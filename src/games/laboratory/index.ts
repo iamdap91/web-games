@@ -79,14 +79,21 @@ class GameScreen {
       this.shell,
       element('stage-slot', HTMLDivElement),
       element('stage-frame', HTMLDivElement),
-      element('fullscreen', HTMLButtonElement),
-      element('display-message', HTMLParagraphElement),
-      () => this.clearInput(),
+      element('landscape-toggle', HTMLButtonElement),
+      () => {
+        this.clearInput();
+        this.resize();
+      },
     );
     this.assets = await loadAssets();
     if (signal.aborted) return;
     this.animation = new AnimationPlayer(this.assets.animations, 'stand');
-    this.webSpace = new WebSpace(this.canvas, this.assets, this.shell);
+    this.webSpace = new WebSpace(
+      this.canvas,
+      this.assets,
+      this.shell,
+      () => this.display?.rotated ?? false,
+    );
     this.loadingOverlay = new LoadingOverlay(this.canvas, this.assets);
     element('developer', HTMLElement).hidden = !this.developer;
     this.selection.disabled =
@@ -179,6 +186,7 @@ class GameScreen {
     this.stick = new VirtualStick({
       root: element('move-stick', HTMLDivElement),
       knob: element('stick-knob', HTMLSpanElement),
+      isRotated: () => this.display?.rotated ?? false,
       onStart: (pointerId) => {
         this.canvas.focus({ preventScroll: true });
         this.controlPointers.add(pointerId);
@@ -326,9 +334,11 @@ class GameScreen {
 
   private resize(): void {
     const bounds = this.canvas.getBoundingClientRect();
-    if (bounds.width === 0 || bounds.height === 0) return;
-    this.canvas.width = Math.round(bounds.width * devicePixelRatio);
-    this.canvas.height = Math.round(bounds.height * devicePixelRatio);
+    const width = this.display?.rotated ? bounds.height : bounds.width;
+    const height = this.display?.rotated ? bounds.width : bounds.height;
+    if (width === 0 || height === 0) return;
+    this.canvas.width = Math.round(width * devicePixelRatio);
+    this.canvas.height = Math.round(height * devicePixelRatio);
     this.context.setTransform(
       this.canvas.width / viewport.width,
       0,
@@ -338,8 +348,8 @@ class GameScreen {
       0,
     );
     this.context.imageSmoothingEnabled = false;
-    this.webSpace?.resize(bounds.width, devicePixelRatio);
-    this.loadingOverlay?.resize(bounds.width, devicePixelRatio);
+    this.webSpace?.resize(width, devicePixelRatio);
+    this.loadingOverlay?.resize(width, devicePixelRatio);
   }
 
   private readonly tick = (now: number): void => {

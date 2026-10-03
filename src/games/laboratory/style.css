@@ -486,6 +486,14 @@ body.escaped {
 }
 
 #game-shell {
+  --game-width: 100vw;
+  --game-height: 100vh;
+  --game-width: 100dvw;
+  --game-height: 100dvh;
+  --safe-top: env(safe-area-inset-top);
+  --safe-right: env(safe-area-inset-right);
+  --safe-bottom: env(safe-area-inset-bottom);
+  --safe-left: env(safe-area-inset-left);
   position: relative;
   background: #101718;
 }
@@ -507,16 +515,6 @@ body.escaped {
   color: #9baaa3;
   font-size: 11px;
   line-height: 1.5;
-}
-#display-message {
-  margin: 0;
-  padding: 4px 8px;
-  text-align: center;
-  color: #afbeb0;
-  font-size: 12px;
-}
-#display-message:empty {
-  display: none;
 }
 .touch-controls {
   --jump-control-width: 88px;
@@ -546,10 +544,10 @@ body.escaped {
 .compact-game header {
   display: none;
 }
-.expanded-game {
+.landscape-game {
   overflow: hidden;
 }
-#game-shell.expanded {
+#game-shell.landscape-mode {
   position: fixed;
   inset: 0;
   z-index: 30;
@@ -557,20 +555,18 @@ body.escaped {
 #game-shell.immersive {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  height: 100dvh;
+  height: var(--game-height);
   width: 100%;
   overflow: hidden;
   overscroll-behavior: none;
-  padding: max(4px, env(safe-area-inset-top))
-    max(8px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom))
-    max(8px, env(safe-area-inset-left));
+  padding: max(4px, var(--safe-top)) max(8px, var(--safe-right))
+    max(8px, var(--safe-bottom)) max(8px, var(--safe-left));
 }
 .immersive .game-toolbar {
   position: absolute;
-  top: max(8px, env(safe-area-inset-top));
-  left: max(16px, env(safe-area-inset-left));
-  right: max(16px, env(safe-area-inset-right));
+  top: max(8px, var(--safe-top));
+  left: max(16px, var(--safe-left));
+  right: max(16px, var(--safe-right));
   z-index: 22;
   padding: 0;
   pointer-events: none;
@@ -583,15 +579,6 @@ body.escaped {
 }
 .immersive .rotate-hint {
   color: #ffffffb3;
-  text-shadow: 0 1px 3px #000;
-}
-.immersive #display-message {
-  position: absolute;
-  top: calc(max(8px, env(safe-area-inset-top)) + 48px);
-  left: 16px;
-  right: 16px;
-  z-index: 22;
-  pointer-events: none;
   text-shadow: 0 1px 3px #000;
 }
 .immersive #stage-frame {
@@ -625,7 +612,7 @@ body.escaped {
   display: none;
 }
 .immersive .touch-controls {
-  --jump-control-width: clamp(60px, 10vw, 80px);
+  --jump-control-width: clamp(60px, calc(var(--game-width) * 0.1), 80px);
   position: absolute;
   inset: auto 16px 14px;
   z-index: 21;
@@ -687,7 +674,7 @@ body.escaped {
   display: none;
 }
 @media (orientation: portrait) {
-  .compact-game:not(.escaped) .rotate-hint {
+  .compact-game:not(.escaped) #game-shell:not(.rotated) .rotate-hint {
     display: block;
   }
 }
@@ -741,7 +728,28 @@ body.escaped {
   background: #ffffff26;
 }
 .immersive .virtual-stick {
-  width: clamp(84px, 18vw, 112px);
+  width: clamp(84px, calc(var(--game-width) * 0.18), 112px);
   height: auto;
   aspect-ratio: 1;
+}
+
+#game-shell.rotated {
+  --game-width: 100vh;
+  --game-height: 100vw;
+  --game-width: 100dvh;
+  --game-height: 100dvw;
+  --safe-top: env(safe-area-inset-right);
+  --safe-right: env(safe-area-inset-bottom);
+  --safe-bottom: env(safe-area-inset-left);
+  --safe-left: env(safe-area-inset-top);
+  inset: 0 auto auto 100%;
+  width: var(--game-width);
+  height: var(--game-height);
+  transform-origin: top left;
+  transform: rotate(90deg);
+}
+.rotated .page-falling-actor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }

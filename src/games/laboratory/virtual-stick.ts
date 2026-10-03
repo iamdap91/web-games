@@ -21,6 +21,7 @@ export class VirtualStick {
     private readonly options: {
       root: HTMLElement;
       knob: HTMLElement;
+      isRotated: () => boolean;
       onStart: (pointerId: number) => void;
       onDirection: (direction: Direction) => void;
     },
@@ -38,14 +39,14 @@ export class VirtualStick {
         this.pointerId = event.pointerId;
         root.setPointerCapture(event.pointerId);
         root.classList.add('pressed');
-        this.move(event.clientX);
+        this.move(event);
       },
       { signal },
     );
     root.addEventListener(
       'pointermove',
       (event) => {
-        if (event.pointerId === this.pointerId) this.move(event.clientX);
+        if (event.pointerId === this.pointerId) this.move(event);
       },
       { signal },
     );
@@ -80,15 +81,15 @@ export class VirtualStick {
     this.options.root.setAttribute('aria-disabled', 'true');
   }
 
-  private move(clientX: number): void {
+  private move(event: PointerEvent): void {
     const { root, knob } = this.options;
     const bounds = root.getBoundingClientRect();
-    // CSS 픽셀로 계산해 회전·고해상도 화면에서도 손가락과 손잡이를 맞춘다.
+    // 시계 방향으로 회전한 게임의 오른쪽은 화면 좌표에서 아래쪽이다.
+    const offset = this.options.isRotated()
+      ? event.clientY - bounds.top - bounds.height / 2
+      : event.clientX - bounds.left - bounds.width / 2;
     const travel = (bounds.width - knob.getBoundingClientRect().width) / 2;
-    const position = stickPosition(
-      clientX - bounds.left - bounds.width / 2,
-      travel,
-    );
+    const position = stickPosition(offset, travel);
     this.show(position.offset, position.direction);
   }
 
