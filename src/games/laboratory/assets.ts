@@ -89,6 +89,7 @@ export async function loadAssets(): Promise<GameAssets> {
       map.regions,
       'laboratory',
       centralDoorScale,
+      true,
     );
     return grade(canvas);
   };

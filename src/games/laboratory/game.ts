@@ -10,7 +10,8 @@ export const pipeX = 1460;
 export type Direction = -1 | 0 | 1;
 export type Scenario = 'normal' | 'giant-door' | 'falling-pipe';
 export type ScenarioSelection = 'random' | Scenario;
-export type Phase = 'reference' | 'playing' | 'result' | 'complete';
+export type Phase = 'playing' | 'transition' | 'complete';
+export const passage = { fadeOut: 0.22, fadeIn: 0.32, glitch: 1.1 } as const;
 export type Motion = 'stand' | 'move' | 'jump';
 
 export function isSelection(value: string): value is ScenarioSelection {
@@ -97,38 +98,58 @@ export type GameSnapshot = {
   readonly phase: Phase;
   readonly progress: number;
   readonly pipeElapsed: number | null;
-  readonly message: string;
+  readonly transitionElapsed: number | null;
+  readonly failureElapsed: number | null;
+  readonly previousRoom: number;
+};
+
+type Transition = {
+  elapsed: number;
+  swapped: boolean;
+  readonly nextRoom: number;
+  readonly failed: boolean;
 };
 
 export class LaboratoryGame {
   private player = new Player();
   private scenario: Scenario = 'normal';
   private selection: ScenarioSelection = 'random';
-  private phase: Phase = 'reference';
+  private phase: Phase = 'playing';
   private progress = 0;
   private pipeElapsed: number | null = null;
-  private message = '';
+  private transition: Transition | null = null;
+  private failureElapsed: number | null = null;
+  private previousRoom = 0;
 
   constructor(private readonly random: () => number = Math.random) {}
 
   reset(selection: ScenarioSelection = 'random'): void {
     this.selection = selection;
-    this.progress = 0;
-    this.startRound(selection === 'random');
+    this.progress = this.previousRoom = 0;
+    this.transition = null;
+    this.failureElapsed = null;
+    this.phase = 'playing';
+    this.loadRoom();
   }
 
   face(direction: Direction): void {
-    if (this.phase === 'reference' || this.phase === 'playing')
-      this.player.face(direction);
+    if (this.phase === 'playing') this.player.face(direction);
   }
 
   jump(direction: Direction): void {
-    if (this.phase === 'reference' || this.phase === 'playing')
-      this.player.jump(direction);
+    if (this.phase === 'playing') this.player.jump(direction);
   }
 
   update(seconds: number, direction: Direction): void {
-    if (this.phase !== 'reference' && this.phase !== 'playing') return;
+    if (this.failureElapsed !== null) {
+      this.failureElapsed += seconds;
+      if (this.failureElapsed >= passage.glitch) this.failureElapsed = null;
+    }
+    if (this.phase === 'transition') {
+      this.updateTransition(seconds);
+      return;
+    }
+    if (this.phase !== 'playing') return;
     const previousX = this.player.snapshot.x;
     this.player.update(seconds, direction);
     const { x } = this.player.snapshot;
@@ -144,18 +165,16 @@ export class LaboratoryGame {
     else if (x >= world.width - 55) this.leave('right');
   }
 
-  continue(): void {
-    if (this.phase === 'complete') this.reset(this.selection);
-    else if (this.phase === 'result') this.startRound(false);
-  }
-
-  private startRound(reference: boolean): void {
+  private loadRoom(): void {
     this.player = new Player();
     this.pipeElapsed = null;
-    this.message = '';
-    this.phase = reference ? 'reference' : 'playing';
-    if (reference) this.scenario = 'normal';
-    else if (this.selection !== 'random') this.scenario = this.selection;
+    if (
+      this.progress === 8 ||
+      (this.selection === 'random' && this.progress === 0)
+    ) {
+      // 0번 방이 반복 가능한 기준 풍경이 되어 별도의 튜토리얼 팝업을 대신한다.
+      this.scenario = 'normal';
+    } else if (this.selection !== 'random') this.scenario = this.selection;
     else {
       const roll = this.random();
       this.scenario =
@@ -164,25 +183,33 @@ export class LaboratoryGame {
   }
 
   private leave(exit: 'left' | 'right'): void {
-    if (this.phase === 'reference') {
-      if (exit === 'left') {
-        this.message =
-          '기준 통로에는 이상이 없습니다. 오른쪽 끝까지 살펴보세요.';
-        this.player = new Player();
-        return;
-      }
-      this.message =
-        '정상 통로를 확인했습니다. 이제부터 8번의 판단이 시작됩니다.';
-    } else {
-      const correct = (this.scenario === 'normal') === (exit === 'right');
-      this.progress = correct ? this.progress + 1 : 0;
-      this.message = correct
-        ? '올바른 방향입니다. 다음 통로로 이동하세요.'
-        : '잘못된 방향입니다. 연속 성공이 0으로 돌아갑니다.';
+    const correct = (this.scenario === 'normal') === (exit === 'right');
+    this.previousRoom = this.progress;
+    this.transition = {
+      elapsed: 0,
+      swapped: false,
+      nextRoom: correct ? this.progress + 1 : 0,
+      failed: !correct,
+    };
+    this.phase = 'transition';
+  }
+
+  private updateTransition(seconds: number): void {
+    const transition = this.transition;
+    if (!transition) return;
+    transition.elapsed += seconds;
+    if (!transition.swapped && transition.elapsed >= passage.fadeOut) {
+      this.progress = transition.nextRoom;
+      this.loadRoom();
+      transition.swapped = true;
+      if (transition.failed) this.failureElapsed = 0;
     }
-    this.phase = this.progress === 8 ? 'complete' : 'result';
-    if (this.phase === 'complete')
-      this.message = '마침내, 연구소 밖의 공기가 느껴집니다.';
+    // 실패 숫자를 읽기 전에 달려 지나치지 않도록 입장 연출 동안만 입력을 잠근다.
+    const duration =
+      passage.fadeOut + (transition.failed ? passage.glitch : passage.fadeIn);
+    if (transition.elapsed < duration) return;
+    this.transition = null;
+    this.phase = this.progress === 8 ? 'complete' : 'playing';
   }
 
   get snapshot(): GameSnapshot {
@@ -192,7 +219,9 @@ export class LaboratoryGame {
       phase: this.phase,
       progress: this.progress,
       pipeElapsed: this.pipeElapsed,
-      message: this.message,
+      transitionElapsed: this.transition?.elapsed ?? null,
+      failureElapsed: this.failureElapsed,
+      previousRoom: this.previousRoom,
     };
   }
 }

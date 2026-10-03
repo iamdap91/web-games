@@ -24,11 +24,6 @@ class GameScreen {
   private readonly canvas = element('scene', HTMLCanvasElement);
   private readonly context = getContext(this.canvas);
   private readonly status = element('status', HTMLParagraphElement);
-  private readonly progress = element('progress', HTMLElement);
-  private readonly roundLabel = element('round-label', HTMLSpanElement);
-  private readonly result = element('result', HTMLDivElement);
-  private readonly resultTitle = element('result-title', HTMLHeadingElement);
-  private readonly continueButton = element('continue', HTMLButtonElement);
   private readonly restartButton = element('restart', HTMLButtonElement);
   private readonly replayButton = element('replay', HTMLButtonElement);
   private readonly selection = element('scenario', HTMLSelectElement);
@@ -71,15 +66,6 @@ class GameScreen {
     this.restartButton.addEventListener('click', () => this.restart(), {
       signal,
     });
-    this.continueButton.addEventListener(
-      'click',
-      () => {
-        this.clearInput();
-        this.game.continue();
-        this.canvas.focus({ preventScroll: true });
-      },
-      { signal },
-    );
     window.addEventListener('keydown', this.keyDown, { signal });
     window.addEventListener('keyup', (event) => this.keys.delete(event.code), {
       signal,
@@ -118,6 +104,8 @@ class GameScreen {
     window.addEventListener('resize', () => this.resize(), { signal });
     this.observer.observe(this.canvas);
     this.resize();
+    this.status.classList.add('sr-only');
+    this.canvas.focus({ preventScroll: true });
     this.updateInterface();
     this.requestId = requestAnimationFrame(this.tick);
   }
@@ -225,8 +213,7 @@ class GameScreen {
         this.motion = state.player.motion;
         this.animation?.play(this.motion);
       }
-      if (state.phase === 'playing' || state.phase === 'reference')
-        this.animation?.update(elapsed);
+      if (state.phase === 'playing') this.animation?.update(elapsed);
     }
     if (this.assets && this.animation)
       drawGame(
@@ -241,38 +228,24 @@ class GameScreen {
 
   private updateInterface(): void {
     const state = this.game.snapshot;
-    setText(this.progress, `${state.progress} / 8`);
-    setText(
-      this.roundLabel,
-      state.phase === 'reference'
-        ? '기준 통로 · 이상 없음'
-        : state.phase === 'complete'
-          ? '탈출 성공'
-          : `C-2 / ${String(state.progress + 1).padStart(2, '0')}`,
-    );
-    setText(
-      this.status,
-      state.message ||
-        (state.phase === 'reference'
-          ? '이곳은 정상 통로입니다. 화면을 눌러 이동하고, 오른쪽 끝까지 모습을 익혀보세요.'
-          : '화면을 눌러 탐험하세요. 이상이 있으면 왼쪽 끝, 없으면 오른쪽 끝으로 이동하세요.'),
-    );
-    const result = state.phase === 'result' || state.phase === 'complete';
-    this.result.hidden = !result;
-    setText(this.resultTitle, state.message);
-    setText(
-      this.continueButton,
-      state.phase === 'complete' ? '다시 탐험하기' : '다음 통로로',
-    );
-    setText(
-      element('result-label', HTMLParagraphElement),
-      state.phase === 'complete' ? 'OUTSIDE / 탈출 성공' : 'C-2 / 판단 결과',
-    );
-    if (result && state.phase !== this.lastPhase) {
-      this.clearInput();
-      this.continueButton.focus({ preventScroll: true });
+    if (state.phase !== this.lastPhase) {
+      // 전환 직전의 키가 새 방에서 곧바로 재탈출을 일으키지 않게 해제한다.
+      if (state.phase === 'transition' || state.phase === 'complete')
+        this.clearInput();
+    }
+    if (state.phase !== 'transition') {
+      setText(
+        this.status,
+        state.phase === 'complete'
+          ? '8번 방. 탈출했습니다.'
+          : `${state.progress}번 방`,
+      );
     }
     this.lastPhase = state.phase;
+    setText(
+      this.restartButton,
+      state.phase === 'complete' ? '다시 들어가기' : '처음부터',
+    );
     if (this.developer) {
       const names = {
         normal: '정상',
@@ -281,7 +254,7 @@ class GameScreen {
       };
       setText(
         this.diagnostics,
-        `현재: ${names[state.scenario]} · 위치: ${Math.round(state.player.x)}, ${Math.round(state.player.y)} · 플래시점프: ${state.player.flashAvailable ? '가능' : '사용함'} · 배관: ${state.pipeElapsed === null ? '대기' : '발동'}`,
+        `방: ${state.progress} · 현재: ${names[state.scenario]} · 위치: ${Math.round(state.player.x)}, ${Math.round(state.player.y)} · 플래시점프: ${state.player.flashAvailable ? '가능' : '사용함'} · 배관: ${state.pipeElapsed === null ? '대기' : '발동'} · 전환: ${state.transitionElapsed === null ? '—' : state.transitionElapsed.toFixed(2)} · 번호 노이즈: ${state.failureElapsed === null ? '—' : state.failureElapsed.toFixed(2)}`,
       );
     }
   }
@@ -293,5 +266,6 @@ void screen.start().catch((error: unknown) => {
   const status = element('status', HTMLParagraphElement);
   status.textContent =
     error instanceof Error ? error.message : '게임을 시작하지 못했습니다.';
+  status.classList.remove('sr-only');
   status.setAttribute('role', 'alert');
 });

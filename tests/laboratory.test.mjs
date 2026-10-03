@@ -6,6 +6,7 @@ import {
   movement,
   world,
   isSelection,
+  passage,
 } from '../dist/src/games/laboratory/game.js';
 
 const step = 1 / 120;
@@ -16,7 +17,7 @@ function advance(actor, seconds, direction = 0) {
 function exit(game, direction) {
   for (let tick = 0; tick < 1500; tick++) {
     game.update(step, direction);
-    if (['result', 'complete'].includes(game.snapshot.phase)) return;
+    if (game.snapshot.phase === 'transition') return;
   }
   assert.fail('통로 출구에 도달하지 못했습니다.');
 }
@@ -57,52 +58,56 @@ test('공중 추가 입력은 수평 가속이며 한 번만 가능하고 착지
   assert.ok(player.snapshot.x < x);
 });
 
-test('기준 통로는 정상이며 오른쪽으로 나가도 점수를 주지 않는다', () => {
+test('0번 방은 정상이며 오른쪽으로 나가면 자동으로 1번 방이 된다', () => {
   const game = new LaboratoryGame(() => 0.9);
-  assert.equal(game.snapshot.phase, 'reference');
-  assert.equal(game.snapshot.scenario, 'normal');
-  advance(game, 1.4, -1);
-  assert.equal(game.snapshot.phase, 'reference');
-  assert.ok(game.snapshot.player.x > 55);
-  exit(game, 1);
+  assert.equal(game.snapshot.phase, 'playing');
   assert.equal(game.snapshot.progress, 0);
-  game.continue();
+  assert.equal(game.snapshot.scenario, 'normal');
+  exit(game, 1);
+  assert.equal(game.snapshot.phase, 'transition');
+  assert.equal(game.snapshot.progress, 0);
+  advance(game, passage.fadeOut + passage.fadeIn + step);
+  assert.equal(game.snapshot.progress, 1);
+  assert.equal(game.snapshot.phase, 'playing');
   assert.equal(game.snapshot.scenario, 'falling-pipe');
+  assert.equal(game.snapshot.player.x, 360);
 });
 
-test('정상은 오른쪽, 이상은 왼쪽이 정답이며 오답은 연속 성공을 초기화한다', () => {
+test('정상은 오른쪽, 이상은 왼쪽이 정답이며 오답은 0번 방으로 돌려보낸다', () => {
   const game = new LaboratoryGame();
   game.reset('normal');
   exit(game, 1);
+  advance(game, 0.6);
   assert.equal(game.snapshot.progress, 1);
-  game.continue();
   exit(game, -1);
+  advance(game, 1.5);
   assert.equal(game.snapshot.progress, 0);
-  assert.match(game.snapshot.message, /잘못된 방향/);
   for (const scenario of ['giant-door', 'falling-pipe']) {
     game.reset(scenario);
     exit(game, -1);
+    advance(game, 0.6);
     assert.equal(game.snapshot.progress, 1);
-    game.continue();
     exit(game, 1);
+    advance(game, 1.5);
     assert.equal(game.snapshot.progress, 0);
   }
 });
 
-test('8회 연속 성공하면 입력이 멈추고 다시 시작할 수 있다', () => {
+test('8번 방에서 팝업 없이 종료되고 재시작할 수 있다', () => {
   const game = new LaboratoryGame();
   game.reset('giant-door');
   for (let count = 1; count <= 8; count++) {
     exit(game, -1);
+    advance(game, 0.6);
     assert.equal(game.snapshot.progress, count);
-    if (count < 8) game.continue();
   }
   assert.equal(game.snapshot.phase, 'complete');
+  assert.equal(game.snapshot.scenario, 'normal');
   const before = game.snapshot.player;
   game.jump(1);
   advance(game, 1, 1);
   assert.deepEqual(game.snapshot.player, before);
-  game.continue();
+  game.reset('giant-door');
   assert.equal(game.snapshot.progress, 0);
   assert.equal(game.snapshot.phase, 'playing');
 });
@@ -124,18 +129,18 @@ test('빠른 접근에도 배관이 발동하고 되돌아가도 초기화되지
   assert.equal(game.snapshot.player.x, 360);
 });
 
-test('개발 선택을 유지하고 무작위로 돌아오면 정상 기준 통로부터 시작한다', () => {
+test('개발 선택을 유지하고 무작위로 돌아오면 정상 0번 방부터 시작한다', () => {
   const game = new LaboratoryGame(() => 0.6);
   game.reset('giant-door');
   exit(game, -1);
-  game.continue();
+  advance(game, 0.6);
   assert.equal(game.snapshot.scenario, 'giant-door');
   game.reset('random');
-  assert.equal(game.snapshot.phase, 'reference');
+  assert.equal(game.snapshot.phase, 'playing');
   assert.equal(game.snapshot.progress, 0);
   assert.equal(game.snapshot.scenario, 'normal');
   exit(game, 1);
-  game.continue();
+  advance(game, 0.6);
   assert.equal(game.snapshot.scenario, 'giant-door');
   assert.equal(isSelection('invalid'), false);
   assert.equal(isSelection('falling-pipe'), true);
@@ -158,4 +163,43 @@ test('짧은 방향 입력도 다음 점프의 방향에 반영한다', () => {
   advance(game, 0.1);
   assert.equal(game.snapshot.player.facing, -1);
   assert.ok(game.snapshot.player.x < 360);
+});
+
+test('실패는 암전에서 방을 교체하고 입장 숫자 노이즈가 끝나면 조작을 돌려준다', () => {
+  const game = new LaboratoryGame(() => 0.1);
+  exit(game, 1);
+  advance(game, 0.6);
+  exit(game, -1);
+  const oldPosition = game.snapshot.player.x;
+  game.jump(1);
+  advance(game, 0.1, 1);
+  assert.equal(game.snapshot.player.x, oldPosition);
+  assert.equal(game.snapshot.progress, 1);
+  assert.equal(game.snapshot.failureElapsed, null);
+  advance(game, 0.25, 1);
+  assert.equal(game.snapshot.progress, 0);
+  assert.equal(game.snapshot.previousRoom, 1);
+  assert.ok(game.snapshot.failureElapsed > 0);
+  assert.equal(game.snapshot.player.x, 360);
+  assert.equal(game.snapshot.scenario, 'normal');
+  assert.equal(game.snapshot.phase, 'transition');
+  advance(game, 0.5, 1);
+  assert.equal(game.snapshot.player.x, 360);
+  advance(game, 0.8);
+  assert.equal(game.snapshot.failureElapsed, null);
+  assert.equal(game.snapshot.phase, 'playing');
+});
+
+test('전환 중 개발 상황을 바꾸면 이전 전환과 노이즈가 취소된다', () => {
+  const game = new LaboratoryGame();
+  exit(game, -1);
+  advance(game, 0.3);
+  assert.notEqual(game.snapshot.failureElapsed, null);
+  game.reset('falling-pipe');
+  advance(game, 1);
+  assert.equal(game.snapshot.transitionElapsed, null);
+  assert.equal(game.snapshot.failureElapsed, null);
+  assert.equal(game.snapshot.scenario, 'falling-pipe');
+  assert.equal(game.snapshot.progress, 0);
+  assert.equal(game.snapshot.player.x, 360);
 });

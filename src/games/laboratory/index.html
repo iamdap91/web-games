@@ -14,17 +14,10 @@
         <div>
           <p class="eyebrow">ALCADNO / SECTOR C-2</p>
           <h1>돌아오는 연구소</h1>
-          <p class="intro">
-            이상이 있다면 되돌아가세요. 없다면 끝까지 나아가세요.
-          </p>
         </div>
         <a href="../../resources/">리소스 보기 ↗</a>
       </header>
       <section class="stage" aria-label="연구소 탐험">
-        <div class="hud">
-          <span id="round-label">기준 통로</span
-          ><span>연속 성공 <strong id="progress">0 / 8</strong></span>
-        </div>
         <div class="scene-wrap">
           <canvas
             id="scene"
@@ -32,15 +25,14 @@
             height="430"
             tabindex="0"
             aria-label="C-2 연구소 게임. 방향키로 이동하고 Space로 점프합니다."
-            aria-describedby="controls"
+            aria-describedby="controls rules"
             >Canvas를 지원하는 브라우저가 필요합니다.</canvas
           >
-          <div id="result" class="result" hidden>
-            <p class="eyebrow" id="result-label">다음 통로</p>
-            <h2 id="result-title"></h2>
-            <button id="continue" type="button">다음 통로로</button>
-          </div>
         </div>
+        <p id="rules" class="sr-only">
+          이상이 있으면 왼쪽으로 되돌아갈 것. 이상이 없으면 오른쪽으로 나아갈
+          것. 8번 방이 출구입니다.
+        </p>
         <p id="status" role="status">로컬 리소스를 불러오는 중…</p>
       </section>
       <div class="controls" id="controls">
@@ -83,10 +75,6 @@
         </div>
         <p id="diagnostics"></p>
       </section>
-      <footer>
-        이상이 보이면 왼쪽 끝으로, 없으면 오른쪽 끝으로. 잘못 고르면 연속 성공이
-        초기화됩니다.
-      </footer>
     </main>
     <script
       type="module"

@@ -10,6 +10,7 @@ export function drawIndustrial(
   regions: readonly Region[],
   kind: Exclude<BackgroundKind, 'corridor'>,
   centralDoorScale = 1,
+  entryClearance = false,
 ): void {
   const subway = kind === 'subway';
   const width = 2400;
@@ -88,7 +89,10 @@ export function drawIndustrial(
     }
     for (const x of [20, 670, 1310, 1950, 2340])
       sprite('wall', x, 0, 50, ground);
-    for (const x of [420, 1600]) sprite('pipe-machine', x, 80, 93, 260);
+    for (const x of [420, 1600]) {
+      if (entryClearance && x === 420) continue;
+      sprite('pipe-machine', x, 80, 93, 260);
+    }
     for (const x of [760, 1820]) sprite('machine', x, 167, 92, 167);
     for (const x of [120, 1080, 2160]) {
       const scale = x === 1080 ? centralDoorScale : 1;

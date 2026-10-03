@@ -1,6 +1,6 @@
 import type { AnimationFrame } from '../../resources/preview/animation-player.js';
 import type { GameAssets } from './assets.js';
-import { pipeX, world, type GameSnapshot } from './game.js';
+import { passage, pipeX, world, type GameSnapshot } from './game.js';
 
 export const viewport = { width: 1000, height: 430 } as const;
 
@@ -28,8 +28,9 @@ export function drawGame(
     0,
     0,
   );
-  drawExit(ctx, 44, '←', '이상 있음');
-  drawExit(ctx, world.width - 44, '→', '이상 없음');
+  drawEntry(ctx, state);
+  drawExit(ctx, 44, '←');
+  drawExit(ctx, world.width - 44, '→');
 
   ctx.fillStyle = '#050d1080';
   ctx.beginPath();
@@ -66,20 +67,114 @@ export function drawGame(
   shade.addColorStop(1, '#030a0c80');
   ctx.fillStyle = shade;
   ctx.fillRect(0, 0, viewport.width, viewport.height);
+  if (state.transitionElapsed !== null) {
+    const elapsed = state.transitionElapsed;
+    const opacity =
+      elapsed < passage.fadeOut
+        ? elapsed / passage.fadeOut
+        : Math.max(0, 1 - (elapsed - passage.fadeOut) / passage.fadeIn);
+    ctx.fillStyle = `rgb(5 10 12 / ${opacity})`;
+    ctx.fillRect(0, 0, viewport.width, viewport.height);
+  }
+}
+
+function drawEntry(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {
+  const glitch = state.failureElapsed;
+  const pulse = glitch === null ? 0 : Math.floor(glitch * 35);
+  const offset =
+    glitch === null
+      ? 0
+      : Math.sin(pulse * 4.7) * 7 * (1 - glitch / passage.glitch);
+  ctx.save();
+  ctx.fillStyle = '#081311';
+  ctx.fillRect(149, 57, 108, 75);
+  ctx.strokeStyle = '#56675d';
+  ctx.strokeRect(149.5, 57.5, 107, 74);
+  ctx.textAlign = 'center';
+  ctx.font = '10px sans-serif';
+  ctx.fillStyle = '#9bac9c';
+  ctx.fillText(state.progress === 8 ? 'EXIT' : 'SECTOR C-2', 203, 73);
+  ctx.font = 'bold 46px monospace';
+  ctx.shadowColor = '#adcfad';
+  ctx.shadowBlur = 7;
+  ctx.fillStyle = glitch !== null && pulse % 3 === 0 ? '#627a73' : '#c4d4b7';
+  const digit =
+    glitch === null || glitch > 0.7
+      ? String(state.progress)
+      : pulse % 4 === 0
+        ? '—'
+        : String(state.previousRoom);
+  ctx.fillText(digit, 203 + offset, 119);
+  ctx.shadowBlur = 0;
+  if (glitch !== null) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(150, 78, 106, 49);
+    ctx.clip();
+    for (let line = 0; line < 6; line++) {
+      ctx.fillStyle = line % 2 ? '#c2d4c17c' : '#081311';
+      ctx.fillRect(
+        151 + Math.sin(pulse + line) * 25,
+        80 + ((pulse * 11 + line * 17) % 46),
+        80,
+        line % 2 ? 1 : 4,
+      );
+    }
+    ctx.restore();
+  }
+  if (state.progress === 8) {
+    // 마지막 문에서 새어 나오는 빛으로 종료를 알리고 결과 창을 띄우지 않는다.
+    const light = ctx.createLinearGradient(180, 160, 360, 340);
+    light.addColorStop(0, '#f5ebcbd0');
+    light.addColorStop(1, '#f5ebcb00');
+    ctx.fillStyle = light;
+    ctx.beginPath();
+    ctx.moveTo(182, 190);
+    ctx.lineTo(245, 190);
+    ctx.lineTo(495, 340);
+    ctx.lineTo(138, 340);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = '#e7e2c8';
+    ctx.fillRect(184, 204, 51, 136);
+    ctx.textAlign = 'left';
+    ctx.font = '18px sans-serif';
+    ctx.fillStyle = '#cdd5c6';
+    ctx.fillText('바깥 공기.', 400, 218);
+  } else {
+    ctx.fillStyle = '#26332c';
+    ctx.fillRect(383, 139, 274, 122);
+    ctx.strokeStyle = '#81907b';
+    ctx.strokeRect(386.5, 142.5, 267, 115);
+    ctx.fillStyle = '#aebba5';
+    ctx.textAlign = 'left';
+    ctx.font = '11px sans-serif';
+    ctx.fillText('연구소 출입 수칙', 402, 162);
+    ctx.font = '19px sans-serif';
+    ctx.fillStyle = '#e0e5ce';
+    ctx.fillText('이상이 있으면  ← 되돌아갈 것', 402, 190);
+    ctx.fillText('이상이 없으면  → 나아갈 것', 402, 217);
+    ctx.fillStyle = '#b3bea8';
+    ctx.font = '14px sans-serif';
+    ctx.fillText('8번 방이 출구입니다.', 402, 244);
+    for (const x of [390, 650])
+      for (const y of [146, 254]) {
+        ctx.fillStyle = '#9caa90';
+        ctx.fillRect(x, y, 2, 2);
+      }
+  }
+  ctx.restore();
 }
 
 function drawExit(
   ctx: CanvasRenderingContext2D,
   x: number,
   arrow: string,
-  label: string,
 ): void {
   ctx.fillStyle = '#9fae9d';
   ctx.textAlign = 'center';
   ctx.font = '28px sans-serif';
   ctx.fillText(arrow, x, 243);
-  ctx.font = '12px sans-serif';
-  ctx.fillText(label, x, 267);
   ctx.fillStyle = '#9fae9d35';
   ctx.fillRect(x - 1, 280, 2, 60);
 }
