@@ -1,0 +1,18 @@
+# Dependencies and build output
+node_modules/
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# Downloaded game assets stay on this machine.
+public/assets/maplestory/*
+!public/assets/maplestory/.gitkeep
+
+# Local configuration and logs
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+.idea/
