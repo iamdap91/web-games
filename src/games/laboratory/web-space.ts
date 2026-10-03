@@ -15,6 +15,7 @@ import {
 export class WebSpace {
   private readonly root = document.createElement('div');
   private readonly escapeLayer = document.createElement('canvas');
+  private readonly fallLayer = document.createElement('canvas');
   private readonly rim = document.createElement('div');
   private readonly perspective = document.createElement('div');
   private readonly stage = document.createElement('div');
@@ -30,6 +31,10 @@ export class WebSpace {
     this.root.setAttribute('aria-hidden', 'true');
     this.root.hidden = true;
     this.escapeLayer.className = 'escape-layer';
+    this.fallLayer.className = 'page-falling-actor';
+    this.fallLayer.setAttribute('aria-hidden', 'true');
+    this.fallLayer.hidden = true;
+    document.body.append(this.fallLayer);
     this.rim.className = 'frame-rim';
     this.perspective.className = 'stage-perspective';
     this.stage.className = 'fold-stage';
@@ -54,12 +59,14 @@ export class WebSpace {
   }
 
   resize(width: number, density: number): void {
+    this.fallLayer.width = Math.round(window.innerWidth * density);
+    this.fallLayer.height = Math.round(window.innerHeight * density);
     this.root.style.transform = `scale(${width / 1000})`;
     // DOM 안의 Canvas도 기본 장면과 같은 실제 픽셀 밀도로 그린다.
     this.density = (density * width) / 1000;
     for (const [canvas, w, h] of [
       [this.escapeLayer, 1000, 430],
-      [this.actor, 280, 180],
+      [this.actor, 280, 430],
     ] as const) {
       canvas.width = Math.round(w * this.density);
       canvas.height = Math.round(h * this.density);
@@ -72,7 +79,7 @@ export class WebSpace {
     const escape =
       state.scenario === 'frame-escape' &&
       state.anomaly.activeElapsed !== null &&
-      state.phase === 'playing';
+      (state.phase === 'playing' || state.phase === 'falling');
     const folding =
       state.scenario === 'folding-stage' && state.phase !== 'complete';
     this.root.hidden = !escape && !folding;
@@ -89,6 +96,27 @@ export class WebSpace {
     this.scene.style.clipPath = escape
       ? `inset(0 ${100 - frameEdge(state) / 10}% 0 0)`
       : '';
+    const tilt =
+      state.chase.phase === 'warning'
+        ? Math.sin(((state.chase.elapsed / 0.26) * Math.PI) / 2) * 1.6
+        : state.chase.phase === 'chasing'
+          ? 1.6 * Math.exp(-state.chase.elapsed * 5)
+          : 0;
+    const offset = state.chase.offset;
+    this.scene.style.transformOrigin = `${frameEdge(state) / 10}% 100%`;
+    this.scene.style.transform = escape
+      ? `translateX(${offset / 10}%) rotate(${tilt}deg)`
+      : '';
+    this.rim.style.transformOrigin = 'right bottom';
+    this.rim.style.transform = `translateX(${offset}px) rotate(${tilt}deg)`;
+    const opacity =
+      state.phase === 'falling'
+        ? Math.max(0, Math.min(1, 1 - (state.chase.elapsed - 0.78) / 0.27))
+        : 1;
+    this.scene.style.opacity = String(opacity);
+    this.root.style.opacity = String(Number(this.root.style.opacity) * opacity);
+    this.fallLayer.hidden = state.phase !== 'falling';
+    if (state.phase === 'falling') this.drawFall(state, frame);
     this.escapeLayer.hidden = this.rim.hidden = !escape;
     this.perspective.hidden = !folding;
     if (escape) this.drawEscape(state, frame);
@@ -97,6 +125,11 @@ export class WebSpace {
 
   destroy(): void {
     this.root.remove();
+    this.fallLayer.remove();
+    this.scene.style.transform =
+      this.scene.style.transformOrigin =
+      this.scene.style.opacity =
+        '';
     this.scene.style.clipPath = '';
     this.scene.closest('.stage')?.classList.remove('frame-broken');
   }
@@ -114,9 +147,9 @@ export class WebSpace {
   }
 
   private drawEscape(state: GameSnapshot, frame: AnimationFrame): void {
-    const edge = frameEdge(state);
+    const edge = Math.min(1000, frameEdge(state) + state.chase.offset);
     const camera = cameraPosition(state.player.x);
-    this.rim.style.width = `${edge}px`;
+    this.rim.style.width = `${frameEdge(state)}px`;
     const pulse = Math.max(0, 1 - (state.anomaly.activeElapsed ?? 0) / 0.9);
     this.rim.style.boxShadow = `${-pulse * 5}px 0 ${pulse * 24}px #b9dac777, 12px 12px 26px #0006`;
     const ctx = this.context(this.escapeLayer, 1000, 430);
@@ -132,9 +165,13 @@ export class WebSpace {
     ctx.fillRect(edge, world.ground, 1000 - edge, 2);
     ctx.fillStyle = '#00000030';
     ctx.fillRect(edge, world.ground + 2, 1000 - edge, 6);
-    ctx.translate(-camera, 0);
-    drawPlayer(ctx, this.assets, state.player, frame);
     ctx.restore();
+    if (state.phase !== 'falling') {
+      ctx.save();
+      ctx.translate(-camera, 0);
+      drawPlayer(ctx, this.assets, state.player, frame);
+      ctx.restore();
+    }
     if (pulse > 0) {
       ctx.save();
       ctx.beginPath();
@@ -157,6 +194,38 @@ export class WebSpace {
     }
   }
 
+  private drawFall(state: GameSnapshot, frame: AnimationFrame): void {
+    const caught = state.chase.caught;
+    if (!caught) return;
+    const ctx = this.context(
+      this.fallLayer,
+      window.innerWidth,
+      window.innerHeight,
+    );
+    // 고정된 페이지 레이어라 아래 UI를 지나가도 문서 높이나 스크롤 위치는 변하지 않는다.
+    const bounds = this.root.getBoundingClientRect();
+    const scale = bounds.width / 1000;
+    const t = state.chase.elapsed;
+    const x = Math.min(990, caught.x - 1400 + 90 * t);
+    const drop = Math.max(
+      1000,
+      (window.innerHeight - bounds.top) / scale + 160,
+    );
+    const y = caught.y - 28 - 150 * t + drop * t * t;
+    ctx.save();
+    ctx.translate(bounds.left + x * scale, bounds.top + y * scale);
+    ctx.scale(scale, scale);
+    ctx.rotate(t * Math.PI * 5);
+    drawPlayer(
+      ctx,
+      this.assets,
+      { ...caught, x: 0, y: 28, flashRemaining: 0 },
+      frame,
+      false,
+    );
+    ctx.restore();
+  }
+
   private drawStage(state: GameSnapshot, frame: AnimationFrame): void {
     const camera = cameraPosition(state.player.x);
     this.panels.forEach((panel, index) => {
@@ -169,9 +238,9 @@ export class WebSpace {
       );
     });
     this.actor.style.left = `${state.player.x - camera - 140}px`;
-    const ctx = this.context(this.actor, 280, 180);
+    const ctx = this.context(this.actor, 280, 430);
     ctx.save();
-    ctx.translate(140 - state.player.x, 160 - world.ground);
+    ctx.translate(140 - state.player.x, 0);
     drawPlayer(ctx, this.assets, state.player, frame);
     ctx.restore();
   }

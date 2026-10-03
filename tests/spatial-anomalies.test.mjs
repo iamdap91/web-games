@@ -27,32 +27,110 @@ test('화면 경계는 걷기로 발동하지 않고 오른쪽 끝의 플래시�
   assert.deepEqual(game.snapshot.encountered, ['frame-escape']);
 });
 
-test('화면 밖에서도 같은 속도로 이동하고 우측 끝은 방 전환이 아니며 왼쪽으로 재진입할 수 있다', () => {
+function escape(game) {
+  advance(game, 7.2, 1);
+  game.jump(1);
+  game.jump(1);
+  advance(game, 0.9, 1);
+}
+function until(game, phase) {
+  for (let i = 0; i < 600 && game.snapshot.phase !== phase; i++)
+    game.update(step, 0);
+  assert.equal(game.snapshot.phase, phase);
+}
+
+test('화면 밖에서 돌아서야 추격하고 포획 후 회전 낙하와 다음 방 착지로 이어진다', () => {
+  const game = new LaboratoryGame();
+  game.reset('frame-escape');
+  escape(game);
+  advance(game, 1);
+  assert.equal(game.snapshot.chase.phase, 'idle');
+  assert.equal(game.snapshot.phase, 'playing');
+  const before = game.snapshot.player.x;
+  advance(game, 0.2, -1);
+  assert.ok(Math.abs(before - game.snapshot.player.x - 48) < 3);
+  assert.equal(game.snapshot.chase.phase, 'warning');
+  assert.equal(game.snapshot.chase.offset, 0);
+  advance(game, 0.1);
+  assert.equal(game.snapshot.chase.phase, 'chasing');
+  assert.ok(game.snapshot.chase.offset > 0);
+  until(game, 'falling');
+  const caught = game.snapshot.player;
+  game.jump(1);
+  advance(game, 0.25, 1);
+  assert.deepEqual(game.snapshot.player, caught);
+  assert.equal(game.snapshot.progress, 0);
+  until(game, 'landing');
+  assert.equal(game.snapshot.progress, 1);
+  assert.equal(game.snapshot.player.x, 360);
+  assert.ok(game.snapshot.player.y < 0);
+  assert.equal(game.snapshot.failureElapsed, null);
+  assert.equal(game.snapshot.chase.phase, 'idle');
+  until(game, 'playing');
+  assert.equal(game.snapshot.player.y, 340);
+  advance(game, 0.1, 1);
+  assert.ok(game.snapshot.player.x > 360);
+  assert.equal(game.snapshot.progress, 1);
+  assert.deepEqual(game.snapshot.encountered, ['frame-escape']);
+});
+
+test('되돌아선 뒤 다시 오른쪽 플래시점프로 잠시 거리를 벌릴 수 있다', () => {
   const game = new LaboratoryGame();
   game.reset('frame-escape');
   advance(game, 7.2, 1);
   game.jump(1);
   game.jump(1);
-  advance(game, 1, 1);
-  assert.equal(game.snapshot.phase, 'playing');
-  assert.equal(frameEdge(game.snapshot), 760);
+  advance(game, 0.75);
+  game.face(-1);
+  advance(game, 0.1);
+  const before = game.snapshot.player.x - 2160 - game.snapshot.chase.offset;
+  game.jump(1);
+  game.jump(1);
+  advance(game, 0.12);
   assert.ok(
-    game.snapshot.player.x - cameraPosition(game.snapshot.player.x) >
-      frameEdge(game.snapshot),
+    game.snapshot.player.x - 2160 - game.snapshot.chase.offset > before,
   );
-  const before = game.snapshot.player.x;
-  advance(game, 0.2, -1);
-  assert.ok(Math.abs(before - game.snapshot.player.x - 48) < 3);
-  advance(game, 1, -1);
-  assert.ok(
-    game.snapshot.player.x - cameraPosition(game.snapshot.player.x) <
-      frameEdge(game.snapshot),
-  );
-  advance(game, 10, -1);
+  until(game, 'falling');
+});
+
+test('7번 방에서 화면에 잡혀도 8번 방에 착지한 뒤 직접 나가야 완료된다', () => {
+  const game = new LaboratoryGame();
+  game.reset('frame-escape');
+  for (let room = 0; room < 7; room++) {
+    advance(game, 1.4, -1);
+    advance(game, 0.6);
+    assert.equal(game.snapshot.progress, room + 1);
+  }
+  escape(game);
+  game.face(-1);
+  until(game, 'falling');
+  until(game, 'landing');
+  assert.equal(game.snapshot.progress, 8);
+  assert.equal(game.snapshot.scenario, 'normal');
+  until(game, 'playing');
+  assert.equal(game.snapshot.progress, 8);
+  advance(game, 8.6, 1);
+  advance(game, 0.6);
+  assert.equal(game.snapshot.phase, 'complete');
+});
+
+test('문은 접근하면 천천히 열리고 왕복해도 유지되며 새 방에서는 닫힌다', () => {
+  const game = new LaboratoryGame();
+  game.reset('folding-stage');
+  advance(game, 6, 1);
+  const opening = game.snapshot.anomaly.backstageDoorOpen;
+  assert.ok(opening > 0 && opening < 1);
+  advance(game, 0.8, 1);
+  advance(game, 2);
+  assert.equal(game.snapshot.anomaly.backstageDoorOpen, 1);
+  advance(game, 3, -1);
+  assert.equal(game.snapshot.anomaly.backstageDoorOpen, 1);
+  advance(game, 3, 1);
+  assert.equal(game.snapshot.anomaly.backstageDoorOpen, 1);
+  advance(game, 9, -1);
   advance(game, 0.6);
   assert.equal(game.snapshot.progress, 1);
-  assert.equal(game.snapshot.anomaly.activeElapsed, null);
-  assert.equal(frameEdge(game.snapshot), 1000);
+  assert.equal(game.snapshot.anomaly.backstageDoorOpen, 0);
 });
 
 test('벽은 이동 위치에 따라 순서대로 열리고 같은 위치로 돌아오면 같은 각도가 된다', () => {
@@ -89,21 +167,19 @@ test('재선택과 8번 방 미리보기는 경계 탈출 상태를 정리한다
   assert.equal(game.snapshot.anomaly.activeElapsed, null);
 });
 
-test('문은 접근하면 천천히 열리고 왕복해도 유지되며 새 방에서는 닫힌다', () => {
+test('포획 중 초기화와 8번 방 미리보기는 낙하와 착지를 취소한다', () => {
   const game = new LaboratoryGame();
-  game.reset('folding-stage');
-  advance(game, 6, 1);
-  const opening = game.snapshot.anomaly.backstageDoorOpen;
-  assert.ok(opening > 0 && opening < 1);
-  advance(game, 0.8, 1);
-  advance(game, 2);
-  assert.equal(game.snapshot.anomaly.backstageDoorOpen, 1);
-  advance(game, 3, -1);
-  assert.equal(game.snapshot.anomaly.backstageDoorOpen, 1);
-  advance(game, 3, 1);
-  assert.equal(game.snapshot.anomaly.backstageDoorOpen, 1);
-  advance(game, 9, -1);
-  advance(game, 0.6);
-  assert.equal(game.snapshot.progress, 1);
-  assert.equal(game.snapshot.anomaly.backstageDoorOpen, 0);
+  for (const preview of [false, true]) {
+    game.reset('frame-escape');
+    escape(game);
+    game.face(-1);
+    until(game, 'falling');
+    if (preview) game.previewExit();
+    else game.reset('folding-stage');
+    advance(game, 2);
+    assert.equal(game.snapshot.phase, 'playing');
+    assert.equal(game.snapshot.chase.phase, 'idle');
+    assert.equal(game.snapshot.landingElapsed, null);
+    assert.equal(game.snapshot.progress, preview ? 8 : 0);
+  }
 });

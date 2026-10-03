@@ -91,8 +91,8 @@ export const anomalyDetails = {
   },
   'frame-escape': {
     title: '화면 밖으로',
-    description: '플래시점프로 연구소 화면의 경계를 넘어갔다.',
-    cue: '오른쪽 끝에서 Alt 플래시점프 · 화면 밖에서도 ←로 돌아오기',
+    description: '화면 밖에서 돌아서자 연구소가 따라와, 다음 방으로 떨어졌다.',
+    cue: '오른쪽 끝에서 Alt 플래시점프 · 화면 밖에서 ←로 돌아서면 추격',
     observeX: 2100,
   },
   'folding-stage': {

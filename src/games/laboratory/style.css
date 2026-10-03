@@ -311,7 +311,7 @@ body.escaped {
   image-rendering: pixelated;
 }
 .stage.frame-broken {
-  overflow: visible;
+  overflow: clip;
   border-color: transparent;
   background: transparent;
 }
@@ -371,6 +371,18 @@ body.escaped {
 }
 .stage-actor {
   position: absolute;
-  top: 180px;
+  top: 0;
   transform: translateZ(4px);
+}
+
+.page-falling-actor {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  aspect-ratio: auto;
+  background: transparent;
+  pointer-events: none;
+  image-rendering: pixelated;
+  z-index: 20;
 }

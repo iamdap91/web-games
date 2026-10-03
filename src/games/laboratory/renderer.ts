@@ -41,7 +41,10 @@ export function drawGame(
   }
 
   drawAnomalyFigure(ctx, assets, state, frame);
-  if (state.scenario !== 'folding-stage')
+  if (
+    state.scenario !== 'folding-stage' &&
+    !(state.scenario === 'frame-escape' && state.anomaly.activeElapsed !== null)
+  )
     drawPlayer(ctx, assets, player, frame, state.scenario !== 'late-shadow');
   drawAnomalyPipes(ctx, assets, state);
   ctx.restore();
@@ -69,6 +72,10 @@ export function drawGame(
     ctx.fillStyle = light;
     ctx.fillRect(0, 0, world.width, world.height);
     ctx.restore();
+  }
+  if (state.landingElapsed !== null && state.landingElapsed < 0.18) {
+    ctx.fillStyle = `rgb(5 10 12 / ${1 - state.landingElapsed / 0.18})`;
+    ctx.fillRect(0, 0, viewport.width, viewport.height);
   }
   drawBlackout(ctx, state);
   if (state.hitElapsed !== null) {

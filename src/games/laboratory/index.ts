@@ -338,8 +338,7 @@ class GameScreen {
     if (state.phase !== this.lastPhase) {
       if (state.phase === 'complete') this.renderEnding();
       // 전환 직전의 키가 새 방에서 곧바로 재탈출을 일으키지 않게 해제한다.
-      if (state.phase === 'transition' || state.phase === 'complete')
-        this.clearInput();
+      if (state.phase !== 'playing') this.clearInput();
     }
     if (state.phase !== 'transition') {
       setText(
@@ -365,7 +364,7 @@ class GameScreen {
       );
       setText(
         this.diagnostics,
-        `방: ${state.progress} · 현재: ${state.scenario === 'normal' ? '정상' : anomalyDetails[state.scenario].title} · 위치: ${Math.round(state.player.x)}, ${Math.round(state.player.y)} · 플래시점프: ${state.player.flashAvailable ? '가능' : '사용함'} · 연출: ${state.anomaly.activeElapsed === null ? '대기' : state.anomaly.activeElapsed.toFixed(1)} · 배관: ${state.pipeElapsed === null ? '대기' : `낙하 ${pipes.filter((pipe) => pipeFall(state.pipeElapsed, pipe.delay) === 1).length}/${pipes.filter((pipe) => pipe.delay !== null).length}`} · 전환: ${state.transitionElapsed === null ? '—' : state.transitionElapsed.toFixed(2)} · 번호 노이즈: ${state.failureElapsed === null ? '—' : state.failureElapsed.toFixed(2)}`,
+        `방: ${state.progress} · 현재: ${state.scenario === 'normal' ? '정상' : anomalyDetails[state.scenario].title} · 위치: ${Math.round(state.player.x)}, ${Math.round(state.player.y)} · 플래시점프: ${state.player.flashAvailable ? '가능' : '사용함'} · 연출: ${state.anomaly.activeElapsed === null ? '대기' : state.anomaly.activeElapsed.toFixed(1)} · 배관: ${state.pipeElapsed === null ? '대기' : `낙하 ${pipes.filter((pipe) => pipeFall(state.pipeElapsed, pipe.delay) === 1).length}/${pipes.filter((pipe) => pipe.delay !== null).length}`} · 공간: ${state.chase.phase} · 문틈: ${Math.round(state.anomaly.backstageDoorOpen * 100)}% · 상태: ${state.phase} · 전환: ${state.transitionElapsed === null ? '—' : state.transitionElapsed.toFixed(2)} · 번호 노이즈: ${state.failureElapsed === null ? '—' : state.failureElapsed.toFixed(2)}`,
       );
     }
   }
