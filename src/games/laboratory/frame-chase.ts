@@ -1,4 +1,4 @@
-import type { PlayerSnapshot } from './game.js';
+import type { PlayerSnapshot } from './player.js';
 import { openingFrameEdge } from './spatial-rules.js';
 
 export const pursuit = {

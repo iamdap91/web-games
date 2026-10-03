@@ -1,4 +1,4 @@
-import type { PlayerSnapshot } from './game.js';
+import type { PlayerSnapshot } from './player.js';
 import { smooth } from './event-rules.js';
 
 export const intruderTiming = {

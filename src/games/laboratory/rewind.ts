@@ -1,4 +1,4 @@
-import type { PlayerCapture, PlayerSnapshot } from './game.js';
+import type { PlayerCapture, PlayerSnapshot } from './player.js';
 
 export const rewindTiming = {
   trigger: 1500,

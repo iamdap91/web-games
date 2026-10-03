@@ -1,4 +1,4 @@
-import type { PlayerSnapshot } from './game.js';
+import type { PlayerSnapshot } from './player.js';
 
 // 모바일에서도 반응할 여유를 주도록 절단 진행을 최초 구현의 68% 속도로 재생한다.
 const cutSpeed = 0.8 * 0.85;

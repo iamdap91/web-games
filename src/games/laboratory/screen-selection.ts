@@ -1,4 +1,4 @@
-import type { PlayerSnapshot } from './game.js';
+import type { PlayerSnapshot } from './player.js';
 
 export const selectionTiming = {
   trigger: 1100,
