@@ -1,4 +1,4 @@
-import { pipeTriggerX } from './pipe-cascade.js';
+import { pipeHitsPlayer, pipeTriggerX } from './pipe-cascade.js';
 
 export const world = { width: 2400, height: 430, ground: 340 } as const;
 export const movement = {
@@ -104,6 +104,7 @@ export type GameSnapshot = {
   readonly pipeElapsed: number | null;
   readonly transitionElapsed: number | null;
   readonly failureElapsed: number | null;
+  readonly hitElapsed: number | null;
   readonly previousRoom: number;
   readonly encountered: readonly Anomaly[];
 };
@@ -114,6 +115,7 @@ type Transition = {
   readonly nextRoom: number;
   readonly failed: boolean;
   readonly ending: boolean;
+  readonly hit: boolean;
 };
 
 export class LaboratoryGame {
@@ -167,7 +169,7 @@ export class LaboratoryGame {
       return;
     }
     if (this.phase !== 'playing') return;
-    const previousX = this.player.snapshot.x;
+    const previousPlayer = this.player.snapshot;
     this.player.update(seconds, direction);
     const { x } = this.player.snapshot;
     if (this.progress === 8) {
@@ -176,12 +178,26 @@ export class LaboratoryGame {
     }
     if (this.scenario === 'giant-door' && Math.abs(x - 1163) <= 420)
       this.encountered.add('giant-door');
-    if (this.pipeElapsed !== null) this.pipeElapsed += seconds;
+    if (this.pipeElapsed !== null) {
+      const before = this.pipeElapsed;
+      this.pipeElapsed += seconds;
+      if (
+        pipeHitsPlayer(
+          before,
+          this.pipeElapsed,
+          previousPlayer,
+          this.player.snapshot,
+        )
+      ) {
+        this.startTransition(0, true, false, true);
+        return;
+      }
+    }
     if (
       this.scenario === 'falling-pipe' &&
       this.pipeElapsed === null &&
-      Math.min(previousX, x) <= pipeTriggerX + 200 &&
-      Math.max(previousX, x) >= pipeTriggerX - 200
+      previousPlayer.x < pipeTriggerX &&
+      x >= pipeTriggerX
     ) {
       this.pipeElapsed = 0;
       this.encountered.add('falling-pipe');
@@ -211,13 +227,27 @@ export class LaboratoryGame {
     const ending = this.progress === 8;
     const correct =
       ending || (this.scenario === 'normal') === (exit === 'right');
+    this.startTransition(
+      ending ? 8 : correct ? this.progress + 1 : 0,
+      !correct,
+      ending,
+    );
+  }
+
+  private startTransition(
+    nextRoom: number,
+    failed: boolean,
+    ending: boolean,
+    hit = false,
+  ): void {
     this.previousRoom = this.progress;
     this.transition = {
       elapsed: 0,
       swapped: false,
-      nextRoom: ending ? 8 : correct ? this.progress + 1 : 0,
-      failed: !correct,
+      nextRoom,
+      failed,
       ending,
+      hit,
     };
     this.phase = 'transition';
   }
@@ -254,6 +284,10 @@ export class LaboratoryGame {
       pipeElapsed: this.pipeElapsed,
       transitionElapsed: this.transition?.elapsed ?? null,
       failureElapsed: this.failureElapsed,
+      hitElapsed:
+        this.transition?.hit && !this.transition.swapped
+          ? this.transition.elapsed
+          : null,
       previousRoom: this.previousRoom,
       encountered: [...this.encountered],
     };

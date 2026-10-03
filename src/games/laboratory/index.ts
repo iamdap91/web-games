@@ -27,7 +27,7 @@ const anomalyDetails = {
   },
   'falling-pipe': {
     title: '연쇄 낙하 배관',
-    description: '다가가자 다섯 개의 배관이 앞쪽으로 차례로 내려왔다.',
+    description: '마지막 배관에 다가가자 5번, 2번, 1번 배관이 차례로 내려왔다.',
   },
 } as const;
 
@@ -353,7 +353,7 @@ class GameScreen {
       };
       setText(
         this.diagnostics,
-        `방: ${state.progress} · 현재: ${names[state.scenario]} · 위치: ${Math.round(state.player.x)}, ${Math.round(state.player.y)} · 플래시점프: ${state.player.flashAvailable ? '가능' : '사용함'} · 배관: ${state.pipeElapsed === null ? '대기' : `낙하 ${pipes.filter((pipe) => pipeFall(state.pipeElapsed, pipe.delay) === 1).length}/${pipes.length}`} · 전환: ${state.transitionElapsed === null ? '—' : state.transitionElapsed.toFixed(2)} · 번호 노이즈: ${state.failureElapsed === null ? '—' : state.failureElapsed.toFixed(2)}`,
+        `방: ${state.progress} · 현재: ${names[state.scenario]} · 위치: ${Math.round(state.player.x)}, ${Math.round(state.player.y)} · 플래시점프: ${state.player.flashAvailable ? '가능' : '사용함'} · 배관: ${state.pipeElapsed === null ? '대기' : `낙하 ${pipes.filter((pipe) => pipeFall(state.pipeElapsed, pipe.delay) === 1).length}/${pipes.filter((pipe) => pipe.delay !== null).length}`} · 전환: ${state.transitionElapsed === null ? '—' : state.transitionElapsed.toFixed(2)} · 번호 노이즈: ${state.failureElapsed === null ? '—' : state.failureElapsed.toFixed(2)}`,
       );
     }
   }

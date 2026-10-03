@@ -121,7 +121,7 @@ test('8번 방에서도 움직이고 오른쪽 빛 속으로 나가야 종료된
 test('빠른 접근에도 배관이 발동하고 되돌아가도 초기화되지 않는다', () => {
   const game = new LaboratoryGame();
   game.reset('falling-pipe');
-  advance(game, 3.4, 1);
+  advance(game, 5.2, 1);
   assert.equal(game.snapshot.pipeElapsed, null);
   game.jump(1);
   game.update(step, 1);
@@ -219,7 +219,7 @@ test('개발 모드의 8번 방 확인은 같은 입장 상태를 만들고 현�
   }
   const preview = new LaboratoryGame();
   preview.reset('falling-pipe');
-  advance(preview, 4, 1);
+  advance(preview, 6, 1);
   assert.notEqual(preview.snapshot.pipeElapsed, null);
   preview.previewExit();
   assert.equal(preview.snapshot.progress, 7);
@@ -295,4 +295,56 @@ test('배정만 된 이상은 기록하지 않고 실제 접근한 이상은 실
   assert.deepEqual(game.snapshot.encountered, ['giant-door']);
   game.reset();
   assert.deepEqual(game.snapshot.encountered, []);
+});
+
+function approachPipes(game) {
+  for (let tick = 0; tick < 1000; tick++) {
+    game.update(step, 1);
+    if (game.snapshot.pipeElapsed !== null) return;
+  }
+  assert.fail('마지막 배관 접근으로 발동하지 않았습니다.');
+}
+
+test('배관을 보고 멈추면 안전하고 낙하 종료 후 왼쪽으로 돌아가면 진행한다', () => {
+  const game = new LaboratoryGame();
+  game.reset('falling-pipe');
+  approachPipes(game);
+  advance(game, 1);
+  assert.equal(game.snapshot.phase, 'playing');
+  assert.equal(game.snapshot.hitElapsed, null);
+  exit(game, -1);
+  advance(game, 0.6);
+  assert.equal(game.snapshot.progress, 1);
+});
+
+test('급히 뒤로 플래시점프하면 2번 또는 1번에 맞고 방 번호가 0으로 돌아간다', () => {
+  for (const reaction of [0, 0.1, 0.2]) {
+    const game = new LaboratoryGame();
+    game.reset('falling-pipe');
+    exit(game, -1);
+    advance(game, 0.6);
+    assert.equal(game.snapshot.progress, 1);
+    approachPipes(game);
+    advance(game, reaction);
+    game.jump(-1);
+    game.jump(-1);
+    for (let tick = 0; tick < 120 && game.snapshot.phase === 'playing'; tick++)
+      game.update(step, -1);
+    assert.equal(game.snapshot.hitElapsed, 0);
+    assert.ok(game.snapshot.player.x > 1400 && game.snapshot.player.x < 1640);
+    const impactPosition = game.snapshot.player;
+    game.jump(1);
+    advance(game, 0.1, 1);
+    assert.deepEqual(game.snapshot.player, impactPosition);
+    advance(game, 0.15);
+    assert.equal(game.snapshot.progress, 0);
+    assert.equal(game.snapshot.previousRoom, 1);
+    assert.notEqual(game.snapshot.failureElapsed, null);
+    assert.equal(game.snapshot.hitElapsed, null);
+    assert.deepEqual(game.snapshot.encountered, ['falling-pipe']);
+    advance(game, 1.5);
+    assert.equal(game.snapshot.phase, 'playing');
+    assert.equal(game.snapshot.player.x, 360);
+    assert.equal(game.snapshot.pipeElapsed, null);
+  }
 });

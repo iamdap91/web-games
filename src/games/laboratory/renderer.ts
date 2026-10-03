@@ -2,7 +2,7 @@ import type { AnimationFrame } from '../../resources/preview/animation-player.js
 import type { GameAssets } from './assets.js';
 import { exitLight, passage, world, type GameSnapshot } from './game.js';
 
-import { pipes, pipeFall, pipeShake } from './pipe-cascade.js';
+import { pipes, pipeFall, pipeShake, pipeShape } from './pipe-cascade.js';
 
 export const viewport = { width: 1000, height: 430 } as const;
 
@@ -17,7 +17,12 @@ export function drawGame(
     0,
     Math.min(world.width - viewport.width, player.x - 400),
   );
-  const shake = pipeShake(pipeElapsed);
+  const shake =
+    state.hitElapsed === null
+      ? pipeShake(pipeElapsed)
+      : Math.cos(state.hitElapsed * 100) *
+        7 *
+        (1 - state.hitElapsed / passage.fadeOut);
   ctx.fillStyle = '#0d1719';
   ctx.fillRect(0, 0, viewport.width, viewport.height);
   ctx.save();
@@ -68,9 +73,9 @@ export function drawGame(
     ctx.drawImage(
       assets.pipe,
       pipe.x - pipe.width / 2,
-      -190 + 225 * fall,
+      pipeShape.top + pipeShape.travel * fall,
       pipe.width,
-      300,
+      pipeShape.height,
     );
   }
   ctx.restore();
@@ -98,6 +103,10 @@ export function drawGame(
     ctx.fillStyle = light;
     ctx.fillRect(0, 0, world.width, world.height);
     ctx.restore();
+  }
+  if (state.hitElapsed !== null) {
+    ctx.fillStyle = `rgb(205 65 45 / ${0.45 * (1 - state.hitElapsed / passage.fadeOut)})`;
+    ctx.fillRect(0, 0, viewport.width, viewport.height);
   }
   if (state.transitionElapsed !== null) {
     const elapsed = state.transitionElapsed;
