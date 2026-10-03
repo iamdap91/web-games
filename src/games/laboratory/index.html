@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10191a" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css?v=escaping-exit-8" />
+    <title>C-2 · 돌아오는 연구소</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">ALCADNO / SECTOR C-2</p>
+          <h1>돌아오는 연구소</h1>
+        </div>
+        <a href="../../resources/">리소스 보기 ↗</a>
+      </header>
+      <div id="play-area">
+        <section class="stage" aria-label="연구소 탐험">
+          <div class="scene-wrap">
+            <canvas
+              id="scene"
+              width="1000"
+              height="430"
+              tabindex="0"
+              aria-label="C-2 연구소 게임. 방향키로 이동하고 Alt로 점프합니다."
+              aria-describedby="controls rules"
+              >Canvas를 지원하는 브라우저가 필요합니다.</canvas
+            >
+          </div>
+          <p id="rules" class="sr-only">
+            이상이 있으면 왼쪽으로 되돌아갈 것. 이상이 없으면 오른쪽으로 나아갈
+            것. 8번 방이 출구입니다.
+          </p>
+          <p id="status" role="status">로컬 리소스를 불러오는 중…</p>
+        </section>
+        <div class="controls" id="controls">
+          <p>
+            <kbd>←</kbd> <kbd>→</kbd> 이동 <span>·</span> <kbd>Alt</kbd> 점프
+            <span>·</span> 공중에서 한 번 더 <kbd>Alt</kbd> 플래시점프
+          </p>
+          <button id="restart" type="button" disabled>처음부터</button>
+        </div>
+        <div class="touch-controls" aria-label="화면 조작 버튼">
+          <button id="left" type="button" aria-label="왼쪽으로 이동" disabled>
+            ←
+          </button>
+          <button
+            id="right"
+            type="button"
+            aria-label="오른쪽으로 이동"
+            disabled
+          >
+            →
+          </button>
+          <button id="jump" type="button" disabled>점프 / 플래시점프</button>
+        </div>
+      </div>
+      <section id="ending" class="ending" aria-labelledby="ending-title" hidden>
+        <p class="eyebrow">OUTSIDE / 08</p>
+        <h2 id="ending-title" tabindex="-1">탈출 성공!</h2>
+        <div class="ending-nav" aria-label="엔딩 기록">
+          <button
+            id="show-records"
+            type="button"
+            aria-controls="records"
+            aria-pressed="true"
+          >
+            마주친 이상현상
+          </button>
+          <button
+            id="show-credits"
+            type="button"
+            aria-controls="credits"
+            aria-pressed="false"
+          >
+            크레딧
+          </button>
+        </div>
+        <section id="records" aria-label="이번 탐험의 이상현상">
+          <ul id="encounters"></ul>
+          <p id="no-encounters">이번 탐험에는 기록된 이상현상이 없습니다.</p>
+        </section>
+        <section id="credits" aria-label="엔딩 크레딧" hidden>
+          <dl>
+            <dt>게임 제작</dt>
+            <dd>돌아오는 연구소 프로젝트</dd>
+            <dt>배경 · 캐릭터 리소스</dt>
+            <dd>
+              <a href="https://maplestoryworlds-resourcesearch-new.nexon.com/"
+                >MapleStory · MapleStory Worlds</a
+              >
+            </dd>
+            <dt>배경 원본 참고</dt>
+            <dd>
+              <a href="https://mapledb.kr/search.php?q=261020400&t=map"
+                >MapleDB · 알카드노 연구소 C-2</a
+              >
+            </dd>
+          </dl>
+          <p>플레이해 주셔서 감사합니다.</p>
+        </section>
+        <button id="ending-restart" type="button">다시 들어가기</button>
+      </section>
+      <section id="developer" class="developer" aria-label="개발자 모드" hidden>
+        <div>
+          <p class="eyebrow">DEVELOPER MODE</p>
+          <p>
+            선택하면 진행도와 위치가 초기화됩니다. 다음 통로에서도 선택한 상황을
+            유지합니다.
+          </p>
+        </div>
+        <div class="dev-controls">
+          <label
+            >이상현상 선택
+            <select id="scenario" disabled>
+              <option value="random">일반 진행 · 무작위</option>
+              <option value="normal">정상 · 이상 없음</option>
+            </select></label
+          >
+          <button id="replay" type="button" disabled>
+            선택 상황 다시 시작
+          </button>
+          <button id="preview-exit" type="button" disabled>8번 방 확인</button>
+        </div>
+        <p id="anomaly-cue"></p>
+        <p id="diagnostics"></p>
+      </section>
+    </main>
+    <script
+      type="module"
+      src="../../../dist/src/games/laboratory/index.js"
+    ></script>
+  </body>
+</html>

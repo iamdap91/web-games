@@ -9,6 +9,10 @@ export function drawIndustrial(
   components: ReadonlyMap<string, HTMLImageElement>,
   regions: readonly Region[],
   kind: Exclude<BackgroundKind, 'corridor'>,
+  centralDoorScale = 1,
+  entryClearance = false,
+  omitCentralDoor = false,
+  omitExitDoors = false,
 ): void {
   const subway = kind === 'subway';
   const width = 2400;
@@ -87,9 +91,26 @@ export function drawIndustrial(
     }
     for (const x of [20, 670, 1310, 1950, 2340])
       sprite('wall', x, 0, 50, ground);
-    for (const x of [420, 1600]) sprite('pipe-machine', x, 80, 93, 260);
+    for (const x of [420, 1600]) {
+      if (entryClearance && x === 420) continue;
+      sprite('pipe-machine', x, 80, 93, 260);
+    }
     for (const x of [760, 1820]) sprite('machine', x, 167, 92, 167);
-    for (const x of [120, 1080, 2160]) part('door', x, 140, 166, 200);
+    for (const x of [120, 1080, 2160]) {
+      if (
+        (omitCentralDoor && x === 1080) ||
+        (omitExitDoors && (x === 120 || x === 2160))
+      )
+        continue;
+      const scale = x === 1080 ? centralDoorScale : 1;
+      part(
+        'door',
+        x - (166 * (scale - 1)) / 2,
+        ground - 200 * scale,
+        166 * scale,
+        200 * scale,
+      );
+    }
     for (const x of [360, 920, 1480, 2040]) {
       // 광원은 정적인 미리보기로, 조명 아래에서도 이동 공간을 읽을 수 있게 한다.
       const beam = ctx.createLinearGradient(0, 138, 0, ground);
