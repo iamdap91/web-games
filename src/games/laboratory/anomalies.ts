@@ -107,16 +107,21 @@ export function isSelection(value: string): value is ScenarioSelection {
   );
 }
 
-export function chooseScenario(roll: number): Scenario {
+export function chooseScenario(
+  roll: number,
+  excluded: ReadonlySet<Anomaly> = new Set(),
+): Scenario {
   if (roll < 0.3) return 'normal';
-  // 콘텐츠 수가 줄어도 부재형의 희귀도는 그대로 유지한다.
+  const regular = anomalies.filter(
+    (id) => id !== 'empty-center' && !excluded.has(id),
+  );
+  const emptyAvailable = !excluded.has('empty-center');
+  if (regular.length === 0) return emptyAvailable ? 'empty-center' : 'normal';
   const anomalyRoll = (roll - 0.3) / 0.7;
-  if (anomalyRoll >= 34 / 35) return 'empty-center';
-  const regular = anomalies.filter((id) => id !== 'empty-center');
+  // 일반 이상이 줄어도 아직 나오지 않은 부재형의 희귀도는 유지한다.
+  if (emptyAvailable && anomalyRoll >= 34 / 35) return 'empty-center';
+  const regularRoll = emptyAvailable ? anomalyRoll / (34 / 35) : anomalyRoll;
   return regular[
-    Math.min(
-      regular.length - 1,
-      Math.floor((anomalyRoll / (34 / 35)) * regular.length),
-    )
+    Math.min(regular.length - 1, Math.floor(regularRoll * regular.length))
   ]!;
 }

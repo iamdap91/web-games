@@ -108,6 +108,7 @@ export class LaboratoryGame {
   private failureElapsed: number | null = null;
   private previousRoom = 0;
   private readonly encountered = new Set<Anomaly>();
+  private readonly assignedAnomalies = new Set<Anomaly>();
 
   constructor(private readonly random: () => number = Math.random) {}
 
@@ -428,6 +429,8 @@ export class LaboratoryGame {
 
   private loadRoom(): void {
     this.resetRoomState();
+    // 새 연속 진행에서는 다시 추첨할 수 있지만 엔딩의 관찰 기록은 유지한다.
+    if (this.progress === 0) this.assignedAnomalies.clear();
     if (
       this.progress === 8 ||
       (this.selection === 'random' && this.progress === 0)
@@ -436,7 +439,8 @@ export class LaboratoryGame {
       this.scenario = 'normal';
     } else if (this.selection !== 'random') this.scenario = this.selection;
     else {
-      this.scenario = chooseScenario(this.random());
+      this.scenario = chooseScenario(this.random(), this.assignedAnomalies);
+      if (this.scenario !== 'normal') this.assignedAnomalies.add(this.scenario);
     }
   }
 
