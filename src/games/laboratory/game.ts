@@ -222,7 +222,14 @@ export class LaboratoryGame {
       this.encountered.add('falling-pipe');
     }
     if (x <= 55) this.leave('left');
-    else if (x >= world.width - 55) this.leave('right');
+    else if (
+      x >= world.width - 55 &&
+      !(
+        this.scenario === 'frame-escape' &&
+        this.anomaly.snapshot.activeElapsed !== null
+      )
+    )
+      this.leave('right');
   }
 
   private loadRoom(): void {

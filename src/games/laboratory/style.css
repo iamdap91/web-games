@@ -295,3 +295,82 @@ body.escaped {
 #ending-title:focus {
   outline: none;
 }
+
+.web-space {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1000px;
+  height: 430px;
+  transform-origin: top left;
+  pointer-events: none;
+}
+.web-space canvas {
+  aspect-ratio: auto;
+  background: transparent;
+  image-rendering: pixelated;
+}
+.stage.frame-broken {
+  overflow: visible;
+  border-color: transparent;
+  background: transparent;
+}
+.escape-layer {
+  position: absolute;
+  inset: 0;
+}
+.frame-rim {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 430px;
+  border: 1px solid #8eac9c;
+  border-radius: 5px;
+}
+.stage-perspective {
+  position: absolute;
+  inset: 0;
+  perspective: 1100px;
+  perspective-origin: 500px 340px;
+}
+.fold-stage {
+  width: 1000px;
+  height: 430px;
+  transform-style: preserve-3d;
+}
+.wall-panel {
+  position: absolute;
+  top: 0;
+  width: 520px;
+  height: 340px;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+}
+.wall-panel canvas {
+  position: absolute;
+  inset: 0;
+  width: 520px;
+  height: 340px;
+  backface-visibility: hidden;
+}
+.wall-front {
+  transform: translateZ(3px);
+  filter: brightness(calc(1 - var(--panel-shade, 0)));
+}
+.wall-back {
+  transform: rotateY(180deg) translateZ(3px);
+}
+.wall-edge {
+  position: absolute;
+  top: 0;
+  right: -3px;
+  width: 6px;
+  height: 340px;
+  background: linear-gradient(90deg, #718171, #192827);
+  transform: rotateY(90deg);
+}
+.stage-actor {
+  position: absolute;
+  top: 180px;
+  transform: translateZ(4px);
+}

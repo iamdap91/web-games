@@ -1,4 +1,5 @@
 import { anomalyDetails, type Scenario } from './anomalies.js';
+import { frameTriggerX } from './spatial-rules.js';
 import type { PlayerSnapshot } from './game.js';
 
 type Trace = {
@@ -39,11 +40,15 @@ export class AnomalyMotion {
     if (this.activeElapsed !== null) this.activeElapsed += seconds;
     const moved = Math.abs(player.x - previous.x) > 0;
     const revealed =
-      scenario === 'lingering-echo'
-        ? player.flashRemaining > 0
-        : scenario === 'late-shadow' || scenario === 'reverse-flow'
-          ? moved
-          : player.x >= anomalyDetails[scenario].observeX;
+      scenario === 'frame-escape'
+        ? player.x >= frameTriggerX &&
+          player.facing === 1 &&
+          player.flashRemaining > 0
+        : scenario === 'lingering-echo'
+          ? player.flashRemaining > 0
+          : scenario === 'late-shadow' || scenario === 'reverse-flow'
+            ? moved
+            : player.x >= anomalyDetails[scenario].observeX;
     if (this.activeElapsed === null && revealed) {
       this.activeElapsed = 0;
       this.blackoutX = player.x + 90;

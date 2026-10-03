@@ -89,6 +89,18 @@ export const anomalyDetails = {
     cue: '좌우로 이동하며 바닥 아래 확인',
     observeX: 360,
   },
+  'frame-escape': {
+    title: '화면 밖으로',
+    description: '플래시점프로 연구소 화면의 경계를 넘어갔다.',
+    cue: '오른쪽 끝에서 Alt 플래시점프 · 화면 밖에서도 ←로 돌아오기',
+    observeX: 2100,
+  },
+  'folding-stage': {
+    title: '연구소의 뒷면',
+    description: '벽이 돌아가면서 설비 뒤의 빈 공간이 드러났다.',
+    cue: '중앙부터 오른쪽으로 이동 · 왼쪽으로 돌아가며 벽의 앞뒤 비교',
+    observeX: 950,
+  },
   'empty-center': {
     title: '텅 빈 중앙',
     description: '중앙 철문이 통째로 사라졌다.',
@@ -100,7 +112,9 @@ export const anomalyDetails = {
 export type Anomaly = keyof typeof anomalyDetails;
 export type Scenario = 'normal' | Anomaly;
 export type ScenarioSelection = 'random' | Scenario;
-export const anomalies = Object.keys(anomalyDetails) as Anomaly[];
+export const anomalies: readonly Anomaly[] = Object.keys(
+  anomalyDetails,
+) as Anomaly[];
 
 export function isSelection(value: string): value is ScenarioSelection {
   return (
@@ -112,7 +126,7 @@ export function isSelection(value: string): value is ScenarioSelection {
 
 export function chooseScenario(roll: number): Scenario {
   if (roll < 0.3) return 'normal';
-  // 부재형 하나만 다른 이상현상의 절반 확률로 배정한다(이상 중 약 1/31).
+  // 부재형 하나만 다른 이상현상의 절반 확률로 배정한다(이상 중 약 1/35).
   let weight = ((roll - 0.3) / 0.7) * (anomalies.length * 2 - 1);
   for (const anomaly of anomalies) {
     weight -= anomaly === 'empty-center' ? 1 : 2;

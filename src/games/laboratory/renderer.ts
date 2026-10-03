@@ -2,6 +2,8 @@ import type { AnimationFrame } from '../../resources/preview/animation-player.js
 import type { GameAssets } from './assets.js';
 import { exitLight, passage, world, type GameSnapshot } from './game.js';
 
+import { cameraPosition } from './spatial-rules.js';
+import { drawPlayer } from './player-renderer.js';
 import { pipeShake } from './pipe-cascade.js';
 import {
   drawAnomalyBackground,
@@ -19,10 +21,7 @@ export function drawGame(
   frame: AnimationFrame,
 ): void {
   const { player, pipeElapsed } = state;
-  const cameraX = Math.max(
-    0,
-    Math.min(world.width - viewport.width, player.x - 400),
-  );
+  const cameraX = cameraPosition(player.x);
   const shake =
     state.hitElapsed === null
       ? pipeShake(pipeElapsed)
@@ -42,30 +41,8 @@ export function drawGame(
   }
 
   drawAnomalyFigure(ctx, assets, state, frame);
-  ctx.fillStyle = state.scenario === 'late-shadow' ? '#0000' : '#050d1080';
-  ctx.beginPath();
-  ctx.ellipse(player.x, world.ground + 2, 22, 4, 0, 0, Math.PI * 2);
-  ctx.fill();
-  const image = assets.frames.get(frame.localPath);
-  if (image) {
-    ctx.save();
-    ctx.translate(player.x, player.y);
-    // 원본 모험가 프레임은 왼쪽을 바라본다.
-    ctx.scale(-player.facing * 1.3, 1.3);
-    if (player.flashRemaining > 0) {
-      for (const distance of [26, 52, 78]) {
-        ctx.globalAlpha = 0.22 * (1 - distance / 100);
-        ctx.drawImage(
-          image,
-          distance - frame.pivot.x,
-          -(frame.height - frame.pivot.y),
-        );
-      }
-    }
-    ctx.globalAlpha = 1;
-    ctx.drawImage(image, -frame.pivot.x, -(frame.height - frame.pivot.y));
-    ctx.restore();
-  }
+  if (state.scenario !== 'folding-stage')
+    drawPlayer(ctx, assets, player, frame, state.scenario !== 'late-shadow');
   drawAnomalyPipes(ctx, assets, state);
   ctx.restore();
 

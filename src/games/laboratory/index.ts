@@ -1,3 +1,4 @@
+import { WebSpace } from './web-space.js';
 import { anomalies, anomalyDetails } from './anomalies.js';
 import { AnimationPlayer } from '../../resources/preview/animation-player.js';
 import { getContext, loadAssets, type GameAssets } from './assets.js';
@@ -45,6 +46,7 @@ class GameScreen {
   private readonly pointers = new Map<number, Direction>();
   private assets: GameAssets | null = null;
   private animation: AnimationPlayer | null = null;
+  private webSpace: WebSpace | null = null;
   private motion: Motion = 'stand';
   private requestId = 0;
   private previousTime = 0;
@@ -65,6 +67,7 @@ class GameScreen {
     this.assets = await loadAssets();
     if (signal.aborted) return;
     this.animation = new AnimationPlayer(this.assets.animations, 'stand');
+    this.webSpace = new WebSpace(this.canvas, this.assets);
     element('developer', HTMLElement).hidden = !this.developer;
     this.selection.disabled =
       this.replayButton.disabled =
@@ -161,12 +164,18 @@ class GameScreen {
     this.resize();
     this.status.classList.add('sr-only');
     this.canvas.focus({ preventScroll: true });
+    if (this.animation)
+      this.webSpace?.render(
+        this.game.snapshot,
+        this.animation.currentFrame.frame,
+      );
     this.updateInterface();
     this.requestId = requestAnimationFrame(this.tick);
   }
 
   destroy(): void {
     this.events.abort();
+    this.webSpace?.destroy();
     this.observer.disconnect();
     cancelAnimationFrame(this.requestId);
     this.clearInput();
@@ -254,6 +263,7 @@ class GameScreen {
       0,
     );
     this.context.imageSmoothingEnabled = false;
+    this.webSpace?.resize(bounds.width, devicePixelRatio);
   }
 
   private readonly tick = (now: number): void => {
@@ -280,6 +290,11 @@ class GameScreen {
       drawGame(
         this.context,
         this.assets,
+        this.game.snapshot,
+        this.animation.currentFrame.frame,
+      );
+    if (this.animation)
+      this.webSpace?.render(
         this.game.snapshot,
         this.animation.currentFrame.frame,
       );

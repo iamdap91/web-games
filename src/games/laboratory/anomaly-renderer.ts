@@ -1,3 +1,9 @@
+import {
+  cameraPosition,
+  panelAngle,
+  panelWidth,
+  stagePanels,
+} from './spatial-rules.js';
 import type { AnimationFrame } from '../../resources/preview/animation-player.js';
 import type { GameAssets } from './assets.js';
 import { world, type GameSnapshot } from './game.js';
@@ -9,6 +15,10 @@ export function drawAnomalyBackground(
   state: GameSnapshot,
 ): void {
   const { scenario, player, anomaly } = state;
+  if (scenario === 'folding-stage') {
+    drawBackstage(ctx, assets, state);
+    return;
+  }
   const background =
     state.progress === 8
       ? assets.exit
@@ -83,6 +93,7 @@ export function drawAnomalyPipes(
   assets: GameAssets,
   state: GameSnapshot,
 ): void {
+  if (state.scenario === 'folding-stage') return;
   for (const pipe of pipes) {
     const fall = pipeFall(state.pipeElapsed, pipe.delay);
     const y = pipeShape.top + pipeShape.travel * fall;
@@ -318,4 +329,80 @@ function drawFloorFlow(ctx: CanvasRenderingContext2D, offset: number): void {
     ctx.stroke();
   }
   ctx.restore();
+}
+
+function drawBackstage(
+  ctx: CanvasRenderingContext2D,
+  assets: GameAssets,
+  state: GameSnapshot,
+): void {
+  ctx.fillStyle = '#060c0f';
+  ctx.fillRect(0, 0, world.width, world.ground);
+  const glow = ctx.createLinearGradient(0, 45, 0, world.ground);
+  glow.addColorStop(0, '#0a151a');
+  glow.addColorStop(1, '#27372e');
+  ctx.fillStyle = glow;
+  ctx.fillRect(800, 0, 1600, world.ground);
+  for (let x = 820; x < 2400; x += 260) {
+    ctx.fillStyle = '#14252a';
+    ctx.fillRect(x, 0, 10, 340);
+    ctx.strokeStyle = '#304039';
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+    ctx.moveTo(x, 20);
+    ctx.lineTo(x + 250, 330);
+    ctx.stroke();
+    ctx.strokeStyle = '#050b0c';
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.moveTo(x + 70, 0);
+    ctx.bezierCurveTo(x + 160, 90, x - 15, 180, x + 100, 285);
+    ctx.stroke();
+  }
+  ctx.drawImage(
+    assets.normal,
+    0,
+    0,
+    800,
+    world.ground,
+    0,
+    0,
+    800,
+    world.ground,
+  );
+  ctx.drawImage(
+    assets.normal,
+    0,
+    world.ground,
+    world.width,
+    90,
+    0,
+    world.ground,
+    world.width,
+    90,
+  );
+  ctx.fillStyle = '#17221e80';
+  ctx.fillRect(800, 340, 1600, 90);
+  for (let x = 850; x < 2400; x += 130) {
+    ctx.fillStyle = '#82927a36';
+    ctx.fillRect(x, 347, 33, 2);
+  }
+  const camera = cameraPosition(state.player.x);
+  for (const [index, x] of stagePanels.entries()) {
+    const angle = (panelAngle(state.player.x, index) * Math.PI) / 180;
+    const depth = -Math.sin(angle) * panelWidth;
+    const edge =
+      ((x - camera + Math.cos(angle) * panelWidth - 500) * 1100) /
+        (1100 - depth) +
+      500 +
+      camera;
+    ctx.fillStyle = '#00000070';
+    ctx.beginPath();
+    ctx.moveTo(x, 340);
+    ctx.lineTo(edge, 340);
+    ctx.lineTo(edge + depth * 0.08, 350);
+    ctx.lineTo(x + 8, 344);
+    ctx.closePath();
+    ctx.fill();
+  }
 }

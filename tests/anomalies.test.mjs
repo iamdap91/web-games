@@ -16,14 +16,14 @@ function make(scenario) {
   return game;
 }
 
-test('16종을 모두 선택할 수 있고 정상 30%와 드문 부재형 가중치를 유지한다', () => {
-  assert.equal(anomalies.length, 16);
+test('18종을 모두 선택할 수 있고 정상 30%와 드문 부재형 가중치를 유지한다', () => {
+  assert.equal(anomalies.length, 18);
   const counts = new Map();
-  for (let i = 0; i < 31000; i++) {
-    const scenario = chooseScenario((i + 0.5) / 31000);
+  for (let i = 0; i < 35000; i++) {
+    const scenario = chooseScenario((i + 0.5) / 35000);
     counts.set(scenario, (counts.get(scenario) ?? 0) + 1);
   }
-  assert.equal(counts.get('normal'), 9300);
+  assert.equal(counts.get('normal'), 10500);
   assert.equal(counts.get('empty-center'), 700);
   for (const id of anomalies) {
     assert.ok(isSelection(id));
@@ -123,7 +123,7 @@ test('역류는 이동 방향과 반대이며 8번 방은 새 연출 상태를 �
   assert.deepEqual(game.snapshot.encountered, ['reverse-flow']);
 });
 
-test('신규 14종에는 피격 초기화가 없고 관찰 후 기록을 보존한다', () => {
+test('신규 현상에는 피격 초기화가 없고 관찰 후 기록을 보존한다', () => {
   for (const id of anomalies.filter(
     (id) => !['giant-door', 'falling-pipe'].includes(id),
   )) {
@@ -131,6 +131,11 @@ test('신규 14종에는 피격 초기화가 없고 관찰 후 기록을 보존�
     game.jump(1);
     game.jump(1);
     advance(game, 7, 1);
+    if (id === 'frame-escape') {
+      game.jump(1);
+      game.jump(1);
+      advance(game, 0.25, 1);
+    }
     assert.equal(game.snapshot.phase, 'playing', id);
     assert.equal(game.snapshot.hitElapsed, null, id);
     assert.deepEqual(game.snapshot.encountered, [id], id);
