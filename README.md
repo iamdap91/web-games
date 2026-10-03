@@ -74,7 +74,7 @@ npm run dev
 
 [리소스 뷰어](http://127.0.0.1:8000/src/resources/)에서 캐릭터별 화면으로 이동할 수 있다. `yeti/`, `slime/`, `adventurer/`에서 각각 모션을 선택하고 일시정지할 수 있다. 다운로드한 로컬 이미지가 필요하다. 아직 이동·점프·공격 입력은 구현하지 않았다.
 
-- `src/resources/`: 캐릭터·배경·소품·사운드별 리소스 목록. `yeti/`, `slime/`, `adventurer/`에 각 캐릭터의 `index.html`과 `index.ts` 진입점을 함께 둔다.
+- `src/resources/`: 카테고리 선택 화면. `characters/`, `backgrounds/`, `props/`, `audio/`는 각 분류의 목록이며 해당 리소스 카드만 생성한다. `yeti/`, `slime/`, `adventurer/`에 각 캐릭터의 `index.html`과 `index.ts` 진입점을 함께 둔다.
 - `src/resources/preview/`: 공통 미리보기 코드와 스타일. `preview.ts`의 `ResourcePreview`가 화면·이미지·실행 루프를 관리하고, `animation-player.ts`의 `AnimationPlayer`가 모션 전환과 프레임 계산을 담당한다. `preview-renderer.ts`는 전달받은 정보로 Canvas를 그린다.
 - `npm run build`: TypeScript를 `dist/`에 컴파일
 - `npm run typecheck`: `strict` 타입 검사
@@ -119,7 +119,7 @@ npm run dev
 
 ## 리소스 분류와 출처 표시
 
-- 첫 화면 `/src/resources/`는 `manifest.json`의 `category`로 캐릭터(`characters`)·배경(`backgrounds`)·소품(`props`)·사운드(`audio`)를 나눈다. `collection`은 저택 같은 테마 묶음이며 기본 분류와 별개다.
+- 첫 화면 `/src/resources/`는 카테고리별 개수와 테마 링크만 표시하고 이미지·오디오 카드를 생성하지 않는다. `characters/`, `backgrounds/`, `props/`, `audio/`의 독립 페이지가 `manifest.json`의 `category`로 목록을 골라 표시한다. 상단 메뉴로 다른 분류에 이동할 수 있다. `collection`은 저택 같은 테마 묶음이며 기본 분류와 별개다.
 - 모든 카드에 `sourceName`과 `sourceUrl`을 표시한다. 확인된 원본 이름은 `originalName`, 기존 상세 뷰어 경로는 `previewPath`에 기록한다. 미확인 원본 이름은 추측하지 않고 리소스 ID로 구분한다.
 - 모험가의 합성 부위와 재배치 배경의 추가 소품은 `components`의 출처 링크로 확인한다. `composition`에 원본과 다른 가공 내용을 표시한다. 맵 원본 이미지는 MapleDB, 추가 구성 리소스는 메이플스토리 월드 출처를 구분한다.
-- `src/resources/catalog/`의 카드와 스타일을 전체 목록과 저택 테마 화면에서 함께 사용한다. 원본 파일·프레임 정보를 복제하지 않으며 기존 상세 뷰어 주소도 유지한다.
+- `src/resources/catalog/`의 카드와 스타일을 각 카테고리 목록과 저택 테마 화면에서 함께 사용한다. `categories.ts`는 카테고리 메뉴를, `category-page.ts`는 해당 분류의 카드 생성을 담당한다. 원본 파일·프레임 정보를 복제하지 않으며 기존 상세 뷰어 주소도 유지한다.

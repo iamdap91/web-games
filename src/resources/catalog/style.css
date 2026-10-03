@@ -211,3 +211,12 @@ audio {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.category-nav a[aria-current='page'] {
+  background: #413b2b;
+  border-color: #c4a86c;
+  color: #f5e4bb;
+}
+.category-nav a[aria-current='page'] span {
+  color: #ddd1b6;
+}
