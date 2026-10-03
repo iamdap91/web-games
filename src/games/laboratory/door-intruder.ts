@@ -17,20 +17,22 @@ export const intruderTiming = {
   close: 0.28,
   drag: 1.15,
 } as const;
-const handAt = intruderTiming.drag;
-const poisedAt = handAt + 0.2;
-const crossingAt = poisedAt + 0.2;
-const lungeAt = crossingAt + 0.34;
-const blackoutAt = lungeAt + 0.16 + 0.12;
+const handAt = intruderTiming.drag + 0.02;
+const poisedAt = handAt + 0.26;
+const crossingAt = poisedAt + 0.5;
+const lungeAt = crossingAt + 0.3;
+const blackoutAt = lungeAt + 0.13 + 0.07;
 export const intruderScare = {
-  bars: 0.18,
+  bars: 0.34,
+  barStagger: 0.18,
+  barReveal: 0.72,
   hand: handAt,
   poised: poisedAt,
   crossing: crossingAt,
   lunge: lungeAt,
-  lungeDuration: 0.16,
+  lungeDuration: 0.13,
   blackout: blackoutAt,
-  finish: blackoutAt + 0.18,
+  finish: blackoutAt + 0.26,
 } as const;
 
 // 회색 연구소 문에서 실제 문짝이 차지하는 좁은 입구. 그림과 손 판정이 같은 기준을 쓴다.

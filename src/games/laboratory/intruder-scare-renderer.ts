@@ -119,23 +119,91 @@ function drawReachingArm(
   ctx.fill();
 }
 
+function drawScareLighting(
+  ctx: CanvasRenderingContext2D,
+  time: number,
+  focus: Point,
+  width: number,
+  height: number,
+): void {
+  const settle = smooth((time - 0.16) / 1.05);
+  const suspense = smooth(
+    (time - intruderScare.poised) /
+      (intruderScare.crossing - intruderScare.poised),
+  );
+  const attack = smooth((time - intruderScare.crossing) / 0.12);
+  const radius = width * (0.78 - settle * 0.36 - suspense * 0.07);
+  // 끌려가는 캐릭터는 남겨두고, 손이 멈추면 주변 조명만 더 좁힌다.
+  const shade = ctx.createRadialGradient(
+    focus.x,
+    focus.y,
+    35,
+    focus.x,
+    focus.y,
+    radius,
+  );
+  shade.addColorStop(
+    0,
+    `rgb(1 7 7 / ${settle * 0.12 + suspense * 0.1 * (1 - attack)})`,
+  );
+  shade.addColorStop(0.38, `rgb(1 7 7 / ${settle * 0.37})`);
+  shade.addColorStop(1, `rgb(1 5 6 / ${settle * 0.88})`);
+  ctx.fillStyle = shade;
+  ctx.fillRect(0, 0, width, height);
+}
+
 function drawDepthBars(
   ctx: CanvasRenderingContext2D,
   time: number,
   width: number,
   height: number,
 ): void {
-  ctx.save();
-  ctx.globalAlpha *= smooth((time - intruderScare.bars) / 0.28);
-  for (const x of [width * 0.3, width * 0.7]) {
-    ctx.fillStyle = '#020706';
+  for (const [index, x] of [width * 0.3, width * 0.7].entries()) {
+    const reveal = smooth(
+      (time - intruderScare.bars - index * intruderScare.barStagger) /
+        intruderScare.barReveal,
+    );
+    if (reveal === 0) continue;
+    ctx.save();
+    ctx.globalAlpha *= reveal;
+    // 고정된 관찰창의 테두리가 반사광을 받아 어둠에서 드러나게 한다.
+    const rim = ctx.createLinearGradient(x - 13, 0, x + 13, 0);
+    rim.addColorStop(0, '#01060800');
+    rim.addColorStop(0.35, '#01060899');
+    rim.addColorStop(0.5, '#809c963b');
+    rim.addColorStop(0.65, '#01060899');
+    rim.addColorStop(1, '#01060800');
+    ctx.fillStyle = rim;
+    ctx.fillRect(x - 13, 0, 26, height);
+    ctx.fillStyle = '#061111';
     ctx.fillRect(x - 5, 0, 10, height);
-    ctx.fillStyle = '#b0bcb2';
+    const metal = ctx.createLinearGradient(x - 3.5, 0, x + 3.5, 0);
+    metal.addColorStop(0, '#718984');
+    metal.addColorStop(0.28, '#d0d7c9');
+    metal.addColorStop(0.52, '#aabdb3');
+    metal.addColorStop(1, '#617b78');
+    ctx.fillStyle = metal;
     ctx.fillRect(x - 3.5, 0, 7, height);
-    ctx.fillStyle = '#d2d7c5';
-    ctx.fillRect(x - 3, 0, 1, height);
+    if (reveal < 1) {
+      // 양쪽 테두리를 반사광이 엇갈려 스친다. 드러난 뒤에는 움직이지 않는다.
+      const travel = -0.28 + reveal * 1.56;
+      const beamY = height * (index === 0 ? travel : 1 - travel);
+      const reflection = ctx.createLinearGradient(
+        0,
+        beamY - height * 0.3,
+        0,
+        beamY + height * 0.3,
+      );
+      reflection.addColorStop(0, '#e0eddf00');
+      reflection.addColorStop(0.42, '#bddcd66b');
+      reflection.addColorStop(0.5, '#eff5dfdd');
+      reflection.addColorStop(0.58, '#bddcd66b');
+      reflection.addColorStop(1, '#e0eddf00');
+      ctx.fillStyle = reflection;
+      ctx.fillRect(x - 2, 0, 4, height);
+    }
+    ctx.restore();
   }
-  ctx.restore();
 }
 
 export function drawIntruderScare(
@@ -154,6 +222,23 @@ export function drawIntruderScare(
     ctx.restore();
     return;
   }
+  const grip = intruderHand(state.intruder);
+  const origin = { x: grip.x - roomCameraPosition(state), y: grip.y };
+  const direction = origin.x < width / 2 ? 1 : -1;
+  const barX = width * (direction === 1 ? 0.3 : 0.7);
+  const framing = smooth(
+    (time - intruderScare.hand) / (intruderScare.poised - intruderScare.hand),
+  );
+  drawScareLighting(
+    ctx,
+    time,
+    {
+      x: origin.x + (barX - origin.x) * framing,
+      y: origin.y + (height * 0.47 - origin.y) * framing,
+    },
+    width,
+    height,
+  );
   if (time < intruderScare.hand) {
     drawDepthBars(ctx, time, width, height);
     ctx.restore();
@@ -168,11 +253,9 @@ export function drawIntruderScare(
   );
   const lunge =
     clamp((time - intruderScare.lunge) / intruderScare.lungeDuration) ** 2;
-  const grip = intruderHand(state.intruder);
-  const origin = { x: grip.x - roomCameraPosition(state), y: grip.y };
-  const direction = origin.x < width / 2 ? 1 : -1;
   const facing = 1 - intruderTurn(state.intruder) * 2;
-  const barX = width * (direction === 1 ? 0.3 : 0.7);
+  const anticipation =
+    smooth((time - intruderScare.crossing + 0.12) / 0.12) * (1 - crossing);
   const poised = { x: barX + direction * 12, y: height * 0.47 };
   const crossed = { x: barX + direction * 50, y: height * 0.59 };
   const target = { x: width * 0.5 + direction * 105, y: height * 0.7 };
@@ -199,12 +282,10 @@ export function drawIntruderScare(
     yaw: -direction * facing * prepare * 0.45 * (1 - crossing * 0.7),
     depth: -220 + crossing * 460 + lunge * 165,
     wristLag: crossing * 85 + lunge * 55,
-    curl: 1 - prepare * 0.98 + smooth(lunge) * 0.68,
+    curl: 1 - prepare * 0.98 + anticipation * 0.1 + smooth(lunge) * 0.68,
     facing,
     size: 1.42,
   });
-  ctx.fillStyle = `rgb(2 8 7 / ${prepare * 0.12 + crossing * 0.2 + lunge * 0.15})`;
-  ctx.fillRect(0, 0, width, height);
   const handOpacity = smooth((time - intruderScare.hand) / 0.045);
   ctx.save();
   ctx.globalAlpha *= handOpacity;
