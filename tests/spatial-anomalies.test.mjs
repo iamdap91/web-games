@@ -33,7 +33,7 @@ function escape(game) {
   advance(game, 7.2, 1);
   game.jump(1);
   game.jump(1);
-  advance(game, 0.9, 1);
+  advance(game, 0.55);
 }
 function until(game, phase) {
   for (let i = 0; i < 600 && game.snapshot.phase !== phase; i++)
@@ -41,76 +41,124 @@ function until(game, phase) {
   assert.equal(game.snapshot.phase, phase);
 }
 
-test('화면 밖에서 돌아서야 추격하고 포획 후 회전 낙하와 다음 방 착지로 이어진다', () => {
+function flee(game, stopJumpingAfter = Infinity) {
+  let grounded = 0;
+  let airborne = 0;
+  let flashed = false;
+  let minGap = Infinity;
+  // 두 Alt 입력 사이와 착지 후 다음 입력에 각각 80ms의 반응 시간을 둔다.
+  for (let t = 0; t < 10 && game.snapshot.phase === 'playing'; t += step) {
+    if (game.snapshot.player.grounded) {
+      grounded += step;
+      airborne = 0;
+      flashed = false;
+      if (grounded >= 0.08 && t < stopJumpingAfter) {
+        game.jump(-1);
+        grounded = 0;
+      }
+    } else {
+      airborne += step;
+      if (airborne >= 0.08 && !flashed) {
+        game.jump(-1);
+        flashed = true;
+      }
+    }
+    game.update(step, -1);
+    if (game.snapshot.chase.phase === 'chasing')
+      minGap = Math.min(
+        minGap,
+        game.snapshot.chase.boundary - game.snapshot.player.x,
+      );
+  }
+  return minGap;
+}
+
+test('화면 밖에 나가면 방향과 무관하게 떨림 유예가 시작되고 재진입해야 추격한다', () => {
   const game = new LaboratoryGame();
   game.reset('frame-escape');
   escape(game);
-  advance(game, 1);
-  assert.equal(game.snapshot.chase.phase, 'idle');
-  assert.equal(game.snapshot.phase, 'playing');
-  const before = game.snapshot.player.x;
-  advance(game, 0.2, -1);
-  assert.ok(Math.abs(before - game.snapshot.player.x - 48) < 3);
   assert.equal(game.snapshot.chase.phase, 'warning');
-  assert.equal(game.snapshot.chase.offset, 0);
-  advance(game, 0.1);
-  assert.equal(game.snapshot.chase.phase, 'chasing');
-  assert.ok(game.snapshot.chase.offset > 0);
-  until(game, 'falling');
-  const caught = game.snapshot.player;
-  game.jump(1);
-  advance(game, 0.25, 1);
-  assert.deepEqual(game.snapshot.player, caught);
-  assert.equal(game.snapshot.progress, 0);
-  until(game, 'landing');
-  assert.equal(game.snapshot.progress, 1);
-  assert.equal(game.snapshot.player.x, 360);
-  assert.ok(game.snapshot.player.y < 0);
-  assert.equal(game.snapshot.failureElapsed, null);
-  assert.equal(game.snapshot.chase.phase, 'idle');
-  until(game, 'playing');
-  assert.equal(game.snapshot.player.y, 340);
-  advance(game, 0.1, 1);
-  assert.ok(game.snapshot.player.x > 360);
-  assert.equal(game.snapshot.progress, 1);
-  assert.deepEqual(game.snapshot.encountered, ['frame-escape']);
-});
-
-test('되돌아선 뒤 다시 오른쪽 플래시점프로 잠시 거리를 벌릴 수 있다', () => {
-  const game = new LaboratoryGame();
-  game.reset('frame-escape');
-  advance(game, 7.2, 1);
-  game.jump(1);
-  game.jump(1);
-  advance(game, 0.75);
+  const boundary = game.snapshot.chase.boundary;
+  advance(game, 0.2);
+  assert.equal(game.snapshot.chase.boundary, boundary);
   game.face(-1);
   advance(game, 0.1);
-  const before = game.snapshot.player.x - 2160 - game.snapshot.chase.offset;
-  game.jump(1);
-  game.jump(1);
-  advance(game, 0.12);
-  assert.ok(
-    game.snapshot.player.x - 2160 - game.snapshot.chase.offset > before,
+  assert.equal(game.snapshot.chase.phase, 'warning');
+  game.jump(-1);
+  game.jump(-1);
+  advance(game, 0.3, -1);
+  assert.equal(game.snapshot.chase.phase, 'chasing');
+  assert.ok(game.snapshot.chase.boundary < boundary);
+  assert.equal(
+    frameEdge(game.snapshot),
+    game.snapshot.chase.boundary - cameraPosition(game.snapshot.player.x),
   );
-  until(game, 'falling');
 });
 
-test('7번 방에서 화면에 잡혀도 8번 방에 착지한 뒤 직접 나가야 완료된다', () => {
+test('유예 동안 복귀하지 않으면 낙하해 0번 방에 착지하고 번호가 초기화된다', () => {
+  const game = new LaboratoryGame();
+  game.reset('frame-escape');
+  advance(game, 1.4, -1);
+  advance(game, 0.6);
+  assert.equal(game.snapshot.progress, 1);
+  escape(game);
+  until(game, 'falling');
+  const caught = game.snapshot.player;
+  game.jump(-1);
+  advance(game, 0.25, -1);
+  assert.deepEqual(game.snapshot.player, caught);
+  until(game, 'landing');
+  assert.equal(game.snapshot.progress, 0);
+  assert.equal(game.snapshot.previousRoom, 1);
+  assert.notEqual(game.snapshot.failureElapsed, null);
+  assert.ok(game.snapshot.player.y < 0);
+  until(game, 'playing');
+  assert.deepEqual(game.snapshot.encountered, ['frame-escape']);
+  assert.equal(game.snapshot.chase.phase, 'idle');
+});
+
+test('복귀 후 걷기만 하거나 플래시점프를 멈추면 경계에 잡힌다', () => {
+  for (const stopAfter of [0, 1.5]) {
+    const game = new LaboratoryGame();
+    game.reset('frame-escape');
+    escape(game);
+    flee(game, stopAfter);
+    assert.equal(game.snapshot.phase, 'falling');
+    assert.ok(game.snapshot.player.x > 55);
+    assert.ok(game.snapshot.chase.boundary <= game.snapshot.player.x + 14);
+  }
+});
+
+test('반응 시간을 둔 연속 플래시점프로 추격을 벗어나 다음 방으로 진행할 수 있다', () => {
+  const game = new LaboratoryGame();
+  game.reset('frame-escape');
+  escape(game);
+  advance(game, 0.2);
+  const minGap = flee(game);
+  assert.equal(game.snapshot.phase, 'transition');
+  assert.ok(game.snapshot.player.x <= 55);
+  assert.ok(minGap > 14 && minGap < 80);
+  advance(game, 0.6);
+  assert.equal(game.snapshot.progress, 1);
+  assert.equal(game.snapshot.failureElapsed, null);
+  assert.equal(game.snapshot.chase.phase, 'idle');
+  assert.equal(frameEdge(game.snapshot), 1000);
+});
+
+test('7번 방에서 추격을 피하면 8번 방으로 진입하고 직접 나가야 완료된다', () => {
   const game = new LaboratoryGame();
   game.reset('frame-escape');
   for (let room = 0; room < 7; room++) {
     advance(game, 1.4, -1);
     advance(game, 0.6);
-    assert.equal(game.snapshot.progress, room + 1);
   }
   escape(game);
-  game.face(-1);
-  until(game, 'falling');
-  until(game, 'landing');
+  flee(game);
+  assert.equal(game.snapshot.phase, 'transition');
+  advance(game, 0.6);
   assert.equal(game.snapshot.progress, 8);
   assert.equal(game.snapshot.scenario, 'normal');
-  until(game, 'playing');
-  assert.equal(game.snapshot.progress, 8);
+  assert.equal(game.snapshot.phase, 'playing');
   advance(game, 8.6, 1);
   advance(game, 0.6);
   assert.equal(game.snapshot.phase, 'complete');

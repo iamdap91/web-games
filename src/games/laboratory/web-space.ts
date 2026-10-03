@@ -2,6 +2,7 @@ import type { AnimationFrame } from '../../resources/preview/animation-player.js
 import { getContext, type GameAssets } from './assets.js';
 import { passage, world, type GameSnapshot } from './game.js';
 import { pipes, pipeShape } from './pipe-cascade.js';
+import { pursuit } from './frame-chase.js';
 import { drawPlayer } from './player-renderer.js';
 import {
   cameraPosition,
@@ -81,7 +82,9 @@ export class WebSpace {
     const escape =
       state.scenario === 'frame-escape' &&
       state.anomaly.activeElapsed !== null &&
-      (state.phase === 'playing' || state.phase === 'falling');
+      (state.phase === 'playing' ||
+        state.phase === 'falling' ||
+        state.phase === 'transition');
     const folding =
       state.scenario === 'folding-stage' && state.phase !== 'complete';
     this.root.hidden = !escape && !folding;
@@ -98,19 +101,13 @@ export class WebSpace {
     this.scene.style.clipPath = escape
       ? `inset(0 ${100 - frameEdge(state) / 10}% 0 0)`
       : '';
-    const tilt =
-      state.chase.phase === 'warning'
-        ? Math.sin(((state.chase.elapsed / 0.26) * Math.PI) / 2) * 1.6
-        : state.chase.phase === 'chasing'
-          ? 1.6 * Math.exp(-state.chase.elapsed * 5)
-          : 0;
-    const offset = state.chase.offset;
-    this.scene.style.transformOrigin = `${frameEdge(state) / 10}% 100%`;
-    this.scene.style.transform = escape
-      ? `translateX(${offset / 10}%) rotate(${tilt}deg)`
-      : '';
-    this.rim.style.transformOrigin = 'right bottom';
-    this.rim.style.transform = `translateX(${offset}px) rotate(${tilt}deg)`;
+    const warning = state.chase.phase === 'warning';
+    const tremble = warning
+      ? 1.5 + (state.chase.elapsed / pursuit.grace) * 2.5
+      : 0;
+    const shake = Math.sin(state.chase.elapsed * 85) * tremble;
+    this.scene.style.transform = escape ? `translateX(${shake / 10}%)` : '';
+    this.rim.style.transform = `translateX(${shake}px)`;
     const opacity =
       state.phase === 'falling'
         ? Math.max(0, Math.min(1, 1 - (state.chase.elapsed - 0.78) / 0.27))
@@ -149,11 +146,17 @@ export class WebSpace {
   }
 
   private drawEscape(state: GameSnapshot, frame: AnimationFrame): void {
-    const edge = Math.min(1000, frameEdge(state) + state.chase.offset);
+    const edge = frameEdge(state);
     const camera = cameraPosition(state.player.x);
     this.rim.style.width = `${frameEdge(state)}px`;
     const pulse = Math.max(0, 1 - (state.anomaly.activeElapsed ?? 0) / 0.9);
-    this.rim.style.boxShadow = `${-pulse * 5}px 0 ${pulse * 24}px #b9dac777, 12px 12px 26px #0006`;
+    const warning = state.chase.phase === 'warning';
+    const chasing = state.chase.phase === 'chasing';
+    this.rim.style.borderColor = warning || chasing ? '#d5d1a2' : '#8eac9c';
+    this.rim.style.boxShadow =
+      warning || chasing
+        ? '5px 0 16px #d0d69b55, 12px 12px 26px #0006'
+        : `${-pulse * 5}px 0 ${pulse * 24}px #b9dac777, 12px 12px 26px #0006`;
     const ctx = this.context(this.escapeLayer, 1000, 430);
     // 같은 좌표계로 경계 양쪽을 나누므로 통과 중 크기와 속도가 바뀌지 않는다.
     ctx.save();
@@ -161,6 +164,10 @@ export class WebSpace {
     ctx.rect(edge, 0, 1000 - edge, 430);
     ctx.clip();
     const floor = ctx.createLinearGradient(edge, 0, 1000, 0);
+    // 유예 시간이 끝나갈수록 페이지 위의 발판도 흔들리며 사라진다.
+    ctx.globalAlpha = warning
+      ? Math.max(0, 1 - state.chase.elapsed / pursuit.grace)
+      : 0;
     floor.addColorStop(0, '#849184');
     floor.addColorStop(1, '#84918415');
     ctx.fillStyle = floor;
@@ -208,7 +215,7 @@ export class WebSpace {
     const bounds = this.root.getBoundingClientRect();
     const scale = bounds.width / 1000;
     const t = state.chase.elapsed;
-    const x = Math.min(990, caught.x - 1400 + 90 * t);
+    const x = Math.min(990, caught.x - cameraPosition(caught.x) + 90 * t);
     const drop = Math.max(
       1000,
       (window.innerHeight - bounds.top) / scale + 160,

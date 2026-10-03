@@ -91,8 +91,8 @@ export const anomalyDetails = {
   },
   'frame-escape': {
     title: '화면 밖으로',
-    description: '화면 밖에서 돌아서자 연구소가 따라와, 다음 방으로 떨어졌다.',
-    cue: '오른쪽 끝에서 Alt 플래시점프 · 화면 밖에서 ←로 돌아서면 추격',
+    description: '화면 밖에서 돌아오자 경계가 좁혀 오며 뒤를 쫓았다.',
+    cue: '화면 밖에서 떨릴 때 안으로 복귀 · ← + 연속 Alt 플래시점프로 탈출',
     observeX: 2100,
   },
   'folding-stage': {

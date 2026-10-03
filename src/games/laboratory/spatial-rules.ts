@@ -14,7 +14,16 @@ function smooth(value: number): number {
 export function frameEdge(state: GameSnapshot): number {
   if (state.scenario !== 'frame-escape' || state.anomaly.activeElapsed === null)
     return 1000;
-  return 1000 - 240 * smooth(state.anomaly.activeElapsed / 0.55);
+  if (state.chase.phase === 'chasing' || state.chase.phase === 'falling') {
+    return Math.max(
+      0,
+      Math.min(1000, state.chase.boundary - cameraPosition(state.player.x)),
+    );
+  }
+  return openingFrameEdge(state.anomaly.activeElapsed);
+}
+export function openingFrameEdge(elapsed: number): number {
+  return 1000 - 240 * smooth(elapsed / 0.55);
 }
 export function panelAngle(playerX: number, index: number): number {
   return -105 * smooth((playerX - 820 - index * 95) / 900);

@@ -190,8 +190,9 @@ export class LaboratoryGame {
     if (this.phase === 'falling') {
       if (this.chase.fall(seconds)) {
         this.previousRoom = this.progress;
-        this.progress = Math.min(8, this.progress + 1);
+        this.progress = 0;
         this.loadRoom();
+        this.failureElapsed = 0;
         this.player.dropIn();
         this.landingElapsed = 0;
         this.phase = 'landing';

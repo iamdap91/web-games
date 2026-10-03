@@ -1,42 +1,58 @@
 import type { PlayerSnapshot } from './game.js';
+import { openingFrameEdge } from './spatial-rules.js';
+
+export const pursuit = {
+  grace: 1.25,
+  boundary: 2160,
+  startSpeed: 0,
+  acceleration: 650,
+  topSpeed: 520,
+} as const;
 
 export type ChaseSnapshot = {
   readonly phase: 'idle' | 'warning' | 'chasing' | 'falling';
   readonly elapsed: number;
-  readonly offset: number;
+  readonly boundary: number;
   readonly caught: PlayerSnapshot | null;
 };
 
-// 화면의 추격과 포획 시점은 렌더링 속도나 DOM 크기에 의존하지 않는다.
+// 추격 경계는 월드 좌표로 관리해 카메라 이동과 화면 크기에 영향을 받지 않는다.
 export class FrameChase {
   private phase: ChaseSnapshot['phase'] = 'idle';
   private elapsed = 0;
-  private offset = 0;
-  private outside = false;
+  private boundary: number = pursuit.boundary;
   private caught: PlayerSnapshot | null = null;
 
   update(seconds: number, player: PlayerSnapshot, activeElapsed: number): void {
-    if (activeElapsed >= 0.55 && player.x >= 2190) this.outside = true;
     if (this.phase === 'idle') {
-      if (!this.outside || player.facing !== -1) return;
+      if (player.x < 1400 + openingFrameEdge(activeElapsed) + 14) return;
       this.phase = 'warning';
       this.elapsed = 0;
+      return;
     }
     this.elapsed += seconds;
     if (this.phase === 'warning') {
-      if (this.elapsed < 0.26) return;
-      this.phase = 'chasing';
-      this.elapsed = 0;
+      if (player.x + 18 <= pursuit.boundary) {
+        this.phase = 'chasing';
+        this.elapsed = 0;
+      } else if (this.elapsed >= pursuit.grace) {
+        this.capture(player);
+      }
+      return;
     }
     if (this.phase !== 'chasing') return;
-    const previous = this.offset;
-    this.offset = 70 * this.elapsed + 560 * this.elapsed ** 2;
-    // 경계가 몸을 가로지를 때 포획한다. 빠른 점프로 한 틱에 지나가도 놓치지 않는다.
-    if (2160 + Math.max(previous, this.offset) >= player.x - 14) {
-      this.phase = 'falling';
-      this.elapsed = 0;
-      this.caught = player;
-    }
+    const speed = Math.min(
+      pursuit.topSpeed,
+      pursuit.startSpeed + pursuit.acceleration * this.elapsed,
+    );
+    this.boundary -= speed * seconds;
+    if (player.x + 14 >= this.boundary) this.capture(player);
+  }
+
+  private capture(player: PlayerSnapshot): void {
+    this.phase = 'falling';
+    this.elapsed = 0;
+    this.caught = player;
   }
 
   fall(seconds: number): boolean {
@@ -48,7 +64,7 @@ export class FrameChase {
     return {
       phase: this.phase,
       elapsed: this.elapsed,
-      offset: this.offset,
+      boundary: this.boundary,
       caught: this.caught,
     };
   }
