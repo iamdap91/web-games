@@ -169,54 +169,82 @@ export function drawRoom(
   ctx.restore();
 }
 
+const roomNumberNoiseColors = ['#5cffff', '#ff62cf', '#ffe875', '#98ff94'];
+
 function drawRoomNumber(
   ctx: CanvasRenderingContext2D,
   state: GameSnapshot,
 ): void {
   const glitch = state.failureElapsed;
-  const pulse = glitch === null ? 0 : Math.floor(glitch * 35);
-  const offset =
-    glitch === null
-      ? 0
-      : Math.sin(pulse * 4.7) * 7 * (1 - glitch / passage.glitch);
+  const pulse = glitch === null ? 0 : Math.floor(glitch * 30);
+  // 암전이 걷힌 뒤에도 색 어긋남을 유지하고 마지막에는 밝은 0으로 정착시킨다.
+  const strength =
+    glitch === null ? 0 : 1 - smooth((glitch / passage.glitch - 0.55) / 0.45);
+  const accent = roomNumberNoiseColors[pulse % roomNumberNoiseColors.length]!;
+  const offset = Math.sin(pulse * 4.7) * 9 * strength;
   ctx.save();
   ctx.fillStyle = '#081311';
   ctx.fillRect(149, 57, 108, 75);
-  ctx.strokeStyle = '#56675d';
+  ctx.strokeStyle = glitch === null ? '#56675d' : accent;
+  ctx.shadowColor = accent;
+  ctx.shadowBlur = 14 * strength;
+  ctx.lineWidth = glitch === null ? 1 : 2;
   ctx.strokeRect(149.5, 57.5, 107, 74);
+  ctx.shadowBlur = 0;
   ctx.textAlign = 'center';
   ctx.font = '10px sans-serif';
-  ctx.fillStyle = '#9bac9c';
+  ctx.fillStyle = glitch === null ? '#9bac9c' : '#eaffed';
   ctx.fillText(state.progress === 8 ? 'EXIT →' : 'SECTOR C-2', 203, 73);
   ctx.font = 'bold 46px monospace';
-  ctx.shadowColor = '#adcfad';
-  ctx.shadowBlur = 7;
-  ctx.fillStyle = glitch !== null && pulse % 3 === 0 ? '#627a73' : '#c4d4b7';
   const digit =
-    glitch === null || glitch > 0.7
+    glitch === null || glitch / passage.glitch >= 0.65
       ? String(state.progress)
       : pulse % 4 === 0
         ? '—'
-        : String(state.previousRoom);
+        : String(pulse % 3 === 0 ? state.progress : state.previousRoom);
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(150, 78, 106, 49);
+  ctx.clip();
+  if (glitch !== null) {
+    // 숫자 본체는 밝게 유지하고 색 잔상만 서로 어긋나게 그린다.
+    ctx.globalAlpha = 0.85 * strength;
+    ctx.fillStyle = '#5cffff';
+    ctx.fillText(digit, 203 + offset - 7 * strength, 119 - 2 * strength);
+    ctx.fillStyle = '#ff62cf';
+    ctx.fillText(digit, 203 + offset + 7 * strength, 119 + 2 * strength);
+    ctx.globalAlpha = 1;
+  }
+  ctx.shadowColor = glitch === null ? '#adcfad' : '#baffdc';
+  ctx.shadowBlur = glitch === null ? 7 : 12;
+  ctx.fillStyle = glitch === null ? '#c4d4b7' : '#f2fff5';
   ctx.fillText(digit, 203 + offset, 119);
   ctx.shadowBlur = 0;
-  if (glitch !== null) {
-    ctx.save();
-    ctx.beginPath();
-    ctx.rect(150, 78, 106, 49);
-    ctx.clip();
-    for (let line = 0; line < 6; line++) {
-      ctx.fillStyle = line % 2 ? '#c2d4c17c' : '#081311';
-      ctx.fillRect(
-        151 + Math.sin(pulse + line) * 25,
-        80 + ((pulse * 11 + line * 17) % 46),
-        80,
-        line % 2 ? 1 : 4,
-      );
-    }
-    ctx.restore();
-  }
+  if (glitch !== null) drawRoomNumberNoise(ctx, pulse, strength);
   ctx.restore();
+  ctx.restore();
+}
+
+function drawRoomNumberNoise(
+  ctx: CanvasRenderingContext2D,
+  pulse: number,
+  strength: number,
+): void {
+  ctx.globalAlpha = 0.7 * strength;
+  for (let line = 0; line < 8; line++) {
+    ctx.fillStyle =
+      roomNumberNoiseColors[(pulse + line) % roomNumberNoiseColors.length]!;
+    const y = 80 + ((pulse * 11 + line * 17) % 46);
+    ctx.fillRect(
+      151 + Math.sin(pulse + line) * 28,
+      y,
+      36 + ((pulse * 13 + line * 19) % 60),
+      line % 3 === 0 ? 3 : 1,
+    );
+    // 짧은 검은 단절과 밝은 색 조각으로 고장 난 표시판의 수평 잡음을 만든다.
+    ctx.fillStyle = '#081311';
+    ctx.fillRect(160 + ((pulse * 7 + line * 23) % 78), y + 2, 18, 2);
+  }
 }
 
 function drawEntry(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {
