@@ -1061,6 +1061,758 @@
       ],
       "composition": "원본의 상자 발판과 높은 출입구를 제거한다. 문·조명·천장·바닥을 단층으로 재배치하고 공식 배관·제어판 리소스와 Canvas 벽면·빛을 합성한다.",
       "animations": {}
+    },
+    {
+      "id": "9016aa7209e741eb9c84224289e72f92",
+      "name": "저택 실내 벽",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "공간",
+      "notes": "청록 벽과 장식이 포함된 배경. 복도 기본 공간 후보. 반복 연결 여부는 미검증.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=9016aa7209e741eb9c84224289e72f92",
+      "animations": {
+        "stand": {
+          "id": "9016aa7209e741eb9c84224289e72f92",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/9016aa7209e741eb9c84224289e72f92",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/9016aa7209e741eb9c84224289e72f92.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "9016aa7209e741eb9c84224289e72f92",
+              "width": 1024,
+              "height": 620,
+              "pivot": {
+                "x": 512.0,
+                "y": 309.0,
+                "nx": 0.5,
+                "ny": 0.4984
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/90/16/9016aa7209e741eb9c84224289e72f92.png",
+              "localPath": "public/assets/maplestory/haunted-house/9016aa7209e741eb9c84224289e72f92.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "71ae59c69ce44c0a88997ac001202aab",
+      "name": "목재 바닥 무늬",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "공간",
+      "notes": "바닥 표면용 정사각형 텍스처. 횡스크롤 발판 이미지가 아니며 원근·반복 연결은 배치 시 조정한다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=71ae59c69ce44c0a88997ac001202aab",
+      "animations": {
+        "stand": {
+          "id": "71ae59c69ce44c0a88997ac001202aab",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/71ae59c69ce44c0a88997ac001202aab",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/71ae59c69ce44c0a88997ac001202aab.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "71ae59c69ce44c0a88997ac001202aab",
+              "width": 300,
+              "height": 300,
+              "pivot": {
+                "x": 144.0,
+                "y": 162.0,
+                "nx": 0.48,
+                "ny": 0.54
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/71/ae/71ae59c69ce44c0a88997ac001202aab.png",
+              "localPath": "public/assets/maplestory/haunted-house/71ae59c69ce44c0a88997ac001202aab.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "55c3ed1d06e047bc92f61ff5182e21cb",
+      "name": "장식 양문",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "공간",
+      "notes": "출구·잠긴 문 후보. 닫힌 정적 이미지 하나만 확보했으며 열림 상태는 없다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=55c3ed1d06e047bc92f61ff5182e21cb",
+      "animations": {
+        "stand": {
+          "id": "55c3ed1d06e047bc92f61ff5182e21cb",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/55c3ed1d06e047bc92f61ff5182e21cb",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/55c3ed1d06e047bc92f61ff5182e21cb.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "55c3ed1d06e047bc92f61ff5182e21cb",
+              "width": 192,
+              "height": 232,
+              "pivot": {
+                "x": 95.0,
+                "y": 115.0,
+                "nx": 0.4948,
+                "ny": 0.4957
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/55/c3/55c3ed1d06e047bc92f61ff5182e21cb.png",
+              "localPath": "public/assets/maplestory/haunted-house/55c3ed1d06e047bc92f61ff5182e21cb.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "7425b854d02c4c049fd4d1f91b93a9ea",
+      "name": "깨진 창문",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "공간",
+      "notes": "푸른 유리와 파손 흔적. 창밖 실루엣·불빛 연출의 전경 후보.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=7425b854d02c4c049fd4d1f91b93a9ea",
+      "animations": {
+        "stand": {
+          "id": "7425b854d02c4c049fd4d1f91b93a9ea",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/7425b854d02c4c049fd4d1f91b93a9ea",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/7425b854d02c4c049fd4d1f91b93a9ea.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "7425b854d02c4c049fd4d1f91b93a9ea",
+              "width": 356,
+              "height": 252,
+              "pivot": {
+                "x": 178.0,
+                "y": 126.0,
+                "nx": 0.5,
+                "ny": 0.5
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/74/25/7425b854d02c4c049fd4d1f91b93a9ea.png",
+              "localPath": "public/assets/maplestory/haunted-house/7425b854d02c4c049fd4d1f91b93a9ea.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "a92e6c91f6274e7f9fb9d6c2bb5a0c3c",
+      "name": "작은 초상화",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "소품",
+      "notes": "액자의 이동·소멸·좌우 반전으로 이상 현상을 만들 수 있다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=a92e6c91f6274e7f9fb9d6c2bb5a0c3c",
+      "animations": {
+        "stand": {
+          "id": "a92e6c91f6274e7f9fb9d6c2bb5a0c3c",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/a92e6c91f6274e7f9fb9d6c2bb5a0c3c",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/a92e6c91f6274e7f9fb9d6c2bb5a0c3c.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "a92e6c91f6274e7f9fb9d6c2bb5a0c3c",
+              "width": 80,
+              "height": 88,
+              "pivot": {
+                "x": 39.0,
+                "y": 44.0,
+                "nx": 0.4875,
+                "ny": 0.5
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/a9/2e/a92e6c91f6274e7f9fb9d6c2bb5a0c3c.png",
+              "localPath": "public/assets/maplestory/haunted-house/a92e6c91f6274e7f9fb9d6c2bb5a0c3c.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "0f714a9675ed417281fcfe440bc98853",
+      "name": "목재 괘종시계",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "소품",
+      "notes": "정적 시계 이미지. 시계추·바늘의 독립 애니메이션은 포함하지 않는다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=0f714a9675ed417281fcfe440bc98853",
+      "animations": {
+        "stand": {
+          "id": "0f714a9675ed417281fcfe440bc98853",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/0f714a9675ed417281fcfe440bc98853",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/0f714a9675ed417281fcfe440bc98853.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "0f714a9675ed417281fcfe440bc98853",
+              "width": 132,
+              "height": 196,
+              "pivot": {
+                "x": 65.0,
+                "y": 84.0,
+                "nx": 0.4924,
+                "ny": 0.4286
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/0f/71/0f714a9675ed417281fcfe440bc98853.png",
+              "localPath": "public/assets/maplestory/haunted-house/0f714a9675ed417281fcfe440bc98853.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "167dea666cdd4d8485010a9d95754a4d",
+      "name": "낡은 나무 의자",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "소품",
+      "notes": "위치·개수 변화용 소품. 앞다리가 짧게 보이는 원본 측면 형태.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=167dea666cdd4d8485010a9d95754a4d",
+      "animations": {
+        "stand": {
+          "id": "167dea666cdd4d8485010a9d95754a4d",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/167dea666cdd4d8485010a9d95754a4d",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/167dea666cdd4d8485010a9d95754a4d.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "167dea666cdd4d8485010a9d95754a4d",
+              "width": 76,
+              "height": 64,
+              "pivot": {
+                "x": 37.0,
+                "y": 32.0,
+                "nx": 0.4868,
+                "ny": 0.5
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/16/7d/167dea666cdd4d8485010a9d95754a4d.png",
+              "localPath": "public/assets/maplestory/haunted-house/167dea666cdd4d8485010a9d95754a4d.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "npc/1063018.img",
+      "name": "남겨진 인형",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "소품",
+      "notes": "이동하거나 사라지는 이상 현상 후보. 몸에 새싹이 달린 원본 외형을 유지한다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=npc/1063018.img",
+      "animations": {
+        "stand": {
+          "id": "fb625320987b4ac3b7eec6a2749cf4a6",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/fb625320987b4ac3b7eec6a2749cf4a6",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/fb625320987b4ac3b7eec6a2749cf4a6.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "e0debaace3d84f2da1216a0c861e11af",
+              "width": 116,
+              "height": 112,
+              "pivot": {
+                "x": 62.0,
+                "y": 0.0,
+                "nx": 0.5345,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/e0/de/e0debaace3d84f2da1216a0c861e11af.png",
+              "localPath": "public/assets/maplestory/haunted-house/e0debaace3d84f2da1216a0c861e11af.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "b45e30e4d67449b59f74fa9ef82dd375",
+      "name": "목재 책장",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "소품",
+      "notes": "복도 가구·단서 은닉 장소 후보. 배경과 크기를 맞춰 배치한다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=b45e30e4d67449b59f74fa9ef82dd375",
+      "animations": {
+        "stand": {
+          "id": "b45e30e4d67449b59f74fa9ef82dd375",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/b45e30e4d67449b59f74fa9ef82dd375",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/b45e30e4d67449b59f74fa9ef82dd375.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "b45e30e4d67449b59f74fa9ef82dd375",
+              "width": 240,
+              "height": 212,
+              "pivot": {
+                "x": 119.0,
+                "y": 105.0,
+                "nx": 0.4958,
+                "ny": 0.4953
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/b4/5e/b45e30e4d67449b59f74fa9ef82dd375.png",
+              "localPath": "public/assets/maplestory/haunted-house/b45e30e4d67449b59f74fa9ef82dd375.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "cfb02881117747fdb2d428d58d0f900d",
+      "name": "벽 촛대",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "조명·단서",
+      "notes": "불꽃 없는 촛대. 불빛과 깜빡임은 게임에서 별도로 연출한다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=cfb02881117747fdb2d428d58d0f900d",
+      "animations": {
+        "stand": {
+          "id": "cfb02881117747fdb2d428d58d0f900d",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/cfb02881117747fdb2d428d58d0f900d",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/cfb02881117747fdb2d428d58d0f900d.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "cfb02881117747fdb2d428d58d0f900d",
+              "width": 96,
+              "height": 76,
+              "pivot": {
+                "x": 47.0,
+                "y": 38.0,
+                "nx": 0.4896,
+                "ny": 0.5
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/cf/b0/cfb02881117747fdb2d428d58d0f900d.png",
+              "localPath": "public/assets/maplestory/haunted-house/cfb02881117747fdb2d428d58d0f900d.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "50c3b884e0e14298916632fcc6c334ce",
+      "name": "낡은 열쇠",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "조명·단서",
+      "notes": "32px 아이템 아이콘. 수집 표시나 바닥의 작은 목표물에 적합하다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=50c3b884e0e14298916632fcc6c334ce",
+      "animations": {
+        "stand": {
+          "id": "50c3b884e0e14298916632fcc6c334ce",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/50c3b884e0e14298916632fcc6c334ce",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/50c3b884e0e14298916632fcc6c334ce.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "50c3b884e0e14298916632fcc6c334ce",
+              "width": 32,
+              "height": 32,
+              "pivot": {
+                "x": -1.0,
+                "y": 0.0,
+                "nx": -0.0312,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/50/c3/50c3b884e0e14298916632fcc6c334ce.png",
+              "localPath": "public/assets/maplestory/haunted-house/50c3b884e0e14298916632fcc6c334ce.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "870df55831ce49d088b49232f0f46f72",
+      "name": "쪽지",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "조명·단서",
+      "notes": "작게 접힌 종이 아이콘. 읽을 본문은 게임 UI에서 제공한다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=870df55831ce49d088b49232f0f46f72",
+      "animations": {
+        "stand": {
+          "id": "870df55831ce49d088b49232f0f46f72",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/870df55831ce49d088b49232f0f46f72",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/870df55831ce49d088b49232f0f46f72.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "870df55831ce49d088b49232f0f46f72",
+              "width": 32,
+              "height": 28,
+              "pivot": {
+                "x": -2.0,
+                "y": -2.0,
+                "nx": -0.0625,
+                "ny": -0.0714
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/87/0d/870df55831ce49d088b49232f0f46f72.png",
+              "localPath": "public/assets/maplestory/haunted-house/870df55831ce49d088b49232f0f46f72.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mob/9100027.img",
+      "name": "유령",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "위협",
+      "notes": "대기·이동·추격 프레임을 확보했다. 파란 유령 외형이며 원본 프레임 시간은 API에 없다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=mob/9100027.img",
+      "animations": {
+        "chase": {
+          "id": "4347933baf2d4e3e9aa4554da3d54688",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/4347933baf2d4e3e9aa4554da3d54688",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/4347933baf2d4e3e9aa4554da3d54688.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "d93c09cab5b74d1086edcf93e0efacbc",
+              "width": 56,
+              "height": 60,
+              "pivot": {
+                "x": 25.0,
+                "y": -42.0,
+                "nx": 0.4464,
+                "ny": -0.7
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/d9/3c/d93c09cab5b74d1086edcf93e0efacbc.png",
+              "localPath": "public/assets/maplestory/haunted-house/d93c09cab5b74d1086edcf93e0efacbc.png"
+            },
+            {
+              "index": 1,
+              "spriteRuid": "f8020f263ca44d419e379162af45f013",
+              "width": 52,
+              "height": 60,
+              "pivot": {
+                "x": 25.0,
+                "y": -41.0,
+                "nx": 0.4808,
+                "ny": -0.6833
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/f8/02/f8020f263ca44d419e379162af45f013.png",
+              "localPath": "public/assets/maplestory/haunted-house/f8020f263ca44d419e379162af45f013.png"
+            },
+            {
+              "index": 2,
+              "spriteRuid": "3c0bf31ffd5344dfab42713308c0ff03",
+              "width": 52,
+              "height": 64,
+              "pivot": {
+                "x": 25.0,
+                "y": -40.0,
+                "nx": 0.4808,
+                "ny": -0.625
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/3c/0b/3c0bf31ffd5344dfab42713308c0ff03.png",
+              "localPath": "public/assets/maplestory/haunted-house/3c0bf31ffd5344dfab42713308c0ff03.png"
+            },
+            {
+              "index": 3,
+              "spriteRuid": "07f2bf58f5344f478977ecd85141aeb7",
+              "width": 52,
+              "height": 64,
+              "pivot": {
+                "x": 25.0,
+                "y": -39.0,
+                "nx": 0.4808,
+                "ny": -0.6094
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/07/f2/07f2bf58f5344f478977ecd85141aeb7.png",
+              "localPath": "public/assets/maplestory/haunted-house/07f2bf58f5344f478977ecd85141aeb7.png"
+            },
+            {
+              "index": 4,
+              "spriteRuid": "2037127655c74ccebfd38641777707af",
+              "width": 56,
+              "height": 64,
+              "pivot": {
+                "x": 25.0,
+                "y": -40.0,
+                "nx": 0.4464,
+                "ny": -0.625
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/20/37/2037127655c74ccebfd38641777707af.png",
+              "localPath": "public/assets/maplestory/haunted-house/2037127655c74ccebfd38641777707af.png"
+            },
+            {
+              "index": 5,
+              "spriteRuid": "76cab6b53c47415aaff1450a97faca70",
+              "width": 56,
+              "height": 60,
+              "pivot": {
+                "x": 25.0,
+                "y": -41.0,
+                "nx": 0.4464,
+                "ny": -0.6833
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/76/ca/76cab6b53c47415aaff1450a97faca70.png",
+              "localPath": "public/assets/maplestory/haunted-house/76cab6b53c47415aaff1450a97faca70.png"
+            }
+          ]
+        },
+        "move": {
+          "id": "8baaa43f99964930bbe6bb15116256ee",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/8baaa43f99964930bbe6bb15116256ee",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/8baaa43f99964930bbe6bb15116256ee.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "beed168e202e45ea932738d6e9ba6139",
+              "width": 56,
+              "height": 60,
+              "pivot": {
+                "x": 25.0,
+                "y": -6.0,
+                "nx": 0.4464,
+                "ny": -0.1
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/be/ed/beed168e202e45ea932738d6e9ba6139.png",
+              "localPath": "public/assets/maplestory/haunted-house/beed168e202e45ea932738d6e9ba6139.png"
+            },
+            {
+              "index": 1,
+              "spriteRuid": "be6c6c16d1aa4759b4375ca1ed8ec7d0",
+              "width": 52,
+              "height": 60,
+              "pivot": {
+                "x": 25.0,
+                "y": -5.0,
+                "nx": 0.4808,
+                "ny": -0.0833
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/be/6c/be6c6c16d1aa4759b4375ca1ed8ec7d0.png",
+              "localPath": "public/assets/maplestory/haunted-house/be6c6c16d1aa4759b4375ca1ed8ec7d0.png"
+            },
+            {
+              "index": 2,
+              "spriteRuid": "469c60d2cb994d2ea8501e2d9e0e9c32",
+              "width": 52,
+              "height": 64,
+              "pivot": {
+                "x": 25.0,
+                "y": -4.0,
+                "nx": 0.4808,
+                "ny": -0.0625
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/46/9c/469c60d2cb994d2ea8501e2d9e0e9c32.png",
+              "localPath": "public/assets/maplestory/haunted-house/469c60d2cb994d2ea8501e2d9e0e9c32.png"
+            },
+            {
+              "index": 3,
+              "spriteRuid": "7cda503982324b089af0e4774ca87415",
+              "width": 52,
+              "height": 64,
+              "pivot": {
+                "x": 25.0,
+                "y": -3.0,
+                "nx": 0.4808,
+                "ny": -0.0469
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/7c/da/7cda503982324b089af0e4774ca87415.png",
+              "localPath": "public/assets/maplestory/haunted-house/7cda503982324b089af0e4774ca87415.png"
+            },
+            {
+              "index": 4,
+              "spriteRuid": "a3224dccebb040249f1715ad58a8c4ba",
+              "width": 56,
+              "height": 64,
+              "pivot": {
+                "x": 25.0,
+                "y": -4.0,
+                "nx": 0.4464,
+                "ny": -0.0625
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/a3/22/a3224dccebb040249f1715ad58a8c4ba.png",
+              "localPath": "public/assets/maplestory/haunted-house/a3224dccebb040249f1715ad58a8c4ba.png"
+            },
+            {
+              "index": 5,
+              "spriteRuid": "0d7adb52dbb74821b6cf35d5f27c2c2b",
+              "width": 56,
+              "height": 60,
+              "pivot": {
+                "x": 25.0,
+                "y": -5.0,
+                "nx": 0.4464,
+                "ny": -0.0833
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/0d/7a/0d7adb52dbb74821b6cf35d5f27c2c2b.png",
+              "localPath": "public/assets/maplestory/haunted-house/0d7adb52dbb74821b6cf35d5f27c2c2b.png"
+            }
+          ]
+        },
+        "stand": {
+          "id": "59760a015a9c4786bc99261819e385c1",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/59760a015a9c4786bc99261819e385c1",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/59760a015a9c4786bc99261819e385c1.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "4fe72c16da30408bb67bfa1d671be518",
+              "width": 56,
+              "height": 60,
+              "pivot": {
+                "x": 25.0,
+                "y": -6.0,
+                "nx": 0.4464,
+                "ny": -0.1
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/4f/e7/4fe72c16da30408bb67bfa1d671be518.png",
+              "localPath": "public/assets/maplestory/haunted-house/4fe72c16da30408bb67bfa1d671be518.png"
+            },
+            {
+              "index": 1,
+              "spriteRuid": "a45682aab585495585a684396c228796",
+              "width": 52,
+              "height": 60,
+              "pivot": {
+                "x": 25.0,
+                "y": -5.0,
+                "nx": 0.4808,
+                "ny": -0.0833
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/a4/56/a45682aab585495585a684396c228796.png",
+              "localPath": "public/assets/maplestory/haunted-house/a45682aab585495585a684396c228796.png"
+            },
+            {
+              "index": 2,
+              "spriteRuid": "3949abebcec34586bd450056484e316c",
+              "width": 52,
+              "height": 64,
+              "pivot": {
+                "x": 25.0,
+                "y": -4.0,
+                "nx": 0.4808,
+                "ny": -0.0625
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/39/49/3949abebcec34586bd450056484e316c.png",
+              "localPath": "public/assets/maplestory/haunted-house/3949abebcec34586bd450056484e316c.png"
+            },
+            {
+              "index": 3,
+              "spriteRuid": "4b83a33664274a099b99c5d6c4e18c71",
+              "width": 52,
+              "height": 64,
+              "pivot": {
+                "x": 25.0,
+                "y": -3.0,
+                "nx": 0.4808,
+                "ny": -0.0469
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/4b/83/4b83a33664274a099b99c5d6c4e18c71.png",
+              "localPath": "public/assets/maplestory/haunted-house/4b83a33664274a099b99c5d6c4e18c71.png"
+            },
+            {
+              "index": 4,
+              "spriteRuid": "dde6fdcdeeae4631bfe14018bdb1ccc5",
+              "width": 56,
+              "height": 64,
+              "pivot": {
+                "x": 25.0,
+                "y": -4.0,
+                "nx": 0.4464,
+                "ny": -0.0625
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/dd/e6/dde6fdcdeeae4631bfe14018bdb1ccc5.png",
+              "localPath": "public/assets/maplestory/haunted-house/dde6fdcdeeae4631bfe14018bdb1ccc5.png"
+            },
+            {
+              "index": 5,
+              "spriteRuid": "80ab867b59364d5fa806e22d436be2ea",
+              "width": 56,
+              "height": 60,
+              "pivot": {
+                "x": 25.0,
+                "y": -5.0,
+                "nx": 0.4464,
+                "ny": -0.0833
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/80/ab/80ab867b59364d5fa806e22d436be2ea.png",
+              "localPath": "public/assets/maplestory/haunted-house/80ab867b59364d5fa806e22d436be2ea.png"
+            },
+            {
+              "index": 6,
+              "spriteRuid": "b0e30ec5c628457f895c7bccf9f772de",
+              "width": 56,
+              "height": 60,
+              "pivot": {
+                "x": 25.0,
+                "y": -6.0,
+                "nx": 0.4464,
+                "ny": -0.1
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/b0/e3/b0e30ec5c628457f895c7bccf9f772de.png",
+              "localPath": "public/assets/maplestory/haunted-house/b0e30ec5c628457f895c7bccf9f772de.png"
+            },
+            {
+              "index": 7,
+              "spriteRuid": "24a69427292d4b03a475fc9a455c6bc9",
+              "width": 52,
+              "height": 60,
+              "pivot": {
+                "x": 25.0,
+                "y": -5.0,
+                "nx": 0.4808,
+                "ny": -0.0833
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/24/a6/24a69427292d4b03a475fc9a455c6bc9.png",
+              "localPath": "public/assets/maplestory/haunted-house/24a69427292d4b03a475fc9a455c6bc9.png"
+            },
+            {
+              "index": 8,
+              "spriteRuid": "263e55be54164f14a693be5199ee6e3c",
+              "width": 52,
+              "height": 64,
+              "pivot": {
+                "x": 25.0,
+                "y": -4.0,
+                "nx": 0.4808,
+                "ny": -0.0625
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/26/3e/263e55be54164f14a693be5199ee6e3c.png",
+              "localPath": "public/assets/maplestory/haunted-house/263e55be54164f14a693be5199ee6e3c.png"
+            },
+            {
+              "index": 9,
+              "spriteRuid": "9ff01e1c5a6640b39ef8e115144a99a3",
+              "width": 52,
+              "height": 64,
+              "pivot": {
+                "x": 25.0,
+                "y": -3.0,
+                "nx": 0.4808,
+                "ny": -0.0469
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/9f/f0/9ff01e1c5a6640b39ef8e115144a99a3.png",
+              "localPath": "public/assets/maplestory/haunted-house/9ff01e1c5a6640b39ef8e115144a99a3.png"
+            },
+            {
+              "index": 10,
+              "spriteRuid": "82a4ba51f9654bdbbc5b783c197e94f6",
+              "width": 56,
+              "height": 64,
+              "pivot": {
+                "x": 25.0,
+                "y": -4.0,
+                "nx": 0.4464,
+                "ny": -0.0625
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/82/a4/82a4ba51f9654bdbbc5b783c197e94f6.png",
+              "localPath": "public/assets/maplestory/haunted-house/82a4ba51f9654bdbbc5b783c197e94f6.png"
+            },
+            {
+              "index": 11,
+              "spriteRuid": "fe17ae50d2af4123b1504d16d9a8db4a",
+              "width": 56,
+              "height": 60,
+              "pivot": {
+                "x": 25.0,
+                "y": -5.0,
+                "nx": 0.4464,
+                "ny": -0.0833
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/fe/17/fe17ae50d2af4123b1504d16d9a8db4a.png",
+              "localPath": "public/assets/maplestory/haunted-house/fe17ae50d2af4123b1504d16d9a8db4a.png"
+            }
+          ]
+        }
+      }
     }
   ]
 }
