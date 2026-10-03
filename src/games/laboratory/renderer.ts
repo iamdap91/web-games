@@ -33,7 +33,8 @@ export function drawGame(
   ctx.save();
   ctx.translate(-cameraX, shake);
   drawAnomalyBackground(ctx, assets, state);
-  drawEntry(ctx, state);
+  if (!(state.scenario === 'folding-stage' && state.anomaly.backstageReturning))
+    drawEntry(ctx, state);
   if (state.progress === 8) drawExit(ctx, 780, '→');
   else {
     drawExit(ctx, 44, '←');

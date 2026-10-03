@@ -1,8 +1,7 @@
 import {
   cameraPosition,
-  panelAngle,
+  stagePanelViews,
   panelWidth,
-  stagePanels,
 } from './spatial-rules.js';
 import type { AnimationFrame } from '../../resources/preview/animation-player.js';
 import type { GameAssets } from './assets.js';
@@ -342,8 +341,9 @@ function drawBackstage(
   glow.addColorStop(0, '#0a151a');
   glow.addColorStop(1, '#27372e');
   ctx.fillStyle = glow;
-  ctx.fillRect(800, 0, 1600, world.ground);
-  for (let x = 820; x < 2400; x += 260) {
+  const start = state.anomaly.backstageReturning ? 0 : 800;
+  ctx.fillRect(start, 0, world.width - start, world.ground);
+  for (let x = start + 20; x < 2400; x += 260) {
     ctx.fillStyle = '#14252a';
     ctx.fillRect(x, 0, 10, 340);
     ctx.strokeStyle = '#304039';
@@ -359,17 +359,18 @@ function drawBackstage(
     ctx.bezierCurveTo(x + 160, 90, x - 15, 180, x + 100, 285);
     ctx.stroke();
   }
-  ctx.drawImage(
-    assets.normal,
-    0,
-    0,
-    800,
-    world.ground,
-    0,
-    0,
-    800,
-    world.ground,
-  );
+  if (!state.anomaly.backstageReturning)
+    ctx.drawImage(
+      assets.normal,
+      0,
+      0,
+      800,
+      world.ground,
+      0,
+      0,
+      800,
+      world.ground,
+    );
   ctx.drawImage(
     assets.normal,
     0,
@@ -382,18 +383,35 @@ function drawBackstage(
     90,
   );
   ctx.fillStyle = '#17221e80';
-  ctx.fillRect(800, 340, 1600, 90);
+  ctx.fillRect(start, 340, world.width - start, 90);
   for (let x = 850; x < 2400; x += 130) {
     ctx.fillStyle = '#82927a36';
     ctx.fillRect(x, 347, 33, 2);
   }
-  drawBackstageDoor(ctx, assets, state);
+  drawBackstageDoor(
+    ctx,
+    assets,
+    state.progress,
+    1990,
+    state.anomaly.backstageDoorOpen,
+  );
+  if (state.anomaly.backstageReturning)
+    drawBackstageDoor(
+      ctx,
+      assets,
+      state.progress,
+      110,
+      state.anomaly.returnDoorOpen,
+    );
   const camera = cameraPosition(state.player.x);
-  for (const [index, x] of stagePanels.entries()) {
-    const angle = (panelAngle(state.player.x, index) * Math.PI) / 180;
-    const depth = -Math.sin(angle) * panelWidth;
+  for (const view of stagePanelViews(state)) {
+    if (!view.visible) continue;
+    const x = view.x + (view.reverse ? panelWidth : 0);
+    const direction = view.reverse ? -1 : 1;
+    const angle = (view.angle * Math.PI) / 180;
+    const depth = -Math.sin(angle) * panelWidth * direction;
     const edge =
-      ((x - camera + Math.cos(angle) * panelWidth - 500) * 1100) /
+      ((x - camera + Math.cos(angle) * panelWidth * direction - 500) * 1100) /
         (1100 - depth) +
       500 +
       camera;
@@ -402,8 +420,13 @@ function drawBackstage(
     ctx.strokeStyle = '#6c776455';
     ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.moveTo(x + 210, 32);
-    ctx.quadraticCurveTo((x + 210 + edge) / 2, 150 - tension * 102, edge, 42);
+    ctx.moveTo(x + direction * 210, 32);
+    ctx.quadraticCurveTo(
+      (x + direction * 210 + edge) / 2,
+      150 - tension * 102,
+      edge,
+      42,
+    );
     ctx.stroke();
     ctx.fillStyle = '#00000070';
     ctx.beginPath();
@@ -419,10 +442,10 @@ function drawBackstage(
 function drawBackstageDoor(
   ctx: CanvasRenderingContext2D,
   assets: GameAssets,
-  state: GameSnapshot,
+  progress: number,
+  x: number,
+  open: number,
 ): void {
-  const open = state.anomaly.backstageDoorOpen;
-  const x = 1990;
   const y = 106;
   const width = 170;
   const height = 234;
@@ -449,7 +472,7 @@ function drawBackstageDoor(
   ctx.fillStyle = '#e2efc1';
   ctx.shadowColor = '#d8e9b9';
   ctx.shadowBlur = 8;
-  ctx.fillText(String(state.progress), x + 66, y + 51);
+  ctx.fillText(String(progress), x + 66, y + 51);
   ctx.shadowBlur = 0;
   const innerShade = ctx.createLinearGradient(x, 0, x + width, 0);
   innerShade.addColorStop(0, '#08100b20');

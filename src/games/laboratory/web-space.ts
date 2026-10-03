@@ -6,7 +6,8 @@ import { drawPlayer } from './player-renderer.js';
 import {
   cameraPosition,
   frameEdge,
-  panelAngle,
+  stagePanelViews,
+  returnPanels,
   panelWidth,
   stagePanels,
 } from './spatial-rules.js';
@@ -39,9 +40,10 @@ export class WebSpace {
     this.perspective.className = 'stage-perspective';
     this.stage.className = 'fold-stage';
     this.actor.className = 'stage-actor';
-    for (const x of stagePanels) {
+    for (const [index, x] of [...stagePanels, ...returnPanels].entries()) {
       const panel = document.createElement('div');
-      panel.className = 'wall-panel';
+      panel.className =
+        index < stagePanels.length ? 'wall-panel' : 'wall-panel reverse';
       const front = this.makeFront(x);
       front.className = 'wall-front';
       const back = this.makeBack();
@@ -228,9 +230,15 @@ export class WebSpace {
 
   private drawStage(state: GameSnapshot, frame: AnimationFrame): void {
     const camera = cameraPosition(state.player.x);
+    const views = stagePanelViews(state);
     this.panels.forEach((panel, index) => {
-      panel.style.left = `${stagePanels[index]! - camera}px`;
-      const angle = panelAngle(state.player.x, index);
+      const view = views[index]!;
+      panel.hidden = !view.visible;
+      panel.style.transformOrigin = view.reverse
+        ? 'right center'
+        : 'left center';
+      panel.style.left = `${view.x - camera}px`;
+      const angle = view.angle;
       panel.style.transform = `rotateY(${angle}deg)`;
       panel.style.setProperty(
         '--panel-shade',

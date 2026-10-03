@@ -5,6 +5,8 @@ import {
   cameraPosition,
   frameEdge,
   panelAngle,
+  returnPanelAngle,
+  stagePanelViews,
 } from '../dist/src/games/laboratory/spatial-rules.js';
 const step = 1 / 120;
 function advance(game, seconds, direction = 0) {
@@ -182,4 +184,49 @@ test('포획 중 초기화와 8번 방 미리보기는 낙하와 착지를 취�
     assert.equal(game.snapshot.landingElapsed, null);
     assert.equal(game.snapshot.progress, preview ? 8 : 0);
   }
+});
+
+test('처음 입장해 왼쪽으로 움직일 때는 귀로 벽과 문이 나타나지 않는다', () => {
+  const game = new LaboratoryGame();
+  game.reset('folding-stage');
+  advance(game, 0.3, -1);
+  assert.equal(game.snapshot.anomaly.backstageReturning, false);
+  assert.equal(game.snapshot.anomaly.returnDoorOpen, 0);
+  assert.equal(
+    stagePanelViews(game.snapshot).filter(
+      (view) => view.reverse && view.visible,
+    ).length,
+    0,
+  );
+});
+
+test('이상을 보고 돌아오면 반대 경첩의 벽과 왼쪽 문틈이 열리고 새 방에서 초기화된다', () => {
+  const game = new LaboratoryGame();
+  game.reset('folding-stage');
+  advance(game, 4, 1);
+  assert.equal(game.snapshot.anomaly.backstageReturning, false);
+  advance(game, 0.2, -1);
+  assert.equal(game.snapshot.anomaly.backstageReturning, true);
+  const before = returnPanelAngle(game.snapshot.player.x, 1);
+  advance(game, 3.8, -1);
+  advance(game, 1);
+  assert.ok(returnPanelAngle(game.snapshot.player.x, 1) > before);
+  assert.ok(game.snapshot.anomaly.returnDoorOpen > 0.8);
+  assert.equal(
+    stagePanelViews(game.snapshot).filter(
+      (view) => view.reverse && view.visible,
+    ).length,
+    2,
+  );
+  const opened = game.snapshot.anomaly.returnDoorOpen;
+  advance(game, 1, 1);
+  assert.equal(game.snapshot.anomaly.returnDoorOpen, opened);
+  advance(game, 3, -1);
+  advance(game, 0.6);
+  assert.equal(game.snapshot.progress, 1);
+  assert.equal(game.snapshot.anomaly.returnDoorOpen, 0);
+  assert.equal(game.snapshot.anomaly.backstageReturning, false);
+  game.previewExit();
+  advance(game, 0.6);
+  assert.equal(game.snapshot.anomaly.backstageReturning, false);
 });

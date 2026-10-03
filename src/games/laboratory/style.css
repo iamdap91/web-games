@@ -386,3 +386,8 @@ body.escaped {
   image-rendering: pixelated;
   z-index: 20;
 }
+
+.wall-panel.reverse .wall-edge {
+  right: auto;
+  left: -3px;
+}
