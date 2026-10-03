@@ -13,7 +13,7 @@ export class GameDisplay {
   constructor(
     private readonly shell: HTMLElement,
     private readonly slot: HTMLElement,
-    private readonly stage: HTMLElement,
+    private readonly frame: HTMLElement,
     private readonly button: HTMLButtonElement,
     private readonly message: HTMLElement,
     private readonly onChange: () => void,
@@ -62,7 +62,7 @@ export class GameDisplay {
     this.observer.disconnect();
     document.body.classList.remove('compact-game', 'expanded-game');
     this.shell.classList.remove('immersive', 'expanded');
-    this.stage.style.removeProperty('width');
+    this.frame.style.removeProperty('width');
   }
 
   private async toggle(): Promise<void> {
@@ -113,11 +113,11 @@ export class GameDisplay {
 
   private fit(): void {
     if (!this.compact.matches && !this.expanded) {
-      this.stage.style.removeProperty('width');
+      this.frame.style.removeProperty('width');
       return;
     }
     if (this.slot.clientWidth === 0 || this.slot.clientHeight === 0) return;
-    // 테두리를 뺀 장면 비율을 유지해 낮은 가로 화면에서도 조작 영역을 남긴다.
+    // 테두리를 뺀 장면 비율을 유지하며 가용 화면을 최대한 채운다.
     const width = Math.max(
       0,
       Math.min(
@@ -125,6 +125,6 @@ export class GameDisplay {
         ((this.slot.clientHeight - 2) * viewport.width) / viewport.height + 2,
       ),
     );
-    this.stage.style.width = `${width}px`;
+    this.frame.style.width = `${width}px`;
   }
 }

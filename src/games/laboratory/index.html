@@ -8,7 +8,7 @@
     />
     <meta name="theme-color" content="#10191a" />
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="./style.css?v=mobile-1" />
+    <link rel="stylesheet" href="./style.css?v=mobile-overlay-2" />
     <title>C-2 · 돌아오는 연구소</title>
   </head>
   <body>
@@ -31,54 +31,62 @@
         <p id="display-message" role="status"></p>
         <div id="play-area">
           <div id="stage-slot">
-            <section id="stage" class="stage" aria-label="연구소 탐험">
-              <div class="scene-wrap">
-                <canvas
-                  id="scene"
-                  width="1000"
-                  height="430"
-                  tabindex="0"
-                  aria-label="C-2 연구소 게임. 방향키 또는 화면 버튼으로 이동하고 점프합니다."
-                  aria-describedby="controls touch-help rules"
-                  >Canvas를 지원하는 브라우저가 필요합니다.</canvas
-                >
+            <div id="stage-frame">
+              <section id="stage" class="stage" aria-label="연구소 탐험">
+                <div class="scene-wrap">
+                  <canvas
+                    id="scene"
+                    width="1000"
+                    height="430"
+                    tabindex="0"
+                    aria-label="C-2 연구소 게임. 방향키 또는 화면 버튼으로 이동하고 점프합니다."
+                    aria-describedby="controls touch-help rules"
+                    >Canvas를 지원하는 브라우저가 필요합니다.</canvas
+                  >
+                </div>
+                <p id="rules" class="sr-only">
+                  이상이 있으면 왼쪽으로 되돌아갈 것. 이상이 없으면 오른쪽으로
+                  나아갈 것. 8번 방이 출구입니다.
+                </p>
+                <p id="status" role="status">로컬 리소스를 불러오는 중…</p>
+              </section>
+              <div class="controls" id="controls">
+                <p>
+                  <kbd>←</kbd> <kbd>→</kbd> 이동 <span>·</span>
+                  <kbd>Alt</kbd> 점프 <span>·</span> 공중에서 한 번 더
+                  <kbd>Alt</kbd> 플래시점프
+                </p>
               </div>
-              <p id="rules" class="sr-only">
-                이상이 있으면 왼쪽으로 되돌아갈 것. 이상이 없으면 오른쪽으로
-                나아갈 것. 8번 방이 출구입니다.
-              </p>
-              <p id="status" role="status">로컬 리소스를 불러오는 중…</p>
-            </section>
-          </div>
-          <div class="controls" id="controls">
-            <p>
-              <kbd>←</kbd> <kbd>→</kbd> 이동 <span>·</span> <kbd>Alt</kbd> 점프
-              <span>·</span> 공중에서 한 번 더 <kbd>Alt</kbd> 플래시점프
-            </p>
-          </div>
-          <div class="touch-controls" aria-label="화면 조작 버튼">
-            <button id="left" type="button" aria-label="왼쪽으로 이동" disabled>
-              ←
-            </button>
-            <button
-              id="right"
-              type="button"
-              aria-label="오른쪽으로 이동"
-              disabled
-            >
-              →
-            </button>
-            <p id="touch-help">
-              누른 채로 이동 · 공중에서 한 번 더 누르면 플래시점프
-            </p>
-            <button
-              id="jump"
-              type="button"
-              aria-describedby="touch-help"
-              disabled
-            >
-              점프
-            </button>
+              <div class="touch-controls" aria-label="화면 조작 버튼">
+                <button
+                  id="left"
+                  type="button"
+                  aria-label="왼쪽으로 이동"
+                  disabled
+                >
+                  ←
+                </button>
+                <button
+                  id="right"
+                  type="button"
+                  aria-label="오른쪽으로 이동"
+                  disabled
+                >
+                  →
+                </button>
+                <p id="touch-help">
+                  누른 채로 이동 · 공중에서 한 번 더 누르면 플래시점프
+                </p>
+                <button
+                  id="jump"
+                  type="button"
+                  aria-describedby="touch-help"
+                  disabled
+                >
+                  점프
+                </button>
+              </div>
+            </div>
           </div>
         </div>
         <section

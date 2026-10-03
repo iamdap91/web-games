@@ -486,6 +486,7 @@ body.escaped {
 }
 
 #game-shell {
+  position: relative;
   background: #101718;
 }
 .game-toolbar {
@@ -567,8 +568,36 @@ body.escaped {
     max(8px, env(safe-area-inset-left));
 }
 .immersive .game-toolbar {
+  position: absolute;
+  top: max(8px, env(safe-area-inset-top));
+  left: max(16px, env(safe-area-inset-left));
+  right: max(16px, env(safe-area-inset-right));
+  z-index: 22;
+  padding: 0;
+  pointer-events: none;
+}
+.immersive .game-toolbar button {
+  color: #ffffffb3;
+  border-color: #ffffff40;
+  background: #10171830;
+  pointer-events: auto;
+}
+.immersive .rotate-hint {
+  color: #ffffffb3;
+  text-shadow: 0 1px 3px #000;
+}
+.immersive #display-message {
+  position: absolute;
+  top: calc(max(8px, env(safe-area-inset-top)) + 48px);
+  left: 16px;
+  right: 16px;
+  z-index: 22;
+  pointer-events: none;
+  text-shadow: 0 1px 3px #000;
+}
+.immersive #stage-frame {
+  position: relative;
   flex: none;
-  padding-bottom: 4px;
 }
 .immersive #play-area {
   display: flex;
@@ -597,31 +626,54 @@ body.escaped {
   display: none;
 }
 .immersive .touch-controls {
-  position: relative;
+  --move-control-width: clamp(52px, 9vw, 68px);
+  --jump-control-width: clamp(60px, 10vw, 80px);
+  position: absolute;
+  inset: auto 16px 14px;
   z-index: 21;
-  flex: none;
   gap: 12px;
-  margin-top: 8px;
-  padding-top: 8px;
-  border-top: 1px solid #354340;
-  touch-action: none;
+  margin: 0;
+  pointer-events: none;
 }
 .immersive .touch-controls button {
   width: var(--move-control-width);
-  height: 64px;
+  min-width: 0;
+  height: var(--move-control-width);
   padding: 0;
-  border-radius: 16px;
-  font-size: 24px;
-  font-weight: 600;
+  border: 2px solid #ffffff66;
+  border-radius: 12px;
+  background: #ffffff08;
+  color: #ffffffa6;
+  font-size: 30px;
+  font-weight: 400;
+  text-shadow: 0 1px 3px #0006;
+  pointer-events: auto;
 }
 .immersive #jump {
   width: var(--jump-control-width);
-  font-size: 18px;
+  height: var(--jump-control-width);
+  border-radius: 50%;
+  font-size: 16px;
+}
+.immersive .touch-controls button.pressed {
+  background: #ffffff26;
+  border-color: #ffffffc7;
+  color: #ffffffe6;
+  box-shadow: 0 0 12px #ffffff12;
+}
+.immersive #touch-help {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
 }
 .immersive #scene {
   touch-action: none;
 }
 .immersive .ending {
+  margin-top: 52px;
   flex: 1;
   min-height: 0;
   overflow-y: auto;
@@ -630,36 +682,16 @@ body.escaped {
 .escaped #game-shell {
   background: #f7f3e5;
 }
+.escaped .game-toolbar button {
+  color: #374b38;
+  border-color: #b8ac7b;
+  background: #f0e9cd;
+}
 .escaped .rotate-hint {
   display: none;
 }
 @media (orientation: portrait) {
   .compact-game:not(.escaped) .rotate-hint {
     display: block;
-  }
-}
-@media (max-width: 550px) {
-  .touch-controls {
-    display: grid;
-    grid-template-columns:
-      var(--move-control-width) var(--move-control-width)
-      1fr var(--jump-control-width);
-  }
-  #touch-help {
-    grid-column: 1 / -1;
-    grid-row: 1;
-    font-size: 11px;
-  }
-  #left {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  #right {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  #jump {
-    grid-column: 4;
-    grid-row: 2;
   }
 }

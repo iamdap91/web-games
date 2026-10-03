@@ -78,7 +78,7 @@ class GameScreen {
     this.display = new GameDisplay(
       this.shell,
       element('stage-slot', HTMLDivElement),
-      element('stage', HTMLElement),
+      element('stage-frame', HTMLDivElement),
       element('fullscreen', HTMLButtonElement),
       element('display-message', HTMLParagraphElement),
       () => this.clearInput(),
