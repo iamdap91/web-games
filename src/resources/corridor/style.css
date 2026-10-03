@@ -24,6 +24,24 @@ a {
   font-size: 12px;
   text-decoration: none;
 }
+.map-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.map-navigation a {
+  padding: 9px 13px;
+  border: 1px solid #3c4c46;
+  border-radius: 5px;
+  font-size: 12px;
+  text-decoration: none;
+}
+.map-navigation a[aria-current='page'] {
+  background: #394a3f;
+  color: #eff0da;
+  border-color: #6a8068;
+}
 header {
   margin: 32px 0 24px;
 }

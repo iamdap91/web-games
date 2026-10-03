@@ -12,15 +12,20 @@
     <main>
       <a class="back" href="../">← 리소스 목록</a>
       <header>
-        <p class="eyebrow">MAP STUDY / 01</p>
-        <h1>불이 남아 있는 복도</h1>
-        <p class="intro">
+        <p class="eyebrow">BACKGROUND STUDIES</p>
+        <h1 id="title">불이 남아 있는 복도</h1>
+        <p id="intro" class="intro">
           아무도 없는 연구소. 차가운 벽과 오래된 조명만 남아 있어요.
         </p>
       </header>
-      <section class="stage" aria-label="연구소 복도 색감 미리보기">
+      <nav class="map-navigation" aria-label="배경 후보 선택">
+        <a href="./" data-map="corridor">01 · 제뉴미스트 복도</a>
+        <a href="./?map=subway" data-map="subway">02 · 지하철</a>
+        <a href="./?map=laboratory" data-map="laboratory">03 · C-2 연구소</a>
+      </nav>
+      <section class="stage" aria-label="배경 색감 미리보기">
         <div class="stage-top">
-          <span>제뉴미스트 연구소 · 2층 복도</span>
+          <span id="map-label">제뉴미스트 연구소 · 2층 복도</span>
           <span id="mode-label">음습한 보정</span>
         </div>
         <canvas
@@ -33,12 +38,12 @@
         <p id="status" role="status">로컬 배경 이미지를 불러오는 중…</p>
       </section>
       <div class="toolbar">
-        <div class="modes" role="group" aria-label="원본과 보정 비교">
+        <div class="modes" role="group" aria-label="보정 전후 비교">
           <button id="graded" type="button" aria-pressed="true" disabled>
             음습한 보정
           </button>
           <button id="original" type="button" aria-pressed="false" disabled>
-            원본 톤
+            보정 전
           </button>
         </div>
         <button id="reset" class="secondary" type="button" disabled>
@@ -107,14 +112,14 @@
       </section>
       <footer>
         <p>분위기를 고르는 정적 예시예요. NPC·소리·점프스케어는 없어요.</p>
+        <p id="composition">흰색 바탕을 제거하고 벽면을 합성한 예시예요.</p>
         <p>
-          원본 톤과 보정은 같은 벽면 합성을 사용해요. 흰색 바탕은 제거하고
-          벽면을 Canvas로 채웠으며, 실제 게임의 배경 전체를 재현한 것은
-          아니에요.
+          보정 전후 모두 재구성한 배경이에요. 실제 게임 원본과는 배치가 달라요.
         </p>
         <p>
           출처:
           <a
+            id="source"
             href="https://mapledb.kr/search.php?q=261010100&amp;t=map"
             target="_blank"
             rel="noreferrer"

@@ -3,9 +3,12 @@ import {
   drawCorridor,
   drawViewport,
   gradePixels,
+  prepareMapObjects,
   sceneHeight,
   sceneWidth,
 } from './corridor-renderer.js';
+import { backgrounds, selectBackground } from './background-presets.js';
+import { drawIndustrial } from './industrial-renderer.js';
 
 function getElement<T extends HTMLElement>(id: string, type: { new (): T }): T {
   const element = document.getElementById(id);
@@ -21,6 +24,10 @@ function getContext(canvas: HTMLCanvasElement): CanvasRenderingContext2D {
 }
 
 class CorridorPreview {
+  private readonly kind = selectBackground(
+    new URLSearchParams(location.search).get('map'),
+  );
+  private readonly preset = backgrounds[this.kind];
   private readonly canvas = getElement('scene', HTMLCanvasElement);
   private readonly context = getContext(this.canvas);
   private readonly original = document.createElement('canvas');
@@ -47,9 +54,30 @@ class CorridorPreview {
   async start(): Promise<void> {
     const { signal } = this.events;
     window.addEventListener('pagehide', this.handlePageHide, { signal });
-    const asset = manifest.assets.find((entry) => entry.id === 'map/261010100');
-    if (!asset?.localPath || !asset.crop)
-      throw new Error('복도 리소스 정보가 없습니다.');
+    const asset = manifest.assets.find((entry) => entry.id === this.preset.id);
+    if (!asset?.localPath) throw new Error('복도 리소스 정보가 없습니다.');
+    document.title = `${this.preset.label} · 리소스 뷰어`;
+    getElement('title', HTMLHeadingElement).textContent = this.preset.title;
+    getElement('intro', HTMLParagraphElement).textContent = this.preset.intro;
+    getElement('map-label', HTMLSpanElement).textContent = this.preset.label;
+    getElement('composition', HTMLParagraphElement).textContent =
+      this.preset.note;
+    const source = getElement('source', HTMLAnchorElement);
+    source.href = asset.sourceUrl;
+    source.textContent = `맵 원본 · ${this.preset.label}`;
+    for (const key of [
+      'saturation',
+      'brightness',
+      'chill',
+      'vignette',
+    ] as const) {
+      this.controls[key].defaultValue = String(this.preset[key]);
+      this.controls[key].value = String(this.preset[key]);
+    }
+    this.updateOutputs();
+    document
+      .querySelector(`[data-map="${this.kind}"]`)
+      ?.setAttribute('aria-current', 'page');
     const image = new Image();
     image.src = `/${asset.localPath}`;
     try {
@@ -58,9 +86,37 @@ class CorridorPreview {
       throw new Error(`로컬 배경 이미지가 없습니다: ${asset.localPath}`);
     }
     if (signal.aborted) return;
-    this.original.width = this.graded.width = asset.crop.width;
-    this.original.height = this.graded.height = asset.crop.height;
-    drawCorridor(this.originalContext, image, asset.crop);
+    this.original.width = this.graded.width = this.preset.width;
+    this.original.height = this.graded.height = this.preset.height;
+    if (this.kind === 'corridor') {
+      if (!asset.crop) throw new Error('복도 크롭 정보가 없습니다.');
+      drawCorridor(this.originalContext, image, asset.crop);
+    } else {
+      if (!asset.regions) throw new Error('배경 조각 정보가 없습니다.');
+      const components = new Map<string, HTMLImageElement>();
+      await Promise.all(
+        (asset.components ?? []).map(async (component) => {
+          const image = new Image();
+          image.src = `/${component.localPath}`;
+          try {
+            await image.decode();
+          } catch {
+            throw new Error(
+              `로컬 장식 이미지가 없습니다: ${component.localPath}`,
+            );
+          }
+          components.set(component.name, image);
+        }),
+      );
+      if (signal.aborted) return;
+      drawIndustrial(
+        this.originalContext,
+        prepareMapObjects(image),
+        components,
+        asset.regions,
+        this.kind,
+      );
+    }
     this.ready = true;
     for (const [name, control] of Object.entries(this.controls)) {
       control.disabled = false;
@@ -103,7 +159,7 @@ class CorridorPreview {
     this.updateGrade();
     this.resize();
     this.status.textContent =
-      '로컬 배경 준비 완료 · 슬라이더로 복도를 둘러보고 원본 톤과 비교해보세요.';
+      '로컬 배경 준비 완료 · 좌우로 둘러보고 보정 전후를 비교해보세요.';
   }
 
   destroy(): void {
@@ -176,13 +232,13 @@ class CorridorPreview {
     this.originalButton.setAttribute('aria-pressed', String(this.showOriginal));
     this.gradedButton.setAttribute('aria-pressed', String(!this.showOriginal));
     this.modeLabel.textContent = this.showOriginal
-      ? '원본 톤 · 벽면 합성'
+      ? '보정 전 · 재구성 배경'
       : '음습한 보정';
     this.canvas.setAttribute(
       'aria-label',
       this.showOriginal
-        ? '원본 톤의 연구소 복도'
-        : '음습하게 보정한 연구소 복도',
+        ? `보정 전 ${this.preset.label}`
+        : `음습하게 보정한 ${this.preset.label}`,
     );
   }
 }

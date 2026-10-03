@@ -15,7 +15,7 @@ export type Crop = {
   readonly height: number;
 };
 
-function removeWhiteBackdrop(pixels: ImageData): void {
+function removeWhiteBackdrop(pixels: ImageData, preserveUntil = 240): void {
   const { data, width, height } = pixels;
   const visited = new Uint8Array(width * height);
   const region = new Int32Array(width * height);
@@ -48,12 +48,25 @@ function removeWhiteBackdrop(pixels: ImageData): void {
       }
     }
     // 벽 위쪽의 작은 전구 하이라이트는 보존하고, 탁자 아래의 흰색 틈도 비운다.
-    if (length < 2048 && Math.floor(start / width) < 240) continue;
+    if (length < 2048 && Math.floor(start / width) < preserveUntil) continue;
     for (let index = 0; index < length; index++) {
       const pixel = region[index];
       if (pixel !== undefined) data[pixel * 4 + 3] = 0;
     }
   }
+}
+
+export function prepareMapObjects(image: HTMLImageElement): HTMLCanvasElement {
+  const canvas = document.createElement('canvas');
+  canvas.width = image.naturalWidth;
+  canvas.height = image.naturalHeight;
+  const context = canvas.getContext('2d');
+  if (!context) throw new Error('배경 조합용 Canvas를 사용할 수 없습니다.');
+  context.drawImage(image, 0, 0);
+  const pixels = context.getImageData(0, 0, canvas.width, canvas.height);
+  removeWhiteBackdrop(pixels, Infinity);
+  context.putImageData(pixels, 0, 0);
+  return canvas;
 }
 
 export function drawCorridor(
