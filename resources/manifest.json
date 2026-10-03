@@ -261,7 +261,12 @@
             }
           ]
         }
-      }
+      },
+      "category": "characters",
+      "sourceName": "메이플스토리 월드 리소스 검색",
+      "previewPath": "src/resources/slime/",
+      "originalName": "슬라임",
+      "notes": "캐릭터 모션을 비교하고 게임에 사용할 동작을 고르는 후보."
     },
     {
       "id": "mob/6300000.img",
@@ -635,7 +640,12 @@
             }
           ]
         }
-      }
+      },
+      "category": "characters",
+      "sourceName": "메이플스토리 월드 리소스 검색",
+      "previewPath": "src/resources/yeti/",
+      "originalName": "예티",
+      "notes": "캐릭터 모션을 비교하고 게임에 사용할 동작을 고르는 후보."
     },
     {
       "id": "avatar/adventurer-toben",
@@ -897,7 +907,11 @@
             }
           ]
         }
-      }
+      },
+      "category": "characters",
+      "sourceName": "메이플스토리 월드 리소스 검색",
+      "previewPath": "src/resources/adventurer/",
+      "notes": "일반 귀, 부위 소켓과 zmap을 사용한 로컬 합성. 피격은 alert 자세 + hit 표정. 무기는 미착용."
     },
     {
       "id": "map/261010100",
@@ -915,7 +929,12 @@
         "height": 404
       },
       "composition": "맵 오브젝트 렌더 이미지. 흰색 바탕은 제거하고 벽면을 Canvas로 합성하며 NPC·소리는 포함하지 않는다.",
-      "animations": {}
+      "animations": {},
+      "category": "backgrounds",
+      "sourceName": "MapleDB",
+      "previewPath": "src/resources/corridor/",
+      "originalName": "제뉴미스트 연구소 2층 복도",
+      "notes": "맵 오브젝트 렌더 이미지. 흰색 바탕은 제거하고 벽면을 Canvas로 합성하며 NPC·소리는 포함하지 않는다."
     },
     {
       "id": "map/103000200",
@@ -989,7 +1008,12 @@
         }
       ],
       "composition": "상층 발판과 사다리는 사용하지 않는다. 원본에서 천장·바닥·문·신호등·조명·안내판을 잘라 단층으로 재배치하고 공식 콘크리트 벽 리소스를 합성한다.",
-      "animations": {}
+      "animations": {},
+      "category": "backgrounds",
+      "sourceName": "MapleDB",
+      "previewPath": "src/resources/corridor/?map=subway",
+      "originalName": "커닝시티 지하철 2호선 1구역",
+      "notes": "상층 발판과 사다리는 사용하지 않는다. 원본에서 천장·바닥·문·신호등·조명·안내판을 잘라 단층으로 재배치하고 공식 콘크리트 벽 리소스를 합성한다."
     },
     {
       "id": "map/261020400",
@@ -1060,7 +1084,12 @@
         }
       ],
       "composition": "원본의 상자 발판과 높은 출입구를 제거한다. 문·조명·천장·바닥을 단층으로 재배치하고 공식 배관·제어판 리소스와 Canvas 벽면·빛을 합성한다.",
-      "animations": {}
+      "animations": {},
+      "category": "backgrounds",
+      "sourceName": "MapleDB",
+      "previewPath": "src/resources/corridor/?map=laboratory",
+      "originalName": "알카드노 연구소 C-2",
+      "notes": "원본의 상자 발판과 높은 출입구를 제거한다. 문·조명·천장·바닥을 단층으로 재배치하고 공식 배관·제어판 리소스와 Canvas 벽면·빛을 합성한다."
     },
     {
       "id": "9016aa7209e741eb9c84224289e72f92",
@@ -1092,7 +1121,9 @@
             }
           ]
         }
-      }
+      },
+      "category": "backgrounds",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "71ae59c69ce44c0a88997ac001202aab",
@@ -1124,7 +1155,9 @@
             }
           ]
         }
-      }
+      },
+      "category": "backgrounds",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "55c3ed1d06e047bc92f61ff5182e21cb",
@@ -1156,7 +1189,9 @@
             }
           ]
         }
-      }
+      },
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "7425b854d02c4c049fd4d1f91b93a9ea",
@@ -1188,7 +1223,9 @@
             }
           ]
         }
-      }
+      },
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "a92e6c91f6274e7f9fb9d6c2bb5a0c3c",
@@ -1220,7 +1257,9 @@
             }
           ]
         }
-      }
+      },
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "0f714a9675ed417281fcfe440bc98853",
@@ -1252,7 +1291,9 @@
             }
           ]
         }
-      }
+      },
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "167dea666cdd4d8485010a9d95754a4d",
@@ -1284,7 +1325,9 @@
             }
           ]
         }
-      }
+      },
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "npc/1063018.img",
@@ -1316,7 +1359,10 @@
             }
           ]
         }
-      }
+      },
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색",
+      "originalName": "남겨진 인형"
     },
     {
       "id": "b45e30e4d67449b59f74fa9ef82dd375",
@@ -1348,7 +1394,9 @@
             }
           ]
         }
-      }
+      },
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "cfb02881117747fdb2d428d58d0f900d",
@@ -1380,7 +1428,9 @@
             }
           ]
         }
-      }
+      },
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "50c3b884e0e14298916632fcc6c334ce",
@@ -1412,7 +1462,10 @@
             }
           ]
         }
-      }
+      },
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색",
+      "originalName": "낡은 열쇠"
     },
     {
       "id": "870df55831ce49d088b49232f0f46f72",
@@ -1444,7 +1497,10 @@
             }
           ]
         }
-      }
+      },
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색",
+      "originalName": "쪽지"
     },
     {
       "id": "mob/9100027.img",
@@ -1812,7 +1868,10 @@
             }
           ]
         }
-      }
+      },
+      "category": "characters",
+      "sourceName": "메이플스토리 월드 리소스 검색",
+      "originalName": "유령"
     },
     {
       "id": "a7d5dceee9be4e38bff24543551b7382",
@@ -1926,7 +1985,9 @@
           "animation": "stand",
           "frameIndex": 5
         }
-      ]
+      ],
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "4acff445f9d34b98952c4e0fd9a72db4",
@@ -2000,7 +2061,9 @@
             }
           ]
         }
-      }
+      },
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "e17d0bc664394626b7426cfcb3804920",
@@ -2032,7 +2095,9 @@
             }
           ]
         }
-      }
+      },
+      "category": "props",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "81d249c774714fc3aa2064f452d76fda",
@@ -2053,7 +2118,9 @@
         "sourceDescription": "나무 문이 삐걱거리며 열리고 닫히는 소리",
         "sourceDurationSeconds": 3.6048979591836736,
         "codec": "opus"
-      }
+      },
+      "category": "audio",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "ba4db5a8a11d4c6abddebc60ac1eebfb",
@@ -2074,7 +2141,9 @@
         "sourceDescription": "나무 바닥을 밟는 듯한 짧고 가벼운 발소리",
         "sourceDurationSeconds": 0.626938775510204,
         "codec": "opus"
-      }
+      },
+      "category": "audio",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "171d678023fa4abf87289e83d5e9de88",
@@ -2095,7 +2164,9 @@
         "sourceDescription": "시계 바늘이 일정하게 움직이며 내는 기계적인 째깍거리는 소리",
         "sourceDurationSeconds": 0.8620408163265306,
         "codec": "opus"
-      }
+      },
+      "category": "audio",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     },
     {
       "id": "7292dee607434e18ae21eceaa7bb2dd9",
@@ -2116,7 +2187,9 @@
         "sourceDescription": "나무 문을 세 번 규칙적으로 두드리는 노크 소리",
         "sourceDurationSeconds": 1.7240816326530612,
         "codec": "opus"
-      }
+      },
+      "category": "audio",
+      "sourceName": "메이플스토리 월드 리소스 검색"
     }
   ]
 }
