@@ -11,6 +11,7 @@ export {
   type Scenario,
   type ScenarioSelection,
 } from './anomalies.js';
+import { MotionRewind, type RewindSnapshot } from './rewind.js';
 import { RoomCutter, cutting, type CutSnapshot } from './room-cutter.js';
 import { ceiling, ceilingHeight, roomTurn } from './event-rules.js';
 import { FrameChase, type ChaseSnapshot } from './frame-chase.js';
@@ -47,6 +48,13 @@ export type PlayerSnapshot = {
   readonly flashAvailable: boolean;
   readonly flashRemaining: number;
   readonly motion: Motion;
+  readonly motionElapsed: number;
+};
+
+export type PlayerCapture = {
+  readonly player: PlayerSnapshot;
+  readonly velocityY: number;
+  readonly flashDirection: -1 | 1;
 };
 
 export class Player {
@@ -59,6 +67,29 @@ export class Player {
   private flashRemaining = 0;
   private flashAvailable = true;
   private motion: Motion = 'stand';
+  private motionElapsed = 0;
+
+  captureMotion(): PlayerCapture {
+    return {
+      player: this.snapshot,
+      velocityY: this.velocityY,
+      flashDirection: this.flashDirection,
+    };
+  }
+
+  rewindTo(capture: PlayerCapture): void {
+    const saved = capture.player;
+    this.x = saved.x;
+    this.y = saved.y;
+    this.facing = saved.facing;
+    this.inverted = saved.inverted;
+    this.flashAvailable = saved.flashAvailable;
+    this.flashRemaining = saved.flashRemaining;
+    this.motion = saved.motion;
+    this.motionElapsed = saved.motionElapsed;
+    this.velocityY = capture.velocityY;
+    this.flashDirection = capture.flashDirection;
+  }
 
   dropIn(): void {
     this.y = -65;
@@ -132,8 +163,11 @@ export class Player {
       this.flashAvailable = true;
       this.flashRemaining = 0;
     }
-    this.motion =
+    const motion =
       this.y !== this.floor ? 'jump' : velocityX !== 0 ? 'move' : 'stand';
+    this.motionElapsed =
+      motion === this.motion ? this.motionElapsed + seconds : 0;
+    this.motion = motion;
   }
 
   get snapshot(): PlayerSnapshot {
@@ -146,6 +180,7 @@ export class Player {
       flashAvailable: this.flashAvailable,
       flashRemaining: this.flashRemaining,
       motion: this.motion,
+      motionElapsed: this.motionElapsed,
     };
   }
 }
@@ -157,6 +192,7 @@ export type GameSnapshot = {
   readonly anomaly: AnomalySnapshot;
   readonly chase: ChaseSnapshot;
   readonly cut: CutSnapshot;
+  readonly rewind: RewindSnapshot;
   readonly landingElapsed: number | null;
   readonly scenario: Scenario;
   readonly phase: Phase;
@@ -183,6 +219,7 @@ export class LaboratoryGame {
   private anomaly = new AnomalyMotion();
   private chase = new FrameChase();
   private cutter = new RoomCutter();
+  private rewind = new MotionRewind();
   private landingElapsed: number | null = null;
   private squashElapsed: number | null = null;
   private scenario: Scenario = 'normal';
@@ -212,6 +249,7 @@ export class LaboratoryGame {
     this.anomaly = new AnomalyMotion();
     this.chase = new FrameChase();
     this.cutter = new RoomCutter();
+    this.rewind = new MotionRewind();
     this.landingElapsed = null;
     this.squashElapsed = null;
     this.pipeElapsed = this.failureElapsed = null;
@@ -222,12 +260,12 @@ export class LaboratoryGame {
   }
 
   face(direction: Direction): void {
-    if (this.phase === 'playing')
+    if (this.phase === 'playing' && !this.rewind.snapshot.rewinding)
       this.player.face(this.worldDirection(direction));
   }
 
   jump(direction: Direction): void {
-    if (this.phase === 'playing')
+    if (this.phase === 'playing' && !this.rewind.snapshot.rewinding)
       this.player.jump(this.worldDirection(direction));
   }
 
@@ -297,6 +335,10 @@ export class LaboratoryGame {
       return;
     }
     if (this.phase !== 'playing') return;
+    if (this.rewind.snapshot.rewinding) {
+      this.player.rewindTo(this.rewind.playBackward(seconds));
+      return;
+    }
     const previousPlayer = this.player.snapshot;
     const wasMirrored = this.mirrored;
     this.player.update(seconds, this.worldDirection(direction));
@@ -391,6 +433,10 @@ export class LaboratoryGame {
         return;
       }
     }
+    if (this.scenario === 'time-rewind') {
+      this.rewind.record(seconds, this.player.captureMotion());
+      if (this.rewind.snapshot.rewinding) return;
+    }
     const atBackstageDoor =
       this.scenario === 'folding-stage' &&
       this.anomaly.snapshot.backstageReturning &&
@@ -411,6 +457,7 @@ export class LaboratoryGame {
     this.anomaly = new AnomalyMotion();
     this.chase = new FrameChase();
     this.cutter = new RoomCutter();
+    this.rewind = new MotionRewind();
     this.landingElapsed = null;
     this.squashElapsed = null;
     this.pipeElapsed = null;
@@ -486,6 +533,7 @@ export class LaboratoryGame {
       anomaly: this.anomaly.snapshot,
       chase: this.chase.snapshot,
       cut: this.cutter.snapshot,
+      rewind: this.rewind.snapshot,
       landingElapsed: this.landingElapsed,
       scenario: this.scenario,
       phase: this.phase,

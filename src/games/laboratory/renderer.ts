@@ -6,6 +6,11 @@ import { roomTurn, smooth } from './event-rules.js';
 import { drawInvasionFurniture } from './chamber-renderer.js';
 import { cameraPosition } from './spatial-rules.js';
 import { drawPlayer } from './player-renderer.js';
+import {
+  recordedFrame,
+  drawRewindEchoes,
+  drawRewindScreen,
+} from './rewind-renderer.js';
 import { drawCutRoom } from './cut-renderer.js';
 import { cutImpact } from './room-cutter.js';
 import { pipeShake } from './pipe-cascade.js';
@@ -25,6 +30,8 @@ export function drawGame(
   frame: AnimationFrame,
 ): void {
   const { player } = state;
+  if (state.scenario === 'time-rewind')
+    frame = recordedFrame(assets, player, frame);
   const cameraX = cameraPosition(player.x);
   ctx.fillStyle = state.cut.elapsed === null ? '#0d1719' : '#020305';
   ctx.fillRect(0, 0, viewport.width, viewport.height);
@@ -60,6 +67,7 @@ export function drawGame(
     ctx.fillRect(0, 0, viewport.width, viewport.height);
   }
   drawBlackout(ctx, state);
+  drawRewindScreen(ctx, state);
   if (state.hitElapsed !== null) {
     ctx.fillStyle = `rgb(205 65 45 / ${0.45 * (1 - state.hitElapsed / passage.fadeOut)})`;
     ctx.fillRect(0, 0, viewport.width, viewport.height);
@@ -116,6 +124,7 @@ function drawRoom(
     drawExit(ctx, world.width - 44, '→');
   }
 
+  drawRewindEchoes(ctx, assets, state, frame);
   if (
     state.squashElapsed === null &&
     state.scenario !== 'folding-stage' &&

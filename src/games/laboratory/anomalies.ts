@@ -59,6 +59,12 @@ export const anomalyDetails = {
     cue: '오른쪽으로 진행 · 칼날이 보이면 왼쪽 문까지 플래시점프로 탈출',
     observeX: 1280,
   },
+  'time-rewind': {
+    title: '리와인드',
+    description: '점프와 잔상까지 방금 움직였던 궤적을 거꾸로 되짚었다.',
+    cue: '오른쪽으로 진행하면 첫 되감기 · 이후 조작 2.8초마다 최근 1.6초를 2.5배속 역재생',
+    observeX: 1500,
+  },
   'empty-center': {
     title: '텅 빈 중앙',
     description: '중앙 철문이 통째로 사라졌다.',
