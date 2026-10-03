@@ -87,9 +87,18 @@ class GameScreen {
       { signal },
     );
     window.addEventListener('keydown', this.keyDown, { signal });
-    window.addEventListener('keyup', (event) => this.keys.delete(event.code), {
-      signal,
-    });
+    window.addEventListener(
+      'keyup',
+      (event) => {
+        if (
+          document.activeElement === this.canvas &&
+          (event.code === 'AltLeft' || event.code === 'AltRight')
+        )
+          event.preventDefault();
+        this.keys.delete(event.code);
+      },
+      { signal },
+    );
     window.addEventListener(
       'blur',
       () => {
@@ -149,14 +158,18 @@ class GameScreen {
   }
 
   private readonly keyDown = (event: KeyboardEvent): void => {
-    // 선택 상자·버튼의 방향키와 Space는 브라우저 기본 조작에 맡긴다.
+    // 선택 상자·버튼에 포커스가 있으면 브라우저 기본 조작에 맡긴다.
     if (document.activeElement !== this.canvas) return;
-    if (!['ArrowLeft', 'ArrowRight', 'Space'].includes(event.code)) return;
+    if (
+      !['ArrowLeft', 'ArrowRight', 'AltLeft', 'AltRight'].includes(event.code)
+    )
+      return;
     event.preventDefault();
     if (event.repeat) return;
     this.keys.add(event.code);
     this.game.face(this.direction);
-    if (event.code === 'Space') this.game.jump(this.direction);
+    if (event.code === 'AltLeft' || event.code === 'AltRight')
+      this.game.jump(this.direction);
   };
 
   private bindPointer(id: string, direction: Direction): void {
