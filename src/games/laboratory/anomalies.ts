@@ -67,10 +67,9 @@ export const anomalyDetails = {
   },
   'escaping-exit': {
     title: '도망가는 출구',
-    description:
-      '돌아가려 하자 입구가 피했다. 물러났다가 돌아오는 틈을 잡았다.',
-    cue: '오른쪽 탐색 중 입구가 따라옴 · 왼쪽 문에 접근 · 쉬거나 되돌아오는 문을 플래시점프로 잡기',
-    observeX: 560,
+    description: '오른쪽 문이 달아났다. 돌아가려 하자 왼쪽 문까지 도망갔다.',
+    cue: '오른쪽 문에 접근하면 먼저 도주 · 돌아와 왼쪽 문에 접근 · 연속 플래시점프로 귀로의 문 잡기',
+    observeX: 2010,
   },
   'select-delete': {
     title: '전체 선택 → 삭제',

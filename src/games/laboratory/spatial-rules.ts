@@ -8,13 +8,18 @@ export function cameraPosition(x: number): number {
   return Math.max(0, Math.min(1400, x - 400));
 }
 export function roomCameraPosition(state: GameSnapshot): number {
-  if (state.scenario === 'escaping-exit' && state.exit.revealed)
-    return Math.min(
-      cameraPosition(state.player.x),
-      state.player.x - 360,
-      state.exit.x - 105,
-    );
-  return cameraPosition(state.player.x);
+  const x = state.player.x;
+  if (state.scenario !== 'escaping-exit' || !state.rightExit.revealed)
+    return cameraPosition(x);
+  let camera = x < 360 ? x - 360 : x > 2040 ? x - 640 : cameraPosition(x);
+  // 멀어진 문은 서서히 놓아 주어 반대 출구로 돌아갈 때 카메라가 붙잡히지 않는다.
+  if (state.exit.revealed) {
+    const near = 1 - smooth((Math.abs(x - state.exit.x) - 600) / 300);
+    camera += Math.min(0, state.exit.x - 105 - camera) * near;
+  }
+  const near = 1 - smooth((Math.abs(x - state.rightExit.x) - 600) / 300);
+  camera += Math.max(0, state.rightExit.x - 895 - camera) * near;
+  return camera;
 }
 function smooth(value: number): number {
   const t = Math.max(0, Math.min(1, value));

@@ -129,7 +129,8 @@ export function drawRoom(
   if (state.progress === 8) drawExit(ctx, 780, '→');
   else {
     if (state.scenario !== 'escaping-exit') drawExit(ctx, 44, '←');
-    drawExit(ctx, world.width - 44, '→');
+    if (state.scenario !== 'escaping-exit')
+      drawExit(ctx, world.width - 44, '→');
   }
 
   drawRewindEchoes(ctx, assets, state, frame);
@@ -253,18 +254,23 @@ function drawEscapingExit(
   assets: GameAssets,
   state: GameSnapshot,
 ): void {
-  const door = state.exit;
-  ctx.save();
-  ctx.fillStyle = '#02080970';
-  ctx.beginPath();
-  ctx.ellipse(door.x, world.ground - 2, 92, 8, 0, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.translate(door.x, world.ground - door.bounce);
-  ctx.rotate(door.lean);
-  ctx.drawImage(assets.entryDoor, -83, -200);
-  ctx.translate(-203, -world.ground);
-  drawRoomNumber(ctx, state);
-  ctx.restore();
+  for (const [door, entry] of [
+    [state.exit, true],
+    [state.rightExit, false],
+  ] as const) {
+    ctx.save();
+    ctx.fillStyle = '#02080970';
+    ctx.beginPath();
+    ctx.ellipse(door.x, world.ground - 2, 92, 8, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.translate(door.x, world.ground - door.bounce);
+    ctx.rotate(door.lean);
+    ctx.drawImage(assets.exitDoor, -83, -200);
+    ctx.translate(-203, -world.ground);
+    if (entry) drawRoomNumber(ctx, state);
+    else drawExit(ctx, 316, '→');
+    ctx.restore();
+  }
 }
 
 function drawExit(

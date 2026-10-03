@@ -12,7 +12,7 @@ export function drawIndustrial(
   centralDoorScale = 1,
   entryClearance = false,
   omitCentralDoor = false,
-  omitEntryDoor = false,
+  omitExitDoors = false,
 ): void {
   const subway = kind === 'subway';
   const width = 2400;
@@ -97,7 +97,10 @@ export function drawIndustrial(
     }
     for (const x of [760, 1820]) sprite('machine', x, 167, 92, 167);
     for (const x of [120, 1080, 2160]) {
-      if ((omitCentralDoor && x === 1080) || (omitEntryDoor && x === 120))
+      if (
+        (omitCentralDoor && x === 1080) ||
+        (omitExitDoors && (x === 120 || x === 2160))
+      )
         continue;
       const scale = x === 1080 ? centralDoorScale : 1;
       part(

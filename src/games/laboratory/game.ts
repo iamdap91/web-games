@@ -156,17 +156,19 @@ export class Player {
     }
   }
 
-  update(seconds: number, direction: Direction, minimum = 24): void {
+  update(
+    seconds: number,
+    direction: Direction,
+    minimum = 24,
+    maximum = world.width - 24,
+  ): void {
     if (direction !== 0) this.facing = direction;
     const flashing = this.flashRemaining > 0;
     const velocityX = flashing
       ? this.flashDirection * movement.flashSpeed
       : direction * movement.speed;
     this.flashRemaining = Math.max(0, this.flashRemaining - seconds);
-    this.x = Math.max(
-      minimum,
-      Math.min(world.width - 24, this.x + velocityX * seconds),
-    );
+    this.x = Math.max(minimum, Math.min(maximum, this.x + velocityX * seconds));
     this.velocityY += movement.gravity * seconds * (this.inverted ? -1 : 1);
     this.y += this.velocityY * seconds;
     if (this.inverted ? this.y <= this.floor : this.y >= this.floor) {
@@ -206,6 +208,7 @@ export type GameSnapshot = {
   readonly cut: CutSnapshot;
   readonly rewind: RewindSnapshot;
   readonly exit: EscapingExitSnapshot;
+  readonly rightExit: EscapingExitSnapshot;
   readonly selection: SelectionSnapshot;
   readonly wheel: WheelSnapshot;
   readonly landingElapsed: number | null;
@@ -236,6 +239,7 @@ export class LaboratoryGame {
   private cutter = new RoomCutter();
   private rewind = new MotionRewind();
   private exit = new EscapingExit();
+  private rightExit = new EscapingExit(1);
   private screenSelection = new ScreenSelection();
   private wheel = new LoadingWheel();
   private landingElapsed: number | null = null;
@@ -269,6 +273,7 @@ export class LaboratoryGame {
     this.cutter = new RoomCutter();
     this.rewind = new MotionRewind();
     this.exit = new EscapingExit();
+    this.rightExit = new EscapingExit(1);
     this.screenSelection = new ScreenSelection();
     this.wheel = new LoadingWheel();
     this.landingElapsed = null;
@@ -389,6 +394,9 @@ export class LaboratoryGame {
       seconds,
       this.worldDirection(direction),
       this.scenario === 'escaping-exit' ? Number.NEGATIVE_INFINITY : 24,
+      this.scenario === 'escaping-exit'
+        ? Number.POSITIVE_INFINITY
+        : world.width - 24,
     );
     let { x } = this.player.snapshot;
     if (this.progress === 8) {
@@ -483,10 +491,18 @@ export class LaboratoryGame {
       }
     }
     if (this.scenario === 'escaping-exit') {
-      this.exit.update(seconds, this.player.snapshot, previousPlayer);
-      if (this.exit.snapshot.revealed) this.encountered.add('escaping-exit');
+      this.rightExit.update(seconds, this.player.snapshot, previousPlayer);
+      if (this.rightExit.snapshot.revealed) {
+        this.encountered.add('escaping-exit');
+        // 오른쪽 문이 이상을 드러낸 뒤에만 귀로의 문을 깨운다.
+        this.exit.update(seconds, this.player.snapshot, previousPlayer);
+      }
       if (this.exit.snapshot.phase === 'caught') {
         this.leave('left');
+        return;
+      }
+      if (this.rightExit.snapshot.phase === 'caught') {
+        this.leave('right');
         return;
       }
     }
@@ -517,10 +533,17 @@ export class LaboratoryGame {
       this.scenario === 'folding-stage' &&
       this.anomaly.snapshot.backstageReturning &&
       x <= 250;
-    if (atBackstageDoor || (x <= 55 && this.scenario !== 'escaping-exit'))
+    if (
+      atBackstageDoor ||
+      (x <= 55 &&
+        !(
+          this.scenario === 'escaping-exit' && this.rightExit.snapshot.revealed
+        ))
+    )
       this.leave('left');
     else if (
       x >= world.width - 55 &&
+      this.scenario !== 'escaping-exit' &&
       !(
         this.scenario === 'frame-escape' &&
         this.anomaly.snapshot.activeElapsed !== null
@@ -536,6 +559,7 @@ export class LaboratoryGame {
     this.cutter = new RoomCutter();
     this.rewind = new MotionRewind();
     this.exit = new EscapingExit();
+    this.rightExit = new EscapingExit(1);
     this.screenSelection = new ScreenSelection();
     this.wheel = new LoadingWheel();
     this.landingElapsed = null;
@@ -615,6 +639,7 @@ export class LaboratoryGame {
       cut: this.cutter.snapshot,
       rewind: this.rewind.snapshot,
       exit: this.exit.snapshot,
+      rightExit: this.rightExit.snapshot,
       selection: this.screenSelection.snapshot,
       wheel: this.wheel.snapshot,
       landingElapsed: this.landingElapsed,

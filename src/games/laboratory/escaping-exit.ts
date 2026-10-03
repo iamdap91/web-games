@@ -1,7 +1,8 @@
 import type { PlayerSnapshot } from './game.js';
 
 export const escapingExit = {
-  home: 203,
+  left: 203,
+  right: 2243,
 } as const;
 type ExitPhase =
   'idle' | 'startled' | 'fleeing' | 'resting' | 'returning' | 'caught';
@@ -16,16 +17,24 @@ export type EscapingExitSnapshot = {
 };
 
 export class EscapingExit {
-  private x: number = escapingExit.home;
+  private x: number = escapingExit.left;
   private phase: ExitPhase = 'idle';
   private elapsed = 0;
   private attempts = 0;
-  private home: number = escapingExit.home;
-  private from: number = escapingExit.home;
-  private target: number = escapingExit.home;
+  private home: number = escapingExit.left;
+  private from: number = escapingExit.left;
+  private target: number = escapingExit.left;
   private retreat = 0;
   private lean = 0;
   private revealed = false;
+
+  constructor(private readonly outward: -1 | 1 = -1) {
+    this.x =
+      this.home =
+      this.from =
+      this.target =
+        outward === -1 ? escapingExit.left : escapingExit.right;
+  }
 
   update(
     seconds: number,
@@ -35,12 +44,9 @@ export class EscapingExit {
     if (this.phase === 'caught') return;
     this.elapsed += seconds;
     const before = this.x;
-    const approaching = player.x < previous.x;
-    const distance = player.x - this.x;
+    const approaching = (player.x - previous.x) * this.outward > 0;
+    const distance = (this.x - player.x) * this.outward;
     if (this.phase === 'idle') {
-      // 오른쪽을 탐색할 때도 시야 가장자리에서 움직이는 입구를 발견할 수 있다.
-      if (player.x >= 560 && player.facing === 1)
-        this.x += Math.max(0, Math.min(player.x - 310 - this.x, 700 * seconds));
       if (approaching && distance < 235) this.startle();
     } else if (this.phase === 'startled') {
       if (this.elapsed >= 0.035) this.changePhase('fleeing');
@@ -53,7 +59,7 @@ export class EscapingExit {
     } else if (this.phase === 'resting') {
       this.retreat = approaching
         ? 0
-        : this.retreat + Math.max(0, player.x - previous.x);
+        : this.retreat + Math.max(0, (previous.x - player.x) * this.outward);
       if (this.retreat >= 48) {
         this.from = this.x;
         this.changePhase('returning');
@@ -66,14 +72,14 @@ export class EscapingExit {
     } else if (this.phase === 'returning') {
       // 돌아오기 시작한 문은 접근만으로 취소하지 않아 페인트에 확실한 기회를 준다.
       if (this.elapsed > 0.18)
-        this.x = Math.min(this.home, this.x + 190 * seconds);
+        this.x -=
+          this.outward * Math.min(Math.abs(this.home - this.x), 190 * seconds);
       if (this.x === this.home) this.changePhase('resting');
     }
     const speed = (this.x - before) / Math.max(seconds, 0.001);
     const targetLean = Math.max(-0.075, Math.min(0.075, -speed * 0.00015));
     this.lean += (targetLean - this.lean) * Math.min(1, seconds * 14);
-    if (Math.abs(this.x - escapingExit.home) > 2 || this.attempts > 0)
-      this.revealed = true;
+    if (this.attempts > 0) this.revealed = true;
     // 플래시점프로 한 틱에 문을 넘어도 상대 이동 구간으로 접촉을 판정한다.
     const oldDistance = previous.x - before;
     const newDistance = player.x - this.x;
@@ -88,7 +94,7 @@ export class EscapingExit {
   private startle(): void {
     this.attempts++;
     this.home = this.from = this.x;
-    this.target = this.x - (this.attempts === 1 ? 440 : 340);
+    this.target = this.x + this.outward * (this.attempts === 1 ? 440 : 340);
     this.retreat = 0;
     this.changePhase('startled');
   }
@@ -110,7 +116,7 @@ export class EscapingExit {
       elapsed: this.elapsed,
       attempts: this.attempts,
       revealed: this.revealed,
-      lean: this.lean + startled * 0.025,
+      lean: this.lean - this.outward * startled * 0.025,
       bounce:
         this.phase === 'fleeing'
           ? Math.abs(Math.sin(this.elapsed * 32)) * 4
