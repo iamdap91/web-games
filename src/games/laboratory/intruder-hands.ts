@@ -2,7 +2,7 @@ import type { GameSnapshot } from './game.js';
 import { intruderDoor, intruderTiming, type Point } from './door-intruder.js';
 import { smooth } from './event-rules.js';
 
-type Finger = readonly [Point, Point, Point, Point];
+export type Finger = readonly [Point, Point, Point, Point];
 type FingerColors = {
   readonly edge: string;
   readonly shade: string;
@@ -145,15 +145,10 @@ export function drawPeekingFingers(
   ctx.restore();
 }
 
-export function drawIntruderHand(
-  ctx: CanvasRenderingContext2D,
-  point: Point,
-  angle: number,
-  closed: boolean | number,
-): void {
-  ctx.save();
-  ctx.translate(point.x, point.y);
-  ctx.rotate(angle);
+export function intruderHandPose(closed: boolean | number): {
+  readonly fingers: readonly Finger[];
+  readonly thumb: Finger;
+} {
   const curl = typeof closed === 'boolean' ? Number(closed) : smooth(closed);
   const bent: readonly Finger[] = [
     [
@@ -215,6 +210,31 @@ export function drawIntruderHand(
     return [joint(0), joint(1), joint(2), joint(3)];
   };
   const fingers = spread.map((finger, index) => bend(finger, bent[index]!));
+  const bentThumb: Finger = [
+    { x: -18, y: 8 },
+    { x: -31, y: 0 },
+    { x: -27, y: -14 },
+    { x: -10, y: -13 },
+  ];
+  const spreadThumb: Finger = [
+    { x: -18, y: 8 },
+    { x: -31, y: 1 },
+    { x: -42, y: -7 },
+    { x: -44, y: -20 },
+  ];
+  return { fingers, thumb: bend(spreadThumb, bentThumb) };
+}
+
+export function drawIntruderHand(
+  ctx: CanvasRenderingContext2D,
+  point: Point,
+  angle: number,
+  closed: boolean | number,
+): void {
+  ctx.save();
+  ctx.translate(point.x, point.y);
+  ctx.rotate(angle);
+  const { fingers, thumb } = intruderHandPose(closed);
   for (const [index, finger] of fingers.entries())
     drawFinger(ctx, finger, [5.2, 5.8, 5.1, 4.1][index]!, exposed);
   const palm = ctx.createLinearGradient(-22, -17, 17, 21);
@@ -246,18 +266,6 @@ export function drawIntruderHand(
     ctx.quadraticCurveTo(root.x * 0.7, 0, root.x * 0.25, 15);
     ctx.stroke();
   }
-  const bentThumb: Finger = [
-    { x: -18, y: 8 },
-    { x: -31, y: 0 },
-    { x: -27, y: -14 },
-    { x: -10, y: -13 },
-  ];
-  const spreadThumb: Finger = [
-    { x: -18, y: 8 },
-    { x: -31, y: 1 },
-    { x: -42, y: -7 },
-    { x: -44, y: -20 },
-  ];
-  drawFinger(ctx, bend(spreadThumb, bentThumb), 6.1, exposed);
+  drawFinger(ctx, thumb, 6.1, exposed);
   ctx.restore();
 }
