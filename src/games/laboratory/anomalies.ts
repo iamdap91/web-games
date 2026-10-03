@@ -86,9 +86,9 @@ export const anomalyDetails = {
   },
   'loading-wheel': {
     title: '로딩 중',
-    description: '로딩 원에 휘말려 튕겨 나온 뒤 굴러오는 원을 피해 달렸다.',
-    cue: '커지는 로딩 원에 접근 · 회전 후 왼쪽으로 튕겨 나오면 플래시점프로 탈출',
-    observeX: 970,
+    description: '끝나지 않는 로딩 표시가 방과 몸을 빨아들이기 시작했다.',
+    cue: '입장 즉시 로딩 표시 · 3.2초 뒤 흡수 시작 · 왼쪽으로 탈출, 빨려들면 0번 방',
+    observeX: 0,
   },
   'empty-center': {
     title: '텅 빈 중앙',

@@ -1,3 +1,4 @@
+import { LoadingOverlay } from './loading-overlay.js';
 import { PageSpace } from './page-space.js';
 import { WebSpace } from './web-space.js';
 import { anomalies, anomalyDetails } from './anomalies.js';
@@ -49,6 +50,7 @@ class GameScreen {
   private animation: AnimationPlayer | null = null;
   private webSpace: WebSpace | null = null;
   private pageSpace: PageSpace | null = null;
+  private loadingOverlay: LoadingOverlay | null = null;
   private motion: Motion = 'stand';
   private requestId = 0;
   private previousTime = 0;
@@ -71,6 +73,7 @@ class GameScreen {
     this.animation = new AnimationPlayer(this.assets.animations, 'stand');
     this.webSpace = new WebSpace(this.canvas, this.assets);
     this.pageSpace = new PageSpace(this.canvas, this.assets);
+    this.loadingOverlay = new LoadingOverlay(this.canvas, this.assets);
     element('developer', HTMLElement).hidden = !this.developer;
     this.selection.disabled =
       this.replayButton.disabled =
@@ -177,6 +180,11 @@ class GameScreen {
         this.game.snapshot,
         this.animation.currentFrame.frame,
       );
+    if (this.animation)
+      this.loadingOverlay?.render(
+        this.game.snapshot,
+        this.animation.currentFrame.frame,
+      );
     this.updateInterface();
     this.requestId = requestAnimationFrame(this.tick);
   }
@@ -185,6 +193,7 @@ class GameScreen {
     this.events.abort();
     this.webSpace?.destroy();
     this.pageSpace?.destroy();
+    this.loadingOverlay?.destroy();
     this.observer.disconnect();
     cancelAnimationFrame(this.requestId);
     this.clearInput();
@@ -274,6 +283,7 @@ class GameScreen {
     this.context.imageSmoothingEnabled = false;
     this.webSpace?.resize(bounds.width, devicePixelRatio);
     this.pageSpace?.resize(bounds.width, devicePixelRatio);
+    this.loadingOverlay?.resize(bounds.width, devicePixelRatio);
   }
 
   private readonly tick = (now: number): void => {
@@ -310,6 +320,11 @@ class GameScreen {
       );
     if (this.animation)
       this.pageSpace?.render(
+        this.game.snapshot,
+        this.animation.currentFrame.frame,
+      );
+    if (this.animation)
+      this.loadingOverlay?.render(
         this.game.snapshot,
         this.animation.currentFrame.frame,
       );

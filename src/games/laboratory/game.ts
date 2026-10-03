@@ -99,20 +99,8 @@ export class Player {
     this.flashDirection = capture.flashDirection;
   }
 
-  rideWheel(x: number, y: number): void {
-    this.x = x;
-    this.y = y;
-    this.velocityY = 0;
-    this.flashRemaining = 0;
-    this.motion = 'jump';
-  }
-
-  launchFromWheel(): void {
-    this.velocityY = -240;
-    this.facing = this.flashDirection = -1;
-    this.flashRemaining = 0.32;
-    this.flashAvailable = true;
-    this.motion = 'jump';
+  pullToward(x: number, distance: number): void {
+    this.x += Math.sign(x - this.x) * Math.min(Math.abs(x - this.x), distance);
   }
 
   dropIn(): void {
@@ -296,7 +284,6 @@ export class LaboratoryGame {
     if (
       this.phase === 'playing' &&
       !this.rewind.snapshot.rewinding &&
-      this.wheel.snapshot.phase !== 'spinning' &&
       this.wheel.snapshot.phase !== 'caught'
     )
       this.player.face(this.worldDirection(direction));
@@ -306,7 +293,6 @@ export class LaboratoryGame {
     if (
       this.phase === 'playing' &&
       !this.rewind.snapshot.rewinding &&
-      this.wheel.snapshot.phase !== 'spinning' &&
       this.wheel.snapshot.phase !== 'caught'
     )
       this.player.jump(this.worldDirection(direction));
@@ -387,14 +373,10 @@ export class LaboratoryGame {
       return;
     }
     if (this.phase !== 'playing') return;
-    const wheelPhase = this.wheel.snapshot.phase;
-    if (wheelPhase === 'spinning' || wheelPhase === 'caught') {
+    if (this.wheel.snapshot.phase === 'caught') {
       this.wheel.update(seconds, this.player.snapshot);
-      const wheel = this.wheel.snapshot;
-      if (wheel.passenger)
-        this.player.rideWheel(wheel.passenger.x, wheel.passenger.y);
-      else if (wheelPhase === 'spinning') this.player.launchFromWheel();
-      else if (wheel.elapsed >= 0.75) this.startTransition(0, true, false);
+      if ((this.wheel.snapshot.caughtElapsed ?? 0) >= loading.disappear)
+        this.startTransition(0, true, false);
       return;
     }
     if (this.rewind.snapshot.rewinding) {
@@ -404,7 +386,7 @@ export class LaboratoryGame {
     const previousPlayer = this.player.snapshot;
     const wasMirrored = this.mirrored;
     this.player.update(seconds, this.worldDirection(direction));
-    const { x } = this.player.snapshot;
+    let { x } = this.player.snapshot;
     if (this.progress === 8) {
       if (x >= exitLight.finish) this.leave('right');
       return;
@@ -506,14 +488,13 @@ export class LaboratoryGame {
     if (this.scenario === 'loading-wheel') {
       this.wheel.update(seconds, this.player.snapshot);
       const wheel = this.wheel.snapshot;
-      if (wheel.passenger) {
-        this.player.rideWheel(wheel.passenger.x, wheel.passenger.y);
-        return;
-      }
       if (wheel.phase === 'caught') return;
-      if (wheel.phase === 'chasing' && x <= loading.exit) {
-        this.leave('left');
-        return;
+      if (wheel.phase === 'pulling') {
+        this.player.pullToward(
+          wheel.x,
+          loading.force * wheel.strength * seconds,
+        );
+        x = this.player.snapshot.x;
       }
     }
     if (this.scenario === 'time-rewind') {
