@@ -178,7 +178,7 @@ export class LaboratoryGame {
     else {
       const roll = this.random();
       this.scenario =
-        roll < 0.5 ? 'normal' : roll < 0.75 ? 'giant-door' : 'falling-pipe';
+        roll < 0.3 ? 'normal' : roll < 0.65 ? 'giant-door' : 'falling-pipe';
     }
   }
 
