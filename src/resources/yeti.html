@@ -6,33 +6,29 @@
     <meta name="theme-color" content="#173c32" />
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="./style.css" />
-    <title>모험가 · 캔버스 프로토타입</title>
+    <title>예티 · 리소스 뷰어</title>
   </head>
   <body>
     <main>
       <nav aria-label="캐릭터 선택">
-        <a href="./yeti.html">예티</a><a href="./slime.html">슬라임</a
-        ><a href="./adventurer.html" aria-current="page">모험가</a>
+        <a href="./yeti.html" aria-current="page">예티</a
+        ><a href="./slime.html">슬라임</a><a href="./adventurer.html">모험가</a>
       </nav>
       <header>
         <div>
-          <p class="eyebrow">WEB GAMES / ADVENTURER</p>
-          <h1>모험가의 작은 숲</h1>
-          <p class="intro">
-            검은색 토벤머리, 하얀 반팔 면티, 파란 청 반바지와 빨간색 장화.
-          </p>
+          <p class="eyebrow">WEB GAMES / YETI</p>
+          <h1>예티의 작은 숲</h1>
+          <p class="intro">커다란 예티의 대기·이동·공격 모션을 살펴보세요.</p>
         </div>
         <span class="badge">로컬 리소스</span>
       </header>
       <section class="stage" aria-label="리소스 미리보기">
-        <div class="stage-top">
-          <span>작은 숲</span><span>모험가 모션</span>
-        </div>
+        <div class="stage-top"><span>작은 숲</span><span>예티 모션</span></div>
         <canvas
           id="scene"
           width="960"
           height="480"
-          aria-label="숲속 발판 위 모험가의 모션"
+          aria-label="숲속 발판 위 예티의 모션"
           >캔버스를 지원하는 브라우저에서 확인해주세요.</canvas
         >
         <p id="status" role="status">로컬 이미지를 불러오는 중…</p>
@@ -40,22 +36,19 @@
       <section class="controls" aria-label="모션 설정">
         <label
           >모션
-          <select id="motion" disabled aria-label="모험가 모션"></select>
+          <select id="motion" disabled aria-label="예티 모션"></select>
           <output id="frame">—</output>
         </label>
         <button id="toggle" type="button" disabled>일시정지</button>
       </section>
       <footer>
-        <p>
-          부위 데이터의 프레임 시간을 사용해요. 공격은 맨손, 피격은 경계 자세와
-          피격 표정의 조합이에요.
-        </p>
+        <p>모션은 임시 속도인 프레임당 140ms로 반복 재생해요.</p>
         <p>
           현재는 리소스 미리보기예요. 이동·점프·공격 조작은 다음 단계에서
           추가합니다.
         </p>
       </footer>
     </main>
-    <script type="module" src="../../dist/src/prototype/adventurer.js"></script>
+    <script type="module" src="../../dist/src/resources/yeti.js"></script>
   </body>
 </html>

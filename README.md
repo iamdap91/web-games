@@ -65,16 +65,16 @@ npm run check
 
 [typescript-eslint 권장 설정](https://typescript-eslint.io/getting-started/)을 사용하고, [Prettier 설치 지침](https://prettier.io/docs/install)에 따라 버전을 고정한다. `eslint-config-prettier`로 포맷 관련 린트 충돌을 방지한다. 다운로드한 리소스와 생성물은 검사·포맷에서 제외한다.
 
-## 캔버스 미리보기 실행
+## 리소스 뷰어 실행
 
 ```sh
 npm ci
 npm run dev
 ```
 
-[캔버스 미리보기](http://127.0.0.1:8000/src/prototype/)에서 캐릭터별 화면으로 이동할 수 있다. `yeti.html`, `slime.html`, `adventurer.html`에서 각각 모션을 선택하고 일시정지할 수 있다. 다운로드한 로컬 이미지가 필요하다. 아직 이동·점프·공격 입력은 구현하지 않았다.
+[리소스 뷰어](http://127.0.0.1:8000/src/resources/)에서 캐릭터별 화면으로 이동할 수 있다. `yeti.html`, `slime.html`, `adventurer.html`에서 각각 모션을 선택하고 일시정지할 수 있다. 다운로드한 로컬 이미지가 필요하다. 아직 이동·점프·공격 입력은 구현하지 않았다.
 
-- `src/prototype/`: 캐릭터별 HTML·TypeScript 진입점과 공통 `preview.ts`·`style.css`
+- `src/resources/`: 캐릭터별 HTML·TypeScript 진입점과 공통 `preview.ts`·`style.css`
 - `npm run build`: TypeScript를 `dist/`에 컴파일
 - `npm run typecheck`: `strict` 타입 검사
 - 추가 개발 서버 패키지 없이 Python 3 기본 HTTP 서버를 사용한다. 소스 수정 후 `npm run build`와 브라우저 새로고침이 필요하다.
