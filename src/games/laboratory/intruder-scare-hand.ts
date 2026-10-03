@@ -23,7 +23,7 @@ export type ScareHand = {
   readonly center: Point;
   readonly surfaces: readonly Surface[];
   readonly wrist: Point;
-  readonly wristWidth: number;
+  readonly wristEdges: readonly [Point, Point];
 };
 
 // 선의 가상 깊이를 통과한 표면만 앞에 그려 가림과 원근이 같은 기준을 쓰게 한다.
@@ -118,8 +118,8 @@ export function createScareHand(pose: ScareHandPose): ScareHand {
   );
   surfaces.push(...fingerSurfaces(shape.thumb, 6.1, pose.curl));
   const contour: readonly Point[] = [
-    { x: -10, y: 21 },
-    { x: -13, y: 11 },
+    { x: -14, y: 21 },
+    { x: -16, y: 11 },
     { x: -21, y: 6 },
     { x: -24, y: 0 },
     { x: -22, y: -10 },
@@ -129,8 +129,8 @@ export function createScareHand(pose: ScareHandPose): ScareHand {
     { x: 20, y: -12 },
     { x: 23, y: -3 },
     { x: 19, y: 6 },
-    { x: 13, y: 14 },
-    { x: 10, y: 21 },
+    { x: 16, y: 14 },
+    { x: 14, y: 21 },
   ];
   surfaces.push({
     vertices: contour.map((point) => ({ ...point, z: 2 })),
@@ -177,13 +177,14 @@ export function createScareHand(pose: ScareHandPose): ScareHand {
     surface.vertices.reduce((sum, vertex) => sum + vertex.z, 0) /
     surface.vertices.length;
   projected.sort((a, b) => averageDepth(a) - averageDepth(b));
-  const wrist = project(transform({ x: 0, y: 21, z: 0 }), pose.center);
-  const edge = project(transform({ x: 10, y: 21, z: 0 }), pose.center);
+  // 손목 윤곽과 팔의 접점을 같은 꼭짓점으로 계산해 사선에서도 틈이 벌어지지 않게 한다.
+  const left = project(transform({ x: -14, y: 21, z: 2 }), pose.center);
+  const right = project(transform({ x: 14, y: 21, z: 2 }), pose.center);
   return {
     surfaces: projected,
     center: pose.center,
-    wrist,
-    wristWidth: Math.hypot(edge.x - wrist.x, edge.y - wrist.y),
+    wrist: { x: (left.x + right.x) / 2, y: (left.y + right.y) / 2 },
+    wristEdges: [left, right],
   };
 }
 

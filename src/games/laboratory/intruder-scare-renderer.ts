@@ -19,29 +19,98 @@ function drawReachingArm(
   hand: ScareHand,
 ): void {
   const wrist = hand.wrist;
-  const width = hand.wristWidth;
-  const middleY = (origin.y + wrist.y) / 2 + 25;
+  const [edgeA, edgeB] = hand.wristEdges;
+  const dx = wrist.x - origin.x;
+  const dy = wrist.y - origin.y;
+  const length = Math.max(1, Math.hypot(dx, dy));
+  const width = Math.max(
+    1,
+    Math.hypot(edgeB.x - edgeA.x, edgeB.y - edgeA.y) / 2,
+  );
+  const across = {
+    x: (edgeB.x - edgeA.x) / (width * 2),
+    y: (edgeB.y - edgeA.y) / (width * 2),
+  };
+  // 손목 방향에 접선을 맞추고 팔 곡선의 수직 방향으로 두께를 유지한다.
+  const turn = -across.y * dx + across.x * dy >= 0 ? 1 : -1;
+  const tangent = { x: -across.y * turn, y: across.x * turn };
+  const bend = Math.min(72, length * 0.28);
+  const controlA = {
+    x: origin.x + dx * 0.35,
+    y: origin.y + dy * 0.35 + Math.min(20, length * 0.08),
+  };
+  const controlB = {
+    x: wrist.x - tangent.x * bend,
+    y: wrist.y - tangent.y * bend,
+  };
+  const near: Point[] = [];
+  const far: Point[] = [];
+  const rootWidth = Math.max(10, Math.min(18, width * 0.6));
+  const muscle = Math.min(28, Math.max(12, length * 0.07));
+  const orientation = -turn;
+  for (let i = 0; i <= 20; i++) {
+    const t = i / 20;
+    const u = 1 - t;
+    const center = {
+      x:
+        u ** 3 * origin.x +
+        3 * u * u * t * controlA.x +
+        3 * u * t * t * controlB.x +
+        t ** 3 * wrist.x,
+      y:
+        u ** 3 * origin.y +
+        3 * u * u * t * controlA.y +
+        3 * u * t * t * controlB.y +
+        t ** 3 * wrist.y,
+    };
+    const velocity = {
+      x:
+        3 * u * u * (controlA.x - origin.x) +
+        6 * u * t * (controlB.x - controlA.x) +
+        3 * t * t * (wrist.x - controlB.x),
+      y:
+        3 * u * u * (controlA.y - origin.y) +
+        6 * u * t * (controlB.y - controlA.y) +
+        3 * t * t * (wrist.y - controlB.y),
+    };
+    const speed = Math.hypot(velocity.x, velocity.y);
+    const normal =
+      speed > 0.001
+        ? {
+            x: (-velocity.y / speed) * orientation,
+            y: (velocity.x / speed) * orientation,
+          }
+        : across;
+    const radius =
+      rootWidth +
+      (width - rootWidth) * smooth(t) +
+      Math.sin(Math.PI * t) * muscle;
+    near.push({
+      x: center.x + normal.x * radius,
+      y: center.y + normal.y * radius,
+    });
+    far.push({
+      x: center.x - normal.x * radius,
+      y: center.y - normal.y * radius,
+    });
+  }
+  // 손바닥 윤곽의 실제 양 끝까지 이어 붙인다.
+  near[20] = edgeB;
+  far[20] = edgeA;
   ctx.beginPath();
-  ctx.moveTo(origin.x - 7, origin.y);
-  ctx.bezierCurveTo(
-    origin.x - 20,
-    middleY,
-    wrist.x - width * 0.7,
-    wrist.y + width,
-    wrist.x - width,
-    wrist.y,
-  );
-  ctx.lineTo(wrist.x + width, wrist.y);
-  ctx.bezierCurveTo(
-    wrist.x + width * 0.7,
-    wrist.y + width,
-    origin.x + 20,
-    middleY,
-    origin.x + 7,
-    origin.y,
-  );
+  ctx.moveTo(near[0]!.x, near[0]!.y);
+  for (const point of near.slice(1)) ctx.lineTo(point.x, point.y);
+  for (const point of far.reverse()) ctx.lineTo(point.x, point.y);
   ctx.closePath();
-  const skin = ctx.createLinearGradient(wrist.x - width, 0, wrist.x + width, 0);
+  const middle = { x: (origin.x + wrist.x) / 2, y: (origin.y + wrist.y) / 2 };
+  const normal = { x: -dy / length, y: dx / length };
+  const thickness = (rootWidth + width) / 2 + muscle;
+  const skin = ctx.createLinearGradient(
+    middle.x - normal.x * thickness,
+    middle.y - normal.y * thickness,
+    middle.x + normal.x * thickness,
+    middle.y + normal.y * thickness,
+  );
   skin.addColorStop(0, '#253a2e');
   skin.addColorStop(0.3, '#89947b');
   skin.addColorStop(0.6, '#526a52');
@@ -129,7 +198,7 @@ export function drawIntruderScare(
     pitch: prepare * 0.62 + crossing * 0.17 + lunge * 0.1,
     yaw: -direction * facing * prepare * 0.45 * (1 - crossing * 0.7),
     depth: -220 + crossing * 460 + lunge * 165,
-    wristLag: crossing * 150 + lunge * 90,
+    wristLag: crossing * 85 + lunge * 55,
     curl: 1 - prepare * 0.98 + smooth(lunge) * 0.68,
     facing,
     size: 1.42,
