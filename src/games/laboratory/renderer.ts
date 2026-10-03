@@ -85,34 +85,6 @@ export function drawGame(
   shade.addColorStop(1, state.progress === 8 ? '#35231330' : '#030a0c80');
   ctx.fillStyle = shade;
   ctx.fillRect(0, 0, viewport.width, viewport.height);
-  if (
-    state.scenario === 'mirrored-lab' &&
-    state.anomaly.mirrorElapsed !== null
-  ) {
-    const time = state.anomaly.mirrorElapsed;
-    const opacity =
-      smooth((time - 1.65) / 0.5) * (1 - smooth((time - 6.5) / 1));
-    ctx.save();
-    ctx.globalAlpha = opacity;
-    const darkness = ctx.createRadialGradient(500, 211, 110, 500, 211, 430);
-    darkness.addColorStop(0, '#080307ed');
-    darkness.addColorStop(0.6, '#080307ac');
-    darkness.addColorStop(1, '#08030700');
-    ctx.fillStyle = darkness;
-    ctx.fillRect(0, 55, 1000, 315);
-    ctx.font = '700 44px "AppleMyungjo", "Noto Serif KR", serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.lineJoin = 'round';
-    ctx.lineWidth = 5;
-    ctx.strokeStyle = '#18070bdd';
-    ctx.strokeText('이제 어느 방향으로 갈래?', 500, 211);
-    ctx.shadowColor = '#9e303a';
-    ctx.shadowBlur = 12;
-    ctx.fillStyle = '#f1ddd0';
-    ctx.fillText('이제 어느 방향으로 갈래?', 500, 211);
-    ctx.restore();
-  }
   if (state.progress === 8) {
     ctx.save();
     ctx.translate(-cameraX, 0);

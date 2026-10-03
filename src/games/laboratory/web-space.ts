@@ -2,6 +2,7 @@ import type { AnimationFrame } from '../../resources/preview/animation-player.js
 import { getContext, type GameAssets } from './assets.js';
 import { passage, world, type GameSnapshot } from './game.js';
 import { pipes, pipeShape } from './pipe-cascade.js';
+import { smooth } from './event-rules.js';
 import { pursuit } from './frame-chase.js';
 import { drawPlayer } from './player-renderer.js';
 import {
@@ -16,6 +17,7 @@ import {
 // 입력과 물리는 원래 게임에 두고, 페이지 경계와 3D 평면의 표시만 소유한다.
 export class WebSpace {
   private readonly root = document.createElement('div');
+  private readonly taunt = document.createElement('div');
   private readonly escapeLayer = document.createElement('canvas');
   private readonly fallLayer = document.createElement('canvas');
   private readonly rim = document.createElement('div');
@@ -32,6 +34,20 @@ export class WebSpace {
     this.root.className = 'web-space';
     this.root.setAttribute('aria-hidden', 'true');
     this.root.hidden = true;
+    this.taunt.className = 'mirror-taunt';
+    this.taunt.hidden = true;
+    const tauntText = '이제 어느 방향으로 갈래?';
+    this.taunt.setAttribute('aria-label', tauntText);
+    for (const [index, letter] of [...tauntText].entries()) {
+      const span = document.createElement('span');
+      span.textContent = letter;
+      span.style.setProperty('--letter-delay', `${index * 0.075}s`);
+      span.style.setProperty(
+        '--letter-tilt',
+        `${[-4, 3, -2, 5, -3][index % 5]}deg`,
+      );
+      this.taunt.append(span);
+    }
     this.escapeLayer.className = 'escape-layer';
     this.fallLayer.className = 'page-falling-actor';
     this.fallLayer.setAttribute('aria-hidden', 'true');
@@ -57,7 +73,7 @@ export class WebSpace {
     }
     this.stage.append(this.actor);
     this.perspective.append(this.stage);
-    this.root.append(this.perspective, this.escapeLayer, this.rim);
+    this.root.append(this.perspective, this.escapeLayer, this.rim, this.taunt);
     this.scene.parentElement?.append(this.root);
   }
 
@@ -87,7 +103,21 @@ export class WebSpace {
         state.phase === 'transition');
     const folding =
       state.scenario === 'folding-stage' && state.phase !== 'complete';
-    this.root.hidden = !escape && !folding;
+    const tauntTime = state.anomaly.mirrorElapsed;
+    const taunting =
+      state.scenario === 'mirrored-lab' &&
+      tauntTime !== null &&
+      tauntTime >= 1.65 &&
+      tauntTime < 7.5;
+    this.taunt.hidden = !taunting;
+    if (taunting) {
+      // CSS 모션도 게임 시각에 맞춰 정지·재시작되므로 탭을 떠나도 어긋나지 않는다.
+      this.taunt.style.setProperty('--taunt-time', `${tauntTime - 1.65}s`);
+      this.taunt.style.opacity = String(
+        smooth((tauntTime - 1.65) / 0.5) * (1 - smooth((tauntTime - 6.5) / 1)),
+      );
+    }
+    this.root.hidden = !escape && !folding && !taunting;
     const elapsed = state.transitionElapsed;
     this.root.style.opacity =
       elapsed === null
