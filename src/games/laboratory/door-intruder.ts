@@ -19,18 +19,22 @@ export const intruderTiming = {
 } as const;
 const handAt = intruderTiming.drag + 0.02;
 const poisedAt = handAt + 0.26;
-const crossingAt = poisedAt + 0.5;
-const lungeAt = crossingAt + 0.3;
-const blackoutAt = lungeAt + 0.13 + 0.07;
+const vanishAt = poisedAt + 0.12;
+const vanishedAt = vanishAt + 0.14;
+const lungeAt = vanishedAt + 0.28;
+const impactAt = lungeAt + 0.1;
+const blackoutAt = impactAt + 0.07;
 export const intruderScare = {
   bars: 0.34,
   barStagger: 0.18,
   barReveal: 0.72,
   hand: handAt,
   poised: poisedAt,
-  crossing: crossingAt,
+  vanish: vanishAt,
+  vanished: vanishedAt,
   lunge: lungeAt,
-  lungeDuration: 0.13,
+  lungeDuration: 0.1,
+  impact: impactAt,
   blackout: blackoutAt,
   finish: blackoutAt + 0.26,
 } as const;

@@ -123,17 +123,13 @@ function drawScareLighting(
   ctx: CanvasRenderingContext2D,
   time: number,
   focus: Point,
+  concealment: number,
   width: number,
   height: number,
 ): void {
   const settle = smooth((time - 0.16) / 1.05);
-  const suspense = smooth(
-    (time - intruderScare.poised) /
-      (intruderScare.crossing - intruderScare.poised),
-  );
-  const attack = smooth((time - intruderScare.crossing) / 0.12);
-  const radius = width * (0.78 - settle * 0.36 - suspense * 0.07);
-  // 끌려가는 캐릭터는 남겨두고, 손이 멈추면 주변 조명만 더 좁힌다.
+  const radius = width * (0.78 - settle * 0.36 - concealment * 0.07);
+  // 사라진 손의 자리를 다시 밝히지 않고 어둠에서 전경의 손만 튀어나오게 한다.
   const shade = ctx.createRadialGradient(
     focus.x,
     focus.y,
@@ -142,14 +138,38 @@ function drawScareLighting(
     focus.y,
     radius,
   );
-  shade.addColorStop(
-    0,
-    `rgb(1 7 7 / ${settle * 0.12 + suspense * 0.1 * (1 - attack)})`,
-  );
-  shade.addColorStop(0.38, `rgb(1 7 7 / ${settle * 0.37})`);
-  shade.addColorStop(1, `rgb(1 5 6 / ${settle * 0.88})`);
+  const darkness = (base: number): number => base + (1 - base) * concealment;
+  shade.addColorStop(0, `rgb(1 5 6 / ${darkness(settle * 0.12)})`);
+  shade.addColorStop(0.38, `rgb(1 5 6 / ${darkness(settle * 0.37)})`);
+  shade.addColorStop(1, `rgb(1 5 6 / ${darkness(settle * 0.88)})`);
   ctx.fillStyle = shade;
   ctx.fillRect(0, 0, width, height);
+}
+
+function drawGlimpseShade(
+  ctx: CanvasRenderingContext2D,
+  center: Point,
+  opacity: number,
+  width: number,
+  height: number,
+): void {
+  ctx.save();
+  ctx.globalAlpha *= opacity;
+  // 전조에서는 손끝 일부만 비추고 공격 자세와 전체 궤적은 숨긴다.
+  const shade = ctx.createRadialGradient(
+    center.x,
+    center.y - 38,
+    9,
+    center.x,
+    center.y - 24,
+    118,
+  );
+  shade.addColorStop(0, '#01050633');
+  shade.addColorStop(0.45, '#010506a6');
+  shade.addColorStop(1, '#010506eb');
+  ctx.fillStyle = shade;
+  ctx.fillRect(0, 0, width, height);
+  ctx.restore();
 }
 
 function drawDepthBars(
@@ -222,6 +242,11 @@ export function drawIntruderScare(
     ctx.restore();
     return;
   }
+  const concealment = smooth(
+    (time - intruderScare.vanish) /
+      (intruderScare.vanished - intruderScare.vanish),
+  );
+  const attacking = time >= intruderScare.lunge;
   const grip = intruderHand(state.intruder);
   const origin = { x: grip.x - roomCameraPosition(state), y: grip.y };
   const direction = origin.x < width / 2 ? 1 : -1;
@@ -236,10 +261,14 @@ export function drawIntruderScare(
       x: origin.x + (barX - origin.x) * framing,
       y: origin.y + (height * 0.47 - origin.y) * framing,
     },
+    concealment,
     width,
     height,
   );
-  if (time < intruderScare.hand) {
+  if (
+    time < intruderScare.hand ||
+    (time >= intruderScare.vanished && !attacking)
+  ) {
     drawDepthBars(ctx, time, width, height);
     ctx.restore();
     return;
@@ -247,19 +276,22 @@ export function drawIntruderScare(
   const prepare = smooth(
     (time - intruderScare.hand) / (intruderScare.poised - intruderScare.hand),
   );
-  const crossing = smooth(
-    (time - intruderScare.crossing) /
-      (intruderScare.lunge - intruderScare.crossing),
+  // 어둠 속 이동은 보여주지 않고, 다시 나타나는 첫 프레임부터 손끝이 선을 넘어온다.
+  const lunge = attacking
+    ? 1 -
+      (1 - clamp((time - intruderScare.lunge) / intruderScare.lungeDuration)) **
+        3
+    : 0;
+  const crossing = attacking ? 0.82 + lunge * 0.18 : 0;
+  const clutch = smooth(
+    (time - intruderScare.impact) /
+      (intruderScare.blackout - intruderScare.impact),
   );
-  const lunge =
-    clamp((time - intruderScare.lunge) / intruderScare.lungeDuration) ** 2;
   const facing = 1 - intruderTurn(state.intruder) * 2;
-  const anticipation =
-    smooth((time - intruderScare.crossing + 0.12) / 0.12) * (1 - crossing);
   const poised = { x: barX + direction * 12, y: height * 0.47 };
   const crossed = { x: barX + direction * 50, y: height * 0.59 };
-  const target = { x: width * 0.5 + direction * 105, y: height * 0.7 };
-  // 한쪽 선에 가려진 자세로 멈춘 뒤, 반대쪽 아래를 향해 사선으로 뻗는다.
+  const target = { x: width * 0.5 + direction * 70, y: height * 0.66 };
+  // 먼 손은 어둠에 숨기고, 가까운 위치에서 반대쪽 아래로 덮친다.
   const center = {
     x:
       origin.x +
@@ -280,18 +312,28 @@ export function drawIntruderScare(
       direction * facing * crossing * 0.2,
     pitch: prepare * 0.62 + crossing * 0.17 + lunge * 0.1,
     yaw: -direction * facing * prepare * 0.45 * (1 - crossing * 0.7),
-    depth: -220 + crossing * 460 + lunge * 165,
+    depth: -220 + crossing * 460 + lunge * 190,
     wristLag: crossing * 85 + lunge * 55,
-    curl: 1 - prepare * 0.98 + anticipation * 0.1 + smooth(lunge) * 0.68,
+    curl: 1 - prepare * 0.98 + clutch * 0.82,
     facing,
     size: 1.42,
   });
-  const handOpacity = smooth((time - intruderScare.hand) / 0.045);
+  const handOpacity = attacking
+    ? 1
+    : smooth((time - intruderScare.hand) / 0.045) * (1 - concealment);
   ctx.save();
   ctx.globalAlpha *= handOpacity;
   drawReachingArm(ctx, origin, hand);
   drawScareHand(ctx, hand, false);
   ctx.restore();
+  if (!attacking)
+    drawGlimpseShade(
+      ctx,
+      center,
+      smooth((time - intruderScare.hand) / 0.045),
+      width,
+      height,
+    );
   drawDepthBars(ctx, time, width, height);
   ctx.globalAlpha *= handOpacity;
   drawScareHand(ctx, hand, true);
