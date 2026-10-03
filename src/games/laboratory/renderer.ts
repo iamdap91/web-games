@@ -1,7 +1,8 @@
 import { drawSelectedRoom } from './browser-hazard-renderer.js';
 import type { AnimationFrame } from '../../resources/preview/animation-player.js';
 import type { GameAssets } from './assets.js';
-import { exitLight, passage, world, type GameSnapshot } from './game.js';
+import { exitLight, passage, type GameSnapshot } from './game.js';
+import { world, viewport } from './layout.js';
 
 import { roomTurn, smooth } from './event-rules.js';
 import { drawIntruder } from './intruder-renderer.js';
@@ -24,7 +25,7 @@ import {
   drawBlackout,
 } from './anomaly-renderer.js';
 
-export const viewport = { width: 1000, height: 430 } as const;
+export { viewport } from './layout.js';
 
 export function drawGame(
   ctx: CanvasRenderingContext2D,
@@ -97,11 +98,10 @@ export function drawRoom(
   assets: GameAssets,
   state: GameSnapshot,
   frame: AnimationFrame,
-  actor = true,
-  camera = true,
+  { actor = true }: { readonly actor?: boolean } = {},
 ): void {
   const { player, pipeElapsed } = state;
-  const cameraX = camera ? roomCameraPosition(state) : 0;
+  const cameraX = roomCameraPosition(state);
   const shake =
     state.hitElapsed === null
       ? pipeShake(pipeElapsed)

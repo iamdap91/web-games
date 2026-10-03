@@ -1,3 +1,4 @@
+import { viewport } from './layout.js';
 import type { AnimationFrame } from '../../resources/preview/animation-player.js';
 import type { GameAssets } from './assets.js';
 import type { GameSnapshot, PlayerSnapshot } from './game.js';
@@ -53,20 +54,20 @@ export function drawRewindScreen(
   if (!state.rewind.rewinding) return;
   ctx.save();
   const time = state.rewind.remaining;
-  const glow = ctx.createLinearGradient(0, 0, 1000, 0);
+  const glow = ctx.createLinearGradient(0, 0, viewport.width, 0);
   glow.addColorStop(0, '#9fd7e32b');
   glow.addColorStop(0.2, '#99cbe303');
   glow.addColorStop(0.8, '#99cbe303');
   glow.addColorStop(1, '#9fd7e32b');
   ctx.fillStyle = glow;
-  ctx.fillRect(0, 0, 1000, 430);
+  ctx.fillRect(0, 0, viewport.width, viewport.height);
   // 좁은 주사선만 거꾸로 흐르게 해 실제 움직임을 가리지 않는다.
   for (let i = 0; i < 3; i++) {
     const y = ((time * 780 + i * 163) % 470) - 20;
     ctx.fillStyle = '#c0dbe517';
-    ctx.fillRect(0, y, 1000, 1);
+    ctx.fillRect(0, y, viewport.width, 1);
     ctx.fillStyle = '#030b1320';
-    ctx.fillRect(0, y + 2, 1000, 5);
+    ctx.fillRect(0, y + 2, viewport.width, 5);
   }
   ctx.fillStyle = '#d1e8e3aa';
   for (const x of [948, 963]) {

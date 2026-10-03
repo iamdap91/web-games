@@ -1,3 +1,4 @@
+import { world, viewport } from './layout.js';
 import {
   cameraPosition,
   roomCameraPosition,
@@ -9,7 +10,7 @@ import {
   drawObservationGlass,
 } from './observation-window.js';
 import type { GameAssets } from './assets.js';
-import { world, type GameSnapshot } from './game.js';
+import type { GameSnapshot } from './game.js';
 import { pipes, pipeFall, pipeShape } from './pipe-cascade.js';
 import { ceiling, ceilingHeight, smooth } from './event-rules.js';
 import { drawMachine, drawBlackoutChamber } from './chamber-renderer.js';
@@ -39,13 +40,37 @@ export function drawAnomalyBackground(
   if (scenario === 'escaping-exit') {
     const camera = roomCameraPosition(state);
     // 통로 길이와 무관하게 현재 화면에 걸친 타일만 그린다.
-    for (let x = Math.floor(camera / 600) * 600; x < camera + 1000; x += 600) {
+    for (
+      let x = Math.floor(camera / 600) * 600;
+      x < camera + viewport.width;
+      x += 600
+    ) {
       if (x >= 0 && x < world.width) continue;
-      ctx.drawImage(assets.withoutExitDoors, 70, 0, 600, 430, x, 0, 600, 430);
+      ctx.drawImage(
+        assets.withoutExitDoors,
+        70,
+        0,
+        600,
+        viewport.height,
+        x,
+        0,
+        600,
+        viewport.height,
+      );
     }
   }
   if (scenario === 'mirrored-lab') {
-    ctx.drawImage(assets.normal, 0, 340, 2400, 90, 0, -90, 2400, 90);
+    ctx.drawImage(
+      assets.normal,
+      0,
+      340,
+      world.width,
+      90,
+      0,
+      -90,
+      world.width,
+      90,
+    );
     ctx.fillStyle = '#34423c';
     ctx.fillRect(0, -4, world.width, 4);
   }
@@ -142,7 +167,7 @@ export function drawBlackout(
   const opacity =
     time < 0.1 ? time / 0.1 : time < 0.4 ? 1 : 1 - (time - 0.4) / 0.25;
   ctx.fillStyle = `rgb(0 0 0 / ${opacity})`;
-  ctx.fillRect(0, 0, 1000, 430);
+  ctx.fillRect(0, 0, viewport.width, viewport.height);
 }
 
 function drawEye(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {
@@ -230,7 +255,7 @@ function drawBackstage(
   ctx.fillStyle = glow;
   const start = state.anomaly.backstageReturning ? 0 : 800;
   ctx.fillRect(start, 0, world.width - start, world.ground);
-  for (let x = start + 20; x < 2400; x += 260) {
+  for (let x = start + 20; x < world.width; x += 260) {
     ctx.fillStyle = '#14252a';
     ctx.fillRect(x, 0, 10, 340);
     ctx.strokeStyle = '#304039';
@@ -271,7 +296,7 @@ function drawBackstage(
   );
   ctx.fillStyle = '#17221e80';
   ctx.fillRect(start, 340, world.width - start, 90);
-  for (let x = 850; x < 2400; x += 130) {
+  for (let x = 850; x < world.width; x += 130) {
     ctx.fillStyle = '#82927a36';
     ctx.fillRect(x, 347, 33, 2);
   }

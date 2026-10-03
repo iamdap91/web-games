@@ -1,3 +1,4 @@
+import { world } from './layout.js';
 import type { PlayerSnapshot } from './player.js';
 
 export const selectionTiming = {
@@ -38,7 +39,7 @@ export class ScreenSelection {
   }
   private get boundary(): number {
     return this.elapsed === null
-      ? 2400
+      ? world.width
       : 2100 - 1650 * Math.min(1, this.elapsed / selectionTiming.sweep);
   }
   get snapshot(): SelectionSnapshot {

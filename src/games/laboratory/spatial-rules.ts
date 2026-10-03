@@ -1,3 +1,5 @@
+import { world, viewport } from './layout.js';
+import { smooth } from './event-rules.js';
 import type { GameSnapshot } from './game.js';
 
 export const stagePanels = [800, 1320, 1840] as const;
@@ -5,7 +7,7 @@ export const returnPanels = [-240, 280] as const;
 export const panelWidth = 520;
 export const frameTriggerX = 2100;
 export function cameraPosition(x: number): number {
-  return Math.max(0, Math.min(1400, x - 400));
+  return Math.max(0, Math.min(world.width - viewport.width, x - 400));
 }
 export function roomCameraPosition(state: GameSnapshot): number {
   const x = state.player.x;
@@ -21,23 +23,22 @@ export function roomCameraPosition(state: GameSnapshot): number {
   camera += Math.max(0, state.rightExit.x - 895 - camera) * near;
   return camera;
 }
-function smooth(value: number): number {
-  const t = Math.max(0, Math.min(1, value));
-  return t * t * (3 - 2 * t);
-}
 export function frameEdge(state: GameSnapshot): number {
   if (state.scenario !== 'frame-escape' || state.anomaly.activeElapsed === null)
-    return 1000;
+    return viewport.width;
   if (state.chase.phase === 'chasing' || state.chase.phase === 'falling') {
     return Math.max(
       0,
-      Math.min(1000, state.chase.boundary - cameraPosition(state.player.x)),
+      Math.min(
+        viewport.width,
+        state.chase.boundary - cameraPosition(state.player.x),
+      ),
     );
   }
   return openingFrameEdge(state.anomaly.activeElapsed);
 }
 export function openingFrameEdge(elapsed: number): number {
-  return 1000 - 240 * smooth(elapsed / 0.55);
+  return viewport.width - 240 * smooth(elapsed / 0.55);
 }
 export function panelAngle(playerX: number, index: number): number {
   return -105 * smooth((playerX - 820 - index * 95) / 900);

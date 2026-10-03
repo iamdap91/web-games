@@ -1,3 +1,4 @@
+import { world } from './layout.js';
 import { cutImpact, cutting } from './room-cutter.js';
 import { cameraPosition } from './spatial-rules.js';
 import type { GameSnapshot } from './game.js';
@@ -25,7 +26,7 @@ export function drawCutRoom(
     const age = time - cutImpact(i);
     if (age > 1.25) continue;
     const left = cutting.boundaries[i]!;
-    const right = i === 0 ? 2400 : cutting.boundaries[i - 1]!;
+    const right = i === 0 ? world.width : cutting.boundaries[i - 1]!;
     const fall = Math.max(0, age - 0.11);
     const x = left - camera;
     ctx.save();
@@ -33,11 +34,11 @@ export function drawCutRoom(
     ctx.rotate(fall * 0.13);
     ctx.translate(-x, 0);
     ctx.beginPath();
-    ctx.rect(x, 0, right - left, 430);
+    ctx.rect(x, 0, right - left, world.height);
     ctx.clip();
     drawRoom();
     ctx.fillStyle = '#b9d3cd';
-    ctx.fillRect(x, 0, 2, 430);
+    ctx.fillRect(x, 0, 2, world.height);
     ctx.restore();
   }
   // 아직 내려오지 않은 칼날과 직전 칼날만 남겨 화면을 가리지 않는다.
@@ -68,7 +69,7 @@ function drawBlade(
     ctx.setLineDash([7, 5]);
     ctx.beginPath();
     ctx.moveTo(x, 0);
-    ctx.lineTo(x, 430);
+    ctx.lineTo(x, world.height);
     ctx.stroke();
     ctx.setLineDash([]);
     ctx.fillStyle = `rgb(203 212 172 / ${alpha * 0.35})`;
@@ -114,7 +115,7 @@ function drawBlade(
     ctx.save();
     ctx.globalAlpha = 1 - after / 0.22;
     ctx.fillStyle = '#e8e7bf';
-    ctx.fillRect(x - 2, 0, 4, 430);
+    ctx.fillRect(x - 2, 0, 4, world.height);
     for (let i = 0; i < 14; i++) {
       const angle = i * 2.4;
       const travel = after * (120 + (i % 4) * 90);

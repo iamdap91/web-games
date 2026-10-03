@@ -1,6 +1,7 @@
+import { world, viewport } from './layout.js';
 import type { AnimationFrame } from '../../resources/preview/animation-player.js';
 import { getContext, type GameAssets } from './assets.js';
-import { passage, world, type GameSnapshot } from './game.js';
+import { passage, type GameSnapshot } from './game.js';
 import { pipes, pipeShape } from './pipe-cascade.js';
 import { smooth } from './event-rules.js';
 import { pursuit } from './frame-chase.js';
@@ -80,12 +81,12 @@ export class WebSpace {
   resize(width: number, density: number): void {
     this.fallLayer.width = Math.round(window.innerWidth * density);
     this.fallLayer.height = Math.round(window.innerHeight * density);
-    this.root.style.transform = `scale(${width / 1000})`;
+    this.root.style.transform = `scale(${width / viewport.width})`;
     // DOM 안의 Canvas도 기본 장면과 같은 실제 픽셀 밀도로 그린다.
-    this.density = (density * width) / 1000;
+    this.density = (density * width) / viewport.width;
     for (const [canvas, w, h] of [
-      [this.escapeLayer, 1000, 430],
-      [this.actor, 280, 430],
+      [this.escapeLayer, viewport.width, viewport.height],
+      [this.actor, 280, viewport.height],
     ] as const) {
       canvas.width = Math.round(w * this.density);
       canvas.height = Math.round(h * this.density);
@@ -187,13 +188,13 @@ export class WebSpace {
       warning || chasing
         ? '5px 0 16px #d0d69b55, 12px 12px 26px #0006'
         : `${-pulse * 5}px 0 ${pulse * 24}px #b9dac777, 12px 12px 26px #0006`;
-    const ctx = this.context(this.escapeLayer, 1000, 430);
+    const ctx = this.context(this.escapeLayer, viewport.width, viewport.height);
     // 같은 좌표계로 경계 양쪽을 나누므로 통과 중 크기와 속도가 바뀌지 않는다.
     ctx.save();
     ctx.beginPath();
-    ctx.rect(edge, 0, 1000 - edge, 430);
+    ctx.rect(edge, 0, viewport.width - edge, viewport.height);
     ctx.clip();
-    const floor = ctx.createLinearGradient(edge, 0, 1000, 0);
+    const floor = ctx.createLinearGradient(edge, 0, viewport.width, 0);
     // 유예 시간이 끝나갈수록 페이지 위의 발판도 흔들리며 사라진다.
     ctx.globalAlpha = warning
       ? Math.max(0, 1 - state.chase.elapsed / pursuit.grace)
@@ -201,9 +202,9 @@ export class WebSpace {
     floor.addColorStop(0, '#849184');
     floor.addColorStop(1, '#84918415');
     ctx.fillStyle = floor;
-    ctx.fillRect(edge, world.ground, 1000 - edge, 2);
+    ctx.fillRect(edge, world.ground, viewport.width - edge, 2);
     ctx.fillStyle = '#00000030';
-    ctx.fillRect(edge, world.ground + 2, 1000 - edge, 6);
+    ctx.fillRect(edge, world.ground + 2, viewport.width - edge, 6);
     ctx.restore();
     if (state.phase !== 'falling') {
       ctx.save();
@@ -214,7 +215,7 @@ export class WebSpace {
     if (pulse > 0) {
       ctx.save();
       ctx.beginPath();
-      ctx.rect(0, 0, edge, 430);
+      ctx.rect(0, 0, edge, viewport.height);
       ctx.clip();
       ctx.globalAlpha = pulse * 0.25;
       drawPlayer(
@@ -243,7 +244,7 @@ export class WebSpace {
     );
     // 고정된 페이지 레이어라 아래 UI를 지나가도 문서 높이나 스크롤 위치는 변하지 않는다.
     const bounds = this.root.getBoundingClientRect();
-    const scale = bounds.width / 1000;
+    const scale = bounds.width / viewport.width;
     const t = state.chase.elapsed;
     const x = Math.min(990, caught.x - cameraPosition(caught.x) + 90 * t);
     const drop = Math.max(
@@ -283,7 +284,7 @@ export class WebSpace {
       );
     });
     this.actor.style.left = `${state.player.x - camera - 140}px`;
-    const ctx = this.context(this.actor, 280, 430);
+    const ctx = this.context(this.actor, 280, viewport.height);
     ctx.save();
     ctx.translate(140 - state.player.x, 0);
     drawPlayer(ctx, this.assets, state.player, frame);

@@ -1,3 +1,4 @@
+import { world, viewport } from './layout.js';
 import type { GameSnapshot } from './game.js';
 import { cameraPosition } from './spatial-rules.js';
 import { selectionTiming } from './screen-selection.js';
@@ -17,10 +18,10 @@ export function drawSelectedRoom(
   const edge = caught ? 0 : selection.boundary - camera;
   if (selection.deleted) {
     ctx.fillStyle = '#0a1012';
-    ctx.fillRect(0, 0, 1000, 430);
+    ctx.fillRect(0, 0, viewport.width, viewport.height);
     ctx.save();
     ctx.beginPath();
-    ctx.rect(0, 0, Math.max(0, edge), 430);
+    ctx.rect(0, 0, Math.max(0, edge), viewport.height);
     ctx.clip();
     if (!caught) paint();
     ctx.restore();
@@ -28,7 +29,7 @@ export function drawSelectedRoom(
       selection.elapsed - selectionTiming.sweep - selectionTiming.pause;
     if (after < 0.1) {
       ctx.fillStyle = `rgb(163 192 255 / ${(1 - after / 0.1) * 0.5})`;
-      ctx.fillRect(Math.max(0, edge), 0, 1000, 430);
+      ctx.fillRect(Math.max(0, edge), 0, viewport.width, viewport.height);
     }
     const phrase = '아...깝...다...';
     const typing = [
@@ -40,7 +41,7 @@ export function drawSelectedRoom(
     const textX = Math.max(26, edge + 24);
     ctx.save();
     ctx.beginPath();
-    ctx.rect(Math.max(0, edge), 0, 1000, 430);
+    ctx.rect(Math.max(0, edge), 0, viewport.width, viewport.height);
     ctx.clip();
     // 타이핑 중 글자 크기가 달라지지 않도록 완성된 문구를 기준으로 맞춘다.
     ctx.font = 'bold 96px monospace';
@@ -69,10 +70,10 @@ export function drawSelectedRoom(
   paint();
   ctx.save();
   ctx.beginPath();
-  ctx.rect(edge, 0, 2400, 430);
+  ctx.rect(edge, 0, world.width, viewport.height);
   ctx.clip();
   ctx.fillStyle = '#397cf26b';
-  ctx.fillRect(edge, 0, 2400, 430);
+  ctx.fillRect(edge, 0, world.width, viewport.height);
   ctx.globalCompositeOperation = 'screen';
   ctx.fillStyle = '#327dff38';
   for (const [y, h] of [
@@ -81,11 +82,11 @@ export function drawSelectedRoom(
     [251, 51],
     [341, 70],
   ])
-    ctx.fillRect(edge, y!, 2400, h!);
+    ctx.fillRect(edge, y!, world.width, h!);
   ctx.restore();
   ctx.strokeStyle = '#b3cfff';
   ctx.lineWidth = 2;
-  ctx.strokeRect(edge + 1, 2, 2400 - selection.boundary - 2, 426);
+  ctx.strokeRect(edge + 1, 2, world.width - selection.boundary - 2, 426);
   for (const y of [5, 211, 420]) {
     ctx.fillStyle = '#dce9ff';
     ctx.fillRect(edge - 4, y, 9, 9);
