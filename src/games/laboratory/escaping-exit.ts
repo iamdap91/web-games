@@ -2,8 +2,6 @@ import type { PlayerSnapshot } from './game.js';
 
 export const escapingExit = {
   home: 203,
-  minimum: -960,
-  playerMinimum: -1140,
 } as const;
 type ExitPhase =
   'idle' | 'startled' | 'fleeing' | 'resting' | 'returning' | 'caught';
@@ -63,9 +61,7 @@ export class EscapingExit {
       } else if (
         approaching &&
         distance < 235 &&
-        this.elapsed >= (this.attempts === 1 ? 0.32 : 0.65) &&
-        this.attempts < 3 &&
-        this.x > escapingExit.minimum
+        this.elapsed >= (this.attempts === 1 ? 0.32 : 0.65)
       )
         this.startle();
     } else if (this.phase === 'returning') {
@@ -93,10 +89,7 @@ export class EscapingExit {
   private startle(): void {
     this.attempts++;
     this.home = this.from = this.x;
-    this.target = Math.max(
-      escapingExit.minimum,
-      this.x - (this.attempts === 1 ? 105 : 290),
-    );
+    this.target = this.x - (this.attempts === 1 ? 105 : 290);
     this.retreat = 0;
     this.changePhase('startled');
   }

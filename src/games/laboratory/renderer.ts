@@ -5,7 +5,7 @@ import { exitLight, passage, world, type GameSnapshot } from './game.js';
 
 import { roomTurn, smooth } from './event-rules.js';
 import { drawInvasionFurniture } from './chamber-renderer.js';
-import { cameraPosition } from './spatial-rules.js';
+import { cameraPosition, roomCameraPosition } from './spatial-rules.js';
 import { drawWindowReflection } from './observation-window.js';
 import { drawPlayer } from './player-renderer.js';
 import {
@@ -99,13 +99,7 @@ export function drawRoom(
   camera = true,
 ): void {
   const { player, pipeElapsed } = state;
-  const cameraX = camera
-    ? state.scenario === 'escaping-exit' && state.exit.revealed
-      ? player.x < 360
-        ? Math.max(-1200, player.x - 360)
-        : cameraPosition(player.x)
-      : cameraPosition(player.x)
-    : 0;
+  const cameraX = camera ? roomCameraPosition(state) : 0;
   const shake =
     state.hitElapsed === null
       ? pipeShake(pipeElapsed)

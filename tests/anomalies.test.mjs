@@ -53,8 +53,10 @@ test('15종에서도 정상 30%와 부재형 1/35를 유지한다', () => {
 test('모든 이상은 왼쪽으로 진행하며 재선택과 8번 방은 연출을 초기화한다', () => {
   for (const id of anomalies) {
     const game = make(id);
-    for (let t = 0; t < 8 && game.snapshot.phase === 'playing'; t += step)
+    for (let t = 0; t < 8 && game.snapshot.phase === 'playing'; t += step) {
+      if (id === 'escaping-exit') game.jump(-1);
       game.update(step, -1);
+    }
     advance(game, 0.6);
     assert.equal(game.snapshot.progress, 1, id);
     game.previewExit();

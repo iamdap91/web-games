@@ -1,5 +1,6 @@
 import {
   cameraPosition,
+  roomCameraPosition,
   stagePanelViews,
   panelWidth,
 } from './spatial-rules.js';
@@ -39,8 +40,14 @@ export function drawAnomalyBackground(
     0,
   );
   if (scenario === 'escaping-exit') {
-    for (const x of [-1200, -600])
-      ctx.drawImage(assets.withoutEntry, 60, 0, 600, 430, x, 0, 600, 430);
+    const camera = roomCameraPosition(state);
+    // 통로 길이와 무관하게 현재 화면에 걸친 타일만 그린다.
+    for (
+      let x = Math.floor(camera / 600) * 600;
+      x < Math.min(0, camera + 1000);
+      x += 600
+    )
+      ctx.drawImage(assets.withoutEntry, 70, 0, 600, 430, x, 0, 600, 430);
   }
   if (scenario === 'mirrored-lab') {
     ctx.drawImage(assets.normal, 0, 340, 2400, 90, 0, -90, 2400, 90);

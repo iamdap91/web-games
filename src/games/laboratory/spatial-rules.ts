@@ -7,6 +7,15 @@ export const frameTriggerX = 2100;
 export function cameraPosition(x: number): number {
   return Math.max(0, Math.min(1400, x - 400));
 }
+export function roomCameraPosition(state: GameSnapshot): number {
+  if (state.scenario === 'escaping-exit' && state.exit.revealed)
+    return Math.min(
+      cameraPosition(state.player.x),
+      state.player.x - 360,
+      state.exit.x - 105,
+    );
+  return cameraPosition(state.player.x);
+}
 function smooth(value: number): number {
   const t = Math.max(0, Math.min(1, value));
   return t * t * (3 - 2 * t);

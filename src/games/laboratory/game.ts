@@ -4,11 +4,7 @@ import {
   selectionTiming,
   type SelectionSnapshot,
 } from './screen-selection.js';
-import {
-  EscapingExit,
-  escapingExit,
-  type EscapingExitSnapshot,
-} from './escaping-exit.js';
+import { EscapingExit, type EscapingExitSnapshot } from './escaping-exit.js';
 import {
   chooseScenario,
   type Anomaly,
@@ -392,7 +388,7 @@ export class LaboratoryGame {
     this.player.update(
       seconds,
       this.worldDirection(direction),
-      this.scenario === 'escaping-exit' ? escapingExit.playerMinimum : 24,
+      this.scenario === 'escaping-exit' ? Number.NEGATIVE_INFINITY : 24,
     );
     let { x } = this.player.snapshot;
     if (this.progress === 8) {

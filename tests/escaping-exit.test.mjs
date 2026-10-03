@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { LaboratoryGame } from '../dist/src/games/laboratory/game.js';
+import { roomCameraPosition } from '../dist/src/games/laboratory/spatial-rules.js';
 const dt = 1 / 120;
 function advance(game, seconds, direction = 0) {
   for (let t = 0; t < seconds; t += dt) game.update(dt, direction);
@@ -52,17 +53,36 @@ test('물러나면 문이 돌아오며 플래시점프로 복귀 중 문을 잡�
   assert.equal(game.snapshot.exit.attempts, 0);
 });
 
-test('문은 최대 세 번만 피하고 보행으로도 잡을 수 있으며 원래 왼쪽 경계는 출구가 아니다', () => {
-  const game = new LaboratoryGame();
-  game.reset('escaping-exit');
-  until(game, (s) => s.player.x <= 55, -1);
-  assert.equal(game.snapshot.phase, 'playing');
-  until(game, (s) => s.phase === 'transition', -1);
-  assert.equal(game.snapshot.exit.phase, 'caught');
-  assert.ok(game.snapshot.exit.attempts <= 3);
-  assert.ok(game.snapshot.player.x < 0);
-  advance(game, 0.6);
-  assert.equal(game.snapshot.progress, 1);
+test('보행으로 오래 따라가거나 멈춰도 문과 통로가 끝없이 이어진다', () => {
+  for (const pause of [false, true]) {
+    const game = new LaboratoryGame();
+    game.reset('escaping-exit');
+    for (let i = 0; i < 90; i++) {
+      advance(game, 1, -1);
+      if (pause) advance(game, 0.4);
+      assert.equal(game.snapshot.phase, 'playing');
+      assert.equal(game.snapshot.progress, 0);
+      assert.ok(game.snapshot.player.x - game.snapshot.exit.x > 64);
+    }
+    assert.ok(game.snapshot.player.x < -20000);
+    assert.ok(game.snapshot.exit.attempts > 50);
+    const camera = roomCameraPosition(game.snapshot);
+    assert.ok(game.snapshot.player.x - camera >= 360);
+    assert.ok(game.snapshot.player.x - camera < 650);
+    assert.ok(game.snapshot.exit.x > camera);
+    // 멀리 늘어난 통로에서도 복귀 중인 문을 잡아 탈출할 수 있어야 한다.
+    until(game, (s) => s.exit.phase === 'resting', 0);
+    until(game, (s) => s.exit.phase === 'returning', 1);
+    advance(game, 0.3);
+    for (let i = 0; i < 4 && game.snapshot.phase === 'playing'; i++)
+      flashToward(game, -1);
+    assert.equal(game.snapshot.phase, 'transition');
+    assert.equal(game.snapshot.exit.phase, 'caught');
+    advance(game, 0.6);
+    assert.equal(game.snapshot.progress, 1);
+    assert.equal(game.snapshot.player.x, 360);
+    assert.equal(roomCameraPosition(game.snapshot), 0);
+  }
 });
 
 test('잘못된 우측 선택은 0번으로, 재선택·8번 미리보기는 회피 상태를 정리한다', () => {
