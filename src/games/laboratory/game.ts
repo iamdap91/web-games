@@ -1,3 +1,16 @@
+import {
+  chooseScenario,
+  type Anomaly,
+  type Scenario,
+  type ScenarioSelection,
+} from './anomalies.js';
+import { AnomalyMotion, type AnomalySnapshot } from './anomaly-motion.js';
+export {
+  isSelection,
+  type Anomaly,
+  type Scenario,
+  type ScenarioSelection,
+} from './anomalies.js';
 import { pipeHitsPlayer, pipeTriggerX } from './pipe-cascade.js';
 
 export const world = { width: 2400, height: 430, ground: 340 } as const;
@@ -9,18 +22,11 @@ export const movement = {
   flashDuration: 0.2,
 } as const;
 export type Direction = -1 | 0 | 1;
-export type Scenario = 'normal' | 'giant-door' | 'falling-pipe';
-export type Anomaly = Exclude<Scenario, 'normal'>;
-export type ScenarioSelection = 'random' | Scenario;
 export type Phase = 'playing' | 'transition' | 'complete';
 // 잔상까지 빛에 가려진 뒤 종료되도록 불투명 구간 안에 여유를 둔다.
 export const exitLight = { start: 300, opaque: 2200, finish: 2340 } as const;
 export const passage = { fadeOut: 0.22, fadeIn: 0.32, glitch: 1.1 } as const;
 export type Motion = 'stand' | 'move' | 'jump';
-
-export function isSelection(value: string): value is ScenarioSelection {
-  return ['random', 'normal', 'giant-door', 'falling-pipe'].includes(value);
-}
 
 export type PlayerSnapshot = {
   readonly x: number;
@@ -98,6 +104,7 @@ export class Player {
 
 export type GameSnapshot = {
   readonly player: PlayerSnapshot;
+  readonly anomaly: AnomalySnapshot;
   readonly scenario: Scenario;
   readonly phase: Phase;
   readonly progress: number;
@@ -120,6 +127,7 @@ type Transition = {
 
 export class LaboratoryGame {
   private player = new Player();
+  private anomaly = new AnomalyMotion();
   private scenario: Scenario = 'normal';
   private selection: ScenarioSelection = 'random';
   private phase: Phase = 'playing';
@@ -144,6 +152,7 @@ export class LaboratoryGame {
 
   previewExit(): void {
     this.player = new Player();
+    this.anomaly = new AnomalyMotion();
     this.pipeElapsed = this.failureElapsed = null;
     this.progress = 7;
     this.scenario = 'normal';
@@ -176,8 +185,18 @@ export class LaboratoryGame {
       if (x >= exitLight.finish) this.leave('right');
       return;
     }
-    if (this.scenario === 'giant-door' && Math.abs(x - 1163) <= 420)
-      this.encountered.add('giant-door');
+    const revealed = this.anomaly.update(
+      seconds,
+      this.scenario,
+      this.player.snapshot,
+      previousPlayer,
+    );
+    if (
+      revealed &&
+      this.scenario !== 'normal' &&
+      this.scenario !== 'falling-pipe'
+    )
+      this.encountered.add(this.scenario);
     if (this.pipeElapsed !== null) {
       const before = this.pipeElapsed;
       this.pipeElapsed += seconds;
@@ -208,6 +227,7 @@ export class LaboratoryGame {
 
   private loadRoom(): void {
     this.player = new Player();
+    this.anomaly = new AnomalyMotion();
     this.pipeElapsed = null;
     if (
       this.progress === 8 ||
@@ -217,9 +237,7 @@ export class LaboratoryGame {
       this.scenario = 'normal';
     } else if (this.selection !== 'random') this.scenario = this.selection;
     else {
-      const roll = this.random();
-      this.scenario =
-        roll < 0.3 ? 'normal' : roll < 0.65 ? 'giant-door' : 'falling-pipe';
+      this.scenario = chooseScenario(this.random());
     }
   }
 
@@ -278,6 +296,7 @@ export class LaboratoryGame {
   get snapshot(): GameSnapshot {
     return {
       player: this.player.snapshot,
+      anomaly: this.anomaly.snapshot,
       scenario: this.scenario,
       phase: this.phase,
       progress: this.progress,

@@ -11,6 +11,9 @@ export type GameAssets = {
   readonly normal: HTMLCanvasElement;
   readonly giantDoor: HTMLCanvasElement;
   readonly exit: HTMLCanvasElement;
+  readonly emptyCenter: HTMLCanvasElement;
+  readonly door: HTMLCanvasElement;
+  readonly machine: HTMLCanvasElement;
   readonly pipe: HTMLCanvasElement;
   readonly animations: ReadonlyMap<Motion, Animation>;
   readonly frames: ReadonlyMap<string, HTMLImageElement>;
@@ -86,6 +89,7 @@ export async function loadAssets(): Promise<GameAssets> {
   const makeBackground = (
     centralDoorScale: number,
     warm = false,
+    omitCentralDoor = false,
   ): HTMLCanvasElement => {
     const canvas = document.createElement('canvas');
     canvas.width = world.width;
@@ -98,6 +102,7 @@ export async function loadAssets(): Promise<GameAssets> {
       'laboratory',
       centralDoorScale,
       true,
+      omitCentralDoor,
     );
     return grade(canvas, warm);
   };
@@ -107,7 +112,32 @@ export async function loadAssets(): Promise<GameAssets> {
   pipe.width = pipeImage.width;
   pipe.height = pipeImage.height;
   getContext(pipe).drawImage(pipeImage, 0, 0);
+  const doorRegion = map.regions.find((region) => region.name === 'door');
+  const machineImage = components.get('machine');
+  if (!doorRegion || !machineImage)
+    throw new Error('이상현상 리소스가 없습니다.');
+  const door = document.createElement('canvas');
+  door.width = 166;
+  door.height = 200;
+  getContext(door).drawImage(
+    objects,
+    doorRegion.x,
+    doorRegion.y,
+    doorRegion.width,
+    doorRegion.height,
+    0,
+    0,
+    166,
+    200,
+  );
+  const machine = document.createElement('canvas');
+  machine.width = machineImage.width;
+  machine.height = machineImage.height;
+  getContext(machine).drawImage(machineImage, 0, 0);
   return {
+    emptyCenter: makeBackground(1, false, true),
+    door: grade(door),
+    machine: grade(machine),
     normal: makeBackground(1),
     giantDoor: makeBackground(1.48),
     exit: makeBackground(1, true),

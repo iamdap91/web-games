@@ -2,7 +2,13 @@ import type { AnimationFrame } from '../../resources/preview/animation-player.js
 import type { GameAssets } from './assets.js';
 import { exitLight, passage, world, type GameSnapshot } from './game.js';
 
-import { pipes, pipeFall, pipeShake, pipeShape } from './pipe-cascade.js';
+import { pipeShake } from './pipe-cascade.js';
+import {
+  drawAnomalyBackground,
+  drawAnomalyPipes,
+  drawAnomalyFigure,
+  drawBlackout,
+} from './anomaly-renderer.js';
 
 export const viewport = { width: 1000, height: 430 } as const;
 
@@ -27,15 +33,7 @@ export function drawGame(
   ctx.fillRect(0, 0, viewport.width, viewport.height);
   ctx.save();
   ctx.translate(-cameraX, shake);
-  ctx.drawImage(
-    state.progress === 8
-      ? assets.exit
-      : state.scenario === 'giant-door'
-        ? assets.giantDoor
-        : assets.normal,
-    0,
-    0,
-  );
+  drawAnomalyBackground(ctx, assets, state);
   drawEntry(ctx, state);
   if (state.progress === 8) drawExit(ctx, 780, '→');
   else {
@@ -43,7 +41,8 @@ export function drawGame(
     drawExit(ctx, world.width - 44, '→');
   }
 
-  ctx.fillStyle = '#050d1080';
+  drawAnomalyFigure(ctx, assets, state, frame);
+  ctx.fillStyle = state.scenario === 'late-shadow' ? '#0000' : '#050d1080';
   ctx.beginPath();
   ctx.ellipse(player.x, world.ground + 2, 22, 4, 0, 0, Math.PI * 2);
   ctx.fill();
@@ -67,17 +66,7 @@ export function drawGame(
     ctx.drawImage(image, -frame.pivot.x, -(frame.height - frame.pivot.y));
     ctx.restore();
   }
-  // 정상 방에도 같은 배관을 배치하고, 낙하가 시작되어야 차이가 드러나게 한다.
-  for (const pipe of pipes) {
-    const fall = pipeFall(pipeElapsed, pipe.delay);
-    ctx.drawImage(
-      assets.pipe,
-      pipe.x - pipe.width / 2,
-      pipeShape.top + pipeShape.travel * fall,
-      pipe.width,
-      pipeShape.height,
-    );
-  }
+  drawAnomalyPipes(ctx, assets, state);
   ctx.restore();
 
   const shade = ctx.createRadialGradient(500, 230, 130, 500, 215, 550);
@@ -104,6 +93,7 @@ export function drawGame(
     ctx.fillRect(0, 0, world.width, world.height);
     ctx.restore();
   }
+  drawBlackout(ctx, state);
   if (state.hitElapsed !== null) {
     ctx.fillStyle = `rgb(205 65 45 / ${0.45 * (1 - state.hitElapsed / passage.fadeOut)})`;
     ctx.fillRect(0, 0, viewport.width, viewport.height);

@@ -1,3 +1,4 @@
+import { anomalies, anomalyDetails } from './anomalies.js';
 import { AnimationPlayer } from '../../resources/preview/animation-player.js';
 import { getContext, loadAssets, type GameAssets } from './assets.js';
 import {
@@ -19,17 +20,6 @@ function element<T extends HTMLElement>(id: string, type: { new (): T }): T {
 function setText(node: HTMLElement, value: string): void {
   if (node.textContent !== value) node.textContent = value;
 }
-
-const anomalyDetails = {
-  'giant-door': {
-    title: '거대해진 철문',
-    description: '중앙 철문이 천장 가까이까지 커져 있었다.',
-  },
-  'falling-pipe': {
-    title: '연쇄 낙하 배관',
-    description: '마지막 배관에 다가가자 5번, 2번, 1번 배관이 차례로 내려왔다.',
-  },
-} as const;
 
 class GameScreen {
   private readonly game = new LaboratoryGame();
@@ -80,6 +70,12 @@ class GameScreen {
       this.replayButton.disabled =
       this.previewExitButton.disabled =
         !this.developer;
+    for (const key of anomalies) {
+      const option = document.createElement('option');
+      option.value = key;
+      option.textContent = anomalyDetails[key].title;
+      this.selection.append(option);
+    }
     this.restartButton.disabled = false;
     this.selection.addEventListener('change', () => this.restart(), { signal });
     this.replayButton.addEventListener('click', () => this.restart(), {
@@ -346,14 +342,15 @@ class GameScreen {
       state.phase === 'complete' ? '다시 들어가기' : '처음부터',
     );
     if (this.developer) {
-      const names = {
-        normal: '정상',
-        'giant-door': '거대해진 철문',
-        'falling-pipe': '연쇄 낙하 배관',
-      };
+      setText(
+        element('anomaly-cue', HTMLParagraphElement),
+        state.scenario === 'normal'
+          ? '정상 기준 풍경'
+          : anomalyDetails[state.scenario].cue,
+      );
       setText(
         this.diagnostics,
-        `방: ${state.progress} · 현재: ${names[state.scenario]} · 위치: ${Math.round(state.player.x)}, ${Math.round(state.player.y)} · 플래시점프: ${state.player.flashAvailable ? '가능' : '사용함'} · 배관: ${state.pipeElapsed === null ? '대기' : `낙하 ${pipes.filter((pipe) => pipeFall(state.pipeElapsed, pipe.delay) === 1).length}/${pipes.filter((pipe) => pipe.delay !== null).length}`} · 전환: ${state.transitionElapsed === null ? '—' : state.transitionElapsed.toFixed(2)} · 번호 노이즈: ${state.failureElapsed === null ? '—' : state.failureElapsed.toFixed(2)}`,
+        `방: ${state.progress} · 현재: ${state.scenario === 'normal' ? '정상' : anomalyDetails[state.scenario].title} · 위치: ${Math.round(state.player.x)}, ${Math.round(state.player.y)} · 플래시점프: ${state.player.flashAvailable ? '가능' : '사용함'} · 연출: ${state.anomaly.activeElapsed === null ? '대기' : state.anomaly.activeElapsed.toFixed(1)} · 배관: ${state.pipeElapsed === null ? '대기' : `낙하 ${pipes.filter((pipe) => pipeFall(state.pipeElapsed, pipe.delay) === 1).length}/${pipes.filter((pipe) => pipe.delay !== null).length}`} · 전환: ${state.transitionElapsed === null ? '—' : state.transitionElapsed.toFixed(2)} · 번호 노이즈: ${state.failureElapsed === null ? '—' : state.failureElapsed.toFixed(2)}`,
       );
     }
   }
