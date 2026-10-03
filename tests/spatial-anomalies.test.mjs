@@ -13,18 +13,16 @@ function advance(game, seconds, direction = 0) {
   for (let t = 0; t < seconds; t += step) game.update(step, direction);
 }
 
-test('화면 경계는 걷기로 발동하지 않고 오른쪽 끝의 플래시점프로만 열린다', () => {
+test('화면 경계는 발동 지점 전에는 닫혀 있고 걸어서 도달해도 열린다', () => {
   const game = new LaboratoryGame();
   game.reset('frame-escape');
   advance(game, 7.2, 1);
   assert.equal(frameEdge(game.snapshot), 1000);
   assert.equal(game.snapshot.anomaly.activeElapsed, null);
-  game.jump(1);
-  advance(game, 0.04, 1);
-  assert.equal(game.snapshot.anomaly.activeElapsed, null);
-  game.jump(1);
-  advance(game, 0.05, 1);
+  advance(game, 0.1, 1);
   assert.notEqual(game.snapshot.anomaly.activeElapsed, null);
+  advance(game, 0.6);
+  assert.equal(frameEdge(game.snapshot), 760);
   assert.equal(cameraPosition(game.snapshot.player.x), 1400);
   assert.deepEqual(game.snapshot.encountered, ['frame-escape']);
 });

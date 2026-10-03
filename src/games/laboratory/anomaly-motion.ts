@@ -1,5 +1,4 @@
 import { anomalyDetails, type Scenario } from './anomalies.js';
-import { frameTriggerX } from './spatial-rules.js';
 import type { Player, PlayerSnapshot } from './player.js';
 import { Blackout } from './blackout.js';
 import { CreepingMachine } from './creeping-machine.js';
@@ -43,12 +42,7 @@ export class AnomalyMotion {
     if (this.activeElapsed !== null) this.activeElapsed += seconds;
     if (scenario === 'blackout')
       this.blackout.update(previousActive, this.activeElapsed, player.x);
-    const revealed =
-      scenario === 'frame-escape'
-        ? player.x >= frameTriggerX &&
-          player.facing === 1 &&
-          player.flashRemaining > 0
-        : player.x >= anomalyDetails[scenario].observeX;
+    const revealed = player.x >= anomalyDetails[scenario].observeX;
     if (this.activeElapsed === null && revealed) {
       this.activeElapsed = 0;
       this.blackout.reveal(player.x);

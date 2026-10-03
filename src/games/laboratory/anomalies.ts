@@ -38,7 +38,7 @@ export const anomalyDetails = {
   'frame-escape': {
     title: '화면 밖으로',
     description: '화면 밖에서 돌아오자 경계가 좁혀 오며 뒤를 쫓았다.',
-    cue: '경계가 줄면 왼쪽으로 돌아가 추격 시작 · 밖에 나갔다면 떨릴 때 복귀',
+    cue: '오른쪽 끝에 접근하면 경계 열림 · 왼쪽으로 돌아가 추격 시작 · 밖에 나갔다면 떨릴 때 복귀',
     observeX: 2100,
   },
   'folding-stage': {
