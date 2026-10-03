@@ -12,7 +12,15 @@ export function drawPlayer(
   if (shadow) {
     ctx.fillStyle = '#050d1080';
     ctx.beginPath();
-    ctx.ellipse(player.x, world.ground + 2, 22, 4, 0, 0, Math.PI * 2);
+    ctx.ellipse(
+      player.x,
+      player.inverted ? -2 : world.ground + 2,
+      22,
+      4,
+      0,
+      0,
+      Math.PI * 2,
+    );
     ctx.fill();
   }
   const image = assets.frames.get(frame.localPath);
@@ -21,7 +29,7 @@ export function drawPlayer(
     ctx.save();
     ctx.translate(player.x, player.y);
     // 원본 모험가 프레임은 왼쪽을 바라본다.
-    ctx.scale(-player.facing * 1.3, 1.3);
+    ctx.scale(-player.facing * 1.3, player.inverted ? -1.3 : 1.3);
     if (player.flashRemaining > 0) {
       for (const distance of [26, 52, 78]) {
         ctx.globalAlpha = opacity * 0.22 * (1 - distance / 100);

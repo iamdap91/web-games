@@ -34,6 +34,11 @@ export function drawAnomalyBackground(
     0,
     0,
   );
+  if (scenario === 'mirrored-lab') {
+    ctx.drawImage(assets.normal, 0, 340, 2400, 90, 0, -90, 2400, 90);
+    ctx.fillStyle = '#34423c';
+    ctx.fillRect(0, -4, world.width, 4);
+  }
   if (scenario === 'creeping-machine')
     drawMachine(
       ctx,

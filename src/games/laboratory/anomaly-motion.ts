@@ -1,11 +1,12 @@
 import { anomalyDetails, type Scenario } from './anomalies.js';
 import { frameTriggerX } from './spatial-rules.js';
-import { ceiling, smooth } from './event-rules.js';
+import { ceiling, smooth, roomFlip } from './event-rules.js';
 import type { PlayerSnapshot } from './game.js';
 
 export type AnomalySnapshot = {
   readonly elapsed: number;
   readonly activeElapsed: number | null;
+  readonly mirrorElapsed: number | null;
   readonly machineX: number;
   readonly machineLean: number;
   readonly machineStride: number;
@@ -20,6 +21,8 @@ export type AnomalySnapshot = {
 export class AnomalyMotion {
   private elapsed = 0;
   private activeElapsed: number | null = null;
+  private mirrorElapsed: number | null = null;
+  private flipFinishX: number | null = null;
   private machineX = 1420;
   private machineLean = 0;
   private machineStride = 0;
@@ -60,6 +63,15 @@ export class AnomalyMotion {
       this.activeElapsed = 0;
       this.blackoutX = player.x + 105;
     }
+    if (
+      scenario === 'mirrored-lab' &&
+      (this.activeElapsed ?? 0) >= roomFlip.duration
+    ) {
+      this.flipFinishX ??= player.x;
+      if (this.mirrorElapsed !== null) this.mirrorElapsed += seconds;
+      else if (Math.abs(player.x - this.flipFinishX) >= roomFlip.returnDistance)
+        this.mirrorElapsed = 0;
+    }
     if (scenario === 'creeping-machine' && this.activeElapsed !== null) {
       const distance = player.x - this.machineX;
       const unwatched = distance * player.facing > 0;
@@ -85,8 +97,7 @@ export class AnomalyMotion {
     }
     if (scenario === 'lowering-ceiling') {
       if (this.ceilingSlam !== null) this.ceilingSlam += seconds;
-      else if (player.x >= ceiling.trigger && (this.activeElapsed ?? 0) >= 0.8)
-        this.ceilingSlam = 0;
+      else if (player.x >= ceiling.trigger) this.ceilingSlam = 0;
     }
     if (scenario === 'room-invasion' && this.activeElapsed !== null) {
       const approach = smooth((player.x - 900) / 620);
@@ -118,6 +129,7 @@ export class AnomalyMotion {
     return {
       elapsed: this.elapsed,
       activeElapsed: this.activeElapsed,
+      mirrorElapsed: this.mirrorElapsed,
       machineX: this.machineX,
       machineLean: this.machineLean,
       machineStride: this.machineStride,

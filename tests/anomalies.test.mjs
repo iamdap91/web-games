@@ -57,6 +57,8 @@ test('모든 이상은 왼쪽으로 진행하며 재선택과 8번 방은 연출
     advance(game, 0.6);
     assert.equal(game.snapshot.scenario, 'normal');
     assert.equal(game.snapshot.mirrored, false);
+    assert.equal(game.snapshot.player.inverted, false);
+    assert.equal(game.snapshot.anomaly.mirrorElapsed, null);
     assert.equal(game.snapshot.anomaly.ceilingSlam, null);
     assert.equal(game.snapshot.anomaly.invasion, 0);
     game.reset('normal');
@@ -64,13 +66,21 @@ test('모든 이상은 왼쪽으로 진행하며 재선택과 8번 방은 연출
   }
 });
 
-test('좌우 반전 후 조작 방향은 유지되며 오른쪽으로 돌아가야 정답이다', () => {
+test('상하 반전 뒤 추가 이동에만 좌우가 뒤집히며 조작과 귀로를 유지한다', () => {
   for (const direction of [1, -1]) {
     const game = make('mirrored-lab');
     advance(game, 2.3, 1);
     advance(game, 1.5);
+    assert.equal(game.snapshot.player.inverted, true);
+    assert.equal(game.snapshot.player.y, 0);
+    advance(game, 2);
+    assert.equal(game.snapshot.anomaly.mirrorElapsed, null);
+    advance(game, 0.5, direction);
+    assert.equal(game.snapshot.anomaly.mirrorElapsed, null);
+    advance(game, 0.3, direction);
+    advance(game, 1.5);
     assert.equal(game.snapshot.mirrored, true);
-    assert.equal(game.snapshot.player.y, 340);
+    assert.equal(game.snapshot.player.y, 0);
     const x = game.snapshot.player.x;
     game.face(direction);
     game.jump(direction);
@@ -89,9 +99,9 @@ test('좌우 반전 후 조작 방향은 유지되며 오른쪽으로 돌아가�
 
 test('낮아지는 천장을 보고 돌아오면 안전하며 더 전진하면 찌부 연출을 거쳐 0번 방이다', () => {
   const safe = make('lowering-ceiling');
-  advance(safe, 4.8, 1);
+  advance(safe, 2.75, 1);
   assert.equal(safe.snapshot.anomaly.ceilingSlam, null);
-  advance(safe, 6.3, -1);
+  while (safe.snapshot.phase === 'playing') safe.update(step, -1);
   advance(safe, 0.6);
   assert.equal(safe.snapshot.progress, 1);
   const hit = make('lowering-ceiling');
@@ -100,6 +110,7 @@ test('낮아지는 천장을 보고 돌아오면 안전하며 더 전진하면 �
   while (hit.snapshot.phase === 'playing') hit.update(step, 1);
   assert.equal(hit.snapshot.progress, 1);
   assert.equal(hit.snapshot.phase, 'squashed');
+  assert.ok(hit.snapshot.player.x < 1150);
   assert.equal(hit.snapshot.hitElapsed, null);
   const flattenedAt = hit.snapshot.player;
   hit.jump(-1);

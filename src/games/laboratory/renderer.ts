@@ -34,10 +34,11 @@ export function drawGame(
   ctx.fillRect(0, 0, viewport.width, viewport.height);
   ctx.save();
   if (state.scenario === 'mirrored-lab') {
-    const turn = roomTurn(state.anomaly.activeElapsed) * Math.PI;
-    ctx.translate(500, 0);
-    ctx.scale(Math.cos(turn), 1);
-    ctx.translate(-500, 0);
+    const vertical = roomTurn(state.anomaly.activeElapsed) * Math.PI;
+    const horizontal = roomTurn(state.anomaly.mirrorElapsed) * Math.PI;
+    ctx.translate(500, 170);
+    ctx.scale(Math.cos(horizontal), Math.cos(vertical));
+    ctx.translate(-500, -170);
   }
   ctx.translate(-cameraX, shake);
   drawAnomalyBackground(ctx, assets, state);
@@ -55,7 +56,14 @@ export function drawGame(
     !(state.scenario === 'frame-escape' && state.anomaly.activeElapsed !== null)
   )
     drawPlayer(ctx, assets, player, frame);
+  ctx.save();
+  if (state.scenario === 'mirrored-lab') {
+    ctx.beginPath();
+    ctx.rect(0, 0, world.width, world.ground);
+    ctx.clip();
+  }
   drawAnomalyPipes(ctx, assets, state);
+  ctx.restore();
   drawCeiling(ctx, assets, state);
   if (state.squashElapsed !== null) {
     const t = state.squashElapsed;
@@ -79,19 +87,30 @@ export function drawGame(
   ctx.fillRect(0, 0, viewport.width, viewport.height);
   if (
     state.scenario === 'mirrored-lab' &&
-    state.anomaly.activeElapsed !== null
+    state.anomaly.mirrorElapsed !== null
   ) {
-    const time = state.anomaly.activeElapsed;
+    const time = state.anomaly.mirrorElapsed;
     const opacity =
-      smooth((time - 1.2) / 0.4) * (1 - smooth((time - 5.5) / 0.8));
+      smooth((time - 1.65) / 0.5) * (1 - smooth((time - 6.5) / 1));
     ctx.save();
     ctx.globalAlpha = opacity;
-    ctx.fillStyle = '#071012dd';
-    ctx.fillRect(310, 28, 380, 52);
-    ctx.font = '23px sans-serif';
+    const darkness = ctx.createRadialGradient(500, 211, 110, 500, 211, 430);
+    darkness.addColorStop(0, '#080307ed');
+    darkness.addColorStop(0.6, '#080307ac');
+    darkness.addColorStop(1, '#08030700');
+    ctx.fillStyle = darkness;
+    ctx.fillRect(0, 55, 1000, 315);
+    ctx.font = '700 44px "AppleMyungjo", "Noto Serif KR", serif';
     ctx.textAlign = 'center';
-    ctx.fillStyle = '#e0e5ce';
-    ctx.fillText('이제 어느 방향으로 갈래?', 500, 62);
+    ctx.textBaseline = 'middle';
+    ctx.lineJoin = 'round';
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = '#18070bdd';
+    ctx.strokeText('이제 어느 방향으로 갈래?', 500, 211);
+    ctx.shadowColor = '#9e303a';
+    ctx.shadowBlur = 12;
+    ctx.fillStyle = '#f1ddd0';
+    ctx.fillText('이제 어느 방향으로 갈래?', 500, 211);
     ctx.restore();
   }
   if (state.progress === 8) {

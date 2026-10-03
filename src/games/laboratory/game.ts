@@ -36,6 +36,7 @@ export type PlayerSnapshot = {
   readonly y: number;
   readonly facing: -1 | 1;
   readonly grounded: boolean;
+  readonly inverted: boolean;
   readonly flashAvailable: boolean;
   readonly flashRemaining: number;
   readonly motion: Motion;
@@ -45,6 +46,7 @@ export class Player {
   private x = 360;
   private y: number = world.ground;
   private velocityY = 0;
+  private inverted = false;
   private facing: -1 | 1 = 1;
   private flashDirection: -1 | 1 = 1;
   private flashRemaining = 0;
@@ -55,6 +57,17 @@ export class Player {
     this.y = -65;
     this.velocityY = 220;
     this.motion = 'jump';
+  }
+
+  invertGravity(): void {
+    if (this.inverted) return;
+    this.inverted = true;
+    this.velocityY = -50;
+    this.flashRemaining = 0;
+  }
+
+  private get floor(): number {
+    return this.inverted ? 0 : world.ground;
   }
 
   reflectMotion(): void {
@@ -70,7 +83,7 @@ export class Player {
   }
 
   stopAtCeiling(height: number): void {
-    if (this.y - 62 >= height) return;
+    if (this.inverted || this.y - 62 >= height) return;
     this.y = Math.min(world.ground, height + 62);
     this.velocityY = Math.max(0, this.velocityY);
   }
@@ -81,15 +94,15 @@ export class Player {
 
   jump(direction: Direction): void {
     this.face(direction);
-    if (this.y === world.ground) {
-      this.velocityY = -movement.jumpSpeed;
+    if (this.y === this.floor) {
+      this.velocityY = (this.inverted ? 1 : -1) * movement.jumpSpeed;
       // 입력이 같은 물리 틱에 두 번 들어와도 두 번째는 공중 입력이다.
-      this.y -= 0.01;
+      this.y += this.inverted ? 0.01 : -0.01;
     } else if (this.flashAvailable) {
       this.flashAvailable = false;
       this.flashDirection = this.facing;
       this.flashRemaining = movement.flashDuration;
-      this.velocityY = -180;
+      this.velocityY = this.inverted ? 180 : -180;
     }
   }
 
@@ -104,16 +117,16 @@ export class Player {
       24,
       Math.min(world.width - 24, this.x + velocityX * seconds),
     );
-    this.velocityY += movement.gravity * seconds;
+    this.velocityY += movement.gravity * seconds * (this.inverted ? -1 : 1);
     this.y += this.velocityY * seconds;
-    if (this.y >= world.ground) {
-      this.y = world.ground;
+    if (this.inverted ? this.y <= this.floor : this.y >= this.floor) {
+      this.y = this.floor;
       this.velocityY = 0;
       this.flashAvailable = true;
       this.flashRemaining = 0;
     }
     this.motion =
-      this.y !== world.ground ? 'jump' : velocityX !== 0 ? 'move' : 'stand';
+      this.y !== this.floor ? 'jump' : velocityX !== 0 ? 'move' : 'stand';
   }
 
   get snapshot(): PlayerSnapshot {
@@ -121,7 +134,8 @@ export class Player {
       x: this.x,
       y: this.y,
       facing: this.facing,
-      grounded: this.y === world.ground,
+      grounded: this.y === this.floor,
+      inverted: this.inverted,
       flashAvailable: this.flashAvailable,
       flashRemaining: this.flashRemaining,
       motion: this.motion,
@@ -210,7 +224,7 @@ export class LaboratoryGame {
   private get mirrored(): boolean {
     return (
       this.scenario === 'mirrored-lab' &&
-      roomTurn(this.anomaly.snapshot.activeElapsed) >= 0.5
+      roomTurn(this.anomaly.snapshot.mirrorElapsed) >= 0.5
     );
   }
 
@@ -281,6 +295,11 @@ export class LaboratoryGame {
       this.player.snapshot,
       previousPlayer,
     );
+    if (
+      this.scenario === 'mirrored-lab' &&
+      roomTurn(this.anomaly.snapshot.activeElapsed) >= 0.5
+    )
+      this.player.invertGravity();
     if (!wasMirrored && this.mirrored) this.player.reflectMotion();
     const slam = this.anomaly.snapshot.ceilingSlam;
     if (

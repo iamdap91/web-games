@@ -7,8 +7,8 @@ export const anomalyDetails = {
   },
   'mirrored-lab': {
     title: '뒤집힌 연구소',
-    description: '연구소의 좌우가 뒤집히고 출발했던 문이 반대편에 나타났다.',
-    cue: '중앙으로 접근 · 좌우 반전 후 돌아갈 방향 선택',
+    description: '천장에 착지한 뒤 더 움직이자 좌우까지 뒤집혔다.',
+    cue: '중앙에서 상하 반전 · 이후 조금 더 이동하면 좌우 반전',
     observeX: 900,
   },
   'creeping-machine': {
@@ -32,7 +32,7 @@ export const anomalyDetails = {
   'lowering-ceiling': {
     title: '낮아지는 천장',
     description: '더 들어가자 천장이 내려앉아 몸이 납작해졌다.',
-    cue: '천장이 낮아진 뒤 더 전진 · 급강하에 찌부된 뒤 0번 방',
+    cue: '내려오는 천장 시작의 첫 문에 접근 · 찌부된 뒤 0번 방',
     observeX: 700,
   },
   'frame-escape': {
