@@ -37,40 +37,20 @@ function project(vertex: Vertex, center: Point): Point {
   return { x: center.x + vertex.x * scale, y: center.y + vertex.y * scale };
 }
 
-// 손이 회전해도 화면 아래의 같은 광원에서 붉은 빛을 받게 한다.
-function lowerReflection(normal: Vertex, pose: ScareHandPose): number {
-  const pitchedY =
-    normal.y * Math.cos(pose.pitch) + normal.z * Math.sin(pose.pitch);
-  const pitchedZ =
-    -normal.y * Math.sin(pose.pitch) + normal.z * Math.cos(pose.pitch);
-  const x = normal.x * Math.cos(pose.yaw) + pitchedZ * Math.sin(pose.yaw);
-  const z = -normal.x * Math.sin(pose.yaw) + pitchedZ * Math.cos(pose.yaw);
-  const y = x * Math.sin(pose.angle) + pitchedY * Math.cos(pose.angle);
-  return (
-    Math.max(
-      0,
-      (y * 0.92 + z * 0.38) / Math.hypot(normal.x, normal.y, normal.z),
-    ) ** 2
+function skinColor(light: number): string {
+  const shade = [32, 53, 42];
+  const highlight = [165, 176, 147];
+  const channels = shade.map((dark, index) =>
+    Math.round(dark + (highlight[index]! - dark) * light),
   );
-}
-
-function skinColor(light: number, reflection: number): string {
-  const shade = [39, 26, 27];
-  const highlight = [168, 175, 150];
-  const red = [153, 48, 42];
-  const channels = shade.map((dark, index) => {
-    const skin = dark + (highlight[index]! - dark) * light;
-    return Math.round(skin + (red[index]! - skin) * reflection * 0.7);
-  });
   return `rgb(${channels.join(' ')})`;
 }
 
 function fingerSurfaces(
   finger: Finger,
   width: number,
-  pose: ScareHandPose,
+  curl: number,
 ): Surface[] {
-  const curl = pose.curl;
   const surfaces: Surface[] = [];
   for (let joint = 0; joint < 3; joint++) {
     const start = finger[joint]!;
@@ -102,37 +82,12 @@ function fingerSurfaces(
           Math.sin((a + b) / 2) * 0.8 - Math.cos((a + b) / 2) * 0.25,
         ) *
           0.75;
-      const angle = (a + b) / 2;
-      const reflection = lowerReflection(
-        {
-          x: normal.x * Math.cos(angle) * 0.7,
-          y: normal.y * Math.cos(angle) * 0.7,
-          z: Math.sin(angle),
-        },
-        pose,
-      );
       for (let section = 0; section < 2; section++) {
         const from = section / 2;
         const to = (section + 1) / 2;
         surfaces.push({
           vertices: [ring(from, a), ring(to, a), ring(to, b), ring(from, b)],
-          color: skinColor(light, reflection),
-        });
-      }
-      // 관절 전체를 두르지 않고 빛을 향한 좁은 면에만 젖은 듯한 반사를 남긴다.
-      if (joint > 0 && reflection > 0.55 && Math.sin(angle) > 0.2) {
-        const glint = (t: number, theta: number): Vertex => {
-          const point = ring(t, theta);
-          return { ...point, z: point.z + 0.6 };
-        };
-        surfaces.push({
-          vertices: [
-            glint(0.07, angle - 0.08),
-            glint(0.15, angle - 0.08),
-            glint(0.15, angle + 0.08),
-            glint(0.07, angle + 0.08),
-          ],
-          color: `rgb(176 100 83 / ${reflection * 0.65})`,
+          color: skinColor(light),
         });
       }
     }
@@ -149,21 +104,7 @@ function fingerSurfaces(
           nail(1.03, tip * 0.55),
           nail(0.38, tip * 0.8),
         ],
-        color: '#65504a',
-      });
-      const reflection = lowerReflection({ x: 0, y: 0, z: 1 }, pose);
-      const glint = (t: number, offset: number): Vertex => {
-        const point = nail(t, offset);
-        return { ...point, z: point.z + 0.3 };
-      };
-      surfaces.push({
-        vertices: [
-          glint(0.44, tip * 0.47),
-          glint(0.7, tip * 0.4),
-          glint(0.79, tip * 0.5),
-          glint(0.49, tip * 0.62),
-        ],
-        color: `rgb(193 115 96 / ${0.18 + reflection * 0.55})`,
+        color: '#6c7964',
       });
     }
   }
@@ -173,9 +114,9 @@ function fingerSurfaces(
 export function createScareHand(pose: ScareHandPose): ScareHand {
   const shape = intruderHandPose(pose.curl);
   const surfaces = shape.fingers.flatMap((finger, index) =>
-    fingerSurfaces(finger, [5.2, 5.8, 5.1, 4.1][index]!, pose),
+    fingerSurfaces(finger, [5.2, 5.8, 5.1, 4.1][index]!, pose.curl),
   );
-  surfaces.push(...fingerSurfaces(shape.thumb, 6.1, pose));
+  surfaces.push(...fingerSurfaces(shape.thumb, 6.1, pose.curl));
   const contour: readonly Point[] = [
     { x: -14, y: 21 },
     { x: -16, y: 11 },
@@ -281,7 +222,6 @@ export function drawScareHand(
     for (const point of points.slice(1)) ctx.lineTo(point.x, point.y);
     ctx.closePath();
     ctx.fillStyle = surface.color;
-    let underlight: CanvasGradient | undefined;
     if (surface.palm) {
       // 선 뒤와 앞의 조각에 같은 그라데이션을 써서 경계에서 피부색이 바뀌지 않게 한다.
       const full = surface.vertices.map((vertex) =>
@@ -295,32 +235,16 @@ export function drawScareHand(
         Math.max(left + 1, right),
         0,
       );
-      shade.addColorStop(0, '#403338');
-      shade.addColorStop(0.34, '#a4ab91');
-      shade.addColorStop(0.7, '#7c7c62');
-      shade.addColorStop(1, '#362529');
+      shade.addColorStop(0, '#354d3d');
+      shade.addColorStop(0.34, '#9faa8d');
+      shade.addColorStop(0.7, '#70856a');
+      shade.addColorStop(1, '#2a4232');
       ctx.fillStyle = shade;
-      const top = Math.min(...full.map((point) => point.y));
-      const bottom = Math.max(...full.map((point) => point.y));
-      underlight = ctx.createLinearGradient(
-        0,
-        top,
-        0,
-        Math.max(top + 1, bottom),
-      );
-      underlight.addColorStop(0, '#781c1600');
-      underlight.addColorStop(0.4, '#781c1600');
-      underlight.addColorStop(0.78, '#9c2c2359');
-      underlight.addColorStop(1, '#a9342a9c');
     }
     ctx.fill();
     // 이웃한 면의 안티앨리어싱 틈만 메운다.
     ctx.strokeStyle = ctx.fillStyle;
     ctx.lineWidth = 0.45;
     ctx.stroke();
-    if (underlight) {
-      ctx.fillStyle = underlight;
-      ctx.fill();
-    }
   }
 }
