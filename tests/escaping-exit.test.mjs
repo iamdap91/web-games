@@ -25,6 +25,36 @@ function flashToward(game, direction) {
     game.update(dt, direction);
 }
 
+test('첫 접근은 한두 번에 잡히지 않고 연속 플래시점프 약 세 번으로 따라잡는다', () => {
+  for (const explored of [false, true]) {
+    for (const delay of [0, 0.04, 0.08, 0.12]) {
+      const game = explored ? explore() : new LaboratoryGame();
+      if (!explored) game.reset('escaping-exit');
+      let flashes = 0;
+      let airborne = 0;
+      for (let t = 0; t < 8 && game.snapshot.phase === 'playing'; t += dt) {
+        if (game.snapshot.player.grounded) {
+          game.jump(-1);
+          airborne = 0;
+        }
+        if (airborne >= delay && game.snapshot.player.flashAvailable) {
+          game.jump(-1);
+          flashes++;
+        }
+        airborne += dt;
+        game.update(dt, -1);
+        if (flashes < 3) assert.equal(game.snapshot.phase, 'playing');
+      }
+      assert.equal(game.snapshot.phase, 'transition');
+      assert.equal(game.snapshot.exit.phase, 'caught');
+      assert.ok(
+        flashes >= 3 && flashes <= 4,
+        `${explored}/${delay}: ${flashes}번`,
+      );
+    }
+  }
+});
+
 test('탐색 중 따라온 입구는 귀환 접근에 회피하고, 번호와 함께 이동할 위치를 제공한다', () => {
   const game = explore();
   assert.ok(game.snapshot.exit.x > 203);

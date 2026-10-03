@@ -43,10 +43,9 @@ export class EscapingExit {
         this.x += Math.max(0, Math.min(player.x - 310 - this.x, 700 * seconds));
       if (approaching && distance < 235) this.startle();
     } else if (this.phase === 'startled') {
-      if (this.elapsed >= (this.attempts === 1 ? 0.14 : 0.035))
-        this.changePhase('fleeing');
+      if (this.elapsed >= 0.035) this.changePhase('fleeing');
     } else if (this.phase === 'fleeing') {
-      const duration = this.attempts === 1 ? 0.28 : 0.48;
+      const duration = 0.48;
       const t = Math.min(1, this.elapsed / duration);
       const eased = 1 - Math.pow(1 - t, 2);
       this.x = this.from + (this.target - this.from) * eased;
@@ -61,7 +60,7 @@ export class EscapingExit {
       } else if (
         approaching &&
         distance < 235 &&
-        this.elapsed >= (this.attempts === 1 ? 0.32 : 0.65)
+        this.elapsed >= (this.attempts === 1 ? 0.65 : 0.4)
       )
         this.startle();
     } else if (this.phase === 'returning') {
@@ -89,7 +88,7 @@ export class EscapingExit {
   private startle(): void {
     this.attempts++;
     this.home = this.from = this.x;
-    this.target = this.x - (this.attempts === 1 ? 105 : 290);
+    this.target = this.x - (this.attempts === 1 ? 440 : 340);
     this.retreat = 0;
     this.changePhase('startled');
   }
@@ -102,7 +101,9 @@ export class EscapingExit {
 
   get snapshot(): EscapingExitSnapshot {
     const startled =
-      this.phase === 'startled' ? Math.sin((this.elapsed / 0.14) * Math.PI) : 0;
+      this.phase === 'startled'
+        ? Math.sin((this.elapsed / 0.035) * Math.PI)
+        : 0;
     return {
       x: this.x,
       phase: this.phase,
