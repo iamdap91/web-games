@@ -6,6 +6,7 @@ import {
 import { drawIndustrial } from '../../resources/corridor/industrial-renderer.js';
 import type { Animation } from '../../resources/preview/animation-player.js';
 import { world, type Motion } from './game.js';
+import { drawObservationWindow } from './observation-window.js';
 
 export type GameAssets = {
   readonly normal: HTMLCanvasElement;
@@ -86,9 +87,8 @@ export async function loadAssets(): Promise<GameAssets> {
   ]);
   const objects = prepareMapObjects(original);
   const makeBackground = (
-    centralDoorScale: number,
     warm = false,
-    omitCentralDoor = false,
+    omitWindow = false,
   ): HTMLCanvasElement => {
     const canvas = document.createElement('canvas');
     canvas.width = world.width;
@@ -99,10 +99,16 @@ export async function loadAssets(): Promise<GameAssets> {
       components,
       map.regions,
       'laboratory',
-      centralDoorScale,
+      1,
       true,
-      omitCentralDoor,
+      true,
     );
+    if (!omitWindow) {
+      const machine = components.get('machine');
+      const pipe = components.get('wall');
+      if (!machine || !pipe) throw new Error('관측창 설비 리소스가 없습니다.');
+      drawObservationWindow(getContext(canvas), machine, pipe);
+    }
     return grade(canvas, warm);
   };
   const pipeImage = components.get('wall');
@@ -139,10 +145,10 @@ export async function loadAssets(): Promise<GameAssets> {
   machine.height = machineImage.height;
   getContext(machine).drawImage(machineImage, 0, 0);
   return {
-    emptyCenter: makeBackground(1, false, true),
+    emptyCenter: makeBackground(false, true),
     machine: grade(machine),
-    normal: makeBackground(1),
-    exit: makeBackground(1, true),
+    normal: makeBackground(),
+    exit: makeBackground(true),
     pipe: grade(pipe),
     props,
     animations,

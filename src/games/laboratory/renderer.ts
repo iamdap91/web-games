@@ -5,6 +5,7 @@ import { exitLight, passage, world, type GameSnapshot } from './game.js';
 import { roomTurn, smooth } from './event-rules.js';
 import { drawInvasionFurniture } from './chamber-renderer.js';
 import { cameraPosition } from './spatial-rules.js';
+import { drawWindowReflection } from './observation-window.js';
 import { drawPlayer } from './player-renderer.js';
 import {
   recordedFrame,
@@ -116,6 +117,7 @@ function drawRoom(
     cutAge < 0.16 ? Math.sin(cutAge * 130) * 5 * (1 - cutAge / 0.16) : 0;
   ctx.translate(-cameraX, shake + cutShake);
   drawAnomalyBackground(ctx, assets, state);
+  drawWindowReflection(ctx, assets, state, frame);
   if (!(state.scenario === 'folding-stage' && state.anomaly.backstageReturning))
     drawEntry(ctx, state);
   if (state.progress === 8) drawExit(ctx, 780, '→');

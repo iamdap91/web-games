@@ -3,6 +3,10 @@ import {
   stagePanelViews,
   panelWidth,
 } from './spatial-rules.js';
+import {
+  observationWindow,
+  drawObservationGlass,
+} from './observation-window.js';
 import type { GameAssets } from './assets.js';
 import { world, type GameSnapshot } from './game.js';
 import { pipes, pipeFall, pipeShape } from './pipe-cascade.js';
@@ -26,9 +30,7 @@ export function drawAnomalyBackground(
   ctx.drawImage(
     state.progress === 8
       ? assets.exit
-      : ['empty-center', 'room-invasion', 'blackout', 'watching-eye'].includes(
-            scenario,
-          )
+      : scenario === 'empty-center'
         ? assets.emptyCenter
         : assets.normal,
     0,
@@ -140,25 +142,13 @@ function drawEye(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {
   const opening = smooth((time ?? 0) / 1.1);
   const approach =
     smooth((state.player.x - 950) / 400) * smooth(((time ?? 0) - 0.8) / 1.2);
-  const x = 950,
-    y = 100,
-    w = 330,
-    h = 200;
+  const { x, y, width: w, height: h } = observationWindow;
+  if (time === null) return;
   ctx.save();
-  ctx.fillStyle = '#101c21';
-  ctx.fillRect(x - 12, y - 12, w + 24, h + 24);
-  ctx.strokeStyle = '#586760';
-  ctx.lineWidth = 7;
-  ctx.strokeRect(x - 5, y - 5, w + 10, h + 10);
-  for (const bx of [x - 7, x + w + 7])
-    for (const by of [y - 7, y + h + 7]) {
-      ctx.fillStyle = '#8b9986';
-      ctx.fillRect(bx - 2, by - 2, 4, 4);
-    }
   ctx.beginPath();
   ctx.rect(x, y, w, h);
   ctx.clip();
-  ctx.fillStyle = '#04090c';
+  ctx.fillStyle = `rgb(4 9 12 / ${smooth(time / 0.65)})`;
   ctx.fillRect(x, y, w, h);
   if (opening > 0) {
     ctx.save();
@@ -215,15 +205,7 @@ function drawEye(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {
     ctx.fill();
     ctx.restore();
   }
-  const reflection = ctx.createLinearGradient(x, y, x + w, y + h);
-  reflection.addColorStop(0, '#90c5c218');
-  reflection.addColorStop(0.4, '#b3d0c52b');
-  reflection.addColorStop(0.43, '#09121800');
-  reflection.addColorStop(1, '#02070b55');
-  ctx.fillStyle = reflection;
-  ctx.fillRect(x, y, w, h);
-  ctx.fillStyle = '#101c21';
-  ctx.fillRect(x + w / 2 - 3, y, 6, h);
+  drawObservationGlass(ctx);
   ctx.restore();
 }
 

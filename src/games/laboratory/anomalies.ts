@@ -32,7 +32,7 @@ export const anomalyDetails = {
   'lowering-ceiling': {
     title: '낮아지는 천장',
     description: '더 들어가자 천장이 내려앉아 몸이 납작해졌다.',
-    cue: '내려오는 천장 시작의 첫 문에 접근 · 찌부된 뒤 0번 방',
+    cue: '내려오는 천장 아래 관측창 중앙에 접근 · 찌부된 뒤 0번 방',
     observeX: 700,
   },
   'frame-escape': {
@@ -67,8 +67,8 @@ export const anomalyDetails = {
   },
   'empty-center': {
     title: '텅 빈 중앙',
-    description: '중앙 철문이 통째로 사라졌다.',
-    cue: '중앙 철문 자리 확인 · 드물게 출현',
+    description: '중앙 관측창이 통째로 사라졌다.',
+    cue: '중앙 관측창 자리 확인 · 드물게 출현',
     observeX: 850,
   },
 } as const;
