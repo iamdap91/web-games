@@ -25,6 +25,7 @@ export class ResourcePreview {
     images = new Map();
     imagePaths;
     animation;
+    motions;
     name;
     scale;
     resizeObserver = new ResizeObserver(() => this.resizeCanvas());
@@ -48,13 +49,32 @@ export class ResourcePreview {
             animations.set(name, animation);
         }
         this.animation = new AnimationPlayer(animations, 'stand');
+        this.motions = animations;
         this.name = asset.name;
         this.scale = scale;
         this.imagePaths = [
             ...new Set([...animations.values()].flatMap((animation) => animation.frames.map((frame) => frame.localPath))),
         ];
-        this.select.replaceChildren(...[...animations.keys()].map((name) => new Option(motionNames[name] ?? name, name)));
+        const options = document.createDocumentFragment();
+        const groups = new Map();
+        for (const [name, animation] of animations) {
+            const option = new Option(animation.label ?? motionNames[name] ?? name, name);
+            if (!animation.group) {
+                options.append(option);
+                continue;
+            }
+            let group = groups.get(animation.group);
+            if (!group) {
+                group = document.createElement('optgroup');
+                group.label = animation.group;
+                groups.set(animation.group, group);
+                options.append(group);
+            }
+            group.append(option);
+        }
+        this.select.replaceChildren(options);
         this.select.value = 'stand';
+        this.showMotionNotes();
     }
     async start() {
         if (this.state !== 'idle')
@@ -113,8 +133,14 @@ export class ResourcePreview {
     };
     handleMotionChange = () => {
         this.animation.play(this.select.value);
+        this.showMotionNotes();
         this.draw();
     };
+    showMotionNotes() {
+        const notes = document.getElementById('motion-notes');
+        if (notes)
+            notes.textContent = this.motions.get(this.select.value)?.notes ?? '';
+    }
     handleToggle = () => {
         this.paused = !this.paused;
         this.toggle.textContent = this.paused ? '재생' : '일시정지';

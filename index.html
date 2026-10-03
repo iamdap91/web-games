@@ -8,7 +8,7 @@
     />
     <meta name="theme-color" content="#10191a" />
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="./style.css?v=landscape-mode-4" />
+    <link rel="stylesheet" href="./style.css?v=character-selection-1" />
     <title>C-2 · 돌아오는 연구소</title>
   </head>
   <body>
@@ -22,6 +22,14 @@
       <div id="game-shell">
         <div class="game-toolbar" aria-label="게임 화면 메뉴">
           <p class="rotate-hint">가로로 돌리면 더 넓게 볼 수 있어요</p>
+          <label class="character-choice">
+            <span class="sr-only">플레이 캐릭터</span>
+            <select id="character" disabled>
+              <option value="toben">토벤머리 용사</option>
+              <option value="ataho">아타호</option>
+              <option value="smashu">스마슈</option>
+            </select>
+          </label>
           <button id="restart" type="button" disabled>처음부터</button>
           <button id="landscape-toggle" type="button" aria-pressed="false">
             가로 모드

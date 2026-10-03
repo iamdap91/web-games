@@ -35,6 +35,7 @@ class GameScreen {
     replayButton = element('replay', HTMLButtonElement);
     previewExitButton = element('preview-exit', HTMLButtonElement);
     selection = element('scenario', HTMLSelectElement);
+    characterSelection = element('character', HTMLSelectElement);
     diagnostics = element('diagnostics', HTMLParagraphElement);
     developer = new URLSearchParams(location.search).get('dev') === '1';
     events = new AbortController();
@@ -67,7 +68,7 @@ class GameScreen {
         this.assets = await loadAssets();
         if (signal.aborted)
             return;
-        this.animation = new AnimationPlayer(this.assets.animations, 'stand');
+        this.animation = new AnimationPlayer(this.assets.character.appearance.animations, 'stand');
         this.webSpace = new WebSpace(this.canvas, this.assets, this.shell, () => this.display?.rotated ?? false);
         this.loadingOverlay = new LoadingOverlay(this.canvas, this.assets);
         element('developer', HTMLElement).hidden = !this.developer;
@@ -82,6 +83,9 @@ class GameScreen {
             this.selection.append(option);
         }
         this.restartButton.disabled = false;
+        this.characterSelection.value = 'toben';
+        this.characterSelection.disabled = false;
+        this.characterSelection.addEventListener('change', () => this.changeCharacter(), { signal });
         this.selection.addEventListener('change', () => this.restart(), { signal });
         this.replayButton.addEventListener('click', () => this.restart(), {
             signal,
@@ -177,6 +181,19 @@ class GameScreen {
         this.observer.disconnect();
         cancelAnimationFrame(this.requestId);
         this.clearInput();
+    }
+    changeCharacter() {
+        const character = this.characterSelection.value;
+        if (!this.assets ||
+            (character !== 'toben' && character !== 'ataho' && character !== 'smashu'))
+            return;
+        this.clearInput();
+        this.assets.character.select(character);
+        const player = this.game.snapshot.player;
+        this.motion = player.motion;
+        this.animation = new AnimationPlayer(this.assets.character.appearance.animations, player.motion);
+        this.animation.update(player.motionElapsed);
+        this.canvas.focus({ preventScroll: true });
     }
     restart() {
         const value = this.selection.value;

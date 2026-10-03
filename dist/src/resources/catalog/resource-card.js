@@ -22,7 +22,7 @@ function createFrames(asset) {
     for (const [motion, animation] of Object.entries(asset.animations)) {
         if (!animation)
             continue;
-        details.append(createText('h4', `${motionNames[motion] ?? motion} · ${animation.frames.length}프레임`));
+        details.append(createText('h4', `${animation.group ? `${animation.group} · ` : ''}${animation.label ?? motionNames[motion] ?? motion} · ${animation.frames.length}프레임`));
         const strip = document.createElement('div');
         strip.className = 'frames';
         for (const [index, frame] of animation.frames.entries()) {

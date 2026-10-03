@@ -504,10 +504,22 @@ body.escaped {
   gap: 8px;
   padding-bottom: 10px;
 }
-.game-toolbar button {
+.game-toolbar button,
+.game-toolbar select {
   min-height: 44px;
   white-space: nowrap;
   touch-action: manipulation;
+}
+.character-choice {
+  margin-right: auto;
+  min-width: 0;
+}
+.character-choice select {
+  max-width: 100%;
+}
+.immersive .character-choice option {
+  color: #dbe3d6;
+  background: #101718;
 }
 .rotate-hint {
   display: none;
@@ -571,7 +583,8 @@ body.escaped {
   padding: 0;
   pointer-events: none;
 }
-.immersive .game-toolbar button {
+.immersive .game-toolbar button,
+.immersive .game-toolbar select {
   color: #ffffffb3;
   border-color: #ffffff40;
   background: #10171830;

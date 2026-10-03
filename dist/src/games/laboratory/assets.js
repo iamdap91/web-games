@@ -1,6 +1,7 @@
 import manifest from '../../../resources/manifest.json' with { type: 'json' };
 import { gradePixels, prepareMapObjects, } from '../../resources/corridor/corridor-renderer.js';
 import { drawIndustrial } from '../../resources/corridor/industrial-renderer.js';
+import { CharacterSprites } from './character-sprites.js';
 import { world } from './game.js';
 import { drawObservationWindow } from './observation-window.js';
 export function getContext(canvas) {
@@ -39,26 +40,19 @@ function grade(canvas, warm = false) {
 }
 export async function loadAssets() {
     const map = manifest.assets.find((asset) => asset.id === 'map/261020400');
-    const avatar = manifest.assets.find((asset) => asset.id === 'avatar/adventurer-toben');
-    if (!map?.localPath || !map.regions || !avatar)
+    if (!map?.localPath || !map.regions)
         throw new Error('게임 리소스 정보가 없습니다.');
     const components = new Map();
     const frames = new Map();
-    const animations = new Map();
-    for (const motion of ['stand', 'move', 'jump']) {
-        const animation = avatar.animations[motion];
-        if (!animation)
-            throw new Error(`모험가 모션이 없습니다: ${motion}`);
-        animations.set(motion, animation);
-    }
+    const character = new CharacterSprites();
     const [original] = await Promise.all([
         loadImage(map.localPath),
         Promise.all((map.components ?? []).map(async (part) => {
             components.set(part.name, await loadImage(part.localPath));
         })),
-        Promise.all([...animations.values()].flatMap((animation) => animation.frames.map(async (frame) => {
-            frames.set(frame.localPath, await loadImage(frame.localPath));
-        }))),
+        Promise.all(character.framePaths.map(async (path) => {
+            frames.set(path, await loadImage(path));
+        })),
     ]);
     const objects = prepareMapObjects(original);
     const makeBackground = ({ warm = false, omitWindow = false, omitExitDoors = false, } = {}) => {
@@ -113,7 +107,7 @@ export async function loadAssets() {
         exit: makeBackground({ warm: true }),
         pipe: grade(pipe),
         props,
-        animations,
+        character,
         frames,
     };
 }

@@ -1,7 +1,7 @@
 import { viewport } from './layout.js';
 import { drawPlayer } from './player-renderer.js';
 export function recordedFrame(assets, player, fallback) {
-    const frames = assets.animations.get(player.motion)?.frames;
+    const frames = assets.character.appearance.animations.get(player.motion)?.frames;
     if (!frames?.length)
         return fallback;
     const duration = frames.reduce((sum, frame) => sum + (frame.durationSeconds ?? 0.14), 0);

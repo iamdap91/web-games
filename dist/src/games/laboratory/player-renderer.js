@@ -11,12 +11,13 @@ export function drawPlayer(ctx, assets, player, frame, shadow = true) {
         const opacity = ctx.globalAlpha;
         ctx.save();
         ctx.translate(player.x, player.y);
-        // 원본 모험가 프레임은 왼쪽을 바라본다.
-        ctx.scale(-player.facing * 1.3, player.inverted ? -1.3 : 1.3);
+        // 토벤·스마슈는 왼쪽, 아타호는 오른쪽 원본이므로 이동 방향에 맞춘다.
+        const { scale, sourceFacing } = assets.character.appearance;
+        ctx.scale(player.facing * sourceFacing * scale, player.inverted ? -scale : scale);
         if (player.flashRemaining > 0) {
             for (const distance of [26, 52, 78]) {
                 ctx.globalAlpha = opacity * 0.22 * (1 - distance / 100);
-                ctx.drawImage(image, distance - frame.pivot.x, -(frame.height - frame.pivot.y));
+                ctx.drawImage(image, -sourceFacing * distance - frame.pivot.x, -(frame.height - frame.pivot.y));
             }
         }
         ctx.globalAlpha = opacity;
