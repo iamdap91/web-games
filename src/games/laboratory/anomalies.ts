@@ -49,8 +49,9 @@ export const anomalyDetails = {
   },
   'room-invasion': {
     title: '문에 끼어 있는 침입자',
-    description: '작은 문틈의 손가락 뒤로 긴 팔과 몸이 튀어나왔다.',
-    cue: '작은 문틈에 손가락이 보이면 접근 · 손이 먼저 돌출 · 잡히면 0번 방',
+    description:
+      '작은 문에서 튀어나온 침입자가 왼쪽을 덮친 뒤 반대로 돌아섰다.',
+    cue: '작은 문틈에 접근 · 왼쪽 공격 후 오른쪽 공격 · 모두 피하면 문 안으로 복귀 · 잡히면 0번 방',
     observeX: 1000,
   },
   'room-guillotine': {

@@ -73,7 +73,7 @@ test('움츠리는 예고 뒤 손에 잡히면 입력을 잠그고 문 안으로
   assert.deepEqual(game.snapshot.encountered, ['room-invasion']);
 });
 
-test('예고에 반응한 왼쪽 플래시점프는 피할 수 있고 공격은 취소되거나 반복되지 않는다', () => {
+test('왼쪽 플래시점프로 양쪽 공격을 피하면 물러나고 다시 공격하지 않는다', () => {
   const game = make();
   armAttack(game);
   advance(game, 0.2);
@@ -82,12 +82,12 @@ test('예고에 반응한 왼쪽 플래시점프는 피할 수 있고 공격은 
   advance(game, 0.8, -1);
   assert.equal(game.snapshot.phase, 'playing');
   assert.equal(game.snapshot.intruder.phase, 'striking');
-  advance(game, 2);
-  assert.equal(game.snapshot.intruder.phase, 'lodged');
+  advance(game, 3);
+  assert.equal(game.snapshot.intruder.phase, 'gone');
   approach(game, 1350);
   advance(game, 3);
   assert.equal(game.snapshot.phase, 'playing');
-  assert.equal(game.snapshot.intruder.phase, 'lodged');
+  assert.equal(game.snapshot.intruder.phase, 'gone');
   advance(game, 6, -1);
   advance(game, 0.6);
   assert.equal(game.snapshot.progress, 1);

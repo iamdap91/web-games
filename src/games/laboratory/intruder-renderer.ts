@@ -6,6 +6,11 @@ import { drawPlayer } from './player-renderer.js';
 import {
   intruderDoor,
   intruderReveal,
+  intruderDoorOpen,
+  intruderTurn,
+  intruderWithdrawal,
+  intruderLocalHand,
+  intruderPivotX,
   intruderExtension,
   intruderTiming,
   intruderHand,
@@ -23,12 +28,8 @@ export function drawIntruderDoor(
   // 새 문을 추가로 만들지 않고 원래 회색 문의 문틀과 문짝 질감을 사용한다.
   ctx.drawImage(assets.exitDoor, door.x, door.y, door.width, door.height);
   if (reveal.fingers === 0) return;
-  const strike = Math.max(
-    0,
-    (state.intruder.attackElapsed ?? 0) - intruderTiming.brace,
-  );
-  const pushed = 1 - (1 - Math.min(1, strike / 0.17)) ** 3;
-  const open = 0.06 * reveal.fingers + pushed * 0.88;
+  const open = intruderDoorOpen(state.intruder);
+  if (open === 0) return;
   const panelWidth = door.openingWidth * (1 - open);
   ctx.fillStyle = '#010405';
   ctx.fillRect(
@@ -358,6 +359,12 @@ function drawArm(
   }
 }
 
+function turnIntruder(ctx: CanvasRenderingContext2D, turn: number): void {
+  ctx.translate(intruderPivotX, 0);
+  ctx.scale(1 - turn * 2, 1);
+  ctx.translate(-intruderPivotX, 0);
+}
+
 export function drawIntruder(
   ctx: CanvasRenderingContext2D,
   assets: GameAssets,
@@ -371,11 +378,15 @@ export function drawIntruder(
   const reveal = intruderReveal(monster);
   drawPeekingFingers(ctx, state);
   if (reveal.hand === 0) return;
-  const extension = intruderExtension(monster.attackElapsed);
+  const extension = intruderExtension(
+    (monster.attackElapsed ?? 0) - (monster.caughtElapsed ?? 0),
+  );
+  const turn = intruderTurn(monster);
+  const withdrawal = intruderWithdrawal(monster);
   const dragged = smooth((monster.caughtElapsed ?? 0) / intruderTiming.drag);
   const breath = Math.sin(time * 2.3) * 1.5;
   const body = { x: 1524 - reveal.body * 44 + dragged * 20, y: 290 + breath };
-  const hand = intruderHand(monster);
+  const hand = intruderLocalHand(monster);
   const leftShoulder = {
     x: 1515 + (body.x - 58 - 1515) * reveal.body,
     y: 268 - reveal.body * 13,
@@ -383,6 +394,20 @@ export function drawIntruder(
   const rightShoulder = { x: body.x + 42, y: 244 };
   const rightHand = { x: intruderDoor.seamX + 7, y: 267 };
   ctx.save();
+  turnIntruder(ctx, turn);
+  // 물러나는 몸은 작은 입구 뒤로 가려지며, 문 밖에서 갑자기 사라지지 않는다.
+  if (withdrawal > 0) {
+    const remaining = 1 - withdrawal;
+    ctx.beginPath();
+    ctx.rect(
+      intruderDoor.openingX - remaining * 125,
+      intruderDoor.openingY - remaining * 57,
+      intruderDoor.openingWidth + remaining * 245,
+      intruderDoor.openingHeight + remaining * 57,
+    );
+    ctx.clip();
+    ctx.globalAlpha *= 1 - smooth((withdrawal - 0.8) / 0.2);
+  }
   ctx.fillStyle = `rgb(0 3 4 / ${reveal.hand * 0.6})`;
   ctx.beginPath();
   ctx.ellipse(
@@ -427,10 +452,9 @@ export function drawIntruder(
         intruderTiming.bodyDelay,
     );
     const headLag = Math.sin(headTime * 17) * Math.exp(-headTime * 4);
-    const gaze = Math.max(
-      -0.15,
-      Math.min(0.2, (state.player.x - body.x) / 1400),
-    );
+    const playerX =
+      turn < 0.5 ? state.player.x : intruderPivotX * 2 - state.player.x;
+    const gaze = Math.max(-0.15, Math.min(0.2, (playerX - body.x) / 1400));
     ctx.save();
     ctx.translate(body.x - 12 - reveal.body * 19, 267 - reveal.body * 49);
     ctx.scale(0.6 + reveal.body * 0.24, 0.6 + reveal.body * 0.24);
@@ -450,12 +474,15 @@ export function drawIntruder(
     true,
   );
   if (actor && monster.caughtElapsed !== null) {
+    // 캐릭터까지 좌우반전하지 않고 실제로 잡힌 월드 위치에서 끌어들인다.
+    ctx.restore();
+    const worldHand = intruderHand(monster);
     const bind = smooth(monster.caughtElapsed / 0.12);
     const scale = 1 - dragged * 0.58;
     ctx.save();
     ctx.translate(
-      state.player.x + (hand.x - state.player.x) * bind,
-      state.player.y + (hand.y + 29 * scale - state.player.y) * bind,
+      state.player.x + (worldHand.x - state.player.x) * bind,
+      state.player.y + (worldHand.y + 29 * scale - state.player.y) * bind,
     );
     ctx.rotate(
       Math.sin(monster.caughtElapsed * 24) * (1 - dragged) * 0.15 +
@@ -465,6 +492,8 @@ export function drawIntruder(
     ctx.globalAlpha *= 1 - smooth((monster.caughtElapsed - 0.86) / 0.25);
     drawPlayer(ctx, assets, { ...state.player, x: 0, y: 0 }, frame, false);
     ctx.restore();
+    ctx.save();
+    turnIntruder(ctx, turn);
   }
   ctx.save();
   ctx.translate(hand.x, hand.y);
