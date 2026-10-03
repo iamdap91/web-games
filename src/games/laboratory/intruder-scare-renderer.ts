@@ -186,24 +186,11 @@ function drawDepthBars(
     if (reveal === 0) continue;
     ctx.save();
     ctx.globalAlpha *= reveal;
-    // 고정된 관찰창의 테두리가 반사광을 받아 어둠에서 드러나게 한다.
-    const rim = ctx.createLinearGradient(x - 13, 0, x + 13, 0);
-    rim.addColorStop(0, '#01060800');
-    rim.addColorStop(0.35, '#01060899');
-    rim.addColorStop(0.5, '#809c963b');
-    rim.addColorStop(0.65, '#01060899');
-    rim.addColorStop(1, '#01060800');
-    ctx.fillStyle = rim;
-    ctx.fillRect(x - 13, 0, 26, height);
-    ctx.fillStyle = '#061111';
+    // 밝기를 균일하게 유지하고 양쪽 1px 경계로 손에 가려지는 부분을 또렷하게 한다.
+    ctx.fillStyle = '#56615e';
+    ctx.fillRect(x - 6, 0, 12, height);
+    ctx.fillStyle = '#cad2cf';
     ctx.fillRect(x - 5, 0, 10, height);
-    const metal = ctx.createLinearGradient(x - 3.5, 0, x + 3.5, 0);
-    metal.addColorStop(0, '#718984');
-    metal.addColorStop(0.28, '#d0d7c9');
-    metal.addColorStop(0.52, '#aabdb3');
-    metal.addColorStop(1, '#617b78');
-    ctx.fillStyle = metal;
-    ctx.fillRect(x - 3.5, 0, 7, height);
     if (reveal < 1) {
       // 양쪽 테두리를 반사광이 엇갈려 스친다. 드러난 뒤에는 움직이지 않는다.
       const travel = -0.28 + reveal * 1.56;
