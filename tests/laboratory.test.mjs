@@ -83,7 +83,7 @@ test('정상은 오른쪽, 이상은 왼쪽이 정답이며 오답은 0번 방�
   exit(game, -1);
   advance(game, 1.5);
   assert.equal(game.snapshot.progress, 0);
-  for (const scenario of ['giant-door', 'falling-pipe']) {
+  for (const scenario of ['watching-eye', 'falling-pipe']) {
     game.reset(scenario);
     exit(game, -1);
     advance(game, 0.6);
@@ -96,7 +96,7 @@ test('정상은 오른쪽, 이상은 왼쪽이 정답이며 오답은 0번 방�
 
 test('8번 방에서도 움직이고 오른쪽 빛 속으로 나가야 종료된다', () => {
   const game = new LaboratoryGame();
-  game.reset('giant-door');
+  game.reset('watching-eye');
   for (let count = 1; count <= 8; count++) {
     exit(game, -1);
     advance(game, 0.6);
@@ -113,7 +113,7 @@ test('8번 방에서도 움직이고 오른쪽 빛 속으로 나가야 종료된
   game.jump(1);
   advance(game, 1, 1);
   assert.deepEqual(game.snapshot.player, before);
-  game.reset('giant-door');
+  game.reset('watching-eye');
   assert.equal(game.snapshot.progress, 0);
   assert.equal(game.snapshot.phase, 'playing');
 });
@@ -137,24 +137,24 @@ test('빠른 접근에도 배관이 발동하고 되돌아가도 초기화되지
 
 test('개발 선택을 유지하고 무작위로 돌아오면 정상 0번 방부터 시작한다', () => {
   const game = new LaboratoryGame(() => 0.31);
-  game.reset('giant-door');
+  game.reset('watching-eye');
   exit(game, -1);
   advance(game, 0.6);
-  assert.equal(game.snapshot.scenario, 'giant-door');
+  assert.equal(game.snapshot.scenario, 'watching-eye');
   game.reset('random');
   assert.equal(game.snapshot.phase, 'playing');
   assert.equal(game.snapshot.progress, 0);
   assert.equal(game.snapshot.scenario, 'normal');
   exit(game, 1);
   advance(game, 0.6);
-  assert.equal(game.snapshot.scenario, 'giant-door');
+  assert.equal(game.snapshot.scenario, 'falling-pipe');
   assert.equal(isSelection('invalid'), false);
   assert.equal(isSelection('falling-pipe'), true);
 });
 
 test('정상과 정적 이상에서는 배관이 움직이지 않는다', () => {
   const game = new LaboratoryGame();
-  for (const scenario of ['normal', 'giant-door']) {
+  for (const scenario of ['normal', 'watching-eye']) {
     game.reset(scenario);
     advance(game, 5, 1);
     assert.equal(game.snapshot.pipeElapsed, null);
@@ -212,7 +212,7 @@ test('전환 중 개발 상황을 바꾸면 이전 전환과 노이즈가 취소
 
 test('개발 모드의 8번 방 확인은 같은 입장 상태를 만들고 현재 기록을 보존한다', () => {
   const completed = new LaboratoryGame();
-  completed.reset('giant-door');
+  completed.reset('watching-eye');
   for (let room = 0; room < 8; room++) {
     exit(completed, -1);
     advance(completed, 0.6);
@@ -276,23 +276,23 @@ test('8번 방의 왼쪽은 출구가 아니고 빛이 몸과 잔상을 가린 �
 
 test('배정만 된 이상은 기록하지 않고 실제 접근한 이상은 실패 후에도 중복 없이 남긴다', () => {
   const game = new LaboratoryGame();
-  game.reset('giant-door');
+  game.reset('watching-eye');
   exit(game, -1);
   advance(game, 0.6);
   assert.deepEqual(game.snapshot.encountered, []);
   advance(game, 2, 1);
-  assert.deepEqual(game.snapshot.encountered, ['giant-door']);
+  assert.deepEqual(game.snapshot.encountered, ['watching-eye']);
   exit(game, 1);
   advance(game, 1.5);
   assert.equal(game.snapshot.progress, 0);
-  assert.deepEqual(game.snapshot.encountered, ['giant-door']);
+  assert.deepEqual(game.snapshot.encountered, ['watching-eye']);
   advance(game, 2, 1);
-  assert.deepEqual(game.snapshot.encountered, ['giant-door']);
+  assert.deepEqual(game.snapshot.encountered, ['watching-eye']);
   game.previewExit();
   advance(game, 0.6);
   exit(game, 1);
   advance(game, 0.3);
-  assert.deepEqual(game.snapshot.encountered, ['giant-door']);
+  assert.deepEqual(game.snapshot.encountered, ['watching-eye']);
   game.reset();
   assert.deepEqual(game.snapshot.encountered, []);
 });

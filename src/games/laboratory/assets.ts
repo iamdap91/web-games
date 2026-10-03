@@ -9,12 +9,11 @@ import { world, type Motion } from './game.js';
 
 export type GameAssets = {
   readonly normal: HTMLCanvasElement;
-  readonly giantDoor: HTMLCanvasElement;
   readonly exit: HTMLCanvasElement;
   readonly emptyCenter: HTMLCanvasElement;
-  readonly door: HTMLCanvasElement;
   readonly machine: HTMLCanvasElement;
   readonly pipe: HTMLCanvasElement;
+  readonly props: ReadonlyMap<string, readonly HTMLImageElement[]>;
   readonly animations: ReadonlyMap<Motion, Animation>;
   readonly frames: ReadonlyMap<string, HTMLImageElement>;
 };
@@ -112,23 +111,28 @@ export async function loadAssets(): Promise<GameAssets> {
   pipe.width = pipeImage.width;
   pipe.height = pipeImage.height;
   getContext(pipe).drawImage(pipeImage, 0, 0);
-  const doorRegion = map.regions.find((region) => region.name === 'door');
   const machineImage = components.get('machine');
-  if (!doorRegion || !machineImage)
-    throw new Error('이상현상 리소스가 없습니다.');
-  const door = document.createElement('canvas');
-  door.width = 166;
-  door.height = 200;
-  getContext(door).drawImage(
-    objects,
-    doorRegion.x,
-    doorRegion.y,
-    doorRegion.width,
-    doorRegion.height,
-    0,
-    0,
-    166,
-    200,
+  if (!machineImage) throw new Error('기계 리소스가 없습니다.');
+  const props = new Map<string, readonly HTMLImageElement[]>();
+  await Promise.all(
+    [
+      '개폐 철문',
+      '저택 실내 벽',
+      '목재 바닥 무늬',
+      '목재 책장',
+      '목재 괘종시계',
+      '낡은 나무 의자',
+    ].map(async (name) => {
+      const asset = manifest.assets.find((entry) => entry.name === name);
+      const animation = asset?.animations.stand;
+      if (!animation) throw new Error(`공간 리소스가 없습니다: ${name}`);
+      props.set(
+        name,
+        await Promise.all(
+          animation.frames.map((frame) => loadImage(frame.localPath)),
+        ),
+      );
+    }),
   );
   const machine = document.createElement('canvas');
   machine.width = machineImage.width;
@@ -136,12 +140,11 @@ export async function loadAssets(): Promise<GameAssets> {
   getContext(machine).drawImage(machineImage, 0, 0);
   return {
     emptyCenter: makeBackground(1, false, true),
-    door: grade(door),
     machine: grade(machine),
     normal: makeBackground(1),
-    giantDoor: makeBackground(1.48),
     exit: makeBackground(1, true),
     pipe: grade(pipe),
+    props,
     animations,
     frames,
   };

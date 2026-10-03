@@ -3,88 +3,55 @@ import {
   stagePanelViews,
   panelWidth,
 } from './spatial-rules.js';
-import type { AnimationFrame } from '../../resources/preview/animation-player.js';
 import type { GameAssets } from './assets.js';
 import { world, type GameSnapshot } from './game.js';
 import { pipes, pipeFall, pipeShape } from './pipe-cascade.js';
+import { ceiling, ceilingHeight, smooth } from './event-rules.js';
+import {
+  drawMachine,
+  drawBlackoutChamber,
+  drawInvasion,
+} from './chamber-renderer.js';
 
 export function drawAnomalyBackground(
   ctx: CanvasRenderingContext2D,
   assets: GameAssets,
   state: GameSnapshot,
 ): void {
-  const { scenario, player, anomaly } = state;
+  const { scenario, anomaly } = state;
   if (scenario === 'folding-stage') {
     drawBackstage(ctx, assets, state);
     return;
   }
-  const background =
+  ctx.drawImage(
     state.progress === 8
       ? assets.exit
-      : scenario === 'giant-door'
-        ? assets.giantDoor
-        : ['empty-center', 'following-door'].includes(scenario)
-          ? assets.emptyCenter
-          : assets.normal;
-  ctx.drawImage(background, 0, 0);
+      : ['empty-center', 'room-invasion', 'blackout', 'watching-eye'].includes(
+            scenario,
+          )
+        ? assets.emptyCenter
+        : assets.normal,
+    0,
+    0,
+  );
   if (scenario === 'upside-down') {
-    ctx.save();
-    ctx.translate(0, world.ground);
-    ctx.scale(1, -1);
-    ctx.drawImage(
-      background,
-      0,
-      0,
-      world.width,
-      world.ground,
-      0,
-      0,
-      world.width,
-      world.ground,
-    );
-    ctx.restore();
+    // 뒤집히면 기존 천장의 바깥 면이 발을 받치는 바닥이 된다.
+    ctx.drawImage(assets.normal, 0, 340, 2400, 90, 0, -90, 2400, 90);
+    ctx.fillStyle = '#34423c';
+    ctx.fillRect(0, -4, world.width, 4);
   }
-  if (scenario === 'crowded-lab') {
-    for (let x = 820; x < 2150; x += 105) {
-      ctx.drawImage(assets.machine, x, 100, 95, 235);
-      ctx.drawImage(assets.machine, x + 15, 25, 65, 90);
-    }
-  }
-  if (scenario === 'following-door')
-    ctx.drawImage(assets.door, anomaly.doorX, 140);
   if (scenario === 'creeping-machine')
-    ctx.drawImage(assets.machine, anomaly.machineX - 70, 85, 140, 250);
-  if (
-    scenario === 'blackout' &&
-    anomaly.activeElapsed !== null &&
-    anomaly.activeElapsed >= 0.28
-  ) {
-    ctx.drawImage(assets.machine, anomaly.blackoutX - 90, 15, 180, 320);
-  }
-  if (scenario === 'red-fluid') drawFluid(ctx, anomaly.elapsed);
-  if (scenario === 'sealed-exit') drawSealedExit(ctx);
-  if (scenario === 'watching-eye') drawEye(ctx, player.x, anomaly.elapsed);
-  if (scenario === 'reverse-flow') drawFloorFlow(ctx, anomaly.flowOffset);
-  if (scenario === 'lowering-ceiling') {
-    const drop = ceilingDrop(player.x);
-    ctx.fillStyle = '#111c1e';
-    ctx.fillRect(0, 0, world.width, drop);
-    ctx.drawImage(
-      assets.normal,
-      0,
-      0,
-      world.width,
-      48,
-      0,
-      drop,
-      world.width,
-      48,
+    drawMachine(
+      ctx,
+      assets,
+      anomaly.machineX,
+      1,
+      anomaly.machineLean,
+      anomaly.machineStride,
     );
-  }
-}
-
-function ceilingDrop(x: number): number {
-  return Math.max(0, Math.min(210, (x - 600) * 0.15));
+  if (scenario === 'blackout') drawBlackoutChamber(ctx, assets, state);
+  if (scenario === 'watching-eye') drawEye(ctx, state);
+  if (scenario === 'room-invasion') drawInvasion(ctx, assets, state);
 }
 
 export function drawAnomalyPipes(
@@ -93,33 +60,33 @@ export function drawAnomalyPipes(
   state: GameSnapshot,
 ): void {
   if (state.scenario === 'folding-stage') return;
-  for (const pipe of pipes) {
+  for (const [index, pipe] of pipes.entries()) {
     const fall = pipeFall(state.pipeElapsed, pipe.delay);
     const y = pipeShape.top + pipeShape.travel * fall;
     if (state.scenario === 'bent-pipes') {
-      const bend = Math.max(-90, Math.min(90, (state.player.x - pipe.x) * 0.3));
-      // 조각을 가로로 늘리는 대신 얇은 띠를 옮겨 금속 무늬를 유지한다.
-      for (let strip = 0; strip < 30; strip++) {
-        const ratio = strip / 29;
+      const bend = state.anomaly.pipeBends[index] ?? 0;
+      for (let strip = 0; strip < 40; strip++) {
+        const ratio = strip / 39;
         ctx.drawImage(
           assets.pipe,
           0,
-          (strip * assets.pipe.height) / 30,
+          (strip * assets.pipe.height) / 40,
           assets.pipe.width,
-          assets.pipe.height / 30,
+          assets.pipe.height / 40,
           pipe.x - pipe.width / 2 + bend * ratio ** 2,
-          -75 + strip * 10,
+          -150 + strip * 8,
           pipe.width,
-          11,
+          9,
         );
       }
-    } else if (state.scenario === 'upside-down') {
-      ctx.save();
+      ctx.fillStyle = '#050d11';
       ctx.beginPath();
-      ctx.rect(0, 0, world.width, world.ground);
-      ctx.clip();
-      ctx.translate(0, world.ground);
-      ctx.scale(1, -1);
+      ctx.ellipse(pipe.x + bend, 168, pipe.width / 2, 9, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.strokeStyle = '#75877c';
+      ctx.lineWidth = 3;
+      ctx.stroke();
+    } else
       ctx.drawImage(
         assets.pipe,
         pipe.x - pipe.width / 2,
@@ -127,64 +94,58 @@ export function drawAnomalyPipes(
         pipe.width,
         pipeShape.height,
       );
-      ctx.restore();
-    } else {
-      const drop =
-        state.scenario === 'lowering-ceiling' ? ceilingDrop(state.player.x) : 0;
-      ctx.save();
-      if (state.scenario === 'lowering-ceiling') {
-        ctx.beginPath();
-        ctx.rect(0, drop + 48, world.width, world.ground - drop - 48);
-        ctx.clip();
-      }
-      ctx.drawImage(
-        assets.pipe,
-        pipe.x - pipe.width / 2,
-        y + drop,
-        pipe.width,
-        pipeShape.height,
-      );
-      ctx.restore();
-    }
   }
 }
 
-export function drawAnomalyFigure(
+export function drawCeiling(
   ctx: CanvasRenderingContext2D,
   assets: GameAssets,
   state: GameSnapshot,
-  frame: AnimationFrame,
 ): void {
-  if (state.scenario !== 'late-shadow' && state.scenario !== 'lingering-echo')
-    return;
-  const pose =
-    state.scenario === 'late-shadow'
-      ? state.anomaly.shadow
-      : state.anomaly.echo;
-  if (!pose) return;
-  const echoFrame =
-    state.scenario === 'lingering-echo'
-      ? (assets.animations.get('jump')?.frames[0] ?? frame)
-      : frame;
-  const image = assets.frames.get(echoFrame.localPath);
-  if (!image) return;
+  if (state.scenario !== 'lowering-ceiling') return;
+  const drop = ceilingHeight(state.player.x, state.anomaly.ceilingSlam);
+  const slam = state.anomaly.ceilingSlam;
+  const shake =
+    slam === null ? (Math.sin(state.anomaly.elapsed * 21) * drop) / 150 : 0;
   ctx.save();
-  if (state.scenario === 'late-shadow') {
-    ctx.translate(pose.x, world.ground + 9);
-    ctx.scale(-pose.facing * 1.6, 0.42);
-    ctx.filter = 'brightness(0)';
-    ctx.globalAlpha = 0.85;
-  } else {
-    ctx.translate(pose.x, pose.y);
-    ctx.scale(-pose.facing * 1.3, 1.3);
-    ctx.filter = 'grayscale(1) sepia(0.6)';
-    ctx.globalAlpha = 0.65;
-  }
+  ctx.translate(0, shake);
+  ctx.fillStyle = '#0e171b';
+  ctx.fillRect(ceiling.edge, 0, world.width - ceiling.edge, drop);
   ctx.drawImage(
-    image,
-    -echoFrame.pivot.x,
-    -(echoFrame.height - echoFrame.pivot.y),
+    assets.normal,
+    ceiling.edge,
+    0,
+    world.width - ceiling.edge,
+    48,
+    ceiling.edge,
+    drop,
+    world.width - ceiling.edge,
+    48,
   );
+  for (let x = ceiling.edge; x < world.width; x += 180) {
+    ctx.fillStyle = '#2c3b3a';
+    ctx.fillRect(x, 0, 12, drop);
+    ctx.strokeStyle = '#090f12';
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(x + 6, 0);
+    ctx.lineTo(x + 100, drop);
+    ctx.stroke();
+  }
+  ctx.fillStyle = '#050b0ee0';
+  ctx.fillRect(ceiling.edge, drop + 40, world.width - ceiling.edge, 8);
+  const shadow = ctx.createLinearGradient(0, drop + 48, 0, 340);
+  shadow.addColorStop(0, '#02050890');
+  shadow.addColorStop(1, '#02050800');
+  if (drop + 48 < 340) {
+    ctx.fillStyle = shadow;
+    ctx.fillRect(
+      ceiling.edge,
+      drop + 48,
+      world.width - ceiling.edge,
+      340 - drop - 48,
+    );
+  }
   ctx.restore();
 }
 
@@ -193,140 +154,102 @@ export function drawBlackout(
   state: GameSnapshot,
 ): void {
   const time = state.anomaly.activeElapsed;
-  if (state.scenario !== 'blackout' || time === null || time > 0.48) return;
+  if (state.scenario !== 'blackout' || time === null || time > 0.65) return;
   const opacity =
-    time < 0.08 ? time / 0.08 : time < 0.28 ? 1 : 1 - (time - 0.28) / 0.2;
+    time < 0.1 ? time / 0.1 : time < 0.4 ? 1 : 1 - (time - 0.4) / 0.25;
   ctx.fillStyle = `rgb(0 0 0 / ${opacity})`;
   ctx.fillRect(0, 0, 1000, 430);
 }
 
-function drawFluid(ctx: CanvasRenderingContext2D, time: number): void {
+function drawEye(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {
+  const time = state.anomaly.activeElapsed;
+  const opening = smooth((time ?? 0) / 1.1);
+  const approach =
+    smooth((state.player.x - 950) / 400) * smooth(((time ?? 0) - 0.8) / 1.2);
+  const x = 950,
+    y = 100,
+    w = 330,
+    h = 200;
   ctx.save();
-  const glow = ctx.createRadialGradient(806, 245, 15, 806, 245, 150);
-  glow.addColorStop(0, '#bb102b55');
-  glow.addColorStop(1, '#bb102b00');
-  ctx.fillStyle = glow;
-  ctx.fillRect(650, 90, 310, 310);
-  ctx.fillStyle = '#7c0921';
-  ctx.fillRect(772, 185, 63, 129);
-  ctx.strokeStyle = '#e34249';
-  ctx.lineWidth = 3;
-  for (let i = 0; i < 9; i++) {
-    const y = 302 - ((time * 35 + i * 19) % 108);
-    ctx.beginPath();
-    ctx.arc(779 + ((i * 17) % 48), y, 2 + (i % 3), 0, Math.PI * 2);
-    ctx.stroke();
-  }
-  ctx.strokeStyle = '#a3122d';
-  ctx.lineWidth = 8;
-  for (const x of [765, 837]) {
-    ctx.beginPath();
-    ctx.moveTo(x, 185);
-    ctx.bezierCurveTo(x - 18, 220, x + 20, 275, x, 339);
-    ctx.stroke();
-  }
-  ctx.fillStyle = '#7c0921';
-  ctx.beginPath();
-  ctx.ellipse(806, 339, 100 + Math.sin(time * 2) * 8, 7, 0, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.restore();
-}
-
-function drawSealedExit(ctx: CanvasRenderingContext2D): void {
-  ctx.save();
-  ctx.fillStyle = '#313c42';
-  ctx.fillRect(2155, 132, 176, 208);
-  ctx.strokeStyle = '#687978';
-  ctx.lineWidth = 4;
-  ctx.strokeRect(2155, 132, 176, 208);
-  ctx.strokeStyle = '#0c191d';
-  ctx.lineWidth = 18;
-  for (const [from, to] of [
-    [
-      [2165, 145],
-      [2320, 326],
-    ],
-    [
-      [2320, 145],
-      [2165, 326],
-    ],
-  ] as const) {
-    ctx.beginPath();
-    ctx.moveTo(from[0], from[1]);
-    ctx.lineTo(to[0], to[1]);
-    ctx.stroke();
-  }
-  for (const x of [2165, 2321])
-    for (const y of [143, 329]) {
-      ctx.fillStyle = '#a1ad9c';
-      ctx.fillRect(x - 3, y - 3, 6, 6);
+  ctx.fillStyle = '#101c21';
+  ctx.fillRect(x - 12, y - 12, w + 24, h + 24);
+  ctx.strokeStyle = '#586760';
+  ctx.lineWidth = 7;
+  ctx.strokeRect(x - 5, y - 5, w + 10, h + 10);
+  for (const bx of [x - 7, x + w + 7])
+    for (const by of [y - 7, y + h + 7]) {
+      ctx.fillStyle = '#8b9986';
+      ctx.fillRect(bx - 2, by - 2, 4, 4);
     }
-  ctx.restore();
-}
-
-function drawEye(
-  ctx: CanvasRenderingContext2D,
-  playerX: number,
-  time: number,
-): void {
-  ctx.save();
-  ctx.fillStyle = '#172126';
-  ctx.fillRect(957, 110, 315, 181);
-  ctx.strokeStyle = '#64736b';
-  ctx.lineWidth = 9;
-  ctx.strokeRect(957, 110, 315, 181);
   ctx.beginPath();
-  ctx.ellipse(1114, 199, 136, 67, 0, 0, Math.PI * 2);
+  ctx.rect(x, y, w, h);
   ctx.clip();
-  ctx.fillStyle = '#c7cab1';
-  ctx.fillRect(978, 131, 274, 136);
-  ctx.strokeStyle = '#873e3970';
-  ctx.lineWidth = 2;
-  for (let i = 0; i < 11; i++) {
+  ctx.fillStyle = '#04090c';
+  ctx.fillRect(x, y, w, h);
+  if (opening > 0) {
+    ctx.save();
+    ctx.translate(x + w / 2, y + h / 2);
+    const size = 1 + approach * 1.5;
+    ctx.scale(size, size);
     ctx.beginPath();
-    ctx.moveTo(980 + i * 27, 133);
-    ctx.lineTo(995 + i * 24, 172 + (i % 3) * 23);
-    ctx.lineTo(986 + i * 25, 266);
-    ctx.stroke();
-  }
-  const x = 1114 + Math.max(-75, Math.min(75, (playerX - 1114) * 0.15));
-  ctx.fillStyle = '#516557';
-  ctx.beginPath();
-  ctx.arc(x, 199, 51, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.fillStyle = '#040b0c';
-  ctx.beginPath();
-  ctx.ellipse(x, 199, 17 + Math.sin(time) * 2, 43, 0, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.fillStyle = '#f5f4cd';
-  ctx.fillRect(x - 16, 178, 9, 9);
-  ctx.restore();
-}
-
-function drawFloorFlow(ctx: CanvasRenderingContext2D, offset: number): void {
-  ctx.save();
-  ctx.beginPath();
-  ctx.rect(0, 354, world.width, 65);
-  ctx.clip();
-  ctx.fillStyle = '#214e4ee0';
-  ctx.fillRect(0, 354, world.width, 65);
-  ctx.strokeStyle = '#9fbfa68c';
-  ctx.lineWidth = 4;
-  for (let x = -160; x < world.width + 160; x += 110) {
-    const position = x + (offset % 110);
+    ctx.moveTo(-153, 0);
+    ctx.bezierCurveTo(-90, -100 * opening, 85, -100 * opening, 153, 0);
+    ctx.bezierCurveTo(85, 90 * opening, -90, 90 * opening, -153, 0);
+    ctx.clip();
+    const sclera = ctx.createRadialGradient(-20, -5, 15, 0, 0, 155);
+    sclera.addColorStop(0, '#b8b99e');
+    sclera.addColorStop(0.65, '#72796a');
+    sclera.addColorStop(1, '#242a27');
+    ctx.fillStyle = sclera;
+    ctx.fillRect(-160, -100, 320, 200);
+    ctx.strokeStyle = '#594139aa';
+    ctx.lineWidth = 1;
+    for (let i = 0; i < 16; i++) {
+      const a = (i * Math.PI) / 8;
+      ctx.beginPath();
+      ctx.moveTo(Math.cos(a) * 150, Math.sin(a) * 90);
+      ctx.lineTo(Math.cos(a + 0.08) * 104, Math.sin(a + 0.08) * 58);
+      ctx.lineTo(Math.cos(a - 0.04) * 78, Math.sin(a - 0.04) * 44);
+      ctx.stroke();
+    }
+    const gaze = Math.max(-54, Math.min(54, (state.player.x - 1115) * 0.13));
+    ctx.translate(gaze, 0);
+    const iris = ctx.createRadialGradient(0, 0, 8, 0, 0, 48);
+    iris.addColorStop(0, '#8b8650');
+    iris.addColorStop(0.5, '#576752');
+    iris.addColorStop(1, '#15231f');
+    ctx.fillStyle = iris;
     ctx.beginPath();
-    ctx.moveTo(position, 354);
-    ctx.lineTo(position - 50, 419);
-    ctx.stroke();
-  }
-  ctx.strokeStyle = '#a9c1a9';
-  ctx.lineWidth = 2;
-  for (const y of [357, 415]) {
+    ctx.arc(0, 0, 48, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.strokeStyle = '#b3ad644d';
+    ctx.lineWidth = 1;
+    for (let i = 0; i < 60; i++) {
+      const a = (i * Math.PI) / 30;
+      ctx.beginPath();
+      ctx.moveTo(Math.cos(a) * 20, Math.sin(a) * 20);
+      ctx.lineTo(Math.cos(a + 0.03) * 45, Math.sin(a + 0.03) * 45);
+      ctx.stroke();
+    }
+    ctx.fillStyle = '#020607';
     ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(world.width, y);
-    ctx.stroke();
+    ctx.ellipse(0, 0, 14 - approach * 7, 36, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#e1e8ca9c';
+    ctx.beginPath();
+    ctx.ellipse(-16, -17, 6, 9, -0.5, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
   }
+  const reflection = ctx.createLinearGradient(x, y, x + w, y + h);
+  reflection.addColorStop(0, '#90c5c218');
+  reflection.addColorStop(0.4, '#b3d0c52b');
+  reflection.addColorStop(0.43, '#09121800');
+  reflection.addColorStop(1, '#02070b55');
+  ctx.fillStyle = reflection;
+  ctx.fillRect(x, y, w, h);
+  ctx.fillStyle = '#101c21';
+  ctx.fillRect(x + w / 2 - 3, y, 6, h);
   ctx.restore();
 }
 

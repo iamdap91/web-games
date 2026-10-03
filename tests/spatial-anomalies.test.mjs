@@ -308,7 +308,8 @@ test('경계 안에 머물러도 열린 뒤 왼쪽으로 100만큼 되돌아가�
   advance(game, 6.6, 1);
   game.jump(1);
   game.jump(1);
-  advance(game, 0.6);
+  // 경계에 도달한 뒤 열림 애니메이션 0.55초가 끝날 때까지 기다린다.
+  advance(game, 0.8);
   assert.equal(frameEdge(game.snapshot), 760);
   assert.ok(game.snapshot.player.x < game.snapshot.chase.boundary);
   assert.equal(game.snapshot.chase.phase, 'idle');

@@ -2,13 +2,15 @@ import type { AnimationFrame } from '../../resources/preview/animation-player.js
 import type { GameAssets } from './assets.js';
 import { exitLight, passage, world, type GameSnapshot } from './game.js';
 
+import { roomTurn } from './event-rules.js';
+import { drawInvasionFurniture } from './chamber-renderer.js';
 import { cameraPosition } from './spatial-rules.js';
 import { drawPlayer } from './player-renderer.js';
 import { pipeShake } from './pipe-cascade.js';
 import {
   drawAnomalyBackground,
   drawAnomalyPipes,
-  drawAnomalyFigure,
+  drawCeiling,
   drawBlackout,
 } from './anomaly-renderer.js';
 
@@ -31,7 +33,14 @@ export function drawGame(
   ctx.fillStyle = '#0d1719';
   ctx.fillRect(0, 0, viewport.width, viewport.height);
   ctx.save();
-  ctx.translate(-cameraX, shake);
+  if (state.scenario === 'upside-down') {
+    const turn = roomTurn(state.anomaly.activeElapsed) * Math.PI;
+    // 좌우 조작을 유지하면서 방을 깊이 방향으로 뒤집는다.
+    ctx.translate(500, 170 + shake);
+    ctx.transform(1, 0, Math.sin(turn) * 0.12, Math.cos(turn), 0, 0);
+    ctx.translate(-500, -170);
+  }
+  ctx.translate(-cameraX, state.scenario === 'upside-down' ? 0 : shake);
   drawAnomalyBackground(ctx, assets, state);
   if (!(state.scenario === 'folding-stage' && state.anomaly.backstageReturning))
     drawEntry(ctx, state);
@@ -41,13 +50,22 @@ export function drawGame(
     drawExit(ctx, world.width - 44, '→');
   }
 
-  drawAnomalyFigure(ctx, assets, state, frame);
   if (
     state.scenario !== 'folding-stage' &&
     !(state.scenario === 'frame-escape' && state.anomaly.activeElapsed !== null)
   )
-    drawPlayer(ctx, assets, player, frame, state.scenario !== 'late-shadow');
+    drawPlayer(ctx, assets, player, frame);
+  ctx.save();
+  if (state.scenario === 'upside-down') {
+    ctx.beginPath();
+    ctx.rect(0, 0, world.width, world.ground);
+    ctx.clip();
+  }
   drawAnomalyPipes(ctx, assets, state);
+  ctx.restore();
+  drawCeiling(ctx, assets, state);
+  if (state.scenario === 'room-invasion')
+    drawInvasionFurniture(ctx, assets, state);
   ctx.restore();
 
   const shade = ctx.createRadialGradient(500, 230, 130, 500, 215, 550);

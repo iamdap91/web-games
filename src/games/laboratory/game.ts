@@ -11,6 +11,7 @@ export {
   type Scenario,
   type ScenarioSelection,
 } from './anomalies.js';
+import { ceiling, ceilingHeight, roomTurn } from './event-rules.js';
 import { FrameChase, type ChaseSnapshot } from './frame-chase.js';
 import { pipeHitsPlayer, pipeTriggerX } from './pipe-cascade.js';
 
@@ -35,6 +36,7 @@ export type PlayerSnapshot = {
   readonly y: number;
   readonly facing: -1 | 1;
   readonly grounded: boolean;
+  readonly inverted: boolean;
   readonly flashAvailable: boolean;
   readonly flashRemaining: number;
   readonly motion: Motion;
@@ -44,6 +46,7 @@ export class Player {
   private x = 360;
   private y: number = world.ground;
   private velocityY = 0;
+  private inverted = false;
   private facing: -1 | 1 = 1;
   private flashDirection: -1 | 1 = 1;
   private flashRemaining = 0;
@@ -56,21 +59,38 @@ export class Player {
     this.motion = 'jump';
   }
 
+  invertGravity(): void {
+    if (this.inverted) return;
+    this.inverted = true;
+    this.velocityY = -50;
+    this.flashRemaining = 0;
+  }
+
+  stopAtCeiling(height: number): void {
+    if (this.inverted || this.y - 62 >= height) return;
+    this.y = Math.min(world.ground, height + 62);
+    this.velocityY = Math.max(0, this.velocityY);
+  }
+
+  private get floor(): number {
+    return this.inverted ? 0 : world.ground;
+  }
+
   face(direction: Direction): void {
     if (direction !== 0) this.facing = direction;
   }
 
   jump(direction: Direction): void {
     this.face(direction);
-    if (this.y === world.ground) {
-      this.velocityY = -movement.jumpSpeed;
+    if (this.y === this.floor) {
+      this.velocityY = (this.inverted ? 1 : -1) * movement.jumpSpeed;
       // 입력이 같은 물리 틱에 두 번 들어와도 두 번째는 공중 입력이다.
-      this.y -= 0.01;
+      this.y += this.inverted ? 0.01 : -0.01;
     } else if (this.flashAvailable) {
       this.flashAvailable = false;
       this.flashDirection = this.facing;
       this.flashRemaining = movement.flashDuration;
-      this.velocityY = -180;
+      this.velocityY = this.inverted ? 180 : -180;
     }
   }
 
@@ -85,16 +105,16 @@ export class Player {
       24,
       Math.min(world.width - 24, this.x + velocityX * seconds),
     );
-    this.velocityY += movement.gravity * seconds;
+    this.velocityY += movement.gravity * seconds * (this.inverted ? -1 : 1);
     this.y += this.velocityY * seconds;
-    if (this.y >= world.ground) {
-      this.y = world.ground;
+    if (this.inverted ? this.y <= this.floor : this.y >= this.floor) {
+      this.y = this.floor;
       this.velocityY = 0;
       this.flashAvailable = true;
       this.flashRemaining = 0;
     }
     this.motion =
-      this.y < world.ground ? 'jump' : velocityX !== 0 ? 'move' : 'stand';
+      this.y !== this.floor ? 'jump' : velocityX !== 0 ? 'move' : 'stand';
   }
 
   get snapshot(): PlayerSnapshot {
@@ -102,7 +122,8 @@ export class Player {
       x: this.x,
       y: this.y,
       facing: this.facing,
-      grounded: this.y === world.ground,
+      grounded: this.y === this.floor,
+      inverted: this.inverted,
       flashAvailable: this.flashAvailable,
       flashRemaining: this.flashRemaining,
       motion: this.motion,
@@ -209,6 +230,17 @@ export class LaboratoryGame {
       return;
     }
     if (this.phase === 'transition') {
+      if (
+        this.scenario === 'lowering-ceiling' &&
+        this.transition?.hit &&
+        !this.transition.swapped
+      )
+        this.anomaly.update(
+          seconds,
+          this.scenario,
+          this.player.snapshot,
+          this.player.snapshot,
+        );
       this.updateTransition(seconds);
       return;
     }
@@ -226,6 +258,28 @@ export class LaboratoryGame {
       this.player.snapshot,
       previousPlayer,
     );
+    if (
+      this.scenario === 'upside-down' &&
+      roomTurn(this.anomaly.snapshot.activeElapsed) >= 0.5
+    )
+      this.player.invertGravity();
+    const slam = this.anomaly.snapshot.ceilingSlam;
+    if (
+      this.scenario === 'lowering-ceiling' &&
+      slam === null &&
+      x + 16 >= ceiling.edge
+    )
+      this.player.stopAtCeiling(ceilingHeight(x, null) + 48);
+    if (
+      this.scenario === 'lowering-ceiling' &&
+      slam !== null &&
+      x + 16 >= ceiling.edge &&
+      this.player.snapshot.y - 62 <= ceilingHeight(x, slam) + 40
+    ) {
+      this.encountered.add('lowering-ceiling');
+      this.startTransition(0, true, false, true);
+      return;
+    }
     if (
       revealed &&
       this.scenario !== 'normal' &&

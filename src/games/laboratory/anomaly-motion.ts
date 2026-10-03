@@ -1,21 +1,18 @@
 import { anomalyDetails, type Scenario } from './anomalies.js';
 import { frameTriggerX } from './spatial-rules.js';
+import { ceiling, smooth } from './event-rules.js';
 import type { PlayerSnapshot } from './game.js';
 
-type Trace = {
-  readonly x: number;
-  readonly y: number;
-  readonly facing: -1 | 1;
-};
 export type AnomalySnapshot = {
   readonly elapsed: number;
   readonly activeElapsed: number | null;
-  readonly doorX: number;
   readonly machineX: number;
-  readonly shadow: Trace;
-  readonly echo: Trace | null;
-  readonly flowOffset: number;
+  readonly machineLean: number;
+  readonly machineStride: number;
+  readonly pipeBends: readonly number[];
   readonly blackoutX: number;
+  readonly ceilingSlam: number | null;
+  readonly invasion: number;
   readonly backstageDoorOpen: number;
   readonly backstageReturning: boolean;
   readonly returnDoorOpen: number;
@@ -24,16 +21,20 @@ export type AnomalySnapshot = {
 export class AnomalyMotion {
   private elapsed = 0;
   private activeElapsed: number | null = null;
-  private doorX = 1080;
-  private machineX = 1320;
-  private shadow: Trace = { x: 360, y: 340, facing: 1 };
-  private echo: Trace | null = null;
-  private flowOffset = 0;
+  private machineX = 1420;
+  private machineLean = 0;
+  private machineStride = 0;
+  private machineUnwatched = 0;
+  private machineApproaches = 0;
+  private wasUnwatched = false;
+  private readonly pipeBends = [0, 0, 0, 0, 0];
+  private readonly history: { time: number; x: number }[] = [];
   private blackoutX = 1180;
+  private ceilingSlam: number | null = null;
+  private invasion = 0;
   private backstageDoorOpen = 0;
   private backstageReturning = false;
   private returnDoorOpen = 0;
-  private readonly history: { time: number; pose: Trace }[] = [];
 
   update(
     seconds: number,
@@ -43,62 +44,81 @@ export class AnomalyMotion {
   ): boolean {
     this.elapsed += seconds;
     if (scenario === 'normal') return false;
+    const previousActive = this.activeElapsed;
     if (this.activeElapsed !== null) this.activeElapsed += seconds;
-    const moved = Math.abs(player.x - previous.x) > 0;
+    if (
+      scenario === 'blackout' &&
+      previousActive !== null &&
+      previousActive < 0.32 &&
+      (this.activeElapsed ?? 0) >= 0.32
+    )
+      this.blackoutX = player.x + 120;
     const revealed =
       scenario === 'frame-escape'
         ? player.x >= frameTriggerX &&
           player.facing === 1 &&
           player.flashRemaining > 0
-        : scenario === 'lingering-echo'
-          ? player.flashRemaining > 0
-          : scenario === 'late-shadow' || scenario === 'reverse-flow'
-            ? moved
-            : player.x >= anomalyDetails[scenario].observeX;
+        : player.x >= anomalyDetails[scenario].observeX;
     if (this.activeElapsed === null && revealed) {
       this.activeElapsed = 0;
-      this.blackoutX = player.x + 90;
-      if (scenario === 'lingering-echo') this.echo = { ...previous };
+      this.blackoutX = player.x + 105;
     }
-    if (scenario === 'late-shadow') {
-      this.history.push({ time: this.elapsed, pose: { ...player } });
+    if (scenario === 'bent-pipes') {
+      this.history.push({ time: this.elapsed, x: player.x });
       while (
-        this.history.length &&
-        this.history[0]!.time <= this.elapsed - 0.65
-      ) {
-        this.shadow = this.history.shift()!.pose;
-      }
-    }
-    if (scenario === 'following-door' && this.activeElapsed !== null) {
-      const target = Math.max(720, Math.min(1800, player.x + 130));
-      this.doorX += Math.max(
-        -seconds * 170,
-        Math.min(seconds * 170, target - this.doorX),
-      );
+        this.history.length > 1 &&
+        this.history[1]!.time < this.elapsed - 1.5
+      )
+        this.history.shift();
+      this.pipeBends.forEach((bend, index) => {
+        if (this.activeElapsed === null || this.activeElapsed < index * 0.16)
+          return;
+        const delay = 0.16 + index * 0.15;
+        const targetX =
+          this.history.find((pose) => pose.time >= this.elapsed - delay)?.x ??
+          player.x;
+        const target = Math.max(
+          -120,
+          Math.min(120, (targetX - (1460 + index * 120)) * 0.5),
+        );
+        this.pipeBends[index] =
+          bend + (target - bend) * Math.min(1, seconds * 5);
+      });
     }
     if (scenario === 'creeping-machine' && this.activeElapsed !== null) {
       const distance = player.x - this.machineX;
-      // 기계가 시선 뒤에 있을 때만 움직이며 몸을 통과하지 않는다.
-      if (distance * player.facing > 0 && Math.abs(distance) > 135) {
-        this.machineX +=
-          Math.sign(distance) *
-          Math.min(seconds * 260, Math.abs(distance) - 135);
-      }
+      const unwatched = distance * player.facing > 0;
+      if (unwatched && !this.wasUnwatched) this.machineApproaches++;
+      this.machineUnwatched = unwatched ? this.machineUnwatched + seconds : 0;
+      const moving =
+        unwatched && this.machineUnwatched > 0.18 && Math.abs(distance) > 90;
+      const speed = moving
+        ? Math.sign(distance) * Math.min(400, 170 + this.machineApproaches * 75)
+        : 0;
+      const travel =
+        Math.sign(speed) *
+        Math.min(
+          Math.abs(speed) * seconds,
+          Math.max(0, Math.abs(distance) - 90),
+        );
+      this.machineX += travel;
+      this.machineStride += Math.abs(travel) / 45;
+      this.machineLean +=
+        ((moving ? -Math.sign(speed) * 0.055 : 0) - this.machineLean) *
+        Math.min(1, seconds * (moving ? 5 : 12));
+      this.wasUnwatched = unwatched;
     }
-    if (
-      scenario === 'lingering-echo' &&
-      this.echo &&
-      this.activeElapsed !== null &&
-      this.activeElapsed > 0.7
-    ) {
-      const distance = player.x - player.facing * 65 - this.echo.x;
-      this.echo = {
-        x:
-          this.echo.x +
-          Math.sign(distance) * Math.min(Math.abs(distance), seconds * 190),
-        y: this.echo.y + (player.y - this.echo.y) * Math.min(1, seconds * 4),
-        facing: distance < 0 ? -1 : 1,
-      };
+    if (scenario === 'lowering-ceiling') {
+      if (this.ceilingSlam !== null) this.ceilingSlam += seconds;
+      else if (player.x >= ceiling.trigger && (this.activeElapsed ?? 0) >= 0.8)
+        this.ceilingSlam = 0;
+    }
+    if (scenario === 'room-invasion' && this.activeElapsed !== null) {
+      const approach = smooth((player.x - 900) / 620);
+      this.invasion = Math.max(
+        this.invasion,
+        Math.min(approach, this.invasion + seconds * 0.45),
+      );
     }
     if (scenario === 'folding-stage') {
       if (this.activeElapsed !== null && player.x < previous.x)
@@ -111,14 +131,11 @@ export class AnomalyMotion {
         );
       }
       const proximity = Math.max(0, Math.min(1, (player.x - 1690) / 290));
-      // 한 번 들여다본 문은 벽을 닫아도 같은 방 안에서 열린 흔적을 남긴다.
       this.backstageDoorOpen = Math.max(
         this.backstageDoorOpen,
         Math.min(proximity, this.backstageDoorOpen + seconds * 0.65),
       );
     }
-    if (scenario === 'reverse-flow')
-      this.flowOffset -= player.facing * seconds * (moved ? 210 : 60);
     return this.activeElapsed !== null;
   }
 
@@ -126,12 +143,13 @@ export class AnomalyMotion {
     return {
       elapsed: this.elapsed,
       activeElapsed: this.activeElapsed,
-      doorX: this.doorX,
       machineX: this.machineX,
-      shadow: this.shadow,
-      echo: this.echo,
-      flowOffset: this.flowOffset,
+      machineLean: this.machineLean,
+      machineStride: this.machineStride,
+      pipeBends: [...this.pipeBends],
       blackoutX: this.blackoutX,
+      ceilingSlam: this.ceilingSlam,
+      invasion: this.invasion,
       backstageDoorOpen: this.backstageDoorOpen,
       backstageReturning: this.backstageReturning,
       returnDoorOpen: this.returnDoorOpen,
