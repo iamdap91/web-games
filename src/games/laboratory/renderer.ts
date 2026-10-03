@@ -23,13 +23,20 @@ export function drawGame(
   ctx.save();
   ctx.translate(-cameraX, shake);
   ctx.drawImage(
-    state.scenario === 'giant-door' ? assets.giantDoor : assets.normal,
+    state.progress === 8
+      ? assets.exit
+      : state.scenario === 'giant-door'
+        ? assets.giantDoor
+        : assets.normal,
     0,
     0,
   );
   drawEntry(ctx, state);
-  drawExit(ctx, 44, '←');
-  drawExit(ctx, world.width - 44, '→');
+  if (state.progress === 8) drawExit(ctx, 282, '←');
+  else {
+    drawExit(ctx, 44, '←');
+    drawExit(ctx, world.width - 44, '→');
+  }
 
   ctx.fillStyle = '#050d1080';
   ctx.beginPath();
@@ -70,7 +77,7 @@ export function drawGame(
 
   const shade = ctx.createRadialGradient(500, 230, 130, 500, 215, 550);
   shade.addColorStop(0, '#07141600');
-  shade.addColorStop(1, '#030a0c80');
+  shade.addColorStop(1, state.progress === 8 ? '#35231330' : '#030a0c80');
   ctx.fillStyle = shade;
   ctx.fillRect(0, 0, viewport.width, viewport.height);
   if (state.transitionElapsed !== null) {

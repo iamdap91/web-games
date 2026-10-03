@@ -20,10 +20,24 @@ function setText(node: HTMLElement, value: string): void {
   if (node.textContent !== value) node.textContent = value;
 }
 
+const anomalyDetails = {
+  'giant-door': {
+    title: '거대해진 철문',
+    description: '중앙 철문이 천장 가까이까지 커져 있었다.',
+  },
+  'falling-pipe': {
+    title: '연쇄 낙하 배관',
+    description: '다가가자 다섯 개의 배관이 앞쪽으로 차례로 내려왔다.',
+  },
+} as const;
+
 class GameScreen {
   private readonly game = new LaboratoryGame();
   private readonly canvas = element('scene', HTMLCanvasElement);
   private readonly context = getContext(this.canvas);
+  private readonly playArea = element('play-area', HTMLDivElement);
+  private readonly ending = element('ending', HTMLElement);
+  private readonly endingTitle = element('ending-title', HTMLHeadingElement);
   private readonly status = element('status', HTMLParagraphElement);
   private readonly restartButton = element('restart', HTMLButtonElement);
   private readonly replayButton = element('replay', HTMLButtonElement);
@@ -82,8 +96,24 @@ class GameScreen {
         this.game.previewExit();
         this.motion = 'stand';
         this.animation?.play('stand');
+        this.updateInterface();
         this.canvas.focus({ preventScroll: true });
       },
+      { signal },
+    );
+    element('ending-restart', HTMLButtonElement).addEventListener(
+      'click',
+      () => this.restart(),
+      { signal },
+    );
+    element('show-records', HTMLButtonElement).addEventListener(
+      'click',
+      () => this.showEndingPanel('records'),
+      { signal },
+    );
+    element('show-credits', HTMLButtonElement).addEventListener(
+      'click',
+      () => this.showEndingPanel('credits'),
       { signal },
     );
     window.addEventListener('keydown', this.keyDown, { signal });
@@ -154,6 +184,7 @@ class GameScreen {
     this.game.reset(selection);
     this.motion = 'stand';
     this.animation?.play('stand');
+    this.updateInterface();
     this.canvas.focus({ preventScroll: true });
   }
 
@@ -215,6 +246,7 @@ class GameScreen {
 
   private resize(): void {
     const bounds = this.canvas.getBoundingClientRect();
+    if (bounds.width === 0 || bounds.height === 0) return;
     this.canvas.width = Math.round(bounds.width * devicePixelRatio);
     this.canvas.height = Math.round(bounds.height * devicePixelRatio);
     this.context.setTransform(
@@ -259,9 +291,40 @@ class GameScreen {
     this.requestId = requestAnimationFrame(this.tick);
   };
 
+  private showEndingPanel(panel: 'records' | 'credits'): void {
+    for (const name of ['records', 'credits'] as const) {
+      element(name, HTMLElement).hidden = name !== panel;
+      element(`show-${name}`, HTMLButtonElement).setAttribute(
+        'aria-pressed',
+        String(name === panel),
+      );
+    }
+  }
+
+  private renderEnding(): void {
+    const encounters = element('encounters', HTMLUListElement);
+    encounters.replaceChildren();
+    const seen = this.game.snapshot.encountered;
+    element('no-encounters', HTMLParagraphElement).hidden = seen.length > 0;
+    for (const anomaly of seen) {
+      const item = document.createElement('li');
+      const title = document.createElement('h3');
+      const description = document.createElement('p');
+      title.textContent = anomalyDetails[anomaly].title;
+      description.textContent = anomalyDetails[anomaly].description;
+      item.append(title, description);
+      encounters.append(item);
+    }
+    this.showEndingPanel('records');
+    this.endingTitle.focus({ preventScroll: true });
+  }
+
   private updateInterface(): void {
     const state = this.game.snapshot;
+    this.playArea.hidden = state.phase === 'complete';
+    this.ending.hidden = state.phase !== 'complete';
     if (state.phase !== this.lastPhase) {
+      if (state.phase === 'complete') this.renderEnding();
       // 전환 직전의 키가 새 방에서 곧바로 재탈출을 일으키지 않게 해제한다.
       if (state.phase === 'transition' || state.phase === 'complete')
         this.clearInput();
@@ -271,7 +334,9 @@ class GameScreen {
         this.status,
         state.phase === 'complete'
           ? '8번 방. 탈출했습니다.'
-          : `${state.progress}번 방`,
+          : state.progress === 8
+            ? '8번 방. 왼쪽의 열린 문으로 나갈 수 있습니다.'
+            : `${state.progress}번 방`,
       );
     }
     this.lastPhase = state.phase;

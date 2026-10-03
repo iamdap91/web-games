@@ -10,6 +10,7 @@ export const movement = {
 } as const;
 export type Direction = -1 | 0 | 1;
 export type Scenario = 'normal' | 'giant-door' | 'falling-pipe';
+export type Anomaly = Exclude<Scenario, 'normal'>;
 export type ScenarioSelection = 'random' | Scenario;
 export type Phase = 'playing' | 'transition' | 'complete';
 export const passage = { fadeOut: 0.22, fadeIn: 0.32, glitch: 1.1 } as const;
@@ -102,6 +103,7 @@ export type GameSnapshot = {
   readonly transitionElapsed: number | null;
   readonly failureElapsed: number | null;
   readonly previousRoom: number;
+  readonly encountered: readonly Anomaly[];
 };
 
 type Transition = {
@@ -109,6 +111,7 @@ type Transition = {
   swapped: boolean;
   readonly nextRoom: number;
   readonly failed: boolean;
+  readonly ending: boolean;
 };
 
 export class LaboratoryGame {
@@ -121,11 +124,13 @@ export class LaboratoryGame {
   private transition: Transition | null = null;
   private failureElapsed: number | null = null;
   private previousRoom = 0;
+  private readonly encountered = new Set<Anomaly>();
 
   constructor(private readonly random: () => number = Math.random) {}
 
   reset(selection: ScenarioSelection = 'random'): void {
     this.selection = selection;
+    this.encountered.clear();
     this.progress = this.previousRoom = 0;
     this.transition = null;
     this.failureElapsed = null;
@@ -134,7 +139,8 @@ export class LaboratoryGame {
   }
 
   previewExit(): void {
-    this.reset(this.selection);
+    this.player = new Player();
+    this.pipeElapsed = this.failureElapsed = null;
     this.progress = 7;
     this.scenario = 'normal';
     // 실제 플레이와 같은 7 → 8 전환 경로로 종료 장면을 확인한다.
@@ -161,15 +167,23 @@ export class LaboratoryGame {
     if (this.phase !== 'playing') return;
     const previousX = this.player.snapshot.x;
     this.player.update(seconds, direction);
-    const { x } = this.player.snapshot;
+    const { x, grounded } = this.player.snapshot;
+    if (this.progress === 8) {
+      if (x <= 245 && grounded) this.leave('left');
+      return;
+    }
+    if (this.scenario === 'giant-door' && Math.abs(x - 1163) <= 420)
+      this.encountered.add('giant-door');
     if (this.pipeElapsed !== null) this.pipeElapsed += seconds;
     if (
       this.scenario === 'falling-pipe' &&
       this.pipeElapsed === null &&
       Math.min(previousX, x) <= pipeTriggerX + 200 &&
       Math.max(previousX, x) >= pipeTriggerX - 200
-    )
+    ) {
       this.pipeElapsed = 0;
+      this.encountered.add('falling-pipe');
+    }
     if (x <= 55) this.leave('left');
     else if (x >= world.width - 55) this.leave('right');
   }
@@ -192,13 +206,16 @@ export class LaboratoryGame {
   }
 
   private leave(exit: 'left' | 'right'): void {
-    const correct = (this.scenario === 'normal') === (exit === 'right');
+    const ending = this.progress === 8;
+    const correct =
+      ending || (this.scenario === 'normal') === (exit === 'right');
     this.previousRoom = this.progress;
     this.transition = {
       elapsed: 0,
       swapped: false,
-      nextRoom: correct ? this.progress + 1 : 0,
+      nextRoom: ending ? 8 : correct ? this.progress + 1 : 0,
       failed: !correct,
+      ending,
     };
     this.phase = 'transition';
   }
@@ -208,6 +225,11 @@ export class LaboratoryGame {
     if (!transition) return;
     transition.elapsed += seconds;
     if (!transition.swapped && transition.elapsed >= passage.fadeOut) {
+      if (transition.ending) {
+        this.transition = null;
+        this.phase = 'complete';
+        return;
+      }
       this.progress = transition.nextRoom;
       this.loadRoom();
       transition.swapped = true;
@@ -218,7 +240,7 @@ export class LaboratoryGame {
       passage.fadeOut + (transition.failed ? passage.glitch : passage.fadeIn);
     if (transition.elapsed < duration) return;
     this.transition = null;
-    this.phase = this.progress === 8 ? 'complete' : 'playing';
+    this.phase = 'playing';
   }
 
   get snapshot(): GameSnapshot {
@@ -231,6 +253,7 @@ export class LaboratoryGame {
       transitionElapsed: this.transition?.elapsed ?? null,
       failureElapsed: this.failureElapsed,
       previousRoom: this.previousRoom,
+      encountered: [...this.encountered],
     };
   }
 }

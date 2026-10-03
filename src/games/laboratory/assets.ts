@@ -10,6 +10,7 @@ import { world, type Motion } from './game.js';
 export type GameAssets = {
   readonly normal: HTMLCanvasElement;
   readonly giantDoor: HTMLCanvasElement;
+  readonly exit: HTMLCanvasElement;
   readonly pipe: HTMLCanvasElement;
   readonly animations: ReadonlyMap<Motion, Animation>;
   readonly frames: ReadonlyMap<string, HTMLImageElement>;
@@ -34,16 +35,20 @@ async function loadImage(path: string): Promise<HTMLImageElement> {
   return image;
 }
 
-function grade(canvas: HTMLCanvasElement): HTMLCanvasElement {
+function grade(canvas: HTMLCanvasElement, warm = false): HTMLCanvasElement {
   const context = getContext(canvas);
   const pixels = context.getImageData(0, 0, canvas.width, canvas.height);
   gradePixels(pixels, {
-    saturation: 0.46,
-    brightness: 0.8,
-    chill: 0.52,
+    saturation: warm ? 0.62 : 0.46,
+    brightness: warm ? 1 : 0.8,
+    chill: warm ? 0 : 0.52,
     vignette: 0.38,
   });
   context.putImageData(pixels, 0, 0);
+  if (warm) {
+    context.fillStyle = '#e9b76630';
+    context.fillRect(0, 0, canvas.width, canvas.height);
+  }
   return canvas;
 }
 
@@ -78,7 +83,10 @@ export async function loadAssets(): Promise<GameAssets> {
     ),
   ]);
   const objects = prepareMapObjects(original);
-  const makeBackground = (centralDoorScale: number): HTMLCanvasElement => {
+  const makeBackground = (
+    centralDoorScale: number,
+    warm = false,
+  ): HTMLCanvasElement => {
     const canvas = document.createElement('canvas');
     canvas.width = world.width;
     canvas.height = world.height;
@@ -91,7 +99,7 @@ export async function loadAssets(): Promise<GameAssets> {
       centralDoorScale,
       true,
     );
-    return grade(canvas);
+    return grade(canvas, warm);
   };
   const pipeImage = components.get('wall');
   if (!pipeImage) throw new Error('배관 리소스가 없습니다.');
@@ -102,6 +110,7 @@ export async function loadAssets(): Promise<GameAssets> {
   return {
     normal: makeBackground(1),
     giantDoor: makeBackground(1.48),
+    exit: makeBackground(1, true),
     pipe: grade(pipe),
     animations,
     frames,
