@@ -1,11 +1,23 @@
 import manifest from '../../../resources/manifest.json' with { type: 'json' };
 import type { Animation } from '../preview/animation-player.js';
 
+type AudioResource = {
+  readonly localPath: string;
+  readonly durationSeconds: number;
+  readonly sourceDescription: string;
+};
+
 type CollectionAsset = {
   readonly name: string;
   readonly notes: string;
   readonly sourceUrl: string;
   readonly animations: Readonly<Record<string, Animation | undefined>>;
+  readonly audio?: AudioResource;
+  readonly states?: readonly {
+    readonly label: string;
+    readonly animation: string;
+    readonly frameIndex: number;
+  }[];
 };
 
 const groups = [
@@ -17,6 +29,11 @@ const groups = [
     description: '시선을 이끌고 탐색을 만드는 것',
   },
   { name: '위협', anchor: 'threat', description: '복도 끝에 나타날 존재' },
+  {
+    name: '효과음',
+    anchor: 'audio',
+    description: '화면 밖에서 들려오는 인기척 · 눌러서 들어보기',
+  },
 ] as const;
 
 const motionNames: Readonly<Record<string, string>> = {
@@ -87,14 +104,77 @@ function createFrames(asset: CollectionAsset): HTMLDetailsElement {
   return details;
 }
 
+function createSourceLink(asset: CollectionAsset): HTMLAnchorElement {
+  const source = document.createElement('a');
+  source.href = asset.sourceUrl;
+  source.target = '_blank';
+  source.rel = 'noopener noreferrer';
+  source.textContent = '공식 출처 보기 ↗';
+  return source;
+}
+
+function createAudioCard(
+  asset: CollectionAsset,
+  audio: AudioResource,
+): HTMLElement {
+  const card = document.createElement('article');
+  card.className = 'resource-card';
+  const player = document.createElement('audio');
+  player.controls = true;
+  player.preload = 'metadata';
+  player.volume = 0.35;
+  player.src = new URL(`../../../${audio.localPath}`, document.baseURI).href;
+  player.setAttribute('aria-label', `${asset.name} 미리듣기`);
+  const original = document.createElement('a');
+  original.href = player.src;
+  original.textContent = '원본 오디오 열기';
+  const metadata = createText(
+    'p',
+    `OGG · ${audio.durationSeconds.toFixed(2)}초`,
+  );
+  metadata.className = 'metadata';
+  card.append(
+    createText('h3', asset.name),
+    metadata,
+    player,
+    createText('p', `출처 설명: ${audio.sourceDescription}`),
+    createText('p', asset.notes),
+    original,
+    createSourceLink(asset),
+    createText('code', audio.localPath),
+  );
+  return card;
+}
+
 function createCard(asset: CollectionAsset): HTMLElement {
+  if (asset.audio) return createAudioCard(asset, asset.audio);
   const frame = asset.animations.stand?.frames[0];
   if (!frame) throw new Error(`기본 프레임이 없습니다: ${asset.name}`);
   const card = document.createElement('article');
   card.className = 'resource-card';
   const stage = document.createElement('div');
   stage.className = 'resource-image';
-  stage.append(createImage(frame.localPath, asset.name, frame.width));
+  if (asset.states) {
+    for (const state of asset.states) {
+      const stateFrame =
+        asset.animations[state.animation]?.frames[state.frameIndex];
+      if (!stateFrame)
+        throw new Error(`상태 프레임이 없습니다: ${asset.name} ${state.label}`);
+      const figure = document.createElement('figure');
+      figure.className = 'state-preview';
+      figure.append(
+        createImage(
+          stateFrame.localPath,
+          `${asset.name} ${state.label}`,
+          stateFrame.width,
+        ),
+        createText('figcaption', state.label),
+      );
+      stage.append(figure);
+    }
+  } else {
+    stage.append(createImage(frame.localPath, asset.name, frame.width));
+  }
   const frameCount = Object.values(asset.animations).reduce(
     (sum, animation) => sum + (animation?.frames.length ?? 0),
     0,
@@ -104,17 +184,12 @@ function createCard(asset: CollectionAsset): HTMLElement {
     `${frame.width} × ${frame.height}px · 총 ${frameCount}프레임`,
   );
   metadata.className = 'metadata';
-  const source = document.createElement('a');
-  source.href = asset.sourceUrl;
-  source.target = '_blank';
-  source.rel = 'noopener noreferrer';
-  source.textContent = '공식 출처 보기 ↗';
   card.append(
     stage,
     createText('h3', asset.name),
     metadata,
     createText('p', asset.notes),
-    source,
+    createSourceLink(asset),
     createFrames(asset),
   );
   return card;
@@ -149,7 +224,7 @@ function showCollection(): void {
     sections.append(section);
   }
   container.replaceChildren(sections);
-  status.textContent = `${count}종의 리소스 · 정적 원본 미리보기`;
+  status.textContent = `${count}종의 리소스 · 이미지·상태 비교와 효과음 미리듣기`;
 }
 
 showCollection();

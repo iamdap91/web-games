@@ -1813,6 +1813,310 @@
           ]
         }
       }
+    },
+    {
+      "id": "a7d5dceee9be4e38bff24543551b7382",
+      "name": "개폐 철문",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "공간",
+      "notes": "닫힘부터 열림까지 같은 철문의 6프레임. 첫 프레임은 닫힘, 마지막은 열림이다. 기존 장식 양문과 다른 디자인이며 연구소·시설 구역용 대안이다. 원본 재생 시간은 미확인.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=a7d5dceee9be4e38bff24543551b7382",
+      "animations": {
+        "stand": {
+          "id": "a7d5dceee9be4e38bff24543551b7382",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/a7d5dceee9be4e38bff24543551b7382",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/a7d5dceee9be4e38bff24543551b7382.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "8ed7a38590e140fda0c292a54325b7d4",
+              "width": 284,
+              "height": 292,
+              "pivot": {
+                "x": 164.0,
+                "y": -22.0,
+                "nx": 0.5775,
+                "ny": -0.0753
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/8e/d7/8ed7a38590e140fda0c292a54325b7d4.png",
+              "localPath": "public/assets/maplestory/haunted-house/8ed7a38590e140fda0c292a54325b7d4.png"
+            },
+            {
+              "index": 1,
+              "spriteRuid": "2ddcd01da28843d090cf058670c14527",
+              "width": 284,
+              "height": 292,
+              "pivot": {
+                "x": 164.0,
+                "y": -22.0,
+                "nx": 0.5775,
+                "ny": -0.0753
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/2d/dc/2ddcd01da28843d090cf058670c14527.png",
+              "localPath": "public/assets/maplestory/haunted-house/2ddcd01da28843d090cf058670c14527.png"
+            },
+            {
+              "index": 2,
+              "spriteRuid": "a94b8008fae745768f90d00877bb4bf2",
+              "width": 284,
+              "height": 292,
+              "pivot": {
+                "x": 164.0,
+                "y": -22.0,
+                "nx": 0.5775,
+                "ny": -0.0753
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/a9/4b/a94b8008fae745768f90d00877bb4bf2.png",
+              "localPath": "public/assets/maplestory/haunted-house/a94b8008fae745768f90d00877bb4bf2.png"
+            },
+            {
+              "index": 3,
+              "spriteRuid": "0d5848c9cb074477a3edf5b9a20eb309",
+              "width": 284,
+              "height": 292,
+              "pivot": {
+                "x": 164.0,
+                "y": -22.0,
+                "nx": 0.5775,
+                "ny": -0.0753
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/0d/58/0d5848c9cb074477a3edf5b9a20eb309.png",
+              "localPath": "public/assets/maplestory/haunted-house/0d5848c9cb074477a3edf5b9a20eb309.png"
+            },
+            {
+              "index": 4,
+              "spriteRuid": "060a159dacc54a759846a53b1b312228",
+              "width": 284,
+              "height": 292,
+              "pivot": {
+                "x": 164.0,
+                "y": -22.0,
+                "nx": 0.5775,
+                "ny": -0.0753
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/06/0a/060a159dacc54a759846a53b1b312228.png",
+              "localPath": "public/assets/maplestory/haunted-house/060a159dacc54a759846a53b1b312228.png"
+            },
+            {
+              "index": 5,
+              "spriteRuid": "c1c410446cb044098a348d0c6b68925c",
+              "width": 284,
+              "height": 292,
+              "pivot": {
+                "x": 164.0,
+                "y": -22.0,
+                "nx": 0.5775,
+                "ny": -0.0753
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/c1/c4/c1c410446cb044098a348d0c6b68925c.png",
+              "localPath": "public/assets/maplestory/haunted-house/c1c410446cb044098a348d0c6b68925c.png"
+            }
+          ]
+        }
+      },
+      "states": [
+        {
+          "label": "닫힘",
+          "animation": "stand",
+          "frameIndex": 0
+        },
+        {
+          "label": "열림",
+          "animation": "stand",
+          "frameIndex": 5
+        }
+      ]
+    },
+    {
+      "id": "4acff445f9d34b98952c4e0fd9a72db4",
+      "name": "해골 촛불",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "조명·단서",
+      "notes": "불꽃을 포함한 작은 해골 초의 4프레임. 불꽃만 분리된 이미지가 아니므로 기존 벽 촛대에 그대로 겹치지 않는다. 독립 광원 후보이며 재생 시간은 미확인.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=4acff445f9d34b98952c4e0fd9a72db4",
+      "animations": {
+        "stand": {
+          "id": "4acff445f9d34b98952c4e0fd9a72db4",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/4acff445f9d34b98952c4e0fd9a72db4",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/4acff445f9d34b98952c4e0fd9a72db4.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "1cb30fbdb2854d31b81ea9e2d152ee34",
+              "width": 32,
+              "height": 48,
+              "pivot": {
+                "x": 15.0,
+                "y": 0.0,
+                "nx": 0.4688,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/1c/b3/1cb30fbdb2854d31b81ea9e2d152ee34.png",
+              "localPath": "public/assets/maplestory/haunted-house/1cb30fbdb2854d31b81ea9e2d152ee34.png"
+            },
+            {
+              "index": 1,
+              "spriteRuid": "46b80dcbdefe46dca49286eec49b5dfb",
+              "width": 32,
+              "height": 48,
+              "pivot": {
+                "x": 15.0,
+                "y": 0.0,
+                "nx": 0.4688,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/46/b8/46b80dcbdefe46dca49286eec49b5dfb.png",
+              "localPath": "public/assets/maplestory/haunted-house/46b80dcbdefe46dca49286eec49b5dfb.png"
+            },
+            {
+              "index": 2,
+              "spriteRuid": "339230e63b4947938f58f1c1b9b0a87d",
+              "width": 32,
+              "height": 48,
+              "pivot": {
+                "x": 15.0,
+                "y": 0.0,
+                "nx": 0.4688,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/33/92/339230e63b4947938f58f1c1b9b0a87d.png",
+              "localPath": "public/assets/maplestory/haunted-house/339230e63b4947938f58f1c1b9b0a87d.png"
+            },
+            {
+              "index": 3,
+              "spriteRuid": "31151b3911a74d199a3ec4efbe4d8915",
+              "width": 32,
+              "height": 48,
+              "pivot": {
+                "x": 15.0,
+                "y": 0.0,
+                "nx": 0.4688,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/31/15/31151b3911a74d199a3ec4efbe4d8915.png",
+              "localPath": "public/assets/maplestory/haunted-house/31151b3911a74d199a3ec4efbe4d8915.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "e17d0bc664394626b7426cfcb3804920",
+      "name": "목재 벽거울",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "소품",
+      "notes": "장식 테두리와 반사광이 포함된 정적 거울. 인물 반사나 유령 출현은 게임에서 별도 합성한다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=e17d0bc664394626b7426cfcb3804920",
+      "animations": {
+        "stand": {
+          "id": "e17d0bc664394626b7426cfcb3804920",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/e17d0bc664394626b7426cfcb3804920",
+          "metadataPath": "public/assets/maplestory/haunted-house/metadata/e17d0bc664394626b7426cfcb3804920.json",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "e17d0bc664394626b7426cfcb3804920",
+              "width": 124,
+              "height": 180,
+              "pivot": {
+                "x": 62.0,
+                "y": 90.0,
+                "nx": 0.5,
+                "ny": 0.5
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/e1/7d/e17d0bc664394626b7426cfcb3804920.png",
+              "localPath": "public/assets/maplestory/haunted-house/e17d0bc664394626b7426cfcb3804920.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "81d249c774714fc3aa2064f452d76fda",
+      "name": "문 삐걱임",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "효과음",
+      "notes": "문이 저절로 열리는 사건에 사용할 후보. 원본 설명 기준으로 선정했으며 소리의 분위기는 직접 청취해 확인한다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=81d249c774714fc3aa2064f452d76fda",
+      "animations": {},
+      "audio": {
+        "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/audios/81/d2/81d249c774714fc3aa2064f452d76fda.ogg",
+        "localPath": "public/assets/maplestory/haunted-house/81d249c774714fc3aa2064f452d76fda.ogg",
+        "metadataUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/81d249c774714fc3aa2064f452d76fda",
+        "metadataPath": "public/assets/maplestory/haunted-house/metadata/81d249c774714fc3aa2064f452d76fda.json",
+        "format": "ogg",
+        "durationSeconds": 3.6049166666666665,
+        "sourceDescription": "나무 문이 삐걱거리며 열리고 닫히는 소리",
+        "sourceDurationSeconds": 3.6048979591836736,
+        "codec": "opus"
+      }
+    },
+    {
+      "id": "ba4db5a8a11d4c6abddebc60ac1eebfb",
+      "name": "나무 바닥 발소리",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "효과음",
+      "notes": "짧은 발소리 후보. 이동 간격에 맞춰 재생할 수 있으며 자연스러운 반복 간격은 별도 조정한다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=ba4db5a8a11d4c6abddebc60ac1eebfb",
+      "animations": {},
+      "audio": {
+        "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/audios/ba/4d/ba4db5a8a11d4c6abddebc60ac1eebfb.ogg",
+        "localPath": "public/assets/maplestory/haunted-house/ba4db5a8a11d4c6abddebc60ac1eebfb.ogg",
+        "metadataUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/ba4db5a8a11d4c6abddebc60ac1eebfb",
+        "metadataPath": "public/assets/maplestory/haunted-house/metadata/ba4db5a8a11d4c6abddebc60ac1eebfb.json",
+        "format": "ogg",
+        "durationSeconds": 0.656,
+        "sourceDescription": "나무 바닥을 밟는 듯한 짧고 가벼운 발소리",
+        "sourceDurationSeconds": 0.626938775510204,
+        "codec": "opus"
+      }
+    },
+    {
+      "id": "171d678023fa4abf87289e83d5e9de88",
+      "name": "시계 째깍임",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "효과음",
+      "notes": "시계 주변의 긴장감을 만드는 짧은 소리 후보. 1초 주기나 무봉제 루프가 보장된 파일은 아니다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=171d678023fa4abf87289e83d5e9de88",
+      "animations": {},
+      "audio": {
+        "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/audios/17/1d/171d678023fa4abf87289e83d5e9de88.ogg",
+        "localPath": "public/assets/maplestory/haunted-house/171d678023fa4abf87289e83d5e9de88.ogg",
+        "metadataUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/171d678023fa4abf87289e83d5e9de88",
+        "metadataPath": "public/assets/maplestory/haunted-house/metadata/171d678023fa4abf87289e83d5e9de88.json",
+        "format": "ogg",
+        "durationSeconds": 0.8620833333333333,
+        "sourceDescription": "시계 바늘이 일정하게 움직이며 내는 기계적인 째깍거리는 소리",
+        "sourceDurationSeconds": 0.8620408163265306,
+        "codec": "opus"
+      }
+    },
+    {
+      "id": "7292dee607434e18ae21eceaa7bb2dd9",
+      "name": "문 노크",
+      "role": "horror-resource-candidate",
+      "collection": "haunted-house",
+      "group": "효과음",
+      "notes": "공식 설명상 세 번 두드리는 노크 소리. 화면 밖 인기척 후보이며 실제 템포는 청취 후 조정한다.",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=7292dee607434e18ae21eceaa7bb2dd9",
+      "animations": {},
+      "audio": {
+        "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/audios/72/92/7292dee607434e18ae21eceaa7bb2dd9.ogg",
+        "localPath": "public/assets/maplestory/haunted-house/7292dee607434e18ae21eceaa7bb2dd9.ogg",
+        "metadataUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/7292dee607434e18ae21eceaa7bb2dd9",
+        "metadataPath": "public/assets/maplestory/haunted-house/metadata/7292dee607434e18ae21eceaa7bb2dd9.json",
+        "format": "ogg",
+        "durationSeconds": 1.7240833333333334,
+        "sourceDescription": "나무 문을 세 번 규칙적으로 두드리는 노크 소리",
+        "sourceDurationSeconds": 1.7240816326530612,
+        "codec": "opus"
+      }
     }
   ]
 }

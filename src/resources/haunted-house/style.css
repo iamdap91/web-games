@@ -140,3 +140,20 @@ code {
   color: #999b95;
   margin-top: 10px;
 }
+
+.resource-image .state-preview {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  padding: 6px;
+}
+.state-preview img {
+  max-height: 180px;
+}
+audio {
+  width: 100%;
+  margin: 10px 0;
+}
+.resource-card > a + a {
+  margin-left: 16px;
+}
