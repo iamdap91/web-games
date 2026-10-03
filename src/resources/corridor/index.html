@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#131c1d" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+    <title>음습한 연구소 복도 · 리소스 뷰어</title>
+  </head>
+  <body>
+    <main>
+      <a class="back" href="../">← 리소스 목록</a>
+      <header>
+        <p class="eyebrow">MAP STUDY / 01</p>
+        <h1>불이 남아 있는 복도</h1>
+        <p class="intro">
+          아무도 없는 연구소. 차가운 벽과 오래된 조명만 남아 있어요.
+        </p>
+      </header>
+      <section class="stage" aria-label="연구소 복도 색감 미리보기">
+        <div class="stage-top">
+          <span>제뉴미스트 연구소 · 2층 복도</span>
+          <span id="mode-label">음습한 보정</span>
+        </div>
+        <canvas
+          id="scene"
+          width="1000"
+          height="430"
+          aria-label="음습하게 보정한 연구소 복도"
+          >캔버스를 지원하는 브라우저에서 확인해주세요.</canvas
+        >
+        <p id="status" role="status">로컬 배경 이미지를 불러오는 중…</p>
+      </section>
+      <div class="toolbar">
+        <div class="modes" role="group" aria-label="원본과 보정 비교">
+          <button id="graded" type="button" aria-pressed="true" disabled>
+            음습한 보정
+          </button>
+          <button id="original" type="button" aria-pressed="false" disabled>
+            원본 톤
+          </button>
+        </div>
+        <button id="reset" class="secondary" type="button" disabled>
+          추천값으로
+        </button>
+      </div>
+      <section class="settings" aria-label="색감과 시야 설정">
+        <label class="position" for="position"
+          >복도 둘러보기 <output id="position-value" for="position">50%</output>
+          <input
+            id="position"
+            type="range"
+            min="0"
+            max="100"
+            value="50"
+            disabled
+          />
+          <span class="range-ends"
+            ><span>왼쪽 끝</span><span>오른쪽 끝</span></span
+          >
+        </label>
+        <label for="saturation"
+          >채도 <output id="saturation-value" for="saturation">48%</output>
+          <input
+            id="saturation"
+            type="range"
+            min="0"
+            max="100"
+            value="48"
+            disabled
+          />
+        </label>
+        <label for="brightness"
+          >밝기 <output id="brightness-value" for="brightness">74%</output>
+          <input
+            id="brightness"
+            type="range"
+            min="40"
+            max="110"
+            value="74"
+            disabled
+          />
+        </label>
+        <label for="chill"
+          >차가운 색감 <output id="chill-value" for="chill">38%</output>
+          <input
+            id="chill"
+            type="range"
+            min="0"
+            max="100"
+            value="38"
+            disabled
+          />
+        </label>
+        <label for="vignette"
+          >가장자리 어둠 <output id="vignette-value" for="vignette">42%</output>
+          <input
+            id="vignette"
+            type="range"
+            min="0"
+            max="80"
+            value="42"
+            disabled
+          />
+        </label>
+      </section>
+      <footer>
+        <p>분위기를 고르는 정적 예시예요. NPC·소리·점프스케어는 없어요.</p>
+        <p>
+          원본 톤과 보정은 같은 벽면 합성을 사용해요. 흰색 바탕은 제거하고
+          벽면을 Canvas로 채웠으며, 실제 게임의 배경 전체를 재현한 것은
+          아니에요.
+        </p>
+        <p>
+          출처:
+          <a
+            href="https://mapledb.kr/search.php?q=261010100&amp;t=map"
+            target="_blank"
+            rel="noreferrer"
+            >메이플랜드 데이터베이스 · 연구소 2층 복도</a
+          >
+        </p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../dist/src/resources/corridor/index.js"
+    ></script>
+  </body>
+</html>
