@@ -58,7 +58,7 @@ function drawBlade(
   x: number,
   age: number,
 ): void {
-  if (age < 0 || age > 1.12) return;
+  if (age < 0 || age > cutting.warning + cutting.descent + 0.6) return;
   ctx.save();
   // 칼이 닿을 선은 바닥까지 이어져 점프 중에도 절단 위치를 읽을 수 있다.
   if (age < cutting.warning) {

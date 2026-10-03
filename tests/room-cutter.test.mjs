@@ -1,7 +1,11 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { LaboratoryGame } from '../dist/src/games/laboratory/game.js';
-import { RoomCutter } from '../dist/src/games/laboratory/room-cutter.js';
+import {
+  RoomCutter,
+  cutting,
+  cutImpact,
+} from '../dist/src/games/laboratory/room-cutter.js';
 const dt = 1 / 120;
 function advance(game, seconds, direction = 0) {
   for (let t = 0; t < seconds; t += dt) game.update(dt, direction);
@@ -18,18 +22,18 @@ function triggered() {
 test('칼날은 오른쪽부터 순서대로 자르고 마지막에 출구도 사라진다', () => {
   const cutter = new RoomCutter();
   cutter.update(dt, { x: 1280 });
-  cutter.update(0.68, { x: 24 });
+  cutter.update(cutImpact(0) - 0.01, { x: 24 });
   assert.equal(cutter.snapshot.count, 0);
   cutter.update(0.02, { x: 24 });
   assert.equal(cutter.snapshot.boundary, 1550);
-  cutter.update(0.775 * 4, { x: 24 });
+  cutter.update(cutting.interval * 4, { x: 24 });
   assert.equal(cutter.snapshot.boundary, 310);
   assert.equal(cutter.snapshot.caughtElapsed, null);
-  cutter.update(0.775, { x: 24 });
+  cutter.update(cutting.interval, { x: 24 });
   assert.equal(cutter.snapshot.boundary, 0);
   assert.equal(cutter.snapshot.caughtElapsed, 0);
 });
-test('반응 후 연속 플래시점프는 입구에서 탈출하고 걷기만 하면 조각과 함께 떨어진다', () => {
+test('반응 후 연속 플래시점프는 입구에서 탈출하고 멈춰 있으면 조각과 함께 떨어진다', () => {
   for (const flash of [false, true]) {
     const game = triggered();
     advance(game, 0.3);
@@ -42,7 +46,7 @@ test('반응 후 연속 플래시점프는 입구에서 탈출하고 걷기만 �
         } else if (t - jumpedAt > 0.08 && game.snapshot.player.flashAvailable)
           game.jump(-1);
       }
-      game.update(dt, -1);
+      game.update(dt, flash ? -1 : 0);
     }
     assert.equal(game.snapshot.phase, flash ? 'transition' : 'severed');
     if (flash) assert.ok(game.snapshot.player.x <= 235);
@@ -60,7 +64,7 @@ test('반응 후 연속 플래시점프는 입구에서 탈출하고 걷기만 �
 test('절단 중 재선택과 출구 미리보기는 칼날과 낙하를 초기화한다', () => {
   for (const preview of [false, true]) {
     const game = triggered();
-    advance(game, 1.6);
+    advance(game, cutImpact(1) + 0.05);
     assert.equal(game.snapshot.phase, 'severed');
     if (preview) game.previewExit();
     else game.reset('normal');
