@@ -129,7 +129,8 @@ test('문은 접근하면 천천히 열리고 왕복해도 유지되며 새 방�
   assert.equal(game.snapshot.anomaly.backstageDoorOpen, 1);
   advance(game, 3, 1);
   assert.equal(game.snapshot.anomaly.backstageDoorOpen, 1);
-  advance(game, 9, -1);
+  for (let i = 0; i < 1200 && game.snapshot.phase === 'playing'; i++)
+    game.update(step, -1);
   advance(game, 0.6);
   assert.equal(game.snapshot.progress, 1);
   assert.equal(game.snapshot.anomaly.backstageDoorOpen, 0);
@@ -229,4 +230,26 @@ test('이상을 보고 돌아오면 반대 경첩의 벽과 왼쪽 문틈이 열
   game.previewExit();
   advance(game, 0.6);
   assert.equal(game.snapshot.anomaly.backstageReturning, false);
+});
+
+test('귀로 문에 도달하면 맵 끝까지 지나가지 않아도 다음 방으로 전환한다', () => {
+  for (const flash of [false, true]) {
+    const game = new LaboratoryGame();
+    game.reset('folding-stage');
+    advance(game, 3.5, 1);
+    advance(game, 3.5, -1);
+    assert.equal(game.snapshot.phase, 'playing');
+    if (flash) {
+      game.jump(-1);
+      game.jump(-1);
+    }
+    for (let i = 0; i < 120 && game.snapshot.phase === 'playing'; i++)
+      game.update(step, -1);
+    assert.equal(game.snapshot.phase, 'transition');
+    assert.ok(game.snapshot.player.x > 230 && game.snapshot.player.x <= 250);
+    assert.equal(game.snapshot.failureElapsed, null);
+    advance(game, 0.6);
+    assert.equal(game.snapshot.progress, 1);
+    assert.equal(game.snapshot.player.x, 360);
+  }
 });

@@ -269,7 +269,11 @@ export class LaboratoryGame {
       this.pipeElapsed = 0;
       this.encountered.add('falling-pipe');
     }
-    if (x <= 55) this.leave('left');
+    const atBackstageDoor =
+      this.scenario === 'folding-stage' &&
+      this.anomaly.snapshot.backstageReturning &&
+      x <= 250;
+    if (atBackstageDoor || x <= 55) this.leave('left');
     else if (
       x >= world.width - 55 &&
       !(
