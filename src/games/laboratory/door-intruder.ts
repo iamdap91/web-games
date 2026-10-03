@@ -17,17 +17,13 @@ export const intruderTiming = {
   close: 0.28,
   drag: 1.15,
 } as const;
-const handsAt = intruderTiming.drag + 0.22;
-const faceAt = handsAt + 0.12;
-const blackoutAt = faceAt + 0.2 + 0.12;
+const handAt = intruderTiming.drag + 0.22;
+const handDuration = 0.28;
+const blackoutAt = handAt + handDuration + 0.14;
 export const intruderScare = {
   bars: 0.18,
-  look: 0.9,
-  lookDuration: 0.22,
-  hands: handsAt,
-  handDuration: 0.2,
-  face: faceAt,
-  faceDuration: 0.2,
+  hand: handAt,
+  handDuration,
   blackout: blackoutAt,
   finish: blackoutAt + 0.18,
 } as const;
