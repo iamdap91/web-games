@@ -5,22 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="./preview/style.css" />
-    <title>리소스 선택 · 리소스 뷰어</title>
+    <link rel="stylesheet" href="./catalog/style.css" />
+    <title>리소스 라이브러리</title>
   </head>
   <body>
     <main>
-      <p class="eyebrow">WEB GAMES / RESOURCES</p>
-      <h1>게임 리소스 둘러보기</h1>
-      <p class="intro">캐릭터 모션과 배경 후보의 분위기를 확인해보세요.</p>
-      <nav aria-label="리소스 선택">
-        <a href="../games/laboratory/">C-2 연구소 플레이</a>
-        <a href="./yeti/">예티</a>
-        <a href="./slime/">슬라임</a>
-        <a href="./adventurer/">모험가</a>
-        <a href="./corridor/">음습한 연구소 복도</a>
-        <a href="./corridor/?map=subway">단층 지하철</a>
-        <a href="./corridor/?map=laboratory">단층 C-2 연구소</a>
-      </nav>
+      <p class="eyebrow">WEB GAMES / RESOURCE LIBRARY</p>
+      <h1>게임의 재료를 한곳에서</h1>
+      <p class="intro">
+        종류별로 찾고, 원본과 출처를 확인하세요. 캐릭터와 배경의 상세 화면에서는
+        모션과 분위기를 살펴볼 수 있습니다.
+      </p>
+      <nav
+        id="categories"
+        class="category-nav"
+        aria-label="리소스 카테고리"
+      ></nav>
+      <a class="theme-link" href="./haunted-house/"
+        >테마별 모아보기 · 저택 공포게임 →<span
+          >복도, 일상 소품, 단서와 유령을 함께 살펴보세요.</span
+        ></a
+      >
+      <a class="theme-link" href="../games/laboratory/">C-2 연구소 플레이 →</a>
+      <p id="status" role="status">리소스 목록을 불러오는 중입니다.</p>
+      <noscript>리소스 목록을 보려면 JavaScript를 활성화해주세요.</noscript>
+      <footer>
+        카드의 이름은 프로젝트 표시명입니다. 원본 식별자·구성 부위·가공 내용은
+        각 카드의 출처 정보에서 확인할 수 있습니다. 이미지는 로컬 파일을
+        사용하며 카드마다 표시 배율이 다릅니다.
+      </footer>
     </main>
+    <script type="module" src="../../dist/src/resources/index.js"></script>
   </body>
 </html>

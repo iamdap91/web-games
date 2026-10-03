@@ -128,7 +128,7 @@ npm run dev
 
 [리소스 뷰어](http://127.0.0.1:8000/src/resources/)에서 캐릭터별 화면으로 이동할 수 있다. `yeti/`, `slime/`, `adventurer/`에서 각각 모션을 선택하고 일시정지할 수 있다. 다운로드한 로컬 이미지가 필요하다. 리소스 뷰어는 모션 확인용이며, 이동·점프·플래시점프는 위 C-2 게임에서 플레이한다.
 
-- `src/resources/`: 캐릭터 선택 화면. `yeti/`, `slime/`, `adventurer/`에 각 캐릭터의 `index.html`과 `index.ts` 진입점을 함께 둔다.
+- `src/resources/`: 카테고리 선택 화면. `characters/`, `backgrounds/`, `props/`, `audio/`는 각 분류의 목록이며 해당 리소스 카드만 생성한다. `yeti/`, `slime/`, `adventurer/`에 각 캐릭터의 `index.html`과 `index.ts` 진입점을 함께 둔다.
 - `src/resources/preview/`: 공통 미리보기 코드와 스타일. `preview.ts`의 `ResourcePreview`가 화면·이미지·실행 루프를 관리하고, `animation-player.ts`의 `AnimationPlayer`가 모션 전환과 프레임 계산을 담당한다. `preview-renderer.ts`는 전달받은 정보로 Canvas를 그린다.
 - `npm run build`: TypeScript를 `dist/`에 컴파일
 - `npm run typecheck`: `strict` 타입 검사
@@ -155,3 +155,25 @@ C-2 게임에서 모험가 이동·점프·플래시점프, 세 가지 상황, �
 - 공식 검색 API에서 부위 7종을 확인했다. 아바타 렌더 API는 404를 반환해 부위별 아틀라스와 소켓·zmap을 이용해 PNG 프레임을 로컬 합성했다.
 - 대기(`stand1`), 걷기(`walk1`), 점프(`jump`), 맨손 공격(`swingO1`), 피격 대체(`alert` 자세 + `hit` 표정)를 제공한다. 피격 대체는 원본의 독립적인 피격 동작이 아니다.
 - 원본 아틀라스, 부위 메타데이터, 합성 프레임은 `public/assets/maplestory/adventurer/`에 보관한다. 각 부위의 출처·ID와 프레임 기준점·시간은 `resources/manifest.json`에서 관리한다.
+
+## 저택 공포게임 리소스 묶음
+
+- `/src/resources/haunted-house/`에서 분류별 원본 이미지와 활용 메모를 확인한다. 파일·프레임 정보를 펼치면 모든 프레임을 정적으로 비교하고 원본 PNG를 열 수 있다. 자동 애니메이션 재생은 하지 않는다. 개폐 철문은 두 상태를 나란히 표시하며, 효과음은 기본 음량 35%의 오디오 컨트롤로 직접 재생한다.
+
+- `resources/manifest.json`의 `collection: haunted-house`로 이미지 16종·효과음 4종을 모았다. 이름은 식별하기 쉬운 프로젝트 표시명이며, 출처는 각 항목의 `sourceUrl`에서 확인한다.
+- 공간: 저택 실내 벽, 목재 바닥 무늬, 장식 양문, 깨진 창문, 개폐 철문.
+- 소품: 작은 초상화, 목재 괘종시계, 낡은 나무 의자, 남겨진 인형, 목재 책장, 목재 벽거울.
+- 조명·단서: 벽 촛대, 낡은 열쇠, 쪽지, 해골 촛불. 위협: 유령의 대기·이동·추격 모션.
+- 원본 PNG 47프레임·OGG 효과음 4개와 조회 메타데이터는 `public/assets/maplestory/haunted-house/`에 보관한다(약 1 MB, Git 제외). 기존 다운로드를 재사용하며 게임 실행 중 CDN을 조회하지 않는다.
+- 정적 리소스도 `animations.stand.frames`에 한 프레임으로 기록한다. 모든 프레임의 크기·왼쪽 아래 기준점·원본 URL·로컬 경로를 저장했다. 모션의 원본 재생 시간은 미확인이며 임의의 시간을 원본 정보로 기록하지 않는다.
+- 완성된 맵이나 동일 맵에서 추출한 세트는 아니다. 크기·색감·반복 연결은 게임 배치 시 조정한다. 바닥은 표면 텍스처, 기존 장식 양문은 닫힌 상태만, 벽 촛대는 불꽃 없는 이미지다. 새 개폐 철문은 다른 디자인의 6프레임이며 `states`에 닫힘·열림의 프레임 위치를 기록했다. 해골 촛불은 초와 불꽃이 합쳐진 4프레임으로 독립 광원용이다. 세부 활용과 제약은 각 항목의 `notes`에 기록했다.
+- 다른 체크아웃에서는 프레임의 `sourceUrl` 파일을 해당 `localPath`에 저장한다. 로컬에 원본이 있다면 복사해서 재사용한다.
+
+- 효과음: 문 삐걱임, 나무 바닥 발소리, 시계 째깍임, 문 노크. `audio`에 원본 URL·로컬 경로·재생 시간·출처 설명·메타데이터 경로를 기록한다. 설명을 기준으로 고른 후보이며 실제 분위기와 반복 간격은 청취 후 결정한다. 자동 재생·자동 반복은 하지 않는다.
+
+## 리소스 분류와 출처 표시
+
+- 첫 화면 `/src/resources/`는 카테고리별 개수와 테마 링크만 표시하고 이미지·오디오 카드를 생성하지 않는다. `characters/`, `backgrounds/`, `props/`, `audio/`의 독립 페이지가 `manifest.json`의 `category`로 목록을 골라 표시한다. 상단 메뉴로 다른 분류에 이동할 수 있다. `collection`은 저택 같은 테마 묶음이며 기본 분류와 별개다.
+- 모든 카드에 `sourceName`과 `sourceUrl`을 표시한다. 확인된 원본 이름은 `originalName`, 기존 상세 뷰어 경로는 `previewPath`에 기록한다. 미확인 원본 이름은 추측하지 않고 리소스 ID로 구분한다.
+- 모험가의 합성 부위와 재배치 배경의 추가 소품은 `components`의 출처 링크로 확인한다. `composition`에 원본과 다른 가공 내용을 표시한다. 맵 원본 이미지는 MapleDB, 추가 구성 리소스는 메이플스토리 월드 출처를 구분한다.
+- `src/resources/catalog/`의 카드와 스타일을 각 카테고리 목록과 저택 테마 화면에서 함께 사용한다. `categories.ts`는 카테고리 메뉴를, `category-page.ts`는 해당 분류의 카드 생성을 담당한다. 원본 파일·프레임 정보를 복제하지 않으며 기존 상세 뷰어 주소도 유지한다.
