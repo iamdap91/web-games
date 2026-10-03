@@ -1,33 +1,19 @@
 import manifest from '../../resources/manifest.json' with { type: 'json' };
+import { AnimationPlayer, type Animation } from './animation-player.js';
+import {
+  drawFrame,
+  drawLandscape,
+  sceneHeight,
+  sceneWidth,
+} from './preview-renderer.js';
 
-const sceneWidth = 960;
-const sceneHeight = 480;
-const groundY = 365;
-// 원본 재생 시간 확인 전 미리보기에만 사용하는 임시 값이다.
-const frameDuration = 0.14;
-const motionNames: Record<string, string> = {
+const motionNames: Readonly<Record<string, string>> = {
   stand: '대기',
   move: '이동',
   jump: '점프',
   attack1: '공격',
   hit1: '피격',
   die1: '사망',
-};
-type Frame = {
-  width: number;
-  height: number;
-  pivot: { x: number; y: number };
-  localPath: string;
-  durationSeconds?: number;
-};
-type Animation = { frames: Frame[] };
-type Actor = {
-  name: string;
-  scale: number;
-  animations: Map<string, Animation>;
-  motion: string;
-  elapsed: number;
-  output: HTMLOutputElement;
 };
 
 function getElement<T extends HTMLElement>(id: string, type: { new (): T }): T {
@@ -37,185 +23,173 @@ function getElement<T extends HTMLElement>(id: string, type: { new (): T }): T {
   return element;
 }
 
-const canvas = getElement('scene', HTMLCanvasElement);
-const status = getElement('status', HTMLParagraphElement);
-const toggle = getElement('toggle', HTMLButtonElement);
-const context = canvas.getContext('2d');
-if (!context) throw new Error('Canvas 2D를 사용할 수 없습니다.');
-const ctx = context;
-const images = new Map<string, HTMLImageElement>();
-let actor: Actor | undefined;
-let paused = false;
-let previousTime = 0;
+export class ResourcePreview {
+  private readonly canvas = getElement('scene', HTMLCanvasElement);
+  private readonly status = getElement('status', HTMLParagraphElement);
+  private readonly toggle = getElement('toggle', HTMLButtonElement);
+  private readonly select = getElement('motion', HTMLSelectElement);
+  private readonly output = getElement('frame', HTMLOutputElement);
+  private readonly context: CanvasRenderingContext2D;
+  private readonly images = new Map<string, HTMLImageElement>();
+  private readonly imagePaths: readonly string[];
+  private readonly animation: AnimationPlayer;
+  private readonly name: string;
+  private readonly scale: number;
+  private readonly resizeObserver = new ResizeObserver(() =>
+    this.resizeCanvas(),
+  );
+  private readonly events = new AbortController();
+  private state: 'idle' | 'loading' | 'running' | 'destroyed' = 'idle';
+  private paused = false;
+  private previousTime = 0;
+  private animationFrameId = 0;
 
-function createActor(id: string, scale: number): Actor {
-  const asset = manifest.assets.find((entry) => entry.id === id);
-  if (!asset) throw new Error(`리소스 목록에 ${id}가 없습니다.`);
-  const select = getElement('motion', HTMLSelectElement);
-  const animations = new Map<string, Animation>();
-  for (const [name, animation] of Object.entries(asset.animations)) {
-    if (!animation || animation.frames.length === 0) continue;
-    animations.set(name, animation);
-    select.add(new Option(motionNames[name] ?? name, name));
+  constructor(id: string, scale: number) {
+    const context = this.canvas.getContext('2d');
+    if (!context) throw new Error('Canvas 2D를 사용할 수 없습니다.');
+    this.context = context;
+
+    const asset = manifest.assets.find((entry) => entry.id === id);
+    if (!asset) throw new Error(`리소스 목록에 ${id}가 없습니다.`);
+    const animations = new Map<string, Animation>();
+    for (const [name, animation] of Object.entries(asset.animations)) {
+      if (!animation || animation.frames.length === 0) continue;
+      animations.set(name, animation);
+    }
+    this.animation = new AnimationPlayer(animations, 'stand');
+    this.name = asset.name;
+    this.scale = scale;
+    this.imagePaths = [
+      ...new Set(
+        [...animations.values()].flatMap((animation) =>
+          animation.frames.map((frame) => frame.localPath),
+        ),
+      ),
+    ];
+    this.select.replaceChildren(
+      ...[...animations.keys()].map(
+        (name) => new Option(motionNames[name] ?? name, name),
+      ),
+    );
+    this.select.value = 'stand';
   }
-  select.value = 'stand';
-  const actor: Actor = {
-    name: asset.name,
-    scale,
-    animations,
-    motion: 'stand',
-    elapsed: 0,
-    output: getElement('frame', HTMLOutputElement),
+
+  async start(): Promise<void> {
+    if (this.state !== 'idle') return;
+    this.state = 'loading';
+    const { signal } = this.events;
+    window.addEventListener('pagehide', this.handlePageHide, { signal });
+    this.resizeCanvas();
+    try {
+      await Promise.all(this.imagePaths.map((path) => this.loadImage(path)));
+    } catch (error: unknown) {
+      if (signal.aborted) return;
+      this.destroy();
+      throw error;
+    }
+    // 로딩 중 화면이 종료되면 이벤트와 실행 루프를 다시 등록하지 않는다.
+    if (signal.aborted) return;
+
+    this.state = 'running';
+    this.select.disabled = false;
+    this.toggle.disabled = false;
+    this.status.textContent = `로컬 이미지 ${this.images.size}개 준비 완료 · 모션을 선택해보세요`;
+    this.select.addEventListener('change', this.handleMotionChange, { signal });
+    this.toggle.addEventListener('click', this.handleToggle, { signal });
+    window.addEventListener('resize', this.resizeCanvas, { signal });
+    this.resizeObserver.observe(this.canvas);
+    this.animationFrameId = requestAnimationFrame(this.animate);
+  }
+
+  destroy(): void {
+    this.state = 'destroyed';
+    cancelAnimationFrame(this.animationFrameId);
+    this.resizeObserver.disconnect();
+    this.events.abort();
+    this.images.clear();
+    this.select.disabled = true;
+    this.toggle.disabled = true;
+  }
+
+  private async loadImage(path: string): Promise<void> {
+    const image = new Image();
+    image.src = `/${path}`;
+    try {
+      await image.decode();
+    } catch {
+      throw new Error(`로컬 이미지가 없습니다: ${path}`);
+    }
+    if (!this.events.signal.aborted) this.images.set(path, image);
+  }
+
+  private readonly handlePageHide = (event: PageTransitionEvent): void => {
+    // 뒤로 가기 캐시에 보관되는 화면은 복귀 후 기존 상태로 재생을 이어간다.
+    if (!event.persisted) this.destroy();
   };
-  select.addEventListener('change', () => {
-    actor.motion = select.value;
-    actor.elapsed = 0;
-    draw();
-  });
-  return actor;
-}
 
-async function loadImage(frame: Frame): Promise<void> {
-  if (images.has(frame.localPath)) return;
-  const image = new Image();
-  image.src = `/${frame.localPath}`;
-  try {
-    await image.decode();
-  } catch {
-    throw new Error(`로컬 이미지가 없습니다: ${frame.localPath}`);
+  private readonly handleMotionChange = (): void => {
+    this.animation.play(this.select.value);
+    this.draw();
+  };
+
+  private readonly handleToggle = (): void => {
+    this.paused = !this.paused;
+    this.toggle.textContent = this.paused ? '재생' : '일시정지';
+  };
+
+  private readonly resizeCanvas = (): void => {
+    const bounds = this.canvas.getBoundingClientRect();
+    const ratio = window.devicePixelRatio || 1;
+    this.canvas.width = Math.round(bounds.width * ratio);
+    this.canvas.height = Math.round(bounds.height * ratio);
+    // 월드 좌표를 backing store에 직접 매핑해 CSS 크기와 DPR을 함께 반영한다.
+    this.context.setTransform(
+      this.canvas.width / sceneWidth,
+      0,
+      0,
+      this.canvas.height / sceneHeight,
+      0,
+      0,
+    );
+    this.context.imageSmoothingEnabled = false;
+    this.draw();
+  };
+
+  private draw(): void {
+    drawLandscape(this.context);
+    const { frame, index, totalFrames } = this.animation.currentFrame;
+    const image = this.images.get(frame.localPath);
+    if (!image) return;
+    drawFrame(this.context, frame, image, this.name, this.scale);
+    const label = `${index + 1} / ${totalFrames} 프레임`;
+    if (this.output.value !== label) this.output.value = label;
   }
-  images.set(frame.localPath, image);
-}
 
-function resizeCanvas(): void {
-  const bounds = canvas.getBoundingClientRect();
-  const ratio = window.devicePixelRatio || 1;
-  canvas.width = Math.round(bounds.width * ratio);
-  canvas.height = Math.round(bounds.height * ratio);
-  // 월드 좌표를 backing store에 직접 매핑해 CSS 크기와 DPR을 함께 반영한다.
-  ctx.setTransform(
-    canvas.width / sceneWidth,
-    0,
-    0,
-    canvas.height / sceneHeight,
-    0,
-    0,
-  );
-  ctx.imageSmoothingEnabled = false;
-  draw();
-}
-
-function drawLandscape(): void {
-  ctx.fillStyle = '#e5efde';
-  ctx.fillRect(0, 0, sceneWidth, sceneHeight);
-  ctx.fillStyle = '#f7f5ce';
-  ctx.beginPath();
-  ctx.arc(757, 91, 39, 0, Math.PI * 2);
-  ctx.fill();
-  for (const [x, y, radius] of [
-    [80, 370, 220],
-    [355, 385, 185],
-    [700, 380, 210],
-    [995, 385, 190],
-  ]) {
-    if (x === undefined || y === undefined || radius === undefined) continue;
-    ctx.fillStyle = '#cbdcc1';
-    ctx.beginPath();
-    ctx.arc(x, y, radius, Math.PI, Math.PI * 2);
-    ctx.fill();
-  }
-  ctx.fillStyle = '#93b18b';
-  ctx.fillRect(0, groundY, sceneWidth, 12);
-  ctx.fillStyle = '#d2c8a9';
-  ctx.fillRect(0, groundY + 12, sceneWidth, sceneHeight - groundY);
-  ctx.fillStyle = '#b6aa89';
-  for (let x = 15; x < sceneWidth; x += 37)
-    ctx.fillRect(x, 397 + (x % 3) * 12, 5, 3);
-}
-
-function drawActor(actor: Actor): void {
-  const animation = actor.animations.get(actor.motion);
-  if (!animation) return;
-  const durations = animation.frames.map(
-    (frame) => frame.durationSeconds ?? frameDuration,
-  );
-  const total = durations.reduce((sum, duration) => sum + duration, 0);
-  let remaining = actor.elapsed % total;
-  let index = 0;
-  while (index < durations.length - 1 && remaining >= durations[index]!) {
-    remaining -= durations[index]!;
-    index += 1;
-  }
-  const frame = animation.frames[index];
-  if (!frame) return;
-  const image = images.get(frame.localPath);
-  if (!image) return;
-  const scale = actor.scale;
-  const x = sceneWidth / 2;
-  ctx.fillStyle = '#254b3822';
-  ctx.beginPath();
-  ctx.ellipse(x, groundY, 47, 8, 0, 0, Math.PI * 2);
-  ctx.fill();
-  // MSW 기준점은 이미지 왼쪽 아래를 기준으로 제공되므로 Canvas 상단 좌표로 변환한다.
-  ctx.drawImage(
-    image,
-    x - frame.pivot.x * scale,
-    groundY - (frame.height - frame.pivot.y) * scale,
-    frame.width * scale,
-    frame.height * scale,
-  );
-  ctx.fillStyle = '#35513d';
-  ctx.font = '14px sans-serif';
-  ctx.textAlign = 'center';
-  ctx.fillText(actor.name, x, groundY + 67);
-  const label = `${index + 1} / ${animation.frames.length} 프레임`;
-  if (actor.output.value !== label) actor.output.value = label;
-}
-
-function draw(): void {
-  drawLandscape();
-  if (actor) drawActor(actor);
-}
-
-function animate(time: number): void {
-  const delta =
-    previousTime === 0 ? 0 : Math.min((time - previousTime) / 1000, 0.1);
-  previousTime = time;
-  if (!paused && !document.hidden) {
-    if (actor) actor.elapsed += delta;
-    draw();
-  }
-  requestAnimationFrame(animate);
-}
-
-async function start(id: string, scale: number): Promise<void> {
-  actor = createActor(id, scale);
-  resizeCanvas();
-  const frames = [...actor.animations.values()].flatMap(
-    (animation) => animation.frames,
-  );
-  const uniqueFrames = [
-    ...new Map(frames.map((frame) => [frame.localPath, frame])).values(),
-  ];
-  await Promise.all(uniqueFrames.map(loadImage));
-  document.querySelectorAll('select').forEach((select) => {
-    select.disabled = false;
-  });
-  toggle.disabled = false;
-  status.textContent = `로컬 이미지 ${images.size}개 준비 완료 · 모션을 선택해보세요`;
-  toggle.addEventListener('click', () => {
-    paused = !paused;
-    toggle.textContent = paused ? '재생' : '일시정지';
-  });
-  new ResizeObserver(resizeCanvas).observe(canvas);
-  window.addEventListener('resize', resizeCanvas);
-  requestAnimationFrame(animate);
+  private readonly animate = (time: number): void => {
+    const delta =
+      this.previousTime === 0
+        ? 0
+        : Math.min((time - this.previousTime) / 1000, 0.1);
+    this.previousTime = time;
+    if (!this.paused && !document.hidden) {
+      this.animation.update(delta);
+      this.draw();
+    }
+    this.animationFrameId = requestAnimationFrame(this.animate);
+  };
 }
 
 export function startPreview(id: string, scale: number): void {
-  start(id, scale).catch((error: unknown) => {
+  const status = getElement('status', HTMLParagraphElement);
+  const showError = (error: unknown): void => {
     status.textContent =
       error instanceof Error ? error.message : '리소스를 불러오지 못했습니다.';
     status.setAttribute('role', 'alert');
-  });
+  };
+  try {
+    const preview = new ResourcePreview(id, scale);
+    void preview.start().catch(showError);
+  } catch (error: unknown) {
+    showError(error);
+  }
 }
