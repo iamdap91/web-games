@@ -99,7 +99,13 @@ export function drawRoom(
   camera = true,
 ): void {
   const { player, pipeElapsed } = state;
-  const cameraX = camera ? cameraPosition(player.x) : 0;
+  const cameraX = camera
+    ? state.scenario === 'escaping-exit' && state.exit.revealed
+      ? player.x < 360
+        ? Math.max(-1200, player.x - 360)
+        : cameraPosition(player.x)
+      : cameraPosition(player.x)
+    : 0;
   const shake =
     state.hitElapsed === null
       ? pipeShake(pipeElapsed)
@@ -125,9 +131,10 @@ export function drawRoom(
   if (actor) drawWindowReflection(ctx, assets, state, frame);
   if (!(state.scenario === 'folding-stage' && state.anomaly.backstageReturning))
     drawEntry(ctx, state);
+  if (state.scenario === 'escaping-exit') drawEscapingExit(ctx, assets, state);
   if (state.progress === 8) drawExit(ctx, 780, '→');
   else {
-    drawExit(ctx, 44, '←');
+    if (state.scenario !== 'escaping-exit') drawExit(ctx, 44, '←');
     drawExit(ctx, world.width - 44, '→');
   }
 
@@ -164,7 +171,10 @@ export function drawRoom(
   ctx.restore();
 }
 
-function drawEntry(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {
+function drawRoomNumber(
+  ctx: CanvasRenderingContext2D,
+  state: GameSnapshot,
+): void {
   const glitch = state.failureElapsed;
   const pulse = glitch === null ? 0 : Math.floor(glitch * 35);
   const offset =
@@ -208,6 +218,12 @@ function drawEntry(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {
     }
     ctx.restore();
   }
+  ctx.restore();
+}
+
+function drawEntry(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {
+  if (state.scenario !== 'escaping-exit') drawRoomNumber(ctx, state);
+  ctx.save();
   if (state.progress === 8) {
     ctx.textAlign = 'left';
     ctx.font = '18px sans-serif';
@@ -235,6 +251,25 @@ function drawEntry(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {
         ctx.fillRect(x, y, 2, 2);
       }
   }
+  ctx.restore();
+}
+
+function drawEscapingExit(
+  ctx: CanvasRenderingContext2D,
+  assets: GameAssets,
+  state: GameSnapshot,
+): void {
+  const door = state.exit;
+  ctx.save();
+  ctx.fillStyle = '#02080970';
+  ctx.beginPath();
+  ctx.ellipse(door.x, world.ground - 2, 92, 8, 0, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.translate(door.x, world.ground - door.bounce);
+  ctx.rotate(door.lean);
+  ctx.drawImage(assets.entryDoor, -83, -200);
+  ctx.translate(-203, -world.ground);
+  drawRoomNumber(ctx, state);
   ctx.restore();
 }
 

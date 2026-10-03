@@ -1,5 +1,4 @@
 import { LoadingOverlay } from './loading-overlay.js';
-import { PageSpace } from './page-space.js';
 import { WebSpace } from './web-space.js';
 import { anomalies, anomalyDetails } from './anomalies.js';
 import { AnimationPlayer } from '../../resources/preview/animation-player.js';
@@ -49,7 +48,6 @@ class GameScreen {
   private assets: GameAssets | null = null;
   private animation: AnimationPlayer | null = null;
   private webSpace: WebSpace | null = null;
-  private pageSpace: PageSpace | null = null;
   private loadingOverlay: LoadingOverlay | null = null;
   private motion: Motion = 'stand';
   private requestId = 0;
@@ -72,7 +70,6 @@ class GameScreen {
     if (signal.aborted) return;
     this.animation = new AnimationPlayer(this.assets.animations, 'stand');
     this.webSpace = new WebSpace(this.canvas, this.assets);
-    this.pageSpace = new PageSpace(this.canvas, this.assets);
     this.loadingOverlay = new LoadingOverlay(this.canvas, this.assets);
     element('developer', HTMLElement).hidden = !this.developer;
     this.selection.disabled =
@@ -176,11 +173,6 @@ class GameScreen {
         this.animation.currentFrame.frame,
       );
     if (this.animation)
-      this.pageSpace?.render(
-        this.game.snapshot,
-        this.animation.currentFrame.frame,
-      );
-    if (this.animation)
       this.loadingOverlay?.render(
         this.game.snapshot,
         this.animation.currentFrame.frame,
@@ -192,7 +184,6 @@ class GameScreen {
   destroy(): void {
     this.events.abort();
     this.webSpace?.destroy();
-    this.pageSpace?.destroy();
     this.loadingOverlay?.destroy();
     this.observer.disconnect();
     cancelAnimationFrame(this.requestId);
@@ -282,7 +273,6 @@ class GameScreen {
     );
     this.context.imageSmoothingEnabled = false;
     this.webSpace?.resize(bounds.width, devicePixelRatio);
-    this.pageSpace?.resize(bounds.width, devicePixelRatio);
     this.loadingOverlay?.resize(bounds.width, devicePixelRatio);
   }
 
@@ -315,11 +305,6 @@ class GameScreen {
       );
     if (this.animation)
       this.webSpace?.render(
-        this.game.snapshot,
-        this.animation.currentFrame.frame,
-      );
-    if (this.animation)
-      this.pageSpace?.render(
         this.game.snapshot,
         this.animation.currentFrame.frame,
       );
@@ -394,7 +379,7 @@ class GameScreen {
       );
       setText(
         this.diagnostics,
-        `방: ${state.progress} · 현재: ${state.scenario === 'normal' ? '정상' : anomalyDetails[state.scenario].title} · 위치: ${Math.round(state.player.x)}, ${Math.round(state.player.y)} · 플래시점프: ${state.player.flashAvailable ? '가능' : '사용함'} · 연출: ${state.anomaly.activeElapsed === null ? '대기' : state.anomaly.activeElapsed.toFixed(1)} · 배관: ${state.pipeElapsed === null ? '대기' : `낙하 ${pipes.filter((pipe) => pipeFall(state.pipeElapsed, pipe.delay) === 1).length}/${pipes.filter((pipe) => pipe.delay !== null).length}`} · 공간: ${state.chase.phase} ${state.chase.elapsed.toFixed(2)}초 / 경계 ${Math.round(state.chase.boundary)} · 문틈: ${Math.round(state.anomaly.backstageDoorOpen * 100)}% / 귀로 ${Math.round(state.anomaly.returnDoorOpen * 100)}% · 천장: ${state.anomaly.ceilingSlam === null ? '예고' : state.anomaly.ceilingSlam.toFixed(2)} · 반전: ${state.mirrored ? '상하+좌우' : state.player.inverted ? '상하 반전' : '정방향'} · 침범: ${Math.round(state.anomaly.invasion * 100)}% · 절단: ${state.cut.count}/6 ${state.cut.elapsed?.toFixed(2) ?? '대기'} · 리와인드: ${state.rewind.cycles}회 ${state.rewind.rewinding ? state.rewind.remaining.toFixed(2) + '초' : '조작'} · 선택: ${state.selection.deleted ? '삭제' : (state.selection.elapsed?.toFixed(1) ?? '대기')} · 로딩: ${state.wheel.phase} ${state.wheel.elapsed.toFixed(1)} · 페이지: ${state.page.elapsed?.toFixed(1) ?? '대기'} / 펼침 ${Math.round(state.page.reveal * 100)}% · 상태: ${state.phase} · 전환: ${state.transitionElapsed === null ? '—' : state.transitionElapsed.toFixed(2)} · 번호 노이즈: ${state.failureElapsed === null ? '—' : state.failureElapsed.toFixed(2)}`,
+        `방: ${state.progress} · 현재: ${state.scenario === 'normal' ? '정상' : anomalyDetails[state.scenario].title} · 위치: ${Math.round(state.player.x)}, ${Math.round(state.player.y)} · 플래시점프: ${state.player.flashAvailable ? '가능' : '사용함'} · 연출: ${state.anomaly.activeElapsed === null ? '대기' : state.anomaly.activeElapsed.toFixed(1)} · 배관: ${state.pipeElapsed === null ? '대기' : `낙하 ${pipes.filter((pipe) => pipeFall(state.pipeElapsed, pipe.delay) === 1).length}/${pipes.filter((pipe) => pipe.delay !== null).length}`} · 공간: ${state.chase.phase} ${state.chase.elapsed.toFixed(2)}초 / 경계 ${Math.round(state.chase.boundary)} · 문틈: ${Math.round(state.anomaly.backstageDoorOpen * 100)}% / 귀로 ${Math.round(state.anomaly.returnDoorOpen * 100)}% · 천장: ${state.anomaly.ceilingSlam === null ? '예고' : state.anomaly.ceilingSlam.toFixed(2)} · 반전: ${state.mirrored ? '상하+좌우' : state.player.inverted ? '상하 반전' : '정방향'} · 침범: ${Math.round(state.anomaly.invasion * 100)}% · 절단: ${state.cut.count}/6 ${state.cut.elapsed?.toFixed(2) ?? '대기'} · 리와인드: ${state.rewind.cycles}회 ${state.rewind.rewinding ? state.rewind.remaining.toFixed(2) + '초' : '조작'} · 선택: ${state.selection.deleted ? '삭제' : (state.selection.elapsed?.toFixed(1) ?? '대기')} · 로딩: ${state.wheel.phase} ${state.wheel.elapsed.toFixed(1)} · 출구: ${state.exit.phase} x=${Math.round(state.exit.x)} / ${state.exit.attempts}회 · 상태: ${state.phase} · 전환: ${state.transitionElapsed === null ? '—' : state.transitionElapsed.toFixed(2)} · 번호 노이즈: ${state.failureElapsed === null ? '—' : state.failureElapsed.toFixed(2)}`,
       );
     }
   }

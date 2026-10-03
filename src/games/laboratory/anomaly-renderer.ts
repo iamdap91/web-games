@@ -32,10 +32,16 @@ export function drawAnomalyBackground(
       ? assets.exit
       : scenario === 'empty-center'
         ? assets.emptyCenter
-        : assets.normal,
+        : scenario === 'escaping-exit'
+          ? assets.withoutEntry
+          : assets.normal,
     0,
     0,
   );
+  if (scenario === 'escaping-exit') {
+    for (const x of [-1200, -600])
+      ctx.drawImage(assets.withoutEntry, 60, 0, 600, 430, x, 0, 600, 430);
+  }
   if (scenario === 'mirrored-lab') {
     ctx.drawImage(assets.normal, 0, 340, 2400, 90, 0, -90, 2400, 90);
     ctx.fillStyle = '#34423c';

@@ -4,7 +4,11 @@ import {
   selectionTiming,
   type SelectionSnapshot,
 } from './screen-selection.js';
-import { PageDistortion, type PageSnapshot } from './page-distortion.js';
+import {
+  EscapingExit,
+  escapingExit,
+  type EscapingExitSnapshot,
+} from './escaping-exit.js';
 import {
   chooseScenario,
   type Anomaly,
@@ -156,7 +160,7 @@ export class Player {
     }
   }
 
-  update(seconds: number, direction: Direction): void {
+  update(seconds: number, direction: Direction, minimum = 24): void {
     if (direction !== 0) this.facing = direction;
     const flashing = this.flashRemaining > 0;
     const velocityX = flashing
@@ -164,7 +168,7 @@ export class Player {
       : direction * movement.speed;
     this.flashRemaining = Math.max(0, this.flashRemaining - seconds);
     this.x = Math.max(
-      24,
+      minimum,
       Math.min(world.width - 24, this.x + velocityX * seconds),
     );
     this.velocityY += movement.gravity * seconds * (this.inverted ? -1 : 1);
@@ -205,7 +209,7 @@ export type GameSnapshot = {
   readonly chase: ChaseSnapshot;
   readonly cut: CutSnapshot;
   readonly rewind: RewindSnapshot;
-  readonly page: PageSnapshot;
+  readonly exit: EscapingExitSnapshot;
   readonly selection: SelectionSnapshot;
   readonly wheel: WheelSnapshot;
   readonly landingElapsed: number | null;
@@ -235,7 +239,7 @@ export class LaboratoryGame {
   private chase = new FrameChase();
   private cutter = new RoomCutter();
   private rewind = new MotionRewind();
-  private page = new PageDistortion();
+  private exit = new EscapingExit();
   private screenSelection = new ScreenSelection();
   private wheel = new LoadingWheel();
   private landingElapsed: number | null = null;
@@ -268,7 +272,7 @@ export class LaboratoryGame {
     this.chase = new FrameChase();
     this.cutter = new RoomCutter();
     this.rewind = new MotionRewind();
-    this.page = new PageDistortion();
+    this.exit = new EscapingExit();
     this.screenSelection = new ScreenSelection();
     this.wheel = new LoadingWheel();
     this.landingElapsed = null;
@@ -385,13 +389,16 @@ export class LaboratoryGame {
     }
     const previousPlayer = this.player.snapshot;
     const wasMirrored = this.mirrored;
-    this.player.update(seconds, this.worldDirection(direction));
+    this.player.update(
+      seconds,
+      this.worldDirection(direction),
+      this.scenario === 'escaping-exit' ? escapingExit.playerMinimum : 24,
+    );
     let { x } = this.player.snapshot;
     if (this.progress === 8) {
       if (x >= exitLight.finish) this.leave('right');
       return;
     }
-    this.page.update(seconds, this.scenario, x);
     const revealed = this.anomaly.update(
       seconds,
       this.scenario,
@@ -426,7 +433,8 @@ export class LaboratoryGame {
     if (
       revealed &&
       this.scenario !== 'normal' &&
-      this.scenario !== 'falling-pipe'
+      this.scenario !== 'falling-pipe' &&
+      this.scenario !== 'escaping-exit'
     )
       this.encountered.add(this.scenario);
     if (
@@ -478,6 +486,14 @@ export class LaboratoryGame {
         return;
       }
     }
+    if (this.scenario === 'escaping-exit') {
+      this.exit.update(seconds, this.player.snapshot, previousPlayer);
+      if (this.exit.snapshot.revealed) this.encountered.add('escaping-exit');
+      if (this.exit.snapshot.phase === 'caught') {
+        this.leave('left');
+        return;
+      }
+    }
     if (this.scenario === 'select-delete') {
       this.screenSelection.update(seconds, this.player.snapshot);
       if (this.screenSelection.snapshot.caughtElapsed !== null) {
@@ -505,7 +521,8 @@ export class LaboratoryGame {
       this.scenario === 'folding-stage' &&
       this.anomaly.snapshot.backstageReturning &&
       x <= 250;
-    if (atBackstageDoor || x <= 55) this.leave('left');
+    if (atBackstageDoor || (x <= 55 && this.scenario !== 'escaping-exit'))
+      this.leave('left');
     else if (
       x >= world.width - 55 &&
       !(
@@ -522,7 +539,7 @@ export class LaboratoryGame {
     this.chase = new FrameChase();
     this.cutter = new RoomCutter();
     this.rewind = new MotionRewind();
-    this.page = new PageDistortion();
+    this.exit = new EscapingExit();
     this.screenSelection = new ScreenSelection();
     this.wheel = new LoadingWheel();
     this.landingElapsed = null;
@@ -601,7 +618,7 @@ export class LaboratoryGame {
       chase: this.chase.snapshot,
       cut: this.cutter.snapshot,
       rewind: this.rewind.snapshot,
-      page: this.page.snapshot,
+      exit: this.exit.snapshot,
       selection: this.screenSelection.snapshot,
       wheel: this.wheel.snapshot,
       landingElapsed: this.landingElapsed,

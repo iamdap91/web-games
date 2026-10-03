@@ -19,26 +19,6 @@ function start(scenario) {
   assert.equal(game.snapshot.progress, 1);
   return game;
 }
-for (const scenario of ['page-scroll', 'image-zoom']) {
-  test(`${scenario}: 발동 뒤 점프·귀환·다음 방 전환과 초기화`, () => {
-    const game = start(scenario);
-    walkUntil(game, (s) => s.player.x >= 1500);
-    advance(game, 2.2);
-    assert.notEqual(game.snapshot.page.elapsed, null);
-    assert.ok(game.snapshot.encountered.includes(scenario));
-    if (scenario === 'image-zoom') assert.equal(game.snapshot.page.reveal, 1);
-    game.jump(-1);
-    advance(game, 0.1, -1);
-    assert.equal(game.snapshot.player.grounded, false);
-    walkUntil(game, (s) => s.player.x < 300, -1);
-    assert.ok(game.snapshot.page.departure < 0.11);
-    walkUntil(game, (s) => s.phase === 'transition', -1);
-    advance(game, 0.6);
-    assert.equal(game.snapshot.progress, 2);
-    assert.equal(game.snapshot.page.elapsed, null);
-  });
-}
-
 test('선택 삭제: 삭제 전에는 닿아도 살고, 삭제 순간 영역 안에 있으면 0번 방', () => {
   const game = start('select-delete');
   walkUntil(game, (s) => s.selection.elapsed !== null);
@@ -124,13 +104,8 @@ test('흡수 도중 재선택·출구 미리보기는 포획과 입력 잠금을
   }
 });
 
-test('새 이상현상 재선택·8번 방 미리보기는 페이지와 삭제·흡수를 모두 정리한다', () => {
-  for (const scenario of [
-    'page-scroll',
-    'image-zoom',
-    'select-delete',
-    'loading-wheel',
-  ]) {
+test('새 이상현상 재선택·8번 방 미리보기는 삭제·흡수를 모두 정리한다', () => {
+  for (const scenario of ['select-delete', 'loading-wheel']) {
     for (const preview of [false, true]) {
       const game = start(scenario);
       walkUntil(game, (s) => s.player.x >= 1200);
@@ -138,7 +113,6 @@ test('새 이상현상 재선택·8번 방 미리보기는 페이지와 삭제·
         game.previewExit();
         advance(game, 0.6);
       } else game.reset('normal');
-      assert.equal(game.snapshot.page.elapsed, null);
       assert.equal(game.snapshot.selection.elapsed, null);
       assert.equal(game.snapshot.wheel.phase, 'waiting');
       assert.equal(game.snapshot.progress, preview ? 8 : 0);

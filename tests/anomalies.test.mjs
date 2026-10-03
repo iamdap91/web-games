@@ -16,8 +16,8 @@ function make(scenario) {
   return game;
 }
 
-test('16종에서도 정상 30%와 부재형 1/35를 유지한다', () => {
-  assert.equal(anomalies.length, 16);
+test('15종에서도 정상 30%와 부재형 1/35를 유지한다', () => {
+  assert.equal(anomalies.length, 15);
   const counts = new Map();
   for (let i = 0; i < 35000; i++) {
     const scenario = chooseScenario((i + 0.5) / 35000);
@@ -28,11 +28,13 @@ test('16종에서도 정상 30%와 부재형 1/35를 유지한다', () => {
   for (const id of anomalies) {
     assert.ok(isSelection(id));
     assert.ok(
-      Math.abs(counts.get(id) - (id === 'empty-center' ? 700 : 23800 / 15)) <=
+      Math.abs(counts.get(id) - (id === 'empty-center' ? 700 : 23800 / 14)) <=
         1,
     );
   }
   for (const removed of [
+    'page-scroll',
+    'image-zoom',
     'giant-door',
     'bent-pipes',
     'upside-down',
@@ -51,7 +53,8 @@ test('16종에서도 정상 30%와 부재형 1/35를 유지한다', () => {
 test('모든 이상은 왼쪽으로 진행하며 재선택과 8번 방은 연출을 초기화한다', () => {
   for (const id of anomalies) {
     const game = make(id);
-    advance(game, 1.4, -1);
+    for (let t = 0; t < 8 && game.snapshot.phase === 'playing'; t += step)
+      game.update(step, -1);
     advance(game, 0.6);
     assert.equal(game.snapshot.progress, 1, id);
     game.previewExit();

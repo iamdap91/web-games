@@ -10,6 +10,8 @@ import { drawObservationWindow } from './observation-window.js';
 
 export type GameAssets = {
   readonly normal: HTMLCanvasElement;
+  readonly withoutEntry: HTMLCanvasElement;
+  readonly entryDoor: HTMLCanvasElement;
   readonly exit: HTMLCanvasElement;
   readonly emptyCenter: HTMLCanvasElement;
   readonly machine: HTMLCanvasElement;
@@ -89,6 +91,7 @@ export async function loadAssets(): Promise<GameAssets> {
   const makeBackground = (
     warm = false,
     omitWindow = false,
+    omitEntry = false,
   ): HTMLCanvasElement => {
     const canvas = document.createElement('canvas');
     canvas.width = world.width;
@@ -102,6 +105,7 @@ export async function loadAssets(): Promise<GameAssets> {
       1,
       true,
       true,
+      omitEntry,
     );
     if (!omitWindow) {
       const machine = components.get('machine');
@@ -111,6 +115,22 @@ export async function loadAssets(): Promise<GameAssets> {
     }
     return grade(canvas, warm);
   };
+  const doorRegion = map.regions.find((region) => region.name === 'door');
+  if (!doorRegion) throw new Error('입구 문 리소스가 없습니다.');
+  const entryDoor = document.createElement('canvas');
+  entryDoor.width = 166;
+  entryDoor.height = 200;
+  getContext(entryDoor).drawImage(
+    objects,
+    doorRegion.x,
+    doorRegion.y,
+    doorRegion.width,
+    doorRegion.height,
+    0,
+    0,
+    166,
+    200,
+  );
   const pipeImage = components.get('wall');
   if (!pipeImage) throw new Error('배관 리소스가 없습니다.');
   const pipe = document.createElement('canvas');
@@ -148,6 +168,8 @@ export async function loadAssets(): Promise<GameAssets> {
     emptyCenter: makeBackground(false, true),
     machine: grade(machine),
     normal: makeBackground(),
+    withoutEntry: makeBackground(false, false, true),
+    entryDoor: grade(entryDoor),
     exit: makeBackground(true),
     pipe: grade(pipe),
     props,
