@@ -1,11 +1,14 @@
 import type { PlayerSnapshot } from './game.js';
 
+// 모바일에서도 반응할 여유를 주도록 절단 진행을 기존의 80% 속도로 재생한다.
+const cutSpeed = 0.8;
+
 export const cutting = {
   trigger: 1280,
   boundaries: [1550, 1240, 930, 620, 310, 0],
-  interval: 0.62,
-  warning: 0.42,
-  descent: 0.13,
+  interval: 0.62 / cutSpeed,
+  warning: 0.42 / cutSpeed,
+  descent: 0.13 / cutSpeed,
   exit: 235,
 } as const;
 

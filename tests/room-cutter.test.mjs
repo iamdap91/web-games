@@ -18,14 +18,14 @@ function triggered() {
 test('칼날은 오른쪽부터 순서대로 자르고 마지막에 출구도 사라진다', () => {
   const cutter = new RoomCutter();
   cutter.update(dt, { x: 1280 });
-  cutter.update(0.54, { x: 24 });
+  cutter.update(0.68, { x: 24 });
   assert.equal(cutter.snapshot.count, 0);
   cutter.update(0.02, { x: 24 });
   assert.equal(cutter.snapshot.boundary, 1550);
-  cutter.update(0.62 * 4, { x: 24 });
+  cutter.update(0.775 * 4, { x: 24 });
   assert.equal(cutter.snapshot.boundary, 310);
   assert.equal(cutter.snapshot.caughtElapsed, null);
-  cutter.update(0.62, { x: 24 });
+  cutter.update(0.775, { x: 24 });
   assert.equal(cutter.snapshot.boundary, 0);
   assert.equal(cutter.snapshot.caughtElapsed, 0);
 });
@@ -60,7 +60,7 @@ test('반응 후 연속 플래시점프는 입구에서 탈출하고 걷기만 �
 test('절단 중 재선택과 출구 미리보기는 칼날과 낙하를 초기화한다', () => {
   for (const preview of [false, true]) {
     const game = triggered();
-    advance(game, 1.3);
+    advance(game, 1.6);
     assert.equal(game.snapshot.phase, 'severed');
     if (preview) game.previewExit();
     else game.reset('normal');
