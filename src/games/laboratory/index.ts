@@ -1,3 +1,4 @@
+import { VirtualStick } from './virtual-stick.js';
 import { GameDisplay } from './game-display.js';
 import { LoadingOverlay } from './loading-overlay.js';
 import { WebSpace } from './web-space.js';
@@ -30,9 +31,8 @@ class GameScreen {
   private readonly canvas = element('scene', HTMLCanvasElement);
   private readonly context = getContext(this.canvas);
   private readonly shell = element('game-shell', HTMLDivElement);
-  private readonly touchButtons = ['left', 'right', 'jump'].map((id) =>
-    element(id, HTMLButtonElement),
-  );
+  private readonly jumpButton = element('jump', HTMLButtonElement);
+  private stick: VirtualStick | null = null;
   private display: GameDisplay | null = null;
   private readonly playArea = element('play-area', HTMLDivElement);
   private readonly ending = element('ending', HTMLElement);
@@ -51,7 +51,7 @@ class GameScreen {
   private readonly events = new AbortController();
   private readonly observer = new ResizeObserver(() => this.resize());
   private readonly keys = new Set<string>();
-  private readonly pointers = new Map<number, Direction>();
+  private readonly jumpPointers = new Set<number>();
   private readonly controlPointers = new Set<number>();
   private suppressControlClick = false;
   private assets: GameAssets | null = null;
@@ -176,9 +176,16 @@ class GameScreen {
     this.canvas.addEventListener('pointerdown', () => this.canvas.focus(), {
       signal,
     });
-    this.bindPointer('left', -1);
-    this.bindPointer('right', 1);
-    this.bindPointer('jump', 0);
+    this.stick = new VirtualStick({
+      root: element('move-stick', HTMLDivElement),
+      knob: element('stick-knob', HTMLSpanElement),
+      onStart: (pointerId) => {
+        this.canvas.focus({ preventScroll: true });
+        this.controlPointers.add(pointerId);
+      },
+      onDirection: (direction) => this.game.face(direction),
+    });
+    this.bindJump();
     // 엔딩으로 조작 버튼이 사라져도 손을 떼며 새 화면의 버튼을 누르지 않게 한다.
     window.addEventListener(
       'pointerdown',
@@ -237,6 +244,7 @@ class GameScreen {
   destroy(): void {
     this.events.abort();
     this.display?.destroy();
+    this.stick?.destroy();
     this.webSpace?.destroy();
     this.loadingOverlay?.destroy();
     this.observer.disconnect();
@@ -271,8 +279,8 @@ class GameScreen {
       this.game.jump(this.direction);
   };
 
-  private bindPointer(id: string, direction: Direction): void {
-    const button = element(id, HTMLButtonElement);
+  private bindJump(): void {
+    const button = this.jumpButton;
     const { signal } = this.events;
     button.disabled = false;
     button.addEventListener(
@@ -283,21 +291,15 @@ class GameScreen {
         this.canvas.focus({ preventScroll: true });
         button.setPointerCapture(event.pointerId);
         this.controlPointers.add(event.pointerId);
-        this.pointers.set(event.pointerId, direction);
+        this.jumpPointers.add(event.pointerId);
         button.classList.add('pressed');
-        if (id === 'jump') this.game.jump(this.direction);
-        else {
-          this.game.face(direction);
-        }
+        this.game.jump(this.direction);
       },
       { signal },
     );
     const release = (event: PointerEvent): void => {
-      this.pointers.delete(event.pointerId);
-      button.classList.toggle(
-        'pressed',
-        [...this.pointers.values()].includes(direction),
-      );
+      this.jumpPointers.delete(event.pointerId);
+      button.classList.toggle('pressed', this.jumpPointers.size > 0);
     };
     button.addEventListener('contextmenu', (event) => event.preventDefault(), {
       signal,
@@ -308,16 +310,16 @@ class GameScreen {
   }
 
   private get direction(): Direction {
-    const values = [...this.pointers.values()];
-    const left = this.keys.has('ArrowLeft') || values.includes(-1);
-    const right = this.keys.has('ArrowRight') || values.includes(1);
+    const left = this.keys.has('ArrowLeft') || this.stick?.direction === -1;
+    const right = this.keys.has('ArrowRight') || this.stick?.direction === 1;
     return left === right ? 0 : left ? -1 : 1;
   }
 
   private clearInput(): void {
     this.keys.clear();
-    this.pointers.clear();
-    for (const button of this.touchButtons) button.classList.remove('pressed');
+    this.jumpPointers.clear();
+    this.jumpButton.classList.remove('pressed');
+    this.stick?.reset();
     this.accumulator = 0;
     this.previousTime = 0;
   }

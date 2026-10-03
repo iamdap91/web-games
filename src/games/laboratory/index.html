@@ -8,7 +8,7 @@
     />
     <meta name="theme-color" content="#10191a" />
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="./style.css?v=mobile-overlay-2" />
+    <link rel="stylesheet" href="./style.css?v=virtual-stick-3" />
     <title>C-2 · 돌아오는 연구소</title>
   </head>
   <body>
@@ -39,7 +39,7 @@
                     width="1000"
                     height="430"
                     tabindex="0"
-                    aria-label="C-2 연구소 게임. 방향키 또는 화면 버튼으로 이동하고 점프합니다."
+                    aria-label="C-2 연구소 게임. 방향키 또는 화면 스틱으로 이동하고 Jump 버튼으로 점프합니다."
                     aria-describedby="controls touch-help rules"
                     >Canvas를 지원하는 브라우저가 필요합니다.</canvas
                   >
@@ -58,24 +58,26 @@
                 </p>
               </div>
               <div class="touch-controls" aria-label="화면 조작 버튼">
-                <button
-                  id="left"
-                  type="button"
-                  aria-label="왼쪽으로 이동"
-                  disabled
+                <div
+                  id="move-stick"
+                  class="virtual-stick"
+                  role="group"
+                  aria-label="좌우 이동 스틱"
+                  aria-describedby="touch-help"
+                  aria-disabled="true"
                 >
-                  ←
-                </button>
-                <button
-                  id="right"
-                  type="button"
-                  aria-label="오른쪽으로 이동"
-                  disabled
-                >
-                  →
-                </button>
+                  <span class="stick-guide" aria-hidden="true"
+                    >‹<span>›</span></span
+                  >
+                  <span
+                    id="stick-knob"
+                    class="stick-knob"
+                    aria-hidden="true"
+                  ></span>
+                </div>
                 <p id="touch-help">
-                  누른 채로 이동 · 공중에서 한 번 더 누르면 플래시점프
+                  스틱을 좌우로 밀어 이동 · 손을 떼면 정지 · 공중에서 Jump를 한
+                  번 더 누르면 플래시점프
                 </p>
                 <button
                   id="jump"
