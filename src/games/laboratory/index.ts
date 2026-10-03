@@ -321,6 +321,7 @@ class GameScreen {
 
   private updateInterface(): void {
     const state = this.game.snapshot;
+    document.body.classList.toggle('escaped', state.phase === 'complete');
     this.playArea.hidden = state.phase === 'complete';
     this.ending.hidden = state.phase !== 'complete';
     if (state.phase !== this.lastPhase) {
@@ -335,7 +336,7 @@ class GameScreen {
         state.phase === 'complete'
           ? '8번 방. 탈출했습니다.'
           : state.progress === 8
-            ? '8번 방. 왼쪽의 열린 문으로 나갈 수 있습니다.'
+            ? '8번 방. 오른쪽에서 빛이 들어옵니다.'
             : `${state.progress}번 방`,
       );
     }

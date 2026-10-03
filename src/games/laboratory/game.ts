@@ -13,6 +13,8 @@ export type Scenario = 'normal' | 'giant-door' | 'falling-pipe';
 export type Anomaly = Exclude<Scenario, 'normal'>;
 export type ScenarioSelection = 'random' | Scenario;
 export type Phase = 'playing' | 'transition' | 'complete';
+// 잔상까지 빛에 가려진 뒤 종료되도록 불투명 구간 안에 여유를 둔다.
+export const exitLight = { start: 300, opaque: 2200, finish: 2340 } as const;
 export const passage = { fadeOut: 0.22, fadeIn: 0.32, glitch: 1.1 } as const;
 export type Motion = 'stand' | 'move' | 'jump';
 
@@ -167,9 +169,9 @@ export class LaboratoryGame {
     if (this.phase !== 'playing') return;
     const previousX = this.player.snapshot.x;
     this.player.update(seconds, direction);
-    const { x, grounded } = this.player.snapshot;
+    const { x } = this.player.snapshot;
     if (this.progress === 8) {
-      if (x <= 245 && grounded) this.leave('left');
+      if (x >= exitLight.finish) this.leave('right');
       return;
     }
     if (this.scenario === 'giant-door' && Math.abs(x - 1163) <= 420)

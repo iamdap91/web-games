@@ -1,6 +1,6 @@
 import type { AnimationFrame } from '../../resources/preview/animation-player.js';
 import type { GameAssets } from './assets.js';
-import { passage, world, type GameSnapshot } from './game.js';
+import { exitLight, passage, world, type GameSnapshot } from './game.js';
 
 import { pipes, pipeFall, pipeShake } from './pipe-cascade.js';
 
@@ -32,7 +32,7 @@ export function drawGame(
     0,
   );
   drawEntry(ctx, state);
-  if (state.progress === 8) drawExit(ctx, 282, '←');
+  if (state.progress === 8) drawExit(ctx, 780, '→');
   else {
     drawExit(ctx, 44, '←');
     drawExit(ctx, world.width - 44, '→');
@@ -80,13 +80,35 @@ export function drawGame(
   shade.addColorStop(1, state.progress === 8 ? '#35231330' : '#030a0c80');
   ctx.fillStyle = shade;
   ctx.fillRect(0, 0, viewport.width, viewport.height);
+  if (state.progress === 8) {
+    ctx.save();
+    ctx.translate(-cameraX, 0);
+    // 빛은 캐릭터와 잔상 위에 그려 오른쪽에서 모든 윤곽을 지운다.
+    const light = ctx.createLinearGradient(
+      exitLight.start,
+      0,
+      exitLight.opaque,
+      0,
+    );
+    light.addColorStop(0, '#fffaf000');
+    light.addColorStop(0.2, '#fffaf01a');
+    light.addColorStop(0.55, '#fffaf059');
+    light.addColorStop(0.82, '#fffaf0cc');
+    light.addColorStop(1, '#fffaf0');
+    ctx.fillStyle = light;
+    ctx.fillRect(0, 0, world.width, world.height);
+    ctx.restore();
+  }
   if (state.transitionElapsed !== null) {
     const elapsed = state.transitionElapsed;
     const opacity =
       elapsed < passage.fadeOut
         ? elapsed / passage.fadeOut
         : Math.max(0, 1 - (elapsed - passage.fadeOut) / passage.fadeIn);
-    ctx.fillStyle = `rgb(5 10 12 / ${opacity})`;
+    const leavingInLight = state.progress === 8 && player.x >= exitLight.finish;
+    ctx.fillStyle = leavingInLight
+      ? `rgb(255 250 240 / ${opacity})`
+      : `rgb(5 10 12 / ${opacity})`;
     ctx.fillRect(0, 0, viewport.width, viewport.height);
   }
 }
@@ -106,7 +128,7 @@ function drawEntry(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {
   ctx.textAlign = 'center';
   ctx.font = '10px sans-serif';
   ctx.fillStyle = '#9bac9c';
-  ctx.fillText(state.progress === 8 ? 'EXIT' : 'SECTOR C-2', 203, 73);
+  ctx.fillText(state.progress === 8 ? 'EXIT →' : 'SECTOR C-2', 203, 73);
   ctx.font = 'bold 46px monospace';
   ctx.shadowColor = '#adcfad';
   ctx.shadowBlur = 7;
@@ -136,23 +158,9 @@ function drawEntry(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {
     ctx.restore();
   }
   if (state.progress === 8) {
-    // 마지막 문에서 새어 나오는 빛으로 종료를 알리고 결과 창을 띄우지 않는다.
-    const light = ctx.createLinearGradient(180, 160, 360, 340);
-    light.addColorStop(0, '#f5ebcbd0');
-    light.addColorStop(1, '#f5ebcb00');
-    ctx.fillStyle = light;
-    ctx.beginPath();
-    ctx.moveTo(182, 190);
-    ctx.lineTo(245, 190);
-    ctx.lineTo(495, 340);
-    ctx.lineTo(138, 340);
-    ctx.closePath();
-    ctx.fill();
-    ctx.fillStyle = '#e7e2c8';
-    ctx.fillRect(184, 204, 51, 136);
     ctx.textAlign = 'left';
     ctx.font = '18px sans-serif';
-    ctx.fillStyle = '#cdd5c6';
+    ctx.fillStyle = '#eee5cc';
     ctx.fillText('바깥 공기.', 400, 218);
   } else {
     ctx.fillStyle = '#26332c';

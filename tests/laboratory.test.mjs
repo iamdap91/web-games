@@ -7,6 +7,7 @@ import {
   world,
   isSelection,
   passage,
+  exitLight,
 } from '../dist/src/games/laboratory/game.js';
 
 const step = 1 / 120;
@@ -93,7 +94,7 @@ test('정상은 오른쪽, 이상은 왼쪽이 정답이며 오답은 0번 방�
   }
 });
 
-test('8번 방에서도 움직이고 열린 문으로 나가야 종료된다', () => {
+test('8번 방에서도 움직이고 오른쪽 빛 속으로 나가야 종료된다', () => {
   const game = new LaboratoryGame();
   game.reset('giant-door');
   for (let count = 1; count <= 8; count++) {
@@ -105,7 +106,7 @@ test('8번 방에서도 움직이고 열린 문으로 나가야 종료된다', (
   assert.equal(game.snapshot.scenario, 'normal');
   advance(game, 0.3, 1);
   assert.ok(game.snapshot.player.x > 360);
-  exit(game, -1);
+  exit(game, 1);
   advance(game, 0.3);
   assert.equal(game.snapshot.phase, 'complete');
   const before = game.snapshot.player;
@@ -252,21 +253,24 @@ test('실패 중에도 8번 방을 확인할 수 있고 반복 확인과 상황 
   assert.equal(game.snapshot.phase, 'playing');
 });
 
-test('8번 방의 오른쪽 끝은 다음 방이 아니며 열린 문 앞에서 착지해야 탈출한다', () => {
+test('8번 방의 왼쪽은 출구가 아니고 빛이 몸과 잔상을 가린 뒤 공중에서도 탈출한다', () => {
   const game = new LaboratoryGame();
   game.previewExit();
   advance(game, 0.6);
-  advance(game, 10, 1);
+  advance(game, 2, -1);
   assert.equal(game.snapshot.phase, 'playing');
   assert.equal(game.snapshot.progress, 8);
   game.previewExit();
   advance(game, 0.6);
-  game.jump(-1);
-  advance(game, 0.5, -1);
-  assert.ok(game.snapshot.player.x <= 245);
-  assert.equal(game.snapshot.player.grounded, false);
+  while (game.snapshot.player.x < exitLight.opaque) game.update(step, 1);
   assert.equal(game.snapshot.phase, 'playing');
-  advance(game, 1);
+  game.jump(1);
+  game.jump(1);
+  while (game.snapshot.phase === 'playing') game.update(step, 1);
+  assert.ok(game.snapshot.player.x >= exitLight.finish);
+  assert.ok(game.snapshot.player.x - 130 >= exitLight.opaque);
+  assert.equal(game.snapshot.player.grounded, false);
+  advance(game, 0.3);
   assert.equal(game.snapshot.phase, 'complete');
 });
 
@@ -286,7 +290,7 @@ test('배정만 된 이상은 기록하지 않고 실제 접근한 이상은 실
   assert.deepEqual(game.snapshot.encountered, ['giant-door']);
   game.previewExit();
   advance(game, 0.6);
-  exit(game, -1);
+  exit(game, 1);
   advance(game, 0.3);
   assert.deepEqual(game.snapshot.encountered, ['giant-door']);
   game.reset();

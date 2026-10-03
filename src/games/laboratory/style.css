@@ -204,15 +204,15 @@ select:disabled {
 .ending {
   min-height: 430px;
   padding: clamp(24px, 5vw, 56px);
-  border: 1px solid #766b48;
+  border: 1px solid #d9cd9e;
   border-radius: 8px;
-  background: radial-gradient(ellipse at top left, #3e402f, #1b2521 75%);
-  color: #e2ddc7;
+  background: radial-gradient(ellipse at top right, #fff4c9, #fffaf0 70%);
+  color: #34483b;
 }
 .ending h2 {
   font-size: clamp(24px, 4vw, 36px);
   font-weight: 500;
-  margin: 14px 0 30px;
+  margin: 14px 0 18px;
 }
 .ending-nav {
   display: flex;
@@ -221,8 +221,8 @@ select:disabled {
   flex-wrap: wrap;
 }
 .ending-nav [aria-pressed='true'] {
-  background: #696548;
-  border-color: #b1aa7c;
+  background: #e5d68f;
+  border-color: #b5a15a;
 }
 .ending ul {
   list-style: none;
@@ -231,9 +231,9 @@ select:disabled {
   gap: 12px;
 }
 .ending li {
-  border-left: 2px solid #a2a17b;
+  border-left: 2px solid #b49b53;
   padding: 10px 18px;
-  background: #a4ab8010;
+  background: #ebead480;
 }
 .ending h3 {
   font-size: 17px;
@@ -244,20 +244,63 @@ select:disabled {
 .ending dd {
   font-size: 14px;
   line-height: 1.8;
-  color: #b9c0ac;
+  color: #556453;
 }
 .ending dt {
   font-size: 12px;
-  color: #8f9b88;
+  color: #67715d;
   margin-top: 16px;
 }
 .ending dd {
   margin: 5px 0 0;
 }
 .ending a {
-  color: #d2cfb0;
+  color: #486044;
   white-space: normal;
 }
 #ending-restart {
   margin-top: 22px;
+}
+
+body.escaped {
+  color-scheme: light;
+  background: #f7f3e5;
+  color: #34483b;
+}
+.escaped header a {
+  color: #586849;
+}
+.escaped .eyebrow {
+  color: #877342;
+}
+.escaped button,
+.escaped select {
+  background: #f0e9cd;
+  color: #374b38;
+  border-color: #b8ac7b;
+}
+.escaped button:hover {
+  background: #e8dcac;
+}
+.escaped .ending-nav [aria-pressed='true'] {
+  background: #e5d68f;
+}
+.escaped .developer {
+  background: #eeeedd;
+  border-color: #b4b48c;
+}
+.escaped .developer p {
+  color: #59634f;
+}
+.ending .ending-praise {
+  font-size: clamp(18px, 2.5vw, 23px);
+  font-weight: 600;
+  color: #5e713e;
+  margin-bottom: 8px;
+}
+.ending .ending-message {
+  margin: 0 0 28px;
+}
+#ending-title:focus {
+  outline: none;
 }
