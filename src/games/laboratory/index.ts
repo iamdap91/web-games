@@ -27,6 +27,10 @@ class GameScreen {
   private readonly status = element('status', HTMLParagraphElement);
   private readonly restartButton = element('restart', HTMLButtonElement);
   private readonly replayButton = element('replay', HTMLButtonElement);
+  private readonly previewExitButton = element(
+    'preview-exit',
+    HTMLButtonElement,
+  );
   private readonly selection = element('scenario', HTMLSelectElement);
   private readonly diagnostics = element('diagnostics', HTMLParagraphElement);
   private readonly developer =
@@ -58,7 +62,10 @@ class GameScreen {
     if (signal.aborted) return;
     this.animation = new AnimationPlayer(this.assets.animations, 'stand');
     element('developer', HTMLElement).hidden = !this.developer;
-    this.selection.disabled = this.replayButton.disabled = !this.developer;
+    this.selection.disabled =
+      this.replayButton.disabled =
+      this.previewExitButton.disabled =
+        !this.developer;
     this.restartButton.disabled = false;
     this.selection.addEventListener('change', () => this.restart(), { signal });
     this.replayButton.addEventListener('click', () => this.restart(), {
@@ -67,6 +74,18 @@ class GameScreen {
     this.restartButton.addEventListener('click', () => this.restart(), {
       signal,
     });
+    this.previewExitButton.addEventListener(
+      'click',
+      () => {
+        if (!this.developer) return;
+        this.clearInput();
+        this.game.previewExit();
+        this.motion = 'stand';
+        this.animation?.play('stand');
+        this.canvas.focus({ preventScroll: true });
+      },
+      { signal },
+    );
     window.addEventListener('keydown', this.keyDown, { signal });
     window.addEventListener('keyup', (event) => this.keys.delete(event.code), {
       signal,

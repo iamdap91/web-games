@@ -133,6 +133,14 @@ export class LaboratoryGame {
     this.loadRoom();
   }
 
+  previewExit(): void {
+    this.reset(this.selection);
+    this.progress = 7;
+    this.scenario = 'normal';
+    // 실제 플레이와 같은 7 → 8 전환 경로로 종료 장면을 확인한다.
+    this.leave('right');
+  }
+
   face(direction: Direction): void {
     if (this.phase === 'playing') this.player.face(direction);
   }

@@ -203,3 +203,41 @@ test('전환 중 개발 상황을 바꾸면 이전 전환과 노이즈가 취소
   assert.equal(game.snapshot.progress, 0);
   assert.equal(game.snapshot.player.x, 360);
 });
+
+test('개발 모드의 8번 방 확인은 실제 탈출과 같은 종료 상태를 만든다', () => {
+  const completed = new LaboratoryGame();
+  completed.reset('giant-door');
+  for (let room = 0; room < 8; room++) {
+    exit(completed, -1);
+    advance(completed, 0.6);
+  }
+  const preview = new LaboratoryGame();
+  preview.reset('falling-pipe');
+  advance(preview, 4, 1);
+  assert.notEqual(preview.snapshot.pipeElapsed, null);
+  preview.previewExit();
+  assert.equal(preview.snapshot.progress, 7);
+  assert.equal(preview.snapshot.phase, 'transition');
+  assert.equal(preview.snapshot.pipeElapsed, null);
+  assert.equal(preview.snapshot.failureElapsed, null);
+  advance(preview, 0.6);
+  assert.deepEqual(preview.snapshot, completed.snapshot);
+});
+
+test('실패 중에도 8번 방을 확인할 수 있고 반복 확인과 상황 복귀가 가능하다', () => {
+  const game = new LaboratoryGame();
+  exit(game, -1);
+  advance(game, 0.3);
+  assert.notEqual(game.snapshot.failureElapsed, null);
+  for (let attempt = 0; attempt < 2; attempt++) {
+    game.previewExit();
+    assert.equal(game.snapshot.failureElapsed, null);
+    advance(game, 0.6);
+    assert.equal(game.snapshot.phase, 'complete');
+    assert.equal(game.snapshot.progress, 8);
+  }
+  game.reset('falling-pipe');
+  assert.equal(game.snapshot.progress, 0);
+  assert.equal(game.snapshot.scenario, 'falling-pipe');
+  assert.equal(game.snapshot.phase, 'playing');
+});
