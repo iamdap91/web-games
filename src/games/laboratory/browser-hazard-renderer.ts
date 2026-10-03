@@ -13,7 +13,8 @@ export function drawSelectedRoom(
     return;
   }
   const camera = cameraPosition(state.player.x);
-  const edge = selection.boundary - camera;
+  const caught = selection.caughtElapsed !== null;
+  const edge = caught ? 0 : selection.boundary - camera;
   if (selection.deleted) {
     ctx.fillStyle = '#0a1012';
     ctx.fillRect(0, 0, 1000, 430);
@@ -21,7 +22,7 @@ export function drawSelectedRoom(
     ctx.beginPath();
     ctx.rect(0, 0, Math.max(0, edge), 430);
     ctx.clip();
-    paint();
+    if (!caught) paint();
     ctx.restore();
     const after =
       selection.elapsed - selectionTiming.sweep - selectionTiming.pause;
@@ -29,12 +30,40 @@ export function drawSelectedRoom(
       ctx.fillStyle = `rgb(163 192 255 / ${(1 - after / 0.1) * 0.5})`;
       ctx.fillRect(Math.max(0, edge), 0, 1000, 430);
     }
+    const phrase = '아...깝...다...';
+    const typing = [
+      0.45, 0.7, 0.87, 1.04, 1.65, 1.9, 2.07, 2.24, 2.85, 3.1, 3.27, 3.44,
+    ];
+    const typed = caught
+      ? ''
+      : phrase.slice(0, typing.filter((time) => after >= time).length);
+    const textX = Math.max(26, edge + 24);
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(Math.max(0, edge), 0, 1000, 430);
+    ctx.clip();
+    // 타이핑 중 글자 크기가 달라지지 않도록 완성된 문구를 기준으로 맞춘다.
+    ctx.font = 'bold 96px monospace';
+    const fontSize = Math.min(
+      96,
+      (96 * (970 - textX)) / ctx.measureText(phrase).width,
+    );
+    ctx.font = `bold ${fontSize}px monospace`;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillStyle = '#e24646';
+    const baseline = 215 + fontSize * 0.35;
+    ctx.fillText(typed, textX, baseline);
+    const cursorX = textX + ctx.measureText(typed).width + (typed ? 12 : 0);
     if (after % 1 < 0.58) {
-      ctx.fillStyle = '#c8dfd8';
-      ctx.fillRect(Math.max(26, edge + 24), 142, 4, 134);
-      ctx.fillRect(Math.max(20, edge + 18), 140, 16, 2);
-      ctx.fillRect(Math.max(20, edge + 18), 276, 16, 2);
+      ctx.fillStyle = '#f0f4f1';
+      const top = caught ? 142 : baseline - fontSize;
+      const height = caught ? 134 : fontSize * 1.25;
+      ctx.fillRect(cursorX, top, 4, height);
+      ctx.fillRect(cursorX - 6, top - 2, 16, 2);
+      ctx.fillRect(cursorX - 6, top + height, 16, 2);
     }
+    ctx.restore();
     return;
   }
   paint();
