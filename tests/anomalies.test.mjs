@@ -16,8 +16,8 @@ function make(scenario) {
   return game;
 }
 
-test('11종으로 정리해도 정상 30%와 부재형 1/35를 유지한다', () => {
-  assert.equal(anomalies.length, 11);
+test('10종으로 정리해도 정상 30%와 부재형 1/35를 유지한다', () => {
+  assert.equal(anomalies.length, 10);
   const counts = new Map();
   for (let i = 0; i < 35000; i++) {
     const scenario = chooseScenario((i + 0.5) / 35000);
@@ -27,10 +27,14 @@ test('11종으로 정리해도 정상 30%와 부재형 1/35를 유지한다', ()
   assert.equal(counts.get('empty-center'), 700);
   for (const id of anomalies) {
     assert.ok(isSelection(id));
-    assert.equal(counts.get(id), id === 'empty-center' ? 700 : 2380);
+    assert.ok(
+      Math.abs(counts.get(id) - (id === 'empty-center' ? 700 : 23800 / 9)) <= 1,
+    );
   }
   for (const removed of [
     'giant-door',
+    'bent-pipes',
+    'upside-down',
     'red-fluid',
     'sealed-exit',
     'crowded-lab',
@@ -52,7 +56,7 @@ test('모든 이상은 왼쪽으로 진행하며 재선택과 8번 방은 연출
     game.previewExit();
     advance(game, 0.6);
     assert.equal(game.snapshot.scenario, 'normal');
-    assert.equal(game.snapshot.player.inverted, false);
+    assert.equal(game.snapshot.mirrored, false);
     assert.equal(game.snapshot.anomaly.ceilingSlam, null);
     assert.equal(game.snapshot.anomaly.invasion, 0);
     game.reset('normal');
@@ -60,25 +64,30 @@ test('모든 이상은 왼쪽으로 진행하며 재선택과 8번 방은 연출
   }
 });
 
-test('뒤집힘 도중 이동 가능하고 천장 착지 후 점프와 플래시점프를 다시 쓴다', () => {
-  const game = make('upside-down');
-  advance(game, 2.3, 1);
-  const x = game.snapshot.player.x;
-  advance(game, 1.8, 1);
-  assert.ok(game.snapshot.player.x > x);
-  assert.equal(game.snapshot.player.inverted, true);
-  assert.equal(game.snapshot.player.y, 0);
-  assert.equal(game.snapshot.player.grounded, true);
-  game.jump(-1);
-  advance(game, 0.1, -1);
-  game.jump(-1);
-  assert.ok(game.snapshot.player.y > 0);
-  assert.equal(game.snapshot.player.flashAvailable, false);
-  advance(game, 1);
-  assert.equal(game.snapshot.player.y, 0);
+test('좌우 반전 후 조작 방향은 유지되며 오른쪽으로 돌아가야 정답이다', () => {
+  for (const direction of [1, -1]) {
+    const game = make('mirrored-lab');
+    advance(game, 2.3, 1);
+    advance(game, 1.5);
+    assert.equal(game.snapshot.mirrored, true);
+    assert.equal(game.snapshot.player.y, 340);
+    const x = game.snapshot.player.x;
+    game.face(direction);
+    game.jump(direction);
+    advance(game, 0.1, direction);
+    game.jump(direction);
+    advance(game, 0.1, direction);
+    assert.equal(Math.sign(game.snapshot.player.x - x), -direction);
+    assert.equal(game.snapshot.player.flashAvailable, false);
+    for (let tick = 0; tick < 2000 && game.snapshot.phase === 'playing'; tick++)
+      game.update(step, direction);
+    advance(game, 1.5);
+    assert.equal(game.snapshot.progress, direction === 1 ? 1 : 0);
+    assert.equal(game.snapshot.mirrored, false);
+  }
 });
 
-test('낮아지는 천장을 보고 돌아오면 안전하며 더 전진하면 피격 후 0번 방이다', () => {
+test('낮아지는 천장을 보고 돌아오면 안전하며 더 전진하면 찌부 연출을 거쳐 0번 방이다', () => {
   const safe = make('lowering-ceiling');
   advance(safe, 4.8, 1);
   assert.equal(safe.snapshot.anomaly.ceilingSlam, null);
@@ -89,9 +98,15 @@ test('낮아지는 천장을 보고 돌아오면 안전하며 더 전진하면 �
   advance(hit, 1.4, -1);
   advance(hit, 0.6);
   while (hit.snapshot.phase === 'playing') hit.update(step, 1);
-  assert.equal(hit.snapshot.previousRoom, 1);
-  assert.notEqual(hit.snapshot.hitElapsed, null);
-  advance(hit, 1.5);
+  assert.equal(hit.snapshot.progress, 1);
+  assert.equal(hit.snapshot.phase, 'squashed');
+  assert.equal(hit.snapshot.hitElapsed, null);
+  const flattenedAt = hit.snapshot.player;
+  hit.jump(-1);
+  advance(hit, 0.5, -1);
+  assert.equal(hit.snapshot.phase, 'squashed');
+  assert.deepEqual(hit.snapshot.player, flattenedAt);
+  advance(hit, 2);
   assert.equal(hit.snapshot.progress, 0);
   assert.equal(hit.snapshot.anomaly.ceilingSlam, null);
   assert.deepEqual(hit.snapshot.encountered, ['lowering-ceiling']);
@@ -112,18 +127,6 @@ test('기계는 등질 때 접근하고 바라보면 위치를 멈춘다', () =>
   assert.equal(game.snapshot.anomaly.machineX, close);
 });
 
-test('배관은 방향 전환 후 즉시 꺾이지 않고 순차적으로 뒤따른다', () => {
-  const game = make('bent-pipes');
-  advance(game, 4.5, 1);
-  const bends = game.snapshot.anomaly.pipeBends;
-  advance(game, 0.01, -1);
-  game.snapshot.anomaly.pipeBends.forEach((bend, i) =>
-    assert.ok(Math.abs(bend - bends[i]) < 8),
-  );
-  advance(game, 1, -1);
-  assert.ok(game.snapshot.anomaly.pipeBends[0] < bends[0]);
-});
-
 test('소등은 한 번만 이동시키고 침범한 방은 물러나도 접히지 않는다', () => {
   const blackout = make('blackout');
   advance(blackout, 4, 1);
@@ -140,4 +143,18 @@ test('소등은 한 번만 이동시키고 침범한 방은 물러나도 접히�
   assert.equal(room.snapshot.anomaly.invasion, invaded);
   room.reset('room-invasion');
   assert.equal(room.snapshot.anomaly.invasion, 0);
+});
+
+test('찌부 중 재선택이나 출구 미리보기는 연출을 즉시 정리한다', () => {
+  for (const preview of [false, true]) {
+    const game = make('lowering-ceiling');
+    while (game.snapshot.phase === 'playing') game.update(step, 1);
+    assert.equal(game.snapshot.squashElapsed, 0);
+    if (preview) game.previewExit();
+    else game.reset('normal');
+    advance(game, 0.6);
+    assert.equal(game.snapshot.squashElapsed, null);
+    assert.equal(game.snapshot.phase, 'playing');
+    assert.equal(game.snapshot.progress, preview ? 8 : 0);
+  }
 });

@@ -25,7 +25,7 @@ export const movement = {
 } as const;
 export type Direction = -1 | 0 | 1;
 export type Phase =
-  'playing' | 'transition' | 'falling' | 'landing' | 'complete';
+  'playing' | 'squashed' | 'transition' | 'falling' | 'landing' | 'complete';
 // 잔상까지 빛에 가려진 뒤 종료되도록 불투명 구간 안에 여유를 둔다.
 export const exitLight = { start: 300, opaque: 2200, finish: 2340 } as const;
 export const passage = { fadeOut: 0.22, fadeIn: 0.32, glitch: 1.1 } as const;
@@ -36,7 +36,6 @@ export type PlayerSnapshot = {
   readonly y: number;
   readonly facing: -1 | 1;
   readonly grounded: boolean;
-  readonly inverted: boolean;
   readonly flashAvailable: boolean;
   readonly flashRemaining: number;
   readonly motion: Motion;
@@ -46,7 +45,6 @@ export class Player {
   private x = 360;
   private y: number = world.ground;
   private velocityY = 0;
-  private inverted = false;
   private facing: -1 | 1 = 1;
   private flashDirection: -1 | 1 = 1;
   private flashRemaining = 0;
@@ -59,21 +57,22 @@ export class Player {
     this.motion = 'jump';
   }
 
-  invertGravity(): void {
-    if (this.inverted) return;
-    this.inverted = true;
-    this.velocityY = -50;
+  reflectMotion(): void {
+    this.facing = this.facing === 1 ? -1 : 1;
+    this.flashDirection = this.flashDirection === 1 ? -1 : 1;
+  }
+
+  squash(): void {
+    this.y = world.ground;
+    this.velocityY = 0;
     this.flashRemaining = 0;
+    this.motion = 'stand';
   }
 
   stopAtCeiling(height: number): void {
-    if (this.inverted || this.y - 62 >= height) return;
+    if (this.y - 62 >= height) return;
     this.y = Math.min(world.ground, height + 62);
     this.velocityY = Math.max(0, this.velocityY);
-  }
-
-  private get floor(): number {
-    return this.inverted ? 0 : world.ground;
   }
 
   face(direction: Direction): void {
@@ -82,15 +81,15 @@ export class Player {
 
   jump(direction: Direction): void {
     this.face(direction);
-    if (this.y === this.floor) {
-      this.velocityY = (this.inverted ? 1 : -1) * movement.jumpSpeed;
+    if (this.y === world.ground) {
+      this.velocityY = -movement.jumpSpeed;
       // 입력이 같은 물리 틱에 두 번 들어와도 두 번째는 공중 입력이다.
-      this.y += this.inverted ? 0.01 : -0.01;
+      this.y -= 0.01;
     } else if (this.flashAvailable) {
       this.flashAvailable = false;
       this.flashDirection = this.facing;
       this.flashRemaining = movement.flashDuration;
-      this.velocityY = this.inverted ? 180 : -180;
+      this.velocityY = -180;
     }
   }
 
@@ -105,16 +104,16 @@ export class Player {
       24,
       Math.min(world.width - 24, this.x + velocityX * seconds),
     );
-    this.velocityY += movement.gravity * seconds * (this.inverted ? -1 : 1);
+    this.velocityY += movement.gravity * seconds;
     this.y += this.velocityY * seconds;
-    if (this.inverted ? this.y <= this.floor : this.y >= this.floor) {
-      this.y = this.floor;
+    if (this.y >= world.ground) {
+      this.y = world.ground;
       this.velocityY = 0;
       this.flashAvailable = true;
       this.flashRemaining = 0;
     }
     this.motion =
-      this.y !== this.floor ? 'jump' : velocityX !== 0 ? 'move' : 'stand';
+      this.y !== world.ground ? 'jump' : velocityX !== 0 ? 'move' : 'stand';
   }
 
   get snapshot(): PlayerSnapshot {
@@ -122,8 +121,7 @@ export class Player {
       x: this.x,
       y: this.y,
       facing: this.facing,
-      grounded: this.y === this.floor,
-      inverted: this.inverted,
+      grounded: this.y === world.ground,
       flashAvailable: this.flashAvailable,
       flashRemaining: this.flashRemaining,
       motion: this.motion,
@@ -133,6 +131,8 @@ export class Player {
 
 export type GameSnapshot = {
   readonly player: PlayerSnapshot;
+  readonly mirrored: boolean;
+  readonly squashElapsed: number | null;
   readonly anomaly: AnomalySnapshot;
   readonly chase: ChaseSnapshot;
   readonly landingElapsed: number | null;
@@ -161,6 +161,7 @@ export class LaboratoryGame {
   private anomaly = new AnomalyMotion();
   private chase = new FrameChase();
   private landingElapsed: number | null = null;
+  private squashElapsed: number | null = null;
   private scenario: Scenario = 'normal';
   private selection: ScenarioSelection = 'random';
   private phase: Phase = 'playing';
@@ -188,6 +189,7 @@ export class LaboratoryGame {
     this.anomaly = new AnomalyMotion();
     this.chase = new FrameChase();
     this.landingElapsed = null;
+    this.squashElapsed = null;
     this.pipeElapsed = this.failureElapsed = null;
     this.progress = 7;
     this.scenario = 'normal';
@@ -196,17 +198,47 @@ export class LaboratoryGame {
   }
 
   face(direction: Direction): void {
-    if (this.phase === 'playing') this.player.face(direction);
+    if (this.phase === 'playing')
+      this.player.face(this.worldDirection(direction));
   }
 
   jump(direction: Direction): void {
-    if (this.phase === 'playing') this.player.jump(direction);
+    if (this.phase === 'playing')
+      this.player.jump(this.worldDirection(direction));
+  }
+
+  private get mirrored(): boolean {
+    return (
+      this.scenario === 'mirrored-lab' &&
+      roomTurn(this.anomaly.snapshot.activeElapsed) >= 0.5
+    );
+  }
+
+  private worldDirection(direction: Direction): Direction {
+    return this.mirrored
+      ? direction === 0
+        ? 0
+        : direction === 1
+          ? -1
+          : 1
+      : direction;
   }
 
   update(seconds: number, direction: Direction): void {
     if (this.failureElapsed !== null) {
       this.failureElapsed += seconds;
       if (this.failureElapsed >= passage.glitch) this.failureElapsed = null;
+    }
+    if (this.phase === 'squashed') {
+      this.squashElapsed = (this.squashElapsed ?? 0) + seconds;
+      this.anomaly.update(
+        seconds,
+        this.scenario,
+        this.player.snapshot,
+        this.player.snapshot,
+      );
+      if (this.squashElapsed >= 1.05) this.startTransition(0, true, false);
+      return;
     }
     if (this.phase === 'falling') {
       if (this.chase.fall(seconds)) {
@@ -226,27 +258,18 @@ export class LaboratoryGame {
       if (this.player.snapshot.grounded) {
         this.phase = 'playing';
         this.landingElapsed = null;
+        this.squashElapsed = null;
       }
       return;
     }
     if (this.phase === 'transition') {
-      if (
-        this.scenario === 'lowering-ceiling' &&
-        this.transition?.hit &&
-        !this.transition.swapped
-      )
-        this.anomaly.update(
-          seconds,
-          this.scenario,
-          this.player.snapshot,
-          this.player.snapshot,
-        );
       this.updateTransition(seconds);
       return;
     }
     if (this.phase !== 'playing') return;
     const previousPlayer = this.player.snapshot;
-    this.player.update(seconds, direction);
+    const wasMirrored = this.mirrored;
+    this.player.update(seconds, this.worldDirection(direction));
     const { x } = this.player.snapshot;
     if (this.progress === 8) {
       if (x >= exitLight.finish) this.leave('right');
@@ -258,11 +281,7 @@ export class LaboratoryGame {
       this.player.snapshot,
       previousPlayer,
     );
-    if (
-      this.scenario === 'upside-down' &&
-      roomTurn(this.anomaly.snapshot.activeElapsed) >= 0.5
-    )
-      this.player.invertGravity();
+    if (!wasMirrored && this.mirrored) this.player.reflectMotion();
     const slam = this.anomaly.snapshot.ceilingSlam;
     if (
       this.scenario === 'lowering-ceiling' &&
@@ -277,7 +296,9 @@ export class LaboratoryGame {
       this.player.snapshot.y - 62 <= ceilingHeight(x, slam) + 40
     ) {
       this.encountered.add('lowering-ceiling');
-      this.startTransition(0, true, false, true);
+      this.player.squash();
+      this.squashElapsed = 0;
+      this.phase = 'squashed';
       return;
     }
     if (
@@ -344,6 +365,7 @@ export class LaboratoryGame {
     this.anomaly = new AnomalyMotion();
     this.chase = new FrameChase();
     this.landingElapsed = null;
+    this.squashElapsed = null;
     this.pipeElapsed = null;
     if (
       this.progress === 8 ||
@@ -412,6 +434,8 @@ export class LaboratoryGame {
   get snapshot(): GameSnapshot {
     return {
       player: this.player.snapshot,
+      mirrored: this.mirrored,
+      squashElapsed: this.squashElapsed,
       anomaly: this.anomaly.snapshot,
       chase: this.chase.snapshot,
       landingElapsed: this.landingElapsed,

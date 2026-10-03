@@ -15,7 +15,7 @@ export function ceilingHeight(x: number, slam: number | null): number {
   const warning = 145 * smooth((x - ceiling.start) / 850);
   return slam === null
     ? warning
-    : 145 + 155 * clamp(slam / ceiling.duration) ** 2;
+    : 145 + 139 * clamp(slam / ceiling.duration) ** 2;
 }
 export function roomTurn(elapsed: number | null): number {
   return elapsed === null ? 0 : smooth(elapsed / 1.4);

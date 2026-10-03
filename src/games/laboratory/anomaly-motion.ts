@@ -9,7 +9,6 @@ export type AnomalySnapshot = {
   readonly machineX: number;
   readonly machineLean: number;
   readonly machineStride: number;
-  readonly pipeBends: readonly number[];
   readonly blackoutX: number;
   readonly ceilingSlam: number | null;
   readonly invasion: number;
@@ -27,8 +26,6 @@ export class AnomalyMotion {
   private machineUnwatched = 0;
   private machineApproaches = 0;
   private wasUnwatched = false;
-  private readonly pipeBends = [0, 0, 0, 0, 0];
-  private readonly history: { time: number; x: number }[] = [];
   private blackoutX = 1180;
   private ceilingSlam: number | null = null;
   private invasion = 0;
@@ -62,28 +59,6 @@ export class AnomalyMotion {
     if (this.activeElapsed === null && revealed) {
       this.activeElapsed = 0;
       this.blackoutX = player.x + 105;
-    }
-    if (scenario === 'bent-pipes') {
-      this.history.push({ time: this.elapsed, x: player.x });
-      while (
-        this.history.length > 1 &&
-        this.history[1]!.time < this.elapsed - 1.5
-      )
-        this.history.shift();
-      this.pipeBends.forEach((bend, index) => {
-        if (this.activeElapsed === null || this.activeElapsed < index * 0.16)
-          return;
-        const delay = 0.16 + index * 0.15;
-        const targetX =
-          this.history.find((pose) => pose.time >= this.elapsed - delay)?.x ??
-          player.x;
-        const target = Math.max(
-          -120,
-          Math.min(120, (targetX - (1460 + index * 120)) * 0.5),
-        );
-        this.pipeBends[index] =
-          bend + (target - bend) * Math.min(1, seconds * 5);
-      });
     }
     if (scenario === 'creeping-machine' && this.activeElapsed !== null) {
       const distance = player.x - this.machineX;
@@ -146,7 +121,6 @@ export class AnomalyMotion {
       machineX: this.machineX,
       machineLean: this.machineLean,
       machineStride: this.machineStride,
-      pipeBends: [...this.pipeBends],
       blackoutX: this.blackoutX,
       ceilingSlam: this.ceilingSlam,
       invasion: this.invasion,

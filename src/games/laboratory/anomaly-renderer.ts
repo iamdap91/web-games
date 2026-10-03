@@ -34,12 +34,6 @@ export function drawAnomalyBackground(
     0,
     0,
   );
-  if (scenario === 'upside-down') {
-    // 뒤집히면 기존 천장의 바깥 면이 발을 받치는 바닥이 된다.
-    ctx.drawImage(assets.normal, 0, 340, 2400, 90, 0, -90, 2400, 90);
-    ctx.fillStyle = '#34423c';
-    ctx.fillRect(0, -4, world.width, 4);
-  }
   if (scenario === 'creeping-machine')
     drawMachine(
       ctx,
@@ -60,40 +54,15 @@ export function drawAnomalyPipes(
   state: GameSnapshot,
 ): void {
   if (state.scenario === 'folding-stage') return;
-  for (const [index, pipe] of pipes.entries()) {
+  for (const pipe of pipes) {
     const fall = pipeFall(state.pipeElapsed, pipe.delay);
-    const y = pipeShape.top + pipeShape.travel * fall;
-    if (state.scenario === 'bent-pipes') {
-      const bend = state.anomaly.pipeBends[index] ?? 0;
-      for (let strip = 0; strip < 40; strip++) {
-        const ratio = strip / 39;
-        ctx.drawImage(
-          assets.pipe,
-          0,
-          (strip * assets.pipe.height) / 40,
-          assets.pipe.width,
-          assets.pipe.height / 40,
-          pipe.x - pipe.width / 2 + bend * ratio ** 2,
-          -150 + strip * 8,
-          pipe.width,
-          9,
-        );
-      }
-      ctx.fillStyle = '#050d11';
-      ctx.beginPath();
-      ctx.ellipse(pipe.x + bend, 168, pipe.width / 2, 9, 0, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.strokeStyle = '#75877c';
-      ctx.lineWidth = 3;
-      ctx.stroke();
-    } else
-      ctx.drawImage(
-        assets.pipe,
-        pipe.x - pipe.width / 2,
-        y,
-        pipe.width,
-        pipeShape.height,
-      );
+    ctx.drawImage(
+      assets.pipe,
+      pipe.x - pipe.width / 2,
+      pipeShape.top + pipeShape.travel * fall,
+      pipe.width,
+      pipeShape.height,
+    );
   }
 }
 

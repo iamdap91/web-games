@@ -2,7 +2,7 @@ import type { AnimationFrame } from '../../resources/preview/animation-player.js
 import type { GameAssets } from './assets.js';
 import { exitLight, passage, world, type GameSnapshot } from './game.js';
 
-import { roomTurn } from './event-rules.js';
+import { roomTurn, smooth } from './event-rules.js';
 import { drawInvasionFurniture } from './chamber-renderer.js';
 import { cameraPosition } from './spatial-rules.js';
 import { drawPlayer } from './player-renderer.js';
@@ -33,14 +33,13 @@ export function drawGame(
   ctx.fillStyle = '#0d1719';
   ctx.fillRect(0, 0, viewport.width, viewport.height);
   ctx.save();
-  if (state.scenario === 'upside-down') {
+  if (state.scenario === 'mirrored-lab') {
     const turn = roomTurn(state.anomaly.activeElapsed) * Math.PI;
-    // 좌우 조작을 유지하면서 방을 깊이 방향으로 뒤집는다.
-    ctx.translate(500, 170 + shake);
-    ctx.transform(1, 0, Math.sin(turn) * 0.12, Math.cos(turn), 0, 0);
-    ctx.translate(-500, -170);
+    ctx.translate(500, 0);
+    ctx.scale(Math.cos(turn), 1);
+    ctx.translate(-500, 0);
   }
-  ctx.translate(-cameraX, state.scenario === 'upside-down' ? 0 : shake);
+  ctx.translate(-cameraX, shake);
   drawAnomalyBackground(ctx, assets, state);
   if (!(state.scenario === 'folding-stage' && state.anomaly.backstageReturning))
     drawEntry(ctx, state);
@@ -51,19 +50,24 @@ export function drawGame(
   }
 
   if (
+    state.squashElapsed === null &&
     state.scenario !== 'folding-stage' &&
     !(state.scenario === 'frame-escape' && state.anomaly.activeElapsed !== null)
   )
     drawPlayer(ctx, assets, player, frame);
-  ctx.save();
-  if (state.scenario === 'upside-down') {
-    ctx.beginPath();
-    ctx.rect(0, 0, world.width, world.ground);
-    ctx.clip();
-  }
   drawAnomalyPipes(ctx, assets, state);
-  ctx.restore();
   drawCeiling(ctx, assets, state);
+  if (state.squashElapsed !== null) {
+    const t = state.squashElapsed;
+    const squash = smooth(t / 0.1);
+    const wobble =
+      t > 0.1 ? Math.sin((t - 0.1) * 30) * Math.exp(-(t - 0.1) * 7) * 0.18 : 0;
+    ctx.save();
+    ctx.translate(player.x, world.ground);
+    ctx.scale(1 + squash * 1.8 + wobble, 1 - squash * 0.88);
+    drawPlayer(ctx, assets, { ...player, x: 0, y: 0 }, frame, false);
+    ctx.restore();
+  }
   if (state.scenario === 'room-invasion')
     drawInvasionFurniture(ctx, assets, state);
   ctx.restore();
@@ -73,6 +77,23 @@ export function drawGame(
   shade.addColorStop(1, state.progress === 8 ? '#35231330' : '#030a0c80');
   ctx.fillStyle = shade;
   ctx.fillRect(0, 0, viewport.width, viewport.height);
+  if (
+    state.scenario === 'mirrored-lab' &&
+    state.anomaly.activeElapsed !== null
+  ) {
+    const time = state.anomaly.activeElapsed;
+    const opacity =
+      smooth((time - 1.2) / 0.4) * (1 - smooth((time - 5.5) / 0.8));
+    ctx.save();
+    ctx.globalAlpha = opacity;
+    ctx.fillStyle = '#071012dd';
+    ctx.fillRect(310, 28, 380, 52);
+    ctx.font = '23px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#e0e5ce';
+    ctx.fillText('이제 어느 방향으로 갈래?', 500, 62);
+    ctx.restore();
+  }
   if (state.progress === 8) {
     ctx.save();
     ctx.translate(-cameraX, 0);

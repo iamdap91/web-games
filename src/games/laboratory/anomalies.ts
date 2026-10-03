@@ -5,17 +5,11 @@ export const anomalyDetails = {
     cue: '마지막 배관에 접근 · 낙하 중 피격 시 0번 방',
     observeX: 1720,
   },
-  'upside-down': {
-    title: '거꾸로 된 연구소',
-    description: '연구소가 뒤집히고, 방금 전의 천장으로 떨어졌다.',
-    cue: '중앙으로 접근 · 뒤집힌 뒤에도 방향키·Alt로 이동',
+  'mirrored-lab': {
+    title: '뒤집힌 연구소',
+    description: '연구소의 좌우가 뒤집히고 출발했던 문이 반대편에 나타났다.',
+    cue: '중앙으로 접근 · 좌우 반전 후 돌아갈 방향 선택',
     observeX: 900,
-  },
-  'bent-pipes': {
-    title: '휘어진 배관',
-    description: '천장 배관들이 몸을 향해 휘어졌다.',
-    cue: '배관 구간에서 멈추거나 방향을 바꾸기 · 뒤늦게 돌아보는 배관',
-    observeX: 1120,
   },
   'creeping-machine': {
     title: '다가오는 기계',
@@ -37,8 +31,8 @@ export const anomalyDetails = {
   },
   'lowering-ceiling': {
     title: '낮아지는 천장',
-    description: '낮아지던 천장이 더 들어가자 갑자기 내려앉았다.',
-    cue: '천장이 낮아진 뒤 더 전진 · 급강하 피격 시 0번 방',
+    description: '더 들어가자 천장이 내려앉아 몸이 납작해졌다.',
+    cue: '천장이 낮아진 뒤 더 전진 · 급강하에 찌부된 뒤 0번 방',
     observeX: 700,
   },
   'frame-escape': {
