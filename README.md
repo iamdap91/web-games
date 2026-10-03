@@ -1,6 +1,7 @@
 # Web Games
 
-메이플스토리 월드 리소스를 활용하는 로컬 전용 웹 캔버스 미니게임 프로젝트.
+메이플스토리 월드 리소스를 활용하는 TypeScript 웹 캔버스 미니게임 프로젝트.
+로컬에서 개발하고, 로컬 리소스를 포함한 정적 파일을 GitHub Pages에 배포한다.
 전체 MMORPG를 재현하기보다, 소수의 조작과 규칙으로 완성되는 작은 게임을 만든다.
 
 코드, 커밋, 디렉토리 구성 및 검증 기준은 [AGENTS.md](AGENTS.md)에 정리한다.
@@ -138,6 +139,55 @@ npm run check
 - `npm run check`: 타입·린트·포맷 검사
 
 [typescript-eslint 권장 설정](https://typescript-eslint.io/getting-started/)을 사용하고, [Prettier 설치 지침](https://prettier.io/docs/install)에 따라 버전을 고정한다. `eslint-config-prettier`로 포맷 관련 린트 충돌을 방지한다. 다운로드한 리소스와 생성물은 검사·포맷에서 제외한다.
+
+## GitHub Pages 배포
+
+공개 저장소 `iamdap91/web-games`의 `gh-pages` 브랜치에 로컬 빌드 결과를 올린다.
+게시 주소는 <https://iamdap91.github.io/web-games/>다. 저장소 하위 경로와 도메인 루트 모두 같은 빌드 결과를 사용할 수 있다.
+
+### 배포 파일 준비
+
+```sh
+npm ci
+npm run build:pages
+```
+
+- `site/`에 게임 진입 HTML·CSS, `dist/`의 JS·리소스 목록 JSON, manifest의 `localPath`에 등록된 파일을 모은다. 리소스 뷰어 HTML, TypeScript 소스, 원본 메타데이터, manifest에 없는 파일은 포함하지 않는다. 등록된 다른 게임 후보의 이미지·오디오는 함께 포함한다.
+- `public/assets/maplestory/`는 계속 소스 브랜치의 Git 추적에서 제외한다. 배포할 컴퓨터에 리소스를 준비해야 하며, 하나라도 누락되면 빌드를 중단한다. 새 워크트리에서는 기존 로컬 리소스를 복사한다.
+- `site/`는 생성물이므로 소스 브랜치에서 Git·린트·포맷 대상에서 제외한다. 배포 브랜치에서는 완성된 파일과 리소스를 Git으로 관리한다.
+- `.nojekyll`을 함께 생성하여 Pages가 정적 파일을 그대로 게시하도록 한다.
+
+생성물을 확인하려면 다음 명령 후 <http://127.0.0.1:8001/>에 접속한다.
+
+```sh
+python3 -m http.server 8001 --bind 127.0.0.1 --directory site
+```
+
+### 게시
+
+로컬 Git의 `user.name`·`user.email`과 `origin` 푸시 권한이 필요하다.
+
+```sh
+npm run deploy:pages
+```
+
+이 명령은 `check`·테스트·Pages 빌드 후, **현재 작업 파일로 만든 결과**를 `origin`의 `gh-pages`에 푸시한다. 검증한 작업을 커밋한 뒤 실행한다. 실제 공개 사이트를 갱신하는 명령이므로 `build:pages`와 구분한다.
+
+- 별도 임시 저장소에서 배포하므로 현재 브랜치·작업 파일을 변경하지 않는다. 첫 배포는 소스 이력과 분리된 브랜치를 만들고, 이후에는 배포 이력을 보존하는 일반 커밋·푸시를 사용한다. 강제 푸시는 하지 않는다.
+- 변경이 없으면 새 커밋을 만들지 않고, 기존 배포 브랜치에 `CNAME`이 있으면 보존한다.
+- 로컬에만 있는 리소스를 사용하므로 소스 `main` 푸시만으로 자동 배포하지 않는다. GitHub에서 리소스를 다시 다운로드하지도 않는다.
+
+첫 푸시 후 저장소 **Settings → Pages → Build and deployment**를 다음과 같이 설정한다.
+
+1. Source: **Deploy from a branch**
+2. Branch: **gh-pages**, 폴더: **/(root)**
+3. Save 후 **Enforce HTTPS**를 활성화한다.
+
+게시 성공 여부는 저장소 **Actions**의 Pages 작업에서 확인한다. 푸시 성공만으로 게시 완료가 보장되지는 않는다. 이후 `deploy:pages` 실행으로 사이트가 갱신된다.
+
+사이트가 게시되면 이미지 로딩, 이동·점프, 모바일 조작을 확인한다. 개발 진단은 기존과 같이 `?dev=1`로 확인할 수 있다.
+
+GitHub의 [배포 브랜치 설정 문서](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)를 참고한다.
 
 ## 리소스 뷰어 실행
 

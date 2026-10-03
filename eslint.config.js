@@ -6,6 +6,7 @@ import tseslint from 'typescript-eslint';
 export default defineConfig(
   globalIgnores([
     'dist/**',
+    'site/**',
     'coverage/**',
     'playwright-report/**',
     'test-results/**',
