@@ -1,6 +1,8 @@
 import type { AnimationFrame } from '../../resources/preview/animation-player.js';
 import type { GameAssets } from './assets.js';
-import { passage, pipeX, world, type GameSnapshot } from './game.js';
+import { passage, world, type GameSnapshot } from './game.js';
+
+import { pipes, pipeFall, pipeShake } from './pipe-cascade.js';
 
 export const viewport = { width: 1000, height: 430 } as const;
 
@@ -15,10 +17,7 @@ export function drawGame(
     0,
     Math.min(world.width - viewport.width, player.x - 400),
   );
-  const shake =
-    pipeElapsed !== null && pipeElapsed < 0.32
-      ? Math.sin(pipeElapsed * 100) * 5 * (1 - pipeElapsed / 0.32)
-      : 0;
+  const shake = pipeShake(pipeElapsed);
   ctx.fillStyle = '#0d1719';
   ctx.fillRect(0, 0, viewport.width, viewport.height);
   ctx.save();
@@ -56,10 +55,17 @@ export function drawGame(
     ctx.drawImage(image, -frame.pivot.x, -(frame.height - frame.pivot.y));
     ctx.restore();
   }
-  // 정상일 때의 짧은 배관도 같은 자리에 있어 출현 자체가 단서가 되지 않는다.
-  const fall =
-    pipeElapsed === null ? 0 : Math.min(1, (pipeElapsed / 0.18) ** 2);
-  ctx.drawImage(assets.pipe, pipeX - 34, -190 + 225 * fall, 68, 300);
+  // 정상 방에도 같은 배관을 배치하고, 낙하가 시작되어야 차이가 드러나게 한다.
+  for (const pipe of pipes) {
+    const fall = pipeFall(pipeElapsed, pipe.delay);
+    ctx.drawImage(
+      assets.pipe,
+      pipe.x - pipe.width / 2,
+      -190 + 225 * fall,
+      pipe.width,
+      300,
+    );
+  }
   ctx.restore();
 
   const shade = ctx.createRadialGradient(500, 230, 130, 500, 215, 550);

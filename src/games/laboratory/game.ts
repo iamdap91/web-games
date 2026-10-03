@@ -1,3 +1,5 @@
+import { pipeTriggerX } from './pipe-cascade.js';
+
 export const world = { width: 2400, height: 430, ground: 340 } as const;
 export const movement = {
   speed: 240,
@@ -6,7 +8,6 @@ export const movement = {
   flashSpeed: 850,
   flashDuration: 0.2,
 } as const;
-export const pipeX = 1460;
 export type Direction = -1 | 0 | 1;
 export type Scenario = 'normal' | 'giant-door' | 'falling-pipe';
 export type ScenarioSelection = 'random' | Scenario;
@@ -157,8 +158,8 @@ export class LaboratoryGame {
     if (
       this.scenario === 'falling-pipe' &&
       this.pipeElapsed === null &&
-      Math.min(previousX, x) <= pipeX + 200 &&
-      Math.max(previousX, x) >= pipeX - 200
+      Math.min(previousX, x) <= pipeTriggerX + 200 &&
+      Math.max(previousX, x) >= pipeTriggerX - 200
     )
       this.pipeElapsed = 0;
     if (x <= 55) this.leave('left');

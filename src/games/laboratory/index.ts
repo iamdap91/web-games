@@ -8,6 +8,7 @@ import {
   type ScenarioSelection,
 } from './game.js';
 import { drawGame, viewport } from './renderer.js';
+import { pipes, pipeFall } from './pipe-cascade.js';
 
 function element<T extends HTMLElement>(id: string, type: { new (): T }): T {
   const node = document.getElementById(id);
@@ -250,11 +251,11 @@ class GameScreen {
       const names = {
         normal: '정상',
         'giant-door': '거대해진 철문',
-        'falling-pipe': '급강하하는 배관',
+        'falling-pipe': '연쇄 낙하 배관',
       };
       setText(
         this.diagnostics,
-        `방: ${state.progress} · 현재: ${names[state.scenario]} · 위치: ${Math.round(state.player.x)}, ${Math.round(state.player.y)} · 플래시점프: ${state.player.flashAvailable ? '가능' : '사용함'} · 배관: ${state.pipeElapsed === null ? '대기' : '발동'} · 전환: ${state.transitionElapsed === null ? '—' : state.transitionElapsed.toFixed(2)} · 번호 노이즈: ${state.failureElapsed === null ? '—' : state.failureElapsed.toFixed(2)}`,
+        `방: ${state.progress} · 현재: ${names[state.scenario]} · 위치: ${Math.round(state.player.x)}, ${Math.round(state.player.y)} · 플래시점프: ${state.player.flashAvailable ? '가능' : '사용함'} · 배관: ${state.pipeElapsed === null ? '대기' : `낙하 ${pipes.filter((pipe) => pipeFall(state.pipeElapsed, pipe.delay) === 1).length}/${pipes.length}`} · 전환: ${state.transitionElapsed === null ? '—' : state.transitionElapsed.toFixed(2)} · 번호 노이즈: ${state.failureElapsed === null ? '—' : state.failureElapsed.toFixed(2)}`,
       );
     }
   }
