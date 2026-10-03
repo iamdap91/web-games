@@ -1,3 +1,10 @@
+import { LoadingWheel, loading, type WheelSnapshot } from './loading-wheel.js';
+import {
+  ScreenSelection,
+  selectionTiming,
+  type SelectionSnapshot,
+} from './screen-selection.js';
+import { PageDistortion, type PageSnapshot } from './page-distortion.js';
 import {
   chooseScenario,
   type Anomaly,
@@ -28,6 +35,7 @@ export const movement = {
 export type Direction = -1 | 0 | 1;
 export type Phase =
   | 'playing'
+  | 'erased'
   | 'severed'
   | 'squashed'
   | 'transition'
@@ -89,6 +97,22 @@ export class Player {
     this.motionElapsed = saved.motionElapsed;
     this.velocityY = capture.velocityY;
     this.flashDirection = capture.flashDirection;
+  }
+
+  rideWheel(x: number, y: number): void {
+    this.x = x;
+    this.y = y;
+    this.velocityY = 0;
+    this.flashRemaining = 0;
+    this.motion = 'jump';
+  }
+
+  launchFromWheel(): void {
+    this.velocityY = -240;
+    this.facing = this.flashDirection = -1;
+    this.flashRemaining = 0.32;
+    this.flashAvailable = true;
+    this.motion = 'jump';
   }
 
   dropIn(): void {
@@ -193,6 +217,9 @@ export type GameSnapshot = {
   readonly chase: ChaseSnapshot;
   readonly cut: CutSnapshot;
   readonly rewind: RewindSnapshot;
+  readonly page: PageSnapshot;
+  readonly selection: SelectionSnapshot;
+  readonly wheel: WheelSnapshot;
   readonly landingElapsed: number | null;
   readonly scenario: Scenario;
   readonly phase: Phase;
@@ -220,6 +247,9 @@ export class LaboratoryGame {
   private chase = new FrameChase();
   private cutter = new RoomCutter();
   private rewind = new MotionRewind();
+  private page = new PageDistortion();
+  private screenSelection = new ScreenSelection();
+  private wheel = new LoadingWheel();
   private landingElapsed: number | null = null;
   private squashElapsed: number | null = null;
   private scenario: Scenario = 'normal';
@@ -250,6 +280,9 @@ export class LaboratoryGame {
     this.chase = new FrameChase();
     this.cutter = new RoomCutter();
     this.rewind = new MotionRewind();
+    this.page = new PageDistortion();
+    this.screenSelection = new ScreenSelection();
+    this.wheel = new LoadingWheel();
     this.landingElapsed = null;
     this.squashElapsed = null;
     this.pipeElapsed = this.failureElapsed = null;
@@ -260,12 +293,22 @@ export class LaboratoryGame {
   }
 
   face(direction: Direction): void {
-    if (this.phase === 'playing' && !this.rewind.snapshot.rewinding)
+    if (
+      this.phase === 'playing' &&
+      !this.rewind.snapshot.rewinding &&
+      this.wheel.snapshot.phase !== 'spinning' &&
+      this.wheel.snapshot.phase !== 'caught'
+    )
       this.player.face(this.worldDirection(direction));
   }
 
   jump(direction: Direction): void {
-    if (this.phase === 'playing' && !this.rewind.snapshot.rewinding)
+    if (
+      this.phase === 'playing' &&
+      !this.rewind.snapshot.rewinding &&
+      this.wheel.snapshot.phase !== 'spinning' &&
+      this.wheel.snapshot.phase !== 'caught'
+    )
       this.player.jump(this.worldDirection(direction));
   }
 
@@ -290,6 +333,15 @@ export class LaboratoryGame {
     if (this.failureElapsed !== null) {
       this.failureElapsed += seconds;
       if (this.failureElapsed >= passage.glitch) this.failureElapsed = null;
+    }
+    if (this.phase === 'erased') {
+      this.screenSelection.update(seconds, this.player.snapshot);
+      if (
+        (this.screenSelection.snapshot.caughtElapsed ?? 0) >=
+        selectionTiming.erased
+      )
+        this.startTransition(0, true, false);
+      return;
     }
     if (this.phase === 'severed') {
       this.cutter.update(seconds, this.player.snapshot);
@@ -335,6 +387,16 @@ export class LaboratoryGame {
       return;
     }
     if (this.phase !== 'playing') return;
+    const wheelPhase = this.wheel.snapshot.phase;
+    if (wheelPhase === 'spinning' || wheelPhase === 'caught') {
+      this.wheel.update(seconds, this.player.snapshot);
+      const wheel = this.wheel.snapshot;
+      if (wheel.passenger)
+        this.player.rideWheel(wheel.passenger.x, wheel.passenger.y);
+      else if (wheelPhase === 'spinning') this.player.launchFromWheel();
+      else if (wheel.elapsed >= 0.75) this.startTransition(0, true, false);
+      return;
+    }
     if (this.rewind.snapshot.rewinding) {
       this.player.rewindTo(this.rewind.playBackward(seconds));
       return;
@@ -347,6 +409,7 @@ export class LaboratoryGame {
       if (x >= exitLight.finish) this.leave('right');
       return;
     }
+    this.page.update(seconds, this.scenario, x);
     const revealed = this.anomaly.update(
       seconds,
       this.scenario,
@@ -433,6 +496,26 @@ export class LaboratoryGame {
         return;
       }
     }
+    if (this.scenario === 'select-delete') {
+      this.screenSelection.update(seconds, this.player.snapshot);
+      if (this.screenSelection.snapshot.caughtElapsed !== null) {
+        this.phase = 'erased';
+        return;
+      }
+    }
+    if (this.scenario === 'loading-wheel') {
+      this.wheel.update(seconds, this.player.snapshot);
+      const wheel = this.wheel.snapshot;
+      if (wheel.passenger) {
+        this.player.rideWheel(wheel.passenger.x, wheel.passenger.y);
+        return;
+      }
+      if (wheel.phase === 'caught') return;
+      if (wheel.phase === 'chasing' && x <= loading.exit) {
+        this.leave('left');
+        return;
+      }
+    }
     if (this.scenario === 'time-rewind') {
       this.rewind.record(seconds, this.player.captureMotion());
       if (this.rewind.snapshot.rewinding) return;
@@ -458,6 +541,9 @@ export class LaboratoryGame {
     this.chase = new FrameChase();
     this.cutter = new RoomCutter();
     this.rewind = new MotionRewind();
+    this.page = new PageDistortion();
+    this.screenSelection = new ScreenSelection();
+    this.wheel = new LoadingWheel();
     this.landingElapsed = null;
     this.squashElapsed = null;
     this.pipeElapsed = null;
@@ -534,6 +620,9 @@ export class LaboratoryGame {
       chase: this.chase.snapshot,
       cut: this.cutter.snapshot,
       rewind: this.rewind.snapshot,
+      page: this.page.snapshot,
+      selection: this.screenSelection.snapshot,
+      wheel: this.wheel.snapshot,
       landingElapsed: this.landingElapsed,
       scenario: this.scenario,
       phase: this.phase,

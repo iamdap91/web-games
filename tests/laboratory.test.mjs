@@ -60,7 +60,7 @@ test('공중 추가 입력은 수평 가속이며 한 번만 가능하고 착지
 });
 
 test('0번 방은 정상이며 오른쪽으로 나가면 자동으로 1번 방이 된다', () => {
-  const game = new LaboratoryGame(() => 0.36);
+  const game = new LaboratoryGame(() => 0.31);
   assert.equal(game.snapshot.phase, 'playing');
   assert.equal(game.snapshot.progress, 0);
   assert.equal(game.snapshot.scenario, 'normal');

@@ -1,3 +1,8 @@
+import {
+  drawSelectedRoom,
+  drawLoadingWheel,
+  drawWheelActor,
+} from './browser-hazard-renderer.js';
 import type { AnimationFrame } from '../../resources/preview/animation-player.js';
 import type { GameAssets } from './assets.js';
 import { exitLight, passage, world, type GameSnapshot } from './game.js';
@@ -33,10 +38,14 @@ export function drawGame(
   const { player } = state;
   if (state.scenario === 'time-rewind')
     frame = recordedFrame(assets, player, frame);
-  const cameraX = cameraPosition(player.x);
+  const cameraX = cameraPosition(
+    state.wheel.passenger ? state.wheel.anchorX : player.x,
+  );
   ctx.fillStyle = state.cut.elapsed === null ? '#0d1719' : '#020305';
   ctx.fillRect(0, 0, viewport.width, viewport.height);
-  if (state.scenario === 'room-guillotine')
+  if (state.scenario === 'select-delete')
+    drawSelectedRoom(ctx, state, () => drawRoom(ctx, assets, state, frame));
+  else if (state.scenario === 'room-guillotine')
     drawCutRoom(ctx, state, () => drawRoom(ctx, assets, state, frame));
   else drawRoom(ctx, assets, state, frame);
   const shade = ctx.createRadialGradient(500, 230, 130, 500, 215, 550);
@@ -87,14 +96,18 @@ export function drawGame(
   }
 }
 
-function drawRoom(
+export function drawRoom(
   ctx: CanvasRenderingContext2D,
   assets: GameAssets,
   state: GameSnapshot,
   frame: AnimationFrame,
+  actor = true,
+  camera = true,
 ): void {
   const { player, pipeElapsed } = state;
-  const cameraX = cameraPosition(player.x);
+  const cameraX = camera
+    ? cameraPosition(state.wheel.passenger ? state.wheel.anchorX : player.x)
+    : 0;
   const shake =
     state.hitElapsed === null
       ? pipeShake(pipeElapsed)
@@ -117,7 +130,8 @@ function drawRoom(
     cutAge < 0.16 ? Math.sin(cutAge * 130) * 5 * (1 - cutAge / 0.16) : 0;
   ctx.translate(-cameraX, shake + cutShake);
   drawAnomalyBackground(ctx, assets, state);
-  drawWindowReflection(ctx, assets, state, frame);
+  if (actor) drawWindowReflection(ctx, assets, state, frame);
+  drawLoadingWheel(ctx, assets, state);
   if (!(state.scenario === 'folding-stage' && state.anomaly.backstageReturning))
     drawEntry(ctx, state);
   if (state.progress === 8) drawExit(ctx, 780, '→');
@@ -128,6 +142,8 @@ function drawRoom(
 
   drawRewindEchoes(ctx, assets, state, frame);
   if (
+    actor &&
+    !drawWheelActor(ctx, assets, state, frame) &&
     state.squashElapsed === null &&
     state.scenario !== 'folding-stage' &&
     !(state.scenario === 'frame-escape' && state.anomaly.activeElapsed !== null)

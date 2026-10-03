@@ -65,6 +65,31 @@ export const anomalyDetails = {
     cue: '오른쪽으로 진행하면 첫 되감기 · 이후 조작 2.8초마다 최근 1.6초를 2.5배속 역재생',
     observeX: 1500,
   },
+  'page-scroll': {
+    title: '스크롤 아래로',
+    description:
+      '바닥 아래로 떨어지자 연구소가 페이지 위의 작은 콘텐츠로 남았다.',
+    cue: '중앙에 접근 · 자동 스크롤과 낙하 후 왼쪽으로 돌아오기',
+    observeX: 900,
+  },
+  'image-zoom': {
+    title: '확대되는 연구소',
+    description: '거대해진 연구소에서 빠져나오니 작은 이미지의 테두리 위였다.',
+    cue: '중앙부터 배경 확대 · x=1450까지 가면 이미지 바깥으로 · 왼쪽으로 복귀',
+    observeX: 900,
+  },
+  'select-delete': {
+    title: '전체 선택 → 삭제',
+    description: '파랗게 선택된 연구소와 그 안에 남은 것들이 한 번에 지워졌다.',
+    cue: '중앙에 접근 · 선택 영역이 멈춘 뒤 삭제 · 파란 영역에서 왼쪽으로 탈출',
+    observeX: 1100,
+  },
+  'loading-wheel': {
+    title: '로딩 중',
+    description: '로딩 원에 휘말려 튕겨 나온 뒤 굴러오는 원을 피해 달렸다.',
+    cue: '커지는 로딩 원에 접근 · 회전 후 왼쪽으로 튕겨 나오면 플래시점프로 탈출',
+    observeX: 970,
+  },
   'empty-center': {
     title: '텅 빈 중앙',
     description: '중앙 관측창이 통째로 사라졌다.',
