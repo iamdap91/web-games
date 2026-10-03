@@ -16,8 +16,8 @@ function make(scenario) {
   return game;
 }
 
-test('15종에서도 정상 30%와 부재형 1/35를 유지한다', () => {
-  assert.equal(anomalies.length, 15);
+test('14종에서도 정상 30%와 부재형 1/35를 유지한다', () => {
+  assert.equal(anomalies.length, 14);
   const counts = new Map();
   for (let i = 0; i < 35000; i++) {
     const scenario = chooseScenario((i + 0.5) / 35000);
@@ -28,11 +28,12 @@ test('15종에서도 정상 30%와 부재형 1/35를 유지한다', () => {
   for (const id of anomalies) {
     assert.ok(isSelection(id));
     assert.ok(
-      Math.abs(counts.get(id) - (id === 'empty-center' ? 700 : 23800 / 14)) <=
+      Math.abs(counts.get(id) - (id === 'empty-center' ? 700 : 23800 / 13)) <=
         1,
     );
   }
   for (const removed of [
+    'creeping-machine',
     'page-scroll',
     'image-zoom',
     'giant-door',
@@ -127,21 +128,6 @@ test('낮아지는 천장을 보고 돌아오면 안전하며 더 전진하면 �
   assert.equal(hit.snapshot.progress, 0);
   assert.equal(hit.snapshot.anomaly.ceilingSlam, null);
   assert.deepEqual(hit.snapshot.encountered, ['lowering-ceiling']);
-});
-
-test('기계는 등질 때 접근하고 바라보면 위치를 멈춘다', () => {
-  const game = make('creeping-machine');
-  advance(game, 2.5, 1);
-  const before = game.snapshot.anomaly.machineX;
-  advance(game, 0.5);
-  assert.equal(game.snapshot.anomaly.machineX, before);
-  game.face(-1);
-  advance(game, 0.6);
-  assert.ok(game.snapshot.anomaly.machineX < before);
-  const close = game.snapshot.anomaly.machineX;
-  game.face(1);
-  advance(game, 0.6);
-  assert.equal(game.snapshot.anomaly.machineX, close);
 });
 
 test('소등은 한 번만 이동시킨다', () => {

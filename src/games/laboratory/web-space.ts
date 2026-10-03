@@ -31,6 +31,8 @@ export class WebSpace {
   constructor(
     private readonly scene: HTMLCanvasElement,
     private readonly assets: GameAssets,
+    private readonly overlayHost: HTMLElement,
+    private readonly isRotated: () => boolean,
   ) {
     this.root.className = 'web-space';
     this.root.setAttribute('aria-hidden', 'true');
@@ -53,7 +55,7 @@ export class WebSpace {
     this.fallLayer.className = 'page-falling-actor';
     this.fallLayer.setAttribute('aria-hidden', 'true');
     this.fallLayer.hidden = true;
-    document.body.append(this.fallLayer);
+    overlayHost.append(this.fallLayer);
     this.rim.className = 'frame-rim';
     this.perspective.className = 'stage-perspective';
     this.stage.className = 'fold-stage';
@@ -79,8 +81,9 @@ export class WebSpace {
   }
 
   resize(width: number, density: number): void {
-    this.fallLayer.width = Math.round(window.innerWidth * density);
-    this.fallLayer.height = Math.round(window.innerHeight * density);
+    const surface = this.fallSurface;
+    this.fallLayer.width = Math.round(surface.width * density);
+    this.fallLayer.height = Math.round(surface.height * density);
     this.root.style.transform = `scale(${width / viewport.width})`;
     // DOM 안의 Canvas도 기본 장면과 같은 실제 픽셀 밀도로 그린다.
     this.density = (density * width) / viewport.width;
@@ -234,26 +237,33 @@ export class WebSpace {
     }
   }
 
+  private get fallSurface(): { width: number; height: number } {
+    return this.isRotated()
+      ? {
+          width: this.overlayHost.clientWidth,
+          height: this.overlayHost.clientHeight,
+        }
+      : { width: window.innerWidth, height: window.innerHeight };
+  }
+
   private drawFall(state: GameSnapshot, frame: AnimationFrame): void {
     const caught = state.chase.caught;
     if (!caught) return;
-    const ctx = this.context(
-      this.fallLayer,
-      window.innerWidth,
-      window.innerHeight,
-    );
-    // 고정된 페이지 레이어라 아래 UI를 지나가도 문서 높이나 스크롤 위치는 변하지 않는다.
+    const surface = this.fallSurface;
+    const ctx = this.context(this.fallLayer, surface.width, surface.height);
     const bounds = this.root.getBoundingClientRect();
-    const scale = bounds.width / viewport.width;
+    const host = this.overlayHost.getBoundingClientRect();
+    const rotated = this.isRotated();
+    // 회전 시 낙하 레이어도 게임과 함께 돌기 때문에 화면 좌표를 로컬 좌표로 되돌린다.
+    const left = rotated ? bounds.top - host.top : bounds.left;
+    const top = rotated ? host.right - bounds.right : bounds.top;
+    const scale = (rotated ? bounds.height : bounds.width) / viewport.width;
     const t = state.chase.elapsed;
     const x = Math.min(990, caught.x - cameraPosition(caught.x) + 90 * t);
-    const drop = Math.max(
-      1000,
-      (window.innerHeight - bounds.top) / scale + 160,
-    );
+    const drop = Math.max(1000, (surface.height - top) / scale + 160);
     const y = caught.y - 28 - 150 * t + drop * t * t;
     ctx.save();
-    ctx.translate(bounds.left + x * scale, bounds.top + y * scale);
+    ctx.translate(left + x * scale, top + y * scale);
     ctx.scale(scale, scale);
     ctx.rotate(t * Math.PI * 5);
     drawPlayer(

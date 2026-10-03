@@ -11,12 +11,6 @@ export const anomalyDetails = {
     cue: '중앙에서 상하 반전 · 이후 조금 더 이동하면 좌우 반전',
     observeX: 900,
   },
-  'creeping-machine': {
-    title: '다가오는 기계',
-    description: '등을 돌릴 때마다 기계가 가까워졌다.',
-    cue: '중앙에 접근한 뒤 기계를 등지고 기다리기',
-    observeX: 850,
-  },
   'watching-eye': {
     title: '창 안의 거대한 눈',
     description: '관측창 안의 눈이 움직임을 따라왔다.',
@@ -38,7 +32,7 @@ export const anomalyDetails = {
   'frame-escape': {
     title: '화면 밖으로',
     description: '화면 밖에서 돌아오자 경계가 좁혀 오며 뒤를 쫓았다.',
-    cue: '경계가 줄면 왼쪽으로 돌아가 추격 시작 · 밖에 나갔다면 떨릴 때 복귀',
+    cue: '오른쪽 끝에 접근하면 경계 열림 · 왼쪽으로 돌아가 추격 시작 · 밖에 나갔다면 떨릴 때 복귀',
     observeX: 2100,
   },
   'folding-stage': {
@@ -107,16 +101,21 @@ export function isSelection(value: string): value is ScenarioSelection {
   );
 }
 
-export function chooseScenario(roll: number): Scenario {
+export function chooseScenario(
+  roll: number,
+  excluded: ReadonlySet<Anomaly> = new Set(),
+): Scenario {
   if (roll < 0.3) return 'normal';
-  // 콘텐츠 수가 줄어도 부재형의 희귀도는 그대로 유지한다.
+  const regular = anomalies.filter(
+    (id) => id !== 'empty-center' && !excluded.has(id),
+  );
+  const emptyAvailable = !excluded.has('empty-center');
+  if (regular.length === 0) return emptyAvailable ? 'empty-center' : 'normal';
   const anomalyRoll = (roll - 0.3) / 0.7;
-  if (anomalyRoll >= 34 / 35) return 'empty-center';
-  const regular = anomalies.filter((id) => id !== 'empty-center');
+  // 일반 이상이 줄어도 아직 나오지 않은 부재형의 희귀도는 유지한다.
+  if (emptyAvailable && anomalyRoll >= 34 / 35) return 'empty-center';
+  const regularRoll = emptyAvailable ? anomalyRoll / (34 / 35) : anomalyRoll;
   return regular[
-    Math.min(
-      regular.length - 1,
-      Math.floor((anomalyRoll / (34 / 35)) * regular.length),
-    )
+    Math.min(regular.length - 1, Math.floor(regularRoll * regular.length))
   ]!;
 }

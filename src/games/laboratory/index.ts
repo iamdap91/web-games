@@ -1,3 +1,5 @@
+import { VirtualStick } from './virtual-stick.js';
+import { GameDisplay } from './game-display.js';
 import { LoadingOverlay } from './loading-overlay.js';
 import { WebSpace } from './web-space.js';
 import { anomalies, anomalyDetails } from './anomalies.js';
@@ -28,6 +30,10 @@ class GameScreen {
   private readonly game = new LaboratoryGame();
   private readonly canvas = element('scene', HTMLCanvasElement);
   private readonly context = getContext(this.canvas);
+  private readonly shell = element('game-shell', HTMLDivElement);
+  private readonly jumpButton = element('jump', HTMLButtonElement);
+  private stick: VirtualStick | null = null;
+  private display: GameDisplay | null = null;
   private readonly playArea = element('play-area', HTMLDivElement);
   private readonly ending = element('ending', HTMLElement);
   private readonly endingTitle = element('ending-title', HTMLHeadingElement);
@@ -45,7 +51,9 @@ class GameScreen {
   private readonly events = new AbortController();
   private readonly observer = new ResizeObserver(() => this.resize());
   private readonly keys = new Set<string>();
-  private readonly pointers = new Map<number, Direction>();
+  private readonly jumpPointers = new Set<number>();
+  private readonly controlPointers = new Set<number>();
+  private suppressControlClick = false;
   private assets: GameAssets | null = null;
   private animation: AnimationPlayer | null = null;
   private webSpace: WebSpace | null = null;
@@ -67,10 +75,25 @@ class GameScreen {
       },
       { signal },
     );
+    this.display = new GameDisplay(
+      this.shell,
+      element('stage-slot', HTMLDivElement),
+      element('stage-frame', HTMLDivElement),
+      element('landscape-toggle', HTMLButtonElement),
+      () => {
+        this.clearInput();
+        this.resize();
+      },
+    );
     this.assets = await loadAssets();
     if (signal.aborted) return;
     this.animation = new AnimationPlayer(this.assets.animations, 'stand');
-    this.webSpace = new WebSpace(this.canvas, this.assets);
+    this.webSpace = new WebSpace(
+      this.canvas,
+      this.assets,
+      this.shell,
+      () => this.display?.rotated ?? false,
+    );
     this.loadingOverlay = new LoadingOverlay(this.canvas, this.assets);
     element('developer', HTMLElement).hidden = !this.developer;
     this.selection.disabled =
@@ -160,9 +183,53 @@ class GameScreen {
     this.canvas.addEventListener('pointerdown', () => this.canvas.focus(), {
       signal,
     });
-    this.bindPointer('left', -1);
-    this.bindPointer('right', 1);
-    this.bindPointer('jump', 0);
+    this.stick = new VirtualStick({
+      root: element('move-stick', HTMLDivElement),
+      knob: element('stick-knob', HTMLSpanElement),
+      isRotated: () => this.display?.rotated ?? false,
+      onStart: (pointerId) => {
+        this.canvas.focus({ preventScroll: true });
+        this.controlPointers.add(pointerId);
+      },
+      onDirection: (direction) => this.game.face(direction),
+    });
+    this.bindJump();
+    // 엔딩으로 조작 버튼이 사라져도 손을 떼며 새 화면의 버튼을 누르지 않게 한다.
+    window.addEventListener(
+      'pointerdown',
+      (event) => {
+        this.suppressControlClick = false;
+        if (event.isPrimary) this.controlPointers.clear();
+        this.controlPointers.delete(event.pointerId);
+      },
+      { signal, capture: true },
+    );
+    window.addEventListener(
+      'pointerup',
+      (event) => {
+        this.suppressControlClick = this.controlPointers.delete(
+          event.pointerId,
+        );
+      },
+      { signal, capture: true },
+    );
+    window.addEventListener(
+      'click',
+      (event) => {
+        if (!this.suppressControlClick || event.detail === 0) return;
+        this.suppressControlClick = false;
+        event.preventDefault();
+        event.stopPropagation();
+      },
+      { signal, capture: true },
+    );
+    window.addEventListener(
+      'pointercancel',
+      (event) => {
+        this.controlPointers.delete(event.pointerId);
+      },
+      { signal },
+    );
     window.addEventListener('resize', () => this.resize(), { signal });
     this.observer.observe(this.canvas);
     this.resize();
@@ -184,6 +251,8 @@ class GameScreen {
 
   destroy(): void {
     this.events.abort();
+    this.display?.destroy();
+    this.stick?.destroy();
     this.webSpace?.destroy();
     this.loadingOverlay?.destroy();
     this.observer.disconnect();
@@ -218,8 +287,8 @@ class GameScreen {
       this.game.jump(this.direction);
   };
 
-  private bindPointer(id: string, direction: Direction): void {
-    const button = element(id, HTMLButtonElement);
+  private bindJump(): void {
+    const button = this.jumpButton;
     const { signal } = this.events;
     button.disabled = false;
     button.addEventListener(
@@ -229,41 +298,47 @@ class GameScreen {
         event.preventDefault();
         this.canvas.focus({ preventScroll: true });
         button.setPointerCapture(event.pointerId);
-        if (id === 'jump') this.game.jump(this.direction);
-        else {
-          this.pointers.set(event.pointerId, direction);
-          this.game.face(direction);
-        }
+        this.controlPointers.add(event.pointerId);
+        this.jumpPointers.add(event.pointerId);
+        button.classList.add('pressed');
+        this.game.jump(this.direction);
       },
       { signal },
     );
     const release = (event: PointerEvent): void => {
-      this.pointers.delete(event.pointerId);
+      this.jumpPointers.delete(event.pointerId);
+      button.classList.toggle('pressed', this.jumpPointers.size > 0);
     };
+    button.addEventListener('contextmenu', (event) => event.preventDefault(), {
+      signal,
+    });
     button.addEventListener('pointerup', release, { signal });
     button.addEventListener('pointercancel', release, { signal });
     button.addEventListener('lostpointercapture', release, { signal });
   }
 
   private get direction(): Direction {
-    const values = [...this.pointers.values()];
-    const left = this.keys.has('ArrowLeft') || values.includes(-1);
-    const right = this.keys.has('ArrowRight') || values.includes(1);
+    const left = this.keys.has('ArrowLeft') || this.stick?.direction === -1;
+    const right = this.keys.has('ArrowRight') || this.stick?.direction === 1;
     return left === right ? 0 : left ? -1 : 1;
   }
 
   private clearInput(): void {
     this.keys.clear();
-    this.pointers.clear();
+    this.jumpPointers.clear();
+    this.jumpButton.classList.remove('pressed');
+    this.stick?.reset();
     this.accumulator = 0;
     this.previousTime = 0;
   }
 
   private resize(): void {
     const bounds = this.canvas.getBoundingClientRect();
-    if (bounds.width === 0 || bounds.height === 0) return;
-    this.canvas.width = Math.round(bounds.width * devicePixelRatio);
-    this.canvas.height = Math.round(bounds.height * devicePixelRatio);
+    const width = this.display?.rotated ? bounds.height : bounds.width;
+    const height = this.display?.rotated ? bounds.width : bounds.height;
+    if (width === 0 || height === 0) return;
+    this.canvas.width = Math.round(width * devicePixelRatio);
+    this.canvas.height = Math.round(height * devicePixelRatio);
     this.context.setTransform(
       this.canvas.width / viewport.width,
       0,
@@ -273,8 +348,8 @@ class GameScreen {
       0,
     );
     this.context.imageSmoothingEnabled = false;
-    this.webSpace?.resize(bounds.width, devicePixelRatio);
-    this.loadingOverlay?.resize(bounds.width, devicePixelRatio);
+    this.webSpace?.resize(width, devicePixelRatio);
+    this.loadingOverlay?.resize(width, devicePixelRatio);
   }
 
   private readonly tick = (now: number): void => {
@@ -350,6 +425,7 @@ class GameScreen {
     const state = this.game.snapshot;
     document.body.classList.toggle('escaped', state.phase === 'complete');
     this.playArea.hidden = state.phase === 'complete';
+    this.restartButton.hidden = state.phase === 'complete';
     this.ending.hidden = state.phase !== 'complete';
     if (state.phase !== this.lastPhase) {
       if (state.phase === 'complete') this.renderEnding();

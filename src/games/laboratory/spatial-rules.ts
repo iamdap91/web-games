@@ -5,7 +5,6 @@ import type { GameSnapshot } from './game.js';
 export const stagePanels = [800, 1320, 1840] as const;
 export const returnPanels = [-240, 280] as const;
 export const panelWidth = 520;
-export const frameTriggerX = 2100;
 export function cameraPosition(x: number): number {
   return Math.max(0, Math.min(world.width - viewport.width, x - 400));
 }
