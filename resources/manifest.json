@@ -1,4 +1,903 @@
 {
   "version": 1,
-  "assets": []
+  "assets": [
+    {
+      "id": "mob/0210100.img",
+      "name": "슬라임",
+      "role": "monster-candidate",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=mob/0210100.img",
+      "animations": {
+        "die1": {
+          "id": "31ecb6c7cbc24599881f00cb01599f09",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/31ecb6c7cbc24599881f00cb01599f09",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "523d341c7ce04196841b6b30fc8846e3",
+              "width": 64,
+              "height": 60,
+              "pivot": {
+                "x": 26.0,
+                "y": 0.0,
+                "nx": 0.4062,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/52/3d/523d341c7ce04196841b6b30fc8846e3.png",
+              "localPath": "public/assets/maplestory/slime/523d341c7ce04196841b6b30fc8846e3.png"
+            },
+            {
+              "index": 1,
+              "spriteRuid": "1250c18c3a7e4915b8f4e325d41e0f74",
+              "width": 56,
+              "height": 60,
+              "pivot": {
+                "x": 30.0,
+                "y": 0.0,
+                "nx": 0.5357,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/12/50/1250c18c3a7e4915b8f4e325d41e0f74.png",
+              "localPath": "public/assets/maplestory/slime/1250c18c3a7e4915b8f4e325d41e0f74.png"
+            },
+            {
+              "index": 2,
+              "spriteRuid": "0b09e4f753f94db3999ebc2d7c4aaced",
+              "width": 52,
+              "height": 56,
+              "pivot": {
+                "x": 26.0,
+                "y": 0.0,
+                "nx": 0.5,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/0b/09/0b09e4f753f94db3999ebc2d7c4aaced.png",
+              "localPath": "public/assets/maplestory/slime/0b09e4f753f94db3999ebc2d7c4aaced.png"
+            },
+            {
+              "index": 3,
+              "spriteRuid": "aa5d0e9c5ab740f980995734d3666759",
+              "width": 32,
+              "height": 40,
+              "pivot": {
+                "x": 14.0,
+                "y": 0.0,
+                "nx": 0.4375,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/aa/5d/aa5d0e9c5ab740f980995734d3666759.png",
+              "localPath": "public/assets/maplestory/slime/aa5d0e9c5ab740f980995734d3666759.png"
+            }
+          ]
+        },
+        "hit1": {
+          "id": "61c27025a8f14c478f30ede1b49758bc",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/61c27025a8f14c478f30ede1b49758bc",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "15770085b1ac4a5d879e9ae1e9afee0c",
+              "width": 64,
+              "height": 68,
+              "pivot": {
+                "x": 23.0,
+                "y": 0.0,
+                "nx": 0.3594,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/15/77/15770085b1ac4a5d879e9ae1e9afee0c.png",
+              "localPath": "public/assets/maplestory/slime/15770085b1ac4a5d879e9ae1e9afee0c.png"
+            }
+          ]
+        },
+        "jump": {
+          "id": "8b89d86b1a9c4c4288650614c6f30e67",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/8b89d86b1a9c4c4288650614c6f30e67",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "d74cb2edf6ad4eecbc8515c731386b69",
+              "width": 64,
+              "height": 68,
+              "pivot": {
+                "x": 27.0,
+                "y": 13.0,
+                "nx": 0.4219,
+                "ny": 0.1912
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/d7/4c/d74cb2edf6ad4eecbc8515c731386b69.png",
+              "localPath": "public/assets/maplestory/slime/d74cb2edf6ad4eecbc8515c731386b69.png"
+            }
+          ]
+        },
+        "move": {
+          "id": "dc932872543f4a02bf41e977ab79e5ad",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/dc932872543f4a02bf41e977ab79e5ad",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "c7e56f4dd3b343a291ad8e20bf5c0ed5",
+              "width": 72,
+              "height": 52,
+              "pivot": {
+                "x": 29.0,
+                "y": 0.0,
+                "nx": 0.4028,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/c7/e5/c7e56f4dd3b343a291ad8e20bf5c0ed5.png",
+              "localPath": "public/assets/maplestory/slime/c7e56f4dd3b343a291ad8e20bf5c0ed5.png"
+            },
+            {
+              "index": 1,
+              "spriteRuid": "c4fb220090f14833b05bbf33df2553e7",
+              "width": 64,
+              "height": 56,
+              "pivot": {
+                "x": 31.0,
+                "y": 0.0,
+                "nx": 0.4844,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/c4/fb/c4fb220090f14833b05bbf33df2553e7.png",
+              "localPath": "public/assets/maplestory/slime/c4fb220090f14833b05bbf33df2553e7.png"
+            },
+            {
+              "index": 2,
+              "spriteRuid": "a915a302e2d04e8790771ce44b88ebca",
+              "width": 56,
+              "height": 64,
+              "pivot": {
+                "x": 27.0,
+                "y": -10.0,
+                "nx": 0.4821,
+                "ny": -0.1562
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/a9/15/a915a302e2d04e8790771ce44b88ebca.png",
+              "localPath": "public/assets/maplestory/slime/a915a302e2d04e8790771ce44b88ebca.png"
+            },
+            {
+              "index": 3,
+              "spriteRuid": "06337da7032949859c503dbc113ac26f",
+              "width": 64,
+              "height": 68,
+              "pivot": {
+                "x": 27.0,
+                "y": -4.0,
+                "nx": 0.4219,
+                "ny": -0.0588
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/06/33/06337da7032949859c503dbc113ac26f.png",
+              "localPath": "public/assets/maplestory/slime/06337da7032949859c503dbc113ac26f.png"
+            },
+            {
+              "index": 4,
+              "spriteRuid": "88861cba7a6740b1a1c30dfd26f1c30c",
+              "width": 64,
+              "height": 84,
+              "pivot": {
+                "x": 27.0,
+                "y": -10.0,
+                "nx": 0.4219,
+                "ny": -0.119
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/88/86/88861cba7a6740b1a1c30dfd26f1c30c.png",
+              "localPath": "public/assets/maplestory/slime/88861cba7a6740b1a1c30dfd26f1c30c.png"
+            },
+            {
+              "index": 5,
+              "spriteRuid": "479cc3565f12471d815c04ba6a9616f3",
+              "width": 64,
+              "height": 72,
+              "pivot": {
+                "x": 28.0,
+                "y": 0.0,
+                "nx": 0.4375,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/47/9c/479cc3565f12471d815c04ba6a9616f3.png",
+              "localPath": "public/assets/maplestory/slime/479cc3565f12471d815c04ba6a9616f3.png"
+            },
+            {
+              "index": 6,
+              "spriteRuid": "77fab94e17b6497ea4a905100594e0af",
+              "width": 60,
+              "height": 48,
+              "pivot": {
+                "x": 27.0,
+                "y": 0.0,
+                "nx": 0.45,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/77/fa/77fab94e17b6497ea4a905100594e0af.png",
+              "localPath": "public/assets/maplestory/slime/77fab94e17b6497ea4a905100594e0af.png"
+            }
+          ]
+        },
+        "stand": {
+          "id": "50faf654ee5d479cb2958edce9feaef0",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/50faf654ee5d479cb2958edce9feaef0",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "460975bed1114ad6a34ea2e0e5a43953",
+              "width": 64,
+              "height": 52,
+              "pivot": {
+                "x": 27.0,
+                "y": 0.0,
+                "nx": 0.4219,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/46/09/460975bed1114ad6a34ea2e0e5a43953.png",
+              "localPath": "public/assets/maplestory/slime/460975bed1114ad6a34ea2e0e5a43953.png"
+            },
+            {
+              "index": 1,
+              "spriteRuid": "4ae9793ee2a5461bbece4d3142c56b79",
+              "width": 72,
+              "height": 52,
+              "pivot": {
+                "x": 28.0,
+                "y": 0.0,
+                "nx": 0.3889,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/4a/e9/4ae9793ee2a5461bbece4d3142c56b79.png",
+              "localPath": "public/assets/maplestory/slime/4ae9793ee2a5461bbece4d3142c56b79.png"
+            },
+            {
+              "index": 2,
+              "spriteRuid": "b02795d871c94f68be7316fc5f443344",
+              "width": 60,
+              "height": 52,
+              "pivot": {
+                "x": 26.0,
+                "y": 0.0,
+                "nx": 0.4333,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/b0/27/b02795d871c94f68be7316fc5f443344.png",
+              "localPath": "public/assets/maplestory/slime/b02795d871c94f68be7316fc5f443344.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "mob/6300000.img",
+      "name": "예티",
+      "role": "player-candidate",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?selected=mob/6300000.img",
+      "animations": {
+        "attack1": {
+          "id": "a9e503154e3e4ad5ab0e9e7742dd53ec",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/a9e503154e3e4ad5ab0e9e7742dd53ec",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "040d41c7c739425aa41fa82cc50ec701",
+              "width": 116,
+              "height": 112,
+              "pivot": {
+                "x": 70.0,
+                "y": 4.0,
+                "nx": 0.6034,
+                "ny": 0.0357
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/04/0d/040d41c7c739425aa41fa82cc50ec701.png",
+              "localPath": "public/assets/maplestory/yeti/040d41c7c739425aa41fa82cc50ec701.png"
+            },
+            {
+              "index": 1,
+              "spriteRuid": "615f6a2c582c4beda49bab13feff7594",
+              "width": 132,
+              "height": 112,
+              "pivot": {
+                "x": 83.0,
+                "y": 1.0,
+                "nx": 0.6288,
+                "ny": 0.0089
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/61/5f/615f6a2c582c4beda49bab13feff7594.png",
+              "localPath": "public/assets/maplestory/yeti/615f6a2c582c4beda49bab13feff7594.png"
+            },
+            {
+              "index": 2,
+              "spriteRuid": "05008199f4254772bb764311922fcf8a",
+              "width": 132,
+              "height": 188,
+              "pivot": {
+                "x": 87.0,
+                "y": 0.0,
+                "nx": 0.6591,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/05/00/05008199f4254772bb764311922fcf8a.png",
+              "localPath": "public/assets/maplestory/yeti/05008199f4254772bb764311922fcf8a.png"
+            },
+            {
+              "index": 3,
+              "spriteRuid": "6539f6387500421a95b259ab542cd78d",
+              "width": 108,
+              "height": 188,
+              "pivot": {
+                "x": 60.0,
+                "y": 0.0,
+                "nx": 0.5556,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/65/39/6539f6387500421a95b259ab542cd78d.png",
+              "localPath": "public/assets/maplestory/yeti/6539f6387500421a95b259ab542cd78d.png"
+            },
+            {
+              "index": 4,
+              "spriteRuid": "e7517376b3bd489a9d26fe226bf655f7",
+              "width": 212,
+              "height": 108,
+              "pivot": {
+                "x": 168.0,
+                "y": 2.0,
+                "nx": 0.7925,
+                "ny": 0.0185
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/e7/51/e7517376b3bd489a9d26fe226bf655f7.png",
+              "localPath": "public/assets/maplestory/yeti/e7517376b3bd489a9d26fe226bf655f7.png"
+            },
+            {
+              "index": 5,
+              "spriteRuid": "d0c3d1e1f0d24447815aa61347cdccbb",
+              "width": 220,
+              "height": 96,
+              "pivot": {
+                "x": 175.0,
+                "y": 1.0,
+                "nx": 0.7955,
+                "ny": 0.0104
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/d0/c3/d0c3d1e1f0d24447815aa61347cdccbb.png",
+              "localPath": "public/assets/maplestory/yeti/d0c3d1e1f0d24447815aa61347cdccbb.png"
+            },
+            {
+              "index": 6,
+              "spriteRuid": "ed6dd2fe5b7e4211b1fb64f46defb545",
+              "width": 220,
+              "height": 96,
+              "pivot": {
+                "x": 178.0,
+                "y": 1.0,
+                "nx": 0.8091,
+                "ny": 0.0104
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/ed/6d/ed6dd2fe5b7e4211b1fb64f46defb545.png",
+              "localPath": "public/assets/maplestory/yeti/ed6dd2fe5b7e4211b1fb64f46defb545.png"
+            },
+            {
+              "index": 7,
+              "spriteRuid": "13d90b72ce0648b8bffbff58d5cb6fb1",
+              "width": 216,
+              "height": 96,
+              "pivot": {
+                "x": 171.0,
+                "y": 1.0,
+                "nx": 0.7917,
+                "ny": 0.0104
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/13/d9/13d90b72ce0648b8bffbff58d5cb6fb1.png",
+              "localPath": "public/assets/maplestory/yeti/13d90b72ce0648b8bffbff58d5cb6fb1.png"
+            },
+            {
+              "index": 8,
+              "spriteRuid": "10f53643ec784916a5b9d21b6e688f6c",
+              "width": 176,
+              "height": 96,
+              "pivot": {
+                "x": 133.0,
+                "y": 1.0,
+                "nx": 0.7557,
+                "ny": 0.0104
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/10/f5/10f53643ec784916a5b9d21b6e688f6c.png",
+              "localPath": "public/assets/maplestory/yeti/10f53643ec784916a5b9d21b6e688f6c.png"
+            }
+          ]
+        },
+        "die1": {
+          "id": "5a328165fb9a4f47b3810c427b8edbd6",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/5a328165fb9a4f47b3810c427b8edbd6",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "01d45d1877da4acc9dbfbfa9ba7aba61",
+              "width": 100,
+              "height": 108,
+              "pivot": {
+                "x": 44.0,
+                "y": 0.0,
+                "nx": 0.44,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/01/d4/01d45d1877da4acc9dbfbfa9ba7aba61.png",
+              "localPath": "public/assets/maplestory/yeti/01d45d1877da4acc9dbfbfa9ba7aba61.png"
+            },
+            {
+              "index": 1,
+              "spriteRuid": "1a470e238f1e439b870f7b1537534191",
+              "width": 116,
+              "height": 96,
+              "pivot": {
+                "x": 55.0,
+                "y": 0.0,
+                "nx": 0.4741,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/1a/47/1a470e238f1e439b870f7b1537534191.png",
+              "localPath": "public/assets/maplestory/yeti/1a470e238f1e439b870f7b1537534191.png"
+            },
+            {
+              "index": 2,
+              "spriteRuid": "ede1580b062f428293a2f762edf88a62",
+              "width": 116,
+              "height": 96,
+              "pivot": {
+                "x": 67.0,
+                "y": 0.0,
+                "nx": 0.5776,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/ed/e1/ede1580b062f428293a2f762edf88a62.png",
+              "localPath": "public/assets/maplestory/yeti/ede1580b062f428293a2f762edf88a62.png"
+            },
+            {
+              "index": 3,
+              "spriteRuid": "6bb62a7e221e4e12a15889f1b089a8a3",
+              "width": 176,
+              "height": 64,
+              "pivot": {
+                "x": 132.0,
+                "y": 1.0,
+                "nx": 0.75,
+                "ny": 0.0156
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/6b/b6/6bb62a7e221e4e12a15889f1b089a8a3.png",
+              "localPath": "public/assets/maplestory/yeti/6bb62a7e221e4e12a15889f1b089a8a3.png"
+            },
+            {
+              "index": 4,
+              "spriteRuid": "236b2629a64f4d66b720bc239f2e21f6",
+              "width": 172,
+              "height": 64,
+              "pivot": {
+                "x": 130.0,
+                "y": 0.0,
+                "nx": 0.7558,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/23/6b/236b2629a64f4d66b720bc239f2e21f6.png",
+              "localPath": "public/assets/maplestory/yeti/236b2629a64f4d66b720bc239f2e21f6.png"
+            },
+            {
+              "index": 5,
+              "spriteRuid": "eef86ca5efd4429bbf2e004f07ccacfb",
+              "width": 172,
+              "height": 64,
+              "pivot": {
+                "x": 128.0,
+                "y": 0.0,
+                "nx": 0.7442,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/ee/f8/eef86ca5efd4429bbf2e004f07ccacfb.png",
+              "localPath": "public/assets/maplestory/yeti/eef86ca5efd4429bbf2e004f07ccacfb.png"
+            },
+            {
+              "index": 6,
+              "spriteRuid": "c75217a9c26240d09a7692db16dec2e7",
+              "width": 172,
+              "height": 64,
+              "pivot": {
+                "x": 128.0,
+                "y": 0.0,
+                "nx": 0.7442,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/c7/52/c75217a9c26240d09a7692db16dec2e7.png",
+              "localPath": "public/assets/maplestory/yeti/c75217a9c26240d09a7692db16dec2e7.png"
+            }
+          ]
+        },
+        "hit1": {
+          "id": "186789a04dd34be797ab716279f7fea7",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/186789a04dd34be797ab716279f7fea7",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "c1165834091c457db8e80195873944e4",
+              "width": 108,
+              "height": 120,
+              "pivot": {
+                "x": 44.0,
+                "y": 0.0,
+                "nx": 0.4074,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/c1/16/c1165834091c457db8e80195873944e4.png",
+              "localPath": "public/assets/maplestory/yeti/c1165834091c457db8e80195873944e4.png"
+            }
+          ]
+        },
+        "move": {
+          "id": "02dfd5686d7042768adcea2d24c184b4",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/02dfd5686d7042768adcea2d24c184b4",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "32ea57e3f1f04d24b933fee924f8da7c",
+              "width": 104,
+              "height": 112,
+              "pivot": {
+                "x": 52.0,
+                "y": 0.0,
+                "nx": 0.5,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/32/ea/32ea57e3f1f04d24b933fee924f8da7c.png",
+              "localPath": "public/assets/maplestory/yeti/32ea57e3f1f04d24b933fee924f8da7c.png"
+            },
+            {
+              "index": 1,
+              "spriteRuid": "bb61c7d504244ff4aba03a658ca66dfe",
+              "width": 112,
+              "height": 104,
+              "pivot": {
+                "x": 52.0,
+                "y": 0.0,
+                "nx": 0.4643,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/bb/61/bb61c7d504244ff4aba03a658ca66dfe.png",
+              "localPath": "public/assets/maplestory/yeti/bb61c7d504244ff4aba03a658ca66dfe.png"
+            },
+            {
+              "index": 2,
+              "spriteRuid": "b9c6bff4c8e448a2848e332fe1055caf",
+              "width": 100,
+              "height": 108,
+              "pivot": {
+                "x": 52.0,
+                "y": 0.0,
+                "nx": 0.52,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/b9/c6/b9c6bff4c8e448a2848e332fe1055caf.png",
+              "localPath": "public/assets/maplestory/yeti/b9c6bff4c8e448a2848e332fe1055caf.png"
+            },
+            {
+              "index": 3,
+              "spriteRuid": "24c4b66bd9a94b65bd2e30dcfe9ca148",
+              "width": 124,
+              "height": 104,
+              "pivot": {
+                "x": 52.0,
+                "y": 0.0,
+                "nx": 0.4194,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/24/c4/24c4b66bd9a94b65bd2e30dcfe9ca148.png",
+              "localPath": "public/assets/maplestory/yeti/24c4b66bd9a94b65bd2e30dcfe9ca148.png"
+            }
+          ]
+        },
+        "stand": {
+          "id": "2fa39477afb34d8cb6412b7fe5085f42",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/2fa39477afb34d8cb6412b7fe5085f42",
+          "frames": [
+            {
+              "index": 0,
+              "spriteRuid": "cd1951dafaa0467dbb1af4803b612292",
+              "width": 100,
+              "height": 108,
+              "pivot": {
+                "x": 44.0,
+                "y": 0.0,
+                "nx": 0.44,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/cd/19/cd1951dafaa0467dbb1af4803b612292.png",
+              "localPath": "public/assets/maplestory/yeti/cd1951dafaa0467dbb1af4803b612292.png"
+            },
+            {
+              "index": 1,
+              "spriteRuid": "055af762150849ed985bddf0cb4e7277",
+              "width": 100,
+              "height": 108,
+              "pivot": {
+                "x": 44.0,
+                "y": 0.0,
+                "nx": 0.44,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/05/5a/055af762150849ed985bddf0cb4e7277.png",
+              "localPath": "public/assets/maplestory/yeti/055af762150849ed985bddf0cb4e7277.png"
+            },
+            {
+              "index": 2,
+              "spriteRuid": "87f08766df674b9a911763dd27f4f23f",
+              "width": 100,
+              "height": 108,
+              "pivot": {
+                "x": 44.0,
+                "y": 0.0,
+                "nx": 0.44,
+                "ny": 0.0
+              },
+              "sourceUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/87/f0/87f08766df674b9a911763dd27f4f23f.png",
+              "localPath": "public/assets/maplestory/yeti/87f08766df674b9a911763dd27f4f23f.png"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "avatar/adventurer-toben",
+      "name": "모험가",
+      "role": "player-candidate",
+      "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/search?q=%ED%86%A0%EB%B2%A4",
+      "components": [
+        {
+          "id": "3cf4cb29ae344577b9eed37e531688a4",
+          "name": "크림 피부 (몸)",
+          "category": "body",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/3cf4cb29ae344577b9eed37e531688a4",
+          "atlasUrl": "https://d2e9z1enisa81b.cloudfront.net/avatars/atlas/3c/f4/3cf4cb29ae344577b9eed37e531688a4_0.png",
+          "localPath": "public/assets/maplestory/adventurer/3cf4cb29ae344577b9eed37e531688a4_0.png"
+        },
+        {
+          "id": "5069d11260b549869339cd46777306f9",
+          "name": "크림 피부 (머리)",
+          "category": "head",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/5069d11260b549869339cd46777306f9",
+          "atlasUrl": "https://d2e9z1enisa81b.cloudfront.net/avatars/atlas/50/69/5069d11260b549869339cd46777306f9_0.png",
+          "localPath": "public/assets/maplestory/adventurer/5069d11260b549869339cd46777306f9_0.png"
+        },
+        {
+          "id": "29246028db7642baba92689a1ef777bb",
+          "name": "검은색 토벤 머리",
+          "category": "hair",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/29246028db7642baba92689a1ef777bb",
+          "atlasUrl": "https://d2e9z1enisa81b.cloudfront.net/avatars/atlas/29/24/29246028db7642baba92689a1ef777bb_0.png",
+          "localPath": "public/assets/maplestory/adventurer/29246028db7642baba92689a1ef777bb_0.png"
+        },
+        {
+          "id": "e69d98d5e19647c092da7ae183d5d954",
+          "name": "자신있는 얼굴",
+          "category": "face",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/e69d98d5e19647c092da7ae183d5d954",
+          "atlasUrl": "https://d2e9z1enisa81b.cloudfront.net/avatars/atlas/e6/9d/e69d98d5e19647c092da7ae183d5d954_0.png",
+          "localPath": "public/assets/maplestory/adventurer/e69d98d5e19647c092da7ae183d5d954_0.png"
+        },
+        {
+          "id": "ae8d3590a96e48c3b7cd75d46ebd3f15",
+          "name": "하얀 반팔 면티",
+          "category": "coat",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/ae8d3590a96e48c3b7cd75d46ebd3f15",
+          "atlasUrl": "https://d2e9z1enisa81b.cloudfront.net/avatars/atlas/ae/8d/ae8d3590a96e48c3b7cd75d46ebd3f15_0.png",
+          "localPath": "public/assets/maplestory/adventurer/ae8d3590a96e48c3b7cd75d46ebd3f15_0.png"
+        },
+        {
+          "id": "61f10ef0a6204e0ab6593bdf36fed3e5",
+          "name": "파란 청 반바지",
+          "category": "pants",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/61f10ef0a6204e0ab6593bdf36fed3e5",
+          "atlasUrl": "https://d2e9z1enisa81b.cloudfront.net/avatars/atlas/61/f1/61f10ef0a6204e0ab6593bdf36fed3e5_0.png",
+          "localPath": "public/assets/maplestory/adventurer/61f10ef0a6204e0ab6593bdf36fed3e5_0.png"
+        },
+        {
+          "id": "42d8d9c75a3448148b07367407fbc81f",
+          "name": "빨간색 장화",
+          "category": "shoes",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/42d8d9c75a3448148b07367407fbc81f",
+          "atlasUrl": "https://d2e9z1enisa81b.cloudfront.net/avatars/atlas/42/d8/42d8d9c75a3448148b07367407fbc81f_0.png",
+          "localPath": "public/assets/maplestory/adventurer/42d8d9c75a3448148b07367407fbc81f_0.png"
+        }
+      ],
+      "metadataPath": "public/assets/maplestory/adventurer/parts.json",
+      "composition": "일반 귀, 부위 소켓과 zmap을 사용한 로컬 합성. 피격은 alert 자세 + hit 표정. 무기는 미착용.",
+      "animations": {
+        "stand": {
+          "id": "adventurer/stand1/default",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/avatars/batch",
+          "action": "stand1",
+          "expression": "default",
+          "frames": [
+            {
+              "index": 0,
+              "width": 39,
+              "height": 66,
+              "pivot": {
+                "x": 23,
+                "y": 0
+              },
+              "durationSeconds": 0.5,
+              "localPath": "public/assets/maplestory/adventurer/stand-0.png"
+            },
+            {
+              "index": 1,
+              "width": 39,
+              "height": 66,
+              "pivot": {
+                "x": 23,
+                "y": 0
+              },
+              "durationSeconds": 0.5,
+              "localPath": "public/assets/maplestory/adventurer/stand-1.png"
+            },
+            {
+              "index": 2,
+              "width": 39,
+              "height": 66,
+              "pivot": {
+                "x": 23,
+                "y": 0
+              },
+              "durationSeconds": 0.5,
+              "localPath": "public/assets/maplestory/adventurer/stand-2.png"
+            }
+          ]
+        },
+        "move": {
+          "id": "adventurer/walk1/default",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/avatars/batch",
+          "action": "walk1",
+          "expression": "default",
+          "frames": [
+            {
+              "index": 0,
+              "width": 39,
+              "height": 66,
+              "pivot": {
+                "x": 23,
+                "y": 0
+              },
+              "durationSeconds": 0.18,
+              "localPath": "public/assets/maplestory/adventurer/move-0.png"
+            },
+            {
+              "index": 1,
+              "width": 39,
+              "height": 65,
+              "pivot": {
+                "x": 23,
+                "y": 0
+              },
+              "durationSeconds": 0.18,
+              "localPath": "public/assets/maplestory/adventurer/move-1.png"
+            },
+            {
+              "index": 2,
+              "width": 39,
+              "height": 66,
+              "pivot": {
+                "x": 23,
+                "y": 0
+              },
+              "durationSeconds": 0.18,
+              "localPath": "public/assets/maplestory/adventurer/move-2.png"
+            },
+            {
+              "index": 3,
+              "width": 39,
+              "height": 65,
+              "pivot": {
+                "x": 23,
+                "y": 0
+              },
+              "durationSeconds": 0.18,
+              "localPath": "public/assets/maplestory/adventurer/move-3.png"
+            }
+          ]
+        },
+        "jump": {
+          "id": "adventurer/jump/default",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/avatars/batch",
+          "action": "jump",
+          "expression": "default",
+          "frames": [
+            {
+              "index": 0,
+              "width": 39,
+              "height": 64,
+              "pivot": {
+                "x": 23,
+                "y": 0
+              },
+              "durationSeconds": 0.2,
+              "localPath": "public/assets/maplestory/adventurer/jump-0.png"
+            }
+          ]
+        },
+        "attack1": {
+          "id": "adventurer/swingO1/default",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/avatars/batch",
+          "action": "swingO1",
+          "expression": "default",
+          "frames": [
+            {
+              "index": 0,
+              "width": 45,
+              "height": 60,
+              "pivot": {
+                "x": 28,
+                "y": 0
+              },
+              "durationSeconds": 0.3,
+              "localPath": "public/assets/maplestory/adventurer/attack1-0.png"
+            },
+            {
+              "index": 1,
+              "width": 39,
+              "height": 65,
+              "pivot": {
+                "x": 29,
+                "y": 0
+              },
+              "durationSeconds": 0.15,
+              "localPath": "public/assets/maplestory/adventurer/attack1-1.png"
+            },
+            {
+              "index": 2,
+              "width": 56,
+              "height": 59,
+              "pivot": {
+                "x": 56,
+                "y": 0
+              },
+              "durationSeconds": 0.35,
+              "localPath": "public/assets/maplestory/adventurer/attack1-2.png"
+            }
+          ]
+        },
+        "hit1": {
+          "id": "adventurer/alert/hit",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/avatars/batch",
+          "action": "alert",
+          "expression": "hit",
+          "frames": [
+            {
+              "index": 0,
+              "width": 39,
+              "height": 63,
+              "pivot": {
+                "x": 23,
+                "y": 0
+              },
+              "durationSeconds": 0.5,
+              "localPath": "public/assets/maplestory/adventurer/hit1-0.png"
+            },
+            {
+              "index": 1,
+              "width": 39,
+              "height": 64,
+              "pivot": {
+                "x": 23,
+                "y": 0
+              },
+              "durationSeconds": 0.5,
+              "localPath": "public/assets/maplestory/adventurer/hit1-1.png"
+            },
+            {
+              "index": 2,
+              "width": 39,
+              "height": 65,
+              "pivot": {
+                "x": 23,
+                "y": 0
+              },
+              "durationSeconds": 0.5,
+              "localPath": "public/assets/maplestory/adventurer/hit1-2.png"
+            }
+          ]
+        }
+      }
+    }
+  ]
 }
