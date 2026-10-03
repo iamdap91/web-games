@@ -898,6 +898,169 @@
           ]
         }
       }
+    },
+    {
+      "id": "map/261010100",
+      "name": "제뉴미스트 연구소 2층 복도",
+      "role": "background-preview",
+      "sourceUrl": "https://mapledb.kr/search.php?q=261010100&t=map",
+      "imageUrl": "https://mapledb.kr/Assets/image/minimaps/261010100.png",
+      "localPath": "public/assets/maplestory/zenumist-corridor/original.png",
+      "width": 2319,
+      "height": 602,
+      "crop": {
+        "x": 51,
+        "y": 139,
+        "width": 2223,
+        "height": 404
+      },
+      "composition": "맵 오브젝트 렌더 이미지. 흰색 바탕은 제거하고 벽면을 Canvas로 합성하며 NPC·소리는 포함하지 않는다.",
+      "animations": {}
+    },
+    {
+      "id": "map/103000200",
+      "name": "커닝시티 지하철 2호선 1구역 · 단층 재구성",
+      "role": "background-preview",
+      "sourceUrl": "https://mapledb.kr/search.php?q=103000200&t=map",
+      "imageUrl": "https://mapledb.kr/Assets/image/minimaps/103000200.png",
+      "localPath": "public/assets/maplestory/kerning-subway/original.png",
+      "width": 4165,
+      "height": 1352,
+      "regions": [
+        {
+          "name": "ceiling",
+          "x": 400,
+          "y": 140,
+          "width": 600,
+          "height": 140
+        },
+        {
+          "name": "floor",
+          "x": 2100,
+          "y": 818,
+          "width": 450,
+          "height": 152
+        },
+        {
+          "name": "door",
+          "x": 3670,
+          "y": 630,
+          "width": 125,
+          "height": 187
+        },
+        {
+          "name": "signal",
+          "x": 1250,
+          "y": 777,
+          "width": 68,
+          "height": 174
+        },
+        {
+          "name": "lamp",
+          "x": 1245,
+          "y": 388,
+          "width": 45,
+          "height": 52
+        },
+        {
+          "name": "notice",
+          "x": 1755,
+          "y": 704,
+          "width": 78,
+          "height": 109
+        },
+        {
+          "name": "cart",
+          "x": 750,
+          "y": 850,
+          "width": 226,
+          "height": 107
+        }
+      ],
+      "components": [
+        {
+          "id": "9c899b8dd8f947e8a477f9bb7129729d",
+          "name": "wall",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/9c899b8dd8f947e8a477f9bb7129729d",
+          "imageUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/9c/89/9c899b8dd8f947e8a477f9bb7129729d.png",
+          "localPath": "public/assets/maplestory/kerning-subway/wall.png",
+          "width": 156,
+          "height": 520
+        }
+      ],
+      "composition": "상층 발판과 사다리는 사용하지 않는다. 원본에서 천장·바닥·문·신호등·조명·안내판을 잘라 단층으로 재배치하고 공식 콘크리트 벽 리소스를 합성한다.",
+      "animations": {}
+    },
+    {
+      "id": "map/261020400",
+      "name": "알카드노 연구소 C-2 · 단층 재구성",
+      "role": "background-preview",
+      "sourceUrl": "https://mapledb.kr/search.php?q=261020400&t=map",
+      "imageUrl": "https://mapledb.kr/Assets/image/minimaps/261020400.png",
+      "localPath": "public/assets/maplestory/alcadno-lab/original.png",
+      "width": 2524,
+      "height": 837,
+      "regions": [
+        {
+          "name": "ceiling",
+          "x": 50,
+          "y": 139,
+          "width": 2410,
+          "height": 74
+        },
+        {
+          "name": "floor",
+          "x": 50,
+          "y": 622,
+          "width": 2410,
+          "height": 156
+        },
+        {
+          "name": "lamp",
+          "x": 390,
+          "y": 210,
+          "width": 55,
+          "height": 155
+        },
+        {
+          "name": "door",
+          "x": 155,
+          "y": 285,
+          "width": 154,
+          "height": 186
+        }
+      ],
+      "components": [
+        {
+          "id": "8f8d54a18a4342068acb50ad656deca4",
+          "name": "wall",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/8f8d54a18a4342068acb50ad656deca4",
+          "imageUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/8f/8d/8f8d54a18a4342068acb50ad656deca4.png",
+          "localPath": "public/assets/maplestory/alcadno-lab/wall.png",
+          "width": 88,
+          "height": 600
+        },
+        {
+          "id": "6ff6fffaab064388a9f311da4faec3ba",
+          "name": "machine",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/6ff6fffaab064388a9f311da4faec3ba",
+          "imageUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/6f/f6/6ff6fffaab064388a9f311da4faec3ba.png",
+          "localPath": "public/assets/maplestory/alcadno-lab/machine.png",
+          "width": 108,
+          "height": 196
+        },
+        {
+          "id": "8a15a92e299c41c29bad54c38e748e0a",
+          "name": "pipe-machine",
+          "sourceUrl": "https://maplestoryworlds-resourcesearch-new.nexon.com/api/v3/resources/8a15a92e299c41c29bad54c38e748e0a",
+          "imageUrl": "https://d2e9z1enisa81b.cloudfront.net/sprites/8a/15/8a15a92e299c41c29bad54c38e748e0a.png",
+          "localPath": "public/assets/maplestory/alcadno-lab/pipe-machine.png",
+          "width": 148,
+          "height": 412
+        }
+      ],
+      "composition": "원본의 상자 발판과 높은 출입구를 제거한다. 문·조명·천장·바닥을 단층으로 재배치하고 공식 배관·제어판 리소스와 Canvas 벽면·빛을 합성한다.",
+      "animations": {}
     }
   ]
 }
