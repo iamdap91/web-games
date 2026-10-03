@@ -1,4 +1,4 @@
-import manifest from '../../resources/manifest.json' with { type: 'json' };
+import manifest from '../../../resources/manifest.json' with { type: 'json' };
 import { AnimationPlayer, type Animation } from './animation-player.js';
 import {
   drawFrame,

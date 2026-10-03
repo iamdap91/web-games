@@ -5,33 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#173c32" />
     <link rel="icon" href="data:," />
-    <link rel="stylesheet" href="./style.css" />
-    <title>슬라임 · 리소스 뷰어</title>
+    <link rel="stylesheet" href="../preview/style.css" />
+    <title>예티 · 리소스 뷰어</title>
   </head>
   <body>
     <main>
       <nav aria-label="캐릭터 선택">
-        <a href="./yeti.html">예티</a
-        ><a href="./slime.html" aria-current="page">슬라임</a
-        ><a href="./adventurer.html">모험가</a>
+        <a href="../yeti/" aria-current="page">예티</a
+        ><a href="../slime/">슬라임</a><a href="../adventurer/">모험가</a>
       </nav>
       <header>
         <div>
-          <p class="eyebrow">WEB GAMES / SLIME</p>
-          <h1>슬라임의 작은 숲</h1>
-          <p class="intro">작은 슬라임의 대기·이동·점프 모션을 살펴보세요.</p>
+          <p class="eyebrow">WEB GAMES / YETI</p>
+          <h1>예티의 작은 숲</h1>
+          <p class="intro">커다란 예티의 대기·이동·공격 모션을 살펴보세요.</p>
         </div>
         <span class="badge">로컬 리소스</span>
       </header>
       <section class="stage" aria-label="리소스 미리보기">
-        <div class="stage-top">
-          <span>작은 숲</span><span>슬라임 모션</span>
-        </div>
+        <div class="stage-top"><span>작은 숲</span><span>예티 모션</span></div>
         <canvas
           id="scene"
           width="960"
           height="480"
-          aria-label="숲속 발판 위 슬라임의 모션"
+          aria-label="숲속 발판 위 예티의 모션"
           >캔버스를 지원하는 브라우저에서 확인해주세요.</canvas
         >
         <p id="status" role="status">로컬 이미지를 불러오는 중…</p>
@@ -39,7 +36,7 @@
       <section class="controls" aria-label="모션 설정">
         <label
           >모션
-          <select id="motion" disabled aria-label="슬라임 모션"></select>
+          <select id="motion" disabled aria-label="예티 모션"></select>
           <output id="frame">—</output>
         </label>
         <button id="toggle" type="button" disabled>일시정지</button>
@@ -52,6 +49,9 @@
         </p>
       </footer>
     </main>
-    <script type="module" src="../../dist/src/resources/slime.js"></script>
+    <script
+      type="module"
+      src="../../../dist/src/resources/yeti/index.js"
+    ></script>
   </body>
 </html>
