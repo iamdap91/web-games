@@ -1,3 +1,5 @@
+import { playerBody } from './layout.js';
+
 export const pipes = [
   { x: 1460, width: 68, delay: 0.78 },
   { x: 1580, width: 74, delay: 0.56 },
@@ -47,10 +49,12 @@ export function pipeHitsPlayer(
     const top = pipeShape.top + pipeShape.travel * pipeFall(start, pipe.delay);
     // 머리카락·잔상은 제외하고 몸통과 머리의 안쪽을 판정한다.
     return (
-      Math.max(first.x, last.x) + 16 > pipe.x - pipe.width / 2 &&
-      Math.min(first.x, last.x) - 16 < pipe.x + pipe.width / 2 &&
-      Math.min(first.y, last.y) - 62 < bottom &&
-      Math.max(first.y, last.y) - 4 > top
+      Math.max(first.x, last.x) + playerBody.halfWidth >
+        pipe.x - pipe.width / 2 &&
+      Math.min(first.x, last.x) - playerBody.halfWidth <
+        pipe.x + pipe.width / 2 &&
+      Math.min(first.y, last.y) - playerBody.height < bottom &&
+      Math.max(first.y, last.y) - playerBody.footInset > top
     );
   });
 }
@@ -66,4 +70,29 @@ export function pipeShake(elapsed: number | null): number {
     shake += Math.sin(impact * 90) * 3 * (1 - impact / impactDuration);
   }
   return Math.max(-4, Math.min(4, shake));
+}
+
+export class PipeCascade {
+  private elapsed: number | null = null;
+
+  update(
+    seconds: number,
+    player: Position,
+    previous: Position,
+  ): 'triggered' | 'hit' | null {
+    if (this.elapsed !== null) {
+      const before = this.elapsed;
+      this.elapsed += seconds;
+      return pipeHitsPlayer(before, this.elapsed, previous, player)
+        ? 'hit'
+        : null;
+    }
+    if (previous.x >= pipeTriggerX || player.x < pipeTriggerX) return null;
+    this.elapsed = 0;
+    return 'triggered';
+  }
+
+  get activeElapsed(): number | null {
+    return this.elapsed;
+  }
 }

@@ -1,3 +1,4 @@
+import { viewport } from './layout.js';
 import type { AnimationFrame } from '../../resources/preview/animation-player.js';
 import { getContext, type GameAssets } from './assets.js';
 import { passage, type GameSnapshot } from './game.js';
@@ -30,15 +31,15 @@ export class LoadingOverlay {
     label.textContent = 'Loading…';
     this.indicator.append(this.spinner, label);
     this.root.append(this.surface, this.indicator);
-    this.room.width = 1000;
-    this.room.height = 430;
+    this.room.width = viewport.width;
+    this.room.height = viewport.height;
     scene.parentElement?.append(this.root);
   }
 
   resize(width: number, density: number): void {
-    this.density = (width * density) / 1000;
+    this.density = (width * density) / viewport.width;
     this.surface.width = Math.round(width * density);
-    this.surface.height = Math.round(430 * this.density);
+    this.surface.height = Math.round(viewport.height * this.density);
   }
 
   render(state: GameSnapshot, frame: AnimationFrame): void {
@@ -57,24 +58,24 @@ export class LoadingOverlay {
     ctx.setTransform(this.density, 0, 0, this.density, 0, 0);
     ctx.imageSmoothingEnabled = false;
     ctx.fillStyle = '#101617';
-    ctx.fillRect(0, 0, 1000, 430);
+    ctx.fillRect(0, 0, viewport.width, viewport.height);
     const source = getContext(this.room);
-    source.clearRect(0, 0, 1000, 430);
-    drawRoom(source, this.assets, state, frame, false);
+    source.clearRect(0, 0, viewport.width, viewport.height);
+    drawRoom(source, this.assets, state, frame, { actor: false });
     // 벽과 바닥의 실제 픽셀을 가늘게 모아 로딩 지점으로 당긴다.
-    for (let y = 0; y < 430; y += 5) {
+    for (let y = 0; y < viewport.height; y += 5) {
       const pinch =
         Math.exp(-Math.pow((y - 215) / 115, 2)) * wheel.strength * 0.21;
-      const h = Math.min(5, 430 - y);
+      const h = Math.min(5, viewport.height - y);
       ctx.drawImage(
         this.room,
         0,
         y,
-        1000,
+        viewport.width,
         h,
         hub * pinch,
         y,
-        1000 * (1 - pinch),
+        viewport.width * (1 - pinch),
         h,
       );
     }
@@ -111,7 +112,7 @@ export class LoadingOverlay {
     ctx.restore();
     // 처음부터 있는 얇은 로딩 막은 흡수 중에도 UI처럼 남는다.
     ctx.fillStyle = `rgb(8 12 14 / ${0.42 + wheel.strength * 0.08})`;
-    ctx.fillRect(0, 0, 1000, 430);
+    ctx.fillRect(0, 0, viewport.width, viewport.height);
     const elapsed = state.transitionElapsed;
     const fade =
       elapsed === null
@@ -120,7 +121,7 @@ export class LoadingOverlay {
           ? elapsed / passage.fadeOut
           : Math.max(0, 1 - (elapsed - passage.fadeOut) / passage.fadeIn);
     ctx.fillStyle = `rgb(5 10 12 / ${fade})`;
-    ctx.fillRect(0, 0, 1000, 430);
+    ctx.fillRect(0, 0, viewport.width, viewport.height);
     this.indicator.style.opacity = String(1 - fade);
   }
 

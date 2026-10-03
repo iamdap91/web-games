@@ -9,10 +9,15 @@ export function drawIndustrial(
   components: ReadonlyMap<string, HTMLImageElement>,
   regions: readonly Region[],
   kind: Exclude<BackgroundKind, 'corridor'>,
-  centralDoorScale = 1,
-  entryClearance = false,
-  omitCentralDoor = false,
-  omitExitDoors = false,
+  {
+    entryClearance = false,
+    omitCentralDoor = false,
+    omitExitDoors = false,
+  }: {
+    readonly entryClearance?: boolean;
+    readonly omitCentralDoor?: boolean;
+    readonly omitExitDoors?: boolean;
+  } = {},
 ): void {
   const subway = kind === 'subway';
   const width = 2400;
@@ -102,14 +107,7 @@ export function drawIndustrial(
         (omitExitDoors && (x === 120 || x === 2160))
       )
         continue;
-      const scale = x === 1080 ? centralDoorScale : 1;
-      part(
-        'door',
-        x - (166 * (scale - 1)) / 2,
-        ground - 200 * scale,
-        166 * scale,
-        200 * scale,
-      );
+      part('door', x, ground - 200, 166, 200);
     }
     for (const x of [360, 920, 1480, 2040]) {
       // 광원은 정적인 미리보기로, 조명 아래에서도 이동 공간을 읽을 수 있게 한다.

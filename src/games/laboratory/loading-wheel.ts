@@ -1,4 +1,5 @@
-import type { PlayerSnapshot } from './game.js';
+import { viewport } from './layout.js';
+import type { PlayerSnapshot } from './player.js';
 import { smooth } from './event-rules.js';
 import { cameraPosition } from './spatial-rules.js';
 
@@ -20,14 +21,14 @@ export type WheelSnapshot = {
 export class LoadingWheel {
   private elapsed = 0;
   private phase: WheelSnapshot['phase'] = 'waiting';
-  private x = 500;
+  private x: number = viewport.width / 2;
   private caughtAt: number | null = null;
 
   update(seconds: number, player: PlayerSnapshot): void {
     this.elapsed += seconds;
     if (this.phase === 'waiting' && this.elapsed >= loading.wait) {
       // 흡수를 시작하는 순간 화면 중앙을 공간에 고정한다. 이후 돌아서면 멀어진다.
-      this.x = cameraPosition(player.x) + 500;
+      this.x = cameraPosition(player.x) + viewport.width / 2;
       this.phase = 'pulling';
     }
     if (

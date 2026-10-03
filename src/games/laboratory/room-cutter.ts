@@ -1,4 +1,5 @@
-import type { PlayerSnapshot } from './game.js';
+import { world } from './layout.js';
+import type { PlayerSnapshot } from './player.js';
 
 // 모바일에서도 반응할 여유를 주도록 절단 진행을 최초 구현의 68% 속도로 재생한다.
 const cutSpeed = 0.8 * 0.85;
@@ -43,7 +44,7 @@ export class RoomCutter {
   }
 
   private get boundary(): number {
-    return this.count === 0 ? 2400 : cutting.boundaries[this.count - 1]!;
+    return this.count === 0 ? world.width : cutting.boundaries[this.count - 1]!;
   }
 
   get snapshot(): CutSnapshot {

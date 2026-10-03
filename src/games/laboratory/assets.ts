@@ -88,11 +88,15 @@ export async function loadAssets(): Promise<GameAssets> {
     ),
   ]);
   const objects = prepareMapObjects(original);
-  const makeBackground = (
+  const makeBackground = ({
     warm = false,
     omitWindow = false,
     omitExitDoors = false,
-  ): HTMLCanvasElement => {
+  }: {
+    readonly warm?: boolean;
+    readonly omitWindow?: boolean;
+    readonly omitExitDoors?: boolean;
+  } = {}): HTMLCanvasElement => {
     const canvas = document.createElement('canvas');
     canvas.width = world.width;
     canvas.height = world.height;
@@ -102,10 +106,7 @@ export async function loadAssets(): Promise<GameAssets> {
       components,
       map.regions,
       'laboratory',
-      1,
-      true,
-      true,
-      omitExitDoors,
+      { entryClearance: true, omitCentralDoor: true, omitExitDoors },
     );
     if (!omitWindow) {
       const machine = components.get('machine');
@@ -160,12 +161,12 @@ export async function loadAssets(): Promise<GameAssets> {
   machine.height = machineImage.height;
   getContext(machine).drawImage(machineImage, 0, 0);
   return {
-    emptyCenter: makeBackground(false, true),
+    emptyCenter: makeBackground({ omitWindow: true }),
     machine: grade(machine),
     normal: makeBackground(),
-    withoutExitDoors: makeBackground(false, false, true),
+    withoutExitDoors: makeBackground({ omitExitDoors: true }),
     exitDoor: grade(exitDoor),
-    exit: makeBackground(true),
+    exit: makeBackground({ warm: true }),
     pipe: grade(pipe),
     props,
     animations,

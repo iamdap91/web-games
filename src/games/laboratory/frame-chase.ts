@@ -1,4 +1,5 @@
-import type { PlayerSnapshot } from './game.js';
+import { world, viewport } from './layout.js';
+import type { PlayerSnapshot } from './player.js';
 import { openingFrameEdge } from './spatial-rules.js';
 
 export const pursuit = {
@@ -28,7 +29,10 @@ export class FrameChase {
   update(seconds: number, player: PlayerSnapshot, activeElapsed: number): void {
     if (this.phase === 'idle') {
       this.furthestX = Math.max(this.furthestX ?? player.x, player.x);
-      if (player.x >= 1400 + openingFrameEdge(activeElapsed) + 14) {
+      if (
+        player.x >=
+        world.width - viewport.width + openingFrameEdge(activeElapsed) + 14
+      ) {
         this.phase = 'warning';
       } else if (
         activeElapsed > 0 &&
