@@ -16,8 +16,8 @@ function make(scenario) {
   return game;
 }
 
-test('10종으로 정리해도 정상 30%와 부재형 1/35를 유지한다', () => {
-  assert.equal(anomalies.length, 10);
+test('11종으로 정리해도 정상 30%와 부재형 1/35를 유지한다', () => {
+  assert.equal(anomalies.length, 11);
   const counts = new Map();
   for (let i = 0; i < 35000; i++) {
     const scenario = chooseScenario((i + 0.5) / 35000);
@@ -28,7 +28,8 @@ test('10종으로 정리해도 정상 30%와 부재형 1/35를 유지한다', ()
   for (const id of anomalies) {
     assert.ok(isSelection(id));
     assert.ok(
-      Math.abs(counts.get(id) - (id === 'empty-center' ? 700 : 23800 / 9)) <= 1,
+      Math.abs(counts.get(id) - (id === 'empty-center' ? 700 : 23800 / 10)) <=
+        1,
     );
   }
   for (const removed of [

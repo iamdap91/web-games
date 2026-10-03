@@ -6,6 +6,8 @@ import { roomTurn, smooth } from './event-rules.js';
 import { drawInvasionFurniture } from './chamber-renderer.js';
 import { cameraPosition } from './spatial-rules.js';
 import { drawPlayer } from './player-renderer.js';
+import { drawCutRoom } from './cut-renderer.js';
+import { cutImpact } from './room-cutter.js';
 import { pipeShake } from './pipe-cascade.js';
 import {
   drawAnomalyBackground,
@@ -22,64 +24,13 @@ export function drawGame(
   state: GameSnapshot,
   frame: AnimationFrame,
 ): void {
-  const { player, pipeElapsed } = state;
+  const { player } = state;
   const cameraX = cameraPosition(player.x);
-  const shake =
-    state.hitElapsed === null
-      ? pipeShake(pipeElapsed)
-      : Math.cos(state.hitElapsed * 100) *
-        7 *
-        (1 - state.hitElapsed / passage.fadeOut);
-  ctx.fillStyle = '#0d1719';
+  ctx.fillStyle = state.cut.elapsed === null ? '#0d1719' : '#020305';
   ctx.fillRect(0, 0, viewport.width, viewport.height);
-  ctx.save();
-  if (state.scenario === 'mirrored-lab') {
-    const vertical = roomTurn(state.anomaly.activeElapsed) * Math.PI;
-    const horizontal = roomTurn(state.anomaly.mirrorElapsed) * Math.PI;
-    ctx.translate(500, 170);
-    ctx.scale(Math.cos(horizontal), Math.cos(vertical));
-    ctx.translate(-500, -170);
-  }
-  ctx.translate(-cameraX, shake);
-  drawAnomalyBackground(ctx, assets, state);
-  if (!(state.scenario === 'folding-stage' && state.anomaly.backstageReturning))
-    drawEntry(ctx, state);
-  if (state.progress === 8) drawExit(ctx, 780, '→');
-  else {
-    drawExit(ctx, 44, '←');
-    drawExit(ctx, world.width - 44, '→');
-  }
-
-  if (
-    state.squashElapsed === null &&
-    state.scenario !== 'folding-stage' &&
-    !(state.scenario === 'frame-escape' && state.anomaly.activeElapsed !== null)
-  )
-    drawPlayer(ctx, assets, player, frame);
-  ctx.save();
-  if (state.scenario === 'mirrored-lab') {
-    ctx.beginPath();
-    ctx.rect(0, 0, world.width, world.ground);
-    ctx.clip();
-  }
-  drawAnomalyPipes(ctx, assets, state);
-  ctx.restore();
-  drawCeiling(ctx, assets, state);
-  if (state.squashElapsed !== null) {
-    const t = state.squashElapsed;
-    const squash = smooth(t / 0.1);
-    const wobble =
-      t > 0.1 ? Math.sin((t - 0.1) * 30) * Math.exp(-(t - 0.1) * 7) * 0.18 : 0;
-    ctx.save();
-    ctx.translate(player.x, world.ground);
-    ctx.scale(1 + squash * 1.8 + wobble, 1 - squash * 0.88);
-    drawPlayer(ctx, assets, { ...player, x: 0, y: 0 }, frame, false);
-    ctx.restore();
-  }
-  if (state.scenario === 'room-invasion')
-    drawInvasionFurniture(ctx, assets, state);
-  ctx.restore();
-
+  if (state.scenario === 'room-guillotine')
+    drawCutRoom(ctx, state, () => drawRoom(ctx, assets, state, frame));
+  else drawRoom(ctx, assets, state, frame);
   const shade = ctx.createRadialGradient(500, 230, 130, 500, 215, 550);
   shade.addColorStop(0, '#07141600');
   shade.addColorStop(1, state.progress === 8 ? '#35231330' : '#030a0c80');
@@ -125,6 +76,75 @@ export function drawGame(
       : `rgb(5 10 12 / ${opacity})`;
     ctx.fillRect(0, 0, viewport.width, viewport.height);
   }
+}
+
+function drawRoom(
+  ctx: CanvasRenderingContext2D,
+  assets: GameAssets,
+  state: GameSnapshot,
+  frame: AnimationFrame,
+): void {
+  const { player, pipeElapsed } = state;
+  const cameraX = cameraPosition(player.x);
+  const shake =
+    state.hitElapsed === null
+      ? pipeShake(pipeElapsed)
+      : Math.cos(state.hitElapsed * 100) *
+        7 *
+        (1 - state.hitElapsed / passage.fadeOut);
+  ctx.save();
+  if (state.scenario === 'mirrored-lab') {
+    const vertical = roomTurn(state.anomaly.activeElapsed) * Math.PI;
+    const horizontal = roomTurn(state.anomaly.mirrorElapsed) * Math.PI;
+    ctx.translate(500, 170);
+    ctx.scale(Math.cos(horizontal), Math.cos(vertical));
+    ctx.translate(-500, -170);
+  }
+  const cutAge =
+    state.cut.elapsed === null || state.cut.count === 0
+      ? 1
+      : state.cut.elapsed - cutImpact(state.cut.count - 1);
+  const cutShake =
+    cutAge < 0.16 ? Math.sin(cutAge * 130) * 5 * (1 - cutAge / 0.16) : 0;
+  ctx.translate(-cameraX, shake + cutShake);
+  drawAnomalyBackground(ctx, assets, state);
+  if (!(state.scenario === 'folding-stage' && state.anomaly.backstageReturning))
+    drawEntry(ctx, state);
+  if (state.progress === 8) drawExit(ctx, 780, '→');
+  else {
+    drawExit(ctx, 44, '←');
+    drawExit(ctx, world.width - 44, '→');
+  }
+
+  if (
+    state.squashElapsed === null &&
+    state.scenario !== 'folding-stage' &&
+    !(state.scenario === 'frame-escape' && state.anomaly.activeElapsed !== null)
+  )
+    drawPlayer(ctx, assets, player, frame);
+  ctx.save();
+  if (state.scenario === 'mirrored-lab') {
+    ctx.beginPath();
+    ctx.rect(0, 0, world.width, world.ground);
+    ctx.clip();
+  }
+  drawAnomalyPipes(ctx, assets, state);
+  ctx.restore();
+  drawCeiling(ctx, assets, state);
+  if (state.squashElapsed !== null) {
+    const t = state.squashElapsed;
+    const squash = smooth(t / 0.1);
+    const wobble =
+      t > 0.1 ? Math.sin((t - 0.1) * 30) * Math.exp(-(t - 0.1) * 7) * 0.18 : 0;
+    ctx.save();
+    ctx.translate(player.x, world.ground);
+    ctx.scale(1 + squash * 1.8 + wobble, 1 - squash * 0.88);
+    drawPlayer(ctx, assets, { ...player, x: 0, y: 0 }, frame, false);
+    ctx.restore();
+  }
+  if (state.scenario === 'room-invasion')
+    drawInvasionFurniture(ctx, assets, state);
+  ctx.restore();
 }
 
 function drawEntry(ctx: CanvasRenderingContext2D, state: GameSnapshot): void {

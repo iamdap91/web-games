@@ -11,6 +11,7 @@ export {
   type Scenario,
   type ScenarioSelection,
 } from './anomalies.js';
+import { RoomCutter, cutting, type CutSnapshot } from './room-cutter.js';
 import { ceiling, ceilingHeight, roomTurn } from './event-rules.js';
 import { FrameChase, type ChaseSnapshot } from './frame-chase.js';
 import { pipeHitsPlayer, pipeTriggerX } from './pipe-cascade.js';
@@ -25,7 +26,13 @@ export const movement = {
 } as const;
 export type Direction = -1 | 0 | 1;
 export type Phase =
-  'playing' | 'squashed' | 'transition' | 'falling' | 'landing' | 'complete';
+  | 'playing'
+  | 'severed'
+  | 'squashed'
+  | 'transition'
+  | 'falling'
+  | 'landing'
+  | 'complete';
 // 잔상까지 빛에 가려진 뒤 종료되도록 불투명 구간 안에 여유를 둔다.
 export const exitLight = { start: 300, opaque: 2200, finish: 2340 } as const;
 export const passage = { fadeOut: 0.22, fadeIn: 0.32, glitch: 1.1 } as const;
@@ -149,6 +156,7 @@ export type GameSnapshot = {
   readonly squashElapsed: number | null;
   readonly anomaly: AnomalySnapshot;
   readonly chase: ChaseSnapshot;
+  readonly cut: CutSnapshot;
   readonly landingElapsed: number | null;
   readonly scenario: Scenario;
   readonly phase: Phase;
@@ -174,6 +182,7 @@ export class LaboratoryGame {
   private player = new Player();
   private anomaly = new AnomalyMotion();
   private chase = new FrameChase();
+  private cutter = new RoomCutter();
   private landingElapsed: number | null = null;
   private squashElapsed: number | null = null;
   private scenario: Scenario = 'normal';
@@ -202,6 +211,7 @@ export class LaboratoryGame {
     this.player = new Player();
     this.anomaly = new AnomalyMotion();
     this.chase = new FrameChase();
+    this.cutter = new RoomCutter();
     this.landingElapsed = null;
     this.squashElapsed = null;
     this.pipeElapsed = this.failureElapsed = null;
@@ -242,6 +252,12 @@ export class LaboratoryGame {
     if (this.failureElapsed !== null) {
       this.failureElapsed += seconds;
       if (this.failureElapsed >= passage.glitch) this.failureElapsed = null;
+    }
+    if (this.phase === 'severed') {
+      this.cutter.update(seconds, this.player.snapshot);
+      if ((this.cutter.snapshot.caughtElapsed ?? 0) >= 1.1)
+        this.startTransition(0, true, false);
+      return;
     }
     if (this.phase === 'squashed') {
       this.squashElapsed = (this.squashElapsed ?? 0) + seconds;
@@ -364,6 +380,17 @@ export class LaboratoryGame {
       this.pipeElapsed = 0;
       this.encountered.add('falling-pipe');
     }
+    if (this.scenario === 'room-guillotine') {
+      this.cutter.update(seconds, this.player.snapshot);
+      if (this.cutter.snapshot.caughtElapsed !== null) {
+        this.phase = 'severed';
+        return;
+      }
+      if (this.cutter.snapshot.elapsed !== null && x <= cutting.exit) {
+        this.leave('left');
+        return;
+      }
+    }
     const atBackstageDoor =
       this.scenario === 'folding-stage' &&
       this.anomaly.snapshot.backstageReturning &&
@@ -383,6 +410,7 @@ export class LaboratoryGame {
     this.player = new Player();
     this.anomaly = new AnomalyMotion();
     this.chase = new FrameChase();
+    this.cutter = new RoomCutter();
     this.landingElapsed = null;
     this.squashElapsed = null;
     this.pipeElapsed = null;
@@ -457,6 +485,7 @@ export class LaboratoryGame {
       squashElapsed: this.squashElapsed,
       anomaly: this.anomaly.snapshot,
       chase: this.chase.snapshot,
+      cut: this.cutter.snapshot,
       landingElapsed: this.landingElapsed,
       scenario: this.scenario,
       phase: this.phase,

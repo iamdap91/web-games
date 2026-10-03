@@ -53,6 +53,12 @@ export const anomalyDetails = {
     cue: '중앙 철문에 접근 · 문이 열린 뒤 더 다가가기',
     observeX: 800,
   },
+  'room-guillotine': {
+    title: '공간 절단',
+    description: '칼날이 내려올 때마다 연구소가 조각째 떨어져 나갔다.',
+    cue: '오른쪽으로 진행 · 칼날이 보이면 왼쪽 문까지 플래시점프로 탈출',
+    observeX: 1280,
+  },
   'empty-center': {
     title: '텅 빈 중앙',
     description: '중앙 철문이 통째로 사라졌다.',
