@@ -111,11 +111,24 @@ function drawReachingArm(
     middle.x + normal.x * thickness,
     middle.y + normal.y * thickness,
   );
-  skin.addColorStop(0, '#253a2e');
-  skin.addColorStop(0.3, '#89947b');
-  skin.addColorStop(0.6, '#526a52');
-  skin.addColorStop(1, '#14251e');
+  skin.addColorStop(0, '#302126');
+  skin.addColorStop(0.3, '#90957e');
+  skin.addColorStop(0.6, '#656650');
+  skin.addColorStop(1, '#21151b');
   ctx.fillStyle = skin;
+  ctx.fill();
+  const top = Math.min(...near.concat(far).map((point) => point.y));
+  const bottom = Math.max(...near.concat(far).map((point) => point.y));
+  const underlight = ctx.createLinearGradient(
+    0,
+    top,
+    0,
+    Math.max(top + 1, bottom),
+  );
+  underlight.addColorStop(0, '#781c1600');
+  underlight.addColorStop(0.45, '#781c1600');
+  underlight.addColorStop(1, '#a9342a9c');
+  ctx.fillStyle = underlight;
   ctx.fill();
 }
 
@@ -139,9 +152,9 @@ function drawScareLighting(
     radius,
   );
   const darkness = (base: number): number => base + (1 - base) * concealment;
-  shade.addColorStop(0, `rgb(1 5 6 / ${darkness(settle * 0.12)})`);
-  shade.addColorStop(0.38, `rgb(1 5 6 / ${darkness(settle * 0.37)})`);
-  shade.addColorStop(1, `rgb(1 5 6 / ${darkness(settle * 0.88)})`);
+  shade.addColorStop(0, `rgb(10 2 3 / ${darkness(settle * 0.12)})`);
+  shade.addColorStop(0.38, `rgb(10 2 3 / ${darkness(settle * 0.37)})`);
+  shade.addColorStop(1, `rgb(10 2 3 / ${darkness(settle * 0.88)})`);
   ctx.fillStyle = shade;
   ctx.fillRect(0, 0, width, height);
 }
@@ -164,9 +177,9 @@ function drawGlimpseShade(
     center.y - 24,
     118,
   );
-  shade.addColorStop(0, '#01050633');
-  shade.addColorStop(0.45, '#010506a6');
-  shade.addColorStop(1, '#010506eb');
+  shade.addColorStop(0, '#0a020333');
+  shade.addColorStop(0.45, '#0a0203a6');
+  shade.addColorStop(1, '#0a0203eb');
   ctx.fillStyle = shade;
   ctx.fillRect(0, 0, width, height);
   ctx.restore();
