@@ -149,64 +149,72 @@ export function drawIntruderHand(
   ctx: CanvasRenderingContext2D,
   point: Point,
   angle: number,
-  closed: boolean,
+  closed: boolean | number,
 ): void {
   ctx.save();
   ctx.translate(point.x, point.y);
   ctx.rotate(angle);
-  const fingers: readonly Finger[] = closed
-    ? [
-        [
-          { x: -14, y: -10 },
-          { x: -25, y: -27 },
-          { x: -26, y: -42 },
-          { x: -10, y: -32 },
-        ],
-        [
-          { x: -5, y: -15 },
-          { x: -8, y: -37 },
-          { x: 3, y: -48 },
-          { x: 10, y: -28 },
-        ],
-        [
-          { x: 6, y: -14 },
-          { x: 15, y: -32 },
-          { x: 26, y: -34 },
-          { x: 21, y: -18 },
-        ],
-        [
-          { x: 16, y: -8 },
-          { x: 30, y: -21 },
-          { x: 40, y: -18 },
-          { x: 29, y: -7 },
-        ],
-      ]
-    : [
-        [
-          { x: -14, y: -10 },
-          { x: -24, y: -29 },
-          { x: -29, y: -48 },
-          { x: -23, y: -61 },
-        ],
-        [
-          { x: -5, y: -15 },
-          { x: -9, y: -38 },
-          { x: -8, y: -57 },
-          { x: -1, y: -69 },
-        ],
-        [
-          { x: 6, y: -14 },
-          { x: 10, y: -36 },
-          { x: 14, y: -54 },
-          { x: 21, y: -62 },
-        ],
-        [
-          { x: 16, y: -8 },
-          { x: 26, y: -23 },
-          { x: 34, y: -38 },
-          { x: 41, y: -41 },
-        ],
-      ];
+  const curl = typeof closed === 'boolean' ? Number(closed) : smooth(closed);
+  const bent: readonly Finger[] = [
+    [
+      { x: -14, y: -10 },
+      { x: -25, y: -27 },
+      { x: -26, y: -42 },
+      { x: -10, y: -32 },
+    ],
+    [
+      { x: -5, y: -15 },
+      { x: -8, y: -37 },
+      { x: 3, y: -48 },
+      { x: 10, y: -28 },
+    ],
+    [
+      { x: 6, y: -14 },
+      { x: 15, y: -32 },
+      { x: 26, y: -34 },
+      { x: 21, y: -18 },
+    ],
+    [
+      { x: 16, y: -8 },
+      { x: 30, y: -21 },
+      { x: 40, y: -18 },
+      { x: 29, y: -7 },
+    ],
+  ];
+  const spread: readonly Finger[] = [
+    [
+      { x: -14, y: -10 },
+      { x: -24, y: -29 },
+      { x: -29, y: -48 },
+      { x: -23, y: -61 },
+    ],
+    [
+      { x: -5, y: -15 },
+      { x: -9, y: -38 },
+      { x: -8, y: -57 },
+      { x: -1, y: -69 },
+    ],
+    [
+      { x: 6, y: -14 },
+      { x: 10, y: -36 },
+      { x: 14, y: -54 },
+      { x: 21, y: -62 },
+    ],
+    [
+      { x: 16, y: -8 },
+      { x: 26, y: -23 },
+      { x: 34, y: -38 },
+      { x: 41, y: -41 },
+    ],
+  ];
+  const bend = (open: Finger, shut: Finger): Finger => {
+    const joint = (index: number): Point => ({
+      x: open[index]!.x + (shut[index]!.x - open[index]!.x) * curl,
+      y: open[index]!.y + (shut[index]!.y - open[index]!.y) * curl,
+    });
+    return [joint(0), joint(1), joint(2), joint(3)];
+  };
+  const fingers = spread.map((finger, index) => bend(finger, bent[index]!));
   for (const [index, finger] of fingers.entries())
     drawFinger(ctx, finger, [5.2, 5.8, 5.1, 4.1][index]!, exposed);
   const palm = ctx.createLinearGradient(-22, -17, 17, 21);
@@ -238,19 +246,18 @@ export function drawIntruderHand(
     ctx.quadraticCurveTo(root.x * 0.7, 0, root.x * 0.25, 15);
     ctx.stroke();
   }
-  const thumb: Finger = closed
-    ? [
-        { x: -18, y: 8 },
-        { x: -31, y: 0 },
-        { x: -27, y: -14 },
-        { x: -10, y: -13 },
-      ]
-    : [
-        { x: -18, y: 8 },
-        { x: -31, y: 1 },
-        { x: -42, y: -7 },
-        { x: -44, y: -20 },
-      ];
-  drawFinger(ctx, thumb, 6.1, exposed);
+  const bentThumb: Finger = [
+    { x: -18, y: 8 },
+    { x: -31, y: 0 },
+    { x: -27, y: -14 },
+    { x: -10, y: -13 },
+  ];
+  const spreadThumb: Finger = [
+    { x: -18, y: 8 },
+    { x: -31, y: 1 },
+    { x: -42, y: -7 },
+    { x: -44, y: -20 },
+  ];
+  drawFinger(ctx, bend(spreadThumb, bentThumb), 6.1, exposed);
   ctx.restore();
 }

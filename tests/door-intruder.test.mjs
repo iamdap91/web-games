@@ -6,6 +6,7 @@ import {
   intruderHand,
   intruderReveal,
   intruderTiming,
+  intruderScare,
 } from '../dist/src/games/laboratory/door-intruder.js';
 
 const step = 1 / 120;
@@ -47,7 +48,7 @@ test('문에 접근하면 손가락만 나타나고 더 다가오기 전에는 �
   assert.equal(game.snapshot.intruder.phase, 'fingers');
 });
 
-test('움츠리는 예고 뒤 손에 잡히면 입력을 잠그고 문 안으로 끌어간 뒤 0번 방으로 복귀한다', () => {
+test('잡히면 입력을 잠그고 끌어간 뒤 점프스케어가 끝나야 0번 방으로 복귀한다', () => {
   const game = make();
   // 먼저 한 방을 통과해 실패 시 실제 진행도가 초기화되는지도 확인한다.
   advance(game, 1.5, -1);
@@ -66,7 +67,10 @@ test('움츠리는 예고 뒤 손에 잡히면 입력을 잠그고 문 안으로
   advance(game, 0.55, -1);
   assert.deepEqual(game.snapshot.player, captured);
   assert.ok(intruderHand(game.snapshot.intruder).x > hand.x);
-  advance(game, 0.85);
+  advance(game, intruderTiming.drag - 0.55);
+  assert.equal(game.snapshot.phase, 'snatched');
+  assert.equal(game.snapshot.progress, 1);
+  advance(game, intruderScare.finish - intruderTiming.drag + 0.25);
   assert.equal(game.snapshot.progress, 0);
   assert.notEqual(game.snapshot.failureElapsed, null);
   assert.equal(game.snapshot.intruder.phase, 'hidden');

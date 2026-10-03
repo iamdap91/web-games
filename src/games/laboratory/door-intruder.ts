@@ -17,6 +17,21 @@ export const intruderTiming = {
   close: 0.28,
   drag: 1.15,
 } as const;
+const handsAt = intruderTiming.drag + 0.22;
+const faceAt = handsAt + 0.12;
+const blackoutAt = faceAt + 0.2 + 0.12;
+export const intruderScare = {
+  bars: 0.18,
+  look: 0.9,
+  lookDuration: 0.22,
+  hands: handsAt,
+  handDuration: 0.2,
+  face: faceAt,
+  faceDuration: 0.2,
+  blackout: blackoutAt,
+  finish: blackoutAt + 0.18,
+} as const;
+
 // 회색 연구소 문에서 실제 문짝이 차지하는 좁은 입구. 그림과 손 판정이 같은 기준을 쓴다.
 export const intruderDoor = {
   x: 1460,

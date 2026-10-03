@@ -5,6 +5,7 @@ import { exitLight, passage, world, type GameSnapshot } from './game.js';
 
 import { roomTurn, smooth } from './event-rules.js';
 import { drawIntruder } from './intruder-renderer.js';
+import { drawIntruderScare } from './intruder-scare-renderer.js';
 import { cameraPosition, roomCameraPosition } from './spatial-rules.js';
 import { drawWindowReflection } from './observation-window.js';
 import { drawPlayer } from './player-renderer.js';
@@ -72,6 +73,7 @@ export function drawGame(
   }
   drawBlackout(ctx, state);
   drawRewindScreen(ctx, state);
+  drawIntruderScare(ctx, state, viewport.width, viewport.height);
   if (state.hitElapsed !== null) {
     ctx.fillStyle = `rgb(205 65 45 / ${0.45 * (1 - state.hitElapsed / passage.fadeOut)})`;
     ctx.fillRect(0, 0, viewport.width, viewport.height);

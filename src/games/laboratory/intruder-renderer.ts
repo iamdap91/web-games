@@ -13,6 +13,7 @@ import {
   intruderPivotX,
   intruderExtension,
   intruderTiming,
+  intruderScare,
   intruderHand,
   type Point,
 } from './door-intruder.js';
@@ -458,6 +459,13 @@ export function drawIntruder(
     ctx.save();
     ctx.translate(body.x - 12 - reveal.body * 19, 267 - reveal.body * 49);
     ctx.scale(0.6 + reveal.body * 0.24, 0.6 + reveal.body * 0.24);
+    // 정면 얼굴로 이어지는 순간에만 기존 옆얼굴을 감춘다.
+    ctx.globalAlpha *=
+      1 -
+      smooth(
+        ((monster.caughtElapsed ?? 0) - intruderScare.look) /
+          intruderScare.lookDuration,
+      );
     drawHead(ctx, 0, 0, -0.7 + gaze + headLag * 0.22, time);
     ctx.restore();
     ctx.restore();

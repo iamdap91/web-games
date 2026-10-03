@@ -1,6 +1,6 @@
 import {
   DoorIntruder,
-  intruderTiming,
+  intruderScare,
   type IntruderSnapshot,
 } from './door-intruder.js';
 import { LoadingWheel, loading, type WheelSnapshot } from './loading-wheel.js';
@@ -351,7 +351,7 @@ export class LaboratoryGame {
     }
     if (this.phase === 'snatched') {
       this.intruder.update(seconds, this.player.snapshot);
-      if ((this.intruder.snapshot.caughtElapsed ?? 0) >= intruderTiming.drag)
+      if ((this.intruder.snapshot.caughtElapsed ?? 0) >= intruderScare.finish)
         this.startTransition(0, true, false);
       return;
     }
