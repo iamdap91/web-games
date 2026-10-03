@@ -12,10 +12,11 @@ test('5 → 2 → 1번만 낙하하고 3·4번은 천장에 남는다', () => {
   assert.deepEqual(falls(null), [0, 0, 0, 0, 0]);
   assert.deepEqual(falls(0.1).slice(0, 4), [0, 0, 0, 0]);
   assert.ok(falls(0.1)[4] > 0 && falls(0.1)[4] < 1);
-  assert.equal(falls(0.35)[4], 1);
-  assert.ok(falls(0.35)[1] > 0 && falls(0.35)[1] < 1);
-  assert.equal(falls(0.35)[0], 0);
-  assert.ok(falls(0.55)[0] > 0 && falls(0.55)[0] < 1);
+  assert.deepEqual(falls(0.5), [0, 0, 0, 0, 1]);
+  assert.equal(falls(0.65)[4], 1);
+  assert.ok(falls(0.65)[1] > 0 && falls(0.65)[1] < 1);
+  assert.equal(falls(0.65)[0], 0);
+  assert.ok(falls(0.85)[0] > 0 && falls(0.85)[0] < 1);
   assert.deepEqual(falls(1), [1, 1, 0, 0, 1]);
   assert.deepEqual(falls(20), [1, 1, 0, 0, 1]);
 });
@@ -27,7 +28,7 @@ test('흔들림은 충돌마다 짧게 발생한 후 사라진다', () => {
     assert.notEqual(pipeShake(pipe.delay + 0.21), 0);
   for (let time = 0; time <= 1; time += 0.01)
     assert.ok(Math.abs(pipeShake(time)) <= 4);
-  assert.equal(pipeShake(1), 0);
+  assert.equal(pipeShake(1.2), 0);
 });
 
 test('낙하 중 몸체와만 충돌하고 끝난 배관·빈 구간·잔상에는 충돌하지 않는다', () => {

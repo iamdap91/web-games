@@ -317,8 +317,8 @@ test('배관을 보고 멈추면 안전하고 낙하 종료 후 왼쪽으로 돌
   assert.equal(game.snapshot.progress, 1);
 });
 
-test('급히 뒤로 플래시점프하면 2번 또는 1번에 맞고 방 번호가 0으로 돌아간다', () => {
-  for (const reaction of [0, 0.1, 0.2]) {
+test('낙하를 보고 반응한 뒤 플래시점프하면 2번 또는 1번에 맞고 0번으로 돌아간다', () => {
+  for (const reaction of [0.3, 0.4, 0.5]) {
     const game = new LaboratoryGame();
     game.reset('falling-pipe');
     exit(game, -1);

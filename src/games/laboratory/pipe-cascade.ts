@@ -1,6 +1,6 @@
 export const pipes = [
-  { x: 1460, width: 68, delay: 0.48 },
-  { x: 1580, width: 74, delay: 0.26 },
+  { x: 1460, width: 68, delay: 0.78 },
+  { x: 1580, width: 74, delay: 0.56 },
   { x: 1700, width: 80, delay: null },
   { x: 1820, width: 86, delay: null },
   { x: 1940, width: 92, delay: 0 },
