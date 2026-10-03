@@ -48,10 +48,10 @@ export const anomalyDetails = {
     observeX: 950,
   },
   'room-invasion': {
-    title: '다른 방의 침범',
-    description: '철문 너머 저택의 바닥과 가구가 연구소로 밀려 나왔다.',
-    cue: '중앙 철문에 접근 · 문이 열린 뒤 더 다가가기',
-    observeX: 800,
+    title: '문에 끼어 있는 침입자',
+    description: '작은 문틈의 손가락 뒤로 긴 팔과 몸이 튀어나왔다.',
+    cue: '작은 문틈에 손가락이 보이면 접근 · 손이 먼저 돌출 · 잡히면 0번 방',
+    observeX: 1000,
   },
   'room-guillotine': {
     title: '공간 절단',

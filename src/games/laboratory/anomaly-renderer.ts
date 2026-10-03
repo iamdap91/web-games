@@ -12,11 +12,8 @@ import type { GameAssets } from './assets.js';
 import { world, type GameSnapshot } from './game.js';
 import { pipes, pipeFall, pipeShape } from './pipe-cascade.js';
 import { ceiling, ceilingHeight, smooth } from './event-rules.js';
-import {
-  drawMachine,
-  drawBlackoutChamber,
-  drawInvasion,
-} from './chamber-renderer.js';
+import { drawMachine, drawBlackoutChamber } from './chamber-renderer.js';
+import { drawIntruderDoor } from './intruder-renderer.js';
 
 export function drawAnomalyBackground(
   ctx: CanvasRenderingContext2D,
@@ -63,7 +60,7 @@ export function drawAnomalyBackground(
     );
   if (scenario === 'blackout') drawBlackoutChamber(ctx, assets, state);
   if (scenario === 'watching-eye') drawEye(ctx, state);
-  if (scenario === 'room-invasion') drawInvasion(ctx, assets, state);
+  if (scenario === 'room-invasion') drawIntruderDoor(ctx, assets, state);
 }
 
 export function drawAnomalyPipes(

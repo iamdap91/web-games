@@ -1,3 +1,8 @@
+import {
+  DoorIntruder,
+  intruderTiming,
+  type IntruderSnapshot,
+} from './door-intruder.js';
 import { LoadingWheel, loading, type WheelSnapshot } from './loading-wheel.js';
 import {
   ScreenSelection,
@@ -38,6 +43,7 @@ export type Phase =
   | 'erased'
   | 'severed'
   | 'squashed'
+  | 'snatched'
   | 'transition'
   | 'falling'
   | 'landing'
@@ -211,6 +217,7 @@ export type GameSnapshot = {
   readonly rightExit: EscapingExitSnapshot;
   readonly selection: SelectionSnapshot;
   readonly wheel: WheelSnapshot;
+  readonly intruder: IntruderSnapshot;
   readonly landingElapsed: number | null;
   readonly scenario: Scenario;
   readonly phase: Phase;
@@ -242,6 +249,7 @@ export class LaboratoryGame {
   private rightExit = new EscapingExit(1);
   private screenSelection = new ScreenSelection();
   private wheel = new LoadingWheel();
+  private intruder = new DoorIntruder();
   private landingElapsed: number | null = null;
   private squashElapsed: number | null = null;
   private scenario: Scenario = 'normal';
@@ -276,6 +284,7 @@ export class LaboratoryGame {
     this.rightExit = new EscapingExit(1);
     this.screenSelection = new ScreenSelection();
     this.wheel = new LoadingWheel();
+    this.intruder = new DoorIntruder();
     this.landingElapsed = null;
     this.squashElapsed = null;
     this.pipeElapsed = this.failureElapsed = null;
@@ -337,6 +346,12 @@ export class LaboratoryGame {
     if (this.phase === 'severed') {
       this.cutter.update(seconds, this.player.snapshot);
       if ((this.cutter.snapshot.caughtElapsed ?? 0) >= 1.1)
+        this.startTransition(0, true, false);
+      return;
+    }
+    if (this.phase === 'snatched') {
+      this.intruder.update(seconds, this.player.snapshot);
+      if ((this.intruder.snapshot.caughtElapsed ?? 0) >= intruderTiming.drag)
         this.startTransition(0, true, false);
       return;
     }
@@ -479,6 +494,13 @@ export class LaboratoryGame {
       this.pipeElapsed = 0;
       this.encountered.add('falling-pipe');
     }
+    if (this.scenario === 'room-invasion') {
+      this.intruder.update(seconds, this.player.snapshot, previousPlayer);
+      if (this.intruder.snapshot.caughtElapsed !== null) {
+        this.phase = 'snatched';
+        return;
+      }
+    }
     if (this.scenario === 'room-guillotine') {
       this.cutter.update(seconds, this.player.snapshot);
       if (this.cutter.snapshot.caughtElapsed !== null) {
@@ -562,6 +584,7 @@ export class LaboratoryGame {
     this.rightExit = new EscapingExit(1);
     this.screenSelection = new ScreenSelection();
     this.wheel = new LoadingWheel();
+    this.intruder = new DoorIntruder();
     this.landingElapsed = null;
     this.squashElapsed = null;
     this.pipeElapsed = null;
@@ -642,6 +665,7 @@ export class LaboratoryGame {
       rightExit: this.rightExit.snapshot,
       selection: this.screenSelection.snapshot,
       wheel: this.wheel.snapshot,
+      intruder: this.intruder.snapshot,
       landingElapsed: this.landingElapsed,
       scenario: this.scenario,
       phase: this.phase,

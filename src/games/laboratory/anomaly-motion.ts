@@ -1,6 +1,6 @@
 import { anomalyDetails, type Scenario } from './anomalies.js';
 import { frameTriggerX } from './spatial-rules.js';
-import { ceiling, smooth, roomFlip } from './event-rules.js';
+import { ceiling, roomFlip } from './event-rules.js';
 import type { PlayerSnapshot } from './game.js';
 
 export type AnomalySnapshot = {
@@ -12,7 +12,6 @@ export type AnomalySnapshot = {
   readonly machineStride: number;
   readonly blackoutX: number;
   readonly ceilingSlam: number | null;
-  readonly invasion: number;
   readonly backstageDoorOpen: number;
   readonly backstageReturning: boolean;
   readonly returnDoorOpen: number;
@@ -31,7 +30,6 @@ export class AnomalyMotion {
   private wasUnwatched = false;
   private blackoutX = 1180;
   private ceilingSlam: number | null = null;
-  private invasion = 0;
   private backstageDoorOpen = 0;
   private backstageReturning = false;
   private returnDoorOpen = 0;
@@ -99,13 +97,6 @@ export class AnomalyMotion {
       if (this.ceilingSlam !== null) this.ceilingSlam += seconds;
       else if (player.x >= ceiling.trigger) this.ceilingSlam = 0;
     }
-    if (scenario === 'room-invasion' && this.activeElapsed !== null) {
-      const approach = smooth((player.x - 900) / 620);
-      this.invasion = Math.max(
-        this.invasion,
-        Math.min(approach, this.invasion + seconds * 0.45),
-      );
-    }
     if (scenario === 'folding-stage') {
       if (this.activeElapsed !== null && player.x < previous.x)
         this.backstageReturning = true;
@@ -135,7 +126,6 @@ export class AnomalyMotion {
       machineStride: this.machineStride,
       blackoutX: this.blackoutX,
       ceilingSlam: this.ceilingSlam,
-      invasion: this.invasion,
       backstageDoorOpen: this.backstageDoorOpen,
       backstageReturning: this.backstageReturning,
       returnDoorOpen: this.returnDoorOpen,

@@ -66,7 +66,7 @@ test('모든 이상은 왼쪽으로 진행하며 재선택과 8번 방은 연출
     assert.equal(game.snapshot.player.inverted, false);
     assert.equal(game.snapshot.anomaly.mirrorElapsed, null);
     assert.equal(game.snapshot.anomaly.ceilingSlam, null);
-    assert.equal(game.snapshot.anomaly.invasion, 0);
+    assert.equal(game.snapshot.intruder.phase, 'hidden');
     game.reset('normal');
     assert.deepEqual(game.snapshot.encountered, []);
   }
@@ -144,22 +144,13 @@ test('기계는 등질 때 접근하고 바라보면 위치를 멈춘다', () =>
   assert.equal(game.snapshot.anomaly.machineX, close);
 });
 
-test('소등은 한 번만 이동시키고 침범한 방은 물러나도 접히지 않는다', () => {
+test('소등은 한 번만 이동시킨다', () => {
   const blackout = make('blackout');
   advance(blackout, 4, 1);
   const x = blackout.snapshot.anomaly.blackoutX;
   advance(blackout, 0.6, -1);
   advance(blackout, 0.6, 1);
   assert.equal(blackout.snapshot.anomaly.blackoutX, x);
-  const room = make('room-invasion');
-  advance(room, 4.8, 1);
-  advance(room, 2);
-  assert.ok(room.snapshot.anomaly.invasion > 0.9);
-  const invaded = room.snapshot.anomaly.invasion;
-  advance(room, 1, -1);
-  assert.equal(room.snapshot.anomaly.invasion, invaded);
-  room.reset('room-invasion');
-  assert.equal(room.snapshot.anomaly.invasion, 0);
 });
 
 test('찌부 중 재선택이나 출구 미리보기는 연출을 즉시 정리한다', () => {

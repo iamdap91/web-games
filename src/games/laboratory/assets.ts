@@ -141,24 +141,19 @@ export async function loadAssets(): Promise<GameAssets> {
   if (!machineImage) throw new Error('기계 리소스가 없습니다.');
   const props = new Map<string, readonly HTMLImageElement[]>();
   await Promise.all(
-    [
-      '개폐 철문',
-      '저택 실내 벽',
-      '목재 바닥 무늬',
-      '목재 책장',
-      '목재 괘종시계',
-      '낡은 나무 의자',
-    ].map(async (name) => {
-      const asset = manifest.assets.find((entry) => entry.name === name);
-      const animation = asset?.animations.stand;
-      if (!animation) throw new Error(`공간 리소스가 없습니다: ${name}`);
-      props.set(
-        name,
-        await Promise.all(
-          animation.frames.map((frame) => loadImage(frame.localPath)),
-        ),
-      );
-    }),
+    ['개폐 철문', '남겨진 인형', '목재 괘종시계', '낡은 나무 의자'].map(
+      async (name) => {
+        const asset = manifest.assets.find((entry) => entry.name === name);
+        const animation = asset?.animations.stand;
+        if (!animation) throw new Error(`공간 리소스가 없습니다: ${name}`);
+        props.set(
+          name,
+          await Promise.all(
+            animation.frames.map((frame) => loadImage(frame.localPath)),
+          ),
+        );
+      },
+    ),
   );
   const machine = document.createElement('canvas');
   machine.width = machineImage.width;

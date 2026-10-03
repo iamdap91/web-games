@@ -4,7 +4,7 @@ import type { GameAssets } from './assets.js';
 import { exitLight, passage, world, type GameSnapshot } from './game.js';
 
 import { roomTurn, smooth } from './event-rules.js';
-import { drawInvasionFurniture } from './chamber-renderer.js';
+import { drawIntruder } from './intruder-renderer.js';
 import { cameraPosition, roomCameraPosition } from './spatial-rules.js';
 import { drawWindowReflection } from './observation-window.js';
 import { drawPlayer } from './player-renderer.js';
@@ -137,6 +137,7 @@ export function drawRoom(
   if (
     actor &&
     state.squashElapsed === null &&
+    state.intruder.caughtElapsed === null &&
     state.scenario !== 'folding-stage' &&
     !(state.scenario === 'frame-escape' && state.anomaly.activeElapsed !== null)
   )
@@ -162,7 +163,7 @@ export function drawRoom(
     ctx.restore();
   }
   if (state.scenario === 'room-invasion')
-    drawInvasionFurniture(ctx, assets, state);
+    drawIntruder(ctx, assets, state, frame, actor);
   ctx.restore();
 }
 
