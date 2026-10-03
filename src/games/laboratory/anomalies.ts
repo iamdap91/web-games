@@ -97,8 +97,8 @@ export const anomalyDetails = {
   },
   'folding-stage': {
     title: '연구소의 뒷면',
-    description: '벽이 돌아가면서 설비 뒤의 빈 공간이 드러났다.',
-    cue: '중앙부터 오른쪽으로 이동 · 왼쪽으로 돌아가며 벽의 앞뒤 비교',
+    description: '벽 뒤의 문틈 너머에 방금 출발한 입구가 있었다.',
+    cue: '오른쪽 뒷면의 문에 접근 · 돌아갔다 다시 와서 문틈 확인',
     observeX: 950,
   },
   'empty-center': {

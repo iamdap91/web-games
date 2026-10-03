@@ -387,6 +387,7 @@ function drawBackstage(
     ctx.fillStyle = '#82927a36';
     ctx.fillRect(x, 347, 33, 2);
   }
+  drawBackstageDoor(ctx, assets, state);
   const camera = cameraPosition(state.player.x);
   for (const [index, x] of stagePanels.entries()) {
     const angle = (panelAngle(state.player.x, index) * Math.PI) / 180;
@@ -396,6 +397,14 @@ function drawBackstage(
         (1100 - depth) +
       500 +
       camera;
+    // 회전한 벽의 끝을 잡아 주는 케이블은 열릴수록 처짐이 줄어든다.
+    const tension = Math.min(1, Math.abs(angle) / 1.8);
+    ctx.strokeStyle = '#6c776455';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(x + 210, 32);
+    ctx.quadraticCurveTo((x + 210 + edge) / 2, 150 - tension * 102, edge, 42);
+    ctx.stroke();
     ctx.fillStyle = '#00000070';
     ctx.beginPath();
     ctx.moveTo(x, 340);
@@ -405,4 +414,84 @@ function drawBackstage(
     ctx.closePath();
     ctx.fill();
   }
+}
+
+function drawBackstageDoor(
+  ctx: CanvasRenderingContext2D,
+  assets: GameAssets,
+  state: GameSnapshot,
+): void {
+  const open = state.anomaly.backstageDoorOpen;
+  const x = 1990;
+  const y = 106;
+  const width = 170;
+  const height = 234;
+  ctx.save();
+  // 문과 실내는 회전하는 벽보다 뒤에 남아, 앞면이 닫히면 완전히 가려진다.
+  ctx.fillStyle = '#050b0d';
+  ctx.fillRect(x - 10, y - 10, width + 20, height + 10);
+  ctx.strokeStyle = '#637168';
+  ctx.lineWidth = 5;
+  ctx.strokeRect(x - 5, y - 5, width + 10, height + 5);
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(x, y, width, height);
+  ctx.clip();
+  ctx.drawImage(assets.normal, 60, 25, 370, 405, x, y, width, height);
+  // 문틈 속 번호도 지금 방의 번호다. 얇은 벽 뒤에 출발점이 존재한다.
+  ctx.fillStyle = '#081311';
+  ctx.fillRect(x + 41, y + 18, 50, 43);
+  ctx.strokeStyle = '#80937d';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(x + 41, y + 18, 50, 43);
+  ctx.font = 'bold 30px monospace';
+  ctx.textAlign = 'center';
+  ctx.fillStyle = '#e2efc1';
+  ctx.shadowColor = '#d8e9b9';
+  ctx.shadowBlur = 8;
+  ctx.fillText(String(state.progress), x + 66, y + 51);
+  ctx.shadowBlur = 0;
+  const innerShade = ctx.createLinearGradient(x, 0, x + width, 0);
+  innerShade.addColorStop(0, '#08100b20');
+  innerShade.addColorStop(1, '#030706bb');
+  ctx.fillStyle = innerShade;
+  ctx.fillRect(x, y, width, height);
+  ctx.restore();
+  // 오른쪽 경첩에서 안으로 열리며 왼쪽 틈에 입구를 드러낸다.
+  const leafWidth = width * (1 - open * 0.63);
+  const lip = open * 15;
+  ctx.fillStyle = '#283832';
+  ctx.beginPath();
+  ctx.moveTo(x + width - leafWidth, y + lip);
+  ctx.lineTo(x + width, y);
+  ctx.lineTo(x + width, y + height);
+  ctx.lineTo(x + width - leafWidth, y + height - lip);
+  ctx.closePath();
+  ctx.fill();
+  ctx.strokeStyle = '#66715a';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+  ctx.fillStyle = '#0c1817';
+  ctx.fillRect(x + width - leafWidth + 8, y + height * 0.6, 4, 19);
+  ctx.strokeStyle = '#8e9874';
+  ctx.beginPath();
+  ctx.moveTo(x + width - leafWidth + 10, y + height * 0.6 + 3);
+  ctx.lineTo(x + width - leafWidth + 23, y + height * 0.6 + 3);
+  ctx.stroke();
+  if (open > 0) {
+    const light = ctx.createLinearGradient(0, 335, 0, 400);
+    light.addColorStop(0, `rgb(220 233 166 / ${open * 0.38})`);
+    light.addColorStop(1, '#e4eab400');
+    ctx.fillStyle = light;
+    ctx.beginPath();
+    ctx.moveTo(x, 339);
+    ctx.lineTo(x + width - leafWidth, 339);
+    ctx.lineTo(x + width - leafWidth + 24, 402);
+    ctx.lineTo(x - 140 * open, 402);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = `rgb(233 242 186 / ${open * 0.75})`;
+    ctx.fillRect(x, 338, width - leafWidth, 2);
+  }
+  ctx.restore();
 }

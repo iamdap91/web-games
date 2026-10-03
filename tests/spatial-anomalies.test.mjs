@@ -88,3 +88,22 @@ test('재선택과 8번 방 미리보기는 경계 탈출 상태를 정리한다
   game.reset('folding-stage');
   assert.equal(game.snapshot.anomaly.activeElapsed, null);
 });
+
+test('문은 접근하면 천천히 열리고 왕복해도 유지되며 새 방에서는 닫힌다', () => {
+  const game = new LaboratoryGame();
+  game.reset('folding-stage');
+  advance(game, 6, 1);
+  const opening = game.snapshot.anomaly.backstageDoorOpen;
+  assert.ok(opening > 0 && opening < 1);
+  advance(game, 0.8, 1);
+  advance(game, 2);
+  assert.equal(game.snapshot.anomaly.backstageDoorOpen, 1);
+  advance(game, 3, -1);
+  assert.equal(game.snapshot.anomaly.backstageDoorOpen, 1);
+  advance(game, 3, 1);
+  assert.equal(game.snapshot.anomaly.backstageDoorOpen, 1);
+  advance(game, 9, -1);
+  advance(game, 0.6);
+  assert.equal(game.snapshot.progress, 1);
+  assert.equal(game.snapshot.anomaly.backstageDoorOpen, 0);
+});

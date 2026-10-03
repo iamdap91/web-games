@@ -16,6 +16,7 @@ export type AnomalySnapshot = {
   readonly echo: Trace | null;
   readonly flowOffset: number;
   readonly blackoutX: number;
+  readonly backstageDoorOpen: number;
 };
 
 export class AnomalyMotion {
@@ -27,6 +28,7 @@ export class AnomalyMotion {
   private echo: Trace | null = null;
   private flowOffset = 0;
   private blackoutX = 1180;
+  private backstageDoorOpen = 0;
   private readonly history: { time: number; pose: Trace }[] = [];
 
   update(
@@ -94,6 +96,14 @@ export class AnomalyMotion {
         facing: distance < 0 ? -1 : 1,
       };
     }
+    if (scenario === 'folding-stage') {
+      const proximity = Math.max(0, Math.min(1, (player.x - 1690) / 290));
+      // 한 번 들여다본 문은 벽을 닫아도 같은 방 안에서 열린 흔적을 남긴다.
+      this.backstageDoorOpen = Math.max(
+        this.backstageDoorOpen,
+        Math.min(proximity, this.backstageDoorOpen + seconds * 0.65),
+      );
+    }
     if (scenario === 'reverse-flow')
       this.flowOffset -= player.facing * seconds * (moved ? 210 : 60);
     return this.activeElapsed !== null;
@@ -109,6 +119,7 @@ export class AnomalyMotion {
       echo: this.echo,
       flowOffset: this.flowOffset,
       blackoutX: this.blackoutX,
+      backstageDoorOpen: this.backstageDoorOpen,
     };
   }
 }
