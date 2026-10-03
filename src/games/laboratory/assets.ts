@@ -31,7 +31,8 @@ export function getContext(
 
 async function loadImage(path: string): Promise<HTMLImageElement> {
   const image = new Image();
-  image.src = `/${path}`;
+  // 컴파일된 모듈을 기준으로 찾아 저장소 하위 경로에서도 같은 리소스를 사용한다.
+  image.src = new URL(`../../../../${path}`, import.meta.url).href;
   try {
     await image.decode();
   } catch {
