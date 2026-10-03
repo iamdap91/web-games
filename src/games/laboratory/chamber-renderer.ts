@@ -2,13 +2,12 @@ import type { GameAssets } from './assets.js';
 import type { GameSnapshot } from './game.js';
 import { clamp } from './event-rules.js';
 
-export function drawMachine(
+function drawMachine(
   ctx: CanvasRenderingContext2D,
   assets: GameAssets,
   x: number,
   scale: number,
   lean = 0,
-  stride = 0,
 ): void {
   ctx.save();
   ctx.fillStyle = '#03080bd0';
@@ -17,11 +16,10 @@ export function drawMachine(
   ctx.fill();
   ctx.translate(x, 340);
   ctx.rotate(lean);
-  const lift = Math.abs(Math.sin(stride)) * Math.min(3, Math.abs(lean) * 60);
   ctx.drawImage(
     assets.machine,
     -70 * scale,
-    -250 * scale - lift,
+    -250 * scale,
     140 * scale,
     250 * scale,
   );

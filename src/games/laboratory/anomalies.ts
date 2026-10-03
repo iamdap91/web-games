@@ -11,12 +11,6 @@ export const anomalyDetails = {
     cue: '중앙에서 상하 반전 · 이후 조금 더 이동하면 좌우 반전',
     observeX: 900,
   },
-  'creeping-machine': {
-    title: '다가오는 기계',
-    description: '등을 돌릴 때마다 기계가 가까워졌다.',
-    cue: '중앙에 접근한 뒤 기계를 등지고 기다리기',
-    observeX: 850,
-  },
   'watching-eye': {
     title: '창 안의 거대한 눈',
     description: '관측창 안의 눈이 움직임을 따라왔다.',

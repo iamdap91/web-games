@@ -1,7 +1,6 @@
 import { anomalyDetails, type Scenario } from './anomalies.js';
 import type { Player, PlayerSnapshot } from './player.js';
 import { Blackout } from './blackout.js';
-import { CreepingMachine } from './creeping-machine.js';
 import { FoldingStage } from './folding-stage.js';
 import { LoweringCeiling } from './lowering-ceiling.js';
 import { MirroredLab } from './mirrored-lab.js';
@@ -10,9 +9,6 @@ export type AnomalySnapshot = {
   readonly elapsed: number;
   readonly activeElapsed: number | null;
   readonly mirrorElapsed: number | null;
-  readonly machineX: number;
-  readonly machineLean: number;
-  readonly machineStride: number;
   readonly blackoutX: number;
   readonly ceilingSlam: number | null;
   readonly backstageDoorOpen: number;
@@ -25,7 +21,6 @@ export class AnomalyMotion {
   private elapsed = 0;
   private activeElapsed: number | null = null;
   private readonly blackout = new Blackout();
-  private readonly machine = new CreepingMachine();
   private readonly stage = new FoldingStage();
   private readonly ceiling = new LoweringCeiling();
   private readonly mirror = new MirroredLab();
@@ -51,9 +46,6 @@ export class AnomalyMotion {
       case 'mirrored-lab':
         this.mirror.update(seconds, this.activeElapsed, player.x);
         break;
-      case 'creeping-machine':
-        if (this.activeElapsed !== null) this.machine.update(seconds, player);
-        break;
       case 'lowering-ceiling':
         this.ceiling.update(seconds, player.x);
         break;
@@ -74,15 +66,11 @@ export class AnomalyMotion {
   }
 
   get snapshot(): AnomalySnapshot {
-    const machine = this.machine.snapshot;
     const stage = this.stage.snapshot;
     return {
       elapsed: this.elapsed,
       activeElapsed: this.activeElapsed,
       mirrorElapsed: this.mirror.mirrorElapsed,
-      machineX: machine.x,
-      machineLean: machine.lean,
-      machineStride: machine.stride,
       blackoutX: this.blackout.position,
       ceilingSlam: this.ceiling.slamElapsed,
       backstageDoorOpen: stage.doorOpen,
