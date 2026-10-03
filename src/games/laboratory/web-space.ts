@@ -31,6 +31,7 @@ export class WebSpace {
   constructor(
     private readonly scene: HTMLCanvasElement,
     private readonly assets: GameAssets,
+    overlayHost: HTMLElement,
   ) {
     this.root.className = 'web-space';
     this.root.setAttribute('aria-hidden', 'true');
@@ -53,7 +54,7 @@ export class WebSpace {
     this.fallLayer.className = 'page-falling-actor';
     this.fallLayer.setAttribute('aria-hidden', 'true');
     this.fallLayer.hidden = true;
-    document.body.append(this.fallLayer);
+    overlayHost.append(this.fallLayer);
     this.rim.className = 'frame-rim';
     this.perspective.className = 'stage-perspective';
     this.stage.className = 'fold-stage';
