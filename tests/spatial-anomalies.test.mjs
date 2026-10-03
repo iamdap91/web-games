@@ -301,3 +301,22 @@ test('귀로 문에 도달하면 맵 끝까지 지나가지 않아도 다음 방
     assert.equal(game.snapshot.player.x, 360);
   }
 });
+
+test('경계 안에 머물러도 열린 뒤 왼쪽으로 100만큼 되돌아가면 추격한다', () => {
+  const game = new LaboratoryGame();
+  game.reset('frame-escape');
+  advance(game, 6.6, 1);
+  game.jump(1);
+  game.jump(1);
+  advance(game, 0.6);
+  assert.equal(frameEdge(game.snapshot), 760);
+  assert.ok(game.snapshot.player.x < game.snapshot.chase.boundary);
+  assert.equal(game.snapshot.chase.phase, 'idle');
+  game.face(-1);
+  advance(game, 0.3);
+  assert.equal(game.snapshot.chase.phase, 'idle');
+  advance(game, 0.3, -1);
+  assert.equal(game.snapshot.chase.phase, 'idle');
+  advance(game, 0.15, -1);
+  assert.equal(game.snapshot.chase.phase, 'chasing');
+});

@@ -5,8 +5,9 @@ export const pursuit = {
   grace: 1.25,
   boundary: 2160,
   startSpeed: 0,
-  acceleration: 650,
-  topSpeed: 520,
+  acceleration: 520,
+  topSpeed: 416,
+  returnDistance: 100,
 } as const;
 
 export type ChaseSnapshot = {
@@ -22,11 +23,20 @@ export class FrameChase {
   private elapsed = 0;
   private boundary: number = pursuit.boundary;
   private caught: PlayerSnapshot | null = null;
+  private furthestX: number | null = null;
 
   update(seconds: number, player: PlayerSnapshot, activeElapsed: number): void {
     if (this.phase === 'idle') {
-      if (player.x < 1400 + openingFrameEdge(activeElapsed) + 14) return;
-      this.phase = 'warning';
+      this.furthestX = Math.max(this.furthestX ?? player.x, player.x);
+      if (player.x >= 1400 + openingFrameEdge(activeElapsed) + 14) {
+        this.phase = 'warning';
+      } else if (
+        activeElapsed > 0 &&
+        this.furthestX - player.x >= pursuit.returnDistance
+      ) {
+        // 밖으로 나가지 않아도 경계가 열린 뒤 실제로 되돌아가면 추격한다.
+        this.phase = 'chasing';
+      } else return;
       this.elapsed = 0;
       return;
     }
