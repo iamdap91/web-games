@@ -497,6 +497,13 @@ body.escaped {
   position: relative;
   background: #101718;
 }
+/* 조작부 사이의 여백도 브라우저의 확대·스크롤 제스처로 넘기지 않는다. */
+#play-area {
+  touch-action: none;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
 .game-toolbar {
   display: flex;
   justify-content: flex-end;

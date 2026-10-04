@@ -56,6 +56,7 @@ class GameScreen {
     lastPhase = '';
     async start() {
         const { signal } = this.events;
+        this.bindTouchGestures();
         window.addEventListener('pagehide', (event) => {
             this.clearInput();
             if (!event.persisted)
@@ -219,6 +220,28 @@ class GameScreen {
         if (event.code === 'AltLeft' || event.code === 'AltRight')
             this.game.jump(this.direction);
     };
+    bindTouchGestures() {
+        const { signal } = this.events;
+        const preventGesture = (event) => {
+            if (event.cancelable)
+                event.preventDefault();
+        };
+        // Safari의 연타·두 손가락 확대를 막되 실제 조작은 기존 PointerEvent가 맡는다.
+        // 엔딩과 개발 패널은 playArea 밖에 있어 스크롤과 기본 터치 동작을 유지한다.
+        for (const type of [
+            'touchstart',
+            'touchmove',
+            'touchend',
+            'gesturestart',
+            'gesturechange',
+        ]) {
+            this.playArea.addEventListener(type, preventGesture, {
+                signal,
+                passive: false,
+                capture: true,
+            });
+        }
+    }
     bindJump() {
         const button = this.jumpButton;
         const { signal } = this.events;
