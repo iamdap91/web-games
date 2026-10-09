@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#172723" />
+    <link rel="icon" href="data:," />
+    <style>
+      body {
+        margin: 0;
+        background: #0b1514;
+      }
+    </style>
+    <title>산길의 결투 · 아타호</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../node_modules/three/build/three.module.js",
+          "three/addons/": "../../../node_modules/three/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="battle-root"></div>
+
+    <script
+      type="module"
+      src="../../../dist/src/prototypes/overdrive-battle/index.js"
+    ></script>
+  </body>
+</html>

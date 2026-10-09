@@ -1,0 +1,344 @@
+@import url('../../games/tiger-rpg/resource-strip.css');
+
+.clearing-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  container-type: size;
+  isolation: isolate;
+  color-scheme: light;
+  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  --clearing-paper: var(--ui-paper, #fff3d7);
+  --clearing-paper-shade: var(--ui-paper-shade, #f1dfb5);
+  --clearing-ink: var(--ui-ink, #38291f);
+  --clearing-muted: var(--ui-muted, #79624a);
+  --clearing-line: var(--ui-line, #a58750);
+  --clearing-gold: var(--ui-gold, #bd9147);
+  --clearing-shadow: var(--ui-shadow, #251b1633);
+  --clearing-panel: #251f1bd6;
+  color: var(--clearing-ink);
+  background: #abb6aa;
+  --hud-left: var(--game-safe-left, max(16px, env(safe-area-inset-left, 0px)));
+  --hud-right: var(
+    --game-safe-right,
+    max(16px, env(safe-area-inset-right, 0px))
+  );
+  --hud-top: var(
+    --clearing-hud-top,
+    var(--game-hud-top, max(24px, env(safe-area-inset-top, 0px)))
+  );
+  --hud-bottom: var(
+    --clearing-hud-bottom,
+    var(--game-safe-bottom, max(12px, env(safe-area-inset-bottom, 0px)))
+  );
+}
+.clearing-screen * {
+  box-sizing: border-box;
+}
+.clearing-screen [hidden] {
+  display: none !important;
+}
+.clearing-screen canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+.clearing-screen .location-tag {
+  position: absolute;
+  top: var(--hud-top);
+  left: max(24px, var(--hud-left));
+  margin: 0;
+  color: var(--clearing-ink);
+  text-shadow: 0 1px 8px #fff3d7;
+  pointer-events: none;
+}
+.clearing-screen .location-tag p {
+  margin: 0 0 5px;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+.clearing-screen .location-tag h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+}
+.clearing-screen .abilities {
+  position: absolute;
+  left: var(--hud-left);
+  bottom: var(--hud-bottom);
+  padding: 8px 10px;
+  color: var(--clearing-paper);
+  background: var(--clearing-panel);
+  border: 1px solid #a587503d;
+  border-radius: 2px;
+  box-shadow: 0 3px 12px var(--clearing-shadow);
+}
+.clearing-screen .energy-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 7px;
+  font-size: 11px;
+  color: #ded1b7;
+}
+.clearing-screen #charge-label {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.clearing-screen progress {
+  display: block;
+  width: 125px;
+  height: 4px;
+  border: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  accent-color: var(--clearing-gold);
+  background: #fff3d721;
+  mask-image: linear-gradient(
+    to right,
+    #000 0% 32%,
+    transparent 32% 34%,
+    #000 34% 65%,
+    transparent 65% 67%,
+    #000 67% 100%
+  );
+}
+.clearing-screen progress::-webkit-progress-bar {
+  background: #fff3d721;
+}
+.clearing-screen progress::-webkit-progress-value {
+  background: var(--clearing-gold);
+}
+.clearing-screen .skill-controls {
+  display: flex;
+  gap: 7px;
+}
+.clearing-screen button {
+  font: inherit;
+  cursor: pointer;
+}
+.clearing-screen .skill-controls button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 34px;
+  border: 1px solid #fff3d72b;
+  border-radius: 2px;
+  padding: 5px 8px;
+  background: #fff3d709;
+  color: #d2c8b5;
+  font-size: 12px;
+}
+.clearing-screen .skill-controls small {
+  color: #c9bca4;
+  font-size: 10px;
+  margin-left: 2px;
+}
+.clearing-screen .skill-controls button:disabled {
+  cursor: default;
+}
+.clearing-screen .skill-controls button[data-ready='true'] {
+  color: var(--clearing-paper);
+  background: #bd914724;
+  border-color: var(--clearing-gold);
+}
+.clearing-screen .skill-controls button[data-ready-pulse='true'] {
+  animation: clearing-skill-ready 600ms ease-out;
+}
+@keyframes clearing-skill-ready {
+  0% {
+    box-shadow:
+      0 0 0 2px #f2d58fc9,
+      0 0 14px #bd914780;
+  }
+  100% {
+    box-shadow:
+      0 0 0 0 #f2d58f00,
+      0 0 0 #bd914700;
+  }
+}
+.clearing-screen button:focus-visible {
+  outline: 2px solid var(--clearing-gold);
+  outline-offset: 3px;
+}
+.clearing-screen kbd {
+  font: inherit;
+  font-size: 10px;
+  border: 1px solid var(--clearing-line);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  padding: 2px 4px;
+}
+.clearing-screen .controls {
+  position: absolute;
+  right: var(--hud-right);
+  bottom: var(--hud-bottom);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px 10px;
+  max-width: 260px;
+  color: var(--clearing-ink);
+  font-size: 11px;
+  line-height: 1.6;
+  text-shadow:
+    0 1px 4px #fff3d7,
+    0 0 8px #fff3d7;
+  pointer-events: none;
+}
+.clearing-screen .controls span {
+  white-space: nowrap;
+}
+.clearing-screen .notice,
+.clearing-screen .target-hint {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 3px 7px;
+  max-width: calc(100% - var(--hud-left) - var(--hud-right));
+  width: max-content;
+  color: var(--clearing-ink);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  text-shadow:
+    0 1px 4px #fff3d7,
+    0 0 8px #fff3d7;
+  pointer-events: none;
+}
+.clearing-screen .notice {
+  top: calc(var(--hud-top) + 56px);
+}
+.clearing-screen .target-hint {
+  bottom: calc(var(--hud-bottom) + 83px);
+}
+.clearing-screen .exit-hint {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  margin: 0;
+  padding: 5px 11px;
+  border-radius: 4px;
+  background: #fff3d7b3;
+  color: var(--clearing-ink);
+  font-size: 11px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.clearing-screen .exit-hint span {
+  margin-left: 9px;
+}
+.clearing-screen .reset {
+  position: absolute;
+  right: var(--hud-right);
+  bottom: calc(var(--hud-bottom) + 44px);
+  border: 1px solid var(--clearing-line);
+  border-radius: 5px;
+  padding: 7px 10px;
+  background: #fff3d7b3;
+  color: var(--clearing-ink);
+  font-size: 10px;
+}
+.clearing-screen .overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #251b1655;
+  backdrop-filter: blur(4px);
+}
+.clearing-screen .card {
+  margin: 24px;
+  padding: 28px 34px;
+  max-width: 410px;
+  color: var(--clearing-ink);
+  background: var(--clearing-paper);
+  border: 1px solid var(--clearing-line);
+  border-radius: 10px;
+  box-shadow: 0 20px 70px var(--clearing-shadow);
+}
+.clearing-screen .card h2 {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+.clearing-screen .card p {
+  font-size: 13px;
+  line-height: 1.8;
+}
+.clearing-screen .card button {
+  border: 1px solid var(--clearing-line);
+  border-radius: 5px;
+  padding: 9px 15px;
+  background: var(--clearing-paper-shade);
+  color: var(--clearing-ink);
+}
+@container (max-width: 700px) {
+  .clearing-screen .location-tag {
+    left: var(--hud-left);
+  }
+  .clearing-screen .location-tag h1 {
+    font-size: 20px;
+  }
+  .clearing-screen .controls {
+    max-width: 165px;
+  }
+}
+@container (max-height: 480px) {
+  .clearing-screen .abilities {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 8px;
+  }
+  .clearing-screen .energy-control {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    gap: 5px;
+  }
+  .clearing-screen progress {
+    width: 74px;
+  }
+  .clearing-screen .skill-controls {
+    gap: 6px;
+  }
+  .clearing-screen .skill-controls button {
+    padding-inline: 6px;
+  }
+  .clearing-screen .controls {
+    max-width: 180px;
+    gap: 3px 9px;
+  }
+  .clearing-screen .target-hint {
+    bottom: calc(var(--hud-bottom) + 54px);
+  }
+  .clearing-screen .exit-hint {
+    translate: 0 -14px;
+  }
+  .clearing-screen .reset {
+    bottom: calc(var(--hud-bottom) + 52px);
+  }
+  .clearing-screen .card {
+    margin: 16px;
+    padding: 14px 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .clearing-screen .skill-controls button[data-ready-pulse='true'] {
+    animation: none;
+    outline: 1px solid #f2d58f;
+    outline-offset: 2px;
+  }
+}
+
+.game-frame[data-story-blocking='true'] .clearing-screen .abilities,
+.game-frame[data-story-blocking='true'] .clearing-screen .controls,
+.game-frame[data-story-blocking='true'] .clearing-screen .target-hint,
+.game-frame[data-story-blocking='true'] .clearing-screen .notice,
+.game-frame[data-story-blocking='true'] .clearing-screen .reset,
+.game-frame[data-story-blocking='true'] .clearing-screen .exit-hint {
+  visibility: hidden;
+}

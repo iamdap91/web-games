@@ -1,0 +1,87 @@
+/* 마을 보유량과 이번 채집량은 같은 크기·위치로 읽는다. 값과 피드백은 각 화면 소유다. */
+.resource-strip {
+  position: absolute;
+  top: var(--game-hud-top, 24px);
+  right: max(16px, var(--game-safe-right, 0px));
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0;
+  padding: 5px 10px;
+  border-radius: 2px;
+  color: var(--ui-ink, #38291f);
+  background: #fff3d7c9;
+  box-shadow: 0 1px 8px #251b1620;
+  font-size: 12px;
+  line-height: 20px;
+  pointer-events: none;
+}
+.resource-strip .resource-label {
+  min-width: 4.5em;
+  color: var(--ui-muted, #79624a);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.resource-strip .resource-count {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.resource-strip b {
+  min-width: 18px;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+.resource-strip .wood-icon {
+  width: 15px;
+  height: 10px;
+  border: 2px solid #d9b576;
+  background: #987440;
+  border-radius: 5px 2px 2px 5px;
+  transform: rotate(-22deg);
+}
+.resource-strip .stone-icon {
+  width: 13px;
+  height: 13px;
+  background: #88928f;
+  clip-path: polygon(30% 0, 80% 12%, 100% 67%, 70% 100%, 0 85%, 5% 32%);
+}
+.resource-strip .resource-name {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.resource-strip .resource-gain {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 7px);
+  padding: 0 5px;
+  color: #fff3d7;
+  background: #38291fde;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  animation: resource-gain-in 160ms ease-out;
+}
+@keyframes resource-gain-in {
+  from {
+    opacity: 0;
+    translate: 0 3px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .resource-strip .resource-gain {
+    animation: none;
+  }
+}
