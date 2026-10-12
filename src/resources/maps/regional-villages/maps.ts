@@ -1,0 +1,503 @@
+import {
+  mapStyles,
+  type MapStyle,
+} from '../../../rendering/map-art-direction.js';
+import type {
+  GroundPoint,
+  Footprint,
+} from '../../facilities/dojo/dojo-layout.js';
+import type { TrailTerrain } from '../../../games/tiger-rpg/trail-layout.js';
+import type { MapDetail } from '../../props/map-sprite-resources.js';
+
+export type VillageId = 'harbor' | 'onsen';
+export type VillageBuilding = Footprint & {
+  readonly id: string;
+  readonly label: string;
+  readonly height: number;
+  readonly roof: number;
+  readonly kind: 'house' | 'stall';
+};
+export type VillagePoint = GroundPoint & {
+  readonly id: string;
+  readonly label: string;
+  readonly symbol: string;
+  readonly description: string;
+  readonly destination?: 'wetland' | 'coast' | 'snow';
+  readonly effect?: 'bell' | 'fire' | 'spring';
+};
+export type VillageMap = TrailTerrain & {
+  readonly id: VillageId;
+  readonly title: string;
+  readonly subtitle: string;
+  readonly description: string;
+  readonly style: MapStyle;
+  readonly spawn: GroundPoint;
+  readonly boundary: readonly GroundPoint[];
+  readonly plazas: readonly (GroundPoint & { readonly radius: number })[];
+  readonly furniture: readonly (Footprint & {
+    readonly kind: 'crates' | 'rack' | 'logs' | 'screen';
+  })[];
+  readonly decks: readonly Footprint[];
+  readonly buildings: readonly VillageBuilding[];
+  readonly paths: readonly Footprint[];
+  readonly points: readonly VillagePoint[];
+  readonly props: readonly (GroundPoint & {
+    readonly key: MapDetail;
+    readonly width: number;
+  })[];
+  readonly solids: readonly (GroundPoint & { readonly radius: number })[];
+  readonly pool?: GroundPoint & { readonly radius: number };
+  readonly hearth?: GroundPoint & { readonly radius: number };
+};
+const terrain: TrailTerrain = {
+  entrance: { x: 0, z: -15 },
+  routes: [
+    {
+      points: [
+        { x: -16, z: -12 },
+        { x: 16, z: 17 },
+      ],
+      halfWidth: 1,
+    },
+  ],
+  clearings: [],
+  obstacles: [],
+};
+export const villageMaps: readonly VillageMap[] = [
+  {
+    ...terrain,
+    id: 'harbor',
+    solids: [{ x: 12.6, z: 3.5, radius: 0.15 }],
+    title: '해풍나루',
+    subtitle: '갈대나루 · 파도굴 해안의 거점',
+    description:
+      '어시장 광장과 바다 위 부두가 이어지는 마을. 물자 창고 뒤편을 돌아 나룻배가 기다리는 선착장으로 향한다.',
+    style: {
+      ...mapStyles.village,
+      background: 0xb6c8c5,
+      shade: 0x6b7e7c,
+      ground: {
+        grass: 0x9da68f,
+        leaves: 0x80937e,
+        earth: 0x9c9688,
+        path: 0xc4b99f,
+        stone: 0xa0aba7,
+      },
+    },
+    spawn: { x: -3, z: 12 },
+    boundary: [
+      { x: -14, z: -11 },
+      { x: -10, z: -12 },
+      { x: -3, z: -12 },
+      { x: 3, z: -10 },
+      { x: 5, z: -6 },
+      { x: 5, z: -4 },
+      { x: 4.8, z: -0.5 },
+      { x: 5.3, z: 1.5 },
+      { x: 4.8, z: 3 },
+      { x: 5.2, z: 7 },
+      { x: 4.6, z: 10 },
+      { x: 4, z: 13 },
+      { x: 1, z: 15 },
+      { x: -4, z: 16 },
+      { x: -10, z: 16 },
+      { x: -13, z: 14 },
+      { x: -15, z: 10 },
+      { x: -15, z: 3 },
+      { x: -16, z: -2 },
+      { x: -15, z: -8 },
+    ],
+    plazas: [{ x: -4, z: 3, radius: 4.2 }],
+    furniture: [
+      { kind: 'crates', x: 3.3, z: 0.5, width: 1.25, depth: 1.1 },
+      { kind: 'rack', x: -13, z: 3, width: 1.1, depth: 2.1 },
+      { kind: 'rack', x: -6.6, z: 9.2, width: 1.8, depth: 1.05 },
+    ],
+    decks: [
+      { x: 7.8, z: 5, width: 6.4, depth: 3.4 },
+      { x: 12.6, z: 4.5, width: 3.2, depth: 17 },
+      { x: 8.1, z: -2.3, width: 6.6, depth: 3.2 },
+    ],
+    paths: [
+      { x: -3, z: 5, width: 5, depth: 20 },
+      { x: -4, z: 1.8, width: 18, depth: 3.5 },
+      { x: -10, z: 4, width: 3, depth: 17 },
+      { x: -3.4, z: -8, width: 12, depth: 2.8 },
+    ],
+    buildings: [
+      {
+        id: 'house-a',
+        label: '어부의 집',
+        x: -3.5,
+        z: -9.6,
+        width: 3.7,
+        depth: 3,
+        height: 1.9,
+        roof: 0x8b8f7e,
+        kind: 'house',
+      },
+      {
+        id: 'house-b',
+        label: '뱃사공의 집',
+        x: 0.6,
+        z: 11.5,
+        width: 3.2,
+        depth: 3,
+        height: 1.9,
+        roof: 0x83928b,
+        kind: 'house',
+      },
+      {
+        id: 'inn',
+        label: '해풍여관',
+        x: -9.5,
+        z: -3.5,
+        width: 5.1,
+        depth: 4.8,
+        height: 2.5,
+        roof: 0x6d8581,
+        kind: 'house',
+      },
+      {
+        id: 'warehouse',
+        label: '물자 창고',
+        x: 1.1,
+        z: -4,
+        width: 5.4,
+        depth: 5,
+        height: 2.8,
+        roof: 0x788783,
+        kind: 'house',
+      },
+      {
+        id: 'market',
+        label: '어시장',
+        x: -6.3,
+        z: 4.8,
+        width: 3.3,
+        depth: 1.8,
+        height: 1.8,
+        roof: 0xb4a58e,
+        kind: 'stall',
+      },
+      {
+        id: 'supply',
+        label: '여행 보급소',
+        x: -10.7,
+        z: 9,
+        width: 3.8,
+        depth: 3.4,
+        height: 2.2,
+        roof: 0x8d8473,
+        kind: 'house',
+      },
+    ],
+    points: [
+      {
+        id: 'inn',
+        x: -9.5,
+        z: -0.3,
+        label: '해풍여관',
+        symbol: '⌂',
+        description:
+          '바닷바람을 피하는 여관. 해안 원정 전 휴식과 짐 정리를 맡길 곳이다.',
+      },
+      {
+        id: 'warehouse',
+        x: 1.1,
+        z: -0.6,
+        label: '물자 창고',
+        symbol: '▣',
+        description:
+          '나루에서 들어온 식량과 밧줄이 쌓여 있다. 해안 원정의 준비 거점이다.',
+      },
+      {
+        id: 'market',
+        x: -6.3,
+        z: 6.6,
+        label: '어시장',
+        symbol: '≈',
+        description:
+          '소금에 절인 생선과 말린 해초. 이 지역의 식재료가 모이는 작은 시장이다.',
+      },
+      {
+        id: 'supply',
+        x: -10.7,
+        z: 11.6,
+        label: '여행 보급소',
+        symbol: '◇',
+        description:
+          '방수 천과 여행 물병을 챙기는 곳. 갈대나루와 파도굴로 나갈 채비를 한다.',
+      },
+      {
+        id: 'bell',
+        x: 12.6,
+        z: 4.5,
+        label: '나루 종',
+        symbol: '♧',
+        description: '나루 종을 울렸다. 정박한 배 주변으로 물결이 번진다.',
+        effect: 'bell',
+      },
+      {
+        id: 'coast',
+        destination: 'coast',
+        x: 12.6,
+        z: 11,
+        label: '파도굴 선착장',
+        symbol: '↗',
+        description:
+          '파도굴 해안으로 향하는 배가 머무는 곳. 물길 원정의 출발점으로 사용할 수 있다.',
+      },
+      {
+        id: 'wetland',
+        destination: 'wetland',
+        x: -10,
+        z: 14,
+        label: '갈대나루 길목',
+        symbol: '↗',
+        description:
+          '마을 서쪽 흙길이 갈대나루로 이어진다. 육로와 물길 중 원정에 맞는 방향을 고른다.',
+      },
+    ],
+    props: [
+      { key: 'fishing-net', x: 1.9, z: -0.9, width: 1.3 },
+      { key: 'rope', x: 10.5, z: 4.7, width: 0.9 },
+      { key: 'shore-shells', x: 4, z: 10, width: 1 },
+      { key: 'basket', x: -7.5, z: 6.2, width: 0.8 },
+      { key: 'cloth', x: -11.8, z: 11, width: 0.8 },
+      { key: 'travel-flask', x: -9.7, z: 11, width: 0.7 },
+      { key: 'grain-trays', x: -0.6, z: -0.9, width: 1.1 },
+    ],
+  },
+  {
+    ...terrain,
+    id: 'onsen',
+    solids: [],
+    title: '눈솔온천마을',
+    subtitle: '설원 온천분지의 거점',
+    description:
+      '눈을 막아 주는 집들 사이에 공동 화덕이 놓인 마을. 보급 골목과 온천 돌길이 중앙 마당으로 다시 이어진다.',
+    style: {
+      ...mapStyles.village,
+      background: 0xc3d0cf,
+      sunlight: 0xf8e8d3,
+      sunStrength: 1.45,
+      ground: {
+        grass: 0xd2d9d2,
+        leaves: 0x7e9388,
+        earth: 0x929892,
+        path: 0xbbb8a7,
+        stone: 0x9faaa7,
+      },
+    },
+    spawn: { x: 0, z: 12 },
+    boundary: [
+      { x: -13, z: -9 },
+      { x: -8, z: -12 },
+      { x: 2, z: -12 },
+      { x: 9, z: -11 },
+      { x: 14, z: -7 },
+      { x: 15, z: -1 },
+      { x: 14, z: 7 },
+      { x: 13, z: 13 },
+      { x: 9, z: 16 },
+      { x: 3, z: 17 },
+      { x: -4, z: 16 },
+      { x: -10, z: 15 },
+      { x: -14, z: 10 },
+      { x: -15, z: 3 },
+      { x: -14, z: -4 },
+    ],
+    plazas: [
+      { x: 0, z: 3, radius: 3.1 },
+      { x: 7.7, z: 0.1, radius: 4.2 },
+    ],
+    furniture: [
+      { kind: 'logs', x: -12.8, z: -0.1, width: 1.2, depth: 2 },
+      { kind: 'screen', x: 11.7, z: -3.5, width: 0.4, depth: 2.2 },
+    ],
+    decks: [],
+    paths: [
+      { x: 0, z: 5, width: 4.5, depth: 19 },
+      { x: -3, z: -1, width: 20, depth: 3.2 },
+      { x: -8.5, z: 4, width: 3.6, depth: 12 },
+      { x: 6.7, z: 7, width: 13, depth: 3.1 },
+      { x: 11.5, z: 2.2, width: 2.8, depth: 9 },
+    ],
+    buildings: [
+      {
+        id: 'house-a',
+        label: '산지기의 집',
+        x: -6.5,
+        z: 11,
+        width: 3.6,
+        depth: 3,
+        height: 1.9,
+        roof: 0x879189,
+        kind: 'house',
+      },
+      {
+        id: 'house-b',
+        label: '온천지기의 집',
+        x: 9,
+        z: 11.5,
+        width: 4,
+        depth: 3,
+        height: 2,
+        roof: 0x7d8a82,
+        kind: 'house',
+      },
+      {
+        id: 'inn',
+        label: '눈솔여관',
+        x: -7.5,
+        z: -5,
+        width: 6.2,
+        depth: 5.2,
+        height: 2.6,
+        roof: 0x717e79,
+        kind: 'house',
+      },
+      {
+        id: 'supply',
+        label: '설원 보급소',
+        x: 0.2,
+        z: -6,
+        width: 4.6,
+        depth: 4.4,
+        height: 2.3,
+        roof: 0x7f867e,
+        kind: 'house',
+      },
+      {
+        id: 'smithy',
+        label: '화덕 공방',
+        x: -10.9,
+        z: 4.7,
+        width: 4,
+        depth: 4.2,
+        height: 2.3,
+        roof: 0x87857a,
+        kind: 'house',
+      },
+      {
+        id: 'bath',
+        label: '온천 탈의소',
+        x: 9,
+        z: -6.3,
+        width: 4.7,
+        depth: 3.6,
+        height: 2.2,
+        roof: 0x71867f,
+        kind: 'house',
+      },
+    ],
+    pool: { x: 7.7, z: 0.1, radius: 3 },
+    hearth: { x: 0, z: 4, radius: 0.85 },
+    points: [
+      {
+        id: 'inn',
+        x: -7.5,
+        z: -1.5,
+        label: '눈솔여관',
+        symbol: '⌂',
+        description:
+          '두꺼운 지붕이 눈을 막아 준다. 설원으로 떠나기 전 몸을 녹이고 쉬어 가는 곳이다.',
+      },
+      {
+        id: 'supply',
+        x: 0.2,
+        z: -2.9,
+        label: '설원 보급소',
+        symbol: '◇',
+        description:
+          '설피와 마른 식량이 가지런히 놓여 있다. 눈길을 걷기 위한 준비를 맡는다.',
+      },
+      {
+        id: 'smithy',
+        x: -10.9,
+        z: 7.6,
+        label: '화덕 공방',
+        symbol: '⚒',
+        description:
+          '차가운 산바람 속에서도 불이 꺼지지 않는 공방. 장비를 손보는 마을 시설이다.',
+      },
+      {
+        id: 'bath',
+        x: 9,
+        z: -3.7,
+        label: '온천 탈의소',
+        symbol: '▣',
+        description:
+          '온천 돌길 옆에 옷과 짐을 맡기는 작은 집. 마을의 휴식 공간을 연결한다.',
+      },
+      {
+        id: 'spring',
+        effect: 'spring',
+        x: 7.7,
+        z: 4.1,
+        label: '솔그늘 온천',
+        symbol: '≈',
+        description:
+          '온천 물길을 열었다. 대나무 홈통에서 따뜻한 물이 흐르고 수면에 물결과 김이 번진다.',
+      },
+      {
+        id: 'fire',
+        x: 0,
+        z: 5.7,
+        label: '공동 화덕',
+        symbol: '♨',
+        description:
+          '장작을 고쳐 놓자 화덕의 불꽃이 살아났다. 마당에 따뜻한 불빛이 번진다.',
+        effect: 'fire',
+      },
+      {
+        id: 'snow',
+        destination: 'snow',
+        x: 0,
+        z: 14.3,
+        label: '설원 길목',
+        symbol: '↗',
+        description:
+          '눈솔 고개 너머 설원 온천분지로 이어지는 길. 이곳에서 설원 원정을 출발할 수 있다.',
+      },
+    ],
+    props: [
+      { key: 'snowshoes', x: 1.4, z: -3.4, width: 1.1 },
+      { key: 'bedroll', x: -8.7, z: -1.9, width: 0.9 },
+      { key: 'sack', x: -0.8, z: -3.4, width: 0.9 },
+      { key: 'wood-chips', x: -10, z: 7, width: 1.1 },
+      { key: 'bowl', x: 9.7, z: -4.1, width: 0.65 },
+      { key: 'cloth', x: 8.2, z: -4.1, width: 0.8 },
+      { key: 'survey-chart', x: 1.4, z: 12.6, width: 0.9 },
+    ],
+  },
+];
+export function villageMap(id: string | null): VillageMap {
+  return villageMaps.find((map) => map.id === id) ?? villageMaps[0]!;
+}
+
+export function villageGatePosts(
+  map: VillageMap,
+): readonly (GroundPoint & { readonly radius: number })[] {
+  return map.points
+    .filter((p) => ['wetland', 'coast', 'snow'].includes(p.id))
+    .flatMap((p) =>
+      [-1, 1].map((side) => ({
+        x: p.x + side * (p.id === 'coast' ? 1.8 : 1.7),
+        z: p.z,
+        radius: 0.12,
+      })),
+    );
+}
+
+export function villageShoreRocks(
+  map: VillageMap,
+): readonly (GroundPoint & { readonly radius: number })[] {
+  if (map.id !== 'harbor') return [];
+  return Array.from({ length: 11 }, (_, i) => ({
+    x: 5.85,
+    z: -11 + i * 2.5,
+    radius: 0.45 + (i % 3) * 0.08,
+  })).filter((p) => Math.abs(p.z - 5) >= 2 && Math.abs(p.z + 2.3) >= 1.9);
+}

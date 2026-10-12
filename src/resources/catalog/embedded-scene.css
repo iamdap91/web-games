@@ -1,0 +1,157 @@
+.embedded-scene .resource-navigation,
+.embedded-scene .atlas-header > a,
+.embedded-scene .atlas-header label > span,
+.embedded-scene .atlas-info h1,
+.embedded-scene .atlas-footer .quiet,
+.embedded-scene #villages > header > div,
+.embedded-scene #villages > header a,
+.embedded-scene #villages .notice a,
+.embedded-scene .embedded-facilities > nav,
+.embedded-scene .embedded-facilities > header,
+.embedded-scene .embedded-facilities > .level-note,
+.embedded-scene .embedded-facilities > .collection,
+.embedded-scene .embedded-facilities > .source,
+.embedded-scene .embedded-facilities > footer,
+.embedded-scene .embedded-facilities .workspace > aside {
+  display: none;
+}
+.embedded-scene #atlas {
+  inset: 0;
+}
+.embedded-scene .atlas-header {
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.embedded-scene .atlas-header label {
+  max-width: 100%;
+  padding: 4px;
+}
+.embedded-scene .atlas-header select {
+  max-width: 100%;
+}
+.embedded-scene .atlas-footer {
+  flex-wrap: wrap;
+}
+.embedded-scene #villages {
+  height: 100dvh;
+}
+.embedded-scene #villages > header {
+  padding: 10px 12px;
+}
+.embedded-scene #villages > header nav {
+  margin: 0;
+  flex-wrap: wrap;
+}
+.embedded-scene #villages footer {
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 12px;
+}
+.embedded-scene body:has(.embedded-facilities) {
+  height: 100dvh;
+  overflow: hidden;
+}
+.embedded-scene .embedded-facilities {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  padding: 12px;
+  gap: 12px;
+}
+.embedded-scene .facility-controls {
+  flex-shrink: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+.embedded-scene .facility-controls h2 {
+  margin-bottom: 6px;
+}
+.embedded-scene .facility-controls h2 span {
+  display: none;
+}
+.embedded-scene .facility-controls button {
+  padding: 9px 4px;
+  white-space: normal;
+  font-size: 11px;
+}
+.embedded-scene .facility-controls button span {
+  display: block;
+  margin: 0 0 4px;
+}
+.embedded-scene .embedded-facilities .workspace {
+  display: block;
+  flex: 1;
+  min-height: 0;
+}
+.embedded-scene .embedded-facilities .preview {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto auto auto;
+  height: 100%;
+}
+.embedded-scene .embedded-facilities canvas {
+  height: 100%;
+  min-height: 0;
+}
+.embedded-scene .embedded-facilities .preview-bar {
+  padding: 10px 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.embedded-scene .embedded-facilities .view-switch,
+.embedded-scene .embedded-facilities .tools {
+  padding: 9px 12px;
+}
+.embedded-scene .embedded-facilities #status {
+  padding: 7px 12px;
+}
+@media (max-width: 1000px) {
+  .embedded-scene .facility-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 650px) {
+  .embedded-scene .atlas-header {
+    left: 10px;
+    right: 10px;
+  }
+  .embedded-scene .atlas-info {
+    top: 115px;
+    left: 14px;
+    width: 160px;
+  }
+  .embedded-scene .atlas-map {
+    top: 115px;
+    right: 10px;
+  }
+  .embedded-scene .atlas-map canvas {
+    width: 150px;
+    height: 118px;
+  }
+  .embedded-scene .atlas-description {
+    top: 115px;
+    width: calc(100% - 24px);
+  }
+  .embedded-scene #villages .intro {
+    display: none;
+  }
+  .embedded-scene #villages .legend {
+    top: 10px;
+    right: 10px;
+    padding: 8px 10px;
+  }
+  .embedded-scene #villages .notice,
+  .embedded-scene .atlas-notice {
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+  }
+  .embedded-scene .embedded-facilities .tools {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 440px) {
+  .embedded-scene .facility-controls {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

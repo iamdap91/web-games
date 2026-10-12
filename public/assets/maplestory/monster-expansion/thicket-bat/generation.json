@@ -1,0 +1,3359 @@
+{
+  "id": "thicket-bat",
+  "name": "덤불박쥐",
+  "theme": "forest",
+  "role": "rusher",
+  "appearance": "Leaf-eared dark plum bat with a moss-green belly, membranous wings and one pair of bright eyes; small low fluttering silhouette.",
+  "motions": {
+    "stand": "Hovering in place, both membrane wings fold upward then fan fully open and close, ears twitch, one gentle wingbeat cycle returning to the exact ready pose. Real hinged wing articulation, not sprite translation.",
+    "move": "Low flying rush toward the left in place, alternating broad upstroke and forceful downstroke, body pitches forward then levels, legs tuck, head and leaf ears remain facing left. A continuous wingbeat locomotion loop without moving the whole sprite across the canvas.",
+    "attack1": "Facing left, crouch the airborne body and draw both wings backward, then thrust the head and small open fangs sharply forward left with the wings sweeping forward, retract and return to ready hovering pose. One clear diving bite, no extra enemies or effects.",
+    "hit1": "Facing left, wince from a strike on the face, fold one wing close and recoil the shoulders back to the right, then reopen both wings and return to the original hover. Visible reaction in face, wings and legs.",
+    "die1": "Facing left, lose wing tension, fold both membrane wings inward, descend and topple onto the side, ears droop and eyes close, finish motionless on the ground. Do not dissolve or revive."
+  },
+  "assetId": "ai/monster-thicket-bat",
+  "localRoot": "public/assets/maplestory/monster-expansion/thicket-bat",
+  "attempts": [
+    {
+      "motion": "original",
+      "attempt": 1,
+      "key": "monster-a-thicket-bat-original-01",
+      "jobId": "6800f953-0fb9-46e2-9197-8707e37da758",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download",
+      "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+      "sha256": "d54da1d2ae95370762ed78a5858bb4dad235cfb9e67e240585496d98d58d211b",
+      "byteSize": 1875,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 10,
+        "y": 10,
+        "width": 42,
+        "height": 43
+      },
+      "visiblePixels": 960,
+      "paletteSize": 25,
+      "chargedGenerations": 1,
+      "directionObserved": "east",
+      "selection": "accepted",
+      "request": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Leaf-eared dark plum bat with a moss-green belly, membranous wings and one pair of bright eyes; small low fluttering silhouette. Battle-ready stance facing LEFT (west), slight three-quarter view toward the viewer, camera only slightly above the creature. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, small cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described, no accessories beyond described features. A single creature only, no text, no frame, no background, no scenery, no floor, no cast shadow, no blurred anti-aliasing. Full creature occupies about 44-52 pixels inside this 64 pixel canvas with 4 pixel transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 614001,
+        "text_guidance_scale": 8
+      },
+      "nativeFacing": "right"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-thicket-bat-stand-01",
+      "jobId": "7b3fcc23-8ae5-4f33-a84c-c84d869276c5",
+      "balanceBefore": 512,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625001,
+        "action": "Hovering in place, both membrane wings fold upward then fan fully open and close, ears twitch, one gentle wingbeat cycle returning to the exact ready pose. Real hinged wing articulation, not sprite translation. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "queueResponse": "id: 7b3fcc23-8ae5-4f33-a84c-c84d869276c5\njob_id: 7b3fcc23-8ae5-4f33-a84c-c84d869276c5\naction: Hovering in place, both membrane wings fold upward then fan fully open and close, ears twitch, one gentle wingbeat cycle returning to the exact ready pose. Real hinged wing articulation, not sprite translation. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625001\nasset_id: 0fded121-b81b-5936-8d28-05528cf42952\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"7b3fcc23-8ae5-4f33-a84c-c84d869276c5\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 7b3fcc23-8ae5-4f33-a84c-c84d869276c5\njob_id: 7b3fcc23-8ae5-4f33-a84c-c84d869276c5\nframes: 5\ntransparent: yes\nasset_id: 0fded121-b81b-5936-8d28-05528cf42952\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 3,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+        "sha256": "d54da1d2ae95370762ed78a5858bb4dad235cfb9e67e240585496d98d58d211b",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 0,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/00.png",
+          "sourceSha256": "09da75cdec3236c7c5adf67040cc9e157f12aba34284bc40b601bab7d65ce7d1",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 960,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/01.png",
+          "sourceSha256": "4291dea11e89c64f31362dc3051aa54f848e3189035988151973ecc52bc90a6d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 11,
+            "width": 43,
+            "height": 42
+          },
+          "visiblePixels": 946,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/02.png",
+          "sourceSha256": "00b8face74358c5c6eca76611ce723498d8fadfb257d70adf13f670f01c823bd",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 13,
+            "width": 43,
+            "height": 39
+          },
+          "visiblePixels": 932,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/03.png",
+          "sourceSha256": "2eb82e220f8ea1e3117871ab019cf44dc334f85c2071fe02446f5eac973d9aab",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 10,
+            "width": 43,
+            "height": 42
+          },
+          "visiblePixels": 954,
+          "colors": 38,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/04.png",
+          "sourceSha256": "09da75cdec3236c7c5adf67040cc9e157f12aba34284bc40b601bab7d65ce7d1",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 960,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thicket-bat/review/stand-7b3fcc23-8ae5-4f33-a84c-c84d869276c5.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/00.png",
+          "sha256": "4291dea11e89c64f31362dc3051aa54f848e3189035988151973ecc52bc90a6d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/01.png",
+          "sourceSha256": "4291dea11e89c64f31362dc3051aa54f848e3189035988151973ecc52bc90a6d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/01.png",
+          "sha256": "00b8face74358c5c6eca76611ce723498d8fadfb257d70adf13f670f01c823bd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/02.png",
+          "sourceSha256": "00b8face74358c5c6eca76611ce723498d8fadfb257d70adf13f670f01c823bd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/02.png",
+          "sha256": "2eb82e220f8ea1e3117871ab019cf44dc334f85c2071fe02446f5eac973d9aab",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/03.png",
+          "sourceSha256": "2eb82e220f8ea1e3117871ab019cf44dc334f85c2071fe02446f5eac973d9aab",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/03.png",
+          "sha256": "09da75cdec3236c7c5adf67040cc9e157f12aba34284bc40b601bab7d65ce7d1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/7b3fcc23-8ae5-4f33-a84c-c84d869276c5/04.png",
+          "sourceSha256": "09da75cdec3236c7c5adf67040cc9e157f12aba34284bc40b601bab7d65ce7d1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "rejected: generated third frame has strong unexplained palette brightness flash"
+    },
+    {
+      "motion": "stand",
+      "attempt": 2,
+      "key": "monster-a-thicket-bat-stand-02",
+      "jobId": "72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856",
+      "balanceBefore": 517,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 626001,
+        "action": "Facing right, hovering in place with one gentle articulated wingbeat: open and fold the two membrane wings modestly, twitch the leaf ears once, return to the exact original ready pose. The dark plum fur and moss-green belly keep exactly the same colors and brightness throughout. No glow, no flash, no magic, no lighting changes. Real hinged wing articulation, no whole-sprite translation. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "queueResponse": "id: 72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856\njob_id: 72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856\naction: Facing right, hovering in place with one gentle articulated wingbeat: open and fold the two membrane wings modestly, twitch the leaf ears once, return to the exact original ready pose. The dark plum fur and moss-green belly keep exactly the same colors and brightness throughout. No glow, no flash, no magic, no lighting changes. Real hinged wing articulation, no whole-sprite translation. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626001\nasset_id: f3d514bb-dae4-52d4-aa6c-31fa962b99fc\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856\njob_id: 72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856\nframes: 5\ntransparent: yes\nasset_id: f3d514bb-dae4-52d4-aa6c-31fa962b99fc\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+        "sha256": "d54da1d2ae95370762ed78a5858bb4dad235cfb9e67e240585496d98d58d211b",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 36,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/00.png",
+          "sourceSha256": "04be126907fbe7bc20480b11bd7561a6ffb2cd218e4e6fd20e83f764ebe28d7e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 961,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/01.png",
+          "sourceSha256": "de216bcec59a951e338fbb7dea70bf76d3c717554ed12bef0c7e9095df1332a1",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 12,
+            "width": 42,
+            "height": 40
+          },
+          "visiblePixels": 917,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/02.png",
+          "sourceSha256": "805cfed4f77165a25fc2077633ff51d0ea7e6301aa146cd008ca7ec3cdf8030a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 13,
+            "width": 44,
+            "height": 37
+          },
+          "visiblePixels": 903,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/03.png",
+          "sourceSha256": "a3738624206d91e0d89ef97a5db61b57b30aaae9ab59f078560022e4dc7989d2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 12,
+            "width": 42,
+            "height": 39
+          },
+          "visiblePixels": 912,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/04.png",
+          "sourceSha256": "27c72f786b78619dc708bb436dd2e014daf018022962a28fa9e154b35f7e1554",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 961,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thicket-bat/review/stand-72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/00.png",
+          "sha256": "de216bcec59a951e338fbb7dea70bf76d3c717554ed12bef0c7e9095df1332a1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/01.png",
+          "sourceSha256": "de216bcec59a951e338fbb7dea70bf76d3c717554ed12bef0c7e9095df1332a1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/01.png",
+          "sha256": "805cfed4f77165a25fc2077633ff51d0ea7e6301aa146cd008ca7ec3cdf8030a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/02.png",
+          "sourceSha256": "805cfed4f77165a25fc2077633ff51d0ea7e6301aa146cd008ca7ec3cdf8030a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/02.png",
+          "sha256": "a3738624206d91e0d89ef97a5db61b57b30aaae9ab59f078560022e4dc7989d2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/03.png",
+          "sourceSha256": "a3738624206d91e0d89ef97a5db61b57b30aaae9ab59f078560022e4dc7989d2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/03.png",
+          "sha256": "27c72f786b78619dc708bb436dd2e014daf018022962a28fa9e154b35f7e1554",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/04.png",
+          "sourceSha256": "27c72f786b78619dc708bb436dd2e014daf018022962a28fa9e154b35f7e1554",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: stable plum/green palette, hinged wing changes and a genuine blink, same native right-facing pose"
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "monster-a-thicket-bat-attack1-01",
+      "jobId": "54e5b332-eeda-4395-9584-bb416eed1d4f",
+      "balanceBefore": 528,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625003,
+        "action": "Facing right, crouch the airborne body and draw both wings backward, then thrust the head and small open fangs sharply forward right with the wings sweeping forward, retract and return to ready hovering pose. One clear diving bite, no extra enemies or effects. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "queueResponse": "id: 54e5b332-eeda-4395-9584-bb416eed1d4f\njob_id: 54e5b332-eeda-4395-9584-bb416eed1d4f\naction: Facing right, crouch the airborne body and draw both wings backward, then thrust the head and small open fangs sharply forward right with the wings sweeping forward, retract and return to ready hovering pose. One clear diving bite, no extra enemies or effects. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625003\nasset_id: 5efccbe2-050f-5555-a00e-68228059da7c\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"54e5b332-eeda-4395-9584-bb416eed1d4f\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 54e5b332-eeda-4395-9584-bb416eed1d4f\njob_id: 54e5b332-eeda-4395-9584-bb416eed1d4f\nframes: 9\ntransparent: yes\nasset_id: 5efccbe2-050f-5555-a00e-68228059da7c\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+        "sha256": "d54da1d2ae95370762ed78a5858bb4dad235cfb9e67e240585496d98d58d211b",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 30,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/00.png",
+          "sourceSha256": "4b7f7d1bbc40d70c48072b2d35ba8ae9e8298bc07d91574f76bc2db2cdbd6980",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 960,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/01.png",
+          "sourceSha256": "3807ffbcf10c681b5613365c1a2a7a10b092507829eda4b529d4469064ee82b1",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 11,
+            "width": 44,
+            "height": 42
+          },
+          "visiblePixels": 947,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/02.png",
+          "sourceSha256": "de3974feb1371485ac82b762fc09537089a35b4074175d41a13cadd7b4ba03e7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 45,
+            "height": 41
+          },
+          "visiblePixels": 956,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/03.png",
+          "sourceSha256": "f9cc3c958ef570ce308c6f3b9054c5d9e32c61cf0890ab6bcc710785e93f0811",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 11,
+            "width": 46,
+            "height": 39
+          },
+          "visiblePixels": 946,
+          "colors": 32,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/04.png",
+          "sourceSha256": "f47be9f6bce0e602523098ce62f981f91018137c053b2e95912d09d99079646d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 14,
+            "width": 45,
+            "height": 35
+          },
+          "visiblePixels": 922,
+          "colors": 33,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/05.png",
+          "sourceSha256": "d734f1525a6d8a976ff444506d0adb091d8d635b687c5cb591aa3034ac3911d6",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 14,
+            "width": 47,
+            "height": 35
+          },
+          "visiblePixels": 923,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/06.png",
+          "sourceSha256": "9077b508f53e23a65415f64c349086efe480bd7b088ba5e9484ba388933c60fb",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 46,
+            "height": 41
+          },
+          "visiblePixels": 958,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/07.png",
+          "sourceSha256": "f15bf4fbd0366005883a9cb2d8bf551f21345d7b361c8aa150691a37bad7f726",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 11,
+            "width": 44,
+            "height": 42
+          },
+          "visiblePixels": 952,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/08.png",
+          "sourceSha256": "5d1b817f9aa1186c52b5d1adf7cfe931a24ad80c19a527ff07bfe77d35d082a2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 960,
+          "colors": 26,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thicket-bat/review/attack1-54e5b332-eeda-4395-9584-bb416eed1d4f.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/00.png",
+          "sha256": "3807ffbcf10c681b5613365c1a2a7a10b092507829eda4b529d4469064ee82b1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/01.png",
+          "sourceSha256": "3807ffbcf10c681b5613365c1a2a7a10b092507829eda4b529d4469064ee82b1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/01.png",
+          "sha256": "de3974feb1371485ac82b762fc09537089a35b4074175d41a13cadd7b4ba03e7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/02.png",
+          "sourceSha256": "de3974feb1371485ac82b762fc09537089a35b4074175d41a13cadd7b4ba03e7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/02.png",
+          "sha256": "f9cc3c958ef570ce308c6f3b9054c5d9e32c61cf0890ab6bcc710785e93f0811",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/03.png",
+          "sourceSha256": "f9cc3c958ef570ce308c6f3b9054c5d9e32c61cf0890ab6bcc710785e93f0811",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/03.png",
+          "sha256": "f47be9f6bce0e602523098ce62f981f91018137c053b2e95912d09d99079646d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/04.png",
+          "sourceSha256": "f47be9f6bce0e602523098ce62f981f91018137c053b2e95912d09d99079646d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/04.png",
+          "sha256": "d734f1525a6d8a976ff444506d0adb091d8d635b687c5cb591aa3034ac3911d6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/05.png",
+          "sourceSha256": "d734f1525a6d8a976ff444506d0adb091d8d635b687c5cb591aa3034ac3911d6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/05.png",
+          "sha256": "9077b508f53e23a65415f64c349086efe480bd7b088ba5e9484ba388933c60fb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/06.png",
+          "sourceSha256": "9077b508f53e23a65415f64c349086efe480bd7b088ba5e9484ba388933c60fb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/06.png",
+          "sha256": "f15bf4fbd0366005883a9cb2d8bf551f21345d7b361c8aa150691a37bad7f726",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/07.png",
+          "sourceSha256": "f15bf4fbd0366005883a9cb2d8bf551f21345d7b361c8aa150691a37bad7f726",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/07.png",
+          "sha256": "5d1b817f9aa1186c52b5d1adf7cfe931a24ad80c19a527ff07bfe77d35d082a2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/08.png",
+          "sourceSha256": "5d1b817f9aa1186c52b5d1adf7cfe931a24ad80c19a527ff07bfe77d35d082a2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 우향 준비에서 날개를 뒤로 젖히고 송곳니를 드러내며 돌진한 뒤 복귀. 3번에서 주둥이가 가장 오른쪽으로 뻗는 접촉 자세.",
+      "contactFrameIndex": 3,
+      "contactProgress": 0.43749999999999994,
+      "contactReason": "우향 준비에서 날개를 뒤로 젖히고 송곳니를 드러내며 돌진한 뒤 복귀. 3번에서 주둥이가 가장 오른쪽으로 뻗는 접촉 자세."
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "monster-a-thicket-bat-move-01",
+      "jobId": "73567021-5c50-49a3-a784-695644baf54b",
+      "balanceBefore": 541,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625002,
+        "action": "Low flying rush toward the right in place, alternating broad upstroke and forceful downstroke, body pitches forward then levels, legs tuck, head and leaf ears remain facing right. A continuous wingbeat locomotion loop without moving the whole sprite across the canvas. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "queueResponse": "id: 73567021-5c50-49a3-a784-695644baf54b\njob_id: 73567021-5c50-49a3-a784-695644baf54b\naction: Low flying rush toward the right in place, alternating broad upstroke and forceful downstroke, body pitches forward then levels, legs tuck, head and leaf ears remain facing right. A continuous wingbeat locomotion loop without moving the whole sprite across the canvas. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625002\nasset_id: df9c6532-e4f1-5096-9c21-f0739c722873\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"73567021-5c50-49a3-a784-695644baf54b\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 73567021-5c50-49a3-a784-695644baf54b\njob_id: 73567021-5c50-49a3-a784-695644baf54b\nframes: 9\ntransparent: yes\nasset_id: df9c6532-e4f1-5096-9c21-f0739c722873\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+        "sha256": "d54da1d2ae95370762ed78a5858bb4dad235cfb9e67e240585496d98d58d211b",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 39,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/00.png",
+          "sourceSha256": "8a135b0d8018f266ff05e4412f9a5f3b696dcfdf1d92c84e15acfa80a4700f36",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 960,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/01.png",
+          "sourceSha256": "69b3326fe0ddb2a2dc3fd4c4489646a19366c2449da1e66ef5c6bf7e62638657",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 42
+          },
+          "visiblePixels": 912,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/02.png",
+          "sourceSha256": "0556edb54113ed93f9158e3874c2490f063cf464c409650827b4c31c64f2099f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 11,
+            "width": 43,
+            "height": 39
+          },
+          "visiblePixels": 904,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/03.png",
+          "sourceSha256": "2cae6b67a8332b59bf8a8b6a6acdc2386cfbef3baaace3da7d055cceea713042",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 14,
+            "width": 42,
+            "height": 34
+          },
+          "visiblePixels": 883,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/04.png",
+          "sourceSha256": "f3230104bdb086e4a1da6f3016dde3cfb0e4b0ad9142ded3ff1788e16fec93ba",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 14,
+            "width": 40,
+            "height": 35
+          },
+          "visiblePixels": 832,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/05.png",
+          "sourceSha256": "b82479e86424cd9ba8c75747fb12ac1f704597e9e7c4636c86775038ddf250d8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 13,
+            "width": 41,
+            "height": 34
+          },
+          "visiblePixels": 872,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/06.png",
+          "sourceSha256": "9392463a6d738130c37c31713a7ab0eaca885e1ebbf4d709f0bd39eed3de89ae",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 41
+          },
+          "visiblePixels": 919,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/07.png",
+          "sourceSha256": "57ad0fe2dfb46c8a18a48f23c1586bd8900718e1d6876ca569775501da3ca145",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 11,
+            "width": 43,
+            "height": 41
+          },
+          "visiblePixels": 919,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/08.png",
+          "sourceSha256": "48c5560f8bab4feee64603cde5b3456a5f200533baf022aa8552f8638c4f35d8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 960,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thicket-bat/review/move-73567021-5c50-49a3-a784-695644baf54b.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/00.png",
+          "sha256": "69b3326fe0ddb2a2dc3fd4c4489646a19366c2449da1e66ef5c6bf7e62638657",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/01.png",
+          "sourceSha256": "69b3326fe0ddb2a2dc3fd4c4489646a19366c2449da1e66ef5c6bf7e62638657",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/01.png",
+          "sha256": "0556edb54113ed93f9158e3874c2490f063cf464c409650827b4c31c64f2099f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/02.png",
+          "sourceSha256": "0556edb54113ed93f9158e3874c2490f063cf464c409650827b4c31c64f2099f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/02.png",
+          "sha256": "2cae6b67a8332b59bf8a8b6a6acdc2386cfbef3baaace3da7d055cceea713042",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/03.png",
+          "sourceSha256": "2cae6b67a8332b59bf8a8b6a6acdc2386cfbef3baaace3da7d055cceea713042",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/03.png",
+          "sha256": "f3230104bdb086e4a1da6f3016dde3cfb0e4b0ad9142ded3ff1788e16fec93ba",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/04.png",
+          "sourceSha256": "f3230104bdb086e4a1da6f3016dde3cfb0e4b0ad9142ded3ff1788e16fec93ba",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/04.png",
+          "sha256": "b82479e86424cd9ba8c75747fb12ac1f704597e9e7c4636c86775038ddf250d8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/05.png",
+          "sourceSha256": "b82479e86424cd9ba8c75747fb12ac1f704597e9e7c4636c86775038ddf250d8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/05.png",
+          "sha256": "9392463a6d738130c37c31713a7ab0eaca885e1ebbf4d709f0bd39eed3de89ae",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/06.png",
+          "sourceSha256": "9392463a6d738130c37c31713a7ab0eaca885e1ebbf4d709f0bd39eed3de89ae",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/06.png",
+          "sha256": "57ad0fe2dfb46c8a18a48f23c1586bd8900718e1d6876ca569775501da3ca145",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/07.png",
+          "sourceSha256": "57ad0fe2dfb46c8a18a48f23c1586bd8900718e1d6876ca569775501da3ca145",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/07.png",
+          "sha256": "48c5560f8bab4feee64603cde5b3456a5f200533baf022aa8552f8638c4f35d8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/08.png",
+          "sourceSha256": "48c5560f8bab4feee64603cde5b3456a5f200533baf022aa8552f8638c4f35d8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 우향으로 날개가 위·아래로 크게 접히고 펼쳐지며 몸통이 전진 자세를 취하는 실제 비행 루프."
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "monster-a-thicket-bat-hit1-01",
+      "jobId": "a0a17d87-4c75-470a-b85c-be15fc1c54ae",
+      "balanceBefore": 541,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625004,
+        "action": "Facing right, wince from a strike on the face, fold one wing close and recoil the shoulders back to the left, then reopen both wings and return to the original hover. Visible reaction in face, wings and legs. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "queueResponse": "id: a0a17d87-4c75-470a-b85c-be15fc1c54ae\njob_id: a0a17d87-4c75-470a-b85c-be15fc1c54ae\naction: Facing right, wince from a strike on the face, fold one wing close and recoil the shoulders back to the left, then reopen both wings and return to the original hover. Visible reaction in face, wings and legs. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625004\nasset_id: f55f185b-b3fc-559a-ba33-cee50f8bfbed\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"a0a17d87-4c75-470a-b85c-be15fc1c54ae\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: a0a17d87-4c75-470a-b85c-be15fc1c54ae\njob_id: a0a17d87-4c75-470a-b85c-be15fc1c54ae\nframes: 5\ntransparent: yes\nasset_id: f55f185b-b3fc-559a-ba33-cee50f8bfbed\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+        "sha256": "d54da1d2ae95370762ed78a5858bb4dad235cfb9e67e240585496d98d58d211b",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 14,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/00.png",
+          "sourceSha256": "b77b01404d41b5a57eb00c67f42be5ea748b22cf1a572f6bcadc60aa41e96dd5",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 960,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/01.png",
+          "sourceSha256": "6d934a40ec31f236375c2700eaf74111f2395899f6b00b4529ebf712f91e80a8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 14,
+            "width": 43,
+            "height": 37
+          },
+          "visiblePixels": 905,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/02.png",
+          "sourceSha256": "79b7bd0a300355f76ac8fcb7c5c1b381373715dd650594e4626fcf93edc2284e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 16,
+            "width": 44,
+            "height": 33
+          },
+          "visiblePixels": 871,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/03.png",
+          "sourceSha256": "78e9d07de2a2cf861f371de6354e820a6d50ed7050b98568fa7f2e6ffa3a5fd3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 14,
+            "width": 43,
+            "height": 37
+          },
+          "visiblePixels": 914,
+          "colors": 33,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/04.png",
+          "sourceSha256": "214cc0093c64cb7b3852b2ef1093862613f574f02f5f6820858c35cf7a1c1574",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 960,
+          "colors": 26,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thicket-bat/review/hit1-a0a17d87-4c75-470a-b85c-be15fc1c54ae.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/00.png",
+          "sha256": "6d934a40ec31f236375c2700eaf74111f2395899f6b00b4529ebf712f91e80a8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/01.png",
+          "sourceSha256": "6d934a40ec31f236375c2700eaf74111f2395899f6b00b4529ebf712f91e80a8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/01.png",
+          "sha256": "79b7bd0a300355f76ac8fcb7c5c1b381373715dd650594e4626fcf93edc2284e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/02.png",
+          "sourceSha256": "79b7bd0a300355f76ac8fcb7c5c1b381373715dd650594e4626fcf93edc2284e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/02.png",
+          "sha256": "78e9d07de2a2cf861f371de6354e820a6d50ed7050b98568fa7f2e6ffa3a5fd3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/03.png",
+          "sourceSha256": "78e9d07de2a2cf861f371de6354e820a6d50ed7050b98568fa7f2e6ffa3a5fd3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/03.png",
+          "sha256": "214cc0093c64cb7b3852b2ef1093862613f574f02f5f6820858c35cf7a1c1574",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/04.png",
+          "sourceSha256": "214cc0093c64cb7b3852b2ef1093862613f574f02f5f6820858c35cf7a1c1574",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 우향 얼굴을 찡그리고 양 날개를 감싸며 움츠린 뒤 원래 비행 자세로 복귀하는 단발 피격."
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "monster-a-thicket-bat-die1-01",
+      "jobId": "0d912017-d81b-43f9-9392-00fcae6702df",
+      "balanceBefore": 550,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625005,
+        "action": "Facing right, lose wing tension, fold both membrane wings inward, descend and topple onto the side, ears droop and eyes close, finish motionless on the ground. Do not dissolve or revive. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature."
+      },
+      "queueResponse": "id: 0d912017-d81b-43f9-9392-00fcae6702df\njob_id: 0d912017-d81b-43f9-9392-00fcae6702df\naction: Facing right, lose wing tension, fold both membrane wings inward, descend and topple onto the side, ears droop and eyes close, finish motionless on the ground. Do not dissolve or revive. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 625005\nasset_id: 6193940f-1c7b-55c4-ba3b-cf6af03e1630\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"0d912017-d81b-43f9-9392-00fcae6702df\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 0d912017-d81b-43f9-9392-00fcae6702df\njob_id: 0d912017-d81b-43f9-9392-00fcae6702df\nframes: 9\ntransparent: yes\nasset_id: 6193940f-1c7b-55c4-ba3b-cf6af03e1630\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+        "sha256": "d54da1d2ae95370762ed78a5858bb4dad235cfb9e67e240585496d98d58d211b",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 153,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/00.png",
+          "sourceSha256": "b55a1e70644f90ed826263970c777f1c7527fc9615bab989175b76c8728f3c13",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 960,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/01.png",
+          "sourceSha256": "c0a865e8583365fc85f76d93d9763236bd12f111ee86d286ca206d2b216cbc7d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 11,
+            "width": 43,
+            "height": 40
+          },
+          "visiblePixels": 933,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/02.png",
+          "sourceSha256": "d8b0e85d5f4149b7503e11f6cdd82fc83e7f96931f361b19f1371d7fb2a1c6ee",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 13,
+            "width": 43,
+            "height": 38
+          },
+          "visiblePixels": 891,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/03.png",
+          "sourceSha256": "5b01d0ecd9164688744c532c4c3a9e001e2bfdb4d48c8df0702a4b736c952876",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 15,
+            "width": 43,
+            "height": 37
+          },
+          "visiblePixels": 877,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/04.png",
+          "sourceSha256": "815dd8ccda52ad4037ec1ea437e296204ff6d9b70b1564f7e7b3f6d018e8fc36",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 16,
+            "width": 44,
+            "height": 37
+          },
+          "visiblePixels": 896,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/05.png",
+          "sourceSha256": "58cf36e8ec4f99f67eb6b405d8173585df3409080e04b94750988d69f7c43c5f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 18,
+            "width": 45,
+            "height": 36
+          },
+          "visiblePixels": 884,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/06.png",
+          "sourceSha256": "f8bf63ddeabae97d3d7f1e747bf02521aec2ed7b1435806100f9f1bd25b18dd8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 23,
+            "width": 44,
+            "height": 31
+          },
+          "visiblePixels": 776,
+          "colors": 18,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/07.png",
+          "sourceSha256": "120297ebb4d0ceb13fbee6320bee4a07da0d22301424f1e6e2d38eee04e46bb8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 27,
+            "width": 45,
+            "height": 27
+          },
+          "visiblePixels": 745,
+          "colors": 22,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/08.png",
+          "sourceSha256": "a8db7ef2fb2f9269c6bfb399b35fa5a42a1b4e5e2a9fbb0ed20aab00cadeff72",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 28,
+            "width": 44,
+            "height": 26
+          },
+          "visiblePixels": 734,
+          "colors": 20,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thicket-bat/review/die1-0d912017-d81b-43f9-9392-00fcae6702df.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/0d912017-d81b-43f9-9392-00fcae6702df/00.png",
+          "sha256": "c0a865e8583365fc85f76d93d9763236bd12f111ee86d286ca206d2b216cbc7d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/01.png",
+          "sourceSha256": "c0a865e8583365fc85f76d93d9763236bd12f111ee86d286ca206d2b216cbc7d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/0d912017-d81b-43f9-9392-00fcae6702df/01.png",
+          "sha256": "d8b0e85d5f4149b7503e11f6cdd82fc83e7f96931f361b19f1371d7fb2a1c6ee",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/02.png",
+          "sourceSha256": "d8b0e85d5f4149b7503e11f6cdd82fc83e7f96931f361b19f1371d7fb2a1c6ee",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/0d912017-d81b-43f9-9392-00fcae6702df/02.png",
+          "sha256": "5b01d0ecd9164688744c532c4c3a9e001e2bfdb4d48c8df0702a4b736c952876",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/03.png",
+          "sourceSha256": "5b01d0ecd9164688744c532c4c3a9e001e2bfdb4d48c8df0702a4b736c952876",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/0d912017-d81b-43f9-9392-00fcae6702df/03.png",
+          "sha256": "815dd8ccda52ad4037ec1ea437e296204ff6d9b70b1564f7e7b3f6d018e8fc36",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/04.png",
+          "sourceSha256": "815dd8ccda52ad4037ec1ea437e296204ff6d9b70b1564f7e7b3f6d018e8fc36",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/0d912017-d81b-43f9-9392-00fcae6702df/04.png",
+          "sha256": "58cf36e8ec4f99f67eb6b405d8173585df3409080e04b94750988d69f7c43c5f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/05.png",
+          "sourceSha256": "58cf36e8ec4f99f67eb6b405d8173585df3409080e04b94750988d69f7c43c5f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/0d912017-d81b-43f9-9392-00fcae6702df/05.png",
+          "sha256": "f8bf63ddeabae97d3d7f1e747bf02521aec2ed7b1435806100f9f1bd25b18dd8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/06.png",
+          "sourceSha256": "f8bf63ddeabae97d3d7f1e747bf02521aec2ed7b1435806100f9f1bd25b18dd8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/0d912017-d81b-43f9-9392-00fcae6702df/06.png",
+          "sha256": "120297ebb4d0ceb13fbee6320bee4a07da0d22301424f1e6e2d38eee04e46bb8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/07.png",
+          "sourceSha256": "120297ebb4d0ceb13fbee6320bee4a07da0d22301424f1e6e2d38eee04e46bb8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/0d912017-d81b-43f9-9392-00fcae6702df/07.png",
+          "sha256": "a8db7ef2fb2f9269c6bfb399b35fa5a42a1b4e5e2a9fbb0ed20aab00cadeff72",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/0d912017-d81b-43f9-9392-00fcae6702df/08.png",
+          "sourceSha256": "a8db7ef2fb2f9269c6bfb399b35fa5a42a1b4e5e2a9fbb0ed20aab00cadeff72",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "needs grounded end target: genuine collapsed body remains 7px above the fixed floor anchor"
+    },
+    {
+      "motion": "die1",
+      "attempt": 2,
+      "key": "monster-a-thicket-bat-die1-02",
+      "jobId": "327e0332-a3f5-4343-a46b-a8f13e258fd9",
+      "balanceBefore": 565,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626005,
+        "action": "Facing right, lose wing tension, close the eyes, fold both membrane wings around the body and descend downward to the ground, topple onto the side and finish exactly in the supplied collapsed end pose. The final body must rest on the ground at canvas row 59. A single genuine fall ending motionless, no revival and no return to idle. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/b99019d0-d748-43a5-87a6-043e27703e7a/assets/native/full.png"
+      },
+      "queueResponse": "id: 327e0332-a3f5-4343-a46b-a8f13e258fd9\njob_id: 327e0332-a3f5-4343-a46b-a8f13e258fd9\naction: Facing right, lose wing tension, close the eyes, fold both membrane wings around the body and descend downward to the ground, topple onto the side and finish exactly in the supplied collapsed end pose. The final body must rest on the ground at canvas row 59. A single genuine fall ending motionless, no revival and no return to idle. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626005\nasset_id: 399c64f8-07b8-5554-8508-7792f51a5bd3\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"327e0332-a3f5-4343-a46b-a8f13e258fd9\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 327e0332-a3f5-4343-a46b-a8f13e258fd9\njob_id: 327e0332-a3f5-4343-a46b-a8f13e258fd9\nframes: 9\ntransparent: yes\nasset_id: 399c64f8-07b8-5554-8508-7792f51a5bd3\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+        "sha256": "d54da1d2ae95370762ed78a5858bb4dad235cfb9e67e240585496d98d58d211b",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 120,
+        "alphaDifferences": 4,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/00.png",
+          "sourceSha256": "32085f4ff98504444e636916a4624d882f5ac3a91b3e54579214220614e7f436",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 960,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/01.png",
+          "sourceSha256": "451b3fecd3f84ae2baf2b4a9318090c231ee64316222ff6be387b417f1b827a3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 11,
+            "width": 45,
+            "height": 43
+          },
+          "visiblePixels": 952,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/02.png",
+          "sourceSha256": "230bd37f235656f275e4f5202a75ee29dcc0e4c7d87ae3e77e1cbcd1ae066ae1",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 12,
+            "width": 45,
+            "height": 43
+          },
+          "visiblePixels": 954,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/03.png",
+          "sourceSha256": "3c1210b4736a62f2c7c2e1bcc9cc4380b43d934b968a7fdcc3bcbefacff4550e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 14,
+            "width": 43,
+            "height": 42
+          },
+          "visiblePixels": 933,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/04.png",
+          "sourceSha256": "7d9fe1db57626ce95b1f21030d60020fc40a84f7bcd39de0b18e3c5fd991cb35",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 17,
+            "width": 43,
+            "height": 39
+          },
+          "visiblePixels": 911,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/05.png",
+          "sourceSha256": "5c4373d4d5b2b90efe093b715c13c1a67e0376cbb817a1d0bd2f1f5ee665be6d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 21,
+            "width": 43,
+            "height": 35
+          },
+          "visiblePixels": 851,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/06.png",
+          "sourceSha256": "bda16c87e77b36eedc890827b28a526aba13c4fef78341cd5b6bc4cd48e31e39",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 25,
+            "width": 43,
+            "height": 33
+          },
+          "visiblePixels": 833,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/07.png",
+          "sourceSha256": "c4e39f7954955e2fe34d631e07b1618908f92a36b43a4df42920c2a054d0246d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 30,
+            "width": 45,
+            "height": 30
+          },
+          "visiblePixels": 765,
+          "colors": 33,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/08.png",
+          "sourceSha256": "2d95f6667180dbeb34a15de1486595b304ae70204825df770f628d217f0abfad",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 34,
+            "width": 44,
+            "height": 26
+          },
+          "visiblePixels": 734,
+          "colors": 21,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thicket-bat/review/die1-327e0332-a3f5-4343-a46b-a8f13e258fd9.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/00.png",
+          "sha256": "451b3fecd3f84ae2baf2b4a9318090c231ee64316222ff6be387b417f1b827a3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/01.png",
+          "sourceSha256": "451b3fecd3f84ae2baf2b4a9318090c231ee64316222ff6be387b417f1b827a3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/01.png",
+          "sha256": "230bd37f235656f275e4f5202a75ee29dcc0e4c7d87ae3e77e1cbcd1ae066ae1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/02.png",
+          "sourceSha256": "230bd37f235656f275e4f5202a75ee29dcc0e4c7d87ae3e77e1cbcd1ae066ae1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/02.png",
+          "sha256": "3c1210b4736a62f2c7c2e1bcc9cc4380b43d934b968a7fdcc3bcbefacff4550e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/03.png",
+          "sourceSha256": "3c1210b4736a62f2c7c2e1bcc9cc4380b43d934b968a7fdcc3bcbefacff4550e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/03.png",
+          "sha256": "7d9fe1db57626ce95b1f21030d60020fc40a84f7bcd39de0b18e3c5fd991cb35",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/04.png",
+          "sourceSha256": "7d9fe1db57626ce95b1f21030d60020fc40a84f7bcd39de0b18e3c5fd991cb35",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/04.png",
+          "sha256": "5c4373d4d5b2b90efe093b715c13c1a67e0376cbb817a1d0bd2f1f5ee665be6d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/05.png",
+          "sourceSha256": "5c4373d4d5b2b90efe093b715c13c1a67e0376cbb817a1d0bd2f1f5ee665be6d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/05.png",
+          "sha256": "bda16c87e77b36eedc890827b28a526aba13c4fef78341cd5b6bc4cd48e31e39",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/06.png",
+          "sourceSha256": "bda16c87e77b36eedc890827b28a526aba13c4fef78341cd5b6bc4cd48e31e39",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/06.png",
+          "sha256": "c4e39f7954955e2fe34d631e07b1618908f92a36b43a4df42920c2a054d0246d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/07.png",
+          "sourceSha256": "c4e39f7954955e2fe34d631e07b1618908f92a36b43a4df42920c2a054d0246d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/07.png",
+          "sha256": "2d95f6667180dbeb34a15de1486595b304ae70204825df770f628d217f0abfad",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/08.png",
+          "sourceSha256": "2d95f6667180dbeb34a15de1486595b304ae70204825df770f628d217f0abfad",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 양 날개와 귀가 접히며 실제로 아래로 떨어지고 눈을 감은 몸이 바닥에 닿는 단발 쓰러짐. 끝자세 고정."
+    }
+  ],
+  "nativeFacing": "right",
+  "selectedOriginal": {
+    "motion": "original",
+    "attempt": 1,
+    "key": "monster-a-thicket-bat-original-01",
+    "jobId": "6800f953-0fb9-46e2-9197-8707e37da758",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download",
+    "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+    "sha256": "d54da1d2ae95370762ed78a5858bb4dad235cfb9e67e240585496d98d58d211b",
+    "byteSize": 1875,
+    "width": 64,
+    "height": 64,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "visibleBounds": {
+      "x": 10,
+      "y": 10,
+      "width": 42,
+      "height": 43
+    },
+    "visiblePixels": 960,
+    "paletteSize": 25,
+    "chargedGenerations": 1,
+    "directionObserved": "east",
+    "selection": "accepted",
+    "request": {
+      "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Leaf-eared dark plum bat with a moss-green belly, membranous wings and one pair of bright eyes; small low fluttering silhouette. Battle-ready stance facing LEFT (west), slight three-quarter view toward the viewer, camera only slightly above the creature. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, small cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described, no accessories beyond described features. A single creature only, no text, no frame, no background, no scenery, no floor, no cast shadow, no blurred anti-aliasing. Full creature occupies about 44-52 pixels inside this 64 pixel canvas with 4 pixel transparent safety margins.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "direction": "west",
+      "view": "low top-down",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "detail": "medium detail",
+      "seed": 614001,
+      "text_guidance_scale": 8
+    },
+    "nativeFacing": "right"
+  },
+  "anchor": {
+    "x": 32,
+    "y": 60
+  },
+  "animations": {
+    "stand": {
+      "motion": "stand",
+      "attempt": 2,
+      "key": "monster-a-thicket-bat-stand-02",
+      "jobId": "72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856",
+      "balanceBefore": 517,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 626001,
+        "action": "Facing right, hovering in place with one gentle articulated wingbeat: open and fold the two membrane wings modestly, twitch the leaf ears once, return to the exact original ready pose. The dark plum fur and moss-green belly keep exactly the same colors and brightness throughout. No glow, no flash, no magic, no lighting changes. Real hinged wing articulation, no whole-sprite translation. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "queueResponse": "id: 72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856\njob_id: 72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856\naction: Facing right, hovering in place with one gentle articulated wingbeat: open and fold the two membrane wings modestly, twitch the leaf ears once, return to the exact original ready pose. The dark plum fur and moss-green belly keep exactly the same colors and brightness throughout. No glow, no flash, no magic, no lighting changes. Real hinged wing articulation, no whole-sprite translation. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626001\nasset_id: f3d514bb-dae4-52d4-aa6c-31fa962b99fc\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856\njob_id: 72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856\nframes: 5\ntransparent: yes\nasset_id: f3d514bb-dae4-52d4-aa6c-31fa962b99fc\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+        "sha256": "d54da1d2ae95370762ed78a5858bb4dad235cfb9e67e240585496d98d58d211b",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/6800f953-0fb9-46e2-9197-8707e37da758/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 36,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/00.png",
+          "sourceSha256": "04be126907fbe7bc20480b11bd7561a6ffb2cd218e4e6fd20e83f764ebe28d7e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 961,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/01.png",
+          "sourceSha256": "de216bcec59a951e338fbb7dea70bf76d3c717554ed12bef0c7e9095df1332a1",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 12,
+            "width": 42,
+            "height": 40
+          },
+          "visiblePixels": 917,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/02.png",
+          "sourceSha256": "805cfed4f77165a25fc2077633ff51d0ea7e6301aa146cd008ca7ec3cdf8030a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 13,
+            "width": 44,
+            "height": 37
+          },
+          "visiblePixels": 903,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/03.png",
+          "sourceSha256": "a3738624206d91e0d89ef97a5db61b57b30aaae9ab59f078560022e4dc7989d2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 12,
+            "width": 42,
+            "height": 39
+          },
+          "visiblePixels": 912,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/04.png",
+          "sourceSha256": "27c72f786b78619dc708bb436dd2e014daf018022962a28fa9e154b35f7e1554",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 43
+          },
+          "visiblePixels": 961,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thicket-bat/review/stand-72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/00.png",
+          "sha256": "de216bcec59a951e338fbb7dea70bf76d3c717554ed12bef0c7e9095df1332a1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/01.png",
+          "sourceSha256": "de216bcec59a951e338fbb7dea70bf76d3c717554ed12bef0c7e9095df1332a1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/01.png",
+          "sha256": "805cfed4f77165a25fc2077633ff51d0ea7e6301aa146cd008ca7ec3cdf8030a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/02.png",
+          "sourceSha256": "805cfed4f77165a25fc2077633ff51d0ea7e6301aa146cd008ca7ec3cdf8030a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/02.png",
+          "sha256": "a3738624206d91e0d89ef97a5db61b57b30aaae9ab59f078560022e4dc7989d2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/03.png",
+          "sourceSha256": "a3738624206d91e0d89ef97a5db61b57b30aaae9ab59f078560022e4dc7989d2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/03.png",
+          "sha256": "27c72f786b78619dc708bb436dd2e014daf018022962a28fa9e154b35f7e1554",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/stand/72283eb0-ec3f-4ab0-a1f7-8c8aab0e2856/04.png",
+          "sourceSha256": "27c72f786b78619dc708bb436dd2e014daf018022962a28fa9e154b35f7e1554",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: stable plum/green palette, hinged wing changes and a genuine blink, same native right-facing pose",
+      "notes": "실제 생성 대기. 색 번쩍임 없이 날개·귀·눈이 움직이고 같은 우향 자세로 복귀."
+    },
+    "attack1": {
+      "label": "공격",
+      "loop": false,
+      "jobId": "54e5b332-eeda-4395-9584-bb416eed1d4f",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/00.png",
+          "sha256": "3807ffbcf10c681b5613365c1a2a7a10b092507829eda4b529d4469064ee82b1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/01.png",
+          "sourceSha256": "3807ffbcf10c681b5613365c1a2a7a10b092507829eda4b529d4469064ee82b1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/01.png",
+          "sha256": "de3974feb1371485ac82b762fc09537089a35b4074175d41a13cadd7b4ba03e7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/02.png",
+          "sourceSha256": "de3974feb1371485ac82b762fc09537089a35b4074175d41a13cadd7b4ba03e7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/02.png",
+          "sha256": "f9cc3c958ef570ce308c6f3b9054c5d9e32c61cf0890ab6bcc710785e93f0811",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/03.png",
+          "sourceSha256": "f9cc3c958ef570ce308c6f3b9054c5d9e32c61cf0890ab6bcc710785e93f0811",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/03.png",
+          "sha256": "f47be9f6bce0e602523098ce62f981f91018137c053b2e95912d09d99079646d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/04.png",
+          "sourceSha256": "f47be9f6bce0e602523098ce62f981f91018137c053b2e95912d09d99079646d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/04.png",
+          "sha256": "d734f1525a6d8a976ff444506d0adb091d8d635b687c5cb591aa3034ac3911d6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/05.png",
+          "sourceSha256": "d734f1525a6d8a976ff444506d0adb091d8d635b687c5cb591aa3034ac3911d6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/05.png",
+          "sha256": "9077b508f53e23a65415f64c349086efe480bd7b088ba5e9484ba388933c60fb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/06.png",
+          "sourceSha256": "9077b508f53e23a65415f64c349086efe480bd7b088ba5e9484ba388933c60fb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/06.png",
+          "sha256": "f15bf4fbd0366005883a9cb2d8bf551f21345d7b361c8aa150691a37bad7f726",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/07.png",
+          "sourceSha256": "f15bf4fbd0366005883a9cb2d8bf551f21345d7b361c8aa150691a37bad7f726",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/07.png",
+          "sha256": "5d1b817f9aa1186c52b5d1adf7cfe931a24ad80c19a527ff07bfe77d35d082a2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/54e5b332-eeda-4395-9584-bb416eed1d4f/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/attack1/54e5b332-eeda-4395-9584-bb416eed1d4f/08.png",
+          "sourceSha256": "5d1b817f9aa1186c52b5d1adf7cfe931a24ad80c19a527ff07bfe77d35d082a2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "우향 준비에서 날개를 뒤로 젖히고 송곳니를 드러내며 돌진한 뒤 복귀. 3번에서 주둥이가 가장 오른쪽으로 뻗는 접촉 자세.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/thicket-bat/review/attack1-54e5b332-eeda-4395-9584-bb416eed1d4f.png",
+      "contactFrameIndex": 3,
+      "contactProgress": 0.43749999999999994
+    },
+    "move": {
+      "label": "이동",
+      "loop": true,
+      "jobId": "73567021-5c50-49a3-a784-695644baf54b",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/00.png",
+          "sha256": "69b3326fe0ddb2a2dc3fd4c4489646a19366c2449da1e66ef5c6bf7e62638657",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/01.png",
+          "sourceSha256": "69b3326fe0ddb2a2dc3fd4c4489646a19366c2449da1e66ef5c6bf7e62638657",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/01.png",
+          "sha256": "0556edb54113ed93f9158e3874c2490f063cf464c409650827b4c31c64f2099f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/02.png",
+          "sourceSha256": "0556edb54113ed93f9158e3874c2490f063cf464c409650827b4c31c64f2099f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/02.png",
+          "sha256": "2cae6b67a8332b59bf8a8b6a6acdc2386cfbef3baaace3da7d055cceea713042",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/03.png",
+          "sourceSha256": "2cae6b67a8332b59bf8a8b6a6acdc2386cfbef3baaace3da7d055cceea713042",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/03.png",
+          "sha256": "f3230104bdb086e4a1da6f3016dde3cfb0e4b0ad9142ded3ff1788e16fec93ba",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/04.png",
+          "sourceSha256": "f3230104bdb086e4a1da6f3016dde3cfb0e4b0ad9142ded3ff1788e16fec93ba",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/04.png",
+          "sha256": "b82479e86424cd9ba8c75747fb12ac1f704597e9e7c4636c86775038ddf250d8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/05.png",
+          "sourceSha256": "b82479e86424cd9ba8c75747fb12ac1f704597e9e7c4636c86775038ddf250d8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/05.png",
+          "sha256": "9392463a6d738130c37c31713a7ab0eaca885e1ebbf4d709f0bd39eed3de89ae",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/06.png",
+          "sourceSha256": "9392463a6d738130c37c31713a7ab0eaca885e1ebbf4d709f0bd39eed3de89ae",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/06.png",
+          "sha256": "57ad0fe2dfb46c8a18a48f23c1586bd8900718e1d6876ca569775501da3ca145",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/07.png",
+          "sourceSha256": "57ad0fe2dfb46c8a18a48f23c1586bd8900718e1d6876ca569775501da3ca145",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/move/73567021-5c50-49a3-a784-695644baf54b/07.png",
+          "sha256": "48c5560f8bab4feee64603cde5b3456a5f200533baf022aa8552f8638c4f35d8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/73567021-5c50-49a3-a784-695644baf54b/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/move/73567021-5c50-49a3-a784-695644baf54b/08.png",
+          "sourceSha256": "48c5560f8bab4feee64603cde5b3456a5f200533baf022aa8552f8638c4f35d8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "우향으로 날개가 위·아래로 크게 접히고 펼쳐지며 몸통이 전진 자세를 취하는 실제 비행 루프.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/thicket-bat/review/move-73567021-5c50-49a3-a784-695644baf54b.png"
+    },
+    "hit1": {
+      "label": "피격",
+      "loop": false,
+      "jobId": "a0a17d87-4c75-470a-b85c-be15fc1c54ae",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/00.png",
+          "sha256": "6d934a40ec31f236375c2700eaf74111f2395899f6b00b4529ebf712f91e80a8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/01.png",
+          "sourceSha256": "6d934a40ec31f236375c2700eaf74111f2395899f6b00b4529ebf712f91e80a8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/01.png",
+          "sha256": "79b7bd0a300355f76ac8fcb7c5c1b381373715dd650594e4626fcf93edc2284e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/02.png",
+          "sourceSha256": "79b7bd0a300355f76ac8fcb7c5c1b381373715dd650594e4626fcf93edc2284e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/02.png",
+          "sha256": "78e9d07de2a2cf861f371de6354e820a6d50ed7050b98568fa7f2e6ffa3a5fd3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/03.png",
+          "sourceSha256": "78e9d07de2a2cf861f371de6354e820a6d50ed7050b98568fa7f2e6ffa3a5fd3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/03.png",
+          "sha256": "214cc0093c64cb7b3852b2ef1093862613f574f02f5f6820858c35cf7a1c1574",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a0a17d87-4c75-470a-b85c-be15fc1c54ae/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/hit1/a0a17d87-4c75-470a-b85c-be15fc1c54ae/04.png",
+          "sourceSha256": "214cc0093c64cb7b3852b2ef1093862613f574f02f5f6820858c35cf7a1c1574",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "우향 얼굴을 찡그리고 양 날개를 감싸며 움츠린 뒤 원래 비행 자세로 복귀하는 단발 피격.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/thicket-bat/review/hit1-a0a17d87-4c75-470a-b85c-be15fc1c54ae.png"
+    },
+    "die1": {
+      "label": "쓰러짐",
+      "loop": false,
+      "jobId": "327e0332-a3f5-4343-a46b-a8f13e258fd9",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/00.png",
+          "sha256": "451b3fecd3f84ae2baf2b4a9318090c231ee64316222ff6be387b417f1b827a3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/01.png",
+          "sourceSha256": "451b3fecd3f84ae2baf2b4a9318090c231ee64316222ff6be387b417f1b827a3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/01.png",
+          "sha256": "230bd37f235656f275e4f5202a75ee29dcc0e4c7d87ae3e77e1cbcd1ae066ae1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/02.png",
+          "sourceSha256": "230bd37f235656f275e4f5202a75ee29dcc0e4c7d87ae3e77e1cbcd1ae066ae1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/02.png",
+          "sha256": "3c1210b4736a62f2c7c2e1bcc9cc4380b43d934b968a7fdcc3bcbefacff4550e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/03.png",
+          "sourceSha256": "3c1210b4736a62f2c7c2e1bcc9cc4380b43d934b968a7fdcc3bcbefacff4550e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/03.png",
+          "sha256": "7d9fe1db57626ce95b1f21030d60020fc40a84f7bcd39de0b18e3c5fd991cb35",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/04.png",
+          "sourceSha256": "7d9fe1db57626ce95b1f21030d60020fc40a84f7bcd39de0b18e3c5fd991cb35",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/04.png",
+          "sha256": "5c4373d4d5b2b90efe093b715c13c1a67e0376cbb817a1d0bd2f1f5ee665be6d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/05.png",
+          "sourceSha256": "5c4373d4d5b2b90efe093b715c13c1a67e0376cbb817a1d0bd2f1f5ee665be6d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/05.png",
+          "sha256": "bda16c87e77b36eedc890827b28a526aba13c4fef78341cd5b6bc4cd48e31e39",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/06.png",
+          "sourceSha256": "bda16c87e77b36eedc890827b28a526aba13c4fef78341cd5b6bc4cd48e31e39",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/06.png",
+          "sha256": "c4e39f7954955e2fe34d631e07b1618908f92a36b43a4df42920c2a054d0246d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/07.png",
+          "sourceSha256": "c4e39f7954955e2fe34d631e07b1618908f92a36b43a4df42920c2a054d0246d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/frames/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/07.png",
+          "sha256": "2d95f6667180dbeb34a15de1486595b304ae70204825df770f628d217f0abfad",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/327e0332-a3f5-4343-a46b-a8f13e258fd9/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/327e0332-a3f5-4343-a46b-a8f13e258fd9/08.png",
+          "sourceSha256": "2d95f6667180dbeb34a15de1486595b304ae70204825df770f628d217f0abfad",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "양 날개와 귀가 접히며 실제로 아래로 떨어지고 눈을 감은 몸이 바닥에 닿는 단발 쓰러짐. 끝자세 고정.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/thicket-bat/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/thicket-bat/review/die1-327e0332-a3f5-4343-a46b-a8f13e258fd9.png"
+    }
+  },
+  "poseTargets": [
+    {
+      "motion": "die1",
+      "localPath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/target-corpse-02.png",
+      "recordPath": "public/assets/maplestory/monster-expansion/thicket-bat/originals/die1/target-corpse-02.json",
+      "drawingId": "b99019d0-d748-43a5-87a6-043e27703e7a",
+      "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/b99019d0-d748-43a5-87a6-043e27703e7a/assets/native/full.png",
+      "source": "https://api.pixellab.ai/mcp/images/0d912017-d81b-43f9-9392-00fcae6702df/download?index=8",
+      "offset": [
+        0,
+        6
+      ],
+      "angle": 0,
+      "pivot": [
+        32,
+        32
+      ],
+      "sha256": "09069c71d822cf5d82ea0905dbd8582158e7f8a1ef856d583894136d7c66cc9e",
+      "paidGenerations": 0,
+      "kind": "free exact native end keyframe; intermediate motion generated by PixelLab",
+      "reason": "원본 픽셀로 누운 끝자세를 지정하고 중간 쓰러짐 프레임은 PixelLab에서 실제 생성."
+    }
+  ]
+}

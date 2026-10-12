@@ -1,0 +1,158 @@
+:root {
+  color-scheme: light;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  color: #292f2b;
+  background: #efeee8;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 1024px;
+}
+main {
+  max-width: 1280px;
+  margin: auto;
+  padding: 25px 32px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.eyebrow {
+  color: #776b52;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  margin: 0 0 7px;
+}
+h1 {
+  font-size: 25px;
+  margin: 0;
+  font-weight: 650;
+}
+a {
+  color: #596953;
+  font-size: 13px;
+  text-underline-offset: 3px;
+}
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+legend {
+  position: absolute;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+}
+button,
+select {
+  font: inherit;
+  color: inherit;
+  background: #faf9f5;
+  border: 1px solid #d2d2c8;
+  border-radius: 6px;
+  padding: 8px 11px;
+}
+button {
+  cursor: pointer;
+}
+button[aria-pressed='true'] {
+  background: #526650;
+  color: white;
+  border-color: #526650;
+}
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 2px solid #9b7840;
+  outline-offset: 3px;
+}
+input {
+  accent-color: #526650;
+}
+label {
+  white-space: nowrap;
+}
+.separator {
+  flex: 1;
+}
+.timeline {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 18px 0;
+  font-size: 12px;
+  color: #656c63;
+}
+.timeline input {
+  flex: 1;
+}
+output {
+  min-width: 235px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+article {
+  border: 1px solid #d2d4c8;
+  border-radius: 9px;
+  background: #faf9f5;
+  overflow: hidden;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 18px;
+}
+h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+.heading span {
+  font-size: 12px;
+  color: #6b7367;
+}
+.stage {
+  height: 360px;
+  overflow: hidden;
+}
+canvas {
+  display: block;
+}
+article p {
+  margin: 0;
+  padding: 12px 18px;
+  font-size: 12px;
+  color: #757969;
+}
+footer {
+  margin-top: 18px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #5e685b;
+}
+footer p {
+  margin: 6px 0;
+}
+.note {
+  color: #8a806c;
+}

@@ -1,0 +1,388 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-11",
+  "round": 2,
+  "provider": "PixelLab",
+  "tool": "create_image_pro_flash",
+  "model": "Pro Flash",
+  "status": "completed-rejected-by-user",
+  "scope": "전면 후보 4개. 1.5등신·넓은 머리로 비율 수정. 기존 후보 6개는 보존.",
+  "candidateLimit": 4,
+  "requestLimit": 4,
+  "retryLimit": 0,
+  "generationBudget": 20,
+  "balanceBefore": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1903\ngenerations_used: 97\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "referenceImages": [],
+  "comparison": {
+    "canvas": {
+      "width": 64,
+      "height": 64
+    },
+    "targetHeight": 56,
+    "headHeightRatio": "약 2/3",
+    "headWidthRatio": "머리 높이 대비 1.2~1.3배",
+    "pose": "거의 정면인 전신 정지",
+    "outfit": "청록 민소매 조끼, 모래색 바지, 적갈색 허리띠, 아이보리 붕대",
+    "selection": null
+  },
+  "candidates": [
+    {
+      "id": 1,
+      "label": "넓고 둥근 얼굴",
+      "seed": 101201,
+      "variant": "Face variation: very broad softly rounded face and wide cheeks, short broad muzzle, gently arched thick eyebrows, friendly closed-mouth smile. Wide head about 1.2 times its height, with compact cheek tufts.",
+      "request": {
+        "description": "Original adult anthropomorphic tiger martial artist, cheerful and confident. One full-body, nearly front-facing pixel-art game sprite.\nCRITICAL: only 1.5 heads tall. The HUGE head including ears is about TWO THIRDS of the entire standing height. A very WIDE, slightly flattened round head, wider cheek-to-cheek than it is tall, much wider than the shoulders. Almost no neck. TINY squat torso directly under the head, very short arms and stubby legs, big simple paws. Adult expressive tiger face, not a baby. Do not draw a long torso or long legs.\nAmber-orange fur, few bold dark-brown stripes, broad short cream muzzle, cream cheek tufts, round ears.\nSame outfit: dark teal sleeveless short martial-arts vest, loose sand-colored trousers, rust-red waist sash, broad ivory wrist and ankle wraps, bare tiger paws, short thick striped tail close behind the body.\nSame pose: relaxed standing, feet planted slightly apart, both hands lowered beside the waist. Face almost directly forward, both eyes similar in size and clearly visible, muzzle near the center, only a tiny natural turn. Minimal downward camera angle.\nCrisp native pixel art. Rounded forehead, protruding muzzle, cheek side planes and paws have clear pixel clusters and 3-4 shading tones, soft upper-left light, selective dark outline. Character about 56px tall inside a 64x64 canvas, ears and feet fully visible with transparent margin.\nTransparent background. No scene, floor, ground shadow, text, weapon, cape, extra props, smooth gradients, antialiasing or blur.\nFace variation: very broad softly rounded face and wide cheeks, short broad muzzle, gently arched thick eyebrows, friendly closed-mouth smile. Wide head about 1.2 times its height, with compact cheek tufts.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "seed": 101201
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"da870f16-076b-4cd8-97db-ac77eee9c988\",\n  \"image_id\": \"a232dc0a-caf2-5ae7-9511-4b52e99a5651\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"a232dc0a-caf2-5ae7-9511-4b52e99a5651\",\n  \"job_id\": \"da870f16-076b-4cd8-97db-ac77eee9c988\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/da870f16-076b-4cd8-97db-ac77eee9c988/download\"\n}\nPoll get_image(job_id=\"da870f16-076b-4cd8-97db-ac77eee9c988\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "da870f16-076b-4cd8-97db-ac77eee9c988",
+          "image_id": "a232dc0a-caf2-5ae7-9511-4b52e99a5651",
+          "status": "processing",
+          "source_image_id": "a232dc0a-caf2-5ae7-9511-4b52e99a5651",
+          "job_id": "da870f16-076b-4cd8-97db-ac77eee9c988",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/da870f16-076b-4cd8-97db-ac77eee9c988/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "da870f16-076b-4cd8-97db-ac77eee9c988",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/da870f16-076b-4cd8-97db-ac77eee9c988/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/da870f16-076b-4cd8-97db-ac77eee9c988/download"
+        ],
+        "asset": {
+          "id": "a232dc0a-caf2-5ae7-9511-4b52e99a5651",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: da870f16-076b-4cd8-97db-ac77eee9c988\njob_id: da870f16-076b-4cd8-97db-ac77eee9c988\nframes: 1\ntransparent: yes\nasset_id: a232dc0a-caf2-5ae7-9511-4b52e99a5651\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/da870f16-076b-4cd8-97db-ac77eee9c988/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-02/originals/candidate-01.png",
+      "reviewDisposition": "rejected-by-user",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-02/originals/candidate-01.png",
+        "sha256": "31df7dcdab16dc3adcbd7e8133274c90899f2c6951a21c35ddcd2eb111dfefbe",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3737,
+        "alphaBBox": [
+          5,
+          4,
+          54,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      }
+    },
+    {
+      "id": 2,
+      "label": "넙대대한 볼 · 느긋한 표정",
+      "seed": 101202,
+      "variant": "Face variation: very broad flatter cheek-to-cheek silhouette, horizontally spreading cream cheek tufts, relaxed thick eyebrows and warm knowing eyes with an easy small smile. Head about 1.3 times its height, tiny squat body.",
+      "request": {
+        "description": "Original adult anthropomorphic tiger martial artist, cheerful and confident. One full-body, nearly front-facing pixel-art game sprite.\nCRITICAL: only 1.5 heads tall. The HUGE head including ears is about TWO THIRDS of the entire standing height. A very WIDE, slightly flattened round head, wider cheek-to-cheek than it is tall, much wider than the shoulders. Almost no neck. TINY squat torso directly under the head, very short arms and stubby legs, big simple paws. Adult expressive tiger face, not a baby. Do not draw a long torso or long legs.\nAmber-orange fur, few bold dark-brown stripes, broad short cream muzzle, cream cheek tufts, round ears.\nSame outfit: dark teal sleeveless short martial-arts vest, loose sand-colored trousers, rust-red waist sash, broad ivory wrist and ankle wraps, bare tiger paws, short thick striped tail close behind the body.\nSame pose: relaxed standing, feet planted slightly apart, both hands lowered beside the waist. Face almost directly forward, both eyes similar in size and clearly visible, muzzle near the center, only a tiny natural turn. Minimal downward camera angle.\nCrisp native pixel art. Rounded forehead, protruding muzzle, cheek side planes and paws have clear pixel clusters and 3-4 shading tones, soft upper-left light, selective dark outline. Character about 56px tall inside a 64x64 canvas, ears and feet fully visible with transparent margin.\nTransparent background. No scene, floor, ground shadow, text, weapon, cape, extra props, smooth gradients, antialiasing or blur.\nFace variation: very broad flatter cheek-to-cheek silhouette, horizontally spreading cream cheek tufts, relaxed thick eyebrows and warm knowing eyes with an easy small smile. Head about 1.3 times its height, tiny squat body.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "seed": 101202
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"1382e14b-b1ee-4f57-a22b-89877b60d9e5\",\n  \"image_id\": \"a9b21089-19e1-5a66-8cbb-be65a8b2a500\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"a9b21089-19e1-5a66-8cbb-be65a8b2a500\",\n  \"job_id\": \"1382e14b-b1ee-4f57-a22b-89877b60d9e5\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/1382e14b-b1ee-4f57-a22b-89877b60d9e5/download\"\n}\nPoll get_image(job_id=\"1382e14b-b1ee-4f57-a22b-89877b60d9e5\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "1382e14b-b1ee-4f57-a22b-89877b60d9e5",
+          "image_id": "a9b21089-19e1-5a66-8cbb-be65a8b2a500",
+          "status": "processing",
+          "source_image_id": "a9b21089-19e1-5a66-8cbb-be65a8b2a500",
+          "job_id": "1382e14b-b1ee-4f57-a22b-89877b60d9e5",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/1382e14b-b1ee-4f57-a22b-89877b60d9e5/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "1382e14b-b1ee-4f57-a22b-89877b60d9e5",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/1382e14b-b1ee-4f57-a22b-89877b60d9e5/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/1382e14b-b1ee-4f57-a22b-89877b60d9e5/download"
+        ],
+        "asset": {
+          "id": "a9b21089-19e1-5a66-8cbb-be65a8b2a500",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: 1382e14b-b1ee-4f57-a22b-89877b60d9e5\njob_id: 1382e14b-b1ee-4f57-a22b-89877b60d9e5\nframes: 1\ntransparent: yes\nasset_id: a9b21089-19e1-5a66-8cbb-be65a8b2a500\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/1382e14b-b1ee-4f57-a22b-89877b60d9e5/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-02/originals/candidate-02.png",
+      "reviewDisposition": "rejected-by-user",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-02/originals/candidate-02.png",
+        "sha256": "54e68ede8ea7b1d7511e43dea55a2e6e066635be48e9f58db0e5d620dbf6f569",
+        "width": 64,
+        "height": 64,
+        "byteSize": 4151,
+        "alphaBBox": [
+          8,
+          3,
+          56,
+          62
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      }
+    },
+    {
+      "id": 3,
+      "label": "큰 이마 · 또렷한 눈",
+      "seed": 101203,
+      "variant": "Face variation: enormous broad forehead, clearly readable friendly eyes beneath thick expressive brows, broad rounded cream muzzle and a subtle confident grin. Oversized head about 1.25 times its height, cheeks widen the silhouette.",
+      "request": {
+        "description": "Original adult anthropomorphic tiger martial artist, cheerful and confident. One full-body, nearly front-facing pixel-art game sprite.\nCRITICAL: only 1.5 heads tall. The HUGE head including ears is about TWO THIRDS of the entire standing height. A very WIDE, slightly flattened round head, wider cheek-to-cheek than it is tall, much wider than the shoulders. Almost no neck. TINY squat torso directly under the head, very short arms and stubby legs, big simple paws. Adult expressive tiger face, not a baby. Do not draw a long torso or long legs.\nAmber-orange fur, few bold dark-brown stripes, broad short cream muzzle, cream cheek tufts, round ears.\nSame outfit: dark teal sleeveless short martial-arts vest, loose sand-colored trousers, rust-red waist sash, broad ivory wrist and ankle wraps, bare tiger paws, short thick striped tail close behind the body.\nSame pose: relaxed standing, feet planted slightly apart, both hands lowered beside the waist. Face almost directly forward, both eyes similar in size and clearly visible, muzzle near the center, only a tiny natural turn. Minimal downward camera angle.\nCrisp native pixel art. Rounded forehead, protruding muzzle, cheek side planes and paws have clear pixel clusters and 3-4 shading tones, soft upper-left light, selective dark outline. Character about 56px tall inside a 64x64 canvas, ears and feet fully visible with transparent margin.\nTransparent background. No scene, floor, ground shadow, text, weapon, cape, extra props, smooth gradients, antialiasing or blur.\nFace variation: enormous broad forehead, clearly readable friendly eyes beneath thick expressive brows, broad rounded cream muzzle and a subtle confident grin. Oversized head about 1.25 times its height, cheeks widen the silhouette.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "seed": 101203
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"c0f78203-f671-42b0-a179-e1a64b8ff4e3\",\n  \"image_id\": \"09a5043a-6f48-54e0-9d2e-98764e3416d8\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"09a5043a-6f48-54e0-9d2e-98764e3416d8\",\n  \"job_id\": \"c0f78203-f671-42b0-a179-e1a64b8ff4e3\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/c0f78203-f671-42b0-a179-e1a64b8ff4e3/download\"\n}\nPoll get_image(job_id=\"c0f78203-f671-42b0-a179-e1a64b8ff4e3\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "c0f78203-f671-42b0-a179-e1a64b8ff4e3",
+          "image_id": "09a5043a-6f48-54e0-9d2e-98764e3416d8",
+          "status": "processing",
+          "source_image_id": "09a5043a-6f48-54e0-9d2e-98764e3416d8",
+          "job_id": "c0f78203-f671-42b0-a179-e1a64b8ff4e3",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/c0f78203-f671-42b0-a179-e1a64b8ff4e3/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "c0f78203-f671-42b0-a179-e1a64b8ff4e3",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/c0f78203-f671-42b0-a179-e1a64b8ff4e3/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/c0f78203-f671-42b0-a179-e1a64b8ff4e3/download"
+        ],
+        "asset": {
+          "id": "09a5043a-6f48-54e0-9d2e-98764e3416d8",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: c0f78203-f671-42b0-a179-e1a64b8ff4e3\njob_id: c0f78203-f671-42b0-a179-e1a64b8ff4e3\nframes: 1\ntransparent: yes\nasset_id: 09a5043a-6f48-54e0-9d2e-98764e3416d8\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/c0f78203-f671-42b0-a179-e1a64b8ff4e3/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-02/originals/candidate-03.png",
+      "reviewDisposition": "rejected-by-user",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-02/originals/candidate-03.png",
+        "sha256": "b8c75063fb289cd29f2d31a887c1ff64568241ce9a0839a950ee22e23a6f525b",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3795,
+        "alphaBBox": [
+          10,
+          3,
+          53,
+          62
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      }
+    },
+    {
+      "id": 4,
+      "label": "풍성한 볼털 · 호방한 미소",
+      "seed": 101204,
+      "variant": "Face variation: huge wide head with full fluffy cream cheek tufts spreading sideways, round ears, relaxed friendly eyes and a broad cheerful grin. Adult carefree martial artist, head about 1.3 times its height on a very tiny sturdy body.",
+      "request": {
+        "description": "Original adult anthropomorphic tiger martial artist, cheerful and confident. One full-body, nearly front-facing pixel-art game sprite.\nCRITICAL: only 1.5 heads tall. The HUGE head including ears is about TWO THIRDS of the entire standing height. A very WIDE, slightly flattened round head, wider cheek-to-cheek than it is tall, much wider than the shoulders. Almost no neck. TINY squat torso directly under the head, very short arms and stubby legs, big simple paws. Adult expressive tiger face, not a baby. Do not draw a long torso or long legs.\nAmber-orange fur, few bold dark-brown stripes, broad short cream muzzle, cream cheek tufts, round ears.\nSame outfit: dark teal sleeveless short martial-arts vest, loose sand-colored trousers, rust-red waist sash, broad ivory wrist and ankle wraps, bare tiger paws, short thick striped tail close behind the body.\nSame pose: relaxed standing, feet planted slightly apart, both hands lowered beside the waist. Face almost directly forward, both eyes similar in size and clearly visible, muzzle near the center, only a tiny natural turn. Minimal downward camera angle.\nCrisp native pixel art. Rounded forehead, protruding muzzle, cheek side planes and paws have clear pixel clusters and 3-4 shading tones, soft upper-left light, selective dark outline. Character about 56px tall inside a 64x64 canvas, ears and feet fully visible with transparent margin.\nTransparent background. No scene, floor, ground shadow, text, weapon, cape, extra props, smooth gradients, antialiasing or blur.\nFace variation: huge wide head with full fluffy cream cheek tufts spreading sideways, round ears, relaxed friendly eyes and a broad cheerful grin. Adult carefree martial artist, head about 1.3 times its height on a very tiny sturdy body.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "seed": 101204
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"6ea323bd-afc5-4611-9f57-f6e64113a0bb\",\n  \"image_id\": \"999f7d6e-ca64-5e39-85c5-2e149fa211d4\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"999f7d6e-ca64-5e39-85c5-2e149fa211d4\",\n  \"job_id\": \"6ea323bd-afc5-4611-9f57-f6e64113a0bb\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/6ea323bd-afc5-4611-9f57-f6e64113a0bb/download\"\n}\nPoll get_image(job_id=\"6ea323bd-afc5-4611-9f57-f6e64113a0bb\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "6ea323bd-afc5-4611-9f57-f6e64113a0bb",
+          "image_id": "999f7d6e-ca64-5e39-85c5-2e149fa211d4",
+          "status": "processing",
+          "source_image_id": "999f7d6e-ca64-5e39-85c5-2e149fa211d4",
+          "job_id": "6ea323bd-afc5-4611-9f57-f6e64113a0bb",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/6ea323bd-afc5-4611-9f57-f6e64113a0bb/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "6ea323bd-afc5-4611-9f57-f6e64113a0bb",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/6ea323bd-afc5-4611-9f57-f6e64113a0bb/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/6ea323bd-afc5-4611-9f57-f6e64113a0bb/download"
+        ],
+        "asset": {
+          "id": "999f7d6e-ca64-5e39-85c5-2e149fa211d4",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: 6ea323bd-afc5-4611-9f57-f6e64113a0bb\njob_id: 6ea323bd-afc5-4611-9f57-f6e64113a0bb\nframes: 1\ntransparent: yes\nasset_id: 999f7d6e-ca64-5e39-85c5-2e149fa211d4\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/6ea323bd-afc5-4611-9f57-f6e64113a0bb/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-02/originals/candidate-04.png",
+      "reviewDisposition": "rejected-by-user",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-02/originals/candidate-04.png",
+        "sha256": "d0bba7cfc4b69eaac53df7cedfa8e99fefa821148b458c66274d39521fe076b3",
+        "width": 64,
+        "height": 64,
+        "byteSize": 4274,
+        "alphaBBox": [
+          7,
+          2,
+          58,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      }
+    }
+  ],
+  "validationFailures": [
+    {
+      "id": 1,
+      "label": "넓고 둥근 얼굴",
+      "request": {
+        "description": "One original adult anthropomorphic tiger martial artist. Full-body front-view game sprite, cheerful confident and easygoing.\nCRITICAL PROPORTIONS: extreme big-headed chibi, only about ONE AND A HALF HEADS TALL. The head including ears occupies roughly two thirds of the entire standing height. Very large WIDE, horizontally broad, slightly flattened round tiger head. The cheek-to-cheek width is visibly greater than the head height. Head much wider than shoulders and torso. Tiny squat adult body tucked directly beneath the oversized head, almost no visible neck, very short arms and stubby legs, big simple paws. Adult tiger face and fighter attitude on a tiny body, not a baby animal. Do not draw a normally proportioned torso or long legs.\nWarm amber-orange fur with a few bold dark-brown tiger stripes, cream cheek tufts and short broad cream muzzle, round tiger ears. Outfit fixed: dark teal sleeveless short martial-arts vest, sand-colored loose trousers, simple rust-red waist sash, broad ivory wrist and ankle wraps, bare tiger paws. Short thick striped tail kept close behind the tiny body.\nPose fixed: relaxed standing, both feet planted slightly apart, hands lowered beside the waist with both paws visible. Body faces the viewer. Face almost straight forward, both eyes clearly visible and similar in size, muzzle close to center, only a tiny natural turn. No strong three-quarter turn. Camera only slightly above eye level, minimal downward angle.\nCrisp native 64-pixel RPG sprite, rounded dimensional forehead, protruding muzzle, cream cheek side planes and paws defined by clear pixel clusters and three or four distinct shading tones. Soft upper-left lighting, selective dark outline, clean restrained highlights. Entire character approximately 56 pixels tall, entire ears and both feet visible with transparent margin. One character only, transparent background. No floor, ground shadow, scene, text, weapon, cape, extra props, smooth gradients, antialiasing or blur.\nFace variation: very broad softly rounded face and wide cheeks, short broad muzzle, gently arched thick eyebrows, friendly closed-mouth smile. Wide head about 1.2 times its height, with compact cheek tufts.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "seed": 101201
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "1 validation error for call[create_image_pro_flash]\ndescription\n  String should have at most 2000 characters [type=string_too_long, input_value='One original adult anthr...th compact cheek tufts.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_too_long"
+          }
+        ],
+        "isError": true
+      }
+    }
+  ],
+  "balanceAfter": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1883\ngenerations_used: 117\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "actualCostGenerations": 20,
+  "requests": 4,
+  "retries": 0
+}

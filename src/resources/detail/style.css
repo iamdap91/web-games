@@ -1,0 +1,70 @@
+html {
+  scroll-behavior: smooth;
+}
+.detail-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #181b1cf2;
+  border-bottom: 1px solid #4c574c;
+  padding: 12px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+}
+.detail-nav a {
+  font-size: 12px;
+}
+section {
+  scroll-margin-top: 65px;
+}
+.intro {
+  max-width: 860px;
+}
+.stage {
+  background: #2d3930;
+  border-color: #4b5c4f;
+}
+.controls select {
+  color: #e4dfd3;
+  background: #29382d;
+  border-color: #526a56;
+}
+.controls output {
+  color: #a7b3ab;
+}
+#scene-preview > a {
+  display: inline-block;
+  padding: 14px 20px;
+  border: 1px solid #806f49;
+  border-radius: 8px;
+  background: #302e25;
+  margin: 18px 0;
+}
+#scene-preview img {
+  display: block;
+  max-height: 320px;
+}
+#resource-information > .resource-card {
+  max-width: 860px;
+}
+#resource-information > .resource-card .resource-image {
+  display: none;
+}
+#resource-information > .resource-card h3 {
+  margin-top: 0;
+}
+#records a {
+  display: block;
+  font-size: 13px;
+}
+#originals-section p,
+#resource-information > p {
+  color: #a7b3ab;
+  font-size: 13px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

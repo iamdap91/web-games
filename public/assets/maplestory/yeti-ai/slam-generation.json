@@ -1,0 +1,963 @@
+{
+  "version": 1,
+  "createdAt": "2026-10-10",
+  "service": "PixelLab MCP",
+  "purpose": "양손을 머리 위로 들었다가 함께 내리찍고 복귀하는 예티 공격",
+  "budget": {
+    "chargedGenerations": 8,
+    "remainingBefore": 1955,
+    "remainingAfter": 1947,
+    "usdCreditsSpent": 0
+  },
+  "jobs": [
+    {
+      "key": "raised",
+      "seed": 2026101010,
+      "description": "Same exact LEFT-facing 3/4 white yeti, blue face/hands/feet, horns, fur, palette and pixel size. Raise BOTH huge fists fully ABOVE its head, elbows bent, ready for a two-handed downward smash. Both fists clearly visible in upper transparent space. Keep BOTH feet planted at the SAME x positions and ground y=152, same torso size and facing LEFT. No jump, rotation, weapons, extra limbs, effects or shadow. One full-body 128x160 transparent pixel sprite, with complete raised fists and feet.",
+      "tool": "edit_image_pixen",
+      "jobId": "4b7103a0-acb4-4592-b1cd-a063f57627cd",
+      "parameters": {
+        "description": "Same exact LEFT-facing 3/4 white yeti, blue face/hands/feet, horns, fur, palette and pixel size. Raise BOTH huge fists fully ABOVE its head, elbows bent, ready for a two-handed downward smash. Both fists clearly visible in upper transparent space. Keep BOTH feet planted at the SAME x positions and ground y=152, same torso size and facing LEFT. No jump, rotation, weapons, extra limbs, effects or shadow. One full-body 128x160 transparent pixel sprite, with complete raised fists and feet.",
+        "width": 128,
+        "height": 160,
+        "no_background": true,
+        "seed": 2026101010,
+        "imagePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/input-stand.png"
+      },
+      "result": {
+        "job_id": "4b7103a0-acb4-4592-b1cd-a063f57627cd",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/4b7103a0-acb4-4592-b1cd-a063f57627cd/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/4b7103a0-acb4-4592-b1cd-a063f57627cd/download"
+        ],
+        "asset": {
+          "id": "3fe122b8-a9f2-5a75-bc14-270051d5203b",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 1
+      }
+    },
+    {
+      "key": "slam",
+      "seed": 2026101011,
+      "description": "Same exact LEFT-facing 3/4 white yeti, blue face/hands/feet, horns, fur, palette and pixel size. End pose of a heavy TWO-FIST downward smash: bend knees and lean upper body forward LEFT, BOTH arms extended downward, BOTH large blue fists resting on ground IN FRONT to the LEFT of its feet. Keep BOTH feet planted at SAME x positions and ground y=152. Show both fists separately. No punch sideways, jump, turn, weapons, extra limbs, effects or shadow. Full-body 128x160 transparent pixel sprite.",
+      "tool": "edit_image_pixen",
+      "jobId": "e2ac4930-ca23-41fd-89e5-b75f99b0c584",
+      "parameters": {
+        "description": "Same exact LEFT-facing 3/4 white yeti, blue face/hands/feet, horns, fur, palette and pixel size. End pose of a heavy TWO-FIST downward smash: bend knees and lean upper body forward LEFT, BOTH arms extended downward, BOTH large blue fists resting on ground IN FRONT to the LEFT of its feet. Keep BOTH feet planted at SAME x positions and ground y=152. Show both fists separately. No punch sideways, jump, turn, weapons, extra limbs, effects or shadow. Full-body 128x160 transparent pixel sprite.",
+        "width": 128,
+        "height": 160,
+        "no_background": true,
+        "seed": 2026101011,
+        "imagePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/input-stand.png"
+      },
+      "result": {
+        "job_id": "e2ac4930-ca23-41fd-89e5-b75f99b0c584",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/e2ac4930-ca23-41fd-89e5-b75f99b0c584/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/e2ac4930-ca23-41fd-89e5-b75f99b0c584/download"
+        ],
+        "asset": {
+          "id": "cf4c4e0b-d0b2-50a9-b6d1-15800f63064b",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 1
+      }
+    },
+    {
+      "key": "lift",
+      "tool": "animate_image",
+      "seed": 2026101012,
+      "jobId": "73ca04a5-6c46-4a54-a8c4-f555b586cc56",
+      "parameters": {
+        "action": "Slow powerful anticipation for a two-handed ground slam. From the standing first pose, raise BOTH huge fists together ABOVE the head into the exact last pose. Keep both feet firmly planted at the same ground line y=152, same horizontal position, torso scale and LEFT facing. Arms lift in a smooth arc. No jumping, walking, turning, extra limbs, camera motion, effects or shadow. Transparent pixel art, preserve the exact character and palette.",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 2026101012,
+        "firstFramePath": "originals/attack1-slam/input-stand.png",
+        "lastFramePath": "originals/attack1-slam/raised.png"
+      },
+      "result": {
+        "job_id": "73ca04a5-6c46-4a54-a8c4-f555b586cc56",
+        "status": "completed",
+        "frames": 5,
+        "download_url": "https://api.pixellab.ai/mcp/images/73ca04a5-6c46-4a54-a8c4-f555b586cc56/download?index=4",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/73ca04a5-6c46-4a54-a8c4-f555b586cc56/download?index=0",
+          "https://api.pixellab.ai/mcp/images/73ca04a5-6c46-4a54-a8c4-f555b586cc56/download?index=1",
+          "https://api.pixellab.ai/mcp/images/73ca04a5-6c46-4a54-a8c4-f555b586cc56/download?index=2",
+          "https://api.pixellab.ai/mcp/images/73ca04a5-6c46-4a54-a8c4-f555b586cc56/download?index=3",
+          "https://api.pixellab.ai/mcp/images/73ca04a5-6c46-4a54-a8c4-f555b586cc56/download?index=4"
+        ],
+        "asset": {
+          "id": "fba29718-5360-55a8-9fbf-932de6aec529",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 2,
+        "frame": 4
+      }
+    },
+    {
+      "key": "down",
+      "tool": "animate_image",
+      "seed": 2026101013,
+      "jobId": "1f76ec07-7bd8-4659-8f70-7d9e251f57e1",
+      "parameters": {
+        "action": "Explosive TWO-HANDED downward ground smash. Begin with BOTH fists raised overhead as in first pose. Bring BOTH fists sharply DOWN together in a forward arc, bend knees and lean torso LEFT, finish with both fists hitting ground in front of feet exactly as the last pose. Keep feet firmly planted at ground y=152 throughout, same position and body scale. No sideways punch, jump, turn, walking, extra limbs, camera motion, effects or shadow. Transparent pixel art.",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 2026101013,
+        "firstFramePath": "originals/attack1-slam/raised.png",
+        "lastFramePath": "originals/attack1-slam/slam.png"
+      },
+      "result": {
+        "job_id": "1f76ec07-7bd8-4659-8f70-7d9e251f57e1",
+        "status": "completed",
+        "frames": 5,
+        "download_url": "https://api.pixellab.ai/mcp/images/1f76ec07-7bd8-4659-8f70-7d9e251f57e1/download?index=4",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/1f76ec07-7bd8-4659-8f70-7d9e251f57e1/download?index=0",
+          "https://api.pixellab.ai/mcp/images/1f76ec07-7bd8-4659-8f70-7d9e251f57e1/download?index=1",
+          "https://api.pixellab.ai/mcp/images/1f76ec07-7bd8-4659-8f70-7d9e251f57e1/download?index=2",
+          "https://api.pixellab.ai/mcp/images/1f76ec07-7bd8-4659-8f70-7d9e251f57e1/download?index=3",
+          "https://api.pixellab.ai/mcp/images/1f76ec07-7bd8-4659-8f70-7d9e251f57e1/download?index=4"
+        ],
+        "asset": {
+          "id": "470706c5-6422-5e0f-87e4-0e73792deb4b",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 2,
+        "frame": 4
+      }
+    },
+    {
+      "key": "recover",
+      "tool": "animate_image",
+      "seed": 2026101014,
+      "jobId": "f88a1228-069d-449f-9d03-95ccd95d6c94",
+      "parameters": {
+        "action": "Recovery after a two-handed heavy ground slam. From the crouched first pose with both fists on ground, slowly lift both fists off ground, straighten knees and torso, and lower arms naturally to sides, ending in the exact standing last pose. Feet stay firmly planted on ground y=152, same horizontal position, same scale and LEFT facing. No attack, jump, walk, turn, extra limbs, camera motion, effects or shadow. Transparent pixel art, preserve character and palette.",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 2026101014,
+        "firstFramePath": "originals/attack1-slam/slam.png",
+        "lastFramePath": "originals/attack1-slam/input-stand.png"
+      },
+      "result": {
+        "job_id": "f88a1228-069d-449f-9d03-95ccd95d6c94",
+        "status": "completed",
+        "frames": 5,
+        "download_url": "https://api.pixellab.ai/mcp/images/f88a1228-069d-449f-9d03-95ccd95d6c94/download?index=4",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/f88a1228-069d-449f-9d03-95ccd95d6c94/download?index=0",
+          "https://api.pixellab.ai/mcp/images/f88a1228-069d-449f-9d03-95ccd95d6c94/download?index=1",
+          "https://api.pixellab.ai/mcp/images/f88a1228-069d-449f-9d03-95ccd95d6c94/download?index=2",
+          "https://api.pixellab.ai/mcp/images/f88a1228-069d-449f-9d03-95ccd95d6c94/download?index=3",
+          "https://api.pixellab.ai/mcp/images/f88a1228-069d-449f-9d03-95ccd95d6c94/download?index=4"
+        ],
+        "asset": {
+          "id": "3a9f8f0a-3f07-5c43-866e-f508ecb0d1e0",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 2,
+        "frame": 4
+      }
+    }
+  ],
+  "previousAttack": {
+    "id": "ai/yeti/attack1",
+    "label": "주먹 공격",
+    "sourceUrl": "https://www.pixellab.ai/",
+    "jobId": "b15acb41-e859-4fc7-bc58-6fe92edc338f",
+    "frames": [
+      {
+        "index": 0,
+        "sourceFrameIndex": 0,
+        "width": 103,
+        "height": 115,
+        "pivot": {
+          "x": 51.0,
+          "y": 0
+        },
+        "durationSeconds": 0.07,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/807e948b-9109-4d76-aa1d-fb706a5ed5fc/download",
+        "localPath": "public/assets/maplestory/yeti-ai/frames/attack1/frame-00.png",
+        "sourcePath": "public/assets/maplestory/yeti-ai/originals/candidate-00.png",
+        "sourceRect": {
+          "x": 13,
+          "y": 6,
+          "width": 103,
+          "height": 115
+        },
+        "sha256": "e81d79fe728708bccb9f8b018515ea453a2faf28870e5642291579bbcf7ad8ff"
+      },
+      {
+        "index": 1,
+        "sourceFrameIndex": 1,
+        "width": 101,
+        "height": 115,
+        "pivot": {
+          "x": 50.0,
+          "y": 0
+        },
+        "durationSeconds": 0.07,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b15acb41-e859-4fc7-bc58-6fe92edc338f/download?index=1",
+        "localPath": "public/assets/maplestory/yeti-ai/frames/attack1/frame-01.png",
+        "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-refined/frame-01.png",
+        "sourceRect": {
+          "x": 14,
+          "y": 6,
+          "width": 101,
+          "height": 115
+        },
+        "sha256": "d9434003dbcba2d21a010be1a53c3335ec9b7fc6756a45db06980b03ebce2e45"
+      },
+      {
+        "index": 2,
+        "sourceFrameIndex": 2,
+        "width": 92,
+        "height": 111,
+        "pivot": {
+          "x": 47.0,
+          "y": 0
+        },
+        "durationSeconds": 0.07,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b15acb41-e859-4fc7-bc58-6fe92edc338f/download?index=2",
+        "localPath": "public/assets/maplestory/yeti-ai/frames/attack1/frame-02.png",
+        "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-refined/frame-02.png",
+        "sourceRect": {
+          "x": 17,
+          "y": 8,
+          "width": 92,
+          "height": 111
+        },
+        "sha256": "5111ffbc2023d0d84ff85d41b49b2d03859cb0f9c4ede620cdadd665061ec00d"
+      },
+      {
+        "index": 3,
+        "sourceFrameIndex": 4,
+        "width": 78,
+        "height": 101,
+        "pivot": {
+          "x": 35.0,
+          "y": 0
+        },
+        "durationSeconds": 0.07,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b15acb41-e859-4fc7-bc58-6fe92edc338f/download?index=4",
+        "localPath": "public/assets/maplestory/yeti-ai/frames/attack1/frame-03.png",
+        "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-refined/frame-04.png",
+        "sourceRect": {
+          "x": 29,
+          "y": 14,
+          "width": 78,
+          "height": 101
+        },
+        "sha256": "4bc3e1c75bd48e1d62bf05940531886289ff169560070c82c1fb7d90b5e9001d"
+      },
+      {
+        "index": 4,
+        "sourceFrameIndex": 6,
+        "width": 113,
+        "height": 100,
+        "pivot": {
+          "x": 55.0,
+          "y": 0
+        },
+        "durationSeconds": 0.07,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b15acb41-e859-4fc7-bc58-6fe92edc338f/download?index=6",
+        "localPath": "public/assets/maplestory/yeti-ai/frames/attack1/frame-04.png",
+        "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-refined/frame-06.png",
+        "sourceRect": {
+          "x": 9,
+          "y": 13,
+          "width": 113,
+          "height": 100
+        },
+        "sha256": "8a04dda7e3077d9affe6e36348797135edfa36d6fe5e2ca29492eaf7b238f3f9"
+      },
+      {
+        "index": 5,
+        "sourceFrameIndex": 8,
+        "width": 118,
+        "height": 100,
+        "pivot": {
+          "x": 58.0,
+          "y": 0
+        },
+        "durationSeconds": 0.07,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/1b02c26a-1be9-4905-be75-db6ac3e1a9d3/download",
+        "localPath": "public/assets/maplestory/yeti-ai/frames/attack1/frame-05.png",
+        "sourcePath": "public/assets/maplestory/yeti-ai/originals/punch-end/frame-00.png",
+        "sourceRect": {
+          "x": 6,
+          "y": 13,
+          "width": 118,
+          "height": 100
+        },
+        "sha256": "0cc90706bd820c150c35209a83d42b5d394b28bf0662b86fdd5c85a6756368e9"
+      },
+      {
+        "index": 6,
+        "sourceFrameIndex": 8,
+        "width": 118,
+        "height": 100,
+        "pivot": {
+          "x": 58.0,
+          "y": 0
+        },
+        "durationSeconds": 0.07,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/1b02c26a-1be9-4905-be75-db6ac3e1a9d3/download",
+        "localPath": "public/assets/maplestory/yeti-ai/frames/attack1/frame-06.png",
+        "sourcePath": "public/assets/maplestory/yeti-ai/originals/punch-end/frame-00.png",
+        "sourceRect": {
+          "x": 6,
+          "y": 13,
+          "width": 118,
+          "height": 100
+        },
+        "sha256": "0cc90706bd820c150c35209a83d42b5d394b28bf0662b86fdd5c85a6756368e9"
+      },
+      {
+        "index": 7,
+        "sourceFrameIndex": 6,
+        "width": 113,
+        "height": 100,
+        "pivot": {
+          "x": 55.0,
+          "y": 0
+        },
+        "durationSeconds": 0.07,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b15acb41-e859-4fc7-bc58-6fe92edc338f/download?index=6",
+        "localPath": "public/assets/maplestory/yeti-ai/frames/attack1/frame-07.png",
+        "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-refined/frame-06.png",
+        "sourceRect": {
+          "x": 9,
+          "y": 13,
+          "width": 113,
+          "height": 100
+        },
+        "sha256": "8a04dda7e3077d9affe6e36348797135edfa36d6fe5e2ca29492eaf7b238f3f9"
+      },
+      {
+        "index": 8,
+        "sourceFrameIndex": 4,
+        "width": 78,
+        "height": 101,
+        "pivot": {
+          "x": 35.0,
+          "y": 0
+        },
+        "durationSeconds": 0.07,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b15acb41-e859-4fc7-bc58-6fe92edc338f/download?index=4",
+        "localPath": "public/assets/maplestory/yeti-ai/frames/attack1/frame-08.png",
+        "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-refined/frame-04.png",
+        "sourceRect": {
+          "x": 29,
+          "y": 14,
+          "width": 78,
+          "height": 101
+        },
+        "sha256": "4bc3e1c75bd48e1d62bf05940531886289ff169560070c82c1fb7d90b5e9001d"
+      },
+      {
+        "index": 9,
+        "sourceFrameIndex": 2,
+        "width": 92,
+        "height": 111,
+        "pivot": {
+          "x": 47.0,
+          "y": 0
+        },
+        "durationSeconds": 0.07,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b15acb41-e859-4fc7-bc58-6fe92edc338f/download?index=2",
+        "localPath": "public/assets/maplestory/yeti-ai/frames/attack1/frame-09.png",
+        "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-refined/frame-02.png",
+        "sourceRect": {
+          "x": 17,
+          "y": 8,
+          "width": 92,
+          "height": 111
+        },
+        "sha256": "5111ffbc2023d0d84ff85d41b49b2d03859cb0f9c4ede620cdadd665061ec00d"
+      },
+      {
+        "index": 10,
+        "sourceFrameIndex": 1,
+        "width": 101,
+        "height": 115,
+        "pivot": {
+          "x": 50.0,
+          "y": 0
+        },
+        "durationSeconds": 0.07,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b15acb41-e859-4fc7-bc58-6fe92edc338f/download?index=1",
+        "localPath": "public/assets/maplestory/yeti-ai/frames/attack1/frame-10.png",
+        "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-refined/frame-01.png",
+        "sourceRect": {
+          "x": 14,
+          "y": 6,
+          "width": 101,
+          "height": 115
+        },
+        "sha256": "d9434003dbcba2d21a010be1a53c3335ec9b7fc6756a45db06980b03ebce2e45"
+      },
+      {
+        "index": 11,
+        "sourceFrameIndex": 0,
+        "width": 103,
+        "height": 115,
+        "pivot": {
+          "x": 51.0,
+          "y": 0
+        },
+        "durationSeconds": 0.07,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/807e948b-9109-4d76-aa1d-fb706a5ed5fc/download",
+        "localPath": "public/assets/maplestory/yeti-ai/frames/attack1/frame-11.png",
+        "sourcePath": "public/assets/maplestory/yeti-ai/originals/candidate-00.png",
+        "sourceRect": {
+          "x": 13,
+          "y": 6,
+          "width": 103,
+          "height": 115
+        },
+        "sha256": "e81d79fe728708bccb9f8b018515ea453a2faf28870e5642291579bbcf7ad8ff"
+      }
+    ]
+  },
+  "input": {
+    "sourcePath": "public/assets/maplestory/yeti-ai/originals/candidate-00.png",
+    "inputPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/input-stand.png",
+    "width": 128,
+    "height": 160,
+    "offset": {
+      "x": 0,
+      "y": 32
+    },
+    "sourceGroundBaseline": 121,
+    "inputGroundBaseline": 153,
+    "anchorX": 64,
+    "sourceSha256": "caa780332cf243091f1542f73ea2661b0a920b4f94eb1fc099dcb727484a1a88",
+    "inputSha256": "1e72bd3a9481709dc77fc6bc22757570cd1c891411d4b60568fe372cdb7739bc",
+    "notes": "원본 RGBA 그대로 위에 투명 32px 패딩만 추가. 리사이즈 없음."
+  },
+  "poseAlignment": {
+    "slam": {
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/slam-generated.png",
+      "outputPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/slam.png",
+      "translation": {
+        "x": 0,
+        "y": 14
+      },
+      "reason": "원본 픽셀을 변경하지 않고 최하단을 원본 지면 y=153에 맞춘다."
+    }
+  },
+  "timing": {
+    "frameCount": 12,
+    "impactFrameIndices": [
+      5,
+      6
+    ],
+    "contactProgress": 0.45,
+    "battleDurationSeconds": 0.5333333333333333,
+    "contactTimeSeconds": 0.24,
+    "previewFrameDurationSeconds": 0.07,
+    "notes": "전투는 행동 진행률로 프레임을 선택한다. 접촉 45%에서 floor(0.45*12)=5번 타격 프레임을 표시한다."
+  },
+  "activeFrames": [
+    {
+      "index": 0,
+      "sourceFrameIndex": 0,
+      "width": 103,
+      "height": 115,
+      "pivot": {
+        "x": 51,
+        "y": 0
+      },
+      "durationSeconds": 0.07,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/807e948b-9109-4d76-aa1d-fb706a5ed5fc/download",
+      "localPath": "public/assets/maplestory/yeti-ai/frames/attack1-slam/frame-00.png",
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/input-stand.png",
+      "sourceRect": {
+        "x": 13,
+        "y": 38,
+        "width": 103,
+        "height": 115
+      },
+      "sha256": "e81d79fe728708bccb9f8b018515ea453a2faf28870e5642291579bbcf7ad8ff"
+    },
+    {
+      "index": 1,
+      "sourceFrameIndex": 1,
+      "width": 109,
+      "height": 116,
+      "pivot": {
+        "x": 54,
+        "y": 0
+      },
+      "durationSeconds": 0.07,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/73ca04a5-6c46-4a54-a8c4-f555b586cc56/download?index=1",
+      "localPath": "public/assets/maplestory/yeti-ai/frames/attack1-slam/frame-01.png",
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/lift/frame-01.png",
+      "sourceRect": {
+        "x": 10,
+        "y": 37,
+        "width": 109,
+        "height": 116
+      },
+      "sha256": "b5ec38f6b4b19114536e39e20f93b5d5b8de6614235a39f8b8a568b0162540b0"
+    },
+    {
+      "index": 2,
+      "sourceFrameIndex": 2,
+      "width": 106,
+      "height": 145,
+      "pivot": {
+        "x": 54,
+        "y": 0
+      },
+      "durationSeconds": 0.07,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/73ca04a5-6c46-4a54-a8c4-f555b586cc56/download?index=2",
+      "localPath": "public/assets/maplestory/yeti-ai/frames/attack1-slam/frame-02.png",
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/lift/frame-02.png",
+      "sourceRect": {
+        "x": 10,
+        "y": 8,
+        "width": 106,
+        "height": 145
+      },
+      "sha256": "48723a41d6aab28191c52010187206837703eebe4050af58154a1c93b5566f5b"
+    },
+    {
+      "index": 3,
+      "sourceFrameIndex": 0,
+      "width": 112,
+      "height": 139,
+      "pivot": {
+        "x": 56,
+        "y": 0
+      },
+      "durationSeconds": 0.07,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/4b7103a0-acb4-4592-b1cd-a063f57627cd/download",
+      "localPath": "public/assets/maplestory/yeti-ai/frames/attack1-slam/frame-03.png",
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/raised.png",
+      "sourceRect": {
+        "x": 8,
+        "y": 14,
+        "width": 112,
+        "height": 139
+      },
+      "sha256": "48a8d18bf18369af952b6c1e886103363732a5e97445040cd80c3f83e2500cb6"
+    },
+    {
+      "index": 4,
+      "sourceFrameIndex": 3,
+      "width": 105,
+      "height": 105,
+      "pivot": {
+        "x": 56,
+        "y": 0
+      },
+      "durationSeconds": 0.07,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/1f76ec07-7bd8-4659-8f70-7d9e251f57e1/download?index=3",
+      "localPath": "public/assets/maplestory/yeti-ai/frames/attack1-slam/frame-04.png",
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/down/frame-03.png",
+      "sourceRect": {
+        "x": 8,
+        "y": 44,
+        "width": 105,
+        "height": 105
+      },
+      "sha256": "a582f1f8ec50542b2031543d1e396295762a992f69ce665a18687446399cc2f0"
+    },
+    {
+      "index": 5,
+      "sourceFrameIndex": 0,
+      "width": 102,
+      "height": 99,
+      "pivot": {
+        "x": 52,
+        "y": 0
+      },
+      "durationSeconds": 0.07,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/e2ac4930-ca23-41fd-89e5-b75f99b0c584/download",
+      "localPath": "public/assets/maplestory/yeti-ai/frames/attack1-slam/frame-05.png",
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/slam.png",
+      "sourceRect": {
+        "x": 12,
+        "y": 54,
+        "width": 102,
+        "height": 99
+      },
+      "sha256": "2c7f6ade62a8126537371d39b05f55e4657587890c285157ad2ea1f356d1c6ce"
+    },
+    {
+      "index": 6,
+      "sourceFrameIndex": 0,
+      "width": 102,
+      "height": 99,
+      "pivot": {
+        "x": 52,
+        "y": 0
+      },
+      "durationSeconds": 0.07,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/e2ac4930-ca23-41fd-89e5-b75f99b0c584/download",
+      "localPath": "public/assets/maplestory/yeti-ai/frames/attack1-slam/frame-06.png",
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/slam.png",
+      "sourceRect": {
+        "x": 12,
+        "y": 54,
+        "width": 102,
+        "height": 99
+      },
+      "sha256": "2c7f6ade62a8126537371d39b05f55e4657587890c285157ad2ea1f356d1c6ce"
+    },
+    {
+      "index": 7,
+      "sourceFrameIndex": 1,
+      "width": 96,
+      "height": 99,
+      "pivot": {
+        "x": 48,
+        "y": 0
+      },
+      "durationSeconds": 0.07,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/f88a1228-069d-449f-9d03-95ccd95d6c94/download?index=1",
+      "localPath": "public/assets/maplestory/yeti-ai/frames/attack1-slam/frame-07.png",
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/recover/frame-01.png",
+      "sourceRect": {
+        "x": 16,
+        "y": 52,
+        "width": 96,
+        "height": 99
+      },
+      "sha256": "334b540e16c9875dca1d9605897d911925e41dda8787bb7d1b2cf51973e97d53"
+    },
+    {
+      "index": 8,
+      "sourceFrameIndex": 2,
+      "width": 83,
+      "height": 106,
+      "pivot": {
+        "x": 42,
+        "y": 0
+      },
+      "durationSeconds": 0.07,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/f88a1228-069d-449f-9d03-95ccd95d6c94/download?index=2",
+      "localPath": "public/assets/maplestory/yeti-ai/frames/attack1-slam/frame-08.png",
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/recover/frame-02.png",
+      "sourceRect": {
+        "x": 22,
+        "y": 44,
+        "width": 83,
+        "height": 106
+      },
+      "sha256": "949e58d622481f5a2086e89d9a14d5f6efd5e917aa70cc47581084594d8ea127"
+    },
+    {
+      "index": 9,
+      "sourceFrameIndex": 3,
+      "width": 93,
+      "height": 108,
+      "pivot": {
+        "x": 45,
+        "y": 0
+      },
+      "durationSeconds": 0.07,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/f88a1228-069d-449f-9d03-95ccd95d6c94/download?index=3",
+      "localPath": "public/assets/maplestory/yeti-ai/frames/attack1-slam/frame-09.png",
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/recover/frame-03.png",
+      "sourceRect": {
+        "x": 19,
+        "y": 38,
+        "width": 93,
+        "height": 108
+      },
+      "sha256": "eceff25b95959aa5d0b3534049534931190d4a4572c615e3c6fb5173b1f9a1aa"
+    },
+    {
+      "index": 10,
+      "sourceFrameIndex": 0,
+      "width": 103,
+      "height": 115,
+      "pivot": {
+        "x": 51,
+        "y": 0
+      },
+      "durationSeconds": 0.07,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/807e948b-9109-4d76-aa1d-fb706a5ed5fc/download",
+      "localPath": "public/assets/maplestory/yeti-ai/frames/attack1-slam/frame-10.png",
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/input-stand.png",
+      "sourceRect": {
+        "x": 13,
+        "y": 38,
+        "width": 103,
+        "height": 115
+      },
+      "sha256": "e81d79fe728708bccb9f8b018515ea453a2faf28870e5642291579bbcf7ad8ff"
+    },
+    {
+      "index": 11,
+      "sourceFrameIndex": 0,
+      "width": 103,
+      "height": 115,
+      "pivot": {
+        "x": 51,
+        "y": 0
+      },
+      "durationSeconds": 0.07,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/807e948b-9109-4d76-aa1d-fb706a5ed5fc/download",
+      "localPath": "public/assets/maplestory/yeti-ai/frames/attack1-slam/frame-11.png",
+      "sourcePath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/input-stand.png",
+      "sourceRect": {
+        "x": 13,
+        "y": 38,
+        "width": 103,
+        "height": 115
+      },
+      "sha256": "e81d79fe728708bccb9f8b018515ea453a2faf28870e5642291579bbcf7ad8ff"
+    }
+  ],
+  "preservedOriginals": [
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/down/frame-00.png",
+      "sha256": "4478149e28822a37af445fe138989e5bfce108db92ce333e40f430112f814f81",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        8,
+        14,
+        120,
+        153
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/down/frame-01.png",
+      "sha256": "64e4a6e2e045e9db5d5ee0e8d32866a613fc5651847668ea3dfdd8413a2cc4d2",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        14,
+        8,
+        117,
+        152
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/down/frame-02.png",
+      "sha256": "831ada8661e287e9200d2e4f51086b475c16a996fd8b030f36394fa2bb8cc64e",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        17,
+        11,
+        114,
+        152
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/down/frame-03.png",
+      "sha256": "4be2b467ca456dde062e3f1d65b5795434b8e4a95b47e281131d04dea5b5ebad",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        8,
+        44,
+        113,
+        149
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/down/frame-04.png",
+      "sha256": "c0bf897dafce2f7f27d82adcb2517e721e2acf754311ed773c9012c47f650b91",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        12,
+        54,
+        114,
+        153
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/input-stand.png",
+      "sha256": "1e72bd3a9481709dc77fc6bc22757570cd1c891411d4b60568fe372cdb7739bc",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        13,
+        38,
+        116,
+        153
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/input.json",
+      "sha256": "97cd37d8f87240811b7ce5a73a9e833193a41d1aba7c7a99ffa7a7e7fdb24d7f"
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/lift/frame-00.png",
+      "sha256": "2b3631066b25da443cbffaf60281ab531a41a345f6d965d2ffce4625335cc7e4",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        13,
+        38,
+        116,
+        153
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/lift/frame-01.png",
+      "sha256": "1efa3eb655f912ccea2c44e379c2da5ac8cc411a91d8e974862776a5018a031b",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        10,
+        37,
+        119,
+        153
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/lift/frame-02.png",
+      "sha256": "e7b36d1f95bf549a3d6420deff4f90ceed1766fdbf93b1f59a9586b2716bf06d",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        10,
+        8,
+        116,
+        153
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/lift/frame-03.png",
+      "sha256": "ab31588bba5d5de74384a165c1107f1fae712c20bfe7098b6f2187495eb1969c",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        10,
+        6,
+        116,
+        153
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/lift/frame-04.png",
+      "sha256": "75c1011c3db37eb76ea6628b2d6e47e97a70d12ba59ea96384caed0c033a47c6",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        8,
+        14,
+        120,
+        153
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/raised.png",
+      "sha256": "092de136479784a7e39badd03f3759f280f1971d757fcf2c651219d83732afdf",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        8,
+        14,
+        120,
+        153
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/recover/frame-00.png",
+      "sha256": "48eafe819b737ac71e67a9c83ee3a925b23cbd51f4ea303e353768c82cf65373",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        12,
+        54,
+        114,
+        153
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/recover/frame-01.png",
+      "sha256": "d292975742a2e26252d752b1f2a695e4306ac0cb564c4b1c937cfa0565a8dbca",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        16,
+        52,
+        112,
+        151
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/recover/frame-02.png",
+      "sha256": "2a549eec9047861a184aca2096f6ef2f560c45c41e23f97fb4fa6a3c12426330",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        22,
+        44,
+        105,
+        150
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/recover/frame-03.png",
+      "sha256": "2fcb28f25a388edc2e9383239fa784ad6901bed10b2e3e95da6ad56dda4b81d9",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        19,
+        38,
+        112,
+        146
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/recover/frame-04.png",
+      "sha256": "d052069bbecf0e6e032e45a7964704e171d6f5cd3aba98d41e4b665d596ae9e0",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        13,
+        38,
+        116,
+        153
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/slam-generated.png",
+      "sha256": "18672a31beb3cd6d74f6a94a9108c12eeda5aff5e56afd614c2bc4e5255d6947",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        12,
+        40,
+        114,
+        139
+      ]
+    },
+    {
+      "localPath": "public/assets/maplestory/yeti-ai/originals/attack1-slam/slam.png",
+      "sha256": "ad71d2978a9aead16e66c406e1491c88af164c7fd0452b005b0554887b68fccd",
+      "width": 128,
+      "height": 160,
+      "alphaBbox": [
+        12,
+        54,
+        114,
+        153
+      ]
+    }
+  ]
+}

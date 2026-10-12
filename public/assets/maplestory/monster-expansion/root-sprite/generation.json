@@ -1,0 +1,2569 @@
+{
+  "id": "root-sprite",
+  "name": "뿌리요정",
+  "theme": "forest",
+  "role": "support",
+  "appearance": "Small hostile wooden root spirit, tangled root feet, bark-mask face and a crown of two red leaves; no humanoid NPC clothing.",
+  "motions": {
+    "stand": "Facing left, two crown leaves sway independently and the carved eyes blink, small root fingers uncurl and feet flex while the wooden torso breathes slightly, return to ready stance.",
+    "move": "Facing left, tangled root feet alternately lift and grip in a distinct walking loop in place, little root arms counter-swing and crown leaves bounce. Keep bark mask and two red leaves consistent.",
+    "attack1": "Support casting toward left, draw root hands inward around the chest, raise both branch hands in a focused ritual gesture and spread the fingers, crown leaves flare outward, hold the cast then lower hands into original stance. No projectile or screen effect.",
+    "hit1": "Facing left, bark face winces and root hands cover the chest, torso bends back and feet brace, recover to standing with leaves settling.",
+    "die1": "Facing left, root feet loosen and buckle, branch arms fall and wooden body crumples onto the ground with crown leaves drooping. Finish recognizable motionless root spirit without breaking into new objects."
+  },
+  "assetId": "ai/monster-root-sprite",
+  "localRoot": "public/assets/maplestory/monster-expansion/root-sprite",
+  "attempts": [
+    {
+      "motion": "original",
+      "attempt": 1,
+      "key": "monster-a-root-sprite-original-01",
+      "jobId": "7df41eab-e140-4111-8403-a40d431719a5",
+      "balanceBefore": 508,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Small hostile wooden root spirit, tangled root feet, bark-mask face and a crown of two red leaves; no humanoid NPC clothing. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 614006,
+        "text_guidance_scale": 8
+      },
+      "queueResponse": "id: 7df41eab-e140-4111-8403-a40d431719a5\njob_id: 7df41eab-e140-4111-8403-a40d431719a5\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Small hostile wooden root spirit, tangled root feet, bark-mask face and a crown of two red leaves; no humanoid NPC clothing. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: ee40c805-fd01-55d5-8878-c2f218f2e3b4\nasset_status: pending (saved when generation completes)\nseed: 614006\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"7df41eab-e140-4111-8403-a40d431719a5\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 7df41eab-e140-4111-8403-a40d431719a5\njob_id: 7df41eab-e140-4111-8403-a40d431719a5\nframes: 1\ntransparent: yes\nasset_id: ee40c805-fd01-55d5-8878-c2f218f2e3b4\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download",
+      "localPath": "public/assets/maplestory/monster-expansion/root-sprite/originals/original-01.png",
+      "sha256": "a793029950b80a0901efe9c9d0212517d2cb3e2e528ace6a5c0a48322fd10b44",
+      "byteSize": 1743,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 14,
+        "y": 8,
+        "width": 35,
+        "height": 48
+      },
+      "visiblePixels": 801,
+      "paletteSize": 21,
+      "chargedGenerations": 1,
+      "nativeFacing": "right",
+      "selection": "accepted after silhouette / anatomy / native alpha review"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-root-sprite-stand-01",
+      "jobId": "5703eec4-d29f-41ff-b26a-5327e6fb49a7",
+      "balanceBefore": 537,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625501,
+        "action": "Facing right, two crown leaves sway independently and the carved eyes blink, small root fingers uncurl and feet flex while the wooden torso breathes slightly, return to ready stance. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download"
+      },
+      "queueResponse": "id: 5703eec4-d29f-41ff-b26a-5327e6fb49a7\njob_id: 5703eec4-d29f-41ff-b26a-5327e6fb49a7\naction: Facing right, two crown leaves sway independently and the carved eyes blink, small root fingers uncurl and feet flex while the wooden torso breathes slightly, return to ready stance. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625501\nasset_id: aab644af-fdc5-59cc-9f96-bde62114300b\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"5703eec4-d29f-41ff-b26a-5327e6fb49a7\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 5703eec4-d29f-41ff-b26a-5327e6fb49a7\njob_id: 5703eec4-d29f-41ff-b26a-5327e6fb49a7\nframes: 5\ntransparent: yes\nasset_id: aab644af-fdc5-59cc-9f96-bde62114300b\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/root-sprite/originals/original-01.png",
+        "sha256": "a793029950b80a0901efe9c9d0212517d2cb3e2e528ace6a5c0a48322fd10b44",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 18,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/00.png",
+          "sourceSha256": "5842d0e05983ddece0b956cebe48a4b193eb1922b66c8d497b243401932f1891",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 8,
+            "width": 35,
+            "height": 48
+          },
+          "visiblePixels": 801,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/01.png",
+          "sourceSha256": "be3a9c752d5e5eedc94770c444f16d973f81907008ee879ce023282ea3acd219",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 10,
+            "width": 36,
+            "height": 45
+          },
+          "visiblePixels": 817,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/02.png",
+          "sourceSha256": "2a92e23796da83987e0553a99185a5fe8995124da2dcab21be81b4ff5bb9d6da",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 15,
+            "y": 10,
+            "width": 35,
+            "height": 42
+          },
+          "visiblePixels": 811,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/03.png",
+          "sourceSha256": "994d7e45ebb5341ac6f13a674508d205812b46909f385f77f88e4a4dfa7202ae",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 9,
+            "width": 35,
+            "height": 45
+          },
+          "visiblePixels": 809,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/04.png",
+          "sourceSha256": "f75ed0cf873a5ed678f05b5c49bfc6c2f8e34cc84d7acb36791440ba28a9a66a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 8,
+            "width": 35,
+            "height": 48
+          },
+          "visiblePixels": 801,
+          "colors": 22,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/root-sprite/review/stand-5703eec4-d29f-41ff-b26a-5327e6fb49a7.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/00.png",
+          "sha256": "be3a9c752d5e5eedc94770c444f16d973f81907008ee879ce023282ea3acd219",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/01.png",
+          "sourceSha256": "be3a9c752d5e5eedc94770c444f16d973f81907008ee879ce023282ea3acd219",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/01.png",
+          "sha256": "2a92e23796da83987e0553a99185a5fe8995124da2dcab21be81b4ff5bb9d6da",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/02.png",
+          "sourceSha256": "2a92e23796da83987e0553a99185a5fe8995124da2dcab21be81b4ff5bb9d6da",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/02.png",
+          "sha256": "994d7e45ebb5341ac6f13a674508d205812b46909f385f77f88e4a4dfa7202ae",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/03.png",
+          "sourceSha256": "994d7e45ebb5341ac6f13a674508d205812b46909f385f77f88e4a4dfa7202ae",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/03.png",
+          "sha256": "f75ed0cf873a5ed678f05b5c49bfc6c2f8e34cc84d7acb36791440ba28a9a66a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/04.png",
+          "sourceSha256": "f75ed0cf873a5ed678f05b5c49bfc6c2f8e34cc84d7acb36791440ba28a9a66a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 우향 나무 몸통을 유지하며 붉은 잎·뿌리 발·손가락이 움직이는 실제 대기 루프."
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "monster-a-root-sprite-move-01",
+      "jobId": "484185a9-46aa-4d4a-8df8-3850ba7da0b4",
+      "balanceBefore": 598,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625502,
+        "action": "Facing right, tangled root feet alternately lift and grip in a distinct walking loop in place, little root arms counter-swing and crown leaves bounce. Keep bark mask and two red leaves consistent. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download"
+      },
+      "queueResponse": "id: 484185a9-46aa-4d4a-8df8-3850ba7da0b4\njob_id: 484185a9-46aa-4d4a-8df8-3850ba7da0b4\naction: Facing right, tangled root feet alternately lift and grip in a distinct walking loop in place, little root arms counter-swing and crown leaves bounce. Keep bark mask and two red leaves consistent. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625502\nasset_id: 60583070-35e0-537b-845f-0c346c35bb73\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"484185a9-46aa-4d4a-8df8-3850ba7da0b4\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 484185a9-46aa-4d4a-8df8-3850ba7da0b4\njob_id: 484185a9-46aa-4d4a-8df8-3850ba7da0b4\nframes: 9\ntransparent: yes\nasset_id: 60583070-35e0-537b-845f-0c346c35bb73\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/root-sprite/originals/original-01.png",
+        "sha256": "a793029950b80a0901efe9c9d0212517d2cb3e2e528ace6a5c0a48322fd10b44",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 22,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/00.png",
+          "sourceSha256": "9fdc0b555c76b046bbcf3e167e3bf91799f7456c4ca9ac86c7af88cafd166d19",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 8,
+            "width": 35,
+            "height": 48
+          },
+          "visiblePixels": 800,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/01.png",
+          "sourceSha256": "f84203420fc5a2942c539db051723e96fd7c637d6ce5a7aed0a81642e02a6805",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 9,
+            "width": 35,
+            "height": 45
+          },
+          "visiblePixels": 790,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/02.png",
+          "sourceSha256": "11588beb35693b5abbe4cd957e41229285d86614a026f41be2e167316c840c4b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 11,
+            "width": 36,
+            "height": 40
+          },
+          "visiblePixels": 792,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/03.png",
+          "sourceSha256": "d3c602ddcf2d8f418a400ba6ad79f809bf82f55a54de711cbeb2e9989c430478",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 12,
+            "width": 36,
+            "height": 39
+          },
+          "visiblePixels": 775,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/04.png",
+          "sourceSha256": "c97bb314f13fbfb1df74f060595222b15c3de06a119ccf6f719534a0f489d7bc",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 13,
+            "width": 36,
+            "height": 38
+          },
+          "visiblePixels": 779,
+          "colors": 22,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/05.png",
+          "sourceSha256": "69f73363a46e17bda814d981f442c33ab3c9db733cf5ed554b7b9b50f4ecb00e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 12,
+            "width": 36,
+            "height": 39
+          },
+          "visiblePixels": 781,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/06.png",
+          "sourceSha256": "01e894b38dd764d44b0d6782f6d1e84998276e3480aee8f9c53f59fb434e38c3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 11,
+            "width": 36,
+            "height": 40
+          },
+          "visiblePixels": 798,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/07.png",
+          "sourceSha256": "aca1f426e06524d47f57354b5996b3d9a49628faf7f14ebcf49e2fd524a56d37",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 9,
+            "width": 35,
+            "height": 46
+          },
+          "visiblePixels": 802,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/08.png",
+          "sourceSha256": "8085038af369dd9174ef61ddcca9e7e6d8a63ab2148696f36733cc0fba74e11d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 8,
+            "width": 35,
+            "height": 48
+          },
+          "visiblePixels": 800,
+          "colors": 20,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/root-sprite/review/move-484185a9-46aa-4d4a-8df8-3850ba7da0b4.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/00.png",
+          "sha256": "f84203420fc5a2942c539db051723e96fd7c637d6ce5a7aed0a81642e02a6805",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/01.png",
+          "sourceSha256": "f84203420fc5a2942c539db051723e96fd7c637d6ce5a7aed0a81642e02a6805",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/01.png",
+          "sha256": "11588beb35693b5abbe4cd957e41229285d86614a026f41be2e167316c840c4b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/02.png",
+          "sourceSha256": "11588beb35693b5abbe4cd957e41229285d86614a026f41be2e167316c840c4b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/02.png",
+          "sha256": "d3c602ddcf2d8f418a400ba6ad79f809bf82f55a54de711cbeb2e9989c430478",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/03.png",
+          "sourceSha256": "d3c602ddcf2d8f418a400ba6ad79f809bf82f55a54de711cbeb2e9989c430478",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/03.png",
+          "sha256": "c97bb314f13fbfb1df74f060595222b15c3de06a119ccf6f719534a0f489d7bc",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/04.png",
+          "sourceSha256": "c97bb314f13fbfb1df74f060595222b15c3de06a119ccf6f719534a0f489d7bc",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/04.png",
+          "sha256": "69f73363a46e17bda814d981f442c33ab3c9db733cf5ed554b7b9b50f4ecb00e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/05.png",
+          "sourceSha256": "69f73363a46e17bda814d981f442c33ab3c9db733cf5ed554b7b9b50f4ecb00e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/05.png",
+          "sha256": "01e894b38dd764d44b0d6782f6d1e84998276e3480aee8f9c53f59fb434e38c3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/06.png",
+          "sourceSha256": "01e894b38dd764d44b0d6782f6d1e84998276e3480aee8f9c53f59fb434e38c3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/06.png",
+          "sha256": "aca1f426e06524d47f57354b5996b3d9a49628faf7f14ebcf49e2fd524a56d37",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/07.png",
+          "sourceSha256": "aca1f426e06524d47f57354b5996b3d9a49628faf7f14ebcf49e2fd524a56d37",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/07.png",
+          "sha256": "8085038af369dd9174ef61ddcca9e7e6d8a63ab2148696f36733cc0fba74e11d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/08.png",
+          "sourceSha256": "8085038af369dd9174ef61ddcca9e7e6d8a63ab2148696f36733cc0fba74e11d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 우향 뿌리 발을 번갈아 들고 줄기 몸과 붉은 잎이 함께 움직이는 실제 이동 루프."
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "monster-a-root-sprite-attack1-01",
+      "jobId": "ce5f1c39-b833-4fd1-8adc-0a8a5a10200f",
+      "balanceBefore": 615,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625503,
+        "action": "Support casting toward right, draw root hands inward around the chest, raise both branch hands in a focused ritual gesture and spread the fingers, crown leaves flare outward, hold the cast then lower hands into original stance. No projectile or screen effect. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download"
+      },
+      "queueResponse": "id: ce5f1c39-b833-4fd1-8adc-0a8a5a10200f\njob_id: ce5f1c39-b833-4fd1-8adc-0a8a5a10200f\naction: Support casting toward right, draw root hands inward around the chest, raise both branch hands in a focused ritual gesture and spread the fingers, crown leaves flare outward, hold the cast then lower hands into original stance. No projectile or screen effect. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625503\nasset_id: 513477ce-6e1e-5137-8e66-69acfa778fef\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ce5f1c39-b833-4fd1-8adc-0a8a5a10200f\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: ce5f1c39-b833-4fd1-8adc-0a8a5a10200f\njob_id: ce5f1c39-b833-4fd1-8adc-0a8a5a10200f\nframes: 9\ntransparent: yes\nasset_id: 513477ce-6e1e-5137-8e66-69acfa778fef\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/root-sprite/originals/original-01.png",
+        "sha256": "a793029950b80a0901efe9c9d0212517d2cb3e2e528ace6a5c0a48322fd10b44",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 44,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/00.png",
+          "sourceSha256": "38a3d9fc94c270b90ee8fda646f86a91bcac0a50c756192259d8b8a87bb2f2d2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 8,
+            "width": 35,
+            "height": 48
+          },
+          "visiblePixels": 801,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/01.png",
+          "sourceSha256": "b231ef2fba42e0505550d31fc46881300c009bd1d3d4e844ee69c56ea0ed8d67",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 9,
+            "width": 35,
+            "height": 47
+          },
+          "visiblePixels": 796,
+          "colors": 22,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/02.png",
+          "sourceSha256": "56aee897b32475e3927d6ab7ff918ad7da3c10f781386e335f8cbeff8274832a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 7,
+            "width": 35,
+            "height": 49
+          },
+          "visiblePixels": 845,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/03.png",
+          "sourceSha256": "3167b9eb8bf5d4817be10a74c7211485b7e448c3d41a1c2397ee03e85c3c1845",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 8,
+            "width": 35,
+            "height": 48
+          },
+          "visiblePixels": 954,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/04.png",
+          "sourceSha256": "a4d5b3e9e2318803756cc8be720d71fa684e90c56706714a47e325cc7f0b8901",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 46
+          },
+          "visiblePixels": 1048,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/05.png",
+          "sourceSha256": "05650afb4a04304a10a58317b8809fd85d0090bee3be03a06c8069e5991a94bb",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 9,
+            "width": 44,
+            "height": 47
+          },
+          "visiblePixels": 1106,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/06.png",
+          "sourceSha256": "7a5ac406b0b8e3c23b98b32f81930f41642a4ee80a5bd44c8206cb2c23a1015b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 10,
+            "width": 43,
+            "height": 46
+          },
+          "visiblePixels": 1088,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/07.png",
+          "sourceSha256": "a702154278e7f8108dbec450f446f9e049a7afc8a6ef45a1e48aea9a117a41b1",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 9,
+            "width": 35,
+            "height": 47
+          },
+          "visiblePixels": 911,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/08.png",
+          "sourceSha256": "fd2f14218d3f2d74c093bed602420cf0252a860f30f7bd7d30d14ada58a1f3cf",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 8,
+            "width": 35,
+            "height": 48
+          },
+          "visiblePixels": 801,
+          "colors": 21,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/root-sprite/review/attack1-ce5f1c39-b833-4fd1-8adc-0a8a5a10200f.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/00.png",
+          "sha256": "b231ef2fba42e0505550d31fc46881300c009bd1d3d4e844ee69c56ea0ed8d67",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/01.png",
+          "sourceSha256": "b231ef2fba42e0505550d31fc46881300c009bd1d3d4e844ee69c56ea0ed8d67",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/01.png",
+          "sha256": "56aee897b32475e3927d6ab7ff918ad7da3c10f781386e335f8cbeff8274832a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/02.png",
+          "sourceSha256": "56aee897b32475e3927d6ab7ff918ad7da3c10f781386e335f8cbeff8274832a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/02.png",
+          "sha256": "3167b9eb8bf5d4817be10a74c7211485b7e448c3d41a1c2397ee03e85c3c1845",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/03.png",
+          "sourceSha256": "3167b9eb8bf5d4817be10a74c7211485b7e448c3d41a1c2397ee03e85c3c1845",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/03.png",
+          "sha256": "a4d5b3e9e2318803756cc8be720d71fa684e90c56706714a47e325cc7f0b8901",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/04.png",
+          "sourceSha256": "a4d5b3e9e2318803756cc8be720d71fa684e90c56706714a47e325cc7f0b8901",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/04.png",
+          "sha256": "05650afb4a04304a10a58317b8809fd85d0090bee3be03a06c8069e5991a94bb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/05.png",
+          "sourceSha256": "05650afb4a04304a10a58317b8809fd85d0090bee3be03a06c8069e5991a94bb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/05.png",
+          "sha256": "7a5ac406b0b8e3c23b98b32f81930f41642a4ee80a5bd44c8206cb2c23a1015b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/06.png",
+          "sourceSha256": "7a5ac406b0b8e3c23b98b32f81930f41642a4ee80a5bd44c8206cb2c23a1015b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/06.png",
+          "sha256": "a702154278e7f8108dbec450f446f9e049a7afc8a6ef45a1e48aea9a117a41b1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/07.png",
+          "sourceSha256": "a702154278e7f8108dbec450f446f9e049a7afc8a6ef45a1e48aea9a117a41b1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/07.png",
+          "sha256": "fd2f14218d3f2d74c093bed602420cf0252a860f30f7bd7d30d14ada58a1f3cf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/08.png",
+          "sourceSha256": "fd2f14218d3f2d74c093bed602420cf0252a860f30f7bd7d30d14ada58a1f3cf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 우향 뿌리 손을 모아 올렸다 펼치는 지원 시전. 4번에서 두 팔과 잎이 가장 넓게 펼쳐지는 방출 자세.",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625,
+      "contactReason": "우향 뿌리 손을 모아 올렸다 펼치는 지원 시전. 4번에서 두 팔과 잎이 가장 넓게 펼쳐지는 방출 자세."
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "monster-a-root-sprite-hit1-01",
+      "jobId": "e5fefda8-605f-4968-ab24-d3961cb440ec",
+      "balanceBefore": 644,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625504,
+        "action": "Facing right, bark face winces and root hands cover the chest, torso bends back and feet brace, recover to standing with leaves settling. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download"
+      },
+      "queueResponse": "id: e5fefda8-605f-4968-ab24-d3961cb440ec\njob_id: e5fefda8-605f-4968-ab24-d3961cb440ec\naction: Facing right, bark face winces and root hands cover the chest, torso bends back and feet brace, recover to standing with leaves settling. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625504\nasset_id: 901257fc-ca15-5744-8ddd-fd06f5bf33fc\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e5fefda8-605f-4968-ab24-d3961cb440ec\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: e5fefda8-605f-4968-ab24-d3961cb440ec\njob_id: e5fefda8-605f-4968-ab24-d3961cb440ec\nframes: 5\ntransparent: yes\nasset_id: 901257fc-ca15-5744-8ddd-fd06f5bf33fc\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/root-sprite/originals/original-01.png",
+        "sha256": "a793029950b80a0901efe9c9d0212517d2cb3e2e528ace6a5c0a48322fd10b44",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 18,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/00.png",
+          "sourceSha256": "e73e6965a57b34e5fa9f7f884ec28b34af2cc67a975bd174a792c9268285a722",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 8,
+            "width": 35,
+            "height": 48
+          },
+          "visiblePixels": 800,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/01.png",
+          "sourceSha256": "3bec1aac2a9b11f8440b831342a2914fe2aed9cb928596b55b6155a37f40063f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 10,
+            "width": 35,
+            "height": 46
+          },
+          "visiblePixels": 775,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/02.png",
+          "sourceSha256": "1152e8873734c32c89a35f7b3892588c091b2e94890a5dfdac760c9c276f7eae",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 13,
+            "width": 36,
+            "height": 43
+          },
+          "visiblePixels": 760,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/03.png",
+          "sourceSha256": "b901b3d9909942168a84da31c2f649498623cc71cc140c0f4066ff9d380b3d72",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 10,
+            "width": 35,
+            "height": 46
+          },
+          "visiblePixels": 780,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/04.png",
+          "sourceSha256": "d369d2544bd949b9196cd96e624aaf22459d67a1f30eccd485e7a0949f40efdb",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 8,
+            "width": 35,
+            "height": 48
+          },
+          "visiblePixels": 800,
+          "colors": 21,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/root-sprite/review/hit1-e5fefda8-605f-4968-ab24-d3961cb440ec.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/00.png",
+          "sha256": "3bec1aac2a9b11f8440b831342a2914fe2aed9cb928596b55b6155a37f40063f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/01.png",
+          "sourceSha256": "3bec1aac2a9b11f8440b831342a2914fe2aed9cb928596b55b6155a37f40063f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/01.png",
+          "sha256": "1152e8873734c32c89a35f7b3892588c091b2e94890a5dfdac760c9c276f7eae",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/02.png",
+          "sourceSha256": "1152e8873734c32c89a35f7b3892588c091b2e94890a5dfdac760c9c276f7eae",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/02.png",
+          "sha256": "b901b3d9909942168a84da31c2f649498623cc71cc140c0f4066ff9d380b3d72",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/03.png",
+          "sourceSha256": "b901b3d9909942168a84da31c2f649498623cc71cc140c0f4066ff9d380b3d72",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/03.png",
+          "sha256": "d369d2544bd949b9196cd96e624aaf22459d67a1f30eccd485e7a0949f40efdb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/04.png",
+          "sourceSha256": "d369d2544bd949b9196cd96e624aaf22459d67a1f30eccd485e7a0949f40efdb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 우향 잎과 줄기 몸을 움츠리고 눈을 잠깐 감았다 원래 자세로 복귀하는 실제 피격."
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "monster-a-root-sprite-die1-01",
+      "jobId": "4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97",
+      "balanceBefore": 644,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625505,
+        "action": "Facing right, root feet loosen and buckle, branch arms fall and wooden body crumples onto the ground with crown leaves drooping. Finish recognizable motionless root spirit without breaking into new objects. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes."
+      },
+      "queueResponse": "id: 4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97\njob_id: 4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97\naction: Facing right, root feet loosen and buckle, branch arms fall and wooden body crumples onto the ground with crown leaves drooping. Finish recognizable motionless root spirit without breaking into new objects. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 625505\nasset_id: e4d07049-5c02-5055-a97d-b44559d3e8dd\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97\njob_id: 4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97\nframes: 9\ntransparent: yes\nasset_id: e4d07049-5c02-5055-a97d-b44559d3e8dd\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/root-sprite/originals/original-01.png",
+        "sha256": "a793029950b80a0901efe9c9d0212517d2cb3e2e528ace6a5c0a48322fd10b44",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 89,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/00.png",
+          "sourceSha256": "630dd4944d49d5aa5e552b5b61a2a92ebc236ef026dc110510efa4b13845a972",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 8,
+            "width": 35,
+            "height": 48
+          },
+          "visiblePixels": 800,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/01.png",
+          "sourceSha256": "94e952bf562260bf1a7bcc1d67bdc04aaeda8bdea9fa106102b67d28c0de9a65",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 9,
+            "width": 35,
+            "height": 47
+          },
+          "visiblePixels": 794,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/02.png",
+          "sourceSha256": "2f3c5249f1a49a2026d412dc607d00aa04e5a9b0cad6415e3a518d61bcbd35e7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 15,
+            "y": 10,
+            "width": 33,
+            "height": 45
+          },
+          "visiblePixels": 808,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/03.png",
+          "sourceSha256": "2578def2e041a909176259adf2125ca7e4db1709c697a674539cd0f47b24d1b0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 14,
+            "width": 35,
+            "height": 42
+          },
+          "visiblePixels": 817,
+          "colors": 32,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/04.png",
+          "sourceSha256": "731a808b66f23e6d35f8edf09eb76edab039346a20dd959df699fc05eb9531fb",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 16,
+            "width": 35,
+            "height": 40
+          },
+          "visiblePixels": 788,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/05.png",
+          "sourceSha256": "f3cf66da5ec8661da06f7a55a5f17484043629c6d3a874a1564f118d0a5e0ff3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 18,
+            "width": 41,
+            "height": 38
+          },
+          "visiblePixels": 802,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/06.png",
+          "sourceSha256": "732119ca823841f3693e30114c88c89a8023093fe7955c1ff887190e6d1e4c36",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 18,
+            "width": 41,
+            "height": 39
+          },
+          "visiblePixels": 756,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/07.png",
+          "sourceSha256": "5da175c514ab99eb0ce2bcc630c4e1de060e227f12d291de9322e109f76d857f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 26,
+            "width": 47,
+            "height": 30
+          },
+          "visiblePixels": 677,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/08.png",
+          "sourceSha256": "d71ff02240102d47c61bf0da5a4b2c7419d02226c00365b0f2190d6640d1483f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 34,
+            "width": 49,
+            "height": 22
+          },
+          "visiblePixels": 632,
+          "colors": 24,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/root-sprite/review/die1-4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/00.png",
+          "sha256": "94e952bf562260bf1a7bcc1d67bdc04aaeda8bdea9fa106102b67d28c0de9a65",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/01.png",
+          "sourceSha256": "94e952bf562260bf1a7bcc1d67bdc04aaeda8bdea9fa106102b67d28c0de9a65",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/01.png",
+          "sha256": "2f3c5249f1a49a2026d412dc607d00aa04e5a9b0cad6415e3a518d61bcbd35e7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/02.png",
+          "sourceSha256": "2f3c5249f1a49a2026d412dc607d00aa04e5a9b0cad6415e3a518d61bcbd35e7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/02.png",
+          "sha256": "2578def2e041a909176259adf2125ca7e4db1709c697a674539cd0f47b24d1b0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/03.png",
+          "sourceSha256": "2578def2e041a909176259adf2125ca7e4db1709c697a674539cd0f47b24d1b0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/03.png",
+          "sha256": "731a808b66f23e6d35f8edf09eb76edab039346a20dd959df699fc05eb9531fb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/04.png",
+          "sourceSha256": "731a808b66f23e6d35f8edf09eb76edab039346a20dd959df699fc05eb9531fb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/04.png",
+          "sha256": "f3cf66da5ec8661da06f7a55a5f17484043629c6d3a874a1564f118d0a5e0ff3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/05.png",
+          "sourceSha256": "f3cf66da5ec8661da06f7a55a5f17484043629c6d3a874a1564f118d0a5e0ff3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/05.png",
+          "sha256": "732119ca823841f3693e30114c88c89a8023093fe7955c1ff887190e6d1e4c36",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/06.png",
+          "sourceSha256": "732119ca823841f3693e30114c88c89a8023093fe7955c1ff887190e6d1e4c36",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/06.png",
+          "sha256": "5da175c514ab99eb0ce2bcc630c4e1de060e227f12d291de9322e109f76d857f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/07.png",
+          "sourceSha256": "5da175c514ab99eb0ce2bcc630c4e1de060e227f12d291de9322e109f76d857f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/07.png",
+          "sha256": "d71ff02240102d47c61bf0da5a4b2c7419d02226c00365b0f2190d6640d1483f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/08.png",
+          "sourceSha256": "d71ff02240102d47c61bf0da5a4b2c7419d02226c00365b0f2190d6640d1483f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 뿌리 발이 풀리고 나무 줄기와 붉은 잎이 옆으로 쓰러져 누운 자세로 끝나는 실제 KO."
+    }
+  ],
+  "nativeFacing": "right",
+  "selectedOriginal": {
+    "motion": "original",
+    "attempt": 1,
+    "key": "monster-a-root-sprite-original-01",
+    "jobId": "7df41eab-e140-4111-8403-a40d431719a5",
+    "balanceBefore": 508,
+    "maximumReservedGenerations": 1,
+    "args": {
+      "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Small hostile wooden root spirit, tangled root feet, bark-mask face and a crown of two red leaves; no humanoid NPC clothing. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "direction": "west",
+      "view": "low top-down",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "detail": "medium detail",
+      "seed": 614006,
+      "text_guidance_scale": 8
+    },
+    "queueResponse": "id: 7df41eab-e140-4111-8403-a40d431719a5\njob_id: 7df41eab-e140-4111-8403-a40d431719a5\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Small hostile wooden root spirit, tangled root feet, bark-mask face and a crown of two red leaves; no humanoid NPC clothing. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: ee40c805-fd01-55d5-8878-c2f218f2e3b4\nasset_status: pending (saved when generation completes)\nseed: 614006\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"7df41eab-e140-4111-8403-a40d431719a5\")",
+    "status": "completed",
+    "latestResponse": "status: completed\nid: 7df41eab-e140-4111-8403-a40d431719a5\njob_id: 7df41eab-e140-4111-8403-a40d431719a5\nframes: 1\ntransparent: yes\nasset_id: ee40c805-fd01-55d5-8878-c2f218f2e3b4\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/7df41eab-e140-4111-8403-a40d431719a5/download",
+    "localPath": "public/assets/maplestory/monster-expansion/root-sprite/originals/original-01.png",
+    "sha256": "a793029950b80a0901efe9c9d0212517d2cb3e2e528ace6a5c0a48322fd10b44",
+    "byteSize": 1743,
+    "width": 64,
+    "height": 64,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "visibleBounds": {
+      "x": 14,
+      "y": 8,
+      "width": 35,
+      "height": 48
+    },
+    "visiblePixels": 801,
+    "paletteSize": 21,
+    "chargedGenerations": 1,
+    "nativeFacing": "right",
+    "selection": "accepted after silhouette / anatomy / native alpha review"
+  },
+  "anchor": {
+    "x": 32,
+    "y": 56
+  },
+  "animations": {
+    "stand": {
+      "label": "대기",
+      "loop": true,
+      "jobId": "5703eec4-d29f-41ff-b26a-5327e6fb49a7",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/00.png",
+          "sha256": "be3a9c752d5e5eedc94770c444f16d973f81907008ee879ce023282ea3acd219",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/01.png",
+          "sourceSha256": "be3a9c752d5e5eedc94770c444f16d973f81907008ee879ce023282ea3acd219",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/01.png",
+          "sha256": "2a92e23796da83987e0553a99185a5fe8995124da2dcab21be81b4ff5bb9d6da",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/02.png",
+          "sourceSha256": "2a92e23796da83987e0553a99185a5fe8995124da2dcab21be81b4ff5bb9d6da",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/02.png",
+          "sha256": "994d7e45ebb5341ac6f13a674508d205812b46909f385f77f88e4a4dfa7202ae",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/03.png",
+          "sourceSha256": "994d7e45ebb5341ac6f13a674508d205812b46909f385f77f88e4a4dfa7202ae",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/03.png",
+          "sha256": "f75ed0cf873a5ed678f05b5c49bfc6c2f8e34cc84d7acb36791440ba28a9a66a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5703eec4-d29f-41ff-b26a-5327e6fb49a7/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/stand/5703eec4-d29f-41ff-b26a-5327e6fb49a7/04.png",
+          "sourceSha256": "f75ed0cf873a5ed678f05b5c49bfc6c2f8e34cc84d7acb36791440ba28a9a66a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "우향 나무 몸통을 유지하며 붉은 잎·뿌리 발·손가락이 움직이는 실제 대기 루프.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/root-sprite/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/root-sprite/review/stand-5703eec4-d29f-41ff-b26a-5327e6fb49a7.png"
+    },
+    "move": {
+      "label": "이동",
+      "loop": true,
+      "jobId": "484185a9-46aa-4d4a-8df8-3850ba7da0b4",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/00.png",
+          "sha256": "f84203420fc5a2942c539db051723e96fd7c637d6ce5a7aed0a81642e02a6805",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/01.png",
+          "sourceSha256": "f84203420fc5a2942c539db051723e96fd7c637d6ce5a7aed0a81642e02a6805",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/01.png",
+          "sha256": "11588beb35693b5abbe4cd957e41229285d86614a026f41be2e167316c840c4b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/02.png",
+          "sourceSha256": "11588beb35693b5abbe4cd957e41229285d86614a026f41be2e167316c840c4b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/02.png",
+          "sha256": "d3c602ddcf2d8f418a400ba6ad79f809bf82f55a54de711cbeb2e9989c430478",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/03.png",
+          "sourceSha256": "d3c602ddcf2d8f418a400ba6ad79f809bf82f55a54de711cbeb2e9989c430478",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/03.png",
+          "sha256": "c97bb314f13fbfb1df74f060595222b15c3de06a119ccf6f719534a0f489d7bc",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/04.png",
+          "sourceSha256": "c97bb314f13fbfb1df74f060595222b15c3de06a119ccf6f719534a0f489d7bc",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/04.png",
+          "sha256": "69f73363a46e17bda814d981f442c33ab3c9db733cf5ed554b7b9b50f4ecb00e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/05.png",
+          "sourceSha256": "69f73363a46e17bda814d981f442c33ab3c9db733cf5ed554b7b9b50f4ecb00e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/05.png",
+          "sha256": "01e894b38dd764d44b0d6782f6d1e84998276e3480aee8f9c53f59fb434e38c3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/06.png",
+          "sourceSha256": "01e894b38dd764d44b0d6782f6d1e84998276e3480aee8f9c53f59fb434e38c3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/06.png",
+          "sha256": "aca1f426e06524d47f57354b5996b3d9a49628faf7f14ebcf49e2fd524a56d37",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/07.png",
+          "sourceSha256": "aca1f426e06524d47f57354b5996b3d9a49628faf7f14ebcf49e2fd524a56d37",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/07.png",
+          "sha256": "8085038af369dd9174ef61ddcca9e7e6d8a63ab2148696f36733cc0fba74e11d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/484185a9-46aa-4d4a-8df8-3850ba7da0b4/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/move/484185a9-46aa-4d4a-8df8-3850ba7da0b4/08.png",
+          "sourceSha256": "8085038af369dd9174ef61ddcca9e7e6d8a63ab2148696f36733cc0fba74e11d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "우향 뿌리 발을 번갈아 들고 줄기 몸과 붉은 잎이 함께 움직이는 실제 이동 루프.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/root-sprite/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/root-sprite/review/move-484185a9-46aa-4d4a-8df8-3850ba7da0b4.png"
+    },
+    "attack1": {
+      "label": "지원 시전",
+      "loop": false,
+      "jobId": "ce5f1c39-b833-4fd1-8adc-0a8a5a10200f",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/00.png",
+          "sha256": "b231ef2fba42e0505550d31fc46881300c009bd1d3d4e844ee69c56ea0ed8d67",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/01.png",
+          "sourceSha256": "b231ef2fba42e0505550d31fc46881300c009bd1d3d4e844ee69c56ea0ed8d67",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/01.png",
+          "sha256": "56aee897b32475e3927d6ab7ff918ad7da3c10f781386e335f8cbeff8274832a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/02.png",
+          "sourceSha256": "56aee897b32475e3927d6ab7ff918ad7da3c10f781386e335f8cbeff8274832a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/02.png",
+          "sha256": "3167b9eb8bf5d4817be10a74c7211485b7e448c3d41a1c2397ee03e85c3c1845",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/03.png",
+          "sourceSha256": "3167b9eb8bf5d4817be10a74c7211485b7e448c3d41a1c2397ee03e85c3c1845",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/03.png",
+          "sha256": "a4d5b3e9e2318803756cc8be720d71fa684e90c56706714a47e325cc7f0b8901",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/04.png",
+          "sourceSha256": "a4d5b3e9e2318803756cc8be720d71fa684e90c56706714a47e325cc7f0b8901",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/04.png",
+          "sha256": "05650afb4a04304a10a58317b8809fd85d0090bee3be03a06c8069e5991a94bb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/05.png",
+          "sourceSha256": "05650afb4a04304a10a58317b8809fd85d0090bee3be03a06c8069e5991a94bb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/05.png",
+          "sha256": "7a5ac406b0b8e3c23b98b32f81930f41642a4ee80a5bd44c8206cb2c23a1015b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/06.png",
+          "sourceSha256": "7a5ac406b0b8e3c23b98b32f81930f41642a4ee80a5bd44c8206cb2c23a1015b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/06.png",
+          "sha256": "a702154278e7f8108dbec450f446f9e049a7afc8a6ef45a1e48aea9a117a41b1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/07.png",
+          "sourceSha256": "a702154278e7f8108dbec450f446f9e049a7afc8a6ef45a1e48aea9a117a41b1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/07.png",
+          "sha256": "fd2f14218d3f2d74c093bed602420cf0252a860f30f7bd7d30d14ada58a1f3cf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/attack1/ce5f1c39-b833-4fd1-8adc-0a8a5a10200f/08.png",
+          "sourceSha256": "fd2f14218d3f2d74c093bed602420cf0252a860f30f7bd7d30d14ada58a1f3cf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "우향 뿌리 손을 모아 올렸다 펼치는 지원 시전. 4번에서 두 팔과 잎이 가장 넓게 펼쳐지는 방출 자세.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/root-sprite/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/root-sprite/review/attack1-ce5f1c39-b833-4fd1-8adc-0a8a5a10200f.png",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625
+    },
+    "hit1": {
+      "label": "피격",
+      "loop": false,
+      "jobId": "e5fefda8-605f-4968-ab24-d3961cb440ec",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/00.png",
+          "sha256": "3bec1aac2a9b11f8440b831342a2914fe2aed9cb928596b55b6155a37f40063f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/01.png",
+          "sourceSha256": "3bec1aac2a9b11f8440b831342a2914fe2aed9cb928596b55b6155a37f40063f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/01.png",
+          "sha256": "1152e8873734c32c89a35f7b3892588c091b2e94890a5dfdac760c9c276f7eae",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/02.png",
+          "sourceSha256": "1152e8873734c32c89a35f7b3892588c091b2e94890a5dfdac760c9c276f7eae",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/02.png",
+          "sha256": "b901b3d9909942168a84da31c2f649498623cc71cc140c0f4066ff9d380b3d72",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/03.png",
+          "sourceSha256": "b901b3d9909942168a84da31c2f649498623cc71cc140c0f4066ff9d380b3d72",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/03.png",
+          "sha256": "d369d2544bd949b9196cd96e624aaf22459d67a1f30eccd485e7a0949f40efdb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5fefda8-605f-4968-ab24-d3961cb440ec/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/hit1/e5fefda8-605f-4968-ab24-d3961cb440ec/04.png",
+          "sourceSha256": "d369d2544bd949b9196cd96e624aaf22459d67a1f30eccd485e7a0949f40efdb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "우향 잎과 줄기 몸을 움츠리고 눈을 잠깐 감았다 원래 자세로 복귀하는 실제 피격.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/root-sprite/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/root-sprite/review/hit1-e5fefda8-605f-4968-ab24-d3961cb440ec.png"
+    },
+    "die1": {
+      "label": "쓰러짐",
+      "loop": false,
+      "jobId": "4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/00.png",
+          "sha256": "94e952bf562260bf1a7bcc1d67bdc04aaeda8bdea9fa106102b67d28c0de9a65",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/01.png",
+          "sourceSha256": "94e952bf562260bf1a7bcc1d67bdc04aaeda8bdea9fa106102b67d28c0de9a65",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/01.png",
+          "sha256": "2f3c5249f1a49a2026d412dc607d00aa04e5a9b0cad6415e3a518d61bcbd35e7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/02.png",
+          "sourceSha256": "2f3c5249f1a49a2026d412dc607d00aa04e5a9b0cad6415e3a518d61bcbd35e7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/02.png",
+          "sha256": "2578def2e041a909176259adf2125ca7e4db1709c697a674539cd0f47b24d1b0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/03.png",
+          "sourceSha256": "2578def2e041a909176259adf2125ca7e4db1709c697a674539cd0f47b24d1b0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/03.png",
+          "sha256": "731a808b66f23e6d35f8edf09eb76edab039346a20dd959df699fc05eb9531fb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/04.png",
+          "sourceSha256": "731a808b66f23e6d35f8edf09eb76edab039346a20dd959df699fc05eb9531fb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/04.png",
+          "sha256": "f3cf66da5ec8661da06f7a55a5f17484043629c6d3a874a1564f118d0a5e0ff3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/05.png",
+          "sourceSha256": "f3cf66da5ec8661da06f7a55a5f17484043629c6d3a874a1564f118d0a5e0ff3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/05.png",
+          "sha256": "732119ca823841f3693e30114c88c89a8023093fe7955c1ff887190e6d1e4c36",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/06.png",
+          "sourceSha256": "732119ca823841f3693e30114c88c89a8023093fe7955c1ff887190e6d1e4c36",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/06.png",
+          "sha256": "5da175c514ab99eb0ce2bcc630c4e1de060e227f12d291de9322e109f76d857f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/07.png",
+          "sourceSha256": "5da175c514ab99eb0ce2bcc630c4e1de060e227f12d291de9322e109f76d857f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/root-sprite/frames/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/07.png",
+          "sha256": "d71ff02240102d47c61bf0da5a4b2c7419d02226c00365b0f2190d6640d1483f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/root-sprite/originals/die1/4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97/08.png",
+          "sourceSha256": "d71ff02240102d47c61bf0da5a4b2c7419d02226c00365b0f2190d6640d1483f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "뿌리 발이 풀리고 나무 줄기와 붉은 잎이 옆으로 쓰러져 누운 자세로 끝나는 실제 KO.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/root-sprite/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/root-sprite/review/die1-4d9d9bcc-49cd-4ffd-bc94-49dc54eb1e97.png"
+    }
+  }
+}

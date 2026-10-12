@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="motion.css" />
+    <link rel="stylesheet" href="embedded.css" />
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-hybrid/lab-tabs.js"
+    ></script>
+    <title>아타호 · 프레임과 비도트 하이브리드</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body data-lab-tab="hybrid">
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">아타호 · PC 모션 비교</p>
+          <h1>한 박자, 두 가지 움직임</h1>
+        </div>
+        <a href="index.html">선택한 원화 보기</a>
+      </header>
+      <fieldset id="motion-controls" disabled>
+        <legend>함께 재생</legend>
+        <div class="controls">
+          <button data-play="idle" aria-pressed="true">대기</button>
+          <button data-play="walk" aria-pressed="false">걷기</button>
+          <button data-play="punch" aria-pressed="false">정권 · J</button>
+          <button data-play="kick" aria-pressed="false">회전발차기 · K</button>
+          <span class="separator"></span>
+          <button id="pause">일시정지</button>
+          <label><input id="slow" type="checkbox" /> 0.25배</label>
+          <label><input id="bones" type="checkbox" /> 뼈대 보기</label>
+          <label
+            >크기
+            <select id="size">
+              <option value="240">자세히 · 240px</option>
+              <option value="112">게임 크기 · 112px</option>
+            </select></label
+          >
+        </div>
+        <div class="timeline">
+          <label for="timeline">공격 자세 살펴보기</label
+          ><input
+            id="timeline"
+            type="range"
+            min="0"
+            max="1000"
+            step="1"
+            value="0"
+            disabled
+          /><output id="status" aria-live="off">그림을 준비 중이에요.</output>
+        </div>
+      </fieldset>
+      <section class="comparison" aria-label="같은 장면에서 모션 비교">
+        <article>
+          <div class="heading">
+            <h2>현재 프레임 방식</h2>
+            <span id="frame-detail"></span>
+          </div>
+          <div class="stage" id="frame-stage"></div>
+          <p>현재 게임의 프레임과 포즈 순서</p>
+        </article>
+        <article>
+          <div class="heading">
+            <h2>비도트 하이브리드</h2>
+            <span id="hybrid-detail"></span>
+          </div>
+          <div class="stage" id="hybrid-stage"></div>
+          <p>원화 01을 참조한 부위 움직임 + 큰 공격 자세 교체</p>
+        </article>
+      </section>
+      <footer>
+        <p>
+          같은 크기·30° 직교 카메라·이동 거리·접촉 시점·45ms 히트스톱을
+          공유합니다. ← → 이동, J 정권, K 회전발차기, Space 일시정지.
+        </p>
+        <p class="note">
+          비도트 첫 모션 시안입니다. 도트 하이브리드는 아직 제작 전이며, 기존
+          게임에는 적용하지 않았습니다.
+        </p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-hybrid/motion.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

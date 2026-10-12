@@ -1,0 +1,559 @@
+{
+  "createdDate": "2026-10-11",
+  "baseMain": "ac892311210cfe01a64c1484dad50b8648dcfde0",
+  "workingName": "연묵",
+  "concept": "젊은 성인 여우 수인 부적술사",
+  "status": "concept-draft-awaiting-user-review",
+  "provider": "built-in image_gen",
+  "generationCalls": 1,
+  "retries": 0,
+  "pixellabCalls": 0,
+  "cliApiCalls": 0,
+  "authorization": {
+    "scope": "첫 외형 초안 전신 대기 자세 1종과 아타호 DOM 비교 화면",
+    "externalPaidGenerationApproved": false,
+    "externalPaidCalls": 0,
+    "builtInMonetaryCost": "도구가 금액 정보를 반환하지 않음. 이번 범위는 내장 생성 1회만 사용."
+  },
+  "finalPrompt": "Use case: stylized-concept\nAsset type: first character appearance concept for a small pixel-art martial-arts fantasy RPG; one character, one standing pose.\nScene/backdrop: genuinely transparent PNG background. No scenery, ground plane, cast shadow, text, border or watermark.\nSubject: Yeonmuk, a young ADULT anthropomorphic fox talisman practitioner. Silver-white and soft gray fur, large pointed fox ears, a clearly visible fluffy fox tail, a slender agile build, a narrow mature fox muzzle, small confident eyes and a restrained self-assured smile. Gender-neutral presentation; no exaggerated gender traits. Compact RPG proportions with a large head but slightly longer limbs and a more angular adult face than a stocky tiger brawler; roughly 2.5 heads tall, clearly an adult rather than a child.\nClothing and equipment: practical loose dark NAVY traveling clothes, a TEAL cloth sash, understated dark trousers and travel shoes. A small waist talisman pouch and a calligraphy brush visibly tucked at the waist. Hold one small OCHRE paper talisman with a tiny RED seal away from the torso so the whole costume is readable. Simple abstract seal marks, not readable lettering.\nStyle/medium: crisp low-resolution-style pixel art. Chunky deliberate square pixel clusters, thin near-black warm outlines, a restrained palette, just 2–3 shades per material and modest sculpted volume. Aim for the coarse visual density of a character designed for a roughly 64-pixel-tall sprite, shown enlarged for concept review. Avoid smooth illustration, painted texture, excessive tiny details, glossy 3D rendering or antialiased blurry edges.\nComposition/framing: one complete full-body character centered with comfortable transparent margins, almost straight front view with only a very slight turn. Both feet planted at the same ground level, relaxed ready-to-travel idle posture. Full ears, brush, talisman and tail all visible. Tail sits beside/behind the legs without covering the outfit. No attack pose, floating pose, weapons or magical effects obscuring the body.\nConstraints: only this fox character; no tiger, comparison panel, additional poses, sprite sheet, background or extra characters. Preserve genuine transparency.",
+  "inputs": {
+    "referencedImagePaths": [],
+    "numLastImagesToInclude": null,
+    "observedAtaho": {
+      "sourcePath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/south.png",
+      "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9",
+      "size": [64, 64],
+      "observations": "큰 머리와 짧고 묵직한 몸. 짙은 윤곽, 제한된 따뜻한 색 단계와 약한 입체감. 이미지 입력 없이 설명에 반영."
+    }
+  },
+  "file": {
+    "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-01.png",
+    "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a126e7-f1bf-77e0-a6da-a6902de601c1/exec-a78b1f9c-23cc-4105-9f21-da9e4c6f56e1.png",
+    "format": "PNG",
+    "mode": "RGBA",
+    "size": [1098, 1432],
+    "byteSize": 869314,
+    "sha256": "e49e2e1e97a0133e36fd86f6ad665950bbfab84560c62bec568d798038418481",
+    "savedWithoutModification": true,
+    "alpha": {
+      "boundingBox": [27, 19, 1082, 1401],
+      "fullyTransparentPixels": 1011394,
+      "fullyOpaquePixels": 1385,
+      "partiallyTransparentPixels": 559557,
+      "originalAlphaPreserved": true
+    }
+  },
+  "comparisonReference": {
+    "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/ataho-front-reference.png",
+    "size": [64, 64],
+    "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9",
+    "copiedWithoutModification": true
+  },
+  "previewPath": "src/resources/characters/fox-talismanist/",
+  "visualReview": {
+    "subject": "회백색 여우 수인 한 명, 큰 귀와 풍성한 꼬리 확인",
+    "expression": "작은 눈과 자신감 있는 미소. 기존 아타호와 구분되는 날렵한 얼굴",
+    "adultBuild": "어린아이형 큰 눈이나 유아 체형 없이 길어진 팔다리와 성인 여행자 실루엣",
+    "clothing": "짙은 남색 겉옷·청록 띠·황토색 부적의 붉은 문양·허리 주머니와 붓 확인",
+    "pose": "정면에 가까운 전신 대기, 양발이 지면에 닿고 귀·발·꼬리 안 잘림",
+    "gender": "최초 생성 당시에는 성별 미정. 이후 확정한 여성 설정은 currentIdentity에 기록.",
+    "limitations": [
+      "1098×1432 원본으로 64×64 게임 스프라이트가 아님",
+      "아타호보다 도트 밀도·옷 장식·털의 명암 단계가 많음",
+      "부적의 붉은 문양이 작은 인장보다 크게 표현됨",
+      "반투명 픽셀이 많으며 하드 도트 알파로 후처리하지 않고 원본 보존"
+    ]
+  },
+  "gameIntegrated": false,
+  "notImplemented": [
+    "파티·동행",
+    "전투·스킬·모션",
+    "저장·해금·첫 만남 이벤트 연결",
+    "게임용 64×64 스프라이트 정리",
+    "리소스 manifest/runtime 연결"
+  ],
+  "storyOwnership": "설정과 첫 만남 대사는 별도 스토리 세션의 docs/characters/fox-talismanist.md 소유. 이 작업에서 수정하지 않음.",
+  "validation": {
+    "check": "passed",
+    "browser": "passed",
+    "browserReportPath": "public/assets/maplestory/fox-talismanist-ai/concept/review/browser-verification.json",
+    "desktopViewport": [1180, 1000],
+    "mobileViewport": [420, 900],
+    "horizontalOverflow": false,
+    "consoleErrors": 0,
+    "missingResponses": 0,
+    "originalHashVerified": true
+  },
+  "currentIdentity": {
+    "name": "연묵",
+    "nameConfirmed": true,
+    "gender": "여성",
+    "ageGroup": "젊은 성인",
+    "species": "여우 수인",
+    "role": "부적술사",
+    "confirmedDate": "2026-10-11",
+    "confirmation": "이름 연묵은 맘에든다. 성별은 여자로."
+  },
+  "identityHistory": [
+    {
+      "stage": "initial-generation",
+      "date": "2026-10-11",
+      "name": "연묵",
+      "nameStatus": "가칭",
+      "gender": "미정",
+      "genderPresentation": "성별을 과장하지 않는 외형"
+    },
+    {
+      "stage": "user-confirmation",
+      "date": "2026-10-11",
+      "name": "연묵",
+      "nameStatus": "확정",
+      "gender": "여성",
+      "appearanceChangeRequested": false,
+      "regenerated": false
+    }
+  ],
+  "appearanceEdits": [
+    {
+      "date": "2026-10-11",
+      "candidate": "yeonmuk-02",
+      "provider": "built-in image_gen",
+      "operation": "edit-existing-character",
+      "calls": 1,
+      "retries": 0,
+      "pixellabCalls": 0,
+      "cliApiCalls": 0,
+      "authorization": "사용자가 조금 더 여성스러운 느낌, 2D 픽셀에서 어느 정도 굴곡이 보이는 표현을 요청. 기존 01 기준 내장 편집 1회만 승인.",
+      "requestedChanges": [
+        "부드러운 눈썹·눈매와 작은 속눈썹, 옆으로 흐르는 앞머리",
+        "남색 여행복의 어깨·허리·옷자락으로 자연스러운 성인 여성 실루엣",
+        "3~4단계 제한된 명암과 큰 도트 덩어리의 털·몸·옷 주름 볼륨"
+      ],
+      "finalEditPrompt": "Use case: identity-preserve\nAsset type: revised appearance concept for Yeonmuk, a young ADULT FEMALE anthropomorphic fox talisman practitioner in a pixel-art martial-arts fantasy RPG.\nEdit target: the supplied yeonmuk-01.png character. EDIT THIS EXISTING CHARACTER, preserving her identity and composition rather than creating a new character.\nKeep invariant: silver-white and gray fox fur; large pointed ears; the same fluffy tail shape and placement; the same near-front full-body camera and standing pose with both feet on the same ground level; two arms and two legs; the paper talisman held in the same hand at the same height and the other hand relaxed in the same position. Keep the navy traveling outfit, teal sash, dark trousers and travel shoes, ochre talisman with red marks, waist pouch and calligraphy brush. Keep her adult self-assured personality and small confident smile. All ears, feet, tail and equipment remain visible.\nRequested femininity: make the adult woman's face subtly more feminine through softer eyebrows and eye shapes, very small restrained outer eyelashes, and a gently side-swept forelock. Keep a mature fox muzzle and small eyes rather than childlike wide eyes. Give the covered travel outfit a slightly softer shoulder line, modestly fitted waist and gently flowing coat hem so a natural young adult female silhouette reads through the clothing. No exaggerated breasts, cleavage, exposed torso, short skirt, child body, glamour makeup or sexualized posing.\nRequested pixel art: CLEAR CRISP 2D PIXEL ART, with a substantially coarser, regular logical pixel grid and BIG deliberate pixel clusters. Reduce the source's fine lines, fur filigree and tiny costume ornaments. Think of a character with about 64–96 logical pixels of height displayed enlarged, not a detailed high-resolution painting. Preserve volume and natural body contours using only about 3–4 distinct shading steps per material, clustered highlights and hard stepped shadows on the face, shoulders, waist, coat folds and tail. Thin dark stepped outlines. Show rounded fur and clothing volume with discrete color blocks, without flattening everything into a single fill.\nAvoid: continuous gradients, smooth antialiasing, tiny noisy pixels, glossy 3D render, realistic lighting or airbrushed illustration. No new accessories or decorative motifs, no action motion, no extra characters or comparison sheet.\nBackground/output: one complete character on a genuinely transparent PNG background. Preserve transparency; no scene, ground plane, cast shadow, text, border or watermark.",
+      "input": {
+        "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-01.png",
+        "referencedImagePath": "/Users/3sam3/.codex/worktrees/fox-talismanist-concept/web-games/public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-01.png",
+        "sha256": "e49e2e1e97a0133e36fd86f6ad665950bbfab84560c62bec568d798038418481"
+      },
+      "output": {
+        "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-02.png",
+        "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a126e7-f1bf-77e0-a6da-a6902de601c1/exec-695c6a82-e5e5-4ed3-8788-c10957e4b815.png",
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [1098, 1433],
+        "byteSize": 844032,
+        "sha256": "7596e4cbbe27dfd26167df86aaaf9ec7a8115e89a25d5fb1f19c955d518bd358",
+        "savedWithoutModification": true,
+        "alpha": {
+          "boundingBox": [31, 37, 1070, 1405],
+          "fullyTransparentPixels": 1000405,
+          "fullyOpaquePixels": 1434,
+          "partiallyTransparentPixels": 571595,
+          "originalAlphaPreserved": true
+        }
+      },
+      "visualReview": {
+        "identityPreserved": "회백 털·큰 귀·꼬리·남색 옷·청록 띠·부적·주머니·붓 유지",
+        "posePreserved": "정면에 가까운 같은 자세, 두 팔·두 다리와 양발 접지, 부적을 드는 손 유지",
+        "femininity": "눈매·작은 속눈썹과 허리선에 미세한 여성다운 변화. 변화 폭은 크지 않음",
+        "volume": "털과 옷의 명암 덩어리·주름이 유지되며 2D 도트 풍의 입체감 확인",
+        "limitations": [
+          "고해상도 컨셉 PNG이며 64×64 게임용 완성 스프라이트가 아님",
+          "도트·장식 밀도가 여전히 아타호보다 높으며 요청한 굵은 논리 픽셀 격자로 완전히 정리되지는 않음",
+          "미세한 반투명 가장자리 픽셀을 수정하지 않고 도구 출력 그대로 보존"
+        ]
+      },
+      "selectionStatus": "current-preview-candidate-awaiting-user-review",
+      "gameIntegrated": false,
+      "validation": {
+        "original01Unchanged": true,
+        "firstGenerationRecordUnchanged": true,
+        "output02OriginalBytesPreserved": true,
+        "format": "passed",
+        "browser": "passed",
+        "desktopAndMobileImageLoading": "passed",
+        "consoleErrors": 0,
+        "missingFiles": 0,
+        "browserReport": "public/assets/maplestory/fox-talismanist-ai/concept/review/edit-02/browser-verification.json",
+        "gameTests": "not-needed-static-comparison-page"
+      }
+    },
+    {
+      "date": "2026-10-11",
+      "candidate": "yeonmuk-03",
+      "provider": "built-in image_gen",
+      "operation": "edit-existing-character",
+      "calls": 1,
+      "retries": 0,
+      "pixellabCalls": 0,
+      "cliApiCalls": 0,
+      "authorization": "사용자가 02 확인 후 더 여성스럽게 요청. 기획에서 같은 연묵의 얼굴선·짧은 단발·자연스러운 여행복 핏을 더 분명하게 하는 내장 편집 1회를 전달. 자동 재시도와 외부 유료 호출은 제외.",
+      "userRequest": "더 여성스럽게",
+      "requestedChanges": [
+        "갸름하고 부드러운 얼굴선·눈매·눈썹, 옆으로 흐르는 턱선 길이 회백색 단발",
+        "조금 좁은 어깨와 실용적인 여행복의 허리·옷자락 곡선, 성인 여성의 자연스러운 옷 위 굴곡",
+        "선명한 큰 픽셀 덩어리와 3~4단계 제한 명암으로 털·몸·옷의 볼륨 표현"
+      ],
+      "finalEditPrompt": "Use case: identity-preserve\nAsset type: revised full-body appearance concept 03 for Yeonmuk, a young ADULT FEMALE anthropomorphic FOX talisman practitioner in a 2D pixel-art martial-arts fantasy RPG.\nInput: the supplied yeonmuk-02.png is the exact edit target. Edit this same character, not a new character or a comparison sheet. The previous revision was too subtle; the requested face, hairstyle and clothed silhouette changes must be visibly clear.\nPreserve identity and composition: silver-white and gray fox fur, tall large pointed fox ears, mature fox muzzle and black fox nose, golden eyes, the same fluffy tail and its placement, dark NAVY practical traveling outfit, TEAL sash, ochre paper talisman with abstract red markings, brown waist pouch and calligraphy brush. Preserve her confident friendly adult expression. Keep the same nearly front-facing camera, full-body standing idle pose, two arms and two legs, the same talisman-holding hand and relaxed other hand, both feet planted at the same level. All ears, tail, feet and equipment remain fully visible. Do not add items or magic effects.\nMain change, clearly feminine adult FOX face and hair: make the face narrower with a gently tapered soft jaw and less broad pointed cheek fur. Use softer arched slim eyebrows and gently almond-shaped eyes with restrained small lashes. A clearly defined SHORT CHIN-LENGTH BOB hairstyle made of naturally silver-white and gray hair/fur, with side-swept bangs and smooth coherent jaw-length side locks framing the face. This should read as an adult female fox, with fox muzzle and ears retained, not a human girl, child, long-haired princess or generic cute animal. Do not leave the original short spiky cheek mane unchanged.\nMain change, feminine practical travel outfit: slightly narrower shoulders, a natural covered adult female chest, a visibly fitted but modest waist, and a gently flowing coat hem. Let subtle chest, waist and hip contours read through the garment fit and discrete shading while keeping practical coverage and room to travel. No exaggerated hourglass proportions, no sexualized breasts, no cleavage, no exposed torso, no short skirt or glamour pose. Keep the navy jacket, full dark trousers and travel shoes, teal sash and same accessories. Fur remains within the head, hands, tail and natural exposed areas; no stray fur sticking through the clothing seams or coat panels. She is an agile TALISMANIST, not a fighter wearing a tight combat outfit.\nStyle: crisp 2D PIXEL ART with large regular square pixel clusters and thin dark stepped outlines. Coarsen the pixel grid and simplify fine detail visibly; think 64–96 logical pixels tall enlarged for concept viewing. Use just 3–4 discrete shading steps per material, large clustered highlights and hard stepped shadows to show rounded fox fur, the clothed torso's natural contours, coat folds and tail volume. No continuous gradients, airbrushed shading, glossy 3D rendering, smooth antialiasing or dense tiny noisy ornamentation.\nOutput: ONE complete character, genuine transparent PNG background. Preserve alpha transparency. No background scene, ground plane, cast shadow, text, watermark or border.",
+      "input": {
+        "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-02.png",
+        "referencedImagePath": "/Users/3sam3/.codex/worktrees/fox-talismanist-concept/web-games/public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-02.png",
+        "sha256": "7596e4cbbe27dfd26167df86aaaf9ec7a8115e89a25d5fb1f19c955d518bd358"
+      },
+      "output": {
+        "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-03.png",
+        "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a126e7-f1bf-77e0-a6da-a6902de601c1/exec-20c9dd0d-4462-4044-a5ca-19ccb36b06ed.png",
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [1098, 1433],
+        "byteSize": 923878,
+        "sha256": "703a27b47e26804dbbc543bcdc41e614bbdc977ee70d972c49dc1032281c2749",
+        "savedWithoutModification": true,
+        "alpha": {
+          "boundingBox": [0, 17, 1094, 1433],
+          "fullyTransparentPixels": 978805,
+          "fullyOpaquePixels": 964,
+          "partiallyTransparentPixels": 593665,
+          "originalAlphaPreserved": true
+        }
+      },
+      "visualReview": {
+        "identityPreserved": "회백색·큰 귀·풍성한 꼬리·남색 여행복·청록 띠·황토 부적과 붉은 문양·주머니·붓 유지",
+        "posePreserved": "정면에 가까운 전신 대기, 같은 부적 손·양팔·양발 접지 유지",
+        "femininity": "옆으로 흐르는 턱선 길이 단발과 갸름한 얼굴, 좁은 어깨와 옷 위 상체·허리 굴곡이 02보다 분명함",
+        "volume": "계단형 명암과 옷 주름으로 머리·상체·꼬리 굴곡을 표현",
+        "limitations": [
+          "고해상도 컨셉 PNG로 64×64 게임용 완성 스프라이트가 아님",
+          "도트 밀도가 높아 64~96 논리 픽셀의 굵은 격자로 완전히 단순화되지는 않음",
+          "얼굴 털이 정리되며 여우 주둥이가 짧게 읽힘. 사용자 외형 확인이 필요함",
+          "생성된 반투명 가장자리와 내부 알파를 그대로 보존"
+        ]
+      },
+      "selectionStatus": "current-preview-candidate-awaiting-user-review",
+      "gameIntegrated": false,
+      "validation": {
+        "format": "passed",
+        "httpImageLoading": "passed",
+        "responses": 5,
+        "original01And02Unchanged": true,
+        "firstGenerationAndEdit02RecordsUnchanged": true,
+        "output03OriginalBytesPreserved": true,
+        "report": "public/assets/maplestory/fox-talismanist-ai/concept/review/edit-03/http-verification.json",
+        "browserLayoutRetest": "not-needed-unchanged-layout",
+        "gameTests": "not-needed-static-comparison-page"
+      }
+    },
+    {
+      "date": "2026-10-11",
+      "candidate": "yeonmuk-04",
+      "provider": "built-in image_gen",
+      "operation": "edit-existing-character",
+      "calls": 1,
+      "retries": 0,
+      "pixellabCalls": 0,
+      "cliApiCalls": 0,
+      "authorization": "사용자가 03보다 이전 02를 선호하고 여성스러운 굴곡만 강조하는 수정 요청. 02를 입력으로 내장 편집 1회, 외부 유료 호출·자동 재시도 제외.",
+      "userFeedback": {
+        "quote": "이 전 버전이 더 낫다. 이전버전에서 여성스런 굴곡만 좀 더 강조해볼래?",
+        "preferredCandidate": "yeonmuk-02",
+        "nonPreferredCandidate": "yeonmuk-03",
+        "notAdopted": "03의 짧은 단발과 새 얼굴선",
+        "scope": "02의 얼굴·머리·어깨·팔다리·꼬리·장비·구도를 유지하며 여행복 상체·허리·골반 핏과 명암만 수정"
+      },
+      "requestedChanges": [
+        "옷 위의 자연스러운 성인 여성 상체 볼륨과 허리·골반의 곡선",
+        "같은 여행복의 핏·주름·3~4단계 픽셀 명암으로 굴곡 강조"
+      ],
+      "finalEditPrompt": "Use case: precise-object-edit\nAsset type: candidate 04 of Yeonmuk, a young ADULT FEMALE anthropomorphic fox talisman practitioner for a 2D pixel-art RPG.\nExact edit target: the supplied yeonmuk-02.png. This is candidate02, NOT candidate03. The user prefers candidate02's head and face and requests ONLY slightly more feminine clothed torso/waist/hip curves.\nCRITICAL: ONLY torso/waist/hip garment fit and shading; keep face, eyes, hairstyle from candidate02 identical.\nLocked unchanged regions: the ENTIRE HEAD including its size, original short pointed fox cheek fur, original swept forelock and hair silhouette, eyes, eyebrows, eyelashes, muzzle, fox nose, smile, face outline, large ears and all fur colors. Do NOT create a bob haircut, narrow the face, soften or redesign the head, change shoulder width, alter the arms/hands, legs/feet, tail, pose, camera, character scale or equipment. Treat these as locked pixels. Keep the same talisman held in the same hand, relaxed other hand, both feet planted, fluffy tail, brown pouch and brush. Keep the original NAVY / TEAL / OCHRE palette, navy practical fully covered travel coat and full trousers, teal sash, ochre talisman with red marks, exactly the same costume coverage and confident adult personality.\nEditable region ONLY: the navy coat over the chest, waist, and upper hip area. Subtly clarify the natural clothed adult female chest volume using gentle cloth tension, fold placement, clustered highlights and stepped shadows. Make the waist modestly fitted, leading into a soft natural curve of the coat at the hips. Keep the overall body mass and shoulder width; do not make the whole character thinner or change her build. These should be natural practical traveling-clothes contours, not exaggerated breasts, an extreme hourglass, cleavage, skin exposure, a tight catsuit, a short skirt or a sexualized pose. Preserve every accessory and sash design and placement; no stray fur emerging through garment seams.\nStyle: preserve candidate02's crisp 2D pixel-art appearance. Express rounded clothed torso volume and folds with LARGE square pixel clusters and only 3–4 discrete shading steps per material, thin stepped outlines. No glossy 3D rendering, continuous gradients, airbrushing, tiny noisy details, new ornamentation or effects.\nRepeat the strict edit boundary: ONLY torso/waist/hip garment fit and shading; keep face, eyes, hairstyle from candidate02 identical. No new hairstyle or face, no changed limbs, no body-wide slimming.\nOutput: one complete full-body character in the same idle pose on genuine transparent PNG. Preserve transparency; no scenery, ground plane, cast shadow, text, border, watermark or comparison sheet.",
+      "input": {
+        "candidate": "yeonmuk-02",
+        "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-02.png",
+        "referencedImagePath": "/Users/3sam3/.codex/worktrees/fox-talismanist-concept/web-games/public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-02.png",
+        "sha256": "7596e4cbbe27dfd26167df86aaaf9ec7a8115e89a25d5fb1f19c955d518bd358",
+        "candidate03UsedAsInput": false
+      },
+      "output": {
+        "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-04.png",
+        "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a126e7-f1bf-77e0-a6da-a6902de601c1/exec-27320259-aad8-4ced-b84c-18556b546ffd.png",
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [1098, 1433],
+        "byteSize": 877890,
+        "sha256": "004e622819c1f87f64e4a03dd65aa9077468ccd2ff9559a5068abd6bf00a5026",
+        "savedWithoutModification": true,
+        "alpha": {
+          "boundingBox": [41, 33, 1070, 1409],
+          "fullyTransparentPixels": 992767,
+          "fullyOpaquePixels": 1301,
+          "partiallyTransparentPixels": 579366,
+          "originalAlphaPreserved": true
+        }
+      },
+      "visualReview": {
+        "faceAndHair": "02의 얼굴 인상·눈매·앞머리·뾰족한 볼 털 형태를 유지. 03의 단발은 없음",
+        "identityAndPose": "큰 귀·꼬리·팔·다리·부적·주머니·붓과 대기 구도, 남색·청록·황토 팔레트 유지",
+        "garmentCurves": "남색 옷 위 상체 볼륨과 허리선이 02보다 조금 분명하며 옷 주름과 단계 명암 유지",
+        "limitations": [
+          "여전히 고해상도 컨셉 PNG이며 64×64 게임 스프라이트가 아님",
+          "편집 원본의 얼굴·머리 인상은 유지하지만 생성 도구의 재출력으로 영역별 픽셀 완전 동일을 보장하지 않음",
+          "생성된 알파와 픽셀을 후처리하지 않고 원본 보존"
+        ]
+      },
+      "selectionStatus": "current-preview-candidate-awaiting-user-review",
+      "gameIntegrated": false,
+      "validation": {
+        "format": "passed",
+        "httpImageLoading": "passed",
+        "responses": 6,
+        "exactInput02Verified": true,
+        "original01And02And03Unchanged": true,
+        "previousGenerationAndEditRecordsUnchanged": true,
+        "output04OriginalBytesPreserved": true,
+        "report": "public/assets/maplestory/fox-talismanist-ai/concept/review/edit-04/http-verification.json",
+        "browserLayoutRetest": "not-needed-unchanged-layout",
+        "gameTests": "not-needed-static-comparison-page"
+      }
+    }
+  ],
+  "usageSummary": {
+    "builtInInitialGenerations": 1,
+    "builtInEditCalls": 3,
+    "totalBuiltInCalls": 5,
+    "retries": 0,
+    "pixellabCalls": 0,
+    "cliApiCalls": 0,
+    "monetaryCost": "내장 도구가 금액을 반환하지 않음. 외부 유료 생성 호출은 없음.",
+    "builtInSpriteGenerationCalls": 1
+  },
+  "currentSelection": {
+    "candidate": "yeonmuk-04",
+    "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-04.png",
+    "sha256": "004e622819c1f87f64e4a03dd65aa9077468ccd2ff9559a5068abd6bf00a5026",
+    "reason": "03보다 02를 선호한 사용자 요청으로 02 기반 옷의 굴곡 수정 후보를 기본 표시",
+    "approvalStatus": "시각 검토 대기"
+  },
+  "runtimeSprites": [
+    {
+      "date": "2026-10-11",
+      "candidate": "yeonmuk-front-01",
+      "assetId": "ai/fox-talismanist-front",
+      "provider": "built-in image_gen",
+      "operation": "reference-guided-game-sprite-generation",
+      "generationCalls": 1,
+      "retries": 0,
+      "pixellabCalls": 0,
+      "cliApiCalls": 0,
+      "authorization": "사용자가 04 확인 후 게임내 반영할 도트 전면이미지 한 장 요청. 내장 생성 1회와 JS 최근접 64×64 내보내기 승인. 생성 원본 보존, 외부 유료·CLI/API·자동 재시도 제외.",
+      "finalPrompt": "Use case: stylized-concept\nAsset type: ONE production-scale FRONT/SOUTH IDLE sprite for Yeonmuk, a young adult female FOX beast-person talismanist, designed for a 64x64 transparent pixel-art game canvas.\nInput image roles: Image 1 (yeonmuk-04.png) is the APPROVED DESIGN AND IDENTITY REFERENCE. Image 2 (current Ataho south.png) is ONLY the target 64x64 pixel density, occupied height, ground anchor, camera and compact game-sprite scale reference. Do NOT copy the tiger's species, face, orange colors, clothing or personality.\nPrimary request: RE-DESIGN image 1 as genuine LOW-RESOLUTION 64x64 pixel art at the coarse scale of image 2. This must be a newly simplified GAME SPRITE, not a detailed painting or a shrunk high-resolution illustration. Exactly ONE pose, no sprite sheet or variants.\nLOGICAL CANVAS: 64 columns x 64 rows of UNIFORM SQUARE PIXELS, HARD stepped edges, one logical pixel minimum line width. If the output is physically larger, show only that 64x64 logical grid enlarged in exact uniform square blocks; do not draw finer pixels inside those blocks. No visible grid lines. Aim for a 1024-square representation of this exact 64-square sprite if necessary, with each logical pixel occupying a uniform 16x16 block.\nSubject/proportion: retain Yeonmuk's white and gray fox face, original 02/04 swept forelock and pointed cheek-fur hairstyle (NO bob haircut), tall pointed ears, gold confident adult eyes, black fox nose, small smile, one fluffy white-gray tail beside/behind her on viewer right. Compact RPG sprite with a large head and small adult body. Match Ataho's occupied height, roughly y=1 to y=62 with feet at y=62 and ground anchor y=63, on the 64x64 canvas. Fit her ears and tail inside without clipping; reduce torso size a little if needed. Keep body centered near x=32, with transparent margins. Full head, both feet, arms, tail and talisman visible.\nPose/camera: TRUE FRONT facing the camera, SOUTH direction idle, full body. Both eyes facing forward, both shoulders visible, both planted feet at the same ground level. Same calm travel idle idea as approved04, one small ochre talisman with a tiny red symbol held in her hand on viewer left, other hand relaxed. No attack, magic VFX, floating, perspective turn or side view.\nClothing: practical fully covered navy travel coat and dark trousers, teal waist sash, tiny brown waist pouch and one small brush. Preserve approved04's natural adult female chest and modestly fitted waist/hip contour with only a FEW PIXELS of silhouette and 3–4 discrete shade blocks per material. No exaggerated body, exposed skin, cleavage, short skirt or redesigned outfit. Simplify the large concept details: use broad readable navy shapes, clear teal sash, readable white face, small yellow talisman and tiny red mark, minimal accessories. No decorative embroidery.\nPixel style: strong thin dark pixel outline, LARGE intentional flat pixel clusters, restrained palette of roughly 24–32 colors total, 3–4 clean shades per material, NO gradients, antialiasing, smooth curves, tiny noisy texture, glossy render, dithering or painted fur. Small native-size readability is the priority.\nOutput: ONE complete sprite on a genuinely TRANSPARENT background, square composition. No checkerboard baked into the image, no shadow/ground/floor, scenery, text, labels, border, watermark, extra character or comparison panel.",
+      "inputs": [
+        {
+          "role": "approved-design-and-identity",
+          "candidate": "yeonmuk-04",
+          "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-04.png",
+          "referencedImagePath": "/Users/3sam3/.codex/worktrees/fox-talismanist-concept/web-games/public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-04.png",
+          "sha256": "004e622819c1f87f64e4a03dd65aa9077468ccd2ff9559a5068abd6bf00a5026"
+        },
+        {
+          "role": "64x64-pixel-density-scale-camera-and-feet-anchor-only",
+          "localPath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/south.png",
+          "referencedImagePath": "/Users/3sam3/Desktop/dev/prjs/personal/web-games/public/assets/maplestory/tiger-hero-ai/originals/rotations/south.png",
+          "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9",
+          "size": [64, 64],
+          "boundingBox": [7, 0, 52, 63],
+          "footBottomVisibleY": 62,
+          "comparisonLocalPath": "public/assets/maplestory/fox-talismanist-ai/concept/ataho-front-reference.png"
+        }
+      ],
+      "original": {
+        "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a126e7-f1bf-77e0-a6da-a6902de601c1/exec-e4547ab1-cd7a-4387-b912-cc01e4a901d5.png",
+        "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/yeonmuk-front-01-generated.png",
+        "sha256": "8ec52a3845f18be495d2cb9a7975423931d22d9aee9a2404af84c6fbd15bef41",
+        "format": "PNG",
+        "mode": "RGBA",
+        "savedWithoutModification": true,
+        "size": [1254, 1254],
+        "boundingBox": [0, 20, 1222, 1238],
+        "visibleHeight": 1218,
+        "alpha": {
+          "fullyTransparentPixels": 1088377,
+          "fullyOpaquePixels": 1861,
+          "partiallyTransparentPixels": 482278
+        },
+        "visibleRGBAColors": 83635
+      },
+      "output": {
+        "localPath": "public/assets/maplestory/fox-talismanist-ai/runtime/yeonmuk-front-01.png",
+        "sha256": "3fa3ff5d3cbd82109cc6f0a274d7ce978688658f8b3aa4f243294698e845cd16",
+        "format": "PNG",
+        "mode": "RGBA",
+        "size": [64, 64],
+        "boundingBox": [18, 3, 53, 63],
+        "visibleHeight": 60,
+        "alpha": {
+          "fullyTransparentPixels": 2900,
+          "fullyOpaquePixels": 1196,
+          "partiallyTransparentPixels": 0
+        },
+        "visibleRGBAColors": 63,
+        "feetAnchor": {
+          "x": 32,
+          "y": 63
+        },
+        "footBottomVisibleY": 62,
+        "pivot": {
+          "x": 32,
+          "y": 1
+        },
+        "visibleRGBColors": 63
+      },
+      "export": {
+        "tool": "JavaScript / pngjs",
+        "method": "whole-canvas center nearest-neighbor sampling; integer transparent translation",
+        "formula": "sx=floor((x+0.5)*sourceWidth/64); sy=floor((y+0.5)*sourceHeight/64)",
+        "sourceCanvas": [1254, 1254],
+        "targetCanvas": [64, 64],
+        "shiftY": 0,
+        "feetAnchor": {
+          "x": 32,
+          "y": 63
+        },
+        "footBottomVisibleY": 62,
+        "alpha": "nearest export 후 기준 128로 0/255 정리",
+        "color": "JS weighted median-cut 최대 63 RGB + 투명색 1칸, dithering=0",
+        "postProcessing": {
+          "authorization": "기획에서 전달한 사용자 도트 요구: JS export에서 알파 0/255 및 제한 팔레트로 AA 잔여 정리",
+          "tool": "JavaScript weighted median-cut RGB / pngjs",
+          "alphaThreshold": 128,
+          "alphaRule": "alpha < 128 => RGBA(0,0,0,0); otherwise alpha=255",
+          "paletteMaxColors": 64,
+          "opaquePaletteSlots": 63,
+          "transparentPaletteSlots": 1,
+          "dither": 0,
+          "paletteMethod": "weighted median-cut; split longest RGB axis at pixel-count median; choose box by range*sqrt(count); weighted RGB mean; nearest squared RGB distance",
+          "paletteRGB": [
+            [38, 161, 186],
+            [189, 187, 201],
+            [238, 232, 225],
+            [122, 71, 46],
+            [252, 245, 232],
+            [68, 62, 73],
+            [2, 2, 7],
+            [138, 133, 153],
+            [11, 10, 22],
+            [235, 229, 222],
+            [250, 199, 94],
+            [51, 61, 102],
+            [215, 194, 183],
+            [232, 199, 183],
+            [87, 49, 24],
+            [68, 61, 69],
+            [21, 21, 36],
+            [41, 37, 48],
+            [176, 173, 189],
+            [186, 183, 198],
+            [27, 39, 67],
+            [33, 40, 72],
+            [16, 102, 129],
+            [47, 42, 55],
+            [62, 57, 68],
+            [5, 4, 13],
+            [5, 5, 18],
+            [82, 80, 102],
+            [105, 99, 114],
+            [16, 120, 149],
+            [34, 151, 176],
+            [144, 140, 157],
+            [170, 144, 146],
+            [24, 16, 19],
+            [55, 28, 14],
+            [206, 154, 103],
+            [202, 160, 147],
+            [203, 200, 210],
+            [227, 215, 206],
+            [115, 110, 130],
+            [132, 127, 146],
+            [35, 48, 81],
+            [48, 57, 95],
+            [209, 84, 49],
+            [217, 140, 81],
+            [252, 246, 235],
+            [253, 250, 244],
+            [161, 135, 135],
+            [199, 144, 91],
+            [253, 202, 98],
+            [239, 196, 121],
+            [11, 72, 90],
+            [30, 83, 108],
+            [3, 3, 13],
+            [3, 5, 15],
+            [167, 156, 159],
+            [197, 162, 152],
+            [54, 63, 103],
+            [54, 64, 106],
+            [7, 6, 18],
+            [8, 7, 22],
+            [151, 76, 42],
+            [169, 117, 63]
+          ],
+          "actualVisibleRGBColors": 63,
+          "discardedLowAlphaPixels": 61,
+          "rawNearestExport": {
+            "localPath": "public/assets/maplestory/fox-talismanist-ai/runtime/yeonmuk-front-01-raw-nearest.png",
+            "sha256": "2ed59a5fccc6f2f97263eda0a12ec167b3d313ca484bca7a8e903334ac6fdeed",
+            "size": [64, 64],
+            "boundingBox": [7, 3, 60, 63],
+            "visibleHeight": 60,
+            "alpha": {
+              "fullyTransparentPixels": 2839,
+              "fullyOpaquePixels": 2,
+              "partiallyTransparentPixels": 1255
+            },
+            "visibleRGBColors": 908,
+            "visibleRGBAColors": 1011
+          },
+          "fourTimesPreview": {
+            "localPath": "public/assets/maplestory/fox-talismanist-ai/review/front-01/yeonmuk-front-01-4x.png",
+            "sha256": "705246bd1b944d3a28a94b989ce59b421dc1029fdc73588f87f9ebad5e3e6227",
+            "size": [256, 256],
+            "method": "integer nearest-neighbor 4x, every source pixel copied to 4x4 block"
+          },
+          "noAdditionalGeneration": true
+        }
+      },
+      "visualReview": {
+        "readability": "64×64에서 흰 여우 얼굴·청록 띠·황토 부적·한 개 꼬리가 읽힘",
+        "identity": "04의 팔레트·02/04의 앞머리와 볼 털 형태·의상·소품을 단순화해 유지",
+        "direction": "정면 남향 전신 대기, 양발 접지",
+        "scale": "visible bbox [7,3,60,63], 키 60px. 아타호 키 63px와 같은 발바닥 y=62",
+        "limitations": [
+          "내장 도구의 큰 출력을 최근접 64×64 표본과 JS 하드 알파·64색 팔레트로 정리한 첫 후보",
+          "아타호보다 몸통·다리가 길게 읽힘. 게임 연결 전 외형 확인 필요"
+        ],
+        "pixelCleanup": "알파 0/255만 유지, 보이는 RGB 63색. 흰 얼굴·금색 눈·황토 부적·청록 띠·꼬리 유지"
+      },
+      "status": "sprite-export-candidate-awaiting-user-review",
+      "gameIntegrated": false,
+      "scope": "전면 대기 한 장과 비교 뷰·독립 manifest 등록만. 이동·모션·동행·저장·스토리 연결 없음",
+      "validation": {
+        "format": "passed",
+        "png": "passed",
+        "httpImageLoading": "passed",
+        "visibleRGBColors": 63,
+        "alphaValues": [0, 255],
+        "originalAndConceptHashesVerified": true,
+        "fourTimesNearestPixelsVerified": true,
+        "independentManifestEntryVerified": true,
+        "httpResponses": 9,
+        "reportPath": "public/assets/maplestory/fox-talismanist-ai/review/front-01/verification.json",
+        "gameTests": "not-needed-static-assets-and-page"
+      }
+    }
+  ],
+  "currentSpriteSelection": {
+    "candidate": "yeonmuk-front-01",
+    "localPath": "public/assets/maplestory/fox-talismanist-ai/runtime/yeonmuk-front-01.png",
+    "sha256": "3fa3ff5d3cbd82109cc6f0a274d7ce978688658f8b3aa4f243294698e845cd16",
+    "approvalStatus": "시각 검토 대기",
+    "designReference": "yeonmuk-04"
+  }
+}

@@ -1,0 +1,2998 @@
+{
+  "id": "crag-beetle",
+  "name": "절벽딱정벌레",
+  "theme": "ridge",
+  "role": "armored",
+  "appearance": "Low broad slate-gray rhinoceros beetle with cracked mineral plates, one blunt horn, rust-orange underside and sturdy six legs.",
+  "motions": {
+    "stand": "Facing left, small antennae tap and front feet flex, head lifts the blunt horn slightly then lowers while cracked mineral shell remains heavy, return to original low stance.",
+    "move": "Facing left, six sturdy legs alternate tripod groups in an in-place march, feet lift and plant visibly and rust-orange underside shows between steps, blunt horn remains pointed left.",
+    "attack1": "Facing left, lower the blunt horn and brace rear legs, thrust the horn and slate armored shoulders forward left in a short crushing headbutt, stop at contact and retract to the low stance.",
+    "hit1": "Facing left, head tucks beneath mineral shell, front legs buckle and rear legs brace under the recoil, recover planted stance with horn facing left.",
+    "die1": "Facing left, six legs fold inward and heavy plated beetle rolls onto its side exposing a little rust-orange underside, antennae sag, finish motionless with mineral plates intact."
+  },
+  "assetId": "ai/monster-crag-beetle",
+  "localRoot": "public/assets/maplestory/monster-expansion/crag-beetle",
+  "attempts": [
+    {
+      "motion": "original",
+      "attempt": 1,
+      "key": "monster-a-crag-beetle-original-01",
+      "jobId": "d03bece1-9c5a-4941-8216-896dc0dec18a",
+      "balanceBefore": 524,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Low broad slate-gray rhinoceros beetle with cracked mineral plates, one blunt horn, rust-orange underside and sturdy six legs. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 614013,
+        "text_guidance_scale": 8
+      },
+      "queueResponse": "id: d03bece1-9c5a-4941-8216-896dc0dec18a\njob_id: d03bece1-9c5a-4941-8216-896dc0dec18a\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Low broad slate-gray rhinoceros beetle with cracked mineral plates, one blunt horn, rust-orange underside and sturdy six legs. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: 6c3e4d29-7636-5e1f-aa37-4ffaf935ddab\nasset_status: pending (saved when generation completes)\nseed: 614013\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d03bece1-9c5a-4941-8216-896dc0dec18a\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: d03bece1-9c5a-4941-8216-896dc0dec18a\njob_id: d03bece1-9c5a-4941-8216-896dc0dec18a\nframes: 1\ntransparent: yes\nasset_id: 6c3e4d29-7636-5e1f-aa37-4ffaf935ddab\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download",
+      "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+      "sha256": "142435b4bbfae774ba0cb63387f717ebba6d69432be25371108c3873182c5519",
+      "byteSize": 2841,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 3,
+        "y": 14,
+        "width": 57,
+        "height": 40
+      },
+      "visiblePixels": 1221,
+      "paletteSize": 38,
+      "chargedGenerations": 1,
+      "nativeFacing": "left",
+      "selection": "accepted after silhouette / anatomy / native alpha review"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-crag-beetle-stand-01",
+      "jobId": "ac6e1ef5-cedd-4543-951b-5d9fab329a95",
+      "balanceBefore": 569,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 626201,
+        "action": "Facing left, small antennae tap and front feet flex, head lifts the blunt horn slightly then lowers while cracked mineral shell remains heavy, return to original low stance. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download"
+      },
+      "queueResponse": "id: ac6e1ef5-cedd-4543-951b-5d9fab329a95\njob_id: ac6e1ef5-cedd-4543-951b-5d9fab329a95\naction: Facing left, small antennae tap and front feet flex, head lifts the blunt horn slightly then lowers while cracked mineral shell remains heavy, return to original low stance. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626201\nasset_id: 117d70bb-ad8b-57f1-9df7-5d760a4f3dd5\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ac6e1ef5-cedd-4543-951b-5d9fab329a95\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: ac6e1ef5-cedd-4543-951b-5d9fab329a95\njob_id: ac6e1ef5-cedd-4543-951b-5d9fab329a95\nframes: 5\ntransparent: yes\nasset_id: 117d70bb-ad8b-57f1-9df7-5d760a4f3dd5\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+        "sha256": "142435b4bbfae774ba0cb63387f717ebba6d69432be25371108c3873182c5519",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 15,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/00.png",
+          "sourceSha256": "e6ffb2fc63b278fc76a2c2e823fea8fc48b442936f53f0879dab65f9191ded1d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1221,
+          "colors": 38,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/01.png",
+          "sourceSha256": "846df97c028ff267bd68614635b8622e2ecae468addfb6e52cf3126954d0e1b6",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 12,
+            "width": 56,
+            "height": 40
+          },
+          "visiblePixels": 1212,
+          "colors": 41,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/02.png",
+          "sourceSha256": "52199345c6b9eb5845348d302b0142626a1b8e9d34b6f6c90bef7591bfba9cf3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 11,
+            "width": 55,
+            "height": 40
+          },
+          "visiblePixels": 1231,
+          "colors": 44,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/03.png",
+          "sourceSha256": "a173b375fbd0d190309683de0cc0c7ec31c26813ca3ba9dc988cb1060ca0277d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 56,
+            "height": 39
+          },
+          "visiblePixels": 1208,
+          "colors": 39,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/04.png",
+          "sourceSha256": "6de83bc93f51aea9717691d5b7a664535b86170602b200841a97914aedda8c49",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1221,
+          "colors": 38,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/crag-beetle/review/stand-ac6e1ef5-cedd-4543-951b-5d9fab329a95.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/00.png",
+          "sha256": "846df97c028ff267bd68614635b8622e2ecae468addfb6e52cf3126954d0e1b6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/01.png",
+          "sourceSha256": "846df97c028ff267bd68614635b8622e2ecae468addfb6e52cf3126954d0e1b6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/01.png",
+          "sha256": "52199345c6b9eb5845348d302b0142626a1b8e9d34b6f6c90bef7591bfba9cf3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/02.png",
+          "sourceSha256": "52199345c6b9eb5845348d302b0142626a1b8e9d34b6f6c90bef7591bfba9cf3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/02.png",
+          "sha256": "a173b375fbd0d190309683de0cc0c7ec31c26813ca3ba9dc988cb1060ca0277d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/03.png",
+          "sourceSha256": "a173b375fbd0d190309683de0cc0c7ec31c26813ca3ba9dc988cb1060ca0277d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/03.png",
+          "sha256": "6de83bc93f51aea9717691d5b7a664535b86170602b200841a97914aedda8c49",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/04.png",
+          "sourceSha256": "6de83bc93f51aea9717691d5b7a664535b86170602b200841a97914aedda8c49",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 좌향 뿔·앞발·더듬이가 움직이고 돌껍질이 무겁게 유지되는 실제 대기."
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "monster-a-crag-beetle-move-01",
+      "jobId": "054c4fca-0992-4b4f-a8b8-b6af61af7911",
+      "balanceBefore": 606,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626202,
+        "action": "Facing left, six sturdy legs alternate tripod groups in an in-place march, feet lift and plant visibly and rust-orange underside shows between steps, blunt horn remains pointed left. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download"
+      },
+      "queueResponse": "id: 054c4fca-0992-4b4f-a8b8-b6af61af7911\njob_id: 054c4fca-0992-4b4f-a8b8-b6af61af7911\naction: Facing left, six sturdy legs alternate tripod groups in an in-place march, feet lift and plant visibly and rust-orange underside shows between steps, blunt horn remains pointed left. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626202\nasset_id: b6259669-8835-5d27-9dc1-3701e3dcf6ee\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"054c4fca-0992-4b4f-a8b8-b6af61af7911\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 054c4fca-0992-4b4f-a8b8-b6af61af7911\njob_id: 054c4fca-0992-4b4f-a8b8-b6af61af7911\nframes: 9\ntransparent: yes\nasset_id: b6259669-8835-5d27-9dc1-3701e3dcf6ee\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 7,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+        "sha256": "142435b4bbfae774ba0cb63387f717ebba6d69432be25371108c3873182c5519",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 9,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/00.png",
+          "sourceSha256": "b1c1fc6a82681c3a2694654127f5ac090158e8bd2bead02b41527f67209f2b4b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1221,
+          "colors": 39,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/01.png",
+          "sourceSha256": "6aff20e567b8ad32b48db61e67dafec669bb82ec48934f7d20586cb11da4c03d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 56,
+            "height": 40
+          },
+          "visiblePixels": 1238,
+          "colors": 44,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/02.png",
+          "sourceSha256": "f48c6681fc11a1d292635be82d85c44ad0253bd38c13043a1262c264c7e22b35",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 55,
+            "height": 40
+          },
+          "visiblePixels": 1228,
+          "colors": 39,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/03.png",
+          "sourceSha256": "b3eab377bb2ae9f118335c67ece07e87340dab1ee0b9c241183b8e47c97eec96",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 56,
+            "height": 39
+          },
+          "visiblePixels": 1228,
+          "colors": 43,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/04.png",
+          "sourceSha256": "66997f8a53f491a154bfa6e96962d25f84bdc5139cc6c1a953cca886f8069d3d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 56,
+            "height": 38
+          },
+          "visiblePixels": 1253,
+          "colors": 41,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/05.png",
+          "sourceSha256": "c7799bea12c8f2a1db636eaef1cc869c8f317120b96b013cceb9d22cc78536e3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 55,
+            "height": 39
+          },
+          "visiblePixels": 1228,
+          "colors": 45,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/06.png",
+          "sourceSha256": "325f4296bac24e642ed74f0dd17069465dbe13f5cbfb32050725927cffa7bc26",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 12,
+            "width": 56,
+            "height": 42
+          },
+          "visiblePixels": 1258,
+          "colors": 42,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/07.png",
+          "sourceSha256": "1bbf4626d6c3c5b29317ecdd36bcdac8fab5fde09ffd381c6518ee8171590078",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 56,
+            "height": 41
+          },
+          "visiblePixels": 1225,
+          "colors": 46,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/08.png",
+          "sourceSha256": "b1c1fc6a82681c3a2694654127f5ac090158e8bd2bead02b41527f67209f2b4b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1221,
+          "colors": 39,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/crag-beetle/review/move-054c4fca-0992-4b4f-a8b8-b6af61af7911.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/00.png",
+          "sha256": "6aff20e567b8ad32b48db61e67dafec669bb82ec48934f7d20586cb11da4c03d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/01.png",
+          "sourceSha256": "6aff20e567b8ad32b48db61e67dafec669bb82ec48934f7d20586cb11da4c03d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/01.png",
+          "sha256": "f48c6681fc11a1d292635be82d85c44ad0253bd38c13043a1262c264c7e22b35",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/02.png",
+          "sourceSha256": "f48c6681fc11a1d292635be82d85c44ad0253bd38c13043a1262c264c7e22b35",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/02.png",
+          "sha256": "b3eab377bb2ae9f118335c67ece07e87340dab1ee0b9c241183b8e47c97eec96",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/03.png",
+          "sourceSha256": "b3eab377bb2ae9f118335c67ece07e87340dab1ee0b9c241183b8e47c97eec96",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/03.png",
+          "sha256": "66997f8a53f491a154bfa6e96962d25f84bdc5139cc6c1a953cca886f8069d3d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/04.png",
+          "sourceSha256": "66997f8a53f491a154bfa6e96962d25f84bdc5139cc6c1a953cca886f8069d3d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/04.png",
+          "sha256": "c7799bea12c8f2a1db636eaef1cc869c8f317120b96b013cceb9d22cc78536e3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/05.png",
+          "sourceSha256": "c7799bea12c8f2a1db636eaef1cc869c8f317120b96b013cceb9d22cc78536e3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/05.png",
+          "sha256": "325f4296bac24e642ed74f0dd17069465dbe13f5cbfb32050725927cffa7bc26",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/06.png",
+          "sourceSha256": "325f4296bac24e642ed74f0dd17069465dbe13f5cbfb32050725927cffa7bc26",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/06.png",
+          "sha256": "1bbf4626d6c3c5b29317ecdd36bcdac8fab5fde09ffd381c6518ee8171590078",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/07.png",
+          "sourceSha256": "1bbf4626d6c3c5b29317ecdd36bcdac8fab5fde09ffd381c6518ee8171590078",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/07.png",
+          "sha256": "b1c1fc6a82681c3a2694654127f5ac090158e8bd2bead02b41527f67209f2b4b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/08.png",
+          "sourceSha256": "b1c1fc6a82681c3a2694654127f5ac090158e8bd2bead02b41527f67209f2b4b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 좌향 앞·중간·뒷다리의 디딤과 낮은 돌껍질 몸의 이동을 함께 보여주는 실제 루프."
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "monster-a-crag-beetle-attack1-01",
+      "jobId": "bb9a02e5-d127-4fbd-9fb9-23bb994c081f",
+      "balanceBefore": 624,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626203,
+        "action": "Facing left, lower the blunt horn and brace rear legs, thrust the horn and slate armored shoulders forward left in a short crushing headbutt, stop at contact and retract to the low stance. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download"
+      },
+      "queueResponse": "id: bb9a02e5-d127-4fbd-9fb9-23bb994c081f\njob_id: bb9a02e5-d127-4fbd-9fb9-23bb994c081f\naction: Facing left, lower the blunt horn and brace rear legs, thrust the horn and slate armored shoulders forward left in a short crushing headbutt, stop at contact and retract to the low stance. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626203\nasset_id: 9a48f981-9130-5839-9352-7cfd90cfafed\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"bb9a02e5-d127-4fbd-9fb9-23bb994c081f\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: bb9a02e5-d127-4fbd-9fb9-23bb994c081f\njob_id: bb9a02e5-d127-4fbd-9fb9-23bb994c081f\nframes: 9\ntransparent: yes\nasset_id: 9a48f981-9130-5839-9352-7cfd90cfafed\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+        "sha256": "142435b4bbfae774ba0cb63387f717ebba6d69432be25371108c3873182c5519",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 16,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/00.png",
+          "sourceSha256": "935e20438ffcb069d0f7ac634404fe3feabfc959443ca97b4d7b91a28744a097",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1221,
+          "colors": 38,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/01.png",
+          "sourceSha256": "7e6a79336ad1ac835e7496ae95a4d7e239d31fe349f008bc354069905cd93940",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1228,
+          "colors": 39,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/02.png",
+          "sourceSha256": "b5c70be2d61dbe9d6e128eb1fb65a050780de2b3a2755c63ed308a7d2a7a7754",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 12,
+            "width": 55,
+            "height": 42
+          },
+          "visiblePixels": 1211,
+          "colors": 44,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/03.png",
+          "sourceSha256": "3c8c6c636d58dc965f719f115a9fd0ac692ed30589abc914a9ef83448ace048b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 11,
+            "width": 54,
+            "height": 43
+          },
+          "visiblePixels": 1266,
+          "colors": 55,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/04.png",
+          "sourceSha256": "9c8e4f7a3f81820e7fa4f3ba1aa27e2e315c03f986fe254998d9f450441e543d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 10,
+            "width": 49,
+            "height": 44
+          },
+          "visiblePixels": 1300,
+          "colors": 55,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/05.png",
+          "sourceSha256": "da6f5d5367f337d18a016c0b7d6599de6fecc17246a1a2d3325cd53c1ccf3f4b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 10,
+            "width": 50,
+            "height": 44
+          },
+          "visiblePixels": 1289,
+          "colors": 57,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/06.png",
+          "sourceSha256": "3f469b5437279588575fd33c80b75992322d663f5a8bfa96d82df1659e923ed3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 11,
+            "width": 52,
+            "height": 43
+          },
+          "visiblePixels": 1261,
+          "colors": 50,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/07.png",
+          "sourceSha256": "ecb14f38a1bae1d76c51c1e7602d1e8c484b250627bb6a339db77c6c0f76e027",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 13,
+            "width": 55,
+            "height": 41
+          },
+          "visiblePixels": 1234,
+          "colors": 56,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/08.png",
+          "sourceSha256": "bc15696fcea75f0069434c9b4832a7528e764d83177c87f6b37bf3b25ecc24a8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1221,
+          "colors": 40,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/crag-beetle/review/attack1-bb9a02e5-d127-4fbd-9fb9-23bb994c081f.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/00.png",
+          "sha256": "7e6a79336ad1ac835e7496ae95a4d7e239d31fe349f008bc354069905cd93940",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/01.png",
+          "sourceSha256": "7e6a79336ad1ac835e7496ae95a4d7e239d31fe349f008bc354069905cd93940",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/01.png",
+          "sha256": "b5c70be2d61dbe9d6e128eb1fb65a050780de2b3a2755c63ed308a7d2a7a7754",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/02.png",
+          "sourceSha256": "b5c70be2d61dbe9d6e128eb1fb65a050780de2b3a2755c63ed308a7d2a7a7754",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/02.png",
+          "sha256": "3c8c6c636d58dc965f719f115a9fd0ac692ed30589abc914a9ef83448ace048b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/03.png",
+          "sourceSha256": "3c8c6c636d58dc965f719f115a9fd0ac692ed30589abc914a9ef83448ace048b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/03.png",
+          "sha256": "9c8e4f7a3f81820e7fa4f3ba1aa27e2e315c03f986fe254998d9f450441e543d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/04.png",
+          "sourceSha256": "9c8e4f7a3f81820e7fa4f3ba1aa27e2e315c03f986fe254998d9f450441e543d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/04.png",
+          "sha256": "da6f5d5367f337d18a016c0b7d6599de6fecc17246a1a2d3325cd53c1ccf3f4b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/05.png",
+          "sourceSha256": "da6f5d5367f337d18a016c0b7d6599de6fecc17246a1a2d3325cd53c1ccf3f4b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/05.png",
+          "sha256": "3f469b5437279588575fd33c80b75992322d663f5a8bfa96d82df1659e923ed3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/06.png",
+          "sourceSha256": "3f469b5437279588575fd33c80b75992322d663f5a8bfa96d82df1659e923ed3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/06.png",
+          "sha256": "ecb14f38a1bae1d76c51c1e7602d1e8c484b250627bb6a339db77c6c0f76e027",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/07.png",
+          "sourceSha256": "ecb14f38a1bae1d76c51c1e7602d1e8c484b250627bb6a339db77c6c0f76e027",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/07.png",
+          "sha256": "bc15696fcea75f0069434c9b4832a7528e764d83177c87f6b37bf3b25ecc24a8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/08.png",
+          "sourceSha256": "bc15696fcea75f0069434c9b4832a7528e764d83177c87f6b37bf3b25ecc24a8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 뿔과 앞어깨를 낮춰 앞으로 내미는 실제 공격. 4번의 가장 낮고 앞에 나온 뿔을 접촉으로 선택.",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625,
+      "contactReason": "좌향 뿔과 앞어깨를 낮춰 앞으로 내미는 실제 공격. 4번의 가장 낮고 앞에 나온 뿔을 접촉으로 선택."
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "monster-a-crag-beetle-hit1-01",
+      "jobId": "4b023a1e-58c1-4771-80c7-bfeac7a3c06c",
+      "balanceBefore": 683,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 626204,
+        "action": "Facing left, head tucks beneath mineral shell, front legs buckle and rear legs brace under the recoil, recover planted stance with horn facing left. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download"
+      },
+      "queueResponse": "id: 4b023a1e-58c1-4771-80c7-bfeac7a3c06c\njob_id: 4b023a1e-58c1-4771-80c7-bfeac7a3c06c\naction: Facing left, head tucks beneath mineral shell, front legs buckle and rear legs brace under the recoil, recover planted stance with horn facing left. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626204\nasset_id: c313e27d-2b11-54a8-a54a-d052222bcd7a\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"4b023a1e-58c1-4771-80c7-bfeac7a3c06c\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 4b023a1e-58c1-4771-80c7-bfeac7a3c06c\njob_id: 4b023a1e-58c1-4771-80c7-bfeac7a3c06c\nframes: 5\ntransparent: yes\nasset_id: c313e27d-2b11-54a8-a54a-d052222bcd7a\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+        "sha256": "142435b4bbfae774ba0cb63387f717ebba6d69432be25371108c3873182c5519",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 66,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/00.png",
+          "sourceSha256": "9cbd7680c132b8e7bf2eb0eb9287e705732b3c3c2df165de559f7ab5f202ad6b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1222,
+          "colors": 38,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/01.png",
+          "sourceSha256": "bb5b1f1db9ccd947167d2df43563dbe7a5dcf60b0ff0b05bdbe325ab8da85280",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 9,
+            "width": 57,
+            "height": 45
+          },
+          "visiblePixels": 1252,
+          "colors": 38,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/02.png",
+          "sourceSha256": "304bae949b54662f54e708b290f0585e3144305cd2412025f275759f1dee4920",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 6,
+            "width": 57,
+            "height": 48
+          },
+          "visiblePixels": 1265,
+          "colors": 38,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/03.png",
+          "sourceSha256": "7535ddc1eb624b1c6817e37fba3d340dda2176ee42b1cadb8635dadb6527b0eb",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 8,
+            "width": 57,
+            "height": 46
+          },
+          "visiblePixels": 1245,
+          "colors": 38,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/04.png",
+          "sourceSha256": "581542e8326847b4a614d1c6c5bf16245d421645067484fc1ca9157ced158fb3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1222,
+          "colors": 38,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/crag-beetle/review/hit1-4b023a1e-58c1-4771-80c7-bfeac7a3c06c.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/00.png",
+          "sha256": "bb5b1f1db9ccd947167d2df43563dbe7a5dcf60b0ff0b05bdbe325ab8da85280",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/01.png",
+          "sourceSha256": "bb5b1f1db9ccd947167d2df43563dbe7a5dcf60b0ff0b05bdbe325ab8da85280",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/01.png",
+          "sha256": "304bae949b54662f54e708b290f0585e3144305cd2412025f275759f1dee4920",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/02.png",
+          "sourceSha256": "304bae949b54662f54e708b290f0585e3144305cd2412025f275759f1dee4920",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/02.png",
+          "sha256": "7535ddc1eb624b1c6817e37fba3d340dda2176ee42b1cadb8635dadb6527b0eb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/03.png",
+          "sourceSha256": "7535ddc1eb624b1c6817e37fba3d340dda2176ee42b1cadb8635dadb6527b0eb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/03.png",
+          "sha256": "581542e8326847b4a614d1c6c5bf16245d421645067484fc1ca9157ced158fb3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/04.png",
+          "sourceSha256": "581542e8326847b4a614d1c6c5bf16245d421645067484fc1ca9157ced158fb3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 뿔과 머리를 움츠리고 앞다리를 굽혀 몸을 보호한 뒤 원래 낮은 자세로 복귀하는 실제 피격."
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "monster-a-crag-beetle-die1-01",
+      "jobId": "d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba",
+      "balanceBefore": 705,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626205,
+        "action": "Facing left, six legs fold inward and heavy plated beetle rolls onto its side exposing a little rust-orange underside, antennae sag, finish motionless with mineral plates intact. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes."
+      },
+      "queueResponse": "id: d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba\njob_id: d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba\naction: Facing left, six legs fold inward and heavy plated beetle rolls onto its side exposing a little rust-orange underside, antennae sag, finish motionless with mineral plates intact. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 626205\nasset_id: 86e3fc6f-dc10-5ec0-ac7e-811e4e0993c2\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba\njob_id: d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba\nframes: 9\ntransparent: yes\nasset_id: 86e3fc6f-dc10-5ec0-ac7e-811e4e0993c2\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+        "sha256": "142435b4bbfae774ba0cb63387f717ebba6d69432be25371108c3873182c5519",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 66,
+        "alphaDifferences": 2,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/00.png",
+          "sourceSha256": "3cecb6498be2d628ebaa0113a05fbfc404236cb2fe967265752110b6fc0f5f4a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1221,
+          "colors": 39,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/01.png",
+          "sourceSha256": "90c6d7dbb822c42a5165e07f4955b0dead5503433b2cdcf8325690d40e60e90f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 58,
+            "height": 40
+          },
+          "visiblePixels": 1229,
+          "colors": 57,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/02.png",
+          "sourceSha256": "24ba083a0e7f5163237a202b8f0d13d46b6a0f0798465b178c155dc78239ca80",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 58,
+            "height": 41
+          },
+          "visiblePixels": 1219,
+          "colors": 52,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/03.png",
+          "sourceSha256": "b752ceb1bb69433111c3774a6597606efb83335cb5f1b63f9d3c2a24620aaf5a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 12,
+            "width": 58,
+            "height": 42
+          },
+          "visiblePixels": 1228,
+          "colors": 55,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/04.png",
+          "sourceSha256": "02496224fa4264a771cb4df297b3949e6dc3293c4436ef7aa98e3b4411f94f5c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 11,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1225,
+          "colors": 51,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/05.png",
+          "sourceSha256": "0534cba8ec4970651a83df8ea4045830e7e8245053f07575e9d7d0e67f34d4ef",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 10,
+            "width": 54,
+            "height": 39
+          },
+          "visiblePixels": 1209,
+          "colors": 54,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/06.png",
+          "sourceSha256": "7018550a8ac62866dd474017e0a29d48348e96d34b1173105765ceb32f05679c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 50,
+            "height": 41
+          },
+          "visiblePixels": 1225,
+          "colors": 52,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/07.png",
+          "sourceSha256": "b4d0f91c90efbd89edc683f0c14474689b3dc7739e2f1106f702394f96d0dd77",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 10,
+            "width": 54,
+            "height": 39
+          },
+          "visiblePixels": 1216,
+          "colors": 52,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/08.png",
+          "sourceSha256": "7821a216cbce033c5a015377b22e242f4ff8dfd0856f83a91e089ee6ccdca706",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 11,
+            "width": 56,
+            "height": 39
+          },
+          "visiblePixels": 1221,
+          "colors": 51,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/crag-beetle/review/die1-d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/00.png",
+          "sha256": "90c6d7dbb822c42a5165e07f4955b0dead5503433b2cdcf8325690d40e60e90f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/01.png",
+          "sourceSha256": "90c6d7dbb822c42a5165e07f4955b0dead5503433b2cdcf8325690d40e60e90f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/01.png",
+          "sha256": "24ba083a0e7f5163237a202b8f0d13d46b6a0f0798465b178c155dc78239ca80",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/02.png",
+          "sourceSha256": "24ba083a0e7f5163237a202b8f0d13d46b6a0f0798465b178c155dc78239ca80",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/02.png",
+          "sha256": "b752ceb1bb69433111c3774a6597606efb83335cb5f1b63f9d3c2a24620aaf5a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/03.png",
+          "sourceSha256": "b752ceb1bb69433111c3774a6597606efb83335cb5f1b63f9d3c2a24620aaf5a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/03.png",
+          "sha256": "02496224fa4264a771cb4df297b3949e6dc3293c4436ef7aa98e3b4411f94f5c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/04.png",
+          "sourceSha256": "02496224fa4264a771cb4df297b3949e6dc3293c4436ef7aa98e3b4411f94f5c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/04.png",
+          "sha256": "0534cba8ec4970651a83df8ea4045830e7e8245053f07575e9d7d0e67f34d4ef",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/05.png",
+          "sourceSha256": "0534cba8ec4970651a83df8ea4045830e7e8245053f07575e9d7d0e67f34d4ef",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/05.png",
+          "sha256": "7018550a8ac62866dd474017e0a29d48348e96d34b1173105765ceb32f05679c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/06.png",
+          "sourceSha256": "7018550a8ac62866dd474017e0a29d48348e96d34b1173105765ceb32f05679c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/06.png",
+          "sha256": "b4d0f91c90efbd89edc683f0c14474689b3dc7739e2f1106f702394f96d0dd77",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/07.png",
+          "sourceSha256": "b4d0f91c90efbd89edc683f0c14474689b3dc7739e2f1106f702394f96d0dd77",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/07.png",
+          "sha256": "7821a216cbce033c5a015377b22e242f4ff8dfd0856f83a91e089ee6ccdca706",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/d2f97aa9-b8f4-421e-badf-40ddb2ffe4ba/08.png",
+          "sourceSha256": "7821a216cbce033c5a015377b22e242f4ff8dfd0856f83a91e089ee6ccdca706",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "rejected: final pose remains standing / ready, replace with a pinned overturned KO"
+    },
+    {
+      "motion": "die1",
+      "attempt": 2,
+      "key": "monster-a-crag-beetle-die1-02",
+      "jobId": "53f14f32-042c-4c91-8691-89a7364247b5",
+      "balanceBefore": 733,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 627205,
+        "action": "The left-facing stone beetle's six legs buckle, its horn and plated shoulders drop and the whole intact beetle rolls over onto its back into the exact supplied upside-down end pose. Short legs relax upward as the heavy slate shell settles on the ground. Finish overturned and motionless, never stand up again. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/c77601c2-6488-4fae-a1a9-78820e71a6ab/assets/native/full.png"
+      },
+      "queueResponse": "id: 53f14f32-042c-4c91-8691-89a7364247b5\njob_id: 53f14f32-042c-4c91-8691-89a7364247b5\naction: The left-facing stone beetle's six legs buckle, its horn and plated shoulders drop and the whole intact beetle rolls over onto its back into the exact supplied upside-down end pose. Short legs relax upward as the heavy slate shell settles on the ground. Finish overturned and motionless, never stand up again. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 627205\nasset_id: 4e07e3a0-83e7-58fd-85a9-2da859d72a7f\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"53f14f32-042c-4c91-8691-89a7364247b5\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 53f14f32-042c-4c91-8691-89a7364247b5\njob_id: 53f14f32-042c-4c91-8691-89a7364247b5\nframes: 9\ntransparent: yes\nasset_id: 4e07e3a0-83e7-58fd-85a9-2da859d72a7f\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+        "sha256": "142435b4bbfae774ba0cb63387f717ebba6d69432be25371108c3873182c5519",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 16,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/00.png",
+          "sourceSha256": "bfbbafefd1b3d59554b537e9aada42d1579a016c48cc049fe433249e3d0d29df",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1221,
+          "colors": 38,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/01.png",
+          "sourceSha256": "54d078ee46ab66364b5057865c66e2ce80d86560353dbddda54691e6f788db44",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 13,
+            "width": 56,
+            "height": 39
+          },
+          "visiblePixels": 1173,
+          "colors": 52,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/02.png",
+          "sourceSha256": "0f41cff9fccd4726e222b1fa967acfe9538ea0ae5d7b6e45c8c2f4aa122d9505",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 12,
+            "width": 52,
+            "height": 39
+          },
+          "visiblePixels": 1154,
+          "colors": 54,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/03.png",
+          "sourceSha256": "9e88f4b272871866bd0781a8e83306a02dc3d6baff4cd089370aad5a49831599",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 11,
+            "width": 44,
+            "height": 39
+          },
+          "visiblePixels": 1098,
+          "colors": 56,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/04.png",
+          "sourceSha256": "444a6ddeab51556f6f14d8e82502c644fa0674ca7aa487a087a084e5f3e4fa90",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 10,
+            "width": 43,
+            "height": 43
+          },
+          "visiblePixels": 1117,
+          "colors": 51,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/05.png",
+          "sourceSha256": "aafef3496c8a030ee360011c5ae83ee9197eeded6e61ceba5b499a273b56718e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 9,
+            "width": 44,
+            "height": 42
+          },
+          "visiblePixels": 1168,
+          "colors": 55,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/06.png",
+          "sourceSha256": "1c4ba152e1b87e72971398588396d839534ec4f6d8d5e91b1ff6728cb5e89d82",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 13,
+            "width": 49,
+            "height": 38
+          },
+          "visiblePixels": 1142,
+          "colors": 49,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/07.png",
+          "sourceSha256": "45b8156f181b93c62914cff7893cac92a6a490b3e32b9254edbb76204ce43de0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 14,
+            "width": 54,
+            "height": 38
+          },
+          "visiblePixels": 1146,
+          "colors": 54,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/08.png",
+          "sourceSha256": "c1c1662c20f69f0f1e28265919f857789c4ab849b2eb9d6fc9158789c0923b93",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 14,
+            "width": 57,
+            "height": 40
+          },
+          "visiblePixels": 1221,
+          "colors": 41,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/crag-beetle/review/die1-53f14f32-042c-4c91-8691-89a7364247b5.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/00.png",
+          "sha256": "54d078ee46ab66364b5057865c66e2ce80d86560353dbddda54691e6f788db44",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/01.png",
+          "sourceSha256": "54d078ee46ab66364b5057865c66e2ce80d86560353dbddda54691e6f788db44",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/01.png",
+          "sha256": "0f41cff9fccd4726e222b1fa967acfe9538ea0ae5d7b6e45c8c2f4aa122d9505",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/02.png",
+          "sourceSha256": "0f41cff9fccd4726e222b1fa967acfe9538ea0ae5d7b6e45c8c2f4aa122d9505",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/02.png",
+          "sha256": "9e88f4b272871866bd0781a8e83306a02dc3d6baff4cd089370aad5a49831599",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/03.png",
+          "sourceSha256": "9e88f4b272871866bd0781a8e83306a02dc3d6baff4cd089370aad5a49831599",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/03.png",
+          "sha256": "444a6ddeab51556f6f14d8e82502c644fa0674ca7aa487a087a084e5f3e4fa90",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/04.png",
+          "sourceSha256": "444a6ddeab51556f6f14d8e82502c644fa0674ca7aa487a087a084e5f3e4fa90",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/04.png",
+          "sha256": "aafef3496c8a030ee360011c5ae83ee9197eeded6e61ceba5b499a273b56718e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/05.png",
+          "sourceSha256": "aafef3496c8a030ee360011c5ae83ee9197eeded6e61ceba5b499a273b56718e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/05.png",
+          "sha256": "1c4ba152e1b87e72971398588396d839534ec4f6d8d5e91b1ff6728cb5e89d82",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/06.png",
+          "sourceSha256": "1c4ba152e1b87e72971398588396d839534ec4f6d8d5e91b1ff6728cb5e89d82",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/06.png",
+          "sha256": "45b8156f181b93c62914cff7893cac92a6a490b3e32b9254edbb76204ce43de0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/07.png",
+          "sourceSha256": "45b8156f181b93c62914cff7893cac92a6a490b3e32b9254edbb76204ce43de0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/07.png",
+          "sha256": "c1c1662c20f69f0f1e28265919f857789c4ab849b2eb9d6fc9158789c0923b93",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/08.png",
+          "sourceSha256": "c1c1662c20f69f0f1e28265919f857789c4ab849b2eb9d6fc9158789c0923b93",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 여섯 다리가 접히고 무거운 돌껍질 몸이 뒤집혀 다리가 위를 향한 끝자세로 정지하는 실제 KO."
+    }
+  ],
+  "nativeFacing": "left",
+  "selectedOriginal": {
+    "motion": "original",
+    "attempt": 1,
+    "key": "monster-a-crag-beetle-original-01",
+    "jobId": "d03bece1-9c5a-4941-8216-896dc0dec18a",
+    "balanceBefore": 524,
+    "maximumReservedGenerations": 1,
+    "args": {
+      "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Low broad slate-gray rhinoceros beetle with cracked mineral plates, one blunt horn, rust-orange underside and sturdy six legs. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "direction": "west",
+      "view": "low top-down",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "detail": "medium detail",
+      "seed": 614013,
+      "text_guidance_scale": 8
+    },
+    "queueResponse": "id: d03bece1-9c5a-4941-8216-896dc0dec18a\njob_id: d03bece1-9c5a-4941-8216-896dc0dec18a\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Low broad slate-gray rhinoceros beetle with cracked mineral plates, one blunt horn, rust-orange underside and sturdy six legs. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: 6c3e4d29-7636-5e1f-aa37-4ffaf935ddab\nasset_status: pending (saved when generation completes)\nseed: 614013\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d03bece1-9c5a-4941-8216-896dc0dec18a\")",
+    "status": "completed",
+    "latestResponse": "status: completed\nid: d03bece1-9c5a-4941-8216-896dc0dec18a\njob_id: d03bece1-9c5a-4941-8216-896dc0dec18a\nframes: 1\ntransparent: yes\nasset_id: 6c3e4d29-7636-5e1f-aa37-4ffaf935ddab\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download",
+    "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+    "sha256": "142435b4bbfae774ba0cb63387f717ebba6d69432be25371108c3873182c5519",
+    "byteSize": 2841,
+    "width": 64,
+    "height": 64,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "visibleBounds": {
+      "x": 3,
+      "y": 14,
+      "width": 57,
+      "height": 40
+    },
+    "visiblePixels": 1221,
+    "paletteSize": 38,
+    "chargedGenerations": 1,
+    "nativeFacing": "left",
+    "selection": "accepted after silhouette / anatomy / native alpha review"
+  },
+  "anchor": {
+    "x": 32,
+    "y": 54
+  },
+  "animations": {
+    "stand": {
+      "label": "대기",
+      "loop": true,
+      "jobId": "ac6e1ef5-cedd-4543-951b-5d9fab329a95",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/00.png",
+          "sha256": "846df97c028ff267bd68614635b8622e2ecae468addfb6e52cf3126954d0e1b6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/01.png",
+          "sourceSha256": "846df97c028ff267bd68614635b8622e2ecae468addfb6e52cf3126954d0e1b6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/01.png",
+          "sha256": "52199345c6b9eb5845348d302b0142626a1b8e9d34b6f6c90bef7591bfba9cf3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/02.png",
+          "sourceSha256": "52199345c6b9eb5845348d302b0142626a1b8e9d34b6f6c90bef7591bfba9cf3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/02.png",
+          "sha256": "a173b375fbd0d190309683de0cc0c7ec31c26813ca3ba9dc988cb1060ca0277d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/03.png",
+          "sourceSha256": "a173b375fbd0d190309683de0cc0c7ec31c26813ca3ba9dc988cb1060ca0277d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/03.png",
+          "sha256": "6de83bc93f51aea9717691d5b7a664535b86170602b200841a97914aedda8c49",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ac6e1ef5-cedd-4543-951b-5d9fab329a95/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/stand/ac6e1ef5-cedd-4543-951b-5d9fab329a95/04.png",
+          "sourceSha256": "6de83bc93f51aea9717691d5b7a664535b86170602b200841a97914aedda8c49",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 뿔·앞발·더듬이가 움직이고 돌껍질이 무겁게 유지되는 실제 대기.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/crag-beetle/review/stand-ac6e1ef5-cedd-4543-951b-5d9fab329a95.png"
+    },
+    "move": {
+      "label": "이동",
+      "loop": true,
+      "jobId": "054c4fca-0992-4b4f-a8b8-b6af61af7911",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/00.png",
+          "sha256": "6aff20e567b8ad32b48db61e67dafec669bb82ec48934f7d20586cb11da4c03d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/01.png",
+          "sourceSha256": "6aff20e567b8ad32b48db61e67dafec669bb82ec48934f7d20586cb11da4c03d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/01.png",
+          "sha256": "f48c6681fc11a1d292635be82d85c44ad0253bd38c13043a1262c264c7e22b35",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/02.png",
+          "sourceSha256": "f48c6681fc11a1d292635be82d85c44ad0253bd38c13043a1262c264c7e22b35",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/02.png",
+          "sha256": "b3eab377bb2ae9f118335c67ece07e87340dab1ee0b9c241183b8e47c97eec96",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/03.png",
+          "sourceSha256": "b3eab377bb2ae9f118335c67ece07e87340dab1ee0b9c241183b8e47c97eec96",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/03.png",
+          "sha256": "66997f8a53f491a154bfa6e96962d25f84bdc5139cc6c1a953cca886f8069d3d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/04.png",
+          "sourceSha256": "66997f8a53f491a154bfa6e96962d25f84bdc5139cc6c1a953cca886f8069d3d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/04.png",
+          "sha256": "c7799bea12c8f2a1db636eaef1cc869c8f317120b96b013cceb9d22cc78536e3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/05.png",
+          "sourceSha256": "c7799bea12c8f2a1db636eaef1cc869c8f317120b96b013cceb9d22cc78536e3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/05.png",
+          "sha256": "325f4296bac24e642ed74f0dd17069465dbe13f5cbfb32050725927cffa7bc26",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/06.png",
+          "sourceSha256": "325f4296bac24e642ed74f0dd17069465dbe13f5cbfb32050725927cffa7bc26",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/06.png",
+          "sha256": "1bbf4626d6c3c5b29317ecdd36bcdac8fab5fde09ffd381c6518ee8171590078",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/07.png",
+          "sourceSha256": "1bbf4626d6c3c5b29317ecdd36bcdac8fab5fde09ffd381c6518ee8171590078",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/07.png",
+          "sha256": "b1c1fc6a82681c3a2694654127f5ac090158e8bd2bead02b41527f67209f2b4b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/054c4fca-0992-4b4f-a8b8-b6af61af7911/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/move/054c4fca-0992-4b4f-a8b8-b6af61af7911/08.png",
+          "sourceSha256": "b1c1fc6a82681c3a2694654127f5ac090158e8bd2bead02b41527f67209f2b4b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 앞·중간·뒷다리의 디딤과 낮은 돌껍질 몸의 이동을 함께 보여주는 실제 루프.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/crag-beetle/review/move-054c4fca-0992-4b4f-a8b8-b6af61af7911.png"
+    },
+    "attack1": {
+      "label": "공격",
+      "loop": false,
+      "jobId": "bb9a02e5-d127-4fbd-9fb9-23bb994c081f",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/00.png",
+          "sha256": "7e6a79336ad1ac835e7496ae95a4d7e239d31fe349f008bc354069905cd93940",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/01.png",
+          "sourceSha256": "7e6a79336ad1ac835e7496ae95a4d7e239d31fe349f008bc354069905cd93940",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/01.png",
+          "sha256": "b5c70be2d61dbe9d6e128eb1fb65a050780de2b3a2755c63ed308a7d2a7a7754",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/02.png",
+          "sourceSha256": "b5c70be2d61dbe9d6e128eb1fb65a050780de2b3a2755c63ed308a7d2a7a7754",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/02.png",
+          "sha256": "3c8c6c636d58dc965f719f115a9fd0ac692ed30589abc914a9ef83448ace048b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/03.png",
+          "sourceSha256": "3c8c6c636d58dc965f719f115a9fd0ac692ed30589abc914a9ef83448ace048b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/03.png",
+          "sha256": "9c8e4f7a3f81820e7fa4f3ba1aa27e2e315c03f986fe254998d9f450441e543d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/04.png",
+          "sourceSha256": "9c8e4f7a3f81820e7fa4f3ba1aa27e2e315c03f986fe254998d9f450441e543d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/04.png",
+          "sha256": "da6f5d5367f337d18a016c0b7d6599de6fecc17246a1a2d3325cd53c1ccf3f4b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/05.png",
+          "sourceSha256": "da6f5d5367f337d18a016c0b7d6599de6fecc17246a1a2d3325cd53c1ccf3f4b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/05.png",
+          "sha256": "3f469b5437279588575fd33c80b75992322d663f5a8bfa96d82df1659e923ed3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/06.png",
+          "sourceSha256": "3f469b5437279588575fd33c80b75992322d663f5a8bfa96d82df1659e923ed3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/06.png",
+          "sha256": "ecb14f38a1bae1d76c51c1e7602d1e8c484b250627bb6a339db77c6c0f76e027",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/07.png",
+          "sourceSha256": "ecb14f38a1bae1d76c51c1e7602d1e8c484b250627bb6a339db77c6c0f76e027",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/07.png",
+          "sha256": "bc15696fcea75f0069434c9b4832a7528e764d83177c87f6b37bf3b25ecc24a8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/attack1/bb9a02e5-d127-4fbd-9fb9-23bb994c081f/08.png",
+          "sourceSha256": "bc15696fcea75f0069434c9b4832a7528e764d83177c87f6b37bf3b25ecc24a8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 뿔과 앞어깨를 낮춰 앞으로 내미는 실제 공격. 4번의 가장 낮고 앞에 나온 뿔을 접촉으로 선택.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/crag-beetle/review/attack1-bb9a02e5-d127-4fbd-9fb9-23bb994c081f.png",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625
+    },
+    "hit1": {
+      "label": "피격",
+      "loop": false,
+      "jobId": "4b023a1e-58c1-4771-80c7-bfeac7a3c06c",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/00.png",
+          "sha256": "bb5b1f1db9ccd947167d2df43563dbe7a5dcf60b0ff0b05bdbe325ab8da85280",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/01.png",
+          "sourceSha256": "bb5b1f1db9ccd947167d2df43563dbe7a5dcf60b0ff0b05bdbe325ab8da85280",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/01.png",
+          "sha256": "304bae949b54662f54e708b290f0585e3144305cd2412025f275759f1dee4920",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/02.png",
+          "sourceSha256": "304bae949b54662f54e708b290f0585e3144305cd2412025f275759f1dee4920",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/02.png",
+          "sha256": "7535ddc1eb624b1c6817e37fba3d340dda2176ee42b1cadb8635dadb6527b0eb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/03.png",
+          "sourceSha256": "7535ddc1eb624b1c6817e37fba3d340dda2176ee42b1cadb8635dadb6527b0eb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/03.png",
+          "sha256": "581542e8326847b4a614d1c6c5bf16245d421645067484fc1ca9157ced158fb3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/hit1/4b023a1e-58c1-4771-80c7-bfeac7a3c06c/04.png",
+          "sourceSha256": "581542e8326847b4a614d1c6c5bf16245d421645067484fc1ca9157ced158fb3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 뿔과 머리를 움츠리고 앞다리를 굽혀 몸을 보호한 뒤 원래 낮은 자세로 복귀하는 실제 피격.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/crag-beetle/review/hit1-4b023a1e-58c1-4771-80c7-bfeac7a3c06c.png"
+    },
+    "die1": {
+      "label": "쓰러짐",
+      "loop": false,
+      "jobId": "53f14f32-042c-4c91-8691-89a7364247b5",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/00.png",
+          "sha256": "54d078ee46ab66364b5057865c66e2ce80d86560353dbddda54691e6f788db44",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/01.png",
+          "sourceSha256": "54d078ee46ab66364b5057865c66e2ce80d86560353dbddda54691e6f788db44",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/01.png",
+          "sha256": "0f41cff9fccd4726e222b1fa967acfe9538ea0ae5d7b6e45c8c2f4aa122d9505",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/02.png",
+          "sourceSha256": "0f41cff9fccd4726e222b1fa967acfe9538ea0ae5d7b6e45c8c2f4aa122d9505",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/02.png",
+          "sha256": "9e88f4b272871866bd0781a8e83306a02dc3d6baff4cd089370aad5a49831599",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/03.png",
+          "sourceSha256": "9e88f4b272871866bd0781a8e83306a02dc3d6baff4cd089370aad5a49831599",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/03.png",
+          "sha256": "444a6ddeab51556f6f14d8e82502c644fa0674ca7aa487a087a084e5f3e4fa90",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/04.png",
+          "sourceSha256": "444a6ddeab51556f6f14d8e82502c644fa0674ca7aa487a087a084e5f3e4fa90",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/04.png",
+          "sha256": "aafef3496c8a030ee360011c5ae83ee9197eeded6e61ceba5b499a273b56718e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/05.png",
+          "sourceSha256": "aafef3496c8a030ee360011c5ae83ee9197eeded6e61ceba5b499a273b56718e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/05.png",
+          "sha256": "1c4ba152e1b87e72971398588396d839534ec4f6d8d5e91b1ff6728cb5e89d82",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/06.png",
+          "sourceSha256": "1c4ba152e1b87e72971398588396d839534ec4f6d8d5e91b1ff6728cb5e89d82",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/06.png",
+          "sha256": "45b8156f181b93c62914cff7893cac92a6a490b3e32b9254edbb76204ce43de0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/07.png",
+          "sourceSha256": "45b8156f181b93c62914cff7893cac92a6a490b3e32b9254edbb76204ce43de0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/frames/die1/53f14f32-042c-4c91-8691-89a7364247b5/07.png",
+          "sha256": "c1c1662c20f69f0f1e28265919f857789c4ab849b2eb9d6fc9158789c0923b93",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/53f14f32-042c-4c91-8691-89a7364247b5/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/53f14f32-042c-4c91-8691-89a7364247b5/08.png",
+          "sourceSha256": "c1c1662c20f69f0f1e28265919f857789c4ab849b2eb9d6fc9158789c0923b93",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "여섯 다리가 접히고 무거운 돌껍질 몸이 뒤집혀 다리가 위를 향한 끝자세로 정지하는 실제 KO.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/crag-beetle/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/crag-beetle/review/die1-53f14f32-042c-4c91-8691-89a7364247b5.png"
+    }
+  },
+  "poseTargets": [
+    {
+      "motion": "die1",
+      "localPath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/target-corpse-02.png",
+      "recordPath": "public/assets/maplestory/monster-expansion/crag-beetle/originals/die1/target-corpse-02.json",
+      "drawingId": "c77601c2-6488-4fae-a1a9-78820e71a6ab",
+      "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/c77601c2-6488-4fae-a1a9-78820e71a6ab/assets/native/full.png",
+      "source": "https://api.pixellab.ai/mcp/images/d03bece1-9c5a-4941-8216-896dc0dec18a/download",
+      "offset": [
+        0,
+        3
+      ],
+      "angle": 180,
+      "pivot": [
+        32,
+        32
+      ],
+      "sha256": "15e9bd7897e5cf26ac077ae1bff8bfa3f768429b00adc91761d4ffb5fbf8abef",
+      "paidGenerations": 0,
+      "kind": "free exact native end keyframe; intermediate motion generated by PixelLab",
+      "reason": "원본 픽셀로 누운 끝자세를 지정하고 중간 쓰러짐 프레임은 PixelLab에서 실제 생성."
+    }
+  ]
+}

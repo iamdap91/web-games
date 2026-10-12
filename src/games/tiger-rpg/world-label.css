@@ -1,0 +1,64 @@
+/* 지형에 붙는 이름·행동 안내를 통일한다. 투영 위치와 노출 조건은 각 화면이 소유한다. */
+.world-label {
+  position: absolute;
+  display: grid;
+  gap: 3px;
+  margin: 0;
+  padding: 0;
+  transform: translate(-50%, -100%);
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  color: #fff3d7;
+  font:
+    400 14px/1.25 'Apple SD Gothic Neo',
+    'Malgun Gothic',
+    sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  text-shadow:
+    -1px 0 1px #222c22,
+    1px 0 1px #222c22,
+    0 -1px 1px #222c22,
+    0 1px 3px #222c22;
+  pointer-events: none;
+}
+.world-label[hidden] {
+  display: none !important;
+}
+.world-label strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+}
+.world-label span {
+  display: block;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+button.world-label {
+  /* 배경을 그리지 않고 기존 클릭 여백은 유지한다. */
+  padding: 4px 10px;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+button.world-label:disabled {
+  cursor: default;
+  opacity: 1;
+}
+button.world-label[data-nearby='true'] {
+  color: #ffe2a8;
+  text-shadow:
+    -1px 0 1px #222c22,
+    1px 0 1px #222c22,
+    0 -1px 1px #222c22,
+    0 1px 3px #222c22,
+    0 0 5px #e0bd8040;
+}
+button.world-label:focus-visible {
+  outline: 1px solid #e0bd80;
+  outline-offset: 2px;
+}

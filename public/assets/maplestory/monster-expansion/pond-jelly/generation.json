@@ -1,0 +1,2975 @@
+{
+  "id": "pond-jelly",
+  "name": "연못해파리",
+  "theme": "wetland",
+  "role": "ranged",
+  "appearance": "Floating violet freshwater jellyfish with a translucent bell, white rim spots and three broad trailing tendrils; solid readable pixel clusters.",
+  "motions": {
+    "stand": "Hover facing left, violet bell contracts inward then opens fully, three broad tendrils curl and uncurl in a staggered pulse, return to the original hovering pose. Keep solid pixel clusters and no background water.",
+    "move": "Facing left, strong bell contraction and release propels an in-place swimming cycle, three tendrils stream backward then relax under the bell, body pitches left without whole-image translation.",
+    "attack1": "Facing left, contract the violet bell tightly, draw three tendrils under the body, then flare the bell rim and point all three tendrils toward the left in a focused casting pulse, return to hover. No baked projectile.",
+    "hit1": "Facing left, bell flinches inward asymmetrically and broad tendrils retract defensively, recover bell shape and the original hover.",
+    "die1": "Facing left, bell loses lift and folds softly onto the ground while all three tendrils curl loosely beneath it, white rim spots dim, finish motionless but still recognizable, no dissolve."
+  },
+  "assetId": "ai/monster-pond-jelly",
+  "localRoot": "public/assets/maplestory/monster-expansion/pond-jelly",
+  "attempts": [
+    {
+      "motion": "original",
+      "attempt": 1,
+      "key": "monster-a-pond-jelly-original-01",
+      "jobId": "8bfb4912-e2ae-427d-8304-7819ae7939b5",
+      "balanceBefore": 517,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Floating violet freshwater jellyfish with a translucent bell, white rim spots and three broad trailing tendrils; solid readable pixel clusters. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 614010,
+        "text_guidance_scale": 8
+      },
+      "queueResponse": "id: 8bfb4912-e2ae-427d-8304-7819ae7939b5\njob_id: 8bfb4912-e2ae-427d-8304-7819ae7939b5\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Floating violet freshwater jellyfish with a translucent bell, white rim spots and three broad trailing tendrils; solid readable pixel clusters. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: 7ce5c423-b215-52a2-92ed-7d8a8d95ae51\nasset_status: pending (saved when generation completes)\nseed: 614010\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8bfb4912-e2ae-427d-8304-7819ae7939b5\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 8bfb4912-e2ae-427d-8304-7819ae7939b5\njob_id: 8bfb4912-e2ae-427d-8304-7819ae7939b5\nframes: 1\ntransparent: yes\nasset_id: 7ce5c423-b215-52a2-92ed-7d8a8d95ae51\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download",
+      "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+      "sha256": "edf72631e6e070828b42ff111c692e9f53cd8109c577445912dcd41b8962fadd",
+      "byteSize": 2312,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 7,
+        "y": 9,
+        "width": 48,
+        "height": 45
+      },
+      "visiblePixels": 1161,
+      "paletteSize": 17,
+      "chargedGenerations": 1,
+      "nativeFacing": "left",
+      "selection": "accepted after silhouette / anatomy / native alpha review"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-pond-jelly-stand-01",
+      "jobId": "640b4464-c8fa-45a1-b578-0c2457acbb9a",
+      "balanceBefore": 569,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625901,
+        "action": "Hover facing left, violet bell contracts inward then opens fully, three broad tendrils curl and uncurl in a staggered pulse, return to the original hovering pose. Keep solid pixel clusters and no background water. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download"
+      },
+      "queueResponse": "id: 640b4464-c8fa-45a1-b578-0c2457acbb9a\njob_id: 640b4464-c8fa-45a1-b578-0c2457acbb9a\naction: Hover facing left, violet bell contracts inward then opens fully, three broad tendrils curl and uncurl in a staggered pulse, return to the original hovering pose. Keep solid pixel clusters and no background water. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625901\nasset_id: 6bd5ea50-a12a-5d9c-a3be-df0a3871342e\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"640b4464-c8fa-45a1-b578-0c2457acbb9a\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 640b4464-c8fa-45a1-b578-0c2457acbb9a\njob_id: 640b4464-c8fa-45a1-b578-0c2457acbb9a\nframes: 5\ntransparent: yes\nasset_id: 6bd5ea50-a12a-5d9c-a3be-df0a3871342e\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+        "sha256": "edf72631e6e070828b42ff111c692e9f53cd8109c577445912dcd41b8962fadd",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 68,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/00.png",
+          "sourceSha256": "6b9118a0bef360e652738d255daa017205d2067cd1ad59706e242c28e4b9f0fd",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 1161,
+          "colors": 17,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/01.png",
+          "sourceSha256": "83578a556b54cf9af188e886403d8aa23d50eaf6e1d0ee5c8c143c6837e2b8cc",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 50,
+            "height": 43
+          },
+          "visiblePixels": 1170,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/02.png",
+          "sourceSha256": "9bd44acaae6dc751d6004bc07def4a55a5bd495761bb8c8d02b4bdc4fafc76bf",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 11,
+            "width": 47,
+            "height": 43
+          },
+          "visiblePixels": 1139,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/03.png",
+          "sourceSha256": "7db7f28bc9c3d5452d0b731fd07bedf5267ebfeecdcf6c8c891a7b2a2837c6c8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 11,
+            "width": 49,
+            "height": 42
+          },
+          "visiblePixels": 1142,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/04.png",
+          "sourceSha256": "d9b08e642db1a0338e9cbb7ec2fbf62fc3e9c5823d6804321d0ab8ba25d16f04",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 1161,
+          "colors": 17,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/pond-jelly/review/stand-640b4464-c8fa-45a1-b578-0c2457acbb9a.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/00.png",
+          "sha256": "83578a556b54cf9af188e886403d8aa23d50eaf6e1d0ee5c8c143c6837e2b8cc",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/01.png",
+          "sourceSha256": "83578a556b54cf9af188e886403d8aa23d50eaf6e1d0ee5c8c143c6837e2b8cc",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/01.png",
+          "sha256": "9bd44acaae6dc751d6004bc07def4a55a5bd495761bb8c8d02b4bdc4fafc76bf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/02.png",
+          "sourceSha256": "9bd44acaae6dc751d6004bc07def4a55a5bd495761bb8c8d02b4bdc4fafc76bf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/02.png",
+          "sha256": "7db7f28bc9c3d5452d0b731fd07bedf5267ebfeecdcf6c8c891a7b2a2837c6c8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/03.png",
+          "sourceSha256": "7db7f28bc9c3d5452d0b731fd07bedf5267ebfeecdcf6c8c891a7b2a2837c6c8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/03.png",
+          "sha256": "d9b08e642db1a0338e9cbb7ec2fbf62fc3e9c5823d6804321d0ab8ba25d16f04",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/04.png",
+          "sourceSha256": "d9b08e642db1a0338e9cbb7ec2fbf62fc3e9c5823d6804321d0ab8ba25d16f04",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 좌향 종 모양 몸통이 수축·이완하고 촉수가 순서대로 휘어지는 실제 대기 루프."
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "monster-a-pond-jelly-move-01",
+      "jobId": "8d58fb2f-0942-4417-94fc-99d2422b890e",
+      "balanceBefore": 606,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625902,
+        "action": "Facing left, strong bell contraction and release propels an in-place swimming cycle, three tendrils stream backward then relax under the bell, body pitches left without whole-image translation. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download"
+      },
+      "queueResponse": "id: 8d58fb2f-0942-4417-94fc-99d2422b890e\njob_id: 8d58fb2f-0942-4417-94fc-99d2422b890e\naction: Facing left, strong bell contraction and release propels an in-place swimming cycle, three tendrils stream backward then relax under the bell, body pitches left without whole-image translation. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625902\nasset_id: db78770c-30d8-5e44-8938-7cc1bce17b17\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"8d58fb2f-0942-4417-94fc-99d2422b890e\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 8d58fb2f-0942-4417-94fc-99d2422b890e\njob_id: 8d58fb2f-0942-4417-94fc-99d2422b890e\nframes: 9\ntransparent: yes\nasset_id: db78770c-30d8-5e44-8938-7cc1bce17b17\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+        "sha256": "edf72631e6e070828b42ff111c692e9f53cd8109c577445912dcd41b8962fadd",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 42,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/00.png",
+          "sourceSha256": "219e678680682a94d8d7c10b51fed0e0eb1d8e6ae6035e1e6f6ef9a72b141bbf",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 1162,
+          "colors": 17,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/01.png",
+          "sourceSha256": "e2c32221cc264241a824b1e74154187d9b380357b2507ec95532e40911c0cbbc",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 49,
+            "height": 42
+          },
+          "visiblePixels": 1141,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/02.png",
+          "sourceSha256": "8a51bfaa403c23d1b5d85affecde7400763e16b8cf4dedd13389edfee96bda24",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 50,
+            "height": 44
+          },
+          "visiblePixels": 1194,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/03.png",
+          "sourceSha256": "16c273ac0a5ed768229bc22d754c0e2367db5c9fdd43f5cccc9604e7339d7e9a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 10,
+            "width": 48,
+            "height": 43
+          },
+          "visiblePixels": 1199,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/04.png",
+          "sourceSha256": "0177d069dd26b13108d49b279f55021e242a52b220603fd994b5ad15a087eab2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 11,
+            "width": 48,
+            "height": 43
+          },
+          "visiblePixels": 1229,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/05.png",
+          "sourceSha256": "dc02b9c9a74449ad3c75dcf62206f17316289032effaf7fe03f50341e7358171",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 10,
+            "width": 48,
+            "height": 40
+          },
+          "visiblePixels": 1129,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/06.png",
+          "sourceSha256": "a66c0ac6ff9e9a4e858301505bec2fd8e48032955e49e2e1dd6c88075aae5370",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 50,
+            "height": 40
+          },
+          "visiblePixels": 1147,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/07.png",
+          "sourceSha256": "45342b170bbed1b8dcbad972ef86863d3685e5e615deca582e26798fa98cd8f0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 9,
+            "width": 50,
+            "height": 42
+          },
+          "visiblePixels": 1145,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/08.png",
+          "sourceSha256": "6a56096fe79cbfd06185fd435939c9719f51cefe1054cd135a21c502ec5d9e26",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 1162,
+          "colors": 18,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/pond-jelly/review/move-8d58fb2f-0942-4417-94fc-99d2422b890e.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/8d58fb2f-0942-4417-94fc-99d2422b890e/00.png",
+          "sha256": "e2c32221cc264241a824b1e74154187d9b380357b2507ec95532e40911c0cbbc",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/01.png",
+          "sourceSha256": "e2c32221cc264241a824b1e74154187d9b380357b2507ec95532e40911c0cbbc",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/8d58fb2f-0942-4417-94fc-99d2422b890e/01.png",
+          "sha256": "8a51bfaa403c23d1b5d85affecde7400763e16b8cf4dedd13389edfee96bda24",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/02.png",
+          "sourceSha256": "8a51bfaa403c23d1b5d85affecde7400763e16b8cf4dedd13389edfee96bda24",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/8d58fb2f-0942-4417-94fc-99d2422b890e/02.png",
+          "sha256": "16c273ac0a5ed768229bc22d754c0e2367db5c9fdd43f5cccc9604e7339d7e9a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/03.png",
+          "sourceSha256": "16c273ac0a5ed768229bc22d754c0e2367db5c9fdd43f5cccc9604e7339d7e9a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/8d58fb2f-0942-4417-94fc-99d2422b890e/03.png",
+          "sha256": "0177d069dd26b13108d49b279f55021e242a52b220603fd994b5ad15a087eab2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/04.png",
+          "sourceSha256": "0177d069dd26b13108d49b279f55021e242a52b220603fd994b5ad15a087eab2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/8d58fb2f-0942-4417-94fc-99d2422b890e/04.png",
+          "sha256": "dc02b9c9a74449ad3c75dcf62206f17316289032effaf7fe03f50341e7358171",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/05.png",
+          "sourceSha256": "dc02b9c9a74449ad3c75dcf62206f17316289032effaf7fe03f50341e7358171",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/8d58fb2f-0942-4417-94fc-99d2422b890e/05.png",
+          "sha256": "a66c0ac6ff9e9a4e858301505bec2fd8e48032955e49e2e1dd6c88075aae5370",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/06.png",
+          "sourceSha256": "a66c0ac6ff9e9a4e858301505bec2fd8e48032955e49e2e1dd6c88075aae5370",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/8d58fb2f-0942-4417-94fc-99d2422b890e/06.png",
+          "sha256": "45342b170bbed1b8dcbad972ef86863d3685e5e615deca582e26798fa98cd8f0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/07.png",
+          "sourceSha256": "45342b170bbed1b8dcbad972ef86863d3685e5e615deca582e26798fa98cd8f0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/8d58fb2f-0942-4417-94fc-99d2422b890e/07.png",
+          "sha256": "6a56096fe79cbfd06185fd435939c9719f51cefe1054cd135a21c502ec5d9e26",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8d58fb2f-0942-4417-94fc-99d2422b890e/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/8d58fb2f-0942-4417-94fc-99d2422b890e/08.png",
+          "sourceSha256": "6a56096fe79cbfd06185fd435939c9719f51cefe1054cd135a21c502ec5d9e26",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "rejected: extra cyan-white propulsion streaks appear behind the bell; preserve creature-only animation"
+    },
+    {
+      "motion": "move",
+      "attempt": 2,
+      "key": "monster-a-pond-jelly-move-02",
+      "jobId": "5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba",
+      "balanceBefore": 615,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626902,
+        "action": "Facing left, the violet jellyfish makes one small in-place swimming pulse: the bell contracts and opens, and only its three purple tendrils curl and extend in sequence. Animate the bell and tendrils themselves. Exactly the same white rim spots remain on the bell. Absolutely NO propulsion jets, NO water streaks, NO spray, NO glowing trails, NO bubbles, NO magic or particles of any color. No new appendages. Keep original purple colors and return to ready hover. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download"
+      },
+      "queueResponse": "id: 5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba\njob_id: 5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba\naction: Facing left, the violet jellyfish makes one small in-place swimming pulse: the bell contracts and opens, and only its three purple tendrils curl and extend in sequence. Animate the bell and tendrils themselves. Exactly the same white rim spots remain on the bell. Absolutely NO propulsion jets, NO water streaks, NO spray, NO glowing trails, NO bubbles, NO magic or particles of any color. No new appendages. Keep original purple colors and return to ready hover. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626902\nasset_id: 39e3d971-31be-5b1a-b53c-625efc8aee89\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba\njob_id: 5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba\nframes: 9\ntransparent: yes\nasset_id: 39e3d971-31be-5b1a-b53c-625efc8aee89\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+        "sha256": "edf72631e6e070828b42ff111c692e9f53cd8109c577445912dcd41b8962fadd",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 171,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/00.png",
+          "sourceSha256": "b7374f8e5b004aec856ebfcb044ca58d2db80845b66438c87066d0cf98ef2c27",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 1160,
+          "colors": 17,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/01.png",
+          "sourceSha256": "776c7d4cf744ab8aa3534badf85fc89609c85e59b3deace7dd12c4c86712bdf5",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 43
+          },
+          "visiblePixels": 1125,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/02.png",
+          "sourceSha256": "c31857a064dfc1859e84d322163507d526b9bae52c46aa93c5c9fdd31eccf916",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 48,
+            "height": 41
+          },
+          "visiblePixels": 1100,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/03.png",
+          "sourceSha256": "29ef521534384ac7a1c2a509a6236ba4d5fc31c85966519d551975df87eaeea7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 11,
+            "width": 46,
+            "height": 40
+          },
+          "visiblePixels": 1078,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/04.png",
+          "sourceSha256": "edf7ac107bd9f8690cc251a2c8498b01b91c0ea850e11f1dc4d610b297abce6a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 12,
+            "width": 45,
+            "height": 41
+          },
+          "visiblePixels": 1083,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/05.png",
+          "sourceSha256": "eea4f22b62a1274c81cf48b03933661db79dc2b40ebeb37668ca72fcdf47908b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 11,
+            "width": 46,
+            "height": 41
+          },
+          "visiblePixels": 1093,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/06.png",
+          "sourceSha256": "3c33027cda00a5f0e8c3ba57c8a92aa524fe57c8ac6a439555a6f55768820c7f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 48,
+            "height": 42
+          },
+          "visiblePixels": 1108,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/07.png",
+          "sourceSha256": "7d2620c45242658608c15dbb36ba13a5cd2d59c298fcd6aa718746bb538b6afd",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 48,
+            "height": 44
+          },
+          "visiblePixels": 1115,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/08.png",
+          "sourceSha256": "8340a892215868e424795361aa40930f461ac983f1f29151d3888486abf23529",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 1159,
+          "colors": 18,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/pond-jelly/review/move-5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/00.png",
+          "sha256": "776c7d4cf744ab8aa3534badf85fc89609c85e59b3deace7dd12c4c86712bdf5",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/01.png",
+          "sourceSha256": "776c7d4cf744ab8aa3534badf85fc89609c85e59b3deace7dd12c4c86712bdf5",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/01.png",
+          "sha256": "c31857a064dfc1859e84d322163507d526b9bae52c46aa93c5c9fdd31eccf916",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/02.png",
+          "sourceSha256": "c31857a064dfc1859e84d322163507d526b9bae52c46aa93c5c9fdd31eccf916",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/02.png",
+          "sha256": "29ef521534384ac7a1c2a509a6236ba4d5fc31c85966519d551975df87eaeea7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/03.png",
+          "sourceSha256": "29ef521534384ac7a1c2a509a6236ba4d5fc31c85966519d551975df87eaeea7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/03.png",
+          "sha256": "edf7ac107bd9f8690cc251a2c8498b01b91c0ea850e11f1dc4d610b297abce6a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/04.png",
+          "sourceSha256": "edf7ac107bd9f8690cc251a2c8498b01b91c0ea850e11f1dc4d610b297abce6a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/04.png",
+          "sha256": "eea4f22b62a1274c81cf48b03933661db79dc2b40ebeb37668ca72fcdf47908b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/05.png",
+          "sourceSha256": "eea4f22b62a1274c81cf48b03933661db79dc2b40ebeb37668ca72fcdf47908b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/05.png",
+          "sha256": "3c33027cda00a5f0e8c3ba57c8a92aa524fe57c8ac6a439555a6f55768820c7f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/06.png",
+          "sourceSha256": "3c33027cda00a5f0e8c3ba57c8a92aa524fe57c8ac6a439555a6f55768820c7f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/06.png",
+          "sha256": "7d2620c45242658608c15dbb36ba13a5cd2d59c298fcd6aa718746bb538b6afd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/07.png",
+          "sourceSha256": "7d2620c45242658608c15dbb36ba13a5cd2d59c298fcd6aa718746bb538b6afd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/07.png",
+          "sha256": "8340a892215868e424795361aa40930f461ac983f1f29151d3888486abf23529",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/08.png",
+          "sourceSha256": "8340a892215868e424795361aa40930f461ac983f1f29151d3888486abf23529",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 별도 물줄기 없이 종 모양 몸과 세 촉수 자체만 수축·이완하며 좌향으로 이동하는 실제 루프."
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "monster-a-pond-jelly-attack1-01",
+      "jobId": "e07a9ee5-070f-45ae-b638-35d2801d4da1",
+      "balanceBefore": 619,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625903,
+        "action": "Facing left, contract the violet bell tightly, draw three tendrils under the body, then flare the bell rim and point all three tendrils toward the left in a focused casting pulse, return to hover. No baked projectile. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download"
+      },
+      "queueResponse": "id: e07a9ee5-070f-45ae-b638-35d2801d4da1\njob_id: e07a9ee5-070f-45ae-b638-35d2801d4da1\naction: Facing left, contract the violet bell tightly, draw three tendrils under the body, then flare the bell rim and point all three tendrils toward the left in a focused casting pulse, return to hover. No baked projectile. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625903\nasset_id: 5904d5ec-3d67-5d66-a7c3-e10922a9c820\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e07a9ee5-070f-45ae-b638-35d2801d4da1\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: e07a9ee5-070f-45ae-b638-35d2801d4da1\njob_id: e07a9ee5-070f-45ae-b638-35d2801d4da1\nframes: 9\ntransparent: yes\nasset_id: 5904d5ec-3d67-5d66-a7c3-e10922a9c820\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+        "sha256": "edf72631e6e070828b42ff111c692e9f53cd8109c577445912dcd41b8962fadd",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 38,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/00.png",
+          "sourceSha256": "feb5e02d89ed249104c3639ca7b77940958330617f366e2686fc6c9c6b53ff85",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 1161,
+          "colors": 17,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/01.png",
+          "sourceSha256": "c570ea75620cdfef5e06bf57158dbb240c2958a07ff9da6d07b5523669292b01",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 43
+          },
+          "visiblePixels": 1143,
+          "colors": 22,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/02.png",
+          "sourceSha256": "2f8465a5c1dafb3f3852ccd1b37d01ee70e4bdbd444b575ea78ec8d5ba7151aa",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 49,
+            "height": 41
+          },
+          "visiblePixels": 1131,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/03.png",
+          "sourceSha256": "d8543d6b3ffc32c7c733a1e8b2bad415c91ed025c8ef5a6cf2ccd9e1b9143eb7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 11,
+            "width": 48,
+            "height": 39
+          },
+          "visiblePixels": 1101,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/04.png",
+          "sourceSha256": "a52935a928dc51ad3604092de17319fd2c5fb2bca40a6d11022ac979dc86109d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 12,
+            "width": 46,
+            "height": 39
+          },
+          "visiblePixels": 1088,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/05.png",
+          "sourceSha256": "b95551652dc2e73b22240d9cc5a9a92b4147efbac8c793d44a1fa0433a598dbe",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 11,
+            "width": 47,
+            "height": 39
+          },
+          "visiblePixels": 1109,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/06.png",
+          "sourceSha256": "ac819212e68b596585e518acdf676a389ac27d41d13eafff67cffcf4d836e26e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 9,
+            "width": 48,
+            "height": 42
+          },
+          "visiblePixels": 1151,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/07.png",
+          "sourceSha256": "4f48cea49b71735a965dfa213f2368f2441693da8fdd924182151b1316c4f220",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 49,
+            "height": 43
+          },
+          "visiblePixels": 1142,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/08.png",
+          "sourceSha256": "8704ed0c373b0940ee21c72bc73f87332a4472bbccc9da0c9cbe53b828b7ac70",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 1161,
+          "colors": 17,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/pond-jelly/review/attack1-e07a9ee5-070f-45ae-b638-35d2801d4da1.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/00.png",
+          "sha256": "c570ea75620cdfef5e06bf57158dbb240c2958a07ff9da6d07b5523669292b01",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/01.png",
+          "sourceSha256": "c570ea75620cdfef5e06bf57158dbb240c2958a07ff9da6d07b5523669292b01",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/01.png",
+          "sha256": "2f8465a5c1dafb3f3852ccd1b37d01ee70e4bdbd444b575ea78ec8d5ba7151aa",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/02.png",
+          "sourceSha256": "2f8465a5c1dafb3f3852ccd1b37d01ee70e4bdbd444b575ea78ec8d5ba7151aa",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/02.png",
+          "sha256": "d8543d6b3ffc32c7c733a1e8b2bad415c91ed025c8ef5a6cf2ccd9e1b9143eb7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/03.png",
+          "sourceSha256": "d8543d6b3ffc32c7c733a1e8b2bad415c91ed025c8ef5a6cf2ccd9e1b9143eb7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/03.png",
+          "sha256": "a52935a928dc51ad3604092de17319fd2c5fb2bca40a6d11022ac979dc86109d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/04.png",
+          "sourceSha256": "a52935a928dc51ad3604092de17319fd2c5fb2bca40a6d11022ac979dc86109d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/04.png",
+          "sha256": "b95551652dc2e73b22240d9cc5a9a92b4147efbac8c793d44a1fa0433a598dbe",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/05.png",
+          "sourceSha256": "b95551652dc2e73b22240d9cc5a9a92b4147efbac8c793d44a1fa0433a598dbe",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/05.png",
+          "sha256": "ac819212e68b596585e518acdf676a389ac27d41d13eafff67cffcf4d836e26e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/06.png",
+          "sourceSha256": "ac819212e68b596585e518acdf676a389ac27d41d13eafff67cffcf4d836e26e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/06.png",
+          "sha256": "4f48cea49b71735a965dfa213f2368f2441693da8fdd924182151b1316c4f220",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/07.png",
+          "sourceSha256": "4f48cea49b71735a965dfa213f2368f2441693da8fdd924182151b1316c4f220",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/07.png",
+          "sha256": "8704ed0c373b0940ee21c72bc73f87332a4472bbccc9da0c9cbe53b828b7ac70",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/08.png",
+          "sourceSha256": "8704ed0c373b0940ee21c72bc73f87332a4472bbccc9da0c9cbe53b828b7ac70",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 종 몸을 조이고 촉수를 앞쪽으로 모아 내미는 실제 시전. 3번에서 촉수가 앞으로 모인 방출 자세.",
+      "contactFrameIndex": 3,
+      "contactProgress": 0.43749999999999994,
+      "contactReason": "좌향 종 몸을 조이고 촉수를 앞쪽으로 모아 내미는 실제 시전. 3번에서 촉수가 앞으로 모인 방출 자세."
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "monster-a-pond-jelly-hit1-01",
+      "jobId": "293446c4-a949-4f7f-8e1b-edc29e71c314",
+      "balanceBefore": 657,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625904,
+        "action": "Facing left, bell flinches inward asymmetrically and broad tendrils retract defensively, recover bell shape and the original hover. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download"
+      },
+      "queueResponse": "id: 293446c4-a949-4f7f-8e1b-edc29e71c314\njob_id: 293446c4-a949-4f7f-8e1b-edc29e71c314\naction: Facing left, bell flinches inward asymmetrically and broad tendrils retract defensively, recover bell shape and the original hover. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625904\nasset_id: 09d8722d-d306-5c06-bcd1-1749dd963ace\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"293446c4-a949-4f7f-8e1b-edc29e71c314\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 293446c4-a949-4f7f-8e1b-edc29e71c314\njob_id: 293446c4-a949-4f7f-8e1b-edc29e71c314\nframes: 5\ntransparent: yes\nasset_id: 09d8722d-d306-5c06-bcd1-1749dd963ace\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+        "sha256": "edf72631e6e070828b42ff111c692e9f53cd8109c577445912dcd41b8962fadd",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 18,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/00.png",
+          "sourceSha256": "7b6efcd8cb9ca384f65e2784db59da87c46a37f95fa4db0a3187826fee583763",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 1161,
+          "colors": 17,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/01.png",
+          "sourceSha256": "ad02d415cc18d98b7e89bb3558732fd0f0cc220470e18da6f1d2f93ad632c786",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 10,
+            "width": 48,
+            "height": 41
+          },
+          "visiblePixels": 1129,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/02.png",
+          "sourceSha256": "bfe80ef15dbd2e046c446f55d1d9816bf2ef0532012808d15107762fdb99cb38",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 12,
+            "width": 48,
+            "height": 36
+          },
+          "visiblePixels": 1092,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/03.png",
+          "sourceSha256": "9d3036dbde92b6ece7545930530546ebc6b9f40f45540d756f6a5ce6f7e69b36",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 10,
+            "width": 48,
+            "height": 42
+          },
+          "visiblePixels": 1137,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/04.png",
+          "sourceSha256": "65e684149c249815661609f24b81515bdd2085851aa98c9680004f3d1c82dc76",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 1161,
+          "colors": 17,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/pond-jelly/review/hit1-293446c4-a949-4f7f-8e1b-edc29e71c314.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/00.png",
+          "sha256": "ad02d415cc18d98b7e89bb3558732fd0f0cc220470e18da6f1d2f93ad632c786",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/01.png",
+          "sourceSha256": "ad02d415cc18d98b7e89bb3558732fd0f0cc220470e18da6f1d2f93ad632c786",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/01.png",
+          "sha256": "bfe80ef15dbd2e046c446f55d1d9816bf2ef0532012808d15107762fdb99cb38",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/02.png",
+          "sourceSha256": "bfe80ef15dbd2e046c446f55d1d9816bf2ef0532012808d15107762fdb99cb38",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/02.png",
+          "sha256": "9d3036dbde92b6ece7545930530546ebc6b9f40f45540d756f6a5ce6f7e69b36",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/03.png",
+          "sourceSha256": "9d3036dbde92b6ece7545930530546ebc6b9f40f45540d756f6a5ce6f7e69b36",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/03.png",
+          "sha256": "65e684149c249815661609f24b81515bdd2085851aa98c9680004f3d1c82dc76",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/04.png",
+          "sourceSha256": "65e684149c249815661609f24b81515bdd2085851aa98c9680004f3d1c82dc76",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 종 몸과 촉수가 함께 조여졌다 원래 떠 있는 자세로 복귀하는 실제 피격."
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "monster-a-pond-jelly-die1-01",
+      "jobId": "29628456-eb50-4886-b577-711b9b7e25d2",
+      "balanceBefore": 695,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625905,
+        "action": "Facing left, bell loses lift and folds softly onto the ground while all three tendrils curl loosely beneath it, white rim spots dim, finish motionless but still recognizable, no dissolve. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes."
+      },
+      "queueResponse": "id: 29628456-eb50-4886-b577-711b9b7e25d2\njob_id: 29628456-eb50-4886-b577-711b9b7e25d2\naction: Facing left, bell loses lift and folds softly onto the ground while all three tendrils curl loosely beneath it, white rim spots dim, finish motionless but still recognizable, no dissolve. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 625905\nasset_id: 3fc74fe4-4024-5a09-9f81-2df774d89dd7\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"29628456-eb50-4886-b577-711b9b7e25d2\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 29628456-eb50-4886-b577-711b9b7e25d2\njob_id: 29628456-eb50-4886-b577-711b9b7e25d2\nframes: 9\ntransparent: yes\nasset_id: 3fc74fe4-4024-5a09-9f81-2df774d89dd7\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+        "sha256": "edf72631e6e070828b42ff111c692e9f53cd8109c577445912dcd41b8962fadd",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 169,
+        "alphaDifferences": 2,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/00.png",
+          "sourceSha256": "0966f0cdbe3a0000f23e85524cabcd3c78beff5542441dd1dbdc5fc168edd4a0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 1161,
+          "colors": 17,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/01.png",
+          "sourceSha256": "e1624dca36512bd70ae4984394e63ed446a5dd680e8c4ece85544d7e1a74d1c5",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 48,
+            "height": 43
+          },
+          "visiblePixels": 1126,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/02.png",
+          "sourceSha256": "bcccf957ed296d1d67429b750a3a2336d0c00f30f17a1067b42b1e2fe333c9e9",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 11,
+            "width": 49,
+            "height": 41
+          },
+          "visiblePixels": 1129,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/03.png",
+          "sourceSha256": "e01d4d1383c7cbcb9606e6dbc14345816ed66e063c6b078ba2368c04e5b74cfd",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 12,
+            "width": 49,
+            "height": 39
+          },
+          "visiblePixels": 1111,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/04.png",
+          "sourceSha256": "38672d652e3318affa886ec3c5fc4999c210fbd67d8465fadc0de252dfb529d0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 13,
+            "width": 48,
+            "height": 39
+          },
+          "visiblePixels": 1098,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/05.png",
+          "sourceSha256": "a7708f05bd89246a25e26f89fb8646da86a91b6dee5183c8793b2f0ec3595f6b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 13,
+            "width": 48,
+            "height": 39
+          },
+          "visiblePixels": 1092,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/06.png",
+          "sourceSha256": "cb7b448992f05e30a7accf4de40e4e1e3c1f596022c6f074e07820c1cff4727d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 13,
+            "width": 48,
+            "height": 40
+          },
+          "visiblePixels": 1111,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/07.png",
+          "sourceSha256": "fb32156a16b617f78cfd16461a61e1b2faf16f79d895e451a3723282eb3918b9",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 13,
+            "width": 49,
+            "height": 40
+          },
+          "visiblePixels": 1113,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/08.png",
+          "sourceSha256": "50e13cdb8390ae23bef185323d3e09e37bfbe29732f1e8fc332f9b7767fde1e4",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 12,
+            "width": 50,
+            "height": 41
+          },
+          "visiblePixels": 1124,
+          "colors": 21,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/pond-jelly/review/die1-29628456-eb50-4886-b577-711b9b7e25d2.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/00.png",
+          "sha256": "e1624dca36512bd70ae4984394e63ed446a5dd680e8c4ece85544d7e1a74d1c5",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/01.png",
+          "sourceSha256": "e1624dca36512bd70ae4984394e63ed446a5dd680e8c4ece85544d7e1a74d1c5",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/01.png",
+          "sha256": "bcccf957ed296d1d67429b750a3a2336d0c00f30f17a1067b42b1e2fe333c9e9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/02.png",
+          "sourceSha256": "bcccf957ed296d1d67429b750a3a2336d0c00f30f17a1067b42b1e2fe333c9e9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/02.png",
+          "sha256": "e01d4d1383c7cbcb9606e6dbc14345816ed66e063c6b078ba2368c04e5b74cfd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/03.png",
+          "sourceSha256": "e01d4d1383c7cbcb9606e6dbc14345816ed66e063c6b078ba2368c04e5b74cfd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/03.png",
+          "sha256": "38672d652e3318affa886ec3c5fc4999c210fbd67d8465fadc0de252dfb529d0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/04.png",
+          "sourceSha256": "38672d652e3318affa886ec3c5fc4999c210fbd67d8465fadc0de252dfb529d0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/04.png",
+          "sha256": "a7708f05bd89246a25e26f89fb8646da86a91b6dee5183c8793b2f0ec3595f6b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/05.png",
+          "sourceSha256": "a7708f05bd89246a25e26f89fb8646da86a91b6dee5183c8793b2f0ec3595f6b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/05.png",
+          "sha256": "cb7b448992f05e30a7accf4de40e4e1e3c1f596022c6f074e07820c1cff4727d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/06.png",
+          "sourceSha256": "cb7b448992f05e30a7accf4de40e4e1e3c1f596022c6f074e07820c1cff4727d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/06.png",
+          "sha256": "fb32156a16b617f78cfd16461a61e1b2faf16f79d895e451a3723282eb3918b9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/07.png",
+          "sourceSha256": "fb32156a16b617f78cfd16461a61e1b2faf16f79d895e451a3723282eb3918b9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/07.png",
+          "sha256": "50e13cdb8390ae23bef185323d3e09e37bfbe29732f1e8fc332f9b7767fde1e4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/08.png",
+          "sourceSha256": "50e13cdb8390ae23bef185323d3e09e37bfbe29732f1e8fc332f9b7767fde1e4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 종 몸이 낮아지고 흰 점의 빛이 줄며 촉수가 접혀 움직임을 멈추는 실제 쓰러짐."
+    }
+  ],
+  "nativeFacing": "left",
+  "selectedOriginal": {
+    "motion": "original",
+    "attempt": 1,
+    "key": "monster-a-pond-jelly-original-01",
+    "jobId": "8bfb4912-e2ae-427d-8304-7819ae7939b5",
+    "balanceBefore": 517,
+    "maximumReservedGenerations": 1,
+    "args": {
+      "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Floating violet freshwater jellyfish with a translucent bell, white rim spots and three broad trailing tendrils; solid readable pixel clusters. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "direction": "west",
+      "view": "low top-down",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "detail": "medium detail",
+      "seed": 614010,
+      "text_guidance_scale": 8
+    },
+    "queueResponse": "id: 8bfb4912-e2ae-427d-8304-7819ae7939b5\njob_id: 8bfb4912-e2ae-427d-8304-7819ae7939b5\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Floating violet freshwater jellyfish with a translucent bell, white rim spots and three broad trailing tendrils; solid readable pixel clusters. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: 7ce5c423-b215-52a2-92ed-7d8a8d95ae51\nasset_status: pending (saved when generation completes)\nseed: 614010\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"8bfb4912-e2ae-427d-8304-7819ae7939b5\")",
+    "status": "completed",
+    "latestResponse": "status: completed\nid: 8bfb4912-e2ae-427d-8304-7819ae7939b5\njob_id: 8bfb4912-e2ae-427d-8304-7819ae7939b5\nframes: 1\ntransparent: yes\nasset_id: 7ce5c423-b215-52a2-92ed-7d8a8d95ae51\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/8bfb4912-e2ae-427d-8304-7819ae7939b5/download",
+    "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+    "sha256": "edf72631e6e070828b42ff111c692e9f53cd8109c577445912dcd41b8962fadd",
+    "byteSize": 2312,
+    "width": 64,
+    "height": 64,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "visibleBounds": {
+      "x": 7,
+      "y": 9,
+      "width": 48,
+      "height": 45
+    },
+    "visiblePixels": 1161,
+    "paletteSize": 17,
+    "chargedGenerations": 1,
+    "nativeFacing": "left",
+    "selection": "accepted after silhouette / anatomy / native alpha review"
+  },
+  "anchor": {
+    "x": 32,
+    "y": 60
+  },
+  "animations": {
+    "stand": {
+      "label": "대기",
+      "loop": true,
+      "jobId": "640b4464-c8fa-45a1-b578-0c2457acbb9a",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/00.png",
+          "sha256": "83578a556b54cf9af188e886403d8aa23d50eaf6e1d0ee5c8c143c6837e2b8cc",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/01.png",
+          "sourceSha256": "83578a556b54cf9af188e886403d8aa23d50eaf6e1d0ee5c8c143c6837e2b8cc",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/01.png",
+          "sha256": "9bd44acaae6dc751d6004bc07def4a55a5bd495761bb8c8d02b4bdc4fafc76bf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/02.png",
+          "sourceSha256": "9bd44acaae6dc751d6004bc07def4a55a5bd495761bb8c8d02b4bdc4fafc76bf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/02.png",
+          "sha256": "7db7f28bc9c3d5452d0b731fd07bedf5267ebfeecdcf6c8c891a7b2a2837c6c8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/03.png",
+          "sourceSha256": "7db7f28bc9c3d5452d0b731fd07bedf5267ebfeecdcf6c8c891a7b2a2837c6c8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/03.png",
+          "sha256": "d9b08e642db1a0338e9cbb7ec2fbf62fc3e9c5823d6804321d0ab8ba25d16f04",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/640b4464-c8fa-45a1-b578-0c2457acbb9a/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/stand/640b4464-c8fa-45a1-b578-0c2457acbb9a/04.png",
+          "sourceSha256": "d9b08e642db1a0338e9cbb7ec2fbf62fc3e9c5823d6804321d0ab8ba25d16f04",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 종 모양 몸통이 수축·이완하고 촉수가 순서대로 휘어지는 실제 대기 루프.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/pond-jelly/review/stand-640b4464-c8fa-45a1-b578-0c2457acbb9a.png"
+    },
+    "move": {
+      "label": "이동",
+      "loop": true,
+      "jobId": "5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/00.png",
+          "sha256": "776c7d4cf744ab8aa3534badf85fc89609c85e59b3deace7dd12c4c86712bdf5",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/01.png",
+          "sourceSha256": "776c7d4cf744ab8aa3534badf85fc89609c85e59b3deace7dd12c4c86712bdf5",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/01.png",
+          "sha256": "c31857a064dfc1859e84d322163507d526b9bae52c46aa93c5c9fdd31eccf916",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/02.png",
+          "sourceSha256": "c31857a064dfc1859e84d322163507d526b9bae52c46aa93c5c9fdd31eccf916",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/02.png",
+          "sha256": "29ef521534384ac7a1c2a509a6236ba4d5fc31c85966519d551975df87eaeea7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/03.png",
+          "sourceSha256": "29ef521534384ac7a1c2a509a6236ba4d5fc31c85966519d551975df87eaeea7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/03.png",
+          "sha256": "edf7ac107bd9f8690cc251a2c8498b01b91c0ea850e11f1dc4d610b297abce6a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/04.png",
+          "sourceSha256": "edf7ac107bd9f8690cc251a2c8498b01b91c0ea850e11f1dc4d610b297abce6a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/04.png",
+          "sha256": "eea4f22b62a1274c81cf48b03933661db79dc2b40ebeb37668ca72fcdf47908b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/05.png",
+          "sourceSha256": "eea4f22b62a1274c81cf48b03933661db79dc2b40ebeb37668ca72fcdf47908b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/05.png",
+          "sha256": "3c33027cda00a5f0e8c3ba57c8a92aa524fe57c8ac6a439555a6f55768820c7f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/06.png",
+          "sourceSha256": "3c33027cda00a5f0e8c3ba57c8a92aa524fe57c8ac6a439555a6f55768820c7f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/06.png",
+          "sha256": "7d2620c45242658608c15dbb36ba13a5cd2d59c298fcd6aa718746bb538b6afd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/07.png",
+          "sourceSha256": "7d2620c45242658608c15dbb36ba13a5cd2d59c298fcd6aa718746bb538b6afd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/07.png",
+          "sha256": "8340a892215868e424795361aa40930f461ac983f1f29151d3888486abf23529",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/move/5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba/08.png",
+          "sourceSha256": "8340a892215868e424795361aa40930f461ac983f1f29151d3888486abf23529",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "별도 물줄기 없이 종 모양 몸과 세 촉수 자체만 수축·이완하며 좌향으로 이동하는 실제 루프.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/pond-jelly/review/move-5ee63fe0-2cfc-470e-b31c-08b1ea70c0ba.png"
+    },
+    "attack1": {
+      "label": "공격",
+      "loop": false,
+      "jobId": "e07a9ee5-070f-45ae-b638-35d2801d4da1",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/00.png",
+          "sha256": "c570ea75620cdfef5e06bf57158dbb240c2958a07ff9da6d07b5523669292b01",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/01.png",
+          "sourceSha256": "c570ea75620cdfef5e06bf57158dbb240c2958a07ff9da6d07b5523669292b01",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/01.png",
+          "sha256": "2f8465a5c1dafb3f3852ccd1b37d01ee70e4bdbd444b575ea78ec8d5ba7151aa",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/02.png",
+          "sourceSha256": "2f8465a5c1dafb3f3852ccd1b37d01ee70e4bdbd444b575ea78ec8d5ba7151aa",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/02.png",
+          "sha256": "d8543d6b3ffc32c7c733a1e8b2bad415c91ed025c8ef5a6cf2ccd9e1b9143eb7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/03.png",
+          "sourceSha256": "d8543d6b3ffc32c7c733a1e8b2bad415c91ed025c8ef5a6cf2ccd9e1b9143eb7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/03.png",
+          "sha256": "a52935a928dc51ad3604092de17319fd2c5fb2bca40a6d11022ac979dc86109d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/04.png",
+          "sourceSha256": "a52935a928dc51ad3604092de17319fd2c5fb2bca40a6d11022ac979dc86109d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/04.png",
+          "sha256": "b95551652dc2e73b22240d9cc5a9a92b4147efbac8c793d44a1fa0433a598dbe",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/05.png",
+          "sourceSha256": "b95551652dc2e73b22240d9cc5a9a92b4147efbac8c793d44a1fa0433a598dbe",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/05.png",
+          "sha256": "ac819212e68b596585e518acdf676a389ac27d41d13eafff67cffcf4d836e26e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/06.png",
+          "sourceSha256": "ac819212e68b596585e518acdf676a389ac27d41d13eafff67cffcf4d836e26e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/06.png",
+          "sha256": "4f48cea49b71735a965dfa213f2368f2441693da8fdd924182151b1316c4f220",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/07.png",
+          "sourceSha256": "4f48cea49b71735a965dfa213f2368f2441693da8fdd924182151b1316c4f220",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/07.png",
+          "sha256": "8704ed0c373b0940ee21c72bc73f87332a4472bbccc9da0c9cbe53b828b7ac70",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e07a9ee5-070f-45ae-b638-35d2801d4da1/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/attack1/e07a9ee5-070f-45ae-b638-35d2801d4da1/08.png",
+          "sourceSha256": "8704ed0c373b0940ee21c72bc73f87332a4472bbccc9da0c9cbe53b828b7ac70",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 종 몸을 조이고 촉수를 앞쪽으로 모아 내미는 실제 시전. 3번에서 촉수가 앞으로 모인 방출 자세.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/pond-jelly/review/attack1-e07a9ee5-070f-45ae-b638-35d2801d4da1.png",
+      "contactFrameIndex": 3,
+      "contactProgress": 0.43749999999999994
+    },
+    "hit1": {
+      "label": "피격",
+      "loop": false,
+      "jobId": "293446c4-a949-4f7f-8e1b-edc29e71c314",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/00.png",
+          "sha256": "ad02d415cc18d98b7e89bb3558732fd0f0cc220470e18da6f1d2f93ad632c786",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/01.png",
+          "sourceSha256": "ad02d415cc18d98b7e89bb3558732fd0f0cc220470e18da6f1d2f93ad632c786",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/01.png",
+          "sha256": "bfe80ef15dbd2e046c446f55d1d9816bf2ef0532012808d15107762fdb99cb38",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/02.png",
+          "sourceSha256": "bfe80ef15dbd2e046c446f55d1d9816bf2ef0532012808d15107762fdb99cb38",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/02.png",
+          "sha256": "9d3036dbde92b6ece7545930530546ebc6b9f40f45540d756f6a5ce6f7e69b36",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/03.png",
+          "sourceSha256": "9d3036dbde92b6ece7545930530546ebc6b9f40f45540d756f6a5ce6f7e69b36",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/03.png",
+          "sha256": "65e684149c249815661609f24b81515bdd2085851aa98c9680004f3d1c82dc76",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/293446c4-a949-4f7f-8e1b-edc29e71c314/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/hit1/293446c4-a949-4f7f-8e1b-edc29e71c314/04.png",
+          "sourceSha256": "65e684149c249815661609f24b81515bdd2085851aa98c9680004f3d1c82dc76",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 종 몸과 촉수가 함께 조여졌다 원래 떠 있는 자세로 복귀하는 실제 피격.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/pond-jelly/review/hit1-293446c4-a949-4f7f-8e1b-edc29e71c314.png"
+    },
+    "die1": {
+      "label": "쓰러짐",
+      "loop": false,
+      "jobId": "29628456-eb50-4886-b577-711b9b7e25d2",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/00.png",
+          "sha256": "e1624dca36512bd70ae4984394e63ed446a5dd680e8c4ece85544d7e1a74d1c5",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/01.png",
+          "sourceSha256": "e1624dca36512bd70ae4984394e63ed446a5dd680e8c4ece85544d7e1a74d1c5",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/01.png",
+          "sha256": "bcccf957ed296d1d67429b750a3a2336d0c00f30f17a1067b42b1e2fe333c9e9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/02.png",
+          "sourceSha256": "bcccf957ed296d1d67429b750a3a2336d0c00f30f17a1067b42b1e2fe333c9e9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/02.png",
+          "sha256": "e01d4d1383c7cbcb9606e6dbc14345816ed66e063c6b078ba2368c04e5b74cfd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/03.png",
+          "sourceSha256": "e01d4d1383c7cbcb9606e6dbc14345816ed66e063c6b078ba2368c04e5b74cfd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/03.png",
+          "sha256": "38672d652e3318affa886ec3c5fc4999c210fbd67d8465fadc0de252dfb529d0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/04.png",
+          "sourceSha256": "38672d652e3318affa886ec3c5fc4999c210fbd67d8465fadc0de252dfb529d0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/04.png",
+          "sha256": "a7708f05bd89246a25e26f89fb8646da86a91b6dee5183c8793b2f0ec3595f6b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/05.png",
+          "sourceSha256": "a7708f05bd89246a25e26f89fb8646da86a91b6dee5183c8793b2f0ec3595f6b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/05.png",
+          "sha256": "cb7b448992f05e30a7accf4de40e4e1e3c1f596022c6f074e07820c1cff4727d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/06.png",
+          "sourceSha256": "cb7b448992f05e30a7accf4de40e4e1e3c1f596022c6f074e07820c1cff4727d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/06.png",
+          "sha256": "fb32156a16b617f78cfd16461a61e1b2faf16f79d895e451a3723282eb3918b9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/07.png",
+          "sourceSha256": "fb32156a16b617f78cfd16461a61e1b2faf16f79d895e451a3723282eb3918b9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/pond-jelly/frames/die1/29628456-eb50-4886-b577-711b9b7e25d2/07.png",
+          "sha256": "50e13cdb8390ae23bef185323d3e09e37bfbe29732f1e8fc332f9b7767fde1e4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/29628456-eb50-4886-b577-711b9b7e25d2/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/pond-jelly/originals/die1/29628456-eb50-4886-b577-711b9b7e25d2/08.png",
+          "sourceSha256": "50e13cdb8390ae23bef185323d3e09e37bfbe29732f1e8fc332f9b7767fde1e4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "종 몸이 낮아지고 흰 점의 빛이 줄며 촉수가 접혀 움직임을 멈추는 실제 쓰러짐.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/pond-jelly/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/pond-jelly/review/die1-29628456-eb50-4886-b577-711b9b7e25d2.png"
+    }
+  }
+}

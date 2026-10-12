@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="pixellab-idle.css" />
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <link rel="stylesheet" href="embedded.css" />
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-hybrid/lab-tabs.js"
+    ></script>
+    <title>아타호 · PixelLab 비도트 공격 모션</title>
+  </head>
+  <body data-lab-tab="attacks" data-motion="punch">
+    <main>
+      <header>
+        <p class="eyebrow">아타호 · 원화에서 움직임으로</p>
+        <h1>정권지르기 · 발차기 · 철산고</h1>
+        <p>
+          오른쪽 원화, 축소 입력, 생성된 공격을 같은 크기와 발 기준으로
+          비교합니다.
+        </p>
+        <nav>
+          <a href="pixellab-idle.html">정면 대기 시험</a>
+          <a href="side.html">좌우 기준 그림</a>
+          <a href="index.html">승인 원화</a
+          ><a href="motion.html">기존 하이브리드 비교</a>
+        </nav>
+      </header>
+      <fieldset id="controls" disabled>
+        <legend>공격 모션 살펴보기</legend>
+        <div class="controls">
+          <label
+            >동작<select id="motion-choice">
+              <option value="punch">정권지르기</option>
+              <option value="kick">발차기</option>
+              <option value="shoulder">철산고 v1</option>
+              <option value="shoulder-v2">철산고 v2 · 등 타격</option>
+            </select></label
+          >
+          <button id="impact-pose" type="button" hidden>타격 기준 자세</button>
+          <button id="restart" type="button">처음부터 재생</button>
+          <button id="pause" type="button">일시정지 · Space</button>
+          <label><input id="raw-frames" type="checkbox" />생성 원본 전체</label>
+          <label
+            >방향<select id="facing">
+              <option value="right">오른쪽</option>
+              <option value="left">왼쪽 반전</option>
+            </select></label
+          >
+          <label
+            >표시 크기
+            <select id="size">
+              <option value="game">게임 기준 · 720px 화면</option>
+              <option value="112">소형 비교 · 112px</option>
+              <option value="240" selected>자세히 · 240px</option>
+            </select></label
+          >
+          <label
+            >속도
+            <select id="speed">
+              <option value="1">1배</option>
+              <option value="0.25">0.25배</option>
+            </select></label
+          >
+          <label
+            >배경
+            <select id="background">
+              <option value="light">밝게</option>
+              <option value="dark">어둡게</option>
+            </select></label
+          >
+        </div>
+        <div class="timeline">
+          <label for="timeline">한 장씩 보기</label
+          ><input
+            id="timeline"
+            type="range"
+            min="0"
+            max="16"
+            value="0"
+            step="1"
+          /><output id="status" aria-live="off">그림을 준비 중이에요.</output>
+        </div>
+      </fieldset>
+      <section class="comparison" aria-label="원화와 입력 및 생성 결과 비교">
+        <article>
+          <div class="heading">
+            <h2>오른쪽 기준 원화</h2>
+            <span>원본 디테일</span>
+          </div>
+          <canvas
+            id="original"
+            aria-label="공격 모션의 고해상도 오른쪽 원화"
+          ></canvas>
+          <p>측면 원화의 선·질감과 방향 확인</p>
+        </article>
+        <article>
+          <div class="heading">
+            <h2>생성 입력</h2>
+            <span>256 × 256</span>
+          </div>
+          <canvas
+            id="input"
+            aria-label="PixelLab에 전달한 축소 이미지"
+          ></canvas>
+          <p>원화의 디테일이 축소되면서 얼마나 남는지</p>
+        </article>
+        <article>
+          <div class="heading">
+            <h2 id="motion-title">PixelLab 정권지르기</h2>
+            <span id="frame-label">입력 자세</span>
+          </div>
+          <canvas
+            id="generated"
+            aria-label="PixelLab이 생성한 비도트 오른쪽 공격 애니메이션"
+          ></canvas>
+          <p>준비·타격·회수 자세와 외형을 확인</p>
+        </article>
+      </section>
+      <footer>
+        <p>
+          원본은 세 동작 각각 입력 1장 + 생성 16장 보존 · 준비 → 타격 → 회수 ·
+          PixMiniMax · v1 3종 + 철산고 v2 · 총 8 generations
+        </p>
+        <p>
+          기본 재생은 정권의 추가 타격 2·3번과 철산고의 잔상 5번을 제외합니다.
+          생성 원본 전체로 원본 순서도 확인할 수 있습니다.
+        </p>
+        <p>
+          좌우 반전·느린 재생·정지·한 장씩 보기로 손발과 어깨 타격을 살펴봅니다.
+          모든 프레임에 같은 위치와 배율을 사용합니다.
+        </p>
+        <p>
+          철산고 v2는 열린 손의 높이 차이와 숙인 고개를 가진 등 타격 기준 자세를
+          고정하고 준비·회수를 연결합니다.
+        </p>
+        <p>
+          공격 여백을 확보한 공통 입력을 사용합니다. 재생 간격 0.075초는 비교판
+          설정이며 본게임의 타격·피해 판정은 아직 연결하지 않았습니다.
+        </p>
+        <a
+          href="https://www.pixellab.ai/pixellab-api"
+          target="_blank"
+          rel="noopener noreferrer"
+          >PixelLab 공식 기능</a
+        >
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-hybrid/pixellab-motion.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

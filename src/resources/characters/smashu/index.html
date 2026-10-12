@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#173c32" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="../../preview/style.css" />
+    <link rel="stylesheet" href="../../preview/originals.css" />
+    <title>스마슈 · 리소스 뷰어</title>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <main>
+      <nav aria-label="캐릭터 선택">
+        <a href="../">캐릭터 목록</a><a href="../../monsters/yeti/">예티</a>
+        <a href="../../monsters/slime/">슬라임</a
+        ><a href="../adventurer/">모험가</a>
+        <a href="../ataho/">아타호</a>
+        <a href="./" aria-current="page">스마슈</a>
+      </nav>
+      <header>
+        <div>
+          <p class="eyebrow">WEB GAMES / SMASHU</p>
+          <h1>스마슈의 작은 숲</h1>
+          <p class="intro">스마슈의 걷기와 회전 동작을 살펴보세요.</p>
+        </div>
+        <span class="badge">로컬 리소스</span>
+      </header>
+      <section class="stage" aria-label="리소스 미리보기">
+        <div class="stage-top">
+          <span>작은 숲</span><span>스마슈 모션</span>
+        </div>
+        <canvas
+          id="scene"
+          width="960"
+          height="480"
+          aria-label="숲속 발판 위 스마슈의 모션"
+        >
+          캔버스를 지원하는 브라우저에서 확인해주세요.
+        </canvas>
+        <p id="status" role="status">로컬 이미지를 불러오는 중…</p>
+      </section>
+      <section class="controls" aria-label="모션 설정">
+        <label
+          >모션
+          <select id="motion" disabled aria-label="스마슈 모션"></select>
+          <output id="frame">—</output>
+        </label>
+        <button id="toggle" type="button" disabled>일시정지</button>
+      </section>
+      <p id="motion-notes" aria-live="polite"></p>
+      <details class="originals-panel">
+        <summary>원본 스프라이트 시트 2개</summary>
+        <p>걷기·회전 통합 시트와 별도 회전 시트를 함께 보관합니다.</p>
+        <div id="originals"></div>
+      </details>
+      <footer>
+        <p>
+          대기는 걷기의 첫 자세입니다. 회전은 팬 프로젝트에서 공중 이동에 사용한
+          동작이며, 점프 전용 모션은 확인되지 않았습니다.
+        </p>
+        <p>
+          재생 속도는 미리보기용입니다. 원본에 포함된 흐릿함과 반투명 가장자리는
+          그대로 보존했습니다.
+        </p>
+        <p>
+          출처: <a href="https://github.com/ljs5261/Hwanse">ljs5261/Hwanse</a>.
+          팬 저장소의 명시적 리소스 재사용 라이선스는 미확인입니다.
+        </p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/smashu/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

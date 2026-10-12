@@ -1,4 +1,4 @@
-import { treeShape } from '../../rendering/tree-shape.js';
+import { treeShape } from '../../resources/environment/tree-shape.js';
 import { treeFallDuration } from './tree-fall.js';
 export const discoveryLayout = {
     source: { id: 10, x: -6.4, z: -5.2, radius: 0.9 },
@@ -143,7 +143,9 @@ export class ClearingDiscovery {
     }
     canWalk(point, radius) {
         const channel = discoveryLayout.channel;
-        if (Math.abs(point.z - channel.z) >= channel.halfWidth + radius)
+        if (point.x < channel.minX - radius ||
+            point.x > channel.maxX + radius ||
+            Math.abs(point.z - channel.z) >= channel.halfWidth + radius)
             return true;
         return [...this.logs.values()].some((log) => log.supports(point));
     }
@@ -156,6 +158,8 @@ export class ClearingDiscovery {
             if (log.update(dt))
                 this.events.push('bridge-ready');
         if (!this.crossed &&
+            player.x >= discoveryLayout.channel.minX &&
+            player.x <= discoveryLayout.channel.maxX &&
             player.z <
                 discoveryLayout.channel.z -
                     discoveryLayout.channel.halfWidth -

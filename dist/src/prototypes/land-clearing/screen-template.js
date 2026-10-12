@@ -1,6 +1,7 @@
+import { energyCost, holdKey, skillIcon } from './skill-icons.js';
 import { energyRules } from './harvest-energy.js';
 export const clearingMarkup = `
-<canvas id="clearing" tabindex="0" aria-label="숲속 공터. 방향키 이동, Space 또는 E 공격, Q 지면 강타, W 돌진."></canvas>
+<canvas id="clearing" tabindex="0" aria-label="숲속 공터. 방향키 이동, Space 공격 또는 E 짧게 눌렀다 떼기, Q 지면 강타, W 돌진, E 길게 눌렀다 떼기 약점 강타, Esc 메뉴."></canvas>
 <header class="location-tag"><p>안전 채집지</p><h1>숲속 공터</h1></header>
 <aside class="supplies resource-strip" aria-label="이번에 채집한 재료">
   <span class="resource-label">이번 채집</span>
@@ -9,24 +10,27 @@ export const clearingMarkup = `
 </aside>
 <p id="notice" class="notice" role="status" hidden></p>
 <p id="target" class="target-hint" hidden></p>
-<p id="exit-hint" class="exit-hint" hidden>마을 <span aria-hidden="true">↓</span></p>
+<p id="grove-hint" class="grove-hint world-label" hidden><strong>바람숲</strong><span>균열바위 너머</span></p>
+<button id="forest-hint" class="world-label forest-hint" type="button" hidden><strong>숲의 흔적</strong><span>Space · 살펴보기</span></button>
+<p id="weak-hint" class="weak-hint world-label" hidden><span class="weak-action">${holdKey}${skillIcon('weakStrike')}${energyCost(energyRules.costs.weakStrike)}</span><span class="weak-status" hidden></span></p>
+<p id="exit-hint" class="exit-hint world-label" hidden><strong>마을</strong><span>귀환 ↓</span></p>
 <div class="abilities" aria-label="채집 기술">
   <div class="energy-control">
-    <span id="charge-label">기세 0 / ${energyRules.capacity}</span>
+    ${skillIcon('energy')}<span id="charge-label" class="sr-only">기세 0 / ${energyRules.capacity}</span>
     <progress id="charge" value="0" max="${energyRules.capacity}" aria-label="기세"></progress>
   </div>
   <div class="skill-controls">
-    <button id="slam" type="button" disabled><kbd>Q</kbd> 강타 <small>기세 ${energyRules.costs.slam}</small></button>
-    <button id="rush" type="button" disabled><kbd>W</kbd> 돌진 <small>기세 ${energyRules.costs.rush}</small></button>
+    <button id="slam" type="button" aria-label="Q 지면 강타, 기세 ${energyRules.costs.slam}칸" disabled><kbd>Q</kbd>${skillIcon('slam')}${energyCost(energyRules.costs.slam)}</button>
+    <button id="rush" type="button" aria-label="W 돌진, 기세 ${energyRules.costs.rush}칸" disabled><kbd>W</kbd>${skillIcon('rush')}${energyCost(energyRules.costs.rush)}</button>
+    <button id="weak-strike" type="button" aria-label="E 길게 눌렀다 떼기, 약점 강타, 기세 ${energyRules.costs.weakStrike}칸" disabled>${holdKey}${skillIcon('weakStrike')}${energyCost(energyRules.costs.weakStrike)}<span class="skill-lock" hidden>${skillIcon('lock')}</span></button>
   </div>
 </div>
-<div class="controls"><span><kbd>방향키</kbd> 이동</span><span><kbd>Space</kbd>/<kbd>E</kbd> 공격</span><span><kbd>Esc</kbd> 쉬기</span></div>
+<button id="menu" class="menu-toggle" type="button">메뉴</button>
 <button id="reset" class="reset" type="button">공터 초기화 ↺</button>
 <section id="overlay" class="overlay" aria-live="polite">
   <div class="card">
     <h2 id="overlay-title">숲으로 들어가는 중</h2>
     <p id="overlay-message">잠시만 기다려 주세요.</p>
-    <button id="resume" type="button" hidden>계속하기</button>
   </div>
 </section>
 <output id="diagnostics" hidden></output>

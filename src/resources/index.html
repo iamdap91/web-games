@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./catalog/library.css" />
+    <link rel="stylesheet" href="./catalog/library-detail.css" />
+    <title>이계취호전 · 리소스 라이브러리</title>
+  </head>
+  <body>
+    <header class="library-top">
+      <a data-library-navigation class="library-brand" href="./"
+        >이계취호전 <span>RESOURCE LIBRARY</span></a
+      >
+      <a href="../../index.html">게임 목록 ↗</a>
+    </header>
+    <div class="library-layout">
+      <aside class="library-sidebar">
+        <p class="sidebar-label">게임의 재료</p>
+        <nav id="resource-tree" aria-label="리소스 분류와 하위 항목"></nav>
+        <p class="sidebar-note">
+          화살표를 펼쳐 개별 항목으로 이동하세요.<br />원본·모션·사용 장면은
+          상세 화면에서 확인할 수 있습니다.
+        </p>
+      </aside>
+      <main class="library-main">
+        <div class="library-toolbar">
+          <label
+            >리소스 검색<input
+              id="library-search"
+              type="search"
+              placeholder="이름 · 지역 · 모션으로 찾기"
+              autocomplete="off"
+          /></label>
+          <label
+            >프로젝트<select id="library-project">
+              <option value="tiger-rpg">이계취호전</option>
+              <option value="all">전체 프로젝트</option>
+              <option value="other">연구소·저택·기타</option>
+            </select></label
+          >
+        </div>
+        <div id="library-list">
+          <p class="library-eyebrow">LOCAL COLLECTION</p>
+          <h1 id="library-title">전체 리소스</h1>
+          <p id="library-description"></p>
+
+          <p
+            id="library-count"
+            class="library-count"
+            role="status"
+            aria-live="polite"
+          ></p>
+          <div id="library-grid" class="library-grid"></div>
+          <p id="library-empty" class="library-empty" hidden>
+            일치하는 항목이 없습니다. 검색어를 줄이거나 다른 분류를
+            선택해보세요.
+          </p>
+          <noscript>리소스 목록을 보려면 JavaScript를 활성화해주세요.</noscript>
+          <footer class="library-footer">
+            이미지·음원과 코드로 만든 장면을 함께 모았습니다. 각 항목의 상세
+            화면에서 출처와 제작 기록을 확인하세요.
+          </footer>
+        </div>
+        <div id="library-content" hidden></div>
+      </main>
+    </div>
+    <script type="module" src="../../dist/src/resources/index.js"></script>
+  </body>
+</html>

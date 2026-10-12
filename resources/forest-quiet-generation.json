@@ -1,0 +1,152 @@
+{
+  "service": "PixelLab MCP",
+  "model": "Pro",
+  "createdAt": "2026-10-11",
+  "requestCount": 2,
+  "regenerationCount": 0,
+  "totalGenerations": 20,
+  "balanceBefore": 1583,
+  "balanceAfter": 1563,
+  "styleReference": "public/assets/maplestory/forest-quiet-ai/references/safe-clearing.png",
+  "styleCopy": ["color_palette", "outline", "detail", "shading"],
+  "references": [
+    {
+      "localPath": "public/assets/maplestory/forest-quiet-ai/references/safe-clearing.png",
+      "width": 1100,
+      "height": 760,
+      "sha256": "51ad2536365cd75594f5c8d24fcea470c2182a17e0ef19da99c000d2a852dd4a",
+      "usage": "generation style"
+    },
+    {
+      "localPath": "public/assets/maplestory/forest-quiet-ai/references/town.png",
+      "width": 1100,
+      "height": 760,
+      "sha256": "f424db2a7b87d4df61f43a2e4cf457ca79018ca0f55f52c3751cd4b3f56f582f",
+      "usage": "visual review"
+    }
+  ],
+  "requests": [
+    {
+      "key": "quiet-vine",
+      "width": 128,
+      "height": 128,
+      "seed": 101121,
+      "description": "Environment prop for the attached low-poly game environment. Match its muted sage/olive greens and warm brown wood, simple angular silhouettes, broad flat planes, and low detail density. This is background scenery: NO black outline, NO character-style ink contours, NO tiny pixel speckles, NO individual leaf veins, NO bark grain, NO glossy highlights, NO painterly texture, NO dithering. Use three closely related flat color tones per material. Readable polygon-like leaf groups, restrained contrast, illumination from upper left. Transparent background, no floor, no baked cast shadow, no text, no characters, no frame. Fixed orthographic camera viewed from above at 38 degrees. Single rectangular hanging vine curtain, width about110 height98. Six chunky hanging stems carry 12 to18 LARGE angular broad leaves grouped into overlapping masses, enough to conceal a doorway. Stem paths simple, no ornamental curls. Ragged bottom edge, roots absent. Five pixel transparent margin. Each leaf is a clean flat shape with only one darker plane. Palette sage #7b8c73, olive #65775e, pale grey-green #929e83; stems dull brown #79573e. Subject fills canvas. No trees or archway.",
+      "jobId": "42b2e66e-81ac-4e08-9802-62bb841440b9",
+      "chargedGenerations": 10,
+      "candidates": [
+        {
+          "key": "quiet-vine-00",
+          "name": "quiet-vine 원본 1",
+          "index": 0,
+          "localPath": "public/assets/maplestory/forest-quiet-ai/originals/quiet-vine-00.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/42b2e66e-81ac-4e08-9802-62bb841440b9/download?index=0",
+          "pageUrl": "https://www.pixellab.ai/create",
+          "width": 128,
+          "height": 128,
+          "byteSize": 3307,
+          "sha256": "20de964ed2d172117279d6beb6b1b47acbe3e4796b7e0c609ed072bace0d19b3"
+        },
+        {
+          "key": "quiet-vine-01",
+          "name": "quiet-vine 원본 2",
+          "index": 1,
+          "localPath": "public/assets/maplestory/forest-quiet-ai/originals/quiet-vine-01.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/42b2e66e-81ac-4e08-9802-62bb841440b9/download?index=1",
+          "pageUrl": "https://www.pixellab.ai/create",
+          "width": 128,
+          "height": 128,
+          "byteSize": 4219,
+          "sha256": "624df4bdd374d754518c6a61fd8fd3e8edcb75d7732728e907c498202f30f998"
+        },
+        {
+          "key": "quiet-vine-02",
+          "name": "quiet-vine 원본 3",
+          "index": 2,
+          "localPath": "public/assets/maplestory/forest-quiet-ai/originals/quiet-vine-02.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/42b2e66e-81ac-4e08-9802-62bb841440b9/download?index=2",
+          "pageUrl": "https://www.pixellab.ai/create",
+          "width": 128,
+          "height": 128,
+          "byteSize": 2557,
+          "sha256": "75cc4d90f270329c4705e0a9fd0287e77601aa81224b4fc7b3fb48f6961e4cfa"
+        },
+        {
+          "key": "quiet-vine-03",
+          "name": "quiet-vine 원본 4",
+          "index": 3,
+          "localPath": "public/assets/maplestory/forest-quiet-ai/originals/quiet-vine-03.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/42b2e66e-81ac-4e08-9802-62bb841440b9/download?index=3",
+          "pageUrl": "https://www.pixellab.ai/create",
+          "width": 128,
+          "height": 128,
+          "byteSize": 2424,
+          "sha256": "ba38e7e5d9f3c66fc3634f97074727ca1656226406565f83d0870aa4bb839527"
+        }
+      ],
+      "selectedIndices": [3]
+    },
+    {
+      "key": "quiet-props",
+      "width": 128,
+      "height": 128,
+      "seed": 101122,
+      "description": "Environment prop for the attached low-poly game environment. Match its muted sage/olive greens and warm brown wood, simple angular silhouettes, broad flat planes, and low detail density. This is background scenery: NO black outline, NO character-style ink contours, NO tiny pixel speckles, NO individual leaf veins, NO bark grain, NO glossy highlights, NO painterly texture, NO dithering. Use three closely related flat color tones per material. Readable polygon-like leaf groups, restrained contrast, illumination from upper left. Transparent background, no floor, no baked cast shadow, no text, no characters, no frame. Fixed orthographic camera viewed from above at 38 degrees. Asset atlas exactly two columns and two rows, each cell64x64, eight transparent pixels around each object. Top left: short grass tuft of five wide angular blades. Top right: two simple squat mushrooms with broad matte warm grey-brown caps, NO spots. Bottom left: small fern with six broad paired angular leaves, no fine leaflets. Bottom right: a flat pile of five LARGE dry tan leaves, no vein lines. Each object isolated within its cell; no connecting vines, no drawn grid. Colors subdued, background ornaments less saturated than the character. Aim for only about12 colors in the complete image.",
+      "jobId": "37e16090-bc04-47a5-a68b-5f9d817bdfe0",
+      "chargedGenerations": 10,
+      "candidates": [
+        {
+          "key": "quiet-props-00",
+          "name": "quiet-props 원본 1",
+          "index": 0,
+          "localPath": "public/assets/maplestory/forest-quiet-ai/originals/quiet-props-00.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/37e16090-bc04-47a5-a68b-5f9d817bdfe0/download?index=0",
+          "pageUrl": "https://www.pixellab.ai/create",
+          "width": 128,
+          "height": 128,
+          "byteSize": 1024,
+          "sha256": "a73fefe183d659c8e91034f8e964c85a86815d4a60d1286e1aac81c2d56d6eb8"
+        },
+        {
+          "key": "quiet-props-01",
+          "name": "quiet-props 원본 2",
+          "index": 1,
+          "localPath": "public/assets/maplestory/forest-quiet-ai/originals/quiet-props-01.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/37e16090-bc04-47a5-a68b-5f9d817bdfe0/download?index=1",
+          "pageUrl": "https://www.pixellab.ai/create",
+          "width": 128,
+          "height": 128,
+          "byteSize": 1008,
+          "sha256": "d558e79371cd6f57e0f73fd7c6968aed746a80a5f64fb0da9001f5dad4707f15"
+        },
+        {
+          "key": "quiet-props-02",
+          "name": "quiet-props 원본 3",
+          "index": 2,
+          "localPath": "public/assets/maplestory/forest-quiet-ai/originals/quiet-props-02.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/37e16090-bc04-47a5-a68b-5f9d817bdfe0/download?index=2",
+          "pageUrl": "https://www.pixellab.ai/create",
+          "width": 128,
+          "height": 128,
+          "byteSize": 1286,
+          "sha256": "83c4732a50176e951ca1d68626167fb5b4b4d0949202faec6c5c782a1bba2f52"
+        },
+        {
+          "key": "quiet-props-03",
+          "name": "quiet-props 원본 4",
+          "index": 3,
+          "localPath": "public/assets/maplestory/forest-quiet-ai/originals/quiet-props-03.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/37e16090-bc04-47a5-a68b-5f9d817bdfe0/download?index=3",
+          "pageUrl": "https://www.pixellab.ai/create",
+          "width": 128,
+          "height": 128,
+          "byteSize": 1373,
+          "sha256": "acc1fd4e77a744e963cba894753f03966fbe25a412b494d9c739cf0c17b2789c"
+        }
+      ],
+      "selectedIndices": [0, 1, 2, 3],
+      "outputNote": "2×2 시트 요청에 대해 서비스가 소품 종류별 분리 이미지 4장을 반환했다. 각 원본 전체의 투명 여백을 잘라 사용했다."
+    }
+  ],
+  "notes": "마을·안전 채집지 실제 화면을 확인하고 안전 채집지 화면만 생성 참조로 전송했다. 3D의 큰 색면과 낮은 세부 밀도를 기준으로 덩굴 후보 3번과 소품 종류별 네 이미지를 사용한다. RGBA 원본은 변경하지 않고 투명 여백만 추출했다. 큰 나무·고목은 3D를 사용한다. 구독 generations를 사용했으며 별도 결제·요금제 변경은 없다."
+}

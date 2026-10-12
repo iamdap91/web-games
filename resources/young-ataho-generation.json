@@ -1,0 +1,1345 @@
+{
+  "createdDate": "2026-10-12",
+  "resourceId": "ai/young-ataho",
+  "status": "motions-completed",
+  "previewPath": "src/resources/characters/young-ataho/",
+  "builtinGenerationCalls": 1,
+  "paidPixelLabGenerationCalls": 12,
+  "paidPixelLabGenerationsUsed": 18,
+  "approvedFront": {
+    "status": "previously-user-approved",
+    "candidate": "first-round-05",
+    "localPath": "public/assets/maplestory/young-ataho-ai/originals/references/young-ataho-approved-front.png",
+    "sourceProjectPath": "public/assets/maplestory/tiger-hero-ai-candidates/originals/candidate-05.png",
+    "sourceRecord": "public/assets/maplestory/tiger-hero-ai-candidates/generation.json",
+    "sourceImageId": "387a856b-5950-5a8a-a752-a9cff72788a1",
+    "sourceJobId": "e0416efe-9298-4b98-81b3-09915bd580c5",
+    "sha256": "c1153a5ff858a5863209b8cd4946d2523cc84d6a1d880a2d22ac8fc60230e5e0",
+    "size": [64, 64],
+    "visibleBounds": [7, 1, 52, 63],
+    "footBaselineY": 62,
+    "pivot": {
+      "x": 32,
+      "y": 1
+    },
+    "sourcePixelsUnmodified": true,
+    "attachment": {
+      "localPath": "public/assets/maplestory/young-ataho-ai/originals/references/young-ataho-user-attachment.png",
+      "originalPath": "/var/folders/cf/pv_mgsrx2tv0gs71b1p98sgr0000gn/T/codex-clipboard-93bf35ff-d8cb-46d4-a109-5353ccc1fa88.png",
+      "sha256": "1cfab8ae479726577c652fe103909b6064c91f42642f822a5f5f009694ffe4a8",
+      "rgbaExactlyMatchesApprovedOriginal": true,
+      "pngBytesMatch": false
+    }
+  },
+  "concept": {
+    "candidate": "young-ataho-concept-01",
+    "provider": "built-in image_gen",
+    "status": "generated-awaiting-user-review",
+    "finalPrompt": "Use case: stylized-concept\nAsset type: ONE front-facing full-body concept of YOUNG ADULT Ataho.\nInput roles: Image1 is the user's APPROVED64px YOUNG ATAHO SPRITE, the strict authority for identity, outfit, colors and compact proportions. Image2 Yeonmuk04 is ONLY the clean dark linework, restrained stepped cel-shading and gentle-volume RPG illustration style reference. Do not copy the fox, her slender body or costume.\nPrimary request: faithfully expand image1 into a high-resolution original character concept. This is Ataho in his young adult prime: a confident powerful TIGER BEAST-PERSON MALE martial artist, energetic and precise, fully grown rather than a child. Retain the sprite's very broad large orange tiger head, rounded ears, original short forehead tuft, black forehead and cheek stripes, broad ivory cheek fur and muzzle, small black nose, focused golden eyes and restrained self-assured smile. No gray hair, age wrinkles, drooping older eyelids, intoxication or childish oversized sparkling eyes.\nSilhouette: preserve image1's compact big-headed short stout adult build. A broad stable chest, capable shoulders, thick forearms and sturdy short legs, a comfortably strong waist rather than a big middle-aged belly. Strength is in a grounded balanced stance and clear readiness, not exaggerated sculpted muscles. Head remains broad and large; do not turn him into a tall human-bodied tiger or a cub. Both feet planted evenly, front/SOUTH full body, arms low as in the reference with naturally closed capable fists, shoulders squared but relaxed, calm alert focus.\nOutfit invariants from image1: the SAME short open TEAL/BLUE-GREEN sleeveless martial vest with dark trim, IVORY INNER SHIRT beneath it, SAND/BEIGE loose trousers, the original DARK waist sash/belt, BROWN wrist wraps and ankle wraps, BARE orange tiger feet, and ONE orange-and-black striped tail. Preserve these simple shapes and color relationships. The ivory chest area is clothing, not naked chest or a different patch of body fur. No brown older-version jacket, no charcoal older-version pants, no added bottle, weapon, armor, shoes, necklace or equipment. Do not reinterpret costume beyond the approved sprite.\nRendering: exactly image2's crisp dark outlines, angular stepped pixel-like contours, coherent broad flat color clusters and restrained3-4 cel-shade planes producing gentle volume. Match the established Ataho04/Yeonmuk04 concept illustration quality while strictly retaining the young reference's identity. A NEW high-resolution illustration, not an enlarged64px screenshot and not a3D render or realistic painting.\nComposition: one character centered on portrait1098x1433 canvas. Complete ears, hands, feet and single tail within comfortable margins; true FRONT with both eyes and shoulders visible and both feet on a common baseline. Genuinely transparent RGBA, no floor, shadow disk, scenery, text, watermark, comparison card or second character.",
+    "inputs": [
+      {
+        "role": "사용자 첨부 젊은 아타호 도트의 정체성·복장·색·체형 기준. 생성 도구에 첨부 파일을 직접 포함.",
+        "localPath": "public/assets/maplestory/young-ataho-ai/originals/references/young-ataho-user-attachment.png",
+        "originalPath": "/var/folders/cf/pv_mgsrx2tv0gs71b1p98sgr0000gn/T/codex-clipboard-93bf35ff-d8cb-46d4-a109-5353ccc1fa88.png",
+        "sha256": "1cfab8ae479726577c652fe103909b6064c91f42642f822a5f5f009694ffe4a8",
+        "size": [64, 64]
+      },
+      {
+        "role": "원화의 선·단계 명암·입체감 그림체 기준만",
+        "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-04.png",
+        "sha256": "004e622819c1f87f64e4a03dd65aa9077468ccd2ff9559a5068abd6bf00a5026",
+        "size": [1098, 1433]
+      }
+    ],
+    "file": {
+      "localPath": "public/assets/maplestory/young-ataho-ai/concept/young-ataho-concept-01.png",
+      "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a126e7-f1bf-77e0-a6da-a6902de601c1/exec-0497a783-f118-461e-8a30-db0e384551dd.png",
+      "sha256": "77564ce8935106a38686f5c4ab5889ee820674c266f88f96208a0b40170305af",
+      "size": [1098, 1433],
+      "mode": "RGBA",
+      "visibleBoundsAlpha128": [63, 30, 934, 1401],
+      "alphaPreserved": true,
+      "savedWithoutModification": true
+    },
+    "review": "젊은 성인의 또렷한 눈빛과 단정한 미소, 청록 조끼·모래색 바지, 넓은 얼굴과 다부진 체형. 새 무기·술병·노화 요소 없이 전신과 단일 꼬리 확인.",
+    "reviewDifferencesFromApprovedSprite": "원화의 손목·발목 아대는 갈색으로 표현됐고 팔 위쪽에 아이보리 천이 남아 있음. 승인 도트의 아이보리 아대와 완전히 같은 재해석은 아니므로, 유료 방향·모션 생성의 복장과 색 기준은 기존 승인 도트를 유지한다."
+  },
+  "motionPlan": {
+    "status": "completed",
+    "southReferencePolicy": "승인 원본 PNG를 재생성·확대·회전하지 않고 그대로 남향 기준으로 사용. 서비스의 남향 출력이 달라도 로컬 남향은 승인 원본을 유지하며 나머지 방향과 시각적으로 검토.",
+    "creation": {
+      "tool": "create_character",
+      "mode": "v3",
+      "body_type": "humanoid",
+      "n_directions": 8,
+      "referenceLocalPath": "public/assets/maplestory/young-ataho-ai/originals/references/young-ataho-approved-front.png",
+      "sizePolicy": "64×64 승인 원본의 크기를 유지. size 생략으로 reference 크기를 사용하며 96/128로 확대하지 않음.",
+      "view": "low top-down",
+      "southInDirectionImages": false
+    },
+    "idleDirections": [
+      "south",
+      "east",
+      "north",
+      "west",
+      "south-east",
+      "north-east",
+      "north-west",
+      "south-west"
+    ],
+    "walk": {
+      "mode": "template",
+      "template_animation_id": "walking-8-frames",
+      "directions": [
+        "south",
+        "east",
+        "north",
+        "west",
+        "south-east",
+        "north-east",
+        "north-west",
+        "south-west"
+      ],
+      "templateAvailabilityReadFromExistingCharacter": "ca006367-6f19-46fc-ac25-d70fb92332ff",
+      "qualityReview": "더 분명한 디딤·짧은 중심 이동·바른 상체가 읽혀야 함. 기존 중장년 모션의 단순 배속·회전·스케일 대신 신규 생성. 부족한 방향만 승인 한도 내 새 v3 동작으로 재시도.",
+      "action_description": "A young adult tiger martial artist walks with firm purposeful foot plants, compact controlled hip weight transfer, squared steady shoulders and clearly alternating short decisive strides. Strong grounded gait rather than sleepy swaying. Hands remain naturally loosely closed, arms swing economically; no running, bouncing, floating or added props. Preserve the approved teal vest, sand trousers, rust-red sash, ivory wrist and ankle wraps and one striped tail. One smooth complete repeating walking cycle at native sprite scale.",
+      "ai_freedom": 80
+    },
+    "combatDirection": "south-east",
+    "combatMode": "animate_image_pixminimax",
+    "combat": [
+      {
+        "key": "battle-ready",
+        "frames": 4,
+        "loop": true,
+        "action": "Stable young martial-artist guard, feet firmly grounded, elbows close and fists guarding chin. Small disciplined breath and weight readiness, no pacing, no large sway. Start and finish in the same stable guard."
+      },
+      {
+        "key": "punch",
+        "frames": 8,
+        "loop": false,
+        "action": "One sharp straight punch from the established guard. Very short preparation, hip rotation and a decisive shift into the supporting front foot, clear fully extended impact with the other hand still guarding, immediate fist recoil and fast balanced return to exactly the same guard. No multiple punches, leaps or extra arms."
+      },
+      {
+        "key": "kick",
+        "frames": 8,
+        "loop": false,
+        "action": "One forceful compact front kick from the established guard. Firm support foot and short chamber, clear powerful extension, quick knee recoil and controlled landing back into the same guard. Hands remain guarding, no spin or floating."
+      },
+      {
+        "key": "guard",
+        "frames": 4,
+        "loop": false,
+        "action": "A short decisive forearm block from the established guard, grounded feet and stable hips, tight protected impact hold, then release smoothly into the same guard. No large jump or pose reset."
+      },
+      {
+        "key": "hit1",
+        "frames": 4,
+        "loop": false,
+        "action": "Immediate crisp upper-body recoil at the beginning of the clip from the established guard, brief compression and regained balance, then quick stable recovery to the same guard. No preceding attack or exaggerated backward slide."
+      },
+      {
+        "key": "die1",
+        "frames": 4,
+        "loop": false,
+        "action": "A complete single knockdown from guard. Clear loss of support, knees buckle, torso drops with gravity, land on the ground and stay down on the final pose. No getting up, loop reset or standing final frame."
+      }
+    ],
+    "guardConnections": "전투 대기 생성 후 선택한 안정 가드를 주먹·발차기·방어·피격의 실제 시작 기준으로 사용하고 같은 가드로 복귀. 쓰러짐은 마지막 다운 자세 유지.",
+    "verification": [
+      "원본 해시·RGBA·참조 누락 검사",
+      "8방향 외형·복장·단일 꼬리 일관성",
+      "실제 프레임 재생과 지지하는 발·바닥 기준 확인",
+      "타격·막기·피격·복귀·쓰러짐 종결 동작 확인",
+      "브라우저 오류와 누락 응답 검사"
+    ],
+    "excluded": [
+      "현재 게임 캐릭터 교체",
+      "전투 규칙",
+      "모바일",
+      "스토리",
+      "별도 상태/복장",
+      "main 병합",
+      "서버 종료",
+      "워크트리 정리"
+    ],
+    "commonCombatInput": "public/assets/maplestory/young-ataho-ai/originals/animations/ready-pose-01/d1adab6e-3ac4-44d7-af89-d3a2b9aee9e0/00.png"
+  },
+  "paidBudgetProposal": {
+    "approvalStatus": "superseded-by-human-shared-account-1500-approval",
+    "proposedGenerationLimit": 60,
+    "service": "PixelLab MCP",
+    "subscriptionOnly": true,
+    "creditLimitUsd": 0,
+    "separateFromYeonmukBudget": false,
+    "checkedDate": "2026-10-12",
+    "account": {
+      "remaining": 1527,
+      "used": 473,
+      "total": 2000,
+      "creditsUsd": 0,
+      "subscription": "Tier 1 Pixel Apprentice"
+    },
+    "costSources": [
+      "https://api.pixellab.ai/mcp/docs",
+      "public/assets/maplestory/young-ataho-ai/review/planning-research.json"
+    ],
+    "creationQuote": "현재 MCP 문서는 v3 캐릭터 생성 2~9회분을 설명. search_help는 90px 이하 2회분을 제시. 기존 연묵 reference 실제 차감은 1회분이었으므로 과거 차감으로 보장하지 않고 최초 계획에서 최대9회분 확보.",
+    "walkQuote": "template은 방향당1회분. 8방향 최초8회분.",
+    "customFormula": "ceil(generatedCanvasWidth * generatedCanvasHeight * frameCount / 65536), 방향별 합산. 원본64px가 아니라 자동 확장된 실제 생성 캔버스로 과금.",
+    "canvasExamplesEightFrames": {
+      "64x64": 1,
+      "96x96": 2,
+      "128x128": 2,
+      "132x132": 3,
+      "160x160": 4,
+      "256x256": 8
+    },
+    "defaultBattleFrames": {
+      "battle-ready": 4,
+      "punch": 8,
+      "kick": 8,
+      "guard": 4,
+      "hit1": 4,
+      "die1": 4
+    },
+    "initialPassEstimate": {
+      "smallCanvasLowerEstimate": 16,
+      "typical128CanvasEstimate": 18,
+      "planningUpperAt160Canvas": 33,
+      "contingencyAt256Canvas": 49,
+      "assumptions": "캐릭터9, 걷기8, 나머지는 상기4/8프레임 조합을 공식 산식으로 계산. 60은 일반적인64px 진행에 여유가 있지만 모든 실패·재시도 완료를 보장하는 정액 견적은 아님."
+    },
+    "attemptLimits": {
+      "characterAttemptsMax": 2,
+      "walkInitialDirectionalJobs": 8,
+      "walkTargetedRetriesMax": 2,
+      "combatInitialJobs": 6,
+      "combatTargetedRetriesMaxAcrossAllSix": 2,
+      "allRetriesSubjectToRemainingApprovedBudget": true
+    },
+    "executionPolicy": "승인 후 한 작업씩 비용·잔량을 기록. 긴 주먹/발차기 등 확장 가능성이 큰 작업은 여유 회분을 확보하고 실행. 제안60회분 또는 시도 제한 중 먼저 닿는 한도에서 멈춤. 추가 크레딧 충전·USD fallback·별도 character_state 호출 없음.",
+    "stateCostExcluded": "create_character_state는 현재 문서상10~25회분이며 원화에서 별도 젊은 캐릭터를 만들 때 사용하지 않음.",
+    "rejectionCostUncertainty": "실패·재시도의 차감은 응답과 get_balance로 확인. 무료 재시도라고 가정하지 않음."
+  },
+  "validation": {
+    "check": "passed",
+    "browser": "passed",
+    "browserReportPath": "public/assets/maplestory/young-ataho-ai/review/browser.json",
+    "viewports": [
+      [1366, 768],
+      [1920, 1080]
+    ],
+    "matchingConceptResolution": [1098, 1433],
+    "conceptDisplayHeight": 350,
+    "approvedFrontNativeAndFourTimesDisplay": true,
+    "attachmentAndApprovedFrontRgbaExactlyMatch": true,
+    "approvedOriginalBytesUnchanged": true,
+    "generatedOriginalBytesUnchanged": true,
+    "ataho01Through04AndYeonmuk04Unchanged": true,
+    "existingManifestAssetsUnchanged": true,
+    "footerLinksPassed": true,
+    "consoleErrors": 0,
+    "missingResponses": 0,
+    "motionPlayback": "모션 미생성. 승인 후 실제 프레임 재생 검사 예정.",
+    "gameTests": "정적 원화·승인 정면과 준비 기록만 추가하여 생략"
+  },
+  "characterId": "a2f827dc-55c6-49f3-a884-0b30c196dc76",
+  "budget": {
+    "authorization": "연묵 공격 이펙트와 스킬 이펙트도 pixelLab에서 만들어서 개선하는게 좋을지 검토해보고 작업해줘. 이후에 credit 은 1500개 넘어가기 전까진 묻지말고 필요한만큼 써",
+    "authorizationDate": "2026-10-12",
+    "accountUsedLimit": 1500,
+    "sharedAccountLimit": true,
+    "initialWorkEstimate": 60,
+    "initialEstimateIsHardLimit": false,
+    "scope": "젊은 아타호 8방향 기립·걷기와 남동향 전투 대기·주먹·발차기·방어·피격·쓰러짐. 필요한 부분만 품질 재시도.",
+    "chargedGenerations": 18,
+    "reservedGenerations": 0,
+    "externalDollarCreditsAllowed": false,
+    "extraPaymentAllowed": false,
+    "sharedReservationLedger": "/Users/3sam3/Desktop/dev/prjs/personal/web-games/public/assets/maplestory/pixellab-shared-budget.json",
+    "sharedLedgerLock": "동일 경로 .lock의 flock로 예약 갱신. 병렬 담당이 등록하기 전 별도100회분 여유 확보."
+  },
+  "calls": [
+    {
+      "index": 1,
+      "tool": "create_character",
+      "scope": "approved64px front,8idle directions",
+      "upperBound": 9,
+      "arguments": {
+        "mode": "v3",
+        "body_type": "humanoid",
+        "n_directions": 8,
+        "name": "Young Ataho tiger martial artist",
+        "view": "low top-down",
+        "reference_image_url": "upload:79535ac9-28f7-4b5f-88a4-7ff573641c73",
+        "description": "Rotate this EXACT approved south-facing young ADULT male tiger martial artist sprite into consistent eight directions. Preserve its broad large orange tiger head, compact stout adult proportions, round ears, short forehead tuft, cream cheeks and muzzle, confident focused golden eyes, dark tiger stripes, DARK TEAL sleeveless short martial vest, IVORY inner shirt, SAND loose trousers, RUST-RED waist sash, IVORY wrist and ankle wraps, bare tiger feet and ONE short striped tail. No gray fur, old belly, brown jacket, bottle, weapon, shoes or new equipment. All directions stand naturally with the same outfit and palette, the same native64px scale and clean pixel clusters. Feet grounded near y62, full ears/hands/feet/tail inside the transparent canvas. South input is already user-approved; preserve its identity rather than redesigning it. Front faces straight at viewer, backs show the vest back and back of head, side views show proper side silhouette. Solid balanced young martial artist posture; no child, bodybuilder, extra tail or extra limbs."
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: a2f827dc-55c6-49f3-a884-0b30c196dc76\nname: Young Ataho tiger martial artist\nmode: v3 reference (1 generations, 8 directions)\nbody: humanoid\nsize: 64x64px\nview: low top-down\nstyle: from reference image (outline/detail hints ignored)\nstatus: processing (~3-5 min)\n\nhint: get_character(character_id=\"a2f827dc-55c6-49f3-a884-0b30c196dc76\")"
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "reservedGenerations": 9,
+      "quotedGenerations": 1,
+      "balanceBefore": {
+        "content": [
+          {
+            "type": "text",
+            "text": "credits: $0.00\ngenerations_remaining: 1527\ngenerations_used: 473\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+          }
+        ],
+        "isError": false
+      },
+      "balanceAfterSubmission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "credits: $0.00\ngenerations_remaining: 1527\ngenerations_used: 473\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+          }
+        ],
+        "isError": false
+      },
+      "chargedGenerations": 1,
+      "reservationKey": "young-ataho-character-01"
+    },
+    {
+      "index": 2,
+      "tool": "animate_character",
+      "scope": "new8direction8framewalk",
+      "upperBound": 8,
+      "arguments": {
+        "character_id": "a2f827dc-55c6-49f3-a884-0b30c196dc76",
+        "mode": "template",
+        "template_animation_id": "walking-8-frames",
+        "animation_name": "young-ataho-walk",
+        "directions": [
+          "south",
+          "east",
+          "north",
+          "west",
+          "south-east",
+          "north-east",
+          "north-west",
+          "south-west"
+        ],
+        "ai_freedom": 80,
+        "action_description": "A young adult tiger martial artist walks with firm purposeful foot plants, compact controlled hip weight transfer, squared steady shoulders and clearly alternating short decisive strides. Strong grounded gait rather than sleepy swaying. Hands remain naturally loosely closed, arms swing economically; no running, bouncing, floating or added props. Preserve the approved teal vest, sand trousers, rust-red sash, ivory wrist and ankle wraps and one striped tail. One smooth complete repeating walking cycle at native sprite scale."
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "error: need 8 job slots but only 7 available (1/8 used)\n\nhint: wait for 1 jobs to finish (~2-4 min each)"
+          }
+        ],
+        "isError": true
+      },
+      "status": "rejected",
+      "reservedGenerations": 0,
+      "quotedGenerations": 8,
+      "balanceBefore": {
+        "content": [
+          {
+            "type": "text",
+            "text": "credits: $0.00\ngenerations_remaining: 1527\ngenerations_used: 473\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+          }
+        ],
+        "isError": false
+      },
+      "balanceAfterSubmission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "credits: $0.00\ngenerations_remaining: 1527\ngenerations_used: 473\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+          }
+        ],
+        "isError": false
+      },
+      "chargedGenerations": 0,
+      "reservationKey": "young-ataho-walk-01",
+      "reason": "동시 작업8개 제한 중 캐릭터1개가 진행 중이라8방향 요청은 접수되지 않음. 과금0,4방향씩 같은 그룹으로 나눠 생성."
+    },
+    {
+      "index": 3,
+      "tool": "animate_character",
+      "scope": "four cardinal directions of8directionwalk",
+      "upperBound": 4,
+      "arguments": {
+        "character_id": "a2f827dc-55c6-49f3-a884-0b30c196dc76",
+        "mode": "template",
+        "template_animation_id": "walking-8-frames",
+        "animation_name": "young-ataho-walk",
+        "directions": ["south", "east", "north", "west"],
+        "ai_freedom": 80,
+        "action_description": "A young adult tiger martial artist walks with firm purposeful foot plants, compact controlled hip weight transfer, squared steady shoulders and clearly alternating short decisive strides. Strong grounded gait rather than sleepy swaying. Hands remain naturally loosely closed, arms swing economically; no running, bouncing, floating or added props. Preserve the approved teal vest, sand trousers, rust-red sash, ivory wrist and ankle wraps and one striped tail. One smooth complete repeating walking cycle at native sprite scale."
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: a2f827dc-55c6-49f3-a884-0b30c196dc76\nanimation: A young adult tiger martial artist walks with firm purposeful foot plants, compact controlled hip weight transfer, squared steady shoulders and clearly alternating short decisive strides. Strong grounded gait rather than sleepy swaying. Hands remain naturally loosely closed, arms swing economically; no running, bouncing, floating or added props. Preserve the approved teal vest, sand trousers, rust-red sash, ivory wrist and ankle wraps and one striped tail. One smooth complete repeating walking cycle at native sprite scale.\ndirections: south, east, north, west (4 jobs)\ngroup: 799c4701-61b2-44f7-b90a-fb1458218a80\neta: ~2-4 min\nadd more directions to this group: animate_character(character_id=\"a2f827dc-55c6-49f3-a884-0b30c196dc76\", template_animation_id=\"walking-8-frames\", animation_group_id=\"799c4701-61b2-44f7-b90a-fb1458218a80\", directions=[...])\n\nhint: get_character(character_id=\"a2f827dc-55c6-49f3-a884-0b30c196dc76\")\nif poor: delete_animation(character_id=\"a2f827dc-55c6-49f3-a884-0b30c196dc76\", animation_type=\"...\") then retry with mode=\"v3\""
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "reservedGenerations": 4,
+      "quotedGenerations": 4,
+      "balanceBefore": {
+        "content": [
+          {
+            "type": "text",
+            "text": "credits: $0.00\ngenerations_remaining: 1527\ngenerations_used: 473\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+          }
+        ],
+        "isError": false
+      },
+      "balanceAfterSubmission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "credits: $0.00\ngenerations_remaining: 1527\ngenerations_used: 473\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+          }
+        ],
+        "isError": false
+      },
+      "chargedGenerations": 4,
+      "reservationKey": "young-ataho-walk-cardinal-01"
+    },
+    {
+      "key": "walk-diagonal-01",
+      "tool": "animate_character",
+      "args": {
+        "character_id": "a2f827dc-55c6-49f3-a884-0b30c196dc76",
+        "mode": "template",
+        "template_animation_id": "walking-8-frames",
+        "animation_name": "young-ataho-walk",
+        "animation_group_id": "799c4701-61b2-44f7-b90a-fb1458218a80",
+        "directions": ["south-east", "north-east", "north-west", "south-west"],
+        "ai_freedom": 80,
+        "action_description": "A young adult tiger martial artist walks with firm purposeful foot plants, compact controlled hip weight transfer, squared steady shoulders and clearly alternating short decisive strides. Strong grounded gait rather than sleepy swaying. Hands remain naturally loosely closed, arms swing economically; no running, bouncing, floating or added props. Preserve the approved teal vest, sand trousers, rust-red sash, ivory wrist and ankle wraps and one striped tail. One smooth complete repeating walking cycle at native sprite scale."
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: a2f827dc-55c6-49f3-a884-0b30c196dc76\nanimation: A young adult tiger martial artist walks with firm purposeful foot plants, compact controlled hip weight transfer, squared steady shoulders and clearly alternating short decisive strides. Strong grounded gait rather than sleepy swaying. Hands remain naturally loosely closed, arms swing economically; no running, bouncing, floating or added props. Preserve the approved teal vest, sand trousers, rust-red sash, ivory wrist and ankle wraps and one striped tail. One smooth complete repeating walking cycle at native sprite scale.\ndirections: south-east, north-east, north-west, south-west (4 jobs)\ngroup: 799c4701-61b2-44f7-b90a-fb1458218a80\neta: ~2-4 min\nadd more directions to this group: animate_character(character_id=\"a2f827dc-55c6-49f3-a884-0b30c196dc76\", template_animation_id=\"walking-8-frames\", animation_group_id=\"799c4701-61b2-44f7-b90a-fb1458218a80\", directions=[...])\n\nhint: get_character(character_id=\"a2f827dc-55c6-49f3-a884-0b30c196dc76\")\nif poor: delete_animation(character_id=\"a2f827dc-55c6-49f3-a884-0b30c196dc76\", animation_type=\"...\") then retry with mode=\"v3\""
+          }
+        ],
+        "isError": false
+      },
+      "reservationKey": "young-ataho-walk-diagonal-01",
+      "chargedGenerations": 4,
+      "status": "completed",
+      "maximumGenerations": 4,
+      "quotedGenerations": 4
+    },
+    {
+      "key": "ready-transition-01",
+      "tool": "animate_image",
+      "args": {
+        "first_frame_url": "upload:be036f1c-70a3-48d0-bbdc-439424e9265a",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 101231,
+        "action": "Move from relaxed standing into a crisp disciplined boxing guard, facing southeast. Keep BOTH feet planted at the same ground baseline and almost the same positions. Raise both wrapped fists: the forward fist in front of the chest, rear fist guarding the cheek. Elbows compact, knees slightly bent, shoulders ready, eyes alert and clearly OPEN looking at an opponent, not sleepy. Stop in a stable balanced guard on the final frame. Do NOT punch, step, turn away, bounce, float, or enlarge the character. Preserve the exact large broad tiger head, teal sleeveless vest, sand pants, rust-red sash, ivory wraps, and ONE striped tail. Body-only animation, no energy effects, props or shadow disk. Fixed camera and same native pixel scale."
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 1061f983-bb52-4a73-b37c-8ff1909ee2f4\njob_id: 1061f983-bb52-4a73-b37c-8ff1909ee2f4\naction: Move from relaxed standing into a crisp disciplined boxing guard, facing southeast. Keep BOTH feet planted at the same ground baseline and almost the same positions. Raise both wrapped fists: the forward fist in front of the chest, rear fist guarding the cheek. Elbows compact, knees slightly bent, shoulders ready, eyes alert and clearly OPEN looking at an opponent, not sleepy. Stop in a stable balanced guard on the final frame. Do NOT punch, step, turn away, bounce, float, or enlarge the character. Preserve the exact large broad tiger head, teal sleeveless vest, sand pants, rust-red sash, ivory wraps, and ONE striped tail. Body-only animation, no energy effects, props or shadow disk. Fixed camera and same native pixel scale.\nframes: 4\nsize: 96x96px\ntransparent: True\nseed: 101231\nasset_id: d7f77980-36ed-532e-bad4-1d8ad6252b0b\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1061f983-bb52-4a73-b37c-8ff1909ee2f4\")"
+          }
+        ],
+        "isError": false
+      },
+      "reservationKey": "young-ataho-ready-transition-01",
+      "chargedGenerations": 1,
+      "status": "completed",
+      "maximumGenerations": 4,
+      "quotedGenerations": 1,
+      "jobId": "1061f983-bb52-4a73-b37c-8ff1909ee2f4",
+      "selected": false,
+      "selectionNote": "진입 동작은 보관. 마지막 자세보다 정지 가드 후보의 눈빛과 주먹 높이가 더 또렷해 전투 공통 입력은 정지 가드를 선택."
+    },
+    {
+      "key": "ready-pose-01",
+      "tool": "edit_image_pixen",
+      "args": {
+        "image_url": "upload:be036f1c-70a3-48d0-bbdc-439424e9265a",
+        "description": "Keep this SAME tiger, exact native pixel scale, teal vest, sand pants, rust-red sash, ivory wraps and single tail. Change ONLY the pose into a strong compact BOXING GUARD facing southeast: both fists raised, forward fist at chest, rear fist beside cheek, elbows tucked, feet planted in the same positions, knees slightly flexed. Alert open eyes. Large broad head unchanged. No punch, effect, prop or shadow. Transparent canvas, character stays centered.",
+        "width": 96,
+        "height": 96,
+        "no_background": true,
+        "seed": 101232
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: d1adab6e-3ac4-44d7-af89-d3a2b9aee9e0\njob_id: d1adab6e-3ac4-44d7-af89-d3a2b9aee9e0\nmodel: pixen\nedit: Keep this SAME tiger, exact native pixel scale, teal vest, sand pants, rust-red sash, ivory wraps and single tail. Change ONLY the pose into a strong compact BOXING GUARD facing southeast: both fists raised, forward fist at chest, rear fist beside cheek, elbows tucked, feet planted in the same positions, knees slightly flexed. Alert open eyes. Large broad head unchanged. No punch, effect, prop or shadow. Transparent canvas, character stays centered.\nsource: 96x96px\nsize: 96x96px\ntransparent: True\nseed: 101232\nasset_id: 83c98297-fb9d-5e77-9a61-d0a9b9d48f1d\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d1adab6e-3ac4-44d7-af89-d3a2b9aee9e0\")"
+          }
+        ],
+        "isError": false
+      },
+      "jobId": "d1adab6e-3ac4-44d7-af89-d3a2b9aee9e0",
+      "reservationKey": "young-ataho-ready-pose-01",
+      "quotedGenerations": 1,
+      "chargedGenerations": 1,
+      "status": "completed",
+      "reason": "가드 진입 애니메이션이95%에서 지연되어 공통 입력용 정지 가드도 생성해 외형·자세를 비교",
+      "selected": true
+    },
+    {
+      "key": "battle-ready-01",
+      "tool": "animate_image_pixminimax",
+      "args": {
+        "first_frame_url": "upload:8329bb39-b2a0-4dca-a79c-7868de3e5254",
+        "last_frame_url": "upload:8329bb39-b2a0-4dca-a79c-7868de3e5254",
+        "no_background": true,
+        "enhance_prompt": false,
+        "direction": "south-east",
+        "view": "low top-down",
+        "initial_pose": "Standing in a compact two-fist boxing guard, both feet planted, elbows tucked.",
+        "subject_description": "A young adult chibi tiger martial artist with a broad orange head, teal sleeveless vest, sand pants, rust-red sash, ivory wrist and ankle wraps and one striped tail.",
+        "description": "A tiny disciplined BREATHING LOOP in this exact boxing guard. The chest rises and settles by only one or two pixels; both raised fists remain at guard height and both planted feet NEVER move. Alert eyes stay open, no blinking or sleepy sway. Stable head scale and silhouette, one tail. Start and finish in the same guard pose. Do NOT lower the arms, punch, step, turn, bounce or float. Body-only, transparent background, fixed camera and native pixel scale.",
+        "frame_count": 4,
+        "seed": 101233
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: ee91fbdb-9f01-4092-b199-4d0e9b0cfde4\njob_id: ee91fbdb-9f01-4092-b199-4d0e9b0cfde4\ndescription: A tiny disciplined BREATHING LOOP in this exact boxing guard. The chest rises and settles by only one or two pixels; both raised fists remain at guard height and both planted feet NEVER move. Alert eyes stay open, no blinking or sleepy sway. Stable head scale and silhouette, one tail. Start and finish in the same guard pose. Do NOT lower the arms, punch, step, turn, bounce or float. Body-only, transparent background, fixed camera and native pixel scale.\nframes: 4\nsize: 96x96px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 101233\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"ee91fbdb-9f01-4092-b199-4d0e9b0cfde4\")\nasset_id: 7a0f7e35-09c7-5aaa-bb40-3b19cfae0e9f\nasset_status: pending (saved to your gallery when generation completes)"
+          }
+        ],
+        "isError": false
+      },
+      "jobId": "ee91fbdb-9f01-4092-b199-4d0e9b0cfde4",
+      "reservationKey": "young-ataho-battle-ready-01",
+      "quotedGenerations": 1,
+      "chargedGenerations": 1,
+      "status": "completed",
+      "maximumGenerations": 4,
+      "selected": true
+    },
+    {
+      "key": "punch-01",
+      "tool": "animate_image_pixminimax",
+      "args": {
+        "first_frame_url": "upload:8329bb39-b2a0-4dca-a79c-7868de3e5254",
+        "last_frame_url": "upload:8329bb39-b2a0-4dca-a79c-7868de3e5254",
+        "no_background": true,
+        "enhance_prompt": false,
+        "direction": "south-east",
+        "view": "low top-down",
+        "initial_pose": "Standing in a compact two-fist boxing guard, both feet planted, elbows tucked.",
+        "subject_description": "A young adult chibi tiger martial artist with a broad orange head, teal sleeveless vest, sand pants, rust-red sash, ivory wrist and ankle wraps and one striped tail.",
+        "description": "ONE sharp powerful BOXING STRAIGHT PUNCH toward the right, beginning and ending in this exact guard. Make the complete action clearly visible: brief compact hip coil, immediately drive the rear shoulder and hip forward while the REAR fist shoots straight out horizontally to full extension at the opponent, opposite fist stays guarding the cheek. Planted supporting foot pivots in place; no large step. Hold a very clear fully extended contact pose briefly, then snap that fist back and settle fast into EXACTLY the original two-fist guard. No second punch, no arm wave, no jump, effects, new props, head scaling or costume changes. Fixed camera, body only.",
+        "frame_count": 8,
+        "seed": 101234
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 92ee469e-aca7-4fda-a9fe-b31d56ecb6b3\njob_id: 92ee469e-aca7-4fda-a9fe-b31d56ecb6b3\ndescription: ONE sharp powerful BOXING STRAIGHT PUNCH toward the right, beginning and ending in this exact guard. Make the complete action clearly visible: brief compact hip coil, immediately drive the rear shoulder and hip forward while the REAR fist shoots straight out horizontally to full extension at the opponent, opposite fist stays guarding the cheek. Planted supporting foot pivots in place; no large step. Hold a very clear fully extended contact pose briefly, then snap that fist back and settle fast into EXACTLY the original two-fist guard. No second punch, no arm wave, no jump, effects, new props, head scaling or costume changes. Fixed camera, body only.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 101234\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"92ee469e-aca7-4fda-a9fe-b31d56ecb6b3\")\nasset_id: fc49cc58-d540-559e-ad4b-f40c72eafc64\nasset_status: pending (saved to your gallery when generation completes)"
+          }
+        ],
+        "isError": false
+      },
+      "jobId": "92ee469e-aca7-4fda-a9fe-b31d56ecb6b3",
+      "reservationKey": "young-ataho-punch-01",
+      "quotedGenerations": 1,
+      "chargedGenerations": 1,
+      "status": "completed",
+      "maximumGenerations": 8,
+      "selected": true
+    },
+    {
+      "key": "kick-01",
+      "tool": "animate_image_pixminimax",
+      "args": {
+        "first_frame_url": "upload:8329bb39-b2a0-4dca-a79c-7868de3e5254",
+        "last_frame_url": "upload:8329bb39-b2a0-4dca-a79c-7868de3e5254",
+        "no_background": true,
+        "enhance_prompt": false,
+        "direction": "south-east",
+        "view": "low top-down",
+        "initial_pose": "Standing in a compact two-fist boxing guard, both feet planted, elbows tucked.",
+        "subject_description": "A young adult chibi tiger martial artist with a broad orange head, teal sleeveless vest, sand pants, rust-red sash, ivory wrist and ankle wraps and one striped tail.",
+        "description": "ONE forceful FRONT KICK toward the lower-right from this two-fist guard. Keep the rear support foot firmly planted at the same place. Briefly lift and chamber the forward knee tightly, extend the leg decisively toward the opponent with heel leading, show a clear extended striking leg and slight hip thrust. Both fists remain guarding, broad tiger head steady. Retract the knee quickly, plant that foot back where it started and recover to EXACTLY the original stable guard. Full chamber, extension, recoil and landing in one short controlled action. No spin, sidekick, somersault, hovering, body enlargement, effects, props or costume changes. Body only, fixed camera.",
+        "frame_count": 8,
+        "seed": 101235
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 926c7a6d-51c1-430c-883f-69572cb31658\njob_id: 926c7a6d-51c1-430c-883f-69572cb31658\ndescription: ONE forceful FRONT KICK toward the lower-right from this two-fist guard. Keep the rear support foot firmly planted at the same place. Briefly lift and chamber the forward knee tightly, extend the leg decisively toward the opponent with heel leading, show a clear extended striking leg and slight hip thrust. Both fists remain guarding, broad tiger head steady. Retract the knee quickly, plant that foot back where it started and recover to EXACTLY the original stable guard. Full chamber, extension, recoil and landing in one short controlled action. No spin, sidekick, somersault, hovering, body enlargement, effects, props or costume changes. Body only, fixed camera.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 101235\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"926c7a6d-51c1-430c-883f-69572cb31658\")\nasset_id: 09289343-2ee3-570f-b3ff-4873bd1fd377\nasset_status: pending (saved to your gallery when generation completes)"
+          }
+        ],
+        "isError": false
+      },
+      "jobId": "926c7a6d-51c1-430c-883f-69572cb31658",
+      "reservationKey": "young-ataho-kick-01",
+      "quotedGenerations": 1,
+      "chargedGenerations": 1,
+      "status": "completed",
+      "maximumGenerations": 8,
+      "selected": true
+    },
+    {
+      "key": "guard-01",
+      "tool": "animate_image_pixminimax",
+      "args": {
+        "first_frame_url": "upload:8329bb39-b2a0-4dca-a79c-7868de3e5254",
+        "last_frame_url": "upload:8329bb39-b2a0-4dca-a79c-7868de3e5254",
+        "no_background": true,
+        "enhance_prompt": false,
+        "direction": "south-east",
+        "view": "low top-down",
+        "initial_pose": "Compact two-fist boxing guard, feet planted.",
+        "subject_description": "A young chibi orange tiger martial artist, teal vest, sand pants, rust-red sash, ivory wraps and one striped tail.",
+        "description": "ONE decisive compact forearm BLOCK from this two-fist guard. Immediately bring both wrapped forearms together in front of the face and upper chest, elbows tight, knees briefly absorb an incoming impact. Hold a clear protected block pose while feet and hips stay grounded. Then release the forearms quickly back into EXACTLY the original guard. Never punch, jump, step, turn away or enlarge the head. Controlled forceful movement, no floppy sway. Body-only, no opponent, effects, props or costume changes. Fixed camera and native pixel scale.",
+        "frame_count": 4,
+        "seed": 101236
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 4aa97135-f276-4a2a-9cfa-24140d41d72a\njob_id: 4aa97135-f276-4a2a-9cfa-24140d41d72a\ndescription: ONE decisive compact forearm BLOCK from this two-fist guard. Immediately bring both wrapped forearms together in front of the face and upper chest, elbows tight, knees briefly absorb an incoming impact. Hold a clear protected block pose while feet and hips stay grounded. Then release the forearms quickly back into EXACTLY the original guard. Never punch, jump, step, turn away or enlarge the head. Controlled forceful movement, no floppy sway. Body-only, no opponent, effects, props or costume changes. Fixed camera and native pixel scale.\nframes: 4\nsize: 96x96px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 101236\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"4aa97135-f276-4a2a-9cfa-24140d41d72a\")\nasset_id: e5b89eb8-90f4-53d4-a5b5-cbb9b0f8c198\nasset_status: pending (saved to your gallery when generation completes)"
+          }
+        ],
+        "isError": false
+      },
+      "jobId": "4aa97135-f276-4a2a-9cfa-24140d41d72a",
+      "reservationKey": "young-ataho-guard-01",
+      "quotedGenerations": 1,
+      "chargedGenerations": 1,
+      "status": "completed",
+      "maximumGenerations": 4,
+      "selected": true
+    },
+    {
+      "key": "hit1-01",
+      "tool": "animate_image_pixminimax",
+      "args": {
+        "first_frame_url": "upload:8329bb39-b2a0-4dca-a79c-7868de3e5254",
+        "no_background": true,
+        "enhance_prompt": false,
+        "direction": "south-east",
+        "view": "low top-down",
+        "initial_pose": "Compact two-fist boxing guard, feet planted.",
+        "subject_description": "A young chibi orange tiger martial artist, teal vest, sand pants, rust-red sash, ivory wraps and one striped tail.",
+        "frame_count": 4,
+        "last_frame_url": "upload:8329bb39-b2a0-4dca-a79c-7868de3e5254",
+        "seed": 101237,
+        "description": "A single immediate HIT REACTION from this boxing guard: at the VERY FIRST movement the head and chest snap backward slightly as if struck, shoulders compress, fists tighten defensively, hips briefly absorb the impact while feet stay planted. A clear brief recoil, then quickly regain balance and recover to EXACTLY the original guard. Do not wind up or attack first, do not walk backward or fall. Strong controlled young fighter, body-only, no visible enemy, blood, effects, props, added arms or costume changes. Fixed camera and native sprite scale."
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: d30b20a0-0557-4e26-a9cb-7e473f82b772\njob_id: d30b20a0-0557-4e26-a9cb-7e473f82b772\ndescription: A single immediate HIT REACTION from this boxing guard: at the VERY FIRST movement the head and chest snap backward slightly as if struck, shoulders compress, fists tighten defensively, hips briefly absorb the impact while feet stay planted. A clear brief recoil, then quickly regain balance and recover to EXACTLY the original guard. Do not wind up or attack first, do not walk backward or fall. Strong controlled young fighter, body-only, no visible enemy, blood, effects, props, added arms or costume changes. Fixed camera and native sprite scale.\nframes: 4\nsize: 96x96px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 101237\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"d30b20a0-0557-4e26-a9cb-7e473f82b772\")\nasset_id: 9e0cd7e9-9209-5039-a68f-1b2f454998bd\nasset_status: pending (saved to your gallery when generation completes)"
+          }
+        ],
+        "isError": false
+      },
+      "jobId": "d30b20a0-0557-4e26-a9cb-7e473f82b772",
+      "reservationKey": "young-ataho-hit1-01",
+      "quotedGenerations": 1,
+      "chargedGenerations": 1,
+      "status": "completed",
+      "maximumGenerations": 4,
+      "selected": false,
+      "qualityRejected": true,
+      "rejectionReason": "상체·고개의 피격 반응이 대기 호흡과 구별하기 어려울 만큼 약하고 얼굴 옆에 불필요한 흔적 발생. 원본 보존."
+    },
+    {
+      "key": "die1-01",
+      "tool": "animate_image_pixminimax",
+      "args": {
+        "first_frame_url": "upload:8329bb39-b2a0-4dca-a79c-7868de3e5254",
+        "no_background": true,
+        "enhance_prompt": false,
+        "direction": "south-east",
+        "view": "low top-down",
+        "initial_pose": "Compact two-fist boxing guard, feet planted.",
+        "subject_description": "A young chibi orange tiger martial artist, teal vest, sand pants, rust-red sash, ivory wraps and one striped tail.",
+        "frame_count": 8,
+        "seed": 101238,
+        "description": "A complete SINGLE KNOCKDOWN from this exact guard. First the knees buckle and both fists drop, then the hips and torso sink visibly with gravity, lose support and topple onto the side toward the right. Finish with the tiger fully LYING DOWN on the ground, head and torso horizontal, limbs folded naturally, one striped tail resting on the floor. The last TWO frames stay fully down and still. Show the actual descent and grounded landing, not merely leaning while standing. Preserve broad head, teal vest, sand pants and ivory wraps at same native scale. No getting up, loop reset, bouncing, disappearing, spinning, blood, effect or props. Fixed camera, body only, transparent."
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: fc7e1cc9-1d94-4fd3-a618-f8b7aae03de1\njob_id: fc7e1cc9-1d94-4fd3-a618-f8b7aae03de1\ndescription: A complete SINGLE KNOCKDOWN from this exact guard. First the knees buckle and both fists drop, then the hips and torso sink visibly with gravity, lose support and topple onto the side toward the right. Finish with the tiger fully LYING DOWN on the ground, head and torso horizontal, limbs folded naturally, one striped tail resting on the floor. The last TWO frames stay fully down and still. Show the actual descent and grounded landing, not merely leaning while standing. Preserve broad head, teal vest, sand pants and ivory wraps at same native scale. No getting up, loop reset, bouncing, disappearing, spinning, blood, effect or props. Fixed camera, body only, transparent.\nframes: 8\nsize: 96x96px\ntransparent: True\nseed: 101238\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"fc7e1cc9-1d94-4fd3-a618-f8b7aae03de1\")\nasset_id: e2f93ba9-ccab-5d6a-87c7-f09f6fa7fae9\nasset_status: pending (saved to your gallery when generation completes)"
+          }
+        ],
+        "isError": false
+      },
+      "jobId": "fc7e1cc9-1d94-4fd3-a618-f8b7aae03de1",
+      "reservationKey": "young-ataho-die1-01",
+      "quotedGenerations": 1,
+      "chargedGenerations": 1,
+      "status": "completed",
+      "maximumGenerations": 8,
+      "selected": true
+    },
+    {
+      "key": "hit1-02",
+      "tool": "animate_image_pixminimax",
+      "args": {
+        "first_frame_url": "upload:8329bb39-b2a0-4dca-a79c-7868de3e5254",
+        "no_background": true,
+        "enhance_prompt": false,
+        "direction": "south-east",
+        "view": "low top-down",
+        "initial_pose": "Standing in compact two-fist boxing guard with both feet planted.",
+        "subject_description": "One young adult broad-headed chibi tiger martial artist with teal vest, sand pants, rust-red sash, ivory wraps and one striped tail.",
+        "frame_count": 8,
+        "seed": 101239,
+        "description": "A LARGE CLEAR UPPER-BODY RECOIL and RECOVERY. At once tilt the tiger's entire head and shoulders sharply BACKWARD and toward screen LEFT by about eight pixels, lift the chin and lean the torso away as the chest compresses. The waist and both feet stay grounded; the rear foot stays planted. BOTH fists draw tightly toward the chest in a protective reflex. Show a strongly bent-back diagonal torso and recoiling head for a brief clear reaction pose, then straighten the torso and bring the head forward smoothly back into the original two-fist guard. Complete one visible recoil and recovery, not an idle breathing loop. Only animate the tiger's BODY; all empty space stays empty. Retain the exact head size, face, clothing, tail and native pixel scale. Fixed camera."
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: dace502b-aa49-48d7-9ad1-c80b34014e2c\njob_id: dace502b-aa49-48d7-9ad1-c80b34014e2c\ndescription: A LARGE CLEAR UPPER-BODY RECOIL and RECOVERY. At once tilt the tiger's entire head and shoulders sharply BACKWARD and toward screen LEFT by about eight pixels, lift the chin and lean the torso away as the chest compresses. The waist and both feet stay grounded; the rear foot stays planted. BOTH fists draw tightly toward the chest in a protective reflex. Show a strongly bent-back diagonal torso and recoiling head for a brief clear reaction pose, then straighten the torso and bring the head forward smoothly back into the original two-fist guard. Complete one visible recoil and recovery, not an idle breathing loop. Only animate the tiger's BODY; all empty space stays empty. Retain the exact head size, face, clothing, tail and native pixel scale. Fixed camera.\nframes: 8\nsize: 96x96px\ntransparent: True\nseed: 101239\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"dace502b-aa49-48d7-9ad1-c80b34014e2c\")\nasset_id: 1349b03e-723d-5170-b6d3-7bd72e829a6c\nasset_status: pending (saved to your gallery when generation completes)"
+          }
+        ],
+        "isError": false
+      },
+      "jobId": "dace502b-aa49-48d7-9ad1-c80b34014e2c",
+      "reservationKey": "young-ataho-hit1-02",
+      "quotedGenerations": 1,
+      "chargedGenerations": 1,
+      "status": "completed",
+      "maximumGenerations": 8,
+      "selected": true
+    }
+  ],
+  "accountBaseline": {
+    "generationsUsed": 473,
+    "generationsRemaining": 1527,
+    "generationsTotal": 2000,
+    "creditsUsd": 0
+  },
+  "paidPixelLabApiAttempts": 13,
+  "selectedCharacter": {
+    "characterId": "a2f827dc-55c6-49f3-a884-0b30c196dc76",
+    "rotations": [
+      {
+        "direction": "south",
+        "localPath": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/rotations/south.png",
+        "sha256": "36c42a1168312b8fe454ebba15a4d536d8092101faa03861b58e5d9b6b701916",
+        "size": [64, 64],
+        "pivot": {
+          "x": 32,
+          "y": 1
+        }
+      },
+      {
+        "direction": "east",
+        "localPath": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/rotations/east.png",
+        "sha256": "ec8f86c73c472c02a07373adfc695d387e8047b0eb282c0a309da02e5ae143fc",
+        "size": [64, 64],
+        "pivot": {
+          "x": 32,
+          "y": 1
+        }
+      },
+      {
+        "direction": "north",
+        "localPath": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/rotations/north.png",
+        "sha256": "459f7ee2b4d3166b06d07bf212c7dfca00c9d1ff1eb7071d7a79a7e8960edce3",
+        "size": [64, 64],
+        "pivot": {
+          "x": 32,
+          "y": 1
+        }
+      },
+      {
+        "direction": "west",
+        "localPath": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/rotations/west.png",
+        "sha256": "d1bf7c0c89b3a0c0f3f4d8a91eeb5d836dad47e532af4409deb0ecf0fc88d580",
+        "size": [64, 64],
+        "pivot": {
+          "x": 32,
+          "y": 1
+        }
+      },
+      {
+        "direction": "south-east",
+        "localPath": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/rotations/south-east.png",
+        "sha256": "6c5d7775959ff6feadb365415bc5e4dcee35e5b4a7897feaa218a8c571c8b63b",
+        "size": [64, 64],
+        "pivot": {
+          "x": 32,
+          "y": 1
+        }
+      },
+      {
+        "direction": "south-west",
+        "localPath": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/rotations/south-west.png",
+        "sha256": "c2abd7e2251bcf3b228a18ffa6784c5b1805e585b4da4bd8bea41f6f0c97164c",
+        "size": [64, 64],
+        "pivot": {
+          "x": 32,
+          "y": 1
+        }
+      },
+      {
+        "direction": "north-east",
+        "localPath": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/rotations/north-east.png",
+        "sha256": "893c10171bbda54834ebcdb1dbb5d9abe70d27c8989b5fadc623a0a30d42c9dc",
+        "size": [64, 64],
+        "pivot": {
+          "x": 32,
+          "y": 1
+        }
+      },
+      {
+        "direction": "north-west",
+        "localPath": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/rotations/north-west.png",
+        "sha256": "0568b23e30668d43e27ba81eb8d05136b59076cb4e0a6d418520b7eb8d52e176",
+        "size": [64, 64],
+        "pivot": {
+          "x": 32,
+          "y": 1
+        }
+      }
+    ],
+    "approvedSouthBytesPreserved": true,
+    "characterArchive": "public/assets/maplestory/young-ataho-ai/originals/archives/rotations-and-all-walk-01.zip",
+    "providerSouthRgbaMatchesApproved": false
+  },
+  "importedWalkingDirections": [
+    {
+      "direction": "south",
+      "frames": 8,
+      "localSourceDirectory": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/animations/young-ataho-walk/south"
+    },
+    {
+      "direction": "east",
+      "frames": 8,
+      "localSourceDirectory": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/animations/young-ataho-walk/east"
+    },
+    {
+      "direction": "north",
+      "frames": 8,
+      "localSourceDirectory": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/animations/young-ataho-walk/north"
+    },
+    {
+      "direction": "west",
+      "frames": 8,
+      "localSourceDirectory": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/animations/young-ataho-walk/west"
+    },
+    {
+      "direction": "south-east",
+      "frames": 8,
+      "localSourceDirectory": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/animations/young-ataho-walk/south-east"
+    },
+    {
+      "direction": "south-west",
+      "frames": 8,
+      "localSourceDirectory": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/animations/young-ataho-walk/south-west"
+    },
+    {
+      "direction": "north-east",
+      "frames": 8,
+      "localSourceDirectory": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/animations/young-ataho-walk/north-east"
+    },
+    {
+      "direction": "north-west",
+      "frames": 8,
+      "localSourceDirectory": "public/assets/maplestory/young-ataho-ai/originals/characters/a2f827dc-55c6-49f3-a884-0b30c196dc76/animations/young-ataho-walk/north-west"
+    }
+  ],
+  "combatInput": {
+    "localPath": "public/assets/maplestory/young-ataho-ai/originals/inputs/ready-transition-01.png",
+    "sha256": "d2645352336529c0a2678fc49d62314b19aab0b0a9b9a44e468365c12daf8fb0",
+    "sourceOriginalPath": "public/assets/maplestory/young-ataho-ai/runtime/rotations/south-east.png",
+    "sourceRect": {
+      "x": 16,
+      "y": 16,
+      "width": 64,
+      "height": 64
+    },
+    "size": [96, 96],
+    "pixelsPreserved": true,
+    "reason": "공격 시 팔·다리가 뻗을 투명 여백만 추가. 원본64px 캐릭터를 확대·회전하지 않음."
+  },
+  "motionValidation": {
+    "walk": {
+      "status": "passed",
+      "directions": 8,
+      "framesPerDirection": 8,
+      "actualChromePlayback": true,
+      "loopJoinPlayback": true,
+      "pauseResume": true,
+      "viewports": [
+        [1366, 768],
+        [1920, 1080]
+      ],
+      "dpr2": {
+        "width": 1964,
+        "height": 982,
+        "cssWidth": 982,
+        "cssHeight": 491,
+        "dpr": 2
+      },
+      "browserErrors": [],
+      "missingResponses": [],
+      "reportPath": "public/assets/maplestory/young-ataho-ai/review/playback/browser.json"
+    },
+    "otherAssetManifestUnchanged": true,
+    "approvedFrontBytesPreserved": true,
+    "finalPlayback": {
+      "status": "passed",
+      "actualChromePlayback": true,
+      "animationCount": 22,
+      "walkDirections": 8,
+      "combatTypes": 6,
+      "oneshotFinalFramesHeld": 5,
+      "pauseResume": true,
+      "viewports": [
+        [1366, 768],
+        [1920, 1080]
+      ],
+      "dpr2": {
+        "width": 1964,
+        "height": 982,
+        "cssWidth": 982,
+        "cssHeight": 491,
+        "dpr": 2
+      },
+      "totalRenderSamples": 1422,
+      "supportFootScreenDrift": {
+        "kick": {
+          "x": 0,
+          "y": 0
+        },
+        "attack1": {
+          "x": 0,
+          "y": 0
+        },
+        "hit1": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "browserErrors": [],
+      "missingResponses": [],
+      "reportPath": "public/assets/maplestory/young-ataho-ai/review/playback/browser.json"
+    },
+    "resourceContract": {
+      "status": "passed",
+      "frameReferences": 111,
+      "originalFiles": 153,
+      "nativeRgbaVerified": true,
+      "approvedFrontExactBytes": true,
+      "olderConceptsUnchanged": true,
+      "otherAssetManifestUnchanged": true,
+      "reportPath": "public/assets/maplestory/young-ataho-ai/review/resource-contract.json"
+    },
+    "checks": {
+      "npmRunCheck": "passed",
+      "npmRunBuild": "passed",
+      "previewAnimationPlayerTests": 2,
+      "status": "passed"
+    }
+  },
+  "selectedCombatGuard": {
+    "jobId": "d1adab6e-3ac4-44d7-af89-d3a2b9aee9e0",
+    "localPath": "public/assets/maplestory/young-ataho-ai/originals/animations/ready-pose-01/d1adab6e-3ac4-44d7-af89-d3a2b9aee9e0/00.png",
+    "sha256": "2c903d388c1121e8f6093eeaa9a2cfc4f40c76dc90bf7606c4c236f6a0d10afd",
+    "size": [96, 96],
+    "groundBaselineExclusive": 79,
+    "pivot": {
+      "x": 48,
+      "y": 17
+    },
+    "reason": "아이보리 아대를 찬 양손 가드와 또렷한 눈, 같은 발판 위 안정한 지지. 모든 전투 동작의 시작·복귀는 이 원본 그대로 연결."
+  },
+  "combatMotions": [
+    {
+      "key": "kick",
+      "jobId": "926c7a6d-51c1-430c-883f-69572cb31658",
+      "sourceName": "kick-01",
+      "label": "앞차기 · 지지 발 고정",
+      "selectedFrames": ["guard", 1, 2, 3, 4, 5, 6, 7, "guard"],
+      "durations": [0.07, 0.055, 0.055, 0.08, 0.11, 0.06, 0.05, 0.055, 0.11],
+      "pivots": [
+        {
+          "x": 48,
+          "y": 17
+        },
+        {
+          "x": 43,
+          "y": 17
+        },
+        {
+          "x": 37,
+          "y": 16
+        },
+        {
+          "x": 37,
+          "y": 16
+        },
+        {
+          "x": 37,
+          "y": 16
+        },
+        {
+          "x": 37,
+          "y": 16
+        },
+        {
+          "x": 37,
+          "y": 16
+        },
+        {
+          "x": 43,
+          "y": 17
+        },
+        {
+          "x": 48,
+          "y": 17
+        }
+      ],
+      "supportFootAnchors": [
+        {
+          "x": 59.5,
+          "y": 77
+        },
+        {
+          "x": 54.5,
+          "y": 77
+        },
+        {
+          "x": 48.5,
+          "y": 78
+        },
+        {
+          "x": 48.5,
+          "y": 78
+        },
+        {
+          "x": 48.5,
+          "y": 78
+        },
+        {
+          "x": 48.5,
+          "y": 78
+        },
+        {
+          "x": 48.5,
+          "y": 78
+        },
+        {
+          "x": 54.5,
+          "y": 77
+        },
+        {
+          "x": 59.5,
+          "y": 77
+        }
+      ],
+      "loop": false,
+      "contactFrameIndex": 4,
+      "chargedGenerations": 1,
+      "notes": "짧은 무릎 당기기 → 힘 있게 뻗기 → 빠른 회수 → 같은 가드. 지지 발의 원본 좌표에 맞춰 기준점만 조정하며 픽셀은 바꾸지 않습니다.",
+      "frames": 9,
+      "direction": "south-east",
+      "pivot": {
+        "x": 48,
+        "y": 17
+      },
+      "inputGuardSha256": "2c903d388c1121e8f6093eeaa9a2cfc4f40c76dc90bf7606c4c236f6a0d10afd",
+      "originalSheetPath": "public/assets/maplestory/young-ataho-ai/originals/sheets/kick-01-926c7a6d-51c1-430c-883f-69572cb31658.png",
+      "nativePixelsPreserved": true,
+      "review": "passed",
+      "generatedFrames": 8,
+      "inputPlusGeneratedFrames": 9
+    },
+    {
+      "key": "battle-ready",
+      "jobId": "ee91fbdb-9f01-4092-b199-4d0e9b0cfde4",
+      "sourceName": "battle-ready-01",
+      "label": "전투 대기 · 단단한 가드",
+      "selectedFrames": ["guard", 1, 2, 3, "guard"],
+      "durations": [0.22, 0.22, 0.22, 0.22, 0.12],
+      "loop": true,
+      "chargedGenerations": 1,
+      "notes": "양손 가드와 지지하는 발은 유지하고 작은 호흡만 반복합니다. 주먹·발차기·방어·피격의 시작과 복귀는 이 가드 원본입니다.",
+      "frames": 5,
+      "direction": "south-east",
+      "pivot": {
+        "x": 48,
+        "y": 17
+      },
+      "inputGuardSha256": "2c903d388c1121e8f6093eeaa9a2cfc4f40c76dc90bf7606c4c236f6a0d10afd",
+      "originalSheetPath": "public/assets/maplestory/young-ataho-ai/originals/sheets/battle-ready-01-ee91fbdb-9f01-4092-b199-4d0e9b0cfde4.png",
+      "nativePixelsPreserved": true,
+      "review": "passed",
+      "generatedFrames": 4,
+      "inputPlusGeneratedFrames": 5
+    },
+    {
+      "key": "guard",
+      "jobId": "4aa97135-f276-4a2a-9cfa-24140d41d72a",
+      "sourceName": "guard-01",
+      "label": "방어 · 짧은 팔 차단",
+      "selectedFrames": ["guard", 2, 3, "guard"],
+      "durations": [0.055, 0.13, 0.16, 0.12],
+      "loop": false,
+      "contactFrameIndex": 1,
+      "chargedGenerations": 1,
+      "selectionReason": "전방으로 팔을 뻗는 생성1번은 제외하고 양팔을 얼굴·몸통 앞에서 조인2·3번 차단 자세를 사용.",
+      "notes": "즉시 양팔을 모아 차단하고 짧게 힘을 받은 뒤 같은 가드로 복귀합니다. 원본1번의 불필요한 팔 뻗기는 재생에서 제외했습니다.",
+      "frames": 4,
+      "direction": "south-east",
+      "pivot": {
+        "x": 48,
+        "y": 17
+      },
+      "inputGuardSha256": "2c903d388c1121e8f6093eeaa9a2cfc4f40c76dc90bf7606c4c236f6a0d10afd",
+      "originalSheetPath": "public/assets/maplestory/young-ataho-ai/originals/sheets/guard-01-4aa97135-f276-4a2a-9cfa-24140d41d72a.png",
+      "nativePixelsPreserved": true,
+      "review": "passed",
+      "generatedFrames": 4,
+      "inputPlusGeneratedFrames": 5
+    },
+    {
+      "key": "die1",
+      "jobId": "fc7e1cc9-1d94-4fd3-a618-f8b7aae03de1",
+      "sourceName": "die1-01",
+      "label": "쓰러짐 · 마지막 다운 유지",
+      "selectedFrames": ["guard", 1, 2, 4, 5, 6, 7],
+      "durations": [0.06, 0.07, 0.08, 0.1, 0.12, 0.1, 0.25],
+      "pivots": [
+        {
+          "x": 48,
+          "y": 17
+        },
+        {
+          "x": 48,
+          "y": 17
+        },
+        {
+          "x": 48,
+          "y": 17
+        },
+        {
+          "x": 48,
+          "y": 16
+        },
+        {
+          "x": 48,
+          "y": 17
+        },
+        {
+          "x": 48,
+          "y": 17
+        },
+        {
+          "x": 48,
+          "y": 14
+        }
+      ],
+      "loop": false,
+      "chargedGenerations": 1,
+      "selectionReason": "비슷한 생성3번 준비 자세와 착지 뒤 살짝 들썩이는8번을 제외. 완전히 바닥에 누운7번을 마지막으로 유지.",
+      "notes": "무릎이 꺾이고 중심이 내려가며 옆으로 쓰러집니다. 착지 후 완전히 누운 마지막 자세를 유지하며 다시 일어서지 않습니다.",
+      "frames": 7,
+      "direction": "south-east",
+      "pivot": {
+        "x": 48,
+        "y": 17
+      },
+      "inputGuardSha256": "2c903d388c1121e8f6093eeaa9a2cfc4f40c76dc90bf7606c4c236f6a0d10afd",
+      "originalSheetPath": "public/assets/maplestory/young-ataho-ai/originals/sheets/die1-01-fc7e1cc9-1d94-4fd3-a618-f8b7aae03de1.png",
+      "nativePixelsPreserved": true,
+      "review": "passed",
+      "generatedFrames": 8,
+      "inputPlusGeneratedFrames": 9
+    },
+    {
+      "key": "attack1",
+      "jobId": "92ee469e-aca7-4fda-a9fe-b31d56ecb6b3",
+      "sourceName": "punch-01",
+      "label": "스트레이트 · 짧은 준비와 빠른 복귀",
+      "selectedFrames": ["guard", 1, 2, 3, 4, 7, "guard"],
+      "durations": [0.05, 0.05, 0.04, 0.13, 0.06, 0.08, 0.12],
+      "pivots": [
+        {
+          "x": 48,
+          "y": 17
+        },
+        {
+          "x": 47,
+          "y": 17
+        },
+        {
+          "x": 46,
+          "y": 17
+        },
+        {
+          "x": 50,
+          "y": 17
+        },
+        {
+          "x": 50,
+          "y": 17
+        },
+        {
+          "x": 49,
+          "y": 17
+        },
+        {
+          "x": 48,
+          "y": 17
+        }
+      ],
+      "supportFootAnchors": [
+        {
+          "x": 35.5,
+          "y": 79
+        },
+        {
+          "x": 34.5,
+          "y": 79
+        },
+        {
+          "x": 33.5,
+          "y": 79
+        },
+        {
+          "x": 37.5,
+          "y": 79
+        },
+        {
+          "x": 37.5,
+          "y": 79
+        },
+        {
+          "x": 36.5,
+          "y": 79
+        },
+        {
+          "x": 35.5,
+          "y": 79
+        }
+      ],
+      "loop": false,
+      "contactFrameIndex": 3,
+      "chargedGenerations": 1,
+      "selectionReason": "반복되는 완전 신전5·6번은 제외하고 짧은 준비1·2 → 명확한 접촉3·4 → 회수7 → 원본 가드로 연결. 지지하는 뒷발의 좌표로 기준점만 정렬.",
+      "notes": "뒷발을 지지한 채 짧게 준비하고 허리·어깨를 돌려 한 번 뻗습니다. 명확한 접촉을 짧게 유지한 뒤 같은 가드로 빠르게 복귀합니다.",
+      "frames": 7,
+      "direction": "south-east",
+      "pivot": {
+        "x": 48,
+        "y": 17
+      },
+      "inputGuardSha256": "2c903d388c1121e8f6093eeaa9a2cfc4f40c76dc90bf7606c4c236f6a0d10afd",
+      "originalSheetPath": "public/assets/maplestory/young-ataho-ai/originals/sheets/punch-01-92ee469e-aca7-4fda-a9fe-b31d56ecb6b3.png",
+      "nativePixelsPreserved": true,
+      "review": "passed",
+      "generatedFrames": 8,
+      "inputPlusGeneratedFrames": 9
+    },
+    {
+      "key": "hit1",
+      "jobId": "dace502b-aa49-48d7-9ad1-c80b34014e2c",
+      "sourceName": "hit1-02",
+      "label": "피격 · 분명한 상체 반동",
+      "selectedFrames": ["guard", 1, 2, 3, 6, 7, "guard"],
+      "durations": [0.04, 0.07, 0.1, 0.06, 0.06, 0.05, 0.1],
+      "supportFootAnchors": [
+        {
+          "x": 35.5,
+          "y": 79
+        },
+        {
+          "x": 35.5,
+          "y": 79
+        },
+        {
+          "x": 35.5,
+          "y": 79
+        },
+        {
+          "x": 35.5,
+          "y": 79
+        },
+        {
+          "x": 35.5,
+          "y": 79
+        },
+        {
+          "x": 35.5,
+          "y": 79
+        },
+        {
+          "x": 35.5,
+          "y": 79
+        }
+      ],
+      "loop": false,
+      "contactFrameIndex": 2,
+      "chargedGenerations": 1,
+      "selectionReason": "첫 움직임부터 고개와 상체가 뒤로 젖혀지는 명확한 피격. 반복되는4·5번을 제외하고6·7번 회복 뒤 원본 가드로 연결. 불필요한 흔적 없음.",
+      "notes": "맞는 순간 고개와 상체가 분명히 뒤로 젖혀지고, 지지하는 발을 유지하며 빠르게 같은 가드를 되찾습니다. 재시도한 두 번째 생성 원본을 사용합니다.",
+      "frames": 7,
+      "direction": "south-east",
+      "pivot": {
+        "x": 48,
+        "y": 17
+      },
+      "inputGuardSha256": "2c903d388c1121e8f6093eeaa9a2cfc4f40c76dc90bf7606c4c236f6a0d10afd",
+      "originalSheetPath": "public/assets/maplestory/young-ataho-ai/originals/sheets/hit1-02-dace502b-aa49-48d7-9ad1-c80b34014e2c.png",
+      "nativePixelsPreserved": true,
+      "review": "passed",
+      "generatedFrames": 8,
+      "inputPlusGeneratedFrames": 9
+    }
+  ],
+  "qualityRejectedJobs": ["d30b20a0-0557-4e26-a9cb-7e473f82b772"],
+  "accountAfter": {
+    "generationsUsed": 491,
+    "generationsRemaining": 1509,
+    "generationsTotal": 2000,
+    "creditsUsd": 0
+  },
+  "runtimeGameIntegrated": false,
+  "generatedMotionSummary": {
+    "idleDirections": 8,
+    "walkingDirections": 8,
+    "walkingFramesPerDirection": 8,
+    "combatDirection": "south-east",
+    "combatTypes": 6,
+    "totalAnimations": 22,
+    "combatFrames": {
+      "battle-ready": 5,
+      "attack1": 7,
+      "kick": 9,
+      "guard": 4,
+      "hit1": 7,
+      "die1": 7
+    },
+    "commonInputGuardSha256": "2c903d388c1121e8f6093eeaa9a2cfc4f40c76dc90bf7606c4c236f6a0d10afd",
+    "chargedGenerations": 18,
+    "qualityRejectedJobs": ["d30b20a0-0557-4e26-a9cb-7e473f82b772"]
+  }
+}

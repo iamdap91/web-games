@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="embedded.css" />
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-hybrid/lab-tabs.js"
+    ></script>
+    <title>아타호 · 비도트 정면 시안</title>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body data-lab-tab="art">
+    <main>
+      <header>
+        <p class="eyebrow">아타호 · 외형 비교</p>
+        <h1>같은 아타호, 다른 선</h1>
+        <p class="intro">
+          큰 머리와 느긋한 눈매, 볼 털과 갈색 겉옷을 살린 비도트 정면
+          시안입니다.
+        </p>
+      </header>
+      <form class="controls" aria-label="비교 화면 설정">
+        <fieldset>
+          <legend>표시 크기</legend>
+          <label
+            ><input type="radio" name="size" value="large" checked /><span
+              >자세히 보기</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="size" value="game" /><span
+              >게임 크기 · 높이 112px</span
+            ></label
+          >
+        </fieldset>
+        <fieldset>
+          <legend>배경</legend>
+          <label
+            ><input type="radio" name="backdrop" value="light" checked /><span
+              >밝게</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="backdrop" value="dark" /><span
+              >어둡게</span
+            ></label
+          >
+        </fieldset>
+      </form>
+      <section class="portraits" aria-label="기존 그림과 비도트 시안 비교">
+        <article>
+          <div class="card-heading">
+            <h2>지금의 아타호</h2>
+            <span>현재 정면 원본</span>
+          </div>
+          <div class="stage">
+            <img
+              class="pixel portrait"
+              src="../../../../public/assets/maplestory/tiger-hero-ai/frames/stand/00.png"
+              alt="현재 게임에서 사용하는 아타호의 정면 도트 그림"
+              width="45"
+              height="63"
+            />
+          </div>
+          <p class="caption">기존 프레임 그림을 그대로 표시</p>
+        </article>
+        <article>
+          <div class="card-heading">
+            <h2>선택한 비도트 원화</h2>
+            <span>정면 · 원화 01</span>
+          </div>
+          <div class="stage">
+            <object
+              class="vector portrait"
+              type="image/svg+xml"
+              data="ataho-generated-front.svg"
+              aria-label="갈색 겉옷을 입고 느긋한 표정을 짓는 아타호의 비도트 정면 원화"
+              width="940"
+              height="1270"
+            >
+              비도트 정면 원화를 불러오지 못했어요.
+            </object>
+          </div>
+          <p class="caption">기존 외형을 참조한 비도트 일러스트</p>
+        </article>
+      </section>
+      <footer>
+        <p>
+          선택한 기준은 <strong>원화 01</strong>입니다.
+          <span class="lab-local-navigation"
+            ><a href="motion.html">프레임과 비도트 모션 비교 보기</a> ·
+            <a href="pixellab-idle.html">PixelLab 대기 동작 시험</a> ·
+            <a href="side.html">좌우 기준 그림 비교</a></span
+          >
+        </p>
+        <p class="footnote">
+          두 그림의 발 위치와 표시 높이를 맞췄습니다. 이번 화면은 정지 외형
+          비교이며, 애니메이션 비교는 다음 단계입니다.
+        </p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

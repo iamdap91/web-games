@@ -1,3 +1,13 @@
+import { DojoCharacter } from '../../resources/facilities/basecamp/character.js';
+import { yeonmukMotions, yeonmukMotion, yeonmukDisplayScale, } from '../../resources/characters/yeonmuk/yeonmuk-motions.js';
+import { MapSpriteResources } from '../../resources/props/map-sprite-resources.js';
+import { ForestGimmickScene } from './forest-gimmick-scene.js';
+import { forestRightEdge, insideForestClearing, } from './forest-clearing-layout.js';
+import { largeObjectLayout } from './clearing-large-object.js';
+import { RockView } from '../cracked-rock/rock-view.js';
+import { GiantTreeView } from '../cracked-rock/giant-tree-view.js';
+import { cardinalFacing } from '../../resources/characters/ataho/facing.js';
+import { groveLayout } from './grove-layout.js';
 import { clearingAtmosphere, recolorClearingMaterial, } from './clearing-palette.js';
 import { rpgView, rpgCameraBounds, } from '../../games/tiger-rpg/presentation-contracts.js';
 import { clearingCameraPose, clearingCameraX, clearingScreenUpY, projectClearingPoint, } from './clearing-camera.js';
@@ -18,7 +28,7 @@ import { streamLootRules } from './stream-loot.js';
 import { HarvestDrops } from './harvest-drops.js';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { ResourceOutlinePass } from '../../rendering/resource-outline-pass.js';
-import { EnvironmentResources, setResourceOutline, } from '../../rendering/environment-resources.js';
+import { EnvironmentResources, setResourceOutline, } from '../../resources/environment/environment-resources.js';
 import { outlineGroups, resourceLayers, } from '../../rendering/surface-types.js';
 import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { AnimationPlayer, } from '../../resources/preview/animation-player.js';
@@ -26,7 +36,13 @@ import manifest from '../../../resources/manifest.json' with { type: 'json' };
 import { clearing, obstacleTypes, obstacleRadius, } from './world.js';
 export class ClearingScene {
     canvas;
+    companion;
     scene = new THREE.Scene();
+    mapSprites = new MapSpriteResources();
+    gateTrace;
+    stumpTrace;
+    forest;
+    forestMarkerPoint = null;
     camera = new THREE.OrthographicCamera(-12, 12, 9, -9, 0.1, 100);
     renderer;
     composer;
@@ -36,6 +52,24 @@ export class ClearingScene {
     resources = new EnvironmentResources({
         recolor: recolorClearingMaterial,
     });
+    gateView = new RockView(this.resources, {
+        target: 'rock',
+        center: largeObjectLayout.gate,
+        weakNormal: largeObjectLayout.gate.weakNormal,
+    }, { color: 0x728394, crackColor: 0xf1c776 });
+    giantTreeView = new GiantTreeView(this.resources, {
+        target: 'tree',
+        center: largeObjectLayout.tree,
+        weakNormal: largeObjectLayout.tree.weakNormal,
+    });
+    reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+        .matches;
+    weakRing = new THREE.Mesh(new THREE.RingGeometry(0.17, 0.25, 24), new THREE.MeshBasicMaterial({
+        color: 0xffd06b,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+    }));
+    weakMarkerPoint = null;
     rushTrail = new RushTrail();
     rushEffects = new RushScene();
     groundSlam = new GroundSlamScene();
@@ -78,8 +112,17 @@ export class ClearingScene {
     width = 0;
     height = 0;
     disposed = false;
-    constructor(canvas, state) {
+    constructor(canvas, state, options = {}) {
         this.canvas = canvas;
+        this.companion = options.companion
+            ? new DojoCharacter(yeonmukMotions(), 1 / clearingScreenUpY, yeonmukDisplayScale, 'frame-pivot')
+            : null;
+        if (this.companion) {
+            this.companion.root.visible = false;
+            this.scene.add(this.companion.root);
+        }
+        this.forest = new ForestGimmickScene(this.resources, state);
+        this.scene.add(this.forest.group);
         this.renderer = new THREE.WebGLRenderer({
             canvas,
             antialias: false,
@@ -109,7 +152,7 @@ export class ClearingScene {
         sun.shadow.mapSize.set(1024, 1024);
         Object.assign(sun.shadow.camera, {
             left: -18,
-            right: 18,
+            right: 38,
             top: 18,
             bottom: -18,
             near: 1,
@@ -119,10 +162,51 @@ export class ClearingScene {
         this.scene.add(sun);
         this.camera.position.set(0, clearingCameraPose.height, clearingCameraPose.targetZ + clearingCameraPose.depth);
         this.camera.lookAt(0, 0, clearingCameraPose.targetZ);
-        this.scene.add(createClearingLandscape(this.resources, state.obstacles));
+        this.scene.add(createClearingLandscape(this.resources, state.obstacles), this.mapSprites.root);
+        for (const [i, point] of [
+            { x: -7, z: 3 },
+            { x: 7, z: 4 },
+            { x: -6.6, z: -1 },
+            { x: 5.9, z: -2.5 },
+            { x: -4.9, z: 6.2 },
+            { x: 6, z: 7 },
+            { x: 10.2, z: 3 },
+            { x: 28.6, z: 4.6 },
+        ].entries()) {
+            this.mapSprites.add(i % 2 ? 'fern' : 'grass', { ...point, width: 0.44 });
+            this.mapSprites.add(i % 3 ? 'dry-leaves' : 'mushrooms', {
+                x: point.x + 0.55,
+                z: point.z + 0.15,
+                width: 0.42,
+            });
+        }
         this.scene.add(this.discovery.group, this.streamLoot.group, this.groundSlam.group, this.rushTrail.group, this.rushEffects.group);
-        for (const obstacle of state.obstacles)
+        this.scene.add(this.gateView.group, this.giantTreeView.group, this.weakRing);
+        this.weakRing.rotation.x = -Math.PI / 2;
+        this.weakRing.layers.set(resourceLayers.effects);
+        this.gateTrace = this.mapSprites.add('sawdust', {
+            x: largeObjectLayout.gate.x,
+            z: largeObjectLayout.gate.z,
+            y: 0.075,
+            width: 1.5,
+            depth: 0.8,
+            kind: 'ground',
+        });
+        this.gateTrace.material.color.setHex(0xc5b9a0);
+        this.stumpTrace = this.mapSprites.add('wood-chips', {
+            x: largeObjectLayout.tree.x + 0.48,
+            z: largeObjectLayout.tree.z + 0.5,
+            width: 0.8,
+            depth: 0.5,
+            kind: 'ground',
+        });
+        this.gateTrace.visible = this.stumpTrace.visible = false;
+        for (const obstacle of state.obstacles) {
+            if (obstacle.id === largeObjectLayout.gate.id ||
+                obstacle.id === largeObjectLayout.tree.id)
+                continue;
             this.buildObstacle(obstacle);
+        }
         this.actor.layers.set(resourceLayers.character);
         this.actor.scale.y = 1 / clearingScreenUpY;
         setResourceOutline(this.shadow, 'ground');
@@ -141,7 +225,7 @@ export class ClearingScene {
             this.flash.add(ray);
         }
         this.flash.quaternion.copy(this.camera.quaternion);
-        const ataho = manifest.assets.find((asset) => asset.id === 'hwanse/ataho');
+        const ataho = manifest.assets.find((asset) => asset.id === 'ai/tiger-hero');
         if (!ataho)
             throw new Error('아타호 모션 정보를 찾을 수 없어요.');
         const motions = new Map();
@@ -152,9 +236,11 @@ export class ClearingScene {
             'battle-ready',
             'battle-arm',
             'crouch',
+            'work-ready',
             'tiger-fist',
             'turn-kick',
             'sweep-kick',
+            'gather-down',
         ]) {
             const animation = ataho.animations[name];
             if (!animation)
@@ -162,12 +248,42 @@ export class ClearingScene {
             this.workAnimations.set(name, animation);
         }
         this.animation = new AnimationPlayer(motions, 'stand');
+        for (const [i, point] of [
+            { x: -6.3, z: 0.5 },
+            { x: 6.4, z: 0.6 },
+            { x: 10.1, z: 3.9 },
+            { x: 25, z: 4.4 },
+        ].entries()) {
+            this.mapSprites.add('moss', {
+                ...point,
+                width: 0.62,
+                depth: 0.4,
+                kind: 'ground',
+            });
+            this.mapSprites.add(i % 2 ? 'flowers' : 'herb', {
+                x: point.x + 0.4,
+                z: point.z - 0.3,
+                width: 0.35,
+            });
+        }
+        this.mapSprites.add('sawdust', {
+            x: 24.4,
+            z: 4.6,
+            width: 0.82,
+            depth: 0.52,
+            kind: 'ground',
+        });
         this.framePaths = [
             ...new Set([...motions.values(), ...this.workAnimations.values()].flatMap((animation) => animation.frames.map((frame) => frame.localPath))),
         ];
     }
     async load() {
-        await this.textures.load(this.framePaths, '아타호 이미지가 없어요. 로컬 보행·주먹·발차기 리소스를 확인해 주세요.');
+        await Promise.all([
+            this.mapSprites.load(),
+            this.forest.load(),
+            this.companion?.load(),
+            this.textures.load(this.framePaths, '아타호 이미지가 없어요. 로컬 보행·주먹·발차기 리소스를 확인해 주세요.'),
+        ]);
     }
     box(parent, x, y, z, width, height, depth, color, appearance) {
         const mesh = new THREE.Mesh(this.cube, this.resources.material(appearance.surface, color));
@@ -214,7 +330,19 @@ export class ClearingScene {
         patch.receiveShadow = true;
         patch.visible = false;
         this.scene.add(group, patch);
+        const trace = item.kind === 'rock'
+            ? null
+            : this.mapSprites.add(item.kind === 'tree' ? 'wood-chips' : 'dry-leaves', {
+                x: item.x + 0.14,
+                z: item.z + 0.25,
+                width: radius * 1.4,
+                depth: radius,
+                kind: 'ground',
+            });
+        if (trace)
+            trace.visible = false;
         this.props.set(item.id, {
+            trace,
             group,
             cracks,
             patch,
@@ -229,6 +357,10 @@ export class ClearingScene {
             if (event.source === 'rush' && !event.removed)
                 this.rushEffects.strike(event.contact, event.aim, this.actor.position.y);
             this.drops.spawn(event);
+            if (event.id === largeObjectLayout.gate.id)
+                this.gateView.hit();
+            if (event.id === largeObjectLayout.tree.id)
+                this.giantTreeView.hit(event.aim);
             const prop = this.props.get(event.id);
             if (prop) {
                 prop.hitAt = this.elapsed;
@@ -304,6 +436,8 @@ export class ClearingScene {
     }
     reset() {
         this.drops.reset();
+        this.gateView.reset();
+        this.giantTreeView.reset();
         this.groundSlam.reset();
         this.rushTrail.reset();
         this.rushEffects.reset();
@@ -320,12 +454,28 @@ export class ClearingScene {
         this.flashAt = -100;
         this.shakeAt = -100;
     }
-    render(state, dt) {
+    render(state, dt, companion = null) {
         if (this.disposed)
             return;
         this.resize();
         this.elapsed += dt;
         this.updateActor(state, dt);
+        if (this.companion) {
+            this.companion.root.visible = companion !== null;
+            if (companion)
+                this.companion.render({
+                    x: companion.x,
+                    y: companion.y,
+                    z: companion.z,
+                    motion: yeonmukMotion(companion),
+                    delta: dt,
+                });
+        }
+        this.forest.update(state, this.reducedMotion);
+        const forestMarker = this.forest.marker(state);
+        this.forestMarkerPoint = forestMarker
+            ? new THREE.Vector3(forestMarker.x, forestMarker.y, forestMarker.z)
+            : null;
         this.rushTrail.update(this.actor, !!state.rush.action && !state.rush.action.recoil && state.player.moving, dt);
         this.rushEffects.update({
             action: state.rush.action,
@@ -339,6 +489,10 @@ export class ClearingScene {
         this.discovery.update(state.discovery, state.obstacles.find((item) => item.id === discoveryLayout.source.id), dt);
         for (const item of state.obstacles) {
             const prop = this.props.get(item.id);
+            if (!prop)
+                continue;
+            if (prop.trace)
+                prop.trace.visible = item.health <= 0;
             if (prop.tree) {
                 prop.tree.update(dt, { camera: this.camera, actor: this.actor });
                 prop.patch.visible = prop.tree.fallen;
@@ -358,6 +512,18 @@ export class ClearingScene {
             prop.group.rotation.set(prop.aim.z * tilt, 0, -prop.aim.x * tilt);
             prop.group.scale.setScalar(breaking ? Math.max(0, 1 - age / 0.18) : 1);
         }
+        this.gateTrace.visible = state.largeObjects.gate.broken;
+        this.stumpTrace.visible = state.largeObjects.tree.phase === 'fallen';
+        this.gateView.update(state.largeObjects.gate, dt, this.reducedMotion);
+        this.giantTreeView.update(state.largeObjects.tree, dt, this.camera, this.actor, this.reducedMotion);
+        const weak = Object.values(largeObjectLayout).find((item) => item.id === state.weakStrike.targetId);
+        this.weakRing.visible =
+            !!weak && state.weakStrike.unlocked && !state.weakStrike.action;
+        this.weakMarkerPoint = weak
+            ? new THREE.Vector3(weak.x + weak.weakNormal.x * (weak.radius + 0.22), 2.6, weak.z + weak.weakNormal.z * (weak.radius + 0.22))
+            : null;
+        if (this.weakMarkerPoint)
+            this.weakRing.position.set(this.weakMarkerPoint.x, 0.045, this.weakMarkerPoint.z);
         for (let i = this.chips.length - 1; i >= 0; i--) {
             const chip = this.chips[i];
             const age = this.elapsed - chip.born;
@@ -392,12 +558,18 @@ export class ClearingScene {
         const followX = clearingCameraX({
             playerX: state.player.x,
             halfWidth: this.camera.right,
+            rightEdge: forestRightEdge,
         });
-        this.camera.position.set(followX + shake, clearingCameraPose.height + shake * 0.4, clearingCameraPose.targetZ + clearingCameraPose.depth);
+        const followZ = state.player.x > 18 || insideForestClearing(state.player)
+            ? Math.min(clearingCameraPose.targetZ, state.player.z + 2)
+            : clearingCameraPose.targetZ;
+        this.camera.position.set(followX + shake, clearingCameraPose.height + shake * 0.4, followZ + clearingCameraPose.depth);
         this.camera.layers.set(resourceLayers.environment);
         // 종류별 패스가 같은 그림자를 쓰도록 전체 장면의 그림자는 프레임당 한 번 갱신한다.
         if (dt > 0)
             this.renderer.shadowMap.needsUpdate = true;
+        this.mapSprites.face(this.camera);
+        this.forest.face(this.camera);
         this.composer.render(dt);
         const background = this.scene.background;
         this.renderer.setRenderTarget(null);
@@ -411,7 +583,14 @@ export class ClearingScene {
         this.renderer.autoClear = true;
     }
     updateActor(state, dt) {
-        const { player, swing } = state;
+        const { player } = state;
+        const weak = state.weakStrike.action;
+        const forestAction = state.forest.action;
+        const swing = weak
+            ? { ...weak, advance: 0.08 }
+            : forestAction?.kind === 'cut'
+                ? { progress: forestAction.progress, advance: 0, aim: { x: 0, z: -1 } }
+                : state.swing;
         const rush = state.rush.action;
         const recoil = rush?.recoil;
         const recoilLift = recoil ? Math.sin(recoil.progress * Math.PI) * 0.18 : 0;
@@ -426,11 +605,15 @@ export class ClearingScene {
         const slam = state.slam.action
             ? slamMotion(state.slam.action.elapsed)
             : null;
-        const frame = slam
-            ? this.workAnimations.get(slam.motion).frames[slam.frameIndex]
-            : work?.pose
-                ? this.workAnimations.get(work.pose.motion).frames[work.pose.frameIndex]
-                : this.animation.currentFrame.frame;
+        const pushFrame = forestAction?.kind === 'push'
+            ? this.workAnimations.get('battle-ready').frames[0]
+            : null;
+        const frame = pushFrame ??
+            (slam
+                ? this.workAnimations.get(slam.motion).frames[slam.frameIndex]
+                : work?.pose
+                    ? this.workAnimations.get(work.pose.motion).frames[work.pose.frameIndex]
+                    : this.animation.currentFrame.frame);
         if (this.frame !== frame) {
             this.actor.geometry.dispose();
             this.actor.geometry = new THREE.PlaneGeometry(frame.width / rpgView.actorPixelsPerUnit, frame.height / rpgView.actorPixelsPerUnit);
@@ -441,7 +624,7 @@ export class ClearingScene {
         }
         const extension = work?.extension ?? 0;
         const advance = (swing?.advance ?? 0) * extension - (work?.coil ?? 0) * 0.05;
-        this.actor.scale.set((slam ? player.facing === 'left' : work?.mirror) ? -1 : 1, (slam?.squash ??
+        this.actor.scale.set((slam ? cardinalFacing(player.facing) === 'left' : work?.mirror) ? -1 : 1, (slam?.squash ??
             (recoil
                 ? 0.88 + Math.sin(recoil.progress * Math.PI) * 0.15
                 : rush
@@ -459,6 +642,15 @@ export class ClearingScene {
         this.actor.position.set(player.x + (swing?.aim.x ?? 0) * advance, 0.035 +
             bridgeElevation(player, state.discovery.logs) +
             (slam?.lift ?? recoilLift), player.z + (swing?.aim.z ?? 0) * advance);
+        if (forestAction?.kind === 'push' && !this.reducedMotion) {
+            const lean = Math.sin(forestAction.progress * Math.PI) * 0.16;
+            this.actor.position.x +=
+                state.forest.rock.direction === 'east' ? lean : 0;
+            this.actor.position.z +=
+                state.forest.rock.direction === 'south' ? lean : 0;
+        }
+        if (forestAction?.kind === 'inspect' && !this.reducedMotion)
+            this.actor.position.y -= Math.sin(forestAction.progress * Math.PI) * 0.12;
         this.shadow.scale.set(1 - (slam?.lift ?? recoilLift) * 0.15, 0.62, 1);
         this.shadow.position.set(this.actor.position.x, 0.028 + bridgeElevation(player, state.discovery.logs), this.actor.position.z);
     }
@@ -496,6 +688,18 @@ export class ClearingScene {
         this.actor.localToWorld(head);
         return this.project(head);
     }
+    setReducedMotion(reduced) {
+        this.reducedMotion = reduced;
+    }
+    get forestMarker() {
+        return this.forestMarkerPoint ? this.project(this.forestMarkerPoint) : null;
+    }
+    get weakMarker() {
+        return this.weakMarkerPoint ? this.project(this.weakMarkerPoint) : null;
+    }
+    get groveMarker() {
+        return this.project(new THREE.Vector3(groveLayout.sign.x, 0.7, groveLayout.sign.z));
+    }
     get exitMarker() {
         return this.project(new THREE.Vector3(clearing.exit.x, 0, clearing.exit.z));
     }
@@ -530,7 +734,12 @@ export class ClearingScene {
         if (this.disposed)
             return;
         this.disposed = true;
+        this.mapSprites.dispose();
+        this.forest.dispose();
+        this.companion?.dispose();
         this.drops.dispose();
+        this.gateView.dispose();
+        this.giantTreeView.dispose();
         this.groundSlam.dispose();
         this.rushTrail.dispose();
         this.rushEffects.dispose();

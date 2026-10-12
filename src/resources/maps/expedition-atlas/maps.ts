@@ -1,0 +1,612 @@
+import { furtherAtlasMaps } from './further-maps.js';
+import type { GroundPoint } from '../../facilities/dojo/dojo-layout.js';
+import type { MapStyle } from '../../../rendering/map-art-direction.js';
+import { mapStyles } from '../../../rendering/map-art-direction.js';
+import type { TrailTerrain } from '../../../games/tiger-rpg/trail-layout.js';
+
+export type AtlasId =
+  | 'wetland'
+  | 'quarry'
+  | 'ruins'
+  | 'snow'
+  | 'coast'
+  | 'bamboo'
+  | 'canyon'
+  | 'mill'
+  | 'garden'
+  | 'caldera';
+export type SurveyPoint = GroundPoint & {
+  readonly id: string;
+  readonly label: string;
+  readonly description: string;
+  readonly kind: 'landmark' | 'mechanism' | 'cache';
+};
+export type AtlasWall = {
+  readonly from: GroundPoint;
+  readonly to: GroundPoint;
+  readonly height: number;
+  readonly width: number;
+};
+export type AtlasMap = TrailTerrain & {
+  readonly id: AtlasId;
+  readonly title: string;
+  readonly structure: string;
+  readonly description: string;
+  readonly style: MapStyle;
+  readonly spawn: GroundPoint;
+  readonly points: readonly SurveyPoint[];
+  readonly shortcut: { readonly point: string; readonly label: string };
+  readonly bridges: readonly {
+    readonly from: GroundPoint;
+    readonly to: GroundPoint;
+    readonly width: number;
+    readonly shortcut?: boolean;
+  }[];
+  readonly walls: readonly AtlasWall[];
+  readonly battleAreas: readonly (GroundPoint & {
+    readonly radius: number;
+    readonly label: string;
+  })[];
+};
+const entrance = { x: 0, z: -6 },
+  spawn = { x: 0, z: -3.7 };
+const style = (
+  ground: MapStyle['ground'],
+  light: Partial<Omit<MapStyle, 'ground'>> = {},
+): MapStyle => ({ ...mapStyles.clearing, ...light, ground });
+
+export const atlasMaps: readonly AtlasMap[] = [
+  {
+    id: 'wetland',
+    title: '갈대나루',
+    structure: '두 섬을 잇는 순환로',
+    description:
+      '물 위로 난 데크와 작은 섬을 따라 돌아간다. 건너편 가교를 내리면 나루 중심으로 돌아오는 길이 열린다.',
+    style: style(
+      {
+        grass: 0x7f9183,
+        leaves: 0x7d8c72,
+        earth: 0x9a9c7c,
+        path: 0xbab591,
+        stone: 0x919b91,
+      },
+      { background: 0xa9bfbc, sunlight: 0xe5eee0, sunStrength: 1.4 },
+    ),
+    entrance,
+    spawn,
+    routes: [
+      {
+        points: [
+          entrance,
+          { x: 0, z: 0 },
+          { x: -7, z: 2 },
+          { x: -9, z: 8 },
+          { x: -5, z: 15 },
+          { x: 2, z: 18 },
+        ],
+        halfWidth: 1.8,
+      },
+      {
+        points: [
+          { x: 0, z: 0 },
+          { x: 7, z: 2 },
+          { x: 10, z: 9 },
+          { x: 7, z: 15 },
+          { x: 2, z: 18 },
+        ],
+        halfWidth: 1.65,
+      },
+      {
+        points: [
+          { x: 2, z: 18 },
+          { x: 0, z: 12 },
+          { x: 0, z: 0 },
+        ],
+        halfWidth: 1.35,
+        shortcut: true,
+      },
+    ],
+    clearings: [
+      { x: 0, z: 0, radius: 3.1 },
+      { x: -9, z: 8, radius: 3 },
+      { x: 10, z: 9, radius: 3.2 },
+      { x: 2, z: 18, radius: 3.6 },
+    ],
+    obstacles: [{ x: -10.3, z: 7, radius: 0.9, kind: 'tree' }],
+    points: [
+      {
+        id: 'flood-mark',
+        x: -9,
+        z: 9.3,
+        kind: 'landmark',
+        label: '옛 물높이 표석',
+        description: '갈대에 가려진 표석에서 이전 범람의 흔적을 읽었다.',
+      },
+      {
+        id: 'ferry-bridge',
+        x: 2,
+        z: 18,
+        kind: 'mechanism',
+        label: '나루 가교 내리기',
+        description: '나루의 가교가 내려가 물 위로 곧은 귀환길이 이어졌다.',
+      },
+      {
+        id: 'fishing-supplies',
+        x: 10.2,
+        z: 10.5,
+        kind: 'cache',
+        label: '어부의 버려진 어구',
+        description: '작은 섬에서 남겨진 밧줄과 물통을 찾았다.',
+      },
+    ],
+    shortcut: { point: 'ferry-bridge', label: '나루 가교' },
+    bridges: [
+      { from: { x: -2.8, z: 0.8 }, to: { x: -7, z: 2 }, width: 3.1 },
+      { from: { x: 2.8, z: 0.8 }, to: { x: 7, z: 2 }, width: 2.8 },
+      {
+        from: { x: 2, z: 18 },
+        to: { x: 0, z: 12 },
+        width: 2.7,
+        shortcut: true,
+      },
+      { from: { x: 0, z: 12 }, to: { x: 0, z: 0 }, width: 2.7, shortcut: true },
+    ],
+    walls: [],
+    battleAreas: [
+      { x: -6, z: 14, radius: 1.5, label: '섬 가장자리의 선택 전투' },
+      { x: 3, z: 17, radius: 2.1, label: '나루 수호자 자리' },
+    ],
+  },
+  {
+    id: 'quarry',
+    title: '황토채석장',
+    structure: '중앙 작업장과 세 갈래 작업 구역',
+    description:
+      '중앙 작업장을 거점으로 채석면과 적재장을 고른다. 운반로를 정리하면 떨어진 작업 구역끼리 이어진다.',
+    style: style(
+      {
+        grass: 0xa9947c,
+        leaves: 0x899075,
+        earth: 0x9e816a,
+        path: 0xc1a58b,
+        stone: 0xb09885,
+      },
+      { background: 0xc4b5a2, sunlight: 0xf0dfca, sunStrength: 1.5 },
+    ),
+    entrance,
+    spawn,
+    routes: [
+      {
+        points: [
+          entrance,
+          { x: 0, z: 2 },
+          { x: 0, z: 8 },
+          { x: 4, z: 16 },
+          { x: 0, z: 18 },
+        ],
+        halfWidth: 2.3,
+      },
+      {
+        points: [
+          { x: 0, z: 2 },
+          { x: -9, z: 5 },
+          { x: -11, z: 12 },
+        ],
+        halfWidth: 2,
+      },
+      {
+        points: [
+          { x: 0, z: 2 },
+          { x: 9, z: 7 },
+          { x: 10, z: 14 },
+        ],
+        halfWidth: 2,
+      },
+      {
+        points: [
+          { x: -11, z: 12 },
+          { x: -5, z: 11 },
+          { x: 5, z: 12 },
+          { x: 10, z: 14 },
+        ],
+        halfWidth: 1.6,
+        shortcut: true,
+      },
+    ],
+    clearings: [
+      { x: 0, z: 2, radius: 4 },
+      { x: 0, z: 8, radius: 4.6 },
+      { x: -11, z: 12, radius: 3.5 },
+      { x: 10, z: 14, radius: 3.5 },
+      { x: 0, z: 18, radius: 3 },
+    ],
+    obstacles: [
+      { x: -1.3, z: 8, radius: 1.2, kind: 'rock' },
+      { x: 11.3, z: 13.4, radius: 1, kind: 'rock' },
+    ],
+    points: [
+      {
+        id: 'cut-face',
+        x: -11,
+        z: 13,
+        kind: 'landmark',
+        label: '옛 채석면 조사',
+        description: '층이 드러난 바위에서 넓게 퍼진 균열을 확인했다.',
+      },
+      {
+        id: 'haul-road',
+        x: 0.8,
+        z: 10,
+        kind: 'mechanism',
+        label: '운반로 빗장 풀기',
+        description:
+          '운반로의 빗장이 풀려 서쪽 채석면과 동쪽 적재장이 연결됐다.',
+      },
+      {
+        id: 'stone-stores',
+        x: 9,
+        z: 14,
+        kind: 'cache',
+        label: '석재 적재장',
+        description: '적재된 석재 사이에서 채석꾼의 남은 도구를 찾았다.',
+      },
+      {
+        id: 'quarry-overlook',
+        x: 0,
+        z: 18.5,
+        kind: 'landmark',
+        label: '채석장 안쪽 살펴보기',
+        description: '작업장 전체가 보이는 안쪽 채석면에 도착했다.',
+      },
+    ],
+    shortcut: { point: 'haul-road', label: '가로 운반로' },
+    bridges: [],
+    walls: [],
+    battleAreas: [
+      { x: -8, z: 6, radius: 1.6, label: '채석꾼 길목의 선택 전투' },
+      { x: 0, z: 18, radius: 2.2, label: '안쪽 채석면의 주 전투' },
+    ],
+  },
+  {
+    id: 'ruins',
+    title: '옛 관문터',
+    structure: '성곽 외곽과 안마당을 오가는 이중 순환',
+    description:
+      '무너진 서쪽 성벽을 통해 안마당에 들어간다. 안쪽에서 정문 빗장을 풀면 출입 경로가 바뀐다.',
+    style: style(
+      {
+        grass: 0x89937e,
+        leaves: 0x778a73,
+        earth: 0x8d8878,
+        path: 0xb4b3a4,
+        stone: 0x9ba39b,
+      },
+      { background: 0xb7c1b8, sunStrength: 1.4 },
+    ),
+    entrance,
+    spawn,
+    routes: [
+      {
+        points: [
+          entrance,
+          { x: 0, z: 1 },
+          { x: -8, z: 1 },
+          { x: -10, z: 8 },
+          { x: -8, z: 18 },
+          { x: 0, z: 20 },
+          { x: 8, z: 18 },
+          { x: 10, z: 8 },
+          { x: 8, z: 1 },
+          { x: 0, z: 1 },
+        ],
+        halfWidth: 1.8,
+      },
+      {
+        points: [
+          { x: -10, z: 8 },
+          { x: -4, z: 9 },
+          { x: 0, z: 10 },
+          { x: 0, z: 20 },
+        ],
+        halfWidth: 1.9,
+      },
+      {
+        points: [
+          { x: 0, z: 1 },
+          { x: 0, z: 10 },
+        ],
+        halfWidth: 1.7,
+        shortcut: true,
+      },
+    ],
+    clearings: [
+      { x: 0, z: 1, radius: 2.8 },
+      { x: 0, z: 10, radius: 5.5 },
+      { x: -8, z: 18, radius: 2.5 },
+      { x: 0, z: 20, radius: 3.1 },
+      { x: 10, z: 8, radius: 2.5 },
+    ],
+    obstacles: [{ x: 2.5, z: 11.5, radius: 1, kind: 'rock' }],
+    walls: [
+      { from: { x: -6, z: 4 }, to: { x: -2, z: 4 }, height: 1.5, width: 0.75 },
+      { from: { x: 2, z: 4 }, to: { x: 6, z: 4 }, height: 1.5, width: 0.75 },
+      { from: { x: -6, z: 4 }, to: { x: -6, z: 6 }, height: 1.3, width: 0.75 },
+      {
+        from: { x: -6, z: 12 },
+        to: { x: -6, z: 16 },
+        height: 1.4,
+        width: 0.75,
+      },
+      { from: { x: 6, z: 4 }, to: { x: 6, z: 16 }, height: 1.5, width: 0.75 },
+      {
+        from: { x: -6, z: 16 },
+        to: { x: -2, z: 16 },
+        height: 1.2,
+        width: 0.75,
+      },
+      { from: { x: 2, z: 16 }, to: { x: 6, z: 16 }, height: 1.2, width: 0.75 },
+    ],
+    points: [
+      {
+        id: 'watch-post',
+        x: -8,
+        z: 18.3,
+        kind: 'landmark',
+        label: '무너진 망루 터',
+        description: '성곽 바깥쪽에서 오래된 망루의 기초를 살펴봤다.',
+      },
+      {
+        id: 'gate-bar',
+        x: 0,
+        z: 7,
+        kind: 'mechanism',
+        label: '정문 빗장 열기',
+        description:
+          '안마당에서 정문 빗장을 풀었다. 입구와 마당이 바로 이어진다.',
+      },
+      {
+        id: 'old-hall',
+        x: 0,
+        z: 20.5,
+        kind: 'landmark',
+        label: '관문 안쪽 기단',
+        description: '높은 기단과 남겨진 기둥에서 옛 관문의 모습을 짐작했다.',
+      },
+      {
+        id: 'guard-bundle',
+        x: 10.5,
+        z: 8,
+        kind: 'cache',
+        label: '수비대 보급 자루',
+        description: '성곽 동쪽 그늘에서 남겨진 보급 자루를 찾았다.',
+      },
+    ],
+    shortcut: { point: 'gate-bar', label: '관문 정문' },
+    bridges: [],
+    battleAreas: [
+      { x: -9, z: 7, radius: 1.5, label: '무너진 성벽의 선택 전투' },
+      { x: 0, z: 11, radius: 2.8, label: '안마당의 주 전투' },
+    ],
+  },
+  {
+    id: 'snow',
+    title: '설원 온천분지',
+    structure: '넓은 분지와 북쪽 능선의 두 고리',
+    description:
+      '얼어붙은 호수를 돌아 온천과 눈 덮인 쉼터를 찾는다. 북쪽 능선에서 눈길을 정리하면 분지로 바로 내려올 수 있다.',
+    style: style(
+      {
+        grass: 0xc7cec7,
+        leaves: 0x738678,
+        earth: 0x9da6a1,
+        path: 0xd5d8cf,
+        stone: 0xa4b3b0,
+      },
+      {
+        background: 0xc3d0d1,
+        sky: 0xe3eced,
+        shade: 0x7e9294,
+        sunlight: 0xe9eee4,
+        sunStrength: 1.3,
+      },
+    ),
+    entrance,
+    spawn,
+    routes: [
+      {
+        points: [
+          entrance,
+          { x: 0, z: 1 },
+          { x: -5, z: 5 },
+          { x: -10, z: 11 },
+          { x: -8, z: 18 },
+          { x: 3, z: 20 },
+        ],
+        halfWidth: 2.2,
+      },
+      {
+        points: [
+          { x: 0, z: 1 },
+          { x: 7, z: 5 },
+          { x: 10, z: 12 },
+          { x: 9, z: 19 },
+          { x: 3, z: 20 },
+        ],
+        halfWidth: 2.2,
+      },
+      {
+        points: [
+          { x: 3, z: 20 },
+          { x: 0, z: 12 },
+          { x: -4, z: 7 },
+          { x: 0, z: 1 },
+        ],
+        halfWidth: 1.4,
+        shortcut: true,
+      },
+    ],
+    clearings: [
+      { x: 0, z: 4, radius: 6.8 },
+      { x: -10, z: 11, radius: 3.6 },
+      { x: 10, z: 12, radius: 3.9 },
+      { x: 3, z: 20, radius: 3.5 },
+    ],
+    obstacles: [{ x: 0, z: 7, radius: 3.1, kind: 'rock' }],
+    walls: [],
+    bridges: [],
+    points: [
+      {
+        id: 'hot-spring',
+        x: -11.4,
+        z: 11.2,
+        kind: 'landmark',
+        label: '눈 사이 온천 샘',
+        description: '눈 사이로 따뜻한 김이 오르는 작은 온천을 발견했다.',
+      },
+      {
+        id: 'ridge-sled',
+        x: 3,
+        z: 20,
+        kind: 'mechanism',
+        label: '눈길의 썰매 옮기기',
+        description:
+          '막혀 있던 썰매를 옮겨 능선에서 분지로 내려오는 눈길을 열었다.',
+      },
+      {
+        id: 'winter-shelter',
+        x: 11,
+        z: 12.5,
+        kind: 'landmark',
+        label: '눈 덮인 쉼터',
+        description: '눈 덮인 쉼터에서 바람을 피할 수 있는 자리를 확인했다.',
+      },
+      {
+        id: 'snow-bundle',
+        x: -4,
+        z: 3.5,
+        kind: 'cache',
+        label: '눈 속 여행 보따리',
+        description: '눈에 묻힌 작은 보따리에서 오래된 여정의 흔적을 찾았다.',
+      },
+    ],
+    shortcut: { point: 'ridge-sled', label: '분지 내리막 눈길' },
+    battleAreas: [
+      { x: -8, z: 17, radius: 1.7, label: '눈바람 길목의 선택 전투' },
+      { x: 3, z: 20, radius: 2.4, label: '능선 정상의 주 전투' },
+    ],
+  },
+  {
+    id: 'coast',
+    title: '파도굴 해안',
+    structure: '넓은 해변과 갈라지는 해식동굴',
+    description:
+      '해변을 따라 들어가 해식동굴을 돌아본다. 동굴 안쪽에서 낡은 가림판을 치우면 해변으로 곧장 빠져나올 수 있다.',
+    style: style(
+      {
+        grass: 0xb8b29b,
+        leaves: 0x89917d,
+        earth: 0x9e9c8d,
+        path: 0xc9bda0,
+        stone: 0x949e9a,
+      },
+      {
+        background: 0xa9bfbe,
+        sky: 0xdbe8e7,
+        shade: 0x748685,
+        sunlight: 0xf0e8d6,
+        sunStrength: 1.4,
+      },
+    ),
+    entrance,
+    spawn,
+    routes: [
+      {
+        points: [
+          entrance,
+          { x: -5, z: 3 },
+          { x: -6, z: 10 },
+          { x: -2, z: 16 },
+          { x: 4, z: 18 },
+          { x: 9, z: 17 },
+          { x: 10, z: 10 },
+        ],
+        halfWidth: 2.1,
+      },
+      {
+        points: [
+          { x: 4, z: 18 },
+          { x: 8, z: 22 },
+          { x: 14, z: 19 },
+          { x: 14, z: 12 },
+          { x: 10, z: 10 },
+        ],
+        halfWidth: 1.6,
+      },
+      {
+        points: [
+          { x: 10, z: 10 },
+          { x: 5, z: 9 },
+          { x: 0, z: 6 },
+          { x: -5, z: 3 },
+        ],
+        halfWidth: 1.35,
+        shortcut: true,
+      },
+    ],
+    clearings: [
+      { x: -4, z: 3, radius: 5.7 },
+      { x: -6, z: 10, radius: 3.4 },
+      { x: 4, z: 18, radius: 3.2 },
+      { x: 10, z: 10, radius: 3.6 },
+    ],
+    obstacles: [
+      { x: -7.3, z: 10.7, radius: 1.1, kind: 'rock' },
+      { x: 11.4, z: 11.2, radius: 0.95, kind: 'rock' },
+    ],
+    bridges: [],
+    walls: [],
+    points: [
+      {
+        id: 'wreck-keel',
+        x: -6,
+        z: 9,
+        kind: 'landmark',
+        label: '밀려온 배의 골격',
+        description: '해변에 남겨진 배의 골격과 오래된 밧줄을 살펴봤다.',
+      },
+      {
+        id: 'tidal-cave',
+        x: 8,
+        z: 22,
+        kind: 'landmark',
+        label: '파도굴 안쪽',
+        description: '바깥 파도 소리가 작아지는 안쪽 암실에 도착했다.',
+      },
+      {
+        id: 'cave-panel',
+        x: 10,
+        z: 9.8,
+        kind: 'mechanism',
+        label: '낡은 가림판 치우기',
+        description: '동굴 옆의 가림판을 치워 해변으로 나가는 샛길을 열었다.',
+      },
+      {
+        id: 'shore-crate',
+        x: -2.5,
+        z: 4.5,
+        kind: 'cache',
+        label: '밀려온 짐자루',
+        description: '밀려온 짐자루에서 온전한 물통과 자재를 골랐다.',
+      },
+    ],
+    shortcut: { point: 'cave-panel', label: '해변으로 난 동굴 샛길' },
+    battleAreas: [
+      { x: 4, z: 18, radius: 1.7, label: '동굴 입구의 선택 전투' },
+      { x: 10, z: 10, radius: 2.4, label: '안쪽 암실의 주 전투' },
+    ],
+  },
+  ...furtherAtlasMaps,
+];
+export function atlasMap(id: string | null): AtlasMap {
+  return atlasMaps.find((map) => map.id === id) ?? atlasMaps[0]!;
+}

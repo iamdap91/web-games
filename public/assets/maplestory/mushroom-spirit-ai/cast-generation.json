@@ -1,0 +1,834 @@
+{
+  "generation": {
+    "provider": "PixelLab",
+    "interface": "MCP",
+    "tool": "animate_image",
+    "jobId": "26db9ec2-2046-4038-a7c9-8e21d1f97d86",
+    "assetId": "93af8597-821e-57a3-a088-df491dd0aa0c",
+    "createdDate": "2026-10-10",
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download",
+      "frame_count": 8,
+      "no_background": true,
+      "action": "One stationary healing cast in 3 phases. PREPARE: feet planted, lower body slightly and gather tiny hands close to the torso. RELEASE: raise and extend hands forward in the SAME current facing direction, showing a clear hands-out casting pose. RECOVER: lower hands and return to the original idle pose. Keep identity, mushroom cap shape, face, size, colors, teal spore decorations, leaf and pixel density in the 64x64 transparent canvas. Original is nearly frontal; do not turn to a side view. Small expression and limb-shape changes are acceptable; keep every limb present and avoid shaking. No walking, stepping, sliding, jumping, rotation, weapons, floating spores, particles, glow, light sources, spell graphics, scenery, floor or shadow. Magic effects are drawn by game code. Begin and end in the original standing pose."
+    },
+    "width": 64,
+    "height": 64,
+    "requestedFrameCount": 8,
+    "returnedFrameCount": 9,
+    "requests": 1,
+    "variants": 1,
+    "retries": 0,
+    "preGenerationValidationErrors": 1,
+    "displayedCostGenerations": 1,
+    "actualCostGenerations": 1,
+    "usageBefore": {
+      "remaining": 30,
+      "used": 10,
+      "total": 40,
+      "bonus": 16,
+      "creditsUsd": 0,
+      "subscription": "trial"
+    },
+    "usageAfter": {
+      "remaining": 29,
+      "used": 11,
+      "total": 40,
+      "bonus": 15,
+      "creditsUsd": 0
+    },
+    "sourceUrl": "https://www.pixellab.ai/create?tool=animate_image",
+    "metadataPath": "public/assets/maplestory/mushroom-spirit-ai/cast-generation.json",
+    "status": "applied",
+    "qualityNotes": [
+      "같은 버섯갓·얼굴·장식·방향과 사지를 유지하며 심한 흔들림이나 추가 효과 이미지는 관찰되지 않음.",
+      "양손을 몸 중앙에 모으는 준비 동작은 약하고, 2번에서 한 손을 옆으로 뻗는 자세를 발동으로 선택. 표정·입·팔·발 모양 변화가 있음.",
+      "중간 버섯갓의 x 범위가 6~56에서 5~55로 1픽셀 왼쪽 이동. 후처리 수평 이동 없이 원본 anchor x=31을 유지.",
+      "생성본의 색 수는 원본 34색에서 37~50색으로 증가. 리샘플링·색 보정 없이 각 원본의 RGBA 픽셀을 보존."
+    ],
+    "notes": "action 1000자 제한의 입력 검증에서 최초 문장이 거절됨. 생성 job·비용이 없고 사용량 10/40 그대로임을 확인한 뒤 825자로 축약해 실제 생성 1회 수행. 재생성·추가 결제 없음. 모델 이름·seed·기타 서버 기본 설정은 미확인."
+  },
+  "inputOriginal": {
+    "name": "pixellab-pixen-64.png",
+    "kind": "png",
+    "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/pixellab-pixen-64.png",
+    "width": 64,
+    "height": 64,
+    "byteSize": 2915,
+    "sha256": "21314adf1250478d40adc736035cdc4f09dca7687e71e433d87e60201e585956",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download",
+    "key": "pixen-first-candidate",
+    "pageUrl": "https://www.pixellab.ai/create?tool=create_image_pixen"
+  },
+  "originals": [
+    {
+      "index": 0,
+      "name": "frame-00.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-00.png",
+      "sha256": "21314adf1250478d40adc736035cdc4f09dca7687e71e433d87e60201e585956",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2915,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=0"
+    },
+    {
+      "index": 1,
+      "name": "frame-01.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-01.png",
+      "sha256": "59290bd836bbf9e39f527b4ccac06dd5be7759747680071bd4e4e11f0f75a232",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2932,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=1"
+    },
+    {
+      "index": 2,
+      "name": "frame-02.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-02.png",
+      "sha256": "62238fa0b5d424edcdc401e0f0792441ad977a73ee90fa87e20e3c488cc1cd9f",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2955,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=2"
+    },
+    {
+      "index": 3,
+      "name": "frame-03.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-03.png",
+      "sha256": "1570297ab805ac4809bbcb5e4b454322beb703806ede8dd20cb33e3f2bca7e87",
+      "width": 64,
+      "height": 64,
+      "byteSize": 3043,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=3"
+    },
+    {
+      "index": 4,
+      "name": "frame-04.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-04.png",
+      "sha256": "1f6eac2a8da362407c721f5077aee11967c371b588a17a7d3939069732ce239d",
+      "width": 64,
+      "height": 64,
+      "byteSize": 3003,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=4"
+    },
+    {
+      "index": 5,
+      "name": "frame-05.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-05.png",
+      "sha256": "92e6a5b841f79de28dc4b97a96ba806b5dc609e392fd2c25e8c1919f17090246",
+      "width": 64,
+      "height": 64,
+      "byteSize": 3016,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=5"
+    },
+    {
+      "index": 6,
+      "name": "frame-06.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-06.png",
+      "sha256": "5cc425634d43b1b8199d28bb057843ac4dccefda384232839656b3d7509b2ac9",
+      "width": 64,
+      "height": 64,
+      "byteSize": 3016,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=6"
+    },
+    {
+      "index": 7,
+      "name": "frame-07.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-07.png",
+      "sha256": "7bb6488a7040a965f529a801cbf480ba8aa29f60418ce12f7adadaf92edf26d2",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2988,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=7"
+    },
+    {
+      "index": 8,
+      "name": "frame-08.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-08.png",
+      "sha256": "21314adf1250478d40adc736035cdc4f09dca7687e71e433d87e60201e585956",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2915,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=8"
+    }
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "sourceFrameIndex": 0,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-00.png",
+      "sha256": "647cb2805a58c4e6ea8087cdb8dd2279072e0d338e77f799dfbfa74b1009a323",
+      "width": 51,
+      "height": 52,
+      "sourceRect": {
+        "x": 5,
+        "y": 4,
+        "width": 51,
+        "height": 52
+      },
+      "pivot": {
+        "x": 26,
+        "y": 0
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download",
+      "durationSeconds": 0.12,
+      "sourceKey": "input-original"
+    },
+    {
+      "index": 1,
+      "sourceFrameIndex": 1,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-01.png",
+      "sha256": "e10428a27b18c4e09cddfaa28b4e8f21c75b255f46894808520a2011757849cc",
+      "width": 51,
+      "height": 52,
+      "sourceRect": {
+        "x": 5,
+        "y": 4,
+        "width": 51,
+        "height": 52
+      },
+      "pivot": {
+        "x": 26,
+        "y": 0
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=1",
+      "durationSeconds": 0.12
+    },
+    {
+      "index": 2,
+      "sourceFrameIndex": 2,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-02.png",
+      "sha256": "2610dcef0a77dc77656d9a0dfa333c553052b9d3f8d035dea6cf44117fb755c3",
+      "width": 51,
+      "height": 52,
+      "sourceRect": {
+        "x": 5,
+        "y": 4,
+        "width": 51,
+        "height": 52
+      },
+      "pivot": {
+        "x": 26,
+        "y": 0
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=2",
+      "durationSeconds": 0.09
+    },
+    {
+      "index": 3,
+      "sourceFrameIndex": 3,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-03.png",
+      "sha256": "2eb3a0783ef88007e2c6ee039aa485261ebd30f08889c08f115ff6ccaed37c4f",
+      "width": 51,
+      "height": 52,
+      "sourceRect": {
+        "x": 5,
+        "y": 4,
+        "width": 51,
+        "height": 52
+      },
+      "pivot": {
+        "x": 26,
+        "y": 0
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=3",
+      "durationSeconds": 0.09
+    },
+    {
+      "index": 4,
+      "sourceFrameIndex": 4,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-04.png",
+      "sha256": "c627b67b5733042564803d5068d62f9cee383dea826980686cf154601b1e0328",
+      "width": 51,
+      "height": 52,
+      "sourceRect": {
+        "x": 5,
+        "y": 4,
+        "width": 51,
+        "height": 52
+      },
+      "pivot": {
+        "x": 26,
+        "y": 0
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=4",
+      "durationSeconds": 0.09
+    },
+    {
+      "index": 5,
+      "sourceFrameIndex": 5,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-05.png",
+      "sha256": "695edb449a171445f15c5e7b2d0d32b4f2a2065f38103e977643e8e0edf1a7ab",
+      "width": 51,
+      "height": 52,
+      "sourceRect": {
+        "x": 5,
+        "y": 4,
+        "width": 51,
+        "height": 52
+      },
+      "pivot": {
+        "x": 26,
+        "y": 0
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=5",
+      "durationSeconds": 0.09
+    },
+    {
+      "index": 6,
+      "sourceFrameIndex": 6,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-06.png",
+      "sha256": "8cb1609e673e28bfad581c51a2906dec9dd08f5058e121c8470561e6f57235b7",
+      "width": 51,
+      "height": 52,
+      "sourceRect": {
+        "x": 5,
+        "y": 4,
+        "width": 51,
+        "height": 52
+      },
+      "pivot": {
+        "x": 26,
+        "y": 0
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=6",
+      "durationSeconds": 0.09
+    },
+    {
+      "index": 7,
+      "sourceFrameIndex": 7,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-07.png",
+      "sha256": "ad5d898a52d7bf89ae24e8877718645230c76a5e71ec23e9dab38d32d980a79d",
+      "width": 51,
+      "height": 52,
+      "sourceRect": {
+        "x": 5,
+        "y": 4,
+        "width": 51,
+        "height": 52
+      },
+      "pivot": {
+        "x": 26,
+        "y": 0
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=7",
+      "durationSeconds": 0.09
+    },
+    {
+      "index": 8,
+      "sourceFrameIndex": 8,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-08.png",
+      "sha256": "647cb2805a58c4e6ea8087cdb8dd2279072e0d338e77f799dfbfa74b1009a323",
+      "width": 51,
+      "height": 52,
+      "sourceRect": {
+        "x": 5,
+        "y": 4,
+        "width": 51,
+        "height": 52
+      },
+      "pivot": {
+        "x": 26,
+        "y": 0
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=8",
+      "durationSeconds": 0.11
+    }
+  ],
+  "animations": {
+    "prepare": {
+      "label": "회복 시전 · 준비",
+      "group": "회복",
+      "notes": "원래 자세에서 손을 조금 들어 준비. 재생 후 마지막 프레임을 유지한다. 양손을 중앙으로 모으는 동작은 첫 결과에서 뚜렷하지 않음.",
+      "totalDurationSeconds": 0.24,
+      "playback": {
+        "mode": "once",
+        "endBehavior": "hold-last"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 0,
+          "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-00.png",
+          "sha256": "647cb2805a58c4e6ea8087cdb8dd2279072e0d338e77f799dfbfa74b1009a323",
+          "width": 51,
+          "height": 52,
+          "sourceRect": {
+            "x": 5,
+            "y": 4,
+            "width": 51,
+            "height": 52
+          },
+          "pivot": {
+            "x": 26,
+            "y": 0
+          },
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download",
+          "durationSeconds": 0.12,
+          "sourceKey": "input-original"
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 1,
+          "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-01.png",
+          "sha256": "e10428a27b18c4e09cddfaa28b4e8f21c75b255f46894808520a2011757849cc",
+          "width": 51,
+          "height": 52,
+          "sourceRect": {
+            "x": 5,
+            "y": 4,
+            "width": 51,
+            "height": 52
+          },
+          "pivot": {
+            "x": 26,
+            "y": 0
+          },
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=1",
+          "durationSeconds": 0.12
+        }
+      ]
+    },
+    "heal": {
+      "label": "회복 시전 · 발동과 복귀",
+      "group": "회복",
+      "notes": "손을 옆으로 뻗는 원본 2번이 발동 자세. 2~8번을 한 번 재생하고 stand로 돌아간다. 회복 효과는 게임 코드에서 발동 시점에 처리.",
+      "totalDurationSeconds": 0.65,
+      "playback": {
+        "mode": "once",
+        "endBehavior": "return-to-stand"
+      },
+      "cast": {
+        "frameIndex": 0,
+        "sourceFrameIndex": 2,
+        "timeSeconds": 0
+      },
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 2,
+          "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-02.png",
+          "sha256": "2610dcef0a77dc77656d9a0dfa333c553052b9d3f8d035dea6cf44117fb755c3",
+          "width": 51,
+          "height": 52,
+          "sourceRect": {
+            "x": 5,
+            "y": 4,
+            "width": 51,
+            "height": 52
+          },
+          "pivot": {
+            "x": 26,
+            "y": 0
+          },
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=2",
+          "durationSeconds": 0.09
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 3,
+          "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-03.png",
+          "sha256": "2eb3a0783ef88007e2c6ee039aa485261ebd30f08889c08f115ff6ccaed37c4f",
+          "width": 51,
+          "height": 52,
+          "sourceRect": {
+            "x": 5,
+            "y": 4,
+            "width": 51,
+            "height": 52
+          },
+          "pivot": {
+            "x": 26,
+            "y": 0
+          },
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=3",
+          "durationSeconds": 0.09
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 4,
+          "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-04.png",
+          "sha256": "c627b67b5733042564803d5068d62f9cee383dea826980686cf154601b1e0328",
+          "width": 51,
+          "height": 52,
+          "sourceRect": {
+            "x": 5,
+            "y": 4,
+            "width": 51,
+            "height": 52
+          },
+          "pivot": {
+            "x": 26,
+            "y": 0
+          },
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=4",
+          "durationSeconds": 0.09
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 5,
+          "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-05.png",
+          "sha256": "695edb449a171445f15c5e7b2d0d32b4f2a2065f38103e977643e8e0edf1a7ab",
+          "width": 51,
+          "height": 52,
+          "sourceRect": {
+            "x": 5,
+            "y": 4,
+            "width": 51,
+            "height": 52
+          },
+          "pivot": {
+            "x": 26,
+            "y": 0
+          },
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=5",
+          "durationSeconds": 0.09
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 6,
+          "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-06.png",
+          "sha256": "8cb1609e673e28bfad581c51a2906dec9dd08f5058e121c8470561e6f57235b7",
+          "width": 51,
+          "height": 52,
+          "sourceRect": {
+            "x": 5,
+            "y": 4,
+            "width": 51,
+            "height": 52
+          },
+          "pivot": {
+            "x": 26,
+            "y": 0
+          },
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=6",
+          "durationSeconds": 0.09
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 7,
+          "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-07.png",
+          "sha256": "ad5d898a52d7bf89ae24e8877718645230c76a5e71ec23e9dab38d32d980a79d",
+          "width": 51,
+          "height": 52,
+          "sourceRect": {
+            "x": 5,
+            "y": 4,
+            "width": 51,
+            "height": 52
+          },
+          "pivot": {
+            "x": 26,
+            "y": 0
+          },
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=7",
+          "durationSeconds": 0.09
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 8,
+          "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/cast/frame-08.png",
+          "sha256": "647cb2805a58c4e6ea8087cdb8dd2279072e0d338e77f799dfbfa74b1009a323",
+          "width": 51,
+          "height": 52,
+          "sourceRect": {
+            "x": 5,
+            "y": 4,
+            "width": 51,
+            "height": 52
+          },
+          "pivot": {
+            "x": 26,
+            "y": 0
+          },
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26db9ec2-2046-4038-a7c9-8e21d1f97d86/download?index=8",
+          "durationSeconds": 0.11
+        }
+      ]
+    }
+  },
+  "processing": "원래 PNG를 첫 프레임으로 선택하고 반환 1~8번을 동일 51×52 sourceRect로 crop. 원본 x=31 고정·crop 내 pivot.x=26, 하단 pivot.y=0. RGBA 픽셀·색 보존, 리샘플링·색 보정 없음.",
+  "qualityChecks": {
+    "frames": [
+      {
+        "index": 0,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-00.png",
+        "sha256": "21314adf1250478d40adc736035cdc4f09dca7687e71e433d87e60201e585956",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2915,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          6,
+          4,
+          56,
+          56
+        ],
+        "visibleColorCount": 34,
+        "newColorCountVsInput": 0,
+        "visiblePixels": 1832,
+        "changedVisiblePixelsVsInput": 0,
+        "silhouetteChangedPixelsVsInput": 0
+      },
+      {
+        "index": 1,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-01.png",
+        "sha256": "59290bd836bbf9e39f527b4ccac06dd5be7759747680071bd4e4e11f0f75a232",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2932,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          6,
+          4,
+          56,
+          56
+        ],
+        "visibleColorCount": 37,
+        "newColorCountVsInput": 3,
+        "visiblePixels": 1830,
+        "changedVisiblePixelsVsInput": 114,
+        "silhouetteChangedPixelsVsInput": 24
+      },
+      {
+        "index": 2,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-02.png",
+        "sha256": "62238fa0b5d424edcdc401e0f0792441ad977a73ee90fa87e20e3c488cc1cd9f",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2955,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          5,
+          5,
+          55,
+          56
+        ],
+        "visibleColorCount": 37,
+        "newColorCountVsInput": 3,
+        "visiblePixels": 1825,
+        "changedVisiblePixelsVsInput": 1210,
+        "silhouetteChangedPixelsVsInput": 201
+      },
+      {
+        "index": 3,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-03.png",
+        "sha256": "1570297ab805ac4809bbcb5e4b454322beb703806ede8dd20cb33e3f2bca7e87",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3043,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          5,
+          5,
+          55,
+          56
+        ],
+        "visibleColorCount": 46,
+        "newColorCountVsInput": 12,
+        "visiblePixels": 1827,
+        "changedVisiblePixelsVsInput": 1243,
+        "silhouetteChangedPixelsVsInput": 227
+      },
+      {
+        "index": 4,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-04.png",
+        "sha256": "1f6eac2a8da362407c721f5077aee11967c371b588a17a7d3939069732ce239d",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3003,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          5,
+          5,
+          55,
+          56
+        ],
+        "visibleColorCount": 38,
+        "newColorCountVsInput": 4,
+        "visiblePixels": 1828,
+        "changedVisiblePixelsVsInput": 1247,
+        "silhouetteChangedPixelsVsInput": 238
+      },
+      {
+        "index": 5,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-05.png",
+        "sha256": "92e6a5b841f79de28dc4b97a96ba806b5dc609e392fd2c25e8c1919f17090246",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3016,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          5,
+          5,
+          55,
+          56
+        ],
+        "visibleColorCount": 47,
+        "newColorCountVsInput": 13,
+        "visiblePixels": 1825,
+        "changedVisiblePixelsVsInput": 1241,
+        "silhouetteChangedPixelsVsInput": 235
+      },
+      {
+        "index": 6,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-06.png",
+        "sha256": "5cc425634d43b1b8199d28bb057843ac4dccefda384232839656b3d7509b2ac9",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3016,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          6,
+          4,
+          56,
+          56
+        ],
+        "visibleColorCount": 39,
+        "newColorCountVsInput": 5,
+        "visiblePixels": 1846,
+        "changedVisiblePixelsVsInput": 200,
+        "silhouetteChangedPixelsVsInput": 82
+      },
+      {
+        "index": 7,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-07.png",
+        "sha256": "7bb6488a7040a965f529a801cbf480ba8aa29f60418ce12f7adadaf92edf26d2",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2988,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          6,
+          4,
+          56,
+          56
+        ],
+        "visibleColorCount": 50,
+        "newColorCountVsInput": 16,
+        "visiblePixels": 1843,
+        "changedVisiblePixelsVsInput": 195,
+        "silhouetteChangedPixelsVsInput": 55
+      },
+      {
+        "index": 8,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/cast/frame-08.png",
+        "sha256": "21314adf1250478d40adc736035cdc4f09dca7687e71e433d87e60201e585956",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2915,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          6,
+          4,
+          56,
+          56
+        ],
+        "visibleColorCount": 34,
+        "newColorCountVsInput": 0,
+        "visiblePixels": 1832,
+        "changedVisiblePixelsVsInput": 0,
+        "silhouetteChangedPixelsVsInput": 0
+      }
+    ],
+    "commonCrop": {
+      "x": 5,
+      "y": 4,
+      "width": 51,
+      "height": 52
+    },
+    "inputFrameRgbaMatchesOriginal": true,
+    "lastFrameRgbaMatchesOriginal": true,
+    "rawEndVsRawStartChangedVisiblePixels": 0
+  },
+  "alignment": {
+    "commonSourceRect": {
+      "x": 5,
+      "y": 4,
+      "width": 51,
+      "height": 52
+    },
+    "anchorSourceX": 31,
+    "pivotYByFrame": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "bottomEdgeByFrame": [
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56,
+      56
+    ],
+    "rgbaCropMatchesSources": true,
+    "nontransparentPixelCountsPreserved": true,
+    "firstAndLastRenderedRgbaMatchOriginal": true,
+    "standTransitionRgbaMatches": true
+  },
+  "preview": {
+    "gifPath": "/Users/3sam3/.codex/visualizations/2026/10/03/01a1029f-ca13-7051-b784-f11c7ec83899/mushroom-heal-cast.gif",
+    "frameSheetPath": "/Users/3sam3/.codex/visualizations/2026/10/03/01a1029f-ca13-7051-b784-f11c7ec83899/mushroom-heal-selected-frames.png",
+    "gifSha256": "5affdaf776be9909f05ea7cdc3ced04b402e4b53166b2ec84af48ec72cefeaa7",
+    "durationMillisecondsByFrame": [
+      120,
+      120,
+      90,
+      90,
+      90,
+      90,
+      90,
+      90,
+      110
+    ],
+    "totalSeconds": 0.89,
+    "notes": "등록된 시간·피벗을 반영한 4배 Nearest 검토 GIF. 검토용 반복이며 전투 동작은 prepare 한 번 후 유지·heal 한 번 후 stand 복귀. 디코딩 RGB 픽셀·시간 검증."
+  }
+}

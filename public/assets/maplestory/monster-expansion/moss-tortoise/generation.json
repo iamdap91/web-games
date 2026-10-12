@@ -1,0 +1,2696 @@
+{
+  "id": "moss-tortoise",
+  "name": "이끼거북",
+  "theme": "forest",
+  "role": "armored",
+  "appearance": "Broad ancient tortoise with a dark stone shell covered in asymmetrical moss tufts and a tiny fern, grounded squat silhouette.",
+  "motions": {
+    "stand": "Facing left, slowly extend and retract the wrinkled neck as the eyes blink, flex the front toes and let the small fern leaf nod once. Heavy stone shell remains still, finish in the original alert stance.",
+    "move": "Slow deliberate quadruped walk in place toward left, alternate diagonal pairs of short thick legs with visible foot lifts and planting. Neck reaches forward with each step, massive mossy shell rocks minimally, seamless walk loop.",
+    "attack1": "Facing left, lower the head and draw it inside the shell, brace four feet, then extend the neck in one sharp low headbutt to the left, stop at clear contact, withdraw and return to the alert pose. Keep shell shape intact.",
+    "hit1": "Facing left, flinch the head inward and bend the front legs under the heavy shell, blink tightly, then extend the head and recover the planted stance.",
+    "die1": "Facing left, head and front legs slump, remaining legs fold under the shell and the shell settles low on the ground, eyes close. Finish an intact motionless tortoise with neck lying low, no fade or revival."
+  },
+  "assetId": "ai/monster-moss-tortoise",
+  "localRoot": "public/assets/maplestory/monster-expansion/moss-tortoise",
+  "attempts": [
+    {
+      "motion": "original",
+      "attempt": 1,
+      "key": "monster-a-moss-tortoise-original-01",
+      "jobId": "d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download",
+      "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/original-01.png",
+      "sha256": "7c1419c1b8d3ba76cfb2be9b6b51ef4ad919b1b7ace074fdfbdeab52d2284c7c",
+      "byteSize": 3167,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 6,
+        "y": 8,
+        "width": 53,
+        "height": 48
+      },
+      "visiblePixels": 1588,
+      "paletteSize": 49,
+      "chargedGenerations": 1,
+      "directionObserved": "west",
+      "selection": "accepted",
+      "request": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Broad ancient tortoise with a dark stone shell covered in asymmetrical moss tufts and a tiny fern, grounded squat silhouette. Battle-ready stance facing LEFT (west), slight three-quarter view toward the viewer, camera only slightly above the creature. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, small cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described, no accessories beyond described features. A single creature only, no text, no frame, no background, no scenery, no floor, no cast shadow, no blurred anti-aliasing. Full creature occupies about 44-52 pixels inside this 64 pixel canvas with 4 pixel transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 614003,
+        "text_guidance_scale": 8
+      },
+      "nativeFacing": "left"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-moss-tortoise-stand-01",
+      "jobId": "859fc3b3-eafc-40df-a75b-b578f7528dfc",
+      "balanceBefore": 512,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625201,
+        "action": "Facing left, slowly extend and retract the wrinkled neck as the eyes blink, flex the front toes and let the small fern leaf nod once. Heavy stone shell remains still, finish in the original alert stance. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download"
+      },
+      "queueResponse": "id: 859fc3b3-eafc-40df-a75b-b578f7528dfc\njob_id: 859fc3b3-eafc-40df-a75b-b578f7528dfc\naction: Facing left, slowly extend and retract the wrinkled neck as the eyes blink, flex the front toes and let the small fern leaf nod once. Heavy stone shell remains still, finish in the original alert stance. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625201\nasset_id: cabe7765-b620-55d5-86a5-827b954b2d80\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"859fc3b3-eafc-40df-a75b-b578f7528dfc\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 859fc3b3-eafc-40df-a75b-b578f7528dfc\njob_id: 859fc3b3-eafc-40df-a75b-b578f7528dfc\nframes: 5\ntransparent: yes\nasset_id: cabe7765-b620-55d5-86a5-827b954b2d80\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/original-01.png",
+        "sha256": "7c1419c1b8d3ba76cfb2be9b6b51ef4ad919b1b7ace074fdfbdeab52d2284c7c",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 134,
+        "alphaDifferences": 116,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/00.png",
+          "sourceSha256": "f473164b4cdfd55e0402d13bbdfa6768678af6b5597fed868bb47c88bf0b4f88",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1472,
+          "colors": 47,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/01.png",
+          "sourceSha256": "4e946d3328889680f4c6a465ce49abafc98709dec47929fcc4384e8c5b3f2301",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 51,
+            "height": 47
+          },
+          "visiblePixels": 1444,
+          "colors": 49,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/02.png",
+          "sourceSha256": "e6b7d70ccde47df01ce32c4e9ed19c0a68ba11bd1ef2371086400abdfe1fe219",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 7,
+            "width": 50,
+            "height": 46
+          },
+          "visiblePixels": 1411,
+          "colors": 49,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/03.png",
+          "sourceSha256": "d3ca320eca8aacd7d078a57914e3dc57c00d4cd3798e80ff0245e30099d6019f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 6,
+            "width": 51,
+            "height": 49
+          },
+          "visiblePixels": 1455,
+          "colors": 49,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/04.png",
+          "sourceSha256": "2662b771e44a36da6a36db265286351e4d8d3fe6c6fa4b48cc216cbc22cd42fd",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1472,
+          "colors": 47,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/moss-tortoise/review/stand-859fc3b3-eafc-40df-a75b-b578f7528dfc.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/00.png",
+          "sha256": "4e946d3328889680f4c6a465ce49abafc98709dec47929fcc4384e8c5b3f2301",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/01.png",
+          "sourceSha256": "4e946d3328889680f4c6a465ce49abafc98709dec47929fcc4384e8c5b3f2301",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/01.png",
+          "sha256": "e6b7d70ccde47df01ce32c4e9ed19c0a68ba11bd1ef2371086400abdfe1fe219",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/02.png",
+          "sourceSha256": "e6b7d70ccde47df01ce32c4e9ed19c0a68ba11bd1ef2371086400abdfe1fe219",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/02.png",
+          "sha256": "d3ca320eca8aacd7d078a57914e3dc57c00d4cd3798e80ff0245e30099d6019f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/03.png",
+          "sourceSha256": "d3ca320eca8aacd7d078a57914e3dc57c00d4cd3798e80ff0245e30099d6019f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/03.png",
+          "sha256": "2662b771e44a36da6a36db265286351e4d8d3fe6c6fa4b48cc216cbc22cd42fd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/04.png",
+          "sourceSha256": "2662b771e44a36da6a36db265286351e4d8d3fe6c6fa4b48cc216cbc22cd42fd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: actual antenna / head / foot articulation, stable native facing, clear loop"
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "monster-a-moss-tortoise-attack1-01",
+      "jobId": "70ef3848-cb90-4dec-aef3-2446edcdcbff",
+      "balanceBefore": 528,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625203,
+        "action": "Facing left, lower the head and draw it inside the shell, brace four feet, then extend the neck in one sharp low headbutt to the left, stop at clear contact, withdraw and return to the alert pose. Keep shell shape intact. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download"
+      },
+      "queueResponse": "id: 70ef3848-cb90-4dec-aef3-2446edcdcbff\njob_id: 70ef3848-cb90-4dec-aef3-2446edcdcbff\naction: Facing left, lower the head and draw it inside the shell, brace four feet, then extend the neck in one sharp low headbutt to the left, stop at clear contact, withdraw and return to the alert pose. Keep shell shape intact. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625203\nasset_id: 9b7632f0-775a-50e5-b6c7-73ec24b09873\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"70ef3848-cb90-4dec-aef3-2446edcdcbff\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 70ef3848-cb90-4dec-aef3-2446edcdcbff\njob_id: 70ef3848-cb90-4dec-aef3-2446edcdcbff\nframes: 9\ntransparent: yes\nasset_id: 9b7632f0-775a-50e5-b6c7-73ec24b09873\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/original-01.png",
+        "sha256": "7c1419c1b8d3ba76cfb2be9b6b51ef4ad919b1b7ace074fdfbdeab52d2284c7c",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 124,
+        "alphaDifferences": 116,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/00.png",
+          "sourceSha256": "8ac6f2ed5e96bbc17ce3d81e8ad405104c4b0ac5a2d537672da2c7ee326353ad",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1472,
+          "colors": 47,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/01.png",
+          "sourceSha256": "6f2a0ffa5e72d2a748d9da4931f382db5398a4cb56e746aa9b0993f87a464504",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1466,
+          "colors": 48,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/02.png",
+          "sourceSha256": "70e90010cfb59d810b3e628855223cc1241b543c53eade427a2d4ea962c921e6",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 7,
+            "width": 51,
+            "height": 49
+          },
+          "visiblePixels": 1451,
+          "colors": 45,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/03.png",
+          "sourceSha256": "8853bf73579e45db1ca9951abd83fe95e997508a591ed82c8e885c2e1a729eac",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 8,
+            "width": 50,
+            "height": 47
+          },
+          "visiblePixels": 1435,
+          "colors": 49,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/04.png",
+          "sourceSha256": "8a9128d807fad311121623fd78e69ee0f8406b5fb3a8374608fe38024e272690",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 7,
+            "width": 49,
+            "height": 48
+          },
+          "visiblePixels": 1431,
+          "colors": 46,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/05.png",
+          "sourceSha256": "96465e9e63c3e6d6bb8223d1a4198bf242aae9442ccf17abba822868a1083284",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 7,
+            "width": 51,
+            "height": 49
+          },
+          "visiblePixels": 1460,
+          "colors": 51,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/06.png",
+          "sourceSha256": "f1b90e81ca50d0d256b0551044699a5dc2a4ea6142600f4bd93adcc9a389fa10",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1471,
+          "colors": 48,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/07.png",
+          "sourceSha256": "98a15b67496c4cca14ee6e6219135234e41b2d12abe79e2ff44b49562693625c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 9,
+            "width": 52,
+            "height": 47
+          },
+          "visiblePixels": 1463,
+          "colors": 52,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/08.png",
+          "sourceSha256": "b6f811daa8fa6336e337f7dc2b6825b7715313534a91e253a4f6e117ef1cf42f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1472,
+          "colors": 47,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/moss-tortoise/review/attack1-70ef3848-cb90-4dec-aef3-2446edcdcbff.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/00.png",
+          "sha256": "6f2a0ffa5e72d2a748d9da4931f382db5398a4cb56e746aa9b0993f87a464504",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/01.png",
+          "sourceSha256": "6f2a0ffa5e72d2a748d9da4931f382db5398a4cb56e746aa9b0993f87a464504",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/01.png",
+          "sha256": "70e90010cfb59d810b3e628855223cc1241b543c53eade427a2d4ea962c921e6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/02.png",
+          "sourceSha256": "70e90010cfb59d810b3e628855223cc1241b543c53eade427a2d4ea962c921e6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/02.png",
+          "sha256": "8853bf73579e45db1ca9951abd83fe95e997508a591ed82c8e885c2e1a729eac",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/03.png",
+          "sourceSha256": "8853bf73579e45db1ca9951abd83fe95e997508a591ed82c8e885c2e1a729eac",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/03.png",
+          "sha256": "8a9128d807fad311121623fd78e69ee0f8406b5fb3a8374608fe38024e272690",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/04.png",
+          "sourceSha256": "8a9128d807fad311121623fd78e69ee0f8406b5fb3a8374608fe38024e272690",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/04.png",
+          "sha256": "96465e9e63c3e6d6bb8223d1a4198bf242aae9442ccf17abba822868a1083284",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/05.png",
+          "sourceSha256": "96465e9e63c3e6d6bb8223d1a4198bf242aae9442ccf17abba822868a1083284",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/05.png",
+          "sha256": "f1b90e81ca50d0d256b0551044699a5dc2a4ea6142600f4bd93adcc9a389fa10",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/06.png",
+          "sourceSha256": "f1b90e81ca50d0d256b0551044699a5dc2a4ea6142600f4bd93adcc9a389fa10",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/06.png",
+          "sha256": "98a15b67496c4cca14ee6e6219135234e41b2d12abe79e2ff44b49562693625c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/07.png",
+          "sourceSha256": "98a15b67496c4cca14ee6e6219135234e41b2d12abe79e2ff44b49562693625c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/07.png",
+          "sha256": "b6f811daa8fa6336e337f7dc2b6825b7715313534a91e253a4f6e117ef1cf42f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/08.png",
+          "sourceSha256": "b6f811daa8fa6336e337f7dc2b6825b7715313534a91e253a4f6e117ef1cf42f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 머리를 접었다가 앞으로 뻗는 낮은 박치기 후 복귀. 5번의 머리와 앞발이 앞으로 나온 자세를 접촉으로 선택.",
+      "contactFrameIndex": 5,
+      "contactProgress": 0.6875,
+      "contactReason": "좌향 머리를 접었다가 앞으로 뻗는 낮은 박치기 후 복귀. 5번의 머리와 앞발이 앞으로 나온 자세를 접촉으로 선택."
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "monster-a-moss-tortoise-move-01",
+      "jobId": "1c203ed5-6549-4f3b-b717-77fcf503ff5c",
+      "balanceBefore": 541,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625202,
+        "action": "Slow deliberate quadruped walk in place toward left, alternate diagonal pairs of short thick legs with visible foot lifts and planting. Neck reaches forward with each step, massive mossy shell rocks minimally, seamless walk loop. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download"
+      },
+      "queueResponse": "id: 1c203ed5-6549-4f3b-b717-77fcf503ff5c\njob_id: 1c203ed5-6549-4f3b-b717-77fcf503ff5c\naction: Slow deliberate quadruped walk in place toward left, alternate diagonal pairs of short thick legs with visible foot lifts and planting. Neck reaches forward with each step, massive mossy shell rocks minimally, seamless walk loop. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625202\nasset_id: 5a9157e6-726f-5e04-a1ff-725f03696d44\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1c203ed5-6549-4f3b-b717-77fcf503ff5c\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 1c203ed5-6549-4f3b-b717-77fcf503ff5c\njob_id: 1c203ed5-6549-4f3b-b717-77fcf503ff5c\nframes: 9\ntransparent: yes\nasset_id: 5a9157e6-726f-5e04-a1ff-725f03696d44\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/original-01.png",
+        "sha256": "7c1419c1b8d3ba76cfb2be9b6b51ef4ad919b1b7ace074fdfbdeab52d2284c7c",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 165,
+        "alphaDifferences": 117,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/00.png",
+          "sourceSha256": "c9dc3b6de6ca58853a058a8cfef7c702b34ab18bca36725886fe21a01ad7623d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1471,
+          "colors": 46,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/01.png",
+          "sourceSha256": "ea4097e8c509a6bc7c9b3519e1e2c30660ecb6a2c331b6aad4be9d170decea85",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 9,
+            "width": 50,
+            "height": 47
+          },
+          "visiblePixels": 1481,
+          "colors": 45,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/02.png",
+          "sourceSha256": "83a1a5adeac4305b6cfa2805a13f14ace665f3a6f5d42c915d609b254eb64ce3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 9,
+            "width": 50,
+            "height": 47
+          },
+          "visiblePixels": 1471,
+          "colors": 46,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/03.png",
+          "sourceSha256": "d3e9cca2add557a67617c367eb95dfed2847cb5a895aa4c6af4e8e99c6a54d94",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 50,
+            "height": 48
+          },
+          "visiblePixels": 1456,
+          "colors": 48,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/04.png",
+          "sourceSha256": "f065281607fd053a0c573a0a64c91227f42d19e0917e199583d6a461619a13a1",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 50,
+            "height": 47
+          },
+          "visiblePixels": 1427,
+          "colors": 46,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/05.png",
+          "sourceSha256": "a4c22c17ad984abec2cda675963632d70a2c35ac5a226030f848581516f632b2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 9,
+            "width": 50,
+            "height": 46
+          },
+          "visiblePixels": 1420,
+          "colors": 47,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/06.png",
+          "sourceSha256": "61d53ef308c989fdd131eed665335f460843d7b6d45cb87b8293302fe238a42b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 9,
+            "width": 50,
+            "height": 45
+          },
+          "visiblePixels": 1481,
+          "colors": 46,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/07.png",
+          "sourceSha256": "05fb6040efc161ea5df0b178b0e479bb2d929ec1c55fdb4e2caa81c1cb8b8bcd",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 9,
+            "width": 50,
+            "height": 44
+          },
+          "visiblePixels": 1463,
+          "colors": 49,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/08.png",
+          "sourceSha256": "c52307be724b22c31a74cfe8fc9d5e73fca86264c8990b893ea2fefb777a51e1",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1471,
+          "colors": 46,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/moss-tortoise/review/move-1c203ed5-6549-4f3b-b717-77fcf503ff5c.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/00.png",
+          "sha256": "ea4097e8c509a6bc7c9b3519e1e2c30660ecb6a2c331b6aad4be9d170decea85",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/01.png",
+          "sourceSha256": "ea4097e8c509a6bc7c9b3519e1e2c30660ecb6a2c331b6aad4be9d170decea85",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/01.png",
+          "sha256": "83a1a5adeac4305b6cfa2805a13f14ace665f3a6f5d42c915d609b254eb64ce3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/02.png",
+          "sourceSha256": "83a1a5adeac4305b6cfa2805a13f14ace665f3a6f5d42c915d609b254eb64ce3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/02.png",
+          "sha256": "d3e9cca2add557a67617c367eb95dfed2847cb5a895aa4c6af4e8e99c6a54d94",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/03.png",
+          "sourceSha256": "d3e9cca2add557a67617c367eb95dfed2847cb5a895aa4c6af4e8e99c6a54d94",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/03.png",
+          "sha256": "f065281607fd053a0c573a0a64c91227f42d19e0917e199583d6a461619a13a1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/04.png",
+          "sourceSha256": "f065281607fd053a0c573a0a64c91227f42d19e0917e199583d6a461619a13a1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/04.png",
+          "sha256": "a4c22c17ad984abec2cda675963632d70a2c35ac5a226030f848581516f632b2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/05.png",
+          "sourceSha256": "a4c22c17ad984abec2cda675963632d70a2c35ac5a226030f848581516f632b2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/05.png",
+          "sha256": "61d53ef308c989fdd131eed665335f460843d7b6d45cb87b8293302fe238a42b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/06.png",
+          "sourceSha256": "61d53ef308c989fdd131eed665335f460843d7b6d45cb87b8293302fe238a42b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/06.png",
+          "sha256": "05fb6040efc161ea5df0b178b0e479bb2d929ec1c55fdb4e2caa81c1cb8b8bcd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/07.png",
+          "sourceSha256": "05fb6040efc161ea5df0b178b0e479bb2d929ec1c55fdb4e2caa81c1cb8b8bcd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/07.png",
+          "sha256": "c52307be724b22c31a74cfe8fc9d5e73fca86264c8990b893ea2fefb777a51e1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/08.png",
+          "sourceSha256": "c52307be724b22c31a74cfe8fc9d5e73fca86264c8990b893ea2fefb777a51e1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 좌향 앞·뒷다리가 번갈아 들리고 머리가 함께 움직이는 느린 실제 보행 루프."
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "monster-a-moss-tortoise-hit1-01",
+      "jobId": "35035f5b-a55f-48f5-a86e-fc8fd3bb3634",
+      "balanceBefore": 550,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625204,
+        "action": "Facing left, flinch the head inward and bend the front legs under the heavy shell, blink tightly, then extend the head and recover the planted stance. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download"
+      },
+      "queueResponse": "id: 35035f5b-a55f-48f5-a86e-fc8fd3bb3634\njob_id: 35035f5b-a55f-48f5-a86e-fc8fd3bb3634\naction: Facing left, flinch the head inward and bend the front legs under the heavy shell, blink tightly, then extend the head and recover the planted stance. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625204\nasset_id: 72bf7dff-678a-5597-8a30-ea8a9f349a0f\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"35035f5b-a55f-48f5-a86e-fc8fd3bb3634\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 35035f5b-a55f-48f5-a86e-fc8fd3bb3634\njob_id: 35035f5b-a55f-48f5-a86e-fc8fd3bb3634\nframes: 5\ntransparent: yes\nasset_id: 72bf7dff-678a-5597-8a30-ea8a9f349a0f\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/original-01.png",
+        "sha256": "7c1419c1b8d3ba76cfb2be9b6b51ef4ad919b1b7ace074fdfbdeab52d2284c7c",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 145,
+        "alphaDifferences": 116,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/00.png",
+          "sourceSha256": "d9a4debf3c5b160b0cb0b6e55870fefe55498006d68b812b2270e9639f1c556b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1472,
+          "colors": 47,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/01.png",
+          "sourceSha256": "c4524f21fb736e258c886e8f3c1f71d8fddf6d3fcb1f2ff47d29b2193754370d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 7,
+            "width": 52,
+            "height": 49
+          },
+          "visiblePixels": 1453,
+          "colors": 47,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/02.png",
+          "sourceSha256": "7554b46b28ba3d80fec06622794a4b79c54216116dcc9e6e8643fbd9a3c53352",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 7,
+            "width": 51,
+            "height": 47
+          },
+          "visiblePixels": 1389,
+          "colors": 52,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/03.png",
+          "sourceSha256": "9196c8df0dde43a2016a59ef10bd24eddaafb375c3c3540b5bae2e89e346845d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 47
+          },
+          "visiblePixels": 1457,
+          "colors": 57,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/04.png",
+          "sourceSha256": "b00170fd79d7cbc0ac7bf5ba6a87f9d6af63d87119fb7af262ed5ccad8781377",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1472,
+          "colors": 48,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/moss-tortoise/review/hit1-35035f5b-a55f-48f5-a86e-fc8fd3bb3634.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/00.png",
+          "sha256": "c4524f21fb736e258c886e8f3c1f71d8fddf6d3fcb1f2ff47d29b2193754370d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/01.png",
+          "sourceSha256": "c4524f21fb736e258c886e8f3c1f71d8fddf6d3fcb1f2ff47d29b2193754370d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/01.png",
+          "sha256": "7554b46b28ba3d80fec06622794a4b79c54216116dcc9e6e8643fbd9a3c53352",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/02.png",
+          "sourceSha256": "7554b46b28ba3d80fec06622794a4b79c54216116dcc9e6e8643fbd9a3c53352",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/02.png",
+          "sha256": "9196c8df0dde43a2016a59ef10bd24eddaafb375c3c3540b5bae2e89e346845d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/03.png",
+          "sourceSha256": "9196c8df0dde43a2016a59ef10bd24eddaafb375c3c3540b5bae2e89e346845d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/03.png",
+          "sha256": "b00170fd79d7cbc0ac7bf5ba6a87f9d6af63d87119fb7af262ed5ccad8781377",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/04.png",
+          "sourceSha256": "b00170fd79d7cbc0ac7bf5ba6a87f9d6af63d87119fb7af262ed5ccad8781377",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 머리와 목을 껍질 안으로 움츠리고 앞다리를 굽힌 뒤 복귀하는 단발 피격."
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "monster-a-moss-tortoise-die1-01",
+      "jobId": "95cf299b-7fb5-46cc-b34e-5624043d78ab",
+      "balanceBefore": 556,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625205,
+        "action": "Facing left, head and front legs slump, remaining legs fold under the shell and the shell settles low on the ground, eyes close. Finish an intact motionless tortoise with neck lying low, no fade or revival. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature."
+      },
+      "queueResponse": "id: 95cf299b-7fb5-46cc-b34e-5624043d78ab\njob_id: 95cf299b-7fb5-46cc-b34e-5624043d78ab\naction: Facing left, head and front legs slump, remaining legs fold under the shell and the shell settles low on the ground, eyes close. Finish an intact motionless tortoise with neck lying low, no fade or revival. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 625205\nasset_id: 35a7ed2f-507d-5170-beb2-c9e8e5abdcb6\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"95cf299b-7fb5-46cc-b34e-5624043d78ab\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 95cf299b-7fb5-46cc-b34e-5624043d78ab\njob_id: 95cf299b-7fb5-46cc-b34e-5624043d78ab\nframes: 9\ntransparent: yes\nasset_id: 35a7ed2f-507d-5170-beb2-c9e8e5abdcb6\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/original-01.png",
+        "sha256": "7c1419c1b8d3ba76cfb2be9b6b51ef4ad919b1b7ace074fdfbdeab52d2284c7c",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 273,
+        "alphaDifferences": 117,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/00.png",
+          "sourceSha256": "f2c1e11b36954774fa84231a232fd8128925a524a76ff77a73eca6158eff64e3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1475,
+          "colors": 47,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/01.png",
+          "sourceSha256": "4f1da4e1d5a7723dd82e6d13b248f09e686c341b31be1a413335ed5196e61914",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 7,
+            "width": 51,
+            "height": 49
+          },
+          "visiblePixels": 1472,
+          "colors": 53,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/02.png",
+          "sourceSha256": "4d028813de49ab55fad03b109ae53d38ba40d7ac881af462628ebd081fc62b51",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 51,
+            "height": 48
+          },
+          "visiblePixels": 1444,
+          "colors": 48,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/03.png",
+          "sourceSha256": "4ca7ec8ef5eb5d9ebf25a12b26ae4a4878170949549ab2c932f4cc458d244373",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 9,
+            "width": 51,
+            "height": 47
+          },
+          "visiblePixels": 1415,
+          "colors": 51,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/04.png",
+          "sourceSha256": "8238640350c02a3a264b34e2ce95d5199c18b9e2f794289cf9c3d1d86a419ae8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 10,
+            "width": 52,
+            "height": 46
+          },
+          "visiblePixels": 1391,
+          "colors": 46,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/05.png",
+          "sourceSha256": "b9f90398787f9ad76bf4bc42b498a3718d7c7e914875607180393d845a4c5d3a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 11,
+            "width": 52,
+            "height": 45
+          },
+          "visiblePixels": 1358,
+          "colors": 45,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/06.png",
+          "sourceSha256": "18672971d319c6eeb2506eff701130e98cfee8fd00500e9c48b5192ae911da4a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 12,
+            "width": 52,
+            "height": 44
+          },
+          "visiblePixels": 1357,
+          "colors": 45,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/07.png",
+          "sourceSha256": "45f92e9924957ac7a089a58d99da6543e8f4da2f277b4ed84ceb92edad09be05",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 11,
+            "width": 51,
+            "height": 45
+          },
+          "visiblePixels": 1367,
+          "colors": 45,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/08.png",
+          "sourceSha256": "e4a40c4ee077d8f33bf0dc13f9a6b55979be744fba8462e37885797853934f94",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 10,
+            "width": 51,
+            "height": 46
+          },
+          "visiblePixels": 1369,
+          "colors": 45,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/moss-tortoise/review/die1-95cf299b-7fb5-46cc-b34e-5624043d78ab.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/00.png",
+          "sha256": "4f1da4e1d5a7723dd82e6d13b248f09e686c341b31be1a413335ed5196e61914",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/01.png",
+          "sourceSha256": "4f1da4e1d5a7723dd82e6d13b248f09e686c341b31be1a413335ed5196e61914",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/01.png",
+          "sha256": "4d028813de49ab55fad03b109ae53d38ba40d7ac881af462628ebd081fc62b51",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/02.png",
+          "sourceSha256": "4d028813de49ab55fad03b109ae53d38ba40d7ac881af462628ebd081fc62b51",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/02.png",
+          "sha256": "4ca7ec8ef5eb5d9ebf25a12b26ae4a4878170949549ab2c932f4cc458d244373",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/03.png",
+          "sourceSha256": "4ca7ec8ef5eb5d9ebf25a12b26ae4a4878170949549ab2c932f4cc458d244373",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/03.png",
+          "sha256": "8238640350c02a3a264b34e2ce95d5199c18b9e2f794289cf9c3d1d86a419ae8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/04.png",
+          "sourceSha256": "8238640350c02a3a264b34e2ce95d5199c18b9e2f794289cf9c3d1d86a419ae8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/04.png",
+          "sha256": "b9f90398787f9ad76bf4bc42b498a3718d7c7e914875607180393d845a4c5d3a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/05.png",
+          "sourceSha256": "b9f90398787f9ad76bf4bc42b498a3718d7c7e914875607180393d845a4c5d3a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/05.png",
+          "sha256": "18672971d319c6eeb2506eff701130e98cfee8fd00500e9c48b5192ae911da4a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/06.png",
+          "sourceSha256": "18672971d319c6eeb2506eff701130e98cfee8fd00500e9c48b5192ae911da4a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/06.png",
+          "sha256": "45f92e9924957ac7a089a58d99da6543e8f4da2f277b4ed84ceb92edad09be05",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/07.png",
+          "sourceSha256": "45f92e9924957ac7a089a58d99da6543e8f4da2f277b4ed84ceb92edad09be05",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/07.png",
+          "sha256": "e4a40c4ee077d8f33bf0dc13f9a6b55979be744fba8462e37885797853934f94",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/08.png",
+          "sourceSha256": "e4a40c4ee077d8f33bf0dc13f9a6b55979be744fba8462e37885797853934f94",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 머리와 다리가 낮게 접히며 껍질이 내려앉고 마지막에는 눈을 감은 쓰러진 자세를 유지. 대기로 되돌아가지 않음."
+    }
+  ],
+  "nativeFacing": "left",
+  "selectedOriginal": {
+    "motion": "original",
+    "attempt": 1,
+    "key": "monster-a-moss-tortoise-original-01",
+    "jobId": "d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download",
+    "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/original-01.png",
+    "sha256": "7c1419c1b8d3ba76cfb2be9b6b51ef4ad919b1b7ace074fdfbdeab52d2284c7c",
+    "byteSize": 3167,
+    "width": 64,
+    "height": 64,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "visibleBounds": {
+      "x": 6,
+      "y": 8,
+      "width": 53,
+      "height": 48
+    },
+    "visiblePixels": 1588,
+    "paletteSize": 49,
+    "chargedGenerations": 1,
+    "directionObserved": "west",
+    "selection": "accepted",
+    "request": {
+      "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Broad ancient tortoise with a dark stone shell covered in asymmetrical moss tufts and a tiny fern, grounded squat silhouette. Battle-ready stance facing LEFT (west), slight three-quarter view toward the viewer, camera only slightly above the creature. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, small cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described, no accessories beyond described features. A single creature only, no text, no frame, no background, no scenery, no floor, no cast shadow, no blurred anti-aliasing. Full creature occupies about 44-52 pixels inside this 64 pixel canvas with 4 pixel transparent safety margins.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "direction": "west",
+      "view": "low top-down",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "detail": "medium detail",
+      "seed": 614003,
+      "text_guidance_scale": 8
+    },
+    "nativeFacing": "left"
+  },
+  "anchor": {
+    "x": 32,
+    "y": 56
+  },
+  "animations": {
+    "stand": {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-moss-tortoise-stand-01",
+      "jobId": "859fc3b3-eafc-40df-a75b-b578f7528dfc",
+      "balanceBefore": 512,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625201,
+        "action": "Facing left, slowly extend and retract the wrinkled neck as the eyes blink, flex the front toes and let the small fern leaf nod once. Heavy stone shell remains still, finish in the original alert stance. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download"
+      },
+      "queueResponse": "id: 859fc3b3-eafc-40df-a75b-b578f7528dfc\njob_id: 859fc3b3-eafc-40df-a75b-b578f7528dfc\naction: Facing left, slowly extend and retract the wrinkled neck as the eyes blink, flex the front toes and let the small fern leaf nod once. Heavy stone shell remains still, finish in the original alert stance. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625201\nasset_id: cabe7765-b620-55d5-86a5-827b954b2d80\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"859fc3b3-eafc-40df-a75b-b578f7528dfc\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 859fc3b3-eafc-40df-a75b-b578f7528dfc\njob_id: 859fc3b3-eafc-40df-a75b-b578f7528dfc\nframes: 5\ntransparent: yes\nasset_id: cabe7765-b620-55d5-86a5-827b954b2d80\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/original-01.png",
+        "sha256": "7c1419c1b8d3ba76cfb2be9b6b51ef4ad919b1b7ace074fdfbdeab52d2284c7c",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d964cfb9-ef74-4a65-8a1a-ca0d4745d3b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 134,
+        "alphaDifferences": 116,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/00.png",
+          "sourceSha256": "f473164b4cdfd55e0402d13bbdfa6768678af6b5597fed868bb47c88bf0b4f88",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1472,
+          "colors": 47,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/01.png",
+          "sourceSha256": "4e946d3328889680f4c6a465ce49abafc98709dec47929fcc4384e8c5b3f2301",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 51,
+            "height": 47
+          },
+          "visiblePixels": 1444,
+          "colors": 49,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/02.png",
+          "sourceSha256": "e6b7d70ccde47df01ce32c4e9ed19c0a68ba11bd1ef2371086400abdfe1fe219",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 7,
+            "width": 50,
+            "height": 46
+          },
+          "visiblePixels": 1411,
+          "colors": 49,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/03.png",
+          "sourceSha256": "d3ca320eca8aacd7d078a57914e3dc57c00d4cd3798e80ff0245e30099d6019f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 6,
+            "width": 51,
+            "height": 49
+          },
+          "visiblePixels": 1455,
+          "colors": 49,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/04.png",
+          "sourceSha256": "2662b771e44a36da6a36db265286351e4d8d3fe6c6fa4b48cc216cbc22cd42fd",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 8,
+            "width": 52,
+            "height": 48
+          },
+          "visiblePixels": 1472,
+          "colors": 47,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/moss-tortoise/review/stand-859fc3b3-eafc-40df-a75b-b578f7528dfc.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/00.png",
+          "sha256": "4e946d3328889680f4c6a465ce49abafc98709dec47929fcc4384e8c5b3f2301",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/01.png",
+          "sourceSha256": "4e946d3328889680f4c6a465ce49abafc98709dec47929fcc4384e8c5b3f2301",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/01.png",
+          "sha256": "e6b7d70ccde47df01ce32c4e9ed19c0a68ba11bd1ef2371086400abdfe1fe219",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/02.png",
+          "sourceSha256": "e6b7d70ccde47df01ce32c4e9ed19c0a68ba11bd1ef2371086400abdfe1fe219",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/02.png",
+          "sha256": "d3ca320eca8aacd7d078a57914e3dc57c00d4cd3798e80ff0245e30099d6019f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/03.png",
+          "sourceSha256": "d3ca320eca8aacd7d078a57914e3dc57c00d4cd3798e80ff0245e30099d6019f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/03.png",
+          "sha256": "2662b771e44a36da6a36db265286351e4d8d3fe6c6fa4b48cc216cbc22cd42fd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/859fc3b3-eafc-40df-a75b-b578f7528dfc/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/stand/859fc3b3-eafc-40df-a75b-b578f7528dfc/04.png",
+          "sourceSha256": "2662b771e44a36da6a36db265286351e4d8d3fe6c6fa4b48cc216cbc22cd42fd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: actual antenna / head / foot articulation, stable native facing, clear loop",
+      "notes": "실제 생성 대기. 고정 발 기준에서 몸 부분이 움직이며 동일 방향으로 복귀."
+    },
+    "attack1": {
+      "label": "공격",
+      "loop": false,
+      "jobId": "70ef3848-cb90-4dec-aef3-2446edcdcbff",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/00.png",
+          "sha256": "6f2a0ffa5e72d2a748d9da4931f382db5398a4cb56e746aa9b0993f87a464504",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/01.png",
+          "sourceSha256": "6f2a0ffa5e72d2a748d9da4931f382db5398a4cb56e746aa9b0993f87a464504",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/01.png",
+          "sha256": "70e90010cfb59d810b3e628855223cc1241b543c53eade427a2d4ea962c921e6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/02.png",
+          "sourceSha256": "70e90010cfb59d810b3e628855223cc1241b543c53eade427a2d4ea962c921e6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/02.png",
+          "sha256": "8853bf73579e45db1ca9951abd83fe95e997508a591ed82c8e885c2e1a729eac",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/03.png",
+          "sourceSha256": "8853bf73579e45db1ca9951abd83fe95e997508a591ed82c8e885c2e1a729eac",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/03.png",
+          "sha256": "8a9128d807fad311121623fd78e69ee0f8406b5fb3a8374608fe38024e272690",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/04.png",
+          "sourceSha256": "8a9128d807fad311121623fd78e69ee0f8406b5fb3a8374608fe38024e272690",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/04.png",
+          "sha256": "96465e9e63c3e6d6bb8223d1a4198bf242aae9442ccf17abba822868a1083284",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/05.png",
+          "sourceSha256": "96465e9e63c3e6d6bb8223d1a4198bf242aae9442ccf17abba822868a1083284",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/05.png",
+          "sha256": "f1b90e81ca50d0d256b0551044699a5dc2a4ea6142600f4bd93adcc9a389fa10",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/06.png",
+          "sourceSha256": "f1b90e81ca50d0d256b0551044699a5dc2a4ea6142600f4bd93adcc9a389fa10",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/06.png",
+          "sha256": "98a15b67496c4cca14ee6e6219135234e41b2d12abe79e2ff44b49562693625c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/07.png",
+          "sourceSha256": "98a15b67496c4cca14ee6e6219135234e41b2d12abe79e2ff44b49562693625c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/07.png",
+          "sha256": "b6f811daa8fa6336e337f7dc2b6825b7715313534a91e253a4f6e117ef1cf42f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/70ef3848-cb90-4dec-aef3-2446edcdcbff/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/attack1/70ef3848-cb90-4dec-aef3-2446edcdcbff/08.png",
+          "sourceSha256": "b6f811daa8fa6336e337f7dc2b6825b7715313534a91e253a4f6e117ef1cf42f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 머리를 접었다가 앞으로 뻗는 낮은 박치기 후 복귀. 5번의 머리와 앞발이 앞으로 나온 자세를 접촉으로 선택.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/moss-tortoise/review/attack1-70ef3848-cb90-4dec-aef3-2446edcdcbff.png",
+      "contactFrameIndex": 5,
+      "contactProgress": 0.6875
+    },
+    "move": {
+      "label": "이동",
+      "loop": true,
+      "jobId": "1c203ed5-6549-4f3b-b717-77fcf503ff5c",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/00.png",
+          "sha256": "ea4097e8c509a6bc7c9b3519e1e2c30660ecb6a2c331b6aad4be9d170decea85",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/01.png",
+          "sourceSha256": "ea4097e8c509a6bc7c9b3519e1e2c30660ecb6a2c331b6aad4be9d170decea85",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/01.png",
+          "sha256": "83a1a5adeac4305b6cfa2805a13f14ace665f3a6f5d42c915d609b254eb64ce3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/02.png",
+          "sourceSha256": "83a1a5adeac4305b6cfa2805a13f14ace665f3a6f5d42c915d609b254eb64ce3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/02.png",
+          "sha256": "d3e9cca2add557a67617c367eb95dfed2847cb5a895aa4c6af4e8e99c6a54d94",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/03.png",
+          "sourceSha256": "d3e9cca2add557a67617c367eb95dfed2847cb5a895aa4c6af4e8e99c6a54d94",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/03.png",
+          "sha256": "f065281607fd053a0c573a0a64c91227f42d19e0917e199583d6a461619a13a1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/04.png",
+          "sourceSha256": "f065281607fd053a0c573a0a64c91227f42d19e0917e199583d6a461619a13a1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/04.png",
+          "sha256": "a4c22c17ad984abec2cda675963632d70a2c35ac5a226030f848581516f632b2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/05.png",
+          "sourceSha256": "a4c22c17ad984abec2cda675963632d70a2c35ac5a226030f848581516f632b2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/05.png",
+          "sha256": "61d53ef308c989fdd131eed665335f460843d7b6d45cb87b8293302fe238a42b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/06.png",
+          "sourceSha256": "61d53ef308c989fdd131eed665335f460843d7b6d45cb87b8293302fe238a42b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/06.png",
+          "sha256": "05fb6040efc161ea5df0b178b0e479bb2d929ec1c55fdb4e2caa81c1cb8b8bcd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/07.png",
+          "sourceSha256": "05fb6040efc161ea5df0b178b0e479bb2d929ec1c55fdb4e2caa81c1cb8b8bcd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/07.png",
+          "sha256": "c52307be724b22c31a74cfe8fc9d5e73fca86264c8990b893ea2fefb777a51e1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c203ed5-6549-4f3b-b717-77fcf503ff5c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/move/1c203ed5-6549-4f3b-b717-77fcf503ff5c/08.png",
+          "sourceSha256": "c52307be724b22c31a74cfe8fc9d5e73fca86264c8990b893ea2fefb777a51e1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 앞·뒷다리가 번갈아 들리고 머리가 함께 움직이는 느린 실제 보행 루프.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/moss-tortoise/review/move-1c203ed5-6549-4f3b-b717-77fcf503ff5c.png"
+    },
+    "hit1": {
+      "label": "피격",
+      "loop": false,
+      "jobId": "35035f5b-a55f-48f5-a86e-fc8fd3bb3634",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/00.png",
+          "sha256": "c4524f21fb736e258c886e8f3c1f71d8fddf6d3fcb1f2ff47d29b2193754370d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/01.png",
+          "sourceSha256": "c4524f21fb736e258c886e8f3c1f71d8fddf6d3fcb1f2ff47d29b2193754370d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/01.png",
+          "sha256": "7554b46b28ba3d80fec06622794a4b79c54216116dcc9e6e8643fbd9a3c53352",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/02.png",
+          "sourceSha256": "7554b46b28ba3d80fec06622794a4b79c54216116dcc9e6e8643fbd9a3c53352",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/02.png",
+          "sha256": "9196c8df0dde43a2016a59ef10bd24eddaafb375c3c3540b5bae2e89e346845d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/03.png",
+          "sourceSha256": "9196c8df0dde43a2016a59ef10bd24eddaafb375c3c3540b5bae2e89e346845d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/03.png",
+          "sha256": "b00170fd79d7cbc0ac7bf5ba6a87f9d6af63d87119fb7af262ed5ccad8781377",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/hit1/35035f5b-a55f-48f5-a86e-fc8fd3bb3634/04.png",
+          "sourceSha256": "b00170fd79d7cbc0ac7bf5ba6a87f9d6af63d87119fb7af262ed5ccad8781377",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 머리와 목을 껍질 안으로 움츠리고 앞다리를 굽힌 뒤 복귀하는 단발 피격.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/moss-tortoise/review/hit1-35035f5b-a55f-48f5-a86e-fc8fd3bb3634.png"
+    },
+    "die1": {
+      "label": "쓰러짐",
+      "loop": false,
+      "jobId": "95cf299b-7fb5-46cc-b34e-5624043d78ab",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/00.png",
+          "sha256": "4f1da4e1d5a7723dd82e6d13b248f09e686c341b31be1a413335ed5196e61914",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/01.png",
+          "sourceSha256": "4f1da4e1d5a7723dd82e6d13b248f09e686c341b31be1a413335ed5196e61914",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/01.png",
+          "sha256": "4d028813de49ab55fad03b109ae53d38ba40d7ac881af462628ebd081fc62b51",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/02.png",
+          "sourceSha256": "4d028813de49ab55fad03b109ae53d38ba40d7ac881af462628ebd081fc62b51",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/02.png",
+          "sha256": "4ca7ec8ef5eb5d9ebf25a12b26ae4a4878170949549ab2c932f4cc458d244373",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/03.png",
+          "sourceSha256": "4ca7ec8ef5eb5d9ebf25a12b26ae4a4878170949549ab2c932f4cc458d244373",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/03.png",
+          "sha256": "8238640350c02a3a264b34e2ce95d5199c18b9e2f794289cf9c3d1d86a419ae8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/04.png",
+          "sourceSha256": "8238640350c02a3a264b34e2ce95d5199c18b9e2f794289cf9c3d1d86a419ae8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/04.png",
+          "sha256": "b9f90398787f9ad76bf4bc42b498a3718d7c7e914875607180393d845a4c5d3a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/05.png",
+          "sourceSha256": "b9f90398787f9ad76bf4bc42b498a3718d7c7e914875607180393d845a4c5d3a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/05.png",
+          "sha256": "18672971d319c6eeb2506eff701130e98cfee8fd00500e9c48b5192ae911da4a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/06.png",
+          "sourceSha256": "18672971d319c6eeb2506eff701130e98cfee8fd00500e9c48b5192ae911da4a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/06.png",
+          "sha256": "45f92e9924957ac7a089a58d99da6543e8f4da2f277b4ed84ceb92edad09be05",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/07.png",
+          "sourceSha256": "45f92e9924957ac7a089a58d99da6543e8f4da2f277b4ed84ceb92edad09be05",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 8
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/moss-tortoise/frames/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/07.png",
+          "sha256": "e4a40c4ee077d8f33bf0dc13f9a6b55979be744fba8462e37885797853934f94",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/95cf299b-7fb5-46cc-b34e-5624043d78ab/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/die1/95cf299b-7fb5-46cc-b34e-5624043d78ab/08.png",
+          "sourceSha256": "e4a40c4ee077d8f33bf0dc13f9a6b55979be744fba8462e37885797853934f94",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "머리와 다리가 낮게 접히며 껍질이 내려앉고 마지막에는 눈을 감은 쓰러진 자세를 유지. 대기로 되돌아가지 않음.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/moss-tortoise/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/moss-tortoise/review/die1-95cf299b-7fb5-46cc-b34e-5624043d78ab.png"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="../../preview/style.css" />
+    <title>지도별 보스 B · 실제 모션</title>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <main>
+      <nav>
+        <a href="./">원본·크기 비교</a> · <a href="./motions.html">실제 모션</a>
+      </nav>
+      <header>
+        <div>
+          <p class="eyebrow">MAP BOSSES B / NATIVE MOTIONS</p>
+          <h1>보스의 실제 움직임</h1>
+        </div>
+      </header>
+      <label>개체<select id="creature" disabled></select></label>
+      <section class="stage">
+        <canvas
+          id="scene"
+          width="960"
+          height="480"
+          aria-label="보스의 실제 생성 모션"
+        ></canvas>
+        <p id="status" role="status">모션을 준비 중…</p>
+      </section>
+      <section class="controls">
+        <label
+          >모션<select id="motion" disabled></select
+          ><output id="frame">—</output></label
+        >
+        <button id="toggle" type="button" disabled>일시정지</button>
+      </section>
+      <p id="motion-notes"></p>
+      <footer>
+        <a href="../../../../resources/map-bosses-b-generation.json"
+          >생성·교정·선택 기록</a
+        >
+        ·
+        <a href="../../../../resources/map-bosses-b-assets.json"
+          >독립 리소스 목록</a
+        >
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/monsters/bosses-b/motions.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

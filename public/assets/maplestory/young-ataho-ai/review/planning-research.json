@@ -1,0 +1,35 @@
+{
+  "checkedDate": "2026-10-12",
+  "balance": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "credits: $0.00\ngenerations_remaining: 1527\ngenerations_used: 473\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "help": {
+    "status": "fulfilled",
+    "value": {
+      "content": [
+        {
+          "type": "text",
+          "text": "- Creation: `create_character(mode=\"v3\", reference_image_url=..., body_type=\"humanoid\", n_directions=8)` is the documented route. Cost is 2 generations up to 90px; 3 at 91–128px. A 64px reference defaults to its own dimensions if `size` is omitted; a supplied size is advisory. The reference is used as the south-facing source, but byte-identical preservation of south is not documented. Allowed size: 64 and 96/128 are within the documented v3 limit (up to 256px).\n- Walk: template mode costs 1 generation per direction, so eight directions = 8 total; template frame count is fixed by the template. V3 is custom-action mode, requires one direction per call, and allows 4–16 frames. For eight frames, listed base costs are 1/direction at 64px and 2/direction at 96/128px, before silhouette-driven canvas growth; actual charges are reported by the tool. “Walk” as a template is not documented as an 8-frame clip.\n- Six south-east battle animations: no information found for: exact per-call and total charges for six 8-frame south-east v3 animations at 64/96/128. V3 requires one direction per call; base listed costs are 1 at 64px and 2 at 96/128px per direction, but canvas growth can increase these. Template costs 1 per direction, with template-defined frame counts.\n- Extra canvas/state: animation canvas may grow beyond the character canvas and affect v3 charges. no information found for: whether explicitly expanding the animation canvas or creating a new state costs extra.\n- Rejections/retries: no information found for: whether rejected jobs or retries are charged.\n- Credits/USD: credits are billed by actual usage; there is no fixed credits-to-generations ratio. no information found for: exact USD charges at 64/96/128 for these requests or whether credit fallback applies automatically in this case.\n- Fresh cap: no information found for: a conservative total generation cap covering this complete plan."
+        }
+      ],
+      "isError": false
+    }
+  },
+  "sourceUrls": [
+    "https://api.pixellab.ai/mcp/docs",
+    "https://www.pixellab.ai/docs/ways-to-use-pixellab"
+  ],
+  "currentCharacterTemplateConfirmation": {
+    "characterId": "ca006367-6f19-46fc-ac25-d70fb92332ff",
+    "walkingEightFrameTemplateAvailable": true
+  }
+}

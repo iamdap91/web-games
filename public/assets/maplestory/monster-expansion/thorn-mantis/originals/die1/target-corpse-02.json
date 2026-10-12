@@ -1,0 +1,97 @@
+{
+  "id": "thorn-mantis",
+  "source": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=8",
+  "canvas": 96,
+  "offset": [
+    0,
+    5
+  ],
+  "angle": -90,
+  "pivot": [
+    48,
+    48
+  ],
+  "recipe": {
+    "job": {
+      "canvas": [
+        96,
+        96
+      ],
+      "frame_count": 1,
+      "durations_ms": [
+        100
+      ],
+      "views": [
+        {
+          "id": "native",
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "source_bookends_exact": false,
+      "body_palette_exact": true,
+      "require_clear_border": true
+    },
+    "scene": {
+      "palette": {},
+      "layers": [
+        {
+          "id": "body",
+          "name": "Body - grounded collapse target"
+        }
+      ],
+      "views": {
+        "native": {
+          "parts": {
+            "original": {}
+          },
+          "nodes": {
+            "body": {
+              "layer": "body",
+              "at": [
+                0,
+                5
+              ],
+              "pivot": [
+                48,
+                48
+              ],
+              "angle": -90,
+              "draw": [
+                {
+                  "op": "copy",
+                  "part": "original"
+                }
+              ]
+            }
+          },
+          "poses": {
+            "rest": {}
+          },
+          "frames": [
+            "rest"
+          ]
+        }
+      }
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "drawing_id: bb3d87b1-7b5e-4131-9740-4b3e7e282dbd\ncanvas 96x96, 1 frames, 100 ms, views: native\nstate: needs_visual_review\nlayers (native): Body - grounded collapse target\nnodes (native): body\nimages: assets/native/review/full-01.png\n(+2 more evidence images — body-only, change masks, palette: repeat with mode=\"high\", or zoom with --inspect […])\ndownload https://api.pixellab.ai/mcp/pixel-tools/bb3d87b1-7b5e-4131-9740-4b3e7e282dbd/: assets/native/animation.gif, assets/native/full.png, assets/native/layers.npz, recipe.json\nnext: draw --drawing bb3d87b1-7b5e-4131-9740-4b3e7e282dbd --changes […]"
+      },
+      {
+        "type": "image",
+        "data": "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",
+        "mimeType": "image/png"
+      }
+    ],
+    "isError": false
+  },
+  "drawingId": "bb3d87b1-7b5e-4131-9740-4b3e7e282dbd",
+  "url": "https://api.pixellab.ai/mcp/pixel-tools/bb3d87b1-7b5e-4131-9740-4b3e7e282dbd/assets/native/full.png",
+  "paidGenerations": 0
+}

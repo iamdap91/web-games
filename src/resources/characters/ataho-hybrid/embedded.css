@@ -1,0 +1,27 @@
+html[data-embedded='true'] body {
+  min-width: 0;
+}
+html[data-embedded='true'] .resource-navigation,
+html[data-embedded='true'] main > header,
+html[data-embedded='true'] footer nav,
+html[data-embedded='true'] .lab-local-navigation {
+  display: none;
+}
+html[data-embedded='true'] main {
+  width: calc(100% - 32px);
+  max-width: 1320px;
+  margin: 20px auto;
+  padding: 0;
+}
+html[data-embedded='true'] .controls {
+  flex-wrap: wrap;
+}
+@media (max-width: 800px) {
+  html[data-embedded='true'] .portraits,
+  html[data-embedded='true'] .comparison {
+    grid-template-columns: 1fr;
+  }
+  html[data-embedded='true'] .timeline {
+    flex-wrap: wrap;
+  }
+}

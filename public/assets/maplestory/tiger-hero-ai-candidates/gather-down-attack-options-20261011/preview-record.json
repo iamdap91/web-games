@@ -1,0 +1,278 @@
+{
+  "createdDate": "2026-10-11",
+  "provider": "PixelLab",
+  "status": "selected-low-elbow-drop-applied",
+  "gameApplied": true,
+  "userAuthorization": "사선 주먹 내리치기, 짧은 뒤꿈치 찍기, 낮은 팔꿈치 내리찍기 모두 만들어서 위의것처럼 모션으로 보여줄래? 거기서 골라보자",
+  "chargedGenerations": 8,
+  "submissions": [
+    {
+      "key": "diagonal-hammer-fist",
+      "jobId": "dddd180d-c97d-4d31-8452-7965fb394dc2",
+      "framesGenerated": 8,
+      "cost": 2
+    },
+    {
+      "key": "short-heel-stamp",
+      "jobId": "a22288ec-a651-4cdd-833e-183c30c96d8a",
+      "framesGenerated": 8,
+      "cost": 2
+    },
+    {
+      "key": "low-elbow-drop",
+      "jobId": "cf0fc819-8366-4386-b0b6-3d9e39108ce8",
+      "framesGenerated": 8,
+      "cost": 2
+    },
+    {
+      "key": "diagonal-hammer-fist",
+      "jobId": "a359ca49-6a91-469d-b014-8488ff7f6a4d",
+      "framesGenerated": 4,
+      "cost": 1
+    },
+    {
+      "key": "low-elbow-drop",
+      "jobId": "5918c28f-87aa-41b3-aa83-bbea586f3517",
+      "framesGenerated": 4,
+      "cost": 1
+    }
+  ],
+  "previewAssembly": "뒤꿈치는 입력과 생성 출력 순서. 주먹과 팔꿈치는 기존 준비 프레임→추가 생성 타격→타격과 준비 역순 회수. 생성 PNG는 변경 없이 보존. 같은 전체 길이로 나란히 비교하는 검토용 느린 재생.",
+  "review": {
+    "diagonal-hammer-fist": "팔이 아래로 내려오지만 사선 궤적과 몸의 체중 이동이 작게 표현됨.",
+    "short-heel-stamp": "짧은 무릎 준비와 앞쪽 아래로 발을 찍는 동작이 구분됨.",
+    "low-elbow-drop": "팔을 높였다가 몸을 낮추며 내려오나, 접힌 팔꿈치 대신 주먹을 내리는 모습으로 표현되어 보완 필요."
+  },
+  "files": [
+    {
+      "path": "comparison.gif",
+      "sha256": "f7e2865931b770bc2a944a91b067e294880ec03a37df5d2a63c9599e48a77bdf"
+    },
+    {
+      "path": "correction-originals.json",
+      "sha256": "fbdd904653f1473b9a53202915b10c51724f0b7ad91f9d156d013fbf1189ab23"
+    },
+    {
+      "path": "corrections.json",
+      "sha256": "fe56ece27d4bd1b535a0bf6475518be60c39cec07ad537a33012357ae86222f9"
+    },
+    {
+      "path": "diagonal-hammer-fist/all-frames.png",
+      "sha256": "d6b65603d341d59bddb4b3dccea35a217e289056e2d1ebf0693892742a5e752b"
+    },
+    {
+      "path": "diagonal-hammer-fist/correction-originals/00.png",
+      "sha256": "7b75a149cde998db5b855268713f6df0135cec449d33e61fa12f88ad80c7c515"
+    },
+    {
+      "path": "diagonal-hammer-fist/correction-originals/01.png",
+      "sha256": "07d075e2ff9e4506a6bd4bd58b8563c33f95091bcfb19b0c2de5ee285ed4cf22"
+    },
+    {
+      "path": "diagonal-hammer-fist/correction-originals/02.png",
+      "sha256": "139ee953a8e445a97fb036aa52ececd91e1ea2d5fbbfac0dd06516349bb46df0"
+    },
+    {
+      "path": "diagonal-hammer-fist/correction-originals/03.png",
+      "sha256": "caea72c564fa3a439590f3424a0a1c328b91f10b39e6e5a6b8c82f7d7600ab7c"
+    },
+    {
+      "path": "diagonal-hammer-fist/correction-originals/04.png",
+      "sha256": "c2c786c4f9a7dcd59c70ad84397420fd9dbe55efa5c484a0e90c5f873a738f92"
+    },
+    {
+      "path": "diagonal-hammer-fist/final-all-frames.png",
+      "sha256": "96d3dc7322770191115a5ee5e066c6c24a27de187c562b7642b37a01616cce25"
+    },
+    {
+      "path": "diagonal-hammer-fist/final-preview.gif",
+      "sha256": "b0c460d64d2bd2306773232f4dd7315bde9ff0c3e9cd6b2aa24c2c21502fc3fa"
+    },
+    {
+      "path": "diagonal-hammer-fist/originals/00.png",
+      "sha256": "cef5e8c541c982f215ab2745774021d65f6179a6d65a5db95947a1a4c3e036fa"
+    },
+    {
+      "path": "diagonal-hammer-fist/originals/01.png",
+      "sha256": "ac3fce9de599a70476e8cd3bd5b2f6a61911fe5fbcd4f6c5be2304f0c07a6c90"
+    },
+    {
+      "path": "diagonal-hammer-fist/originals/02.png",
+      "sha256": "a827209a1afc2d837bbe7e039b2ccd851ada6566eda25d59c61db55d2b30e153"
+    },
+    {
+      "path": "diagonal-hammer-fist/originals/03.png",
+      "sha256": "6d5a254c2c33c4578d6ce670c697ffb02d9d4e8a9f0487f887c75541417a133e"
+    },
+    {
+      "path": "diagonal-hammer-fist/originals/04.png",
+      "sha256": "c5ccaa0d684822157ac3e5c35718b0d68cf03f9fa5205c24ccc2a62d3219efb6"
+    },
+    {
+      "path": "diagonal-hammer-fist/originals/05.png",
+      "sha256": "16e972f6ef0fddd99f29c62a6ef12c2fea59bd44102ef5faa61508701d28de7b"
+    },
+    {
+      "path": "diagonal-hammer-fist/originals/06.png",
+      "sha256": "0472fa366ae93c27c05ad4322b73bb9ffa91912f4cce9550273237f531fabe10"
+    },
+    {
+      "path": "diagonal-hammer-fist/originals/07.png",
+      "sha256": "9cda404c2c2e7325a67762b9c5216d13457028904aadb628ca773fe946e8f0c4"
+    },
+    {
+      "path": "diagonal-hammer-fist/originals/08.png",
+      "sha256": "14acf4bec5ec55661fceb65982005e0ef1671a04c47e3c9469f30a02ef39c32a"
+    },
+    {
+      "path": "diagonal-hammer-fist/preview.gif",
+      "sha256": "d1338668dbaffe124a22cdcfe9572bfa5d368fb0d190748cc7a71923ff46c1ca"
+    },
+    {
+      "path": "final-comparison.gif",
+      "sha256": "8b8bc62b22977f94a4b9464df6153c93fb9c5f287ea0a94e796cf44aa85706b8"
+    },
+    {
+      "path": "input.png",
+      "sha256": "6612d50f1a3a0b5ac364f9b1892382b700c62cd76b0c32682edb679986d8287b"
+    },
+    {
+      "path": "low-elbow-drop/all-frames.png",
+      "sha256": "9fd03479d3c4b5e26a22cdffc00f24d616e6e0e2b903b67fa4cd4b9227764323"
+    },
+    {
+      "path": "low-elbow-drop/correction-originals/00.png",
+      "sha256": "dcb73ef22f982708b6b8da426b9927ed06e171f8a38ec8bc2bda57430dec2da0"
+    },
+    {
+      "path": "low-elbow-drop/correction-originals/01.png",
+      "sha256": "633b1d1bedefed2b312def8a53be2ddb032a5657ebfdde0cf723182a596939c6"
+    },
+    {
+      "path": "low-elbow-drop/correction-originals/02.png",
+      "sha256": "cc0fb441b558c4482e578e833ceb57b7ddb95a6517098478429cc68f204e2a33"
+    },
+    {
+      "path": "low-elbow-drop/correction-originals/03.png",
+      "sha256": "68a4722d0e4433c6f945ebe056c5b97e33ecebf6578e8944a7874c8c6bca2e9e"
+    },
+    {
+      "path": "low-elbow-drop/correction-originals/04.png",
+      "sha256": "623a0dc7c6683a6b222b99849a6eab107a03fb7b2026b375c0050c817a575407"
+    },
+    {
+      "path": "low-elbow-drop/final-all-frames.png",
+      "sha256": "8c563e5f831ae49b22f1061e025dd9ab52f5cc2bb27da31ca614310522650829"
+    },
+    {
+      "path": "low-elbow-drop/final-preview.gif",
+      "sha256": "0b8af8861838dbd48abfe69c87d0b14f46a393761b0354bc1e47cf4509794a8d"
+    },
+    {
+      "path": "low-elbow-drop/originals/00.png",
+      "sha256": "5521d8453ad225f2ec9800c97b2bf66e3c413bdcd04ede6620a9344be8af2c3d"
+    },
+    {
+      "path": "low-elbow-drop/originals/01.png",
+      "sha256": "e497b3c732bc61dee67ca345290326c9c382f448dcdfe91f8f3475cd24570c7d"
+    },
+    {
+      "path": "low-elbow-drop/originals/02.png",
+      "sha256": "f2cc9870c876d68f2120f5daa6718e4b1883458a76817a7aaa010cdf3a3bda64"
+    },
+    {
+      "path": "low-elbow-drop/originals/03.png",
+      "sha256": "e981b6ef91aa9ef7398656b5e54df40f537200f6ccc3bde5430454af0632300b"
+    },
+    {
+      "path": "low-elbow-drop/originals/04.png",
+      "sha256": "68c90c3dc569d2a7f71accd8cd7242388b1352ad2e17a7a41e0df4a6ad73b780"
+    },
+    {
+      "path": "low-elbow-drop/originals/05.png",
+      "sha256": "4370e123036610d5ddbc31a25888521ddbc2c6f73e69acb2b158b08d78563a81"
+    },
+    {
+      "path": "low-elbow-drop/originals/06.png",
+      "sha256": "6cc8abe9aaa30145bbc5eae0bcc2700d9dcd5be6c9e6a082b8a6ec4b7b35bfcc"
+    },
+    {
+      "path": "low-elbow-drop/originals/07.png",
+      "sha256": "9697dc5de03d876d63040366330e943a26bfd3abfaca73e9cb8a77a450015b12"
+    },
+    {
+      "path": "low-elbow-drop/originals/08.png",
+      "sha256": "f3f252caef17d14aabae9613f8db5fae98e03ae830c87a2ea606154ecf2f43ad"
+    },
+    {
+      "path": "low-elbow-drop/preview.gif",
+      "sha256": "9bd2715cee18b3bb6d24fa6cc669c7db876e7f7f8d29e5327c185857cdc5a692"
+    },
+    {
+      "path": "originals.json",
+      "sha256": "c3b81096a3a36ddd482deb63d8b57e786fa245a00c7e9e0c0fb14baae35aa878"
+    },
+    {
+      "path": "preview-sequences.json",
+      "sha256": "633e78d927d0c9bd82b0e9bffa4801222fab7f21e5a4736f397e587e3c028e9a"
+    },
+    {
+      "path": "short-heel-stamp/all-frames.png",
+      "sha256": "1393a73918e199896f44127dc49e27e911d132c3cd3cec97ed9de87a23204c55"
+    },
+    {
+      "path": "short-heel-stamp/final-all-frames.png",
+      "sha256": "c44d093584675fa5f215b32da67fa76a66241f7d7f222b3fba373e221a6c7184"
+    },
+    {
+      "path": "short-heel-stamp/final-preview.gif",
+      "sha256": "e12a7934521070c56b996f278663d10f3d2e64ba3a7278e64db206f1602dfcee"
+    },
+    {
+      "path": "short-heel-stamp/originals/00.png",
+      "sha256": "66adbbca915a4716b11ebe208d65a8a02afef72f59a6b297a278650c45970ba8"
+    },
+    {
+      "path": "short-heel-stamp/originals/01.png",
+      "sha256": "5a935a89cfb757a699b785cf583abffc7ba867337eb7835c9e93398c231b27f5"
+    },
+    {
+      "path": "short-heel-stamp/originals/02.png",
+      "sha256": "b2aec7b0a2c2496b0c46dffc7acc870bd4f099d309147b73a5e5be474c3a3645"
+    },
+    {
+      "path": "short-heel-stamp/originals/03.png",
+      "sha256": "b598599aa6b03949aedc1125c8390ee6788bcf57e1fdbf604f836e3bce44e9d8"
+    },
+    {
+      "path": "short-heel-stamp/originals/04.png",
+      "sha256": "c5d4515e1ae7b304d9ef31ce2cb73659c3aa86355249da6cebb51d38f3322b59"
+    },
+    {
+      "path": "short-heel-stamp/originals/05.png",
+      "sha256": "a8ce454158b39e377561f5788e65e9be610ea2441f204174f552ba4d165b2f5d"
+    },
+    {
+      "path": "short-heel-stamp/originals/06.png",
+      "sha256": "c1b8f774daa16cec0bbc9e8c7bb607c63d2ddee866502031aeaf1532365eb7ec"
+    },
+    {
+      "path": "short-heel-stamp/originals/07.png",
+      "sha256": "494bb0b81f702708cc5a9d2996d9c99afabac85cd4a8b9055fefdd6d3d4b10d6"
+    },
+    {
+      "path": "short-heel-stamp/originals/08.png",
+      "sha256": "0a42cc826965c4fe4e3155a754bf6df39d421bced4fb661e2977b71f871af824"
+    },
+    {
+      "path": "short-heel-stamp/preview.gif",
+      "sha256": "4d57a159830c451f398a44d6344a9084fd39cdba6e6fe1e84abe314fd59b00df"
+    },
+    {
+      "path": "submissions.json",
+      "sha256": "59f8ffadaca55f24822191d2ba69c531d9ef8b2d1845a62aa7b59c8a9492ca9b"
+    }
+  ],
+  "selectedCandidate": "low-elbow-drop",
+  "implementationRecord": "resources/tiger-hero-gather-down.json"
+}

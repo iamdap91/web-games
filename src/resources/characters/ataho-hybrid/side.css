@@ -1,0 +1,26 @@
+main {
+  max-width: 1320px;
+}
+.portraits {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.card-heading {
+  gap: 8px;
+  padding-inline: 18px;
+}
+.card-heading span {
+  font-size: 10px;
+}
+.mirrored {
+  transform: scaleX(-1);
+}
+footer nav {
+  display: flex;
+  gap: 20px;
+  margin-top: 12px;
+}
+@media (max-width: 1000px) {
+  .portraits {
+    grid-template-columns: 1fr;
+  }
+}

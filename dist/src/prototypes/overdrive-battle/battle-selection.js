@@ -1,4 +1,4 @@
-import { battleSkills, skillTargets } from './battle-skills.js';
+import { battleSkills, skillTargets, isElementSkill, } from './battle-skills.js';
 import { clampSkillArea, } from './world.js';
 import { overdriveRules } from './overdrive.js';
 import { rageRules } from './rage.js';
@@ -9,21 +9,28 @@ export const commandOrder = [
     'ultimate',
     'overdrive',
 ];
-function initialSelection(skills) {
+function initialSelection(state) {
     return {
-        selectedCommand: 'attack',
+        selectedCommand: state.kickGuidance ? 'skill' : 'attack',
         pendingCommand: null,
         skillsOpen: false,
-        selectedSkill: skills[0] ?? 'kick',
+        selectedSkill: state.availableSkills[0] ?? 'kick',
         areaCenter: null,
+        allyTargetId: null,
     };
 }
 export function commandAvailable(command, state) {
     if (state.phase !== 'command')
         return false;
+    if (state.activeActorId !== 0 &&
+        (command === 'ultimate' || command === 'overdrive'))
+        return false;
+    if (command === 'overdrive' && state.player.health <= 0)
+        return false;
     if (command === 'skill')
         return state.availableSkills.length > 0;
-    if (!state.advanced && (command === 'ultimate' || command === 'overdrive'))
+    if ((command === 'ultimate' && !state.advanced) ||
+        (command === 'overdrive' && !state.overdriveUnlocked))
         return false;
     if (command === 'ultimate')
         return state.rage >= rageRules.capacity;
@@ -38,7 +45,7 @@ export class BattleSelection {
     state;
     constructor(world) {
         this.world = world;
-        this.state = initialSelection(world.snapshot.availableSkills);
+        this.state = initialSelection(world.snapshot);
     }
     cycleCommand(direction) {
         const state = this.world.snapshot;
@@ -54,14 +61,30 @@ export class BattleSelection {
         this.state.selectedCommand = command;
         this.state.pendingCommand = null;
         this.state.areaCenter = null;
+        this.state.allyTargetId = null;
         this.state.skillsOpen = command === 'skill';
-        if (command === 'skill')
-            return true;
-        if (command === 'attack' || command === 'ultimate') {
-            this.state.pendingCommand = command;
+        if (command === 'skill') {
+            this.openSkills();
+            const skills = this.world.snapshot.availableSkills;
+            if (skills.length === 1)
+                this.chooseSkill(skills[0]);
             return true;
         }
+        if (command === 'attack' || command === 'ultimate')
+            return this.beginTargetSelection(command);
         return this.executeCommand(command);
+    }
+    /** → 탐색은 기술이 하나여도 확정·실행으로 진행하지 않는다. */
+    openSkills() {
+        const state = this.world.snapshot;
+        if (!commandAvailable('skill', state) || this.state.pendingCommand !== null)
+            return false;
+        this.state.selectedCommand = 'skill';
+        this.state.skillsOpen = true;
+        this.state.areaCenter = null;
+        if (!state.availableSkills.includes(this.state.selectedSkill))
+            this.state.selectedSkill = state.availableSkills[0];
+        return true;
     }
     chooseSkill(id) {
         if (!this.world.snapshot.availableSkills.includes(id))
@@ -74,6 +97,12 @@ export class BattleSelection {
             return false;
         if (id === 'drink')
             return this.executeCommand('skill');
+        if (id === 'ward') {
+            this.state.pendingCommand = 'skill';
+            const allies = this.livingAllies();
+            this.state.allyTargetId = allies[0]?.id ?? null;
+            return allies.length === 1 ? this.confirmTarget(allies[0].id) : true;
+        }
         this.state.pendingCommand = 'skill';
         if (battleSkills[id].target === 'area') {
             const living = state.enemies.filter((enemy) => enemy.health > 0);
@@ -84,8 +113,39 @@ export class BattleSelection {
                         z: living.reduce((sum, enemy) => sum + enemy.z, 0) / living.length,
                     })
                     : null;
+            return true;
         }
-        return true;
+        return this.beginTargetSelection('skill');
+    }
+    beginTargetSelection(command) {
+        this.state.pendingCommand = command;
+        const living = this.world.snapshot.enemies.filter((enemy) => enemy.health > 0);
+        // 단일 대상 행동만 생존자 한 명을 자동 확정한다. 범위 위치는 직접 고른다.
+        return living.length === 1 ? this.confirmTarget(living[0].id) : true;
+    }
+    get selectingAlly() {
+        return (this.state.pendingCommand === 'skill' &&
+            this.state.selectedSkill === 'ward');
+    }
+    livingAllies() {
+        const state = this.world.snapshot;
+        return [state.player, ...(state.companion ? [state.companion] : [])].filter((ally) => ally.health > 0);
+    }
+    selectAlly(id) {
+        if (this.selectingAlly &&
+            this.livingAllies().some((ally) => ally.id === id))
+            this.state.allyTargetId = id;
+    }
+    cycleTarget(direction) {
+        if (!this.selectingAlly) {
+            this.world.cycleTarget(direction);
+            return;
+        }
+        const allies = this.livingAllies();
+        const index = allies.findIndex((ally) => ally.id === this.state.allyTargetId);
+        const next = allies[(index + direction + allies.length) % allies.length];
+        if (next)
+            this.selectAlly(next.id);
     }
     get selectingArea() {
         return (this.state.pendingCommand === 'skill' &&
@@ -94,14 +154,23 @@ export class BattleSelection {
     affectedTargets(state) {
         if (state.phase !== 'command' ||
             this.state.pendingCommand !== 'skill' ||
-            this.state.selectedSkill === 'drink')
+            this.state.selectedSkill === 'drink' ||
+            this.state.selectedSkill === 'ward')
             return [];
+        if (isElementSkill(this.state.selectedSkill))
+            return this.preview?.targetIds ?? [];
         return skillTargets(this.state.selectedSkill, state.targetId, state.enemies, this.state.areaCenter ?? undefined).map((target) => target.id);
     }
     confirmTarget(id) {
         if (this.state.pendingCommand === null)
             return false;
-        if (id !== undefined && !this.selectingArea)
+        if (this.selectingAlly) {
+            if (id !== undefined)
+                this.selectAlly(id);
+            if (id !== undefined && this.state.allyTargetId !== id)
+                return false;
+        }
+        else if (id !== undefined && !this.selectingArea)
             this.world.selectTarget(id);
         return this.executeCommand(this.state.pendingCommand);
     }
@@ -112,16 +181,19 @@ export class BattleSelection {
             this.state.skillsOpen = this.state.pendingCommand === 'skill';
         this.state.pendingCommand = null;
         this.state.areaCenter = null;
+        this.state.allyTargetId = null;
     }
     executeCommand(command) {
         if (!this.world.command(command, {
-            skill: this.state.selectedSkill,
+            skill: command === 'skill' ? this.state.selectedSkill : undefined,
             areaCenter: this.state.areaCenter ?? undefined,
+            allyTargetId: this.state.allyTargetId ?? undefined,
         }))
             return false;
         this.state.skillsOpen = false;
         this.state.pendingCommand = null;
         this.state.areaCenter = null;
+        this.state.allyTargetId = null;
         return true;
     }
     focusCommand(command) {
@@ -153,18 +225,32 @@ export class BattleSelection {
         this.state.skillsOpen = false;
         this.state.areaCenter = null;
         this.state.pendingCommand = null;
-        if (phase === 'command')
+        if (phase === 'command') {
             this.state.selectedCommand = 'attack';
+            this.syncAvailability(this.world.snapshot);
+        }
     }
     syncAvailability(state) {
         if (this.state.pendingCommand !== null &&
             !commandAvailable(this.state.pendingCommand, state))
             this.state.pendingCommand = null;
+        if (!state.availableSkills.includes(this.state.selectedSkill))
+            this.state.selectedSkill = state.availableSkills[0] ?? 'kick';
         if (!commandAvailable(this.state.selectedCommand, state))
             this.state.selectedCommand = 'attack';
     }
     reset() {
-        this.state = initialSelection(this.world.snapshot.availableSkills);
+        this.state = initialSelection(this.world.snapshot);
+    }
+    get preview() {
+        const command = this.state.pendingCommand ?? this.state.selectedCommand;
+        if (command !== 'attack' && command !== 'skill')
+            return null;
+        return this.world.previewInteractions({
+            command,
+            skill: this.state.selectedSkill,
+            areaCenter: this.state.areaCenter ?? undefined,
+        });
     }
     get snapshot() {
         return {

@@ -1,0 +1,1109 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-11",
+  "round": 3,
+  "provider": "PixelLab",
+  "model": "Pro Flash",
+  "tool": "edit_image_pro_flash",
+  "status": "completed-unselected",
+  "scope": "사용자 선호 원본에서 독립 편집한 전면 바리에이션 10개. 비율4·나이2·의상4.",
+  "candidateLimit": 10,
+  "requestLimit": 10,
+  "retryLimit": 0,
+  "generationBudget": 50,
+  "quotedCostPerCandidate": 5,
+  "balanceBefore": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1883\ngenerations_used: 117\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "referenceImages": [
+    {
+      "role": "edit-target",
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/originals/candidate-05.png",
+      "sourceImageId": "387a856b-5950-5a8a-a752-a9cff72788a1",
+      "selectedByUser": true,
+      "sha256": "c1153a5ff858a5863209b8cd4946d2523cc84d6a1d880a2d22ac8fc60230e5e0"
+    }
+  ],
+  "independentEdits": true,
+  "candidates": [
+    {
+      "id": 1,
+      "label": "머리 조금 크게",
+      "group": "비율",
+      "seed": 101301,
+      "change": "Increase head width and height by about 15 percent, keeping the same face and cheek silhouette. Compress the torso and legs slightly to keep the total character height and foot baseline. Keep original teal vest and sand trousers. Still a confident adult, not a baby.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Edit this tiger sprite. Keep its exact character identity, broad adult face, relaxed smiling squint, amber fur and cream cheek shapes, near-front view, standing pose, rounded pixel shading and crisp native pixel grid. Preserve everything except the single change below. Keep the entire character inside the same 64x64 transparent canvas with ears and feet visible; do not add a floor, shadow, text, weapon or props.\nIncrease head width and height by about 15 percent, keeping the same face and cheek silhouette. Compress the torso and legs slightly to keep the total character height and foot baseline. Keep original teal vest and sand trousers. Still a confident adult, not a baby.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101301
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"3af6b723-e36d-45be-b53e-4bad5f2c44b0\",\n  \"image_id\": \"5de0acba-04c3-5f7c-a188-022111d261ed\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"5de0acba-04c3-5f7c-a188-022111d261ed\",\n  \"job_id\": \"3af6b723-e36d-45be-b53e-4bad5f2c44b0\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/3af6b723-e36d-45be-b53e-4bad5f2c44b0/download\"\n}\nPoll get_image(job_id=\"3af6b723-e36d-45be-b53e-4bad5f2c44b0\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "3af6b723-e36d-45be-b53e-4bad5f2c44b0",
+          "image_id": "5de0acba-04c3-5f7c-a188-022111d261ed",
+          "status": "processing",
+          "source_image_id": "5de0acba-04c3-5f7c-a188-022111d261ed",
+          "job_id": "3af6b723-e36d-45be-b53e-4bad5f2c44b0",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/3af6b723-e36d-45be-b53e-4bad5f2c44b0/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "3af6b723-e36d-45be-b53e-4bad5f2c44b0",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/3af6b723-e36d-45be-b53e-4bad5f2c44b0/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/3af6b723-e36d-45be-b53e-4bad5f2c44b0/download"
+        ],
+        "asset": {
+          "id": "5de0acba-04c3-5f7c-a188-022111d261ed",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: 3af6b723-e36d-45be-b53e-4bad5f2c44b0\njob_id: 3af6b723-e36d-45be-b53e-4bad5f2c44b0\nframes: 1\ntransparent: yes\nasset_id: 5de0acba-04c3-5f7c-a188-022111d261ed\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/3af6b723-e36d-45be-b53e-4bad5f2c44b0/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-01.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-01.png",
+        "sha256": "db877e7ccf4b347c8f0a96eda637a6ca9b84b1160ff4f51f9fe17017c2623dde",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3876,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/variant-01.png",
+        "sha256": "a74af0ab9c62b82dd6c606a99294cabb82d9c2c02a53ded119f794ed39681989",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/3af6b723-e36d-45be-b53e-4bad5f2c44b0/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 2,
+      "label": "머리 더 크게 · 작은 몸",
+      "group": "비율",
+      "seed": 101302,
+      "change": "Make the same head substantially larger and the body very squat, aiming near 1.8 heads tall. Preserve the mature broad face and smiling squint exactly in spirit. Head much wider than shoulders, almost no neck, very short torso and legs. Keep original outfit and total standing height.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Edit this tiger sprite. Keep its exact character identity, broad adult face, relaxed smiling squint, amber fur and cream cheek shapes, near-front view, standing pose, rounded pixel shading and crisp native pixel grid. Preserve everything except the single change below. Keep the entire character inside the same 64x64 transparent canvas with ears and feet visible; do not add a floor, shadow, text, weapon or props.\nMake the same head substantially larger and the body very squat, aiming near 1.8 heads tall. Preserve the mature broad face and smiling squint exactly in spirit. Head much wider than shoulders, almost no neck, very short torso and legs. Keep original outfit and total standing height.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101302
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"9af2ac21-b14a-4649-8963-952cb3536f91\",\n  \"image_id\": \"99897745-e7fb-5a67-8379-13bacdffc5b7\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"99897745-e7fb-5a67-8379-13bacdffc5b7\",\n  \"job_id\": \"9af2ac21-b14a-4649-8963-952cb3536f91\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/9af2ac21-b14a-4649-8963-952cb3536f91/download\"\n}\nPoll get_image(job_id=\"9af2ac21-b14a-4649-8963-952cb3536f91\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "9af2ac21-b14a-4649-8963-952cb3536f91",
+          "image_id": "99897745-e7fb-5a67-8379-13bacdffc5b7",
+          "status": "processing",
+          "source_image_id": "99897745-e7fb-5a67-8379-13bacdffc5b7",
+          "job_id": "9af2ac21-b14a-4649-8963-952cb3536f91",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/9af2ac21-b14a-4649-8963-952cb3536f91/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "9af2ac21-b14a-4649-8963-952cb3536f91",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/9af2ac21-b14a-4649-8963-952cb3536f91/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/9af2ac21-b14a-4649-8963-952cb3536f91/download"
+        ],
+        "asset": {
+          "id": "99897745-e7fb-5a67-8379-13bacdffc5b7",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: 9af2ac21-b14a-4649-8963-952cb3536f91\njob_id: 9af2ac21-b14a-4649-8963-952cb3536f91\nframes: 1\ntransparent: yes\nasset_id: 99897745-e7fb-5a67-8379-13bacdffc5b7\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/9af2ac21-b14a-4649-8963-952cb3536f91/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-02.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-02.png",
+        "sha256": "2f056332bdbdf7c77f61e0a35a0028a2e47194d08059636f41754368c3586c45",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3447,
+        "alphaBBox": [
+          7,
+          6,
+          56,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/variant-02.png",
+        "sha256": "97d95aaf179493a89524b5f12fccedc4dbff60fe4f2d8f6e4df089ffc5c78bf1",
+        "width": 49,
+        "height": 57,
+        "sourceRect": {
+          "x": 7,
+          "y": 6,
+          "width": 49,
+          "height": 57
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/9af2ac21-b14a-4649-8963-952cb3536f91/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 3,
+      "label": "머리 좌우로 넓게",
+      "group": "비율",
+      "seed": 101303,
+      "change": "Broaden the same head horizontally by about 15 percent without increasing head height. Keep the face slightly flattened and cheek tufts spreading sideways. Preserve original head-to-body height ratio, adult expression, body, outfit and total standing height.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Edit this tiger sprite. Keep its exact character identity, broad adult face, relaxed smiling squint, amber fur and cream cheek shapes, near-front view, standing pose, rounded pixel shading and crisp native pixel grid. Preserve everything except the single change below. Keep the entire character inside the same 64x64 transparent canvas with ears and feet visible; do not add a floor, shadow, text, weapon or props.\nBroaden the same head horizontally by about 15 percent without increasing head height. Keep the face slightly flattened and cheek tufts spreading sideways. Preserve original head-to-body height ratio, adult expression, body, outfit and total standing height.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101303
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"7be09cc3-9687-4da0-bcf0-17f76ba0ec41\",\n  \"image_id\": \"8cc2c3d7-6c61-5851-a63d-e18afbb242dc\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"8cc2c3d7-6c61-5851-a63d-e18afbb242dc\",\n  \"job_id\": \"7be09cc3-9687-4da0-bcf0-17f76ba0ec41\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/7be09cc3-9687-4da0-bcf0-17f76ba0ec41/download\"\n}\nPoll get_image(job_id=\"7be09cc3-9687-4da0-bcf0-17f76ba0ec41\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "7be09cc3-9687-4da0-bcf0-17f76ba0ec41",
+          "image_id": "8cc2c3d7-6c61-5851-a63d-e18afbb242dc",
+          "status": "processing",
+          "source_image_id": "8cc2c3d7-6c61-5851-a63d-e18afbb242dc",
+          "job_id": "7be09cc3-9687-4da0-bcf0-17f76ba0ec41",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/7be09cc3-9687-4da0-bcf0-17f76ba0ec41/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "7be09cc3-9687-4da0-bcf0-17f76ba0ec41",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/7be09cc3-9687-4da0-bcf0-17f76ba0ec41/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/7be09cc3-9687-4da0-bcf0-17f76ba0ec41/download"
+        ],
+        "asset": {
+          "id": "8cc2c3d7-6c61-5851-a63d-e18afbb242dc",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: 7be09cc3-9687-4da0-bcf0-17f76ba0ec41\njob_id: 7be09cc3-9687-4da0-bcf0-17f76ba0ec41\nframes: 1\ntransparent: yes\nasset_id: 8cc2c3d7-6c61-5851-a63d-e18afbb242dc\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/7be09cc3-9687-4da0-bcf0-17f76ba0ec41/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-03.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-03.png",
+        "sha256": "039680c364acd90e11a21d49465e174a634e2ece02cefa7728cd83b98ee03897",
+        "width": 64,
+        "height": 64,
+        "byteSize": 4019,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/variant-03.png",
+        "sha256": "03c5511c3defe30740554479927a4cdedce040ad4c5c988faf842cd4ddb232a2",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/7be09cc3-9687-4da0-bcf0-17f76ba0ec41/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 4,
+      "label": "몸 더 짧고 다부지게",
+      "group": "비율",
+      "seed": 101304,
+      "change": "Keep the head and face unchanged. Shorten the torso and legs by about 20 percent and broaden chest and forearms slightly for a squat powerful fighter. Lower the head with the shorter body, keeping feet on the original baseline. Preserve original outfit and relaxed standing pose.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Edit this tiger sprite. Keep its exact character identity, broad adult face, relaxed smiling squint, amber fur and cream cheek shapes, near-front view, standing pose, rounded pixel shading and crisp native pixel grid. Preserve everything except the single change below. Keep the entire character inside the same 64x64 transparent canvas with ears and feet visible; do not add a floor, shadow, text, weapon or props.\nKeep the head and face unchanged. Shorten the torso and legs by about 20 percent and broaden chest and forearms slightly for a squat powerful fighter. Lower the head with the shorter body, keeping feet on the original baseline. Preserve original outfit and relaxed standing pose.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101304
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"eaa87dd1-5411-4931-ba92-a9c07bdab55c\",\n  \"image_id\": \"d44c67c2-cf7e-5194-afc8-03eeda13c08d\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"d44c67c2-cf7e-5194-afc8-03eeda13c08d\",\n  \"job_id\": \"eaa87dd1-5411-4931-ba92-a9c07bdab55c\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/eaa87dd1-5411-4931-ba92-a9c07bdab55c/download\"\n}\nPoll get_image(job_id=\"eaa87dd1-5411-4931-ba92-a9c07bdab55c\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "eaa87dd1-5411-4931-ba92-a9c07bdab55c",
+          "image_id": "d44c67c2-cf7e-5194-afc8-03eeda13c08d",
+          "status": "processing",
+          "source_image_id": "d44c67c2-cf7e-5194-afc8-03eeda13c08d",
+          "job_id": "eaa87dd1-5411-4931-ba92-a9c07bdab55c",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/eaa87dd1-5411-4931-ba92-a9c07bdab55c/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "eaa87dd1-5411-4931-ba92-a9c07bdab55c",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/eaa87dd1-5411-4931-ba92-a9c07bdab55c/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/eaa87dd1-5411-4931-ba92-a9c07bdab55c/download"
+        ],
+        "asset": {
+          "id": "d44c67c2-cf7e-5194-afc8-03eeda13c08d",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: eaa87dd1-5411-4931-ba92-a9c07bdab55c\njob_id: eaa87dd1-5411-4931-ba92-a9c07bdab55c\nframes: 1\ntransparent: yes\nasset_id: d44c67c2-cf7e-5194-afc8-03eeda13c08d\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/eaa87dd1-5411-4931-ba92-a9c07bdab55c/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-04.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-04.png",
+        "sha256": "0404acf5a40dda6819c55b62641733df3ad0f9cf0261ddbe1fa78c78c60ef93f",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3440,
+        "alphaBBox": [
+          7,
+          5,
+          54,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/variant-04.png",
+        "sha256": "8b4055ea70e38afd27a1ff5ec0d97a6073333a46c3730b1ba2c4d6d4730b9485",
+        "width": 47,
+        "height": 58,
+        "sourceRect": {
+          "x": 7,
+          "y": 5,
+          "width": 47,
+          "height": 58
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/eaa87dd1-5411-4931-ba92-a9c07bdab55c/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 5,
+      "label": "중년의 노련한 격투가",
+      "group": "나이",
+      "seed": 101305,
+      "change": "Make the same tiger look middle-aged and experienced. Add a few restrained pixel creases at the outer eyes and a heavier relaxed brow, slightly fuller cream cheek fur and a stronger short muzzle. Keep its friendly smiling squint, original fur colors, proportions, outfit and pose. No beard, glasses or accessories.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Edit this tiger sprite. Keep its exact character identity, broad adult face, relaxed smiling squint, amber fur and cream cheek shapes, near-front view, standing pose, rounded pixel shading and crisp native pixel grid. Preserve everything except the single change below. Keep the entire character inside the same 64x64 transparent canvas with ears and feet visible; do not add a floor, shadow, text, weapon or props.\nMake the same tiger look middle-aged and experienced. Add a few restrained pixel creases at the outer eyes and a heavier relaxed brow, slightly fuller cream cheek fur and a stronger short muzzle. Keep its friendly smiling squint, original fur colors, proportions, outfit and pose. No beard, glasses or accessories.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101305
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"38ab624a-343d-471a-be4d-164fd1897fcd\",\n  \"image_id\": \"f8886586-77e0-549a-a0f0-39bd081a4838\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"f8886586-77e0-549a-a0f0-39bd081a4838\",\n  \"job_id\": \"38ab624a-343d-471a-be4d-164fd1897fcd\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/38ab624a-343d-471a-be4d-164fd1897fcd/download\"\n}\nPoll get_image(job_id=\"38ab624a-343d-471a-be4d-164fd1897fcd\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "38ab624a-343d-471a-be4d-164fd1897fcd",
+          "image_id": "f8886586-77e0-549a-a0f0-39bd081a4838",
+          "status": "processing",
+          "source_image_id": "f8886586-77e0-549a-a0f0-39bd081a4838",
+          "job_id": "38ab624a-343d-471a-be4d-164fd1897fcd",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/38ab624a-343d-471a-be4d-164fd1897fcd/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "38ab624a-343d-471a-be4d-164fd1897fcd",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/38ab624a-343d-471a-be4d-164fd1897fcd/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/38ab624a-343d-471a-be4d-164fd1897fcd/download"
+        ],
+        "asset": {
+          "id": "f8886586-77e0-549a-a0f0-39bd081a4838",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: 38ab624a-343d-471a-be4d-164fd1897fcd\njob_id: 38ab624a-343d-471a-be4d-164fd1897fcd\nframes: 1\ntransparent: yes\nasset_id: f8886586-77e0-549a-a0f0-39bd081a4838\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/38ab624a-343d-471a-be4d-164fd1897fcd/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-05.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-05.png",
+        "sha256": "7375b789f8bf222c76b20feec0596c065bd4427bc878fec0ffb2dab5b2c3061d",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3557,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/variant-05.png",
+        "sha256": "90f4ace946fc21c6eda1d77d741d21b7327e3e0208d2a324004669bc1c7e31e1",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/38ab624a-343d-471a-be4d-164fd1897fcd/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 6,
+      "label": "나이 든 호방한 고수",
+      "group": "나이",
+      "seed": 101306,
+      "change": "Make the same tiger a friendly older martial-arts veteran, about late fifties. Add subtle gray fur at the temples and outer cheek tufts, a few readable eye creases and slightly bushier cream brows. Keep the warm smiling squint, amber face, proportions, original outfit and pose. No human beard, glasses or props.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Edit this tiger sprite. Keep its exact character identity, broad adult face, relaxed smiling squint, amber fur and cream cheek shapes, near-front view, standing pose, rounded pixel shading and crisp native pixel grid. Preserve everything except the single change below. Keep the entire character inside the same 64x64 transparent canvas with ears and feet visible; do not add a floor, shadow, text, weapon or props.\nMake the same tiger a friendly older martial-arts veteran, about late fifties. Add subtle gray fur at the temples and outer cheek tufts, a few readable eye creases and slightly bushier cream brows. Keep the warm smiling squint, amber face, proportions, original outfit and pose. No human beard, glasses or props.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101306
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"c4777dda-5fc6-4374-bb6a-a2cc7e147792\",\n  \"image_id\": \"7d74f5df-dcd7-5c2a-845f-ea83b9979985\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"7d74f5df-dcd7-5c2a-845f-ea83b9979985\",\n  \"job_id\": \"c4777dda-5fc6-4374-bb6a-a2cc7e147792\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/c4777dda-5fc6-4374-bb6a-a2cc7e147792/download\"\n}\nPoll get_image(job_id=\"c4777dda-5fc6-4374-bb6a-a2cc7e147792\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "c4777dda-5fc6-4374-bb6a-a2cc7e147792",
+          "image_id": "7d74f5df-dcd7-5c2a-845f-ea83b9979985",
+          "status": "processing",
+          "source_image_id": "7d74f5df-dcd7-5c2a-845f-ea83b9979985",
+          "job_id": "c4777dda-5fc6-4374-bb6a-a2cc7e147792",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/c4777dda-5fc6-4374-bb6a-a2cc7e147792/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "c4777dda-5fc6-4374-bb6a-a2cc7e147792",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/c4777dda-5fc6-4374-bb6a-a2cc7e147792/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/c4777dda-5fc6-4374-bb6a-a2cc7e147792/download"
+        ],
+        "asset": {
+          "id": "7d74f5df-dcd7-5c2a-845f-ea83b9979985",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: c4777dda-5fc6-4374-bb6a-a2cc7e147792\njob_id: c4777dda-5fc6-4374-bb6a-a2cc7e147792\nframes: 1\ntransparent: yes\nasset_id: 7d74f5df-dcd7-5c2a-845f-ea83b9979985\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/c4777dda-5fc6-4374-bb6a-a2cc7e147792/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-06.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-06.png",
+        "sha256": "17eec882f36aa075dc64e19af6053a8e4047a063b6407e46898429df4b8dbc63",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3790,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/variant-06.png",
+        "sha256": "bea024da109349491ff878ea93ccefd49cc5e10348304cf80853ffd2cea7fda7",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/c4777dda-5fc6-4374-bb6a-a2cc7e147792/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 7,
+      "label": "올리브색 무술복",
+      "group": "의상",
+      "seed": 101307,
+      "change": "Change only clothing to a muted olive-green short wrap-front martial-arts jacket with simple rolled sleeves, matching olive trousers and a dark brown sash. Keep broad ivory wrist wraps and bare tiger feet. Preserve the exact original head, face, body proportions, fur colors and relaxed pose.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Edit this tiger sprite. Keep its exact character identity, broad adult face, relaxed smiling squint, amber fur and cream cheek shapes, near-front view, standing pose, rounded pixel shading and crisp native pixel grid. Preserve everything except the single change below. Keep the entire character inside the same 64x64 transparent canvas with ears and feet visible; do not add a floor, shadow, text, weapon or props.\nChange only clothing to a muted olive-green short wrap-front martial-arts jacket with simple rolled sleeves, matching olive trousers and a dark brown sash. Keep broad ivory wrist wraps and bare tiger feet. Preserve the exact original head, face, body proportions, fur colors and relaxed pose.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101307
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"dc5106b1-eed7-4264-b712-768d68806109\",\n  \"image_id\": \"a5113090-7a8b-575c-aaa0-e33d51bea7fe\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"a5113090-7a8b-575c-aaa0-e33d51bea7fe\",\n  \"job_id\": \"dc5106b1-eed7-4264-b712-768d68806109\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/dc5106b1-eed7-4264-b712-768d68806109/download\"\n}\nPoll get_image(job_id=\"dc5106b1-eed7-4264-b712-768d68806109\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "dc5106b1-eed7-4264-b712-768d68806109",
+          "image_id": "a5113090-7a8b-575c-aaa0-e33d51bea7fe",
+          "status": "processing",
+          "source_image_id": "a5113090-7a8b-575c-aaa0-e33d51bea7fe",
+          "job_id": "dc5106b1-eed7-4264-b712-768d68806109",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/dc5106b1-eed7-4264-b712-768d68806109/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "dc5106b1-eed7-4264-b712-768d68806109",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/dc5106b1-eed7-4264-b712-768d68806109/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/dc5106b1-eed7-4264-b712-768d68806109/download"
+        ],
+        "asset": {
+          "id": "a5113090-7a8b-575c-aaa0-e33d51bea7fe",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: dc5106b1-eed7-4264-b712-768d68806109\njob_id: dc5106b1-eed7-4264-b712-768d68806109\nframes: 1\ntransparent: yes\nasset_id: a5113090-7a8b-575c-aaa0-e33d51bea7fe\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/dc5106b1-eed7-4264-b712-768d68806109/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-07.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-07.png",
+        "sha256": "aa20bf8d0af699a99076e897ce37e128c25e7fe837c8ef4a72bcee8bdd2990a5",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3776,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/variant-07.png",
+        "sha256": "621e6e24c0cce9fbdc846b332d03ce8ce33b7cab6cbb5392d79d801741c9f414",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/dc5106b1-eed7-4264-b712-768d68806109/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 8,
+      "label": "아이보리 도복 · 청록 바지",
+      "group": "의상",
+      "seed": 101308,
+      "change": "Change only clothing to a warm ivory short wrap-front martial-arts top with loose short sleeves, dark teal trousers and a rust-red sash. Retain ivory wrist wraps and bare tiger feet. Preserve the exact original head, face, body proportions, fur colors and standing pose.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Edit this tiger sprite. Keep its exact character identity, broad adult face, relaxed smiling squint, amber fur and cream cheek shapes, near-front view, standing pose, rounded pixel shading and crisp native pixel grid. Preserve everything except the single change below. Keep the entire character inside the same 64x64 transparent canvas with ears and feet visible; do not add a floor, shadow, text, weapon or props.\nChange only clothing to a warm ivory short wrap-front martial-arts top with loose short sleeves, dark teal trousers and a rust-red sash. Retain ivory wrist wraps and bare tiger feet. Preserve the exact original head, face, body proportions, fur colors and standing pose.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101308
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"9306baf1-8908-4fa8-8385-3f71e4bb6e7e\",\n  \"image_id\": \"ac500d8c-1cad-5c0d-a11e-bf4a7b6fd321\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"ac500d8c-1cad-5c0d-a11e-bf4a7b6fd321\",\n  \"job_id\": \"9306baf1-8908-4fa8-8385-3f71e4bb6e7e\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/9306baf1-8908-4fa8-8385-3f71e4bb6e7e/download\"\n}\nPoll get_image(job_id=\"9306baf1-8908-4fa8-8385-3f71e4bb6e7e\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "9306baf1-8908-4fa8-8385-3f71e4bb6e7e",
+          "image_id": "ac500d8c-1cad-5c0d-a11e-bf4a7b6fd321",
+          "status": "processing",
+          "source_image_id": "ac500d8c-1cad-5c0d-a11e-bf4a7b6fd321",
+          "job_id": "9306baf1-8908-4fa8-8385-3f71e4bb6e7e",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/9306baf1-8908-4fa8-8385-3f71e4bb6e7e/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "9306baf1-8908-4fa8-8385-3f71e4bb6e7e",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/9306baf1-8908-4fa8-8385-3f71e4bb6e7e/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/9306baf1-8908-4fa8-8385-3f71e4bb6e7e/download"
+        ],
+        "asset": {
+          "id": "ac500d8c-1cad-5c0d-a11e-bf4a7b6fd321",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: 9306baf1-8908-4fa8-8385-3f71e4bb6e7e\njob_id: 9306baf1-8908-4fa8-8385-3f71e4bb6e7e\nframes: 1\ntransparent: yes\nasset_id: ac500d8c-1cad-5c0d-a11e-bf4a7b6fd321\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/9306baf1-8908-4fa8-8385-3f71e4bb6e7e/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-08.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-08.png",
+        "sha256": "b0e174298b04f3838696a62eb6b9994001fc22f5e68f8da2a6e4e8a9bd4463a4",
+        "width": 64,
+        "height": 64,
+        "byteSize": 4004,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/variant-08.png",
+        "sha256": "28fdb3776a1b6c2d569cf49411d98cba55a448aaba69b5d71273381f5443977d",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/9306baf1-8908-4fa8-8385-3f71e4bb6e7e/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 9,
+      "label": "남색 조끼 · 붉은 허리띠",
+      "group": "의상",
+      "seed": 101309,
+      "change": "Change only clothing to a deep navy sleeveless short vest with a simple open front, original sand-colored loose trousers and a muted burgundy waist sash. Keep ivory wraps and bare tiger feet. Preserve the exact original head, face, body proportions, fur colors and pose.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Edit this tiger sprite. Keep its exact character identity, broad adult face, relaxed smiling squint, amber fur and cream cheek shapes, near-front view, standing pose, rounded pixel shading and crisp native pixel grid. Preserve everything except the single change below. Keep the entire character inside the same 64x64 transparent canvas with ears and feet visible; do not add a floor, shadow, text, weapon or props.\nChange only clothing to a deep navy sleeveless short vest with a simple open front, original sand-colored loose trousers and a muted burgundy waist sash. Keep ivory wraps and bare tiger feet. Preserve the exact original head, face, body proportions, fur colors and pose.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101309
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3\",\n  \"image_id\": \"fd79f36f-3481-55ef-920f-7ee181f0a130\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"fd79f36f-3481-55ef-920f-7ee181f0a130\",\n  \"job_id\": \"cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3/download\"\n}\nPoll get_image(job_id=\"cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3",
+          "image_id": "fd79f36f-3481-55ef-920f-7ee181f0a130",
+          "status": "processing",
+          "source_image_id": "fd79f36f-3481-55ef-920f-7ee181f0a130",
+          "job_id": "cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3/download"
+        ],
+        "asset": {
+          "id": "fd79f36f-3481-55ef-920f-7ee181f0a130",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3\njob_id: cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3\nframes: 1\ntransparent: yes\nasset_id: fd79f36f-3481-55ef-920f-7ee181f0a130\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-09.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-09.png",
+        "sha256": "ff9898ed5e1dd431877b9436c3cb7d47899d71e6ea7b3abf3fc9e343edbf6e22",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3646,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/variant-09.png",
+        "sha256": "cae7603c06ec7cd3bd357ef3825dd9e751532870255cbde52f507424913c4e91",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/cc6a1a8e-be22-4d98-80f5-73b5ee89b1b3/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 10,
+      "label": "적갈색 도복 · 짙은 바지",
+      "group": "의상",
+      "seed": 101310,
+      "change": "Change only clothing to a warm rust-red short martial-arts tunic with simple rolled sleeves, charcoal loose trousers and a sand-colored sash. Keep ivory wrist wraps and bare tiger feet. Preserve the exact original head, face, body proportions, fur colors and relaxed standing pose.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Edit this tiger sprite. Keep its exact character identity, broad adult face, relaxed smiling squint, amber fur and cream cheek shapes, near-front view, standing pose, rounded pixel shading and crisp native pixel grid. Preserve everything except the single change below. Keep the entire character inside the same 64x64 transparent canvas with ears and feet visible; do not add a floor, shadow, text, weapon or props.\nChange only clothing to a warm rust-red short martial-arts tunic with simple rolled sleeves, charcoal loose trousers and a sand-colored sash. Keep ivory wrist wraps and bare tiger feet. Preserve the exact original head, face, body proportions, fur colors and relaxed standing pose.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101310
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"65c57a6c-9229-405e-874f-abeab3dd8fc9\",\n  \"image_id\": \"9ebea2ed-c77a-5cfd-9266-ebf2d27c12d7\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"9ebea2ed-c77a-5cfd-9266-ebf2d27c12d7\",\n  \"job_id\": \"65c57a6c-9229-405e-874f-abeab3dd8fc9\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/65c57a6c-9229-405e-874f-abeab3dd8fc9/download\"\n}\nPoll get_image(job_id=\"65c57a6c-9229-405e-874f-abeab3dd8fc9\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "65c57a6c-9229-405e-874f-abeab3dd8fc9",
+          "image_id": "9ebea2ed-c77a-5cfd-9266-ebf2d27c12d7",
+          "status": "processing",
+          "source_image_id": "9ebea2ed-c77a-5cfd-9266-ebf2d27c12d7",
+          "job_id": "65c57a6c-9229-405e-874f-abeab3dd8fc9",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/65c57a6c-9229-405e-874f-abeab3dd8fc9/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "65c57a6c-9229-405e-874f-abeab3dd8fc9",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/65c57a6c-9229-405e-874f-abeab3dd8fc9/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/65c57a6c-9229-405e-874f-abeab3dd8fc9/download"
+        ],
+        "asset": {
+          "id": "9ebea2ed-c77a-5cfd-9266-ebf2d27c12d7",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: 65c57a6c-9229-405e-874f-abeab3dd8fc9\njob_id: 65c57a6c-9229-405e-874f-abeab3dd8fc9\nframes: 1\ntransparent: yes\nasset_id: 9ebea2ed-c77a-5cfd-9266-ebf2d27c12d7\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/65c57a6c-9229-405e-874f-abeab3dd8fc9/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-10.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/originals/variant-10.png",
+        "sha256": "afb519e782babe2137c896922ff8633bb526b35b80c4b35f2c6e9cd1f5602bfa",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3731,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/variant-10.png",
+        "sha256": "2c0868887180670cffa1e4ae07bf130d94e04b88e89fe128f8b1f51de58b620a",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/65c57a6c-9229-405e-874f-abeab3dd8fc9/download",
+        "durationSeconds": 1
+      }
+    }
+  ],
+  "selection": null,
+  "queueLimitErrors": [
+    {
+      "id": 9,
+      "label": "남색 조끼 · 붉은 허리띠",
+      "group": "의상",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Edit this tiger sprite. Keep its exact character identity, broad adult face, relaxed smiling squint, amber fur and cream cheek shapes, near-front view, standing pose, rounded pixel shading and crisp native pixel grid. Preserve everything except the single change below. Keep the entire character inside the same 64x64 transparent canvas with ears and feet visible; do not add a floor, shadow, text, weapon or props.\nChange only clothing to a deep navy sleeveless short vest with a simple open front, original sand-colored loose trousers and a muted burgundy waist sash. Keep ivory wraps and bare tiger feet. Preserve the exact original head, face, body proportions, fur colors and pose.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101309
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "error: Maximum 8 concurrent background jobs allowed (Tier 1). You have 8 active jobs."
+          }
+        ],
+        "isError": true
+      }
+    }
+  ],
+  "userFeedback": "이거 제외하곤 전부 다 별로야. 저걸 기준으로 바리에이션 10개 정도. 비율·나이·머리 크기·옷차림 변형.",
+  "completedCount": 10,
+  "requests": 10,
+  "retries": 0,
+  "actualCostGenerations": 50,
+  "balanceAfter": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1833\ngenerations_used: 167\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "baseFrame": {
+    "index": 0,
+    "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/base.png",
+    "sha256": "42f414a02c34ebd74010c39ceff8c81010b08720fe688381eb2d5f09d05dfb37",
+    "width": 45,
+    "height": 62,
+    "sourceRect": {
+      "x": 7,
+      "y": 1,
+      "width": 45,
+      "height": 62
+    },
+    "pivot": {
+      "x": 25,
+      "y": 0
+    },
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/e0416efe-9298-4b98-81b3-09915bd580c5/download",
+    "durationSeconds": 1
+  },
+  "review": {
+    "contact": {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/review/contact.png",
+      "sha256": "be3339dd73c00b2396f03a696ce8f7fc103afcbbb72e3cc0d688936c9c90b1e7",
+      "width": 1056,
+      "height": 1116
+    },
+    "method": "투명 여백만 크롭, 비교용 정수 3배 확대와 원본 1배. 원본 중앙 가로 피벗과 발 바닥 정렬.",
+    "selection": null,
+    "runtimeVerified": false,
+    "notes": "비율·나이는 요청 의도이며 자동 측정 결과가 아님. 게임 연결 없음.",
+    "visualInspection": {
+      "identity": "기준 원본의 느긋한 표정, 앞을 보는 방향과 도트 명암이 대부분 유지됨. 2번은 큰 머리와 귀·눈 표현의 변화가 상대적으로 큼.",
+      "strongestChanges": [
+        2,
+        6,
+        8
+      ],
+      "subtleChanges": [
+        1,
+        5
+      ],
+      "notes": "비율 후보를 같은 크기로 재조정하지 않았음. 2번 높이57px, 4번58px, 나머지와 기준62px. 정확한 등신·연령 수치를 검증한 것은 아님."
+    }
+  }
+}

@@ -1,0 +1,241 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #8b9a8c;
+  color: #f2ead7;
+  font:
+    14px system-ui,
+    sans-serif;
+}
+button,
+select {
+  font: inherit;
+}
+button,
+select {
+  background: #344d41;
+  color: #f0e6cd;
+  border: 1px solid #8c9b79;
+  border-radius: 5px;
+  padding: 7px 10px;
+}
+button {
+  cursor: pointer;
+}
+button:hover {
+  background: #48604b;
+}
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid #e5c989;
+  outline-offset: 2px;
+}
+[hidden] {
+  display: none !important;
+}
+.atlas-frame {
+  position: absolute;
+  inset: 0;
+}
+.atlas-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  outline: none;
+}
+.atlas-header {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 4;
+  pointer-events: none;
+}
+.atlas-header > * {
+  pointer-events: auto;
+}
+.atlas-header label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #293c32e0;
+  border: 1px solid #b4ae8780;
+  border-radius: 7px;
+  padding: 4px 6px 4px 12px;
+}
+.atlas-header label span {
+  color: #c8c9b7;
+  font-size: 12px;
+}
+.atlas-info {
+  position: absolute;
+  left: 22px;
+  top: 78px;
+  width: 285px;
+  pointer-events: none;
+  text-shadow: 0 2px 2px #304337b0;
+}
+.atlas-info h1 {
+  margin: 0 0 5px;
+  color: #384b3a;
+  font-size: 25px;
+  text-shadow: 0 1px 1px #e9e5c9c0;
+}
+.atlas-info p {
+  margin: 0 0 8px;
+  color: #f4ebd4;
+  font-size: 13px;
+}
+.atlas-progress {
+  display: flex;
+  gap: 7px;
+}
+.atlas-progress i {
+  width: 19px;
+  height: 19px;
+  border: 2px solid #e4ddbb;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px #384d3890;
+  background: #63795a60;
+}
+.atlas-progress i[data-done='true'] {
+  background: #d1cd93;
+  border-color: #f2e3b6;
+}
+.atlas-map {
+  position: absolute;
+  right: 16px;
+  top: 72px;
+  padding: 4px;
+  border: 1px solid #b4af8780;
+  border-radius: 8px;
+  background: #354b40da;
+  z-index: 3;
+}
+.atlas-map canvas {
+  width: 216px;
+  height: 170px;
+  display: block;
+}
+.atlas-map p {
+  margin: 0 0 4px;
+  text-align: center;
+  font-size: 11px;
+  color: #d3d4bd;
+}
+.atlas-interaction {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  text-align: center;
+  background: #eeddbcbf;
+  border: 1px solid #b4a06f;
+  color: #354b3d;
+  box-shadow: 0 3px 10px #293e3430;
+  min-width: 135px;
+  padding: 6px 10px;
+}
+.atlas-interaction strong {
+  display: block;
+  font-size: 14px;
+}
+.atlas-interaction span {
+  display: block;
+  font-size: 12px;
+  margin-top: 3px;
+}
+.atlas-interaction[data-busy='true'] {
+  pointer-events: none;
+}
+.atlas-gauge {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  background: conic-gradient(#eed79c var(--progress), #526b4f80 0);
+  box-shadow: 0 1px 5px #2c4239a0;
+}
+.atlas-gauge::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: #6a7f68;
+}
+.atlas-notice {
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  transform: translateX(-50%);
+  background: #2e483adb;
+  color: #efe8cf;
+  border-radius: 5px;
+  padding: 9px 18px;
+  max-width: 650px;
+  text-align: center;
+}
+.atlas-footer {
+  position: absolute;
+  left: 14px;
+  bottom: 13px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 3;
+  font-size: 12px;
+  text-shadow: 0 1px 3px #2a4137;
+}
+.atlas-footer p {
+  margin: 0;
+}
+.atlas-footer .quiet {
+  margin-left: auto;
+  color: #ddd9c3;
+}
+.atlas-description {
+  position: absolute;
+  left: 50%;
+  top: 72px;
+  transform: translateX(-50%);
+  max-width: 540px;
+  padding: 14px 18px;
+  border: 1px solid #b4af8780;
+  border-radius: 6px;
+  background: #304c40ee;
+  z-index: 5;
+}
+.atlas-description p {
+  margin: 0;
+  line-height: 1.7;
+}
+.atlas-description ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+  line-height: 1.8;
+}
+.atlas-error {
+  position: absolute;
+  inset: 25%;
+  padding: 25px;
+  background: #304b3deb;
+  line-height: 1.8;
+}
+
+.atlas-header a {
+  color: #f0e6cd;
+  background: #344d41;
+  border: 1px solid #8c9b79;
+  border-radius: 5px;
+  padding: 7px 10px;
+  text-decoration: none;
+}

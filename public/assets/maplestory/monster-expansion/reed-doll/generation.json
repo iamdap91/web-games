@@ -1,0 +1,3088 @@
+{
+  "id": "reed-doll",
+  "name": "갈대인형",
+  "theme": "wetland",
+  "role": "charger",
+  "appearance": "Hostile stout bundle-of-reeds golem, tightly bound straw torso, forked reed arms and a dark woven mask, bent stout legs.",
+  "motions": {
+    "stand": "Facing left, forked reed fingers flex, shoulders lift and lower, loose reed tips on the mask rustle independently while bent stout legs remain braced, return to original guard.",
+    "move": "Facing left, stout alternating walking cycle in place with visible bent leg lifts and foot planting, forked reed arms counter-swing and tightly bound straw torso keeps its shape.",
+    "attack1": "Facing left, sink into bent legs and draw both forked reed arms back, then drive one broad shoulder and both rigid arms forward left in a heavy body shove, hold contact and retreat into the original planted guard.",
+    "hit1": "Facing left, mask tilts back and reed arms lift to shield the torso, bound waist bends and legs brace, return to the original guard.",
+    "die1": "Facing left, bound legs buckle, reed arms sag and straw torso falls onto its side, loose tips settle while the dark mask remains attached. Finish a motionless intact heap, no new scattered objects."
+  },
+  "assetId": "ai/monster-reed-doll",
+  "localRoot": "public/assets/maplestory/monster-expansion/reed-doll",
+  "attempts": [
+    {
+      "motion": "original",
+      "attempt": 1,
+      "key": "monster-a-reed-doll-original-01",
+      "jobId": "c0becb8d-648a-4a80-b003-bbff4462b8b0",
+      "balanceBefore": 517,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Hostile stout bundle-of-reeds golem, tightly bound straw torso, forked reed arms and a dark woven mask, bent stout legs. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 614011,
+        "text_guidance_scale": 8
+      },
+      "queueResponse": "id: c0becb8d-648a-4a80-b003-bbff4462b8b0\njob_id: c0becb8d-648a-4a80-b003-bbff4462b8b0\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Hostile stout bundle-of-reeds golem, tightly bound straw torso, forked reed arms and a dark woven mask, bent stout legs. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: 88c60909-0a04-5848-a03c-3fc58ffc667f\nasset_status: pending (saved when generation completes)\nseed: 614011\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"c0becb8d-648a-4a80-b003-bbff4462b8b0\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: c0becb8d-648a-4a80-b003-bbff4462b8b0\njob_id: c0becb8d-648a-4a80-b003-bbff4462b8b0\nframes: 1\ntransparent: yes\nasset_id: 88c60909-0a04-5848-a03c-3fc58ffc667f\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/c0becb8d-648a-4a80-b003-bbff4462b8b0/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/c0becb8d-648a-4a80-b003-bbff4462b8b0/download",
+      "localPath": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-01.png",
+      "sha256": "0367d87dcaaec4157a4b23001f2062735e270834b715e3f2cabadde49c879fed",
+      "byteSize": 3188,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 14,
+        "y": 3,
+        "width": 36,
+        "height": 56
+      },
+      "visiblePixels": 1187,
+      "paletteSize": 26,
+      "chargedGenerations": 1,
+      "nativeFacing": "left",
+      "selection": "accepted after silhouette / anatomy / native alpha review"
+    },
+    {
+      "motion": "original",
+      "attempt": 2,
+      "key": "monster-a-reed-doll-original-02",
+      "jobId": "0a5c6e5c-1cce-4f4b-a3f0-2ef5e7b17209",
+      "balanceBefore": 537,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. A stout hostile GOLEM MADE ONLY FROM VISIBLE DRY REEDS AND STRAW, a broad coarse torso of vertical golden reed stalks tied with simple dark cords, two fork-shaped branchlike reed arms with clearly forked ends, thick bent reed-bundle legs, a flat black woven mask with two small eye holes attached to the reeds, reed tips splay from the shoulders. No fabric, no robe, no hood, no armor, no belt, no human skin, no hands or boots. A crude bundle of straw, not a mummy or knight. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 615011,
+        "text_guidance_scale": 8
+      },
+      "queueResponse": "id: 0a5c6e5c-1cce-4f4b-a3f0-2ef5e7b17209\njob_id: 0a5c6e5c-1cce-4f4b-a3f0-2ef5e7b17209\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. A stout hostile GOLEM MADE ONLY FROM VISIBLE DRY REEDS AND STRAW, a broad coarse torso of vertical golden reed stalks tied with simple dark cords, two fork-shaped branchlike reed arms with clearly forked ends, thick bent reed-bundle legs, a flat black woven mask with two small eye holes attached to the reeds, reed tips splay from the shoulders. No fabric, no robe, no hood, no armor, no belt, no human skin, no hands or boots. A crude bundle of straw, not a mummy or knight. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: 7887a1ba-2175-5a39-bb0d-f716e7afd763\nasset_status: pending (saved when generation completes)\nseed: 615011\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"0a5c6e5c-1cce-4f4b-a3f0-2ef5e7b17209\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 0a5c6e5c-1cce-4f4b-a3f0-2ef5e7b17209\njob_id: 0a5c6e5c-1cce-4f4b-a3f0-2ef5e7b17209\nframes: 1\ntransparent: yes\nasset_id: 7887a1ba-2175-5a39-bb0d-f716e7afd763\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/0a5c6e5c-1cce-4f4b-a3f0-2ef5e7b17209/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/0a5c6e5c-1cce-4f4b-a3f0-2ef5e7b17209/download",
+      "localPath": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-02.png",
+      "sha256": "ffef535c7d6d952502f838c300ad21dba8f75f4c00e4086edcdbdf2d32125149",
+      "byteSize": 3716,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 4,
+        "y": 4,
+        "width": 53,
+        "height": 56
+      },
+      "visiblePixels": 1587,
+      "paletteSize": 21,
+      "chargedGenerations": 1,
+      "nativeFacing": "left",
+      "selection": "accepted after silhouette / anatomy / native alpha review"
+    },
+    {
+      "motion": "original",
+      "attempt": 3,
+      "key": "monster-a-reed-doll-original-03",
+      "jobId": "5054ed56-3798-49d0-813e-d8dc5572e81d",
+      "balanceBefore": 558,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. A NON-HUMANOID living bundle of dry marsh REEDS. Its entire body is ONE FAT ROUND CYLINDRICAL SHEAF OF GOLDEN STRAW tied at the middle with two thin dark ropes. A flat black woven mask with two little angry eye holes is attached directly on the front of the straw bundle; no separate human head or neck. TWO BRANCHED FORKED TWIG ARMS sprout directly from the sides, ending in rough reed forks rather than hands. TWO SHORT BENT REED-ROOT FEET below the bundle. Loose straw tips splay everywhere. Reads unmistakably as animated straw / a hostile hay bale, not a person. No metal anywhere, no armor plates, no sword, no weapon, no cloth, no hood, no clothing, no chest armor, no human joints or boots. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 616011,
+        "text_guidance_scale": 8
+      },
+      "queueResponse": "id: 5054ed56-3798-49d0-813e-d8dc5572e81d\njob_id: 5054ed56-3798-49d0-813e-d8dc5572e81d\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. A NON-HUMANOID living bundle of dry marsh REEDS. Its entire body is ONE FAT ROUND CYLINDRICAL SHEAF OF GOLDEN STRAW tied at the middle with two thin dark ropes. A flat black woven mask with two little angry eye holes is attached directly on the front of the straw bundle; no separate human head or neck. TWO BRANCHED FORKED TWIG ARMS sprout directly from the sides, ending in rough reed forks rather than hands. TWO SHORT BENT REED-ROOT FEET below the bundle. Loose straw tips splay everywhere. Reads unmistakably as animated straw / a hostile hay bale, not a person. No metal anywhere, no armor plates, no sword, no weapon, no cloth, no hood, no clothing, no chest armor, no human joints or boots. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: 7fc1b978-863a-5547-bb76-4a44d7841908\nasset_status: pending (saved when generation completes)\nseed: 616011\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"5054ed56-3798-49d0-813e-d8dc5572e81d\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 5054ed56-3798-49d0-813e-d8dc5572e81d\njob_id: 5054ed56-3798-49d0-813e-d8dc5572e81d\nframes: 1\ntransparent: yes\nasset_id: 7fc1b978-863a-5547-bb76-4a44d7841908\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download",
+      "localPath": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+      "sha256": "85d10375d311ff60f80e41820d61bf780eb9f8f8b133ce9e10684903a8c2dd68",
+      "byteSize": 2482,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 12,
+        "y": 12,
+        "width": 39,
+        "height": 42
+      },
+      "visiblePixels": 1322,
+      "paletteSize": 25,
+      "chargedGenerations": 1,
+      "nativeFacing": "left",
+      "selection": "accepted after silhouette / anatomy / native alpha review"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-reed-doll-stand-01",
+      "jobId": "e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0",
+      "balanceBefore": 569,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 626001,
+        "action": "Facing left, forked reed fingers flex, shoulders lift and lower, loose reed tips on the mask rustle independently while bent stout legs remain braced, return to original guard. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download"
+      },
+      "queueResponse": "id: e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0\njob_id: e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0\naction: Facing left, forked reed fingers flex, shoulders lift and lower, loose reed tips on the mask rustle independently while bent stout legs remain braced, return to original guard. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626001\nasset_id: c0b65bc2-eba8-5566-8365-c7a923357cde\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0\njob_id: e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0\nframes: 5\ntransparent: yes\nasset_id: c0b65bc2-eba8-5566-8365-c7a923357cde\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+        "sha256": "85d10375d311ff60f80e41820d61bf780eb9f8f8b133ce9e10684903a8c2dd68",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 164,
+        "alphaDifferences": 129,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/00.png",
+          "sourceSha256": "4538a2ae2415f0ebc144df891a362989ea6eaf0a7e939bbbeb699698283d9dd3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 12,
+            "width": 39,
+            "height": 41
+          },
+          "visiblePixels": 1195,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/01.png",
+          "sourceSha256": "70e61e2f2c1ed80e973483905ec315acbd0b84aefcb717c8c56357fb05ea64a7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 11,
+            "width": 43,
+            "height": 42
+          },
+          "visiblePixels": 1220,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/02.png",
+          "sourceSha256": "a795cc1476c144bbdf4eef53d1a1920908e016269dbfaa2620559e1775f622e7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 10,
+            "width": 45,
+            "height": 43
+          },
+          "visiblePixels": 1230,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/03.png",
+          "sourceSha256": "765edae89150c9799bfcfd2de20488f3f078b6a4151f69181e50f1049670b2ed",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 11,
+            "width": 43,
+            "height": 42
+          },
+          "visiblePixels": 1222,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/04.png",
+          "sourceSha256": "01690ffd1e3d42b2e9a0bb6699c4d1ecf24a6856aa5b28314377b0ccfcd494a0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 12,
+            "width": 39,
+            "height": 41
+          },
+          "visiblePixels": 1189,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/reed-doll/review/stand-e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/00.png",
+          "sha256": "70e61e2f2c1ed80e973483905ec315acbd0b84aefcb717c8c56357fb05ea64a7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/01.png",
+          "sourceSha256": "70e61e2f2c1ed80e973483905ec315acbd0b84aefcb717c8c56357fb05ea64a7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/01.png",
+          "sha256": "a795cc1476c144bbdf4eef53d1a1920908e016269dbfaa2620559e1775f622e7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/02.png",
+          "sourceSha256": "a795cc1476c144bbdf4eef53d1a1920908e016269dbfaa2620559e1775f622e7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/02.png",
+          "sha256": "765edae89150c9799bfcfd2de20488f3f078b6a4151f69181e50f1049670b2ed",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/03.png",
+          "sourceSha256": "765edae89150c9799bfcfd2de20488f3f078b6a4151f69181e50f1049670b2ed",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/03.png",
+          "sha256": "01690ffd1e3d42b2e9a0bb6699c4d1ecf24a6856aa5b28314377b0ccfcd494a0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/04.png",
+          "sourceSha256": "01690ffd1e3d42b2e9a0bb6699c4d1ecf24a6856aa5b28314377b0ccfcd494a0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 비인간 갈대 다발 몸통의 팔·가닥·뿌리 발이 움직이며 같은 자세로 복귀하는 실제 대기."
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "monster-a-reed-doll-move-01",
+      "jobId": "c1b6d4f5-f5fc-4ecc-b729-82643e93326e",
+      "balanceBefore": 606,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626002,
+        "action": "Facing left, stout alternating walking cycle in place with visible bent leg lifts and foot planting, forked reed arms counter-swing and tightly bound straw torso keeps its shape. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download"
+      },
+      "queueResponse": "id: c1b6d4f5-f5fc-4ecc-b729-82643e93326e\njob_id: c1b6d4f5-f5fc-4ecc-b729-82643e93326e\naction: Facing left, stout alternating walking cycle in place with visible bent leg lifts and foot planting, forked reed arms counter-swing and tightly bound straw torso keeps its shape. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626002\nasset_id: 5c5511e7-232f-58a5-83f5-f40d6c61bdb1\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"c1b6d4f5-f5fc-4ecc-b729-82643e93326e\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: c1b6d4f5-f5fc-4ecc-b729-82643e93326e\njob_id: c1b6d4f5-f5fc-4ecc-b729-82643e93326e\nframes: 9\ntransparent: yes\nasset_id: 5c5511e7-232f-58a5-83f5-f40d6c61bdb1\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+        "sha256": "85d10375d311ff60f80e41820d61bf780eb9f8f8b133ce9e10684903a8c2dd68",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 131,
+        "alphaDifferences": 128,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/00.png",
+          "sourceSha256": "f14c9e1df7fca7adf7b7dea01ef9bd5309d153afabd17908725118260683c24b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 12,
+            "width": 39,
+            "height": 41
+          },
+          "visiblePixels": 1194,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/01.png",
+          "sourceSha256": "4f5ba75fde6120dfdfe7cd44ab7712a777240db9d03221e60e8ed35b48ad57c3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 11,
+            "width": 39,
+            "height": 41
+          },
+          "visiblePixels": 1187,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/02.png",
+          "sourceSha256": "ce6e5efa97053dbf30b6d2a77157f429985d53e8ed271f03af2f8d72ed63da84",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 11,
+            "width": 40,
+            "height": 42
+          },
+          "visiblePixels": 1190,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/03.png",
+          "sourceSha256": "63c455ed0963427ea4bb4e50d3e6771f0cf698c788b6c602ec4a782f8622541f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 11,
+            "width": 43,
+            "height": 41
+          },
+          "visiblePixels": 1185,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/04.png",
+          "sourceSha256": "e0a88b9084c0ab89707a8f0f69a4a0b6624f314fb531e2ddf86594d566eeb06c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 12,
+            "width": 46,
+            "height": 42
+          },
+          "visiblePixels": 1191,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/05.png",
+          "sourceSha256": "ea7f8cb525b560b45abefd5b66e08e0b3ee49378d99e1e77e6bc4ddadddc7914",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 11,
+            "width": 47,
+            "height": 42
+          },
+          "visiblePixels": 1197,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/06.png",
+          "sourceSha256": "6bb179205af717b7a959bce0c308578f198a9b395c3f9d420a6760d8f4b80539",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 11,
+            "width": 45,
+            "height": 42
+          },
+          "visiblePixels": 1190,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/07.png",
+          "sourceSha256": "0f2b90a51c95af32be16f329a1813938a9713ef7d6096e5f3b713ba6ebff48d4",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 11,
+            "width": 41,
+            "height": 42
+          },
+          "visiblePixels": 1190,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/08.png",
+          "sourceSha256": "994d73cb6502a5cda546f6fdc8323f042f7c82f390f9e40a792dc45a2636f04e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 12,
+            "width": 39,
+            "height": 41
+          },
+          "visiblePixels": 1194,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/reed-doll/review/move-c1b6d4f5-f5fc-4ecc-b729-82643e93326e.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/00.png",
+          "sha256": "4f5ba75fde6120dfdfe7cd44ab7712a777240db9d03221e60e8ed35b48ad57c3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/01.png",
+          "sourceSha256": "4f5ba75fde6120dfdfe7cd44ab7712a777240db9d03221e60e8ed35b48ad57c3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/01.png",
+          "sha256": "ce6e5efa97053dbf30b6d2a77157f429985d53e8ed271f03af2f8d72ed63da84",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/02.png",
+          "sourceSha256": "ce6e5efa97053dbf30b6d2a77157f429985d53e8ed271f03af2f8d72ed63da84",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/02.png",
+          "sha256": "63c455ed0963427ea4bb4e50d3e6771f0cf698c788b6c602ec4a782f8622541f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/03.png",
+          "sourceSha256": "63c455ed0963427ea4bb4e50d3e6771f0cf698c788b6c602ec4a782f8622541f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/03.png",
+          "sha256": "e0a88b9084c0ab89707a8f0f69a4a0b6624f314fb531e2ddf86594d566eeb06c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/04.png",
+          "sourceSha256": "e0a88b9084c0ab89707a8f0f69a4a0b6624f314fb531e2ddf86594d566eeb06c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/04.png",
+          "sha256": "ea7f8cb525b560b45abefd5b66e08e0b3ee49378d99e1e77e6bc4ddadddc7914",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/05.png",
+          "sourceSha256": "ea7f8cb525b560b45abefd5b66e08e0b3ee49378d99e1e77e6bc4ddadddc7914",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/05.png",
+          "sha256": "6bb179205af717b7a959bce0c308578f198a9b395c3f9d420a6760d8f4b80539",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/06.png",
+          "sourceSha256": "6bb179205af717b7a959bce0c308578f198a9b395c3f9d420a6760d8f4b80539",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/06.png",
+          "sha256": "0f2b90a51c95af32be16f329a1813938a9713ef7d6096e5f3b713ba6ebff48d4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/07.png",
+          "sourceSha256": "0f2b90a51c95af32be16f329a1813938a9713ef7d6096e5f3b713ba6ebff48d4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/07.png",
+          "sha256": "994d73cb6502a5cda546f6fdc8323f042f7c82f390f9e40a792dc45a2636f04e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/08.png",
+          "sourceSha256": "994d73cb6502a5cda546f6fdc8323f042f7c82f390f9e40a792dc45a2636f04e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 갈대 다발 형태를 유지하며 짧은 뿌리 발과 나뭇가지 팔이 번갈아 움직이는 실제 보행."
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "monster-a-reed-doll-attack1-01",
+      "jobId": "cadd57d7-50f4-4c25-8c74-4dd4c9e7580b",
+      "balanceBefore": 624,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626003,
+        "action": "Facing left, sink into bent legs and draw both forked reed arms back, then drive one broad shoulder and both rigid arms forward left in a heavy body shove, hold contact and retreat into the original planted guard. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download"
+      },
+      "queueResponse": "id: cadd57d7-50f4-4c25-8c74-4dd4c9e7580b\njob_id: cadd57d7-50f4-4c25-8c74-4dd4c9e7580b\naction: Facing left, sink into bent legs and draw both forked reed arms back, then drive one broad shoulder and both rigid arms forward left in a heavy body shove, hold contact and retreat into the original planted guard. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626003\nasset_id: 4d265a15-2d7c-5c62-be66-0d50d4bdf709\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"cadd57d7-50f4-4c25-8c74-4dd4c9e7580b\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: cadd57d7-50f4-4c25-8c74-4dd4c9e7580b\njob_id: cadd57d7-50f4-4c25-8c74-4dd4c9e7580b\nframes: 9\ntransparent: yes\nasset_id: 4d265a15-2d7c-5c62-be66-0d50d4bdf709\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+        "sha256": "85d10375d311ff60f80e41820d61bf780eb9f8f8b133ce9e10684903a8c2dd68",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 165,
+        "alphaDifferences": 131,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/00.png",
+          "sourceSha256": "645d69f133946834ed7135a6045e8ebc59630ac7ec803258fba42b57ab632124",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 12,
+            "width": 39,
+            "height": 41
+          },
+          "visiblePixels": 1191,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/01.png",
+          "sourceSha256": "c5d261f6bcd4cf8cd87d3afeb8e4de6ca35e6693763b302731146efd2148d71e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 13,
+            "width": 43,
+            "height": 40
+          },
+          "visiblePixels": 1198,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/02.png",
+          "sourceSha256": "0f7cacf89df739099a4a73d9964f056f9f26c7f621234ea15ca34aaf77f10700",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 13,
+            "width": 49,
+            "height": 40
+          },
+          "visiblePixels": 1205,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/03.png",
+          "sourceSha256": "800abe16ecbfc971efb8993975e4af498e3b633f16f21df841500a1bf9520c39",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 13,
+            "width": 46,
+            "height": 40
+          },
+          "visiblePixels": 1189,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/04.png",
+          "sourceSha256": "be274558e0b8bcf4d245375d267fe3284f9ea20b23dd61e287923acefdd2fbbd",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 13,
+            "width": 42,
+            "height": 40
+          },
+          "visiblePixels": 1178,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/05.png",
+          "sourceSha256": "3679c551732b23f1f467f2c30f4384d90fe58c7acbbf8d6acc009368ef9b14a2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 13,
+            "width": 42,
+            "height": 40
+          },
+          "visiblePixels": 1183,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/06.png",
+          "sourceSha256": "7911a9f94a812a2b601526dd7b529ef68540531011b9a18d0542262ae035de66",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 13,
+            "width": 43,
+            "height": 40
+          },
+          "visiblePixels": 1185,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/07.png",
+          "sourceSha256": "d65d0e678d220ecd0161dfc4f9062c59baa5643db76c08a001c4e09b8d09892b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 13,
+            "width": 41,
+            "height": 40
+          },
+          "visiblePixels": 1159,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/08.png",
+          "sourceSha256": "7823c1f4aceae785daa5b104977f43169a204a1bbd216b258a004a5d94ac7709",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 12,
+            "width": 39,
+            "height": 41
+          },
+          "visiblePixels": 1194,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/reed-doll/review/attack1-cadd57d7-50f4-4c25-8c74-4dd4c9e7580b.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/00.png",
+          "sha256": "c5d261f6bcd4cf8cd87d3afeb8e4de6ca35e6693763b302731146efd2148d71e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/01.png",
+          "sourceSha256": "c5d261f6bcd4cf8cd87d3afeb8e4de6ca35e6693763b302731146efd2148d71e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/01.png",
+          "sha256": "0f7cacf89df739099a4a73d9964f056f9f26c7f621234ea15ca34aaf77f10700",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/02.png",
+          "sourceSha256": "0f7cacf89df739099a4a73d9964f056f9f26c7f621234ea15ca34aaf77f10700",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/02.png",
+          "sha256": "800abe16ecbfc971efb8993975e4af498e3b633f16f21df841500a1bf9520c39",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/03.png",
+          "sourceSha256": "800abe16ecbfc971efb8993975e4af498e3b633f16f21df841500a1bf9520c39",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/03.png",
+          "sha256": "be274558e0b8bcf4d245375d267fe3284f9ea20b23dd61e287923acefdd2fbbd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/04.png",
+          "sourceSha256": "be274558e0b8bcf4d245375d267fe3284f9ea20b23dd61e287923acefdd2fbbd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/04.png",
+          "sha256": "3679c551732b23f1f467f2c30f4384d90fe58c7acbbf8d6acc009368ef9b14a2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/05.png",
+          "sourceSha256": "3679c551732b23f1f467f2c30f4384d90fe58c7acbbf8d6acc009368ef9b14a2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/05.png",
+          "sha256": "7911a9f94a812a2b601526dd7b529ef68540531011b9a18d0542262ae035de66",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/06.png",
+          "sourceSha256": "7911a9f94a812a2b601526dd7b529ef68540531011b9a18d0542262ae035de66",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/06.png",
+          "sha256": "d65d0e678d220ecd0161dfc4f9062c59baa5643db76c08a001c4e09b8d09892b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/07.png",
+          "sourceSha256": "d65d0e678d220ecd0161dfc4f9062c59baa5643db76c08a001c4e09b8d09892b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/07.png",
+          "sha256": "7823c1f4aceae785daa5b104977f43169a204a1bbd216b258a004a5d94ac7709",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/08.png",
+          "sourceSha256": "7823c1f4aceae785daa5b104977f43169a204a1bbd216b258a004a5d94ac7709",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 갈대 다발 몸이 숙여지며 두 가지 팔을 앞으로 모아 미는 공격. 4번의 가장 낮게 기울여 앞팔을 내민 자세를 접촉으로 선택.",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625,
+      "contactReason": "좌향 갈대 다발 몸이 숙여지며 두 가지 팔을 앞으로 모아 미는 공격. 4번의 가장 낮게 기울여 앞팔을 내민 자세를 접촉으로 선택."
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "monster-a-reed-doll-hit1-01",
+      "jobId": "b9b14afe-a189-4ce0-b995-de1c0c91a531",
+      "balanceBefore": 673,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 626004,
+        "action": "Facing left, mask tilts back and reed arms lift to shield the torso, bound waist bends and legs brace, return to the original guard. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download"
+      },
+      "queueResponse": "id: b9b14afe-a189-4ce0-b995-de1c0c91a531\njob_id: b9b14afe-a189-4ce0-b995-de1c0c91a531\naction: Facing left, mask tilts back and reed arms lift to shield the torso, bound waist bends and legs brace, return to the original guard. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626004\nasset_id: 66102c44-4763-54cc-8b05-3ebb2a706249\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b9b14afe-a189-4ce0-b995-de1c0c91a531\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: b9b14afe-a189-4ce0-b995-de1c0c91a531\njob_id: b9b14afe-a189-4ce0-b995-de1c0c91a531\nframes: 5\ntransparent: yes\nasset_id: 66102c44-4763-54cc-8b05-3ebb2a706249\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+        "sha256": "85d10375d311ff60f80e41820d61bf780eb9f8f8b133ce9e10684903a8c2dd68",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 178,
+        "alphaDifferences": 128,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/00.png",
+          "sourceSha256": "df7a25fb4002d9eafca5414dc99553eda68fdf3c0bf615c81116291e660b76ad",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 12,
+            "width": 39,
+            "height": 41
+          },
+          "visiblePixels": 1194,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/01.png",
+          "sourceSha256": "982fc2b1bf945397c0974ff110a11bc304681067665714412fd469ea9b94fb44",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 41,
+            "height": 42
+          },
+          "visiblePixels": 1199,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/02.png",
+          "sourceSha256": "220c3afcb1f5b0285224be391afe4722414103d259c7828befff645ca68d0bc8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 44,
+            "height": 42
+          },
+          "visiblePixels": 1224,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/03.png",
+          "sourceSha256": "950befc68bab9e7d7d17f8cbc394f6a4dd5e8bcf9915450504e29b52cab72025",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 11,
+            "width": 40,
+            "height": 41
+          },
+          "visiblePixels": 1176,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/04.png",
+          "sourceSha256": "9dcc91bbbb3c26da53b791195b1d60b8fb76781e9e38564e7203b68c28dc184d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 12,
+            "width": 39,
+            "height": 41
+          },
+          "visiblePixels": 1194,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/reed-doll/review/hit1-b9b14afe-a189-4ce0-b995-de1c0c91a531.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/00.png",
+          "sha256": "982fc2b1bf945397c0974ff110a11bc304681067665714412fd469ea9b94fb44",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/01.png",
+          "sourceSha256": "982fc2b1bf945397c0974ff110a11bc304681067665714412fd469ea9b94fb44",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/01.png",
+          "sha256": "220c3afcb1f5b0285224be391afe4722414103d259c7828befff645ca68d0bc8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/02.png",
+          "sourceSha256": "220c3afcb1f5b0285224be391afe4722414103d259c7828befff645ca68d0bc8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/02.png",
+          "sha256": "950befc68bab9e7d7d17f8cbc394f6a4dd5e8bcf9915450504e29b52cab72025",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/03.png",
+          "sourceSha256": "950befc68bab9e7d7d17f8cbc394f6a4dd5e8bcf9915450504e29b52cab72025",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/03.png",
+          "sha256": "9dcc91bbbb3c26da53b791195b1d60b8fb76781e9e38564e7203b68c28dc184d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/04.png",
+          "sourceSha256": "9dcc91bbbb3c26da53b791195b1d60b8fb76781e9e38564e7203b68c28dc184d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 갈대 다발 몸을 뒤로 기울이고 두 가지 팔을 들어 방어한 뒤 원래 자세로 돌아오는 실제 피격."
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "monster-a-reed-doll-die1-01",
+      "jobId": "160421bf-f5d7-428d-befd-f6ed04398860",
+      "balanceBefore": 695,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626005,
+        "action": "Facing left, bound legs buckle, reed arms sag and straw torso falls onto its side, loose tips settle while the dark mask remains attached. Finish a motionless intact heap, no new scattered objects. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes."
+      },
+      "queueResponse": "id: 160421bf-f5d7-428d-befd-f6ed04398860\njob_id: 160421bf-f5d7-428d-befd-f6ed04398860\naction: Facing left, bound legs buckle, reed arms sag and straw torso falls onto its side, loose tips settle while the dark mask remains attached. Finish a motionless intact heap, no new scattered objects. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 626005\nasset_id: 49c2cad0-ce88-5410-a087-00d3f2eafb73\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"160421bf-f5d7-428d-befd-f6ed04398860\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 160421bf-f5d7-428d-befd-f6ed04398860\njob_id: 160421bf-f5d7-428d-befd-f6ed04398860\nframes: 9\ntransparent: yes\nasset_id: 49c2cad0-ce88-5410-a087-00d3f2eafb73\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+        "sha256": "85d10375d311ff60f80e41820d61bf780eb9f8f8b133ce9e10684903a8c2dd68",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 326,
+        "alphaDifferences": 127,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/00.png",
+          "sourceSha256": "48b55c0ee2937441a0075f37ee84c20e6f862cc29d69ba3ad0e0015b4f03fd46",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 12,
+            "width": 39,
+            "height": 41
+          },
+          "visiblePixels": 1195,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/01.png",
+          "sourceSha256": "4ddbf9d1300aabbe43c56c3cfb74f5f2e70afc3f37431f6cf348422b01190f59",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 11,
+            "width": 40,
+            "height": 42
+          },
+          "visiblePixels": 1203,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/02.png",
+          "sourceSha256": "5a2f1dc0a764cbd426a6dab3a218b017d3ac299a48976c6d7d01e73a778924b4",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 44,
+            "height": 42
+          },
+          "visiblePixels": 1225,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/03.png",
+          "sourceSha256": "a76b856ee941784be7355fc2e0141e912dbe78c5a182911dcddf8622b2927149",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 10,
+            "width": 46,
+            "height": 41
+          },
+          "visiblePixels": 1221,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/04.png",
+          "sourceSha256": "1c5e2b889d3c23cc1241c08b24ce51963aec01fe4cec4633bb8da405e5ff5a9f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 12,
+            "width": 44,
+            "height": 39
+          },
+          "visiblePixels": 1180,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/05.png",
+          "sourceSha256": "9ab1a797fa671d8723b2b631cdcb268215c3f62a77b374d02391c8a5c4e0a954",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 14,
+            "width": 43,
+            "height": 37
+          },
+          "visiblePixels": 1123,
+          "colors": 34,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/06.png",
+          "sourceSha256": "85e1cf21cbc8520f53c183eb35134ca563fdd5375315fdff3a10a8436bb925df",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 15,
+            "width": 40,
+            "height": 39
+          },
+          "visiblePixels": 1145,
+          "colors": 34,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/07.png",
+          "sourceSha256": "e676c0601c1072821f44ce0a47ffce1ee8da4c231ad15429dee68a62108f91e7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 18,
+            "width": 47,
+            "height": 36
+          },
+          "visiblePixels": 1146,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/08.png",
+          "sourceSha256": "a9318e68a3bc9251bcc93e25e091f103653f6c095a0df166c9876f2a4600f7b7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 17,
+            "width": 41,
+            "height": 36
+          },
+          "visiblePixels": 1149,
+          "colors": 27,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/reed-doll/review/die1-160421bf-f5d7-428d-befd-f6ed04398860.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/160421bf-f5d7-428d-befd-f6ed04398860/00.png",
+          "sha256": "4ddbf9d1300aabbe43c56c3cfb74f5f2e70afc3f37431f6cf348422b01190f59",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/01.png",
+          "sourceSha256": "4ddbf9d1300aabbe43c56c3cfb74f5f2e70afc3f37431f6cf348422b01190f59",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/160421bf-f5d7-428d-befd-f6ed04398860/01.png",
+          "sha256": "5a2f1dc0a764cbd426a6dab3a218b017d3ac299a48976c6d7d01e73a778924b4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/02.png",
+          "sourceSha256": "5a2f1dc0a764cbd426a6dab3a218b017d3ac299a48976c6d7d01e73a778924b4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/160421bf-f5d7-428d-befd-f6ed04398860/02.png",
+          "sha256": "a76b856ee941784be7355fc2e0141e912dbe78c5a182911dcddf8622b2927149",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/03.png",
+          "sourceSha256": "a76b856ee941784be7355fc2e0141e912dbe78c5a182911dcddf8622b2927149",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/160421bf-f5d7-428d-befd-f6ed04398860/03.png",
+          "sha256": "1c5e2b889d3c23cc1241c08b24ce51963aec01fe4cec4633bb8da405e5ff5a9f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/04.png",
+          "sourceSha256": "1c5e2b889d3c23cc1241c08b24ce51963aec01fe4cec4633bb8da405e5ff5a9f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/160421bf-f5d7-428d-befd-f6ed04398860/04.png",
+          "sha256": "9ab1a797fa671d8723b2b631cdcb268215c3f62a77b374d02391c8a5c4e0a954",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/05.png",
+          "sourceSha256": "9ab1a797fa671d8723b2b631cdcb268215c3f62a77b374d02391c8a5c4e0a954",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/160421bf-f5d7-428d-befd-f6ed04398860/05.png",
+          "sha256": "85e1cf21cbc8520f53c183eb35134ca563fdd5375315fdff3a10a8436bb925df",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/06.png",
+          "sourceSha256": "85e1cf21cbc8520f53c183eb35134ca563fdd5375315fdff3a10a8436bb925df",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/160421bf-f5d7-428d-befd-f6ed04398860/06.png",
+          "sha256": "e676c0601c1072821f44ce0a47ffce1ee8da4c231ad15429dee68a62108f91e7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/07.png",
+          "sourceSha256": "e676c0601c1072821f44ce0a47ffce1ee8da4c231ad15429dee68a62108f91e7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/160421bf-f5d7-428d-befd-f6ed04398860/07.png",
+          "sha256": "a9318e68a3bc9251bcc93e25e091f103653f6c095a0df166c9876f2a4600f7b7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/160421bf-f5d7-428d-befd-f6ed04398860/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/160421bf-f5d7-428d-befd-f6ed04398860/08.png",
+          "sourceSha256": "a9318e68a3bc9251bcc93e25e091f103653f6c095a0df166c9876f2a4600f7b7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "rejected: ends upright, require a clear sideways knockout"
+    },
+    {
+      "motion": "die1",
+      "attempt": 2,
+      "key": "monster-a-reed-doll-die1-02",
+      "jobId": "d5e446ff-3ab9-4443-8018-f045187a439c",
+      "balanceBefore": 723,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 627005,
+        "action": "The left-facing reed bundle's twig feet buckle, its branch arms relax and the fat straw body topples sideways onto the ground into the exact supplied lying end pose. The black woven mask and two ropes stay attached to the same intact bundle. End lying still on its side. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/3836d35e-104e-46df-adf5-304c5deabf36/assets/native/full.png"
+      },
+      "queueResponse": "id: d5e446ff-3ab9-4443-8018-f045187a439c\njob_id: d5e446ff-3ab9-4443-8018-f045187a439c\naction: The left-facing reed bundle's twig feet buckle, its branch arms relax and the fat straw body topples sideways onto the ground into the exact supplied lying end pose. The black woven mask and two ropes stay attached to the same intact bundle. End lying still on its side. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 627005\nasset_id: 79f651c3-b7a1-552b-a840-181a8723b07b\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d5e446ff-3ab9-4443-8018-f045187a439c\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: d5e446ff-3ab9-4443-8018-f045187a439c\njob_id: d5e446ff-3ab9-4443-8018-f045187a439c\nframes: 9\ntransparent: yes\nasset_id: 79f651c3-b7a1-552b-a840-181a8723b07b\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+        "sha256": "85d10375d311ff60f80e41820d61bf780eb9f8f8b133ce9e10684903a8c2dd68",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 187,
+        "alphaDifferences": 128,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/00.png",
+          "sourceSha256": "622f0dddf4384c88a446c4522741d7b5c9b380bd57cd55d88d206f31da07982f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 12,
+            "width": 39,
+            "height": 41
+          },
+          "visiblePixels": 1194,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/01.png",
+          "sourceSha256": "45c48be9b0fa44f9d880f5cdbd34f398a36a1e021c7ebc36bde780abb97bfc81",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 11,
+            "width": 42,
+            "height": 42
+          },
+          "visiblePixels": 1200,
+          "colors": 33,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/02.png",
+          "sourceSha256": "df304f2a31379004fbe7084e7969c6983451a78d9ec9c1b0684eda87f09f4382",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 9,
+            "width": 45,
+            "height": 42
+          },
+          "visiblePixels": 1193,
+          "colors": 33,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/03.png",
+          "sourceSha256": "b925c28fa8e56d948111a27b28c2fd73a0b87e4edc0f96d63301ae05324b38f4",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 9,
+            "width": 40,
+            "height": 43
+          },
+          "visiblePixels": 1164,
+          "colors": 36,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/04.png",
+          "sourceSha256": "fa77e7a29222419012e512ba75c479a04c9c480585b8c66e29a6f2c5608c4bf3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 11,
+            "width": 42,
+            "height": 41
+          },
+          "visiblePixels": 1167,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/05.png",
+          "sourceSha256": "711b43d91d99169397fcc70201633a11ae73078fe7a2da7c1b816d7a49d62b64",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 13,
+            "width": 43,
+            "height": 39
+          },
+          "visiblePixels": 1146,
+          "colors": 36,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/06.png",
+          "sourceSha256": "f5b3119676f897abf1bccd9d92d4ac3275f3ebcd4cd3e9cec7d7eba6b25d439c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 15,
+            "width": 43,
+            "height": 38
+          },
+          "visiblePixels": 1185,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/07.png",
+          "sourceSha256": "b18617fabd89ece66106da10ece1e8256f6d2350099122b795d80df06bd66178",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 15,
+            "width": 42,
+            "height": 38
+          },
+          "visiblePixels": 1184,
+          "colors": 33,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/08.png",
+          "sourceSha256": "ce2c781ef6f675dcdc9e40f06f33bc625825e4bae26e6d0dad4b29cf04edea15",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 15,
+            "width": 41,
+            "height": 39
+          },
+          "visiblePixels": 1194,
+          "colors": 28,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/reed-doll/review/die1-d5e446ff-3ab9-4443-8018-f045187a439c.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/00.png",
+          "sha256": "45c48be9b0fa44f9d880f5cdbd34f398a36a1e021c7ebc36bde780abb97bfc81",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/01.png",
+          "sourceSha256": "45c48be9b0fa44f9d880f5cdbd34f398a36a1e021c7ebc36bde780abb97bfc81",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/01.png",
+          "sha256": "df304f2a31379004fbe7084e7969c6983451a78d9ec9c1b0684eda87f09f4382",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/02.png",
+          "sourceSha256": "df304f2a31379004fbe7084e7969c6983451a78d9ec9c1b0684eda87f09f4382",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/02.png",
+          "sha256": "b925c28fa8e56d948111a27b28c2fd73a0b87e4edc0f96d63301ae05324b38f4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/03.png",
+          "sourceSha256": "b925c28fa8e56d948111a27b28c2fd73a0b87e4edc0f96d63301ae05324b38f4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/03.png",
+          "sha256": "fa77e7a29222419012e512ba75c479a04c9c480585b8c66e29a6f2c5608c4bf3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/04.png",
+          "sourceSha256": "fa77e7a29222419012e512ba75c479a04c9c480585b8c66e29a6f2c5608c4bf3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/04.png",
+          "sha256": "711b43d91d99169397fcc70201633a11ae73078fe7a2da7c1b816d7a49d62b64",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/05.png",
+          "sourceSha256": "711b43d91d99169397fcc70201633a11ae73078fe7a2da7c1b816d7a49d62b64",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/05.png",
+          "sha256": "f5b3119676f897abf1bccd9d92d4ac3275f3ebcd4cd3e9cec7d7eba6b25d439c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/06.png",
+          "sourceSha256": "f5b3119676f897abf1bccd9d92d4ac3275f3ebcd4cd3e9cec7d7eba6b25d439c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/06.png",
+          "sha256": "b18617fabd89ece66106da10ece1e8256f6d2350099122b795d80df06bd66178",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/07.png",
+          "sourceSha256": "b18617fabd89ece66106da10ece1e8256f6d2350099122b795d80df06bd66178",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/07.png",
+          "sha256": "ce2c781ef6f675dcdc9e40f06f33bc625825e4bae26e6d0dad4b29cf04edea15",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/08.png",
+          "sourceSha256": "ce2c781ef6f675dcdc9e40f06f33bc625825e4bae26e6d0dad4b29cf04edea15",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 갈대 묶음 몸과 가면이 기울어 옆으로 넘어지고 원래 몸체를 유지한 누운 끝자세에 정지하는 실제 KO."
+    }
+  ],
+  "nativeFacing": "left",
+  "selectedOriginal": {
+    "motion": "original",
+    "attempt": 3,
+    "key": "monster-a-reed-doll-original-03",
+    "jobId": "5054ed56-3798-49d0-813e-d8dc5572e81d",
+    "balanceBefore": 558,
+    "maximumReservedGenerations": 1,
+    "args": {
+      "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. A NON-HUMANOID living bundle of dry marsh REEDS. Its entire body is ONE FAT ROUND CYLINDRICAL SHEAF OF GOLDEN STRAW tied at the middle with two thin dark ropes. A flat black woven mask with two little angry eye holes is attached directly on the front of the straw bundle; no separate human head or neck. TWO BRANCHED FORKED TWIG ARMS sprout directly from the sides, ending in rough reed forks rather than hands. TWO SHORT BENT REED-ROOT FEET below the bundle. Loose straw tips splay everywhere. Reads unmistakably as animated straw / a hostile hay bale, not a person. No metal anywhere, no armor plates, no sword, no weapon, no cloth, no hood, no clothing, no chest armor, no human joints or boots. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "direction": "west",
+      "view": "low top-down",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "detail": "medium detail",
+      "seed": 616011,
+      "text_guidance_scale": 8
+    },
+    "queueResponse": "id: 5054ed56-3798-49d0-813e-d8dc5572e81d\njob_id: 5054ed56-3798-49d0-813e-d8dc5572e81d\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. A NON-HUMANOID living bundle of dry marsh REEDS. Its entire body is ONE FAT ROUND CYLINDRICAL SHEAF OF GOLDEN STRAW tied at the middle with two thin dark ropes. A flat black woven mask with two little angry eye holes is attached directly on the front of the straw bundle; no separate human head or neck. TWO BRANCHED FORKED TWIG ARMS sprout directly from the sides, ending in rough reed forks rather than hands. TWO SHORT BENT REED-ROOT FEET below the bundle. Loose straw tips splay everywhere. Reads unmistakably as animated straw / a hostile hay bale, not a person. No metal anywhere, no armor plates, no sword, no weapon, no cloth, no hood, no clothing, no chest armor, no human joints or boots. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: 7fc1b978-863a-5547-bb76-4a44d7841908\nasset_status: pending (saved when generation completes)\nseed: 616011\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"5054ed56-3798-49d0-813e-d8dc5572e81d\")",
+    "status": "completed",
+    "latestResponse": "status: completed\nid: 5054ed56-3798-49d0-813e-d8dc5572e81d\njob_id: 5054ed56-3798-49d0-813e-d8dc5572e81d\nframes: 1\ntransparent: yes\nasset_id: 7fc1b978-863a-5547-bb76-4a44d7841908\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download",
+    "localPath": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+    "sha256": "85d10375d311ff60f80e41820d61bf780eb9f8f8b133ce9e10684903a8c2dd68",
+    "byteSize": 2482,
+    "width": 64,
+    "height": 64,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "visibleBounds": {
+      "x": 12,
+      "y": 12,
+      "width": 39,
+      "height": 42
+    },
+    "visiblePixels": 1322,
+    "paletteSize": 25,
+    "chargedGenerations": 1,
+    "nativeFacing": "left",
+    "selection": "accepted after silhouette / anatomy / native alpha review"
+  },
+  "anchor": {
+    "x": 32,
+    "y": 54
+  },
+  "animations": {
+    "stand": {
+      "label": "대기",
+      "loop": true,
+      "jobId": "e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/00.png",
+          "sha256": "70e61e2f2c1ed80e973483905ec315acbd0b84aefcb717c8c56357fb05ea64a7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/01.png",
+          "sourceSha256": "70e61e2f2c1ed80e973483905ec315acbd0b84aefcb717c8c56357fb05ea64a7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/01.png",
+          "sha256": "a795cc1476c144bbdf4eef53d1a1920908e016269dbfaa2620559e1775f622e7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/02.png",
+          "sourceSha256": "a795cc1476c144bbdf4eef53d1a1920908e016269dbfaa2620559e1775f622e7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/02.png",
+          "sha256": "765edae89150c9799bfcfd2de20488f3f078b6a4151f69181e50f1049670b2ed",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/03.png",
+          "sourceSha256": "765edae89150c9799bfcfd2de20488f3f078b6a4151f69181e50f1049670b2ed",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/03.png",
+          "sha256": "01690ffd1e3d42b2e9a0bb6699c4d1ecf24a6856aa5b28314377b0ccfcd494a0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/stand/e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0/04.png",
+          "sourceSha256": "01690ffd1e3d42b2e9a0bb6699c4d1ecf24a6856aa5b28314377b0ccfcd494a0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "비인간 갈대 다발 몸통의 팔·가닥·뿌리 발이 움직이며 같은 자세로 복귀하는 실제 대기.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/reed-doll/review/stand-e7a2cf1d-4594-4fb4-af9b-8214ba5cbaa0.png"
+    },
+    "move": {
+      "label": "이동",
+      "loop": true,
+      "jobId": "c1b6d4f5-f5fc-4ecc-b729-82643e93326e",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/00.png",
+          "sha256": "4f5ba75fde6120dfdfe7cd44ab7712a777240db9d03221e60e8ed35b48ad57c3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/01.png",
+          "sourceSha256": "4f5ba75fde6120dfdfe7cd44ab7712a777240db9d03221e60e8ed35b48ad57c3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/01.png",
+          "sha256": "ce6e5efa97053dbf30b6d2a77157f429985d53e8ed271f03af2f8d72ed63da84",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/02.png",
+          "sourceSha256": "ce6e5efa97053dbf30b6d2a77157f429985d53e8ed271f03af2f8d72ed63da84",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/02.png",
+          "sha256": "63c455ed0963427ea4bb4e50d3e6771f0cf698c788b6c602ec4a782f8622541f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/03.png",
+          "sourceSha256": "63c455ed0963427ea4bb4e50d3e6771f0cf698c788b6c602ec4a782f8622541f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/03.png",
+          "sha256": "e0a88b9084c0ab89707a8f0f69a4a0b6624f314fb531e2ddf86594d566eeb06c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/04.png",
+          "sourceSha256": "e0a88b9084c0ab89707a8f0f69a4a0b6624f314fb531e2ddf86594d566eeb06c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/04.png",
+          "sha256": "ea7f8cb525b560b45abefd5b66e08e0b3ee49378d99e1e77e6bc4ddadddc7914",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/05.png",
+          "sourceSha256": "ea7f8cb525b560b45abefd5b66e08e0b3ee49378d99e1e77e6bc4ddadddc7914",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/05.png",
+          "sha256": "6bb179205af717b7a959bce0c308578f198a9b395c3f9d420a6760d8f4b80539",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/06.png",
+          "sourceSha256": "6bb179205af717b7a959bce0c308578f198a9b395c3f9d420a6760d8f4b80539",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/06.png",
+          "sha256": "0f2b90a51c95af32be16f329a1813938a9713ef7d6096e5f3b713ba6ebff48d4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/07.png",
+          "sourceSha256": "0f2b90a51c95af32be16f329a1813938a9713ef7d6096e5f3b713ba6ebff48d4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/07.png",
+          "sha256": "994d73cb6502a5cda546f6fdc8323f042f7c82f390f9e40a792dc45a2636f04e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/move/c1b6d4f5-f5fc-4ecc-b729-82643e93326e/08.png",
+          "sourceSha256": "994d73cb6502a5cda546f6fdc8323f042f7c82f390f9e40a792dc45a2636f04e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "갈대 다발 형태를 유지하며 짧은 뿌리 발과 나뭇가지 팔이 번갈아 움직이는 실제 보행.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/reed-doll/review/move-c1b6d4f5-f5fc-4ecc-b729-82643e93326e.png"
+    },
+    "attack1": {
+      "label": "공격",
+      "loop": false,
+      "jobId": "cadd57d7-50f4-4c25-8c74-4dd4c9e7580b",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/00.png",
+          "sha256": "c5d261f6bcd4cf8cd87d3afeb8e4de6ca35e6693763b302731146efd2148d71e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/01.png",
+          "sourceSha256": "c5d261f6bcd4cf8cd87d3afeb8e4de6ca35e6693763b302731146efd2148d71e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/01.png",
+          "sha256": "0f7cacf89df739099a4a73d9964f056f9f26c7f621234ea15ca34aaf77f10700",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/02.png",
+          "sourceSha256": "0f7cacf89df739099a4a73d9964f056f9f26c7f621234ea15ca34aaf77f10700",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/02.png",
+          "sha256": "800abe16ecbfc971efb8993975e4af498e3b633f16f21df841500a1bf9520c39",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/03.png",
+          "sourceSha256": "800abe16ecbfc971efb8993975e4af498e3b633f16f21df841500a1bf9520c39",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/03.png",
+          "sha256": "be274558e0b8bcf4d245375d267fe3284f9ea20b23dd61e287923acefdd2fbbd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/04.png",
+          "sourceSha256": "be274558e0b8bcf4d245375d267fe3284f9ea20b23dd61e287923acefdd2fbbd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/04.png",
+          "sha256": "3679c551732b23f1f467f2c30f4384d90fe58c7acbbf8d6acc009368ef9b14a2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/05.png",
+          "sourceSha256": "3679c551732b23f1f467f2c30f4384d90fe58c7acbbf8d6acc009368ef9b14a2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/05.png",
+          "sha256": "7911a9f94a812a2b601526dd7b529ef68540531011b9a18d0542262ae035de66",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/06.png",
+          "sourceSha256": "7911a9f94a812a2b601526dd7b529ef68540531011b9a18d0542262ae035de66",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/06.png",
+          "sha256": "d65d0e678d220ecd0161dfc4f9062c59baa5643db76c08a001c4e09b8d09892b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/07.png",
+          "sourceSha256": "d65d0e678d220ecd0161dfc4f9062c59baa5643db76c08a001c4e09b8d09892b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/07.png",
+          "sha256": "7823c1f4aceae785daa5b104977f43169a204a1bbd216b258a004a5d94ac7709",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/attack1/cadd57d7-50f4-4c25-8c74-4dd4c9e7580b/08.png",
+          "sourceSha256": "7823c1f4aceae785daa5b104977f43169a204a1bbd216b258a004a5d94ac7709",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 갈대 다발 몸이 숙여지며 두 가지 팔을 앞으로 모아 미는 공격. 4번의 가장 낮게 기울여 앞팔을 내민 자세를 접촉으로 선택.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/reed-doll/review/attack1-cadd57d7-50f4-4c25-8c74-4dd4c9e7580b.png",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625
+    },
+    "hit1": {
+      "label": "피격",
+      "loop": false,
+      "jobId": "b9b14afe-a189-4ce0-b995-de1c0c91a531",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/00.png",
+          "sha256": "982fc2b1bf945397c0974ff110a11bc304681067665714412fd469ea9b94fb44",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/01.png",
+          "sourceSha256": "982fc2b1bf945397c0974ff110a11bc304681067665714412fd469ea9b94fb44",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/01.png",
+          "sha256": "220c3afcb1f5b0285224be391afe4722414103d259c7828befff645ca68d0bc8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/02.png",
+          "sourceSha256": "220c3afcb1f5b0285224be391afe4722414103d259c7828befff645ca68d0bc8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/02.png",
+          "sha256": "950befc68bab9e7d7d17f8cbc394f6a4dd5e8bcf9915450504e29b52cab72025",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/03.png",
+          "sourceSha256": "950befc68bab9e7d7d17f8cbc394f6a4dd5e8bcf9915450504e29b52cab72025",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/03.png",
+          "sha256": "9dcc91bbbb3c26da53b791195b1d60b8fb76781e9e38564e7203b68c28dc184d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b9b14afe-a189-4ce0-b995-de1c0c91a531/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/hit1/b9b14afe-a189-4ce0-b995-de1c0c91a531/04.png",
+          "sourceSha256": "9dcc91bbbb3c26da53b791195b1d60b8fb76781e9e38564e7203b68c28dc184d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "갈대 다발 몸을 뒤로 기울이고 두 가지 팔을 들어 방어한 뒤 원래 자세로 돌아오는 실제 피격.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/reed-doll/review/hit1-b9b14afe-a189-4ce0-b995-de1c0c91a531.png"
+    },
+    "die1": {
+      "label": "쓰러짐",
+      "loop": false,
+      "jobId": "d5e446ff-3ab9-4443-8018-f045187a439c",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/00.png",
+          "sha256": "45c48be9b0fa44f9d880f5cdbd34f398a36a1e021c7ebc36bde780abb97bfc81",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/01.png",
+          "sourceSha256": "45c48be9b0fa44f9d880f5cdbd34f398a36a1e021c7ebc36bde780abb97bfc81",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/01.png",
+          "sha256": "df304f2a31379004fbe7084e7969c6983451a78d9ec9c1b0684eda87f09f4382",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/02.png",
+          "sourceSha256": "df304f2a31379004fbe7084e7969c6983451a78d9ec9c1b0684eda87f09f4382",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/02.png",
+          "sha256": "b925c28fa8e56d948111a27b28c2fd73a0b87e4edc0f96d63301ae05324b38f4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/03.png",
+          "sourceSha256": "b925c28fa8e56d948111a27b28c2fd73a0b87e4edc0f96d63301ae05324b38f4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/03.png",
+          "sha256": "fa77e7a29222419012e512ba75c479a04c9c480585b8c66e29a6f2c5608c4bf3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/04.png",
+          "sourceSha256": "fa77e7a29222419012e512ba75c479a04c9c480585b8c66e29a6f2c5608c4bf3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/04.png",
+          "sha256": "711b43d91d99169397fcc70201633a11ae73078fe7a2da7c1b816d7a49d62b64",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/05.png",
+          "sourceSha256": "711b43d91d99169397fcc70201633a11ae73078fe7a2da7c1b816d7a49d62b64",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/05.png",
+          "sha256": "f5b3119676f897abf1bccd9d92d4ac3275f3ebcd4cd3e9cec7d7eba6b25d439c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/06.png",
+          "sourceSha256": "f5b3119676f897abf1bccd9d92d4ac3275f3ebcd4cd3e9cec7d7eba6b25d439c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/06.png",
+          "sha256": "b18617fabd89ece66106da10ece1e8256f6d2350099122b795d80df06bd66178",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/07.png",
+          "sourceSha256": "b18617fabd89ece66106da10ece1e8256f6d2350099122b795d80df06bd66178",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/reed-doll/frames/die1/d5e446ff-3ab9-4443-8018-f045187a439c/07.png",
+          "sha256": "ce2c781ef6f675dcdc9e40f06f33bc625825e4bae26e6d0dad4b29cf04edea15",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d5e446ff-3ab9-4443-8018-f045187a439c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/d5e446ff-3ab9-4443-8018-f045187a439c/08.png",
+          "sourceSha256": "ce2c781ef6f675dcdc9e40f06f33bc625825e4bae26e6d0dad4b29cf04edea15",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "갈대 묶음 몸과 가면이 기울어 옆으로 넘어지고 원래 몸체를 유지한 누운 끝자세에 정지하는 실제 KO.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/reed-doll/originals/original-03.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/reed-doll/review/die1-d5e446ff-3ab9-4443-8018-f045187a439c.png"
+    }
+  },
+  "poseTargets": [
+    {
+      "motion": "die1",
+      "localPath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/target-corpse-02.png",
+      "recordPath": "public/assets/maplestory/monster-expansion/reed-doll/originals/die1/target-corpse-02.json",
+      "drawingId": "3836d35e-104e-46df-adf5-304c5deabf36",
+      "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/3836d35e-104e-46df-adf5-304c5deabf36/assets/native/full.png",
+      "source": "https://api.pixellab.ai/mcp/images/5054ed56-3798-49d0-813e-d8dc5572e81d/download",
+      "offset": [
+        0,
+        1
+      ],
+      "angle": -90,
+      "pivot": [
+        32,
+        32
+      ],
+      "sha256": "e2a1c26ac6da879b5f47e86dce1ded325c9b45f9d283f788c4ae70112b317281",
+      "paidGenerations": 0,
+      "kind": "free exact native end keyframe; intermediate motion generated by PixelLab",
+      "reason": "원본 픽셀로 누운 끝자세를 지정하고 중간 쓰러짐 프레임은 PixelLab에서 실제 생성."
+    }
+  ]
+}

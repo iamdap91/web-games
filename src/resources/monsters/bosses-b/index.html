@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+    <title>지도별 보스 B · 원본 비교</title>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">지도별 보스 B · 승인 원본</p>
+          <h1>도트와 크기를 함께 비교하기</h1>
+        </div>
+        <div class="controls">
+          <label>지도<select id="map"></select></label>
+          <label
+            >PC 기준<select id="viewport">
+              <option value="1366x768">1366 × 768</option>
+              <option value="1920x1080">1920 × 1080</option>
+            </select></label
+          >
+          <label
+            >표시<select id="scale-mode">
+              <option value="native">같은 픽셀 배율</option>
+              <option value="battle">전투 크기</option>
+            </select></label
+          >
+        </div>
+      </header>
+      <p id="status" role="status">원본을 준비 중…</p>
+      <p id="scale-description"></p>
+      <div id="stage">
+        <canvas
+          id="comparison"
+          aria-label="아타호·기존 몬스터와 새 보스 원본의 크기 비교"
+        ></canvas>
+      </div>
+      <section>
+        <h2>무변형 승인 원본</h2>
+        <div id="originals"></div>
+      </section>
+      <footer>
+        <a href="./motions.html">실제 모션 재생</a> ·
+        <a href="../../../../resources/map-bosses-b-generation.json"
+          >생성·선택·예산 기록</a
+        >
+        ·
+        <a href="../../../../resources/map-bosses-b-assets.json"
+          >독립 리소스 목록</a
+        >
+        · <a href="https://www.pixellab.ai/">PixelLab</a>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/monsters/bosses-b/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

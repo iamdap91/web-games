@@ -1,0 +1,77 @@
+{
+  "generation": {
+    "provider": "PixelLab",
+    "model": "Pixen",
+    "createdDate": "2026-10-10",
+    "prompt": "One original game NPC: a friendly human blacksmith living in a warm remote mountain martial-arts fantasy village. Full body standing idle, stocky sturdy build, broad shoulders, short tousled dark hair and simple sideburns, warm approachable face. Muted teal work shirt with rolled sleeves, worn brown leather apron, charcoal trousers and dark work boots. Holds one SMALL iron hand hammer with a short wooden handle low beside the hip; other hand relaxed. Compact charming 1990s 2D RPG character proportions with a large readable head. Facing the viewer with a slight three-quarter turn. Crisp native pixel art, one-pixel dark outline, clear pixel clusters, simple 2-3 tone shading, restrained warm earth colors. One character centered in a 64x64 canvas, about 56 pixels tall, entire head, hammer and both boots clearly visible with transparent margin. Transparent background. No scenery, no text, no floor, no ground shadow, no armor, no giant hammer, no sword, no extra objects, no antialiasing, no blur.",
+    "width": 64,
+    "height": 64,
+    "transparentBackground": true,
+    "direction": "South (facing camera)",
+    "view": "Side (Sidescroller)",
+    "detail": "Low detail",
+    "outline": "Black outline",
+    "referenceImages": [],
+    "requests": 1,
+    "displayedCostGenerations": 1,
+    "actualCostGenerations": 1,
+    "usageBefore": {
+      "used": 7,
+      "limit": 40
+    },
+    "usageAfter": {
+      "used": 8,
+      "limit": 40
+    },
+    "variants": 1,
+    "retries": 0,
+    "sourceUrl": "https://www.pixellab.ai/create?tool=create_image_pixen",
+    "notes": "웹 UI의 단일 이미지 생성. 계정 사용량 7/40 → 8/40으로 실제 1 generation 사용 확인. seed·서버 작업 ID는 노출되지 않아 기록하지 않음."
+  },
+  "original": {
+    "localPath": "public/assets/maplestory/smithy-owner-ai/originals/pixellab-pixen-64.png",
+    "sha256": "c1f51b1bdfbf62de2ea1c87e16b5d6ab4ef9f2fd8cd7456732d0aa2ee1e51e56",
+    "width": 64,
+    "height": 64
+  },
+  "frame": {
+    "localPath": "public/assets/maplestory/smithy-owner-ai/frames/stand.png",
+    "sha256": "746d764cae85b52edac624c33587acbb8ee2dac3384765f7d765d612acbd7a12",
+    "width": 31,
+    "height": 57,
+    "sourceRect": {
+      "x": 16,
+      "y": 3,
+      "width": 31,
+      "height": 57
+    },
+    "pivot": {
+      "x": 16,
+      "y": 0
+    }
+  },
+  "displayScale": 1,
+  "processing": "투명 여백만 잘라내고 RGBA 원본 픽셀 보존. 리샘플링·색 보정·추가 생성 없음. 아타호와 같은 32 pixelsPerUnit·표시 배율 1 사용.",
+  "pixelChecks": {
+    "alphaValues": [
+      0,
+      255
+    ],
+    "colorCount": 61
+  },
+  "placement": {
+    "world": {
+      "x": -14.9,
+      "y": 0.055,
+      "z": 12.3
+    },
+    "localToSmithy": {
+      "x": -9.4,
+      "y": 0.055,
+      "z": 5.1
+    },
+    "visibleFromSmithyLevel": 1,
+    "addsCollision": false,
+    "addsInteraction": false
+  }
+}

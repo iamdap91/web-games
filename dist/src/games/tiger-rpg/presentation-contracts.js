@@ -1,6 +1,7 @@
 export const speakerNames = {
     ataho: '아타호',
     'dojo-owner': '도장 주인',
+    yeonmuk: '연묵',
 };
 // 두 화면의 64px 대기 프레임을 같은 세로 비율로 맞춘다. 화면비는 가로 시야만 바꾼다.
 export const rpgView = {

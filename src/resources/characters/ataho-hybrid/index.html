@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="lab-tabs.css" />
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <title>아타호 · 원화와 모션 작업실</title>
+  </head>
+  <body>
+    <main>
+      <header class="lab-heading">
+        <p class="eyebrow">아타호 · 원화와 모션</p>
+        <h1>아타호 작업실</h1>
+        <p>기준 그림과 모션을 탭으로 바꿔 보세요.</p>
+      </header>
+      <div class="lab-tabs" role="tablist" aria-label="아타호 그림과 모션 비교">
+        <button
+          id="tab-attacks"
+          type="button"
+          role="tab"
+          aria-controls="lab-panel"
+          aria-selected="true"
+          tabindex="0"
+          data-tab="attacks"
+        >
+          공격 · 정권 / 발차기 / 철산고
+        </button>
+        <button
+          id="tab-walk"
+          type="button"
+          role="tab"
+          aria-controls="lab-panel"
+          aria-selected="false"
+          tabindex="-1"
+          data-tab="walk"
+        >
+          측면 걷기
+        </button>
+        <button
+          id="tab-side"
+          type="button"
+          role="tab"
+          aria-controls="lab-panel"
+          aria-selected="false"
+          tabindex="-1"
+          data-tab="side"
+        >
+          좌우 기준 그림
+        </button>
+        <button
+          id="tab-idle"
+          type="button"
+          role="tab"
+          aria-controls="lab-panel"
+          aria-selected="false"
+          tabindex="-1"
+          data-tab="idle"
+        >
+          정면 대기 시험
+        </button>
+        <button
+          id="tab-art"
+          type="button"
+          role="tab"
+          aria-controls="lab-panel"
+          aria-selected="false"
+          tabindex="-1"
+          data-tab="art"
+        >
+          승인 원화
+        </button>
+        <button
+          id="tab-hybrid"
+          type="button"
+          role="tab"
+          aria-controls="lab-panel"
+          aria-selected="false"
+          tabindex="-1"
+          data-tab="hybrid"
+        >
+          기존 하이브리드 비교
+        </button>
+      </div>
+      <p id="lab-description" class="lab-description"></p>
+      <div class="lab-loading">
+        <p id="lab-status" role="status">화면을 준비 중이에요.</p>
+        <button id="lab-retry" type="button" hidden>다시 불러오기</button>
+      </div>
+      <section
+        id="lab-panel"
+        role="tabpanel"
+        aria-labelledby="tab-attacks"
+        aria-busy="true"
+      ></section>
+      <noscript>탭을 사용하려면 JavaScript를 켜 주세요.</noscript>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-hybrid/lab-tabs.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

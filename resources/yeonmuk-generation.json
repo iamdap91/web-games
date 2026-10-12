@@ -1,0 +1,1329 @@
+{
+  "createdDate": "2026-10-11",
+  "provider": "PixelLab MCP",
+  "status": "completed",
+  "assetId": "ai/yeonmuk",
+  "budget": {
+    "maxGenerations": 100,
+    "chargedGenerations": 16,
+    "reservedGenerations": 0,
+    "externalDollarCreditsAllowed": false,
+    "extraPaymentAllowed": false,
+    "authorization": "100회까지 써도 돼. 완성도 낮으면 여러번 만들면서 시도해도 돼",
+    "previousApproval25Included": true
+  },
+  "accountBaseline": {
+    "subscription": "Tier 1: Pixel Apprentice",
+    "generationsUsed": 457,
+    "generationsRemaining": 1543,
+    "creditsUSD": 0
+  },
+  "approvedReference": {
+    "design": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-04.png",
+    "sprite": "public/assets/maplestory/fox-talismanist-ai/runtime/yeonmuk-front-01.png",
+    "sha256": "3fa3ff5d3cbd82109cc6f0a274d7ce978688658f8b3aa4f243294698e845cd16",
+    "size": [64, 64],
+    "visibleRGBColors": 63,
+    "alphaValues": [0, 255],
+    "feetAnchor": {
+      "x": 32,
+      "y": 63
+    },
+    "pivot": {
+      "x": 32,
+      "y": 1
+    },
+    "pixelsPerUnit": 32
+  },
+  "scope": [
+    "8방향 대기",
+    "8방향 걷기",
+    "남동향 전투 준비",
+    "남동향 부적 공격",
+    "남동향 피격",
+    "남동향 쓰러짐"
+  ],
+  "excluded": [
+    "독립 오버드라이브",
+    "승리 모션",
+    "별도 복장",
+    "다른 캐릭터",
+    "모바일"
+  ],
+  "contracts": {
+    "companionHpCommit": "90dee05",
+    "expeditionIdentityCommit": "e8d85bb"
+  },
+  "calls": [
+    {
+      "index": 1,
+      "tool": "create_character",
+      "candidate": "character-01",
+      "scope": "approved front reference, eight idle directions",
+      "upperBound": 9,
+      "arguments": {
+        "mode": "v3",
+        "body_type": "humanoid",
+        "n_directions": 8,
+        "size": 64,
+        "name": "Yeonmuk fox talismanist",
+        "view": "low top-down",
+        "outline": "single color black outline",
+        "detail": "low detail",
+        "reference_image_url": "upload:0b73cf4a-92dc-4639-a952-344fa61c8ade",
+        "direction_images": {
+          "south": "upload:0b73cf4a-92dc-4639-a952-344fa61c8ade"
+        },
+        "description": "Rotate the supplied approved south sprite into consistent 8 directions. One young ADULT FEMALE fox beast-person talismanist. Preserve exact silver-white and gray fur, original swept forelock and pointed cheek fur (NO bob haircut), tall fox ears, small confident gold eyes, small fox muzzle, navy practical full travel coat and trousers, teal sash, ochre paper talisman with red mark held in one hand, brown waist pouch and one brush, ONE fluffy tail. Keep the compact 64px sprite scale, head and torso proportions, natural clothed female chest/waist contour and crisp dark pixel outline. Same identity, outfit and one held talisman in every direction; no extra tail or limbs, no exposed skin, no new costume or objects. South input is already approved and must remain unchanged. All directions standing idle, feet grounded consistently near the input's y=62, full ears and tail unclipped, transparency and low-detail pixel clusters. Back views show the correct back of hair and navy coat, not a duplicate front face."
+      },
+      "status": "input-validation-rejected",
+      "submission": {
+        "text": "error: direction_images keys ['south'] are not valid with n_directions=8; use ['east', 'north', 'north-east', 'north-west', 'south-east', 'south-west', 'west']. South comes from the reference image.",
+        "isError": true
+      },
+      "chargedGenerations": 0,
+      "reason": "남향은 reference_image에서 제공되므로 direction_images에는 south 키를 넣지 않음"
+    },
+    {
+      "index": 2,
+      "tool": "create_character",
+      "candidate": "character-01",
+      "scope": "approved front reference, eight idle directions",
+      "upperBound": 9,
+      "arguments": {
+        "mode": "v3",
+        "body_type": "humanoid",
+        "n_directions": 8,
+        "size": 64,
+        "name": "Yeonmuk fox talismanist",
+        "view": "low top-down",
+        "outline": "single color black outline",
+        "detail": "low detail",
+        "reference_image_url": "upload:0b73cf4a-92dc-4639-a952-344fa61c8ade",
+        "description": "Rotate the supplied approved south sprite into consistent 8 directions. One young ADULT FEMALE fox beast-person talismanist. Preserve exact silver-white and gray fur, original swept forelock and pointed cheek fur (NO bob haircut), tall fox ears, small confident gold eyes, small fox muzzle, navy practical full travel coat and trousers, teal sash, ochre paper talisman with red mark held in one hand, brown waist pouch and one brush, ONE fluffy tail. Keep the compact 64px sprite scale, head and torso proportions, natural clothed female chest/waist contour and crisp dark pixel outline. Same identity, outfit and one held talisman in every direction; no extra tail or limbs, no exposed skin, no new costume or objects. South input is already approved and must remain unchanged. All directions standing idle, feet grounded consistently near the input's y=62, full ears and tail unclipped, transparency and low-detail pixel clusters. Back views show the correct back of hair and navy coat, not a duplicate front face."
+      },
+      "status": "completed",
+      "submission": {
+        "text": "id: ca006367-6f19-46fc-ac25-d70fb92332ff\nname: Yeonmuk fox talismanist\nmode: v3 reference (1 generations, 8 directions)\nbody: humanoid\nsize: 64x64px\nview: low top-down\nstyle: from reference image (outline/detail hints ignored)\nstatus: processing (~3-5 min)\n\nhint: get_character(character_id=\"ca006367-6f19-46fc-ac25-d70fb92332ff\")",
+        "isError": false
+      },
+      "chargedGenerations": 1,
+      "characterId": "ca006367-6f19-46fc-ac25-d70fb92332ff",
+      "completion": "status: completed\nid: ca006367-6f19-46fc-ac25-d70fb92332ff\nname: Yeonmuk fox talismanist\nstate_name: Idle\ndirections: 8 (south, east, north, west, south-east, north-east, north-west, south-west)\nsize: 64x64px\nview: low top-down\nstyle: -, -, -\ngroup: 900228b4-c25b-4c03-8d0d-3d8b441b94f4 (1 state)\n\nrotations:\n  south: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/south.png?t=1791729452\n  east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/east.png?t=1791729452\n  north: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/north.png?t=1791729452\n  west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/west.png?t=1791729452\n  south-east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/south-east.png?t=1791729452\n  north-east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/north-east.png?t=1791729452\n  north-west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/north-west.png?t=1791729452\n  south-west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/south-west.png?t=1791729452\n\nanimations: none\n\ndownload: https://api.pixellab.ai/mcp/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/download\nspritesheet: https://api.pixellab.ai/mcp/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/spritesheet (this state only — one uniform-grid sheet PNG + layout JSON, zipped; cells pivot-centred)\n\navailable_animations: backflip, breathing-idle, cross-punch, crouched-walking, crouching, drinking, falling-back-death, fight-stance-idle-8-frames, fireball, flying-kick, front-flip, getting-up, high-kick, hurricane-kick, jumping-1, jumping-2, lead-jab, leg-sweep, picking-up, pull-heavy-object, pushing, roundhouse-kick, running-4-frames, running-6-frames, running-8-frames, running-jump, running-slide, sad-walk, scary-walk, surprise-uppercut, taking-punch, throw-object, two-footed-jump, walk, walk-1, walk-2, walking, walking-10, walking-2, walking-3, walking-4, walking-4-frames, walking-5, walking-6, walking-6-frames, walking-7, walking-8, walking-8-frames, walking-9\n\nactions: animate_character(character_id=\"ca006367-6f19-46fc-ac25-d70fb92332ff\", ...) | create_character_state(character_id=\"ca006367-6f19-46fc-ac25-d70fb92332ff\", ...) | delete_character(character_id=\"ca006367-6f19-46fc-ac25-d70fb92332ff\")\nhint: animate_character(character_id=\"ca006367-6f19-46fc-ac25-d70fb92332ff\", template_animation_id=\"backflip\")"
+    },
+    {
+      "index": 3,
+      "tool": "animate_character",
+      "candidate": "walk-01",
+      "upperBound": 8,
+      "arguments": {
+        "character_id": "ca006367-6f19-46fc-ac25-d70fb92332ff",
+        "mode": "template",
+        "template_animation_id": "walking-8-frames",
+        "animation_name": "walk",
+        "directions": [
+          "south",
+          "east",
+          "north",
+          "west",
+          "south-east",
+          "north-east",
+          "north-west",
+          "south-west"
+        ]
+      },
+      "status": "completed",
+      "submission": {
+        "text": "character: ca006367-6f19-46fc-ac25-d70fb92332ff\nanimation: walking-8-frames\ndirections: south, east, north, west, south-east, north-east, north-west, south-west (8 jobs)\ngroup: 79b84f0c-83e8-492a-9652-97b2edaac840\neta: ~2-4 min\nadd more directions to this group: animate_character(character_id=\"ca006367-6f19-46fc-ac25-d70fb92332ff\", template_animation_id=\"walking-8-frames\", animation_group_id=\"79b84f0c-83e8-492a-9652-97b2edaac840\", directions=[...])\n\nhint: get_character(character_id=\"ca006367-6f19-46fc-ac25-d70fb92332ff\")\nif poor: delete_animation(character_id=\"ca006367-6f19-46fc-ac25-d70fb92332ff\", animation_type=\"...\") then retry with mode=\"v3\"",
+        "isError": false
+      },
+      "chargedGenerations": 8,
+      "chargeEvidence": "템플릿 방향당1회 ×8방향. 계정 누계458→466 확인.",
+      "completion": "status: completed\nid: ca006367-6f19-46fc-ac25-d70fb92332ff\nname: Yeonmuk fox talismanist\nstate_name: Idle\ndirections: 8 (south, east, north, west, south-east, north-east, north-west, south-west)\nsize: 64x64px\nview: low top-down\nstyle: -, -, -\ngroup: 900228b4-c25b-4c03-8d0d-3d8b441b94f4 (1 state)\n\nrotations:\n  south: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/south.png?t=1791729452\n  east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/east.png?t=1791729452\n  north: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/north.png?t=1791729452\n  west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/west.png?t=1791729452\n  south-east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/south-east.png?t=1791729452\n  north-east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/north-east.png?t=1791729452\n  north-west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/north-west.png?t=1791729452\n  south-west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/south-west.png?t=1791729452\n\nanimations (1 group, 8 total):\n  walk — 8 dir (east, north, south-east, south-west, north-east, north-west, south, west), 8f 2026-10-11 [type=walking-8-frames] [group: 79b84f0c-83e8-492a-9652-97b2edaac840]\n    east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/bde0081c-f643-435a-b6af-9e8fb1563102/east/{i}.png?t=1791729872828 (i=0..7)\n    north: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/fafa5cb8-6135-43d3-8fc4-cd5e837a8124/north/{i}.png?t=1791729783469 (i=0..7)\n    south-east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/447b0c51-4241-4ba6-a161-afe035500f68/south-east/{i}.png?t=1791729773787 (i=0..7)\n    south-west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/e4122fb9-0eb0-4993-a5ab-97e85a7e1e36/south-west/{i}.png?t=1791729764263 (i=0..7)\n    north-east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/6f87bd54-9fcd-4606-8a9b-8798e550bf96/north-east/{i}.png?t=1791729755885 (i=0..7)\n    north-west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/5350c459-80e2-43a2-840b-c8afb6173eba/north-west/{i}.png?t=1791729751164 (i=0..7)\n    south: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/98be59a9-799f-42a0-ba5b-780d3ca7b146/south/{i}.png?t=1791729731490 (i=0..7)\n    west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/9663cba3-5c89-4c62-808c-4c9cdf9f940e/west/{i}.png?t=1791729727605 (i=0..7)\n\ndownload: https://api.pixellab.ai/mcp/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/download\nspritesheet: https://api.pixellab.ai/mcp/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/spritesheet (this state only — one uniform-grid sheet PNG + layout JSON, zipped; cells pivot-centred)\n\navailable_animations: backflip, breathing-idle, cross-punch, crouched-walking, crouching, drinking, falling-back-death, fight-stance-idle-8-frames, fireball, flying-kick, front-flip, getting-up, high-kick, hurricane-kick, jumping-1, jumping-2, lead-jab, leg-sweep, picking-up, pull-heavy-object, pushing, roundhouse-kick, running-4-frames, running-6-frames, running-8-frames, running-jump, running-slide, sad-walk, scary-walk, surprise-uppercut, taking-punch, throw-object, two-footed-jump, walk, walk-1, walk-2, walking, walking-10, walking-2, walking-3, walking-4, walking-4-frames, walking-5, walking-6, walking-6-frames, walking-7, walking-8, walking-8-frames, walking-9\n\nactions: animate_character(character_id=\"ca006367-6f19-46fc-ac25-d70fb92332ff\", ...) | create_character_state(character_id=\"ca006367-6f19-46fc-ac25-d70fb92332ff\", ...) | delete_animation(character_id=\"ca006367-6f19-46fc-ac25-d70fb92332ff\", animation_group_id=\"<group>\") | delete_character(character_id=\"ca006367-6f19-46fc-ac25-d70fb92332ff\")"
+    },
+    {
+      "index": 4,
+      "tool": "animate_image",
+      "candidate": "battle-ready-01",
+      "upperBound": 4,
+      "arguments": {
+        "first_frame_url": "upload:9f2429cb-1e53-47fd-bbdd-ebf1a14cfb1b",
+        "no_background": true,
+        "frame_count": 4,
+        "seed": 101210,
+        "action": "Transition from the supplied south-east standing pose into a focused TALISMANIST BATTLE-READY pose. Same young adult female fox, face, ears, navy travel coat, teal sash, single tail, pouch and held ochre talisman. Turn the shoulders very slightly toward screen RIGHT while keeping the head facing south-east. Plant both feet, bend knees just a little and widen the stance. Bring the talisman-holding hand forward at chest height, paper upright and clearly visible, while the free hand draws back beside the chest with two fingers poised for a spell. Eyes alert and open, confident focused expression, no sleepy face. Four gradual small pose steps; final pose is a stable spellcasting guard, no attack or spell effect yet. Fixed camera and body scale, feet near baseline, no jumping or large vertical shift, no new costume, no duplicated limbs or tail. Clean native pixel art, transparent background."
+      },
+      "status": "completed",
+      "submission": {
+        "text": "id: 919eadd3-2edf-49e2-bb83-460cf5d3d78d\njob_id: 919eadd3-2edf-49e2-bb83-460cf5d3d78d\naction: Transition from the supplied south-east standing pose into a focused TALISMANIST BATTLE-READY pose. Same young adult female fox, face, ears, navy travel coat, teal sash, single tail, pouch and held ochre talisman. Turn the shoulders very slightly toward screen RIGHT while keeping the head facing south-east. Plant both feet, bend knees just a little and widen the stance. Bring the talisman-holding hand forward at chest height, paper upright and clearly visible, while the free hand draws back beside the chest with two fingers poised for a spell. Eyes alert and open, confident focused expression, no sleepy face. Four gradual small pose steps; final pose is a stable spellcasting guard, no attack or spell effect yet. Fixed camera and body scale, feet near baseline, no jumping or large vertical shift, no new costume, no duplicated limbs or tail. Clean native pixel art, transparent background.\nframes: 4\nsize: 64x64px\ntransparent: True\nseed: 101210\nasset_id: 7cac689d-8dc4-56a5-a04b-72535028dffe\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"919eadd3-2edf-49e2-bb83-460cf5d3d78d\")",
+        "isError": false
+      },
+      "chargedGenerations": 1,
+      "jobId": "919eadd3-2edf-49e2-bb83-460cf5d3d78d"
+    },
+    {
+      "index": 5,
+      "tool": "animate_image",
+      "candidate": "talisman-cast-01",
+      "upperBound": 8,
+      "arguments": {
+        "first_frame_url": "upload:06bcc8c1-8abd-4ebe-a9b4-38dc1614f659",
+        "no_background": true,
+        "frame_count": 8,
+        "seed": 101211,
+        "action": "ONE precise TALISMAN CAST starting from this south-east battle guard. First draw the hand holding the ochre talisman slightly back to the shoulder, turn torso a little, then sharply extend that SAME arm toward screen RIGHT at chest height. At the middle of the animation the talisman hand is fully extended horizontally to the right, holding a clearly visible vertical rectangular paper seal at the fingertips, with a forceful focused eye expression. The free hand makes a small two-finger spell sign near the chest. Feet stay planted, no running, no jump. After the single decisive forward seal thrust, smoothly retract the talisman arm and return to the supplied battle guard. Keep the paper held, ONE tail attached to the pelvis, exact face/ears/navy coat/teal sash/body proportions. Body-only animation, NO particles, no projectile, no glowing trail, no extra props or duplicated fingers/limbs. Fixed camera and native64px scale on transparency."
+      },
+      "status": "completed",
+      "submission": {
+        "text": "id: 686f0ba3-ae97-4ac1-b488-22b73398aee3\njob_id: 686f0ba3-ae97-4ac1-b488-22b73398aee3\naction: ONE precise TALISMAN CAST starting from this south-east battle guard. First draw the hand holding the ochre talisman slightly back to the shoulder, turn torso a little, then sharply extend that SAME arm toward screen RIGHT at chest height. At the middle of the animation the talisman hand is fully extended horizontally to the right, holding a clearly visible vertical rectangular paper seal at the fingertips, with a forceful focused eye expression. The free hand makes a small two-finger spell sign near the chest. Feet stay planted, no running, no jump. After the single decisive forward seal thrust, smoothly retract the talisman arm and return to the supplied battle guard. Keep the paper held, ONE tail attached to the pelvis, exact face/ears/navy coat/teal sash/body proportions. Body-only animation, NO particles, no projectile, no glowing trail, no extra props or duplicated fingers/limbs. Fixed camera and native64px scale on transparency.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 101211\nasset_id: 00ffe793-1e02-5182-8682-b1cdfa586fe6\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"686f0ba3-ae97-4ac1-b488-22b73398aee3\")",
+        "isError": false
+      },
+      "chargedGenerations": 1,
+      "jobId": "686f0ba3-ae97-4ac1-b488-22b73398aee3"
+    },
+    {
+      "index": 6,
+      "tool": "animate_image",
+      "candidate": "hurt-01",
+      "upperBound": 4,
+      "arguments": {
+        "first_frame_url": "upload:06bcc8c1-8abd-4ebe-a9b4-38dc1614f659",
+        "no_background": true,
+        "frame_count": 4,
+        "seed": 101212,
+        "action": "ONE quick impact reaction from this south-east talismanist battle guard. On the first generated frame immediately lean the upper torso and head slightly BACK toward screen LEFT, briefly shut the eyes with a pained wince, pull elbows inward while keeping the one ochre paper talisman in the same hand. Knees absorb the hit, both feet remain grounded. Then straighten and recover into the same alert guard. Small recoil only, no fall, no spin or facing change. Preserve exact adult female fox identity, ears, coat, teal sash, single tail and sprite scale. No hit particles, no colored flash, no new objects. Transparent native pixel sprite."
+      },
+      "status": "completed",
+      "submission": {
+        "text": "id: e700ce82-fac4-499b-bbe5-7f4e64cdc6ba\njob_id: e700ce82-fac4-499b-bbe5-7f4e64cdc6ba\naction: ONE quick impact reaction from this south-east talismanist battle guard. On the first generated frame immediately lean the upper torso and head slightly BACK toward screen LEFT, briefly shut the eyes with a pained wince, pull elbows inward while keeping the one ochre paper talisman in the same hand. Knees absorb the hit, both feet remain grounded. Then straighten and recover into the same alert guard. Small recoil only, no fall, no spin or facing change. Preserve exact adult female fox identity, ears, coat, teal sash, single tail and sprite scale. No hit particles, no colored flash, no new objects. Transparent native pixel sprite.\nframes: 4\nsize: 64x64px\ntransparent: True\nseed: 101212\nasset_id: 9b6ce94f-c310-5df1-8f53-89d9c858e590\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e700ce82-fac4-499b-bbe5-7f4e64cdc6ba\")",
+        "isError": false
+      },
+      "chargedGenerations": 1,
+      "jobId": "e700ce82-fac4-499b-bbe5-7f4e64cdc6ba"
+    },
+    {
+      "index": 7,
+      "tool": "animate_image",
+      "candidate": "downed-01",
+      "upperBound": 8,
+      "arguments": {
+        "first_frame_url": "upload:06bcc8c1-8abd-4ebe-a9b4-38dc1614f659",
+        "no_background": true,
+        "frame_count": 8,
+        "seed": 101213,
+        "action": "ONE DOWNED collapse from this south-east talismanist guard, ending permanently on the ground. Knees buckle, body lowers onto one knee, one free hand touches the ground, then gently slump onto her SIDE toward screen LEFT with closed eyes, head and shoulders near the ground, legs folded slightly toward screen RIGHT. The FINAL three generated frames show the SAME prone side-lying exhausted fox at rest, clearly unable to fight; do not stand up, do not recover and do not loop to the beginning. Keep ONE fluffy tail attached behind the hips and keep the ochre talisman beside or in the original hand. Preserve exact fox face, tall ears, navy travel coat, teal sash and adult body scale. No blood, no injury marks, no particles, no new props, no extra tails or limbs. Whole prone body fits inside canvas, transparent crisp pixel art. Ground baseline stays fixed."
+      },
+      "status": "completed",
+      "submission": {
+        "text": "id: 7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de\njob_id: 7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de\naction: ONE DOWNED collapse from this south-east talismanist guard, ending permanently on the ground. Knees buckle, body lowers onto one knee, one free hand touches the ground, then gently slump onto her SIDE toward screen LEFT with closed eyes, head and shoulders near the ground, legs folded slightly toward screen RIGHT. The FINAL three generated frames show the SAME prone side-lying exhausted fox at rest, clearly unable to fight; do not stand up, do not recover and do not loop to the beginning. Keep ONE fluffy tail attached behind the hips and keep the ochre talisman beside or in the original hand. Preserve exact fox face, tall ears, navy travel coat, teal sash and adult body scale. No blood, no injury marks, no particles, no new props, no extra tails or limbs. Whole prone body fits inside canvas, transparent crisp pixel art. Ground baseline stays fixed.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 101213\nasset_id: 41a4025a-2633-5802-8220-08a6309bdbbb\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de\")",
+        "isError": false
+      },
+      "chargedGenerations": 1,
+      "jobId": "7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de"
+    },
+    {
+      "index": 8,
+      "tool": "animate_image",
+      "candidate": "hurt-02",
+      "upperBound": 4,
+      "arguments": {
+        "first_frame_url": "upload:06bcc8c1-8abd-4ebe-a9b4-38dc1614f659",
+        "no_background": true,
+        "frame_count": 4,
+        "seed": 101214,
+        "action": "A CLEAR STRONG but brief HURT RECOIL, not an idle breathing motion. Enemy hits from screen RIGHT. On generated frame1 immediately bend the spine and tilt the entire chest and HEAD 20 degrees backward toward screen LEFT, head displaced4pixels LEFT and slightly DOWN; wince with fully shut eyes and a strained mouth. Keep both feet planted, front knee bends, free hand clutches the chest, talisman hand pulls tightly inward without dropping the one paper. Frame2 is the MAXIMUM pain recoil, shoulders dramatically drawn back LEFT, ears follow the head tilt. Frame3 begins recovering upright. Frame4 returns toward the exact supplied battle guard. DO NOT duck forward to the RIGHT. DO NOT raise the head, jump, walk, collapse or change facing. Keep fox face, pointed ears, same head size, navy coat, teal sash, single tail. No effect or flash. Transparent native pixel art."
+      },
+      "status": "completed",
+      "submission": {
+        "text": "id: c7826bb9-1750-4660-9929-fc3847e39170\njob_id: c7826bb9-1750-4660-9929-fc3847e39170\naction: A CLEAR STRONG but brief HURT RECOIL, not an idle breathing motion. Enemy hits from screen RIGHT. On generated frame1 immediately bend the spine and tilt the entire chest and HEAD 20 degrees backward toward screen LEFT, head displaced4pixels LEFT and slightly DOWN; wince with fully shut eyes and a strained mouth. Keep both feet planted, front knee bends, free hand clutches the chest, talisman hand pulls tightly inward without dropping the one paper. Frame2 is the MAXIMUM pain recoil, shoulders dramatically drawn back LEFT, ears follow the head tilt. Frame3 begins recovering upright. Frame4 returns toward the exact supplied battle guard. DO NOT duck forward to the RIGHT. DO NOT raise the head, jump, walk, collapse or change facing. Keep fox face, pointed ears, same head size, navy coat, teal sash, single tail. No effect or flash. Transparent native pixel art.\nframes: 4\nsize: 64x64px\ntransparent: True\nseed: 101214\nasset_id: 8e6ed81d-99ed-5cfd-866d-e83423aa2f1e\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"c7826bb9-1750-4660-9929-fc3847e39170\")",
+        "isError": false
+      },
+      "chargedGenerations": 1,
+      "jobId": "c7826bb9-1750-4660-9929-fc3847e39170"
+    },
+    {
+      "index": 9,
+      "tool": "animate_image",
+      "candidate": "battle-idle-01",
+      "upperBound": 4,
+      "arguments": {
+        "first_frame_url": "upload:06bcc8c1-8abd-4ebe-a9b4-38dc1614f659",
+        "no_background": true,
+        "frame_count": 4,
+        "seed": 101215,
+        "action": "A VERY SUBTLE loopable breathing idle IN THE EXACT SUPPLIED TALISMAN BATTLE GUARD. Keep both feet, knees, hips and the single fluffy tail FIXED in the exact same pixels. Keep the upright paper talisman in front of the chest, free hand beside it; keep hand/arm pose fixed. Only the chest/coat rises and falls by ONE pixel with slow breathing, and the free sleeve edge settles slightly. Head stays the same position and size; eyes alert with small GOLD irises clearly OPEN, no blinking or sleepy expression. No widening stance, no tail swing, no turning, no nodding, no hopping, no attack or magic effect. Four near-identical micro motion frames, returning toward the original guard by the last frame for a smooth idle loop. Maintain exact fox face/ears/navy coat/teal sash and body scale on transparent background."
+      },
+      "status": "completed",
+      "submission": {
+        "text": "id: 0e777d6a-2e0a-446b-bc7b-8ced3a16933a\njob_id: 0e777d6a-2e0a-446b-bc7b-8ced3a16933a\naction: A VERY SUBTLE loopable breathing idle IN THE EXACT SUPPLIED TALISMAN BATTLE GUARD. Keep both feet, knees, hips and the single fluffy tail FIXED in the exact same pixels. Keep the upright paper talisman in front of the chest, free hand beside it; keep hand/arm pose fixed. Only the chest/coat rises and falls by ONE pixel with slow breathing, and the free sleeve edge settles slightly. Head stays the same position and size; eyes alert with small GOLD irises clearly OPEN, no blinking or sleepy expression. No widening stance, no tail swing, no turning, no nodding, no hopping, no attack or magic effect. Four near-identical micro motion frames, returning toward the original guard by the last frame for a smooth idle loop. Maintain exact fox face/ears/navy coat/teal sash and body scale on transparent background.\nframes: 4\nsize: 64x64px\ntransparent: True\nseed: 101215\nasset_id: b6230f1f-66ca-5180-a1b9-ee4f0416668b\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"0e777d6a-2e0a-446b-bc7b-8ced3a16933a\")",
+        "isError": false
+      },
+      "chargedGenerations": 1,
+      "jobId": "0e777d6a-2e0a-446b-bc7b-8ced3a16933a"
+    },
+    {
+      "index": 10,
+      "tool": "animate_image_pixminimax",
+      "candidate": "hurt-03",
+      "upperBound": 4,
+      "arguments": {
+        "first_frame_url": "upload:06bcc8c1-8abd-4ebe-a9b4-38dc1614f659",
+        "no_background": true,
+        "frame_count": 8,
+        "seed": 101216,
+        "enhance_prompt": false,
+        "subject_description": "young adult female silver-gray fox beast talismanist, navy full travel coat and trousers, teal sash, one fluffy tail, holding one ochre rectangular paper talisman",
+        "initial_pose": "standing in a grounded south-east spellcasting battle guard with both hands in front of the chest and the paper held upright",
+        "direction": "south-east",
+        "view": "low top-down",
+        "description": "The fox suddenly receives one blow from her RIGHT. A strong unmistakable HURT RECOIL: snap her head and shoulders sharply BACK toward screen LEFT, spine tilting backward, eyes squeezed shut and mouth grimacing. Her free hand clutches her chest while the paper talisman stays in the same other hand. Knees bend and absorb the impact, both feet planted. Hold the deepest backward wince briefly near the middle, then straighten and recover to the starting talisman guard by the end. One impact only, no walking or jumping, no fall, no turn or attack, no particles. Keep the exact same face, clothes, body size and attached single tail. Native crisp pixel-art silhouette and transparent background."
+      },
+      "status": "completed",
+      "submission": {
+        "text": "id: aa9417aa-925b-40ce-9eca-1330eea3a5cc\njob_id: aa9417aa-925b-40ce-9eca-1330eea3a5cc\ndescription: The fox suddenly receives one blow from her RIGHT. A strong unmistakable HURT RECOIL: snap her head and shoulders sharply BACK toward screen LEFT, spine tilting backward, eyes squeezed shut and mouth grimacing. Her free hand clutches her chest while the paper talisman stays in the same other hand. Knees bend and absorb the impact, both feet planted. Hold the deepest backward wince briefly near the middle, then straighten and recover to the starting talisman guard by the end. One impact only, no walking or jumping, no fall, no turn or attack, no particles. Keep the exact same face, clothes, body size and attached single tail. Native crisp pixel-art silhouette and transparent background.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 101216\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"aa9417aa-925b-40ce-9eca-1330eea3a5cc\")\nasset_id: 88fe54d0-7bee-51a9-9ab2-af05f5c72481\nasset_status: pending (saved to your gallery when generation completes)",
+        "isError": false
+      },
+      "chargedGenerations": 1,
+      "jobId": "aa9417aa-925b-40ce-9eca-1330eea3a5cc",
+      "completion": "status: completed\nid: aa9417aa-925b-40ce-9eca-1330eea3a5cc\njob_id: aa9417aa-925b-40ce-9eca-1330eea3a5cc\nframes: 9\ntransparent: yes\nasset_id: 88fe54d0-7bee-51a9-9ab2-af05f5c72481\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/aa9417aa-925b-40ce-9eca-1330eea3a5cc/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "character-01",
+      "characterId": "ca006367-6f19-46fc-ac25-d70fb92332ff",
+      "status": "selected",
+      "reviewPath": "public/assets/maplestory/fox-talismanist-ai/review/character-01/directions.png",
+      "review": "8방향 얼굴·외투·부적·귀·꼬리 일관성 확인. 승인 남향은 기존 원본 재사용.",
+      "downloadURL": "https://api.pixellab.ai/mcp/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/download"
+    },
+    {
+      "id": "walk-01",
+      "status": "selected",
+      "groupId": "79b84f0c-83e8-492a-9652-97b2edaac840",
+      "reviewPath": "public/assets/maplestory/fox-talismanist-ai/review/walk-01/frames.png",
+      "review": "8방향의 교차 보행·머리 비율·꼬리 연속성을 프레임으로 확인. 실제 재생 검증은 후속."
+    },
+    {
+      "id": "battle-ready-01",
+      "status": "selected",
+      "jobId": "919eadd3-2edf-49e2-bb83-460cf5d3d78d",
+      "selectedFrameIndices": [4],
+      "reviewPath": "public/assets/maplestory/fox-talismanist-ai/review/battle-ready-01/frames.png",
+      "review": "부적을 몸 앞에 들고 발을 벌린 전투 준비. 얼굴과 외투를 유지."
+    },
+    {
+      "id": "hurt-01",
+      "jobId": "e700ce82-fac4-499b-bbe5-7f4e64cdc6ba",
+      "status": "rejected",
+      "reason": "피격이 작은 움츠림에 머물고 공격 반대 방향으로 젖혀지는 반응이 약함",
+      "originalsPreserved": true
+    },
+    {
+      "id": "hurt-02",
+      "jobId": "c7826bb9-1750-4660-9929-fc3847e39170",
+      "status": "rejected",
+      "reason": "좌측으로 젖히라는 지시와 달리 몸이 앞으로 더 기울며 충격 방향 표현이 약함",
+      "originalsPreserved": true
+    },
+    {
+      "id": "battle-idle-01",
+      "jobId": "0e777d6a-2e0a-446b-bc7b-8ced3a16933a",
+      "status": "selected",
+      "selectedFrameIndices": ["ready", 1, 2, 1, "ready"],
+      "review": "첫2개 생성 포즈의1px 미세 호흡을 왕복 재생. 크게 달라지는3·4는 제외.",
+      "reviewPath": "public/assets/maplestory/fox-talismanist-ai/review/battle-idle-01/frames.png"
+    },
+    {
+      "id": "talisman-cast-01",
+      "jobId": "686f0ba3-ae97-4ac1-b488-22b73398aee3",
+      "status": "selected",
+      "selectedFrameIndices": ["ready", 1, 2, 3, 4, 2, 1, "ready"],
+      "review": "뻗은 부적 자세와 기존 가드 복귀를 원본 포즈의 역순 선택으로 구성.",
+      "reviewPath": "public/assets/maplestory/fox-talismanist-ai/review/talisman-cast-01/frames.png"
+    },
+    {
+      "id": "downed-01",
+      "jobId": "7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de",
+      "status": "selected",
+      "selectedFrameIndices": ["ready", 1, 2, 3, 4, 5, 6, 7, 8],
+      "review": "한 번 무릎이 꺾이고 엎드린 마지막 포즈를 유지.",
+      "reviewPath": "public/assets/maplestory/fox-talismanist-ai/review/downed-01/frames.png"
+    },
+    {
+      "id": "hurt-03",
+      "jobId": "aa9417aa-925b-40ce-9eca-1330eea3a5cc",
+      "model": "PixMiniMax",
+      "status": "selected",
+      "selectedFrameIndices": [4, 5, 6, 7, "ready"],
+      "excludedFrameIndices": [1, 2, 3],
+      "reason": "초반 요청하지 않은 색 효과 제외, 효과 없는 강한 반동과 회복을 원본 그대로 사용.",
+      "reviewPath": "public/assets/maplestory/fox-talismanist-ai/review/hurt-03/frames.png"
+    }
+  ],
+  "selected": {
+    "characterId": "ca006367-6f19-46fc-ac25-d70fb92332ff",
+    "candidate": "character-01",
+    "approvedSouthByteHash": "3fa3ff5d3cbd82109cc6f0a274d7ce978688658f8b3aa4f243294698e845cd16",
+    "providerSouthRGBAEqualsApproved": false,
+    "providerSouthVisibleDifferencePixels": 3,
+    "approvedSouthBytesPreserved": true,
+    "idleKeys": [
+      "stand",
+      "stand-right",
+      "stand-back",
+      "stand-left",
+      "stand-front-right",
+      "stand-front-left",
+      "stand-back-right",
+      "stand-back-left"
+    ],
+    "feetPivots": "원본64×64, 각 방향의 발바닥 기준. south=(32,1)",
+    "notes": "서비스 남향은 투명 RGB와3개 경계 알파가 달라 게임 남향에는 승인된 PNG를 바이트 그대로 사용함. 서비스 원본도 별도 보존.",
+    "walkKeys": [
+      "move",
+      "move-right",
+      "move-back",
+      "move-left",
+      "move-front-right",
+      "move-front-left",
+      "move-back-right",
+      "move-back-left"
+    ],
+    "walkFrameCount": 8,
+    "walkFrameDurationSeconds": 0.1,
+    "battleReadySourceFrame": 4,
+    "battleReadyLoop": true,
+    "walkBrowserReport": "public/assets/maplestory/fox-talismanist-ai/review/motion-playback/walk-browser.json",
+    "battleMotionCandidates": {
+      "ready": "battle-idle-01",
+      "cast": "talisman-cast-01",
+      "hurt": "hurt-03",
+      "downed": "downed-01"
+    }
+  },
+  "accountAfterRegistration": {
+    "generationsUsed": 458,
+    "generationsRemaining": 1542,
+    "creditsUSD": 0
+  },
+  "completedDate": "2026-10-12",
+  "accountFinal": {
+    "generationsUsed": 473,
+    "generationsRemaining": 1527,
+    "creditsUSD": 0,
+    "baselineUsed": 457,
+    "chargedDelta": 16
+  },
+  "runtimeContract": {
+    "assetId": "ai/yeonmuk",
+    "spriteSize": [64, 64],
+    "pixelsPerUnit": 32,
+    "previewURL": "http://127.0.0.1:8201/src/resources/characters/yeonmuk/",
+    "runtimeRoot": "public/assets/maplestory/fox-talismanist-ai/runtime",
+    "originalsRoot": "public/assets/maplestory/fox-talismanist-ai/originals",
+    "motionKeys": {
+      "idle": [
+        "stand",
+        "stand-right",
+        "stand-back",
+        "stand-left",
+        "stand-front-right",
+        "stand-front-left",
+        "stand-back-right",
+        "stand-back-left"
+      ],
+      "walk": [
+        "move",
+        "move-right",
+        "move-back",
+        "move-left",
+        "move-front-right",
+        "move-front-left",
+        "move-back-right",
+        "move-back-left"
+      ],
+      "battle": ["battle-ready", "talisman-cast", "hit1", "die1"]
+    },
+    "walk": {
+      "frames": 8,
+      "frameDurationSeconds": 0.1,
+      "totalSeconds": 0.8,
+      "loop": true,
+      "pivot": "x32, y64-원본발바닥. 프레임별 pivot은 manifest에 기록."
+    },
+    "battleReady": {
+      "direction": "south-east",
+      "frames": 5,
+      "frameDurationSeconds": 0.25,
+      "totalSeconds": 1.25,
+      "loop": true,
+      "pivot": {
+        "x": 32,
+        "y": 2
+      },
+      "canonicalPoseIndex": 0
+    },
+    "talismanCast": {
+      "direction": "south-east",
+      "frames": 8,
+      "totalSeconds": 0.65,
+      "contactTime": 0.36,
+      "contactFrame": 3,
+      "holdFrame": 4,
+      "recoverFrame": 5,
+      "readyReturnFrame": 7,
+      "pivot": {
+        "x": 32,
+        "y": 2
+      },
+      "startEndUseSameReadyPNG": true,
+      "protectionTalisman": "같은 몸 모션 재사용"
+    },
+    "hit1": {
+      "direction": "south-east",
+      "frames": 5,
+      "totalSeconds": 0.23,
+      "impactFrame": 0,
+      "impactHoldSeconds": 0.065,
+      "readyReturnFrame": 4,
+      "pivot": {
+        "x": 32,
+        "y": 2
+      }
+    },
+    "die1": {
+      "direction": "south-east",
+      "frames": 9,
+      "totalSeconds": 0.8,
+      "loop": false,
+      "terminalFrame": 8,
+      "pivot": "x32, y2 기본. 원본3·4번은 발바닥에 맞춘 y4·y3.",
+      "hpZeroTurnSkip": "전투 규칙 소유자 책임"
+    },
+    "integrationBoundary": "리소스/뷰어/생성 기록만 수정. 게임·스토리·HP 규칙은 원정/전투 소유자가 연결.",
+    "reviewReports": {
+      "walk": "public/assets/maplestory/fox-talismanist-ai/review/motion-playback/walk-browser.json",
+      "battle": "public/assets/maplestory/fox-talismanist-ai/review/motion-playback/battle-browser.json"
+    }
+  },
+  "originalFiles": [
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/battle-idle-01/0e777d6a-2e0a-446b-bc7b-8ced3a16933a/00.png",
+      "sha256": "8cf264a724bb26b1930a214b8a3bfdfb3f57db14cc3570ea3b4b7e07e11a9933",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/battle-idle-01/0e777d6a-2e0a-446b-bc7b-8ced3a16933a/01.png",
+      "sha256": "9579768daf8ad2ad23ec9d4f77d99c2b6b3fdbe4055d7392d43c390b7fec5815",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/battle-idle-01/0e777d6a-2e0a-446b-bc7b-8ced3a16933a/02.png",
+      "sha256": "6a3e8b2409b4883acb38c317654bcf85747565c5133b6a33a0b10979a60aeefb",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/battle-idle-01/0e777d6a-2e0a-446b-bc7b-8ced3a16933a/03.png",
+      "sha256": "bedf0e4b5677bfcac926721f9ee555369b765683b17dcb35d21c5c96c31e8af9",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/battle-idle-01/0e777d6a-2e0a-446b-bc7b-8ced3a16933a/04.png",
+      "sha256": "e03d447089e901a6568c874ad94662fcc12b686ab61b244bd7b5bcbd44c0b453",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/battle-ready-01/919eadd3-2edf-49e2-bb83-460cf5d3d78d/00.png",
+      "sha256": "b7de3884654cba341c66c444a32b6814c2bdac33822a2e756215db6706ff95a5",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/battle-ready-01/919eadd3-2edf-49e2-bb83-460cf5d3d78d/01.png",
+      "sha256": "ea49e18b3eb91c9204eaa0cf8614f05037bf7118923ca091d8aaebcd89f1d3a4",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/battle-ready-01/919eadd3-2edf-49e2-bb83-460cf5d3d78d/02.png",
+      "sha256": "16171b5a31f4ca962c720252c697d39e8c433871a7bff9c57873a723fc4524c6",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/battle-ready-01/919eadd3-2edf-49e2-bb83-460cf5d3d78d/03.png",
+      "sha256": "d5c9538bdad8c6d4dc70aeb363e544f14c646a6248e0daf862c0bcbbd4f13d8b",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/battle-ready-01/919eadd3-2edf-49e2-bb83-460cf5d3d78d/04.png",
+      "sha256": "7e4a93797fecdf1eec698b581896b2b372bf67dd859cc9127baf70c2fadd93ae",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/downed-01/7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de/00.png",
+      "sha256": "86c0f63333abca3faa8f820ce665a8fd4061bf00a104e4933851d0a7b37a6ca2",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/downed-01/7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de/01.png",
+      "sha256": "5a1ba3ab45a72954f6633c7e7ebd2a944e95056871233d920e35731c44bc1961",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/downed-01/7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de/02.png",
+      "sha256": "f78c6cbe3c575d0f47ec6679d19e0c0fc8931fe065555ed732fadfec2c30b006",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/downed-01/7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de/03.png",
+      "sha256": "bbd7d19339bec36d911788949561583ddb85806a9fb5961abe8b93d8d1c16f7b",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/downed-01/7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de/04.png",
+      "sha256": "daf0359700ad4799e518f794e51df964b8e6fd34731e374cab05b2c8c22a0d9d",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/downed-01/7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de/05.png",
+      "sha256": "9694350e57238515d5bf3d6a1b52f5bcad683ea230271e5752989242799cbc18",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/downed-01/7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de/06.png",
+      "sha256": "276c17b8db16dc68cbb76a964d4058c7499ca596c0e25b3c3ede4e1d2b342e66",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/downed-01/7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de/07.png",
+      "sha256": "5bffaa6272b577791b524bbe36ce1c91171c9a452be0635e7e6ba4f3a12e4003",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/downed-01/7bd7dbf2-e76f-4903-a0f4-ccf1c8b0a2de/08.png",
+      "sha256": "e9711114cf879d0d9288327ba4e392188a3f7903cc56990b4ebeda70846a22db",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-01/e700ce82-fac4-499b-bbe5-7f4e64cdc6ba/00.png",
+      "sha256": "f0e4f4d752d055cd7a803ee0557236ff28ca62c23eec088720e972b509e90c63",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-01/e700ce82-fac4-499b-bbe5-7f4e64cdc6ba/01.png",
+      "sha256": "74b418e32f6c8b0aa2775ee127eaedb21218c026626ba0d16c0974d32bc68987",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-01/e700ce82-fac4-499b-bbe5-7f4e64cdc6ba/02.png",
+      "sha256": "e95ec76d9c4649f762455968168b981d582a6bb1194403ae2a0ec0aed2a0b4eb",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-01/e700ce82-fac4-499b-bbe5-7f4e64cdc6ba/03.png",
+      "sha256": "e2627b6c1a5e4b6a2f19e690b4d91c9ad8374d5932216a85eb4cfccf6ba561f2",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-01/e700ce82-fac4-499b-bbe5-7f4e64cdc6ba/04.png",
+      "sha256": "ad7d8616f505378b864f77194d1ce8186b36c03b14ec132daa8db82e6e42435f",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-02/c7826bb9-1750-4660-9929-fc3847e39170/00.png",
+      "sha256": "93fc03371665c6aca0409ce8dae3c333e2b8b77b59db6f1011e31f9c9c8b8562",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-02/c7826bb9-1750-4660-9929-fc3847e39170/01.png",
+      "sha256": "41452468ba539829e87d718e6df8c507724e5b6fdcf9391642d925396fad1827",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-02/c7826bb9-1750-4660-9929-fc3847e39170/02.png",
+      "sha256": "10b8ee8e08999d180417d88c66c2444dad0ca232cd42a4f72537f36fa01544ee",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-02/c7826bb9-1750-4660-9929-fc3847e39170/03.png",
+      "sha256": "c04baa286a9d9bde0faf0da41f20b72b10cadaca96797e221af77d33a03791c6",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-02/c7826bb9-1750-4660-9929-fc3847e39170/04.png",
+      "sha256": "615e56a463bd3131d99166d86b1c333ca8a962baef260d6116bad749385c5dcb",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-03/aa9417aa-925b-40ce-9eca-1330eea3a5cc/00.png",
+      "sha256": "0fe2fc5b471984ee8fcbac4c17261b068e0e6764e3f192cea3079418ddbb4551",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-03/aa9417aa-925b-40ce-9eca-1330eea3a5cc/01.png",
+      "sha256": "c3e0601fe713925d9bf69703d79406c283328018f2f8ef0d30a2fba4e8d05e82",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-03/aa9417aa-925b-40ce-9eca-1330eea3a5cc/02.png",
+      "sha256": "87629137d2b9dbf5af5515c26a9b496b6a7061760af54b55a275340d9c1424c7",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-03/aa9417aa-925b-40ce-9eca-1330eea3a5cc/03.png",
+      "sha256": "c554f161940679920cd9557b1ac46702f0c12bdc300477bc37054bc73524fe01",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-03/aa9417aa-925b-40ce-9eca-1330eea3a5cc/04.png",
+      "sha256": "a6892ea5d75f810a505e4b874b858d4138866618bd22045c4453b1098c1fd56a",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-03/aa9417aa-925b-40ce-9eca-1330eea3a5cc/05.png",
+      "sha256": "33ca9104126dc7067f89a57d9d65a12e2f3d1ea6584134d99ebe09eb5ebd268b",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-03/aa9417aa-925b-40ce-9eca-1330eea3a5cc/06.png",
+      "sha256": "fb374a00c38a0e6cdaa6e600af148094c5286d9cafc5925ed500a2597a8b5818",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-03/aa9417aa-925b-40ce-9eca-1330eea3a5cc/07.png",
+      "sha256": "d531562139af6ff3754713ec734ddd9717b50ef841d714bf4588eab8fde6e9a0",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/hurt-03/aa9417aa-925b-40ce-9eca-1330eea3a5cc/08.png",
+      "sha256": "e17f165bd86dd512c7eff9ad77f5f68c0b8e6d7a5f849e991c2466d8140db87a",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/talisman-cast-01/686f0ba3-ae97-4ac1-b488-22b73398aee3/00.png",
+      "sha256": "c7a6253742bd9a7b730ba86eb367a5ad71c350be1e8dff5e9063ae1f99b8dd45",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/talisman-cast-01/686f0ba3-ae97-4ac1-b488-22b73398aee3/01.png",
+      "sha256": "9d20e1a296bc04c39032094de3d5229e75db4d0eb96069287261e0aeda467a72",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/talisman-cast-01/686f0ba3-ae97-4ac1-b488-22b73398aee3/02.png",
+      "sha256": "1ff332fd6d6aad136628629c7460cb99ecb8ddf3219a7dd613679706df807cee",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/talisman-cast-01/686f0ba3-ae97-4ac1-b488-22b73398aee3/03.png",
+      "sha256": "1ff752388617d98f69ebd023512784cc95d26e6a116b4fc2a200690ec2462bd0",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/talisman-cast-01/686f0ba3-ae97-4ac1-b488-22b73398aee3/04.png",
+      "sha256": "8761fa204223265c3065722e03350599d09ab0f38aaa0013e9fc0d4c3fbd3909",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/talisman-cast-01/686f0ba3-ae97-4ac1-b488-22b73398aee3/05.png",
+      "sha256": "39b7b13893ec658324cd65ebbf4f721cfdde9b5d1ef78be197c3155dad14b75b",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/talisman-cast-01/686f0ba3-ae97-4ac1-b488-22b73398aee3/06.png",
+      "sha256": "a7082e2ed8eba1e6d4e81c690002573f99b467e5779f69173e0178f273cc087d",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/talisman-cast-01/686f0ba3-ae97-4ac1-b488-22b73398aee3/07.png",
+      "sha256": "824c8537aa4bf7bf04562f8e45a533ef8f517d587ca9d32509fae978befc3a2d",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/animations/talisman-cast-01/686f0ba3-ae97-4ac1-b488-22b73398aee3/08.png",
+      "sha256": "09802bc9941e8ce4e4b573ed54c384b14dd6c4ec114fdcbcd790ac585ea6c8ee",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/east/frame_000.png",
+      "sha256": "5e5528bc06ba117a8626cb35866f98efc579fcb46abce9fa84d0e8244e2b60a3",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/east/frame_001.png",
+      "sha256": "bdb2bfe910513737dc06b93759236140c96cecce978be5c9572e11c6e72d548c",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/east/frame_002.png",
+      "sha256": "4446e4c041001f80b920477329e55474c8b74f7551463bacd182061cbaff818b",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/east/frame_003.png",
+      "sha256": "448a8943e9dddc7081d827927d282bafe5c486bec9cb12709536d79082e07970",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/east/frame_004.png",
+      "sha256": "a000419d6ad1f0b850d3efc35f90c3a9c04115c0c845e912a83ede35f5463660",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/east/frame_005.png",
+      "sha256": "58bd16794a6d08b7999ada7b81a1cb7ff41288190747152adcfb5af9a26e4e1e",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/east/frame_006.png",
+      "sha256": "08474369ea5b1f56f525f67614b9500a3754328b34970b3feb4e8ca3d36218da",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/east/frame_007.png",
+      "sha256": "8d85c433bd1900e21f9aea2ea0f73937ab5ae0604eea03a6b5b7be6919ce6e70",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north/frame_000.png",
+      "sha256": "26a0cb865aa9d06e9b732cc21ab1373da508fffced8a3845e236a235539e2ef0",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north/frame_001.png",
+      "sha256": "9bd42988acc5ca7b25a178c5ec6839c75793ca71915b396988b87c3a5c6bb223",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north/frame_002.png",
+      "sha256": "df0953e8017fe758585231b593246bd49c874b3e38548b184cd95361108c29db",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north/frame_003.png",
+      "sha256": "371bb76b3758a19ae71529fbaf810139852b33e8bfaa3e1408e3aa7ae291c398",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north/frame_004.png",
+      "sha256": "4836db68749ea66ff0f22f9999845142cf39eaaaba2a6919a3b31851610d10a1",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north/frame_005.png",
+      "sha256": "b811a705b4fdf455ab4294cf60d3618c7a2a36e4a867189a497cae9d02d7dc5e",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north/frame_006.png",
+      "sha256": "01f7bba66f13b76fa088dcfac4a876624f44c8863a9de7192ec134405bd74c42",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north/frame_007.png",
+      "sha256": "e7fa07bd17e4ea0e7a2b065888bb0a0d7af6618706107047dfb0bafc4812cba8",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-east/frame_000.png",
+      "sha256": "7c655da02b4e98b99a18b2b300741a327fa3b1e81cf955bb005b10064d8ef878",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-east/frame_001.png",
+      "sha256": "4b3428d9150367b7964341471b0f279bf12ecf07b18d0fcd6415e187a1ebb718",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-east/frame_002.png",
+      "sha256": "08f3ccc980d9a73221f27b92f5edbf593009a311ac22f6e044c96eafed57b4fc",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-east/frame_003.png",
+      "sha256": "cf59b6f4f5d997bf873ddbd768a3053f84fff54be15b58c6bfe5e67c761472de",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-east/frame_004.png",
+      "sha256": "6791a530ae63902d3aa85acccbf2bc7dd30735a48ce677412d455518e01b7ddb",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-east/frame_005.png",
+      "sha256": "57395c3d1b613e4efbac2653b911709bb19ca1d2d46ad5fc033d2f2b6f34bb00",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-east/frame_006.png",
+      "sha256": "17c7a5e7bd2d2027ad4986d6660c94feef2b5453621310494080ed65e3e83189",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-east/frame_007.png",
+      "sha256": "19646cc449fb6effd2b406e2a8fa7420e784d18844819cb97409361c09ac2e46",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-west/frame_000.png",
+      "sha256": "1a1807570a5b4be09bef3066de0849d663dfa6398958f7814ab5d69888a57652",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-west/frame_001.png",
+      "sha256": "303bbca532ef7f83ff2792e3e8508d9368e8805b73e9174e77d294485a64bf45",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-west/frame_002.png",
+      "sha256": "2ad2267754b48a5c36f71f93d4df18f99143154ef798c61c91ce69cf0ff134a5",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-west/frame_003.png",
+      "sha256": "3517c677771846e13c53ee2b6c31e3046d11b022d4ad1ef5f0c73a106ac3cc80",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-west/frame_004.png",
+      "sha256": "c72fb134819d32c61c8fbc065fa98804a3c96f51f5f10793d87f2b48acb27353",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-west/frame_005.png",
+      "sha256": "d8f468e25e584634eee844bf376bffcc7b2c8573420e09c2a1e22e5b82acd355",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-west/frame_006.png",
+      "sha256": "4e4363c67076ae8a910365f87f0b536270cd9d81b0418a2c7bf3ff34a2ce15e1",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/north-west/frame_007.png",
+      "sha256": "bd533c317c78d33f5129cea7e89bbbb2f8e583c4f4a919f73dab0ee1dbdfc32c",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south/frame_000.png",
+      "sha256": "9a41a5d40ea5672af8aefb167dc0ea5c04d37094ec453a363e5c6bd5f3d928a0",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south/frame_001.png",
+      "sha256": "234bea78b58e56c825b874d009c11025631c40def9a56464190213d7e37e7aff",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south/frame_002.png",
+      "sha256": "e233bc618a49abed83b5d8109571605144c80ae786d4820538c48f28c93dc132",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south/frame_003.png",
+      "sha256": "67cdd0c9972a1b1d108f8e8218b00e5530782e29473ab2df37e703ab888fcb78",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south/frame_004.png",
+      "sha256": "a7fda642ffe6231c0c7345ea30f5c7d5355cfa308e35d8f428d05911149779e5",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south/frame_005.png",
+      "sha256": "7f1228a4dabb378427caed0d02137c87c27976e1d106e685288439ce0d2d5dee",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south/frame_006.png",
+      "sha256": "2bc8e595a3cb3677608083fa2b36c401121186a2f7a82a62cbd142d0e176c52a",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south/frame_007.png",
+      "sha256": "448fe501c2c034bd5341e0db5fefe5b2a7cc69faff9fba4c4237a92eafcb0bb9",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-east/frame_000.png",
+      "sha256": "dc602f011f2d9b74b3e2e197fae09972d7a37f32e401ed61eb1b5907e83699bd",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-east/frame_001.png",
+      "sha256": "b66751b8427b67034ff1cc57d4e386f276e4b912ed417b9af5b4a66a15cbe8db",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-east/frame_002.png",
+      "sha256": "3d17e9227b3835f1deded5cb893c69003dc77da619a28ec4323ca58a9dbae5cd",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-east/frame_003.png",
+      "sha256": "0f284b2a1af918445346231d56cdf6fa6eb4bbf6879c8058dff48a68f68bea35",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-east/frame_004.png",
+      "sha256": "8eb3d4bd4a292b6d41c9d55d4efc8c3b8b827c4264d66285e61b39332a5af940",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-east/frame_005.png",
+      "sha256": "f094a27ffe59c13231c142cf206837937a6e667505c4b55471067e67014c112c",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-east/frame_006.png",
+      "sha256": "8b9f1ab70a6a0a50f7e810323428e711ad94edf27681c92139db5d6902ff7ad0",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-east/frame_007.png",
+      "sha256": "d164e215bd49a21d10b1b453215713fae056e0ed40ff072b08c609be800a9687",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-west/frame_000.png",
+      "sha256": "88e00bf28d45ceb76b097a825ff93bbc0d7c6c14b23b71b7650059ec56855711",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-west/frame_001.png",
+      "sha256": "fe40e7748393b40f772daa6a221013f7e420810a9697d454eba2c4c83bee071c",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-west/frame_002.png",
+      "sha256": "e439f1606b05303943727e77f6fce125481c10b18c3177450cb6cbb4e3c65760",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-west/frame_003.png",
+      "sha256": "e6c39129d5b8db2747555ca050d5ba4598963879b4032c1e5aefdca1a2f0f065",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-west/frame_004.png",
+      "sha256": "1117b16dcf65d5d2f1b7366d3dab3b0fe7e1ca3e4f44c25c52224d0c730686cc",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-west/frame_005.png",
+      "sha256": "9a4402b0457c4f2ca61c488e875020d76086a07f3b7ab16da506c7cada1176ce",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-west/frame_006.png",
+      "sha256": "cb20e9973dddf3345ab8fb759d3430649ca09b2c3a7764ee297341a3eb57f5be",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/south-west/frame_007.png",
+      "sha256": "b233c9eaa15965f8b2505a1e64ffc73490323159d153f010d8dcca851cbfeb14",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/west/frame_000.png",
+      "sha256": "a30a4b56fb55465e46e51f751e609bf216e3fee2bf0c99bee11275cf90838faa",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/west/frame_001.png",
+      "sha256": "0f288fe2b27106bb45b325963c1e5a849e9a584af69b4fefc44ad37c5cbf3a5d",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/west/frame_002.png",
+      "sha256": "f7bdb8d8befe1f852f6d23af3de0e5fe3cd8eaeb824c880b3a2f37f27d37253d",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/west/frame_003.png",
+      "sha256": "ad16504a582f9f166fdcf53434a4833872803ac3ef99a17fc43e36c154b11a09",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/west/frame_004.png",
+      "sha256": "674aa82aa151d3a6e75ef2579ca8a548612fdf6ca9b4ddb4a0dd22737fdb9b3c",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/west/frame_005.png",
+      "sha256": "b4caca78feb6832a7e4fb244ef41f3a328cab3c2388f60bfbb76aaac8a002a3a",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/west/frame_006.png",
+      "sha256": "bdacb8b248afb145a3dcdb56c7471aad8888d0282037d175c77ac0a6696a19ae",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/animations/walk/west/frame_007.png",
+      "sha256": "172d9e95436e5093bf5e6d699b4728401fa258a8f6f7eda1f0261da221b5aceb",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/east.png",
+      "sha256": "bbde3b5f80fc060c6f919cec921cdf9407f44d20bf17a6deec9bedd25bab0f63",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/north-east.png",
+      "sha256": "d14ed3f31eadd7e8180b878b9705fb34d1da530294b579f90bd1dc690ba0ae27",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/north-west.png",
+      "sha256": "9a5b7789b003fa8a985e8f3e9f2db52da5185ee0921adc29f7097be64134e5c3",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/north.png",
+      "sha256": "c0361eafdd8c0210f40a735aea02e01dba11e5865bcd0fe3393d67998999c40e",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/south-east.png",
+      "sha256": "034ea4aabfc3f5b88bf1ff64e51dcb5a4c0e9c6693d0c972dc890c073a11000c",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/south-west.png",
+      "sha256": "828f8b180306182e299d6da3ce63c54c0b726f42c9848d9c9171e4f61eeaf079",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/south.png",
+      "sha256": "9d35c51a8c131fd369f399fdff640c3fc4ab71e7bdab81ca6d05fa374c778487",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/characters/ca006367-6f19-46fc-ac25-d70fb92332ff/rotations/west.png",
+      "sha256": "464aa117ce57167193191a0ab047b11505237d4c5234eadc77494e4e807235b2",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/sheets/battle-idle-01.png",
+      "sha256": "75d8f58d7f0d0a9e94e7b17ccc6aec6e51db4fc3fd8c946756d3dc6b7d637933",
+      "width": 320,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/sheets/downed-01.png",
+      "sha256": "dc6075159de7dd4c1a92fbf30b09788197ac3b6065e0fa02d099bebd26fc03ee",
+      "width": 576,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/sheets/hurt-03.png",
+      "sha256": "e561dd2a46381addbab86077f4cebd745f2b6d52e92e02f8292dc668e736f46f",
+      "width": 576,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/sheets/talisman-cast-01.png",
+      "sha256": "8d91544518aa4d17eeb1940b5c6b473568b5d21842b1d285ae7585c6d8c546f6",
+      "width": 576,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/sheets/walk-east.png",
+      "sha256": "e79a6b29209bf7b30615f3a036fd81929f1ff40a138d85629c1559973ca4ae29",
+      "width": 512,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/sheets/walk-north-east.png",
+      "sha256": "ecaad98351f5643d585eaf0227a78c187a62ee693ce612b65f6584ce2eca1aab",
+      "width": 512,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/sheets/walk-north-west.png",
+      "sha256": "f8c5af50da764489e64cdac046a89198dfec52430fe4f4d19296522495ba08a9",
+      "width": 512,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/sheets/walk-north.png",
+      "sha256": "764dffc0e110fe9b9b1dc5864cbe9274558e2df1ae241a346e7041733b057de8",
+      "width": 512,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/sheets/walk-south-east.png",
+      "sha256": "f13f44dd5dc326889b9843fc07de5d51cc81b430feae3dc34ad704d78a9d0e27",
+      "width": 512,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/sheets/walk-south-west.png",
+      "sha256": "e6f9492a26c97634c28b6f6363b186ce682eca705dc3d5d2111b1a4207b16b42",
+      "width": 512,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/sheets/walk-south.png",
+      "sha256": "48330b63e4b88b35d9f5e485019893dc10c6c116da7422121335fe0db4c0fae1",
+      "width": 512,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/sheets/walk-west.png",
+      "sha256": "4cac78d2421fb8e035cd2c399c954306afed81edfc253c70bfc04cd8c09fec58",
+      "width": 512,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/originals/yeonmuk-front-01-generated.png",
+      "sha256": "8ec52a3845f18be495d2cb9a7975423931d22d9aee9a2404af84c6fbd15bef41",
+      "width": 1254,
+      "height": 1254
+    }
+  ],
+  "validation": {
+    "reportPath": "public/assets/maplestory/fox-talismanist-ai/review/production-validation.json",
+    "frameReferences": 99,
+    "originalPNGCount": 132,
+    "allNativeRGBAEqual": true,
+    "approvedSouthBytesPreserved": true,
+    "concepts01To04Unchanged": true,
+    "readyTransitionsBytesEqual": true,
+    "browserWalkDirections": 8,
+    "browserWalkFramesPerDirection": 8,
+    "browserBattleMotions": 4,
+    "downedLastFrameHeld": true,
+    "consoleErrors": 0,
+    "missingFiles": 0,
+    "viewports": [
+      [1366, 768],
+      [1920, 1080]
+    ],
+    "typecheck": "passed",
+    "lint": "passed",
+    "format": "passed",
+    "build": "passed",
+    "relatedTests": 2,
+    "mobileTests": 0
+  }
+}

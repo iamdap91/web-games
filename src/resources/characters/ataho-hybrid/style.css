@@ -1,0 +1,193 @@
+:root {
+  color-scheme: light;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  color: #333c36;
+  background: #f3f1e9;
+  --portrait-height: 320px;
+  --stage-background: #e8e8df;
+  --floor: #6d806d;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-width: 860px;
+}
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 36px 42px 28px;
+}
+header {
+  margin-bottom: 24px;
+}
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  color: #74806b;
+}
+h1 {
+  margin: 0;
+  font-size: 31px;
+  letter-spacing: -0.035em;
+  font-weight: 750;
+}
+.intro {
+  margin: 11px 0 0;
+  font-size: 14px;
+  color: #697067;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 20px;
+}
+fieldset {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+legend {
+  float: left;
+  margin-right: 12px;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #697067;
+}
+label {
+  position: relative;
+  cursor: pointer;
+}
+input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+label span {
+  display: block;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  padding: 8px 12px;
+  font-size: 12px;
+}
+input:checked + span {
+  background: #fdfcf8;
+  border-color: #b7bfb0;
+  color: #405a45;
+  box-shadow: 0 2px 4px #35423208;
+}
+input:focus-visible + span {
+  outline: 2px solid #5b7758;
+  outline-offset: 3px;
+}
+main:has(input[value='game']:checked) {
+  --portrait-height: 112px;
+}
+main:has(input[value='dark']:checked) {
+  --stage-background: #28352f;
+  --floor: #97ad95;
+}
+.portraits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+article {
+  overflow: hidden;
+  border: 1px solid #d8dbd0;
+  border-radius: 14px;
+  background: #faf9f4;
+}
+.card-heading {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 19px 22px 16px;
+}
+h2 {
+  margin: 0;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+}
+.card-heading span {
+  margin-left: auto;
+  color: #8a8d7f;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.stage {
+  position: relative;
+  height: 385px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 32px;
+  background: var(--stage-background);
+  overflow: hidden;
+}
+.stage::before {
+  content: '';
+  position: absolute;
+  bottom: 19px;
+  width: calc(var(--portrait-height) * 0.45);
+  height: calc(var(--portrait-height) * 0.048);
+  border-radius: 50%;
+  background: var(--floor);
+  opacity: 0.18;
+}
+.stage::after {
+  content: '';
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 30px;
+  height: 1px;
+  background: var(--floor);
+  opacity: 0.12;
+}
+.portrait {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: var(--portrait-height);
+  width: auto;
+  max-width: 90%;
+}
+.pixel {
+  image-rendering: pixelated;
+}
+.caption {
+  margin: 0;
+  padding: 15px 22px 17px;
+  text-align: center;
+  color: #777e72;
+  font-size: 12px;
+}
+footer {
+  margin-top: 23px;
+}
+footer p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.7;
+  color: #66705f;
+}
+footer strong {
+  color: #3b5140;
+  font-weight: 650;
+}
+.footnote {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #92968a;
+}

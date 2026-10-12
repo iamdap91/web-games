@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#173c32" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="../../preview/style.css" />
+    <link rel="stylesheet" href="../../preview/originals.css" />
+    <title>연묵 · 리소스 뷰어</title>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <main>
+      <nav aria-label="캐릭터 선택">
+        <a href="../">캐릭터 목록</a><a href="../../monsters/yeti/">예티</a>
+        <a href="../../monsters/slime/">슬라임</a
+        ><a href="../adventurer/">모험가</a>
+        <a href="./" aria-current="page">연묵</a>
+        <a href="../smashu/">스마슈</a>
+      </nav>
+      <header>
+        <div>
+          <p class="eyebrow">WEB GAMES / YEONMUK</p>
+          <h1>연묵의 작은 숲</h1>
+          <p class="intro">여덟 방향 이동과 부적사의 전투 동작을 살펴보세요.</p>
+        </div>
+        <span class="badge">로컬 리소스</span>
+      </header>
+      <section class="stage" aria-label="리소스 미리보기">
+        <div class="stage-top"><span>작은 숲</span><span>연묵 모션</span></div>
+        <canvas
+          id="scene"
+          width="960"
+          height="480"
+          aria-label="숲속 발판 위 연묵의 모션"
+        >
+          캔버스를 지원하는 브라우저에서 확인해주세요.
+        </canvas>
+        <p id="status" role="status">로컬 이미지를 불러오는 중…</p>
+      </section>
+      <section class="controls" aria-label="모션 설정">
+        <label
+          >모션
+          <select id="motion" disabled aria-label="연묵 모션"></select>
+          <output id="frame">—</output>
+        </label>
+        <button id="toggle" type="button" disabled>일시정지</button>
+      </section>
+      <p id="motion-notes" aria-live="polite"></p>
+      <details class="originals-panel">
+        <summary>PixelLab 생성 원본과 효과</summary>
+        <p>
+          젊은 성인 여우 수인 부적사의 방향별 이미지와 모션 원본을 보관합니다.
+        </p>
+        <div id="originals"></div>
+      </details>
+      <footer>
+        <p>
+          승인한 은회색 털과 짙은 여행 외투의 외형으로 이동·부적 전투 모션을
+          생성했습니다.
+        </p>
+        <p>
+          전투용 포즈는 타격 시점에 맞춰 골랐으며, 전체 생성 동작도 함께 확인할
+          수 있습니다.
+        </p>
+        <p>
+          출처: <a href="https://www.pixellab.ai/">PixelLab</a> · 선택한 AI
+          캐릭터를 기준으로 생성한 로컬 리소스입니다.
+        </p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/yeonmuk/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

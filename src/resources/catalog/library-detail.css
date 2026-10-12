@@ -1,0 +1,205 @@
+.library-detail {
+  color: #e4e6dc;
+}
+.library-detail .detail-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  padding: 14px 0;
+  border-bottom: 1px solid #34413a;
+  margin-bottom: 28px;
+}
+.library-detail a {
+  color: #d6be84;
+  font-size: 12px;
+}
+.library-detail header {
+  margin-bottom: 28px;
+}
+.library-detail .eyebrow {
+  color: #b0a37d;
+  font-size: 11px;
+}
+.library-detail .intro {
+  color: #9bad9f;
+  font-size: 13px;
+  line-height: 1.8;
+}
+.library-detail section {
+  margin-top: 36px;
+  scroll-margin-top: 20px;
+}
+.library-detail h2 {
+  font-size: 21px;
+  margin-bottom: 16px;
+}
+.library-detail .stage {
+  border: 1px solid #4b5c4f;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #2d3930;
+}
+.library-detail canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2;
+}
+.library-detail #status {
+  margin: 0;
+  padding: 14px 18px;
+  color: #a7b3ab;
+  font-size: 12px;
+}
+.library-detail .controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+.library-detail .controls label {
+  flex: 1;
+  min-width: 180px;
+  font-size: 13px;
+}
+.library-detail select {
+  display: block;
+  width: 100%;
+  margin: 10px 0 6px;
+  padding: 11px;
+  border: 1px solid #526a56;
+  border-radius: 8px;
+  color: #e4e6dc;
+  background: #29382d;
+}
+.library-detail output {
+  color: #a7b3ab;
+  font-size: 11px;
+}
+.library-detail button {
+  padding: 13px 24px;
+  border: 1px solid #526a56;
+  border-radius: 8px;
+  color: #e4e6dc;
+  background: #29382d;
+  cursor: pointer;
+}
+.library-detail button:disabled {
+  opacity: 0.5;
+}
+.library-detail #scene-links > a {
+  display: inline-block;
+  padding: 14px 20px;
+  border: 1px solid #806f49;
+  border-radius: 8px;
+  background: #302e25;
+  margin: 18px 12px 0 0;
+}
+.library-detail img {
+  max-width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.library-detail .resource-card {
+  padding: 18px;
+  border: 1px solid #35473a;
+  border-radius: 8px;
+  background: #202b24;
+  min-width: 0;
+}
+.library-detail .resource-image {
+  display: none;
+}
+.library-detail h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+.library-detail p {
+  font-size: 13px;
+  line-height: 1.7;
+}
+.library-detail details {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid #35473a;
+}
+.library-detail summary {
+  cursor: pointer;
+  font-size: 12px;
+}
+.library-detail .frames {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
+.library-detail figure {
+  flex: 0 0 140px;
+  margin: 0;
+}
+.library-detail figure a {
+  display: flex;
+  height: 140px;
+  align-items: center;
+  justify-content: center;
+  background: #333838;
+}
+.library-detail figure img {
+  max-height: 136px;
+}
+.library-detail figcaption {
+  color: #a7b3ab;
+  font-size: 11px;
+  margin-top: 8px;
+}
+.library-detail code {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 10px;
+  color: #9bad9f;
+  margin-top: 10px;
+}
+.library-detail audio {
+  width: 100%;
+  margin: 10px 0;
+}
+.library-detail .source-link,
+.library-detail .preview-link,
+.library-detail #records a {
+  display: block;
+  margin-top: 12px;
+}
+.library-detail #originals article {
+  margin-top: 24px;
+}
+.library-detail #originals img {
+  display: block;
+  width: auto;
+  height: auto;
+  image-rendering: auto;
+}
+.library-detail .provenance ul {
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.library-scene {
+  display: block;
+  width: 100%;
+  height: clamp(520px, 75dvh, 760px);
+  border: 1px solid #4b5c4f;
+  border-radius: 12px;
+  background: #2d3930;
+}
+.library-scene.facility-scene {
+  height: 760px;
+}
+@media (max-width: 650px) {
+  .library-scene {
+    height: 620px;
+  }
+  .library-scene.facility-scene {
+    height: 950px;
+  }
+}

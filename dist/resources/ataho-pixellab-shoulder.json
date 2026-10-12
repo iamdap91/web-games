@@ -1,0 +1,497 @@
+{
+    "schemaVersion": 1,
+    "createdDate": "2026-10-13",
+    "status": "evaluation-only",
+    "provider": "PixelLab · Animate with text (PixMiniMax)",
+    "scope": "오른쪽 기준 원화에서 철산고의 준비·타격·회수 모션을 생성하고 좌우 반전을 비교한다.",
+    "source": {
+        "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png",
+        "sha256": "f429358df77528a614df1e6703582dd13ad08dff7c6af61a17b1b46b944f5285",
+        "generationRecordPath": "resources/ataho-side-generation.json",
+        "sourcePixelsModified": false
+    },
+    "input": {
+        "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/input.png",
+        "sha256": "00df468d5715650518d0cb00b887a91f61ba71a18424e65fbf111f93263e0090",
+        "sourceRect": {
+            "x": 111,
+            "y": 26,
+            "width": 941,
+            "height": 1259
+        },
+        "placement": {
+            "x": 28,
+            "y": 40,
+            "width": 144,
+            "height": 192
+        },
+        "canvasSize": {
+            "width": 256,
+            "height": 256
+        },
+        "processing": "오른쪽 원화의 기존 표시 영역을 Lanczos로 144×192px 축소하고 투명 256px 캔버스 x28,y40에 배치한다. 공격을 뻗을 오른쪽 여백을 확보하며 원본은 변경하지 않는다."
+    },
+    "generation": {
+        "tool": "mcp__pixellab__animate_image_pixminimax",
+        "jobId": "71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f",
+        "assetId": "55faa13e-2229-5f38-bcde-fed19ccd9e99",
+        "galleryStatus": "saved",
+        "request": {
+            "first_frame_url": "upload:6cf86564-9cba-414c-9d25-94b0901d4c73",
+            "last_frame_url": "upload:6cf86564-9cba-414c-9d25-94b0901d4c73",
+            "frame_count": 16,
+            "direction": "east",
+            "view": "side",
+            "subject_description": "a stocky middle-aged orange tiger martial artist with sleepy eyes and ivory cheek fur, wearing a worn brown OPEN short jacket over an ivory CROSS-WRAPPED ROBE without buttons, brown waist sash, dark cropped trousers, wrist wraps and light ankle wraps",
+            "initial_pose": "standing relaxed facing screen-right in a slight three-quarter side view, arms lowered, brown jacket open over crossed ivory robe, both feet on one level baseline",
+            "no_background": true,
+            "enhance_prompt": false,
+            "description": "One grounded Bajiquan shoulder-and-upper-back strike (tie shan kao) to screen-right. Bend both knees into a low stance, tuck both arms tightly against the chest, turn the torso slightly so the near shoulder and upper back lead, take one small grounded step right and drive the shoulder and upper back forcefully right with the compact body. The shoulder is the leading contact point; both fists remain tucked. Briefly hold the braced impact posture, then shift back and return to the input standing pose. One shoulder strike only: no punch, extended elbow, kick, jump, tumble or long dash. Fixed camera and scale, whole body inside the canvas, same ground baseline. Preserve the input face, proportions, brown OPEN jacket, cross-wrapped ivory robe without buttons, sash and painted style. No costume changes, extra limbs, weapons, effects or opponent.",
+            "seed": 202610133
+        },
+        "requestedFrames": 16,
+        "returnedFrames": 17,
+        "firstFrameIsInput": true,
+        "usage": {
+            "requests": 1,
+            "retries": 0,
+            "chargedGenerations": 2
+        },
+        "validationNote": "최초 설명이 API 1000자 제한으로 생성 전 거절돼 851자로 줄였다. 이 검증 오류는 유료 생성·재생성 횟수에 포함하지 않는다.",
+        "firstFramePixelsPreserved": false,
+        "firstFrameEncodingNote": "알파와 보이는 픽셀은 입력과 동일하다. 완전히 투명한 284픽셀의 RGB만 최대 6 다르며 밝은·검은·흰 배경 합성 후 RGB는 동일하다. 반환 원본은 그대로 보존한다.",
+        "delivery": "get_image가 반환한 원본 image/png 데이터를 그대로 저장했다. 반환 프레임의 픽셀·크기·위치 보정은 하지 않는다.",
+        "lastFramePixelsEqualInput": false
+    },
+    "preview": {
+        "path": "src/resources/characters/ataho-hybrid/pixellab-attacks.html",
+        "hubPath": "src/resources/characters/ataho-hybrid/index.html?motion=shoulder#attacks",
+        "footY": 232,
+        "frameDurationSeconds": 0.075,
+        "firstPlaybackFrame": 0,
+        "timingNote": "0.075초는 비교판 설정이며 본게임의 공격 판정 시각은 연결하지 않는다.",
+        "alignment": "모든 프레임에 같은 캔버스 중심·입력 발 기준을 사용하며 프레임별 위치 보정은 하지 않는다.",
+        "leftPreview": "같은 프레임을 표시 단계에서 좌우 반전한다. 별도 생성·PNG 수정 없음.",
+        "playbackFrameIndices": [
+            0, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16
+        ],
+        "selectionNote": "큰 잔상 효과가 붙은 원본 5번을 기본 재생에서 제외한다."
+    },
+    "frames": [
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/00.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=0",
+            "downloadIndex": 0,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "50c5239214c7a0118b296be68d585200f21dbe76d5ae19bca8c6a48fb0b7c516",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [28, 40, 172, 232],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/01.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=1",
+            "downloadIndex": 1,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "2d0bb4a95813624a7e55c954bec8bce371bdf9f6619b895bd4d333a8fab00eb9",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [35, 55, 174, 231],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/02.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=2",
+            "downloadIndex": 2,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "56fc1eb385a3ec73761d52aea3d29af5a9c4cbaa2bf8d0e6119f2e2be887f2ad",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [31, 55, 171, 231],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/03.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=3",
+            "downloadIndex": 3,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "724aa9d9d9096f96e9d06a26e38f3b454e04b553388bdc6bfbe73461ccfd0a1c",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [34, 55, 174, 231],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/04.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=4",
+            "downloadIndex": 4,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "20330db50b161d40413b3836bc6cdf695b05992badd0d94980ec9e7f695ef1dd",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [42, 60, 209, 231],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/05.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=5",
+            "downloadIndex": 5,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "db29677b012c8ccb456d28159114feccf49bbd19ac8c217cf86a58f811de96f8",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [37, 63, 231, 232],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/06.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=6",
+            "downloadIndex": 6,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "b79bcab5a4e194c2ddadc6f32398f02c7b548c79d473997cd629a9eda7e3683d",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [53, 62, 228, 232],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/07.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=7",
+            "downloadIndex": 7,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "3f78f07aba519507fd94540719eec37bb91467eff79d0db044b917375e108304",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [54, 63, 225, 232],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/08.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=8",
+            "downloadIndex": 8,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "0c58476d2d8188a8c4247011a8b6b925cffb8e56d89041a6cd09fb9202495c7b",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [65, 63, 225, 232],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/09.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=9",
+            "downloadIndex": 9,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "78d8a419dddd7f42d7d23fb2d8ace0d6abb2c115024acbb1e111c703b0d818c6",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [58, 63, 224, 232],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/10.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=10",
+            "downloadIndex": 10,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "be4f0375b386dab8e424a1509a51b3d019f783e1d69f2ecb1fcba1ad4bb0645a",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [54, 63, 225, 232],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/11.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=11",
+            "downloadIndex": 11,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "c91e612f75bc5dcc040af0f4aa0c657e5ebe48420bbdadcf304d96bf4c155202",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [55, 63, 225, 232],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/12.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=12",
+            "downloadIndex": 12,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "a3d8b1897601cdeca5651d01f93f7bcc4f0c959745af85c93a87d9d96ad2be8b",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [48, 50, 192, 232],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/13.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=13",
+            "downloadIndex": 13,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "faae6ef17c63ad837af990e367c284648c1d7e261adb47703fa3d5e031dff309",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [41, 43, 177, 232],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/14.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=14",
+            "downloadIndex": 14,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "02d0fa3d5c8a14d5901ac768fea4fc89a009fdf8138d96a1a23745f1da09d26c",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [36, 41, 172, 232],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/15.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=15",
+            "downloadIndex": 15,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "a3da6e6757b7a6478cf9f669058786252ce7aa8b54e40828b69895923bb8ad46",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [31, 41, 171, 232],
+            "touchesCanvasEdge": false
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/16.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/71c00eb0-4e64-4be6-8e4a-ee0ea1eb0e9f/download?index=16",
+            "downloadIndex": 16,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 232
+            },
+            "durationSeconds": 0.075,
+            "sha256": "bdbd7d3e9bd29a230ca654783df3bd6fbc172eff05cb5861a93187ce04d0775b",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [29, 41, 171, 232],
+            "touchesCanvasEdge": false
+        }
+    ],
+    "review": {
+        "status": "pending-user-review",
+        "unverified": ["본게임의 타격·피해 판정 연결", "실기기 모바일 표시"],
+        "findings": [
+            "팔을 가슴 가까이 붙이고 낮게 몸을 밀어 넣는 돌진형이다. 상체의 어깨·등 접촉 강조는 본게임 적용 시 추가 검토 대상이다.",
+            "원본 5번에 큰 잔상이 붙어 기본 재생에서는 제외한다. 원본 전체 보기와 raw-preview.gif에서는 그 장도 확인할 수 있다.",
+            "원화에 비해 선·털 질감이 거칠어지는 경향이 남는다.",
+            "반환 17장 모두 알파 0~255이며 보이는 외형이 256px 캔버스 경계에 닿지 않는다."
+        ],
+        "recommendation": "현재 통합 비교판의 검토 모션으로 사용한다. 본게임 채택 시 접촉 자세·동작 속도와 타격·피해 판정을 별도로 연결하고 검증한다."
+    },
+    "derivatives": {
+        "contactSheet": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/contact-sheet.png",
+        "animatedPreview": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/preview.gif",
+        "notes": "비교 시트·raw-preview.gif는 원본 17장 전체다. preview.gif는 기본 선별 순서로 합성한다. 원본 PNG는 변경하지 않는다.",
+        "rawAnimatedPreview": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder/raw-preview.gif"
+    },
+    "verification": {
+        "checks": "npm run check 통과",
+        "build": "npm run build 통과",
+        "browser": [
+            {
+                "viewport": {
+                    "width": 1366,
+                    "height": 768
+                },
+                "deviceScaleFactor": 1,
+                "motion": {
+                    "key": "shoulder",
+                    "progression": {
+                        "indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+                        "distinctImages": [1, 1, 16]
+                    },
+                    "pause": true,
+                    "slider": "0/15/14",
+                    "mirror": [
+                        {
+                            "checked": 9706,
+                            "bad": 0
+                        },
+                        {
+                            "checked": 9958,
+                            "bad": 32
+                        },
+                        {
+                            "checked": 9788,
+                            "bad": 0
+                        }
+                    ],
+                    "slow": [0, 1, 2],
+                    "sizing": {
+                        "dpr": 1,
+                        "canvases": [
+                            {
+                                "css": [413, 340],
+                                "backing": [413, 340]
+                            },
+                            {
+                                "css": [413, 340],
+                                "backing": [413, 340]
+                            },
+                            {
+                                "css": [413, 340],
+                                "backing": [413, 340]
+                            }
+                        ]
+                    },
+                    "rawFrames": true
+                },
+                "layout": {
+                    "iframeCount": 1,
+                    "parentOverflow": false,
+                    "childOverflow": false,
+                    "childScroll": false,
+                    "height": 797,
+                    "headerHidden": true
+                },
+                "errors": []
+            },
+            {
+                "viewport": {
+                    "width": 1920,
+                    "height": 1080
+                },
+                "deviceScaleFactor": 2,
+                "motion": {
+                    "key": "shoulder",
+                    "progression": {
+                        "indices": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+                        "distinctImages": [1, 1, 16]
+                    },
+                    "pause": true,
+                    "slider": "0/15/14",
+                    "mirror": [
+                        {
+                            "checked": 38055,
+                            "bad": 245
+                        },
+                        {
+                            "checked": 39864,
+                            "bad": 9
+                        },
+                        {
+                            "checked": 39163,
+                            "bad": 62
+                        }
+                    ],
+                    "slow": [0, 1, 2],
+                    "sizing": {
+                        "dpr": 2,
+                        "canvases": [
+                            {
+                                "css": [417, 340],
+                                "backing": [834, 680]
+                            },
+                            {
+                                "css": [417, 340],
+                                "backing": [834, 680]
+                            },
+                            {
+                                "css": [417, 340],
+                                "backing": [834, 680]
+                            }
+                        ]
+                    },
+                    "rawFrames": true
+                },
+                "layout": {
+                    "iframeCount": 1,
+                    "parentOverflow": false,
+                    "childOverflow": false,
+                    "childScroll": false,
+                    "height": 797,
+                    "headerHidden": true
+                },
+                "errors": []
+            }
+        ],
+        "rawFirstFrame": "알파·보이는 픽셀 동일. 완전히 투명한 284픽셀의 RGB만 차이. 세 배경 합성 후 RGB 동일.",
+        "clippedFrames": [],
+        "footBoundsY": [231, 232],
+        "mobile": "600×800은 브라우저 뷰포트 검증이며 실기기 모바일 검증은 수행하지 않음"
+    }
+}

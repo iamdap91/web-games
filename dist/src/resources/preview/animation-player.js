@@ -18,7 +18,8 @@ export class AnimationPlayer {
     get currentFrame() {
         const frames = this.animation.frames;
         const total = frames.reduce((sum, frame) => sum + (frame.durationSeconds ?? frameDuration), 0);
-        let remaining = this.elapsed % total;
+        // 쓰러짐처럼 한 번만 재생하는 모션은 마지막 자세를 유지한다.
+        let remaining = this.animation.loop === false ? this.elapsed : this.elapsed % total;
         for (const [index, frame] of frames.entries()) {
             const duration = frame.durationSeconds ?? frameDuration;
             if (remaining < duration || index === frames.length - 1) {

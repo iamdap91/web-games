@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="motions.css" />
+    <title>맵 보스 A · 실제 모션 검토</title>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <main>
+      <a href="./">첫 지도 원본·PC 크기 비교</a>
+      <a
+        href="../../../../public/assets/maplestory/map-bosses/ferry-claw-crab/review/all-originals-native2.png"
+        >선택 원본15종 비교 시트</a
+      >
+      <h1>맵 보스 A · 실제 모션 검토</h1>
+      <div class="controls">
+        <label
+          >동작<select id="motion">
+            <option value="stand">대기</option>
+            <option value="move">이동</option>
+            <option value="attack1">공격·시전</option>
+            <option value="hit1">피격</option>
+            <option value="die1">쓰러짐</option>
+          </select></label
+        >
+        <label
+          >배율<select id="scale">
+            <option value="1">1배</option>
+            <option value="2" selected>2배</option>
+          </select></label
+        >
+        <label
+          >배경<select id="background">
+            <option value="light">밝게</option>
+            <option value="dark">어둡게</option>
+          </select></label
+        >
+        <button id="toggle">일시정지</button
+        ><button id="restart">처음부터</button>
+      </div>
+      <p id="status" role="status">로컬 프레임을 불러오는 중…</p>
+      <section id="creatures" aria-label="중간보스와 보스 모션"></section>
+      <p>공격·피격·쓰러짐은 단발로 재생한 뒤 마지막 자세를 유지합니다.</p>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/monsters/bosses-a/motions.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+.concept-comparison {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.review-notes ul {
+  padding-left: 22px;
+}
+
+@media (max-width: 640px) {
+  .concept-comparison {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "service": "PixelLab MCP",
+  "model": "Pro",
+  "createdAt": "2026-10-11",
+  "requestCount": 4,
+  "regenerationCount": 0,
+  "totalGenerations": 40,
+  "styleReference": "public/assets/maplestory/tiger-hero-ai/originals/rotations/south.png",
+  "styleCopy": ["outline", "detail", "shading"],
+  "requests": [
+    {
+      "key": "ground-props",
+      "width": 256,
+      "height": 256,
+      "description": "Crisp hand-authored 16-bit pixel art for a warm rustic mountain-forest RPG. Olive and sage greens, warm ochre, weathered brown, muted moss; moderate detail in readable clusters, selective dark outlines, no tiny noisy speckles, no smooth gradients. Soft overhead light, no cast shadow or floor, transparent background. Keep pixel scale similar to the reference, but use green/brown nature colors rather than the character's orange. A game asset atlas: exactly 4 columns and 4 rows of separate objects, each fitting in its own 64x64 cell with at least 8 transparent pixels around every edge. No drawn grid or labels. Row 1: small grass tuft, broad fern, pile of dry ochre leaves, cluster of three brown mushrooms. Row 2: tiny pale wildflowers, leafy bush, mossy pebbles, curled fallen branch. Row 3: low grass patch, small clover patch, sparse fallen leaves, small mushroom group. Row 4: broad low fern, dry twigs, moss patch, a short sapling. Objects are viewed from above at about 38 degrees, slightly from the right. Every sprite isolated, never touching another cell; no people, containers, ground tiles, shadows or scenery.",
+      "jobId": "71f69c5d-0211-421f-a98a-65170e5665af",
+      "seed": 101110,
+      "chargedGenerations": 10,
+      "candidates": [
+        {
+          "index": 0,
+          "localPath": "public/assets/maplestory/forest-pixel-ai/originals/ground-props-00.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/71f69c5d-0211-421f-a98a-65170e5665af/download?index=0",
+          "width": 256,
+          "height": 256,
+          "byteSize": 26811,
+          "sha256": "54b87fcd1f94139e72965b24737a220e5cd70e6a1a2334288f1c3d5bc2cdd4e9"
+        }
+      ],
+      "selectedIndex": 0
+    },
+    {
+      "key": "vine-curtain",
+      "width": 128,
+      "height": 128,
+      "description": "Crisp hand-authored 16-bit pixel art for a warm rustic mountain-forest RPG. Olive and sage greens, warm ochre, weathered brown, muted moss; moderate detail in readable clusters, selective dark outlines, no tiny noisy speckles, no smooth gradients. Soft overhead light, no cast shadow or floor, transparent background. Keep pixel scale similar to the reference, but use green/brown nature colors rather than the character's orange. One dense hanging vine curtain for a game-map barrier, roughly rectangular 110 pixels wide and 94 pixels tall. A few curling woody tendrils carry overlapping broad leaves of sage and olive green, with some pale dry leaves below. Vines hang from the top edge toward the bottom, substantial foliage hides the space behind them, with an irregular ragged lower edge. Viewed from the front and above at 38 degrees, slightly from the right. Bottom at y=118, 5px transparent margin all around. No arch, tree, frame, person, floor or background. Single isolated curtain sprite, not a spritesheet.",
+      "jobId": "32fbb7be-1621-4d3b-96b6-58e3de4ffa5d",
+      "seed": 101111,
+      "chargedGenerations": 10,
+      "candidates": [
+        {
+          "index": 0,
+          "localPath": "public/assets/maplestory/forest-pixel-ai/originals/vine-curtain-00.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/32fbb7be-1621-4d3b-96b6-58e3de4ffa5d/download?index=0",
+          "width": 128,
+          "height": 128,
+          "byteSize": 16504,
+          "sha256": "decf256f8293907309ba054094f0fec1dae9919bd7a83cb7fe1349546bf6606f"
+        },
+        {
+          "index": 1,
+          "localPath": "public/assets/maplestory/forest-pixel-ai/originals/vine-curtain-01.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/32fbb7be-1621-4d3b-96b6-58e3de4ffa5d/download?index=1",
+          "width": 128,
+          "height": 128,
+          "byteSize": 15875,
+          "sha256": "7cfa597de5378410eb89271dbba2fdaa925bfbf53fe2379175e980bb3ace1f37"
+        },
+        {
+          "index": 2,
+          "localPath": "public/assets/maplestory/forest-pixel-ai/originals/vine-curtain-02.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/32fbb7be-1621-4d3b-96b6-58e3de4ffa5d/download?index=2",
+          "width": 128,
+          "height": 128,
+          "byteSize": 16471,
+          "sha256": "dac7acafc0e1a29cd3d0b337282d42d56b592f08343ab4ab3f7b20149beb7c4e"
+        },
+        {
+          "index": 3,
+          "localPath": "public/assets/maplestory/forest-pixel-ai/originals/vine-curtain-03.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/32fbb7be-1621-4d3b-96b6-58e3de4ffa5d/download?index=3",
+          "width": 128,
+          "height": 128,
+          "byteSize": 17107,
+          "sha256": "db847eef6bd274f568baf632a2bb836a98cd0a0a170fa973f9b7fbb1265cc20b"
+        }
+      ],
+      "selectedIndex": 2
+    },
+    {
+      "key": "forest-tree",
+      "width": 128,
+      "height": 192,
+      "description": "Crisp hand-authored 16-bit pixel art for a warm rustic mountain-forest RPG. Olive and sage greens, warm ochre, weathered brown, muted moss; moderate detail in readable clusters, selective dark outlines, no tiny noisy speckles, no smooth gradients. Soft overhead light, no cast shadow or floor, transparent background. Keep pixel scale similar to the reference, but use green/brown nature colors rather than the character's orange. One mature broadleaf forest tree, single isolated full tree. Rich organically rounded crown with uneven lobes and readable overlapping leaf clusters; muted sage and moss green leaves with restrained warm highlights. Weathered brown slightly curved trunk with visible roots; roots centered near x=64,y=185, canopy top at y=8. Crown is wider than trunk. Viewed from above at 38 degrees, slightly from right, for a fixed-camera RPG. No conical pine silhouette, no ground patch or cast shadow, no other trees, no character. Keep 5px transparent margin and include complete roots.",
+      "jobId": "fd7890d9-9e62-4fc7-b2c4-48edcbc14df2",
+      "seed": 101112,
+      "chargedGenerations": 10,
+      "candidates": [
+        {
+          "index": 0,
+          "localPath": "public/assets/maplestory/forest-pixel-ai/originals/forest-tree-00.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/fd7890d9-9e62-4fc7-b2c4-48edcbc14df2/download?index=0",
+          "width": 128,
+          "height": 192,
+          "byteSize": 10733,
+          "sha256": "f951203ecba8eba36c986cbcc9390b7b64f289d82f902a326c4ac75942a62526"
+        }
+      ],
+      "selectedIndex": 0
+    },
+    {
+      "key": "hollow-tree",
+      "width": 96,
+      "height": 128,
+      "description": "Crisp hand-authored 16-bit pixel art for a warm rustic mountain-forest RPG. Olive and sage greens, warm ochre, weathered brown, muted moss; moderate detail in readable clusters, selective dark outlines, no tiny noisy speckles, no smooth gradients. Soft overhead light, no cast shadow or floor, transparent background. Keep pixel scale similar to the reference, but use green/brown nature colors rather than the character's orange. A single front-facing surface detail for an upright hollow dead tree: irregular elongated dark hollow opening framed by gnarled warm brown bark, torn wood grain, muted green moss on the left rim and three tiny shelf mushrooms on the right. The bark rim is irregular and narrow, so the center remains clearly hollow. Short wide dead-tree stump proportions, root base centered x=48,y=119, upper broken rim y=14. Viewed from above at 38 degrees slightly from the right. Transparent surrounding, no leaves or canopy, no ground, no cast shadow, no tools, no person, no background. A single object sprite.",
+      "jobId": "55df91f4-5c10-4146-a3ad-00dd4ca72c26",
+      "seed": 101113,
+      "chargedGenerations": 10,
+      "candidates": [
+        {
+          "index": 0,
+          "localPath": "public/assets/maplestory/forest-pixel-ai/originals/hollow-tree-00.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/55df91f4-5c10-4146-a3ad-00dd4ca72c26/download?index=0",
+          "width": 96,
+          "height": 128,
+          "byteSize": 8475,
+          "sha256": "4ec9775a3102536f09abc194e3784565fcd797d2febf462867caf1ddbdbd9b96"
+        },
+        {
+          "index": 1,
+          "localPath": "public/assets/maplestory/forest-pixel-ai/originals/hollow-tree-01.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/55df91f4-5c10-4146-a3ad-00dd4ca72c26/download?index=1",
+          "width": 96,
+          "height": 128,
+          "byteSize": 6412,
+          "sha256": "a83feb275099965b9a2229ff4a7d52df2c817409bd8452a17eb65d92934d0f86"
+        },
+        {
+          "index": 2,
+          "localPath": "public/assets/maplestory/forest-pixel-ai/originals/hollow-tree-02.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/55df91f4-5c10-4146-a3ad-00dd4ca72c26/download?index=2",
+          "width": 96,
+          "height": 128,
+          "byteSize": 5329,
+          "sha256": "652e57aebf553cfcb51fd3df7550f24d8e760085889751d0faf9e98bcfc85bc3"
+        },
+        {
+          "index": 3,
+          "localPath": "public/assets/maplestory/forest-pixel-ai/originals/hollow-tree-03.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/55df91f4-5c10-4146-a3ad-00dd4ca72c26/download?index=3",
+          "width": 96,
+          "height": 128,
+          "byteSize": 5635,
+          "sha256": "d7ca773ca356b58dc8eb8264d9a4aa9010626e82cc3d3ee74388a4d117829fad"
+        }
+      ],
+      "selectedIndex": 0
+    }
+  ],
+  "notes": "기존 스타일 참조 URL의 404는 생성 작업이 만들어지기 전 검증 실패했다. 로컬 원본으로 같은 요청을 전송했다. 후보 수는 PixelLab Pro 출력이며 추가 후보 생성은 하지 않았다. RGBA 원본과 모든 후보를 보관하고 영역 추출만 수행했다."
+}

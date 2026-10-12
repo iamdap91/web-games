@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#173c32" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="../../preview/style.css" />
+    <link rel="stylesheet" href="../../preview/originals.css" />
+    <title>젊은 아타호 · 리소스 뷰어</title>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <main>
+      <nav aria-label="캐릭터 선택">
+        <a href="../">캐릭터 목록</a>
+        <a href="../ataho/">현재 아타호</a>
+        <a href="./" aria-current="page">젊은 아타호</a>
+        <a href="../yeonmuk/">연묵</a>
+        <a href="./concept.html">젊은 외형 원화</a>
+      </nav>
+      <header>
+        <div>
+          <p class="eyebrow">WEB GAMES / YOUNG ATAHO</p>
+          <h1>젊은 아타호의 수련</h1>
+          <p class="intro">
+            여덟 방향의 걷기와 힘 있고 절도 있는 전투 동작을 살펴보세요.
+          </p>
+        </div>
+        <span class="badge">로컬 리소스</span>
+      </header>
+      <section class="stage" aria-label="리소스 미리보기">
+        <div class="stage-top">
+          <span>작은 숲</span><span>젊은 격투가 모션</span>
+        </div>
+        <canvas
+          id="scene"
+          width="960"
+          height="480"
+          aria-label="발판 위 젊은 아타호의 모션"
+          >캔버스를 지원하는 브라우저에서 확인해주세요.</canvas
+        >
+        <p id="status" role="status">로컬 이미지를 불러오는 중…</p>
+      </section>
+      <section class="controls" aria-label="모션 설정">
+        <label
+          >모션<select
+            id="motion"
+            disabled
+            aria-label="젊은 아타호 모션"
+          ></select
+          ><output id="frame">—</output></label
+        >
+        <button id="toggle" type="button" disabled>일시정지</button>
+      </section>
+      <p id="motion-notes" aria-live="polite"></p>
+      <details class="originals-panel">
+        <summary>PixelLab 생성 원본</summary>
+        <p>
+          승인한 정면 도트와 새 방향별 이미지, 이동·전투 동작의 원본을
+          보관합니다.
+        </p>
+        <div id="originals"></div>
+      </details>
+      <footer>
+        <p>
+          청록 조끼와 모래색 바지의 기존 승인 외형을 기준으로 별도 리소스를
+          생성했습니다.
+        </p>
+        <p>
+          발의 지지, 중심 이동과 허리 회전, 명확한 타격과 빠른 안정 자세 복귀를
+          확인해 주세요.
+        </p>
+        <p>
+          <a href="./concept.html">원화와 승인 정면 비교</a> ·
+          <a href="../../../../resources/young-ataho-generation.json"
+            >생성 프롬프트와 검증 기록</a
+          >
+        </p>
+        <p>출처: <a href="https://www.pixellab.ai/">PixelLab</a></p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/young-ataho/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

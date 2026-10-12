@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { setResourceOutline, } from '../../rendering/environment-resources.js';
+import { setResourceOutline, } from '../../resources/environment/environment-resources.js';
 import { resourceLayers } from '../../rendering/surface-types.js';
 import { streamLootRules } from './stream-loot.js';
 /** 떠내려오는 물건과 상자 파편을 표시하며 획득 규칙은 월드에 맡긴다. */

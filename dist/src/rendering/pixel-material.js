@@ -62,6 +62,10 @@ const broadPattern = `
       } else if (villageSurface == 3.0) {
         float grain = villageNoise(vec2(floor(surfaceUv.x * 5.0), floor(surfaceUv.y * 1.5)));
         ink = grain < 0.22 ? 0.82 : (grain > 0.88 ? 1.07 : 1.0);
+      } else if (villageSurface == 4.0) {
+        vec2 tile = surfaceUv * vec2(2.0, 3.0);
+        float seam = step(fract(tile.y), 0.06);
+        ink = 1.0 - seam * 0.12;
       } else if (villageSurface == 5.0) {
         ink = patchTone < 0.30 ? 0.84 : (patchTone > 0.78 ? 1.09 : 1.0);
       } else if (villageSurface == 6.0) {
@@ -72,7 +76,7 @@ const broadPattern = `
 export function createPixelMaterial(color, options = {}) {
     const style = surfaceStyle(color);
     const pattern = options.pattern ?? 'detailed';
-    const texturePattern = pattern === 'broad' && style !== 4 ? broadPattern : detailedPattern;
+    const texturePattern = pattern === 'broad' ? broadPattern : detailedPattern;
     const material = new THREE.MeshLambertMaterial({ color, flatShading: true });
     if (!style)
         return material;

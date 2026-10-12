@@ -1,0 +1,3125 @@
+{
+  "id": "acorn-weevil",
+  "name": "도토리바구미",
+  "theme": "forest",
+  "role": "striker",
+  "appearance": "Round chestnut armored weevil carrying a single acorn shell on its back, long curved snout, six clearly grouped short legs.",
+  "motions": {
+    "stand": "Standing facing left, antennae curl and uncurl separately, the curved snout lifts a little then lowers, front legs briefly adjust under a breathing armored body, returning to the original ready pose.",
+    "move": "Six-legged walking cycle facing left in place. Alternate the two tripod groups of legs, lifting and planting the short feet while the heavy acorn shell stays coherent and the curved snout points left. No whole-image sliding.",
+    "attack1": "Facing left, brace rear legs, raise the long curved snout, then drive the snout forward and down as a forceful short jab, retract the neck and snout and return to the ready stance. Keep the single acorn shell attached.",
+    "hit1": "Facing left, pull the snout and antennae back from a hit, front legs bend and shell tilts backward a little, recover and place all feet back in the ready pose.",
+    "die1": "Facing left, legs buckle in sequence, the armored weevil rolls onto its side under the acorn shell and tucks its antennae, finish motionless with the shell intact. No exploding fragments."
+  },
+  "assetId": "ai/monster-acorn-weevil",
+  "localRoot": "public/assets/maplestory/monster-expansion/acorn-weevil",
+  "attempts": [
+    {
+      "motion": "original",
+      "attempt": 1,
+      "key": "monster-a-acorn-weevil-original-01",
+      "jobId": "e450ace8-d079-498a-958f-ccbeb2ff33b6",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download",
+      "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+      "sha256": "f9ec86e941d4d983fc0202463844aaf62af71cd7a97246d5d38df0b957b2152d",
+      "byteSize": 1890,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 10,
+        "y": 10,
+        "width": 43,
+        "height": 44
+      },
+      "visiblePixels": 1088,
+      "paletteSize": 20,
+      "chargedGenerations": 1,
+      "directionObserved": "west",
+      "selection": "accepted",
+      "request": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Round chestnut armored weevil carrying a single acorn shell on its back, long curved snout, six clearly grouped short legs. Battle-ready stance facing LEFT (west), slight three-quarter view toward the viewer, camera only slightly above the creature. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, small cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described, no accessories beyond described features. A single creature only, no text, no frame, no background, no scenery, no floor, no cast shadow, no blurred anti-aliasing. Full creature occupies about 44-52 pixels inside this 64 pixel canvas with 4 pixel transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 614002,
+        "text_guidance_scale": 8
+      },
+      "nativeFacing": "left"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-acorn-weevil-stand-01",
+      "jobId": "46d1331b-903a-405c-90ed-b327b5163951",
+      "balanceBefore": 512,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625101,
+        "action": "Standing facing left, antennae curl and uncurl separately, the curved snout lifts a little then lowers, front legs briefly adjust under a breathing armored body, returning to the original ready pose. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download"
+      },
+      "queueResponse": "id: 46d1331b-903a-405c-90ed-b327b5163951\njob_id: 46d1331b-903a-405c-90ed-b327b5163951\naction: Standing facing left, antennae curl and uncurl separately, the curved snout lifts a little then lowers, front legs briefly adjust under a breathing armored body, returning to the original ready pose. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625101\nasset_id: 70c18b98-c962-58ae-a2c9-c4a02f63f2d9\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"46d1331b-903a-405c-90ed-b327b5163951\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 46d1331b-903a-405c-90ed-b327b5163951\njob_id: 46d1331b-903a-405c-90ed-b327b5163951\nframes: 5\ntransparent: yes\nasset_id: 70c18b98-c962-58ae-a2c9-c4a02f63f2d9\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+        "sha256": "f9ec86e941d4d983fc0202463844aaf62af71cd7a97246d5d38df0b957b2152d",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 14,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/00.png",
+          "sourceSha256": "04b0118961dc61c7a81825c55d727bf00835f62b60e92431dcd7cd471f62cc67",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1088,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/01.png",
+          "sourceSha256": "587d599c437ffdf0b089b57c089aff410b1ffbaaf34160a3870c9ec9c9200d62",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 44
+          },
+          "visiblePixels": 1063,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/02.png",
+          "sourceSha256": "44baf9bcea40754744a445e8a22a855c4b455c93c4aa3c47f87087d80d9ce137",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 9,
+            "width": 44,
+            "height": 45
+          },
+          "visiblePixels": 1053,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/03.png",
+          "sourceSha256": "9ae196ec976a2b04c4fd87e6b42a1b014f741876fb0e44ac76194efb62e35a90",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 44,
+            "height": 44
+          },
+          "visiblePixels": 1046,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/04.png",
+          "sourceSha256": "257329d5446632a958e8fbeecf34e64644d18229a1f86517a40bbbfe913fbc77",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1088,
+          "colors": 20,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/acorn-weevil/review/stand-46d1331b-903a-405c-90ed-b327b5163951.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/stand/46d1331b-903a-405c-90ed-b327b5163951/00.png",
+          "sha256": "587d599c437ffdf0b089b57c089aff410b1ffbaaf34160a3870c9ec9c9200d62",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/01.png",
+          "sourceSha256": "587d599c437ffdf0b089b57c089aff410b1ffbaaf34160a3870c9ec9c9200d62",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/stand/46d1331b-903a-405c-90ed-b327b5163951/01.png",
+          "sha256": "44baf9bcea40754744a445e8a22a855c4b455c93c4aa3c47f87087d80d9ce137",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/02.png",
+          "sourceSha256": "44baf9bcea40754744a445e8a22a855c4b455c93c4aa3c47f87087d80d9ce137",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/stand/46d1331b-903a-405c-90ed-b327b5163951/02.png",
+          "sha256": "9ae196ec976a2b04c4fd87e6b42a1b014f741876fb0e44ac76194efb62e35a90",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/03.png",
+          "sourceSha256": "9ae196ec976a2b04c4fd87e6b42a1b014f741876fb0e44ac76194efb62e35a90",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/stand/46d1331b-903a-405c-90ed-b327b5163951/03.png",
+          "sha256": "257329d5446632a958e8fbeecf34e64644d18229a1f86517a40bbbfe913fbc77",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/04.png",
+          "sourceSha256": "257329d5446632a958e8fbeecf34e64644d18229a1f86517a40bbbfe913fbc77",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: actual antenna / head / foot articulation, stable native facing, clear loop"
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "monster-a-acorn-weevil-attack1-01",
+      "jobId": "4d2fd973-591f-402c-b8f9-6a71f72cdee8",
+      "balanceBefore": 528,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625103,
+        "action": "Facing left, brace rear legs, raise the long curved snout, then drive the snout forward and down as a forceful short jab, retract the neck and snout and return to the ready stance. Keep the single acorn shell attached. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download"
+      },
+      "queueResponse": "id: 4d2fd973-591f-402c-b8f9-6a71f72cdee8\njob_id: 4d2fd973-591f-402c-b8f9-6a71f72cdee8\naction: Facing left, brace rear legs, raise the long curved snout, then drive the snout forward and down as a forceful short jab, retract the neck and snout and return to the ready stance. Keep the single acorn shell attached. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625103\nasset_id: f3623ba6-8c89-559b-a574-ef8357ff9312\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"4d2fd973-591f-402c-b8f9-6a71f72cdee8\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 4d2fd973-591f-402c-b8f9-6a71f72cdee8\njob_id: 4d2fd973-591f-402c-b8f9-6a71f72cdee8\nframes: 9\ntransparent: yes\nasset_id: f3623ba6-8c89-559b-a574-ef8357ff9312\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+        "sha256": "f9ec86e941d4d983fc0202463844aaf62af71cd7a97246d5d38df0b957b2152d",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 28,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/00.png",
+          "sourceSha256": "3b65e5e274328aa23ed9b8c24d977275cf4b8eb3c153884a35225c898367cef6",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1087,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/01.png",
+          "sourceSha256": "5fcd50c0a07dca1eb5fe4ae266619f00d079b02035a91af7c9f8833328cb17c8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1061,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/02.png",
+          "sourceSha256": "e00ac0bde51d7d2f51e6031859bcbd80513b7728f1024c7b2a0ab5bcbbeac851",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 10,
+            "width": 43,
+            "height": 43
+          },
+          "visiblePixels": 1055,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/03.png",
+          "sourceSha256": "1908efa01e35ccab92557bbb76b741f97bb766d39ca654771f7432293331912a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 42
+          },
+          "visiblePixels": 1027,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/04.png",
+          "sourceSha256": "e22d399d34526765e84f5a0dcff97c6246beb8c1f677848a749c2bec18fe695e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 11,
+            "width": 44,
+            "height": 41
+          },
+          "visiblePixels": 1038,
+          "colors": 18,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/05.png",
+          "sourceSha256": "861f420f03c47da5575296656d32643a374d9be9cbbbe6a3e0d648a8282a0e47",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 12,
+            "width": 44,
+            "height": 40
+          },
+          "visiblePixels": 1039,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/06.png",
+          "sourceSha256": "180ff22d652919f76e0e92fe0f9091a720f02c8ff9e620ad52d7d35439ff1af7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 12,
+            "width": 45,
+            "height": 41
+          },
+          "visiblePixels": 1062,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/07.png",
+          "sourceSha256": "aa914a4a33c820320d9c7bbc36b7d8115bb8128dcda499d7dd744a080f593cfe",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 11,
+            "width": 43,
+            "height": 42
+          },
+          "visiblePixels": 1054,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/08.png",
+          "sourceSha256": "39d41c81fb293084e5f2dacee27489f43f77b4f26f0854d3a9d058a939a622da",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1088,
+          "colors": 20,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/acorn-weevil/review/attack1-4d2fd973-591f-402c-b8f9-6a71f72cdee8.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/00.png",
+          "sha256": "5fcd50c0a07dca1eb5fe4ae266619f00d079b02035a91af7c9f8833328cb17c8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/01.png",
+          "sourceSha256": "5fcd50c0a07dca1eb5fe4ae266619f00d079b02035a91af7c9f8833328cb17c8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/01.png",
+          "sha256": "e00ac0bde51d7d2f51e6031859bcbd80513b7728f1024c7b2a0ab5bcbbeac851",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/02.png",
+          "sourceSha256": "e00ac0bde51d7d2f51e6031859bcbd80513b7728f1024c7b2a0ab5bcbbeac851",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/02.png",
+          "sha256": "1908efa01e35ccab92557bbb76b741f97bb766d39ca654771f7432293331912a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/03.png",
+          "sourceSha256": "1908efa01e35ccab92557bbb76b741f97bb766d39ca654771f7432293331912a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/03.png",
+          "sha256": "e22d399d34526765e84f5a0dcff97c6246beb8c1f677848a749c2bec18fe695e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/04.png",
+          "sourceSha256": "e22d399d34526765e84f5a0dcff97c6246beb8c1f677848a749c2bec18fe695e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/04.png",
+          "sha256": "861f420f03c47da5575296656d32643a374d9be9cbbbe6a3e0d648a8282a0e47",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/05.png",
+          "sourceSha256": "861f420f03c47da5575296656d32643a374d9be9cbbbe6a3e0d648a8282a0e47",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/05.png",
+          "sha256": "180ff22d652919f76e0e92fe0f9091a720f02c8ff9e620ad52d7d35439ff1af7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/06.png",
+          "sourceSha256": "180ff22d652919f76e0e92fe0f9091a720f02c8ff9e620ad52d7d35439ff1af7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/06.png",
+          "sha256": "aa914a4a33c820320d9c7bbc36b7d8115bb8128dcda499d7dd744a080f593cfe",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/07.png",
+          "sourceSha256": "aa914a4a33c820320d9c7bbc36b7d8115bb8128dcda499d7dd744a080f593cfe",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/07.png",
+          "sha256": "39d41c81fb293084e5f2dacee27489f43f77b4f26f0854d3a9d058a939a622da",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/08.png",
+          "sourceSha256": "39d41c81fb293084e5f2dacee27489f43f77b4f26f0854d3a9d058a939a622da",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 준비에서 앞다리를 굽히고 코를 내밀어 아래로 찌른 뒤 복귀. 4번의 낮게 뻗은 주둥이를 접촉으로 선택.",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625,
+      "contactReason": "좌향 준비에서 앞다리를 굽히고 코를 내밀어 아래로 찌른 뒤 복귀. 4번의 낮게 뻗은 주둥이를 접촉으로 선택."
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "monster-a-acorn-weevil-move-01",
+      "jobId": "f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5",
+      "balanceBefore": 541,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625102,
+        "action": "Six-legged walking cycle facing left in place. Alternate the two tripod groups of legs, lifting and planting the short feet while the heavy acorn shell stays coherent and the curved snout points left. No whole-image sliding. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download"
+      },
+      "queueResponse": "id: f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5\njob_id: f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5\naction: Six-legged walking cycle facing left in place. Alternate the two tripod groups of legs, lifting and planting the short feet while the heavy acorn shell stays coherent and the curved snout points left. No whole-image sliding. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625102\nasset_id: 27dc76d5-aec2-54b0-8652-73c1f527c2ab\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5\njob_id: f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5\nframes: 9\ntransparent: yes\nasset_id: 27dc76d5-aec2-54b0-8652-73c1f527c2ab\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+        "sha256": "f9ec86e941d4d983fc0202463844aaf62af71cd7a97246d5d38df0b957b2152d",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 7,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/00.png",
+          "sourceSha256": "f6e3b2fd9d7ee835d63686febc7971afe97bf1977d11cdd73bbbe3043907b073",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1088,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/01.png",
+          "sourceSha256": "284d5fbd7cf2c820e25975d97988895b7de9683493540f7c62c29b04b0d1184f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 9,
+            "width": 43,
+            "height": 45
+          },
+          "visiblePixels": 1086,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/02.png",
+          "sourceSha256": "546405dd926b1d1b64556cd6e46864bf0ba8f49c7ce28c830f5e95e590f1fa37",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 44,
+            "height": 44
+          },
+          "visiblePixels": 1071,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/03.png",
+          "sourceSha256": "8bac2ad08fbe14c57591905035e8a1b041dc61635628bd419f34db13183c248d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 44,
+            "height": 43
+          },
+          "visiblePixels": 1055,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/04.png",
+          "sourceSha256": "572e505ced0c5ceacfc67b62b54457b51ece1bbfb71c162df7b789be7bfb8661",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 9,
+            "width": 44,
+            "height": 45
+          },
+          "visiblePixels": 1059,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/05.png",
+          "sourceSha256": "f2fa161ac70265e6367e43680e0d3b11b33373e54fcfdef8321e0f6da73e62f4",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 9,
+            "width": 43,
+            "height": 42
+          },
+          "visiblePixels": 1058,
+          "colors": 22,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/06.png",
+          "sourceSha256": "efb637d4445534b4a14596a8671b269c72c0838c96ca20c184a43eb7dd42aebf",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 9,
+            "width": 41,
+            "height": 44
+          },
+          "visiblePixels": 1071,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/07.png",
+          "sourceSha256": "5a022ee3ec2fe42f2dc6cb8d9f1d946fe3732f2b5dc18eeef43b6b8e1cbbd343",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 44
+          },
+          "visiblePixels": 1076,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/08.png",
+          "sourceSha256": "d99a8268b80f068fc001b38085f0ae5051db9afe0c0a663981dd67ceaedc6356",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1088,
+          "colors": 20,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/acorn-weevil/review/move-f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/00.png",
+          "sha256": "284d5fbd7cf2c820e25975d97988895b7de9683493540f7c62c29b04b0d1184f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/01.png",
+          "sourceSha256": "284d5fbd7cf2c820e25975d97988895b7de9683493540f7c62c29b04b0d1184f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/01.png",
+          "sha256": "546405dd926b1d1b64556cd6e46864bf0ba8f49c7ce28c830f5e95e590f1fa37",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/02.png",
+          "sourceSha256": "546405dd926b1d1b64556cd6e46864bf0ba8f49c7ce28c830f5e95e590f1fa37",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/02.png",
+          "sha256": "8bac2ad08fbe14c57591905035e8a1b041dc61635628bd419f34db13183c248d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/03.png",
+          "sourceSha256": "8bac2ad08fbe14c57591905035e8a1b041dc61635628bd419f34db13183c248d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/03.png",
+          "sha256": "572e505ced0c5ceacfc67b62b54457b51ece1bbfb71c162df7b789be7bfb8661",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/04.png",
+          "sourceSha256": "572e505ced0c5ceacfc67b62b54457b51ece1bbfb71c162df7b789be7bfb8661",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/04.png",
+          "sha256": "f2fa161ac70265e6367e43680e0d3b11b33373e54fcfdef8321e0f6da73e62f4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/05.png",
+          "sourceSha256": "f2fa161ac70265e6367e43680e0d3b11b33373e54fcfdef8321e0f6da73e62f4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/05.png",
+          "sha256": "efb637d4445534b4a14596a8671b269c72c0838c96ca20c184a43eb7dd42aebf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/06.png",
+          "sourceSha256": "efb637d4445534b4a14596a8671b269c72c0838c96ca20c184a43eb7dd42aebf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/06.png",
+          "sha256": "5a022ee3ec2fe42f2dc6cb8d9f1d946fe3732f2b5dc18eeef43b6b8e1cbbd343",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/07.png",
+          "sourceSha256": "5a022ee3ec2fe42f2dc6cb8d9f1d946fe3732f2b5dc18eeef43b6b8e1cbbd343",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/07.png",
+          "sha256": "d99a8268b80f068fc001b38085f0ae5051db9afe0c0a663981dd67ceaedc6356",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/08.png",
+          "sourceSha256": "d99a8268b80f068fc001b38085f0ae5051db9afe0c0a663981dd67ceaedc6356",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 좌향 여섯 다리의 교대 디딤과 무거운 도토리 껍질의 짧은 몸 움직임을 함께 보여주는 실제 걷기 루프."
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "monster-a-acorn-weevil-hit1-01",
+      "jobId": "23123e0a-2ad8-4e55-8c0f-d314e1da373c",
+      "balanceBefore": 550,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625104,
+        "action": "Facing left, pull the snout and antennae back from a hit, front legs bend and shell tilts backward a little, recover and place all feet back in the ready pose. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download"
+      },
+      "queueResponse": "id: 23123e0a-2ad8-4e55-8c0f-d314e1da373c\njob_id: 23123e0a-2ad8-4e55-8c0f-d314e1da373c\naction: Facing left, pull the snout and antennae back from a hit, front legs bend and shell tilts backward a little, recover and place all feet back in the ready pose. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625104\nasset_id: ca1d0aec-faa4-5e65-ba2c-1513b5f2bbf8\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"23123e0a-2ad8-4e55-8c0f-d314e1da373c\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 23123e0a-2ad8-4e55-8c0f-d314e1da373c\njob_id: 23123e0a-2ad8-4e55-8c0f-d314e1da373c\nframes: 5\ntransparent: yes\nasset_id: ca1d0aec-faa4-5e65-ba2c-1513b5f2bbf8\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+        "sha256": "f9ec86e941d4d983fc0202463844aaf62af71cd7a97246d5d38df0b957b2152d",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 30,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/00.png",
+          "sourceSha256": "57edf7967a8a2143df96f803b4b5e3a6b349044e1f6370576f9c77fcae05819f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1089,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/01.png",
+          "sourceSha256": "fe2d20f04f614dbb1e0b0deb999832179ed4afa954dd5f05df84f36698b92b3e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 10,
+            "width": 44,
+            "height": 43
+          },
+          "visiblePixels": 1052,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/02.png",
+          "sourceSha256": "a2c0c24fab6d00bf736eb2a159d557a6776f5a8a185b967c08c64fc0ba0ab4fb",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 10,
+            "width": 45,
+            "height": 42
+          },
+          "visiblePixels": 1045,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/03.png",
+          "sourceSha256": "68bd9a64acdd842e912d5021169621c6e6cb003b1a67edadb214d574ab58a3de",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 42
+          },
+          "visiblePixels": 1057,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/04.png",
+          "sourceSha256": "3104e0c60a774a12fbc453aae91b6353ca9ed9547d82c0cf553c2cad33e5139b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1089,
+          "colors": 20,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/acorn-weevil/review/hit1-23123e0a-2ad8-4e55-8c0f-d314e1da373c.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/00.png",
+          "sha256": "fe2d20f04f614dbb1e0b0deb999832179ed4afa954dd5f05df84f36698b92b3e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/01.png",
+          "sourceSha256": "fe2d20f04f614dbb1e0b0deb999832179ed4afa954dd5f05df84f36698b92b3e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/01.png",
+          "sha256": "a2c0c24fab6d00bf736eb2a159d557a6776f5a8a185b967c08c64fc0ba0ab4fb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/02.png",
+          "sourceSha256": "a2c0c24fab6d00bf736eb2a159d557a6776f5a8a185b967c08c64fc0ba0ab4fb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/02.png",
+          "sha256": "68bd9a64acdd842e912d5021169621c6e6cb003b1a67edadb214d574ab58a3de",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/03.png",
+          "sourceSha256": "68bd9a64acdd842e912d5021169621c6e6cb003b1a67edadb214d574ab58a3de",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/03.png",
+          "sha256": "3104e0c60a774a12fbc453aae91b6353ca9ed9547d82c0cf553c2cad33e5139b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/04.png",
+          "sourceSha256": "3104e0c60a774a12fbc453aae91b6353ca9ed9547d82c0cf553c2cad33e5139b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 코와 안테나를 당기고 앞다리와 껍질이 움츠렸다가 원래 자세로 복귀하는 실제 피격."
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "monster-a-acorn-weevil-die1-01",
+      "jobId": "b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c",
+      "balanceBefore": 550,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625105,
+        "action": "Facing left, legs buckle in sequence, the armored weevil rolls onto its side under the acorn shell and tucks its antennae, finish motionless with the shell intact. No exploding fragments. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature."
+      },
+      "queueResponse": "id: b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c\njob_id: b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c\naction: Facing left, legs buckle in sequence, the armored weevil rolls onto its side under the acorn shell and tucks its antennae, finish motionless with the shell intact. No exploding fragments. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 625105\nasset_id: fbb66438-8e57-5c45-a247-d9c04dff5c16\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c\njob_id: b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c\nframes: 9\ntransparent: yes\nasset_id: fbb66438-8e57-5c45-a247-d9c04dff5c16\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+        "sha256": "f9ec86e941d4d983fc0202463844aaf62af71cd7a97246d5d38df0b957b2152d",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 135,
+        "alphaDifferences": 6,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/00.png",
+          "sourceSha256": "4f6ff98c6314fdb5b85658f195c5c4e188a19d0f67997a8bf7238dde45d5e3f4",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1086,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/01.png",
+          "sourceSha256": "46468ad1c3c68967b27ff37b48bbf0ef61d136f6f645e455ec8bed7ec1c1333b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1073,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/02.png",
+          "sourceSha256": "1ef5c9f4da1a65127c25bac197e3e8e340498523f9ff915def015a185047a8b0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1061,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/03.png",
+          "sourceSha256": "08a12a7fe9a1b37cb370e0924ddfd9fa477ca17bc6f134cf221183748f068f8f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1058,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/04.png",
+          "sourceSha256": "71932bc6025a56749556605dec5d2e5135d8e03960f55f6a643648e59463fb87",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 10,
+            "width": 44,
+            "height": 44
+          },
+          "visiblePixels": 1064,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/05.png",
+          "sourceSha256": "b837d96e99529437ec11fd8c9d757f9aab2752c52a80a31f1b73a5e5ce96b649",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 44
+          },
+          "visiblePixels": 1067,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/06.png",
+          "sourceSha256": "44f5624746853639bf28c09b21992a5a23a2509aca1cc593f7871a332f7a13b2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 44
+          },
+          "visiblePixels": 1069,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/07.png",
+          "sourceSha256": "1e122e7c070708c7b096da0a57d97e6acc80665a0d12581ab9f92a196ef6c081",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1074,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/08.png",
+          "sourceSha256": "9e0f20fd3ab726d581e94ba6f4e4747aac0604a144e74f2c9b8655cec0d22d7c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1061,
+          "colors": 23,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/acorn-weevil/review/die1-b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/00.png",
+          "sha256": "46468ad1c3c68967b27ff37b48bbf0ef61d136f6f645e455ec8bed7ec1c1333b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/01.png",
+          "sourceSha256": "46468ad1c3c68967b27ff37b48bbf0ef61d136f6f645e455ec8bed7ec1c1333b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/01.png",
+          "sha256": "1ef5c9f4da1a65127c25bac197e3e8e340498523f9ff915def015a185047a8b0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/02.png",
+          "sourceSha256": "1ef5c9f4da1a65127c25bac197e3e8e340498523f9ff915def015a185047a8b0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/02.png",
+          "sha256": "08a12a7fe9a1b37cb370e0924ddfd9fa477ca17bc6f134cf221183748f068f8f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/03.png",
+          "sourceSha256": "08a12a7fe9a1b37cb370e0924ddfd9fa477ca17bc6f134cf221183748f068f8f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/03.png",
+          "sha256": "71932bc6025a56749556605dec5d2e5135d8e03960f55f6a643648e59463fb87",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/04.png",
+          "sourceSha256": "71932bc6025a56749556605dec5d2e5135d8e03960f55f6a643648e59463fb87",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/04.png",
+          "sha256": "b837d96e99529437ec11fd8c9d757f9aab2752c52a80a31f1b73a5e5ce96b649",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/05.png",
+          "sourceSha256": "b837d96e99529437ec11fd8c9d757f9aab2752c52a80a31f1b73a5e5ce96b649",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/05.png",
+          "sha256": "44f5624746853639bf28c09b21992a5a23a2509aca1cc593f7871a332f7a13b2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/06.png",
+          "sourceSha256": "44f5624746853639bf28c09b21992a5a23a2509aca1cc593f7871a332f7a13b2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/06.png",
+          "sha256": "1e122e7c070708c7b096da0a57d97e6acc80665a0d12581ab9f92a196ef6c081",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/07.png",
+          "sourceSha256": "1e122e7c070708c7b096da0a57d97e6acc80665a0d12581ab9f92a196ef6c081",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/07.png",
+          "sha256": "9e0f20fd3ab726d581e94ba6f4e4747aac0604a144e74f2c9b8655cec0d22d7c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/b8e71c8e-c53a-4e74-b5d2-1d839f31fe4c/08.png",
+          "sourceSha256": "9e0f20fd3ab726d581e94ba6f4e4747aac0604a144e74f2c9b8655cec0d22d7c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "rejected: final generated pose is still standing; no readable KO"
+    },
+    {
+      "motion": "die1",
+      "attempt": 2,
+      "key": "monster-a-acorn-weevil-die1-02",
+      "jobId": "f33b51d9-07c8-415d-bc5d-f93667c76efd",
+      "balanceBefore": 565,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626105,
+        "action": "Facing left, all six short legs buckle, lower the head and curved snout, fall sideways and roll onto the supplied sideways corpse pose, legs fold and relax as the intact acorn shell settles. This is a knockout, NOT walking and NOT an idle bob. Finish exactly in the supplied end pose, completely motionless, never stand up or return to the original pose. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/121144fe-3ce5-4ff1-9acb-926459cb3a8f/assets/native/full.png"
+      },
+      "queueResponse": "id: f33b51d9-07c8-415d-bc5d-f93667c76efd\njob_id: f33b51d9-07c8-415d-bc5d-f93667c76efd\naction: Facing left, all six short legs buckle, lower the head and curved snout, fall sideways and roll onto the supplied sideways corpse pose, legs fold and relax as the intact acorn shell settles. This is a knockout, NOT walking and NOT an idle bob. Finish exactly in the supplied end pose, completely motionless, never stand up or return to the original pose. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626105\nasset_id: 4588e463-006c-5c48-917e-834f6f1cff79\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"f33b51d9-07c8-415d-bc5d-f93667c76efd\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: f33b51d9-07c8-415d-bc5d-f93667c76efd\njob_id: f33b51d9-07c8-415d-bc5d-f93667c76efd\nframes: 9\ntransparent: yes\nasset_id: 4588e463-006c-5c48-917e-834f6f1cff79\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+        "sha256": "f9ec86e941d4d983fc0202463844aaf62af71cd7a97246d5d38df0b957b2152d",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 68,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/00.png",
+          "sourceSha256": "2c5eb10aee4558108da174d23b3baf752ff0e9a47aab902baa2e7e97aa772f5e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1087,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/01.png",
+          "sourceSha256": "679909e270ecd955ef589c8e573ca3d9d23ae55aac412433d9b9d2f7cc8eaeba",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 10,
+            "width": 38,
+            "height": 44
+          },
+          "visiblePixels": 1059,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/02.png",
+          "sourceSha256": "7f79fb8117baa7030d9020ac502931c8a3bf5bf2473f69e857696be2a977c7d0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 14,
+            "y": 11,
+            "width": 38,
+            "height": 43
+          },
+          "visiblePixels": 1055,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/03.png",
+          "sourceSha256": "059d19f18e94c30e56f1412356c6d551c406427736a247797c86042303ac92a2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 15,
+            "y": 13,
+            "width": 38,
+            "height": 39
+          },
+          "visiblePixels": 1038,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/04.png",
+          "sourceSha256": "4f13608b839e7c1efb9881f7329808c28811b2c8ea5e3ad15ccd56d127765fa7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 13,
+            "width": 41,
+            "height": 39
+          },
+          "visiblePixels": 1026,
+          "colors": 22,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/05.png",
+          "sourceSha256": "1a8cc1ef3526f601b1f0af375736a8374846ef11796c6d8dae6193606ce4ea3a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 13,
+            "width": 44,
+            "height": 38
+          },
+          "visiblePixels": 1055,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/06.png",
+          "sourceSha256": "a9cd10253609e370a4648351408f43bc4d8598a29f3d8507cc68f61aa482b9ca",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 13,
+            "width": 44,
+            "height": 39
+          },
+          "visiblePixels": 1049,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/07.png",
+          "sourceSha256": "76b1fc382c387c9c098311b5028aad1657af3de4d185e2f3aab68e2f2cda8b29",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 11,
+            "width": 44,
+            "height": 41
+          },
+          "visiblePixels": 1061,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/08.png",
+          "sourceSha256": "be63bcffe9c6cb6c0622303907152fa4987ddc8e7f1e7c29e2f0040ae7973dd0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 11,
+            "width": 44,
+            "height": 43
+          },
+          "visiblePixels": 1087,
+          "colors": 21,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/acorn-weevil/review/die1-f33b51d9-07c8-415d-bc5d-f93667c76efd.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/00.png",
+          "sha256": "679909e270ecd955ef589c8e573ca3d9d23ae55aac412433d9b9d2f7cc8eaeba",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/01.png",
+          "sourceSha256": "679909e270ecd955ef589c8e573ca3d9d23ae55aac412433d9b9d2f7cc8eaeba",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/01.png",
+          "sha256": "7f79fb8117baa7030d9020ac502931c8a3bf5bf2473f69e857696be2a977c7d0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/02.png",
+          "sourceSha256": "7f79fb8117baa7030d9020ac502931c8a3bf5bf2473f69e857696be2a977c7d0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/02.png",
+          "sha256": "059d19f18e94c30e56f1412356c6d551c406427736a247797c86042303ac92a2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/03.png",
+          "sourceSha256": "059d19f18e94c30e56f1412356c6d551c406427736a247797c86042303ac92a2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/03.png",
+          "sha256": "4f13608b839e7c1efb9881f7329808c28811b2c8ea5e3ad15ccd56d127765fa7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/04.png",
+          "sourceSha256": "4f13608b839e7c1efb9881f7329808c28811b2c8ea5e3ad15ccd56d127765fa7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/04.png",
+          "sha256": "1a8cc1ef3526f601b1f0af375736a8374846ef11796c6d8dae6193606ce4ea3a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/05.png",
+          "sourceSha256": "1a8cc1ef3526f601b1f0af375736a8374846ef11796c6d8dae6193606ce4ea3a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/05.png",
+          "sha256": "a9cd10253609e370a4648351408f43bc4d8598a29f3d8507cc68f61aa482b9ca",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/06.png",
+          "sourceSha256": "a9cd10253609e370a4648351408f43bc4d8598a29f3d8507cc68f61aa482b9ca",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/06.png",
+          "sha256": "76b1fc382c387c9c098311b5028aad1657af3de4d185e2f3aab68e2f2cda8b29",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/07.png",
+          "sourceSha256": "76b1fc382c387c9c098311b5028aad1657af3de4d185e2f3aab68e2f2cda8b29",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/07.png",
+          "sha256": "be63bcffe9c6cb6c0622303907152fa4987ddc8e7f1e7c29e2f0040ae7973dd0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/08.png",
+          "sourceSha256": "be63bcffe9c6cb6c0622303907152fa4987ddc8e7f1e7c29e2f0040ae7973dd0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 다리가 굽어 몸과 도토리 껍질이 옆으로 쓰러지고 같은 쓰러진 자세로 끝나는 실제 생성 KO. 서 있던 첫 후보는 제외."
+    }
+  ],
+  "nativeFacing": "left",
+  "selectedOriginal": {
+    "motion": "original",
+    "attempt": 1,
+    "key": "monster-a-acorn-weevil-original-01",
+    "jobId": "e450ace8-d079-498a-958f-ccbeb2ff33b6",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download",
+    "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+    "sha256": "f9ec86e941d4d983fc0202463844aaf62af71cd7a97246d5d38df0b957b2152d",
+    "byteSize": 1890,
+    "width": 64,
+    "height": 64,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "visibleBounds": {
+      "x": 10,
+      "y": 10,
+      "width": 43,
+      "height": 44
+    },
+    "visiblePixels": 1088,
+    "paletteSize": 20,
+    "chargedGenerations": 1,
+    "directionObserved": "west",
+    "selection": "accepted",
+    "request": {
+      "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Round chestnut armored weevil carrying a single acorn shell on its back, long curved snout, six clearly grouped short legs. Battle-ready stance facing LEFT (west), slight three-quarter view toward the viewer, camera only slightly above the creature. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, small cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described, no accessories beyond described features. A single creature only, no text, no frame, no background, no scenery, no floor, no cast shadow, no blurred anti-aliasing. Full creature occupies about 44-52 pixels inside this 64 pixel canvas with 4 pixel transparent safety margins.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "direction": "west",
+      "view": "low top-down",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "detail": "medium detail",
+      "seed": 614002,
+      "text_guidance_scale": 8
+    },
+    "nativeFacing": "left"
+  },
+  "anchor": {
+    "x": 32,
+    "y": 54
+  },
+  "animations": {
+    "stand": {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-acorn-weevil-stand-01",
+      "jobId": "46d1331b-903a-405c-90ed-b327b5163951",
+      "balanceBefore": 512,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625101,
+        "action": "Standing facing left, antennae curl and uncurl separately, the curved snout lifts a little then lowers, front legs briefly adjust under a breathing armored body, returning to the original ready pose. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download"
+      },
+      "queueResponse": "id: 46d1331b-903a-405c-90ed-b327b5163951\njob_id: 46d1331b-903a-405c-90ed-b327b5163951\naction: Standing facing left, antennae curl and uncurl separately, the curved snout lifts a little then lowers, front legs briefly adjust under a breathing armored body, returning to the original ready pose. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625101\nasset_id: 70c18b98-c962-58ae-a2c9-c4a02f63f2d9\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"46d1331b-903a-405c-90ed-b327b5163951\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 46d1331b-903a-405c-90ed-b327b5163951\njob_id: 46d1331b-903a-405c-90ed-b327b5163951\nframes: 5\ntransparent: yes\nasset_id: 70c18b98-c962-58ae-a2c9-c4a02f63f2d9\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+        "sha256": "f9ec86e941d4d983fc0202463844aaf62af71cd7a97246d5d38df0b957b2152d",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 14,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/00.png",
+          "sourceSha256": "04b0118961dc61c7a81825c55d727bf00835f62b60e92431dcd7cd471f62cc67",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1088,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/01.png",
+          "sourceSha256": "587d599c437ffdf0b089b57c089aff410b1ffbaaf34160a3870c9ec9c9200d62",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 44
+          },
+          "visiblePixels": 1063,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/02.png",
+          "sourceSha256": "44baf9bcea40754744a445e8a22a855c4b455c93c4aa3c47f87087d80d9ce137",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 9,
+            "width": 44,
+            "height": 45
+          },
+          "visiblePixels": 1053,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/03.png",
+          "sourceSha256": "9ae196ec976a2b04c4fd87e6b42a1b014f741876fb0e44ac76194efb62e35a90",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 44,
+            "height": 44
+          },
+          "visiblePixels": 1046,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/04.png",
+          "sourceSha256": "257329d5446632a958e8fbeecf34e64644d18229a1f86517a40bbbfe913fbc77",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 43,
+            "height": 44
+          },
+          "visiblePixels": 1088,
+          "colors": 20,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/acorn-weevil/review/stand-46d1331b-903a-405c-90ed-b327b5163951.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/stand/46d1331b-903a-405c-90ed-b327b5163951/00.png",
+          "sha256": "587d599c437ffdf0b089b57c089aff410b1ffbaaf34160a3870c9ec9c9200d62",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/01.png",
+          "sourceSha256": "587d599c437ffdf0b089b57c089aff410b1ffbaaf34160a3870c9ec9c9200d62",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/stand/46d1331b-903a-405c-90ed-b327b5163951/01.png",
+          "sha256": "44baf9bcea40754744a445e8a22a855c4b455c93c4aa3c47f87087d80d9ce137",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/02.png",
+          "sourceSha256": "44baf9bcea40754744a445e8a22a855c4b455c93c4aa3c47f87087d80d9ce137",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/stand/46d1331b-903a-405c-90ed-b327b5163951/02.png",
+          "sha256": "9ae196ec976a2b04c4fd87e6b42a1b014f741876fb0e44ac76194efb62e35a90",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/03.png",
+          "sourceSha256": "9ae196ec976a2b04c4fd87e6b42a1b014f741876fb0e44ac76194efb62e35a90",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/stand/46d1331b-903a-405c-90ed-b327b5163951/03.png",
+          "sha256": "257329d5446632a958e8fbeecf34e64644d18229a1f86517a40bbbfe913fbc77",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/46d1331b-903a-405c-90ed-b327b5163951/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/stand/46d1331b-903a-405c-90ed-b327b5163951/04.png",
+          "sourceSha256": "257329d5446632a958e8fbeecf34e64644d18229a1f86517a40bbbfe913fbc77",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: actual antenna / head / foot articulation, stable native facing, clear loop",
+      "notes": "실제 생성 대기. 고정 발 기준에서 몸 부분이 움직이며 동일 방향으로 복귀."
+    },
+    "attack1": {
+      "label": "공격",
+      "loop": false,
+      "jobId": "4d2fd973-591f-402c-b8f9-6a71f72cdee8",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/00.png",
+          "sha256": "5fcd50c0a07dca1eb5fe4ae266619f00d079b02035a91af7c9f8833328cb17c8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/01.png",
+          "sourceSha256": "5fcd50c0a07dca1eb5fe4ae266619f00d079b02035a91af7c9f8833328cb17c8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/01.png",
+          "sha256": "e00ac0bde51d7d2f51e6031859bcbd80513b7728f1024c7b2a0ab5bcbbeac851",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/02.png",
+          "sourceSha256": "e00ac0bde51d7d2f51e6031859bcbd80513b7728f1024c7b2a0ab5bcbbeac851",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/02.png",
+          "sha256": "1908efa01e35ccab92557bbb76b741f97bb766d39ca654771f7432293331912a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/03.png",
+          "sourceSha256": "1908efa01e35ccab92557bbb76b741f97bb766d39ca654771f7432293331912a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/03.png",
+          "sha256": "e22d399d34526765e84f5a0dcff97c6246beb8c1f677848a749c2bec18fe695e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/04.png",
+          "sourceSha256": "e22d399d34526765e84f5a0dcff97c6246beb8c1f677848a749c2bec18fe695e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/04.png",
+          "sha256": "861f420f03c47da5575296656d32643a374d9be9cbbbe6a3e0d648a8282a0e47",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/05.png",
+          "sourceSha256": "861f420f03c47da5575296656d32643a374d9be9cbbbe6a3e0d648a8282a0e47",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/05.png",
+          "sha256": "180ff22d652919f76e0e92fe0f9091a720f02c8ff9e620ad52d7d35439ff1af7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/06.png",
+          "sourceSha256": "180ff22d652919f76e0e92fe0f9091a720f02c8ff9e620ad52d7d35439ff1af7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/06.png",
+          "sha256": "aa914a4a33c820320d9c7bbc36b7d8115bb8128dcda499d7dd744a080f593cfe",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/07.png",
+          "sourceSha256": "aa914a4a33c820320d9c7bbc36b7d8115bb8128dcda499d7dd744a080f593cfe",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/07.png",
+          "sha256": "39d41c81fb293084e5f2dacee27489f43f77b4f26f0854d3a9d058a939a622da",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4d2fd973-591f-402c-b8f9-6a71f72cdee8/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/attack1/4d2fd973-591f-402c-b8f9-6a71f72cdee8/08.png",
+          "sourceSha256": "39d41c81fb293084e5f2dacee27489f43f77b4f26f0854d3a9d058a939a622da",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 준비에서 앞다리를 굽히고 코를 내밀어 아래로 찌른 뒤 복귀. 4번의 낮게 뻗은 주둥이를 접촉으로 선택.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/acorn-weevil/review/attack1-4d2fd973-591f-402c-b8f9-6a71f72cdee8.png",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625
+    },
+    "move": {
+      "label": "이동",
+      "loop": true,
+      "jobId": "f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/00.png",
+          "sha256": "284d5fbd7cf2c820e25975d97988895b7de9683493540f7c62c29b04b0d1184f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/01.png",
+          "sourceSha256": "284d5fbd7cf2c820e25975d97988895b7de9683493540f7c62c29b04b0d1184f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/01.png",
+          "sha256": "546405dd926b1d1b64556cd6e46864bf0ba8f49c7ce28c830f5e95e590f1fa37",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/02.png",
+          "sourceSha256": "546405dd926b1d1b64556cd6e46864bf0ba8f49c7ce28c830f5e95e590f1fa37",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/02.png",
+          "sha256": "8bac2ad08fbe14c57591905035e8a1b041dc61635628bd419f34db13183c248d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/03.png",
+          "sourceSha256": "8bac2ad08fbe14c57591905035e8a1b041dc61635628bd419f34db13183c248d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/03.png",
+          "sha256": "572e505ced0c5ceacfc67b62b54457b51ece1bbfb71c162df7b789be7bfb8661",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/04.png",
+          "sourceSha256": "572e505ced0c5ceacfc67b62b54457b51ece1bbfb71c162df7b789be7bfb8661",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/04.png",
+          "sha256": "f2fa161ac70265e6367e43680e0d3b11b33373e54fcfdef8321e0f6da73e62f4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/05.png",
+          "sourceSha256": "f2fa161ac70265e6367e43680e0d3b11b33373e54fcfdef8321e0f6da73e62f4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/05.png",
+          "sha256": "efb637d4445534b4a14596a8671b269c72c0838c96ca20c184a43eb7dd42aebf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/06.png",
+          "sourceSha256": "efb637d4445534b4a14596a8671b269c72c0838c96ca20c184a43eb7dd42aebf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/06.png",
+          "sha256": "5a022ee3ec2fe42f2dc6cb8d9f1d946fe3732f2b5dc18eeef43b6b8e1cbbd343",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/07.png",
+          "sourceSha256": "5a022ee3ec2fe42f2dc6cb8d9f1d946fe3732f2b5dc18eeef43b6b8e1cbbd343",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/07.png",
+          "sha256": "d99a8268b80f068fc001b38085f0ae5051db9afe0c0a663981dd67ceaedc6356",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/move/f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5/08.png",
+          "sourceSha256": "d99a8268b80f068fc001b38085f0ae5051db9afe0c0a663981dd67ceaedc6356",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 여섯 다리의 교대 디딤과 무거운 도토리 껍질의 짧은 몸 움직임을 함께 보여주는 실제 걷기 루프.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/acorn-weevil/review/move-f8ec4225-dcfa-4bdc-ad16-d45e0ab1fac5.png"
+    },
+    "hit1": {
+      "label": "피격",
+      "loop": false,
+      "jobId": "23123e0a-2ad8-4e55-8c0f-d314e1da373c",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/00.png",
+          "sha256": "fe2d20f04f614dbb1e0b0deb999832179ed4afa954dd5f05df84f36698b92b3e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/01.png",
+          "sourceSha256": "fe2d20f04f614dbb1e0b0deb999832179ed4afa954dd5f05df84f36698b92b3e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/01.png",
+          "sha256": "a2c0c24fab6d00bf736eb2a159d557a6776f5a8a185b967c08c64fc0ba0ab4fb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/02.png",
+          "sourceSha256": "a2c0c24fab6d00bf736eb2a159d557a6776f5a8a185b967c08c64fc0ba0ab4fb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/02.png",
+          "sha256": "68bd9a64acdd842e912d5021169621c6e6cb003b1a67edadb214d574ab58a3de",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/03.png",
+          "sourceSha256": "68bd9a64acdd842e912d5021169621c6e6cb003b1a67edadb214d574ab58a3de",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/03.png",
+          "sha256": "3104e0c60a774a12fbc453aae91b6353ca9ed9547d82c0cf553c2cad33e5139b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/23123e0a-2ad8-4e55-8c0f-d314e1da373c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/hit1/23123e0a-2ad8-4e55-8c0f-d314e1da373c/04.png",
+          "sourceSha256": "3104e0c60a774a12fbc453aae91b6353ca9ed9547d82c0cf553c2cad33e5139b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 코와 안테나를 당기고 앞다리와 껍질이 움츠렸다가 원래 자세로 복귀하는 실제 피격.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/acorn-weevil/review/hit1-23123e0a-2ad8-4e55-8c0f-d314e1da373c.png"
+    },
+    "die1": {
+      "label": "쓰러짐",
+      "loop": false,
+      "jobId": "f33b51d9-07c8-415d-bc5d-f93667c76efd",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/00.png",
+          "sha256": "679909e270ecd955ef589c8e573ca3d9d23ae55aac412433d9b9d2f7cc8eaeba",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/01.png",
+          "sourceSha256": "679909e270ecd955ef589c8e573ca3d9d23ae55aac412433d9b9d2f7cc8eaeba",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/01.png",
+          "sha256": "7f79fb8117baa7030d9020ac502931c8a3bf5bf2473f69e857696be2a977c7d0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/02.png",
+          "sourceSha256": "7f79fb8117baa7030d9020ac502931c8a3bf5bf2473f69e857696be2a977c7d0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/02.png",
+          "sha256": "059d19f18e94c30e56f1412356c6d551c406427736a247797c86042303ac92a2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/03.png",
+          "sourceSha256": "059d19f18e94c30e56f1412356c6d551c406427736a247797c86042303ac92a2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/03.png",
+          "sha256": "4f13608b839e7c1efb9881f7329808c28811b2c8ea5e3ad15ccd56d127765fa7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/04.png",
+          "sourceSha256": "4f13608b839e7c1efb9881f7329808c28811b2c8ea5e3ad15ccd56d127765fa7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/04.png",
+          "sha256": "1a8cc1ef3526f601b1f0af375736a8374846ef11796c6d8dae6193606ce4ea3a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/05.png",
+          "sourceSha256": "1a8cc1ef3526f601b1f0af375736a8374846ef11796c6d8dae6193606ce4ea3a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/05.png",
+          "sha256": "a9cd10253609e370a4648351408f43bc4d8598a29f3d8507cc68f61aa482b9ca",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/06.png",
+          "sourceSha256": "a9cd10253609e370a4648351408f43bc4d8598a29f3d8507cc68f61aa482b9ca",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/06.png",
+          "sha256": "76b1fc382c387c9c098311b5028aad1657af3de4d185e2f3aab68e2f2cda8b29",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/07.png",
+          "sourceSha256": "76b1fc382c387c9c098311b5028aad1657af3de4d185e2f3aab68e2f2cda8b29",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/frames/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/07.png",
+          "sha256": "be63bcffe9c6cb6c0622303907152fa4987ddc8e7f1e7c29e2f0040ae7973dd0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f33b51d9-07c8-415d-bc5d-f93667c76efd/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/f33b51d9-07c8-415d-bc5d-f93667c76efd/08.png",
+          "sourceSha256": "be63bcffe9c6cb6c0622303907152fa4987ddc8e7f1e7c29e2f0040ae7973dd0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "다리가 굽어 몸과 도토리 껍질이 옆으로 쓰러지고 같은 쓰러진 자세로 끝나는 실제 생성 KO. 서 있던 첫 후보는 제외.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/acorn-weevil/review/die1-f33b51d9-07c8-415d-bc5d-f93667c76efd.png"
+    }
+  },
+  "poseTargets": [
+    {
+      "motion": "die1",
+      "localPath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/target-corpse-02.png",
+      "recordPath": "public/assets/maplestory/monster-expansion/acorn-weevil/originals/die1/target-corpse-02.json",
+      "drawingId": "121144fe-3ce5-4ff1-9acb-926459cb3a8f",
+      "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/121144fe-3ce5-4ff1-9acb-926459cb3a8f/assets/native/full.png",
+      "source": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download",
+      "offset": [
+        0,
+        -1
+      ],
+      "angle": -90,
+      "pivot": [
+        32,
+        32
+      ],
+      "sha256": "440ccd47e1cfeeb855d1cd7dc0aa3af93094fbeaf4876f1d4e2e40da03a99ee4",
+      "paidGenerations": 0,
+      "kind": "free exact native end keyframe; intermediate motion generated by PixelLab",
+      "reason": "원본 픽셀로 누운 끝자세를 지정하고 중간 쓰러짐 프레임은 PixelLab에서 실제 생성."
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 export const energyRules = {
     capacity: 3,
-    costs: { rush: 2, slam: 3 },
+    costs: { rush: 2, slam: 3, weakStrike: 1 },
 };
-/** 두 기술이 같은 기세와 하나의 입력 예약을 공유한다. */
+/** 채집 기술이 같은 기세와 하나의 입력 예약을 공유한다. */
 export class HarvestEnergy {
     charge = 0;
     requested = null;
@@ -11,6 +11,12 @@ export class HarvestEnergy {
     }
     canUse(skill) {
         return this.charge >= energyRules.costs[skill];
+    }
+    spend(skill) {
+        if (this.requested || !this.canUse(skill))
+            return false;
+        this.charge -= energyRules.costs[skill];
+        return true;
     }
     request(skill) {
         if (this.canUse(skill) && !this.requested)

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="../preview/style.css" />
+    <link rel="stylesheet" href="../catalog/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>도트 재질 · 리소스 뷰어</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../node_modules/three/build/three.module.js",
+          "three/addons/": "../../../node_modules/three/examples/jsm/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <main>
+      <nav aria-label="리소스 탐색">
+        <a href="../">← 리소스 홈</a><a href="../backgrounds/">배경 목록</a
+        ><a href="../characters/ataho/">아타호 모션</a>
+      </nav>
+      <header>
+        <div>
+          <p class="eyebrow">WEB GAMES / MATERIALS</p>
+          <h1>도트의 농도를 고르세요</h1>
+          <p class="intro">
+            아타호 옆에서 나무·채집 잡목·바위를 살펴보세요. 윤곽의 매끈함과 표면
+            무늬를 각각 조절할 수 있어요.
+          </p>
+        </div>
+        <span class="preview-badge">도트 재질 미리보기</span>
+      </header>
+      <div class="workspace">
+        <section class="preview-panel" aria-label="공터 재질 미리보기">
+          <div class="preview-heading">
+            <span>작은 숲속 공터</span><span>아타호와 질감 비교</span>
+          </div>
+          <canvas
+            id="scene"
+            aria-label="아타호와 잔디, 나무, 채집 잡목, 울타리, 바위를 나란히 보여주는 재질 비교 미리보기"
+            >캔버스를 지원하는 브라우저에서 확인해 주세요.</canvas
+          >
+          <p id="status" role="status">미리보기를 준비하고 있어요.</p>
+        </section>
+        <section class="settings" aria-label="윤곽과 표면 무늬 조절">
+          <label class="outline-control" for="outline">
+            <span class="outline-title">윤곽 일괄 조절</span>
+            <output id="outline-value" for="outline">매끈하게</output>
+            <span id="outline-description" class="outline-description">
+              움직이면 모든 종류에 같은 값이 적용됩니다.
+            </span>
+            <input
+              id="outline"
+              type="range"
+              aria-label="윤곽 일괄 조절"
+              aria-describedby="outline-description"
+              disabled
+            />
+            <span class="outline-endpoints" aria-hidden="true">
+              <span>매끈하게</span><span>큰 도트</span>
+            </span>
+          </label>
+          <div class="outline-details">
+            <div class="settings-heading">
+              <h2>리소스별 윤곽</h2>
+              <button
+                id="outline-recommended"
+                type="button"
+                aria-label="윤곽 추천값으로"
+                disabled
+              >
+                추천값으로
+              </button>
+            </div>
+            <p class="outline-help">
+              0.1px씩 조절할 수 있어요. 0~1px에서는 가장자리 보정이 서서히
+              줄어듭니다.
+            </p>
+            <div id="outline-controls"></div>
+          </div>
+          <div class="settings-heading">
+            <h2 id="settings-title">종류별 질감 강도</h2>
+            <div class="preset-actions">
+              <button id="recommended" type="button" disabled>
+                추천값으로
+              </button>
+              <button id="reset" type="button" disabled>100%로 초기화</button>
+            </div>
+          </div>
+          <div id="surface-controls"></div>
+          <p class="preview-note">
+            나무·잡목·바위는 첫 개간과 같은 모델입니다. 슬라이더를 움직여도
+            게임의 설정은 바뀌지 않아요.
+          </p>
+        </section>
+      </div>
+      <footer>
+        윤곽을 매끈하게 해도 나무와 돌의 각진 모양은 유지됩니다. 종류별 질감은
+        0%에서 표면 무늬가 사라집니다. 추천값 버튼은 해당 항목에만 적용되며,
+        100% 초기화는 표면 무늬만 바꿉니다.
+      </footer>
+      <noscript>질감을 조절하려면 JavaScript를 활성화해 주세요.</noscript>
+    </main>
+    <script
+      type="module"
+      src="../../../dist/src/resources/materials/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

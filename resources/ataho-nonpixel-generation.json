@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-12",
+  "status": "front-art-approved",
+  "provider": "Codex built-in ImageGen",
+  "usedCli": false,
+  "referenceAssetId": "ai/tiger-hero",
+  "scope": "기존 아타호를 참조한 비도트 정면 전신 원화 한 장. 외형 검토 후 부위 분리·리깅·모션을 진행한다.",
+  "references": [
+    {
+      "role": "identity-costume-proportions",
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/references/front.png",
+      "originalLocalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/originals/drunk-03.png",
+      "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9"
+    },
+    {
+      "role": "profile-cheek-fur-tail",
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/references/side.png",
+      "originalLocalPath": "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-right-04.png",
+      "sha256": "df21cfadf36255c90432898fc6d7aed9539771308bf958da87fe7c3c7be3b6ef"
+    }
+  ],
+  "output": {
+    "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/front-01.png",
+    "originalHostPath": "/Users/3sam3/.codex/generated_images/01a12f21-0f13-7b03-881c-e909344daec2/exec-9504538f-2623-4685-891f-e4d93c2c72e4.png",
+    "sha256": "da5bf277025f825de169cbeddacc070a65717deec963c183b2baaf3f7b3c8412",
+    "width": 1199,
+    "height": 1312,
+    "format": "PNG",
+    "mode": "RGBA",
+    "alphaRange": [0, 255],
+    "sourcePixelsModified": false,
+    "visibleBoundsAtAlpha8": [112, 20, 1048, 1286],
+    "previewSourceRect": {
+      "x": 110,
+      "y": 18,
+      "width": 940,
+      "height": 1270
+    },
+    "previewPath": "src/resources/characters/ataho-hybrid/ataho-generated-front.svg",
+    "notes": "투명 여백의 매우 낮은 알파 노이즈를 비교 화면에서 제외하기 위해 SVG viewBox만 지정했다. 생성 PNG의 바이트·픽셀은 변경하지 않았다.",
+    "id": "front-01"
+  },
+  "prompt": "Use case: style-transfer, identity-preserving character artwork.\nAsset type: ONE full-body, front-facing 2D game character illustration on a genuinely transparent background, to become the approved base art for later cutout/skeletal animation.\n\nInput image 1: authoritative identity, costume, proportions and relaxed standing-pose reference. This is the existing game's middle-aged tiger martial artist Ataho.\nInput image 2: supporting identity reference for his profile, cheek fur, jacket and tail. Do not reproduce this side-view pose.\n\nPrimary request: translate THIS EXACT character from pixel art into polished hand-drawn NON-PIXEL 2D fantasy game artwork. Keep his recognizable identity rather than redesigning him. Maintain the very broad oversized head (about half his full-body height), short sturdy stocky body, compact legs and arms, orange tiger fur with the same dark stripe character, fluffy ivory cheeks and jaw, messy brow/forehead fur, sleepy half-lidded middle-aged eyes and a subtle relaxed amused expression. Give him the comfortable seasoned martial artist presence of the reference. Keep the worn brown short open jacket, crossed ivory inner robe, brown waist belt, dark charcoal cropped trousers, wrist wraps/guards, light ankle wraps, orange paws/feet and orange striped tail. Follow the references for costume shape and colors.\n\nStyle: appealing professional 2D game illustration, expressive fine ink contours with varied line weight, individually shaped tufts of fur, soft restrained painted/cel shading, believable folded cloth. Warm earth colors. Smooth continuous curves and detailed facial character, with crisp clean readable edges suitable for a sprite. Match the reference's slightly loose, unhurried personality and chibi proportions. Avoid the angular flat vector/logo mascot look of simple geometric shapes; avoid thick uniform outlines, an overly youthful face, a smug villain expression, huge muscles or long thin legs.\n\nComposition: one character only, front-facing full-body relaxed idle stance corresponding to image 1. Feet on the same horizontal baseline, entire ears/hair/tail/hands/feet visible, comfortable transparent margin on all sides. Mild natural asymmetry from the original pose is welcome. No scene, pedestal or cast ground shadow. No props, weapons, alcohol bottle, text, labels, watermark, multiple panels, separate parts or extra poses. This is the ONE assembled base illustration, not a parts sheet.\n\nLighting: gentle neutral diffuse lighting and restrained local shading, no dramatic rim light, glow or baked spotlight. Output a high-resolution PNG with real transparency.",
+  "usage": {
+    "builtInGenerations": 2,
+    "PixelLabPaidGenerations": 0
+  },
+  "review": {
+    "status": "front-01-selected-by-user",
+    "checks": [
+      "정면 전신과 귀·손·발·꼬리가 보임",
+      "현재 갈색 겉옷·아이보리 도복·짙은 바지·아대·발목 붕대 유지",
+      "실제 알파 투명 배경 확인"
+    ],
+    "unverified": [
+      "방향별 동일 외형",
+      "부위 분리와 관절 보완",
+      "리깅·걷기·공격 모션"
+    ],
+    "userReply": "이거 전 이미지로."
+  },
+  "variants": [
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/front-01.png",
+      "originalHostPath": "/Users/3sam3/.codex/generated_images/01a12f21-0f13-7b03-881c-e909344daec2/exec-9504538f-2623-4685-891f-e4d93c2c72e4.png",
+      "sha256": "da5bf277025f825de169cbeddacc070a65717deec963c183b2baaf3f7b3c8412",
+      "width": 1199,
+      "height": 1312,
+      "format": "PNG",
+      "mode": "RGBA",
+      "alphaRange": [0, 255],
+      "sourcePixelsModified": false,
+      "visibleBoundsAtAlpha8": [112, 20, 1048, 1286],
+      "previewSourceRect": {
+        "x": 110,
+        "y": 18,
+        "width": 940,
+        "height": 1270
+      },
+      "previewPath": "src/resources/characters/ataho-hybrid/ataho-generated-front.svg",
+      "notes": "투명 여백의 매우 낮은 알파 노이즈를 비교 화면에서 제외하기 위해 SVG viewBox만 지정했다. 생성 PNG의 바이트·픽셀은 변경하지 않았다.",
+      "id": "front-01",
+      "review": "사용자가 선택한 기준 원화"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/front-02.png",
+      "originalHostPath": "/Users/3sam3/.codex/generated_images/01a12f21-0f13-7b03-881c-e909344daec2/exec-61524caa-f086-4885-af00-4705944d493d.png",
+      "sha256": "1b3f9827762e0bbeb860cadbc743dbd19a496370c310218ca47413d824359d9c",
+      "width": 1199,
+      "height": 1312,
+      "format": "PNG",
+      "mode": "RGBA",
+      "alphaRange": [0, 255],
+      "sourcePixelsModified": false,
+      "visibleBoundsAtAlpha8": [131, 41, 1050, 1285],
+      "previewSourceRect": {
+        "x": 129,
+        "y": 39,
+        "width": 923,
+        "height": 1248
+      },
+      "previewPath": "src/resources/characters/ataho-hybrid/ataho-generated-front.svg",
+      "notes": "투명 여백의 매우 낮은 알파 노이즈를 비교 화면에서 제외하기 위해 SVG viewBox만 지정했다. 생성 PNG의 바이트·픽셀은 변경하지 않았다.",
+      "id": "front-02",
+      "review": "비율 보정 비교 후보로 보존"
+    }
+  ],
+  "editPrompt": "Edit target: Image 1, the non-pixel hand-drawn Ataho tiger martial artist.\nSupporting reference: Image 2, the original approved pixel character, for HEAD-TO-BODY PROPORTIONS ONLY.\n\nMake ONE targeted correction: make the head broader/larger relative to the body and make the torso and legs more compact, so the head including ears and cheek/jaw fur is about 45% of the full standing character height, close to the chibi proportions of image 2. Keep his stocky comfortable body width and sturdy short limbs; do not make him fat, muscular, thin, youthful, or tall. His head should sit close to the shoulders, without a long neck.\n\nPreserve the identity and quality of image 1: the same sleepy middle-aged eyes, relaxed amused expression, muzzle and nose, ear design, individually shaped ivory cheek/jaw fur, orange tiger stripes, brown worn open jacket, ivory crossed inner robe, brown sash, dark charcoal cropped trousers, wrist wraps, ankle wraps, orange paws and striped tail. Preserve the hand-drawn contour style, restrained soft painted shading, fabric detail, warm palette and standing front pose. Do not introduce a new face or change the costume. This is a proportion adjustment, not a redesign.\n\nOne fully assembled front-facing full-body character only. All ears, hair, tail, hands and feet fully visible with transparent margin around the whole silhouette. Neutral lighting, no ground shadow or background, no text, no extra poses or objects. Genuinely transparent PNG.",
+  "verification": {
+    "checks": "npm run check 통과",
+    "originalHashAudit": "원화 01·02와 참조 2장 해시 및 원본 바이트 동일 확인",
+    "browser": "Chrome PC 1366×768 DPR1, 1920×1080 DPR2에서 후보02 표시 확인",
+    "input": "마우스로 320px/112px 크기 및 밝은/어두운 배경 전환 확인",
+    "alignment": "두 이미지 표시 높이와 발 위치 일치",
+    "console": "경고·오류 없음",
+    "motionTests": "정지 외형 단계이므로 실행하지 않음"
+  }
+}

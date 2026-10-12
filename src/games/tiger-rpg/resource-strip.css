@@ -1,24 +1,23 @@
 /* 마을 보유량과 이번 채집량은 같은 크기·위치로 읽는다. 값과 피드백은 각 화면 소유다. */
 .resource-strip {
   position: absolute;
-  top: var(--game-hud-top, 24px);
+  top: var(--game-controls-top, var(--game-safe-top, 24px));
   right: max(16px, var(--game-safe-right, 0px));
   display: flex;
   align-items: center;
   gap: 14px;
   margin: 0;
-  padding: 5px 10px;
-  border-radius: 2px;
-  color: var(--ui-ink, #38291f);
-  background: #fff3d7c9;
-  box-shadow: 0 1px 8px #251b1620;
+  height: var(--game-menu-size, 32px);
+  padding: 0;
+  color: #fff3d7;
+  background: none;
+  box-shadow: none;
   font-size: 12px;
   line-height: 20px;
   pointer-events: none;
 }
 .resource-strip .resource-label {
-  min-width: 4.5em;
-  color: var(--ui-muted, #79624a);
+  color: #fff3d7;
   font-size: 11px;
   white-space: nowrap;
 }
@@ -26,15 +25,17 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
+  white-space: nowrap;
 }
 .resource-strip b {
   min-width: 18px;
-  font-size: 15px;
+  font-size: 17px;
+  line-height: 24px;
   font-variant-numeric: tabular-nums;
   text-align: right;
 }
-.resource-strip .wood-icon {
+:is(.resource-strip, .facility-cost) .wood-icon {
   width: 15px;
   height: 10px;
   border: 2px solid #d9b576;
@@ -42,7 +43,7 @@
   border-radius: 5px 2px 2px 5px;
   transform: rotate(-22deg);
 }
-.resource-strip .stone-icon {
+:is(.resource-strip, .facility-cost) .stone-icon {
   width: 13px;
   height: 13px;
   background: #88928f;
@@ -57,18 +58,48 @@
   clip-path: inset(50%);
   white-space: nowrap;
 }
-.resource-strip .resource-gain {
+/* 아이콘의 도형은 유지하고, 문자와 변화량만 풍경에서 읽히게 윤곽을 준다. */
+.resource-strip :is(.resource-label, b, .resource-gain, .resource-change) {
+  text-shadow:
+    -1px 0 #38291f,
+    1px 0 #38291f,
+    0 -1px #38291f,
+    0 1px #38291f,
+    0 1px 3px #20170d80;
+}
+.resource-strip :is(.wood-icon, .stone-icon) {
+  filter: drop-shadow(0 1px 1px #20170d99);
+}
+.resource-strip :is(.resource-gain, .resource-change) {
   position: absolute;
   right: 0;
-  top: calc(100% + 7px);
-  padding: 0 5px;
-  color: #fff3d7;
-  background: #38291fde;
-  border-radius: 2px;
+  top: calc(100% + 4px);
   font-size: 12px;
+  line-height: 16px;
   font-weight: 700;
+  font-variant-numeric: tabular-nums;
   white-space: nowrap;
   animation: resource-gain-in 160ms ease-out;
+}
+.resource-strip .resource-gain,
+.resource-strip b[data-change='gain'],
+.resource-strip b[data-change='gain'] + .resource-change {
+  color: #ffe5a3;
+}
+.resource-strip b[data-change='loss'],
+.resource-strip b[data-change='loss'] + .resource-change {
+  color: #ffc7b2;
+}
+.resource-strip b:is([data-change='gain'], [data-change='loss']) {
+  animation: resource-count-change 200ms ease-out;
+}
+.resource-strip--town .resource-label {
+  display: none;
+}
+@keyframes resource-count-change {
+  50% {
+    scale: 1.12;
+  }
 }
 @keyframes resource-gain-in {
   from {
@@ -81,7 +112,8 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .resource-strip .resource-gain {
+  .resource-strip :is(.resource-gain, .resource-change),
+  .resource-strip b[data-change] {
     animation: none;
   }
 }

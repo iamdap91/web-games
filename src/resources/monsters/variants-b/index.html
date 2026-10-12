@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="../../preview/style.css" />
+    <link rel="stylesheet" href="../../preview/originals.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>몬스터 배치 B · 리소스 뷰어</title>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <main>
+      <nav aria-label="리소스 선택">
+        <a href="../../characters/">캐릭터 목록</a>
+        <a href="../../characters/ataho/">아타호</a>
+        <a href="./" aria-current="page">몬스터 배치 B</a>
+      </nav>
+      <header>
+        <div>
+          <p class="eyebrow">WEB GAMES / MONSTERS B</p>
+          <h1>몬스터의 몸짓</h1>
+          <p class="intro">
+            산등성이·유적·설원의 몬스터와 다섯 가지 동작을 살펴보세요.
+          </p>
+        </div>
+        <span class="badge">로컬 리소스</span>
+      </header>
+      <section class="monster-select" aria-label="몬스터 선택">
+        <label>몬스터<select id="monster" disabled></select></label>
+        <p id="monster-info"></p>
+      </section>
+      <section class="stage" aria-label="모션 미리보기">
+        <div class="stage-top">
+          <span>작은 숲</span><span>몬스터 몸짓</span>
+        </div>
+        <canvas
+          id="scene"
+          width="960"
+          height="480"
+          aria-label="선택한 몬스터의 모션"
+          >캔버스를 지원하는 브라우저에서 확인해주세요.</canvas
+        >
+        <p id="status" role="status">완성한 모션을 준비 중…</p>
+      </section>
+      <section class="controls" aria-label="모션 설정">
+        <label
+          >모션<select id="motion" disabled></select
+          ><output id="frame">—</output></label
+        >
+        <button id="toggle" type="button" disabled>일시정지</button>
+      </section>
+      <p id="motion-notes" aria-live="polite"></p>
+      <section class="original-gallery" aria-labelledby="original-title">
+        <h2 id="original-title">고정 원본</h2>
+        <p>
+          각 원본을 기준으로 새 대기·이동·공격·피격·쓰러짐을 제작합니다. 다섯
+          모션이 모두 준비된 종부터 위에서 재생할 수 있어요.
+        </p>
+        <div id="original-gallery"></div>
+      </section>
+      <details class="originals-panel">
+        <summary>선택한 몬스터의 생성 원본</summary>
+        <div id="originals"></div>
+      </details>
+      <footer>
+        <p>
+          <a href="../../../../resources/monsters-b-generation.json"
+            >제작 기록과 출처</a
+          >
+          · <a href="https://www.pixellab.ai/">PixelLab</a>
+        </p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/monsters/variants-b/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

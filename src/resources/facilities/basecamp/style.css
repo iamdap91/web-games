@@ -1,0 +1,549 @@
+:root {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Noto Sans KR',
+    sans-serif;
+  color: #303c32;
+  background: #f4f3eb;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1540px;
+  margin: auto;
+  padding: 26px 44px 20px;
+}
+a {
+  color: inherit;
+  text-underline-offset: 4px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+nav a {
+  text-decoration: none;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+nav div {
+  display: flex;
+  gap: 22px;
+  color: #66725e;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 40px 0 28px;
+}
+.eyebrow {
+  margin: 0 0 9px;
+  color: #778368;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+h1 {
+  font-size: 35px;
+  letter-spacing: -1.5px;
+  margin: 0;
+  font-weight: 750;
+}
+.intro {
+  margin: 9px 0 0;
+  color: #76806d;
+  font-size: 14px;
+}
+.facility-controls {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.facility-controls h2 {
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+.facility-controls h2 span {
+  padding-left: 8px;
+  color: #939b85;
+  font-size: 10px;
+  font-weight: 400;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+button:disabled {
+  cursor: wait;
+  opacity: 0.55;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #a07440;
+  outline-offset: 4px;
+}
+.stage-switch {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 5px;
+  padding: 5px;
+  background: #e7e9dd;
+  border-radius: 9px;
+}
+.stage-switch button {
+  border: 0;
+  border-radius: 6px;
+  padding: 13px 15px;
+  white-space: nowrap;
+  background: transparent;
+  color: #69735f;
+  font-size: 13px;
+  font-weight: 650;
+}
+.stage-switch button span {
+  margin-right: 8px;
+  font:
+    11px ui-monospace,
+    monospace;
+  opacity: 0.65;
+}
+.stage-switch button[aria-pressed='true'] {
+  background: #344939;
+  color: #fffcef;
+  box-shadow: 0 2px 4px #24342617;
+}
+.kitchen-switch button[aria-pressed='true'] {
+  background: #885d37;
+}
+.stage-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 268px;
+  gap: 28px;
+  align-items: start;
+}
+.preview {
+  border: 1px solid #d9ddcc;
+  background: #e1e5d7;
+  border-radius: 9px;
+  overflow: hidden;
+}
+.preview-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  font-size: 11px;
+  color: #627158;
+  border-bottom: 1px solid #cdd4c3;
+}
+.preview-bar span:first-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.preview-bar i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #667e50;
+}
+#stage-badge,
+#kitchen-badge {
+  padding: 3px 7px;
+  background: #f5f3e98c;
+  border-radius: 3px;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: clamp(390px, 49vw, 650px);
+  outline: none;
+  touch-action: pan-y;
+}
+canvas:focus-visible {
+  box-shadow: inset 0 0 0 2px #798b68;
+}
+.tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 18px;
+  border-top: 1px solid #cdd4c3;
+  background: #edf0e5;
+}
+.tools > div {
+  display: flex;
+  gap: 7px;
+}
+.tools button {
+  border: 1px solid #d0d8c5;
+  background: #f7f7ee;
+  border-radius: 4px;
+  padding: 7px 10px;
+  color: #53644b;
+  font-size: 11px;
+}
+.tools label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #66725e;
+}
+input {
+  width: 100px;
+  accent-color: #547044;
+}
+output {
+  width: 34px;
+  font-variant-numeric: tabular-nums;
+}
+#status {
+  min-height: 36px;
+  margin: 0;
+  padding: 9px 18px;
+  color: #6d7864;
+  font-size: 11px;
+  line-height: 1.7;
+  background: #edf0e5;
+}
+aside {
+  padding: 15px 0;
+}
+.chapter {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 26px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #879177;
+}
+.chapter span {
+  padding: 5px 6px;
+  background: #e7e9dd;
+  font:
+    11px ui-monospace,
+    monospace;
+}
+aside h2 {
+  margin: 0 0 14px;
+  font-size: 22px;
+  letter-spacing: -0.9px;
+}
+#stage-description,
+#kitchen-description {
+  font-size: 13px;
+  color: #717b66;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+#changes,
+#kitchen-changes {
+  margin: 23px 0 27px;
+  padding: 20px 0 20px 15px;
+  border-block: 1px solid #dedfd4;
+  color: #55634c;
+  font-size: 12px;
+  line-height: 2;
+  word-break: keep-all;
+}
+#changes li + li,
+#kitchen-changes li + li {
+  margin-top: 9px;
+}
+#changes li::marker,
+#kitchen-changes li::marker {
+  color: #a5ae95;
+}
+.kitchen-notes .chapter {
+  color: #946d46;
+  margin-bottom: 14px;
+}
+.kept span {
+  font-size: 10px;
+  color: #9a8562;
+}
+.kept p {
+  font-size: 14px;
+  line-height: 2;
+  color: #66745a;
+}
+.comparison-note {
+  margin-top: 26px;
+  font-size: 11px;
+  line-height: 1.8;
+  color: #8c947f;
+}
+.collection {
+  margin-top: 30px;
+}
+.collection h2 {
+  font-size: 12px;
+  font-weight: 650;
+  margin-bottom: 15px;
+  color: #69775e;
+}
+.resource-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.resource-list article {
+  border-top: 1px solid #daddcf;
+  padding-top: 14px;
+}
+.resource-list span {
+  font-size: 10px;
+  color: #8c967e;
+}
+.resource-list h3 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 8px 0 6px;
+}
+.resource-list p {
+  margin: 0;
+  font-size: 11px;
+  color: #808a74;
+}
+.source {
+  margin-top: 28px;
+  border-block: 1px solid #daddcf;
+  padding: 15px 0;
+  color: #7e8774;
+  font-size: 11px;
+  line-height: 1.8;
+}
+.source summary {
+  cursor: pointer;
+}
+footer {
+  padding-top: 18px;
+  color: #9ca38f;
+  font-size: 10px;
+}
+@media (max-width: 1000px) {
+  main {
+    padding: 22px;
+  }
+  .workspace {
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 20px;
+  }
+  .tools {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 720px) {
+  .facility-controls {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .preview-bar {
+    flex-wrap: wrap;
+    gap: 9px;
+    padding: 12px;
+  }
+  .stage-switch {
+    width: 100%;
+  }
+  .stage-switch button {
+    padding: 12px 5px;
+    font-size: 12px;
+  }
+  .stage-switch button span {
+    margin-right: 4px;
+  }
+  main {
+    padding: 18px 14px;
+  }
+  header {
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 28px 0 20px;
+    gap: 19px;
+  }
+  h1 {
+    font-size: 30px;
+  }
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+  canvas {
+    height: 400px;
+  }
+  aside {
+    padding: 5px;
+  }
+  .chapter {
+    margin-bottom: 12px;
+  }
+  #changes {
+    margin-block: 16px;
+  }
+  .kept,
+  .comparison-note {
+    display: none;
+  }
+  .resource-list {
+    gap: 12px;
+  }
+  .resource-list p {
+    line-height: 1.8;
+  }
+}
+
+/* 시설 수가 늘어도 단계와 단축키를 각각 읽을 수 있게 한다. */
+.facility-controls {
+  gap: 14px;
+}
+.facility-controls button {
+  padding: 12px 6px;
+  font-size: 12px;
+}
+.facility-controls button span {
+  display: block;
+  margin: 0 0 5px;
+}
+.smithy-switch {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.smithy-switch button[aria-pressed='true'] {
+  background: #475d60;
+}
+.level-note {
+  margin: -9px 0 20px;
+  font-size: 11px;
+  color: #7e8774;
+  line-height: 1.7;
+}
+#smithy-badge {
+  padding: 3px 7px;
+  background: #f5f3e98c;
+  border-radius: 3px;
+}
+#smithy-description {
+  font-size: 13px;
+  color: #717b66;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+#smithy-changes {
+  margin: 23px 0 27px;
+  padding: 20px 0 20px 15px;
+  border-block: 1px solid #dedfd4;
+  color: #55634c;
+  font-size: 12px;
+  line-height: 2;
+  word-break: keep-all;
+}
+#smithy-changes li + li {
+  margin-top: 9px;
+}
+.smithy-notes .chapter {
+  color: #547174;
+}
+.facility-notes {
+  margin-top: 16px;
+  border-bottom: 1px solid #dedfd4;
+  padding-bottom: 16px;
+}
+.facility-notes summary {
+  cursor: pointer;
+  font-size: 13px;
+  color: #69775e;
+}
+.facility-notes .chapter {
+  margin-top: 18px;
+}
+.view-switch {
+  display: flex;
+  gap: 7px;
+  padding: 11px 18px;
+  background: #edf0e5;
+  border-top: 1px solid #cdd4c3;
+}
+.view-switch button {
+  border: 1px solid #d0d8c5;
+  background: #f7f7ee;
+  border-radius: 4px;
+  padding: 8px 13px;
+  font-size: 11px;
+  color: #53644b;
+}
+.view-switch button[aria-pressed='true'] {
+  background: #475d60;
+  color: #fffcef;
+}
+@media (max-width: 1100px) {
+  .facility-controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .facility-controls button span {
+    display: inline;
+    margin-right: 5px;
+  }
+  .smithy-switch button span {
+    display: block;
+    margin: 0 0 5px;
+  }
+}
+
+/* 회관 단계는 다른 시설과 독립적으로 비교한다. */
+.hall-switch button[aria-pressed='true'] {
+  background: #7b6946;
+}
+#hall-badge {
+  padding: 3px 7px;
+  background: #e1d3ba;
+  border-radius: 3px;
+}
+.hall-notes > p:not(.chapter),
+.hall-notes li {
+  color: #717b66;
+  font-size: 13px;
+  line-height: 1.9;
+  word-break: keep-all;
+}
+.hall-notes ul {
+  margin: 23px 0;
+  padding: 18px 0 18px 16px;
+  border-block: 1px solid #dedfd4;
+}
+.view-switch {
+  flex-wrap: wrap;
+}
+.resource-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 720px) {
+  .facility-controls {
+    grid-template-columns: 1fr;
+  }
+  .preview-bar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .resource-list {
+    grid-template-columns: 1fr;
+  }
+}

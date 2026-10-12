@@ -1,3 +1,4 @@
+import { alignCameraToPixelGrid } from './pixel-camera.js';
 import * as THREE from 'three';
 import { FullScreenQuad, Pass } from 'three/addons/postprocessing/Pass.js';
 import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
@@ -7,6 +8,7 @@ import { normalizeOutlineSize, outlineGroups, resourceLayers, outlineSettings, }
 // 가려진 바닥도 따로 보관해 큰 도트 사이로 빈 구멍이 생기지 않게 한다.
 const samplingShader = `
   uniform vec2 screenSize;
+  uniform vec2 gridOrigin;
   uniform float pixelRatio;
   uniform vec3 backgroundColor;
   ${outlineGroups
@@ -25,7 +27,8 @@ const samplingShader = `
 
   vec2 outlineUv(vec2 uv, float size) {
     float cell = max(1.0, size * pixelRatio);
-    vec2 sampleUv = (floor(uv * screenSize / cell) + 0.5) * cell / screenSize;
+    // 종류별 도트도 화면 대신 같은 월드 원점에 고정해 카메라와 함께 이동한다.
+    vec2 sampleUv = ((floor((uv * screenSize - gridOrigin) / cell) + 0.5) * cell + gridOrigin) / screenSize;
     return clamp(sampleUv, 0.5 / screenSize, 1.0 - 0.5 / screenSize);
   }
 
@@ -57,6 +60,7 @@ export class ResourceOutlinePass extends Pass {
     smoothingPass;
     layers = new Map();
     screenSize = new THREE.Vector2(1, 1);
+    gridOrigin = new THREE.Vector2();
     resolution = new THREE.Vector2(1, 1);
     pixelRatio = { value: 1 };
     clearColor = new THREE.Color();
@@ -68,6 +72,7 @@ export class ResourceOutlinePass extends Pass {
         this.camera = camera;
         const uniforms = {
             screenSize: { value: this.screenSize },
+            gridOrigin: { value: this.gridOrigin },
             pixelRatio: this.pixelRatio,
             backgroundColor: { value: backgroundColor },
         };
@@ -147,6 +152,11 @@ export class ResourceOutlinePass extends Pass {
             target.setSize(w, h);
     }
     render(renderer, writeBuffer) {
+        const origin = alignCameraToPixelGrid(this.camera, {
+            width: this.screenSize.x,
+            height: this.screenSize.y,
+        });
+        this.gridOrigin.set(origin.x, origin.y);
         const mask = this.camera.layers.mask;
         const background = this.scene.background;
         const alpha = renderer.getClearAlpha();

@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="side.css" />
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <link rel="stylesheet" href="embedded.css" />
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-hybrid/lab-tabs.js"
+    ></script>
+    <title>아타호 · 비도트 좌우 기준 그림</title>
+  </head>
+  <body data-lab-tab="side">
+    <main>
+      <header>
+        <p class="eyebrow">아타호 · 방향과 외형 비교</p>
+        <h1>좌우 이동을 위한 기준 자세</h1>
+        <p class="intro">
+          승인 원화의 외형·화풍을 유지해 몸 전체를 오른쪽으로 돌린 3/4 측면
+          시안입니다.
+        </p>
+      </header>
+      <form class="controls" aria-label="좌우 그림 비교 설정">
+        <fieldset>
+          <legend>표시 크기</legend>
+          <label
+            ><input type="radio" name="size" value="large" checked /><span
+              >자세히 · 320px</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="size" value="game" /><span
+              >소형 비교 · 112px</span
+            ></label
+          >
+        </fieldset>
+        <fieldset>
+          <legend>배경</legend>
+          <label
+            ><input type="radio" name="backdrop" value="light" checked /><span
+              >밝게</span
+            ></label
+          >
+          <label
+            ><input type="radio" name="backdrop" value="dark" /><span
+              >어둡게</span
+            ></label
+          >
+        </fieldset>
+      </form>
+      <section class="portraits" aria-label="정면 기준과 좌우 방향 비교">
+        <article>
+          <div class="card-heading">
+            <h2>승인 원화</h2>
+            <span>정면 · 외형 기준</span>
+          </div>
+          <div class="stage">
+            <object
+              class="vector portrait"
+              type="image/svg+xml"
+              data="ataho-generated-front.svg"
+              aria-label="승인된 아타호 정면 비도트 원화"
+              width="940"
+              height="1270"
+            >
+              정면 원화를 불러오지 못했어요.
+            </object>
+          </div>
+          <p class="caption">얼굴·체형·의상·화풍의 기준</p>
+        </article>
+        <article>
+          <div class="card-heading">
+            <h2>오른쪽 기준</h2>
+            <span>3/4 측면 · 원화 01</span>
+          </div>
+          <div class="stage">
+            <object
+              class="vector portrait"
+              type="image/svg+xml"
+              data="ataho-generated-right.svg"
+              aria-label="몸과 코와 발이 오른쪽을 향하는 아타호 비도트 시안"
+              width="941"
+              height="1259"
+            >
+              오른쪽 시안을 불러오지 못했어요.
+            </object>
+          </div>
+          <p class="caption">얼굴과 가까운 팔이 보이는 측면</p>
+        </article>
+        <article>
+          <div class="card-heading">
+            <h2>왼쪽 반전</h2>
+            <span>같은 그림 재사용</span>
+          </div>
+          <div class="stage">
+            <object
+              class="vector portrait mirrored"
+              type="image/svg+xml"
+              data="ataho-generated-right.svg"
+              aria-label="오른쪽 원화를 반전해 왼쪽을 향하는 아타호 비교 시안"
+              width="941"
+              height="1259"
+            >
+              왼쪽 반전 시안을 불러오지 못했어요.
+            </object>
+          </div>
+          <p class="caption">옷 여밈·꼬리·자세의 반전 외형 확인</p>
+        </article>
+      </section>
+      <footer>
+        <p>원화 생성 1회 · 왼쪽은 표시 단계의 좌우 반전입니다.</p>
+        <p class="footnote">
+          전신과 발 위치를 같은 높이로 맞춘 기준 그림 비교입니다. 112px는 소형
+          비교 크기이며, 이번 그림은 걷기·공격 제작 전의 기준 후보입니다.
+        </p>
+        <nav>
+          <a href="index.html">기존 정면 비교</a
+          ><a href="pixellab-walk.html">측면 걷기 시험</a
+          ><a href="pixellab-idle.html">정면 대기 시험</a>
+        </nav>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

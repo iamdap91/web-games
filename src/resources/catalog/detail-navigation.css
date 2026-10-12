@@ -1,0 +1,75 @@
+.resource-navigation {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 24px;
+  margin: 0;
+  background: #1c2822f5;
+  border-bottom: 1px solid #52634f;
+  color: #e4dfd3;
+  font:
+    12px/1.6 -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+}
+.resource-navigation > a {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: #dfce9c;
+  text-decoration: none;
+  background: transparent;
+}
+.resource-navigation > details {
+  position: relative;
+  margin: 0 0 0 auto;
+  border: 0;
+  padding: 0;
+}
+.resource-navigation summary {
+  cursor: pointer;
+  color: #e4dfd3;
+  font-size: 12px;
+}
+.resource-navigation details > div {
+  position: absolute;
+  right: 0;
+  top: 30px;
+  display: grid;
+  gap: 4px;
+  min-width: 230px;
+  max-width: 300px;
+  max-height: 60dvh;
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid #52634f;
+  border-radius: 8px;
+  background: #1c2822;
+}
+.resource-navigation details a {
+  color: #dfce9c;
+  padding: 7px;
+  border: 0;
+  text-decoration: none;
+}
+.resource-navigation details a:hover {
+  background: #314137;
+}
+main h2,
+main details {
+  scroll-margin-top: 72px;
+}
+.resource-navigation [hidden] {
+  display: none;
+}
+#atlas {
+  position: absolute;
+  inset: var(--resource-navigation-height, 44px) 0 0;
+}
+#villages {
+  height: calc(100dvh - var(--resource-navigation-height, 44px));
+}

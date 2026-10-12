@@ -8,9 +8,10 @@ export const clearingCameraPose = {
 export const clearingScreenUpY = clearingCameraPose.depth /
     Math.hypot(clearingCameraPose.height, clearingCameraPose.depth);
 /** 시야가 공터보다 좁을 때만 가로로 따라가며 가장자리 숲 너머까지 이탈하지 않는다. */
-export function clearingCameraX({ playerX, halfWidth, }) {
+export function clearingCameraX({ playerX, halfWidth, rightEdge = clearing.width / 2, }) {
     const limit = Math.max(0, clearing.width / 2 + 2.3 - halfWidth);
-    return THREE.MathUtils.clamp(playerX, -limit, limit);
+    const rightLimit = Math.max(0, rightEdge + 2.3 - halfWidth);
+    return THREE.MathUtils.clamp(playerX, -limit, rightLimit);
 }
 /** CSS 표시 크기로 투영한다. 화면 밖 좌표를 가장자리 안으로 끌어오지 않는다. */
 export function projectClearingPoint({ point, camera, width, height, }) {

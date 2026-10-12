@@ -1,0 +1,30 @@
+{
+  "service": "PixelLab MCP",
+  "model": "Pro",
+  "createdAt": "2026-10-11",
+  "requestCount": 1,
+  "regenerationCount": 0,
+  "totalGenerations": 10,
+  "styleReference": "public/assets/maplestory/forest-quiet-ai/references/safe-clearing.png",
+  "styleCopy": ["color_palette", "outline", "detail", "shading"],
+  "request": {
+    "key": "map-details",
+    "width": 256,
+    "height": 192,
+    "seed": 101131,
+    "description": "A transparent pixel-art asset atlas for the attached low-poly mountain village and safe forest game. EXACTLY four columns and three rows, each cell64x64; 12 separate sprites, eight transparent pixels around each cell edge, NEVER crossing cell boundaries. No drawn grid, no text. Match the reference's simple angular shapes, broad flat color planes, muted sage and olive greens, grey-brown timber, warm faded beige cloth. Background scenery, restrained contrast, NO black outlines, NO individual leaf veins, NO tiny pixel speckles, NO texture noise, NO dithering, NO gloss, NO intricate details. Two or three flat tones per material, about20 colors for the whole atlas. Fixed orthographic RPG view from above38 degrees, soft upper-left illumination, no floor or baked cast shadows. ROW1 left to right: a low scattered pile of five chunky wood chips; a small matte sawdust mound; a shallow irregular grey ash patch; a low muted green moss patch. ROW2: sparse short grass around two simple exposed roots; a small herb cluster of three broad leaves; a small tuft with two pale cream flowers; a tied bundle of three dried herb stems. ROW3: one squat closed beige grain sack tied at top with a plain band, upright front view; a small bundle of three pale root vegetables with dark green leaves; one neatly folded muted blue-grey cloth with a single large fold; a low cluster of eight LARGE tan grain shapes. Each object centered in its own cell with root/base near cell y54; plain game-ready silhouettes. No baskets, buildings, characters, tools or surrounding environment.",
+    "jobId": "b53c7980-a9f3-4a70-8430-780a88faf507",
+    "chargedGenerations": 10
+  },
+  "original": {
+    "key": "map-details",
+    "name": "차분한 지도 소품 12종 원본",
+    "localPath": "public/assets/maplestory/quiet-map-details/originals/map-details.png",
+    "pageUrl": "https://www.pixellab.ai/create",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/b53c7980-a9f3-4a70-8430-780a88faf507/download",
+    "width": 256,
+    "height": 192,
+    "sha256": "feb212351d9491cf15963e2c71f2a0efa79d8c35494f74ac5a0e117383095664"
+  },
+  "notes": "승인된 7종 개선의 신규 소품을 한 시트로 생성했다. 기존 식생·덩굴을 재사용하고, 약점 표시는 기존 3D 표면 표현을 정리한다. 원본 RGBA는 수정하지 않고 12칸의 투명 여백만 추출했다. 약초·꽃은 장식이며 새 채집·보상 규칙은 없다."
+}

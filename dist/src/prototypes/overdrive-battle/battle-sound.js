@@ -41,12 +41,21 @@ export class BattleSound {
         }
     }
     toggle() {
-        this.muted = !this.muted;
-        if (this.muted)
+        this.setMuted(!this.muted);
+        return this.muted;
+    }
+    get isMuted() {
+        return this.muted;
+    }
+    /** 메뉴와 독립 화면 버튼이 같은 음향 상태를 제어한다. 끄면 예약된 소리도 중단한다. */
+    setMuted(muted) {
+        if (this.muted === muted)
+            return;
+        this.muted = muted;
+        if (muted)
             this.stop();
         else
             this.unlock();
-        return this.muted;
     }
     tone(frequency, end, duration, volume, delay = 0, waveform = 'triangle') {
         const context = this.context;

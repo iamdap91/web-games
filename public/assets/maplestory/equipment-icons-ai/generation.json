@@ -1,0 +1,434 @@
+{
+  "provider": "PixelLab",
+  "interface": "MCP",
+  "createdDate": "2026-10-10",
+  "status": "complete",
+  "approvedMaximumGenerations": 53,
+  "additionalRetries": 0,
+  "references": [
+    {
+      "name": "tiger-plaque",
+      "pageUrl": "https://aninoma.base.shop/items/86693741",
+      "imageUrl": "https://baseec-img-mng.akamaized.net/images/item/origin/8aaf93ffa49e2297cbfde8a3b442e5b3.jpg",
+      "localPath": "public/assets/maplestory/equipment-icons-ai/references/tiger-plaque.jpg",
+      "width": 3024,
+      "height": 3027,
+      "sha256": "d0a2536be83f13ed0a96539e511a4dbe3d26106da6bb613576d171bfb59045c8",
+      "inputPath": "public/assets/maplestory/equipment-icons-ai/references/tiger-plaque-input.png",
+      "inputSha256": "e01ba64327f82a5fd8a5a977cbd0ed2f044fc3a3d5329193e8c017072c154c28",
+      "inputSourceRect": {
+        "x": 520,
+        "y": 750,
+        "width": 2250,
+        "height": 2170
+      },
+      "inputPreparation": "사진 영역 추출 후 56px 범위에 비례 축소, 흰 64×64 캔버스 중앙 배치. 생성 도트는 원본 크기 유지."
+    },
+    {
+      "name": "cloth-wrap",
+      "pageUrl": "https://www.etsy.com/listing/1478055179/distressed-charcoal-cotton-hand-wraps",
+      "imageUrl": "https://i.etsystatic.com/8040813/r/il/47f23c/7951430232/il_794xN.7951430232_npa1.jpg",
+      "localPath": "public/assets/maplestory/equipment-icons-ai/references/cloth-wrap.jpg",
+      "width": 794,
+      "height": 596,
+      "sha256": "273a39275bc2038e9cdcd6f31ffcf2a24b4ea2d2df97e63ae3c10faf0577adba",
+      "inputPath": "public/assets/maplestory/equipment-icons-ai/references/cloth-wrap-input.png",
+      "inputSha256": "fdeef84678e5abee3020a89ff7ded2ac9ed63179d1fd949516e097437f50e263",
+      "inputSourceRect": {
+        "x": 209,
+        "y": 238,
+        "width": 101,
+        "height": 200
+      },
+      "inputPreparation": "사진 영역 추출 후 56px 범위에 비례 축소, 흰 64×64 캔버스 중앙 배치. 생성 도트는 원본 크기 유지.",
+      "referencePath": "public/assets/maplestory/equipment-icons-ai/references/cloth-wrap-reference.png",
+      "referenceSha256": "6fe279ccbb03e15ffcc4d4ae891e382b791fb395fdccd4f3fca65debd5b1c5f3",
+      "shapePath": "public/assets/maplestory/equipment-icons-ai/references/ward-shape.png",
+      "shapeSha256": "c867e996a1eb35e9a701f149f17041de2df6e3fdcb55bc2b0b3657be47af07d9"
+    },
+    {
+      "name": "metal-bracer",
+      "pageUrl": "https://saberforge.com/products/womens-leather-bracers",
+      "imageUrl": "https://saberforge.com/cdn/shop/products/bracerb-1_f33e70d1-b930-440c-a87c-284763d7ec41_720x@2x.jpg?v=1590100455",
+      "localPath": "public/assets/maplestory/equipment-icons-ai/references/metal-bracer.jpg",
+      "width": 1440,
+      "height": 1201,
+      "sha256": "2b674dd2debcd0c14adc3d724c694f0e2abce99de06835df8360f6c98a8a84ff",
+      "inputPath": "public/assets/maplestory/equipment-icons-ai/references/metal-bracer-input.png",
+      "inputSha256": "e580816437ebefba30dfb4c300ca40541911bfcef272e1fcc2a4658f20c166ab",
+      "inputSourceRect": {
+        "x": 582,
+        "y": 74,
+        "width": 400,
+        "height": 1066
+      },
+      "inputPreparation": "사진 영역 추출 후 56px 범위에 비례 축소, 흰 64×64 캔버스 중앙 배치. 생성 도트는 원본 크기 유지.",
+      "referencePath": "public/assets/maplestory/equipment-icons-ai/references/metal-bracer-reference.png",
+      "referenceSha256": "9b0543316c481a5caac03ddd631bc5114b5696adba1ff35868983ef9e3c04c41",
+      "shapePath": "public/assets/maplestory/equipment-icons-ai/references/ironwall-shape.png",
+      "shapeSha256": "cb56faf78ff95412a42d6e12780ee58518c578259f056e00c358a4e02a3d15d8"
+    }
+  ],
+  "jobs": [
+    {
+      "key": "spirit",
+      "input": "tiger-plaque-input",
+      "seed": 2026101001,
+      "description": "One original fantasy RPG inventory item icon: a vertical warm honey-brown wooden talisman plaque with clipped corners, a bold simple engraved TIGER FACE centered on its front, small round ears, dark stripes, two eyes and muzzle. A thick vivid golden YELLOW cord loop and knot on top, yellow tassel at the bottom. Use the input photo ONLY as inspiration for carved wood plaque construction; replace all artwork and writing with an original simple tiger face. Upright centered front view. 64x64 true pixel art, chunky readable shapes, 2px dark warm outline, 3-tone flat shading, top-left light, warm rustic handheld RPG style. Single isolated whole item occupying about 48x56 pixels with transparent padding. Transparent background. No writing, no letters, no kanji, no frame, no sparkles, no cast shadow, no hands, no red or white string. Must read clearly when displayed at 24 pixels.",
+      "job_id": "1058fabb-042e-4867-aa0a-a944bb34f10a",
+      "method": "create_image_pixflux",
+      "parameters": {
+        "description": "One original fantasy RPG inventory item icon: a vertical warm honey-brown wooden talisman plaque with clipped corners, a bold simple engraved TIGER FACE centered on its front, small round ears, dark stripes, two eyes and muzzle. A thick vivid golden YELLOW cord loop and knot on top, yellow tassel at the bottom. Use the input photo ONLY as inspiration for carved wood plaque construction; replace all artwork and writing with an original simple tiger face. Upright centered front view. 64x64 true pixel art, chunky readable shapes, 2px dark warm outline, 3-tone flat shading, top-left light, warm rustic handheld RPG style. Single isolated whole item occupying about 48x56 pixels with transparent padding. Transparent background. No writing, no letters, no kanji, no frame, no sparkles, no cast shadow, no hands, no red or white string. Must read clearly when displayed at 24 pixels.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "init_image_strength": 50,
+        "detail": "medium detail",
+        "outline": "single color outline",
+        "shading": "basic shading",
+        "text_guidance_scale": 9,
+        "seed": 2026101001,
+        "init_image_path": "public/assets/maplestory/equipment-icons-ai/references/tiger-plaque-input.png",
+        "color_image_path": "public/assets/maplestory/equipment-icons-ai/references/palette.png"
+      },
+      "result": {
+        "job_id": "1058fabb-042e-4867-aa0a-a944bb34f10a",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/1058fabb-042e-4867-aa0a-a944bb34f10a/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/1058fabb-042e-4867-aa0a-a944bb34f10a/download"
+        ],
+        "asset": {
+          "id": "5ec2f6ab-5c06-5eff-9c83-15aa081fe6be",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 1
+      },
+      "inputRole": "사용자가 고른 상품 사진의 실제 픽셀을 영역 추출·크기 정리해 이미지 입력. 문자/인체는 프롬프트로 제외 요청."
+    },
+    {
+      "key": "ward",
+      "input": "cloth-wrap-input",
+      "seed": 2026101002,
+      "description": "One original fantasy RPG inventory item icon: a SHORT WIDE cylindrical wrist guard cuff made from overlapping pale warm GREY COTTON BANDAGE strips and one broad brown leather fastening strap. Width greater than height, thick padded cloth, clear wrap bands, hollow dark opening visible along upper edge, compact cuff viewed at slight three-quarter angle. A small golden original tiger-face protective emblem on the center leather strap. Use the input photo ONLY for cloth wraps and leather strap material construction; REMOVE the arm and hand entirely, create a standalone short wide wrist cuff, not a long forearm sleeve. 64x64 true pixel art, chunky readable silhouette, 2px dark warm outline, 3-tone flat shading, top-left light, same warm rustic handheld RPG inventory style as a honey wood talisman. Single isolated centered whole item about 50px wide and 40px tall with transparent padding. Transparent background. No hand, no body, no writing, no frame, no sparkles, no cast shadow, no metal armor plate.",
+      "job_id": "c157b337-b1f0-4862-b2da-ca6c7055ff4d",
+      "method": "create_image_pixflux",
+      "parameters": {
+        "description": "One original fantasy RPG inventory item icon: a SHORT WIDE cylindrical wrist guard cuff made from overlapping pale warm GREY COTTON BANDAGE strips and one broad brown leather fastening strap. Width greater than height, thick padded cloth, clear wrap bands, hollow dark opening visible along upper edge, compact cuff viewed at slight three-quarter angle. A small golden original tiger-face protective emblem on the center leather strap. Use the input photo ONLY for cloth wraps and leather strap material construction; REMOVE the arm and hand entirely, create a standalone short wide wrist cuff, not a long forearm sleeve. 64x64 true pixel art, chunky readable silhouette, 2px dark warm outline, 3-tone flat shading, top-left light, same warm rustic handheld RPG inventory style as a honey wood talisman. Single isolated centered whole item about 50px wide and 40px tall with transparent padding. Transparent background. No hand, no body, no writing, no frame, no sparkles, no cast shadow, no metal armor plate.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "init_image_strength": 50,
+        "detail": "medium detail",
+        "outline": "single color outline",
+        "shading": "basic shading",
+        "text_guidance_scale": 9,
+        "seed": 2026101002,
+        "init_image_path": "public/assets/maplestory/equipment-icons-ai/references/cloth-wrap-input.png",
+        "color_image_path": "public/assets/maplestory/equipment-icons-ai/references/palette.png"
+      },
+      "result": {
+        "job_id": "c157b337-b1f0-4862-b2da-ca6c7055ff4d",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/c157b337-b1f0-4862-b2da-ca6c7055ff4d/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/c157b337-b1f0-4862-b2da-ca6c7055ff4d/download"
+        ],
+        "asset": {
+          "id": "b896e381-a5cc-5a79-b299-747459b9259e",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 1
+      },
+      "inputRole": "사용자가 고른 상품 사진의 실제 픽셀을 영역 추출·크기 정리해 이미지 입력. 문자/인체는 프롬프트로 제외 요청.",
+      "accepted": false,
+      "review": "미채택: 손가락이 있는 긴 장갑. 최종 아이콘에 사용하지 않음."
+    },
+    {
+      "key": "focus",
+      "method": "edit_image_pixen",
+      "job_id": "d5f9b95c-cd42-4e8b-84dc-46feea270601",
+      "parameters": {
+        "description": "Keep the identical wooden tiger-face talisman, pose, silhouette, engraving and shading. Replace ONLY the golden yellow cord/tassel with a strong medium BLUE cord/tassel, using dark blue shadows and light pale-blue highlights. Do not change any wood or tiger-face pixels. One 64x64 transparent pixel art inventory icon. No text, no extra objects.",
+        "image_url": "https://api.pixellab.ai/mcp/images/1058fabb-042e-4867-aa0a-a944bb34f10a/download",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "seed": 2026101003
+      },
+      "description": "Keep the identical wooden tiger-face talisman, pose, silhouette, engraving and shading. Replace ONLY the golden yellow cord/tassel with a strong medium BLUE cord/tassel, using dark blue shadows and light pale-blue highlights. Do not change any wood or tiger-face pixels. One 64x64 transparent pixel art inventory icon. No text, no extra objects.",
+      "input": "originals/spirit.png",
+      "result": {
+        "job_id": "d5f9b95c-cd42-4e8b-84dc-46feea270601",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/d5f9b95c-cd42-4e8b-84dc-46feea270601/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/d5f9b95c-cd42-4e8b-84dc-46feea270601/download"
+        ],
+        "asset": {
+          "id": "e4f0bd64-a3bb-5de5-8bc5-d35a31f02b50",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 1
+      }
+    },
+    {
+      "key": "ward-pro",
+      "seed": 2026101012,
+      "photo": "https://i.etsystatic.com/8040813/r/il/47f23c/7951430232/il_794xN.7951430232_npa1.jpg",
+      "description": "Exactly ONE original fantasy RPG item icon: a short, wide, EMPTY wrist cuff, NOT a glove. A thick oval bracelet-sized hollow band made of overlapping warm ivory-grey cotton bandages, fastened by one broad brown leather strap with a small golden original tiger-face protective emblem. Width visibly greater than height, about 48px WIDE and 36px TALL, dark empty opening visible at top, three-quarter front view, sits alone centered with 6px transparent margins. Use reference 1 ONLY for cotton/leather material and wrapping construction; DO NOT include the wearer or a long forearm wrap. Use reference 2 for the SHORT WIDE HOLLOW CUFF silhouette only; redraw it as finely finished original pixel art. Match the spirit talisman's crisp pixel clusters, dark warm outline and restrained upper-left 3-tone shading, warm rustic JRPG inventory style. Large simple cloth bands, clear diagonal leather strap, small tiger emblem, no fussy stitching. 64x64 true pixel art on transparent background, readable at 24px. NO HANDS, NO FINGERS, NO ARMS, NO GAUNTLET, NO GLOVE, NO LONG SLEEVE. No metal plate. No letters, text, UI frame, stars, sparkles, pedestal, floor shadow or second item.",
+      "item": "ward",
+      "method": "create_image_pro",
+      "job_id": "09975456-7c1e-41e8-8780-be969acf0e8b",
+      "parameters": {
+        "description": "Exactly ONE original fantasy RPG item icon: a short, wide, EMPTY wrist cuff, NOT a glove. A thick oval bracelet-sized hollow band made of overlapping warm ivory-grey cotton bandages, fastened by one broad brown leather strap with a small golden original tiger-face protective emblem. Width visibly greater than height, about 48px WIDE and 36px TALL, dark empty opening visible at top, three-quarter front view, sits alone centered with 6px transparent margins. Use reference 1 ONLY for cotton/leather material and wrapping construction; DO NOT include the wearer or a long forearm wrap. Use reference 2 for the SHORT WIDE HOLLOW CUFF silhouette only; redraw it as finely finished original pixel art. Match the spirit talisman's crisp pixel clusters, dark warm outline and restrained upper-left 3-tone shading, warm rustic JRPG inventory style. Large simple cloth bands, clear diagonal leather strap, small tiger emblem, no fussy stitching. 64x64 true pixel art on transparent background, readable at 24px. NO HANDS, NO FINGERS, NO ARMS, NO GAUNTLET, NO GLOVE, NO LONG SLEEVE. No metal plate. No letters, text, UI frame, stars, sparkles, pedestal, floor shadow or second item.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "reference_images": [
+          {
+            "url": "https://i.etsystatic.com/8040813/r/il/47f23c/7951430232/il_794xN.7951430232_npa1.jpg",
+            "usage": "Material and construction only. This is a commercial PRODUCT PHOTO, not pixel art. Do not copy its exact design, anatomical pose, fingers or hands."
+          },
+          {
+            "localPath": "public/assets/maplestory/equipment-icons-ai/references/ward-shape.png",
+            "usage": "Silhouette/composition only: one EMPTY SHORT WIDE wrist cuff with no hand, fingers or arm. Draw a more refined original pixel-art icon; ignore the draft's low-detail texture."
+          }
+        ],
+        "style_image_url": "https://api.pixellab.ai/mcp/images/1058fabb-042e-4867-aa0a-a944bb34f10a/download",
+        "style_copy": [
+          "outline",
+          "detail",
+          "shading"
+        ],
+        "seed": 2026101012
+      },
+      "result": {
+        "job_id": "09975456-7c1e-41e8-8780-be969acf0e8b",
+        "status": "completed",
+        "frames": 16,
+        "download_url": "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=0",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=0",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=1",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=2",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=3",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=4",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=5",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=6",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=7",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=8",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=9",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=10",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=11",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=12",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=13",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=14",
+          "https://api.pixellab.ai/mcp/images/09975456-7c1e-41e8-8780-be969acf0e8b/download?index=15"
+        ],
+        "asset": {
+          "id": "715cdb18-95cf-52dd-bceb-dc45aa04474c",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 10
+      }
+    },
+    {
+      "key": "ironwall-pro",
+      "seed": 2026101014,
+      "photo": "https://saberforge.com/cdn/shop/products/bracerb-1_f33e70d1-b930-440c-a87c-284763d7ec41_720x@2x.jpg?v=1590100455",
+      "description": "Exactly ONE original fantasy RPG item icon: a short, wide, EMPTY armored wrist cuff, NOT a glove. A stout dark warm-brown leather bracelet-sized hollow cuff with a single broad pale blue-grey steel armor plate covering its front, chunky beveled steel edge and FOUR large brass rivets at the corners. Width visibly greater than height, about 48px WIDE and 36px TALL, dark empty opening visible at top, three-quarter front view, centered with 6px transparent margins. Use reference 1 ONLY for leather base, steel plate and rivet construction; shorten the long product to a compact wrist cuff and show just ONE cuff. Use reference 2 for the SHORT WIDE HOLLOW CUFF silhouette only; redraw as original finely finished pixel art. Match the spirit talisman's crisp pixel clusters, dark warm outline, upper-left light and restrained 3-tone shading, warm rustic JRPG inventory style. Clearly distinct from cloth ward: most front area is a broad bright metal plate, with visible dark leather on sides. A subtle small embossed shield/tiger mark is optional. 64x64 true pixel art on transparent background, readable at 24px. NO HANDS, NO FINGERS, NO ARMS, NO GAUNTLET, NO GLOVE, NO LONG SLEEVE. No cloth wraps. No writing, text, UI frame, stars, sparkles, floor shadow or second item.",
+      "item": "ironwall",
+      "method": "create_image_pro",
+      "job_id": "cc301af6-9d1c-4836-a976-3c88b9a00bea",
+      "parameters": {
+        "description": "Exactly ONE original fantasy RPG item icon: a short, wide, EMPTY armored wrist cuff, NOT a glove. A stout dark warm-brown leather bracelet-sized hollow cuff with a single broad pale blue-grey steel armor plate covering its front, chunky beveled steel edge and FOUR large brass rivets at the corners. Width visibly greater than height, about 48px WIDE and 36px TALL, dark empty opening visible at top, three-quarter front view, centered with 6px transparent margins. Use reference 1 ONLY for leather base, steel plate and rivet construction; shorten the long product to a compact wrist cuff and show just ONE cuff. Use reference 2 for the SHORT WIDE HOLLOW CUFF silhouette only; redraw as original finely finished pixel art. Match the spirit talisman's crisp pixel clusters, dark warm outline, upper-left light and restrained 3-tone shading, warm rustic JRPG inventory style. Clearly distinct from cloth ward: most front area is a broad bright metal plate, with visible dark leather on sides. A subtle small embossed shield/tiger mark is optional. 64x64 true pixel art on transparent background, readable at 24px. NO HANDS, NO FINGERS, NO ARMS, NO GAUNTLET, NO GLOVE, NO LONG SLEEVE. No cloth wraps. No writing, text, UI frame, stars, sparkles, floor shadow or second item.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "reference_images": [
+          {
+            "url": "https://saberforge.com/cdn/shop/products/bracerb-1_f33e70d1-b930-440c-a87c-284763d7ec41_720x@2x.jpg?v=1590100455",
+            "usage": "Material and construction only. This is a commercial PRODUCT PHOTO, not pixel art. Do not copy its exact design, anatomical pose, fingers or hands."
+          },
+          {
+            "localPath": "public/assets/maplestory/equipment-icons-ai/references/ironwall-shape.png",
+            "usage": "Silhouette/composition only: one EMPTY SHORT WIDE wrist cuff with no hand, fingers or arm. Draw a more refined original pixel-art icon; ignore the draft's low-detail texture."
+          }
+        ],
+        "style_image_url": "https://api.pixellab.ai/mcp/images/1058fabb-042e-4867-aa0a-a944bb34f10a/download",
+        "style_copy": [
+          "outline",
+          "detail",
+          "shading"
+        ],
+        "seed": 2026101014
+      },
+      "result": {
+        "job_id": "cc301af6-9d1c-4836-a976-3c88b9a00bea",
+        "status": "completed",
+        "frames": 16,
+        "download_url": "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=0",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=0",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=1",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=2",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=3",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=4",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=5",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=6",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=7",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=8",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=9",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=10",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=11",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=12",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=13",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=14",
+          "https://api.pixellab.ai/mcp/images/cc301af6-9d1c-4836-a976-3c88b9a00bea/download?index=15"
+        ],
+        "asset": {
+          "id": "8568da90-d9be-59be-8865-d454225ab8d7",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 10
+      }
+    }
+  ],
+  "selected": [
+    {
+      "id": "spirit",
+      "name": "기세 부적",
+      "localPath": "public/assets/maplestory/equipment-icons-ai/originals/spirit.png",
+      "jobKey": "spirit",
+      "index": 0,
+      "iconPath": "public/assets/maplestory/equipment-icons-ai/icons/spirit.png",
+      "sha256": "116cb992ca773fa7b72811cd853dd1fff2ab5c36051a3ff3046502d0aadaa00d",
+      "byteSize": 2281,
+      "bounds": [
+        14,
+        3,
+        49,
+        62
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "focus",
+      "name": "집중 부적",
+      "localPath": "public/assets/maplestory/equipment-icons-ai/originals/focus.png",
+      "jobKey": "focus",
+      "index": 0,
+      "iconPath": "public/assets/maplestory/equipment-icons-ai/icons/focus.png",
+      "sha256": "72306c79ad10a9cd46c7d1ba732eabf3781c4a8c35835cee00719dff8d419330",
+      "byteSize": 3663,
+      "bounds": [
+        14,
+        3,
+        49,
+        62
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "ward",
+      "name": "호신 아대",
+      "localPath": "public/assets/maplestory/equipment-icons-ai/originals/ward-pro/candidate-00.png",
+      "jobKey": "ward-pro",
+      "index": 0,
+      "iconPath": "public/assets/maplestory/equipment-icons-ai/icons/ward.png",
+      "sha256": "276656ea3f2922f52524f559edcbfe2a37e9f9c95915c30f3f7906ca66e96432",
+      "byteSize": 2364,
+      "bounds": [
+        8,
+        8,
+        56,
+        56
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "width": 64,
+      "height": 64
+    },
+    {
+      "id": "ironwall",
+      "name": "철벽 아대",
+      "localPath": "public/assets/maplestory/equipment-icons-ai/originals/ironwall-pro/candidate-00.png",
+      "jobKey": "ironwall-pro",
+      "index": 0,
+      "iconPath": "public/assets/maplestory/equipment-icons-ai/icons/ironwall.png",
+      "sha256": "987ade4fbf98eee11bfa1943a9e16a50cd601175fb983044e9d7b6b81eb5a855",
+      "byteSize": 1334,
+      "bounds": [
+        10,
+        10,
+        56,
+        52
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "width": 64,
+      "height": 64
+    }
+  ],
+  "subscriptionBefore": {
+    "remaining": 1978,
+    "used": 22,
+    "total": 2000,
+    "plan": "Tier 1: Pixel Apprentice",
+    "creditsUsd": 0
+  },
+  "subscriptionAfter": {
+    "remaining": 1955,
+    "used": 45,
+    "total": 2000,
+    "creditsUsd": 0
+  },
+  "actualCostGenerations": 23,
+  "verification": {
+    "nativeSize": [
+      64,
+      64
+    ],
+    "alphaValues": [
+      0,
+      255
+    ],
+    "selectedSourceByteEquality": true,
+    "checkedDisplaySizes": [
+      24,
+      32,
+      64
+    ],
+    "checkedDevicePixelRatios": [
+      1,
+      2
+    ],
+    "mobileWidth": 390,
+    "imageAndConsoleErrors": 0,
+    "nonEquipmentManifestUnchanged": true,
+    "focusNotes": "기세·집중의 bbox는 동일. 불투명 실루엣 중 끝 끈 1픽셀의 alpha가 달라 mask IoU=0.999357. 모델이 모든 가시 픽셀 색 값을 바꿔 나무패 픽셀의 완전 일치를 보장하지 않는다. 육안으로 같은 호랑이 문양과 나무패 형태를 유지하며 파란 끈·윤곽이 구분됨."
+  }
+}

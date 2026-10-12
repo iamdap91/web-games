@@ -1,17 +1,30 @@
 import * as THREE from 'three';
-import { EnvironmentResources, setResourceOutline, } from '../../rendering/environment-resources.js';
+import { mapStyles, recolorMapMaterial, } from '../../rendering/map-art-direction.js';
+import { MapSpriteResources } from '../../resources/props/map-sprite-resources.js';
+import { groundGeometry } from '../../rendering/ground-geometry.js';
+import { EnvironmentResources, setResourceOutline, } from '../../resources/environment/environment-resources.js';
 import { villageColors } from '../../rendering/pixel-material.js';
-import { treeShape } from '../../rendering/tree-shape.js';
+import { treeShape } from '../../resources/environment/tree-shape.js';
 import { battleRules } from './world.js';
-/** 경기장 배치를 유지하면서 공용 리소스의 외형과 재질을 적용하고 정리한다. */
+import { groundPathGeometry } from '../../rendering/ground-path.js';
+/** 전투 범위를 둘러싼 숲 공터의 형태와 GPU 자원을 소유한다. */
 export class BattleArena {
+    style;
     root = new THREE.Group();
-    resources = new EnvironmentResources();
+    resources;
+    sprites = new MapSpriteResources();
+    grounds = [];
     cube = new THREE.BoxGeometry(1, 1, 1);
-    constructor() {
+    constructor(style = mapStyles.battle) {
+        this.style = style;
+        this.resources = new EnvironmentResources({
+            recolor: (kind, color) => recolorMapMaterial(style, kind, color),
+        });
         this.buildGround();
         this.buildGate();
         this.buildSurroundings();
+        this.root.add(this.sprites.root);
+        this.buildDetails();
     }
     box(x, y, z, width, height, depth, color, appearance = { surface: 'stone', outline: 'rock' }) {
         const mesh = new THREE.Mesh(this.cube, this.resources.material(appearance.surface, color));
@@ -23,49 +36,84 @@ export class BattleArena {
         this.root.add(mesh);
         return mesh;
     }
+    ground(points, surface, color, y) {
+        this.addGround(groundGeometry(points), surface, color, y);
+    }
+    addGround(geometry, surface, color, y) {
+        this.grounds.push(geometry);
+        const ground = new THREE.Mesh(geometry, this.resources.material(surface, color));
+        ground.position.y = y;
+        ground.receiveShadow = true;
+        setResourceOutline(ground, 'ground');
+        this.root.add(ground);
+    }
     buildGround() {
-        this.box(0, -0.4, 0, 36, 0.5, 32, villageColors.grass, {
-            surface: 'grass',
-            outline: 'ground',
-        });
-        this.box(0, -0.13, 0, battleRules.width + 0.8, 0.25, battleRules.depth + 0.8, villageColors.earth, { surface: 'earth', outline: 'ground' });
-        this.box(0, -0.008, 0, battleRules.width, 0.05, battleRules.depth, villageColors.path, { surface: 'path', outline: 'ground' });
-        for (let i = -6; i <= 6; i++)
-            for (const side of [-1, 1])
-                this.box(i, 0.035, side * 4.05, 0.95, 0.12, 0.28, villageColors.stone);
-        for (let i = -3; i <= 3; i++)
-            for (const side of [-1, 1])
-                this.box(side * 6.6, 0.035, i, 0.25, 0.13, 0.95, villageColors.stone);
-        for (let i = 0; i < 9; i++) {
-            const angle = (i / 9) * Math.PI * 2;
-            const stone = this.box(Math.cos(angle) * 2.4, 0.024, Math.sin(angle) * 2.4, 0.8, 0.018, 0.13, 0x9b8a65, { surface: 'path', outline: 'ground' });
-            stone.rotation.y = -angle + Math.PI / 2;
-        }
+        this.ground([
+            { x: -60, z: -60 },
+            { x: 60, z: -60 },
+            { x: 60, z: 60 },
+            { x: -60, z: 60 },
+        ], 'grass', villageColors.grass, -0.035);
+        // 전투 사각 범위를 포함하는 불규칙한 공터. 턱과 장식은 이동 범위 밖에 둔다.
+        const x = battleRules.width / 2, z = battleRules.depth / 2;
+        const clearing = [
+            { x: -x - 1.4, z: -z + 0.5 },
+            { x: -x - 0.8, z: -z - 1 },
+            { x: -2.1, z: -z - 1.6 },
+            { x: 2.9, z: -z - 1.1 },
+            { x: x + 1, z: -z - 0.6 },
+            { x: x + 1.8, z: 0.4 },
+            { x: x + 1.1, z: z + 1.1 },
+            { x: 1.4, z: z + 1.6 },
+            { x: -3.5, z: z + 1.2 },
+            { x: -x - 1.5, z: z + 0.4 },
+        ];
+        this.ground(clearing.map((p) => ({ x: p.x * 1.08, z: p.z * 1.08 })), 'earth', 0x8b846f, -0.024);
+        this.ground(clearing, 'path', villageColors.path, -0.012);
+        this.addGround(groundPathGeometry([
+            { x: 0.5, z: 18 },
+            { x: -0.4, z: 9 },
+            { x: 0, z: 3 },
+        ], 1.1), 'path', villageColors.path, -0.01);
     }
     buildGate() {
+        // 뒤쪽의 노출된 암반과 오래된 운반 흔적으로 산길에서 이어지는 공간을 만든다.
+        for (const [x, z, radius] of [
+            [-5.9, -6.7, 1.45],
+            [-7.1, -7.5, 0.9],
+            [6.8, -6.2, 1.1],
+        ]) {
+            const rock = this.resources.createRock({
+                radius,
+                rotation: x,
+                color: 0x92968d,
+            });
+            rock.position.x = x;
+            rock.position.z = z;
+            rock.scale.y *= this.style === mapStyles.ridge ? 1.6 : 1;
+            this.root.add(rock);
+        }
         const wood = { surface: 'wood', outline: 'fence' };
-        for (const x of [-5, 5]) {
-            this.box(x, 0.3, -5.1, 1.25, 0.6, 1.2, 0x8a8b70);
-            this.box(x, 1.7, -5.1, 0.5, 2.4, 0.5, villageColors.stone);
-            this.box(x, 2.9, -5.1, 1.25, 0.25, 1.2, 0x64756a);
-            this.box(x, 2.5, -5.1, 0.8, 0.55, 0.8, 0xffc878);
-            const light = new THREE.PointLight(0xffb45e, 8, 5);
-            light.position.set(x, 2.4, -4.8);
-            light.layers.enableAll();
-            this.root.add(light);
-        }
-        this.box(0, 0.16, -5.5, 6.8, 0.3, 1.4, 0x8a8b70);
-        for (const x of [-2.9, 2.9]) {
-            this.box(x, 1.9, -6, 0.42, 3.5, 0.42, villageColors.wood, wood);
-            this.box(x, 0.4, -6, 0.9, 0.8, 0.9, villageColors.stone);
-        }
-        this.box(0, 3.5, -6, 7.8, 0.4, 0.7, villageColors.wood, wood);
-        this.box(0, 3.88, -6, 8.8, 0.4, 1.2, 0x64756a);
-        this.box(0, 3.14, -6, 1.5, 0.75, 0.16, 0xab8358, wood);
+        const logGeometry = new THREE.CylinderGeometry(0.26, 0.32, 3.4, 8);
+        this.grounds.push(logGeometry);
+        const log = new THREE.Mesh(logGeometry, this.resources.material('wood', 0x796b54));
+        log.rotation.z = Math.PI / 2;
+        log.rotation.y = -0.24;
+        log.position.set(2.8, 0.29, -6.3);
+        log.castShadow = log.receiveShadow = true;
+        setResourceOutline(log, 'tree');
+        this.root.add(log);
+        this.box(4.3, 0.32, -6.6, 0.14, 0.64, 0.13, 0x796b54, wood).rotation.z =
+            0.2;
+        this.box(-3.2, 0.45, -6.1, 0.1, 0.9, 0.1, 0x796b54, wood).rotation.z = -0.1;
+        this.box(-3.2, 0.85, -6.1, 0.75, 0.25, 0.1, 0x99866b, wood).rotation.z =
+            -0.08;
     }
     buildSurroundings() {
         const crownTop = treeShape.crowns.at(-1).y + treeShape.crownHeight / 2;
         for (let i = 0; i < 30; i++) {
+            if (i < 16 && i % 4 === 1)
+                continue;
             const x = i < 16 ? (i - 7.5) * 1.7 : (i % 2 ? -1 : 1) * (9 + (i % 3));
             const z = i < 16 ? -8.5 - (i % 3) * 1.6 : (i - 22) * 1.6;
             const height = 3 + (i % 4) * 0.65;
@@ -73,10 +121,13 @@ export class BattleArena {
             // 새 수관 모양도 기존 나무의 높이와 폭에 맞춰 전투 시야를 유지한다.
             const width = 1.6 / treeShape.crowns[0].radius;
             tree.scale.set(width, (height + 1.8) / crownTop, width);
-            tree.position.set(x, 0, z);
+            tree.position.set(x + Math.sin(i * 1.8) * 0.7, 0, z);
+            tree.rotation.y = i * 0.61;
             this.root.add(tree);
         }
         for (let i = 0; i < 28; i++) {
+            if (i % 3 === 1)
+                continue;
             const side = i % 2 ? 1 : -1;
             const x = side * (7.2 + (i % 4) * 0.5);
             const z = -4 + (i / 28) * 10;
@@ -86,12 +137,59 @@ export class BattleArena {
                 rotation: 0,
                 color: 0x8a8b70,
             });
-            rock.position.set(x, 0.08, z);
-            rock.scale.set(radius, radius * 0.6, radius);
+            rock.position.x = x;
+            rock.position.z = z;
             this.root.add(rock);
         }
     }
+    buildDetails() {
+        // 전투 범위 밖에 낮은 식생과 넓은 흙 면을 두어 대상과 기술 원을 가리지 않는다.
+        for (const [x, z, width, depth] of [
+            [-9, 1, 3.2, 4.3],
+            [9.2, -1, 3, 3.8],
+            [-4, -8, 5, 2.4],
+        ]) {
+            const geometry = groundGeometry([
+                { x: x - width / 2, z: z - depth / 3 },
+                { x: x + width / 3, z: z - depth / 2 },
+                { x: x + width / 2, z: z + depth / 4 },
+                { x: x - width / 3, z: z + depth / 2 },
+            ]);
+            this.grounds.push(geometry);
+            const patch = new THREE.Mesh(geometry, this.resources.material('earth', 0x918b76));
+            patch.position.y = -0.028;
+            patch.receiveShadow = true;
+            setResourceOutline(patch, 'ground');
+            this.root.add(patch);
+        }
+        for (const [i, [x, z]] of [
+            [-7.8, -3],
+            [8.1, -1],
+            [-8.3, 2],
+            [8.5, 3.4],
+            [-4.8, -7.8],
+            [4.5, -8.2],
+        ].entries()) {
+            this.sprites.add(i % 2 ? 'fern' : 'root-grass', { x, z, width: 0.5 });
+            if (i % 2 === 0)
+                this.sprites.add('dry-leaves', {
+                    x: x + 0.4,
+                    z: z + 0.25,
+                    width: 0.6,
+                    depth: 0.4,
+                    kind: 'ground',
+                });
+        }
+    }
+    async load() {
+        await this.sprites.load();
+    }
+    face(camera) {
+        this.sprites.face(camera);
+    }
     dispose() {
+        this.sprites.dispose();
+        this.grounds.forEach((geometry) => geometry.dispose());
         this.root.removeFromParent();
         this.root.clear();
         this.cube.dispose();

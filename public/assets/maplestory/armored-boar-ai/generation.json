@@ -1,0 +1,1007 @@
+{
+  "service": "PixelLab MCP",
+  "authorizedTotalBudget": 16,
+  "baseCandidates": 1,
+  "selectedCandidate": 0,
+  "retries": 0,
+  "chargedGenerations": 8,
+  "balanceBefore": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1947\ngenerations_used: 53\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "base": {
+    "args": {
+      "description": "Pixel art RPG armored wild boar enemy, stocky quadruped on four short legs, facing left in clean side view with a slight front view. Warm brown bristly fur, cream tusks and snout, stout dark hooves, iron plates strapped across its back and shoulders with leather harness. Heavy rounded silhouette, whimsical fantasy creature. Limited earthy palette, crisp pixels, selective dark outline, simple two-tone shading. Full body centered with padding. No ground, shadow, effects or text.",
+      "width": 96,
+      "height": 96,
+      "direction": "west",
+      "view": "side",
+      "no_background": true,
+      "outline": "selective outline",
+      "detail": "medium detail",
+      "seed": 710102
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: b5820aa3-e67d-4247-ada9-dbc70cb3b417\njob_id: b5820aa3-e67d-4247-ada9-dbc70cb3b417\nmodel: pixen\ndescription: Pixel art RPG armored wild boar enemy, stocky quadruped on four short legs, facing left in clean side view with a slight front view. Warm brown bristly fur, cream tusks and snout, stout dark hooves, iron plates strapped across its back and shoulders with leather harness. Heavy rounded silhouette, whimsical fantasy creature. Limited earthy palette, crisp pixels, selective dark outline, simple two-tone shading. Full body centered with padding. No ground, shadow, effects or text.\nsize: 96x96px\ntransparent: True\nasset_id: d632eac8-3c4a-587a-86e8-cedc6707fa6e\nasset_status: pending (saved when generation completes)\nseed: 710102\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"b5820aa3-e67d-4247-ada9-dbc70cb3b417\")"
+        }
+      ],
+      "isError": false
+    },
+    "completed": {
+      "content": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: b5820aa3-e67d-4247-ada9-dbc70cb3b417\njob_id: b5820aa3-e67d-4247-ada9-dbc70cb3b417\nframes: 1\ntransparent: yes\nasset_id: d632eac8-3c4a-587a-86e8-cedc6707fa6e\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/b5820aa3-e67d-4247-ada9-dbc70cb3b417/download"
+        }
+      ],
+      "structuredContent": {
+        "job_id": "b5820aa3-e67d-4247-ada9-dbc70cb3b417",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/b5820aa3-e67d-4247-ada9-dbc70cb3b417/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/b5820aa3-e67d-4247-ada9-dbc70cb3b417/download"
+        ],
+        "asset": {
+          "id": "d632eac8-3c4a-587a-86e8-cedc6707fa6e",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 1
+      },
+      "isError": false
+    }
+  },
+  "jobs": [
+    {
+      "motion": "stand",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/b5820aa3-e67d-4247-ada9-dbc70cb3b417/download",
+        "frame_count": 4,
+        "action": "The armored boar breathes quietly, ears flick and its tail twitches. All four hooves remain on the ground. Subtle seamless idle loop, same left-facing body and metal armor, no new effects, stay centered.",
+        "no_background": true,
+        "seed": 710110,
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/b5820aa3-e67d-4247-ada9-dbc70cb3b417/download"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 5f4d0174-7bf2-448c-9bd3-9936552ddff3\njob_id: 5f4d0174-7bf2-448c-9bd3-9936552ddff3\naction: The armored boar breathes quietly, ears flick and its tail twitches. All four hooves remain on the ground. Subtle seamless idle loop, same left-facing body and metal armor, no new effects, stay centered.\nframes: 4\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 710110\nasset_id: 363de2b3-df21-5835-999d-5ec8cc9510bf\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"5f4d0174-7bf2-448c-9bd3-9936552ddff3\")"
+          }
+        ],
+        "isError": false
+      },
+      "completed": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: completed\nid: 5f4d0174-7bf2-448c-9bd3-9936552ddff3\njob_id: 5f4d0174-7bf2-448c-9bd3-9936552ddff3\nframe: 0 of 5\nasset_id: 363de2b3-df21-5835-999d-5ec8cc9510bf\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/5f4d0174-7bf2-448c-9bd3-9936552ddff3/download?index=0"
+          }
+        ],
+        "structuredContent": {
+          "job_id": "5f4d0174-7bf2-448c-9bd3-9936552ddff3",
+          "status": "completed",
+          "frames": 5,
+          "download_url": "https://api.pixellab.ai/mcp/images/5f4d0174-7bf2-448c-9bd3-9936552ddff3/download?index=0",
+          "download_urls": [
+            "https://api.pixellab.ai/mcp/images/5f4d0174-7bf2-448c-9bd3-9936552ddff3/download?index=0",
+            "https://api.pixellab.ai/mcp/images/5f4d0174-7bf2-448c-9bd3-9936552ddff3/download?index=1",
+            "https://api.pixellab.ai/mcp/images/5f4d0174-7bf2-448c-9bd3-9936552ddff3/download?index=2",
+            "https://api.pixellab.ai/mcp/images/5f4d0174-7bf2-448c-9bd3-9936552ddff3/download?index=3",
+            "https://api.pixellab.ai/mcp/images/5f4d0174-7bf2-448c-9bd3-9936552ddff3/download?index=4"
+          ],
+          "asset": {
+            "id": "363de2b3-df21-5835-999d-5ec8cc9510bf",
+            "type": "image",
+            "status": "saved"
+          },
+          "charged_generations": 1,
+          "frame": 0
+        },
+        "isError": false
+      }
+    },
+    {
+      "motion": "move",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/b5820aa3-e67d-4247-ada9-dbc70cb3b417/download",
+        "frame_count": 8,
+        "action": "The armored boar trots in place toward the left. Four short legs alternate, shoulders move with weight, metal plates stay attached. Complete seamless trotting cycle, keep the body centered and facing left, no effects.",
+        "no_background": true,
+        "seed": 710111,
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/b5820aa3-e67d-4247-ada9-dbc70cb3b417/download"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2\njob_id: fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2\naction: The armored boar trots in place toward the left. Four short legs alternate, shoulders move with weight, metal plates stay attached. Complete seamless trotting cycle, keep the body centered and facing left, no effects.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 710111\nasset_id: 470d7883-b6b1-55de-b02a-906850a453ef\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2\")"
+          }
+        ],
+        "isError": false
+      },
+      "completed": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: completed\nid: fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2\njob_id: fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2\nframe: 0 of 9\nasset_id: 470d7883-b6b1-55de-b02a-906850a453ef\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 2 generations\ndownload: https://api.pixellab.ai/mcp/images/fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2/download?index=0"
+          }
+        ],
+        "structuredContent": {
+          "job_id": "fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2",
+          "status": "completed",
+          "frames": 9,
+          "download_url": "https://api.pixellab.ai/mcp/images/fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2/download?index=0",
+          "download_urls": [
+            "https://api.pixellab.ai/mcp/images/fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2/download?index=0",
+            "https://api.pixellab.ai/mcp/images/fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2/download?index=1",
+            "https://api.pixellab.ai/mcp/images/fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2/download?index=2",
+            "https://api.pixellab.ai/mcp/images/fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2/download?index=3",
+            "https://api.pixellab.ai/mcp/images/fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2/download?index=4",
+            "https://api.pixellab.ai/mcp/images/fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2/download?index=5",
+            "https://api.pixellab.ai/mcp/images/fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2/download?index=6",
+            "https://api.pixellab.ai/mcp/images/fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2/download?index=7",
+            "https://api.pixellab.ai/mcp/images/fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2/download?index=8"
+          ],
+          "asset": {
+            "id": "470d7883-b6b1-55de-b02a-906850a453ef",
+            "type": "image",
+            "status": "saved"
+          },
+          "charged_generations": 2,
+          "frame": 0
+        },
+        "isError": false
+      }
+    },
+    {
+      "motion": "attack1",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/b5820aa3-e67d-4247-ada9-dbc70cb3b417/download",
+        "frame_count": 8,
+        "action": "The armored boar lowers its head and scrapes a hoof, then drives its tusks forward in a powerful charge at the middle of the clip, and recovers to the starting stance. Stay centered, left facing, hooves near the ground, preserve armor, no effects.",
+        "no_background": true,
+        "seed": 710112,
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/b5820aa3-e67d-4247-ada9-dbc70cb3b417/download"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: d0063090-4963-4b57-a97b-6b035f0cf8a6\njob_id: d0063090-4963-4b57-a97b-6b035f0cf8a6\naction: The armored boar lowers its head and scrapes a hoof, then drives its tusks forward in a powerful charge at the middle of the clip, and recovers to the starting stance. Stay centered, left facing, hooves near the ground, preserve armor, no effects.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 710112\nasset_id: 7493f3e8-8e11-5ff2-bbeb-a6fed5039439\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d0063090-4963-4b57-a97b-6b035f0cf8a6\")"
+          }
+        ],
+        "isError": false
+      },
+      "completed": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: completed\nid: d0063090-4963-4b57-a97b-6b035f0cf8a6\njob_id: d0063090-4963-4b57-a97b-6b035f0cf8a6\nframe: 0 of 9\nasset_id: 7493f3e8-8e11-5ff2-bbeb-a6fed5039439\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 2 generations\ndownload: https://api.pixellab.ai/mcp/images/d0063090-4963-4b57-a97b-6b035f0cf8a6/download?index=0"
+          }
+        ],
+        "structuredContent": {
+          "job_id": "d0063090-4963-4b57-a97b-6b035f0cf8a6",
+          "status": "completed",
+          "frames": 9,
+          "download_url": "https://api.pixellab.ai/mcp/images/d0063090-4963-4b57-a97b-6b035f0cf8a6/download?index=0",
+          "download_urls": [
+            "https://api.pixellab.ai/mcp/images/d0063090-4963-4b57-a97b-6b035f0cf8a6/download?index=0",
+            "https://api.pixellab.ai/mcp/images/d0063090-4963-4b57-a97b-6b035f0cf8a6/download?index=1",
+            "https://api.pixellab.ai/mcp/images/d0063090-4963-4b57-a97b-6b035f0cf8a6/download?index=2",
+            "https://api.pixellab.ai/mcp/images/d0063090-4963-4b57-a97b-6b035f0cf8a6/download?index=3",
+            "https://api.pixellab.ai/mcp/images/d0063090-4963-4b57-a97b-6b035f0cf8a6/download?index=4",
+            "https://api.pixellab.ai/mcp/images/d0063090-4963-4b57-a97b-6b035f0cf8a6/download?index=5",
+            "https://api.pixellab.ai/mcp/images/d0063090-4963-4b57-a97b-6b035f0cf8a6/download?index=6",
+            "https://api.pixellab.ai/mcp/images/d0063090-4963-4b57-a97b-6b035f0cf8a6/download?index=7",
+            "https://api.pixellab.ai/mcp/images/d0063090-4963-4b57-a97b-6b035f0cf8a6/download?index=8"
+          ],
+          "asset": {
+            "id": "7493f3e8-8e11-5ff2-bbeb-a6fed5039439",
+            "type": "image",
+            "status": "saved"
+          },
+          "charged_generations": 2,
+          "frame": 0
+        },
+        "isError": false
+      }
+    },
+    {
+      "motion": "die1",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/b5820aa3-e67d-4247-ada9-dbc70cb3b417/download",
+        "frame_count": 6,
+        "action": "The armored boar recoils, loses its balance, lowers its body and collapses onto its side with closed eyes, then stays motionless on the ground. Left facing, same armor, no blood, no effects, no disappearing or recovery.",
+        "no_background": true,
+        "seed": 710113
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc\njob_id: b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc\naction: The armored boar recoils, loses its balance, lowers its body and collapses onto its side with closed eyes, then stays motionless on the ground. Left facing, same armor, no blood, no effects, no disappearing or recovery.\nframes: 6\nsize: 96x96px\ntransparent: True\nseed: 710113\nasset_id: 6ae2b01d-f8e2-5f1c-9f11-2f343af2338d\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc\")"
+          }
+        ],
+        "isError": false
+      },
+      "completed": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: completed\nid: b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc\njob_id: b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc\nframe: 0 of 7\nasset_id: 6ae2b01d-f8e2-5f1c-9f11-2f343af2338d\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc/download?index=0"
+          }
+        ],
+        "structuredContent": {
+          "job_id": "b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc",
+          "status": "completed",
+          "frames": 7,
+          "download_url": "https://api.pixellab.ai/mcp/images/b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc/download?index=0",
+          "download_urls": [
+            "https://api.pixellab.ai/mcp/images/b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc/download?index=0",
+            "https://api.pixellab.ai/mcp/images/b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc/download?index=1",
+            "https://api.pixellab.ai/mcp/images/b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc/download?index=2",
+            "https://api.pixellab.ai/mcp/images/b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc/download?index=3",
+            "https://api.pixellab.ai/mcp/images/b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc/download?index=4",
+            "https://api.pixellab.ai/mcp/images/b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc/download?index=5",
+            "https://api.pixellab.ai/mcp/images/b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc/download?index=6"
+          ],
+          "asset": {
+            "id": "6ae2b01d-f8e2-5f1c-9f11-2f343af2338d",
+            "type": "image",
+            "status": "saved"
+          },
+          "charged_generations": 1,
+          "frame": 0
+        },
+        "isError": false
+      }
+    },
+    {
+      "motion": "hit1",
+      "args": {
+        "image_url": "https://api.pixellab.ai/mcp/images/b5820aa3-e67d-4247-ada9-dbc70cb3b417/download",
+        "description": "Keep the same armored boar, pixels, colors and left-facing silhouette. Make a brief hurt pose: eyes squeezed shut, head recoils a little and legs brace under the body. Hooves on the same ground line. Preserve metal armor and canvas. No effects or background.",
+        "no_background": true,
+        "seed": 710115
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 04079ea2-a990-4810-8f7f-1feadfb58af4\njob_id: 04079ea2-a990-4810-8f7f-1feadfb58af4\nmodel: pixen\nedit: Keep the same armored boar, pixels, colors and left-facing silhouette. Make a brief hurt pose: eyes squeezed shut, head recoils a little and legs brace under the body. Hooves on the same ground line. Preserve metal armor and canvas. No effects or background.\nsource: 96x96px\nsize: 96x96px\ntransparent: True\nseed: 710115\nasset_id: 152186f5-9aef-57ef-971f-c850d0bd52c9\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"04079ea2-a990-4810-8f7f-1feadfb58af4\")"
+          }
+        ],
+        "isError": false
+      },
+      "completed": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: completed\nid: 04079ea2-a990-4810-8f7f-1feadfb58af4\njob_id: 04079ea2-a990-4810-8f7f-1feadfb58af4\nframe: 0 of 1\nasset_id: 152186f5-9aef-57ef-971f-c850d0bd52c9\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/04079ea2-a990-4810-8f7f-1feadfb58af4/download?index=0"
+          }
+        ],
+        "structuredContent": {
+          "job_id": "04079ea2-a990-4810-8f7f-1feadfb58af4",
+          "status": "completed",
+          "frames": 1,
+          "download_url": "https://api.pixellab.ai/mcp/images/04079ea2-a990-4810-8f7f-1feadfb58af4/download?index=0",
+          "download_urls": [
+            "https://api.pixellab.ai/mcp/images/04079ea2-a990-4810-8f7f-1feadfb58af4/download"
+          ],
+          "asset": {
+            "id": "152186f5-9aef-57ef-971f-c850d0bd52c9",
+            "type": "image",
+            "status": "saved"
+          },
+          "charged_generations": 1,
+          "frame": 0
+        },
+        "isError": false
+      }
+    }
+  ],
+  "originalHashes": [
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/attack1/frame-00.png",
+      "sha256": "da96fd6cd525307f1c9d409f38ac05818829ef9ae7675737269e889a6c278fcc",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        9,
+        94,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/attack1/frame-01.png",
+      "sha256": "16d1a5386bc3c45349f54e55664c8f6389008277bb3ca02eb0aa626abcffb703",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        3,
+        10,
+        95,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/attack1/frame-02.png",
+      "sha256": "2bbb3239592f322d1a4e9a5db8b10de62a4ddaf99b5823af67914bb7c7ba6df9",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        5,
+        11,
+        94,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/attack1/frame-03.png",
+      "sha256": "6d0ed2f5c771698bc7f57ade248a8a866a63325ef259914c924e403f2decfd7e",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        7,
+        13,
+        92,
+        81
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/attack1/frame-04.png",
+      "sha256": "e4603a149fca056962b227c05648de2509ac1a2e9440aacf32dbe8a1cc6e421e",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        8,
+        15,
+        89,
+        81
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/attack1/frame-05.png",
+      "sha256": "7611e6fe9ec99ccc2137190488c6a3ef9b79bf8880cfc680656f7fb28ff68505",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        7,
+        13,
+        91,
+        81
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/attack1/frame-06.png",
+      "sha256": "2cfb25878760f6890c697939844440dc676f2baf685c41d1a7f76b7077af395e",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        5,
+        11,
+        93,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/attack1/frame-07.png",
+      "sha256": "4b91104677c152cc19f78bdb96c0249ab38f6608497541b36c275a0522d4edcb",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        3,
+        9,
+        95,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/attack1/frame-08.png",
+      "sha256": "2713e2217c558f4e72d04541eadd880b6585998ccf71d5cc58366419287093d2",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        9,
+        94,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/candidate-00.png",
+      "sha256": "30e2abdd802f6428554b1f10cbba7d320906ca0cd89598fd1158323623e8fade",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        9,
+        94,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/die1/frame-00.png",
+      "sha256": "f3929e15cc71d86c5e872b97676dd9a4341f58d194366858120d1390f7304ad9",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        9,
+        94,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/die1/frame-01.png",
+      "sha256": "5c553c51e21459368800bbdfbb2bbd9e0edb011690d4929fe7af4b7ab56071c0",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        10,
+        94,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/die1/frame-02.png",
+      "sha256": "0ceb9b0d6a68939fd3af654e966c3ecca996a1240f0cdefe0371c15ec0d27277",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        3,
+        12,
+        94,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/die1/frame-03.png",
+      "sha256": "40f997bf7eadae24481d6717187e58c5d559d0b33e0929e2e862f80afc534abc",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        5,
+        16,
+        95,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/die1/frame-04.png",
+      "sha256": "8e29d8176a0c12bb4607858cb5ed6253fef5e452878c13828d2f04ef532a3246",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        7,
+        20,
+        93,
+        85
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/die1/frame-05.png",
+      "sha256": "4a547448a08b2ceec88ee966c2d18e743356c0d0774566f8e4770c17409ed932",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        7,
+        20,
+        95,
+        85
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/die1/frame-06.png",
+      "sha256": "68bf7c9c976bd02f7632a53c6355aa7ce2cf453625ef3d6918cf28b50344d2c9",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        7,
+        20,
+        95,
+        85
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/hit1/frame-00.png",
+      "sha256": "4321b25314a5b956218cb797db5d2dce62cf12e72bfef69d5670e0f3683f6a2d",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        9,
+        94,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/move/frame-00.png",
+      "sha256": "a6b9caef4806a5f7a33ac89fa6f654e78082c399661ca4da452584aff5457c60",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        9,
+        94,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/move/frame-01.png",
+      "sha256": "d072e203b3510ec29048156ec5bed676a5fee4c0c087ba2502404bf365ebbf62",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        9,
+        95,
+        83
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/move/frame-02.png",
+      "sha256": "26113dab582eb0e1b3b91a284709d29db8150034c5418cc8df659b083894b873",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        10,
+        94,
+        83
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/move/frame-03.png",
+      "sha256": "0884ef0577f0ff1042d6b53479c766e50df10e4d317cae473b64e7b09a11f0c6",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        10,
+        93,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/move/frame-04.png",
+      "sha256": "e07960ce3000fc63d5c1b20c6d70643206f23418c8c5b020f78a8059c78ac5c6",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        12,
+        92,
+        86
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/move/frame-05.png",
+      "sha256": "39085735af14a4b4a62a9f5303afe45782b5ba6f169e0d4138a8160419aa8ecb",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        11,
+        93,
+        86
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/move/frame-06.png",
+      "sha256": "7a26f8fc0adbfa28f16e8cf5844be54345664556f4d835e44abafdd8329dc24a",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        11,
+        95,
+        85
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/move/frame-07.png",
+      "sha256": "601180093f0dc3cd8d645a1f7828153f249164e7e462f13f0688011fd5c9e4d8",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        10,
+        95,
+        85
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/move/frame-08.png",
+      "sha256": "1e80548282eeab71588f05ccb448856d947a3fa403578ef116bbc98de820d7dc",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        9,
+        94,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/stand/frame-00.png",
+      "sha256": "d6d52736bed28d1f800620a2aee4f8691cc533c28b65ffc8bfd3f367763ed95d",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        9,
+        94,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/stand/frame-01.png",
+      "sha256": "db86aab6ffad1040660bed43a36eda0317d7ffefd7249844f3d3983f85623051",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        9,
+        95,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/stand/frame-02.png",
+      "sha256": "53943386bcaacb5be6ed10f2f80730bf74a08dcdd14176ea96ae5c5f907c9600",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        3,
+        10,
+        96,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/stand/frame-03.png",
+      "sha256": "c451e368a804a67960ec20395f0eb26d61de934d683eaa2ef5e110dbce500e57",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        9,
+        95,
+        84
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/armored-boar-ai/originals/stand/frame-04.png",
+      "sha256": "6171c929a06c712110a7999bf3f5322c8b8286d2e1b613d7c98fadb7c22e28a6",
+      "width": 96,
+      "height": 96,
+      "alphaBbox": [
+        2,
+        9,
+        94,
+        84
+      ]
+    }
+  ],
+  "processing": "원본 RGBA를 변경하지 않고 불투명 영역만 추출. x축은 원본 캔버스 중앙, y축은 각 프레임의 바닥에 맞춤.",
+  "balanceAfter": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1933\ngenerations_used: 67\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "batchSummary": {
+    "authorizedTotalBudget": 16,
+    "chargedGenerations": 14,
+    "completedJobs": 12,
+    "jobIds": [
+      "c92a11ae-4f06-472f-a448-a1cb9a1b2a9c",
+      "b5820aa3-e67d-4247-ada9-dbc70cb3b417",
+      "83ea5255-5892-4abe-989e-e4fe7d643b6a",
+      "dbb8ffab-fec2-4fce-bc6b-106d71577527",
+      "a0b6b007-cba4-4a26-ba6e-df69b4d36aaa",
+      "1f03ff69-1557-48d1-aa25-a0472cd11fff",
+      "da040646-b667-493c-ba3d-6fddbe898e95",
+      "5f4d0174-7bf2-448c-9bd3-9936552ddff3",
+      "fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2",
+      "d0063090-4963-4b57-a97b-6b035f0cf8a6",
+      "b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc",
+      "04079ea2-a990-4810-8f7f-1feadfb58af4"
+    ],
+    "byAsset": {
+      "ai/forest-wolf": 6,
+      "ai/armored-boar": 8
+    },
+    "unusedApprovedGenerations": 2,
+    "usdCreditsSpent": 0,
+    "before": {
+      "generations_remaining": 1947,
+      "generations_used": 53,
+      "generations_total": 2000,
+      "usdCredits": 0.0
+    },
+    "after": {
+      "generations_remaining": 1933,
+      "generations_used": 67,
+      "generations_total": 2000,
+      "usdCredits": 0.0
+    },
+    "notes": "두 몬스터 전체 생성 배치의 전후 잔량. 각 항목의 chargedGenerations는 해당 몬스터 비용이다. 검토 과정에서 추가 생성·재시도는 하지 않았다."
+  },
+  "activeFrameHashes": [
+    {
+      "animation": "stand",
+      "index": 0,
+      "sourceFrameIndex": 0,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/stand/frame-00.png",
+      "sha256": "27acf1f2359fd29891615c9ca1bb2b230482ae3019e4ad2253cbdcac2e6bfa7c"
+    },
+    {
+      "animation": "stand",
+      "index": 1,
+      "sourceFrameIndex": 1,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/stand/frame-01.png",
+      "sha256": "206630e50f72c972c08c42421c97c438b88ae0dcf7b30515919e4e24676ef441"
+    },
+    {
+      "animation": "stand",
+      "index": 2,
+      "sourceFrameIndex": 2,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/stand/frame-02.png",
+      "sha256": "89d035951af5dabe4ad2171400d8a111d45a5716977dd470a76e66c60b0502bb"
+    },
+    {
+      "animation": "stand",
+      "index": 3,
+      "sourceFrameIndex": 3,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/stand/frame-03.png",
+      "sha256": "3b9e38048348a3de1546d01f87a299460b00e5a1cd7d3d9d2705e6465939bbf7"
+    },
+    {
+      "animation": "move",
+      "index": 0,
+      "sourceFrameIndex": 0,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/move/frame-00.png",
+      "sha256": "4f8d9dae2baee68f47f014b2decc3b771db2dcf91bdbf554d1397816ef0a31de"
+    },
+    {
+      "animation": "move",
+      "index": 1,
+      "sourceFrameIndex": 1,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/move/frame-01.png",
+      "sha256": "5054091221bc587cf3d3c6407e93a80e0335b0aa15e95313ebba691d262c00d1"
+    },
+    {
+      "animation": "move",
+      "index": 2,
+      "sourceFrameIndex": 2,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/move/frame-02.png",
+      "sha256": "f395d0d35c1c119e5fdd057d594fec311aee6dc7e79ef0bebfd07a69e4e43953"
+    },
+    {
+      "animation": "move",
+      "index": 3,
+      "sourceFrameIndex": 3,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/move/frame-03.png",
+      "sha256": "e84a3f95eb460c5b7af8a19cb3027e9f767d5412bc99700d7781ef950f2f9485"
+    },
+    {
+      "animation": "move",
+      "index": 4,
+      "sourceFrameIndex": 4,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/move/frame-04.png",
+      "sha256": "3390b948e01b5bccf477e7260fc47e51186c4028cea98dda972b2b90a798030c"
+    },
+    {
+      "animation": "move",
+      "index": 5,
+      "sourceFrameIndex": 5,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/move/frame-05.png",
+      "sha256": "6d08c6284d6aae0f8a19be2b691b63b465dd133075293688b4d6c5d682c6b8ec"
+    },
+    {
+      "animation": "move",
+      "index": 6,
+      "sourceFrameIndex": 6,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/move/frame-06.png",
+      "sha256": "00f1955707b046cb847cc46f7982cd8c0277827a66830999cf42e317d0d5dacf"
+    },
+    {
+      "animation": "move",
+      "index": 7,
+      "sourceFrameIndex": 7,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/move/frame-07.png",
+      "sha256": "de20e3ce7b2203384ef782ea5a52b7d88eea488c96442852f6619a4660d18c57"
+    },
+    {
+      "animation": "attack1",
+      "index": 0,
+      "sourceFrameIndex": 0,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/attack1/frame-00.png",
+      "sha256": "8fe4109adbfc008b7b04c5467ffc3dd2bbdb63fd0d43c64c0b53ef736a4e162d"
+    },
+    {
+      "animation": "attack1",
+      "index": 1,
+      "sourceFrameIndex": 1,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/attack1/frame-01.png",
+      "sha256": "4e443efc6bb7dee3e1bbe1a96dc3f759532959b0e5b032b85fb36c7d34f0e668"
+    },
+    {
+      "animation": "attack1",
+      "index": 2,
+      "sourceFrameIndex": 2,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/attack1/frame-02.png",
+      "sha256": "bf9024795ee15179b8fb74d17ddb694f2ea2c85ae5ef03244fdb6344f8cc82ee"
+    },
+    {
+      "animation": "attack1",
+      "index": 3,
+      "sourceFrameIndex": 3,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/attack1/frame-03.png",
+      "sha256": "1d54d131885df9904161a32d5f9ae3333db8280fab34f226dda5637486708614"
+    },
+    {
+      "animation": "attack1",
+      "index": 4,
+      "sourceFrameIndex": 4,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/attack1/frame-04.png",
+      "sha256": "434c8efa638a52dda73638b7b46c9c615a409c8824d6e008bf5a7c9089723711"
+    },
+    {
+      "animation": "attack1",
+      "index": 5,
+      "sourceFrameIndex": 5,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/attack1/frame-05.png",
+      "sha256": "feb708231309f356c8a64e29ebd320acb80d4332c6c6544b039ecd39e88ae7ed"
+    },
+    {
+      "animation": "attack1",
+      "index": 6,
+      "sourceFrameIndex": 6,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/attack1/frame-06.png",
+      "sha256": "cb82aa9cb527366b6cd6dba898e36b5d5a096ec8ee9c05e6a0810ba434a1adcf"
+    },
+    {
+      "animation": "attack1",
+      "index": 7,
+      "sourceFrameIndex": 7,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/attack1/frame-07.png",
+      "sha256": "3454144242786ef78fda024d6dc00150cce7d518d500c3b10157837c857ba169"
+    },
+    {
+      "animation": "attack1",
+      "index": 8,
+      "sourceFrameIndex": 8,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/attack1/frame-08.png",
+      "sha256": "b8be7dd675975f11c3ccb2a94f66917c5b7029423a70c2ba97ce1f8b54cdba8c"
+    },
+    {
+      "animation": "die1",
+      "index": 0,
+      "sourceFrameIndex": 1,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/die1/frame-00.png",
+      "sha256": "1676fa60d6665a412f366bf8283d613f431c9799bdc86c3f006642ff8c6018b6"
+    },
+    {
+      "animation": "die1",
+      "index": 1,
+      "sourceFrameIndex": 2,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/die1/frame-01.png",
+      "sha256": "bb02f60445df089d289ff26e3fddc7f1f0ea828be3b486eda2fb7b941f1b8375"
+    },
+    {
+      "animation": "die1",
+      "index": 2,
+      "sourceFrameIndex": 3,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/die1/frame-02.png",
+      "sha256": "2a7fd515c01fac8cb975ac976af7dc1714bc78c3901cb73730128becc45c896a"
+    },
+    {
+      "animation": "die1",
+      "index": 3,
+      "sourceFrameIndex": 4,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/die1/frame-03.png",
+      "sha256": "0be67aa359cd6c27016ee0ff01be3e2c44e19800f98fcffb7f4e808779d83e72"
+    },
+    {
+      "animation": "die1",
+      "index": 4,
+      "sourceFrameIndex": 5,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/die1/frame-04.png",
+      "sha256": "bdf007eb38ead965a9ca0e1435626d9bc224d16242cfd5dea88c95bcf5189bc0"
+    },
+    {
+      "animation": "die1",
+      "index": 5,
+      "sourceFrameIndex": 6,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/die1/frame-05.png",
+      "sha256": "a39884acf5541feb948e09d9039b47cbfdc27a8195bc7c7c2d659fb325de2014"
+    },
+    {
+      "animation": "hit1",
+      "index": 0,
+      "sourceFrameIndex": 0,
+      "path": "public/assets/maplestory/armored-boar-ai/frames/hit1/frame-00.png",
+      "sha256": "36d6657db193b7d476a13174b19ad38d07326df4061370ce4f72a445a77230ec"
+    }
+  ],
+  "resourceReview": {
+    "reviewedAt": "2026-10-10",
+    "activeFrameCount": 28,
+    "originalPngCount": 32,
+    "originalCanvasSize": {
+      "width": 96,
+      "height": 96
+    },
+    "alphaValues": [
+      0,
+      255
+    ],
+    "attackTiming": {
+      "frameCount": 9,
+      "contactFrameIndex": 4,
+      "contactTimeSeconds": 0.4,
+      "actionDurationSeconds": 0.9,
+      "contactProgress": 0.4444444444444445,
+      "notes": "전투가 접근·타격·마무리·복귀 구간을 소유하고 접촉 프레임 4번을 명시적으로 맞춘다. 전체 시간에 floor(progress*9)를 적용하지 않는다. durationSeconds는 단독 미리보기용이며 리소스 배열·시간은 변경하지 않았다.",
+      "arrivalProgress": 0.3,
+      "returnProgress": 0.72,
+      "frameSelection": "접근·복귀는 move. 도착 후 공격을 0~4번으로 진행해 접촉 시 4번에 맞추고, 공격 마무리 5~8번 뒤 이동 모션으로 복귀한다."
+    },
+    "nativePixelsPreserved": true,
+    "sourceAnchorX": 48.0,
+    "pivotY": 0,
+    "runtimeVerified": false,
+    "runtimeReviewOwner": "사용자의 실제 플레이 확인 및 통합 담당",
+    "limitations": [
+      "animate_image의 입력·끝 프레임에도 기본 외형과 소량의 픽셀 차이가 있다. 기본 외형을 그대로 복사한 것으로 기록하지 않고 각 반환 원본의 해시를 보존한다.",
+      "검토 당시 준비용 1번의 고개·몸 변화가 작아 3번을 추천했다. 최종 전투 구현은 attack1.frames[3]을 준비 자세로 고정한다. PNG와 9프레임 배열은 그대로 보존했다.",
+      "대기 원본 2번은 오른쪽 95px에 불투명 픽셀이 있어 여백이 없다. 캔버스 밖 손실은 확인할 수 없어 잘림으로 단정하지 않는다. 원본 4번 등 여백이 있는 프레임으로 대체하는 방안을 제안한다.",
+      "퇴장은 옆으로 완전히 넘어지는 동작 대신 앞다리를 접고 머리를 내려 주저앉는 동작이다.",
+      "피격 원본에는 얼굴 왼쪽에 작은 밝은 선 몇 개가 남아 있다. 색·알파 보존 원칙에 따라 지우지 않았다."
+    ],
+    "reviewFiles": [
+      {
+        "path": "public/assets/maplestory/armored-boar-ai/review/attack1.gif",
+        "sha256": "91d77197e04d73ee7a070a5f812eb4b2ef500abac4468689870b287498b8bc7f"
+      },
+      {
+        "path": "public/assets/maplestory/armored-boar-ai/review/contact.png",
+        "sha256": "5b8da51442a16018c84a3e993bdc370f586c1eb1c34403ccf17b697e3421cf48"
+      },
+      {
+        "path": "public/assets/maplestory/armored-boar-ai/review/preparation-comparison.png",
+        "sha256": "487a5fdb211837f3191cfddb20899dd5c162289cd37e1855d5a90bcd1f4108d0"
+      }
+    ],
+    "preparation": {
+      "activeFrameIndex": 3,
+      "sourceFrameIndex": 3,
+      "owner": "BattleSprite의 preparing 표시",
+      "resourceArrayChanged": false
+    },
+    "logicValidation": {
+      "check": "npm run check 통과",
+      "build": "npm run build 통과",
+      "tests": "tests/forest-enemies.test.mjs 및 tests/sprite-textures.test.mjs 13개 통과",
+      "runtimeVerified": false
+    }
+  }
+}

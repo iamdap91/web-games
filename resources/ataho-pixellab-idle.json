@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-12",
+  "status": "evaluation-only",
+  "provider": "PixelLab · Animate with text (PixMiniMax)",
+  "scope": "승인된 비도트 원화 01에서 정면 대기 동작 하나를 통째로 생성해 화풍·외형·움직임을 검토한다.",
+  "source": {
+    "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/front-01.png",
+    "sha256": "da5bf277025f825de169cbeddacc070a65717deec963c183b2baaf3f7b3c8412",
+    "generationRecordPath": "resources/ataho-nonpixel-generation.json",
+    "sourcePixelsModified": false
+  },
+  "input": {
+    "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/pixellab-idle/input.png",
+    "sha256": "c4ebb3244e668bec2cf35f25248468b3c27bf0a03a8e9e00a427ddc6858d48ce",
+    "sourceRect": {
+      "x": 110,
+      "y": 18,
+      "width": 940,
+      "height": 1270
+    },
+    "placement": {
+      "x": 42,
+      "y": 12,
+      "width": 172,
+      "height": 232
+    },
+    "canvasSize": {
+      "width": 256,
+      "height": 256
+    },
+    "processing": "기존 미리보기 범위를 잘라 Lanczos로 비율 유지 축소하고 투명 256px 캔버스에 배치한다. 승인 원본은 변경하지 않는다."
+  },
+  "generation": {
+    "tool": "mcp__pixellab__animate_image_pixminimax",
+    "jobId": "e4f309d7-844b-48e1-be59-5ed51ad371bc",
+    "assetId": "423dbd5b-475e-57e3-ae5f-0d41c30489cf",
+    "galleryStatus": "saved",
+    "request": {
+      "first_frame_url": "upload:c9f1c88d-6dbd-4ad5-93f2-c42fb3149727",
+      "last_frame_url": "upload:c9f1c88d-6dbd-4ad5-93f2-c42fb3149727",
+      "description": "A quiet seamless idle breathing loop in place. Both feet stay firmly planted at exactly the same positions. The chest and shoulders gently rise and settle, the head makes only a tiny relaxed motion, and only the tail tip sways slightly before returning to the starting pose. Preserve the original hand-painted ink lines, soft painted shading, face, body proportions and costume throughout. Fixed camera, fixed framing and scale. No walking, turning, attack, exaggerated squash, pixel-art conversion, ground shadow or added effects.",
+      "subject_description": "A stocky middle-aged orange tiger martial artist with sleepy eyes, ivory cheek fur, a worn brown jacket, ivory crossed robe, dark cropped trousers, wrist wraps and ankle wraps",
+      "initial_pose": "Front-facing relaxed standing stance, both orange feet planted level, hands down, tail curved to the viewer's left",
+      "direction": "south",
+      "view": "side",
+      "frame_count": 8,
+      "no_background": true,
+      "enhance_prompt": false,
+      "seed": 20261012
+    },
+    "requestedFrames": 8,
+    "returnedFrames": 9,
+    "firstFrameIsInput": true,
+    "usage": {
+      "requests": 1,
+      "retries": 0,
+      "chargedGenerations": 1,
+      "balanceBefore": 743,
+      "balanceAfter": 742
+    },
+    "firstFramePixelsPreserved": true,
+    "firstFrameEncodingNote": "첫 장은 RGBA 픽셀이 입력과 동일하며 PNG 인코딩 바이트만 다르다."
+  },
+  "preview": {
+    "path": "src/resources/characters/ataho-hybrid/pixellab-idle.html",
+    "footY": 244,
+    "frameDurationSeconds": 0.125,
+    "timingNote": "재생 속도는 비교 화면의 설정이다. 생성 모델에서 재생 시각은 반환하지 않았다.",
+    "alignment": "모든 프레임에 같은 캔버스 중심·입력 발 기준을 사용하며 프레임별 위치 보정은 하지 않는다.",
+    "firstPlaybackFrame": 0
+  },
+  "frames": [
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/pixellab-idle/00.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/e4f309d7-844b-48e1-be59-5ed51ad371bc/download?index=0",
+      "downloadIndex": 0,
+      "sha256": "fb394384fe0e91ac9e70e1b98fe24e9381fcd1321ab398ed7d562dfaa63680d0",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "alphaBounds8": [42, 12, 214, 244],
+      "alphaRange": [0, 255]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/pixellab-idle/01.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/e4f309d7-844b-48e1-be59-5ed51ad371bc/download?index=1",
+      "downloadIndex": 1,
+      "sha256": "ec742b9bf585eb3e66a93181d3d869b2cfb778f268cfcee079dd5b9bfd88047d",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "alphaBounds8": [40, 14, 213, 244],
+      "alphaRange": [0, 255]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/pixellab-idle/02.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/e4f309d7-844b-48e1-be59-5ed51ad371bc/download?index=2",
+      "downloadIndex": 2,
+      "sha256": "24544b31723df73ed931087bddf090ef1e22e55678871cbdd1bfb825a9eed434",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "alphaBounds8": [38, 13, 214, 244],
+      "alphaRange": [0, 255]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/pixellab-idle/03.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/e4f309d7-844b-48e1-be59-5ed51ad371bc/download?index=3",
+      "downloadIndex": 3,
+      "sha256": "9dd36a052e1ce9d2a53496bd7a07929c64cd99fdb70d9454f2b1a7c4f53b22c4",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "alphaBounds8": [35, 13, 214, 244],
+      "alphaRange": [0, 255]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/pixellab-idle/04.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/e4f309d7-844b-48e1-be59-5ed51ad371bc/download?index=4",
+      "downloadIndex": 4,
+      "sha256": "ca259944ffdfae66df51c6fcf852104a30ddb7b4a626a687a6d22fc72d8e61de",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "alphaBounds8": [36, 12, 214, 244],
+      "alphaRange": [0, 255]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/pixellab-idle/05.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/e4f309d7-844b-48e1-be59-5ed51ad371bc/download?index=5",
+      "downloadIndex": 5,
+      "sha256": "96f6934adab294c4e254373f07d22c0f4624703a761b058841673b5485e6dbd8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "alphaBounds8": [38, 12, 214, 244],
+      "alphaRange": [0, 255]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/pixellab-idle/06.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/e4f309d7-844b-48e1-be59-5ed51ad371bc/download?index=6",
+      "downloadIndex": 6,
+      "sha256": "be72ed882e3bfccd0a79b7aef83b56140c389eb2ae9df5e68d27c39ff3c1433d",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "alphaBounds8": [37, 13, 214, 244],
+      "alphaRange": [0, 255]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/pixellab-idle/07.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/e4f309d7-844b-48e1-be59-5ed51ad371bc/download?index=7",
+      "downloadIndex": 7,
+      "sha256": "0c7a02b6abdcfbd4d77640c9e815974a5c670cb6f270c2b1d260407639030ee8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "alphaBounds8": [42, 14, 213, 244],
+      "alphaRange": [0, 255]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/pixellab-idle/08.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/e4f309d7-844b-48e1-be59-5ed51ad371bc/download?index=8",
+      "downloadIndex": 8,
+      "sha256": "258288783ebfb06812d9f53c0fc2f1a8abc860552c7e0b1bf952916a99847957",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "alphaBounds8": [43, 15, 213, 244],
+      "alphaRange": [0, 255]
+    }
+  ],
+  "review": {
+    "status": "pending-user-review",
+    "unverified": [
+      "다른 방향과 걷기·공격",
+      "본게임 통합",
+      "실기기 모바일 표시"
+    ],
+    "findings": [
+      "이번 정면 대기에서는 얼굴·의상·큰 실루엣이 유지되고 꼬리의 왕복 움직임이 이어진다.",
+      "생성 장의 털·의상 미세 질감과 외곽선이 축소 입력보다 거칠어진다.",
+      "입력 장과 생성 장 사이에 선·질감 차이가 있어 반복 경계에서도 차이가 드러난다.",
+      "79.2px 게임 기준에서는 질감 차이가 작아지며 240px 확대에서는 명확하다."
+    ],
+    "recommendation": "현 모델·요청 조건에서는 비도트 원화의 선·질감을 그대로 유지하는 용도로 채택을 보류한다. 다른 동작·모델의 품질까지 검증한 결과는 아니다."
+  },
+  "verification": {
+    "checks": "npm run check 통과",
+    "build": "npm run build 통과",
+    "browser": [
+      {
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1,
+        "progression": {
+          "indices": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+          "distinctRenderedImages": [1, 1, 9]
+        },
+        "pause": true,
+        "slider": "0/8/7",
+        "sizes": [79.2, 112, 240],
+        "slowFrames": [0, 1, 2],
+        "sizing": {
+          "dpr": 1,
+          "viewport": [1366, 768],
+          "canvases": [
+            {
+              "css": [424, 340],
+              "backing": [424, 340]
+            },
+            {
+              "css": [424, 340],
+              "backing": [424, 340]
+            },
+            {
+              "css": [424, 340],
+              "backing": [424, 340]
+            }
+          ],
+          "overflow": false
+        },
+        "errors": [],
+        "returnNavigation": true
+      },
+      {
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 2,
+        "progression": {
+          "indices": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+          "distinctRenderedImages": [1, 1, 9]
+        },
+        "pause": true,
+        "slider": "0/8/7",
+        "sizes": [79.2, 112, 240],
+        "slowFrames": [0, 1, 2],
+        "sizing": {
+          "dpr": 2,
+          "viewport": [1920, 1080],
+          "canvases": [
+            {
+              "css": [425, 340],
+              "backing": [850, 680]
+            },
+            {
+              "css": [425, 340],
+              "backing": [850, 680]
+            },
+            {
+              "css": [425, 340],
+              "backing": [850, 680]
+            }
+          ],
+          "overflow": false
+        },
+        "errors": [],
+        "returnNavigation": true
+      }
+    ],
+    "firstFrame": "입력과 첫 반환 장의 RGBA 픽셀 동일, PNG 인코딩 바이트만 다름",
+    "original": "승인 원화의 SHA-256이 main 원본과 동일",
+    "alpha": "반환 9장 모두 RGBA, 알파 0~255, 알파 8 이상 외형의 아래끝 y=244 유지",
+    "mobile": "실기기 모바일 검증은 수행하지 않음"
+  },
+  "derivatives": {
+    "contactSheet": "public/assets/maplestory/ataho-nonpixel-ai/20261012/pixellab-idle/contact-sheet.png",
+    "animatedPreview": "public/assets/maplestory/ataho-nonpixel-ai/20261012/pixellab-idle/idle-preview.gif",
+    "notes": "프레임 비교 시트는 원본 PNG를 밝은 배경 위에 나란히 표시한다. GIF는 같은 9장을 밝은 배경에 합성한 간단 미리보기이며 프레임 원본은 수정하지 않는다."
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "id": "acorn-weevil",
+  "motion": "die1",
+  "source": "https://api.pixellab.ai/mcp/images/e450ace8-d079-498a-958f-ccbeb2ff33b6/download",
+  "offset": [
+    0,
+    -1
+  ],
+  "angle": -90,
+  "reason": "An intact sideways collapse target for a real generated death animation",
+  "recipe": {
+    "job": {
+      "canvas": [
+        64,
+        64
+      ],
+      "frame_count": 1,
+      "durations_ms": [
+        100
+      ],
+      "views": [
+        {
+          "id": "native",
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "source_bookends_exact": false,
+      "body_palette_exact": true,
+      "require_clear_border": true
+    },
+    "scene": {
+      "palette": {},
+      "layers": [
+        {
+          "id": "body",
+          "name": "Body - corpse target"
+        }
+      ],
+      "views": {
+        "native": {
+          "parts": {
+            "original": {}
+          },
+          "nodes": {
+            "body": {
+              "layer": "body",
+              "at": [
+                0,
+                -1
+              ],
+              "pivot": [
+                32,
+                32
+              ],
+              "angle": -90,
+              "draw": [
+                {
+                  "op": "copy",
+                  "part": "original"
+                }
+              ]
+            }
+          },
+          "poses": {
+            "rest": {}
+          },
+          "frames": [
+            "rest"
+          ]
+        }
+      }
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "drawing_id: 121144fe-3ce5-4ff1-9acb-926459cb3a8f\ncanvas 64x64, 1 frames, 100 ms, views: native\nstate: needs_visual_review\nlayers (native): Body - corpse target\nnodes (native): body\nimages: assets/native/review/full-01.png\n(+2 more evidence images — body-only, change masks, palette: repeat with mode=\"high\", or zoom with --inspect […])\ndownload https://api.pixellab.ai/mcp/pixel-tools/121144fe-3ce5-4ff1-9acb-926459cb3a8f/: assets/native/animation.gif, assets/native/full.png, assets/native/layers.npz, recipe.json\nnext: draw --drawing 121144fe-3ce5-4ff1-9acb-926459cb3a8f --changes […]"
+      },
+      {
+        "type": "image",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAIAAAACSCAYAAACNIMJbAAAK0UlEQVR4nO2df2yV5RXHvwWqpdeWFpF1NaOF2q06YMG4LANxc6UEM5QfA+sGTopEI2OTZMkSt0wc6IgLZnQBMyFSmQWtGEOmDF1lzrmFbGEwfix0SKGQzJYfgqL9If3B/njuafeee5/7vvfHe+97OeeTkNv399tyzvc5z3nO89ycssqJV6CIZVimX0DJLGoAwokwgIoJ4/HIQ0tRUHBdJt5HSTMRBrDp2Xr09HyG/r7+mBce/ufeqD8TLYf2oamxYfDfsrrvAwAKCwvwzNNP4sj+yGsA4N4F87Djpa3Y/ftXMf32qXH9Mkr8jOA7bhgzBg2/25b0jXt7e1G7uC5i//PPbcCuP7yFmTOqI46NHl2MBfPmoHZRHcaXl2HTs/WonnVP0u+i2HEowOLv1SIUCqGpsQGh/PwIz47m6fGy/Ec/xgsvbo96rLioCFsbt2NgYADt7R0oLioCADy3cT1mzvgWAGDtk6swf+7dSb+HYnAYQOP2JnR1daF2cR06u7p8eeC5c+etx1pPnMSu3X8EANw1aybe/tOfAQBPrFmLlT98BF+ZNBGlJSV4befrvrybRCKagFgMG5bj+dzc3Fw0NTYMbj/281/gxMk2T9eWjfsCHl62BPfdvxQA0N5xBq/tfB2bf/sbfKf2/nheWXEhpgH8/394YWEBcnNzPd/YFgO4EcrPx4b16/CTn67ChQsXh/aH8tHf149Qfn7c91TsxMwDXPrkU3yx8iYAwNy7Z+PKFX+Thjk5OXjmV09h85at+NfBQ4P7x5eXYdrUr6PuoR9g9aqfISfHuxIpsYlpAE+sWYuN9evw8otbUFpagsuXewePnTx1CssfXhbxczIsmD8Hd0yfhkX3LURTYwO2bNoIAPjl6sfx9Lpfo+U/x3Ds/eOoXTA/6WcphhwdC5CNpoKFowYgHDUA4agBCEcNQDhqAMJRAxCOGoBw1ACEowYgHDUA4agBCEcNQDhqAMJRAxCOGoBw1ACEowYgHDUA4agBCEcNQDhqAMJRAxCOGoBw1ACEowYgHDUA4agBpJnJOQOYnDOQ6dcYRA1AOHGtEKJEUtT+SdT9I4abxTTOj81z7O/sDvtcHr8iM6gCCEcVIE5KLn7m2L65qggA0N3rXFfxrRazmMaX2PkYea1v75YIqgDCueoVYMzZHsd2X7/xTGqjR+Sa9YY6imN7JkXuNdUFAIBte0zb/87H/VGfUxFu4/t6HbvRWhzP2/uPKoBwrhoFsHn6pHAbzTnQ8pE5XmmO94S3SRk4NbMKAQx5PlcMHu3HC8UWbkqUalQBhJO1q4RFROPliS0gefj9TgDApMqQY9uGzdO5AtkYVWiub82Lfl2yShIvqgDCyZoYIFUezyHPp5hgSjhmoG3OmLOx71M9xXy+8q65/vpCE1OQstwy3nj4xwed90+35xOqAMIJfAxw56jhACLbar842maWyS+/0UTjx9tit+0r7x0LAFj/ipEG3sZz5eKkO+rnqAIIJ7AKQJ7T03MZwFDbnC4OsLwAZQxD4Vz+3KnXAACaDxiF+OCMec9MteWJogognMD3AtLt+RzeS/jqLaMAAM/vOuc4j5SC+vXZogSqAMIJnAJUhIPucSnq56ea9/Ybz7eNGWQbqgDCCUwvgNpOv/v58cIzhG5jBRweC1Dvpq/X+Wen0UvO9FtvADCkPB99viCu57uhCiCcwMUAiXJrxfCYx/e3xv4uZBt5edckdB15NI0dlH7O3Gf5gxMAAE17Ohznnz5j3o/GCvaGxwro06+YQxVAOBmPAahNjHd0z83j3fCqCF7rBXit4RsbvgEAeKx+H4DIzKINrQdQ0krWxADJerzX+3FlsEXntP+u268HADy6aIrjeP22AwAiPT9oGUJVAOFkPAbw2v9PtQK4wZXALR9gUwre5qsCKIEiYzEAr4alSpxU1fqlm2wdG1AFEE7aFMCWA+dtf7pq/9ygmCPRDGK2oAogHN8VwGumj0fVXAnIE3lvYOFs0//e8cYBxzZB+1NFvKOBQUcVQDi+KUC8OX6vc/NscM/n+5NVgqoKMw7P5wnwMQC3/UFDFUA4Kc8EkucvqvZWuWKLsvncPMrAUQxg83g3vCrB31pMnX9Lq1kPgBSAby+ZdSOAyPF9r6N/NN/Aht8zh1QBhOObAqyYZ2rZ5qxZAgDobP47ALsH2pSA9waSVQDCTQlIAUbmOucmcqitJ4Va++htjuNUD0DUVpcAiFSMDy+Z+3x5ghkr+Me/zfM7u/1dOUQVQDhpywSGar4GAFgS/nRTBMKtjUwUt94BtfVuM5OojSeFmL3i3ZjnH207AWAoI8p/v0NXnCuJlnSHP31aQ0gVQDgpVwCy0IuXTH+580grACA0sSLq+YNtedgTIypyetNbrrD1zUsAEp8HYCPROgD6e7qtM5AoqgDC8S0GoPX0igvfAwDMaD/vOB5isQCHV+B4ZfC+YeUBey7B236K+vnz3frx6cr4aS9A8QXfawJpjV3q3363pizqeS81nwIANO+95NjP+/8cWz7ApjDk+cfaje1/2mU8ON62nt7runzj+ac6TEXT6Q/MfYJeC0ioAggnbVXBblEsRfvUpo4rNR5WMyW653DPd4spdrBehtc23gYpAGX+uLLsDcg6gG6oAggn4/MCCKoSfiC8KrdXbDGALcp3W/fPBo/2+TwA2r/l8UkAhmKak+3OUUWb4uhKoUpGyJq5gQR5/NmzFwC4t/3U5rt5oFfc+v1LVx+Oup/PIXxq80EAQ72HERdMjESrkFEM4bcyqAIIJzAxAGGrKCoOr8E7446bAXiP+im3b8M2p48gT0+2ZpE8mWIdGgV0G+tQBVB8JXAxAHkEnwdAnk+Q53MlePsvRwEMreFri97jHWNINm8Q7wqidL7f3yWkCiCcwCkAeQjNFi4ZY2IB8mybEhBUh8Bz8jeVm/tOq3LmGeKd+2eLBWy9g0TbcLquIrG0hWdUAYQTOAUgqM2j6tjSUc7jtrmAHPJM7vmEba4hVfN6jfr9WgOo1ecEoSqAcAKrAAR5AFUY7W81nkme61UJbNiuI8+vLVsBAKip+iYAoP7EA47zeB6h5GL07yLmo6GZ/q4gQhVAOIFXAII8hvoAPE/AR//4XD6OV8UgzydIGahXcbzN7CcluPM289x39jmfO3a0iRGoMmr3Xz8EMFT3MDgfIM2oAggncGMBXuFtKnkYryDiFUAPftuMypECUCaRoLzCynXmk48i8kwi5St4/T597+C0KrNKuNd6BF0rWEkrWRMDcCKi6PB4+v7W6Ll68mAaI1g4O/b9yXNH5hYBGFKQ0RMnm+0jh9gV1zreKzzMj7Y9zlgg2W8fTzWqAMLJWgXgkOf1WTJ3PIdPbfz68HGKBXhvorvXxBDUqxjZdxoAUMbmDtpG+7z29/2aBe2GKoBwsrYXEC98pVKK5qlXQFSWm5VNXnjzvwAi1wmgeQB85Q9SAvLkoGT63FAFEI4YBbDhNfqm+Qo8g2hTgqDOBOKoAgjnqukFJIqbp5JCUFUyQb0Fvqo4/77AoCuBKoBwxMcAXqHaPFq3b+fL8wEAOzY3A4isLeRjBEFFFUA4qgAJwkcj+QyfoLf9hCqAcMT3AhIl6G27V1QBhKMGIBw1AOGoAQhHDUA4agDCUQMQjhqAcNQAhKMGIBw1AOGoAQhHDUA4agDCUQMQjhqAcNQAhKMGIBw1AOH8D/8DE2f7j0TtAAAAAElFTkSuQmCC",
+        "mimeType": "image/png"
+      }
+    ],
+    "isError": false
+  },
+  "drawingId": "121144fe-3ce5-4ff1-9acb-926459cb3a8f",
+  "url": "https://api.pixellab.ai/mcp/pixel-tools/121144fe-3ce5-4ff1-9acb-926459cb3a8f/assets/native/full.png"
+}

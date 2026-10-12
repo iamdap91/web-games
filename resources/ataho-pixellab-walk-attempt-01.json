@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-13",
+  "status": "evaluation-only",
+  "provider": "PixelLab · Animate with text (PixMiniMax)",
+  "scope": "오른쪽 기준 원화에서 걷기 한 주기를 생성해 발 디딤·화풍·반복 경계와 왼쪽 반전을 검토한다.",
+  "source": {
+    "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png",
+    "sha256": "f429358df77528a614df1e6703582dd13ad08dff7c6af61a17b1b46b944f5285",
+    "generationRecordPath": "resources/ataho-side-generation.json",
+    "sourcePixelsModified": false
+  },
+  "input": {
+    "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk/input.png",
+    "sha256": "f367e61e58f9856064bf3ebe5be44ff69ab6cbb22d33a6f173e9f761d3929e11",
+    "sourceRect": {
+      "x": 111,
+      "y": 26,
+      "width": 941,
+      "height": 1259
+    },
+    "placement": {
+      "x": 41,
+      "y": 12,
+      "width": 173,
+      "height": 232
+    },
+    "canvasSize": {
+      "width": 256,
+      "height": 256
+    },
+    "processing": "기존 미리보기 범위를 잘라 Lanczos로 비율 유지 축소하고 투명 256px 캔버스에 배치한다. 승인 원본은 변경하지 않는다."
+  },
+  "generation": {
+    "tool": "mcp__pixellab__animate_image_pixminimax",
+    "jobId": "66987081-d1b1-4690-87f1-c322009248f9",
+    "assetId": "b100d0d4-e1b4-5ce5-acdc-b8b749fc0321",
+    "galleryStatus": "saved",
+    "request": {
+      "first_frame_url": "upload:7f6bbc85-4a41-4bf2-86cd-51f91a0dffc2",
+      "description": "Walk in place facing right throughout, one complete repeating walk cycle. Alternate both legs through clearly distinct planted contact and raised swing poses, swing the opposite arm gently, with small natural body bob and restrained tail and coat movement. Keep the camera, body center, size and ground level fixed, both feet contacting the same baseline. End in a gait phase that smoothly continues into the first generated walking pose. Preserve the input character's anatomy, costume, painted texture and smooth non-pixel edges. No turning towards the camera, translation across the canvas, extra limbs or effects.",
+      "direction": "east",
+      "view": "side",
+      "subject_description": "a sleepy anthropomorphic orange tiger martial artist wearing a cream Chinese jacket with brown toggle buttons, dark loose trousers, wrist wraps and bare tiger feet",
+      "initial_pose": "standing upright facing right in a slight three-quarter side view with relaxed arms and feet resting on the ground",
+      "frame_count": 8,
+      "no_background": true,
+      "enhance_prompt": false,
+      "seed": 20261013
+    },
+    "requestedFrames": 8,
+    "returnedFrames": 9,
+    "firstFrameIsInput": true,
+    "usage": {
+      "requests": 1,
+      "retries": 0,
+      "chargedGenerations": 1,
+      "balanceBefore": 742,
+      "balanceAfter": 742,
+      "balanceNote": "완료 직후 잔여량 조회는 요청 전과 같은 742를 반환했다. 작업 결과의 charged: 1 generation을 비용 근거로 기록한다."
+    },
+    "delivery": "공개 다운로드 전송 지연으로 get_image의 image/png 원본 데이터를 그대로 저장했다. 추가 생성 없음.",
+    "firstFramePixelsPreserved": true,
+    "firstFrameEncodingNote": "첫 장은 RGBA 픽셀이 입력과 동일하며 PNG 인코딩 바이트만 다르다."
+  },
+  "preview": {
+    "path": "src/resources/characters/ataho-hybrid/pixellab-walk.html",
+    "footY": 244,
+    "frameDurationSeconds": 0.125,
+    "firstPlaybackFrame": 1,
+    "timingNote": "재생 속도는 비교 화면의 설정이다. 생성 모델에서 재생 시각은 반환하지 않았다.",
+    "alignment": "모든 프레임에 같은 캔버스 중심·입력 발 기준을 사용하며 프레임별 위치 보정은 하지 않는다.",
+    "playbackNote": "입력 기준 자세 0번은 정적 비교에 표시하고 생성 1~8번만 반복 재생한다.",
+    "leftPreview": "같은 프레임을 표시 단계에서 좌우 반전한다. 별도 생성·PNG 수정 없음."
+  },
+  "frames": [
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk/00.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/66987081-d1b1-4690-87f1-c322009248f9/download?index=0",
+      "downloadIndex": 0,
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "sha256": "45a3dd13cb689373c6988f55b048671229d2ccd1cbf70880a9cae802ab344eb7",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [41, 12, 214, 244]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk/01.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/66987081-d1b1-4690-87f1-c322009248f9/download?index=1",
+      "downloadIndex": 1,
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "sha256": "87db37ddf452f3bbc2d5d1e5823bd05f20e062e5c58d6f70a3077d3f3c66541e",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [37, 16, 203, 244]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk/02.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/66987081-d1b1-4690-87f1-c322009248f9/download?index=2",
+      "downloadIndex": 2,
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "sha256": "e23cdc2074a706b19c370df046192bda7e1668b8deb89ee2f12ae860b681485e",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [35, 15, 194, 240]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk/03.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/66987081-d1b1-4690-87f1-c322009248f9/download?index=3",
+      "downloadIndex": 3,
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "sha256": "3d8e5cdad063158874b23749c0dbaae1ecba49520e3839a713ee3ec7fb604660",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [37, 13, 194, 238]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk/04.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/66987081-d1b1-4690-87f1-c322009248f9/download?index=4",
+      "downloadIndex": 4,
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "sha256": "ba3456030bc79753b3b65623380b0641a1f31c32470350701a52120c8403e745",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [46, 12, 202, 238]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk/05.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/66987081-d1b1-4690-87f1-c322009248f9/download?index=5",
+      "downloadIndex": 5,
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "sha256": "77d7a44f497d8b9447dbdc04ec81fda4b01110b76b6227af1d4b701241be0663",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [47, 13, 200, 238]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk/06.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/66987081-d1b1-4690-87f1-c322009248f9/download?index=6",
+      "downloadIndex": 6,
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "sha256": "89b2c1a095335dcf21b68bfc750898d3ff78a754bcd87d6de7e55b028d33769c",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [38, 15, 215, 244]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk/07.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/66987081-d1b1-4690-87f1-c322009248f9/download?index=7",
+      "downloadIndex": 7,
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "sha256": "f0682e54261fa67db4619aaf5f417c7afcc79c4342e69f5f1c8c255b3794b187",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [31, 16, 225, 244]
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk/08.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/66987081-d1b1-4690-87f1-c322009248f9/download?index=8",
+      "downloadIndex": 8,
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 244
+      },
+      "durationSeconds": 0.125,
+      "sha256": "12378238df28e746e7a7cc277c800e1dc824c020fda277aec8b6b5720e6f36d9",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [37, 13, 220, 244]
+    }
+  ],
+  "review": {
+    "status": "rejected",
+    "unverified": [
+      "측면 대기·공격·피격 동작",
+      "본게임 통합",
+      "실기기 모바일 표시"
+    ],
+    "findings": [
+      "생성 2번 이후 갈색 겉옷이 흰 단추옷으로 바뀐다.",
+      "입력 caption의 cream Chinese jacket with brown toggle buttons가 원화와 달랐다. 서비스 화풍 보존 성능과 구분해 이 입력 오류를 기록한다."
+    ],
+    "recommendation": "의상 설명을 바로잡은 재시험과 비교하며 이 결과는 게임 리소스로 채택하지 않는다."
+  },
+  "derivatives": {
+    "contactSheet": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk/contact-sheet.png",
+    "animatedPreview": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk/walk-preview.gif",
+    "notes": "비교 시트는 입력과 생성 8장을 밝은 배경 위에 표시한다. GIF는 생성 8장만 합성한 간단 미리보기다. 반환 PNG는 변경하지 않는다."
+  }
+}

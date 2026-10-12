@@ -1,0 +1,2569 @@
+{
+  "id": "quill-badger",
+  "name": "가시털오소리",
+  "theme": "ridge",
+  "role": "striker",
+  "appearance": "Stocky charcoal and ivory striped badger with a dense ridge of dark porcupine-like quills, broad short legs and blunt snout.",
+  "motions": {
+    "stand": "Facing left, chest breathes, striped face blinks and blunt nose sniffs, ear twitches and dense quill ridge flexes gently, return to original four-footed ready pose.",
+    "move": "Facing left, compact quadruped trot in place, alternating diagonal pairs of short broad legs with clear foot lifts and planting, striped head stays low and dense quills sway coherently.",
+    "attack1": "Facing left, crouch the front shoulders and bristle the dark quill ridge, draw the blunt snout back then lunge forward left with a forceful head-and-forepaw swipe, retract and return to the stocky four-footed guard.",
+    "hit1": "Facing left, striped head winces and pulls right, front legs bend and quills flare defensively, recover to the original planted stance.",
+    "die1": "Facing left, front knees buckle and blunt snout lowers, stocky body rolls onto its side with quills settling and short legs relaxed, eyes close, finish motionless and recognizable."
+  },
+  "assetId": "ai/monster-quill-badger",
+  "localRoot": "public/assets/maplestory/monster-expansion/quill-badger",
+  "attempts": [
+    {
+      "motion": "original",
+      "attempt": 1,
+      "key": "monster-a-quill-badger-original-01",
+      "jobId": "607b81e0-ff78-470f-9085-82059ee5319e",
+      "balanceBefore": 524,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Stocky charcoal and ivory striped badger with a dense ridge of dark porcupine-like quills, broad short legs and blunt snout. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 614015,
+        "text_guidance_scale": 8
+      },
+      "queueResponse": "id: 607b81e0-ff78-470f-9085-82059ee5319e\njob_id: 607b81e0-ff78-470f-9085-82059ee5319e\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Stocky charcoal and ivory striped badger with a dense ridge of dark porcupine-like quills, broad short legs and blunt snout. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: f74407f5-cfd6-5a6a-94e3-b42b797e2442\nasset_status: pending (saved when generation completes)\nseed: 614015\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"607b81e0-ff78-470f-9085-82059ee5319e\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 607b81e0-ff78-470f-9085-82059ee5319e\njob_id: 607b81e0-ff78-470f-9085-82059ee5319e\nframes: 1\ntransparent: yes\nasset_id: f74407f5-cfd6-5a6a-94e3-b42b797e2442\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download",
+      "localPath": "public/assets/maplestory/monster-expansion/quill-badger/originals/original-01.png",
+      "sha256": "beea0a32c5acb071fd5078a3b5a5baa6c807af3fe7ccd9bffc7de2437e6eb548",
+      "byteSize": 1922,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 3,
+        "y": 13,
+        "width": 59,
+        "height": 41
+      },
+      "visiblePixels": 1489,
+      "paletteSize": 15,
+      "chargedGenerations": 1,
+      "nativeFacing": "left",
+      "selection": "accepted after silhouette / anatomy / native alpha review"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-quill-badger-stand-01",
+      "jobId": "ad5fad4f-e318-4a71-bfe7-5bca36fa65e9",
+      "balanceBefore": 589,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 626401,
+        "action": "Facing left, chest breathes, striped face blinks and blunt nose sniffs, ear twitches and dense quill ridge flexes gently, return to original four-footed ready pose. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download"
+      },
+      "queueResponse": "id: ad5fad4f-e318-4a71-bfe7-5bca36fa65e9\njob_id: ad5fad4f-e318-4a71-bfe7-5bca36fa65e9\naction: Facing left, chest breathes, striped face blinks and blunt nose sniffs, ear twitches and dense quill ridge flexes gently, return to original four-footed ready pose. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626401\nasset_id: 365fe05f-4ad3-5e85-a7b0-34992520c31c\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ad5fad4f-e318-4a71-bfe7-5bca36fa65e9\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: ad5fad4f-e318-4a71-bfe7-5bca36fa65e9\njob_id: ad5fad4f-e318-4a71-bfe7-5bca36fa65e9\nframes: 5\ntransparent: yes\nasset_id: 365fe05f-4ad3-5e85-a7b0-34992520c31c\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/quill-badger/originals/original-01.png",
+        "sha256": "beea0a32c5acb071fd5078a3b5a5baa6c807af3fe7ccd9bffc7de2437e6eb548",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 33,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/00.png",
+          "sourceSha256": "97df08e4004a63ea7008d4f645583839f362199cd224eab0108c67a6942febe3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 59,
+            "height": 41
+          },
+          "visiblePixels": 1489,
+          "colors": 15,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/01.png",
+          "sourceSha256": "fa220cf2ca2b318c6122dac5f450a29881d76cd036b2f177ed1e0cd2c906a85b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 12,
+            "width": 57,
+            "height": 42
+          },
+          "visiblePixels": 1511,
+          "colors": 18,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/02.png",
+          "sourceSha256": "3f9bc5382eb0f41ea6ad2af3c37a0808651d8313b271e984bc1f4a30c60bd7c3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 12,
+            "width": 58,
+            "height": 42
+          },
+          "visiblePixels": 1521,
+          "colors": 14,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/03.png",
+          "sourceSha256": "38cf804fc17ebbcd54b5e758383b6264ceef475abf96b1eea7e3843cf4e115fc",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 12,
+            "width": 58,
+            "height": 42
+          },
+          "visiblePixels": 1499,
+          "colors": 16,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/04.png",
+          "sourceSha256": "bd9ce586e2b16c23920883d95989a67654ae47cf41162f846c03714cdd28ceb7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 59,
+            "height": 41
+          },
+          "visiblePixels": 1489,
+          "colors": 15,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/quill-badger/review/stand-ad5fad4f-e318-4a71-bfe7-5bca36fa65e9.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/00.png",
+          "sha256": "fa220cf2ca2b318c6122dac5f450a29881d76cd036b2f177ed1e0cd2c906a85b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/01.png",
+          "sourceSha256": "fa220cf2ca2b318c6122dac5f450a29881d76cd036b2f177ed1e0cd2c906a85b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/01.png",
+          "sha256": "3f9bc5382eb0f41ea6ad2af3c37a0808651d8313b271e984bc1f4a30c60bd7c3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/02.png",
+          "sourceSha256": "3f9bc5382eb0f41ea6ad2af3c37a0808651d8313b271e984bc1f4a30c60bd7c3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/02.png",
+          "sha256": "38cf804fc17ebbcd54b5e758383b6264ceef475abf96b1eea7e3843cf4e115fc",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/03.png",
+          "sourceSha256": "38cf804fc17ebbcd54b5e758383b6264ceef475abf96b1eea7e3843cf4e115fc",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/03.png",
+          "sha256": "bd9ce586e2b16c23920883d95989a67654ae47cf41162f846c03714cdd28ceb7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/04.png",
+          "sourceSha256": "bd9ce586e2b16c23920883d95989a67654ae47cf41162f846c03714cdd28ceb7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 좌향 코·머리·귀와 가시털 능선이 움직이는 실제 대기 루프."
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "monster-a-quill-badger-move-01",
+      "jobId": "9aaba686-06be-4c5a-8c73-322f49d1cb02",
+      "balanceBefore": 610,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626402,
+        "action": "Facing left, compact quadruped trot in place, alternating diagonal pairs of short broad legs with clear foot lifts and planting, striped head stays low and dense quills sway coherently. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download"
+      },
+      "queueResponse": "id: 9aaba686-06be-4c5a-8c73-322f49d1cb02\njob_id: 9aaba686-06be-4c5a-8c73-322f49d1cb02\naction: Facing left, compact quadruped trot in place, alternating diagonal pairs of short broad legs with clear foot lifts and planting, striped head stays low and dense quills sway coherently. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626402\nasset_id: 78017bd2-4df0-5cba-b78a-5679f938332e\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"9aaba686-06be-4c5a-8c73-322f49d1cb02\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 9aaba686-06be-4c5a-8c73-322f49d1cb02\njob_id: 9aaba686-06be-4c5a-8c73-322f49d1cb02\nframes: 9\ntransparent: yes\nasset_id: 78017bd2-4df0-5cba-b78a-5679f938332e\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/quill-badger/originals/original-01.png",
+        "sha256": "beea0a32c5acb071fd5078a3b5a5baa6c807af3fe7ccd9bffc7de2437e6eb548",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 28,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/00.png",
+          "sourceSha256": "22e131789a87bf1b417a1f5800df96a5f64a94bcb7b7a7ed6fe1b1b5ea1284bd",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 59,
+            "height": 41
+          },
+          "visiblePixels": 1489,
+          "colors": 15,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/01.png",
+          "sourceSha256": "72f5bf45ec3fdfd74aad0fcd124a55139c697f95d0d2b04ece4bb4bcda34432c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 12,
+            "width": 58,
+            "height": 42
+          },
+          "visiblePixels": 1512,
+          "colors": 16,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/02.png",
+          "sourceSha256": "2eaa5515d0aab8fb165e0f5a60b91c8fe0100b14888997bf75f72412e37f9b22",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 11,
+            "width": 58,
+            "height": 43
+          },
+          "visiblePixels": 1526,
+          "colors": 18,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/03.png",
+          "sourceSha256": "d463893b7e38e9183dc9fda7963c9186b0d79d897d224d4dc2152c73861c76fa",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 12,
+            "width": 57,
+            "height": 42
+          },
+          "visiblePixels": 1500,
+          "colors": 17,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/04.png",
+          "sourceSha256": "77427814c4cb12576f3357ca43ad5cd812bbede7421a108411cd9ecc8cd1afbe",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 59,
+            "height": 41
+          },
+          "visiblePixels": 1489,
+          "colors": 17,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/05.png",
+          "sourceSha256": "28c6563c21d3737fcfb442e86fc547235667dbe67deb5ae2d1d2ce4dc85a2217",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 12,
+            "width": 58,
+            "height": 41
+          },
+          "visiblePixels": 1488,
+          "colors": 15,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/06.png",
+          "sourceSha256": "a692408057c9f3c5ca7c6a3dca319aad0ad2f140bd5ca76088195bcded0847a5",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 11,
+            "width": 57,
+            "height": 41
+          },
+          "visiblePixels": 1502,
+          "colors": 16,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/07.png",
+          "sourceSha256": "7a5a16465343f432b5bb48bf1cad3633445a034b506e5b043630be58f1da42b6",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 12,
+            "width": 58,
+            "height": 40
+          },
+          "visiblePixels": 1501,
+          "colors": 18,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/08.png",
+          "sourceSha256": "b0c1f82383a0eb2b91018a3c7622912db7fffb4e82a589d47059e9b0fb375a84",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 59,
+            "height": 41
+          },
+          "visiblePixels": 1489,
+          "colors": 15,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/quill-badger/review/move-9aaba686-06be-4c5a-8c73-322f49d1cb02.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/00.png",
+          "sha256": "72f5bf45ec3fdfd74aad0fcd124a55139c697f95d0d2b04ece4bb4bcda34432c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/01.png",
+          "sourceSha256": "72f5bf45ec3fdfd74aad0fcd124a55139c697f95d0d2b04ece4bb4bcda34432c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/01.png",
+          "sha256": "2eaa5515d0aab8fb165e0f5a60b91c8fe0100b14888997bf75f72412e37f9b22",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/02.png",
+          "sourceSha256": "2eaa5515d0aab8fb165e0f5a60b91c8fe0100b14888997bf75f72412e37f9b22",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/02.png",
+          "sha256": "d463893b7e38e9183dc9fda7963c9186b0d79d897d224d4dc2152c73861c76fa",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/03.png",
+          "sourceSha256": "d463893b7e38e9183dc9fda7963c9186b0d79d897d224d4dc2152c73861c76fa",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/03.png",
+          "sha256": "77427814c4cb12576f3357ca43ad5cd812bbede7421a108411cd9ecc8cd1afbe",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/04.png",
+          "sourceSha256": "77427814c4cb12576f3357ca43ad5cd812bbede7421a108411cd9ecc8cd1afbe",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/04.png",
+          "sha256": "28c6563c21d3737fcfb442e86fc547235667dbe67deb5ae2d1d2ce4dc85a2217",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/05.png",
+          "sourceSha256": "28c6563c21d3737fcfb442e86fc547235667dbe67deb5ae2d1d2ce4dc85a2217",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/05.png",
+          "sha256": "a692408057c9f3c5ca7c6a3dca319aad0ad2f140bd5ca76088195bcded0847a5",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/06.png",
+          "sourceSha256": "a692408057c9f3c5ca7c6a3dca319aad0ad2f140bd5ca76088195bcded0847a5",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/06.png",
+          "sha256": "7a5a16465343f432b5bb48bf1cad3633445a034b506e5b043630be58f1da42b6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/07.png",
+          "sourceSha256": "7a5a16465343f432b5bb48bf1cad3633445a034b506e5b043630be58f1da42b6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/07.png",
+          "sha256": "b0c1f82383a0eb2b91018a3c7622912db7fffb4e82a589d47059e9b0fb375a84",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/08.png",
+          "sourceSha256": "b0c1f82383a0eb2b91018a3c7622912db7fffb4e82a589d47059e9b0fb375a84",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 좌향 앞·뒷다리가 번갈아 펴지고 접히며 무거운 가시털 몸을 유지하는 실제 보행."
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "monster-a-quill-badger-attack1-01",
+      "jobId": "1c6f87e3-665f-4834-b5fe-6d35272e0372",
+      "balanceBefore": 631,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626403,
+        "action": "Facing left, crouch the front shoulders and bristle the dark quill ridge, draw the blunt snout back then lunge forward left with a forceful head-and-forepaw swipe, retract and return to the stocky four-footed guard. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download"
+      },
+      "queueResponse": "id: 1c6f87e3-665f-4834-b5fe-6d35272e0372\njob_id: 1c6f87e3-665f-4834-b5fe-6d35272e0372\naction: Facing left, crouch the front shoulders and bristle the dark quill ridge, draw the blunt snout back then lunge forward left with a forceful head-and-forepaw swipe, retract and return to the stocky four-footed guard. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626403\nasset_id: aea8b556-b845-5742-914e-cdb73c7f2dd9\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1c6f87e3-665f-4834-b5fe-6d35272e0372\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 1c6f87e3-665f-4834-b5fe-6d35272e0372\njob_id: 1c6f87e3-665f-4834-b5fe-6d35272e0372\nframes: 9\ntransparent: yes\nasset_id: aea8b556-b845-5742-914e-cdb73c7f2dd9\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/quill-badger/originals/original-01.png",
+        "sha256": "beea0a32c5acb071fd5078a3b5a5baa6c807af3fe7ccd9bffc7de2437e6eb548",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 41,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/00.png",
+          "sourceSha256": "82134805058980e7b789e72bdb4cd908d70ab11f342d86128b463046f4396e78",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 59,
+            "height": 41
+          },
+          "visiblePixels": 1489,
+          "colors": 15,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/01.png",
+          "sourceSha256": "ba0084e3e87f701a22b014b1cb86c66bf884000a6cb9398cc306a9c2554d63ff",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 13,
+            "width": 56,
+            "height": 41
+          },
+          "visiblePixels": 1472,
+          "colors": 18,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/02.png",
+          "sourceSha256": "59780715c70c8d1ade2a17f11dd22ac6fb7777eb872d06f43b80e757097dff08",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 12,
+            "width": 53,
+            "height": 41
+          },
+          "visiblePixels": 1461,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/03.png",
+          "sourceSha256": "8c85da58de455c3fa2d1c391c9a44b973a07197ff1dc960205bed544ccb48802",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 50,
+            "height": 41
+          },
+          "visiblePixels": 1405,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/04.png",
+          "sourceSha256": "a429cdd241cd73e445fefd08f1d1abae15ed473851ce9da45b73a0fd4655994b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 10,
+            "width": 48,
+            "height": 41
+          },
+          "visiblePixels": 1367,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/05.png",
+          "sourceSha256": "91d7f2491d96066b18186903b8d260ffa519535147c4892ef63c9c74a6e944ab",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 11,
+            "width": 50,
+            "height": 41
+          },
+          "visiblePixels": 1488,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/06.png",
+          "sourceSha256": "2c773d249a15510760192ad4ecb41c6bcee5ec8dfae1be91bd053efe4e2001ae",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 12,
+            "width": 54,
+            "height": 42
+          },
+          "visiblePixels": 1533,
+          "colors": 18,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/07.png",
+          "sourceSha256": "92cd588f9fcf1ee4e9bc46e308095894895a65c41a4918ebdf2b78227f7e5202",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 14,
+            "width": 59,
+            "height": 40
+          },
+          "visiblePixels": 1467,
+          "colors": 18,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/08.png",
+          "sourceSha256": "5c07562c950fc064c5f2a4d03a2bb0343bbccb77d11720f79e49ddfa1a9009d7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 59,
+            "height": 41
+          },
+          "visiblePixels": 1489,
+          "colors": 16,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/quill-badger/review/attack1-1c6f87e3-665f-4834-b5fe-6d35272e0372.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/00.png",
+          "sha256": "ba0084e3e87f701a22b014b1cb86c66bf884000a6cb9398cc306a9c2554d63ff",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/01.png",
+          "sourceSha256": "ba0084e3e87f701a22b014b1cb86c66bf884000a6cb9398cc306a9c2554d63ff",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/01.png",
+          "sha256": "59780715c70c8d1ade2a17f11dd22ac6fb7777eb872d06f43b80e757097dff08",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/02.png",
+          "sourceSha256": "59780715c70c8d1ade2a17f11dd22ac6fb7777eb872d06f43b80e757097dff08",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/02.png",
+          "sha256": "8c85da58de455c3fa2d1c391c9a44b973a07197ff1dc960205bed544ccb48802",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/03.png",
+          "sourceSha256": "8c85da58de455c3fa2d1c391c9a44b973a07197ff1dc960205bed544ccb48802",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/03.png",
+          "sha256": "a429cdd241cd73e445fefd08f1d1abae15ed473851ce9da45b73a0fd4655994b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/04.png",
+          "sourceSha256": "a429cdd241cd73e445fefd08f1d1abae15ed473851ce9da45b73a0fd4655994b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/04.png",
+          "sha256": "91d7f2491d96066b18186903b8d260ffa519535147c4892ef63c9c74a6e944ab",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/05.png",
+          "sourceSha256": "91d7f2491d96066b18186903b8d260ffa519535147c4892ef63c9c74a6e944ab",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/05.png",
+          "sha256": "2c773d249a15510760192ad4ecb41c6bcee5ec8dfae1be91bd053efe4e2001ae",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/06.png",
+          "sourceSha256": "2c773d249a15510760192ad4ecb41c6bcee5ec8dfae1be91bd053efe4e2001ae",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/06.png",
+          "sha256": "92cd588f9fcf1ee4e9bc46e308095894895a65c41a4918ebdf2b78227f7e5202",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/07.png",
+          "sourceSha256": "92cd588f9fcf1ee4e9bc46e308095894895a65c41a4918ebdf2b78227f7e5202",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/07.png",
+          "sha256": "5c07562c950fc064c5f2a4d03a2bb0343bbccb77d11720f79e49ddfa1a9009d7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/08.png",
+          "sourceSha256": "5c07562c950fc064c5f2a4d03a2bb0343bbccb77d11720f79e49ddfa1a9009d7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 가시털을 세우고 앞어깨·앞발·머리가 낮게 전방으로 나오는 실제 공격. 4번의 낮은 머리와 앞발을 접촉으로 선택.",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625,
+      "contactReason": "좌향 가시털을 세우고 앞어깨·앞발·머리가 낮게 전방으로 나오는 실제 공격. 4번의 낮은 머리와 앞발을 접촉으로 선택."
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "monster-a-quill-badger-hit1-01",
+      "jobId": "661abc5d-8f72-4f2b-9d36-b39ba09cbd3e",
+      "balanceBefore": 684,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 626404,
+        "action": "Facing left, striped head winces and pulls right, front legs bend and quills flare defensively, recover to the original planted stance. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download"
+      },
+      "queueResponse": "id: 661abc5d-8f72-4f2b-9d36-b39ba09cbd3e\njob_id: 661abc5d-8f72-4f2b-9d36-b39ba09cbd3e\naction: Facing left, striped head winces and pulls right, front legs bend and quills flare defensively, recover to the original planted stance. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626404\nasset_id: 3b13087a-9f6c-50f8-bdd4-c9e966c096c3\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"661abc5d-8f72-4f2b-9d36-b39ba09cbd3e\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 661abc5d-8f72-4f2b-9d36-b39ba09cbd3e\njob_id: 661abc5d-8f72-4f2b-9d36-b39ba09cbd3e\nframes: 5\ntransparent: yes\nasset_id: 3b13087a-9f6c-50f8-bdd4-c9e966c096c3\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/quill-badger/originals/original-01.png",
+        "sha256": "beea0a32c5acb071fd5078a3b5a5baa6c807af3fe7ccd9bffc7de2437e6eb548",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 35,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/00.png",
+          "sourceSha256": "abb86a3f545c6045ab2534c2b55a7289246bce5b5f0f4da2d7ff5b04999beb32",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 59,
+            "height": 41
+          },
+          "visiblePixels": 1489,
+          "colors": 15,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/01.png",
+          "sourceSha256": "fc1407b865cb1f8c420605e2071f0f6adef4dec9d296d33d6ddc9ca310ea6844",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 13,
+            "width": 58,
+            "height": 41
+          },
+          "visiblePixels": 1485,
+          "colors": 18,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/02.png",
+          "sourceSha256": "129441e0c47b9f9e690009f90832ad84ff3f647398164186b394f9fff332177d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 13,
+            "width": 57,
+            "height": 41
+          },
+          "visiblePixels": 1477,
+          "colors": 15,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/03.png",
+          "sourceSha256": "e8b648d1bf7248a8db4baf5b7eb3211c8b3fc462460282ef519615e5a47612f6",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 13,
+            "width": 58,
+            "height": 41
+          },
+          "visiblePixels": 1482,
+          "colors": 16,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/04.png",
+          "sourceSha256": "38eff5e6a1ae6f896c554012c857e7b3bbe1ab25a74bcc3e64eceb0239d79408",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 59,
+            "height": 41
+          },
+          "visiblePixels": 1486,
+          "colors": 15,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/quill-badger/review/hit1-661abc5d-8f72-4f2b-9d36-b39ba09cbd3e.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/00.png",
+          "sha256": "fc1407b865cb1f8c420605e2071f0f6adef4dec9d296d33d6ddc9ca310ea6844",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/01.png",
+          "sourceSha256": "fc1407b865cb1f8c420605e2071f0f6adef4dec9d296d33d6ddc9ca310ea6844",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/01.png",
+          "sha256": "129441e0c47b9f9e690009f90832ad84ff3f647398164186b394f9fff332177d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/02.png",
+          "sourceSha256": "129441e0c47b9f9e690009f90832ad84ff3f647398164186b394f9fff332177d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/02.png",
+          "sha256": "e8b648d1bf7248a8db4baf5b7eb3211c8b3fc462460282ef519615e5a47612f6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/03.png",
+          "sourceSha256": "e8b648d1bf7248a8db4baf5b7eb3211c8b3fc462460282ef519615e5a47612f6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/03.png",
+          "sha256": "38eff5e6a1ae6f896c554012c857e7b3bbe1ab25a74bcc3e64eceb0239d79408",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/04.png",
+          "sourceSha256": "38eff5e6a1ae6f896c554012c857e7b3bbe1ab25a74bcc3e64eceb0239d79408",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 머리와 앞다리를 낮추고 가시털이 잠깐 세워졌다 원래 자세로 돌아오는 실제 피격."
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "monster-a-quill-badger-die1-01",
+      "jobId": "ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4",
+      "balanceBefore": 705,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626405,
+        "action": "Facing left, front knees buckle and blunt snout lowers, stocky body rolls onto its side with quills settling and short legs relaxed, eyes close, finish motionless and recognizable. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes."
+      },
+      "queueResponse": "id: ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4\njob_id: ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4\naction: Facing left, front knees buckle and blunt snout lowers, stocky body rolls onto its side with quills settling and short legs relaxed, eyes close, finish motionless and recognizable. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 626405\nasset_id: 67333852-e633-5d4d-aeda-522f82a6bc1c\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4\njob_id: ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4\nframes: 9\ntransparent: yes\nasset_id: 67333852-e633-5d4d-aeda-522f82a6bc1c\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/quill-badger/originals/original-01.png",
+        "sha256": "beea0a32c5acb071fd5078a3b5a5baa6c807af3fe7ccd9bffc7de2437e6eb548",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 180,
+        "alphaDifferences": 3,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/00.png",
+          "sourceSha256": "e83b2bf4082b98e9d7413f297f10f6eae0b630de7b42925604b8d5c50fec9c3c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 13,
+            "width": 59,
+            "height": 41
+          },
+          "visiblePixels": 1488,
+          "colors": 15,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/01.png",
+          "sourceSha256": "d71933eaf0d8d9493f2d17f587b0778e676279c27ae0fdfc20a6e726fe57d323",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 14,
+            "width": 58,
+            "height": 40
+          },
+          "visiblePixels": 1468,
+          "colors": 15,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/02.png",
+          "sourceSha256": "79f6f125e06e7a63678aec77a8ebfba1c158d1f4050ab3a1bc3ad43c5388e04d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 15,
+            "width": 55,
+            "height": 39
+          },
+          "visiblePixels": 1432,
+          "colors": 17,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/03.png",
+          "sourceSha256": "6ab54c13d7c02990264e14bb4cca5777bdf65776ab282e66d151bf11cf4e0baa",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 15,
+            "width": 54,
+            "height": 39
+          },
+          "visiblePixels": 1413,
+          "colors": 18,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/04.png",
+          "sourceSha256": "e6e580ca418ea98286d5a219910a47afaf11ff289dbb2d61a7d17ec29faa8a47",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 16,
+            "width": 54,
+            "height": 38
+          },
+          "visiblePixels": 1415,
+          "colors": 16,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/05.png",
+          "sourceSha256": "21ab1e22266ea04e370513a083e636c31b2af223a6c1649b670eba623eac11d2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 19,
+            "width": 56,
+            "height": 35
+          },
+          "visiblePixels": 1325,
+          "colors": 18,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/06.png",
+          "sourceSha256": "f24cefa627c30308a0edd8ab9fd3712c2f428ef3c3882079189089266738fd8a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 3,
+            "y": 21,
+            "width": 57,
+            "height": 33
+          },
+          "visiblePixels": 1265,
+          "colors": 14,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/07.png",
+          "sourceSha256": "9f7e2099a42c4564548aaf6c0e643f08195d5a49ca30209294904623bfea2f05",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 21,
+            "width": 57,
+            "height": 33
+          },
+          "visiblePixels": 1311,
+          "colors": 14,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/08.png",
+          "sourceSha256": "475f5670836499990e34b2822282a76674d6798d13c4137261a0ba2b78c834a8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 20,
+            "width": 57,
+            "height": 34
+          },
+          "visiblePixels": 1317,
+          "colors": 14,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/quill-badger/review/die1-ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/00.png",
+          "sha256": "d71933eaf0d8d9493f2d17f587b0778e676279c27ae0fdfc20a6e726fe57d323",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/01.png",
+          "sourceSha256": "d71933eaf0d8d9493f2d17f587b0778e676279c27ae0fdfc20a6e726fe57d323",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/01.png",
+          "sha256": "79f6f125e06e7a63678aec77a8ebfba1c158d1f4050ab3a1bc3ad43c5388e04d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/02.png",
+          "sourceSha256": "79f6f125e06e7a63678aec77a8ebfba1c158d1f4050ab3a1bc3ad43c5388e04d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/02.png",
+          "sha256": "6ab54c13d7c02990264e14bb4cca5777bdf65776ab282e66d151bf11cf4e0baa",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/03.png",
+          "sourceSha256": "6ab54c13d7c02990264e14bb4cca5777bdf65776ab282e66d151bf11cf4e0baa",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/03.png",
+          "sha256": "e6e580ca418ea98286d5a219910a47afaf11ff289dbb2d61a7d17ec29faa8a47",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/04.png",
+          "sourceSha256": "e6e580ca418ea98286d5a219910a47afaf11ff289dbb2d61a7d17ec29faa8a47",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/04.png",
+          "sha256": "21ab1e22266ea04e370513a083e636c31b2af223a6c1649b670eba623eac11d2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/05.png",
+          "sourceSha256": "21ab1e22266ea04e370513a083e636c31b2af223a6c1649b670eba623eac11d2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/05.png",
+          "sha256": "f24cefa627c30308a0edd8ab9fd3712c2f428ef3c3882079189089266738fd8a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/06.png",
+          "sourceSha256": "f24cefa627c30308a0edd8ab9fd3712c2f428ef3c3882079189089266738fd8a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/06.png",
+          "sha256": "9f7e2099a42c4564548aaf6c0e643f08195d5a49ca30209294904623bfea2f05",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/07.png",
+          "sourceSha256": "9f7e2099a42c4564548aaf6c0e643f08195d5a49ca30209294904623bfea2f05",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/07.png",
+          "sha256": "475f5670836499990e34b2822282a76674d6798d13c4137261a0ba2b78c834a8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/08.png",
+          "sourceSha256": "475f5670836499990e34b2822282a76674d6798d13c4137261a0ba2b78c834a8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 머리와 다리가 내려앉고 가시털 몸이 바닥에 누운 끝자세를 유지하는 실제 KO."
+    }
+  ],
+  "nativeFacing": "left",
+  "selectedOriginal": {
+    "motion": "original",
+    "attempt": 1,
+    "key": "monster-a-quill-badger-original-01",
+    "jobId": "607b81e0-ff78-470f-9085-82059ee5319e",
+    "balanceBefore": 524,
+    "maximumReservedGenerations": 1,
+    "args": {
+      "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Stocky charcoal and ivory striped badger with a dense ridge of dark porcupine-like quills, broad short legs and blunt snout. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "direction": "west",
+      "view": "low top-down",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "detail": "medium detail",
+      "seed": 614015,
+      "text_guidance_scale": 8
+    },
+    "queueResponse": "id: 607b81e0-ff78-470f-9085-82059ee5319e\njob_id: 607b81e0-ff78-470f-9085-82059ee5319e\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Stocky charcoal and ivory striped badger with a dense ridge of dark porcupine-like quills, broad short legs and blunt snout. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: f74407f5-cfd6-5a6a-94e3-b42b797e2442\nasset_status: pending (saved when generation completes)\nseed: 614015\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"607b81e0-ff78-470f-9085-82059ee5319e\")",
+    "status": "completed",
+    "latestResponse": "status: completed\nid: 607b81e0-ff78-470f-9085-82059ee5319e\njob_id: 607b81e0-ff78-470f-9085-82059ee5319e\nframes: 1\ntransparent: yes\nasset_id: f74407f5-cfd6-5a6a-94e3-b42b797e2442\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/607b81e0-ff78-470f-9085-82059ee5319e/download",
+    "localPath": "public/assets/maplestory/monster-expansion/quill-badger/originals/original-01.png",
+    "sha256": "beea0a32c5acb071fd5078a3b5a5baa6c807af3fe7ccd9bffc7de2437e6eb548",
+    "byteSize": 1922,
+    "width": 64,
+    "height": 64,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "visibleBounds": {
+      "x": 3,
+      "y": 13,
+      "width": 59,
+      "height": 41
+    },
+    "visiblePixels": 1489,
+    "paletteSize": 15,
+    "chargedGenerations": 1,
+    "nativeFacing": "left",
+    "selection": "accepted after silhouette / anatomy / native alpha review"
+  },
+  "anchor": {
+    "x": 32,
+    "y": 54
+  },
+  "animations": {
+    "stand": {
+      "label": "대기",
+      "loop": true,
+      "jobId": "ad5fad4f-e318-4a71-bfe7-5bca36fa65e9",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/00.png",
+          "sha256": "fa220cf2ca2b318c6122dac5f450a29881d76cd036b2f177ed1e0cd2c906a85b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/01.png",
+          "sourceSha256": "fa220cf2ca2b318c6122dac5f450a29881d76cd036b2f177ed1e0cd2c906a85b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/01.png",
+          "sha256": "3f9bc5382eb0f41ea6ad2af3c37a0808651d8313b271e984bc1f4a30c60bd7c3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/02.png",
+          "sourceSha256": "3f9bc5382eb0f41ea6ad2af3c37a0808651d8313b271e984bc1f4a30c60bd7c3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/02.png",
+          "sha256": "38cf804fc17ebbcd54b5e758383b6264ceef475abf96b1eea7e3843cf4e115fc",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/03.png",
+          "sourceSha256": "38cf804fc17ebbcd54b5e758383b6264ceef475abf96b1eea7e3843cf4e115fc",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/03.png",
+          "sha256": "bd9ce586e2b16c23920883d95989a67654ae47cf41162f846c03714cdd28ceb7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/stand/ad5fad4f-e318-4a71-bfe7-5bca36fa65e9/04.png",
+          "sourceSha256": "bd9ce586e2b16c23920883d95989a67654ae47cf41162f846c03714cdd28ceb7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 코·머리·귀와 가시털 능선이 움직이는 실제 대기 루프.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/quill-badger/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/quill-badger/review/stand-ad5fad4f-e318-4a71-bfe7-5bca36fa65e9.png"
+    },
+    "move": {
+      "label": "이동",
+      "loop": true,
+      "jobId": "9aaba686-06be-4c5a-8c73-322f49d1cb02",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/00.png",
+          "sha256": "72f5bf45ec3fdfd74aad0fcd124a55139c697f95d0d2b04ece4bb4bcda34432c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/01.png",
+          "sourceSha256": "72f5bf45ec3fdfd74aad0fcd124a55139c697f95d0d2b04ece4bb4bcda34432c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/01.png",
+          "sha256": "2eaa5515d0aab8fb165e0f5a60b91c8fe0100b14888997bf75f72412e37f9b22",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/02.png",
+          "sourceSha256": "2eaa5515d0aab8fb165e0f5a60b91c8fe0100b14888997bf75f72412e37f9b22",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/02.png",
+          "sha256": "d463893b7e38e9183dc9fda7963c9186b0d79d897d224d4dc2152c73861c76fa",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/03.png",
+          "sourceSha256": "d463893b7e38e9183dc9fda7963c9186b0d79d897d224d4dc2152c73861c76fa",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/03.png",
+          "sha256": "77427814c4cb12576f3357ca43ad5cd812bbede7421a108411cd9ecc8cd1afbe",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/04.png",
+          "sourceSha256": "77427814c4cb12576f3357ca43ad5cd812bbede7421a108411cd9ecc8cd1afbe",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/04.png",
+          "sha256": "28c6563c21d3737fcfb442e86fc547235667dbe67deb5ae2d1d2ce4dc85a2217",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/05.png",
+          "sourceSha256": "28c6563c21d3737fcfb442e86fc547235667dbe67deb5ae2d1d2ce4dc85a2217",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/05.png",
+          "sha256": "a692408057c9f3c5ca7c6a3dca319aad0ad2f140bd5ca76088195bcded0847a5",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/06.png",
+          "sourceSha256": "a692408057c9f3c5ca7c6a3dca319aad0ad2f140bd5ca76088195bcded0847a5",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/06.png",
+          "sha256": "7a5a16465343f432b5bb48bf1cad3633445a034b506e5b043630be58f1da42b6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/07.png",
+          "sourceSha256": "7a5a16465343f432b5bb48bf1cad3633445a034b506e5b043630be58f1da42b6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/07.png",
+          "sha256": "b0c1f82383a0eb2b91018a3c7622912db7fffb4e82a589d47059e9b0fb375a84",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9aaba686-06be-4c5a-8c73-322f49d1cb02/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/move/9aaba686-06be-4c5a-8c73-322f49d1cb02/08.png",
+          "sourceSha256": "b0c1f82383a0eb2b91018a3c7622912db7fffb4e82a589d47059e9b0fb375a84",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 앞·뒷다리가 번갈아 펴지고 접히며 무거운 가시털 몸을 유지하는 실제 보행.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/quill-badger/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/quill-badger/review/move-9aaba686-06be-4c5a-8c73-322f49d1cb02.png"
+    },
+    "attack1": {
+      "label": "공격",
+      "loop": false,
+      "jobId": "1c6f87e3-665f-4834-b5fe-6d35272e0372",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/00.png",
+          "sha256": "ba0084e3e87f701a22b014b1cb86c66bf884000a6cb9398cc306a9c2554d63ff",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/01.png",
+          "sourceSha256": "ba0084e3e87f701a22b014b1cb86c66bf884000a6cb9398cc306a9c2554d63ff",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/01.png",
+          "sha256": "59780715c70c8d1ade2a17f11dd22ac6fb7777eb872d06f43b80e757097dff08",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/02.png",
+          "sourceSha256": "59780715c70c8d1ade2a17f11dd22ac6fb7777eb872d06f43b80e757097dff08",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/02.png",
+          "sha256": "8c85da58de455c3fa2d1c391c9a44b973a07197ff1dc960205bed544ccb48802",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/03.png",
+          "sourceSha256": "8c85da58de455c3fa2d1c391c9a44b973a07197ff1dc960205bed544ccb48802",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/03.png",
+          "sha256": "a429cdd241cd73e445fefd08f1d1abae15ed473851ce9da45b73a0fd4655994b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/04.png",
+          "sourceSha256": "a429cdd241cd73e445fefd08f1d1abae15ed473851ce9da45b73a0fd4655994b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/04.png",
+          "sha256": "91d7f2491d96066b18186903b8d260ffa519535147c4892ef63c9c74a6e944ab",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/05.png",
+          "sourceSha256": "91d7f2491d96066b18186903b8d260ffa519535147c4892ef63c9c74a6e944ab",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/05.png",
+          "sha256": "2c773d249a15510760192ad4ecb41c6bcee5ec8dfae1be91bd053efe4e2001ae",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/06.png",
+          "sourceSha256": "2c773d249a15510760192ad4ecb41c6bcee5ec8dfae1be91bd053efe4e2001ae",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/06.png",
+          "sha256": "92cd588f9fcf1ee4e9bc46e308095894895a65c41a4918ebdf2b78227f7e5202",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/07.png",
+          "sourceSha256": "92cd588f9fcf1ee4e9bc46e308095894895a65c41a4918ebdf2b78227f7e5202",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/07.png",
+          "sha256": "5c07562c950fc064c5f2a4d03a2bb0343bbccb77d11720f79e49ddfa1a9009d7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/1c6f87e3-665f-4834-b5fe-6d35272e0372/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/attack1/1c6f87e3-665f-4834-b5fe-6d35272e0372/08.png",
+          "sourceSha256": "5c07562c950fc064c5f2a4d03a2bb0343bbccb77d11720f79e49ddfa1a9009d7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 가시털을 세우고 앞어깨·앞발·머리가 낮게 전방으로 나오는 실제 공격. 4번의 낮은 머리와 앞발을 접촉으로 선택.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/quill-badger/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/quill-badger/review/attack1-1c6f87e3-665f-4834-b5fe-6d35272e0372.png",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625
+    },
+    "hit1": {
+      "label": "피격",
+      "loop": false,
+      "jobId": "661abc5d-8f72-4f2b-9d36-b39ba09cbd3e",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/00.png",
+          "sha256": "fc1407b865cb1f8c420605e2071f0f6adef4dec9d296d33d6ddc9ca310ea6844",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/01.png",
+          "sourceSha256": "fc1407b865cb1f8c420605e2071f0f6adef4dec9d296d33d6ddc9ca310ea6844",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/01.png",
+          "sha256": "129441e0c47b9f9e690009f90832ad84ff3f647398164186b394f9fff332177d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/02.png",
+          "sourceSha256": "129441e0c47b9f9e690009f90832ad84ff3f647398164186b394f9fff332177d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/02.png",
+          "sha256": "e8b648d1bf7248a8db4baf5b7eb3211c8b3fc462460282ef519615e5a47612f6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/03.png",
+          "sourceSha256": "e8b648d1bf7248a8db4baf5b7eb3211c8b3fc462460282ef519615e5a47612f6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/03.png",
+          "sha256": "38eff5e6a1ae6f896c554012c857e7b3bbe1ab25a74bcc3e64eceb0239d79408",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/hit1/661abc5d-8f72-4f2b-9d36-b39ba09cbd3e/04.png",
+          "sourceSha256": "38eff5e6a1ae6f896c554012c857e7b3bbe1ab25a74bcc3e64eceb0239d79408",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 머리와 앞다리를 낮추고 가시털이 잠깐 세워졌다 원래 자세로 돌아오는 실제 피격.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/quill-badger/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/quill-badger/review/hit1-661abc5d-8f72-4f2b-9d36-b39ba09cbd3e.png"
+    },
+    "die1": {
+      "label": "쓰러짐",
+      "loop": false,
+      "jobId": "ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/00.png",
+          "sha256": "d71933eaf0d8d9493f2d17f587b0778e676279c27ae0fdfc20a6e726fe57d323",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/01.png",
+          "sourceSha256": "d71933eaf0d8d9493f2d17f587b0778e676279c27ae0fdfc20a6e726fe57d323",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/01.png",
+          "sha256": "79f6f125e06e7a63678aec77a8ebfba1c158d1f4050ab3a1bc3ad43c5388e04d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/02.png",
+          "sourceSha256": "79f6f125e06e7a63678aec77a8ebfba1c158d1f4050ab3a1bc3ad43c5388e04d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/02.png",
+          "sha256": "6ab54c13d7c02990264e14bb4cca5777bdf65776ab282e66d151bf11cf4e0baa",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/03.png",
+          "sourceSha256": "6ab54c13d7c02990264e14bb4cca5777bdf65776ab282e66d151bf11cf4e0baa",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/03.png",
+          "sha256": "e6e580ca418ea98286d5a219910a47afaf11ff289dbb2d61a7d17ec29faa8a47",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/04.png",
+          "sourceSha256": "e6e580ca418ea98286d5a219910a47afaf11ff289dbb2d61a7d17ec29faa8a47",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/04.png",
+          "sha256": "21ab1e22266ea04e370513a083e636c31b2af223a6c1649b670eba623eac11d2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/05.png",
+          "sourceSha256": "21ab1e22266ea04e370513a083e636c31b2af223a6c1649b670eba623eac11d2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/05.png",
+          "sha256": "f24cefa627c30308a0edd8ab9fd3712c2f428ef3c3882079189089266738fd8a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/06.png",
+          "sourceSha256": "f24cefa627c30308a0edd8ab9fd3712c2f428ef3c3882079189089266738fd8a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/06.png",
+          "sha256": "9f7e2099a42c4564548aaf6c0e643f08195d5a49ca30209294904623bfea2f05",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/07.png",
+          "sourceSha256": "9f7e2099a42c4564548aaf6c0e643f08195d5a49ca30209294904623bfea2f05",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/quill-badger/frames/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/07.png",
+          "sha256": "475f5670836499990e34b2822282a76674d6798d13c4137261a0ba2b78c834a8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/quill-badger/originals/die1/ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4/08.png",
+          "sourceSha256": "475f5670836499990e34b2822282a76674d6798d13c4137261a0ba2b78c834a8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 머리와 다리가 내려앉고 가시털 몸이 바닥에 누운 끝자세를 유지하는 실제 KO.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/quill-badger/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/quill-badger/review/die1-ace11dac-6cd6-469f-9e5d-fbbd7db2e9a4.png"
+    }
+  }
+}

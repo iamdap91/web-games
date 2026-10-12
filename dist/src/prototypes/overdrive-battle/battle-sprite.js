@@ -1,12 +1,22 @@
+import { isMonsterId, monsterDefinition, } from './monster-catalog.js';
+import { animationDuration, monsterMotionFrame, monsterNativeFacing, } from './monster-motions.js';
+import { yeonmukBattlePose } from './yeonmuk-battle-motion.js';
+import { GuardMotion, hurtPose, reactionTimings } from './reaction-motion.js';
+import { guardFrames } from '../../resources/characters/ataho/combat-frames.js';
+import { drinkPose } from './drink-motion.js';
+import { cardinalFacing } from '../../resources/characters/ataho/facing.js';
 import * as THREE from 'three';
-import { actionPosition, } from './world.js';
+import { actionPosition, forestEnemyAttackTimings, } from './world.js';
 import { introPose, overdriveIntro } from './overdrive-intro.js';
 import { OverdriveAura } from './overdrive-aura.js';
 import { barragePose } from './tiger-barrage.js';
 import { turnAttackPose } from './turn-attack.js';
 import { drivePose } from './overdrive-motion.js';
 import { StaggerStars } from './stagger-stars.js';
-const pixelsPerUnit = 32;
+import { MushroomMotion, mushroomMotionRules } from './mushroom-motion.js';
+import { MushroomSpores } from './mushroom-spores.js';
+export const battlePixelsPerUnit = 32;
+export const yeonmukSpriteScale = 1.12;
 export const cameraHeight = 21;
 export const cameraDepth = 25;
 const screenUpY = cameraDepth / Math.hypot(cameraHeight, cameraDepth);
@@ -34,16 +44,34 @@ export class BattleSprite {
     shapes = new Map();
     driveAura;
     staggerStars;
+    mushroomMotion;
+    mushroomSpores;
+    monster;
+    nativeFacing;
     frame = null;
     elapsed = 0;
+    guardMotion = new GuardMotion();
     hurtAt = -100;
+    healedAt = -100;
     deathAt = null;
     impact = null;
     constructor(animations, textures, fighter) {
         this.animations = animations;
         this.textures = textures;
+        this.monster = isMonsterId(fighter.kind)
+            ? monsterDefinition(fighter.kind)
+            : null;
+        this.nativeFacing = this.monster
+            ? monsterNativeFacing(this.monster.id)
+            : 'left';
         this.mesh.layers.set(1);
         this.group.add(this.mesh);
+        this.mushroomMotion =
+            fighter.kind === 'mushroom' ? new MushroomMotion(animations) : null;
+        this.mushroomSpores =
+            fighter.kind === 'mushroom' ? new MushroomSpores() : null;
+        if (this.mushroomSpores)
+            this.group.add(this.mushroomSpores.group);
         this.driveAura =
             fighter.kind === 'ataho'
                 ? new OverdriveAura(this.group, this.mesh)
@@ -63,14 +91,30 @@ export class BattleSprite {
     hit(impact) {
         this.hurtAt = this.elapsed;
         this.impact = impact;
+        this.mushroomMotion?.hit();
+    }
+    heal() {
+        this.healedAt = this.elapsed;
+    }
+    castHeal(healing) {
+        // 신규 몬스터의 시전 자세는 활성 행동을 따르므로 회복 이벤트로 재시작하지 않는다.
+        this.mushroomMotion?.cast();
+        this.mushroomSpores?.cast({
+            x: healing.x - this.group.position.x,
+            z: healing.z - this.group.position.z,
+        });
     }
     reset() {
         this.elapsed = 0;
+        this.guardMotion.reset();
         this.hurtAt = -100;
+        this.healedAt = -100;
         this.deathAt = null;
         this.impact = null;
         this.driveAura?.reset();
         this.staggerStars?.reset();
+        this.mushroomMotion?.reset();
+        this.mushroomSpores?.reset();
     }
     staggerLabelAnchor() {
         const stars = this.staggerStars?.group;
@@ -82,6 +126,31 @@ export class BattleSprite {
             .add(this.group.position)
             .add(new THREE.Vector3(0, 0.95, 0));
     }
+    labelHeight() {
+        if (!this.frame)
+            return 0;
+        // 새 공격에서 머리보다 높이 든 손도 이름표에 가리지 않게 한다.
+        return (this.group.position.y +
+            ((this.frame.height - this.frame.pivot.y) / battlePixelsPerUnit) *
+                this.mesh.scale.y +
+            0.35);
+    }
+    selectionCorners() {
+        if (!this.frame)
+            return [];
+        // 실제 프레임과 발 pivot으로 만든 사각형을 투영해 큰 개체의 머리·옆면도 선택한다.
+        this.mesh.updateWorldMatrix(true, false);
+        this.mesh.geometry.computeBoundingBox();
+        const bounds = this.mesh.geometry.boundingBox;
+        if (!bounds)
+            return [];
+        return [
+            [bounds.min.x, bounds.min.y],
+            [bounds.max.x, bounds.min.y],
+            [bounds.max.x, bounds.max.y],
+            [bounds.min.x, bounds.max.y],
+        ].map(([x, y]) => new THREE.Vector3(x, y, 0).applyMatrix4(this.mesh.matrixWorld));
+    }
     animation(name) {
         const animation = this.animations.get(name);
         if (!animation)
@@ -89,12 +158,72 @@ export class BattleSprite {
         return animation;
     }
     pose(fighter, options) {
-        const { phase, action, guarding, phaseTime, barrage, returning, drunken, reducedMotion, } = options;
+        const { phase, action, phaseTime, barrage, returning, drunken, reducedMotion, } = options;
         const ataho = fighter.kind === 'ataho';
         const mirror = ataho
-            ? fighter.facing === 'left'
+            ? cardinalFacing(fighter.facing) === 'left'
             : fighter.facing === 'right';
         const hurt = this.elapsed - this.hurtAt;
+        if (this.monster) {
+            const nativeMirror = (fighter.facing === 'right' ? 'right' : 'left') !== this.nativeFacing;
+            const sample = (name, age, repeat = false) => {
+                const animation = this.animation(name);
+                return animation.frames[monsterMotionFrame(animation, age, { repeat })];
+            };
+            if (this.deathAt !== null)
+                return {
+                    frame: sample('die1', reducedMotion
+                        ? animationDuration(this.animation('die1'))
+                        : this.elapsed - this.deathAt),
+                    mirror: nativeMirror,
+                };
+            if (hurt < animationDuration(this.animation('hit1')))
+                return {
+                    frame: sample('hit1', reducedMotion
+                        ? animationDuration(this.animation('hit1')) * 0.5
+                        : hurt),
+                    mirror: nativeMirror,
+                };
+            const active = action?.actorId === fighter.id ? action : null;
+            if (active?.monsterMotion) {
+                const { arrivalTime, returnTime, mode } = active.monsterMotion;
+                const returning = active.elapsed >= returnTime;
+                if (mode === 'melee' && (active.elapsed < arrivalTime || returning)) {
+                    const time = returning
+                        ? arrivalTime + active.elapsed - returnTime
+                        : active.elapsed;
+                    return {
+                        frame: sample('move', reducedMotion ? 0 : time * 1.5, true),
+                        mirror: returning ? !nativeMirror : nativeMirror,
+                    };
+                }
+                return {
+                    frame: sample('attack1', (reducedMotion ? active.contactTime : active.elapsed) - arrivalTime),
+                    mirror: nativeMirror,
+                };
+            }
+            return {
+                frame: sample('stand', reducedMotion ? 0 : this.elapsed, true),
+                mirror: nativeMirror,
+            };
+        }
+        if (fighter.kind === 'yeonmuk')
+            return {
+                frame: yeonmukBattlePose(this.animations, {
+                    elapsed: this.elapsed,
+                    hurtAge: hurt,
+                    deathAge: this.deathAt === null ? null : this.elapsed - this.deathAt,
+                    action: action?.actorId === fighter.id ? action : null,
+                    reducedMotion,
+                }).frame,
+                mirror: false,
+            };
+        if (fighter.kind === 'mushroom') {
+            return {
+                frame: this.mushroomMotion.frame({ reducedMotion }),
+                mirror,
+            };
+        }
         if (ataho && barrage) {
             const pose = barragePose(barrage);
             return {
@@ -102,11 +231,13 @@ export class BattleSprite {
                 mirror: pose.direction < 0,
             };
         }
-        if (ataho && phase === 'breaking')
+        if (ataho && phase === 'breaking') {
+            const pose = introPose(phaseTime);
             return {
-                frame: this.animation('tiger-fist').frames[introPose(phaseTime).frame],
+                frame: this.animation(pose.animation).frames[pose.frame],
                 mirror,
             };
+        }
         if (this.deathAt !== null) {
             const frames = this.animation('die1').frames;
             return {
@@ -114,11 +245,16 @@ export class BattleSprite {
                 mirror,
             };
         }
-        if (hurt < 0.23)
+        if (hurt < reactionTimings.hurtDuration) {
+            const guarded = this.impact?.guarded && ataho;
+            const animation = this.animation(guarded ? 'guard' : 'hit1');
             return {
-                frame: this.animation(this.impact?.guarded && ataho ? 'guard' : 'hit1').frames.at(-1),
+                frame: ataho
+                    ? animation.frames[guarded ? guardFrames.held : hurtPose(hurt)]
+                    : animation.frames.at(-1),
                 mirror,
             };
+        }
         if (ataho && returning) {
             if (returning.heldAction) {
                 const pose = drivePose(returning.heldAction, fighter.facing);
@@ -138,21 +274,50 @@ export class BattleSprite {
         }
         if (action?.actorId === fighter.id) {
             const progress = action.elapsed / action.duration;
+            if (action.enemyMotion) {
+                const arrivalTime = action.duration * forestEnemyAttackTimings.arrivalProgress;
+                const returnTime = action.duration * forestEnemyAttackTimings.returnProgress;
+                const returning = action.elapsed >= returnTime;
+                if (action.elapsed < arrivalTime || returning) {
+                    const animation = this.animation('move');
+                    const moveTime = returning
+                        ? action.elapsed - returnTime
+                        : action.elapsed;
+                    return {
+                        frame: reducedMotion
+                            ? animation.frames[0]
+                            : frameAt(animation, moveTime * 1.5),
+                        mirror: returning ? !mirror : mirror,
+                    };
+                }
+                const frames = this.animation('attack1').frames;
+                const contactFrame = Math.min(4, frames.length - 1);
+                // 생성된 낮은 공격 자세를 실제 접촉에 맞추고 회복 자세까지 적 앞에서 마친다.
+                const index = action.elapsed < action.contactTime
+                    ? Math.floor((contactFrame * (action.elapsed - arrivalTime)) /
+                        (action.contactTime - arrivalTime))
+                    : contactFrame +
+                        Math.floor(((frames.length - contactFrame) *
+                            (action.elapsed - action.contactTime)) /
+                            (returnTime - action.contactTime));
+                return {
+                    frame: frames[Math.min(frames.length - 1, Math.max(0, index))],
+                    mirror,
+                };
+            }
             if (!ataho) {
-                const name = fighter.kind === 'yeti' ? 'attack1' : 'jump';
+                const name = fighter.kind === 'slime' ? 'jump' : 'attack1';
                 const frames = this.animation(name).frames;
                 return {
                     frame: frames[Math.min(frames.length - 1, Math.floor(progress * frames.length))],
                     mirror,
                 };
             }
-            if (action.kind === 'drink') {
-                const frames = this.animation('drink').frames;
+            if (action.kind === 'drink')
                 return {
-                    frame: frames[Math.min(frames.length - 1, Math.floor(progress * frames.length))],
-                    mirror: false,
+                    frame: this.animation('drink').frames[drinkPose(action.elapsed)],
+                    mirror,
                 };
-            }
             if (action.kind === 'attack' || action.kind === 'skill') {
                 const pose = turnAttackPose(action.kind, action.elapsed, fighter.facing, action.skill);
                 return {
@@ -171,10 +336,13 @@ export class BattleSprite {
                 frame: frameAt(this.animation('victory'), this.elapsed),
                 mirror: false,
             };
-        if (ataho && guarding)
-            return { frame: this.animation('guard').frames.at(-1), mirror };
+        const guardFrame = this.guardMotion.frame;
+        if (ataho && guardFrame !== null)
+            return { frame: this.animation('guard').frames[guardFrame], mirror };
         if (!ataho && fighter.staggered)
             return { frame: this.animation('hit1').frames.at(-1), mirror };
+        if (fighter.kind === 'boar' && options.preparing)
+            return { frame: this.animation('attack1').frames[3], mirror };
         if (!ataho)
             return {
                 frame: frameAt(this.animation('stand'), this.elapsed),
@@ -199,15 +367,26 @@ export class BattleSprite {
     render(fighter, options) {
         const { phase, phaseTime, action, dt, reducedMotion, barrage } = options;
         this.elapsed += dt;
+        this.guardMotion.update(options.guarding && fighter.kind === 'ataho', dt);
+        this.mushroomMotion?.update({
+            dt,
+            alive: fighter.health > 0,
+            preparing: options.preparing && !fighter.staggered,
+            healing: options.healing,
+        });
         if (fighter.health <= 0 && this.deathAt === null)
             this.deathAt = this.elapsed;
-        const deathAge = this.deathAt === null ? 0 : this.elapsed - this.deathAt;
+        const deathAge = this.mushroomMotion
+            ? this.mushroomMotion.snapshot.deathTime
+            : this.deathAt === null
+                ? 0
+                : this.elapsed - this.deathAt;
         const pose = this.pose(fighter, options);
         if (this.frame !== pose.frame) {
             let geometry = this.shapes.get(pose.frame);
             if (!geometry) {
-                geometry = new THREE.PlaneGeometry(pose.frame.width / pixelsPerUnit, pose.frame.height / pixelsPerUnit);
-                geometry.translate((pose.frame.width / 2 - pose.frame.pivot.x) / pixelsPerUnit, (pose.frame.height / 2 - pose.frame.pivot.y) / pixelsPerUnit, 0);
+                geometry = new THREE.PlaneGeometry(pose.frame.width / battlePixelsPerUnit, pose.frame.height / battlePixelsPerUnit);
+                geometry.translate((pose.frame.width / 2 - pose.frame.pivot.x) / battlePixelsPerUnit, (pose.frame.height / 2 - pose.frame.pivot.y) / battlePixelsPerUnit, 0);
                 this.shapes.set(pose.frame, geometry);
             }
             if (!this.frame)
@@ -218,30 +397,45 @@ export class BattleSprite {
             this.frame = pose.frame;
         }
         const hero = fighter.kind === 'ataho';
-        const scale = hero ? 1.18 : 0.84;
+        const scale = hero
+            ? 1.18
+            : fighter.kind === 'yeonmuk'
+                ? yeonmukSpriteScale
+                : (this.monster?.displayScale ?? 0.84);
         this.mesh.scale.set(pose.mirror ? -scale : scale, scale / screenUpY, scale);
         const active = action?.actorId === fighter.id ? action : null;
-        const point = active ? actionPosition(active) : fighter;
+        const point = options.visualPoint ?? (active ? actionPosition(active) : fighter);
         const hurt = Math.max(0, this.elapsed - this.hurtAt);
         const drive = this.impact?.drive;
         const hitShape = Math.pow(Math.max(0, 1 - hurt / (drive?.finisher ? 0.28 : 0.18)), 2);
         // 접촉 첫 프레임부터 반동 자세를 만든 뒤 타격 정지 동안 그대로 붙잡는다.
-        const recoil = drive
-            ? hitShape *
-                (reducedMotion
-                    ? 0.03
-                    : drive.finisher === 'push'
-                        ? 0.5
-                        : drive.finisher
-                            ? 0.38
-                            : drive.beat === 1
-                                ? 0.24
-                                : 0.14)
-            : hurt < 0.28
-                ? Math.sin((hurt / 0.28) * Math.PI) * 0.18
-                : 0;
+        const recoil = fighter.kind === 'yeonmuk' || this.monster
+            ? 0
+            : this.mushroomMotion
+                ? fighter.health > 0 && hurt < mushroomMotionRules.recoilDuration
+                    ? Math.pow(1 - hurt / mushroomMotionRules.recoilDuration, 2) *
+                        (reducedMotion ? 0.02 : 0.16)
+                    : 0
+                : drive
+                    ? hitShape *
+                        (reducedMotion
+                            ? 0.03
+                            : drive.finisher === 'push'
+                                ? 0.5
+                                : drive.finisher
+                                    ? 0.38
+                                    : drive.beat === 1
+                                        ? 0.24
+                                        : 0.14)
+                    : hurt < 0.28
+                        ? Math.sin((hurt / 0.28) * Math.PI) * 0.18
+                        : 0;
         this.mesh.rotation.z = 0;
-        if (!hero && drive && !reducedMotion) {
+        if (!hero &&
+            !this.monster &&
+            !this.mushroomMotion &&
+            drive &&
+            !reducedMotion) {
             const squash = hitShape * (drive.finisher ? 0.055 : 0.025);
             this.mesh.scale.x *= 1 + squash;
             this.mesh.scale.y *= 1 - squash;
@@ -250,7 +444,7 @@ export class BattleSprite {
                     hitShape *
                     (drive.finisher === 'sweep' ? 0.1 : drive.finisher ? 0.065 : 0.025);
         }
-        const jump = active && !hero
+        const jump = active && fighter.kind === 'slime'
             ? Math.sin(Math.min(1, active.elapsed / active.duration) * Math.PI) *
                 0.3
             : 0;
@@ -260,7 +454,12 @@ export class BattleSprite {
                 : 0) +
             (this.impact?.aim.x ?? 0) * recoil, 0.06 +
             jump +
-            (!reducedMotion && drive?.finisher === 'push' ? hitShape * 0.09 : 0), point.z + (this.impact?.aim.z ?? 0) * recoil);
+            (!this.monster &&
+                !this.mushroomMotion &&
+                !reducedMotion &&
+                drive?.finisher === 'push'
+                ? hitShape * 0.09
+                : 0), point.z + (this.impact?.aim.z ?? 0) * recoil);
         if (hero && barrage) {
             const motion = barragePose(barrage);
             this.group.position.set(motion.point.x, 0.06 + motion.height, motion.point.z);
@@ -273,11 +472,55 @@ export class BattleSprite {
             this.group.position.z =
                 this.impact.z + (fighter.z - this.impact.z) * settle;
         }
-        this.material.color.setHex(hurt < 0.09 ? 0xffdba6 : 0xffffff);
+        const healed = this.elapsed - this.healedAt < 0.45;
+        const healing = options.healing || healed;
+        const preparing = options.preparing &&
+            fighter.health > 0 &&
+            (!this.mushroomMotion || !fighter.staggered);
+        this.material.color.setHex(hurt < 0.09
+            ? 0xffdba6
+            : healing
+                ? 0x88ffc0
+                : preparing
+                    ? fighter.kind === 'boar' || this.monster?.role === 'charger'
+                        ? 0xffd6a1
+                        : 0xc1f5c9
+                    : options.frozen
+                        ? 0xb6e9ff
+                        : 0xffffff);
+        if (preparing && !this.monster && fighter.kind !== 'boar' && !reducedMotion)
+            this.group.position.y += Math.sin(this.elapsed * 4) * 0.035;
+        if (this.mushroomMotion) {
+            if (fighter.health <= 0) {
+                this.material.color.setHex(0xffffff);
+                if (!reducedMotion) {
+                    const settle = Math.min(1, Math.max(0, (deathAge - mushroomMotionRules.deathHold) /
+                        mushroomMotionRules.deathSettle));
+                    this.mesh.scale.multiplyScalar(1 - settle * 0.12);
+                    this.group.position.y -= settle * 0.035;
+                }
+            }
+            else if (hurt < 0.08)
+                this.material.color.setRGB(1.12, 1.12, 1.08);
+            this.mushroomSpores?.render({
+                dt,
+                alive: fighter.health > 0,
+                preparing,
+                healing: this.mushroomMotion.snapshot.mode === 'heal',
+                reducedMotion,
+            });
+        }
         this.material.opacity =
             this.deathAt === null
                 ? 1
                 : Math.max(0, 1 - Math.max(0, deathAge - 0.45) / 0.35);
+        if (this.monster)
+            this.material.opacity = 1;
+        if (fighter.kind === 'yeonmuk') {
+            // 실제 자세가 반동·회수·쓰러짐을 표현하므로 임시 회전·부유·퇴장 효과를 겹치지 않는다.
+            this.material.opacity = 1;
+            this.material.color.setHex(0xffffff);
+        }
         this.group.visible = this.material.opacity > 0;
         this.shadow.visible = this.group.visible;
         this.shadow.position.set(this.group.position.x, 0.034, this.group.position.z);
@@ -285,9 +528,9 @@ export class BattleSprite {
         this.staggerStars?.render({
             active: fighter.staggered && fighter.health > 0,
             head: {
-                x: ((pose.frame.width / 2 - pose.frame.pivot.x) / pixelsPerUnit) *
+                x: ((pose.frame.width / 2 - pose.frame.pivot.x) / battlePixelsPerUnit) *
                     this.mesh.scale.x,
-                y: ((pose.frame.height - pose.frame.pivot.y) / pixelsPerUnit) *
+                y: ((pose.frame.height - pose.frame.pivot.y) / battlePixelsPerUnit) *
                     this.mesh.scale.y,
             },
             screenUpY,
@@ -314,9 +557,18 @@ export class BattleSprite {
             dt,
         });
     }
+    get diagnostics() {
+        return {
+            frame: this.frame?.localPath ?? null,
+            rotation: this.mesh.rotation.z,
+            mirrored: this.mesh.scale.x < 0,
+            visible: this.group.visible,
+        };
+    }
     dispose() {
         this.driveAura?.dispose();
         this.staggerStars?.dispose();
+        this.mushroomSpores?.dispose();
         this.shapes.forEach((geometry) => geometry.dispose());
         if (!this.frame)
             this.mesh.geometry.dispose();

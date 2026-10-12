@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { resourceLayers } from '../../rendering/surface-types.js';
+import { largeObjectLayout } from './clearing-large-object.js';
 import { obstacleTypes } from './world.js';
 const popDuration = 0.25;
 const attractStart = 0.35;
@@ -24,7 +25,8 @@ export class HarvestDrops {
             x: impact.x,
             z: impact.z,
             material: impact.kind === 'rock' ? 'stone' : 'wood',
-            amount: obstacleTypes[impact.kind].reward,
+            amount: Object.values(largeObjectLayout).find((item) => item.id === impact.id)
+                ?.reward ?? obstacleTypes[impact.kind].reward,
         }, 0.55);
     }
     collect(pickup) {

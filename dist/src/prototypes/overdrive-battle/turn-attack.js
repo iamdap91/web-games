@@ -1,3 +1,6 @@
+import { strikeFrame } from '../../resources/characters/ataho/motion-frame.js';
+import { cardinalFacing } from '../../resources/characters/ataho/facing.js';
+import { straightPunchFrames, tigerFistFrames, sweepKickFrames, pushKickFrames, turnKickFrames, } from '../../resources/characters/ataho/combat-frames.js';
 // 이동·자세·피해 판정이 같은 구간 경계를 사용해 타격 중 발이 밀리지 않게 한다.
 export const turnAttackTimings = {
     attack: {
@@ -29,12 +32,56 @@ export function turnAttackAdvance(kind, time) {
     return Math.max(0, 1 - (time - timing.returnAt) / (timing.returnEnd - timing.returnAt));
 }
 export function turnAttackPose(kind, time, facing, skill = 'tiger') {
+    facing = cardinalFacing(facing);
     const timing = turnAttackTimings[kind];
     const mirror = facing === 'left';
+    if ((kind === 'attack' && (facing === 'left' || facing === 'right')) ||
+        (kind === 'skill' && skill === 'tiger')) {
+        const animation = kind === 'attack' ? 'straight-punch' : 'tiger-fist';
+        const frames = kind === 'attack' ? straightPunchFrames : tigerFistFrames;
+        // 전진·복귀 때 손을 내리지 않고 현재 가드를 유지한다.
+        if (time < timing.windupAt || time >= timing.returnAt)
+            return { animation: 'battle-ready', frame: 0, mirror };
+        if (time < timing.contactTime) {
+            const progress = (time - timing.windupAt) / (timing.contactTime - timing.windupAt);
+            const index = Math.min(frames.windup.length - 1, Math.floor(progress * frames.windup.length));
+            return {
+                animation,
+                frame: frames.windup[index],
+                mirror,
+            };
+        }
+        if (time < timing.recoverAt)
+            return {
+                animation,
+                frame: frames.contact,
+                mirror,
+            };
+        const progress = (time - timing.recoverAt) / (timing.returnAt - timing.recoverAt);
+        const index = Math.min(frames.recovery.length - 1, Math.floor(progress * frames.recovery.length));
+        return {
+            animation,
+            frame: frames.recovery[index],
+            mirror,
+        };
+    }
+    if ((kind === 'skill' && skill !== 'tiger') || facing === 'back') {
+        const kick = kind === 'skill' && skill === 'kick';
+        return {
+            animation: kick ? 'battle-kick' : 'turn-kick',
+            frame: strikeFrame(kick ? pushKickFrames : turnKickFrames, {
+                time,
+                windupAt: timing.windupAt,
+                contactAt: timing.contactTime,
+                recoverAt: timing.recoverAt,
+                endAt: timing.returnAt,
+            }),
+            mirror,
+        };
+    }
     if (time < timing.arriveAt ||
         (time >= timing.returnAt && time < timing.returnEnd)) {
         const suffix = facing === 'front' ? '' : `-${facing}`;
-        // 복귀 때도 적을 바라보며 발 디딤 순서만 거꾸로 재생한다.
         return {
             animation: `move${suffix}`,
             frame: turnAttackAdvance(kind, time) < 0.5 ? 1 : 2,
@@ -44,63 +91,27 @@ export function turnAttackPose(kind, time, facing, skill = 'tiger') {
     if (time >= timing.returnEnd)
         return { animation: 'battle-ready', frame: 0, mirror };
     const windup = Math.max(0, (time - timing.windupAt) / (timing.contactTime - timing.windupAt));
-    if (kind === 'skill' && skill !== 'tiger') {
-        if (time >= timing.recoverAt + (timing.returnAt - timing.recoverAt) * 0.65)
-            return { animation: 'battle-ready', frame: 0, mirror };
-        if (skill === 'sweep')
+    if (facing === 'front') {
+        const animation = 'sweep-kick';
+        if (time < timing.windupAt)
+            return { animation, frame: sweepKickFrames.ready, mirror: false };
+        if (time < timing.contactTime) {
+            const index = Math.min(sweepKickFrames.windup.length - 1, Math.floor(windup * sweepKickFrames.windup.length));
             return {
-                animation: 'turn-kick',
-                frame: time < timing.contactTime
-                    ? windup < 0.55
-                        ? 0
-                        : 1
-                    : time < timing.recoverAt
-                        ? 2
-                        : 3,
-                mirror,
+                animation,
+                frame: sweepKickFrames.windup[index],
+                mirror: false,
             };
-        return {
-            animation: 'battle-kick',
-            frame: time >= timing.contactTime && time < timing.recoverAt ? 1 : 0,
-            mirror,
-        };
-    }
-    if (facing === 'back') {
+        }
+        if (time < timing.recoverAt)
+            return { animation, frame: sweepKickFrames.contact, mirror: false };
         const recovery = (time - timing.recoverAt) / (timing.returnAt - timing.recoverAt);
+        const index = Math.min(sweepKickFrames.recovery.length - 1, Math.floor(recovery * sweepKickFrames.recovery.length));
         return {
-            animation: 'turn-kick',
-            frame: time < timing.contactTime
-                ? windup < 0.5
-                    ? 0
-                    : 1
-                : time < timing.recoverAt
-                    ? 2
-                    : recovery < 0.7
-                        ? 3
-                        : 0,
+            animation,
+            frame: sweepKickFrames.recovery[index],
             mirror: false,
         };
     }
-    if (facing === 'front')
-        return {
-            animation: 'sweep-kick',
-            frame: time >= timing.contactTime && time < timing.recoverAt ? 1 : 0,
-            mirror: false,
-        };
-    // 호격권의 끝 프레임 뒤 손을 모은 자세까지 보여준 다음에 발을 뺀다.
-    if (time >= timing.recoverAt + (timing.returnAt - timing.recoverAt) * 0.6)
-        return { animation: 'battle-ready', frame: 0, mirror };
-    return {
-        animation: 'tiger-fist',
-        frame: time < timing.contactTime
-            ? kind === 'skill'
-                ? Math.min(3, Math.floor(windup * 4))
-                : time < timing.windupAt
-                    ? 0
-                    : 3
-            : time < timing.recoverAt
-                ? 4
-                : 5,
-        mirror,
-    };
+    return { animation: 'battle-ready', frame: 0, mirror };
 }

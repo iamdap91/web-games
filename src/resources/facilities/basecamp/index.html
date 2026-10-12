@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+    <title>산중 베이스캠프 · 마을회관과 복구 시설</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js",
+          "three/addons/": "../../../../node_modules/three/examples/jsm/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <link rel="stylesheet" href="../../catalog/embedded-scene.css" />
+  </head>
+  <body>
+    <main class="embedded-facilities">
+      <nav aria-label="리소스 탐색">
+        <a href="../../">← 리소스 라이브러리</a>
+        <div>
+          <a href="../../backgrounds/">배경</a><a href="../../props/">소품</a
+          ><a href="../../characters/ataho/">아타호</a>
+        </div>
+      </nav>
+      <header>
+        <div>
+          <p class="eyebrow">마을 리소스 · 산중 베이스캠프</p>
+          <h1>광장에서 시작되는 마을</h1>
+          <p class="intro">
+            회관과 광장의 성장을 비교하고, 길을 따라 도장·식사터·대장간과 산길
+            입구까지 걸어보세요.
+          </p>
+        </div>
+      </header>
+      <div class="facility-controls">
+        <section aria-labelledby="hall-controls-title">
+          <h2 id="hall-controls-title">마을회관 <span>Z · X · C</span></h2>
+          <div
+            class="stage-switch hall-switch"
+            role="group"
+            aria-label="회관 성장 단계"
+          >
+            <button id="hall-1" aria-pressed="true" data-control disabled>
+              <span>Lv.1</span> 기본 청사
+            </button>
+            <button id="hall-2" aria-pressed="false" data-control disabled>
+              <span>Lv.2</span> 정비된 청사
+            </button>
+            <button id="hall-3" aria-pressed="false" data-control disabled>
+              <span>Lv.3</span> 중심 청사
+            </button>
+          </div>
+        </section>
+        <section aria-labelledby="dojo-controls-title">
+          <h2 id="dojo-controls-title">무도장 <span>1 · 2 · 3</span></h2>
+          <div class="stage-switch" role="group" aria-label="무도장 복구 상태">
+            <button id="weathered" aria-pressed="true" data-control disabled>
+              <span>Lv.0</span> 쇠락한 도장</button
+            ><button id="patched" aria-pressed="false" data-control disabled>
+              <span>Lv.1</span> 응급 수리</button
+            ><button id="restored" aria-pressed="false" data-control disabled>
+              <span>Lv.2</span> 복구 완료
+            </button>
+          </div>
+        </section>
+        <section aria-labelledby="kitchen-controls-title">
+          <h2 id="kitchen-controls-title">
+            야외 식사터 <span>4 · 5 · 6</span>
+          </h2>
+          <div
+            class="stage-switch kitchen-switch"
+            role="group"
+            aria-label="식사터 복구 상태"
+          >
+            <button
+              id="kitchen-weathered"
+              aria-pressed="true"
+              data-control
+              disabled
+            >
+              <span>Lv.0</span> 방치
+            </button>
+            <button
+              id="kitchen-usable"
+              aria-pressed="false"
+              data-control
+              disabled
+            >
+              <span>Lv.1</span> 첫 복구
+            </button>
+            <button
+              id="kitchen-restored"
+              aria-pressed="false"
+              data-control
+              disabled
+            >
+              <span>Lv.2</span> 정돈 완료
+            </button>
+          </div>
+        </section>
+        <section aria-labelledby="smithy-controls-title">
+          <h2 id="smithy-controls-title">대장간 <span>7 · 8 · 9 · 0</span></h2>
+          <div
+            class="stage-switch smithy-switch"
+            role="group"
+            aria-label="대장간 복구 상태"
+          >
+            <button id="smithy-0" aria-pressed="true" data-control disabled>
+              <span>Lv.0</span> 쇠락
+            </button>
+            <button id="smithy-1" aria-pressed="false" data-control disabled>
+              <span>Lv.1</span> 첫 복구
+            </button>
+            <button id="smithy-2" aria-pressed="false" data-control disabled>
+              <span>Lv.2</span> 복구 완료
+            </button>
+            <button id="smithy-3" aria-pressed="false" data-control disabled>
+              <span>Lv.3</span> 최종 강화
+            </button>
+          </div>
+        </section>
+      </div>
+      <p class="level-note">
+        회관 Lv.1~3 · 도장·식사터 Lv.0~2 · 대장간 Lv.0~3. 각 시설을 독립적으로
+        바꾸며 성장 전후의 모습을 비교하세요.
+      </p>
+      <div class="workspace">
+        <section class="preview" aria-label="마을 시설 성장 비교 미리보기">
+          <div class="preview-bar">
+            <span><i></i> 아타호의 산중 거점</span>
+            <div class="stage-badges">
+              <span id="hall-badge">회관 Lv.1</span
+              ><span id="stage-badge">도장 Lv.0</span
+              ><span id="kitchen-badge">식사터 Lv.0</span
+              ><span id="smithy-badge">대장간 Lv.0</span>
+            </div>
+          </div>
+          <canvas
+            id="dojo"
+            tabindex="0"
+            aria-label="회관·도장·식사터·대장간과 산길 입구. WASD·방향키 이동. Z·X·C 회관, 1·2·3 도장, 4·5·6 식사터, 7·8·9·0 대장간 단계 전환. Esc로 멈춤."
+            aria-describedby="status"
+            >WebGL을 지원하는 브라우저에서 확인해 주세요.</canvas
+          >
+          <div class="view-switch" role="group" aria-label="카메라 보기">
+            <button id="view-village" aria-pressed="true" data-control disabled>
+              마을 전체
+            </button>
+            <button id="view-hall" aria-pressed="false" data-control disabled>
+              회관·광장 가까이
+            </button>
+            <button id="view-dojo" aria-pressed="false" data-control disabled>
+              도장 가까이
+            </button>
+            <button id="view-smithy" aria-pressed="false" data-control disabled>
+              대장간 가까이
+            </button>
+          </div>
+          <div class="tools">
+            <div>
+              <button id="reset" data-control disabled>처음 위치</button
+              ><button id="pause" aria-pressed="false" data-control disabled>
+                잠깐 멈춤
+              </button>
+            </div>
+            <label for="zoom"
+              >확대
+              <input
+                id="zoom"
+                type="range"
+                min="85"
+                max="150"
+                step="5"
+                value="100"
+                data-control
+                disabled
+              /><output id="zoom-value" for="zoom">100%</output></label
+            >
+          </div>
+          <p id="status" role="status">산중 거점과 아타호를 준비하고 있어요.</p>
+        </section>
+        <aside aria-label="선택한 시설 상태">
+          <section class="hall-notes" aria-label="마을회관 상태">
+            <p class="chapter">마을회관 <span id="hall-number">Lv.1</span></p>
+            <h2 id="hall-title">마을이 모이는 첫 자리</h2>
+            <p id="hall-description">
+              큰 본채와 넓은 나무 현관 앞에 흙광장이 열려 있습니다. 소박한
+              모습으로 마을의 중심을 지킵니다.
+            </p>
+            <ul id="hall-changes"></ul>
+          </section>
+          <details class="facility-notes">
+            <summary>대장간 복구 상태</summary>
+            <section class="smithy-notes" aria-label="대장간 상태">
+              <p class="chapter">대장간 <span id="smithy-number">Lv.0</span></p>
+              <h2 id="smithy-title">식어버린 화덕</h2>
+              <p id="smithy-description">
+                무너진 굴뚝과 작업대 사이에 녹슨 모루가 남아 있습니다.
+              </p>
+              <ul id="smithy-changes"></ul>
+            </section>
+          </details>
+          <details class="facility-notes">
+            <summary>무도장 복구 상태</summary>
+            <p class="chapter">무도장 <span id="stage-number">Lv.0</span></p>
+            <h2 id="stage-title">명맥을 잇는 도장</h2>
+            <p id="stage-description">
+              지붕과 벽이 무너진 자리에도, 수련목 앞의 흙은 오늘도 다져져
+              있습니다.
+            </p>
+            <ul id="changes">
+              <li>크게 무너진 오른쪽 처마와 드러난 서까래</li>
+              <li>나무 뼈대가 드러난 벽과 부서진 마루</li>
+              <li>쓰러진 울타리와 잔해 사이의 수련 자리</li>
+            </ul>
+          </details>
+          <details class="facility-notes">
+            <summary>식사터 복구 상태</summary>
+            <section class="kitchen-notes" aria-label="식사터 상태">
+              <p class="chapter">야외 식사터</p>
+              <h2 id="kitchen-title">불이 꺼진 자리</h2>
+              <p id="kitchen-description">
+                무너진 아궁이와 기울어진 식탁. 오래된 솥만 자리를 지킵니다.
+              </p>
+              <ul id="kitchen-changes"></ul>
+            </section>
+          </details>
+          <p class="comparison-note">
+            회관 Lv.1~3으로 황폐한 거점·회복 중·따뜻한 마을을 비교하세요.<br />다른
+            시설은 선택한 복구 상태를 유지해요. 같은 위치와 시점에서 비교할 수
+            있어요.
+          </p>
+        </aside>
+      </div>
+      <section class="collection" aria-labelledby="collection-title">
+        <h2 id="collection-title">이 공간의 리소스</h2>
+        <div class="resource-list">
+          <article>
+            <span>01 / 건물</span>
+            <h3>기와 무도장</h3>
+            <p>처마 · 간판 · 열린 현관 · 마루</p>
+          </article>
+          <article>
+            <span>02 / 생활 공간</span>
+            <h3>야외 부엌·식사터</h3>
+            <p>아궁이 · 솥 · 차양 · 식탁 · 벤치</p>
+          </article>
+          <article>
+            <span>03 / 공용 소품</span>
+            <h3>작은 무구 공방</h3>
+            <p>화덕 · 모루 · 권갑 · 작업대 · 담금질 통</p>
+          </article>
+          <article>
+            <span>04 / 마을과 길</span>
+            <h3>중심 회관과 공용 광장</h3>
+            <p>중심 청사 · 계단 · 광장 · 게시판 · 산길</p>
+          </article>
+        </div>
+      </section>
+      <details class="source">
+        <summary>리소스 출처와 구성</summary>
+        <p>
+          회관·무도장·식사터·대장간·마당·산길 입구는 프로젝트에서 직접 만든 입체
+          모델입니다. 외부 건물 이미지는 사용하지 않습니다. 나무·바위·도트
+          재질은 기존 공통 리소스를 재사용합니다.
+        </p>
+        <p>
+          아타호는 기존 로컬 대기·걷기 프레임을 사용합니다.
+          <a href="../../characters/ataho/">아타호 원본과 출처 보기 →</a>
+        </p>
+        <p>
+          성장 단계는 외형 비교용입니다. 실제 증축 규칙·시설 효과·자원 결제·원정
+          이동·실내 진입은 연결하지 않습니다. 산길 끝은 현재 미리보기의 보행
+          경계입니다.
+        </p>
+      </details>
+      <footer>마을 리소스 연구 · 산중 거점</footer>
+      <pre id="diagnostics" hidden></pre>
+      <noscript>리소스를 보려면 JavaScript를 활성화해 주세요.</noscript>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/facilities/basecamp/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

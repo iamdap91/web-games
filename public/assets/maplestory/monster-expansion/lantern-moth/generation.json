@@ -1,0 +1,3638 @@
+{
+  "id": "lantern-moth",
+  "name": "등불나방",
+  "theme": "forest",
+  "role": "ranged",
+  "appearance": "Amber-winged nocturnal moth with lantern-pattern eye spots, dark furry antennae and a pale luminous abdomen.",
+  "motions": {
+    "stand": "Hover facing left, furry antennae twitch while both amber wings beat through open and folded shapes, abdomen light subtly brightens and dims through the cycle, return to the original pose. Preserve the two lantern eye spots.",
+    "move": "Facing left, continuous fluttering locomotion loop in place with strong hinged wing downstrokes and narrow upstrokes, abdomen tucks backward and body tilts slightly forward. No translation across the image.",
+    "attack1": "Facing left, wings flare wide and antennae point forward to gather power, abdomen brightens, then wings sweep together and abdomen makes a short forward casting pulse toward left, recover to hover. No baked projectile or target.",
+    "hit1": "Facing left, antennae recoil and one wing folds across the body defensively, abdomen light dims and head flinches, reopen the wings and return to hover.",
+    "die1": "Facing left, light dims, wingbeats stop and both wings fold loosely, body descends and rests on its side with antennae down, finish motionless and opaque, no disappearance."
+  },
+  "assetId": "ai/monster-lantern-moth",
+  "localRoot": "public/assets/maplestory/monster-expansion/lantern-moth",
+  "attempts": [
+    {
+      "motion": "original",
+      "attempt": 1,
+      "key": "monster-a-lantern-moth-original-01",
+      "jobId": "0825bdd3-c4a4-4daf-91d8-87d7b01d7755",
+      "balanceBefore": 508,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Amber-winged nocturnal moth with lantern-pattern eye spots, dark furry antennae and a pale luminous abdomen. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 614005,
+        "text_guidance_scale": 8
+      },
+      "queueResponse": "id: 0825bdd3-c4a4-4daf-91d8-87d7b01d7755\njob_id: 0825bdd3-c4a4-4daf-91d8-87d7b01d7755\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Amber-winged nocturnal moth with lantern-pattern eye spots, dark furry antennae and a pale luminous abdomen. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: ed306740-e9f0-5e76-9b49-a764c0c9d611\nasset_status: pending (saved when generation completes)\nseed: 614005\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"0825bdd3-c4a4-4daf-91d8-87d7b01d7755\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 0825bdd3-c4a4-4daf-91d8-87d7b01d7755\njob_id: 0825bdd3-c4a4-4daf-91d8-87d7b01d7755\nframes: 1\ntransparent: yes\nasset_id: ed306740-e9f0-5e76-9b49-a764c0c9d611\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download",
+      "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+      "sha256": "6641d91a48f3fda706357c737cee7af0c4a2627d9811de8e2e6e1a665c750823",
+      "byteSize": 1688,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 13,
+        "y": 10,
+        "width": 39,
+        "height": 42
+      },
+      "visiblePixels": 749,
+      "paletteSize": 19,
+      "chargedGenerations": 1,
+      "nativeFacing": "right",
+      "selection": "accepted after silhouette / anatomy / native alpha review"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-lantern-moth-stand-01",
+      "jobId": "a33f8b3e-8794-4b28-87dd-7edc0d1b9191",
+      "balanceBefore": 534,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625401,
+        "action": "Hover facing right, furry antennae twitch while both amber wings beat through open and folded shapes, abdomen light subtly brightens and dims through the cycle, return to the original pose. Preserve the two lantern eye spots. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "queueResponse": "id: a33f8b3e-8794-4b28-87dd-7edc0d1b9191\njob_id: a33f8b3e-8794-4b28-87dd-7edc0d1b9191\naction: Hover facing right, furry antennae twitch while both amber wings beat through open and folded shapes, abdomen light subtly brightens and dims through the cycle, return to the original pose. Preserve the two lantern eye spots. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625401\nasset_id: 35b29e98-b886-55ca-9273-03a170a0a656\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"a33f8b3e-8794-4b28-87dd-7edc0d1b9191\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: a33f8b3e-8794-4b28-87dd-7edc0d1b9191\njob_id: a33f8b3e-8794-4b28-87dd-7edc0d1b9191\nframes: 5\ntransparent: yes\nasset_id: 35b29e98-b886-55ca-9273-03a170a0a656\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 3,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+        "sha256": "6641d91a48f3fda706357c737cee7af0c4a2627d9811de8e2e6e1a665c750823",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 1,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/00.png",
+          "sourceSha256": "2a2934cf148a514fb58e7adc5f3717115f18cdb4ad68b9163a55e434bf6e5dd1",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/01.png",
+          "sourceSha256": "89b273565721488f5d0d982ba5cb852377ee7e3c80d67c7803224a5990192fd8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 13,
+            "width": 40,
+            "height": 37
+          },
+          "visiblePixels": 718,
+          "colors": 37,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/02.png",
+          "sourceSha256": "ba223a1dec90b9f68face2c59f32276132c981089bb567de05da25aa7843621d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 16,
+            "width": 40,
+            "height": 32
+          },
+          "visiblePixels": 686,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/03.png",
+          "sourceSha256": "0b6bb8e04f0e6bcfcb26f9fa63b5577d506c6c8aa0720a73a216a8a6015d3ae4",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 13,
+            "width": 40,
+            "height": 37
+          },
+          "visiblePixels": 730,
+          "colors": 33,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/04.png",
+          "sourceSha256": "2a2934cf148a514fb58e7adc5f3717115f18cdb4ad68b9163a55e434bf6e5dd1",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 19,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/stand-a33f8b3e-8794-4b28-87dd-7edc0d1b9191.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/00.png",
+          "sha256": "89b273565721488f5d0d982ba5cb852377ee7e3c80d67c7803224a5990192fd8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/01.png",
+          "sourceSha256": "89b273565721488f5d0d982ba5cb852377ee7e3c80d67c7803224a5990192fd8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/01.png",
+          "sha256": "ba223a1dec90b9f68face2c59f32276132c981089bb567de05da25aa7843621d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/02.png",
+          "sourceSha256": "ba223a1dec90b9f68face2c59f32276132c981089bb567de05da25aa7843621d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/02.png",
+          "sha256": "0b6bb8e04f0e6bcfcb26f9fa63b5577d506c6c8aa0720a73a216a8a6015d3ae4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/03.png",
+          "sourceSha256": "0b6bb8e04f0e6bcfcb26f9fa63b5577d506c6c8aa0720a73a216a8a6015d3ae4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/03.png",
+          "sha256": "2a2934cf148a514fb58e7adc5f3717115f18cdb4ad68b9163a55e434bf6e5dd1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/a33f8b3e-8794-4b28-87dd-7edc0d1b9191/04.png",
+          "sourceSha256": "2a2934cf148a514fb58e7adc5f3717115f18cdb4ad68b9163a55e434bf6e5dd1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "rejected: entire body and wings brighten too strongly, rather than a restrained abdomen glow"
+    },
+    {
+      "motion": "stand",
+      "attempt": 2,
+      "key": "monster-a-lantern-moth-stand-02",
+      "jobId": "e5e50cbf-2817-482f-9395-5da854dfadbe",
+      "balanceBefore": 556,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 626401,
+        "action": "Hovering facing right, both amber membrane wings gently open and close through one small hinged wingbeat and the furry antennae twitch, returning to the exact ready pose. Keep the dark plum body and amber wing colors exactly stable under fixed lighting. No glow, no brightening, no flash, no lighting change, no new white highlights. No whole-sprite translation. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "queueResponse": "id: e5e50cbf-2817-482f-9395-5da854dfadbe\njob_id: e5e50cbf-2817-482f-9395-5da854dfadbe\naction: Hovering facing right, both amber membrane wings gently open and close through one small hinged wingbeat and the furry antennae twitch, returning to the exact ready pose. Keep the dark plum body and amber wing colors exactly stable under fixed lighting. No glow, no brightening, no flash, no lighting change, no new white highlights. No whole-sprite translation. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626401\nasset_id: 96b67d74-0804-55fc-8a32-3830559ad068\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e5e50cbf-2817-482f-9395-5da854dfadbe\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: e5e50cbf-2817-482f-9395-5da854dfadbe\njob_id: e5e50cbf-2817-482f-9395-5da854dfadbe\nframes: 5\ntransparent: yes\nasset_id: 96b67d74-0804-55fc-8a32-3830559ad068\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+        "sha256": "6641d91a48f3fda706357c737cee7af0c4a2627d9811de8e2e6e1a665c750823",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 4,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/00.png",
+          "sourceSha256": "90a54cc7c4d66fb4128361ee07e9b78a2f091a403eba1982d298a49e8508d71d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/01.png",
+          "sourceSha256": "1ecc8e7899d9d1998b467ebae907b45c72d2956ad5858ad6a8d8998fd2336c1d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 12,
+            "width": 40,
+            "height": 38
+          },
+          "visiblePixels": 745,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/02.png",
+          "sourceSha256": "3cba1f0703364d1e6e68b0d348fbe4806e69821f23c2fe475bfdfe23f895f0b2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 15,
+            "width": 40,
+            "height": 34
+          },
+          "visiblePixels": 741,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/03.png",
+          "sourceSha256": "cfb680f4549e9c9b70d05584afc1bd153f64e86d3ce24dfac69e319b406565e0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 12,
+            "width": 41,
+            "height": 39
+          },
+          "visiblePixels": 747,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/04.png",
+          "sourceSha256": "843e29ce9b4e9bb3315dfe23c1203d28b6cc419afbd1b857503c92f70ac9ea75",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 19,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/stand-e5e50cbf-2817-482f-9395-5da854dfadbe.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/00.png",
+          "sha256": "1ecc8e7899d9d1998b467ebae907b45c72d2956ad5858ad6a8d8998fd2336c1d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/01.png",
+          "sourceSha256": "1ecc8e7899d9d1998b467ebae907b45c72d2956ad5858ad6a8d8998fd2336c1d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/01.png",
+          "sha256": "3cba1f0703364d1e6e68b0d348fbe4806e69821f23c2fe475bfdfe23f895f0b2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/02.png",
+          "sourceSha256": "3cba1f0703364d1e6e68b0d348fbe4806e69821f23c2fe475bfdfe23f895f0b2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/02.png",
+          "sha256": "cfb680f4549e9c9b70d05584afc1bd153f64e86d3ce24dfac69e319b406565e0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/03.png",
+          "sourceSha256": "cfb680f4549e9c9b70d05584afc1bd153f64e86d3ce24dfac69e319b406565e0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/03.png",
+          "sha256": "843e29ce9b4e9bb3315dfe23c1203d28b6cc419afbd1b857503c92f70ac9ea75",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/04.png",
+          "sourceSha256": "843e29ce9b4e9bb3315dfe23c1203d28b6cc419afbd1b857503c92f70ac9ea75",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 우향 호박빛 날개가 접히고 펼쳐지며 더듬이가 움직이는 실제 대기. 몸 전체가 밝게 번쩍이는 후보는 제외."
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "monster-a-lantern-moth-move-01",
+      "jobId": "db1d86dc-ec7b-4fdf-8db4-a985be58e386",
+      "balanceBefore": 589,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625402,
+        "action": "Facing right, continuous fluttering locomotion loop in place with strong hinged wing downstrokes and narrow upstrokes, abdomen tucks backward and body tilts slightly forward. No translation across the image. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "queueResponse": "id: db1d86dc-ec7b-4fdf-8db4-a985be58e386\njob_id: db1d86dc-ec7b-4fdf-8db4-a985be58e386\naction: Facing right, continuous fluttering locomotion loop in place with strong hinged wing downstrokes and narrow upstrokes, abdomen tucks backward and body tilts slightly forward. No translation across the image. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625402\nasset_id: f74085fb-3a5d-5ccb-8177-366edd49d262\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"db1d86dc-ec7b-4fdf-8db4-a985be58e386\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: db1d86dc-ec7b-4fdf-8db4-a985be58e386\njob_id: db1d86dc-ec7b-4fdf-8db4-a985be58e386\nframes: 9\ntransparent: yes\nasset_id: f74085fb-3a5d-5ccb-8177-366edd49d262\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+        "sha256": "6641d91a48f3fda706357c737cee7af0c4a2627d9811de8e2e6e1a665c750823",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 24,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/00.png",
+          "sourceSha256": "55b65f8ecf62115299bdcfe45a80e5a69d9ad35f50d5aeb66430b9f1c673d770",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/01.png",
+          "sourceSha256": "702ffbb13a1711b18a155a7bbec251224145e2e4fd462ae12a066eaf7fc13c3f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 11,
+            "width": 41,
+            "height": 39
+          },
+          "visiblePixels": 730,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/02.png",
+          "sourceSha256": "f530bad6cf9092ec892f2a9fdfb07a813a9ae16931ab37c1a11d8e07ccc78111",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 13,
+            "width": 42,
+            "height": 36
+          },
+          "visiblePixels": 709,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/03.png",
+          "sourceSha256": "4b2422f7598eaeb2a7b2f61d68725e625be6cff834cd44eb500ceb85f1d77b18",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 16,
+            "width": 44,
+            "height": 32
+          },
+          "visiblePixels": 674,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/04.png",
+          "sourceSha256": "9e9a1022334f71611367b125bd4985c60306a67fc17d7fac666e33cd706a81e4",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 17,
+            "width": 45,
+            "height": 29
+          },
+          "visiblePixels": 645,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/05.png",
+          "sourceSha256": "6359bd53c696733577c03bd4d3c2c6b7f69e5e4ac455604e39f9e6715bab3cb2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 17,
+            "width": 45,
+            "height": 30
+          },
+          "visiblePixels": 663,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/06.png",
+          "sourceSha256": "3d48f2d81090967963b82ce03111ea355d3d374e3a102389dc2c5476dbfa52ae",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 14,
+            "width": 43,
+            "height": 35
+          },
+          "visiblePixels": 716,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/07.png",
+          "sourceSha256": "90311bf6cea91bd1cae1f7760cf345c36c83202c2dc01aab3dde886b39e60c11",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 12,
+            "width": 41,
+            "height": 38
+          },
+          "visiblePixels": 732,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/08.png",
+          "sourceSha256": "267ce13bf85e84a098ba4fe97ee22bf32c44ef5420c4d5f9aaa919fb01027048",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 20,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/move-db1d86dc-ec7b-4fdf-8db4-a985be58e386.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/00.png",
+          "sha256": "702ffbb13a1711b18a155a7bbec251224145e2e4fd462ae12a066eaf7fc13c3f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/01.png",
+          "sourceSha256": "702ffbb13a1711b18a155a7bbec251224145e2e4fd462ae12a066eaf7fc13c3f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/01.png",
+          "sha256": "f530bad6cf9092ec892f2a9fdfb07a813a9ae16931ab37c1a11d8e07ccc78111",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/02.png",
+          "sourceSha256": "f530bad6cf9092ec892f2a9fdfb07a813a9ae16931ab37c1a11d8e07ccc78111",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/02.png",
+          "sha256": "4b2422f7598eaeb2a7b2f61d68725e625be6cff834cd44eb500ceb85f1d77b18",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/03.png",
+          "sourceSha256": "4b2422f7598eaeb2a7b2f61d68725e625be6cff834cd44eb500ceb85f1d77b18",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/03.png",
+          "sha256": "9e9a1022334f71611367b125bd4985c60306a67fc17d7fac666e33cd706a81e4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/04.png",
+          "sourceSha256": "9e9a1022334f71611367b125bd4985c60306a67fc17d7fac666e33cd706a81e4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/04.png",
+          "sha256": "6359bd53c696733577c03bd4d3c2c6b7f69e5e4ac455604e39f9e6715bab3cb2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/05.png",
+          "sourceSha256": "6359bd53c696733577c03bd4d3c2c6b7f69e5e4ac455604e39f9e6715bab3cb2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/05.png",
+          "sha256": "3d48f2d81090967963b82ce03111ea355d3d374e3a102389dc2c5476dbfa52ae",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/06.png",
+          "sourceSha256": "3d48f2d81090967963b82ce03111ea355d3d374e3a102389dc2c5476dbfa52ae",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/06.png",
+          "sha256": "90311bf6cea91bd1cae1f7760cf345c36c83202c2dc01aab3dde886b39e60c11",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/07.png",
+          "sourceSha256": "90311bf6cea91bd1cae1f7760cf345c36c83202c2dc01aab3dde886b39e60c11",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/07.png",
+          "sha256": "267ce13bf85e84a098ba4fe97ee22bf32c44ef5420c4d5f9aaa919fb01027048",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/08.png",
+          "sourceSha256": "267ce13bf85e84a098ba4fe97ee22bf32c44ef5420c4d5f9aaa919fb01027048",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 우향 날개가 넓게 펼쳐졌다 접히고 다리와 배가 함께 뒤로 당겨지는 실제 비행 루프."
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "monster-a-lantern-moth-attack1-01",
+      "jobId": "8e70858d-82c8-4326-ad64-d630ec109037",
+      "balanceBefore": 610,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625403,
+        "action": "Facing right, wings flare wide and antennae point forward to gather power, abdomen brightens, then wings sweep together and abdomen makes a short forward casting pulse toward right, recover to hover. No baked projectile or target. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "queueResponse": "id: 8e70858d-82c8-4326-ad64-d630ec109037\njob_id: 8e70858d-82c8-4326-ad64-d630ec109037\naction: Facing right, wings flare wide and antennae point forward to gather power, abdomen brightens, then wings sweep together and abdomen makes a short forward casting pulse toward right, recover to hover. No baked projectile or target. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625403\nasset_id: e8093ea2-39dd-58eb-9bb7-6d48af679ab9\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"8e70858d-82c8-4326-ad64-d630ec109037\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 8e70858d-82c8-4326-ad64-d630ec109037\njob_id: 8e70858d-82c8-4326-ad64-d630ec109037\nframes: 9\ntransparent: yes\nasset_id: e8093ea2-39dd-58eb-9bb7-6d48af679ab9\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+        "sha256": "6641d91a48f3fda706357c737cee7af0c4a2627d9811de8e2e6e1a665c750823",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 2,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/00.png",
+          "sourceSha256": "9bc7109a23751e4fe5dfa1d4fc37a825879306f2bb2c28329052c03bde70e814",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/01.png",
+          "sourceSha256": "4ca75501ba98008b6677bd4677a7c7e1f83281b35e87e3281998e69888683b8a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 13,
+            "width": 44,
+            "height": 39
+          },
+          "visiblePixels": 749,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/02.png",
+          "sourceSha256": "3b542cd0ff86cd97fce16340f45022eaf797673e607a65771ebce5575b462045",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 14,
+            "width": 50,
+            "height": 38
+          },
+          "visiblePixels": 777,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/03.png",
+          "sourceSha256": "6709b3df74bf5dcbcbea90b517b504f72fa3f5b3ee55a59f2971ec988e1d9ebb",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 13,
+            "width": 49,
+            "height": 37
+          },
+          "visiblePixels": 727,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/04.png",
+          "sourceSha256": "b8e73aecb7a294484c2885b40950d7c02685d251e6e9c8a367f612166deb7d68",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 23,
+            "y": 16,
+            "width": 34,
+            "height": 37
+          },
+          "visiblePixels": 687,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/05.png",
+          "sourceSha256": "8cb32274b472fce039e548e4722dd307f8a45f5cbd2520f7c562161fe5d75c6f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 15,
+            "width": 37,
+            "height": 36
+          },
+          "visiblePixels": 755,
+          "colors": 32,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/06.png",
+          "sourceSha256": "d8d83f9940921502decb0b0e437c21941df9c6f677cc28a38a9a66f6c1c2eb05",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 13,
+            "width": 52,
+            "height": 38
+          },
+          "visiblePixels": 787,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/07.png",
+          "sourceSha256": "157c535876cd90aa86f2d7f57284f8dbcf088a43601785f684ed73a1cae5b05b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 14,
+            "width": 42,
+            "height": 37
+          },
+          "visiblePixels": 754,
+          "colors": 32,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/08.png",
+          "sourceSha256": "0b6dc370d7a650ff271159ad0848be24d417f52efb7790bb4f16823ddb42adf3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 19,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/attack1-8e70858d-82c8-4326-ad64-d630ec109037.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/8e70858d-82c8-4326-ad64-d630ec109037/00.png",
+          "sha256": "4ca75501ba98008b6677bd4677a7c7e1f83281b35e87e3281998e69888683b8a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/01.png",
+          "sourceSha256": "4ca75501ba98008b6677bd4677a7c7e1f83281b35e87e3281998e69888683b8a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/8e70858d-82c8-4326-ad64-d630ec109037/01.png",
+          "sha256": "3b542cd0ff86cd97fce16340f45022eaf797673e607a65771ebce5575b462045",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/02.png",
+          "sourceSha256": "3b542cd0ff86cd97fce16340f45022eaf797673e607a65771ebce5575b462045",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/8e70858d-82c8-4326-ad64-d630ec109037/02.png",
+          "sha256": "6709b3df74bf5dcbcbea90b517b504f72fa3f5b3ee55a59f2971ec988e1d9ebb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/03.png",
+          "sourceSha256": "6709b3df74bf5dcbcbea90b517b504f72fa3f5b3ee55a59f2971ec988e1d9ebb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/8e70858d-82c8-4326-ad64-d630ec109037/03.png",
+          "sha256": "b8e73aecb7a294484c2885b40950d7c02685d251e6e9c8a367f612166deb7d68",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/04.png",
+          "sourceSha256": "b8e73aecb7a294484c2885b40950d7c02685d251e6e9c8a367f612166deb7d68",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/8e70858d-82c8-4326-ad64-d630ec109037/04.png",
+          "sha256": "8cb32274b472fce039e548e4722dd307f8a45f5cbd2520f7c562161fe5d75c6f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/05.png",
+          "sourceSha256": "8cb32274b472fce039e548e4722dd307f8a45f5cbd2520f7c562161fe5d75c6f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/8e70858d-82c8-4326-ad64-d630ec109037/05.png",
+          "sha256": "d8d83f9940921502decb0b0e437c21941df9c6f677cc28a38a9a66f6c1c2eb05",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/06.png",
+          "sourceSha256": "d8d83f9940921502decb0b0e437c21941df9c6f677cc28a38a9a66f6c1c2eb05",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/8e70858d-82c8-4326-ad64-d630ec109037/06.png",
+          "sha256": "157c535876cd90aa86f2d7f57284f8dbcf088a43601785f684ed73a1cae5b05b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/07.png",
+          "sourceSha256": "157c535876cd90aa86f2d7f57284f8dbcf088a43601785f684ed73a1cae5b05b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/8e70858d-82c8-4326-ad64-d630ec109037/07.png",
+          "sha256": "0b6dc370d7a650ff271159ad0848be24d417f52efb7790bb4f16823ddb42adf3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/8e70858d-82c8-4326-ad64-d630ec109037/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/8e70858d-82c8-4326-ad64-d630ec109037/08.png",
+          "sourceSha256": "0b6dc370d7a650ff271159ad0848be24d417f52efb7790bb4f16823ddb42adf3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "rejected: excessive bright wing flash and large body turn; native right-facing must remain stable"
+    },
+    {
+      "motion": "attack1",
+      "attempt": 2,
+      "key": "monster-a-lantern-moth-attack1-02",
+      "jobId": "c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca",
+      "balanceBefore": 619,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626403,
+        "action": "Facing right for the entire motion, keep the head and dark plum torso aimed at the right edge without any body roll or turn. Spread both AMBER wings widely, tuck the legs and draw the abdomen inward to prepare, then move the abdomen and antennae forward slightly in one deliberate casting pulse toward the right, reopen wings into the exact original hover. Amber wings and dark body keep their colors under fixed lighting, only subtle normal shading changes. NO spin, NO roll, NO white wing flash, NO glow, NO trail, NO particles, NO projectile. Only articulated creature body motion. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "queueResponse": "id: c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca\njob_id: c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca\naction: Facing right for the entire motion, keep the head and dark plum torso aimed at the right edge without any body roll or turn. Spread both AMBER wings widely, tuck the legs and draw the abdomen inward to prepare, then move the abdomen and antennae forward slightly in one deliberate casting pulse toward the right, reopen wings into the exact original hover. Amber wings and dark body keep their colors under fixed lighting, only subtle normal shading changes. NO spin, NO roll, NO white wing flash, NO glow, NO trail, NO particles, NO projectile. Only articulated creature body motion. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626403\nasset_id: 6bcf956c-dab8-522f-bef9-6e92aa78ef57\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca\njob_id: c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca\nframes: 9\ntransparent: yes\nasset_id: 6bcf956c-dab8-522f-bef9-6e92aa78ef57\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+        "sha256": "6641d91a48f3fda706357c737cee7af0c4a2627d9811de8e2e6e1a665c750823",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 8,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/00.png",
+          "sourceSha256": "317bbd35f0826c68436f748bfd9fb8d07cd48f39474d97cdc6e92793b7b6522f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/01.png",
+          "sourceSha256": "1d9ff5fb9f0fbb5e6d1dbc95bfbcd9039e7679f52aeb215b9e6c4705023590a9",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 12,
+            "width": 44,
+            "height": 41
+          },
+          "visiblePixels": 732,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/02.png",
+          "sourceSha256": "c5c6561efd2df2fa3d7ff56294553d6d5afd703e7fba92d49219f4dfc3f9d620",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 12,
+            "width": 45,
+            "height": 41
+          },
+          "visiblePixels": 705,
+          "colors": 22,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/03.png",
+          "sourceSha256": "e43588e7abb3c754ed9cb82e2645f1b56c4f08bab6f198d3a6512406c485c635",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 13,
+            "width": 45,
+            "height": 38
+          },
+          "visiblePixels": 700,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/04.png",
+          "sourceSha256": "27c81eae995025e84d77a2e539d8b69a88f82cbb1437949344779faeb1623c17",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 15,
+            "width": 45,
+            "height": 35
+          },
+          "visiblePixels": 687,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/05.png",
+          "sourceSha256": "89c72109fe46972d7c3aa05097c2490a01f42b1ad267a82a95b4ec21f4110702",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 14,
+            "width": 46,
+            "height": 37
+          },
+          "visiblePixels": 704,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/06.png",
+          "sourceSha256": "4f1a9094cbb736a437869167dfab511c7d387c20acaeaf9e0c113058174f9c89",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 11,
+            "width": 46,
+            "height": 42
+          },
+          "visiblePixels": 712,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/07.png",
+          "sourceSha256": "73979ece668d44989da90a5f44ee6e75aa850f3c594a7c1bf1df6b489372d24b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 14,
+            "width": 44,
+            "height": 39
+          },
+          "visiblePixels": 730,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/08.png",
+          "sourceSha256": "24b6ca1209a94a9e4a91ad84b4cf65aec9082073734456e9e5b1a806c12798f0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 19,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/attack1-c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/00.png",
+          "sha256": "1d9ff5fb9f0fbb5e6d1dbc95bfbcd9039e7679f52aeb215b9e6c4705023590a9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/01.png",
+          "sourceSha256": "1d9ff5fb9f0fbb5e6d1dbc95bfbcd9039e7679f52aeb215b9e6c4705023590a9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/01.png",
+          "sha256": "c5c6561efd2df2fa3d7ff56294553d6d5afd703e7fba92d49219f4dfc3f9d620",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/02.png",
+          "sourceSha256": "c5c6561efd2df2fa3d7ff56294553d6d5afd703e7fba92d49219f4dfc3f9d620",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/02.png",
+          "sha256": "e43588e7abb3c754ed9cb82e2645f1b56c4f08bab6f198d3a6512406c485c635",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/03.png",
+          "sourceSha256": "e43588e7abb3c754ed9cb82e2645f1b56c4f08bab6f198d3a6512406c485c635",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/03.png",
+          "sha256": "27c81eae995025e84d77a2e539d8b69a88f82cbb1437949344779faeb1623c17",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/04.png",
+          "sourceSha256": "27c81eae995025e84d77a2e539d8b69a88f82cbb1437949344779faeb1623c17",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/04.png",
+          "sha256": "89c72109fe46972d7c3aa05097c2490a01f42b1ad267a82a95b4ec21f4110702",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/05.png",
+          "sourceSha256": "89c72109fe46972d7c3aa05097c2490a01f42b1ad267a82a95b4ec21f4110702",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/05.png",
+          "sha256": "4f1a9094cbb736a437869167dfab511c7d387c20acaeaf9e0c113058174f9c89",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/06.png",
+          "sourceSha256": "4f1a9094cbb736a437869167dfab511c7d387c20acaeaf9e0c113058174f9c89",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/06.png",
+          "sha256": "73979ece668d44989da90a5f44ee6e75aa850f3c594a7c1bf1df6b489372d24b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/07.png",
+          "sourceSha256": "73979ece668d44989da90a5f44ee6e75aa850f3c594a7c1bf1df6b489372d24b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/07.png",
+          "sha256": "24b6ca1209a94a9e4a91ad84b4cf65aec9082073734456e9e5b1a806c12798f0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/08.png",
+          "sourceSha256": "24b6ca1209a94a9e4a91ad84b4cf65aec9082073734456e9e5b1a806c12798f0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 우향 몸의 큰 회전과 색 번쩍임 없이 날개를 벌리고 배와 더듬이를 앞으로 내미는 시전. 3번의 전방으로 기울인 펄스를 방출로 선택.",
+      "contactFrameIndex": 3,
+      "contactProgress": 0.43749999999999994,
+      "contactReason": "우향 몸의 큰 회전과 색 번쩍임 없이 날개를 벌리고 배와 더듬이를 앞으로 내미는 시전. 3번의 전방으로 기울인 펄스를 방출로 선택."
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "monster-a-lantern-moth-hit1-01",
+      "jobId": "a11321ec-b244-4cc1-8579-11122d432b4a",
+      "balanceBefore": 633,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625404,
+        "action": "Facing right, antennae recoil and one wing folds across the body defensively, abdomen light dims and head flinches, reopen the wings and return to hover. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "queueResponse": "id: a11321ec-b244-4cc1-8579-11122d432b4a\njob_id: a11321ec-b244-4cc1-8579-11122d432b4a\naction: Facing right, antennae recoil and one wing folds across the body defensively, abdomen light dims and head flinches, reopen the wings and return to hover. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625404\nasset_id: baa04a85-3d59-5b8d-ad73-8fee7b7adca3\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"a11321ec-b244-4cc1-8579-11122d432b4a\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: a11321ec-b244-4cc1-8579-11122d432b4a\njob_id: a11321ec-b244-4cc1-8579-11122d432b4a\nframes: 5\ntransparent: yes\nasset_id: baa04a85-3d59-5b8d-ad73-8fee7b7adca3\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+        "sha256": "6641d91a48f3fda706357c737cee7af0c4a2627d9811de8e2e6e1a665c750823",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 0,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/00.png",
+          "sourceSha256": "ceb4d61d6d411d51fbc1316a33b870acf5b8002b5ee78232a99eae5cf50a7ef6",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/01.png",
+          "sourceSha256": "9b62c03fa8afbbc3469c3b9750bf0a0bd9e144515668b0832b996cc5267fc3e7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 14,
+            "width": 40,
+            "height": 36
+          },
+          "visiblePixels": 726,
+          "colors": 34,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/02.png",
+          "sourceSha256": "5ab318e375f6e7ab9a2d510177d11ac46020251238df160a4e348e07352d6aa2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 16,
+            "width": 40,
+            "height": 32
+          },
+          "visiblePixels": 705,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/03.png",
+          "sourceSha256": "37ef3b5b2d7141df0c5e471cb3d9d822bcb8863d155321e42ac2bc65c8d983ad",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 13,
+            "width": 40,
+            "height": 37
+          },
+          "visiblePixels": 739,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/04.png",
+          "sourceSha256": "e28b7cf3fd0d71329464ddc3989f465bf756515bce3ff11859dbab020ccdbfec",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 20,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/hit1-a11321ec-b244-4cc1-8579-11122d432b4a.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/00.png",
+          "sha256": "9b62c03fa8afbbc3469c3b9750bf0a0bd9e144515668b0832b996cc5267fc3e7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/01.png",
+          "sourceSha256": "9b62c03fa8afbbc3469c3b9750bf0a0bd9e144515668b0832b996cc5267fc3e7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/01.png",
+          "sha256": "5ab318e375f6e7ab9a2d510177d11ac46020251238df160a4e348e07352d6aa2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/02.png",
+          "sourceSha256": "5ab318e375f6e7ab9a2d510177d11ac46020251238df160a4e348e07352d6aa2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/02.png",
+          "sha256": "37ef3b5b2d7141df0c5e471cb3d9d822bcb8863d155321e42ac2bc65c8d983ad",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/03.png",
+          "sourceSha256": "37ef3b5b2d7141df0c5e471cb3d9d822bcb8863d155321e42ac2bc65c8d983ad",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/03.png",
+          "sha256": "e28b7cf3fd0d71329464ddc3989f465bf756515bce3ff11859dbab020ccdbfec",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/04.png",
+          "sourceSha256": "e28b7cf3fd0d71329464ddc3989f465bf756515bce3ff11859dbab020ccdbfec",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 우향 날개와 다리를 접으며 몸이 움츠리고 잠깐 붉어졌다 원래 어두운 몸색으로 복귀하는 실제 피격."
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "monster-a-lantern-moth-die1-01",
+      "jobId": "25ad32de-26e3-4778-bcf3-5aa119513cd0",
+      "balanceBefore": 644,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625405,
+        "action": "Facing right, light dims, wingbeats stop and both wings fold loosely, body descends and rests on its side with antennae down, finish motionless and opaque, no disappearance. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes."
+      },
+      "queueResponse": "id: 25ad32de-26e3-4778-bcf3-5aa119513cd0\njob_id: 25ad32de-26e3-4778-bcf3-5aa119513cd0\naction: Facing right, light dims, wingbeats stop and both wings fold loosely, body descends and rests on its side with antennae down, finish motionless and opaque, no disappearance. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 625405\nasset_id: c9abd313-407b-54d9-9265-299e9280c398\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"25ad32de-26e3-4778-bcf3-5aa119513cd0\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 25ad32de-26e3-4778-bcf3-5aa119513cd0\njob_id: 25ad32de-26e3-4778-bcf3-5aa119513cd0\nframes: 9\ntransparent: yes\nasset_id: c9abd313-407b-54d9-9265-299e9280c398\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+        "sha256": "6641d91a48f3fda706357c737cee7af0c4a2627d9811de8e2e6e1a665c750823",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 59,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/00.png",
+          "sourceSha256": "064ab04388b1eca45c2b94a25a5057e0d2c4ada81c3a2a9143333a042402f106",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 749,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/01.png",
+          "sourceSha256": "2fe1149c04b05425238da41eff7b7915d7c9cafb5ebb25ead46c6248138fbefe",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 740,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/02.png",
+          "sourceSha256": "6cf50c17d8bcaf521a566b9709e1314734d4b10b66e809c57edbf784df383b4b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 10,
+            "width": 42,
+            "height": 41
+          },
+          "visiblePixels": 742,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/03.png",
+          "sourceSha256": "e82b5ef33599568b911b28c7618da9b4dc2be97d0b29ac3cabb746405ccd46a4",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 10,
+            "width": 44,
+            "height": 40
+          },
+          "visiblePixels": 739,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/04.png",
+          "sourceSha256": "84366d70b8287e217e63816dbc46ee4b4af566f15822580987fc3d4165bc9bf8",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 11,
+            "width": 44,
+            "height": 38
+          },
+          "visiblePixels": 730,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/05.png",
+          "sourceSha256": "063cca902722dd3ce529e61deda24d77f4b3731015b9c612b9dc73ea085a158e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 14,
+            "width": 44,
+            "height": 36
+          },
+          "visiblePixels": 707,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/06.png",
+          "sourceSha256": "de558894e8b79c08242193ff61dd8e487ee7e220d01b359cca0507fd0ab21d49",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 20,
+            "width": 43,
+            "height": 32
+          },
+          "visiblePixels": 636,
+          "colors": 12,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/07.png",
+          "sourceSha256": "505dfdad66f9b98e3cfdcaebbb17b28f36aca3f4d686945e4cbbb63f9ee4de72",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 24,
+            "width": 42,
+            "height": 28
+          },
+          "visiblePixels": 585,
+          "colors": 12,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/08.png",
+          "sourceSha256": "ac4d6f3f15a7a911fd2a74736dbfffb5157f6d09a2d87cf79c8c54ab4761f146",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 24,
+            "width": 41,
+            "height": 28
+          },
+          "visiblePixels": 571,
+          "colors": 11,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/die1-25ad32de-26e3-4778-bcf3-5aa119513cd0.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/00.png",
+          "sha256": "2fe1149c04b05425238da41eff7b7915d7c9cafb5ebb25ead46c6248138fbefe",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/01.png",
+          "sourceSha256": "2fe1149c04b05425238da41eff7b7915d7c9cafb5ebb25ead46c6248138fbefe",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/01.png",
+          "sha256": "6cf50c17d8bcaf521a566b9709e1314734d4b10b66e809c57edbf784df383b4b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/02.png",
+          "sourceSha256": "6cf50c17d8bcaf521a566b9709e1314734d4b10b66e809c57edbf784df383b4b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/02.png",
+          "sha256": "e82b5ef33599568b911b28c7618da9b4dc2be97d0b29ac3cabb746405ccd46a4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/03.png",
+          "sourceSha256": "e82b5ef33599568b911b28c7618da9b4dc2be97d0b29ac3cabb746405ccd46a4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/03.png",
+          "sha256": "84366d70b8287e217e63816dbc46ee4b4af566f15822580987fc3d4165bc9bf8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/04.png",
+          "sourceSha256": "84366d70b8287e217e63816dbc46ee4b4af566f15822580987fc3d4165bc9bf8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/04.png",
+          "sha256": "063cca902722dd3ce529e61deda24d77f4b3731015b9c612b9dc73ea085a158e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/05.png",
+          "sourceSha256": "063cca902722dd3ce529e61deda24d77f4b3731015b9c612b9dc73ea085a158e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/05.png",
+          "sha256": "de558894e8b79c08242193ff61dd8e487ee7e220d01b359cca0507fd0ab21d49",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/06.png",
+          "sourceSha256": "de558894e8b79c08242193ff61dd8e487ee7e220d01b359cca0507fd0ab21d49",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/06.png",
+          "sha256": "505dfdad66f9b98e3cfdcaebbb17b28f36aca3f4d686945e4cbbb63f9ee4de72",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/07.png",
+          "sourceSha256": "505dfdad66f9b98e3cfdcaebbb17b28f36aca3f4d686945e4cbbb63f9ee4de72",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/07.png",
+          "sha256": "ac4d6f3f15a7a911fd2a74736dbfffb5157f6d09a2d87cf79c8c54ab4761f146",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/25ad32de-26e3-4778-bcf3-5aa119513cd0/08.png",
+          "sourceSha256": "ac4d6f3f15a7a911fd2a74736dbfffb5157f6d09a2d87cf79c8c54ab4761f146",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "pending actual motion / anatomy / ground review"
+    },
+    {
+      "motion": "die1",
+      "attempt": 2,
+      "key": "monster-a-lantern-moth-die1-02",
+      "jobId": "05c1e3f4-47d8-49a2-bac6-788164994d44",
+      "balanceBefore": 673,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626405,
+        "action": "Facing right, wingbeats weaken and stop, fold both amber wings over the dark body, drop vertically to the ground and finish in the supplied flat collapsed end pose at canvas row 59. Antennae and legs droop. Stay motionless in the end pose, do not revive. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/b9b85f31-4a9f-475b-85e0-6beb39972fe1/assets/native/full.png"
+      },
+      "queueResponse": "id: 05c1e3f4-47d8-49a2-bac6-788164994d44\njob_id: 05c1e3f4-47d8-49a2-bac6-788164994d44\naction: Facing right, wingbeats weaken and stop, fold both amber wings over the dark body, drop vertically to the ground and finish in the supplied flat collapsed end pose at canvas row 59. Antennae and legs droop. Stay motionless in the end pose, do not revive. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626405\nasset_id: 46471e4c-d9e9-53da-898f-adb203fab646\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"05c1e3f4-47d8-49a2-bac6-788164994d44\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 05c1e3f4-47d8-49a2-bac6-788164994d44\njob_id: 05c1e3f4-47d8-49a2-bac6-788164994d44\nframes: 9\ntransparent: yes\nasset_id: 46471e4c-d9e9-53da-898f-adb203fab646\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+        "sha256": "6641d91a48f3fda706357c737cee7af0c4a2627d9811de8e2e6e1a665c750823",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 57,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/00.png",
+          "sourceSha256": "c5e6d06d7461cc6aeeadeac49ccadd321584b1f07ad25862b0670a7e641f8bb6",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 10,
+            "width": 39,
+            "height": 42
+          },
+          "visiblePixels": 750,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/01.png",
+          "sourceSha256": "c85e30d13f1f2223e391dee05a40c8d3f3aa3b476cae0be2bdfe766c871fe3e0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 8,
+            "width": 41,
+            "height": 44
+          },
+          "visiblePixels": 773,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/02.png",
+          "sourceSha256": "ee826179022a4a52a73b728691300053562cca99ccccd5fe36b28d63bcc45d35",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 5,
+            "width": 44,
+            "height": 46
+          },
+          "visiblePixels": 823,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/03.png",
+          "sourceSha256": "159602290fa8ec093705c16a28a40ed8f949a70cccfc0baec2d0a3584cee479a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 6,
+            "width": 45,
+            "height": 46
+          },
+          "visiblePixels": 823,
+          "colors": 22,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/04.png",
+          "sourceSha256": "dee5efe5281f2db3ac0e1b12b329cc347d82156d982e60050057d8cccb452017",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 11,
+            "width": 39,
+            "height": 45
+          },
+          "visiblePixels": 767,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/05.png",
+          "sourceSha256": "8c98f06f45bbe43c1aff622a04b49fbb1312b2a406cbfd699e8e03ef2233e5eb",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 15,
+            "y": 13,
+            "width": 38,
+            "height": 43
+          },
+          "visiblePixels": 762,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/06.png",
+          "sourceSha256": "2e016124281f4e2477016e659b66f3cd324aa9eb929e6069542096a5f46a5506",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 17,
+            "y": 16,
+            "width": 37,
+            "height": 41
+          },
+          "visiblePixels": 736,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/07.png",
+          "sourceSha256": "5e3b6be8e609db5f18719fe7fe73251abcfd77dafc0fadb88a5c3d7805a2a9b3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 27,
+            "width": 41,
+            "height": 32
+          },
+          "visiblePixels": 624,
+          "colors": 15,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/08.png",
+          "sourceSha256": "864d19dc0c4055d1a4a5bff85c1388dd1559495175745482f70541843788b41a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 32,
+            "width": 41,
+            "height": 28
+          },
+          "visiblePixels": 571,
+          "colors": 11,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/die1-05c1e3f4-47d8-49a2-bac6-788164994d44.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/00.png",
+          "sha256": "c85e30d13f1f2223e391dee05a40c8d3f3aa3b476cae0be2bdfe766c871fe3e0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/01.png",
+          "sourceSha256": "c85e30d13f1f2223e391dee05a40c8d3f3aa3b476cae0be2bdfe766c871fe3e0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/01.png",
+          "sha256": "ee826179022a4a52a73b728691300053562cca99ccccd5fe36b28d63bcc45d35",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/02.png",
+          "sourceSha256": "ee826179022a4a52a73b728691300053562cca99ccccd5fe36b28d63bcc45d35",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/02.png",
+          "sha256": "159602290fa8ec093705c16a28a40ed8f949a70cccfc0baec2d0a3584cee479a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/03.png",
+          "sourceSha256": "159602290fa8ec093705c16a28a40ed8f949a70cccfc0baec2d0a3584cee479a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/03.png",
+          "sha256": "dee5efe5281f2db3ac0e1b12b329cc347d82156d982e60050057d8cccb452017",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/04.png",
+          "sourceSha256": "dee5efe5281f2db3ac0e1b12b329cc347d82156d982e60050057d8cccb452017",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/04.png",
+          "sha256": "8c98f06f45bbe43c1aff622a04b49fbb1312b2a406cbfd699e8e03ef2233e5eb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/05.png",
+          "sourceSha256": "8c98f06f45bbe43c1aff622a04b49fbb1312b2a406cbfd699e8e03ef2233e5eb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/05.png",
+          "sha256": "2e016124281f4e2477016e659b66f3cd324aa9eb929e6069542096a5f46a5506",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/06.png",
+          "sourceSha256": "2e016124281f4e2477016e659b66f3cd324aa9eb929e6069542096a5f46a5506",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/06.png",
+          "sha256": "5e3b6be8e609db5f18719fe7fe73251abcfd77dafc0fadb88a5c3d7805a2a9b3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/07.png",
+          "sourceSha256": "5e3b6be8e609db5f18719fe7fe73251abcfd77dafc0fadb88a5c3d7805a2a9b3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/07.png",
+          "sha256": "864d19dc0c4055d1a4a5bff85c1388dd1559495175745482f70541843788b41a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/08.png",
+          "sourceSha256": "864d19dc0c4055d1a4a5bff85c1388dd1559495175745482f70541843788b41a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 우향 날개를 접고 실제로 내려앉아 바닥에 닿는 어두운 몸의 끝자세를 유지하는 단발 KO."
+    }
+  ],
+  "nativeFacing": "right",
+  "selectedOriginal": {
+    "motion": "original",
+    "attempt": 1,
+    "key": "monster-a-lantern-moth-original-01",
+    "jobId": "0825bdd3-c4a4-4daf-91d8-87d7b01d7755",
+    "balanceBefore": 508,
+    "maximumReservedGenerations": 1,
+    "args": {
+      "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Amber-winged nocturnal moth with lantern-pattern eye spots, dark furry antennae and a pale luminous abdomen. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "direction": "west",
+      "view": "low top-down",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "detail": "medium detail",
+      "seed": 614005,
+      "text_guidance_scale": 8
+    },
+    "queueResponse": "id: 0825bdd3-c4a4-4daf-91d8-87d7b01d7755\njob_id: 0825bdd3-c4a4-4daf-91d8-87d7b01d7755\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Amber-winged nocturnal moth with lantern-pattern eye spots, dark furry antennae and a pale luminous abdomen. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: ed306740-e9f0-5e76-9b49-a764c0c9d611\nasset_status: pending (saved when generation completes)\nseed: 614005\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"0825bdd3-c4a4-4daf-91d8-87d7b01d7755\")",
+    "status": "completed",
+    "latestResponse": "status: completed\nid: 0825bdd3-c4a4-4daf-91d8-87d7b01d7755\njob_id: 0825bdd3-c4a4-4daf-91d8-87d7b01d7755\nframes: 1\ntransparent: yes\nasset_id: ed306740-e9f0-5e76-9b49-a764c0c9d611\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/0825bdd3-c4a4-4daf-91d8-87d7b01d7755/download",
+    "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+    "sha256": "6641d91a48f3fda706357c737cee7af0c4a2627d9811de8e2e6e1a665c750823",
+    "byteSize": 1688,
+    "width": 64,
+    "height": 64,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "visibleBounds": {
+      "x": 13,
+      "y": 10,
+      "width": 39,
+      "height": 42
+    },
+    "visiblePixels": 749,
+    "paletteSize": 19,
+    "chargedGenerations": 1,
+    "nativeFacing": "right",
+    "selection": "accepted after silhouette / anatomy / native alpha review"
+  },
+  "anchor": {
+    "x": 32,
+    "y": 60
+  },
+  "animations": {
+    "stand": {
+      "label": "대기",
+      "loop": true,
+      "jobId": "e5e50cbf-2817-482f-9395-5da854dfadbe",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/00.png",
+          "sha256": "1ecc8e7899d9d1998b467ebae907b45c72d2956ad5858ad6a8d8998fd2336c1d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/01.png",
+          "sourceSha256": "1ecc8e7899d9d1998b467ebae907b45c72d2956ad5858ad6a8d8998fd2336c1d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/01.png",
+          "sha256": "3cba1f0703364d1e6e68b0d348fbe4806e69821f23c2fe475bfdfe23f895f0b2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/02.png",
+          "sourceSha256": "3cba1f0703364d1e6e68b0d348fbe4806e69821f23c2fe475bfdfe23f895f0b2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/02.png",
+          "sha256": "cfb680f4549e9c9b70d05584afc1bd153f64e86d3ce24dfac69e319b406565e0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/03.png",
+          "sourceSha256": "cfb680f4549e9c9b70d05584afc1bd153f64e86d3ce24dfac69e319b406565e0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/03.png",
+          "sha256": "843e29ce9b4e9bb3315dfe23c1203d28b6cc419afbd1b857503c92f70ac9ea75",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e5e50cbf-2817-482f-9395-5da854dfadbe/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/stand/e5e50cbf-2817-482f-9395-5da854dfadbe/04.png",
+          "sourceSha256": "843e29ce9b4e9bb3315dfe23c1203d28b6cc419afbd1b857503c92f70ac9ea75",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "우향 호박빛 날개가 접히고 펼쳐지며 더듬이가 움직이는 실제 대기. 몸 전체가 밝게 번쩍이는 후보는 제외.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/stand-e5e50cbf-2817-482f-9395-5da854dfadbe.png"
+    },
+    "move": {
+      "label": "이동",
+      "loop": true,
+      "jobId": "db1d86dc-ec7b-4fdf-8db4-a985be58e386",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/00.png",
+          "sha256": "702ffbb13a1711b18a155a7bbec251224145e2e4fd462ae12a066eaf7fc13c3f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/01.png",
+          "sourceSha256": "702ffbb13a1711b18a155a7bbec251224145e2e4fd462ae12a066eaf7fc13c3f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/01.png",
+          "sha256": "f530bad6cf9092ec892f2a9fdfb07a813a9ae16931ab37c1a11d8e07ccc78111",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/02.png",
+          "sourceSha256": "f530bad6cf9092ec892f2a9fdfb07a813a9ae16931ab37c1a11d8e07ccc78111",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/02.png",
+          "sha256": "4b2422f7598eaeb2a7b2f61d68725e625be6cff834cd44eb500ceb85f1d77b18",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/03.png",
+          "sourceSha256": "4b2422f7598eaeb2a7b2f61d68725e625be6cff834cd44eb500ceb85f1d77b18",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/03.png",
+          "sha256": "9e9a1022334f71611367b125bd4985c60306a67fc17d7fac666e33cd706a81e4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/04.png",
+          "sourceSha256": "9e9a1022334f71611367b125bd4985c60306a67fc17d7fac666e33cd706a81e4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/04.png",
+          "sha256": "6359bd53c696733577c03bd4d3c2c6b7f69e5e4ac455604e39f9e6715bab3cb2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/05.png",
+          "sourceSha256": "6359bd53c696733577c03bd4d3c2c6b7f69e5e4ac455604e39f9e6715bab3cb2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/05.png",
+          "sha256": "3d48f2d81090967963b82ce03111ea355d3d374e3a102389dc2c5476dbfa52ae",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/06.png",
+          "sourceSha256": "3d48f2d81090967963b82ce03111ea355d3d374e3a102389dc2c5476dbfa52ae",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/06.png",
+          "sha256": "90311bf6cea91bd1cae1f7760cf345c36c83202c2dc01aab3dde886b39e60c11",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/07.png",
+          "sourceSha256": "90311bf6cea91bd1cae1f7760cf345c36c83202c2dc01aab3dde886b39e60c11",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/07.png",
+          "sha256": "267ce13bf85e84a098ba4fe97ee22bf32c44ef5420c4d5f9aaa919fb01027048",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/db1d86dc-ec7b-4fdf-8db4-a985be58e386/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/move/db1d86dc-ec7b-4fdf-8db4-a985be58e386/08.png",
+          "sourceSha256": "267ce13bf85e84a098ba4fe97ee22bf32c44ef5420c4d5f9aaa919fb01027048",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "우향 날개가 넓게 펼쳐졌다 접히고 다리와 배가 함께 뒤로 당겨지는 실제 비행 루프.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/move-db1d86dc-ec7b-4fdf-8db4-a985be58e386.png"
+    },
+    "attack1": {
+      "label": "공격",
+      "loop": false,
+      "jobId": "c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/00.png",
+          "sha256": "1d9ff5fb9f0fbb5e6d1dbc95bfbcd9039e7679f52aeb215b9e6c4705023590a9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/01.png",
+          "sourceSha256": "1d9ff5fb9f0fbb5e6d1dbc95bfbcd9039e7679f52aeb215b9e6c4705023590a9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/01.png",
+          "sha256": "c5c6561efd2df2fa3d7ff56294553d6d5afd703e7fba92d49219f4dfc3f9d620",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/02.png",
+          "sourceSha256": "c5c6561efd2df2fa3d7ff56294553d6d5afd703e7fba92d49219f4dfc3f9d620",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/02.png",
+          "sha256": "e43588e7abb3c754ed9cb82e2645f1b56c4f08bab6f198d3a6512406c485c635",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/03.png",
+          "sourceSha256": "e43588e7abb3c754ed9cb82e2645f1b56c4f08bab6f198d3a6512406c485c635",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/03.png",
+          "sha256": "27c81eae995025e84d77a2e539d8b69a88f82cbb1437949344779faeb1623c17",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/04.png",
+          "sourceSha256": "27c81eae995025e84d77a2e539d8b69a88f82cbb1437949344779faeb1623c17",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/04.png",
+          "sha256": "89c72109fe46972d7c3aa05097c2490a01f42b1ad267a82a95b4ec21f4110702",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/05.png",
+          "sourceSha256": "89c72109fe46972d7c3aa05097c2490a01f42b1ad267a82a95b4ec21f4110702",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/05.png",
+          "sha256": "4f1a9094cbb736a437869167dfab511c7d387c20acaeaf9e0c113058174f9c89",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/06.png",
+          "sourceSha256": "4f1a9094cbb736a437869167dfab511c7d387c20acaeaf9e0c113058174f9c89",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/06.png",
+          "sha256": "73979ece668d44989da90a5f44ee6e75aa850f3c594a7c1bf1df6b489372d24b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/07.png",
+          "sourceSha256": "73979ece668d44989da90a5f44ee6e75aa850f3c594a7c1bf1df6b489372d24b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/07.png",
+          "sha256": "24b6ca1209a94a9e4a91ad84b4cf65aec9082073734456e9e5b1a806c12798f0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/attack1/c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca/08.png",
+          "sourceSha256": "24b6ca1209a94a9e4a91ad84b4cf65aec9082073734456e9e5b1a806c12798f0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "우향 몸의 큰 회전과 색 번쩍임 없이 날개를 벌리고 배와 더듬이를 앞으로 내미는 시전. 3번의 전방으로 기울인 펄스를 방출로 선택.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/attack1-c1e27c4e-4d6b-4fcc-adc9-84be8904d9ca.png",
+      "contactFrameIndex": 3,
+      "contactProgress": 0.43749999999999994
+    },
+    "hit1": {
+      "label": "피격",
+      "loop": false,
+      "jobId": "a11321ec-b244-4cc1-8579-11122d432b4a",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/00.png",
+          "sha256": "9b62c03fa8afbbc3469c3b9750bf0a0bd9e144515668b0832b996cc5267fc3e7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/01.png",
+          "sourceSha256": "9b62c03fa8afbbc3469c3b9750bf0a0bd9e144515668b0832b996cc5267fc3e7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/01.png",
+          "sha256": "5ab318e375f6e7ab9a2d510177d11ac46020251238df160a4e348e07352d6aa2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/02.png",
+          "sourceSha256": "5ab318e375f6e7ab9a2d510177d11ac46020251238df160a4e348e07352d6aa2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/02.png",
+          "sha256": "37ef3b5b2d7141df0c5e471cb3d9d822bcb8863d155321e42ac2bc65c8d983ad",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/03.png",
+          "sourceSha256": "37ef3b5b2d7141df0c5e471cb3d9d822bcb8863d155321e42ac2bc65c8d983ad",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/03.png",
+          "sha256": "e28b7cf3fd0d71329464ddc3989f465bf756515bce3ff11859dbab020ccdbfec",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/a11321ec-b244-4cc1-8579-11122d432b4a/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/hit1/a11321ec-b244-4cc1-8579-11122d432b4a/04.png",
+          "sourceSha256": "e28b7cf3fd0d71329464ddc3989f465bf756515bce3ff11859dbab020ccdbfec",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "우향 날개와 다리를 접으며 몸이 움츠리고 잠깐 붉어졌다 원래 어두운 몸색으로 복귀하는 실제 피격.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/hit1-a11321ec-b244-4cc1-8579-11122d432b4a.png"
+    },
+    "die1": {
+      "label": "쓰러짐",
+      "loop": false,
+      "jobId": "05c1e3f4-47d8-49a2-bac6-788164994d44",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/00.png",
+          "sha256": "c85e30d13f1f2223e391dee05a40c8d3f3aa3b476cae0be2bdfe766c871fe3e0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/01.png",
+          "sourceSha256": "c85e30d13f1f2223e391dee05a40c8d3f3aa3b476cae0be2bdfe766c871fe3e0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/01.png",
+          "sha256": "ee826179022a4a52a73b728691300053562cca99ccccd5fe36b28d63bcc45d35",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/02.png",
+          "sourceSha256": "ee826179022a4a52a73b728691300053562cca99ccccd5fe36b28d63bcc45d35",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/02.png",
+          "sha256": "159602290fa8ec093705c16a28a40ed8f949a70cccfc0baec2d0a3584cee479a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/03.png",
+          "sourceSha256": "159602290fa8ec093705c16a28a40ed8f949a70cccfc0baec2d0a3584cee479a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/03.png",
+          "sha256": "dee5efe5281f2db3ac0e1b12b329cc347d82156d982e60050057d8cccb452017",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/04.png",
+          "sourceSha256": "dee5efe5281f2db3ac0e1b12b329cc347d82156d982e60050057d8cccb452017",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/04.png",
+          "sha256": "8c98f06f45bbe43c1aff622a04b49fbb1312b2a406cbfd699e8e03ef2233e5eb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/05.png",
+          "sourceSha256": "8c98f06f45bbe43c1aff622a04b49fbb1312b2a406cbfd699e8e03ef2233e5eb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/05.png",
+          "sha256": "2e016124281f4e2477016e659b66f3cd324aa9eb929e6069542096a5f46a5506",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/06.png",
+          "sourceSha256": "2e016124281f4e2477016e659b66f3cd324aa9eb929e6069542096a5f46a5506",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/06.png",
+          "sha256": "5e3b6be8e609db5f18719fe7fe73251abcfd77dafc0fadb88a5c3d7805a2a9b3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/07.png",
+          "sourceSha256": "5e3b6be8e609db5f18719fe7fe73251abcfd77dafc0fadb88a5c3d7805a2a9b3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 4
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/frames/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/07.png",
+          "sha256": "864d19dc0c4055d1a4a5bff85c1388dd1559495175745482f70541843788b41a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/05c1e3f4-47d8-49a2-bac6-788164994d44/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/05c1e3f4-47d8-49a2-bac6-788164994d44/08.png",
+          "sourceSha256": "864d19dc0c4055d1a4a5bff85c1388dd1559495175745482f70541843788b41a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "우향 날개를 접고 실제로 내려앉아 바닥에 닿는 어두운 몸의 끝자세를 유지하는 단발 KO.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/lantern-moth/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/lantern-moth/review/die1-05c1e3f4-47d8-49a2-bac6-788164994d44.png"
+    }
+  },
+  "poseTargets": [
+    {
+      "motion": "die1",
+      "localPath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/target-corpse-02.png",
+      "recordPath": "public/assets/maplestory/monster-expansion/lantern-moth/originals/die1/target-corpse-02.json",
+      "drawingId": "b9b85f31-4a9f-475b-85e0-6beb39972fe1",
+      "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/b9b85f31-4a9f-475b-85e0-6beb39972fe1/assets/native/full.png",
+      "source": "https://api.pixellab.ai/mcp/images/25ad32de-26e3-4778-bcf3-5aa119513cd0/download?index=8",
+      "offset": [
+        0,
+        8
+      ],
+      "angle": 0,
+      "pivot": [
+        32,
+        32
+      ],
+      "sha256": "7597c263ce6965c4dd536f3999d76e42c0f8ac4363b797145371306170e1e07d",
+      "paidGenerations": 0,
+      "kind": "free exact native end keyframe; intermediate motion generated by PixelLab",
+      "reason": "원본 픽셀로 누운 끝자세를 지정하고 중간 쓰러짐 프레임은 PixelLab에서 실제 생성."
+    }
+  ]
+}

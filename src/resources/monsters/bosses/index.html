@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#173c32" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="../../preview/style.css" />
+    <link rel="stylesheet" href="../../preview/originals.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>지도별 보스 · 모션 갤러리</title>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <main>
+      <nav aria-label="검토 화면">
+        <a href="../../">리소스 목록</a>
+        <a href="../gallery/">기존 30종 갤러리</a>
+        
+        
+      </nav>
+      <header>
+        <div>
+          <p class="eyebrow">WEB GAMES / MAP BOSSES</p>
+          <h1>지도별 보스 갤러리</h1>
+          <p class="intro">
+            지도마다 중간보스 A·B와 보스를 골라 실제 모션을 살펴보세요.
+          </p>
+        </div>
+        <span class="badge">로컬 리소스</span>
+      </header>
+      <div class="gallery-layout">
+        <aside class="gallery-selection" aria-label="보스와 모션 선택">
+          <section class="gallery-filters" aria-label="보스 필터">
+            <label
+              >지도<select id="map">
+                <option value="">전체 지도</option>
+              </select></label
+            >
+            <label
+              >등급<select id="grade">
+                <option value="">전체 보스</option>
+                <option value="miniboss">중간보스</option>
+                <option value="boss">보스</option>
+              </select></label
+            >
+            <label
+              >보스<select id="monster" aria-label="보스 선택"></select
+            ></label>
+          </section>
+          <p id="count" role="status"></p>
+          <p id="monster-summary"></p>
+          <section class="controls" aria-label="모션 설정">
+            <label
+              >자세<select
+                id="motion"
+                disabled
+                aria-label="선택한 보스 모션"
+              ></select
+              ><output id="frame">—</output></label
+            >
+            <div class="playback-buttons">
+              <button id="toggle" type="button" disabled>일시정지</button>
+              <button id="restart" type="button" disabled>처음부터</button>
+            </div>
+          </section>
+          <p id="motion-notes" aria-live="polite"></p>
+        </aside>
+        <section class="stage" aria-label="선택한 보스 모션">
+          <div class="stage-top">
+            <span>모션 미리보기</span><span id="monster-name"></span>
+          </div>
+          <canvas
+            id="scene"
+            width="960"
+            height="480"
+            aria-label="보스와 아타호 크기 비교"
+            >캔버스를 지원하는 브라우저에서 확인해 주세요.</canvas
+          >
+          <p class="comparison-note">
+            아타호와 같은 픽셀 배율로 비교합니다. 전투 표시 크기는 독립 전투
+            화면에서 확인하세요.
+          </p>
+          <p id="status" role="status">목록을 준비하는 중…</p>
+        </section>
+      </div>
+      <details id="originals-panel" class="originals-panel" hidden>
+        <summary>원본과 생성 자료</summary>
+        <div id="originals"></div>
+      </details>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/monsters/bosses/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

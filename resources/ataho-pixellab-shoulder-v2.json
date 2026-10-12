@@ -1,0 +1,609 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-13",
+  "status": "approved-for-preview",
+  "provider": "Codex ImageGen impact pose + PixelLab PixMiniMax transitions",
+  "scope": "기존 철산고를 보존하고 등 타격·팔 높이 차이·숙인 고개를 강조한 v2를 추가한다.",
+  "source": {
+    "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png",
+    "sha256": "f429358df77528a614df1e6703582dd13ad08dff7c6af61a17b1b46b944f5285",
+    "generationRecordPath": "resources/ataho-side-generation.json",
+    "sourcePixelsModified": false
+  },
+  "input": {
+    "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/input.png",
+    "sha256": "00df468d5715650518d0cb00b887a91f61ba71a18424e65fbf111f93263e0090",
+    "sourceRect": {
+      "x": 111,
+      "y": 26,
+      "width": 941,
+      "height": 1259
+    },
+    "placement": {
+      "x": 28,
+      "y": 40,
+      "width": 144,
+      "height": 192
+    },
+    "canvasSize": {
+      "width": 256,
+      "height": 256
+    },
+    "processing": "오른쪽 원화의 기존 표시 영역을 Lanczos로 144×192px 축소하고 투명 256px 캔버스 x28,y40에 배치한다. 공격을 뻗을 오른쪽 여백을 확보하며 원본은 변경하지 않는다."
+  },
+  "impactInput": {
+    "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/impact-input.png",
+    "sha256": "4e6eb0a840ca32ca6103dda23978eaf6d33d998b5d298885792a81d9939003dd",
+    "sourcePosePath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/impact-04.png",
+    "transform": {
+      "scale": 0.15250198570293885,
+      "offset": [21, 35],
+      "resizedSize": [183, 200]
+    },
+    "notes": "기존 축소 배율을 그대로 사용해 자세의 높이 변화를 유지하고, 전체 위치만 x21 및 발 아래끝 y232에 맞춘다. 원본은 수정하지 않는다."
+  },
+  "poseGeneration": {
+    "provider": "Codex built-in ImageGen",
+    "usedCli": false,
+    "generations": 4,
+    "referencePaths": [
+      "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/reference-anime.png",
+      "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/reference-game-01.png",
+      "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/reference-game-02.png"
+    ],
+    "identityReferencePaths": [
+      "public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png",
+      "public/assets/maplestory/ataho-nonpixel-ai/20261012/front-01.png"
+    ],
+    "selectedPose": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/impact-04.png",
+    "attempts": [
+      {
+        "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/impact-rejected-01.png",
+        "originalHostPath": "/Users/3sam3/.codex/generated_images/01a13059-be38-7ee0-9d70-2887b8042ce6/exec-f23e46bd-3a97-499c-bdaf-3c479c48972c.png",
+        "sha256": "452aa596581a52dfd95c6a15f8de6be85837b2511f7443f37622fbb117fa3ef9",
+        "size": [1199, 1312],
+        "mode": "RGBA",
+        "alphaRange": [0, 255],
+        "prompt": "Use case: identity-preserve.\nAsset: ONE full-body transparent non-pixel 2D game-character impact key pose, for Ataho's back-body slam version 2.\nImage 1 is the authoritative character, costume, proportions and painted art style. Image 2 is ONLY the reference for the back-first slam posture and force direction; do not copy its human characters, costume, scenery or effects.\n\nRepose the exact tiger martial artist from image 1 at the CONTACT moment of a rightward back slam. His chest, muzzle and gaze face SCREEN-LEFT, while his broad upper BACK and shoulder blade drive SCREEN-RIGHT into an imaginary opponent. This is a backward body-check with the BACK, not a forward crouching tackle. Rotate his whole torso and pelvis away from the original right-facing stance so the brown jacket's back is clearly visible on the right side of his body. Twist and lean the upper body slightly toward the left while pushing the rounded upper back forcefully right; the shoulder blade/back is the leading striking surface to the right, and the head and both forearms stay in front on the LEFT side of the torso. Bend both knees in a wide stable grounded stance, plant both feet on one level baseline, compress the supporting legs to deliver weight through the hips. The nearer arm is bent and raised toward the left; the other forearm bends in front toward the left. Do not extend a fist, elbow, foot or face toward the right as the attack point. Keep the back silhouette unobstructed and visibly braced for impact. Tail may trail behind the lower back but must not obscure the upper back contact surface.\n\nPreserve the exact stocky short-limbed middle-aged orange tiger identity, large head/body proportions, sleepy half-lidded eye, ivory cheek fur, orange stripes, worn brown OPEN short jacket, ivory crossed robe underneath, brown sash, dark cropped trousers, wrist and ankle wraps, bare tiger paws. Preserve smooth ink contours, fine fur shapes and restrained painted shading, no pixel-art conversion and no redesign.\n\nOutput ONE assembled character only, no opponent, no impact burst, speed lines, motion ghosts, shadow, scenery, text or labels. Genuine RGBA transparent background. Use the same 1199x1312 portrait canvas and same character scale as image 1: crouching should lower the head rather than shrink the entire character. Keep the feet near the original baseline y1280, with all ears, hands, tail and feet visible and transparent margins.",
+        "review": "사용자가 부자연스럽다고 지적해 구도 변경"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/impact-composition-02.png",
+        "originalHostPath": "/Users/3sam3/.codex/generated_images/01a13059-be38-7ee0-9d70-2887b8042ce6/exec-556e3439-1461-49c9-ba2e-1082ffcc73f4.png",
+        "sha256": "1140f816a1d22b9a5f836b245d264bed2f489c3de047c4ed6f7c7636dfba2892",
+        "size": [1199, 1312],
+        "mode": "RGBA",
+        "alphaRange": [0, 255],
+        "prompt": "Use case: identity-preserve.\nAsset: ONE transparent full-body impact key pose for Ataho's back slam, NON-PIXEL 2D game artwork.\nImage 1 is the exact character identity, costume and art style to preserve. Image 2 is a pose-only reference: use ONLY the man on the RIGHT, horizontally MIRRORED so his back slam travels SCREEN-RIGHT. Ignore the left opponent, background, UI and low-poly rendering.\n\nPrimary request: transpose the mirrored RIGHT man's exact whole-body posture onto Ataho. A deep, wide staggered stance with bent knees; hips low, upper torso tilted diagonally RIGHT toward impact; the brown jacket's broad upper back and rear shoulder are the leading contact surface on the RIGHT. The chest and muzzle face diagonally LEFT, away from that impact. One bent arm is raised above shoulder level on the LEFT as in the reference, the other bent arm is held LOW across the front of the waist on the LEFT. The arms are at two distinct heights, not clasped in front of the chest. Keep the rear shoulder/back outline clearly exposed. Capture the forceful leg-driven twist and back-body bump in the reference, not an upright guard or a front-facing punch. Preserve the head/body proportions of image 1 while expressing the reference's lean and bent-knee leg angles.\n\nKeep the exact sleepy middle-aged orange tiger face, ivory cheek fur, orange stripes, worn brown OPEN short jacket, ivory cross-wrapped robe, brown sash, dark cropped trousers, wrist/ankle wraps, tiger paws and striped tail. Same smooth ink contours and soft painted shading, same character size; no redesign or pixel conversion.\n\nFull body visible with transparent margins. Same portrait canvas as image 1. ONE character only. No opponent, ground shadow, motion trails, impact effects, text or scenery. Actual RGBA transparency.",
+        "review": "자세는 괜찮지만 고개 방향 수정 요청"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/impact-headfix-03.png",
+        "originalHostPath": "/Users/3sam3/.codex/generated_images/01a13059-be38-7ee0-9d70-2887b8042ce6/exec-466606ea-8b23-4b10-8f64-c3edb06cb889.png",
+        "sha256": "70ccb242f55dc0a71e818966268b3f0c02e6f3f4f4be325c5323184cea93c12e",
+        "size": [1199, 1312],
+        "mode": "RGBA",
+        "alphaRange": [0, 255],
+        "prompt": "Use case: identity-preserve, precise pose correction.\nEdit the supplied Ataho impact illustration. The user likes this body pose. Change ONLY the head and neck orientation; keep the whole torso pose, raised arm, lowered arm, fists, jacket, legs, feet, tail, character scale, framing, painted art style and transparent background unchanged.\n\nThe enemy and BACK-SLAM impact are on SCREEN-LEFT in this image. Ataho's brown-jacketed upper BACK/rear shoulder is the striking surface on that LEFT side. Turn his head and muzzle clearly to SCREEN-RIGHT, AWAY FROM the enemy. His nose and sleepy gaze must point RIGHT, not left and not at the viewer. Tuck the chin slightly and settle the head naturally toward the RIGHT/front side of his own chest so the face does not lead the leftward collision. The leftward striking silhouette should be his back/rear shoulder, with the face safely looking in the opposite direction. Make this an anatomically natural head turn, not a detached or twisted neck.\n\nDo not horizontally flip the entire character and do not redraw the body into a different stance. Preserve the exact original Ataho face identity, large tiger head proportions, orange stripes, ivory cheek fur, ears and sleepy middle-aged expression while changing its orientation. Keep both arms at their current different heights. No new limbs, opponent, effects, shadow, text or background. Preserve genuine RGBA transparency.",
+        "review": "사용자가 새 참고 구도를 요청해 보존"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/impact-04.png",
+        "originalHostPath": "/Users/3sam3/.codex/generated_images/01a13059-be38-7ee0-9d70-2887b8042ce6/exec-c204415a-06d8-487d-a16d-e9afe3d2a224.png",
+        "sha256": "824f71ae3de7efd277695b7588085ab5725ea4f93c42d6b0f4ed556eb3760af2",
+        "size": [1199, 1312],
+        "mode": "RGBA",
+        "alphaRange": [0, 255],
+        "prompt": "Use case: identity-preserve.\nCreate ONE transparent full-body non-pixel 2D Ataho game-character impact pose.\nImage 1 is the exact approved tiger character, costume, proportions and painted style. Image 2 is the POSE AND CAMERA reference: copy ONLY the attacking man on the LEFT. Do not draw the opponent, room or effects.\n\nMatch that left man's silhouette and camera composition closely: a front three-quarter view with the chest visible, torso rotated slightly so the rear shoulder/upper back on SCREEN-RIGHT is the surface driving into an opponent on the right. Sink the hips low in a wide grounded stance; both knees bent and feet widely separated, like the reference. The SCREEN-LEFT arm bends upward with its OPEN palm raised beside and slightly above the head. The other arm is held LOW across the front of the waist with an OPEN palm, exactly the two different arm heights in the reference. Bow the head forward and down with chin tucked and gaze towards the ground in front-left, safely away from the rightward back impact. Do not turn the face into a full left or right profile. The forehead and muzzle must not project towards the right opponent. Use the reference's grounded leg-driven twist and braced rear shoulder, not a guard with two fists raised, a wide superhero lunge or a punching pose.\n\nTranspose that pose onto the unchanged stocky middle-aged orange tiger from image 1: same large head/short-body proportions, half-lidded eyes, ivory cheek fur, stripes, worn brown OPEN short jacket, ivory crossed robe, brown sash, dark cropped trousers, wrist and ankle wraps, tiger paws and striped tail. Keep the same smooth hand-drawn ink contours and soft painted shading. Keep the head naturally attached and lowered, not exaggeratedly twisted. Preserve a readable sleepy experienced personality while focusing downwards.\n\nONE complete character, full body including raised hand and both feet visible, transparent margin on all sides. Actual RGBA transparent background. No opponent, shadow, scenery, motion trails, impact burst, text, redesign, pixelation or 3D rendering.",
+        "review": "새 참고의 왼쪽 공격자·낮은 자세·열린 손·숙인 고개를 적용한 현재 모션 기준 후보"
+      }
+    ],
+    "references": [
+      {
+        "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/reference-anime.png",
+        "originalAttachmentPath": "/var/folders/cf/pv_mgsrx2tv0gs71b1p98sgr0000gn/T/codex-clipboard-1214c346-94ff-4906-9380-80d64093a4c1.png",
+        "sha256": "8699a1764c5d151a1e04056df4285081e4792196c38727e85751e61a9e8ac1bc",
+        "role": "사용자 첨부 자세·구도 참조. 얼굴·의상·게임 배경은 복사하지 않는다."
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/reference-game-01.png",
+        "originalAttachmentPath": "/var/folders/cf/pv_mgsrx2tv0gs71b1p98sgr0000gn/T/codex-clipboard-ba0f6117-1cb4-411d-89ad-c06b49f245e5.png",
+        "sha256": "835e3e426c0f9ba4d99918adb12c4304876e87ab01110d0cb7de907793fb079a",
+        "role": "사용자 첨부 자세·구도 참조. 얼굴·의상·게임 배경은 복사하지 않는다."
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/reference-game-02.png",
+        "originalAttachmentPath": "/var/folders/cf/pv_mgsrx2tv0gs71b1p98sgr0000gn/T/codex-clipboard-b2901f94-1a09-4c70-b2df-e54148fbdc83.png",
+        "sha256": "f8ab43af2c5a3b6240b32b886256f2ae3f239261f702c6d0d38ec13b58ac4360",
+        "role": "사용자 첨부 자세·구도 참조. 얼굴·의상·게임 배경은 복사하지 않는다."
+      }
+    ]
+  },
+  "generation": {
+    "tool": "mcp__pixellab__animate_image_pixminimax",
+    "segments": [
+      {
+        "id": "prepare",
+        "jobId": "d6a6db0b-3aa0-432a-9e27-aa8604e99505",
+        "assetId": "95e53bc9-6c80-5ca3-8bb3-ae5292da956c",
+        "galleryStatus": "saved",
+        "request": {
+          "frame_count": 8,
+          "direction": "east",
+          "view": "side",
+          "subject_description": "a stocky middle-aged orange tiger martial artist with sleepy eyes, ivory cheek fur, worn brown OPEN short jacket, ivory CROSS-WRAPPED ROBE without buttons, brown waist sash, dark cropped trousers, wrist and ankle wraps",
+          "no_background": true,
+          "enhance_prompt": false,
+          "first_frame_url": "upload:6cf86564-9cba-414c-9d25-94b0901d4c73",
+          "last_frame_url": "upload:9c85f0df-5bff-4475-9608-7bac1aed7d40",
+          "initial_pose": "relaxed right-facing standing pose with arms lowered",
+          "seed": 202610134,
+          "description": "Prepare and deliver ONE rightward BACK-BODY slam, ending in the supplied last pose. Sink into a wide bent-knee stance, turn the chest toward the viewer/front-left, raise the screen-left OPEN hand above the head and hold the other OPEN hand low across the waist. Tuck the chin DOWN and away from the enemy on the RIGHT, keeping the head behind the right shoulder impact contour. Push from the legs and drive the RIGHT upper BACK/rear shoulder rightward while both hands stay in front at their two distinct heights. The BACK is the contact surface, never the muzzle, fist or elbow. Match the supplied last pose exactly; no return to standing yet. Keep costume, scale, framing, transparency and ground baseline. No extra strike, opponent, motion ghost or effects."
+        },
+        "requestedFrames": 8,
+        "returnedFrames": 9,
+        "chargedGenerations": 1,
+        "firstFrameVisiblePixelsPreserved": true,
+        "firstFramePixelsPreserved": false
+      },
+      {
+        "id": "recover",
+        "jobId": "ec9a8ed6-defc-46a7-b22a-fbc8b22e1992",
+        "assetId": "d16b52d1-59c1-51a7-a6dd-aa858d19146c",
+        "galleryStatus": "saved",
+        "request": {
+          "frame_count": 8,
+          "direction": "east",
+          "view": "side",
+          "subject_description": "a stocky middle-aged orange tiger martial artist with sleepy eyes, ivory cheek fur, worn brown OPEN short jacket, ivory CROSS-WRAPPED ROBE without buttons, brown waist sash, dark cropped trousers, wrist and ankle wraps",
+          "no_background": true,
+          "enhance_prompt": false,
+          "first_frame_url": "upload:9c85f0df-5bff-4475-9608-7bac1aed7d40",
+          "last_frame_url": "upload:6cf86564-9cba-414c-9d25-94b0901d4c73",
+          "initial_pose": "wide low stance, chin bowed down, chest toward viewer/front-left, one open hand raised and other low across waist, right rear shoulder/back braced for rightward contact",
+          "seed": 202610135,
+          "description": "Recovery ONLY from the supplied rightward back-slam contact pose to the supplied relaxed standing pose. Briefly settle the braced wide bent-knee stance with chin tucked down and face away from the RIGHT enemy, then release the torso twist, lower the raised open hand, draw the legs back to normal stance and calmly stand facing right with arms relaxed. Keep the head protected behind the back contact contour until the rightward pressure has ended. No new strike, punch, kick, spin, jump or additional lunge. Preserve the same character, brown open jacket, crossed ivory robe, palette and proportions. Fixed camera, framing, scale and ground baseline; no opponent, effects, ghost images or costume change."
+        },
+        "requestedFrames": 8,
+        "returnedFrames": 9,
+        "chargedGenerations": 1,
+        "firstFrameVisiblePixelsPreserved": true,
+        "firstFramePixelsPreserved": true
+      }
+    ],
+    "usage": {
+      "requests": 2,
+      "retries": 0,
+      "chargedGenerations": 2,
+      "balanceBefore": 734,
+      "balanceAfter": 732
+    },
+    "notes": "준비와 회수를 각각 8장 생성하며 각 첫 입력을 포함해 전체 18장을 보존한다.",
+    "delivery": "get_image가 반환한 원본 image/png 데이터를 그대로 저장한다. 프레임별 위치·픽셀 보정 없음."
+  },
+  "preview": {
+    "path": "src/resources/characters/ataho-hybrid/pixellab-attacks.html",
+    "hubPath": "src/resources/characters/ataho-hybrid/index.html?motion=shoulder-v2#attacks",
+    "footY": 232,
+    "frameDurationSeconds": 0.075,
+    "firstPlaybackFrame": 0,
+    "timingNote": "0.075초는 비교판 설정이며 본게임 판정은 미연결이다.",
+    "alignment": "모든 프레임에 같은 캔버스 중심·입력 발 기준을 사용하며 프레임별 위치 보정은 하지 않는다.",
+    "leftPreview": "같은 프레임을 표시 단계에서 좌우 반전한다. 별도 생성·PNG 수정 없음.",
+    "playbackFrameIndices": [
+      0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+    ],
+    "selectionNote": "준비 0~8번 다음 회수의 입력인 고정 타격 자세 9번을 포함하고 회수 10~17번으로 이어진다.",
+    "impactFrameIndex": 9
+  },
+  "frames": [
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/prepare/00.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/d6a6db0b-3aa0-432a-9e27-aa8604e99505/download?index=0",
+      "downloadIndex": 0,
+      "segment": "prepare",
+      "label": "입력 자세",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "50c5239214c7a0118b296be68d585200f21dbe76d5ae19bca8c6a48fb0b7c516",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [28, 40, 172, 232],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/prepare/01.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/d6a6db0b-3aa0-432a-9e27-aa8604e99505/download?index=1",
+      "downloadIndex": 1,
+      "segment": "prepare",
+      "label": "준비 1 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "a7f6a35f26d1109503d12eb5a919a4e94959bd952fa97b8c7ef037ac0904cb3b",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [33, 46, 202, 232],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/prepare/02.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/d6a6db0b-3aa0-432a-9e27-aa8604e99505/download?index=2",
+      "downloadIndex": 2,
+      "segment": "prepare",
+      "label": "준비 2 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "6c13554297b33d3b15f96ab2b1a731f61534151f1ddfc5a23631ffb0cc928ed1",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [37, 45, 225, 230],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/prepare/03.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/d6a6db0b-3aa0-432a-9e27-aa8604e99505/download?index=3",
+      "downloadIndex": 3,
+      "segment": "prepare",
+      "label": "준비 3 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "631425b33343458e8fc51b175e3680487aa2e79787c5b9551187f6c5629309e2",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [32, 28, 219, 231],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/prepare/04.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/d6a6db0b-3aa0-432a-9e27-aa8604e99505/download?index=4",
+      "downloadIndex": 4,
+      "segment": "prepare",
+      "label": "준비 4 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "86baa4e38f4bb5e44f6925648d3763a52bc295dc09c0cb15d11f33c0c4cd6323",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [32, 26, 235, 231],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/prepare/05.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/d6a6db0b-3aa0-432a-9e27-aa8604e99505/download?index=5",
+      "downloadIndex": 5,
+      "segment": "prepare",
+      "label": "준비 5 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "70f8f4139e273fa27ddf055083e6842bbbfd089ee825b25dc945bc8e2685e593",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [32, 32, 201, 231],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/prepare/06.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/d6a6db0b-3aa0-432a-9e27-aa8604e99505/download?index=6",
+      "downloadIndex": 6,
+      "segment": "prepare",
+      "label": "준비 6 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "68c5b9e180bd9b09fdfb8d4e9f25d5b0053c52450ce121146dfe317e1994c64c",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [32, 36, 201, 231],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/prepare/07.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/d6a6db0b-3aa0-432a-9e27-aa8604e99505/download?index=7",
+      "downloadIndex": 7,
+      "segment": "prepare",
+      "label": "준비 7 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "7d03c3926412d6388b00c33efa7673275d2104c3e8266b0e7287f155da28fd62",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [32, 36, 202, 231],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/prepare/08.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/d6a6db0b-3aa0-432a-9e27-aa8604e99505/download?index=8",
+      "downloadIndex": 8,
+      "segment": "prepare",
+      "label": "준비 8 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "77e6106bf0501af35a103fc11b52ffe9c3a189fa0f755fc8ca40c97971db706a",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [32, 36, 202, 231],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/recover/00.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/ec9a8ed6-defc-46a7-b22a-fbc8b22e1992/download?index=0",
+      "downloadIndex": 0,
+      "segment": "recover",
+      "label": "타격 기준 자세",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "cbed15cf0b06306c367e847088caa3276dfa1929c4398e5e6a884a4c669ffbdb",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [32, 36, 202, 232],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/recover/01.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/ec9a8ed6-defc-46a7-b22a-fbc8b22e1992/download?index=1",
+      "downloadIndex": 1,
+      "segment": "recover",
+      "label": "회수 1 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "91a24232a29b95df03bb5d35b8f8816ce0606c676f08100bdf9b6550c4afe93b",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [31, 36, 204, 231],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/recover/02.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/ec9a8ed6-defc-46a7-b22a-fbc8b22e1992/download?index=2",
+      "downloadIndex": 2,
+      "segment": "recover",
+      "label": "회수 2 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "4ffd64fed28fa762b8a08ae8db2435e7f39f5fafda47bd22f9a9e343b0872723",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [31, 36, 204, 231],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/recover/03.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/ec9a8ed6-defc-46a7-b22a-fbc8b22e1992/download?index=3",
+      "downloadIndex": 3,
+      "segment": "recover",
+      "label": "회수 3 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "d7bb49fe6d650d9ce51f360100f727d8ed03fbdd3167ce3a9adb0147a83426d1",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [31, 36, 204, 231],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/recover/04.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/ec9a8ed6-defc-46a7-b22a-fbc8b22e1992/download?index=4",
+      "downloadIndex": 4,
+      "segment": "recover",
+      "label": "회수 4 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "6b3e95d77a4c3f508c9e769719e382c60f8e5a26f1ee8094f6386d7b5a85a324",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [37, 54, 195, 230],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/recover/05.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/ec9a8ed6-defc-46a7-b22a-fbc8b22e1992/download?index=5",
+      "downloadIndex": 5,
+      "segment": "recover",
+      "label": "회수 5 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "890d8337225da7650c08376ad9423109a2d1059330ca4769f47cd3b17ca3fbe5",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [42, 49, 186, 231],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/recover/06.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/ec9a8ed6-defc-46a7-b22a-fbc8b22e1992/download?index=6",
+      "downloadIndex": 6,
+      "segment": "recover",
+      "label": "회수 6 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "b30b86ea675a86f1b0d15b1bbafa0e061d5c7ce0c15151c0c7b6b4649ecf5d64",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [54, 45, 179, 232],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/recover/07.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/ec9a8ed6-defc-46a7-b22a-fbc8b22e1992/download?index=7",
+      "downloadIndex": 7,
+      "segment": "recover",
+      "label": "회수 7 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "875d69a988303d03edc7239c802f5161bea3753dbedd45cd16eebe20fa06b2cb",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [35, 41, 172, 232],
+      "touchesCanvasEdge": false
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/recover/08.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/ec9a8ed6-defc-46a7-b22a-fbc8b22e1992/download?index=8",
+      "downloadIndex": 8,
+      "segment": "recover",
+      "label": "회수 8 / 8",
+      "width": 256,
+      "height": 256,
+      "pivot": {
+        "x": 128,
+        "y": 232
+      },
+      "durationSeconds": 0.075,
+      "sha256": "f015f3e4255192a0554d667d562debee0120155c2159f8d3d52cc17a9abc8d66",
+      "alphaRange": [0, 255],
+      "alphaBounds8": [28, 41, 171, 232],
+      "touchesCanvasEdge": false
+    }
+  ],
+  "review": {
+    "status": "approved-for-preview",
+    "unverified": ["본게임 판정 연결", "실기기 모바일 표시"],
+    "userApproval": "오 철산고 멋지다. 잘 적용됐네.",
+    "findings": [
+      "사용자가 확인한 준비·고정 타격·회수의 18장 순서를 유지한다.",
+      "준비 원본 2·3번에 원형 궤적, 4번에 회색 잔상이 있으나 사용자 확인 후 재생 순서를 추가 변경하지 않았다.",
+      "고정 타격 9번은 입력 원화와 보이는 픽셀이 동일하며 열린 손·숙인 고개·오른쪽 어깨와 등의 구도를 유지한다.",
+      "생성 선·질감 변화와 준비/고정 타격/회수의 이음은 본게임 적용 시 검토 대상이다."
+    ],
+    "scopeNote": "현재 통합 비교판의 v2 채택 승인이다. 본게임 타격·피해 판정은 미연결이다."
+  },
+  "derivatives": {
+    "contactSheet": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/contact-sheet.png",
+    "animatedPreview": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-attacks/shoulder-v2/preview.gif",
+    "notes": "준비·기준 타격·회수 순서의 합성 미리보기. 원본 PNG는 보존한다."
+  },
+  "verification": {
+    "checks": "npm run check 통과",
+    "build": "npm run build 통과",
+    "browser": [
+      {
+        "viewport": {
+          "width": 1366,
+          "height": 768
+        },
+        "deviceScaleFactor": 1,
+        "progress": {
+          "indices": [
+            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+          ],
+          "distinctPictures": 18
+        },
+        "keyPose": true,
+        "mirror": {
+          "checked": 9127,
+          "bad": 4
+        },
+        "slow": [0, 1, 2],
+        "layout": {
+          "frames": 1,
+          "overflow": false,
+          "childOverflow": false,
+          "childScroll": false
+        },
+        "originalShoulder": true,
+        "punchRegression": true,
+        "errors": []
+      },
+      {
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "deviceScaleFactor": 2,
+        "progress": {
+          "indices": [
+            0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
+          ],
+          "distinctPictures": 18
+        },
+        "keyPose": true,
+        "mirror": {
+          "checked": 36435,
+          "bad": 22
+        },
+        "slow": [0, 1, 2],
+        "layout": {
+          "frames": 1,
+          "overflow": false,
+          "childOverflow": false,
+          "childScroll": false
+        },
+        "originalShoulder": true,
+        "punchRegression": true,
+        "errors": []
+      }
+    ],
+    "keyPoseVisiblePixelsPreserved": true,
+    "clippedFrames": [],
+    "footBoundsY": [230, 231, 232],
+    "mobile": "실기기 모바일 검증은 수행하지 않음",
+    "readbackNote": "반복 getImageData 검증에서 생긴 Canvas2D 성능 안내만 제외했고 제품의 콘솔·페이지·리소스 오류는 없었다."
+  }
+}

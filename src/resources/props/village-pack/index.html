@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>마을 생활 리소스 묶음</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js",
+          "three/addons/": "../../../../node_modules/three/examples/jsm/"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <main id="pack">
+      <header>
+        <a href="../../">← 리소스 목록</a>
+        <h1>마을 생활 리소스 묶음</h1>
+        <p>주민 13종 · 직업 소품 12종 · 상태 변화 6쌍</p>
+        <nav>
+          <a href="#residents">주민 정면 시안</a
+          ><a href="#professions">직업 소품</a><a href="#states">전후 비교</a
+          ><a href="#scene">마을에서 보기</a>
+        </nav>
+      </header>
+      <section id="scene">
+        <div class="section-title">
+          <h2>마을에서 크기·톤 비교</h2>
+          <div class="controls">
+            <select aria-label="비교 마을">
+              <option value="harbor">해풍나루</option>
+              <option value="onsen">눈솔온천마을</option></select
+            ><button data-overview>전체 / 보행 · M</button
+            ><button data-reset>입구로</button>
+          </div>
+        </div>
+        <div class="state-controls">
+          <button data-mode="before" aria-pressed="true">작업 전</button
+          ><button data-mode="after" aria-pressed="false">작업 후</button
+          ><span>아래 상태 소품과 마을 배치를 함께 전환</span>
+        </div>
+        <div class="stage">
+          <canvas
+            tabindex="0"
+            aria-label="신규 리소스를 놓은 마을 비교"
+          ></canvas>
+          <p data-stage-status role="status">리소스를 불러오는 중…</p>
+        </div>
+        <p class="caption">
+          화면을 누르고 방향키로 이동 · Space 시설 확인 · M 전체 지도 · Esc
+          일시정지. 주민은 정면 시안으로 배치했어.
+        </p>
+      </section>
+      <section id="residents">
+        <h2>주민 정면 시안</h2>
+        <p class="caption">
+          세 마을의 주민 13종. 새 주민은 원화와 정면 도트를 함께 확인한다. 기존
+          거점 주민은 자료 시안이며, 두 지역 마을 주민은 위 비교 맵에도
+          배치했다. 방향·걷기·작업 모션은 정면 외형 선택 후 제작한다.
+        </p>
+        <div class="resident-groups"></div>
+      </section>
+      <section id="professions">
+        <h2>직업 소품 12종</h2>
+        <div class="prop-grid"></div>
+      </section>
+      <section id="states">
+        <h2>상태 변화 소품 6쌍</h2>
+        <p class="caption">
+          동일한 픽셀 배율과 바닥 기준으로 전후 모습을 비교한다.
+        </p>
+        <div class="pair-grid"></div>
+      </section>
+      <footer>
+        이미지 원본·프레임·기준점·생성 프롬프트는 리소스 목록과 생성 기록에
+        보관. 본게임의 보상·경제·NPC 대화와 분리한 미리보기.
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/props/village-pack/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

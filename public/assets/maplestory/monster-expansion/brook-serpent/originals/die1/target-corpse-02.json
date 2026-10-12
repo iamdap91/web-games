@@ -1,0 +1,92 @@
+{
+  "id": "brook-serpent",
+  "source": "https://api.pixellab.ai/mcp/images/b230b1c4-53f9-4b32-927d-c9f2db22906b/download",
+  "at": [
+    0,
+    5
+  ],
+  "sourceFirst": "https://api.pixellab.ai/mcp/images/b230b1c4-53f9-4b32-927d-c9f2db22906b/download",
+  "recipe": {
+    "job": {
+      "canvas": [
+        64,
+        64
+      ],
+      "frame_count": 1,
+      "durations_ms": [
+        100
+      ],
+      "views": [
+        {
+          "id": "native",
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "source_bookends_exact": false,
+      "body_palette_exact": true,
+      "require_clear_border": true
+    },
+    "scene": {
+      "palette": {},
+      "layers": [
+        {
+          "id": "body",
+          "name": "Body - native sideways target"
+        }
+      ],
+      "views": {
+        "native": {
+          "parts": {
+            "original": {}
+          },
+          "nodes": {
+            "body": {
+              "layer": "body",
+              "at": [
+                0,
+                5
+              ],
+              "pivot": [
+                32,
+                32
+              ],
+              "angle": -90,
+              "draw": [
+                {
+                  "op": "copy",
+                  "part": "original"
+                }
+              ]
+            }
+          },
+          "poses": {
+            "rest": {}
+          },
+          "frames": [
+            "rest"
+          ]
+        }
+      }
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "drawing_id: 5a6cc877-474d-461c-9639-627e8973b73e\ncanvas 64x64, 1 frames, 100 ms, views: native\nstate: needs_visual_review\nlayers (native): Body - native sideways target\nnodes (native): body\nimages: assets/native/review/full-01.png\n(+2 more evidence images — body-only, change masks, palette: repeat with mode=\"high\", or zoom with --inspect […])\ndownload https://api.pixellab.ai/mcp/pixel-tools/5a6cc877-474d-461c-9639-627e8973b73e/: assets/native/animation.gif, assets/native/full.png, assets/native/layers.npz, recipe.json\nnext: draw --drawing 5a6cc877-474d-461c-9639-627e8973b73e --changes […]"
+      },
+      {
+        "type": "image",
+        "data": "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",
+        "mimeType": "image/png"
+      }
+    ],
+    "isError": false
+  },
+  "url": "https://api.pixellab.ai/mcp/pixel-tools/5a6cc877-474d-461c-9639-627e8973b73e/assets/native/full.png",
+  "drawingId": "5a6cc877-474d-461c-9639-627e8973b73e",
+  "paidGenerations": 0
+}

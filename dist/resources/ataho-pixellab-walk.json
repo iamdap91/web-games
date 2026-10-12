@@ -1,0 +1,429 @@
+{
+    "schemaVersion": 1,
+    "createdDate": "2026-10-13",
+    "status": "evaluation-only",
+    "provider": "PixelLab · Animate with text (PixMiniMax)",
+    "scope": "오른쪽 기준 원화에서 걷기 한 주기를 생성해 발 디딤·화풍·반복 경계와 왼쪽 반전을 검토한다.",
+    "source": {
+        "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png",
+        "sha256": "f429358df77528a614df1e6703582dd13ad08dff7c6af61a17b1b46b944f5285",
+        "generationRecordPath": "resources/ataho-side-generation.json",
+        "sourcePixelsModified": false
+    },
+    "input": {
+        "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk-revised/input.png",
+        "sha256": "f367e61e58f9856064bf3ebe5be44ff69ab6cbb22d33a6f173e9f761d3929e11",
+        "sourceRect": {
+            "x": 111,
+            "y": 26,
+            "width": 941,
+            "height": 1259
+        },
+        "placement": {
+            "x": 41,
+            "y": 12,
+            "width": 173,
+            "height": 232
+        },
+        "canvasSize": {
+            "width": 256,
+            "height": 256
+        },
+        "processing": "기존 미리보기 범위를 잘라 Lanczos로 비율 유지 축소하고 투명 256px 캔버스에 배치한다. 승인 원본은 변경하지 않는다."
+    },
+    "generation": {
+        "tool": "mcp__pixellab__animate_image_pixminimax",
+        "jobId": "c99aacfb-9807-4514-ab85-b32479394d54",
+        "assetId": "04b77137-ec77-53b6-918b-579a102e9403",
+        "galleryStatus": "saved",
+        "request": {
+            "first_frame_url": "upload:7f6bbc85-4a41-4bf2-86cd-51f91a0dffc2",
+            "description": "Walk in place facing right throughout for one complete seamless repeating walk cycle. Alternate both legs through planted contact and raised swing phases, with gentle opposite arm swing, small natural body bob and restrained tail and coat movement. Keep the camera, body center, scale and ground baseline fixed; no sliding across the canvas or turning towards the viewer. Keep the same worn brown open jacket over the ivory cross-wrapped robe in EVERY generated frame, with the original brown waist sash, dark cropped trousers and wraps. Keep the jacket brown and open throughout, without replacing it with a buttoned shirt. Preserve the input's smooth painted contours, face, body proportions and costume. End in a gait phase that smoothly continues into the first generated walking pose. No added effects or extra limbs.",
+            "frame_count": 8,
+            "direction": "east",
+            "view": "side",
+            "subject_description": "a stocky middle-aged orange tiger martial artist with sleepy eyes and ivory cheek fur, wearing a worn brown OPEN short jacket over an ivory CROSS-WRAPPED ROBE without buttons, a brown waist sash, dark cropped trousers, wrist wraps and light ankle wraps",
+            "initial_pose": "standing upright facing screen-right in a slight three-quarter side view with relaxed arms and both feet on one level baseline, brown jacket open over the crossed ivory robe",
+            "no_background": true,
+            "enhance_prompt": false,
+            "seed": 20261014
+        },
+        "requestedFrames": 8,
+        "returnedFrames": 9,
+        "firstFrameIsInput": true,
+        "usage": {
+            "requests": 2,
+            "retries": 1,
+            "chargedGenerations": 2,
+            "thisAttemptGenerations": 1,
+            "balanceBefore": 742,
+            "balanceAfter": 740,
+            "previousAttemptRecord": "resources/ataho-pixellab-walk-attempt-01.json",
+            "correctionReason": "첫 caption에서 갈색 열린 겉옷을 흰 단추옷으로 잘못 설명해 의상 변경이 발생했다. 같은 걷기 범위에서 caption을 수정해 1회 재시험한다."
+        },
+        "delivery": "공개 다운로드 전송 지연으로 get_image의 image/png 원본 데이터를 그대로 저장했다. 추가 생성 없음.",
+        "firstFramePixelsPreserved": true,
+        "firstFrameEncodingNote": "첫 장은 RGBA 픽셀이 입력과 동일하며 PNG 인코딩 바이트만 다르다."
+    },
+    "preview": {
+        "path": "src/resources/characters/ataho-hybrid/pixellab-walk.html",
+        "footY": 244,
+        "frameDurationSeconds": 0.125,
+        "firstPlaybackFrame": 1,
+        "timingNote": "재생 속도는 비교 화면의 설정이다. 생성 모델에서 재생 시각은 반환하지 않았다.",
+        "alignment": "모든 프레임에 같은 캔버스 중심·입력 발 기준을 사용하며 프레임별 위치 보정은 하지 않는다.",
+        "playbackNote": "입력 기준 자세 0번은 정적 비교에 표시하고 생성 1~8번만 반복 재생한다.",
+        "leftPreview": "같은 프레임을 표시 단계에서 좌우 반전한다. 별도 생성·PNG 수정 없음."
+    },
+    "frames": [
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk-revised/00.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/c99aacfb-9807-4514-ab85-b32479394d54/download?index=0",
+            "downloadIndex": 0,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 244
+            },
+            "durationSeconds": 0.125,
+            "sha256": "45a3dd13cb689373c6988f55b048671229d2ccd1cbf70880a9cae802ab344eb7",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [41, 12, 214, 244]
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk-revised/01.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/c99aacfb-9807-4514-ab85-b32479394d54/download?index=1",
+            "downloadIndex": 1,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 244
+            },
+            "durationSeconds": 0.125,
+            "sha256": "61f0ba98518dadeb321c3d64cc16e17e6d6dc3c464389738daae1f82fc088739",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [37, 13, 209, 243]
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk-revised/02.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/c99aacfb-9807-4514-ab85-b32479394d54/download?index=2",
+            "downloadIndex": 2,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 244
+            },
+            "durationSeconds": 0.125,
+            "sha256": "3b123643f876746861e6d7846fbccdc7f6575ee7c66e5e2b26aea57df48ccf12",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [30, 11, 216, 238]
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk-revised/03.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/c99aacfb-9807-4514-ab85-b32479394d54/download?index=3",
+            "downloadIndex": 3,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 244
+            },
+            "durationSeconds": 0.125,
+            "sha256": "fe255145a5d6cbb14154160f7d6982de68f0e161f12c806b3994f6c630122771",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [27, 10, 224, 240]
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk-revised/04.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/c99aacfb-9807-4514-ab85-b32479394d54/download?index=4",
+            "downloadIndex": 4,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 244
+            },
+            "durationSeconds": 0.125,
+            "sha256": "ff22c288cc178a904d8f540f51411dc3ade2aa84667aad0d00ada3ec758ed1d7",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [29, 12, 231, 239]
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk-revised/05.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/c99aacfb-9807-4514-ab85-b32479394d54/download?index=5",
+            "downloadIndex": 5,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 244
+            },
+            "durationSeconds": 0.125,
+            "sha256": "165bdb37f23a49177f17851ff393baec269b57fbbe8056d494775091f1917cf2",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [32, 13, 234, 244]
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk-revised/06.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/c99aacfb-9807-4514-ab85-b32479394d54/download?index=6",
+            "downloadIndex": 6,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 244
+            },
+            "durationSeconds": 0.125,
+            "sha256": "69b76b4111a39f3a572b427590bcad368afd11e7055a8c90fc209adeab89294f",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [27, 13, 229, 244]
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk-revised/07.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/c99aacfb-9807-4514-ab85-b32479394d54/download?index=7",
+            "downloadIndex": 7,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 244
+            },
+            "durationSeconds": 0.125,
+            "sha256": "1b1f6f7af68231f83d816945a9b2e96a7ae71610995b23e40657eaa07649a2bc",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [25, 13, 221, 244]
+        },
+        {
+            "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk-revised/08.png",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/c99aacfb-9807-4514-ab85-b32479394d54/download?index=8",
+            "downloadIndex": 8,
+            "width": 256,
+            "height": 256,
+            "pivot": {
+                "x": 128,
+                "y": 244
+            },
+            "durationSeconds": 0.125,
+            "sha256": "379ba9aee1c321dac29d32e1d4924c97abbed7af8438b875cfbbb4d87f334ece",
+            "alphaRange": [0, 255],
+            "alphaBounds8": [35, 11, 212, 244]
+        }
+    ],
+    "review": {
+        "status": "pending-user-review",
+        "unverified": [
+            "측면 대기·공격·피격 동작",
+            "본게임 통합",
+            "실기기 모바일 표시"
+        ],
+        "findings": [
+            "의상 설명 수정 후 갈색 겉옷·교차한 속옷·허리띠가 생성 8장에 유지된다.",
+            "오른쪽을 향한 팔·다리·꼬리의 걷기 움직임이 이어지고, 같은 8장을 표시 단계에서 왼쪽으로 반전한다.",
+            "원화 및 축소 입력보다 선·털·의상 질감이 거칠어진다. 240px에서 차이가 명확하고 79.2px에서는 작아진다.",
+            "생성 장의 알파 8 이상 외형 아래끝은 y=238~244로, 입력 발 기준 y=244보다 0~6px 위에 놓인다. 이는 240px 표시에서 최대 약 6.2px, 79.2px 표시에서 약 2.0px다. 프레임별 보정은 하지 않았다.",
+            "생성 8→1 반복에서 의상 교체는 없지만 다리 자세의 이음과 접지를 조작 장면에서 더 확인해야 한다."
+        ],
+        "recommendation": "공격 동작을 늘리기 전에 이 걷기를 이동 속도·발 접지·반복 경계와 함께 다듬어 채택 여부를 판단한다. 비도트 원화의 선·질감을 그대로 보존한 완성 리소스로 채택하지 않는다."
+    },
+    "derivatives": {
+        "contactSheet": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk-revised/contact-sheet.png",
+        "animatedPreview": "public/assets/maplestory/ataho-nonpixel-ai/20261013/pixellab-walk-revised/walk-preview.gif",
+        "notes": "비교 시트는 입력과 생성 8장을 밝은 배경 위에 표시한다. GIF는 생성 8장만 합성한 간단 미리보기다. 반환 PNG는 변경하지 않는다."
+    },
+    "verification": {
+        "checks": "npm run check 통과",
+        "build": "npm run build 통과",
+        "browser": [
+            {
+                "viewport": {
+                    "width": 1366,
+                    "height": 768
+                },
+                "deviceScaleFactor": 1,
+                "progression": {
+                    "indices": [0, 1, 2, 3, 4, 5, 6, 7],
+                    "sourceIndices": [1, 2, 3, 4, 5, 6, 7, 8],
+                    "distinctRenderedImages": [1, 1, 8]
+                },
+                "pause": true,
+                "slider": "0/7/6",
+                "mirror": [
+                    {
+                        "checked": 9636,
+                        "mismatches": 1
+                    },
+                    {
+                        "checked": 9727,
+                        "mismatches": 4
+                    },
+                    {
+                        "checked": 9633,
+                        "mismatches": 4
+                    }
+                ],
+                "sizes": [79.2, 112, 240],
+                "slowFrames": [0, 1, 2],
+                "sizing": {
+                    "dpr": 1,
+                    "viewport": [1366, 768],
+                    "canvases": [
+                        {
+                            "css": [424, 340],
+                            "backing": [424, 340]
+                        },
+                        {
+                            "css": [424, 340],
+                            "backing": [424, 340]
+                        },
+                        {
+                            "css": [424, 340],
+                            "backing": [424, 340]
+                        }
+                    ],
+                    "overflow": false
+                },
+                "returnNavigation": true,
+                "errors": []
+            },
+            {
+                "viewport": {
+                    "width": 1920,
+                    "height": 1080
+                },
+                "deviceScaleFactor": 2,
+                "progression": {
+                    "indices": [0, 1, 2, 3, 4, 5, 6, 7],
+                    "sourceIndices": [1, 2, 3, 4, 5, 6, 7, 8],
+                    "distinctRenderedImages": [1, 1, 8]
+                },
+                "pause": true,
+                "slider": "0/7/6",
+                "mirror": [
+                    {
+                        "checked": 37820,
+                        "mismatches": 14
+                    },
+                    {
+                        "checked": 38676,
+                        "mismatches": 10
+                    },
+                    {
+                        "checked": 38413,
+                        "mismatches": 5
+                    }
+                ],
+                "sizes": [79.2, 112, 240],
+                "slowFrames": [0, 1, 2],
+                "sizing": {
+                    "dpr": 2,
+                    "viewport": [1920, 1080],
+                    "canvases": [
+                        {
+                            "css": [425, 340],
+                            "backing": [850, 680]
+                        },
+                        {
+                            "css": [425, 340],
+                            "backing": [850, 680]
+                        },
+                        {
+                            "css": [425, 340],
+                            "backing": [850, 680]
+                        }
+                    ],
+                    "overflow": false
+                },
+                "returnNavigation": true,
+                "errors": []
+            }
+        ],
+        "idleRegression": [
+            {
+                "viewport": {
+                    "width": 1366,
+                    "height": 768
+                },
+                "deviceScaleFactor": 1,
+                "progression": {
+                    "indices": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+                    "distinctRenderedImages": [1, 1, 9]
+                },
+                "pause": true,
+                "slider": "0/8/7",
+                "sizes": [79.2, 112, 240],
+                "slowFrames": [0, 1, 2],
+                "sizing": {
+                    "dpr": 1,
+                    "viewport": [1366, 768],
+                    "canvases": [
+                        {
+                            "css": [424, 340],
+                            "backing": [424, 340]
+                        },
+                        {
+                            "css": [424, 340],
+                            "backing": [424, 340]
+                        },
+                        {
+                            "css": [424, 340],
+                            "backing": [424, 340]
+                        }
+                    ],
+                    "overflow": false
+                },
+                "errors": [],
+                "returnNavigation": true
+            },
+            {
+                "viewport": {
+                    "width": 1920,
+                    "height": 1080
+                },
+                "deviceScaleFactor": 2,
+                "progression": {
+                    "indices": [0, 1, 2, 3, 4, 5, 6, 7, 8],
+                    "distinctRenderedImages": [1, 1, 9]
+                },
+                "pause": true,
+                "slider": "0/8/7",
+                "sizes": [79.2, 112, 240],
+                "slowFrames": [0, 1, 2],
+                "sizing": {
+                    "dpr": 2,
+                    "viewport": [1920, 1080],
+                    "canvases": [
+                        {
+                            "css": [425, 340],
+                            "backing": [850, 680]
+                        },
+                        {
+                            "css": [425, 340],
+                            "backing": [850, 680]
+                        },
+                        {
+                            "css": [425, 340],
+                            "backing": [850, 680]
+                        }
+                    ],
+                    "overflow": false
+                },
+                "errors": [],
+                "returnNavigation": true
+            }
+        ],
+        "firstFrame": "입력과 첫 반환 장의 RGBA 픽셀 동일, PNG 인코딩 바이트만 다름",
+        "original": "오른쪽 원화 SHA-256이 기준 기록과 동일",
+        "alpha": "반환 9장 모두 RGBA·알파 0~255. 생성 외형 아래끝 y=238~244.",
+        "readbackWarning": "검증용 반복 픽셀 읽기에서 생긴 Canvas2D willReadFrequently 성능 안내만 별도 제외했다. 제품의 콘솔·페이지·리소스 오류는 없었다.",
+        "loopComparison": {
+            "adjacentMeanRGBDelta": [
+                20.3, 18.41, 18.807, 17.655, 13.202, 17.708, 19.289, 19.077
+            ],
+            "note": "밝은 배경에 합성한 생성 1~8번의 인접 RGB 평균 절대 차이. 마지막 값은 8→1이며 수치만으로 동작 품질을 판단하지 않는다."
+        },
+        "mobile": "실기기 모바일 검증은 수행하지 않음"
+    }
+}

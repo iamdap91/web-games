@@ -1,4 +1,6 @@
+import { cardinalFacing } from '../../resources/characters/ataho/facing.js';
 const windupCycle = 0.38;
+const chargeFrameCount = 5;
 /** 모션·균열·효과음이 같은 타격 시점을 사용한다. */
 export const overdriveIntro = {
     windupCycle,
@@ -14,27 +16,32 @@ export const overdriveIntro = {
     tigerReach: 1.3,
 };
 export function introPose(time) {
-    const { windupCycle, chargeEnd, tigerAt, burstAt, lunge } = overdriveIntro;
+    const { chargeEnd, tigerAt, burstAt, lunge } = overdriveIntro;
     if (time < chargeEnd) {
-        // 원본 준비 동작 0~3을 두 번 이어 팔을 한 차례 더 돌린다.
-        const rotation = (time % windupCycle) / windupCycle;
+        // 기합을 모으는 전용 동작을 한 번 진행하며 발은 제자리에 고정한다.
         return {
-            frame: Math.min(3, Math.floor(rotation * 4)),
-            offset: -0.14 * (time / chargeEnd) - Math.sin(rotation * Math.PI) * 0.05,
+            animation: 'overdrive-charge',
+            frame: Math.min(chargeFrameCount - 1, Math.floor((Math.max(0, time) / chargeEnd) * chargeFrameCount)),
+            offset: 0,
         };
     }
     if (time < tigerAt) {
         const progress = (time - chargeEnd) / (tigerAt - chargeEnd);
         return {
-            frame: progress < 0.6 ? 3 : 4,
-            offset: -0.14 + (lunge + 0.14) * progress * progress,
+            animation: 'tiger-fist',
+            frame: progress < 0.35 ? 2 : progress < 0.65 ? 3 : 4,
+            offset: lunge * progress * progress,
         };
     }
     const recovery = Math.max(0, Math.min(1, (time - burstAt - 0.12) / 0.36));
-    return { frame: recovery < 0.5 ? 4 : 5, offset: lunge * (1 - recovery) };
+    return {
+        animation: 'tiger-fist',
+        frame: recovery < 0.5 ? 4 : 5,
+        offset: lunge * (1 - recovery),
+    };
 }
 export function introImpactPoint(fighter) {
-    const direction = fighter.facing === 'left' ? -1 : 1;
+    const direction = cardinalFacing(fighter.facing) === 'left' ? -1 : 1;
     return {
         x: fighter.x +
             direction *

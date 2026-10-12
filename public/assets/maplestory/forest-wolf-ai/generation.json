@@ -1,0 +1,993 @@
+{
+  "service": "PixelLab MCP",
+  "authorizedTotalBudget": 16,
+  "baseCandidates": 1,
+  "selectedCandidate": 0,
+  "retries": 0,
+  "chargedGenerations": 6,
+  "balanceBefore": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1947\ngenerations_used: 53\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "base": {
+    "args": {
+      "description": "Pixel art RPG forest wolf enemy, quadruped standing on four paws, facing left in clean side view with a slight view of the front. Slim ash-grey fur, cream muzzle and chest, dark ears, small amber eyes, long fluffy tail, alert but whimsical fantasy creature. Chunky readable silhouette, limited earthy palette, crisp pixels, selective dark outline, simple two-tone shading. Full body with clear paws, centered with padding. No ground, no shadow, no effects, no text.",
+      "width": 64,
+      "height": 64,
+      "direction": "west",
+      "view": "side",
+      "no_background": true,
+      "outline": "selective outline",
+      "detail": "medium detail",
+      "seed": 710101
+    },
+    "result": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: c92a11ae-4f06-472f-a448-a1cb9a1b2a9c\njob_id: c92a11ae-4f06-472f-a448-a1cb9a1b2a9c\nmodel: pixen\ndescription: Pixel art RPG forest wolf enemy, quadruped standing on four paws, facing left in clean side view with a slight view of the front. Slim ash-grey fur, cream muzzle and chest, dark ears, small amber eyes, long fluffy tail, alert but whimsical fantasy creature. Chunky readable silhouette, limited earthy palette, crisp pixels, selective dark outline, simple two-tone shading. Full body with clear paws, centered with padding. No ground, no shadow, no effects, no text.\nsize: 64x64px\ntransparent: True\nasset_id: 5b8a41e0-ecd8-5936-a139-424884894b31\nasset_status: pending (saved when generation completes)\nseed: 710101\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"c92a11ae-4f06-472f-a448-a1cb9a1b2a9c\")"
+        }
+      ],
+      "isError": false
+    },
+    "completed": {
+      "content": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: c92a11ae-4f06-472f-a448-a1cb9a1b2a9c\njob_id: c92a11ae-4f06-472f-a448-a1cb9a1b2a9c\nframes: 1\ntransparent: yes\nasset_id: 5b8a41e0-ecd8-5936-a139-424884894b31\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/c92a11ae-4f06-472f-a448-a1cb9a1b2a9c/download"
+        }
+      ],
+      "structuredContent": {
+        "job_id": "c92a11ae-4f06-472f-a448-a1cb9a1b2a9c",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/c92a11ae-4f06-472f-a448-a1cb9a1b2a9c/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/c92a11ae-4f06-472f-a448-a1cb9a1b2a9c/download"
+        ],
+        "asset": {
+          "id": "5b8a41e0-ecd8-5936-a139-424884894b31",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 1
+      },
+      "isError": false
+    }
+  },
+  "jobs": [
+    {
+      "motion": "stand",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/c92a11ae-4f06-472f-a448-a1cb9a1b2a9c/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/c92a11ae-4f06-472f-a448-a1cb9a1b2a9c/download",
+        "frame_count": 4,
+        "action": "The wolf breathes quietly, its ears twitch and the tail sways slightly. Paws stay on the ground. Subtle seamless idle loop, keep the same left-facing quadruped centered, no effects.",
+        "no_background": true,
+        "seed": 710120
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 83ea5255-5892-4abe-989e-e4fe7d643b6a\njob_id: 83ea5255-5892-4abe-989e-e4fe7d643b6a\naction: The wolf breathes quietly, its ears twitch and the tail sways slightly. Paws stay on the ground. Subtle seamless idle loop, keep the same left-facing quadruped centered, no effects.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 710120\nasset_id: 32ceadae-63c0-5645-a5d3-a2ef167360d6\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"83ea5255-5892-4abe-989e-e4fe7d643b6a\")"
+          }
+        ],
+        "isError": false
+      },
+      "completed": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: completed\nid: 83ea5255-5892-4abe-989e-e4fe7d643b6a\njob_id: 83ea5255-5892-4abe-989e-e4fe7d643b6a\nframe: 0 of 5\nasset_id: 32ceadae-63c0-5645-a5d3-a2ef167360d6\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/83ea5255-5892-4abe-989e-e4fe7d643b6a/download?index=0"
+          }
+        ],
+        "structuredContent": {
+          "job_id": "83ea5255-5892-4abe-989e-e4fe7d643b6a",
+          "status": "completed",
+          "frames": 5,
+          "download_url": "https://api.pixellab.ai/mcp/images/83ea5255-5892-4abe-989e-e4fe7d643b6a/download?index=0",
+          "download_urls": [
+            "https://api.pixellab.ai/mcp/images/83ea5255-5892-4abe-989e-e4fe7d643b6a/download?index=0",
+            "https://api.pixellab.ai/mcp/images/83ea5255-5892-4abe-989e-e4fe7d643b6a/download?index=1",
+            "https://api.pixellab.ai/mcp/images/83ea5255-5892-4abe-989e-e4fe7d643b6a/download?index=2",
+            "https://api.pixellab.ai/mcp/images/83ea5255-5892-4abe-989e-e4fe7d643b6a/download?index=3",
+            "https://api.pixellab.ai/mcp/images/83ea5255-5892-4abe-989e-e4fe7d643b6a/download?index=4"
+          ],
+          "asset": {
+            "id": "32ceadae-63c0-5645-a5d3-a2ef167360d6",
+            "type": "image",
+            "status": "saved"
+          },
+          "charged_generations": 1,
+          "frame": 0
+        },
+        "isError": false
+      }
+    },
+    {
+      "motion": "move",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/c92a11ae-4f06-472f-a448-a1cb9a1b2a9c/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/c92a11ae-4f06-472f-a448-a1cb9a1b2a9c/download",
+        "frame_count": 8,
+        "action": "The wolf runs in place toward the left with alternating forelegs and hindlegs. Its body stretches lightly and tail follows. Complete seamless running cycle, keep the same left-facing quadruped centered, no effects.",
+        "no_background": true,
+        "seed": 710121
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: dbb8ffab-fec2-4fce-bc6b-106d71577527\njob_id: dbb8ffab-fec2-4fce-bc6b-106d71577527\naction: The wolf runs in place toward the left with alternating forelegs and hindlegs. Its body stretches lightly and tail follows. Complete seamless running cycle, keep the same left-facing quadruped centered, no effects.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 710121\nasset_id: 6739e879-6956-547a-9bba-a33f89f693fd\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"dbb8ffab-fec2-4fce-bc6b-106d71577527\")"
+          }
+        ],
+        "isError": false
+      },
+      "completed": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: completed\nid: dbb8ffab-fec2-4fce-bc6b-106d71577527\njob_id: dbb8ffab-fec2-4fce-bc6b-106d71577527\nframe: 0 of 9\nasset_id: 6739e879-6956-547a-9bba-a33f89f693fd\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/dbb8ffab-fec2-4fce-bc6b-106d71577527/download?index=0"
+          }
+        ],
+        "structuredContent": {
+          "job_id": "dbb8ffab-fec2-4fce-bc6b-106d71577527",
+          "status": "completed",
+          "frames": 9,
+          "download_url": "https://api.pixellab.ai/mcp/images/dbb8ffab-fec2-4fce-bc6b-106d71577527/download?index=0",
+          "download_urls": [
+            "https://api.pixellab.ai/mcp/images/dbb8ffab-fec2-4fce-bc6b-106d71577527/download?index=0",
+            "https://api.pixellab.ai/mcp/images/dbb8ffab-fec2-4fce-bc6b-106d71577527/download?index=1",
+            "https://api.pixellab.ai/mcp/images/dbb8ffab-fec2-4fce-bc6b-106d71577527/download?index=2",
+            "https://api.pixellab.ai/mcp/images/dbb8ffab-fec2-4fce-bc6b-106d71577527/download?index=3",
+            "https://api.pixellab.ai/mcp/images/dbb8ffab-fec2-4fce-bc6b-106d71577527/download?index=4",
+            "https://api.pixellab.ai/mcp/images/dbb8ffab-fec2-4fce-bc6b-106d71577527/download?index=5",
+            "https://api.pixellab.ai/mcp/images/dbb8ffab-fec2-4fce-bc6b-106d71577527/download?index=6",
+            "https://api.pixellab.ai/mcp/images/dbb8ffab-fec2-4fce-bc6b-106d71577527/download?index=7",
+            "https://api.pixellab.ai/mcp/images/dbb8ffab-fec2-4fce-bc6b-106d71577527/download?index=8"
+          ],
+          "asset": {
+            "id": "6739e879-6956-547a-9bba-a33f89f693fd",
+            "type": "image",
+            "status": "saved"
+          },
+          "charged_generations": 1,
+          "frame": 0
+        },
+        "isError": false
+      }
+    },
+    {
+      "motion": "attack1",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/c92a11ae-4f06-472f-a448-a1cb9a1b2a9c/download",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/c92a11ae-4f06-472f-a448-a1cb9a1b2a9c/download",
+        "frame_count": 8,
+        "action": "The wolf crouches, lunges forward low to the ground and snaps its jaws at the middle of the clip, then returns to its starting stance. Keep the same left-facing quadruped centered with all paws readable. No effects.",
+        "no_background": true,
+        "seed": 710122
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: a0b6b007-cba4-4a26-ba6e-df69b4d36aaa\njob_id: a0b6b007-cba4-4a26-ba6e-df69b4d36aaa\naction: The wolf crouches, lunges forward low to the ground and snaps its jaws at the middle of the clip, then returns to its starting stance. Keep the same left-facing quadruped centered with all paws readable. No effects.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 710122\nasset_id: 42037b0e-44ef-5ae5-93ec-00b5636b7360\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"a0b6b007-cba4-4a26-ba6e-df69b4d36aaa\")"
+          }
+        ],
+        "isError": false
+      },
+      "completed": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: completed\nid: a0b6b007-cba4-4a26-ba6e-df69b4d36aaa\njob_id: a0b6b007-cba4-4a26-ba6e-df69b4d36aaa\nframe: 4 of 9\nasset_id: 42037b0e-44ef-5ae5-93ec-00b5636b7360\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/a0b6b007-cba4-4a26-ba6e-df69b4d36aaa/download?index=4"
+          }
+        ],
+        "structuredContent": {
+          "job_id": "a0b6b007-cba4-4a26-ba6e-df69b4d36aaa",
+          "status": "completed",
+          "frames": 9,
+          "download_url": "https://api.pixellab.ai/mcp/images/a0b6b007-cba4-4a26-ba6e-df69b4d36aaa/download?index=4",
+          "download_urls": [
+            "https://api.pixellab.ai/mcp/images/a0b6b007-cba4-4a26-ba6e-df69b4d36aaa/download?index=0",
+            "https://api.pixellab.ai/mcp/images/a0b6b007-cba4-4a26-ba6e-df69b4d36aaa/download?index=1",
+            "https://api.pixellab.ai/mcp/images/a0b6b007-cba4-4a26-ba6e-df69b4d36aaa/download?index=2",
+            "https://api.pixellab.ai/mcp/images/a0b6b007-cba4-4a26-ba6e-df69b4d36aaa/download?index=3",
+            "https://api.pixellab.ai/mcp/images/a0b6b007-cba4-4a26-ba6e-df69b4d36aaa/download?index=4",
+            "https://api.pixellab.ai/mcp/images/a0b6b007-cba4-4a26-ba6e-df69b4d36aaa/download?index=5",
+            "https://api.pixellab.ai/mcp/images/a0b6b007-cba4-4a26-ba6e-df69b4d36aaa/download?index=6",
+            "https://api.pixellab.ai/mcp/images/a0b6b007-cba4-4a26-ba6e-df69b4d36aaa/download?index=7",
+            "https://api.pixellab.ai/mcp/images/a0b6b007-cba4-4a26-ba6e-df69b4d36aaa/download?index=8"
+          ],
+          "asset": {
+            "id": "42037b0e-44ef-5ae5-93ec-00b5636b7360",
+            "type": "image",
+            "status": "saved"
+          },
+          "charged_generations": 1,
+          "frame": 4
+        },
+        "isError": false
+      }
+    },
+    {
+      "motion": "die1",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/c92a11ae-4f06-472f-a448-a1cb9a1b2a9c/download",
+        "frame_count": 6,
+        "action": "The wolf recoils, its legs give way and it collapses onto its side with closed eyes. Settle on the ground and remain motionless. Preserve the same left-facing wolf, no blood, no effects, no disappearing or recovery.",
+        "no_background": true,
+        "seed": 710123
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 1f03ff69-1557-48d1-aa25-a0472cd11fff\njob_id: 1f03ff69-1557-48d1-aa25-a0472cd11fff\naction: The wolf recoils, its legs give way and it collapses onto its side with closed eyes. Settle on the ground and remain motionless. Preserve the same left-facing wolf, no blood, no effects, no disappearing or recovery.\nframes: 6\nsize: 64x64px\ntransparent: True\nseed: 710123\nasset_id: 58400f27-c7f0-54e9-a117-fedc5a2f80fb\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"1f03ff69-1557-48d1-aa25-a0472cd11fff\")"
+          }
+        ],
+        "isError": false
+      },
+      "completed": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: completed\nid: 1f03ff69-1557-48d1-aa25-a0472cd11fff\njob_id: 1f03ff69-1557-48d1-aa25-a0472cd11fff\nframe: 0 of 7\nasset_id: 58400f27-c7f0-54e9-a117-fedc5a2f80fb\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/1f03ff69-1557-48d1-aa25-a0472cd11fff/download?index=0"
+          }
+        ],
+        "structuredContent": {
+          "job_id": "1f03ff69-1557-48d1-aa25-a0472cd11fff",
+          "status": "completed",
+          "frames": 7,
+          "download_url": "https://api.pixellab.ai/mcp/images/1f03ff69-1557-48d1-aa25-a0472cd11fff/download?index=0",
+          "download_urls": [
+            "https://api.pixellab.ai/mcp/images/1f03ff69-1557-48d1-aa25-a0472cd11fff/download?index=0",
+            "https://api.pixellab.ai/mcp/images/1f03ff69-1557-48d1-aa25-a0472cd11fff/download?index=1",
+            "https://api.pixellab.ai/mcp/images/1f03ff69-1557-48d1-aa25-a0472cd11fff/download?index=2",
+            "https://api.pixellab.ai/mcp/images/1f03ff69-1557-48d1-aa25-a0472cd11fff/download?index=3",
+            "https://api.pixellab.ai/mcp/images/1f03ff69-1557-48d1-aa25-a0472cd11fff/download?index=4",
+            "https://api.pixellab.ai/mcp/images/1f03ff69-1557-48d1-aa25-a0472cd11fff/download?index=5",
+            "https://api.pixellab.ai/mcp/images/1f03ff69-1557-48d1-aa25-a0472cd11fff/download?index=6"
+          ],
+          "asset": {
+            "id": "58400f27-c7f0-54e9-a117-fedc5a2f80fb",
+            "type": "image",
+            "status": "saved"
+          },
+          "charged_generations": 1,
+          "frame": 0
+        },
+        "isError": false
+      }
+    },
+    {
+      "motion": "hit1",
+      "args": {
+        "image_url": "https://api.pixellab.ai/mcp/images/c92a11ae-4f06-472f-a448-a1cb9a1b2a9c/download",
+        "description": "Keep the same wolf, pixels, colors and left-facing silhouette. Make a brief hurt pose: eyes squeezed shut, muzzle lifted slightly, ears pulled back and legs braced. Paws stay on the same ground line, preserve body and canvas. No effects or background.",
+        "no_background": true,
+        "seed": 710125
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: da040646-b667-493c-ba3d-6fddbe898e95\njob_id: da040646-b667-493c-ba3d-6fddbe898e95\nmodel: pixen\nedit: Keep the same wolf, pixels, colors and left-facing silhouette. Make a brief hurt pose: eyes squeezed shut, muzzle lifted slightly, ears pulled back and legs braced. Paws stay on the same ground line, preserve body and canvas. No effects or background.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nseed: 710125\nasset_id: 8bb20d6f-b758-5535-8922-c2cff2090f9f\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"da040646-b667-493c-ba3d-6fddbe898e95\")"
+          }
+        ],
+        "isError": false
+      },
+      "completed": {
+        "content": [
+          {
+            "type": "text",
+            "text": "status: completed\nid: da040646-b667-493c-ba3d-6fddbe898e95\njob_id: da040646-b667-493c-ba3d-6fddbe898e95\nframe: 0 of 1\nasset_id: 8bb20d6f-b758-5535-8922-c2cff2090f9f\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/da040646-b667-493c-ba3d-6fddbe898e95/download?index=0"
+          }
+        ],
+        "structuredContent": {
+          "job_id": "da040646-b667-493c-ba3d-6fddbe898e95",
+          "status": "completed",
+          "frames": 1,
+          "download_url": "https://api.pixellab.ai/mcp/images/da040646-b667-493c-ba3d-6fddbe898e95/download?index=0",
+          "download_urls": [
+            "https://api.pixellab.ai/mcp/images/da040646-b667-493c-ba3d-6fddbe898e95/download"
+          ],
+          "asset": {
+            "id": "8bb20d6f-b758-5535-8922-c2cff2090f9f",
+            "type": "image",
+            "status": "saved"
+          },
+          "charged_generations": 1,
+          "frame": 0
+        },
+        "isError": false
+      }
+    }
+  ],
+  "originalHashes": [
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/attack1/frame-00.png",
+      "sha256": "2394e3d4fa7f3da41bec76dca6bbbdd813175a2ab70716280c29819b505c23e4",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        8,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/attack1/frame-01.png",
+      "sha256": "1a178461149e823ca468d54e2b75fc9a9db14df77a4c6f35e8187055662a37a3",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        9,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/attack1/frame-02.png",
+      "sha256": "b3ec1059304901029bc01be8944fc8f54a5feb1526e3be1bb8864e1788c5e966",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        3,
+        10,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/attack1/frame-03.png",
+      "sha256": "c9b59280cc01e71a6682cf02d4466166218298d32b58298d1a4dddf2e98b8ed7",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        2,
+        11,
+        62,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/attack1/frame-04.png",
+      "sha256": "87608f8b69dd6b9e91f5013d1aadeeba11a041750afb611d28fe0e9a5a66d436",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        2,
+        13,
+        58,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/attack1/frame-05.png",
+      "sha256": "54a5d7ea9ad9fdf06435a9dd481a93c307538d3896264a1c1711b69ac08612ed",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        2,
+        11,
+        60,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/attack1/frame-06.png",
+      "sha256": "c6d524491f41ef9cc7f736cd099d1e35f7c9f5bc32a180bd193b84e63ee991af",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        3,
+        10,
+        61,
+        54
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/attack1/frame-07.png",
+      "sha256": "bbb9d43576ed790a1788eb4f65af962a0b02c6d232d431221ff9282df9e4e048",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        10,
+        62,
+        54
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/attack1/frame-08.png",
+      "sha256": "be92a99d85f9bac8bf5b126e420cc6e487b4f7b5d4586cb2cff5f5f8f38bb60e",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        8,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/candidate-00.png",
+      "sha256": "6c4555e5bbf5f7a34a2a663dd8aa1840a8aafbcec19c160c7855c7826373849c",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        8,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/die1/frame-00.png",
+      "sha256": "79e699f7b5dc1e8d222848cf1035af4cf65546e5357c60cc9b43b00d8f255232",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        8,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/die1/frame-01.png",
+      "sha256": "43fdf75dac63e5913dcd02e9e581fc5a0d628afc7954fab859db003a9a23f55e",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        9,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/die1/frame-02.png",
+      "sha256": "e54c90058c9b15730d4c1aa7476d8762f2e2fcb8f7e8a32255d9e59b82c84fac",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        11,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/die1/frame-03.png",
+      "sha256": "208af52df7494396ac841de6ecbbe9276cc0d9fc5f4c9c05d131ca2323583576",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        5,
+        16,
+        61,
+        54
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/die1/frame-04.png",
+      "sha256": "efc0ffce45912a67a2674383ec6b6da061997182b9c1bd0e4250f6bc94dbb230",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        6,
+        21,
+        62,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/die1/frame-05.png",
+      "sha256": "525a9477834eead2d635e864264eede0d31bb3694fc3f7f82225781f85d9894d",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        6,
+        24,
+        58,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/die1/frame-06.png",
+      "sha256": "b36a385a8c56d1dbd22a0b77ce61fca191e854ecff48e44779c8261616420cb4",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        5,
+        26,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/hit1/frame-00.png",
+      "sha256": "54c625854e4d95e6aa0b04811f289985678abc85c8dcc43f793732f5d4241d8e",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        6,
+        12,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/move/frame-00.png",
+      "sha256": "bb96a18e2c3a77ce2fb57d5e6279210a2ba8cc507120c70ff74702891420bd3f",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        8,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/move/frame-01.png",
+      "sha256": "e9d86fe07248cd667ef9cbff1d51183ee635373a33efb99075a1f5929e8de921",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        7,
+        60,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/move/frame-02.png",
+      "sha256": "524436530cb88fb938dfac596d3d4cee01f4a06436607eae1ec76379e6b081bc",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        7,
+        59,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/move/frame-03.png",
+      "sha256": "64c323b0f12dd439008fd83b96d072ea2e2a223da641bc28388533da05e792eb",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        8,
+        59,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/move/frame-04.png",
+      "sha256": "7ad78432a5d743d800f345ad711c6f8daa70992cc3574c2790eb1f5193c3952c",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        9,
+        59,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/move/frame-05.png",
+      "sha256": "cf138029fa00f9c35373ccd5e55578ef3eed6d3e2922f305e171f15181c9e8bf",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        8,
+        59,
+        54
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/move/frame-06.png",
+      "sha256": "be57ef098276b8929027f36442887af33a8fee0272b314120d521e73d6b29d89",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        7,
+        59,
+        54
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/move/frame-07.png",
+      "sha256": "ce780928a7b38ba1be87e68e4ddb85acbd963410ee0c8fe98ee36a15ad97b201",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        7,
+        60,
+        54
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/move/frame-08.png",
+      "sha256": "152eeaa918115e25a7278bf64d4f1e78f9c0e500653ba372534be5e5f153f946",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        8,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/stand/frame-00.png",
+      "sha256": "fb07c4e040c76b8e9ca90ac0f32fd2a696707b5a43d9e5d9187c505389201c5b",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        8,
+        61,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/stand/frame-01.png",
+      "sha256": "050a38d59ac8236751caa1b4eaed6953eceb360ea74ec64f0ee6f913c90ebaac",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        3,
+        9,
+        60,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/stand/frame-02.png",
+      "sha256": "6d270829463d75a2df2d3c911edc26ba26b17f734c153b22915fc2d7f4506b12",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        3,
+        9,
+        59,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/stand/frame-03.png",
+      "sha256": "39a6656164aab03dbba26af331e3cb2da681c0ca98c471c33e3aece8eb66491b",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        3,
+        9,
+        60,
+        55
+      ]
+    },
+    {
+      "path": "public/assets/maplestory/forest-wolf-ai/originals/stand/frame-04.png",
+      "sha256": "c4fe3ebe387c7b6843f40ed2612de3ea67e1a5922845db5c67f95b29bed71abf",
+      "width": 64,
+      "height": 64,
+      "alphaBbox": [
+        4,
+        8,
+        61,
+        55
+      ]
+    }
+  ],
+  "processing": "원본 RGBA를 변경하지 않고 불투명 영역만 추출. x축은 원본 캔버스 중앙, y축은 각 프레임의 바닥에 맞춤.",
+  "balanceAfter": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1933\ngenerations_used: 67\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "batchSummary": {
+    "authorizedTotalBudget": 16,
+    "chargedGenerations": 14,
+    "completedJobs": 12,
+    "jobIds": [
+      "c92a11ae-4f06-472f-a448-a1cb9a1b2a9c",
+      "b5820aa3-e67d-4247-ada9-dbc70cb3b417",
+      "83ea5255-5892-4abe-989e-e4fe7d643b6a",
+      "dbb8ffab-fec2-4fce-bc6b-106d71577527",
+      "a0b6b007-cba4-4a26-ba6e-df69b4d36aaa",
+      "1f03ff69-1557-48d1-aa25-a0472cd11fff",
+      "da040646-b667-493c-ba3d-6fddbe898e95",
+      "5f4d0174-7bf2-448c-9bd3-9936552ddff3",
+      "fe76f6c5-80a5-4f26-b2ba-fe8c0f9430d2",
+      "d0063090-4963-4b57-a97b-6b035f0cf8a6",
+      "b2bd0b39-05af-47dd-bbb2-8fbcc1f9dedc",
+      "04079ea2-a990-4810-8f7f-1feadfb58af4"
+    ],
+    "byAsset": {
+      "ai/forest-wolf": 6,
+      "ai/armored-boar": 8
+    },
+    "unusedApprovedGenerations": 2,
+    "usdCreditsSpent": 0,
+    "before": {
+      "generations_remaining": 1947,
+      "generations_used": 53,
+      "generations_total": 2000,
+      "usdCredits": 0.0
+    },
+    "after": {
+      "generations_remaining": 1933,
+      "generations_used": 67,
+      "generations_total": 2000,
+      "usdCredits": 0.0
+    },
+    "notes": "두 몬스터 전체 생성 배치의 전후 잔량. 각 항목의 chargedGenerations는 해당 몬스터 비용이다. 검토 과정에서 추가 생성·재시도는 하지 않았다."
+  },
+  "activeFrameHashes": [
+    {
+      "animation": "stand",
+      "index": 0,
+      "sourceFrameIndex": 0,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/stand/frame-00.png",
+      "sha256": "ebf0a1457738a76081348668b2c4d488add76ae66f47f37c7cc971bd6f9d4737"
+    },
+    {
+      "animation": "stand",
+      "index": 1,
+      "sourceFrameIndex": 1,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/stand/frame-01.png",
+      "sha256": "f720599b1f6d176ed03d1a3e1d74a6e08c7c988f28d185502369ed39bffc556f"
+    },
+    {
+      "animation": "stand",
+      "index": 2,
+      "sourceFrameIndex": 2,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/stand/frame-02.png",
+      "sha256": "be136395716ff96f23c4709304fb20b777d13f473f6e646d8f74eb65de0143dd"
+    },
+    {
+      "animation": "stand",
+      "index": 3,
+      "sourceFrameIndex": 3,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/stand/frame-03.png",
+      "sha256": "40079ba9a51b76d375779802fd09128993bd4e412faa91577f65e82b3c61fc82"
+    },
+    {
+      "animation": "move",
+      "index": 0,
+      "sourceFrameIndex": 0,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/move/frame-00.png",
+      "sha256": "b1d97e0e2520482cd69651859f94edfd404369a2a7599685c00a84e5e1d9b5f8"
+    },
+    {
+      "animation": "move",
+      "index": 1,
+      "sourceFrameIndex": 1,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/move/frame-01.png",
+      "sha256": "aa65a9d5c5ca778f1d64541746445eb43cc3d6876fa63c586f96bf98a7087835"
+    },
+    {
+      "animation": "move",
+      "index": 2,
+      "sourceFrameIndex": 2,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/move/frame-02.png",
+      "sha256": "5d41ef5bb917d7de678f264f05a8f26db5402ebd498e73b84346209a4c097030"
+    },
+    {
+      "animation": "move",
+      "index": 3,
+      "sourceFrameIndex": 3,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/move/frame-03.png",
+      "sha256": "62ff48f160e8cdf1c75fce3407b8a86d166eccec80d2f084b65b4142cd0fd3a7"
+    },
+    {
+      "animation": "move",
+      "index": 4,
+      "sourceFrameIndex": 4,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/move/frame-04.png",
+      "sha256": "9224e95e47f79b40da72a81b3a55f53e65ee237cc01bd1d04f3c335cb169b47f"
+    },
+    {
+      "animation": "move",
+      "index": 5,
+      "sourceFrameIndex": 5,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/move/frame-05.png",
+      "sha256": "974740cfa5ebe52001aa6603f8f9905f4367a5761341b683bba82dfa474c2da8"
+    },
+    {
+      "animation": "move",
+      "index": 6,
+      "sourceFrameIndex": 6,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/move/frame-06.png",
+      "sha256": "ba1bdb70c2a3d65dd302406e6252e408f596373cd52f3cf7eac4cc01d66f8031"
+    },
+    {
+      "animation": "move",
+      "index": 7,
+      "sourceFrameIndex": 7,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/move/frame-07.png",
+      "sha256": "8fb587aceac7c6c2e09bd5f08f7a5177ed3d0d6277272eb5d8626e2590366362"
+    },
+    {
+      "animation": "attack1",
+      "index": 0,
+      "sourceFrameIndex": 0,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/attack1/frame-00.png",
+      "sha256": "7540ef101c0fa70a11b21103bdccbff4e59a67af43255da9ed84ae3e6925cd8d"
+    },
+    {
+      "animation": "attack1",
+      "index": 1,
+      "sourceFrameIndex": 1,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/attack1/frame-01.png",
+      "sha256": "379c61819aae3fa019c06c3510c9be3a6d7a4f26972bdf3463ee388e994960ba"
+    },
+    {
+      "animation": "attack1",
+      "index": 2,
+      "sourceFrameIndex": 2,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/attack1/frame-02.png",
+      "sha256": "1022651f91b4d9dd6d88ada90afc8c251eebcaa2c6c298fd7f1b239e26dc188f"
+    },
+    {
+      "animation": "attack1",
+      "index": 3,
+      "sourceFrameIndex": 3,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/attack1/frame-03.png",
+      "sha256": "38c4b9edf89c3bbe3d7cf06bfc4e83c49238b1b7b688a1f54bd8809821abce0b"
+    },
+    {
+      "animation": "attack1",
+      "index": 4,
+      "sourceFrameIndex": 4,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/attack1/frame-04.png",
+      "sha256": "68dcfd99c87bac49859b5a25b2aa9e2752f75bfecc9baba77f872eb34a7959eb"
+    },
+    {
+      "animation": "attack1",
+      "index": 5,
+      "sourceFrameIndex": 5,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/attack1/frame-05.png",
+      "sha256": "98979a9b3048fe355e24cc15ef2289e0362bb1d5626445bf12dcdab3723cfa5c"
+    },
+    {
+      "animation": "attack1",
+      "index": 6,
+      "sourceFrameIndex": 6,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/attack1/frame-06.png",
+      "sha256": "6331370bac71f107b4c3725e23fab006fb0f3c3733c98a5729916154e08166b1"
+    },
+    {
+      "animation": "attack1",
+      "index": 7,
+      "sourceFrameIndex": 7,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/attack1/frame-07.png",
+      "sha256": "d7970350f2bda0d6074fe9aa42cb89fdbeab3ec2ba9733c42ce5f6d577f6704c"
+    },
+    {
+      "animation": "attack1",
+      "index": 8,
+      "sourceFrameIndex": 8,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/attack1/frame-08.png",
+      "sha256": "24307d755c47bc5992640d06bc6573d0e4543e86f62c0b3bae6f72cb28bc4f1b"
+    },
+    {
+      "animation": "die1",
+      "index": 0,
+      "sourceFrameIndex": 1,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/die1/frame-00.png",
+      "sha256": "949db7f03bed8f4f2928b6ac77b5a2f595b00d2636be8cd0c639637b333cc717"
+    },
+    {
+      "animation": "die1",
+      "index": 1,
+      "sourceFrameIndex": 2,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/die1/frame-01.png",
+      "sha256": "5b7f6ba5821b95147d8d69d90e14d3b8e5b4ab35027d74f3c372f022edf7371d"
+    },
+    {
+      "animation": "die1",
+      "index": 2,
+      "sourceFrameIndex": 3,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/die1/frame-02.png",
+      "sha256": "0deaec4f6a8991e644e93e515335579fdfbaaf47deae65a351b87f354ce7a11e"
+    },
+    {
+      "animation": "die1",
+      "index": 3,
+      "sourceFrameIndex": 4,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/die1/frame-03.png",
+      "sha256": "7466632af0ce5fdcbcabc2667015b91ac97eb751140adfd38b0d7acd6334ac4b"
+    },
+    {
+      "animation": "die1",
+      "index": 4,
+      "sourceFrameIndex": 5,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/die1/frame-04.png",
+      "sha256": "265dea59e8ef4774e804f910eef7433cbbcd520f831d4e1fd1fd05486e155549"
+    },
+    {
+      "animation": "die1",
+      "index": 5,
+      "sourceFrameIndex": 6,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/die1/frame-05.png",
+      "sha256": "60ecbadfb835c44e8cc28f7eda7adfd8c762d95d39eda11805a86f67fe8adfc4"
+    },
+    {
+      "animation": "hit1",
+      "index": 0,
+      "sourceFrameIndex": 0,
+      "path": "public/assets/maplestory/forest-wolf-ai/frames/hit1/frame-00.png",
+      "sha256": "99a303d32434c799358fccd0cda2442750add014345cc7bd22797ce804b6473f"
+    }
+  ],
+  "resourceReview": {
+    "reviewedAt": "2026-10-10",
+    "activeFrameCount": 28,
+    "originalPngCount": 32,
+    "originalCanvasSize": {
+      "width": 64,
+      "height": 64
+    },
+    "alphaValues": [
+      0,
+      255
+    ],
+    "attackTiming": {
+      "frameCount": 9,
+      "contactFrameIndex": 4,
+      "contactTimeSeconds": 0.24,
+      "actionDurationSeconds": 0.5333333333333333,
+      "contactProgress": 0.45,
+      "notes": "전투가 접근·타격·마무리·복귀 구간을 소유하고 접촉 프레임 4번을 명시적으로 맞춘다. 전체 시간에 floor(progress*9)를 적용하지 않는다. durationSeconds는 단독 미리보기용이며 리소스 배열·시간은 변경하지 않았다.",
+      "arrivalProgress": 0.3,
+      "returnProgress": 0.72,
+      "frameSelection": "접근·복귀는 move. 도착 후 공격을 0~4번으로 진행해 접촉 시 4번에 맞추고, 공격 마무리 5~8번 뒤 이동 모션으로 복귀한다."
+    },
+    "nativePixelsPreserved": true,
+    "sourceAnchorX": 32.0,
+    "pivotY": 0,
+    "runtimeVerified": false,
+    "runtimeReviewOwner": "사용자의 실제 플레이 확인 및 통합 담당",
+    "limitations": [
+      "animate_image의 입력·끝 프레임에도 기본 외형과 소량의 픽셀 차이가 있다. 기본 외형을 그대로 복사한 것으로 기록하지 않고 각 반환 원본의 해시를 보존한다."
+    ],
+    "reviewFiles": [
+      {
+        "path": "public/assets/maplestory/forest-wolf-ai/review/attack1.gif",
+        "sha256": "9f763fedee8d724a0d4e5e0f23ba971daedde6b616844be57808e020b0bd0104"
+      },
+      {
+        "path": "public/assets/maplestory/forest-wolf-ai/review/contact.png",
+        "sha256": "b67c9d0b70773d12de500b146159d83e3f7223dad537ea1c31ac8f549e914c45"
+      }
+    ],
+    "logicValidation": {
+      "check": "npm run check 통과",
+      "build": "npm run build 통과",
+      "tests": "tests/forest-enemies.test.mjs 및 tests/sprite-textures.test.mjs 13개 통과",
+      "runtimeVerified": false
+    }
+  }
+}

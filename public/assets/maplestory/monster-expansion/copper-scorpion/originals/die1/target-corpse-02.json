@@ -1,0 +1,92 @@
+{
+  "id": "copper-scorpion",
+  "source": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download",
+  "at": [
+    0,
+    -2
+  ],
+  "angle": 180,
+  "recipe": {
+    "job": {
+      "canvas": [
+        64,
+        64
+      ],
+      "frame_count": 1,
+      "durations_ms": [
+        100
+      ],
+      "views": [
+        {
+          "id": "native",
+          "offset": [
+            0,
+            0
+          ]
+        }
+      ],
+      "source_bookends_exact": false,
+      "body_palette_exact": true,
+      "require_clear_border": true
+    },
+    "scene": {
+      "palette": {},
+      "layers": [
+        {
+          "id": "body",
+          "name": "Body - intact upside-down target"
+        }
+      ],
+      "views": {
+        "native": {
+          "parts": {
+            "original": {}
+          },
+          "nodes": {
+            "body": {
+              "layer": "body",
+              "at": [
+                0,
+                -2
+              ],
+              "pivot": [
+                32,
+                32
+              ],
+              "angle": 180,
+              "draw": [
+                {
+                  "op": "copy",
+                  "part": "original"
+                }
+              ]
+            }
+          },
+          "poses": {
+            "rest": {}
+          },
+          "frames": [
+            "rest"
+          ]
+        }
+      }
+    }
+  },
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "drawing_id: 1f13998e-fda4-477e-9cdb-eb2122cc04b3\ncanvas 64x64, 1 frames, 100 ms, views: native\nstate: needs_visual_review\nlayers (native): Body - intact upside-down target\nnodes (native): body\nimages: assets/native/review/full-01.png\n(+2 more evidence images — body-only, change masks, palette: repeat with mode=\"high\", or zoom with --inspect […])\ndownload https://api.pixellab.ai/mcp/pixel-tools/1f13998e-fda4-477e-9cdb-eb2122cc04b3/: assets/native/animation.gif, assets/native/full.png, assets/native/layers.npz, recipe.json\nnext: draw --drawing 1f13998e-fda4-477e-9cdb-eb2122cc04b3 --changes […]"
+      },
+      {
+        "type": "image",
+        "data": "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",
+        "mimeType": "image/png"
+      }
+    ],
+    "isError": false
+  },
+  "url": "https://api.pixellab.ai/mcp/pixel-tools/1f13998e-fda4-477e-9cdb-eb2122cc04b3/assets/native/full.png",
+  "drawingId": "1f13998e-fda4-477e-9cdb-eb2122cc04b3",
+  "paidGenerations": 0
+}

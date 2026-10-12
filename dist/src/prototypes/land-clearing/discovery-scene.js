@@ -1,7 +1,7 @@
 import { recolorClearingMaterial } from './clearing-palette.js';
 import { treeFallAngle, treeFallDuration } from './tree-fall.js';
 import * as THREE from 'three';
-import { setResourceOutline, } from '../../rendering/environment-resources.js';
+import { setResourceOutline, } from '../../resources/environment/environment-resources.js';
 import { discoveryLayout, streamFill, } from './clearing-discovery.js';
 import { resourceLayers, outlineGroups, } from '../../rendering/surface-types.js';
 const tileWidth = (discoveryLayout.channel.maxX - discoveryLayout.channel.minX) / 36;

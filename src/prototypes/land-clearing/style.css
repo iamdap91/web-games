@@ -1,4 +1,5 @@
 @import url('../../games/tiger-rpg/resource-strip.css');
+@import url('../../games/tiger-rpg/world-label.css');
 
 .clearing-screen {
   position: relative;
@@ -79,7 +80,7 @@
 .clearing-screen .energy-control {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 7px;
   margin-bottom: 7px;
   font-size: 11px;
   color: #ded1b7;
@@ -124,21 +125,19 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  min-height: 34px;
+  min-width: 68px;
+  min-height: 44px;
+  position: relative;
   border: 1px solid #fff3d72b;
   border-radius: 2px;
-  padding: 5px 8px;
+  padding: 5px 8px 12px;
   background: #fff3d709;
   color: #d2c8b5;
   font-size: 12px;
 }
-.clearing-screen .skill-controls small {
-  color: #c9bca4;
-  font-size: 10px;
-  margin-left: 2px;
-}
 .clearing-screen .skill-controls button:disabled {
   cursor: default;
+  color: #968c7c;
 }
 .clearing-screen .skill-controls button[data-ready='true'] {
   color: var(--clearing-paper);
@@ -160,7 +159,9 @@
       0 0 0 #bd914700;
   }
 }
-.clearing-screen button:focus-visible {
+.clearing-screen .skill-controls button:focus-visible,
+.clearing-screen .menu-toggle:focus-visible,
+.clearing-screen .reset:focus-visible {
   outline: 2px solid var(--clearing-gold);
   outline-offset: 3px;
 }
@@ -171,26 +172,6 @@
   border-bottom-width: 2px;
   border-radius: 3px;
   padding: 2px 4px;
-}
-.clearing-screen .controls {
-  position: absolute;
-  right: var(--hud-right);
-  bottom: var(--hud-bottom);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 6px 10px;
-  max-width: 260px;
-  color: var(--clearing-ink);
-  font-size: 11px;
-  line-height: 1.6;
-  text-shadow:
-    0 1px 4px #fff3d7,
-    0 0 8px #fff3d7;
-  pointer-events: none;
-}
-.clearing-screen .controls span {
-  white-space: nowrap;
 }
 .clearing-screen .notice,
 .clearing-screen .target-hint {
@@ -216,31 +197,20 @@
 .clearing-screen .target-hint {
   bottom: calc(var(--hud-bottom) + 83px);
 }
-.clearing-screen .exit-hint {
-  position: absolute;
-  transform: translate(-50%, -100%);
-  margin: 0;
-  padding: 5px 11px;
-  border-radius: 4px;
-  background: #fff3d7b3;
-  color: var(--clearing-ink);
-  font-size: 11px;
-  pointer-events: none;
-  white-space: nowrap;
-}
-.clearing-screen .exit-hint span {
-  margin-left: 9px;
-}
+.clearing-screen .menu-toggle,
 .clearing-screen .reset {
   position: absolute;
   right: var(--hud-right);
-  bottom: calc(var(--hud-bottom) + 44px);
+  bottom: var(--hud-bottom);
   border: 1px solid var(--clearing-line);
   border-radius: 5px;
   padding: 7px 10px;
   background: #fff3d7b3;
   color: var(--clearing-ink);
   font-size: 10px;
+}
+.clearing-screen .reset {
+  bottom: calc(var(--hud-bottom) + 44px);
 }
 .clearing-screen .overlay {
   position: absolute;
@@ -268,22 +238,12 @@
   font-size: 13px;
   line-height: 1.8;
 }
-.clearing-screen .card button {
-  border: 1px solid var(--clearing-line);
-  border-radius: 5px;
-  padding: 9px 15px;
-  background: var(--clearing-paper-shade);
-  color: var(--clearing-ink);
-}
 @container (max-width: 700px) {
   .clearing-screen .location-tag {
     left: var(--hud-left);
   }
   .clearing-screen .location-tag h1 {
     font-size: 20px;
-  }
-  .clearing-screen .controls {
-    max-width: 165px;
   }
 }
 @container (max-height: 480px) {
@@ -294,8 +254,8 @@
     padding: 6px 8px;
   }
   .clearing-screen .energy-control {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
     margin: 0;
     gap: 5px;
   }
@@ -308,18 +268,11 @@
   .clearing-screen .skill-controls button {
     padding-inline: 6px;
   }
-  .clearing-screen .controls {
-    max-width: 180px;
-    gap: 3px 9px;
-  }
   .clearing-screen .target-hint {
     bottom: calc(var(--hud-bottom) + 54px);
   }
   .clearing-screen .exit-hint {
     translate: 0 -14px;
-  }
-  .clearing-screen .reset {
-    bottom: calc(var(--hud-bottom) + 52px);
   }
   .clearing-screen .card {
     margin: 16px;
@@ -335,10 +288,162 @@
 }
 
 .game-frame[data-story-blocking='true'] .clearing-screen .abilities,
-.game-frame[data-story-blocking='true'] .clearing-screen .controls,
 .game-frame[data-story-blocking='true'] .clearing-screen .target-hint,
 .game-frame[data-story-blocking='true'] .clearing-screen .notice,
+.game-frame[data-story-blocking='true'] .clearing-screen .menu-toggle,
 .game-frame[data-story-blocking='true'] .clearing-screen .reset,
-.game-frame[data-story-blocking='true'] .clearing-screen .exit-hint {
+.game-frame[data-story-blocking='true'] .clearing-screen .exit-hint,
+.game-frame[data-story-blocking='true'] .clearing-screen .weak-hint,
+.game-frame[data-story-blocking='true'] .clearing-screen .grove-hint,
+.game-frame[data-story-blocking='true'] .clearing-screen .forest-hint {
   visibility: hidden;
+}
+
+.clearing-screen[data-menu-open='true'] .abilities,
+.clearing-screen[data-menu-open='true'] .target-hint,
+.clearing-screen[data-menu-open='true'] .notice,
+.clearing-screen[data-menu-open='true'] .menu-toggle,
+.clearing-screen[data-menu-open='true'] .reset,
+.clearing-screen[data-menu-open='true'] .exit-hint,
+.clearing-screen[data-menu-open='true'] .weak-hint,
+.clearing-screen[data-menu-open='true'] .grove-hint,
+.clearing-screen[data-menu-open='true'] .forest-hint {
+  visibility: hidden;
+}
+
+.clearing-screen .weak-hint {
+  color: #765522;
+  background: #fff1cfe6;
+  padding: 3px 7px;
+  border: 1px solid #d2b272;
+  border-radius: 4px;
+}
+
+.clearing-screen .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.clearing-screen .skill-icon {
+  display: block;
+  flex: none;
+  width: 34px;
+  height: 34px;
+}
+.clearing-screen .energy-control .skill-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--clearing-gold);
+}
+.clearing-screen .skill-cost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--clearing-gold);
+}
+.clearing-screen .skill-cost i {
+  width: 10px;
+  height: 5px;
+  border: 1px solid #fff3d72b;
+  border-radius: 1px;
+  background: #fff3d721;
+}
+.clearing-screen .skill-cost i.required {
+  border-color: currentColor;
+  background: currentColor;
+}
+.clearing-screen .skill-cut {
+  stroke: var(--icon-cut, #251f1b);
+  stroke-width: 1.7;
+}
+.clearing-screen .weak-hint {
+  --icon-cut: #fff1cf;
+}
+.clearing-screen .weak-hint .skill-cost i:not(.required) {
+  border-color: #76552238;
+  background: #7655221a;
+}
+.clearing-screen .skill-controls .skill-cost,
+.clearing-screen .skill-lock {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+}
+.clearing-screen .skill-lock .skill-icon {
+  width: 11px;
+  height: 11px;
+  margin: auto;
+}
+.clearing-screen .hold-key {
+  display: inline-grid;
+  place-items: center;
+  position: relative;
+  flex: none;
+  width: 30px;
+  height: 30px;
+}
+.clearing-screen .hold-key kbd {
+  border: 0;
+  padding: 0;
+  font-size: 12px;
+}
+.clearing-screen .hold-key svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke-width: 2;
+  transform: rotate(-90deg);
+}
+.clearing-screen .hold-track {
+  stroke: currentColor;
+  opacity: 0.3;
+}
+.clearing-screen .hold-fill {
+  stroke: currentColor;
+  stroke-dasharray: 100;
+  stroke-dashoffset: calc(100 * (1 - var(--hold-progress, 0)));
+}
+.clearing-screen [data-charged='true'] .hold-key {
+  color: #a06914;
+  background: #ffe4a6;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #bd914747;
+}
+.clearing-screen .weak-hint {
+  text-shadow: none;
+  padding: 5px 8px;
+}
+.clearing-screen .weak-action {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.clearing-screen .weak-hint[data-available='false'] .weak-action {
+  opacity: 0.5;
+}
+.clearing-screen .weak-status {
+  display: block;
+  margin-top: 3px;
+  font-size: 11px;
+}
+@container (max-width: 430px) and (max-height: 480px) {
+  .clearing-screen .abilities {
+    gap: 6px;
+  }
+  .clearing-screen .energy-control {
+    flex-direction: column;
+  }
+  .clearing-screen progress {
+    width: 40px;
+  }
 }

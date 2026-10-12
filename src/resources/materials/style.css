@@ -1,0 +1,255 @@
+:root {
+  background: #181d1b;
+}
+main {
+  max-width: 1360px;
+  padding-top: 32px;
+}
+header {
+  margin-bottom: 26px;
+}
+h1 {
+  color: #f0eadb;
+}
+.preview-badge {
+  border: 1px solid #515d4a;
+  color: #c3cfaf;
+  border-radius: 30px;
+  padding: 10px 16px;
+  white-space: nowrap;
+  font-size: 12px;
+}
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 310px;
+  gap: 26px;
+  align-items: start;
+}
+.workspace section {
+  margin-top: 0;
+  min-width: 0;
+}
+.preview-panel {
+  position: sticky;
+  top: 24px;
+  border: 1px solid #495447;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #b8c9aa;
+}
+.preview-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 20px;
+  background: #29352d;
+  font-size: 12px;
+  color: #e3e8d7;
+}
+.preview-heading span:last-child {
+  color: #b2c0a7;
+}
+canvas {
+  aspect-ratio: 1.32;
+}
+#status {
+  padding: 14px 20px;
+  background: #29352d;
+  color: #c6d0ba;
+  font-size: 12px;
+  margin: 0;
+}
+.outline-control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 12px;
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #515e48;
+  border-radius: 12px;
+  background: #252f26;
+}
+.outline-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+.outline-control output,
+.resource-outline output {
+  color: #d5c38a;
+  font-size: 13px;
+}
+.outline-description,
+.outline-endpoints {
+  grid-column: 1 / -1;
+  color: #acb8a1;
+  font-size: 11px;
+}
+.outline-endpoints {
+  display: flex;
+  justify-content: space-between;
+}
+.outline-details {
+  margin-bottom: 28px;
+}
+.outline-details h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+.outline-help {
+  margin: 0 0 6px;
+  color: #acb8a1;
+  font-size: 11px;
+  line-height: 1.6;
+}
+.resource-outline {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #343e35;
+}
+.settings-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.settings-heading h2 {
+  font-size: 16px;
+  margin: 0;
+}
+.settings-heading button {
+  font-size: 11px;
+  padding: 9px 11px;
+  background: #303c31;
+  color: #d7dec7;
+  border: 1px solid #546047;
+}
+.preset-actions {
+  display: flex;
+  gap: 6px;
+}
+.settings-heading button {
+  white-space: nowrap;
+}
+#recommended,
+#outline-recommended {
+  background: #485b37;
+  border-color: #788d58;
+  color: #f0f1df;
+}
+#recommended:hover,
+#outline-recommended:hover {
+  background: #596e43;
+}
+.surface-control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 12px;
+  border-bottom: 1px solid #343e35;
+  padding: 12px 0;
+}
+.surface-name {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.surface-name::before {
+  content: '';
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--swatch);
+  border: 1px solid #ffffff26;
+}
+.surface-control output {
+  color: #d5c38a;
+  font-size: 14px;
+}
+.surface-description {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  color: #a6afa1;
+}
+input[type='range'] {
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 24px;
+  margin: 0;
+  accent-color: #b2bf89;
+  cursor: pointer;
+}
+.preview-note {
+  color: #a6afa1;
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 15px 0 0;
+}
+footer {
+  max-width: 850px;
+}
+@media (max-width: 850px) {
+  .workspace {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .preview-panel {
+    top: 0;
+    z-index: 1;
+  }
+  canvas {
+    aspect-ratio: 1.75;
+    max-height: 46vh;
+  }
+  #surface-controls,
+  #outline-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+  }
+  .preview-badge {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  main {
+    padding: 22px 16px;
+  }
+  header {
+    margin-bottom: 18px;
+  }
+  nav {
+    margin-bottom: 20px;
+    gap: 6px;
+  }
+  nav a {
+    padding: 9px 11px;
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .intro {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .preview-heading {
+    padding: 12px 14px;
+  }
+  #status {
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+  #surface-controls,
+  #outline-controls {
+    gap: 0 18px;
+  }
+  .surface-description {
+    min-height: 28px;
+    line-height: 1.5;
+  }
+}

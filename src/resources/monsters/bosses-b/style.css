@@ -1,0 +1,103 @@
+:root {
+  color-scheme: dark;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  background: #162921;
+  color: #f4e5c7;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  padding: 16px;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+h1 {
+  margin: 4px 0;
+  font-size: 23px;
+}
+h2 {
+  font-size: 19px;
+}
+.eyebrow {
+  margin: 0;
+  color: #b8c9a6;
+  font-size: 12px;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+label {
+  display: grid;
+  gap: 5px;
+  font-size: 12px;
+}
+select {
+  font: inherit;
+  background: #31483a;
+  color: inherit;
+  border: 1px solid #84977a;
+  border-radius: 4px;
+  padding: 7px 10px;
+}
+select:focus-visible,
+a:focus-visible {
+  outline: 2px solid #ebd48b;
+  outline-offset: 3px;
+}
+#status,
+#scale-description {
+  margin: 10px 0;
+  font-size: 13px;
+  color: #c9d4b8;
+}
+#stage {
+  width: 100%;
+  overflow: auto;
+  border: 1px solid #607960;
+  border-radius: 6px;
+}
+canvas {
+  display: block;
+}
+#originals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+figure {
+  margin: 0;
+  padding: 15px;
+  min-width: 230px;
+  background: #26392f;
+  border: 1px solid #58735b;
+  border-radius: 5px;
+}
+figure img {
+  display: block;
+  image-rendering: pixelated;
+  margin: 8px auto 18px;
+}
+figcaption {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+}
+a {
+  color: #eed59a;
+}
+footer {
+  margin-top: 24px;
+  font-size: 12px;
+}

@@ -1,0 +1,263 @@
+{
+  "createdDate": "2026-10-12",
+  "provider": "built-in image_gen",
+  "operation": "reference-guided-concept-generation",
+  "status": "completed",
+  "generationCalls": 1,
+  "retries": 0,
+  "pixellabCalls": 0,
+  "cliApiCalls": 0,
+  "scope": "아타호 정면 전신 외형 컨셉1장과 연묵04 비교 카드. 런타임 도트·배율·모션 변경 없음.",
+  "finalPrompt": "Use case: style-transfer\nAsset type: ONE front-facing full-body character concept for an appearance comparison card.\nInput image roles: Image 1 (64x64 Ataho south.png) is the STRICT character identity, outfit, proportions and color reference. Image 2 (Yeonmuk04) is ONLY the target illustration style, line quality, stepped shading and rendering detail reference. Do not draw the fox and do not copy her clothes or slender body.\nPrimary request: Expand the tiger in image1 into a high-resolution character concept rendered in exactly the same crisp illustrated RPG character style as image2: dark clean outlines, angular stepped pixel-like edges, restrained flat cel-shaded color clusters, a few coherent shadow planes giving gentle volume, no airbrush gradients or painterly texture.\nSubject: Ataho, a MIDDLE-AGED male tiger beast-person martial artist. Retain his very broad large tiger head, rounded tiger ears, original orange forehead hair tuft, black tiger stripes on forehead and cheeks, sweeping ivory cheek fur and broad pale muzzle, thick brows, slightly half-lidded confident golden eyes, small black nose, easy assured smile. Mature, dependable and a little roguish, NOT a cub, not angry, no alcohol bottle. Keep his compact squat stocky silhouette, thick neck, broad shoulders and robust short torso/legs from image1; do not elongate him to the fox's slimmer proportions.\nOUTFIT INVARIANTS: same short OPEN BROWN jacket with dark edges and cuffs, visible IVORY INNER SHIRT covering the chest beneath the jacket, dark charcoal loose trousers, original muted waist belt/sash, brown wrist wraps, bare orange tiger feet with toes, one orange-and-black striped tail. The ivory torso area is CLOTHING, NOT a naked chest or added chest-fur patch. Preserve original garment shape and simple materials. No new costume, armor, weapon, shoes or accessories.\nPose/composition: true FRONT/SOUTH full-body neutral standing, both shoulders and both eyes visible, both bare feet on a common ground line, arms relaxed beside waist as in image1, one slightly closed fist. Tail visible curving to one side behind hips. All ears, hands, feet and tail completely visible with comfortable transparent margins. One character only centered on a portrait canvas comparable to image2.\nBackground: genuinely transparent RGBA, no ground plane, no shadow disk, no backdrop, no frame, no text, no watermark. This is a NEW high-resolution concept drawing, not an enlarged low-resolution64px screenshot. Maintain image1 identity and compact body while matching image2's visual language and shading quality.\n",
+  "inputs": [
+    {
+      "role": "현재 아타호 외형·복장·비율 기준",
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/ataho-front-reference.png",
+      "sourcePath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/south.png",
+      "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9",
+      "size": [64, 64]
+    },
+    {
+      "role": "선·단계 명암의 그림체 기준",
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-04.png",
+      "sha256": "004e622819c1f87f64e4a03dd65aa9077468ccd2ff9559a5068abd6bf00a5026",
+      "size": [1098, 1433]
+    }
+  ],
+  "file": {
+    "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-01.png",
+    "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a126e7-f1bf-77e0-a6da-a6902de601c1/exec-75b2f8db-7487-4c80-9d4f-d48a6846fee5.png",
+    "sha256": "c3376aa6bf14e792431cdc7cc85ad0f8d82976167e6b09aabe5227a04945988e",
+    "size": [1098, 1433],
+    "mode": "RGBA",
+    "savedWithoutModification": true,
+    "alphaPreserved": true,
+    "visibleBoundsAlpha128": [54, 51, 986, 1405]
+  },
+  "review": {
+    "identity": "큰 넓은 호랑이 얼굴, 주황 털과 검정 줄무늬, 둥근 귀·이마 털·밝은 볼털·편안한 금빛 눈",
+    "outfit": "갈색 열린 짧은 겉옷과 아이보리 속옷, 짙은 바지·허리띠·아대·맨발",
+    "silhouette": "듬직하고 넓은 체형과 단일 줄무늬 꼬리. 귀·발·꼬리 전체 확인",
+    "comparisonOnly": true
+  },
+  "previewPath": "src/resources/characters/fox-talismanist/#appearance-comparison",
+  "validation": {
+    "check": "passed",
+    "browser": "passed",
+    "browserReportPath": "public/assets/maplestory/fox-talismanist-ai/concept/review/ataho-01/browser.json",
+    "viewports": [
+      [1366, 768],
+      [1920, 1080]
+    ],
+    "matchingConceptResolution": [1098, 1433],
+    "matchingDisplayHeight": 350,
+    "dotComparisonPreserved": true,
+    "allRuntimeAnimationMetadataUnchanged": true,
+    "originalBytesPreserved": true,
+    "consoleErrors": 0,
+    "missingResponses": 0,
+    "gameTests": "정적 컨셉 비교만 변경하여 생략"
+  },
+  "revisions": [
+    {
+      "createdDate": "2026-10-12",
+      "candidate": "ataho-concept-02",
+      "provider": "built-in image_gen",
+      "status": "generated-awaiting-user-review",
+      "generationCalls": 1,
+      "retries": 0,
+      "pixellabCalls": 0,
+      "cliApiCalls": 0,
+      "authorization": "첨부 도트를 우선 기준으로 노련한 중장년 무술가의 인상·생활감 있는 현재 복장·허리 도기 술병을 반영한 컨셉02 한 장과 비교 카드 수정.",
+      "finalPrompt": "Use case: stylized-concept\nAsset type: ONE revised Ataho full-body FRONT concept02 for a two-character appearance comparison.\nReference priority: Image1 is the user's attached ORIGINAL SMALL ATAHO SPRITE and is the PRIMARY authority for identity, face, stocky silhouette, proportions, colors and existing costume. Actually interpret this sprite's seasoned middle-aged look; do not substitute a youthful attractive tiger. Image2 Yeonmuk04 is ONLY the linework and coherent stepped cel-shading style reference. No fox, no copying her outfit or slim proportions.\nCharacter: Ataho, an EXPERIENCED MIDDLE-AGED MALE TIGER martial artist who was formidable in his prime and is STILL very strong, though less sharp physically than his peak. His face must visibly read OLDER AND MORE SEASONED: a very broad heavy tiger face like the sprite, subtly heavier upper eyelids, small fine creases at the outer eyes and brow, a few gray fur clusters at temples and outer eyebrows, broad ivory cheek/muzzle fur, original orange forehead tuft, rounded ears, black tiger stripes, small black nose. Quiet, knowing, slightly tired expression with an unhurried but penetrating gaze, a restrained confident half-smile. Not youthful bright eyes, not a child, not a gaunt elderly grandfather, no long white beard, no red nose, no exaggerated drunken expression.\nBody: keep the sprite's big broad head and compact heavy silhouette. Thick neck and shoulders, thick powerful forearms and large capable fists. A slightly roomy softened waist, not a tight young bodybuilder torso. Comfortable grounded neutral stance; real strength remains in the fists without displaying it. Short robust legs, no elongation toward the fox's shape.\nPreserve the sprite's EXISTING clothes: short open BROWN outer jacket with dark borders and cuffs, IVORY INNER SHIRT covering the chest, dark charcoal loose trousers, muted cloth belt/sash, brown wrist wraps, bare orange tiger feet with toes, ONE striped orange tail. The chest's ivory material is an inner garment, not a naked torso or chest-fur replacement. Give the same garments subtle lived-in age: faded brown cloth, softly worn cuffs, frayed wrap edges, small scuffs and creases from years of travel. No new costume, armor, shoes, weapons or flashy decorations.\nRequired new object: ONE OLD EARTHENWARE SAKE/WINE BOTTLE tied by a simple cord to one side of his waist belt, hanging visibly beside the hip. Modest rounded pottery bottle with narrow corked neck and a few worn glaze scuffs, clearly readable and not hidden by the fist or tail. He keeps it close out of habitual reliance on alcohol; express this by its always-at-hand placement and a little fatigue, not clownish drunkenness. He is standing composed, not drinking or swinging the bottle.\nRendering: match image2's crisp dark outlines, angular pixel-like edge steps, restrained broad flat color clusters, clean 3-4 cel-shade planes per material and gentle sculpted volume. A NEW high-resolution illustrated character concept, not a resized64px image. Rich readable face and hands while retaining the sprite's familiar robust identity.\nComposition: exactly one character, straight FRONT/SOUTH, both eyes and shoulders visible, full body from ears through bare feet and full single tail. Relaxed arms, one loosely curled powerful fist, both feet on the same ground baseline. Comfortable transparent margin on all sides. Portrait canvas1098x1433 comparable to image2. Genuinely transparent RGBA background, no floor, drop-shadow disk, scenery, text, frame, watermark or second character. Show a face bearing years and hands still bearing strength.\n",
+      "inputs": [
+        {
+          "role": "사용자가 첨부한 최우선 정체성·복장·체형 기준. 도구 reference에 직접 포함.",
+          "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/references/ataho-user-reference-02.png",
+          "originalAttachmentPath": "/var/folders/cf/pv_mgsrx2tv0gs71b1p98sgr0000gn/T/codex-clipboard-359772b0-43c7-4bf5-a398-c825a7e71302.png",
+          "sha256": "6f0b3539b7e7a86e4eb6228b9c5c28d4b2fbc81b446a58d5367a64151785f3f7",
+          "size": [64, 64]
+        },
+        {
+          "role": "그림체·선·명암 참고만",
+          "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-04.png",
+          "sha256": "004e622819c1f87f64e4a03dd65aa9077468ccd2ff9559a5068abd6bf00a5026",
+          "size": [1098, 1433]
+        }
+      ],
+      "file": {
+        "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-02.png",
+        "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a126e7-f1bf-77e0-a6da-a6902de601c1/exec-0efadcfe-6ef9-47c3-a084-b40326c71c07.png",
+        "sha256": "d9fc315ed558d0f871911bd6cea0720797f92fcba8b829cdc0796a87797d9069",
+        "size": [1098, 1433],
+        "mode": "RGBA",
+        "savedWithoutModification": true,
+        "alphaPreserved": true,
+        "visibleBoundsAlpha128": [156, 50, 1030, 1400]
+      },
+      "review": {
+        "age": "무거운 눈꺼풀·잔주름·회색 눈썹과 관자놀이 털, 느긋하고 날카로운 시선",
+        "strength": "넓은 얼굴과 두꺼운 어깨·팔·주먹, 조금 여유 있는 허리와 편한 자세",
+        "outfit": "첨부 도트의 갈색 겉옷·아이보리 속옷·짙은 바지·아대·맨발·단일 꼬리. 바랜 천과 닳은 소매 표현",
+        "bottle": "허리 한쪽에 끈으로 매단 낡은 도기 술병1개. 과장된 취기·붉은 코 없이 가까이 두는 습관 표현",
+        "comparisonOnly": true
+      },
+      "validation": {
+        "check": "passed",
+        "browser": "passed",
+        "browserReportPath": "public/assets/maplestory/fox-talismanist-ai/concept/review/ataho-02/browser.json",
+        "viewports": [
+          [1366, 768],
+          [1920, 1080]
+        ],
+        "matchingConceptResolution": [1098, 1433],
+        "displayHeight": 350,
+        "originalGeneratedBytesPreserved": true,
+        "concept01AndItsMetadataUnchanged": true,
+        "attachmentBytesPreserved": true,
+        "yeonmuk04Unchanged": true,
+        "dotComparisonPreserved": true,
+        "runtimeAnimationMetadataUnchanged": true,
+        "consoleErrors": 0,
+        "missingResponses": 0,
+        "gameTests": "정적 컨셉 비교만 변경하여 생략"
+      }
+    },
+    {
+      "createdDate": "2026-10-12",
+      "candidate": "ataho-concept-03",
+      "provider": "built-in image_gen",
+      "status": "generated-awaiting-user-review",
+      "generationCalls": 1,
+      "retries": 0,
+      "pixellabCalls": 0,
+      "cliApiCalls": 0,
+      "authorization": "첨부 도트를 우선 기준으로 옷 위로 보이는 자연스러운 나이살, 편안해진 중장년 인상과 은근한 술기운을 반영한 컨셉03 한 장. 기획 확인 후 추가 생성 없이 비교 카드에 반영.",
+      "finalPrompt": "Use case: stylized-concept\nAsset type: ONE revised Ataho full-body front concept03.\nReference priority: Image1 is the USER'S ORIGINAL SMALL ATAHO SPRITE, the highest-priority authority for identity, face, relaxed cheeky expression, costume and SHORT HEAVY ROUNDED silhouette. Transfer that exact comfortable, slightly roguish sprite feeling into a high-resolution concept. Image2 Yeonmuk04 is ONLY the clean outlines and stepped cel-shading illustration style reference, never her slender proportions or costume. Do not draw a fox.\nAtaho is clearly a MIDDLE-AGED male tiger martial artist: still solid and capable, softened by age and years of enjoying drink, gradually kinder and more easygoing. The CENTRAL CHANGE is a visibly SOFTER, ROUNDER BODY and WARM RELAXED FACE, rather than a tightly muscular intimidating hero.\nBody silhouette is vital: retain the broad tiger head, thick arms and large hands, but make the torso barrel-shaped with NATURAL MIDDLE-AGED BELLY FAT clearly readable THROUGH THE CLOTHES. A comfortably rounded lower belly projects slightly above and over a LOOSE low waist sash; ivory shirt fabric drapes and gently bulges over the belly and rests in a soft fold above the belt. The waist is broad, almost as wide as the chest, NOT tightly cinched. Jacket side contours curve softly outward around the belly. Broad relaxed shoulders slope gently instead of flexing upward; arms hang comfortably, large hands are loosely curled rather than combat-clenched. Short stout legs, grounded relaxed stance. Strong underneath, but no V-shaped bodybuilder torso, sculpted abs, hard muscle separation, narrow athlete waist or chest puffing. Not extremely obese and not frail.\nFace: preserve the sprite's very broad round orange tiger face, black stripes, rounded ears, familiar forehead tuft, broad ivory cheek and muzzle fur, small black nose. Soft half-open golden eyes with lowered relaxed lids, slight crow's-feet, a small knowing friendly smile and softly rounded cheeks. A MILD pleasant alcohol warmth: very subtle warm cheek coloration and a languid gaze that STILL has focus. Easygoing, approachable, a little cheeky; not stern, suspicious or angry. No red nose, heavy flushing, cartoon drunken grin, tongue out, stumbling or severe intoxication. A little gray fur at temples and eyebrows supports middle age, but keep it SPARSE: no oversized long white eyebrows, long beard or elderly grandfather impression.\nOutfit must remain the SPRITE'S short open BROWN jacket, IVORY INNER SHIRT covering the chest, dark charcoal loose trousers, muted fabric belt/sash, brown wrist wraps, bare orange tiger feet and ONE striped tail. Keep these exact garment types and colors. Gentle faded fabric, worn cuffs and wraps and lived-in creases, no armor, weapon, shoes or new fancy costume. The belly remains fully COVERED by the ivory shirt; do not replace it with bare chest fur or exposed skin.\nONE worn brown EARTHENWARE WINE BOTTLE with corked narrow neck, tied by simple cord to ONE hip at the waist, clearly visible beside the soft belly. Worn glaze and travel scuffs. Bottle stays hanging close to hand, not lifted for drinking.\nRendering: image2's crisp dark outlines, angular stepped edge language, broad flat color clusters, restrained 3-4 shade planes per material, gentle sculpted volume, no airbrush or glossy3D rendering. Front/SOUTH, complete full body, both eyes/shoulders/feet visible, ears and single tail uncut, arms relaxed. Center ONE character with comfortable transparent margins on portrait canvas1098x1433. Genuinely transparent RGBA background, no floor, scenery, shadow disk, text, border, watermark or comparison panel. This is an illustrated concept, not an enlarged64px screenshot. Prioritize the original SPRITE'S soft rounded relaxed middle-aged charm, not an idealized young or stern muscular tiger.",
+      "inputs": [
+        {
+          "role": "사용자가 첨부한 최우선 정체성·복장·체형 기준. 도구 reference에 직접 포함.",
+          "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/references/ataho-user-reference-02.png",
+          "originalAttachmentPath": "/var/folders/cf/pv_mgsrx2tv0gs71b1p98sgr0000gn/T/codex-clipboard-359772b0-43c7-4bf5-a398-c825a7e71302.png",
+          "sha256": "6f0b3539b7e7a86e4eb6228b9c5c28d4b2fbc81b446a58d5367a64151785f3f7",
+          "size": [64, 64]
+        },
+        {
+          "role": "그림체·선·명암 참고만",
+          "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-04.png",
+          "sha256": "004e622819c1f87f64e4a03dd65aa9077468ccd2ff9559a5068abd6bf00a5026",
+          "size": [1098, 1433]
+        }
+      ],
+      "file": {
+        "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-03.png",
+        "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a126e7-f1bf-77e0-a6da-a6902de601c1/exec-29164c6b-1c97-4979-8e53-840a3ffd00cb.png",
+        "sha256": "e9e43fa9ddc3fa6c563103b988a71ccd10ce72a320f491736ccb86cffa6582fb",
+        "size": [1098, 1433],
+        "mode": "RGBA",
+        "savedWithoutModification": true,
+        "alphaPreserved": true,
+        "visibleBoundsAlpha128": [59, 44, 985, 1403]
+      },
+      "review": {
+        "body": "아이보리 속옷 위로 둥근 배와 넓고 부드러운 허리, 배 아래 느슨한 띠. 편하게 내려놓은 어깨와 손.",
+        "expression": "반쯤 내려앉은 눈매와 작은 웃음으로 표현한 유해진 중장년 인상. 과장되지 않은 은근한 술기운.",
+        "outfit": "갈색 겉옷·아이보리 속옷·짙은 바지·아대·맨발·단일 꼬리와 허리의 낡은 도기 술병 유지.",
+        "comparisonOnly": true,
+        "planningReview": "기획에서 생성 원본을 직접 확인하고 비교 카드 반영을 요청. 최종 외형 평가는 사용자에게 맡김."
+      },
+      "validation": {
+        "check": "passed",
+        "browser": "passed",
+        "browserReportPath": "public/assets/maplestory/fox-talismanist-ai/concept/review/ataho-03/browser.json",
+        "viewports": [
+          [1366, 768],
+          [1920, 1080]
+        ],
+        "matchingConceptResolution": [1098, 1433],
+        "displayHeight": 350,
+        "originalGeneratedBytesPreserved": true,
+        "concept01And02AndTheirMetadataUnchanged": true,
+        "attachmentBytesPreserved": true,
+        "yeonmuk04Unchanged": true,
+        "dotComparisonPreserved": true,
+        "runtimeAnimationMetadataUnchanged": true,
+        "consoleErrors": 0,
+        "missingResponses": 0,
+        "gameTests": "정적 컨셉 비교만 변경하여 생략"
+      }
+    },
+    {
+      "createdDate": "2026-10-12",
+      "candidate": "ataho-concept-04",
+      "provider": "built-in image_gen",
+      "operation": "localized-age-edit",
+      "status": "generated-awaiting-user-review",
+      "generationCalls": 1,
+      "retries": 0,
+      "pixellabCalls": 0,
+      "cliApiCalls": 0,
+      "authorization": "사용자의 아직 젊어 보인다는 피드백에 따라 컨셉03을 직접 편집해 얼굴·머리의 연령감만 높이는 수정안04 한 장. 03의 체형·표정·복장·술병·전신 자세 유지.",
+      "finalPrompt": "Use case: precise-object-edit\nAsset type: ONE Ataho concept04, a localized AGE EDIT of the existing full-body concept03.\nImage roles: Image1 is the EXACT EDIT TARGET: concept03. Image2 is the original64px user sprite for identity only, not a new body or rendering style. Edit image1 rather than redesigning or making a different character.\nPrimary request: The user likes concept03 but finds his FACE still too young. Make this SAME tiger look a little older, clearly late50s to early60s, while retaining his warm relaxed cheeky small smile, slightly tipsy pleasant warmth and experienced strong spirit.\nCHANGE ONLY AGE CUES WITHIN THE FACE/HEAD: heavier upper eyelids and slight relaxed sag under the eyes; visibly readable but restrained fine crow's-feet at both outer eye corners; a few faint forehead expression lines; a little more soft weight in cheeks and lower jaw. Add small readable pepper-gray fur clusters mixed into the SHORT natural eyebrows, temples and a small portion of the forehead tuft. Gray is limited and intermixed with orange, not a full white tuft. Keep both eyes half-open and golden with a calm warm gaze; keep the gentle knowing smile. Avoid severe wrinkles, gauntness, fatigue-heavy despair, scowling, rigid sternness, exaggerated red nose or obvious cartoon drunkenness. NO long white eyebrows, long beard, giant white moustache or elderly-grandfather redesign. He is the same approachable sturdy drink-loving martial artist with a more visibly seasoned face.\nLOCK EVERYTHING ELSE FROM IMAGE1: identical rounded middle-aged belly visible through the IVORY INNER SHIRT, broad soft waist and low loose BROWN sash, relaxed sloping shoulders, comfortable arms and loosely curled hands, short heavy body proportions, BROWN open jacket with worn cuffs, charcoal loose trousers, wrist wraps, bare tiger feet, ONE orange striped tail, ONE old pottery wine bottle tied to the same hip. Keep the shirt fabric, belly contour, jacket silhouette, hands, legs, feet, tail and bottle unchanged. Preserve the exact full-body FRONT pose, canvas composition, margins, colors, crisp dark outlines, angular stepped illustration edges and clean flat cel-shading from concept03. Do not enlarge or shrink the head, straighten the body, remove belly fat, tighten waist, add muscles, replace clothing or move the bottle.\nCanvas: same portrait1098x1433 with genuinely transparent RGBA; no scenery, ground plane, shadow disk, text or watermark. Full ears, tail and feet remain uncut. Preserve all parts outside the head as closely as possible. Only the face and small gray head-fur details should visibly differ from concept03. ONE final edited character, no before-after panel.",
+      "inputs": [
+        {
+          "role": "직접 편집 대상. 컨셉03의 체형·복장·표정·전신 자세·그림체 보존 기준.",
+          "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-03.png",
+          "sha256": "e9e43fa9ddc3fa6c563103b988a71ccd10ce72a320f491736ccb86cffa6582fb",
+          "size": [1098, 1433]
+        },
+        {
+          "role": "사용자 첨부 도트의 정체성 기준. 편집 도구에 로컬 보존 사본을 직접 포함.",
+          "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/references/ataho-user-reference-02.png",
+          "originalAttachmentPath": "/var/folders/cf/pv_mgsrx2tv0gs71b1p98sgr0000gn/T/codex-clipboard-359772b0-43c7-4bf5-a398-c825a7e71302.png",
+          "sha256": "6f0b3539b7e7a86e4eb6228b9c5c28d4b2fbc81b446a58d5367a64151785f3f7",
+          "size": [64, 64]
+        }
+      ],
+      "file": {
+        "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-04.png",
+        "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a126e7-f1bf-77e0-a6da-a6902de601c1/exec-e4df1d96-3e70-44db-9d12-f354f4282967.png",
+        "sha256": "fe633a7a1b2d361ce35ab487a58f5d4189c8034175ae895517736f2968c7f67e",
+        "size": [1098, 1433],
+        "mode": "RGBA",
+        "savedWithoutModification": true,
+        "alphaPreserved": true,
+        "visibleBoundsAlpha128": [59, 43, 989, 1405]
+      },
+      "review": {
+        "age": "50대 후반~60대 초반의 연령감을 목표로 눈꺼풀·눈 밑·눈꼬리와 이마의 주름, 짧은 눈썹·관자놀이·이마 털의 회색을 보강.",
+        "expression": "03의 따뜻하고 능청스러운 작은 웃음과 은근한 술기운 유지. 긴 흰 눈썹·수염 없이 연령감을 표현.",
+        "bodyAndOutfit": "03의 둥근 배, 편안한 어깨와 손, 갈색 겉옷·아이보리 속옷·짙은 바지·아대·맨발·단일 꼬리·허리 술병과 전신 자세를 육안 비교.",
+        "preservationLimit": "생성 편집이므로 머리 밖 픽셀이 원본과 동일하다고 주장하지 않음. 외형과 자세의 유지는 육안 확인.",
+        "comparisonOnly": true
+      },
+      "validation": {
+        "check": "passed",
+        "browser": "passed",
+        "browserReportPath": "public/assets/maplestory/fox-talismanist-ai/concept/review/ataho-04/browser.json",
+        "viewports": [
+          [1366, 768],
+          [1920, 1080]
+        ],
+        "matchingConceptResolution": [1098, 1433],
+        "displayHeight": 350,
+        "originalGeneratedBytesPreserved": true,
+        "concept01Through03AndTheirMetadataUnchanged": true,
+        "attachmentBytesPreserved": true,
+        "yeonmuk04Unchanged": true,
+        "dotComparisonPreserved": true,
+        "runtimeAnimationMetadataUnchanged": true,
+        "consoleErrors": 0,
+        "missingResponses": 0,
+        "gameTests": "정적 컨셉 비교만 변경하여 생략"
+      }
+    }
+  ],
+  "currentConcept": {
+    "candidate": "ataho-concept-04",
+    "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-04.png",
+    "generationRecord": "resources/ataho-concept.json",
+    "designApproval": "사용자 검토 대기",
+    "previousConceptPath": "public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-03.png"
+  }
+}

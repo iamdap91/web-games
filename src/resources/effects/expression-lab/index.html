@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>움직임과 풍경 · 2.5D 표현 비교</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <script type="importmap">
+      { "imports": { "three": "/node_modules/three/build/three.module.js" } }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header class="lab-header">
+        <div>
+          <p class="eyebrow">이계취호전 · 표현 실험실</p>
+          <h1>움직임과 풍경</h1>
+          <p class="intro">
+            같은 그림, 같은 장면. 박자와 반응을 더하면 어떤 인상이 될까요?
+          </p>
+        </div>
+        <span class="draft-badge">라이브러리 비교 시안</span>
+      </header>
+
+      <fieldset id="controls" disabled>
+        <legend class="visually-hidden">표현 비교 설정</legend>
+        <div class="toolbar">
+          <div class="scene-tabs" aria-label="비교 장면 선택">
+            <button id="combat-tab" type="button" aria-pressed="true">
+              01 · 공격의 박자
+            </button>
+            <button id="environment-tab" type="button" aria-pressed="false">
+              02 · 반응하는 숲
+            </button>
+          </div>
+          <div class="playback">
+            <button id="pause" type="button">일시정지</button>
+            <button id="reset" type="button">처음부터</button>
+            <label><input id="slow" type="checkbox" /> 0.25배</label>
+            <label><input id="guides" type="checkbox" /> 움직임 표시</label>
+          </div>
+        </div>
+
+        <div id="combat-options" class="option-bar">
+          <span class="option-label">추가판에 적용</span>
+          <label
+            ><input id="timing" type="checkbox" checked /> 동작의 박자</label
+          >
+          <label
+            ><input id="trails" type="checkbox" checked /> 발을 따라가는
+            궤적</label
+          >
+          <label class="repeat"
+            ><input id="loop" type="checkbox" checked /> 반복 재생</label
+          >
+          <button id="attack" type="button">회전 강타 · Space</button>
+        </div>
+        <div id="environment-options" class="option-bar" hidden>
+          <span class="option-label">추가판에 적용</span>
+          <label
+            ><input id="secondary" type="checkbox" checked /> 늦게 따라오는
+            반응</label
+          >
+          <label
+            ><input id="lighting" type="checkbox" checked /> 빛과 반딧불</label
+          >
+          <label
+            ><input id="height" type="checkbox" checked /> 다리 위·아래
+            길</label
+          >
+          <button id="pulse" type="button">주변에 충격 · Space</button>
+        </div>
+      </fieldset>
+
+      <p id="loading" class="loading" role="status">
+        아타호의 원본 프레임과 비교 장면을 준비하고 있어요.
+      </p>
+
+      <section
+        id="combat-panel"
+        class="comparison"
+        aria-label="회전 강타의 기존 표현과 추가 표현"
+      >
+        <article class="comparison-card">
+          <div class="card-heading">
+            <h2>현재 회전 강타</h2>
+            <span class="variant-label">기준</span>
+          </div>
+          <div
+            id="combat-baseline"
+            class="stage"
+            tabindex="0"
+            aria-label="현재 회전 강타 재생 화면"
+          ></div>
+          <div class="card-footer">
+            <p>현재 포즈 순서 · 금빛 반달 · 타격 정지</p>
+            <output id="combat-baseline-detail" aria-live="off"></output>
+          </div>
+        </article>
+        <article class="comparison-card enhanced-card">
+          <div class="card-heading">
+            <h2>박자와 궤적을 더하면</h2>
+            <span class="variant-label">추가판</span>
+          </div>
+          <div
+            id="combat-enhanced"
+            class="stage"
+            tabindex="0"
+            aria-label="박자와 발 궤적을 추가한 회전 강타 재생 화면"
+          ></div>
+          <div class="card-footer">
+            <p>준비를 읽고, 빠르게 뻗고, 짧게 남는 발의 궤적</p>
+            <output id="combat-enhanced-detail" aria-live="off"></output>
+          </div>
+        </article>
+      </section>
+
+      <section
+        id="environment-panel"
+        class="comparison"
+        aria-label="기본 풍경과 반응을 추가한 풍경"
+        hidden
+      >
+        <article class="comparison-card">
+          <div class="card-heading">
+            <h2>기본 풍경</h2>
+            <span class="variant-label">현재 아트 기준</span>
+          </div>
+          <div
+            id="environment-baseline"
+            class="stage"
+            tabindex="0"
+            aria-label="기본 숲과 길 비교 화면"
+          ></div>
+          <div class="card-footer">
+            <p>같은 배치 · 도트 인물 · 평지 경로</p>
+            <output id="environment-baseline-detail" aria-live="off"></output>
+          </div>
+        </article>
+        <article class="comparison-card enhanced-card">
+          <div class="card-heading">
+            <h2>풍경이 반응하면</h2>
+            <span class="variant-label">추가판</span>
+          </div>
+          <div
+            id="environment-enhanced"
+            class="stage"
+            tabindex="0"
+            aria-label="소품 반응과 빛과 높이 경로를 추가한 숲 비교 화면"
+          ></div>
+          <div class="card-footer">
+            <p>충격에 흔들리는 잎 · 따뜻한 빛 · 위와 아래의 길</p>
+            <output id="environment-enhanced-detail" aria-live="off"></output>
+          </div>
+        </article>
+      </section>
+
+      <div id="attack-timeline" class="timeline">
+        <label for="timeline">공격 자세 살펴보기</label>
+        <input
+          id="timeline"
+          type="range"
+          min="0"
+          max="1000"
+          step="1"
+          value="0"
+          disabled
+        />
+        <output id="timeline-detail" aria-live="off">0%</output>
+      </div>
+      <div id="exploration-controls" class="exploration" hidden>
+        <div class="route-controls">
+          <button id="upper-route" type="button" disabled>
+            위로 건너기 · 빠른 길
+          </button>
+          <button id="lower-route" type="button" disabled>
+            아래로 돌아가기 · 발견 길
+          </button>
+          <p>방향키로 직접 걷거나 길을 골라 두 장면을 함께 이동해 보세요.</p>
+        </div>
+        <div class="direction-pad" aria-label="직접 걷기">
+          <button
+            data-direction="up"
+            type="button"
+            aria-label="위로 걷기"
+            disabled
+          >
+            ↑
+          </button>
+          <button
+            data-direction="left"
+            type="button"
+            aria-label="왼쪽으로 걷기"
+            disabled
+          >
+            ←
+          </button>
+          <button
+            data-direction="down"
+            type="button"
+            aria-label="아래로 걷기"
+            disabled
+          >
+            ↓
+          </button>
+          <button
+            data-direction="right"
+            type="button"
+            aria-label="오른쪽으로 걷기"
+            disabled
+          >
+            →
+          </button>
+        </div>
+      </div>
+
+      <section class="changes" aria-label="추가한 표현과 비교 기준">
+        <div class="changes-heading">
+          <h2>무엇이 달라졌나요?</h2>
+          <p>체크를 하나씩 끄면 차이를 분리해서 볼 수 있어요.</p>
+        </div>
+        <div id="combat-notes" class="change-grid">
+          <article data-feature="timing">
+            <span>01 · 동작의 박자</span>
+            <p>
+              그림을 새로 만들지 않고 준비·뻗음·회수의 표시 시간을 다듬습니다.
+              접촉 시각과 행동 길이는 같아요.
+            </p>
+          </article>
+          <article data-feature="trails">
+            <span>02 · 발의 궤적</span>
+            <p>
+              현재 금빛 반달에 발의 움직임을 따라가는 짧은 잔광을 더합니다.
+              자세를 가리지 않는지 살펴보세요.
+            </p>
+          </article>
+        </div>
+        <div id="environment-notes" class="change-grid" hidden>
+          <article data-feature="secondary">
+            <span>03 · 따라오는 반응</span>
+            <p>
+              충격 뒤 잎과 천 끝이 늦게 흔들리고 가라앉습니다. Space를 눌러
+              반응을 비교하세요.
+            </p>
+          </article>
+          <article data-feature="lighting">
+            <span>04 · 장소의 빛</span>
+            <p>
+              등불 주변의 온기와 작은 반딧불을 더합니다. 인물과 이동 경로가 계속
+              잘 읽히는지 확인하세요.
+            </p>
+          </article>
+          <article data-feature="height">
+            <span>05 · 높이와 발견</span>
+            <p>
+              위로는 다리를 건너고 아래로는 발견 장소에 다녀옵니다. 직접 걸으며
+              다리의 가림과 통과를 살펴보세요.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <footer class="lab-footer">
+        <p>
+          현재 아타호의 원본 프레임을 사용합니다. 공격은 현재 회전 강타를 독립
+          재생하며 전투 카메라의 줌·진입 연출은 제외했습니다. 숲은 현재 아트
+          기준을 참고한 비교용 배치입니다.
+        </p>
+        <p>
+          표현과 경로를 살펴보는 라이브러리 시안이며 실제 게임의
+          진행·피해·보상·저장에는 연결하지 않았습니다.
+          <a href="README.md">비교 기준과 제작 메모</a> ·
+          <a href="../../characters/ataho-hybrid/motion.html"
+            >프레임·비도트 하이브리드 비교</a
+          >
+        </p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/effects/expression-lab/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

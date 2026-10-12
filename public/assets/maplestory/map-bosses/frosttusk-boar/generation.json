@@ -1,0 +1,2877 @@
+{
+  "mapId": "snow",
+  "mapName": "설원 온천분지",
+  "theme": "snow",
+  "id": "frosttusk-boar",
+  "name": "빙엄니 산멧돼지",
+  "tier": "miniboss",
+  "role": "rusher",
+  "appearance": "Wide feral dark slate wild boar with thick cream frost bristles, short icicle-blue tusks and powerful compact legs, one pale scar over its cheek. No metal armor; unmistakable winter animal silhouette.",
+  "context": "눈길을 빠르게 돌파하는 기습형. 기존 갑옷멧돼지와 체형·이동 느낌을 구분.",
+  "batch": "A",
+  "order": 10,
+  "assetId": "ai/monster-frosttusk-boar",
+  "assetPath": "public/assets/maplestory/map-bosses/frosttusk-boar/",
+  "localRoot": "public/assets/maplestory/map-bosses/frosttusk-boar",
+  "status": "motions-ready",
+  "nativeFacing": "left",
+  "previewCandidate": {
+    "key": "original-03",
+    "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/original-03.png",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/0f7b4842-5e5a-4637-b210-d2eda11572a8/download",
+    "sha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d",
+    "width": 96,
+    "height": 96,
+    "pivot": {
+      "x": 48,
+      "y": 5
+    },
+    "anchor": {
+      "x": 48,
+      "y": 91
+    },
+    "visibleBounds": {
+      "x": 3,
+      "y": 3,
+      "width": 85,
+      "height": 88
+    },
+    "alphaValues": [
+      0,
+      255
+    ],
+    "paletteSize": 46,
+    "borderPixels": 0,
+    "softAlphaPixels": 0
+  },
+  "selectedOriginal": {
+    "key": "original-03",
+    "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/original-03.png",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/0f7b4842-5e5a-4637-b210-d2eda11572a8/download",
+    "sha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d",
+    "width": 96,
+    "height": 96,
+    "pivot": {
+      "x": 48,
+      "y": 5
+    },
+    "anchor": {
+      "x": 48,
+      "y": 91
+    },
+    "visibleBounds": {
+      "x": 3,
+      "y": 3,
+      "width": 85,
+      "height": 88
+    },
+    "alphaValues": [
+      0,
+      255
+    ],
+    "paletteSize": 46,
+    "borderPixels": 0,
+    "softAlphaPixels": 0
+  },
+  "attempts": [
+    {
+      "key": "map-boss-a-frosttusk-boar-original-01",
+      "attempt": 1,
+      "motion": "original",
+      "jobId": "cf4f724c-4a82-4deb-8df5-ca87dbb3f6d5",
+      "engine": "Pixen",
+      "args": {
+        "description": "Wide feral dark slate wild boar with thick cream frost bristles, short icicle-blue tusks and powerful compact legs, one pale scar over its cheek. No metal armor; unmistakable winter animal silhouette. Single original East Asian pixel RPG enemy, 3/4 view with its face and attacking front on the LEFT and rear to the RIGHT. Entire anatomy and any held item inside 4px clear transparent margins. Authentic native chunky pixel clusters like a 64px game sprite, larger body mass rather than fine illustration, broad two or three shade planes, dark 1px outline, muted material palette, no gradients, no antialiasing, no dithering, no tiny scattered noise. Transparent canvas with no ground shadow, scenery, writing or effects.",
+        "width": 96,
+        "height": 96,
+        "direction": "south-west",
+        "view": "low top-down",
+        "detail": "low detail",
+        "outline": "single color black outline",
+        "no_background": true,
+        "seed": 622010
+      },
+      "balanceBefore": 1082,
+      "maximumReservedGenerations": 1,
+      "queueResponse": "id: cf4f724c-4a82-4deb-8df5-ca87dbb3f6d5\njob_id: cf4f724c-4a82-4deb-8df5-ca87dbb3f6d5\nmodel: pixen\ndescription: Wide feral dark slate wild boar with thick cream frost bristles, short icicle-blue tusks and powerful compact legs, one pale scar over its cheek. No metal armor; unmistakable winter animal silhouette. Single original East Asian pixel RPG enemy, 3/4 view with its face and attacking front on the LEFT and rear to the RIGHT. Entire anatomy and any held item inside 4px clear transparent margins. Authentic native chunky pixel clusters like a 64px game sprite, larger body mass rather than fine illustration, broad two or three shade planes, dark 1px outline, muted material palette, no gradients, no antialiasing, no dithering, no tiny scattered noise. Transparent canvas with no ground shadow, scenery, writing or effects.\nsize: 96x96px\ntransparent: True\nasset_id: b1664c95-a824-5900-86a5-ab71f0bed2b9\nasset_status: pending (saved when generation completes)\nseed: 622010\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"cf4f724c-4a82-4deb-8df5-ca87dbb3f6d5\")",
+      "status": "completed",
+      "chargedGenerations": 1,
+      "latestResponse": "status: completed\nid: cf4f724c-4a82-4deb-8df5-ca87dbb3f6d5\njob_id: cf4f724c-4a82-4deb-8df5-ca87dbb3f6d5\nframes: 1\ntransparent: yes\nasset_id: b1664c95-a824-5900-86a5-ab71f0bed2b9\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/cf4f724c-4a82-4deb-8df5-ca87dbb3f6d5/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/cf4f724c-4a82-4deb-8df5-ca87dbb3f6d5/download",
+      "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/original-01.png",
+      "sha256": "e9f105175ed20d17fe1b3933312bcc13abe1eb6ff4c07f25a3d6560d53221d82",
+      "byteSize": 7360,
+      "width": 96,
+      "height": 96,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 9,
+        "y": 3,
+        "width": 79,
+        "height": 89
+      },
+      "visiblePixels": 4439,
+      "paletteSize": 65,
+      "borderPixels": 0,
+      "softAlphaPixels": 0,
+      "selection": "not selected; immutable source candidate preserved: awaiting planning visual review",
+      "technicalQuality": "native PNG transparency and borders passed"
+    },
+    {
+      "key": "map-boss-a-frosttusk-boar-original-02",
+      "attempt": 2,
+      "motion": "original",
+      "jobId": "3d040c07-0581-4ff4-aaff-fe3324ed04e0",
+      "engine": "Pixen",
+      "args": {
+        "description": "Wide feral dark slate wild boar with thick cream frost bristles, short icicle-blue tusks and powerful compact legs, one pale scar over its cheek. No metal armor; unmistakable winter animal silhouette. Single original East Asian pixel RPG enemy, 3/4 view with its face and attacking front on the LEFT and rear to the RIGHT. Entire anatomy and any held item inside 4px clear transparent margins. Authentic native chunky pixel clusters like a 64px game sprite, larger body mass rather than fine illustration, broad two or three shade planes, dark 1px outline, muted material palette, no gradients, no antialiasing, no dithering, no tiny scattered noise. Transparent canvas with no ground shadow, scenery, writing or effects. Every pale fur tuft is attached directly to the back, neck or cheeks, all tusks attached to its jaw. Keep the canvas fully empty outside the one boar. A broad low four-legged silhouette, all four legs visible and intact. Do not add floating snow crystals, loose hairs or dots.",
+        "width": 96,
+        "height": 96,
+        "direction": "south-west",
+        "view": "low top-down",
+        "detail": "low detail",
+        "outline": "single color black outline",
+        "no_background": true,
+        "seed": 622120
+      },
+      "balanceBefore": 1102,
+      "maximumReservedGenerations": 1,
+      "queueResponse": "id: 3d040c07-0581-4ff4-aaff-fe3324ed04e0\njob_id: 3d040c07-0581-4ff4-aaff-fe3324ed04e0\nmodel: pixen\ndescription: Wide feral dark slate wild boar with thick cream frost bristles, short icicle-blue tusks and powerful compact legs, one pale scar over its cheek. No metal armor; unmistakable winter animal silhouette. Single original East Asian pixel RPG enemy, 3/4 view with its face and attacking front on the LEFT and rear to the RIGHT. Entire anatomy and any held item inside 4px clear transparent margins. Authentic native chunky pixel clusters like a 64px game sprite, larger body mass rather than fine illustration, broad two or three shade planes, dark 1px outline, muted material palette, no gradients, no antialiasing, no dithering, no tiny scattered noise. Transparent canvas with no ground shadow, scenery, writing or effects. Every pale fur tuft is attached directly to the back, neck or cheeks, all tusks attached to its jaw. Keep the canvas fully empty outside the one boar. A broad low four-legged silhouette, all four legs visible and intact. Do not add floating snow crystals, loose hairs or dots.\nsize: 96x96px\ntransparent: True\nasset_id: 797fb9a7-a95c-5fe0-8117-384931962eba\nasset_status: pending (saved when generation completes)\nseed: 622120\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"3d040c07-0581-4ff4-aaff-fe3324ed04e0\")",
+      "status": "completed",
+      "chargedGenerations": 1,
+      "latestResponse": "status: completed\nid: 3d040c07-0581-4ff4-aaff-fe3324ed04e0\njob_id: 3d040c07-0581-4ff4-aaff-fe3324ed04e0\nframes: 1\ntransparent: yes\nasset_id: 797fb9a7-a95c-5fe0-8117-384931962eba\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/3d040c07-0581-4ff4-aaff-fe3324ed04e0/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/3d040c07-0581-4ff4-aaff-fe3324ed04e0/download",
+      "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/original-02.png",
+      "sha256": "dcd66a69bd6e0a98d190f4f82d031ce09d7ff53b2e475847266ecaac5d19d67e",
+      "byteSize": 9969,
+      "width": 96,
+      "height": 96,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 1,
+        "y": 1,
+        "width": 94,
+        "height": 93
+      },
+      "visiblePixels": 5392,
+      "paletteSize": 60,
+      "borderPixels": 0,
+      "softAlphaPixels": 0,
+      "selection": "not selected; immutable source candidate preserved: awaiting planning visual review",
+      "technicalQuality": "native PNG transparency and borders passed"
+    },
+    {
+      "key": "map-boss-a-frosttusk-boar-original-03",
+      "attempt": 3,
+      "motion": "original",
+      "jobId": "0f7b4842-5e5a-4637-b210-d2eda11572a8",
+      "engine": "Pixen",
+      "args": {
+        "description": "One broad old dark slate wild boar facing LEFT in a low top-down three-quarter game sprite. Four short powerful legs and stout planted hooves, one pale cheek scar, attached pale blue curved tusks. A compact cream-white mane is rooted directly along the back of the neck and shoulders, clearly connected to the animal. Every bristle connects to the same silhouette. Low heavy shoulders and broad snout, winter guardian animal, no metal armor. Use crisp chunky native pixel clusters, black single-pixel outline and broad two-tone material planes rather than gradients or illustrative detail. Keep the complete animal well inside 5 pixels of EMPTY transparent margins on all four sides. The canvas contains exactly one connected animal silhouette with tusks and legs.",
+        "width": 96,
+        "height": 96,
+        "no_background": true,
+        "view": "low top-down",
+        "direction": "south-west",
+        "outline": "single color black outline",
+        "detail": "low detail",
+        "seed": 622123
+      },
+      "balanceBefore": 1128,
+      "maximumReservedGenerations": 1,
+      "queueResponse": "id: 0f7b4842-5e5a-4637-b210-d2eda11572a8\njob_id: 0f7b4842-5e5a-4637-b210-d2eda11572a8\nmodel: pixen\ndescription: One broad old dark slate wild boar facing LEFT in a low top-down three-quarter game sprite. Four short powerful legs and stout planted hooves, one pale cheek scar, attached pale blue curved tusks. A compact cream-white mane is rooted directly along the back of the neck and shoulders, clearly connected to the animal. Every bristle connects to the same silhouette. Low heavy shoulders and broad snout, winter guardian animal, no metal armor. Use crisp chunky native pixel clusters, black single-pixel outline and broad two-tone material planes rather than gradients or illustrative detail. Keep the complete animal well inside 5 pixels of EMPTY transparent margins on all four sides. The canvas contains exactly one connected animal silhouette with tusks and legs.\nsize: 96x96px\ntransparent: True\nasset_id: f01f578b-85a9-5e78-b27b-ea6e1bd39acf\nasset_status: pending (saved when generation completes)\nseed: 622123\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"0f7b4842-5e5a-4637-b210-d2eda11572a8\")",
+      "status": "completed",
+      "chargedGenerations": 1,
+      "latestResponse": "status: completed\nid: 0f7b4842-5e5a-4637-b210-d2eda11572a8\njob_id: 0f7b4842-5e5a-4637-b210-d2eda11572a8\nframes: 1\ntransparent: yes\nasset_id: f01f578b-85a9-5e78-b27b-ea6e1bd39acf\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/0f7b4842-5e5a-4637-b210-d2eda11572a8/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/0f7b4842-5e5a-4637-b210-d2eda11572a8/download",
+      "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/original-03.png",
+      "sha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d",
+      "byteSize": 5611,
+      "width": 96,
+      "height": 96,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 3,
+        "y": 3,
+        "width": 85,
+        "height": 88
+      },
+      "visiblePixels": 4499,
+      "paletteSize": 46,
+      "borderPixels": 0,
+      "softAlphaPixels": 0,
+      "selection": "selected: 세 번째 후보에서 몸 밖의 흰 조각이 사라지고 목 뒤에 붙은 크림색 갈기와 좌측 주둥이·파란 엄니·굵은 네 다리로 겨울 멧돼지를 구분한다.",
+      "technicalQuality": "native PNG transparency and borders passed"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "map-boss-a-frosttusk-boar-stand-01",
+      "engine": "PixelLab animate_image",
+      "jobId": "ab06bfd4-f0c0-454b-867d-bbf8b79d3c99",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "action": "Facing left, Breathe in place with the broad shoulders. Flex the planted leg joints and ears, slightly open and close the left-facing jaw; the tusks and thick mane remain attached. Preserve the original anatomy, native pixel clusters, colors and props. Fixed transparent camera and ground anchor, full body with clear margins. ",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 623100
+      },
+      "balanceBefore": 1216,
+      "maximumReservedGenerations": 8,
+      "queueResponse": "id: ab06bfd4-f0c0-454b-867d-bbf8b79d3c99\njob_id: ab06bfd4-f0c0-454b-867d-bbf8b79d3c99\naction: Facing left, Breathe in place with the broad shoulders. Flex the planted leg joints and ears, slightly open and close the left-facing jaw; the tusks and thick mane remain attached. Preserve the original anatomy, native pixel clusters, colors and props. Fixed transparent camera and ground anchor, full body with clear margins. \nframes: 4\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 623100\nasset_id: c0db5d41-aeae-5f30-af89-e5bd1b9351af\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ab06bfd4-f0c0-454b-867d-bbf8b79d3c99\")",
+      "status": "completed",
+      "chargedGenerations": 1,
+      "latestResponse": "status: completed\nid: ab06bfd4-f0c0-454b-867d-bbf8b79d3c99\njob_id: ab06bfd4-f0c0-454b-867d-bbf8b79d3c99\nframes: 5\ntransparent: yes\nasset_id: c0db5d41-aeae-5f30-af89-e5bd1b9351af\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "serviceFrameZeroComparison": {
+        "visibleDifferentPixels": 170,
+        "alphaDifferentPixels": 2,
+        "transparentRgbDifferentPixels": 0,
+        "note": "승인 원본과 패딩 입력은 불변. 서비스의 입력0 정규화는 별도 기록하고 실제 생성1..N을 사용."
+      },
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animation-input-128.png",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "drawingId": "55b53285-c749-4c17-9a70-df5aa7e951ce",
+        "width": 128,
+        "height": 128,
+        "offset": {
+          "x": 16,
+          "y": 16
+        },
+        "sha256": "a149e16f522da208f63287e319d37d23aef3608d4197061b9f8c19fb3b92dcdd",
+        "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/original-03.png",
+        "sourceSha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d",
+        "paidGenerations": 0,
+        "verification": "exact RGBA at16,16; outside fully transparent; no scaling",
+        "immutableSelectedOriginalSha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/00.png",
+          "sha256": "13bfd1250c3a4c45f30ebcddb91ab687d9b1c9d4fcd3198c2be0a6b20bfef0f9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=1",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/01.png",
+          "sourceSha256": "13bfd1250c3a4c45f30ebcddb91ab687d9b1c9d4fcd3198c2be0a6b20bfef0f9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/01.png",
+          "sha256": "2a2576b78e4e7429e31adaf506dfafe4d79390d02b3a8d800db303a50869ba59",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=2",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/02.png",
+          "sourceSha256": "2a2576b78e4e7429e31adaf506dfafe4d79390d02b3a8d800db303a50869ba59",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/02.png",
+          "sha256": "0baa204f64da0eb1fda5daada434838c386baaa783ab97569003d5298a2ff30b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=3",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/03.png",
+          "sourceSha256": "0baa204f64da0eb1fda5daada434838c386baaa783ab97569003d5298a2ff30b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/03.png",
+          "sha256": "109fd34b825e8c007aaee8543ac3695c2ef3b02015e506d746cbf4530b10783e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=4",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/04.png",
+          "sourceSha256": "109fd34b825e8c007aaee8543ac3695c2ef3b02015e506d746cbf4530b10783e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        }
+      ],
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=0",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/00.png",
+          "sourceSha256": "4535353f7e2336191162ba425299333b945795f55378ce5856c9369524476e68",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 19,
+            "width": 85,
+            "height": 88
+          },
+          "visiblePixels": 4497,
+          "borderPixels": 0,
+          "paletteSize": 48,
+          "bodyRgbaHash": "35ae395101c4db0582467771e31cbad06b240705d65ec6e36437703f50072209",
+          "bodyAlphaHash": "a992b2c1d2af39a3aaf34d23c84790cac8dbd4f95105ab2dec18081800dfcbe7"
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=1",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/01.png",
+          "sourceSha256": "13bfd1250c3a4c45f30ebcddb91ab687d9b1c9d4fcd3198c2be0a6b20bfef0f9",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 20,
+            "y": 20,
+            "width": 85,
+            "height": 83
+          },
+          "visiblePixels": 4443,
+          "borderPixels": 0,
+          "paletteSize": 53,
+          "bodyRgbaHash": "81c697b2d94728c5737157e9c25644391b4056fdfc1327012d6633ef47a762b9",
+          "bodyAlphaHash": "f9d8335352a705ada2e0e0cd1139dad4eabf4e54adca59fe6fbd5a96929c62af"
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=2",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/02.png",
+          "sourceSha256": "2a2576b78e4e7429e31adaf506dfafe4d79390d02b3a8d800db303a50869ba59",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 21,
+            "y": 21,
+            "width": 87,
+            "height": 81
+          },
+          "visiblePixels": 4414,
+          "borderPixels": 0,
+          "paletteSize": 54,
+          "bodyRgbaHash": "8a8f75f182f84913cfa07a8c0096644a6e5eb3ba79277ffaea5cee0c98b5a0c6",
+          "bodyAlphaHash": "61d7acea2d77ccf6f525e4572755f2782ad0460f20708e56caef011e8f6ea94a"
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=3",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/03.png",
+          "sourceSha256": "0baa204f64da0eb1fda5daada434838c386baaa783ab97569003d5298a2ff30b",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 20,
+            "y": 20,
+            "width": 86,
+            "height": 87
+          },
+          "visiblePixels": 4460,
+          "borderPixels": 0,
+          "paletteSize": 56,
+          "bodyRgbaHash": "f28fa759e24061bf3e55dad7d5642d894ef8b251927a61b76769d5024cba42ed",
+          "bodyAlphaHash": "f171384fd3a8a654367c1d3dc3b9ff5c53b2c9433ea8b741a8c97af2d2ac3af1"
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=4",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/04.png",
+          "sourceSha256": "109fd34b825e8c007aaee8543ac3695c2ef3b02015e506d746cbf4530b10783e",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 19,
+            "width": 85,
+            "height": 88
+          },
+          "visiblePixels": 4498,
+          "borderPixels": 0,
+          "paletteSize": 48,
+          "bodyRgbaHash": "6372763166072f529b4c51b45225f23d1f2997eb2dc0751bd21b53aaca819e01",
+          "bodyAlphaHash": "20cbde7fb82cd6f20ca61a84819d0740afbc9aad13eb41f6553471d538ee26ea"
+        }
+      ],
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "distinctBodyRgbaPoses": 4,
+      "distinctBodyAlphaPoses": 4,
+      "loop": true,
+      "selection": "accepted after native identity / actual articulation / fixed pivot review: 갈기와 엄니를 붙인 채 귀·턱·네 다리의 작은 호흡과 눈 깜빡임으로 대기한다.",
+      "technicalQuality": "native canvas / clear edges / binary alpha passed",
+      "reviewPath": "public/assets/maplestory/map-bosses/frosttusk-boar/review/stand-ab06bfd4-f0c0-454b-867d-bbf8b79d3c99.png"
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "map-boss-a-frosttusk-boar-move-01",
+      "engine": "PixelLab animate_image",
+      "jobId": "56943d4f-1428-41e0-8204-11fb49f5e72f",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "action": "Facing left, Take an in-place four-legged trot facing left, near and far legs bending and planting in alternating pairs. The shoulders and hips follow the real leg motion; ears and attached bristles sway. Return to the original stance. Preserve the original anatomy, native pixel clusters, colors and props. Fixed transparent camera and ground anchor, full body with clear margins. ",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 623101
+      },
+      "balanceBefore": 1216,
+      "maximumReservedGenerations": 8,
+      "queueResponse": "id: 56943d4f-1428-41e0-8204-11fb49f5e72f\njob_id: 56943d4f-1428-41e0-8204-11fb49f5e72f\naction: Facing left, Take an in-place four-legged trot facing left, near and far legs bending and planting in alternating pairs. The shoulders and hips follow the real leg motion; ears and attached bristles sway. Return to the original stance. Preserve the original anatomy, native pixel clusters, colors and props. Fixed transparent camera and ground anchor, full body with clear margins. \nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 623101\nasset_id: 3fd0e721-82bc-5a6d-95cd-a91ea17ca793\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"56943d4f-1428-41e0-8204-11fb49f5e72f\")",
+      "status": "completed",
+      "chargedGenerations": 2,
+      "latestResponse": "status: completed\nid: 56943d4f-1428-41e0-8204-11fb49f5e72f\njob_id: 56943d4f-1428-41e0-8204-11fb49f5e72f\nframes: 9\ntransparent: yes\nasset_id: 3fd0e721-82bc-5a6d-95cd-a91ea17ca793\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 2 generations\ndownload: https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "serviceFrameZeroComparison": {
+        "visibleDifferentPixels": 114,
+        "alphaDifferentPixels": 3,
+        "transparentRgbDifferentPixels": 0,
+        "note": "승인 원본과 패딩 입력은 불변. 서비스의 입력0 정규화는 별도 기록하고 실제 생성1..N을 사용."
+      },
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animation-input-128.png",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "drawingId": "55b53285-c749-4c17-9a70-df5aa7e951ce",
+        "width": 128,
+        "height": 128,
+        "offset": {
+          "x": 16,
+          "y": 16
+        },
+        "sha256": "a149e16f522da208f63287e319d37d23aef3608d4197061b9f8c19fb3b92dcdd",
+        "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/original-03.png",
+        "sourceSha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d",
+        "paidGenerations": 0,
+        "verification": "exact RGBA at16,16; outside fully transparent; no scaling",
+        "immutableSelectedOriginalSha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/00.png",
+          "sha256": "7138bfdbac16346d5807fbbbcf445a5af3525dfcdb81c06417135431d6b7bd42",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=1",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/01.png",
+          "sourceSha256": "7138bfdbac16346d5807fbbbcf445a5af3525dfcdb81c06417135431d6b7bd42",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/01.png",
+          "sha256": "568b3bab741a838a0d4f654a9f4545e304b59e6e141de6da51dba95f5c8ccc49",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=2",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/02.png",
+          "sourceSha256": "568b3bab741a838a0d4f654a9f4545e304b59e6e141de6da51dba95f5c8ccc49",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/02.png",
+          "sha256": "2d2b7538679551c7087ffb5f4d153d033e6651d527a2057eb1a289b3a9f39d8d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=3",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/03.png",
+          "sourceSha256": "2d2b7538679551c7087ffb5f4d153d033e6651d527a2057eb1a289b3a9f39d8d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/03.png",
+          "sha256": "ab5f003749dd8d8978886366b5a928c7f61c49efa1ae960f1dd57416d2903349",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=4",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/04.png",
+          "sourceSha256": "ab5f003749dd8d8978886366b5a928c7f61c49efa1ae960f1dd57416d2903349",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/04.png",
+          "sha256": "5bdd3a6ca5d71bc04be1d74c3ba70cccb302fe6cae96b6d6ea0f36452264d4ef",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=5",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/05.png",
+          "sourceSha256": "5bdd3a6ca5d71bc04be1d74c3ba70cccb302fe6cae96b6d6ea0f36452264d4ef",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/05.png",
+          "sha256": "4fd751a323de3ca25b1a1d15577219b53bfab0ebd3af5774cf3f22b60dd6ff18",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=6",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/06.png",
+          "sourceSha256": "4fd751a323de3ca25b1a1d15577219b53bfab0ebd3af5774cf3f22b60dd6ff18",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/06.png",
+          "sha256": "87ec8c1a3a64c472536ff7b997e87b9c67e535325b70e4b3acd8d380958765b2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=7",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/07.png",
+          "sourceSha256": "87ec8c1a3a64c472536ff7b997e87b9c67e535325b70e4b3acd8d380958765b2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/07.png",
+          "sha256": "62edcf766a851b6bab17a6c18567d988b11ca7240e1a29a6fa3d9d0c8eef0cc7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=8",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/08.png",
+          "sourceSha256": "62edcf766a851b6bab17a6c18567d988b11ca7240e1a29a6fa3d9d0c8eef0cc7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        }
+      ],
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=0",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/00.png",
+          "sourceSha256": "8f83d6701d3e7c8f023f62392ca8c76157449b86a45a8bded71082c9dc28e92f",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 19,
+            "width": 85,
+            "height": 88
+          },
+          "visiblePixels": 4498,
+          "borderPixels": 0,
+          "paletteSize": 46,
+          "bodyRgbaHash": "0a24cb44dacde8c5a56c6f9006fd74134f800a4c3155d4b12ca27131571b2485",
+          "bodyAlphaHash": "b38067d07776cd714fb4990a6db5d118994307b823644b54dcecbe5a67c1b11c"
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=1",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/01.png",
+          "sourceSha256": "7138bfdbac16346d5807fbbbcf445a5af3525dfcdb81c06417135431d6b7bd42",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 18,
+            "y": 19,
+            "width": 87,
+            "height": 87
+          },
+          "visiblePixels": 4465,
+          "borderPixels": 0,
+          "paletteSize": 57,
+          "bodyRgbaHash": "52fa114eb58334e7034b7578997cfe59f58b3541c546e29b408e71d28ef9e09f",
+          "bodyAlphaHash": "fedde2c1baf2cb984bafd4c66e451612a6d272dee49ecc225be084f41b335ff4"
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=2",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/02.png",
+          "sourceSha256": "568b3bab741a838a0d4f654a9f4545e304b59e6e141de6da51dba95f5c8ccc49",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 16,
+            "y": 19,
+            "width": 90,
+            "height": 86
+          },
+          "visiblePixels": 4464,
+          "borderPixels": 0,
+          "paletteSize": 60,
+          "bodyRgbaHash": "e10236f545b83490233a108721f7b63e8ec319649849c6b710c6fd8c86ae3dca",
+          "bodyAlphaHash": "f6a9dbdb003310160bb3efe77b2e3baaf8eab686cf88ba2c04a4e4f8b4658949"
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=3",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/03.png",
+          "sourceSha256": "2d2b7538679551c7087ffb5f4d153d033e6651d527a2057eb1a289b3a9f39d8d",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 15,
+            "y": 20,
+            "width": 93,
+            "height": 84
+          },
+          "visiblePixels": 4427,
+          "borderPixels": 0,
+          "paletteSize": 62,
+          "bodyRgbaHash": "5be8ebcaabb64efd721a00d9ca36406452f721c6d30416769ce28e4ab1ee2371",
+          "bodyAlphaHash": "d3cbfb6804d4797053ed96bf1fb3ff2b154fcc63032a26866f36a51a2f9ca899"
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=4",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/04.png",
+          "sourceSha256": "ab5f003749dd8d8978886366b5a928c7f61c49efa1ae960f1dd57416d2903349",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 15,
+            "y": 20,
+            "width": 95,
+            "height": 82
+          },
+          "visiblePixels": 4387,
+          "borderPixels": 0,
+          "paletteSize": 56,
+          "bodyRgbaHash": "b598bb3b9e9cf4ba49dbc363062461f126417fd6b8920582b3c14be070deb1af",
+          "bodyAlphaHash": "6899bde44d1631b320c30c35c46e2cff4115cb603430012e0d9f47f7d4b07ef0"
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=5",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/05.png",
+          "sourceSha256": "5bdd3a6ca5d71bc04be1d74c3ba70cccb302fe6cae96b6d6ea0f36452264d4ef",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 19,
+            "width": 89,
+            "height": 81
+          },
+          "visiblePixels": 4353,
+          "borderPixels": 0,
+          "paletteSize": 59,
+          "bodyRgbaHash": "1484644047adf68dabe5010a4b66b56df89dd174c21caffd5e276a10a7beac16",
+          "bodyAlphaHash": "87cdda749e54996e4ab3786eff40cfb875601f163ea2e62ab91442983decf822"
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=6",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/06.png",
+          "sourceSha256": "4fd751a323de3ca25b1a1d15577219b53bfab0ebd3af5774cf3f22b60dd6ff18",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 16,
+            "y": 19,
+            "width": 89,
+            "height": 82
+          },
+          "visiblePixels": 4340,
+          "borderPixels": 0,
+          "paletteSize": 56,
+          "bodyRgbaHash": "d7d8b2c52594e5aa76010e91ef412c7c9727813437b826c719e8fdc95666e42a",
+          "bodyAlphaHash": "7eebfd6d2a65f44858812672add79cbb112a98878ce3858725302f8d45d1c35d"
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=7",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/07.png",
+          "sourceSha256": "87ec8c1a3a64c472536ff7b997e87b9c67e535325b70e4b3acd8d380958765b2",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 16,
+            "y": 19,
+            "width": 88,
+            "height": 84
+          },
+          "visiblePixels": 4443,
+          "borderPixels": 0,
+          "paletteSize": 63,
+          "bodyRgbaHash": "1b8d405ebe9c2eb97bc359ec2ac3cc1cc3dd3e8d3d17ccc4948eb3b70dca74d8",
+          "bodyAlphaHash": "09becddc56f35f8c3ed7628b41f546620fcb7fcdac7e3630a2e96764f79a62e3"
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=8",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/08.png",
+          "sourceSha256": "62edcf766a851b6bab17a6c18567d988b11ca7240e1a29a6fa3d9d0c8eef0cc7",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 19,
+            "width": 85,
+            "height": 88
+          },
+          "visiblePixels": 4498,
+          "borderPixels": 0,
+          "paletteSize": 47,
+          "bodyRgbaHash": "50d4cf0ba1d8b9f4eabdb9dcd623c73c463c0639c8e9e0273ab44704bc685883",
+          "bodyAlphaHash": "20cbde7fb82cd6f20ca61a84819d0740afbc9aad13eb41f6553471d538ee26ea"
+        }
+      ],
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "distinctBodyRgbaPoses": 8,
+      "distinctBodyAlphaPoses": 8,
+      "loop": true,
+      "selection": "accepted after native identity / actual articulation / fixed pivot review: 네 다리 관절이 교대로 들리고 발굽을 내려놓는 실제 보행과 어깨·귀·꼬리의 균형을 확인했다.",
+      "technicalQuality": "native canvas / clear edges / binary alpha passed",
+      "reviewPath": "public/assets/maplestory/map-bosses/frosttusk-boar/review/move-56943d4f-1428-41e0-8204-11fb49f5e72f.png"
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "map-boss-a-frosttusk-boar-attack1-01",
+      "engine": "PixelLab animate_image",
+      "jobId": "26b5ca4c-6761-414f-b1f3-636e7daf861f",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "action": "Facing left, Brace the rear hooves, lower the left-facing head and shoulders, fold the forelegs to prepare, then extend the rear legs and thrust the attached tusks LEFT once in a physical head rush. Retract and plant all four hooves in the original posture. Preserve the original anatomy, native pixel clusters, colors and props. Fixed transparent camera and ground anchor, full body with clear margins. ",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 623102
+      },
+      "balanceBefore": 1225,
+      "maximumReservedGenerations": 8,
+      "queueResponse": "id: 26b5ca4c-6761-414f-b1f3-636e7daf861f\njob_id: 26b5ca4c-6761-414f-b1f3-636e7daf861f\naction: Facing left, Brace the rear hooves, lower the left-facing head and shoulders, fold the forelegs to prepare, then extend the rear legs and thrust the attached tusks LEFT once in a physical head rush. Retract and plant all four hooves in the original posture. Preserve the original anatomy, native pixel clusters, colors and props. Fixed transparent camera and ground anchor, full body with clear margins. \nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 623102\nasset_id: b04f4166-3a42-5025-a774-098227f5bb62\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"26b5ca4c-6761-414f-b1f3-636e7daf861f\")",
+      "status": "completed",
+      "chargedGenerations": 2,
+      "latestResponse": "status: completed\nid: 26b5ca4c-6761-414f-b1f3-636e7daf861f\njob_id: 26b5ca4c-6761-414f-b1f3-636e7daf861f\nframes: 9\ntransparent: yes\nasset_id: b04f4166-3a42-5025-a774-098227f5bb62\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 2 generations\ndownload: https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "serviceFrameZeroComparison": {
+        "visibleDifferentPixels": 244,
+        "alphaDifferentPixels": 4,
+        "transparentRgbDifferentPixels": 0,
+        "note": "승인 원본과 패딩 입력은 불변. 서비스의 입력0 정규화는 별도 기록하고 실제 생성1..N을 사용."
+      },
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animation-input-128.png",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "drawingId": "55b53285-c749-4c17-9a70-df5aa7e951ce",
+        "width": 128,
+        "height": 128,
+        "offset": {
+          "x": 16,
+          "y": 16
+        },
+        "sha256": "a149e16f522da208f63287e319d37d23aef3608d4197061b9f8c19fb3b92dcdd",
+        "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/original-03.png",
+        "sourceSha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d",
+        "paidGenerations": 0,
+        "verification": "exact RGBA at16,16; outside fully transparent; no scaling",
+        "immutableSelectedOriginalSha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/00.png",
+          "sha256": "716f63457db265ad5d2c6c78aaee2f7169656e75b1baefba1ce9dabb27373503",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=1",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/01.png",
+          "sourceSha256": "716f63457db265ad5d2c6c78aaee2f7169656e75b1baefba1ce9dabb27373503",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/01.png",
+          "sha256": "50b7f7050d1d8a0b62dd51803bcbd18ce775929f5a64bc38478d0669b7950406",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=2",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/02.png",
+          "sourceSha256": "50b7f7050d1d8a0b62dd51803bcbd18ce775929f5a64bc38478d0669b7950406",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/02.png",
+          "sha256": "ca1cd793b9e686bd8a6b794edf638d9ccfe23c2d00cf79efbb670bc2f31cfbb7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=3",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/03.png",
+          "sourceSha256": "ca1cd793b9e686bd8a6b794edf638d9ccfe23c2d00cf79efbb670bc2f31cfbb7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/03.png",
+          "sha256": "dd3a7e3a2f8c789f8e77af1c275dde788b365a827479dc4093370992a823ffc9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=4",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/04.png",
+          "sourceSha256": "dd3a7e3a2f8c789f8e77af1c275dde788b365a827479dc4093370992a823ffc9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/04.png",
+          "sha256": "c9c17eea0fe869b16e0d2799946ccefa698109de7bb35eb16dba8166a0140c8f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=5",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/05.png",
+          "sourceSha256": "c9c17eea0fe869b16e0d2799946ccefa698109de7bb35eb16dba8166a0140c8f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/05.png",
+          "sha256": "5657545be612b6b5b85e7bab01856816efcbd14cf88f0a3e5c2b3edafe161c7e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=6",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/06.png",
+          "sourceSha256": "5657545be612b6b5b85e7bab01856816efcbd14cf88f0a3e5c2b3edafe161c7e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/06.png",
+          "sha256": "de13bca41a0f8ddcb9fbf52402ac9bce1415c00b2a83fb35b77a441490e89b88",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=7",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/07.png",
+          "sourceSha256": "de13bca41a0f8ddcb9fbf52402ac9bce1415c00b2a83fb35b77a441490e89b88",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/07.png",
+          "sha256": "d9182520ce37b03dc53fa8326516860a076ceebd53057270975c1794add4e4c7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=8",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/08.png",
+          "sourceSha256": "d9182520ce37b03dc53fa8326516860a076ceebd53057270975c1794add4e4c7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        }
+      ],
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=0",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/00.png",
+          "sourceSha256": "39ab7f1237162d075d14e1a9e4dd33187a7c9cef6f708f997901389955838c83",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 19,
+            "width": 85,
+            "height": 88
+          },
+          "visiblePixels": 4495,
+          "borderPixels": 0,
+          "paletteSize": 48,
+          "bodyRgbaHash": "d9a43a5797031a4239e9d89f03e5d61b67af6fb5bca7dfb913b4f074c2bd05b3",
+          "bodyAlphaHash": "90a15b294569357ce19fd70e84dd35561f2215321c61a0016d5d4bcba1c9020c"
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=1",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/01.png",
+          "sourceSha256": "716f63457db265ad5d2c6c78aaee2f7169656e75b1baefba1ce9dabb27373503",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 20,
+            "y": 20,
+            "width": 85,
+            "height": 86
+          },
+          "visiblePixels": 4420,
+          "borderPixels": 0,
+          "paletteSize": 57,
+          "bodyRgbaHash": "9c32d8bd569f575580e8c21cfce05f01015a30e4fb5d9a6fea82b1a5f9402d88",
+          "bodyAlphaHash": "690fbbbad451e6b3069a7c179a1676aef154e70176cf36125a14742bdcfaf36a"
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=2",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/02.png",
+          "sourceSha256": "50b7f7050d1d8a0b62dd51803bcbd18ce775929f5a64bc38478d0669b7950406",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 20,
+            "y": 21,
+            "width": 89,
+            "height": 83
+          },
+          "visiblePixels": 4368,
+          "borderPixels": 0,
+          "paletteSize": 49,
+          "bodyRgbaHash": "9a1785dba5e8f1439b3d0dcfbf911c721a0defdd171ae8769dd88b39607c7ee0",
+          "bodyAlphaHash": "f8a104ec85d10213668c57b59b51f5c99580f9d6b9091635cebe31339a1116d6"
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=3",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/03.png",
+          "sourceSha256": "ca1cd793b9e686bd8a6b794edf638d9ccfe23c2d00cf79efbb670bc2f31cfbb7",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 20,
+            "width": 91,
+            "height": 80
+          },
+          "visiblePixels": 4353,
+          "borderPixels": 0,
+          "paletteSize": 58,
+          "bodyRgbaHash": "d7d36d4b76434fddb5825434999120bb21038f6e9f458848a6469bec0f19da20",
+          "bodyAlphaHash": "76856e2cbd1b76751225aaf3718c42fa7cc47f91b3d9c97de2f9e336b000a454"
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=4",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/04.png",
+          "sourceSha256": "dd3a7e3a2f8c789f8e77af1c275dde788b365a827479dc4093370992a823ffc9",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 17,
+            "y": 22,
+            "width": 93,
+            "height": 78
+          },
+          "visiblePixels": 4443,
+          "borderPixels": 0,
+          "paletteSize": 56,
+          "bodyRgbaHash": "e9518619f5dfa014b50d1573045a8ced80f595067fc7995e03ce915a843c3949",
+          "bodyAlphaHash": "53bc5524dc35819c685dec7a22752db002fd9b0d3173187ff13e2706cdc3a5e0"
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=5",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/05.png",
+          "sourceSha256": "c9c17eea0fe869b16e0d2799946ccefa698109de7bb35eb16dba8166a0140c8f",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 17,
+            "y": 21,
+            "width": 93,
+            "height": 82
+          },
+          "visiblePixels": 4499,
+          "borderPixels": 0,
+          "paletteSize": 59,
+          "bodyRgbaHash": "3d44f001990a3ea222b210165a8f4b2491578d6451e7cb884c177e8dfe688bb1",
+          "bodyAlphaHash": "cfc94d90c99e6065d2f19e536a31c553a7f0b153aa9d516358335da0b14258a0"
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=6",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/06.png",
+          "sourceSha256": "5657545be612b6b5b85e7bab01856816efcbd14cf88f0a3e5c2b3edafe161c7e",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 18,
+            "y": 20,
+            "width": 91,
+            "height": 85
+          },
+          "visiblePixels": 4459,
+          "borderPixels": 0,
+          "paletteSize": 57,
+          "bodyRgbaHash": "e22ee07b8f171bd35b1ac28162f987a8f6ef89508a5435e26839762b07fb5886",
+          "bodyAlphaHash": "bd4ec2c0e81b426deb89918cd1387a7c9f884211ef53017b7712599014d70e24"
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=7",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/07.png",
+          "sourceSha256": "de13bca41a0f8ddcb9fbf52402ac9bce1415c00b2a83fb35b77a441490e89b88",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 18,
+            "width": 85,
+            "height": 88
+          },
+          "visiblePixels": 4541,
+          "borderPixels": 0,
+          "paletteSize": 65,
+          "bodyRgbaHash": "3b8afe2876fc0c925f38902a09377ca0823d0c62c5ffee41859033196a324f85",
+          "bodyAlphaHash": "df1cc245d8a1120547a45dca5af63f5d9f5691b06418157f1b5e6b08b90a3c3b"
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=8",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/08.png",
+          "sourceSha256": "d9182520ce37b03dc53fa8326516860a076ceebd53057270975c1794add4e4c7",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 19,
+            "width": 85,
+            "height": 88
+          },
+          "visiblePixels": 4495,
+          "borderPixels": 0,
+          "paletteSize": 50,
+          "bodyRgbaHash": "98ff0541b2b3e5f897999358872c1264223bd09798b0a1fbb1851e4ef3e0b968",
+          "bodyAlphaHash": "90a15b294569357ce19fd70e84dd35561f2215321c61a0016d5d4bcba1c9020c"
+        }
+      ],
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "distinctBodyRgbaPoses": 8,
+      "distinctBodyAlphaPoses": 8,
+      "loop": false,
+      "selection": "accepted after native identity / actual articulation / fixed pivot review: 앞다리를 굽혀 머리와 엄니를 낮추고 뒷다리로 밀며 좌측으로 들이받은 뒤 복귀한다.5번째 런타임 최대 전진을 접촉으로 선택한다.",
+      "technicalQuality": "native canvas / clear edges / binary alpha passed",
+      "reviewPath": "public/assets/maplestory/map-bosses/frosttusk-boar/review/attack1-26b5ca4c-6761-414f-b1f3-636e7daf861f.png"
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "map-boss-a-frosttusk-boar-hit1-01",
+      "engine": "PixelLab animate_image",
+      "jobId": "b18f28b1-abb3-4020-b130-1c77ec0f65c9",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "action": "Facing left, Recoil the muzzle and ears, bend the foreleg joints and brace the rear hooves, then settle back into the original four-legged stance. Preserve the original anatomy, native pixel clusters, colors and props. Fixed transparent camera and ground anchor, full body with clear margins. ",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 623103
+      },
+      "balanceBefore": 1227,
+      "maximumReservedGenerations": 8,
+      "queueResponse": "id: b18f28b1-abb3-4020-b130-1c77ec0f65c9\njob_id: b18f28b1-abb3-4020-b130-1c77ec0f65c9\naction: Facing left, Recoil the muzzle and ears, bend the foreleg joints and brace the rear hooves, then settle back into the original four-legged stance. Preserve the original anatomy, native pixel clusters, colors and props. Fixed transparent camera and ground anchor, full body with clear margins. \nframes: 4\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 623103\nasset_id: a1a9118d-b365-528c-a104-2f7588db82aa\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"b18f28b1-abb3-4020-b130-1c77ec0f65c9\")",
+      "status": "completed",
+      "chargedGenerations": 1,
+      "latestResponse": "status: completed\nid: b18f28b1-abb3-4020-b130-1c77ec0f65c9\njob_id: b18f28b1-abb3-4020-b130-1c77ec0f65c9\nframes: 5\ntransparent: yes\nasset_id: a1a9118d-b365-528c-a104-2f7588db82aa\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "serviceFrameZeroComparison": {
+        "visibleDifferentPixels": 175,
+        "alphaDifferentPixels": 3,
+        "transparentRgbDifferentPixels": 0,
+        "note": "승인 원본과 패딩 입력은 불변. 서비스의 입력0 정규화는 별도 기록하고 실제 생성1..N을 사용."
+      },
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animation-input-128.png",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "drawingId": "55b53285-c749-4c17-9a70-df5aa7e951ce",
+        "width": 128,
+        "height": 128,
+        "offset": {
+          "x": 16,
+          "y": 16
+        },
+        "sha256": "a149e16f522da208f63287e319d37d23aef3608d4197061b9f8c19fb3b92dcdd",
+        "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/original-03.png",
+        "sourceSha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d",
+        "paidGenerations": 0,
+        "verification": "exact RGBA at16,16; outside fully transparent; no scaling",
+        "immutableSelectedOriginalSha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/00.png",
+          "sha256": "55869b276515a3a0a18dd7dddba5d6ebc59d47b3159d26fc8a48c83c8e1dc08a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=1",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/01.png",
+          "sourceSha256": "55869b276515a3a0a18dd7dddba5d6ebc59d47b3159d26fc8a48c83c8e1dc08a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/01.png",
+          "sha256": "e468c600582f721334950a2921eda08a7c5364a5d39a9d1de2f54df7635dc6ef",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=2",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/02.png",
+          "sourceSha256": "e468c600582f721334950a2921eda08a7c5364a5d39a9d1de2f54df7635dc6ef",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/02.png",
+          "sha256": "df05ef02ca9ec1c6ddbb0670a1c08bc1e9657d4e3b7b0a1472a7bb42351c6e81",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=3",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/03.png",
+          "sourceSha256": "df05ef02ca9ec1c6ddbb0670a1c08bc1e9657d4e3b7b0a1472a7bb42351c6e81",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/03.png",
+          "sha256": "24a8951cf440c4d5d4933e64358aa5b6a81af869f9781e4b1cecd8253901e5a1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=4",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/04.png",
+          "sourceSha256": "24a8951cf440c4d5d4933e64358aa5b6a81af869f9781e4b1cecd8253901e5a1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        }
+      ],
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=0",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/00.png",
+          "sourceSha256": "727d5f33af30865c9710cd34b94cef5378099a72b4b13bace8ba50fa12fb61a9",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 19,
+            "width": 85,
+            "height": 88
+          },
+          "visiblePixels": 4496,
+          "borderPixels": 0,
+          "paletteSize": 48,
+          "bodyRgbaHash": "e4235f62047807f2ca0a254e8fb65318bc91bfcaecb6db19ea36f6e395db74ff",
+          "bodyAlphaHash": "bf1029555d9fad129bbcec9bb1400131db990e0d6b4a5e6f02359c14adb7bfa0"
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=1",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/01.png",
+          "sourceSha256": "55869b276515a3a0a18dd7dddba5d6ebc59d47b3159d26fc8a48c83c8e1dc08a",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 20,
+            "y": 21,
+            "width": 85,
+            "height": 86
+          },
+          "visiblePixels": 4440,
+          "borderPixels": 0,
+          "paletteSize": 58,
+          "bodyRgbaHash": "0f295730c663436970c1d394d31840509c15b281202b10da661c010de673709f",
+          "bodyAlphaHash": "8ede876779908f6c8163c7ece4e30b1c2f248e51151afdaa97451ff0e1b462fb"
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=2",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/02.png",
+          "sourceSha256": "e468c600582f721334950a2921eda08a7c5364a5d39a9d1de2f54df7635dc6ef",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 21,
+            "y": 22,
+            "width": 84,
+            "height": 80
+          },
+          "visiblePixels": 4352,
+          "borderPixels": 0,
+          "paletteSize": 49,
+          "bodyRgbaHash": "bb881079d4a5b2013be658b4ea7631ef730f9e203ff88565d7f824f781633832",
+          "bodyAlphaHash": "1f22a52fadec6f7580620943fed3759fac14c96c738a95f861e4c47cf120a8b1"
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=3",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/03.png",
+          "sourceSha256": "df05ef02ca9ec1c6ddbb0670a1c08bc1e9657d4e3b7b0a1472a7bb42351c6e81",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 21,
+            "y": 20,
+            "width": 86,
+            "height": 85
+          },
+          "visiblePixels": 4462,
+          "borderPixels": 0,
+          "paletteSize": 63,
+          "bodyRgbaHash": "5ab92360ea028d9f9c880b602b18e01c759026002a380aa22a0835c3361cee0f",
+          "bodyAlphaHash": "2c75d7438eacf4f14775dcd132b8947954bff1deb23588c46114b93c647e56ca"
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=4",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/04.png",
+          "sourceSha256": "24a8951cf440c4d5d4933e64358aa5b6a81af869f9781e4b1cecd8253901e5a1",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 19,
+            "width": 85,
+            "height": 88
+          },
+          "visiblePixels": 4497,
+          "borderPixels": 0,
+          "paletteSize": 48,
+          "bodyRgbaHash": "076481066a1ad59e052d16d1c978a402e4ddc586c2187a3d27c866142a2fda89",
+          "bodyAlphaHash": "fad622b355e787c7f4189fcaffacb604363db6d64942c52f0adff6a89b8fab34"
+        }
+      ],
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "distinctBodyRgbaPoses": 4,
+      "distinctBodyAlphaPoses": 4,
+      "loop": false,
+      "selection": "accepted after native identity / actual articulation / fixed pivot review: 머리와 귀가 물러나며 앞다리가 버티고 네 발 자세로 돌아오는 짧은 실제 피격.",
+      "technicalQuality": "native canvas / clear edges / binary alpha passed",
+      "reviewPath": "public/assets/maplestory/map-bosses/frosttusk-boar/review/hit1-b18f28b1-abb3-4020-b130-1c77ec0f65c9.png"
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "map-boss-a-frosttusk-boar-die1-01",
+      "engine": "PixelLab animate_image",
+      "jobId": "7431c880-13f3-4688-a11c-510132911398",
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/84dae0f5-41af-432d-9101-1511871bcabe/assets/native/full.png",
+        "action": "Facing left, The four leg joints buckle and the boar rolls onto its back into the supplied overturned end pose. Its legs relax upward and the mane settles. Remain still. Preserve the original anatomy, native pixel clusters, colors and props. Fixed transparent camera and ground anchor, full body with clear margins. Do not stand up or revive.",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 623104
+      },
+      "balanceBefore": 1227,
+      "maximumReservedGenerations": 8,
+      "queueResponse": "id: 7431c880-13f3-4688-a11c-510132911398\njob_id: 7431c880-13f3-4688-a11c-510132911398\naction: Facing left, The four leg joints buckle and the boar rolls onto its back into the supplied overturned end pose. Its legs relax upward and the mane settles. Remain still. Preserve the original anatomy, native pixel clusters, colors and props. Fixed transparent camera and ground anchor, full body with clear margins. Do not stand up or revive.\nframes: 8\nsize: 128x128px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 623104\nasset_id: f0bdf55c-39eb-5f5f-ad93-347a84b78cdf\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"7431c880-13f3-4688-a11c-510132911398\")",
+      "status": "completed",
+      "chargedGenerations": 2,
+      "latestResponse": "status: completed\nid: 7431c880-13f3-4688-a11c-510132911398\njob_id: 7431c880-13f3-4688-a11c-510132911398\nframes: 9\ntransparent: yes\nasset_id: f0bdf55c-39eb-5f5f-ad93-347a84b78cdf\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 2 generations\ndownload: https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "serviceFrameZeroComparison": {
+        "visibleDifferentPixels": 354,
+        "alphaDifferentPixels": 2,
+        "transparentRgbDifferentPixels": 0,
+        "note": "승인 원본과 패딩 입력은 불변. 서비스의 입력0 정규화는 별도 기록하고 실제 생성1..N을 사용."
+      },
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animation-input-128.png",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+        "drawingId": "55b53285-c749-4c17-9a70-df5aa7e951ce",
+        "width": 128,
+        "height": 128,
+        "offset": {
+          "x": 16,
+          "y": 16
+        },
+        "sha256": "a149e16f522da208f63287e319d37d23aef3608d4197061b9f8c19fb3b92dcdd",
+        "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/original-03.png",
+        "sourceSha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d",
+        "paidGenerations": 0,
+        "verification": "exact RGBA at16,16; outside fully transparent; no scaling",
+        "immutableSelectedOriginalSha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d"
+      },
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/00.png",
+          "sha256": "90c54e4041552d261a2f2fe66741d58935969a0e993a13cf64cabd057e2fc5ae",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=1",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/01.png",
+          "sourceSha256": "90c54e4041552d261a2f2fe66741d58935969a0e993a13cf64cabd057e2fc5ae",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/01.png",
+          "sha256": "4f0b45247709389583d14913ccf44501849bb04b382e28cc11a5ace84934ca42",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=2",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/02.png",
+          "sourceSha256": "4f0b45247709389583d14913ccf44501849bb04b382e28cc11a5ace84934ca42",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/02.png",
+          "sha256": "6b2dbaddd40bb20ea1b46628f47b37ada0b6bc51233e049e5b9fb162d7661b88",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=3",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/03.png",
+          "sourceSha256": "6b2dbaddd40bb20ea1b46628f47b37ada0b6bc51233e049e5b9fb162d7661b88",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/03.png",
+          "sha256": "41a86dca142e4cfa9dafa13cba8ddce432cbede8686738d385e0ff232938a96a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=4",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/04.png",
+          "sourceSha256": "41a86dca142e4cfa9dafa13cba8ddce432cbede8686738d385e0ff232938a96a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/04.png",
+          "sha256": "cffd8d0f65b10c87fb343455ebec62a347f3c766af6e104d9db3acefa14bab8d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=5",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/05.png",
+          "sourceSha256": "cffd8d0f65b10c87fb343455ebec62a347f3c766af6e104d9db3acefa14bab8d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/05.png",
+          "sha256": "741ff492707d9f56d3f27496fa07583f888b329d132b12e0c9db8d4fd7117ddf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=6",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/06.png",
+          "sourceSha256": "741ff492707d9f56d3f27496fa07583f888b329d132b12e0c9db8d4fd7117ddf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/06.png",
+          "sha256": "9917e345f3a63fae31fa31c1173b0454f0940a28366f0a8afa4c3846f6ed7b5d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=7",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/07.png",
+          "sourceSha256": "9917e345f3a63fae31fa31c1173b0454f0940a28366f0a8afa4c3846f6ed7b5d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/07.png",
+          "sha256": "c01a19dc14420d9e5fa3a84ef5982263c29615e655c27f26b8a12a614953fc74",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=8",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/08.png",
+          "sourceSha256": "c01a19dc14420d9e5fa3a84ef5982263c29615e655c27f26b8a12a614953fc74",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        }
+      ],
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=0",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/00.png",
+          "sourceSha256": "b7b814fbbbc96238796e6c3257109057d78569179fdefa8d078bc7eb7752c4d6",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 19,
+            "y": 19,
+            "width": 85,
+            "height": 88
+          },
+          "visiblePixels": 4499,
+          "borderPixels": 0,
+          "paletteSize": 48,
+          "bodyRgbaHash": "ebb72bf4252f595d66f2be9b9639b2210b7f57dd64f91a7c1552e5e488a481a0",
+          "bodyAlphaHash": "c2e67be2d0d9f55fd9ac0b11dbdc96d6dd63d49034e3132bcee1776ea13fdd98"
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=1",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/01.png",
+          "sourceSha256": "90c54e4041552d261a2f2fe66741d58935969a0e993a13cf64cabd057e2fc5ae",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 20,
+            "y": 19,
+            "width": 85,
+            "height": 88
+          },
+          "visiblePixels": 4448,
+          "borderPixels": 0,
+          "paletteSize": 62,
+          "bodyRgbaHash": "bafc96a0391e3ba0b90d9c33864199a00fcc44a404171550930f56af865a0621",
+          "bodyAlphaHash": "048740a818ff530e9cfad8b852735019b56bc155c089ab9c3ee8c2bceda383cc"
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=2",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/02.png",
+          "sourceSha256": "4f0b45247709389583d14913ccf44501849bb04b382e28cc11a5ace84934ca42",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 20,
+            "y": 20,
+            "width": 88,
+            "height": 86
+          },
+          "visiblePixels": 4399,
+          "borderPixels": 0,
+          "paletteSize": 64,
+          "bodyRgbaHash": "3087cb43862e05d6f12fe278c67127d806321e3cfe4374b7785c31e5d9db1f85",
+          "bodyAlphaHash": "0c723721e75e39daed4dcc15a75be73327faaed91707057bff06edec1b56c797"
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=3",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/03.png",
+          "sourceSha256": "6b2dbaddd40bb20ea1b46628f47b37ada0b6bc51233e049e5b9fb162d7661b88",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 20,
+            "y": 19,
+            "width": 93,
+            "height": 83
+          },
+          "visiblePixels": 4046,
+          "borderPixels": 0,
+          "paletteSize": 64,
+          "bodyRgbaHash": "a640e7b5ff51befeeb1db66ea7ca99405d3a52c962e91eb9677db9c3ae223d1f",
+          "bodyAlphaHash": "76381a49edeebe42e7d662f5ce282437d33a3a66fbe0417f09616e221a86c17c"
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=4",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/04.png",
+          "sourceSha256": "41a86dca142e4cfa9dafa13cba8ddce432cbede8686738d385e0ff232938a96a",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 20,
+            "y": 23,
+            "width": 84,
+            "height": 77
+          },
+          "visiblePixels": 3929,
+          "borderPixels": 0,
+          "paletteSize": 64,
+          "bodyRgbaHash": "a6447da182bcf70c33b99a29632b68ad92a8b850daa972b70f45757bfebcb55c",
+          "bodyAlphaHash": "58c90c509f1550dfa8c24af4ce03136e9729feba470064454080269af94d82ca"
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=5",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/05.png",
+          "sourceSha256": "cffd8d0f65b10c87fb343455ebec62a347f3c766af6e104d9db3acefa14bab8d",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 21,
+            "y": 24,
+            "width": 82,
+            "height": 70
+          },
+          "visiblePixels": 3458,
+          "borderPixels": 0,
+          "paletteSize": 64,
+          "bodyRgbaHash": "535919afe75f43e5d1beb99cd621d896b76d1cd618f84ba173c7939d7120f3a3",
+          "bodyAlphaHash": "4e5d979d487ea31c71f5e634689ffc6929671b047c3c3609b0adaa868ed86fb8"
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=6",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/06.png",
+          "sourceSha256": "741ff492707d9f56d3f27496fa07583f888b329d132b12e0c9db8d4fd7117ddf",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 20,
+            "y": 22,
+            "width": 82,
+            "height": 81
+          },
+          "visiblePixels": 3928,
+          "borderPixels": 0,
+          "paletteSize": 64,
+          "bodyRgbaHash": "b477c972380cd846b480e26cc8e92226b8411289863309c5ebf5283f077143bc",
+          "bodyAlphaHash": "e836dd137ba184bf32876d4cb6ca46f65c147cbc14844c85b3a7a00d283032df"
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=7",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/07.png",
+          "sourceSha256": "9917e345f3a63fae31fa31c1173b0454f0940a28366f0a8afa4c3846f6ed7b5d",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 24,
+            "y": 20,
+            "width": 78,
+            "height": 85
+          },
+          "visiblePixels": 4292,
+          "borderPixels": 0,
+          "paletteSize": 65,
+          "bodyRgbaHash": "ff8ecb3806340b06976548ee7230769fb07e1a0ffb68eeda7dd1cea0d980e061",
+          "bodyAlphaHash": "2e0bd8c5b09bede46b21b83585f67c25facb164668ae09118e415c47bfa7183f"
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=8",
+          "sourcePath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/08.png",
+          "sourceSha256": "c01a19dc14420d9e5fa3a84ef5982263c29615e655c27f26b8a12a614953fc74",
+          "width": 128,
+          "height": 128,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 25,
+            "y": 19,
+            "width": 85,
+            "height": 88
+          },
+          "visiblePixels": 4498,
+          "borderPixels": 0,
+          "paletteSize": 46,
+          "bodyRgbaHash": "cbef741ab7c51ecac65b0678966b76495d2fd1eb49f91fbc766b0211085170fb",
+          "bodyAlphaHash": "c0316329bea1d7d8275fc25ff7b4584a4b4d2b0d2182f8ae6bfbe8b72efb25b8"
+        }
+      ],
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "distinctBodyRgbaPoses": 8,
+      "distinctBodyAlphaPoses": 8,
+      "loop": false,
+      "selection": "accepted after native identity / actual articulation / fixed pivot review: 앞뒤 다리 관절이 풀리고 머리·몸통이 뒤집히며 끝에서 네 발을 위로 둔 채 누워 멈춘다. 추가 머리와 부활이 없다.",
+      "technicalQuality": "native canvas / clear edges / binary alpha passed",
+      "reviewPath": "public/assets/maplestory/map-bosses/frosttusk-boar/review/die1-7431c880-13f3-4688-a11c-510132911398.png"
+    }
+  ],
+  "animations": {
+    "stand": {
+      "id": "ai/monster-frosttusk-boar/stand",
+      "label": "대기",
+      "group": "기본 동작",
+      "loop": true,
+      "jobId": "ab06bfd4-f0c0-454b-867d-bbf8b79d3c99",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/00.png",
+          "sha256": "13bfd1250c3a4c45f30ebcddb91ab687d9b1c9d4fcd3198c2be0a6b20bfef0f9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=1",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/01.png",
+          "sourceSha256": "13bfd1250c3a4c45f30ebcddb91ab687d9b1c9d4fcd3198c2be0a6b20bfef0f9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/01.png",
+          "sha256": "2a2576b78e4e7429e31adaf506dfafe4d79390d02b3a8d800db303a50869ba59",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=2",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/02.png",
+          "sourceSha256": "2a2576b78e4e7429e31adaf506dfafe4d79390d02b3a8d800db303a50869ba59",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/02.png",
+          "sha256": "0baa204f64da0eb1fda5daada434838c386baaa783ab97569003d5298a2ff30b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=3",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/03.png",
+          "sourceSha256": "0baa204f64da0eb1fda5daada434838c386baaa783ab97569003d5298a2ff30b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/03.png",
+          "sha256": "109fd34b825e8c007aaee8543ac3695c2ef3b02015e506d746cbf4530b10783e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/download?index=4",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/stand/ab06bfd4-f0c0-454b-867d-bbf8b79d3c99/04.png",
+          "sourceSha256": "109fd34b825e8c007aaee8543ac3695c2ef3b02015e506d746cbf4530b10783e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        }
+      ],
+      "notes": "갈기와 엄니를 붙인 채 귀·턱·네 다리의 작은 호흡과 눈 깜빡임으로 대기한다."
+    },
+    "move": {
+      "id": "ai/monster-frosttusk-boar/move",
+      "label": "이동",
+      "group": "기본 동작",
+      "loop": true,
+      "jobId": "56943d4f-1428-41e0-8204-11fb49f5e72f",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/00.png",
+          "sha256": "7138bfdbac16346d5807fbbbcf445a5af3525dfcdb81c06417135431d6b7bd42",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=1",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/01.png",
+          "sourceSha256": "7138bfdbac16346d5807fbbbcf445a5af3525dfcdb81c06417135431d6b7bd42",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/01.png",
+          "sha256": "568b3bab741a838a0d4f654a9f4545e304b59e6e141de6da51dba95f5c8ccc49",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=2",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/02.png",
+          "sourceSha256": "568b3bab741a838a0d4f654a9f4545e304b59e6e141de6da51dba95f5c8ccc49",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/02.png",
+          "sha256": "2d2b7538679551c7087ffb5f4d153d033e6651d527a2057eb1a289b3a9f39d8d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=3",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/03.png",
+          "sourceSha256": "2d2b7538679551c7087ffb5f4d153d033e6651d527a2057eb1a289b3a9f39d8d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/03.png",
+          "sha256": "ab5f003749dd8d8978886366b5a928c7f61c49efa1ae960f1dd57416d2903349",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=4",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/04.png",
+          "sourceSha256": "ab5f003749dd8d8978886366b5a928c7f61c49efa1ae960f1dd57416d2903349",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/04.png",
+          "sha256": "5bdd3a6ca5d71bc04be1d74c3ba70cccb302fe6cae96b6d6ea0f36452264d4ef",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=5",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/05.png",
+          "sourceSha256": "5bdd3a6ca5d71bc04be1d74c3ba70cccb302fe6cae96b6d6ea0f36452264d4ef",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/05.png",
+          "sha256": "4fd751a323de3ca25b1a1d15577219b53bfab0ebd3af5774cf3f22b60dd6ff18",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=6",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/06.png",
+          "sourceSha256": "4fd751a323de3ca25b1a1d15577219b53bfab0ebd3af5774cf3f22b60dd6ff18",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/06.png",
+          "sha256": "87ec8c1a3a64c472536ff7b997e87b9c67e535325b70e4b3acd8d380958765b2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=7",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/07.png",
+          "sourceSha256": "87ec8c1a3a64c472536ff7b997e87b9c67e535325b70e4b3acd8d380958765b2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/move/56943d4f-1428-41e0-8204-11fb49f5e72f/07.png",
+          "sha256": "62edcf766a851b6bab17a6c18567d988b11ca7240e1a29a6fa3d9d0c8eef0cc7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/56943d4f-1428-41e0-8204-11fb49f5e72f/download?index=8",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/move/56943d4f-1428-41e0-8204-11fb49f5e72f/08.png",
+          "sourceSha256": "62edcf766a851b6bab17a6c18567d988b11ca7240e1a29a6fa3d9d0c8eef0cc7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        }
+      ],
+      "notes": "네 다리 관절이 교대로 들리고 발굽을 내려놓는 실제 보행과 어깨·귀·꼬리의 균형을 확인했다."
+    },
+    "attack1": {
+      "id": "ai/monster-frosttusk-boar/attack1",
+      "label": "공격",
+      "group": "기본 동작",
+      "loop": false,
+      "jobId": "26b5ca4c-6761-414f-b1f3-636e7daf861f",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/00.png",
+          "sha256": "716f63457db265ad5d2c6c78aaee2f7169656e75b1baefba1ce9dabb27373503",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=1",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/01.png",
+          "sourceSha256": "716f63457db265ad5d2c6c78aaee2f7169656e75b1baefba1ce9dabb27373503",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/01.png",
+          "sha256": "50b7f7050d1d8a0b62dd51803bcbd18ce775929f5a64bc38478d0669b7950406",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=2",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/02.png",
+          "sourceSha256": "50b7f7050d1d8a0b62dd51803bcbd18ce775929f5a64bc38478d0669b7950406",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/02.png",
+          "sha256": "ca1cd793b9e686bd8a6b794edf638d9ccfe23c2d00cf79efbb670bc2f31cfbb7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=3",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/03.png",
+          "sourceSha256": "ca1cd793b9e686bd8a6b794edf638d9ccfe23c2d00cf79efbb670bc2f31cfbb7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/03.png",
+          "sha256": "dd3a7e3a2f8c789f8e77af1c275dde788b365a827479dc4093370992a823ffc9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=4",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/04.png",
+          "sourceSha256": "dd3a7e3a2f8c789f8e77af1c275dde788b365a827479dc4093370992a823ffc9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/04.png",
+          "sha256": "c9c17eea0fe869b16e0d2799946ccefa698109de7bb35eb16dba8166a0140c8f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=5",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/05.png",
+          "sourceSha256": "c9c17eea0fe869b16e0d2799946ccefa698109de7bb35eb16dba8166a0140c8f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/05.png",
+          "sha256": "5657545be612b6b5b85e7bab01856816efcbd14cf88f0a3e5c2b3edafe161c7e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=6",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/06.png",
+          "sourceSha256": "5657545be612b6b5b85e7bab01856816efcbd14cf88f0a3e5c2b3edafe161c7e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/06.png",
+          "sha256": "de13bca41a0f8ddcb9fbf52402ac9bce1415c00b2a83fb35b77a441490e89b88",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=7",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/07.png",
+          "sourceSha256": "de13bca41a0f8ddcb9fbf52402ac9bce1415c00b2a83fb35b77a441490e89b88",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/07.png",
+          "sha256": "d9182520ce37b03dc53fa8326516860a076ceebd53057270975c1794add4e4c7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/26b5ca4c-6761-414f-b1f3-636e7daf861f/download?index=8",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/attack1/26b5ca4c-6761-414f-b1f3-636e7daf861f/08.png",
+          "sourceSha256": "d9182520ce37b03dc53fa8326516860a076ceebd53057270975c1794add4e4c7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        }
+      ],
+      "notes": "앞다리를 굽혀 머리와 엄니를 낮추고 뒷다리로 밀며 좌측으로 들이받은 뒤 복귀한다.5번째 런타임 최대 전진을 접촉으로 선택한다.",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625
+    },
+    "hit1": {
+      "id": "ai/monster-frosttusk-boar/hit1",
+      "label": "피격",
+      "group": "기본 동작",
+      "loop": false,
+      "jobId": "b18f28b1-abb3-4020-b130-1c77ec0f65c9",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/00.png",
+          "sha256": "55869b276515a3a0a18dd7dddba5d6ebc59d47b3159d26fc8a48c83c8e1dc08a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=1",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/01.png",
+          "sourceSha256": "55869b276515a3a0a18dd7dddba5d6ebc59d47b3159d26fc8a48c83c8e1dc08a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/01.png",
+          "sha256": "e468c600582f721334950a2921eda08a7c5364a5d39a9d1de2f54df7635dc6ef",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=2",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/02.png",
+          "sourceSha256": "e468c600582f721334950a2921eda08a7c5364a5d39a9d1de2f54df7635dc6ef",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/02.png",
+          "sha256": "df05ef02ca9ec1c6ddbb0670a1c08bc1e9657d4e3b7b0a1472a7bb42351c6e81",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=3",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/03.png",
+          "sourceSha256": "df05ef02ca9ec1c6ddbb0670a1c08bc1e9657d4e3b7b0a1472a7bb42351c6e81",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.09,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/03.png",
+          "sha256": "24a8951cf440c4d5d4933e64358aa5b6a81af869f9781e4b1cecd8253901e5a1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b18f28b1-abb3-4020-b130-1c77ec0f65c9/download?index=4",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/hit1/b18f28b1-abb3-4020-b130-1c77ec0f65c9/04.png",
+          "sourceSha256": "24a8951cf440c4d5d4933e64358aa5b6a81af869f9781e4b1cecd8253901e5a1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        }
+      ],
+      "notes": "머리와 귀가 물러나며 앞다리가 버티고 네 발 자세로 돌아오는 짧은 실제 피격."
+    },
+    "die1": {
+      "id": "ai/monster-frosttusk-boar/die1",
+      "label": "쓰러짐",
+      "group": "기본 동작",
+      "loop": false,
+      "jobId": "7431c880-13f3-4688-a11c-510132911398",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/00.png",
+          "sha256": "90c54e4041552d261a2f2fe66741d58935969a0e993a13cf64cabd057e2fc5ae",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=1",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/01.png",
+          "sourceSha256": "90c54e4041552d261a2f2fe66741d58935969a0e993a13cf64cabd057e2fc5ae",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/01.png",
+          "sha256": "4f0b45247709389583d14913ccf44501849bb04b382e28cc11a5ace84934ca42",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=2",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/02.png",
+          "sourceSha256": "4f0b45247709389583d14913ccf44501849bb04b382e28cc11a5ace84934ca42",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/02.png",
+          "sha256": "6b2dbaddd40bb20ea1b46628f47b37ada0b6bc51233e049e5b9fb162d7661b88",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=3",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/03.png",
+          "sourceSha256": "6b2dbaddd40bb20ea1b46628f47b37ada0b6bc51233e049e5b9fb162d7661b88",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/03.png",
+          "sha256": "41a86dca142e4cfa9dafa13cba8ddce432cbede8686738d385e0ff232938a96a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=4",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/04.png",
+          "sourceSha256": "41a86dca142e4cfa9dafa13cba8ddce432cbede8686738d385e0ff232938a96a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/04.png",
+          "sha256": "cffd8d0f65b10c87fb343455ebec62a347f3c766af6e104d9db3acefa14bab8d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=5",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/05.png",
+          "sourceSha256": "cffd8d0f65b10c87fb343455ebec62a347f3c766af6e104d9db3acefa14bab8d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/05.png",
+          "sha256": "741ff492707d9f56d3f27496fa07583f888b329d132b12e0c9db8d4fd7117ddf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=6",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/06.png",
+          "sourceSha256": "741ff492707d9f56d3f27496fa07583f888b329d132b12e0c9db8d4fd7117ddf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/06.png",
+          "sha256": "9917e345f3a63fae31fa31c1173b0454f0940a28366f0a8afa4c3846f6ed7b5d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=7",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/07.png",
+          "sourceSha256": "9917e345f3a63fae31fa31c1173b0454f0940a28366f0a8afa4c3846f6ed7b5d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 128,
+          "height": 128,
+          "pivot": {
+            "x": 64,
+            "y": 21
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/frames/die1/7431c880-13f3-4688-a11c-510132911398/07.png",
+          "sha256": "c01a19dc14420d9e5fa3a84ef5982263c29615e655c27f26b8a12a614953fc74",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/7431c880-13f3-4688-a11c-510132911398/download?index=8",
+          "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animations/die1/7431c880-13f3-4688-a11c-510132911398/08.png",
+          "sourceSha256": "c01a19dc14420d9e5fa3a84ef5982263c29615e655c27f26b8a12a614953fc74",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 128
+          }
+        }
+      ],
+      "notes": "앞뒤 다리 관절이 풀리고 머리·몸통이 뒤집히며 끝에서 네 발을 위로 둔 채 누워 멈춘다. 추가 머리와 부활이 없다."
+    }
+  },
+  "motionStatus": {
+    "stand": "accepted",
+    "move": "accepted",
+    "attack1": "accepted",
+    "hit1": "accepted",
+    "die1": "accepted"
+  },
+  "approval": {
+    "scope": "A15 전체 생성 승인에 따른 native 원본 자체 검토",
+    "selectedKey": "original-03",
+    "notes": "세 번째 후보에서 몸 밖의 흰 조각이 사라지고 목 뒤에 붙은 크림색 갈기와 좌측 주둥이·파란 엄니·굵은 네 다리로 겨울 멧돼지를 구분한다."
+  },
+  "previewDisplayScale": 1,
+  "animationInput": {
+    "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/animation-input-128.png",
+    "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+    "drawingId": "55b53285-c749-4c17-9a70-df5aa7e951ce",
+    "width": 128,
+    "height": 128,
+    "offset": {
+      "x": 16,
+      "y": 16
+    },
+    "sha256": "a149e16f522da208f63287e319d37d23aef3608d4197061b9f8c19fb3b92dcdd",
+    "sourceOriginalPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/original-03.png",
+    "sourceSha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d",
+    "paidGenerations": 0,
+    "verification": "exact RGBA at16,16; outside fully transparent; no scaling"
+  },
+  "animationAnchor": {
+    "x": 64,
+    "y": 107
+  },
+  "koEndTarget": {
+    "localPath": "public/assets/maplestory/map-bosses/frosttusk-boar/originals/ko-end-target.png",
+    "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/84dae0f5-41af-432d-9101-1511871bcabe/assets/native/full.png",
+    "drawingId": "84dae0f5-41af-432d-9101-1511871bcabe",
+    "source": "https://api.pixellab.ai/mcp/pixel-tools/55b53285-c749-4c17-9a70-df5aa7e951ce/assets/native/full.png",
+    "at": [
+      0,
+      -3
+    ],
+    "angle": 180,
+    "sha256": "f32199d68329ebbc57c9637b9fcce15dc7320d19f39596ed335afbc2fcfd7f09",
+    "paidGenerations": 0,
+    "kind": "free exact native end keyframe; all actual intermediate motions generated"
+  },
+  "verification": {
+    "selectedSourceSha256": "110ec2cf1c6fdb792bb74dc0073436e97ade437e2525fde72c25ffdf863efd7d",
+    "fixedNativePadding": "RGBA exact at16,16",
+    "runtimeBytes": "exact raw PNG copies",
+    "binaryAlpha": true,
+    "clearBorders": true,
+    "fixedBottomPivot": true,
+    "nativeFacing": "left",
+    "actualArticulation": "all selected poses visually reviewed; no transform-only substitute",
+    "attackContactFrameIndex": 4,
+    "attackContactProgress": 0.5625,
+    "ko": "articulated fall with held last pose; no revival",
+    "pcPlayback": "all frames observed at1x and2x,1366 and1920,DPR2",
+    "clips": 5,
+    "runtimeFrames": 32
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "status": "passed",
+  "errors": [],
+  "missing": [],
+  "summaries": {
+    "town": {
+      "samples": 325,
+      "stages": {
+        "initial": {
+          "motions": [
+            "stand"
+          ],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/stand/00.png"
+          ],
+          "mirrors": [
+            1
+          ]
+        },
+        "right-walk-stop": {
+          "motions": [
+            "stand",
+            "move-right",
+            "stand-right"
+          ],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/stand/00.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/03.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/04.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/05.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/06.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/07.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/08.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-right-04.png"
+          ],
+          "mirrors": [
+            1
+          ]
+        },
+        "left-walk-stop": {
+          "motions": [
+            "move-left",
+            "stand-left"
+          ],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/move-left/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-left/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-left/03.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-left/04.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-left/05.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-left/06.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-left/07.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-left/08.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-left-04.png"
+          ],
+          "mirrors": [
+            1
+          ]
+        },
+        "diagonal-turn": {
+          "motions": [
+            "move-back-right",
+            "stand-back-right"
+          ],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/move-back-right/2f16f048-de62-4f30-9826-ae5a6b870c61/00.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-back-right/2f16f048-de62-4f30-9826-ae5a6b870c61/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-back-right/2f16f048-de62-4f30-9826-ae5a6b870c61/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-back-right/2f16f048-de62-4f30-9826-ae5a6b870c61/03.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/stand-back-right/00.png"
+          ],
+          "mirrors": [
+            1
+          ]
+        },
+        "right-from-diagonal": {
+          "motions": [
+            "move-right",
+            "stand-right"
+          ],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-right-04.png"
+          ],
+          "mirrors": [
+            1
+          ]
+        }
+      }
+    },
+    "clearing": {
+      "samples": 180,
+      "stages": {
+        "initial": {
+          "motions": [
+            "stand-back"
+          ],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/stand-back/00.png"
+          ],
+          "mirrors": [
+            1
+          ]
+        },
+        "right-walk-stop": {
+          "motions": [
+            "move-right",
+            "stand-right"
+          ],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-right-04.png"
+          ],
+          "mirrors": [
+            1
+          ]
+        },
+        "right-side-swing": {
+          "motions": [
+            "work-ready",
+            "tiger-fist",
+            "battle-ready",
+            "stand-right"
+          ],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/motion-links/work-turn/1ee813c7-6c5c-4f22-be59-28226438e987/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/battle-ready/5679735d-e2c6-4c3b-88d9-acfefcde6ff0/03.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/tiger-fist/6174dc12-d68f-4985-bb63-fc7792b5aef0/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/tiger-fist/6174dc12-d68f-4985-bb63-fc7792b5aef0/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/tiger-fist/6174dc12-d68f-4985-bb63-fc7792b5aef0/03.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/tiger-fist/6174dc12-d68f-4985-bb63-fc7792b5aef0/04.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/motion-links/work-turn/1ee813c7-6c5c-4f22-be59-28226438e987/03.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/motion-links/work-turn/1ee813c7-6c5c-4f22-be59-28226438e987/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-right-04.png"
+          ],
+          "mirrors": [
+            1
+          ]
+        },
+        "left-walk-stop": {
+          "motions": [
+            "move-left",
+            "stand-left"
+          ],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/move-left/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-left/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-left-04.png"
+          ],
+          "mirrors": [
+            1
+          ]
+        },
+        "left-side-swing": {
+          "motions": [
+            "work-ready",
+            "tiger-fist",
+            "battle-ready",
+            "stand-left"
+          ],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/motion-links/work-turn/1ee813c7-6c5c-4f22-be59-28226438e987/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/motion-links/work-turn/1ee813c7-6c5c-4f22-be59-28226438e987/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/battle-ready/5679735d-e2c6-4c3b-88d9-acfefcde6ff0/03.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/tiger-fist/6174dc12-d68f-4985-bb63-fc7792b5aef0/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/tiger-fist/6174dc12-d68f-4985-bb63-fc7792b5aef0/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/tiger-fist/6174dc12-d68f-4985-bb63-fc7792b5aef0/03.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/tiger-fist/6174dc12-d68f-4985-bb63-fc7792b5aef0/04.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/motion-links/work-turn/1ee813c7-6c5c-4f22-be59-28226438e987/03.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-right-04.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-left-04.png"
+          ],
+          "mirrors": [
+            -1,
+            1
+          ]
+        }
+      }
+    },
+    "trail": {
+      "samples": 54,
+      "stages": {
+        "right-walk-stop": {
+          "motions": [
+            "move-right",
+            "stand-right"
+          ],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-right/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-right-04.png"
+          ],
+          "mirrors": [
+            1
+          ]
+        },
+        "left-walk-stop": {
+          "motions": [
+            "move-left",
+            "stand-left"
+          ],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/move-left/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/move-left/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-left-04.png"
+          ],
+          "mirrors": [
+            1
+          ]
+        }
+      }
+    },
+    "battle": {
+      "samples": 88,
+      "stages": {
+        "normal-attack": {
+          "motions": [],
+          "paths": [
+            "public/assets/maplestory/tiger-hero-ai/frames/battle-ready/5679735d-e2c6-4c3b-88d9-acfefcde6ff0/03.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/straight-punch/c8853492-3fd1-4b99-91a9-465974fbe7fc/01.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/straight-punch/c8853492-3fd1-4b99-91a9-465974fbe7fc/02.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/straight-punch/c8853492-3fd1-4b99-91a9-465974fbe7fc/03.png",
+            "public/assets/maplestory/tiger-hero-ai/frames/straight-punch/c8853492-3fd1-4b99-91a9-465974fbe7fc/04.png"
+          ],
+          "mirrors": [
+            1.18
+          ]
+        }
+      }
+    }
+  }
+}

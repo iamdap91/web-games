@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:," />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>아타호 측면 볼륨 비교</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: system-ui, sans-serif;
+        background: #e5e4da;
+        color: #30392e;
+      }
+      body {
+        margin: 0;
+        padding: 16px;
+      }
+      main {
+        max-width: 740px;
+        margin: auto;
+        --sprite-size: 128px;
+      }
+      h1 {
+        font-size: 20px;
+        margin: 0 0 8px;
+      }
+      p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 8px 0;
+      }
+      fieldset {
+        border: 0;
+        padding: 0;
+        margin: 18px 0 12px;
+        display: flex;
+        gap: 16px;
+      }
+      legend {
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+      label {
+        font-size: 14px;
+        cursor: pointer;
+      }
+      main:has(#scale-1:checked) {
+        --sprite-size: 64px;
+      }
+      main:has(#scale-4:checked) {
+        --sprite-size: 256px;
+      }
+      .gallery {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        padding: 14px 12px 18px;
+        background: #a6aa91;
+        border: 1px solid #89917a;
+        border-radius: 12px;
+      }
+      figure {
+        margin: 0;
+        flex: 1 0 var(--sprite-size);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h2 {
+        font-size: 14px;
+        margin: 0 0 12px;
+        white-space: nowrap;
+      }
+      .sprite {
+        display: block;
+        width: var(--sprite-size);
+        height: var(--sprite-size);
+        image-rendering: pixelated;
+        image-rendering: crisp-edges;
+      }
+      figcaption {
+        font-size: 12px;
+        margin-top: 12px;
+        text-align: center;
+        line-height: 1.5;
+        max-width: 160px;
+      }
+      .note {
+        padding: 12px;
+        border: 1px solid #c0c4b2;
+        background: #f4f2e5;
+        border-radius: 10px;
+      }
+      details {
+        margin-top: 16px;
+        font-size: 13px;
+      }
+      summary {
+        cursor: pointer;
+      }
+      .captures {
+        display: flex;
+        gap: 16px;
+        margin-top: 10px;
+      }
+      .captures img {
+        image-rendering: pixelated;
+        max-width: 112px;
+        height: auto;
+      }
+    </style>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <main>
+      <h1>아타호 · 측면 볼륨 비교</h1>
+      <p>
+        원본과 첫 수정안 사이의 몸통 두께로 보완한 04입니다. 네 이미지를 같은
+        배율과 발 높이로 비교합니다.
+      </p>
+      <fieldset>
+        <legend>확대 배율 · 기본 2배는 게임 화면에 가까운 크기</legend>
+        <label><input id="scale-1" type="radio" name="scale" /> 1배</label>
+        <label
+          ><input id="scale-2" type="radio" name="scale" checked /> 2배</label
+        >
+        <label><input id="scale-4" type="radio" name="scale" /> 4배</label>
+      </fieldset>
+      <section
+        class="gallery"
+        aria-label="원본 측면, 첫 수정01, 정밀 보정04, 정면 비교"
+      >
+        <figure>
+          <h2>원본 측면</h2>
+          <img
+            class="sprite"
+            src="../../../../public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/references/side-original.png"
+            width="64"
+            height="64"
+            alt="기존 오른쪽 측면 대기"
+          />
+          <figcaption>기존의 얇은 목·몸통</figcaption>
+        </figure>
+        <figure>
+          <h2>수정 측면 · 01</h2>
+          <img
+            class="sprite"
+            src="../../../../public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/originals/side-volume-01.png"
+            width="64"
+            height="64"
+            alt="목털과 몸통이 더 도톰한 오른쪽 측면 후보"
+          />
+          <figcaption>목털·가슴·배에 소폭 볼륨 추가</figcaption>
+        </figure>
+        <figure>
+          <h2>정밀 보정 · 04</h2>
+          <img
+            class="sprite"
+            src="../../../../public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/originals/side-volume-04.png"
+            width="64"
+            height="64"
+            alt="옷으로 덮인 몸통만 원본과 첫 수정 사이 두께로 보완한 04"
+          />
+          <figcaption>얼굴·팔다리 유지, 옷 안쪽 몸통만 보완</figcaption>
+        </figure>
+        <figure>
+          <h2>정면 기준</h2>
+          <img
+            class="sprite"
+            src="../../../../public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/references/front-original.png"
+            width="64"
+            height="64"
+            alt="현재 중장년 아타호 정면 대기"
+          />
+          <figcaption>같은 인물의 듬직한 체격</figcaption>
+        </figure>
+      </section>
+      <p class="note">
+        04는 원본의 얼굴·목·팔손·발·꼬리 도트를 유지하고 옷 외곽만 보완했습니다.
+        흰 털 추가 없이 기존 갈색으로 무료 편집했으며 네 장 모두 64×64 원본을
+        정수 배율로 표시합니다. 01은 얼굴과 발 색도 일부 달라진 이전 후보입니다.
+        현재는 외형 비교용입니다.
+      </p>
+      <details>
+        <summary>사용자가 보낸 게임 화면</summary>
+        <div class="captures">
+          <img
+            src="../../../../public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/references/user-side.png"
+            alt="사용자가 캡처한 측면"
+          />
+          <img
+            src="../../../../public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/references/user-front.png"
+            alt="사용자가 캡처한 정면"
+          />
+        </div>
+      </details>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

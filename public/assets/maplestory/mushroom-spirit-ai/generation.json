@@ -1,0 +1,81 @@
+{
+  "generation": {
+    "provider": "PixelLab",
+    "model": "Pixen",
+    "interface": "MCP",
+    "tool": "create_image_pixen",
+    "jobId": "bf931ad7-11af-4e5f-9f17-333321a5113b",
+    "createdDate": "2026-10-10",
+    "prompt": "One original small forest mushroom-spirit monster for a 1990s side-view RPG battle. Full body standing idle, facing LEFT in a clear left-facing three-quarter pose, looking toward the hero on the left. A big rounded reddish-brown to muted plum mushroom cap, a small cream-colored stem body, two short feet and tiny arms. A few small teal spore buds and a tiny leaf ornament attached to the cap indicate a support/healing role, but NO floating particles or large spell effects. Narrow determined monster eyes and a slightly mischievous hostile expression; readable as a battle enemy rather than a harmless mascot. Compact charming proportions, simple strong silhouette. Crisp native pixel art with a one-pixel dark outline, coherent pixel clusters, broad flat color areas and restrained 2-3 tone shading, pixel density matching small 1990s RPG character sprites. ONE character centered in a 64x64 canvas, the full figure about 48 pixels tall, complete mushroom cap and BOTH feet fully visible with transparent margin on every side. Transparent background. No scenery, no text, no floor, no ground shadow, no weapon, no extra characters, no extra objects, no glow haze, no blur, no antialiasing.",
+    "width": 64,
+    "height": 64,
+    "transparentBackground": true,
+    "direction": "west",
+    "view": "side",
+    "detail": "low detail",
+    "outline": "single color black outline",
+    "referenceImages": [],
+    "requests": 1,
+    "displayedCostGenerations": 1,
+    "actualCostGenerations": 1,
+    "usageBefore": {
+      "used": 8,
+      "limit": 40,
+      "remaining": 32,
+      "bonus": 18
+    },
+    "usageAfter": {
+      "used": 9,
+      "limit": 40,
+      "remaining": 31,
+      "bonus": 17
+    },
+    "variants": 1,
+    "retries": 0,
+    "sourceUrl": "https://www.pixellab.ai/create?tool=create_image_pixen",
+    "downloadUrl": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download",
+    "notes": "MCP 단일 생성. 작업 응답 charged_generations=1, 계정 사용량 8/40 → 9/40. seed·project_id는 요청하지 않았으며 나머지 서버 기본 설정은 미확인."
+  },
+  "original": {
+    "name": "pixellab-pixen-64.png",
+    "kind": "png",
+    "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/pixellab-pixen-64.png",
+    "width": 64,
+    "height": 64,
+    "byteSize": 2915,
+    "sha256": "21314adf1250478d40adc736035cdc4f09dca7687e71e433d87e60201e585956",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download",
+    "key": "pixen-first-candidate",
+    "pageUrl": "https://www.pixellab.ai/create?tool=create_image_pixen"
+  },
+  "frame": {
+    "index": 0,
+    "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/stand.png",
+    "sha256": "c85cfa31d2de3be67bdd515f8386fd6d47cbe5aabbbcffcfbb512e0d25592b90",
+    "width": 50,
+    "height": 52,
+    "sourceRect": {
+      "x": 6,
+      "y": 4,
+      "width": 50,
+      "height": 52
+    },
+    "pivot": {
+      "x": 25,
+      "y": 0
+    },
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download"
+  },
+  "displayScale": 1,
+  "pixelsPerUnit": 32,
+  "processing": "투명 여백만 잘라내고 RGBA 원본 픽셀 보존. 리샘플링·색 보정 없음. 32 pixelsPerUnit·표시 배율 1로 아타호보다 작은 정령을 표시.",
+  "pixelChecks": {
+    "alphaValues": [
+      0,
+      255
+    ],
+    "colorCount": 34,
+    "rgbaCropMatches": true
+  },
+  "qualityNotes": "버섯갓·청록 포자와 작은 다리가 읽힌다. 요청한 줄기 몸보다 얼굴이 사람/노움에 가깝고 왼쪽 3/4보다 정면에 가까운 시점이다. 이 첫 후보를 독립 혼합 전투 프로토타입에 사용하고 실제 크기·방향은 프로토타입에서 검토한다."
+}

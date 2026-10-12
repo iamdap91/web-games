@@ -1,0 +1,46 @@
+{
+  "generation": {
+    "provider": "PixelLab",
+    "model": "Pixen",
+    "createdDate": "2026-10-10",
+    "prompt": "One original game NPC: a kind, calm middle-aged human martial arts teacher guarding a remote mountain dojo. Full body seated cross-legged on the ground, hands resting on knees, facing the viewer, relaxed shoulders and friendly expression. Black hair in a small topknot, subtle moustache, worn grey-brown martial arts robe with a muted brown sash and dark cloth shoes. Charming compact 1990s 2D RPG pixel sprite, readable face, crisp one-pixel dark outline, consistent native pixel clusters, broad flat color areas with simple 2-3 tone shading, restrained warm earth palette. Centered, entire seated figure visible, about 48 pixels tall inside the 64x64 canvas. Isolated on transparent background. No scenery, no ground, no cast shadow, no text, no props, no weapon, no antialiasing, no blur.",
+    "width": 64,
+    "height": 64,
+    "transparentBackground": true,
+    "direction": "South (facing camera)",
+    "view": "Side (Sidescroller)",
+    "detail": "Low detail",
+    "outline": "Black outline",
+    "referenceImages": [],
+    "requests": 1,
+    "displayedCostGenerations": 1,
+    "variants": 1,
+    "retries": 0,
+    "sourceUrl": "https://www.pixellab.ai/create?tool=create_image_pixen",
+    "notes": "웹 UI의 단일 이미지 생성. 표시된 비용은 1 generation이며 실제 차감 잔액·seed·서버 작업 ID는 별도로 노출되지 않아 기록하지 않음. 무기·소품 제외 프롬프트에도 등 뒤 막대 모양 소품이 생성됨."
+  },
+  "original": {
+    "localPath": "public/assets/maplestory/dojo-owner-ai/originals/pixellab-pixen-64.png",
+    "sha256": "1b4b6dbe3f53f5aca49fb22ecfb6255e2e1e4f9f62bb12a8b4d702b57e36908c",
+    "width": 64,
+    "height": 64
+  },
+  "frame": {
+    "localPath": "public/assets/maplestory/dojo-owner-ai/frames/seated.png",
+    "sha256": "d4ce3c6dea19551cff841c95313b995454177b9b375804053fc22961902c9d85",
+    "width": 46,
+    "height": 61,
+    "sourceRect": {
+      "x": 10,
+      "y": 1,
+      "width": 46,
+      "height": 61
+    },
+    "pivot": {
+      "x": 22,
+      "y": 0
+    }
+  },
+  "displayScale": 0.85,
+  "processing": "투명 여백만 잘라내고 RGBA 원본 픽셀 보존. 리샘플링·색 보정·소품 제거 없음. 렌더링 단계에서 0.85배 표시."
+}

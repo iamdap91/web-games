@@ -1,12 +1,5 @@
-export function facingFor({ x, z }) {
-    return Math.abs(x) >= Math.abs(z)
-        ? x < 0
-            ? 'left'
-            : 'right'
-        : z < 0
-            ? 'back'
-            : 'front';
-}
+import { facingFor, } from '../../resources/characters/ataho/facing.js';
+export { facingFor } from '../../resources/characters/ataho/facing.js';
 /** 체력과 위치를 소유하며 외부에는 읽기 전용 스냅샷만 제공한다. */
 export class Combatant {
     spec;
@@ -15,11 +8,14 @@ export class Combatant {
     facing;
     moving = false;
     staggered = false;
-    constructor(spec) {
+    constructor(spec, health = spec.maxHealth) {
         this.spec = spec;
-        this.health = spec.maxHealth;
+        if (!Number.isFinite(health))
+            throw new Error('입장 체력이 유효하지 않습니다.');
+        this.health = Math.max(0, Math.min(spec.maxHealth, Math.floor(health)));
         this.point = { ...spec.home };
-        this.facing = spec.kind === 'ataho' ? 'right' : 'left';
+        this.facing =
+            spec.kind === 'ataho' || spec.kind === 'yeonmuk' ? 'right' : 'left';
     }
     get alive() {
         return this.health > 0;
@@ -65,6 +61,13 @@ export class Combatant {
     hurt(damage) {
         const actual = Math.min(this.health, Math.max(0, damage));
         this.health -= actual;
+        return actual;
+    }
+    heal(amount) {
+        if (!this.alive || !Number.isFinite(amount))
+            return 0;
+        const actual = Math.min(this.spec.maxHealth - this.health, Math.max(0, Math.floor(amount)));
+        this.health += actual;
         return actual;
     }
 }

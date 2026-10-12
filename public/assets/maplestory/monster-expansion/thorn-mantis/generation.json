@@ -1,0 +1,3817 @@
+{
+  "id": "thorn-mantis",
+  "name": "가시사마귀",
+  "theme": "forest",
+  "role": "charger",
+  "appearance": "Tall jade mantis with thorn-shaped forearms folded in a threatening martial pose, narrow angular head and segmented abdomen.",
+  "motions": {
+    "stand": "Facing left, move the two antennae independently, subtly turn the narrow head and flex the folded thorn forearms, abdomen expands then settles, loop back to the threatening original guard.",
+    "move": "Facing left, quick insect stepping cycle in place with alternating planted legs and a pitched segmented abdomen, thorn forearms remain folded near the face while antennae react to each step.",
+    "attack1": "Facing left, draw both thorn forearms high and back in a clear wind-up, lean forward and sweep the scythe forearms down and forward together toward the left, hold the long extended strike briefly, retract to the original guard. No beams.",
+    "hit1": "Facing left, recoil the angular head and abdomen to the right, arms spread defensively and supporting legs bend, recover to the folded martial guard.",
+    "die1": "Facing left, forearms uncurl and sag, long supporting legs buckle and the mantis tips onto its side, abdomen settles and antennae lower, finish lying motionless."
+  },
+  "assetId": "ai/monster-thorn-mantis",
+  "localRoot": "public/assets/maplestory/monster-expansion/thorn-mantis",
+  "attempts": [
+    {
+      "motion": "original",
+      "attempt": 1,
+      "key": "monster-a-thorn-mantis-original-01",
+      "jobId": "cd985044-6e69-465e-81e6-6ba48cc5e286",
+      "balanceBefore": 508,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Tall jade mantis with thorn-shaped forearms folded in a threatening martial pose, narrow angular head and segmented abdomen. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 614004,
+        "text_guidance_scale": 8
+      },
+      "queueResponse": "id: cd985044-6e69-465e-81e6-6ba48cc5e286\njob_id: cd985044-6e69-465e-81e6-6ba48cc5e286\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Tall jade mantis with thorn-shaped forearms folded in a threatening martial pose, narrow angular head and segmented abdomen. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: 5d4f0307-6ecb-5b0a-b29f-2807a741a518\nasset_status: pending (saved when generation completes)\nseed: 614004\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"cd985044-6e69-465e-81e6-6ba48cc5e286\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: cd985044-6e69-465e-81e6-6ba48cc5e286\njob_id: cd985044-6e69-465e-81e6-6ba48cc5e286\nframes: 1\ntransparent: yes\nasset_id: 5d4f0307-6ecb-5b0a-b29f-2807a741a518\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/cd985044-6e69-465e-81e6-6ba48cc5e286/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/cd985044-6e69-465e-81e6-6ba48cc5e286/download",
+      "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/original-01.png",
+      "sha256": "4b0b90f373bc45ef774d307fc16b544ee31447b89cde642ea6347ab041514f2b",
+      "byteSize": 2190,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 16,
+        "y": 1,
+        "width": 32,
+        "height": 61
+      },
+      "visiblePixels": 600,
+      "paletteSize": 21,
+      "chargedGenerations": 1,
+      "nativeFacing": "right",
+      "selection": "accepted after silhouette / anatomy / native alpha review"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-thorn-mantis-stand-01",
+      "jobId": "0cf1538f-e92c-4c7d-bf8e-547c77d03ae0",
+      "balanceBefore": 533,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625301,
+        "action": "Facing right, move the two antennae independently, subtly turn the narrow head and flex the folded thorn forearms, abdomen expands then settles, loop back to the threatening original guard. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "queueResponse": "id: 0cf1538f-e92c-4c7d-bf8e-547c77d03ae0\njob_id: 0cf1538f-e92c-4c7d-bf8e-547c77d03ae0\naction: Facing right, move the two antennae independently, subtly turn the narrow head and flex the folded thorn forearms, abdomen expands then settles, loop back to the threatening original guard. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625301\nasset_id: 1100ee2c-3176-542c-bec9-c9c0cddbc02c\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"0cf1538f-e92c-4c7d-bf8e-547c77d03ae0\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 0cf1538f-e92c-4c7d-bf8e-547c77d03ae0\njob_id: 0cf1538f-e92c-4c7d-bf8e-547c77d03ae0\nframes: 5\ntransparent: yes\nasset_id: 1100ee2c-3176-542c-bec9-c9c0cddbc02c\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/animation-input-96.png",
+        "sha256": "e8c2b10d88ab467edc1c6cc706b41239c94acbd51fd1f780591c697d91f951f9",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 6,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/00.png",
+          "sourceSha256": "3856fdce040f2a799afbb371d02f096da00d4e76189410cb4d60996dd4a90622",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 600,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/01.png",
+          "sourceSha256": "2f1c66098ccd765fb13b058250b171619e18d6e846a67cddfe14d536a97bf0d3",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 30,
+            "y": 19,
+            "width": 33,
+            "height": 58
+          },
+          "visiblePixels": 579,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/02.png",
+          "sourceSha256": "63008d6d7ce16934660c69290e86877200bf8bebf4408a1c1b1e46bd039bcf23",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 29,
+            "y": 21,
+            "width": 37,
+            "height": 55
+          },
+          "visiblePixels": 566,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/03.png",
+          "sourceSha256": "56f89ea2c50b3c584380b58701204fc1522efc2e08c8ea7b36eff3e056974a58",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 30,
+            "y": 20,
+            "width": 34,
+            "height": 57
+          },
+          "visiblePixels": 601,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/04.png",
+          "sourceSha256": "2791236b0aca25741211ba1c6de572fd872007187959f493a3b576ef7fbc3d2f",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 600,
+          "colors": 22,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/stand-0cf1538f-e92c-4c7d-bf8e-547c77d03ae0.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/00.png",
+          "sha256": "2f1c66098ccd765fb13b058250b171619e18d6e846a67cddfe14d536a97bf0d3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/01.png",
+          "sourceSha256": "2f1c66098ccd765fb13b058250b171619e18d6e846a67cddfe14d536a97bf0d3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/01.png",
+          "sha256": "63008d6d7ce16934660c69290e86877200bf8bebf4408a1c1b1e46bd039bcf23",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/02.png",
+          "sourceSha256": "63008d6d7ce16934660c69290e86877200bf8bebf4408a1c1b1e46bd039bcf23",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/02.png",
+          "sha256": "56f89ea2c50b3c584380b58701204fc1522efc2e08c8ea7b36eff3e056974a58",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/03.png",
+          "sourceSha256": "56f89ea2c50b3c584380b58701204fc1522efc2e08c8ea7b36eff3e056974a58",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/03.png",
+          "sha256": "2791236b0aca25741211ba1c6de572fd872007187959f493a3b576ef7fbc3d2f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/04.png",
+          "sourceSha256": "2791236b0aca25741211ba1c6de572fd872007187959f493a3b576ef7fbc3d2f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 우향으로 안테나·가시 앞팔·복부가 움직이는 실제 생성 대기. 96px 투명 여백 안에서 원본 도트 밀도와 발 기준 유지."
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "monster-a-thorn-mantis-move-01",
+      "jobId": "cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e",
+      "balanceBefore": 589,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625302,
+        "action": "Facing right, quick insect stepping cycle in place with alternating planted legs and a pitched segmented abdomen, thorn forearms remain folded near the face while antennae react to each step. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "queueResponse": "id: cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e\njob_id: cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e\naction: Facing right, quick insect stepping cycle in place with alternating planted legs and a pitched segmented abdomen, thorn forearms remain folded near the face while antennae react to each step. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625302\nasset_id: 4ed6e69d-31c8-526f-b4eb-5792990d4e37\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e\njob_id: cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e\nframes: 9\ntransparent: yes\nasset_id: 4ed6e69d-31c8-526f-b4eb-5792990d4e37\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 2 generations\ndownload: https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 2,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 7,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/animation-input-96.png",
+        "sha256": "e8c2b10d88ab467edc1c6cc706b41239c94acbd51fd1f780591c697d91f951f9",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 39,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/00.png",
+          "sourceSha256": "227fbd87c236c46599d603cb8ff5c8c31fc2bbcb79d615f2c94abdc4f3dc8de6",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 599,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/01.png",
+          "sourceSha256": "e5687725545bd2ec5b3f91e8317f181808524fbbff0711bd5af60e61e7ca78a4",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 31,
+            "y": 19,
+            "width": 33,
+            "height": 57
+          },
+          "visiblePixels": 570,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/02.png",
+          "sourceSha256": "e59f0e7314730f5cb74933e16e972b123af758f587fa236d3b06f87712f2ae04",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 31,
+            "y": 22,
+            "width": 33,
+            "height": 53
+          },
+          "visiblePixels": 563,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/03.png",
+          "sourceSha256": "851822877a893b5df10fc3e88ddc04e1e9e060168b83ce9a0f99dd57a2eeb9cc",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 33,
+            "y": 24,
+            "width": 33,
+            "height": 51
+          },
+          "visiblePixels": 562,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/04.png",
+          "sourceSha256": "504e5e32ca31a1f9df1e9a38394567581c75cc38edaef5dfeeeb3d2e68359f08",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 24,
+            "width": 34,
+            "height": 50
+          },
+          "visiblePixels": 551,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/05.png",
+          "sourceSha256": "97062c9f19b5c387143a76b7a186dc525958be7c317f34d6a1eb88e2a6b9476d",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 31,
+            "y": 22,
+            "width": 33,
+            "height": 51
+          },
+          "visiblePixels": 545,
+          "colors": 32,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/06.png",
+          "sourceSha256": "ad306f51343cc51d7193e5a46a4a7810076fbaea9012ad7450f4e649079b3986",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 31,
+            "y": 21,
+            "width": 33,
+            "height": 54
+          },
+          "visiblePixels": 538,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/07.png",
+          "sourceSha256": "336ef4d986c4b324c459ae31c09725bfcf26594cbcab8e1aa237f18b5150aa89",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 33,
+            "y": 18,
+            "width": 31,
+            "height": 60
+          },
+          "visiblePixels": 577,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/08.png",
+          "sourceSha256": "227fbd87c236c46599d603cb8ff5c8c31fc2bbcb79d615f2c94abdc4f3dc8de6",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 599,
+          "colors": 21,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/move-cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/00.png",
+          "sha256": "e5687725545bd2ec5b3f91e8317f181808524fbbff0711bd5af60e61e7ca78a4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/01.png",
+          "sourceSha256": "e5687725545bd2ec5b3f91e8317f181808524fbbff0711bd5af60e61e7ca78a4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/01.png",
+          "sha256": "e59f0e7314730f5cb74933e16e972b123af758f587fa236d3b06f87712f2ae04",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/02.png",
+          "sourceSha256": "e59f0e7314730f5cb74933e16e972b123af758f587fa236d3b06f87712f2ae04",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/02.png",
+          "sha256": "851822877a893b5df10fc3e88ddc04e1e9e060168b83ce9a0f99dd57a2eeb9cc",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/03.png",
+          "sourceSha256": "851822877a893b5df10fc3e88ddc04e1e9e060168b83ce9a0f99dd57a2eeb9cc",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/03.png",
+          "sha256": "504e5e32ca31a1f9df1e9a38394567581c75cc38edaef5dfeeeb3d2e68359f08",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/04.png",
+          "sourceSha256": "504e5e32ca31a1f9df1e9a38394567581c75cc38edaef5dfeeeb3d2e68359f08",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/04.png",
+          "sha256": "97062c9f19b5c387143a76b7a186dc525958be7c317f34d6a1eb88e2a6b9476d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/05.png",
+          "sourceSha256": "97062c9f19b5c387143a76b7a186dc525958be7c317f34d6a1eb88e2a6b9476d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/05.png",
+          "sha256": "ad306f51343cc51d7193e5a46a4a7810076fbaea9012ad7450f4e649079b3986",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/06.png",
+          "sourceSha256": "ad306f51343cc51d7193e5a46a4a7810076fbaea9012ad7450f4e649079b3986",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/06.png",
+          "sha256": "336ef4d986c4b324c459ae31c09725bfcf26594cbcab8e1aa237f18b5150aa89",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/07.png",
+          "sourceSha256": "336ef4d986c4b324c459ae31c09725bfcf26594cbcab8e1aa237f18b5150aa89",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/07.png",
+          "sha256": "227fbd87c236c46599d603cb8ff5c8c31fc2bbcb79d615f2c94abdc4f3dc8de6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/08.png",
+          "sourceSha256": "227fbd87c236c46599d603cb8ff5c8c31fc2bbcb79d615f2c94abdc4f3dc8de6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 우향 긴 뒷다리를 번갈아 들고 디디며 복부와 더듬이가 함께 움직이는 실제 걷기 루프. 원본 도트 밀도 유지."
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "monster-a-thorn-mantis-attack1-01",
+      "jobId": "d1da3750-bf7a-46c0-8a98-703ad4ab78da",
+      "balanceBefore": 610,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625303,
+        "action": "Facing right, draw both thorn forearms high and back in a clear wind-up, lean forward and sweep the scythe forearms down and forward together toward the right, hold the long extended strike briefly, retract to the original guard. No beams. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "queueResponse": "id: d1da3750-bf7a-46c0-8a98-703ad4ab78da\njob_id: d1da3750-bf7a-46c0-8a98-703ad4ab78da\naction: Facing right, draw both thorn forearms high and back in a clear wind-up, lean forward and sweep the scythe forearms down and forward together toward the right, hold the long extended strike briefly, retract to the original guard. No beams. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625303\nasset_id: 3a1c3220-a3ac-50bc-bbb6-c0396d9acc96\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d1da3750-bf7a-46c0-8a98-703ad4ab78da\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: d1da3750-bf7a-46c0-8a98-703ad4ab78da\njob_id: d1da3750-bf7a-46c0-8a98-703ad4ab78da\nframes: 9\ntransparent: yes\nasset_id: 3a1c3220-a3ac-50bc-bbb6-c0396d9acc96\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 2 generations\ndownload: https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 2,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/animation-input-96.png",
+        "sha256": "e8c2b10d88ab467edc1c6cc706b41239c94acbd51fd1f780591c697d91f951f9",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 30,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/00.png",
+          "sourceSha256": "3a00975795539c469daf6198da813ce1e73a0914e464d4c8f8a33521cf79461c",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 600,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/01.png",
+          "sourceSha256": "c5a3e278d0de3be07cd58eaff66d691d51033a313992357a40512004c5867e68",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 31,
+            "y": 17,
+            "width": 33,
+            "height": 61
+          },
+          "visiblePixels": 660,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/02.png",
+          "sourceSha256": "47c88c5f53077668b77f353cee17246a242d3f874589dc6373790895eb892b95",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 17,
+            "y": 16,
+            "width": 46,
+            "height": 62
+          },
+          "visiblePixels": 704,
+          "colors": 32,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/03.png",
+          "sourceSha256": "6349608c9bb67c918964764f91c4ec80efaf0f962c0c2d9187a2c83dad288f27",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 16,
+            "width": 50,
+            "height": 62
+          },
+          "visiblePixels": 790,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/04.png",
+          "sourceSha256": "b1a32f55b47a7818da22889142d7aae2b8e3670037cee8ee86e94b674c2153d7",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 19,
+            "width": 73,
+            "height": 59
+          },
+          "visiblePixels": 895,
+          "colors": 34,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/05.png",
+          "sourceSha256": "e98eb2dd9985e4054605077c57ad02eeb61ddb2cd3e1b884cdb55e732de2fe1f",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 14,
+            "width": 74,
+            "height": 64
+          },
+          "visiblePixels": 991,
+          "colors": 36,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/06.png",
+          "sourceSha256": "33f2b6f0abb871ac0e01c24ca8dfa90cb4556e99f5a1aa343c46c25cfea1a0ab",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 13,
+            "y": 18,
+            "width": 72,
+            "height": 60
+          },
+          "visiblePixels": 924,
+          "colors": 34,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/07.png",
+          "sourceSha256": "ca0312c8637f73d93901859cd481ada8b6ab07974e645bed2b22179303e316e9",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 16,
+            "width": 73,
+            "height": 62
+          },
+          "visiblePixels": 972,
+          "colors": 36,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/08.png",
+          "sourceSha256": "05a65dbbb55f5a673c001ce80efe54ace6a0b5345ad4b0c987edb6c9a219ba9c",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 600,
+          "colors": 21,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/attack1-d1da3750-bf7a-46c0-8a98-703ad4ab78da.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/00.png",
+          "sha256": "c5a3e278d0de3be07cd58eaff66d691d51033a313992357a40512004c5867e68",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/01.png",
+          "sourceSha256": "c5a3e278d0de3be07cd58eaff66d691d51033a313992357a40512004c5867e68",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/01.png",
+          "sha256": "47c88c5f53077668b77f353cee17246a242d3f874589dc6373790895eb892b95",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/02.png",
+          "sourceSha256": "47c88c5f53077668b77f353cee17246a242d3f874589dc6373790895eb892b95",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/02.png",
+          "sha256": "6349608c9bb67c918964764f91c4ec80efaf0f962c0c2d9187a2c83dad288f27",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/03.png",
+          "sourceSha256": "6349608c9bb67c918964764f91c4ec80efaf0f962c0c2d9187a2c83dad288f27",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/03.png",
+          "sha256": "b1a32f55b47a7818da22889142d7aae2b8e3670037cee8ee86e94b674c2153d7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/04.png",
+          "sourceSha256": "b1a32f55b47a7818da22889142d7aae2b8e3670037cee8ee86e94b674c2153d7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/04.png",
+          "sha256": "e98eb2dd9985e4054605077c57ad02eeb61ddb2cd3e1b884cdb55e732de2fe1f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/05.png",
+          "sourceSha256": "e98eb2dd9985e4054605077c57ad02eeb61ddb2cd3e1b884cdb55e732de2fe1f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/05.png",
+          "sha256": "33f2b6f0abb871ac0e01c24ca8dfa90cb4556e99f5a1aa343c46c25cfea1a0ab",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/06.png",
+          "sourceSha256": "33f2b6f0abb871ac0e01c24ca8dfa90cb4556e99f5a1aa343c46c25cfea1a0ab",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/06.png",
+          "sha256": "ca0312c8637f73d93901859cd481ada8b6ab07974e645bed2b22179303e316e9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/07.png",
+          "sourceSha256": "ca0312c8637f73d93901859cd481ada8b6ab07974e645bed2b22179303e316e9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/07.png",
+          "sha256": "05a65dbbb55f5a673c001ce80efe54ace6a0b5345ad4b0c987edb6c9a219ba9c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1da3750-bf7a-46c0-8a98-703ad4ab78da/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/d1da3750-bf7a-46c0-8a98-703ad4ab78da/08.png",
+          "sourceSha256": "05a65dbbb55f5a673c001ce80efe54ace6a0b5345ad4b0c987edb6c9a219ba9c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "rejected: baked bright slash trails / ground marks; need body-only strike"
+    },
+    {
+      "motion": "attack1",
+      "attempt": 2,
+      "key": "monster-a-thorn-mantis-attack1-02",
+      "balanceBefore": 619,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626303,
+        "action": "Facing right throughout, the green mantis raises its TWO GREEN THORN FOREARMS back in a visible wind-up, then sweeps the forearms forward and downward toward the right in one forceful close-range strike, holds extended contact briefly, retracts into original folded guard. The forearms remain green physical limbs, not light blades. Creature BODY ONLY: absolutely NO arcs, NO slash trails, NO streaks, NO sparkles, NO yellow light, NO ground marks, NO dust, NO beam, NO added effects. Do not rotate the whole body or turn away. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "queueResponse": "1 validation error for call[animate_image]\naction\n  String should have at most 1000 characters [type=string_too_long, input_value='Facing right throughout,...apon or other creature.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/string_too_long",
+      "status": "queue-error",
+      "selection": "not generated: tool validation rejected action longer than 1000 chars; no generation charged",
+      "chargedGenerations": 0
+    },
+    {
+      "motion": "attack1",
+      "attempt": 3,
+      "key": "monster-a-thorn-mantis-attack1-03",
+      "jobId": "08ce8796-f93b-45c8-a691-c5dbe65901f7",
+      "balanceBefore": 619,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 627303,
+        "action": "Facing right throughout, the green mantis raises its TWO GREEN THORN FOREARMS back in a visible wind-up, then sweeps the forearms forward and downward toward the right in one forceful close-range strike, holds extended contact briefly, retracts into original folded guard. The forearms remain green physical limbs, not light blades. Creature BODY ONLY: absolutely NO arcs, NO slash trails, NO streaks, NO sparkles, NO yellow light, NO ground marks, NO dust, NO beam, NO added effects. Do not rotate the whole body or turn away. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "queueResponse": "id: 08ce8796-f93b-45c8-a691-c5dbe65901f7\njob_id: 08ce8796-f93b-45c8-a691-c5dbe65901f7\naction: Facing right throughout, the green mantis raises its TWO GREEN THORN FOREARMS back in a visible wind-up, then sweeps the forearms forward and downward toward the right in one forceful close-range strike, holds extended contact briefly, retracts into original folded guard. The forearms remain green physical limbs, not light blades. Creature BODY ONLY: absolutely NO arcs, NO slash trails, NO streaks, NO sparkles, NO yellow light, NO ground marks, NO dust, NO beam, NO added effects. Do not rotate the whole body or turn away. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 627303\nasset_id: 97a9e282-bda7-52d8-9fb2-b1e16ea9ccea\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"08ce8796-f93b-45c8-a691-c5dbe65901f7\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 08ce8796-f93b-45c8-a691-c5dbe65901f7\njob_id: 08ce8796-f93b-45c8-a691-c5dbe65901f7\nframes: 9\ntransparent: yes\nasset_id: 97a9e282-bda7-52d8-9fb2-b1e16ea9ccea\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 2 generations\ndownload: https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 2,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/animation-input-96.png",
+        "sha256": "e8c2b10d88ab467edc1c6cc706b41239c94acbd51fd1f780591c697d91f951f9",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 10,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/00.png",
+          "sourceSha256": "c75e23185993930aafcedc6703e70b903162a3f0e69cd8f410dcc0f3161e95fe",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 600,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/01.png",
+          "sourceSha256": "51f12303ae4abee7ddd2761e3e68018617698e6384feb79d2daddbb4403a1df8",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 21,
+            "width": 32,
+            "height": 57
+          },
+          "visiblePixels": 589,
+          "colors": 30,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/02.png",
+          "sourceSha256": "35cbac46d48896817a6e8eeba1782f6015cc3d8f3313d3d9a0953898aece5e8a",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 28,
+            "width": 36,
+            "height": 50
+          },
+          "visiblePixels": 563,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/03.png",
+          "sourceSha256": "bdfdad92050daaf58257b0568fdb73b76b675d11d05899ccba3ccc0df666df90",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 34,
+            "y": 20,
+            "width": 39,
+            "height": 58
+          },
+          "visiblePixels": 1082,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/04.png",
+          "sourceSha256": "2bf03b158541fd9723d88e2255c4a623ed68adc0ba0516d1010c298711f9c626",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 35,
+            "y": 32,
+            "width": 38,
+            "height": 46
+          },
+          "visiblePixels": 525,
+          "colors": 32,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/05.png",
+          "sourceSha256": "8a388e2f90d6f59c95ca6625c5523a4df70fce58ad9956a064f00a659d7b4e63",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 34,
+            "y": 32,
+            "width": 38,
+            "height": 46
+          },
+          "visiblePixels": 528,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/06.png",
+          "sourceSha256": "f0a570b71d80cb9428acd2c5395b7b5ceeed6e06e1cf1d0ef02ad64c8127f041",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 29,
+            "width": 37,
+            "height": 49
+          },
+          "visiblePixels": 564,
+          "colors": 33,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/07.png",
+          "sourceSha256": "8be24699811e15f72974333511b58b0389059894b39bd109fe29c8a91b86020e",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 23,
+            "width": 32,
+            "height": 55
+          },
+          "visiblePixels": 568,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/08.png",
+          "sourceSha256": "7b1d2ae8b15d6059d7b877cb48da72b2df323704736dea3b8a5d4bb86cb308c7",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 600,
+          "colors": 21,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/attack1-08ce8796-f93b-45c8-a691-c5dbe65901f7.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/00.png",
+          "sha256": "51f12303ae4abee7ddd2761e3e68018617698e6384feb79d2daddbb4403a1df8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/01.png",
+          "sourceSha256": "51f12303ae4abee7ddd2761e3e68018617698e6384feb79d2daddbb4403a1df8",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/01.png",
+          "sha256": "35cbac46d48896817a6e8eeba1782f6015cc3d8f3313d3d9a0953898aece5e8a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/02.png",
+          "sourceSha256": "35cbac46d48896817a6e8eeba1782f6015cc3d8f3313d3d9a0953898aece5e8a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/02.png",
+          "sha256": "bdfdad92050daaf58257b0568fdb73b76b675d11d05899ccba3ccc0df666df90",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/03.png",
+          "sourceSha256": "bdfdad92050daaf58257b0568fdb73b76b675d11d05899ccba3ccc0df666df90",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/03.png",
+          "sha256": "2bf03b158541fd9723d88e2255c4a623ed68adc0ba0516d1010c298711f9c626",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/04.png",
+          "sourceSha256": "2bf03b158541fd9723d88e2255c4a623ed68adc0ba0516d1010c298711f9c626",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/04.png",
+          "sha256": "8a388e2f90d6f59c95ca6625c5523a4df70fce58ad9956a064f00a659d7b4e63",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/05.png",
+          "sourceSha256": "8a388e2f90d6f59c95ca6625c5523a4df70fce58ad9956a064f00a659d7b4e63",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/05.png",
+          "sha256": "f0a570b71d80cb9428acd2c5395b7b5ceeed6e06e1cf1d0ef02ad64c8127f041",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/06.png",
+          "sourceSha256": "f0a570b71d80cb9428acd2c5395b7b5ceeed6e06e1cf1d0ef02ad64c8127f041",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/06.png",
+          "sha256": "8be24699811e15f72974333511b58b0389059894b39bd109fe29c8a91b86020e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/07.png",
+          "sourceSha256": "8be24699811e15f72974333511b58b0389059894b39bd109fe29c8a91b86020e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/07.png",
+          "sha256": "7b1d2ae8b15d6059d7b877cb48da72b2df323704736dea3b8a5d4bb86cb308c7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/08ce8796-f93b-45c8-a691-c5dbe65901f7/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/08ce8796-f93b-45c8-a691-c5dbe65901f7/08.png",
+          "sourceSha256": "7b1d2ae8b15d6059d7b877cb48da72b2df323704736dea3b8a5d4bb86cb308c7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "rejected: v3 adds a whole-body yellow/white flash despite body-only caption; switch PixelLab animation mode for this one clip"
+    },
+    {
+      "motion": "attack1",
+      "attempt": 4,
+      "key": "monster-a-thorn-mantis-attack1-04",
+      "jobId": "b168ca9c-cdfe-40b8-be26-daed17796815",
+      "balanceBefore": 631,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "The east-facing green mantis draws its two folded thorn forearms back, leans its chest forward and cuts the green forearms down and forward in one forceful physical strike to the right. The two forearms extend fully during contact while the feet brace, then fold back into the same original martial guard. Head and body stay aimed right. Arms are solid green insect limbs. The creature alone performs this articulated motion on transparency. Keep the same green creature, native pixel size, east-facing orientation and fixed camera.",
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png",
+        "frame_count": 8,
+        "enhance_prompt": false,
+        "no_background": true,
+        "seed": 628303,
+        "subject_description": "Tall jade mantis with thorn-shaped forearms folded in a threatening martial pose, narrow angular head and segmented abdomen.",
+        "initial_pose": "Upright jade mantis with both green thorn forearms folded in guard",
+        "direction": "east",
+        "view": "low top-down"
+      },
+      "queueResponse": "id: b168ca9c-cdfe-40b8-be26-daed17796815\njob_id: b168ca9c-cdfe-40b8-be26-daed17796815\ndescription: The east-facing green mantis draws its two folded thorn forearms back, leans its chest forward and cuts the green forearms down and forward in one forceful physical strike to the right. The two forearms extend fully during contact while the feet brace, then fold back into the same original martial guard. Head and body stay aimed right. Arms are solid green insect limbs. The creature alone performs this articulated motion on transparency. Keep the same green creature, native pixel size, east-facing orientation and fixed camera.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 628303\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"b168ca9c-cdfe-40b8-be26-daed17796815\")\nasset_id: 7580345d-6f7a-5bc6-8ccb-cdd0e702b287\nasset_status: pending (saved to your gallery when generation completes)",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: b168ca9c-cdfe-40b8-be26-daed17796815\njob_id: b168ca9c-cdfe-40b8-be26-daed17796815\nframes: 9\ntransparent: yes\nasset_id: 7580345d-6f7a-5bc6-8ccb-cdd0e702b287\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/animation-input-96.png",
+        "sha256": "e8c2b10d88ab467edc1c6cc706b41239c94acbd51fd1f780591c697d91f951f9",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 0,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/00.png",
+          "sourceSha256": "e8c2b10d88ab467edc1c6cc706b41239c94acbd51fd1f780591c697d91f951f9",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 600,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/01.png",
+          "sourceSha256": "8f1a9bd7b153aed9c954c59c9636f9dfcbb8d4e7e28e381a0ef0eacda2d166df",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 24,
+            "y": 17,
+            "width": 35,
+            "height": 61
+          },
+          "visiblePixels": 610,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/02.png",
+          "sourceSha256": "93ccbe6717f9dcb2e7df622fe8bcd536b1984644c937d26b1247f5e01ba981de",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 18,
+            "y": 16,
+            "width": 36,
+            "height": 62
+          },
+          "visiblePixels": 615,
+          "colors": 18,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/03.png",
+          "sourceSha256": "762afad36b4edba5d83882b44a05627ce56da7c641512c02b614dde3d63d52d8",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 20,
+            "y": 19,
+            "width": 61,
+            "height": 59
+          },
+          "visiblePixels": 1049,
+          "colors": 34,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/04.png",
+          "sourceSha256": "b7fca2222e1b4925a40166b4cfe19802e479fe0f654e54835fcead09692ecdcf",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 28,
+            "y": 23,
+            "width": 53,
+            "height": 55
+          },
+          "visiblePixels": 640,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/05.png",
+          "sourceSha256": "3b71025ae800f1de96dfdb9920d869a5d4649739958493731640889579912e3a",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 27,
+            "y": 23,
+            "width": 54,
+            "height": 55
+          },
+          "visiblePixels": 651,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/06.png",
+          "sourceSha256": "6998af78c41945e9d0344f76b08a44812b2b10df057859743f6f66038423afad",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 27,
+            "y": 21,
+            "width": 51,
+            "height": 57
+          },
+          "visiblePixels": 643,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/07.png",
+          "sourceSha256": "66b1a20b57c149b28a78fa3007dc9940189336d9491de7a9a97ca7a0f09743ad",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 29,
+            "y": 19,
+            "width": 42,
+            "height": 59
+          },
+          "visiblePixels": 618,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/08.png",
+          "sourceSha256": "a1c9c76e5055e053bb4b8cc48cc3a60f7fcff48dca16c76ce75dfb988e5c6119",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 600,
+          "colors": 20,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/attack1-b168ca9c-cdfe-40b8-be26-daed17796815.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/00.png",
+          "sha256": "8f1a9bd7b153aed9c954c59c9636f9dfcbb8d4e7e28e381a0ef0eacda2d166df",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/01.png",
+          "sourceSha256": "8f1a9bd7b153aed9c954c59c9636f9dfcbb8d4e7e28e381a0ef0eacda2d166df",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/01.png",
+          "sha256": "93ccbe6717f9dcb2e7df622fe8bcd536b1984644c937d26b1247f5e01ba981de",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/02.png",
+          "sourceSha256": "93ccbe6717f9dcb2e7df622fe8bcd536b1984644c937d26b1247f5e01ba981de",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/02.png",
+          "sha256": "b7fca2222e1b4925a40166b4cfe19802e479fe0f654e54835fcead09692ecdcf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/04.png",
+          "sourceSha256": "b7fca2222e1b4925a40166b4cfe19802e479fe0f654e54835fcead09692ecdcf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 5,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/03.png",
+          "sha256": "3b71025ae800f1de96dfdb9920d869a5d4649739958493731640889579912e3a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/05.png",
+          "sourceSha256": "3b71025ae800f1de96dfdb9920d869a5d4649739958493731640889579912e3a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 6,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/04.png",
+          "sha256": "6998af78c41945e9d0344f76b08a44812b2b10df057859743f6f66038423afad",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/06.png",
+          "sourceSha256": "6998af78c41945e9d0344f76b08a44812b2b10df057859743f6f66038423afad",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 7,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/05.png",
+          "sha256": "66b1a20b57c149b28a78fa3007dc9940189336d9491de7a9a97ca7a0f09743ad",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/07.png",
+          "sourceSha256": "66b1a20b57c149b28a78fa3007dc9940189336d9491de7a9a97ca7a0f09743ad",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 8,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/06.png",
+          "sha256": "a1c9c76e5055e053bb4b8cc48cc3a60f7fcff48dca16c76ce75dfb988e5c6119",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/08.png",
+          "sourceSha256": "a1c9c76e5055e053bb4b8cc48cc3a60f7fcff48dca16c76ce75dfb988e5c6119",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 우향 두 녹색 앞팔을 들어 준비하고 아래·앞으로 내리친 뒤 복귀하는 실제 공격. 흰 궤적이 있는 원본 3번 프레임만 미사용으로 보존하고 7포즈를 선택. 런타임 2번의 뻗은 팔을 접촉으로 사용.",
+      "unusedGeneratedFrameIndices": [
+        3
+      ],
+      "curationReason": "only generated frame 3 contains white motion streaks; preserve it unused and select seven genuine body poses without pixel edits",
+      "contactFrameIndex": 2,
+      "contactProgress": 0.35714285714285715,
+      "contactReason": "우향 두 녹색 앞팔을 들어 준비하고 아래·앞으로 내리친 뒤 복귀하는 실제 공격. 흰 궤적이 있는 원본 3번 프레임만 미사용으로 보존하고 7포즈를 선택. 런타임 2번의 뻗은 팔을 접촉으로 사용."
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "monster-a-thorn-mantis-hit1-01",
+      "jobId": "2bc7e403-c111-4db9-90cf-fc3866cab4ab",
+      "balanceBefore": 631,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625304,
+        "action": "Facing right, recoil the angular head and abdomen to the right, arms spread defensively and supporting legs bend, recover to the folded martial guard. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "queueResponse": "id: 2bc7e403-c111-4db9-90cf-fc3866cab4ab\njob_id: 2bc7e403-c111-4db9-90cf-fc3866cab4ab\naction: Facing right, recoil the angular head and abdomen to the right, arms spread defensively and supporting legs bend, recover to the folded martial guard. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 4\nsize: 96x96px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625304\nasset_id: 6f3dd050-21e6-5b6f-892b-59905718efcc\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"2bc7e403-c111-4db9-90cf-fc3866cab4ab\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 2bc7e403-c111-4db9-90cf-fc3866cab4ab\njob_id: 2bc7e403-c111-4db9-90cf-fc3866cab4ab\nframes: 5\ntransparent: yes\nasset_id: 6f3dd050-21e6-5b6f-892b-59905718efcc\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/animation-input-96.png",
+        "sha256": "e8c2b10d88ab467edc1c6cc706b41239c94acbd51fd1f780591c697d91f951f9",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 11,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/00.png",
+          "sourceSha256": "9d5fb16bd65927186a31465451a27c7390af850e8c15d381044122fbd2209396",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 600,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/01.png",
+          "sourceSha256": "52b096cbf59b3f035bc08df454293a682b1724abf4b784c1b2a202fbc1e0d035",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 30,
+            "y": 20,
+            "width": 35,
+            "height": 58
+          },
+          "visiblePixels": 595,
+          "colors": 32,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/02.png",
+          "sourceSha256": "acae3e15d3332b2bd34436b82c8f44cc37b970106702b5406cb3d20b6f10f8da",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 30,
+            "y": 21,
+            "width": 36,
+            "height": 57
+          },
+          "visiblePixels": 582,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/03.png",
+          "sourceSha256": "63250631d49cdfa8cb0b2502b512f54d8bd18fc40b4d0d7209d5b6709df8727c",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 31,
+            "y": 20,
+            "width": 35,
+            "height": 58
+          },
+          "visiblePixels": 593,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/04.png",
+          "sourceSha256": "c83c33c355a1c6fbb43125f1e2e3b83f3103731778935634a44c634936c02ad1",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 600,
+          "colors": 22,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/hit1-2bc7e403-c111-4db9-90cf-fc3866cab4ab.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/00.png",
+          "sha256": "52b096cbf59b3f035bc08df454293a682b1724abf4b784c1b2a202fbc1e0d035",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/01.png",
+          "sourceSha256": "52b096cbf59b3f035bc08df454293a682b1724abf4b784c1b2a202fbc1e0d035",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/01.png",
+          "sha256": "acae3e15d3332b2bd34436b82c8f44cc37b970106702b5406cb3d20b6f10f8da",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/02.png",
+          "sourceSha256": "acae3e15d3332b2bd34436b82c8f44cc37b970106702b5406cb3d20b6f10f8da",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/02.png",
+          "sha256": "63250631d49cdfa8cb0b2502b512f54d8bd18fc40b4d0d7209d5b6709df8727c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/03.png",
+          "sourceSha256": "63250631d49cdfa8cb0b2502b512f54d8bd18fc40b4d0d7209d5b6709df8727c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/03.png",
+          "sha256": "c83c33c355a1c6fbb43125f1e2e3b83f3103731778935634a44c634936c02ad1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/04.png",
+          "sourceSha256": "c83c33c355a1c6fbb43125f1e2e3b83f3103731778935634a44c634936c02ad1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 우향 머리와 가시 앞팔을 몸 쪽으로 움츠리며 다리가 굽었다 원래 자세로 복귀하는 실제 피격."
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "monster-a-thorn-mantis-die1-01",
+      "jobId": "ea93d241-ec0e-4b76-a391-dc834a65df3d",
+      "balanceBefore": 644,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625305,
+        "action": "Facing right, forearms uncurl and sag, long supporting legs buckle and the mantis tips onto its side, abdomen settles and antennae lower, finish lying motionless. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes."
+      },
+      "queueResponse": "id: ea93d241-ec0e-4b76-a391-dc834a65df3d\njob_id: ea93d241-ec0e-4b76-a391-dc834a65df3d\naction: Facing right, forearms uncurl and sag, long supporting legs buckle and the mantis tips onto its side, abdomen settles and antennae lower, finish lying motionless. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 96x96px\ntransparent: True\nseed: 625305\nasset_id: 90082bd5-a623-527a-ad96-3bac81895d9b\nasset_status: pending (saved when generation completes)\ncost: 2 generations\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"ea93d241-ec0e-4b76-a391-dc834a65df3d\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: ea93d241-ec0e-4b76-a391-dc834a65df3d\njob_id: ea93d241-ec0e-4b76-a391-dc834a65df3d\nframes: 9\ntransparent: yes\nasset_id: 90082bd5-a623-527a-ad96-3bac81895d9b\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 2 generations\ndownload: https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 2,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/animation-input-96.png",
+        "sha256": "e8c2b10d88ab467edc1c6cc706b41239c94acbd51fd1f780591c697d91f951f9",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 123,
+        "alphaDifferences": 1,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/00.png",
+          "sourceSha256": "b973126cadc0defbc9da3ffbf64a1469d61f7ab7573428355b1222cea44e923a",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 599,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/01.png",
+          "sourceSha256": "8133ea63a387d9bf7b20a89f3a20984034c1260c07bdd4eb00d252ebf8391b53",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 31,
+            "y": 17,
+            "width": 33,
+            "height": 61
+          },
+          "visiblePixels": 609,
+          "colors": 33,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/02.png",
+          "sourceSha256": "d51606cc52058c83850c263d8933b8b5cd1c27d8cfa8f3be5f67c8d0acc40a76",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 31,
+            "y": 20,
+            "width": 35,
+            "height": 58
+          },
+          "visiblePixels": 602,
+          "colors": 32,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/03.png",
+          "sourceSha256": "6fa5bfb02088ed8605d8e39d9b06cc3dea7e9109a7a7dab29c75de3fa4e8fef0",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 30,
+            "y": 24,
+            "width": 39,
+            "height": 55
+          },
+          "visiblePixels": 597,
+          "colors": 31,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/04.png",
+          "sourceSha256": "06dc8424d84bc24319d7dc1114a369018c2b9c57bbdba112cff8be6a65fbec29",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 30,
+            "y": 26,
+            "width": 39,
+            "height": 52
+          },
+          "visiblePixels": 603,
+          "colors": 33,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/05.png",
+          "sourceSha256": "b3aadde7eb7c6aa73c520111d92147bb79f0ceab0589e39189d208685f0c4ce4",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 29,
+            "y": 28,
+            "width": 39,
+            "height": 50
+          },
+          "visiblePixels": 629,
+          "colors": 32,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/06.png",
+          "sourceSha256": "49b6eda5cf8e33569dce03279894f3eb2542f4ecd5997878a9c271a8dc4f7191",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 27,
+            "y": 30,
+            "width": 41,
+            "height": 47
+          },
+          "visiblePixels": 631,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/07.png",
+          "sourceSha256": "5867af4d3b4b898082872e830948d0fdc07e7c906d1b729d75a9f5613730d23b",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 25,
+            "y": 31,
+            "width": 44,
+            "height": 45
+          },
+          "visiblePixels": 629,
+          "colors": 34,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/08.png",
+          "sourceSha256": "033bf790ce71e9e0194e3f8269334afe8ef6ccf5bc5f1913d50121be2da95b64",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 24,
+            "y": 29,
+            "width": 46,
+            "height": 47
+          },
+          "visiblePixels": 636,
+          "colors": 34,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/die1-ea93d241-ec0e-4b76-a391-dc834a65df3d.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/00.png",
+          "sha256": "8133ea63a387d9bf7b20a89f3a20984034c1260c07bdd4eb00d252ebf8391b53",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/01.png",
+          "sourceSha256": "8133ea63a387d9bf7b20a89f3a20984034c1260c07bdd4eb00d252ebf8391b53",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/01.png",
+          "sha256": "d51606cc52058c83850c263d8933b8b5cd1c27d8cfa8f3be5f67c8d0acc40a76",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/02.png",
+          "sourceSha256": "d51606cc52058c83850c263d8933b8b5cd1c27d8cfa8f3be5f67c8d0acc40a76",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/02.png",
+          "sha256": "6fa5bfb02088ed8605d8e39d9b06cc3dea7e9109a7a7dab29c75de3fa4e8fef0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/03.png",
+          "sourceSha256": "6fa5bfb02088ed8605d8e39d9b06cc3dea7e9109a7a7dab29c75de3fa4e8fef0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/03.png",
+          "sha256": "06dc8424d84bc24319d7dc1114a369018c2b9c57bbdba112cff8be6a65fbec29",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/04.png",
+          "sourceSha256": "06dc8424d84bc24319d7dc1114a369018c2b9c57bbdba112cff8be6a65fbec29",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/04.png",
+          "sha256": "b3aadde7eb7c6aa73c520111d92147bb79f0ceab0589e39189d208685f0c4ce4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/05.png",
+          "sourceSha256": "b3aadde7eb7c6aa73c520111d92147bb79f0ceab0589e39189d208685f0c4ce4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/05.png",
+          "sha256": "49b6eda5cf8e33569dce03279894f3eb2542f4ecd5997878a9c271a8dc4f7191",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/06.png",
+          "sourceSha256": "49b6eda5cf8e33569dce03279894f3eb2542f4ecd5997878a9c271a8dc4f7191",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/06.png",
+          "sha256": "5867af4d3b4b898082872e830948d0fdc07e7c906d1b729d75a9f5613730d23b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/07.png",
+          "sourceSha256": "5867af4d3b4b898082872e830948d0fdc07e7c906d1b729d75a9f5613730d23b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/07.png",
+          "sha256": "033bf790ce71e9e0194e3f8269334afe8ef6ccf5bc5f1913d50121be2da95b64",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/ea93d241-ec0e-4b76-a391-dc834a65df3d/08.png",
+          "sourceSha256": "033bf790ce71e9e0194e3f8269334afe8ef6ccf5bc5f1913d50121be2da95b64",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "rejected: ends crouching upright rather than lying down; pin a native collapsed target"
+    },
+    {
+      "motion": "die1",
+      "attempt": 2,
+      "key": "monster-a-thorn-mantis-die1-02",
+      "jobId": "93c61d28-6ea0-4239-8027-3e8f2d4ad8e6",
+      "balanceBefore": 673,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "The east-facing green mantis weakens, bends both long legs, lowers its thorn forearms and falls sideways onto the ground. Its abdomen and antennae relax as the entire articulated body rolls into the exact supplied sideways collapsed end pose. End lying still, with green limbs folded, and remain knocked out. Keep the same green creature, native pixel size, east-facing orientation and fixed camera.",
+        "first_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/bb3d87b1-7b5e-4131-9740-4b3e7e282dbd/assets/native/full.png",
+        "frame_count": 8,
+        "enhance_prompt": false,
+        "no_background": true,
+        "seed": 626305,
+        "subject_description": "Tall jade mantis with thorn-shaped forearms folded in a threatening martial pose, narrow angular head and segmented abdomen.",
+        "initial_pose": "Upright jade mantis with both green thorn forearms folded in guard",
+        "direction": "east",
+        "view": "low top-down"
+      },
+      "queueResponse": "id: 93c61d28-6ea0-4239-8027-3e8f2d4ad8e6\njob_id: 93c61d28-6ea0-4239-8027-3e8f2d4ad8e6\ndescription: The east-facing green mantis weakens, bends both long legs, lowers its thorn forearms and falls sideways onto the ground. Its abdomen and antennae relax as the entire articulated body rolls into the exact supplied sideways collapsed end pose. End lying still, with green limbs folded, and remain knocked out. Keep the same green creature, native pixel size, east-facing orientation and fixed camera.\nframes: 8\nsize: 96x96px\ntransparent: True\nlast_frame: yes (animating toward it)\nseed: 626305\ncost: 1 generation\nstatus: processing (~1-5 min)\n\nhint: get_image(job_id=\"93c61d28-6ea0-4239-8027-3e8f2d4ad8e6\")\nasset_id: a9e1980f-6456-53d3-b0aa-b6cab98dd3ca\nasset_status: pending (saved to your gallery when generation completes)",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 93c61d28-6ea0-4239-8027-3e8f2d4ad8e6\njob_id: 93c61d28-6ea0-4239-8027-3e8f2d4ad8e6\nframes: 9\ntransparent: yes\nasset_id: a9e1980f-6456-53d3-b0aa-b6cab98dd3ca\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/animation-input-96.png",
+        "sha256": "e8c2b10d88ab467edc1c6cc706b41239c94acbd51fd1f780591c697d91f951f9",
+        "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 0,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/00.png",
+          "sourceSha256": "e8c2b10d88ab467edc1c6cc706b41239c94acbd51fd1f780591c697d91f951f9",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 32,
+            "y": 17,
+            "width": 32,
+            "height": 61
+          },
+          "visiblePixels": 600,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/01.png",
+          "sourceSha256": "f5fbe1cc80013ce5cc632e91924408fa5bfb8b1c0bf6e74bc228cd748194df37",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 31,
+            "y": 17,
+            "width": 33,
+            "height": 62
+          },
+          "visiblePixels": 600,
+          "colors": 19,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/02.png",
+          "sourceSha256": "0fab9e2e112c779dd04964df70ad3bd95ca1efebe16902a7471eb0ec85770908",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 25,
+            "y": 18,
+            "width": 44,
+            "height": 63
+          },
+          "visiblePixels": 602,
+          "colors": 21,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/03.png",
+          "sourceSha256": "c515397ebe7d3ed4277126b6722227bbfd3b4d359a17566e6be47f611cfa761a",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 23,
+            "y": 21,
+            "width": 50,
+            "height": 61
+          },
+          "visiblePixels": 606,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/04.png",
+          "sourceSha256": "b8cfb61fbf02c2eb55afee7fc7d113f96341c3ec74d308195a86a02f80e90fac",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 25,
+            "y": 25,
+            "width": 51,
+            "height": 55
+          },
+          "visiblePixels": 629,
+          "colors": 20,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/05.png",
+          "sourceSha256": "1c5f302f96b16bdb4945223f082d4c34ef226b46ed52b658f1abbe11c6006d1c",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 27,
+            "y": 30,
+            "width": 49,
+            "height": 48
+          },
+          "visiblePixels": 628,
+          "colors": 23,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/06.png",
+          "sourceSha256": "23089207b88768914a81c593861d43eb7707388dc6cbd860a78ea5a40cf46ee4",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 29,
+            "y": 32,
+            "width": 47,
+            "height": 46
+          },
+          "visiblePixels": 630,
+          "colors": 22,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/07.png",
+          "sourceSha256": "255e5cc4adf1b80fbb2012d7974369a2b61474b80d83f2961e97581f98203108",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 29,
+            "y": 32,
+            "width": 47,
+            "height": 46
+          },
+          "visiblePixels": 636,
+          "colors": 22,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/08.png",
+          "sourceSha256": "d43d1f9e2b2619bba444302280245739468a4260650aefd7a932f1e5f5cc4845",
+          "width": 96,
+          "height": 96,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 29,
+            "y": 32,
+            "width": 47,
+            "height": 46
+          },
+          "visiblePixels": 636,
+          "colors": 22,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/die1-93c61d28-6ea0-4239-8027-3e8f2d4ad8e6.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/00.png",
+          "sha256": "f5fbe1cc80013ce5cc632e91924408fa5bfb8b1c0bf6e74bc228cd748194df37",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/01.png",
+          "sourceSha256": "f5fbe1cc80013ce5cc632e91924408fa5bfb8b1c0bf6e74bc228cd748194df37",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/01.png",
+          "sha256": "0fab9e2e112c779dd04964df70ad3bd95ca1efebe16902a7471eb0ec85770908",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/02.png",
+          "sourceSha256": "0fab9e2e112c779dd04964df70ad3bd95ca1efebe16902a7471eb0ec85770908",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/02.png",
+          "sha256": "c515397ebe7d3ed4277126b6722227bbfd3b4d359a17566e6be47f611cfa761a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/03.png",
+          "sourceSha256": "c515397ebe7d3ed4277126b6722227bbfd3b4d359a17566e6be47f611cfa761a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/03.png",
+          "sha256": "b8cfb61fbf02c2eb55afee7fc7d113f96341c3ec74d308195a86a02f80e90fac",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/04.png",
+          "sourceSha256": "b8cfb61fbf02c2eb55afee7fc7d113f96341c3ec74d308195a86a02f80e90fac",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/04.png",
+          "sha256": "1c5f302f96b16bdb4945223f082d4c34ef226b46ed52b658f1abbe11c6006d1c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/05.png",
+          "sourceSha256": "1c5f302f96b16bdb4945223f082d4c34ef226b46ed52b658f1abbe11c6006d1c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/05.png",
+          "sha256": "23089207b88768914a81c593861d43eb7707388dc6cbd860a78ea5a40cf46ee4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/06.png",
+          "sourceSha256": "23089207b88768914a81c593861d43eb7707388dc6cbd860a78ea5a40cf46ee4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/06.png",
+          "sha256": "255e5cc4adf1b80fbb2012d7974369a2b61474b80d83f2961e97581f98203108",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/07.png",
+          "sourceSha256": "255e5cc4adf1b80fbb2012d7974369a2b61474b80d83f2961e97581f98203108",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/07.png",
+          "sha256": "d43d1f9e2b2619bba444302280245739468a4260650aefd7a932f1e5f5cc4845",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/08.png",
+          "sourceSha256": "d43d1f9e2b2619bba444302280245739468a4260650aefd7a932f1e5f5cc4845",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 우향 긴 다리와 앞팔이 꺾이며 옆으로 실제 넘어지고, 녹색 몸과 마디가 바닥에 누운 끝자세를 유지하는 단발 KO."
+    }
+  ],
+  "nativeFacing": "right",
+  "selectedOriginal": {
+    "motion": "original",
+    "attempt": 1,
+    "key": "monster-a-thorn-mantis-original-01",
+    "jobId": "cd985044-6e69-465e-81e6-6ba48cc5e286",
+    "balanceBefore": 508,
+    "maximumReservedGenerations": 1,
+    "args": {
+      "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Tall jade mantis with thorn-shaped forearms folded in a threatening martial pose, narrow angular head and segmented abdomen. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "direction": "west",
+      "view": "low top-down",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "detail": "medium detail",
+      "seed": 614004,
+      "text_guidance_scale": 8
+    },
+    "queueResponse": "id: cd985044-6e69-465e-81e6-6ba48cc5e286\njob_id: cd985044-6e69-465e-81e6-6ba48cc5e286\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Tall jade mantis with thorn-shaped forearms folded in a threatening martial pose, narrow angular head and segmented abdomen. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: 5d4f0307-6ecb-5b0a-b29f-2807a741a518\nasset_status: pending (saved when generation completes)\nseed: 614004\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"cd985044-6e69-465e-81e6-6ba48cc5e286\")",
+    "status": "completed",
+    "latestResponse": "status: completed\nid: cd985044-6e69-465e-81e6-6ba48cc5e286\njob_id: cd985044-6e69-465e-81e6-6ba48cc5e286\nframes: 1\ntransparent: yes\nasset_id: 5d4f0307-6ecb-5b0a-b29f-2807a741a518\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/cd985044-6e69-465e-81e6-6ba48cc5e286/download",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/cd985044-6e69-465e-81e6-6ba48cc5e286/download",
+    "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/original-01.png",
+    "sha256": "4b0b90f373bc45ef774d307fc16b544ee31447b89cde642ea6347ab041514f2b",
+    "byteSize": 2190,
+    "width": 64,
+    "height": 64,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "visibleBounds": {
+      "x": 16,
+      "y": 1,
+      "width": 32,
+      "height": 61
+    },
+    "visiblePixels": 600,
+    "paletteSize": 21,
+    "chargedGenerations": 1,
+    "nativeFacing": "right",
+    "selection": "accepted after silhouette / anatomy / native alpha review"
+  },
+  "anchor": {
+    "x": 32,
+    "y": 62
+  },
+  "animationInput": {
+    "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/animation-input-96.png",
+    "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/2e3d76c9-e85d-4675-9e9a-142b3de95e8e/assets/native/full.png",
+    "drawingId": "2e3d76c9-e85d-4675-9e9a-142b3de95e8e",
+    "width": 96,
+    "height": 96,
+    "offset": {
+      "x": 16,
+      "y": 16
+    },
+    "sha256": "e8c2b10d88ab467edc1c6cc706b41239c94acbd51fd1f780591c697d91f951f9",
+    "nativePixels": "exact RGBA at offset; outside fully transparent",
+    "paidGenerations": 0
+  },
+  "animationAnchor": {
+    "x": 48,
+    "y": 78
+  },
+  "animations": {
+    "stand": {
+      "label": "대기",
+      "loop": true,
+      "jobId": "0cf1538f-e92c-4c7d-bf8e-547c77d03ae0",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/00.png",
+          "sha256": "2f1c66098ccd765fb13b058250b171619e18d6e846a67cddfe14d536a97bf0d3",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/01.png",
+          "sourceSha256": "2f1c66098ccd765fb13b058250b171619e18d6e846a67cddfe14d536a97bf0d3",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/01.png",
+          "sha256": "63008d6d7ce16934660c69290e86877200bf8bebf4408a1c1b1e46bd039bcf23",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/02.png",
+          "sourceSha256": "63008d6d7ce16934660c69290e86877200bf8bebf4408a1c1b1e46bd039bcf23",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/02.png",
+          "sha256": "56f89ea2c50b3c584380b58701204fc1522efc2e08c8ea7b36eff3e056974a58",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/03.png",
+          "sourceSha256": "56f89ea2c50b3c584380b58701204fc1522efc2e08c8ea7b36eff3e056974a58",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/03.png",
+          "sha256": "2791236b0aca25741211ba1c6de572fd872007187959f493a3b576ef7fbc3d2f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/stand/0cf1538f-e92c-4c7d-bf8e-547c77d03ae0/04.png",
+          "sourceSha256": "2791236b0aca25741211ba1c6de572fd872007187959f493a3b576ef7fbc3d2f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "notes": "우향으로 안테나·가시 앞팔·복부가 움직이는 실제 생성 대기. 96px 투명 여백 안에서 원본 도트 밀도와 발 기준 유지.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/stand-0cf1538f-e92c-4c7d-bf8e-547c77d03ae0.png"
+    },
+    "move": {
+      "label": "이동",
+      "loop": true,
+      "jobId": "cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/00.png",
+          "sha256": "e5687725545bd2ec5b3f91e8317f181808524fbbff0711bd5af60e61e7ca78a4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/01.png",
+          "sourceSha256": "e5687725545bd2ec5b3f91e8317f181808524fbbff0711bd5af60e61e7ca78a4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/01.png",
+          "sha256": "e59f0e7314730f5cb74933e16e972b123af758f587fa236d3b06f87712f2ae04",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/02.png",
+          "sourceSha256": "e59f0e7314730f5cb74933e16e972b123af758f587fa236d3b06f87712f2ae04",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/02.png",
+          "sha256": "851822877a893b5df10fc3e88ddc04e1e9e060168b83ce9a0f99dd57a2eeb9cc",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/03.png",
+          "sourceSha256": "851822877a893b5df10fc3e88ddc04e1e9e060168b83ce9a0f99dd57a2eeb9cc",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/03.png",
+          "sha256": "504e5e32ca31a1f9df1e9a38394567581c75cc38edaef5dfeeeb3d2e68359f08",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/04.png",
+          "sourceSha256": "504e5e32ca31a1f9df1e9a38394567581c75cc38edaef5dfeeeb3d2e68359f08",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/04.png",
+          "sha256": "97062c9f19b5c387143a76b7a186dc525958be7c317f34d6a1eb88e2a6b9476d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/05.png",
+          "sourceSha256": "97062c9f19b5c387143a76b7a186dc525958be7c317f34d6a1eb88e2a6b9476d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/05.png",
+          "sha256": "ad306f51343cc51d7193e5a46a4a7810076fbaea9012ad7450f4e649079b3986",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/06.png",
+          "sourceSha256": "ad306f51343cc51d7193e5a46a4a7810076fbaea9012ad7450f4e649079b3986",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/06.png",
+          "sha256": "336ef4d986c4b324c459ae31c09725bfcf26594cbcab8e1aa237f18b5150aa89",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/07.png",
+          "sourceSha256": "336ef4d986c4b324c459ae31c09725bfcf26594cbcab8e1aa237f18b5150aa89",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/07.png",
+          "sha256": "227fbd87c236c46599d603cb8ff5c8c31fc2bbcb79d615f2c94abdc4f3dc8de6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/move/cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e/08.png",
+          "sourceSha256": "227fbd87c236c46599d603cb8ff5c8c31fc2bbcb79d615f2c94abdc4f3dc8de6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "notes": "우향 긴 뒷다리를 번갈아 들고 디디며 복부와 더듬이가 함께 움직이는 실제 걷기 루프. 원본 도트 밀도 유지.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/move-cb6eb309-192a-48dd-b7a6-a8ef6bb1d63e.png"
+    },
+    "attack1": {
+      "label": "공격",
+      "loop": false,
+      "jobId": "b168ca9c-cdfe-40b8-be26-daed17796815",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/00.png",
+          "sha256": "8f1a9bd7b153aed9c954c59c9636f9dfcbb8d4e7e28e381a0ef0eacda2d166df",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/01.png",
+          "sourceSha256": "8f1a9bd7b153aed9c954c59c9636f9dfcbb8d4e7e28e381a0ef0eacda2d166df",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/01.png",
+          "sha256": "93ccbe6717f9dcb2e7df622fe8bcd536b1984644c937d26b1247f5e01ba981de",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/02.png",
+          "sourceSha256": "93ccbe6717f9dcb2e7df622fe8bcd536b1984644c937d26b1247f5e01ba981de",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/02.png",
+          "sha256": "b7fca2222e1b4925a40166b4cfe19802e479fe0f654e54835fcead09692ecdcf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/04.png",
+          "sourceSha256": "b7fca2222e1b4925a40166b4cfe19802e479fe0f654e54835fcead09692ecdcf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 5,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/03.png",
+          "sha256": "3b71025ae800f1de96dfdb9920d869a5d4649739958493731640889579912e3a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/05.png",
+          "sourceSha256": "3b71025ae800f1de96dfdb9920d869a5d4649739958493731640889579912e3a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 6,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/04.png",
+          "sha256": "6998af78c41945e9d0344f76b08a44812b2b10df057859743f6f66038423afad",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/06.png",
+          "sourceSha256": "6998af78c41945e9d0344f76b08a44812b2b10df057859743f6f66038423afad",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 7,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/05.png",
+          "sha256": "66b1a20b57c149b28a78fa3007dc9940189336d9491de7a9a97ca7a0f09743ad",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/07.png",
+          "sourceSha256": "66b1a20b57c149b28a78fa3007dc9940189336d9491de7a9a97ca7a0f09743ad",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 8,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/attack1/curated-b168ca9c-cdfe-40b8-be26-daed17796815/06.png",
+          "sha256": "a1c9c76e5055e053bb4b8cc48cc3a60f7fcff48dca16c76ce75dfb988e5c6119",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b168ca9c-cdfe-40b8-be26-daed17796815/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/attack1/b168ca9c-cdfe-40b8-be26-daed17796815/08.png",
+          "sourceSha256": "a1c9c76e5055e053bb4b8cc48cc3a60f7fcff48dca16c76ce75dfb988e5c6119",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "notes": "우향 두 녹색 앞팔을 들어 준비하고 아래·앞으로 내리친 뒤 복귀하는 실제 공격. 흰 궤적이 있는 원본 3번 프레임만 미사용으로 보존하고 7포즈를 선택. 런타임 2번의 뻗은 팔을 접촉으로 사용.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/attack1-b168ca9c-cdfe-40b8-be26-daed17796815.png",
+      "contactFrameIndex": 2,
+      "contactProgress": 0.35714285714285715
+    },
+    "die1": {
+      "label": "쓰러짐",
+      "loop": false,
+      "jobId": "93c61d28-6ea0-4239-8027-3e8f2d4ad8e6",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/00.png",
+          "sha256": "f5fbe1cc80013ce5cc632e91924408fa5bfb8b1c0bf6e74bc228cd748194df37",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/01.png",
+          "sourceSha256": "f5fbe1cc80013ce5cc632e91924408fa5bfb8b1c0bf6e74bc228cd748194df37",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/01.png",
+          "sha256": "0fab9e2e112c779dd04964df70ad3bd95ca1efebe16902a7471eb0ec85770908",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/02.png",
+          "sourceSha256": "0fab9e2e112c779dd04964df70ad3bd95ca1efebe16902a7471eb0ec85770908",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/02.png",
+          "sha256": "c515397ebe7d3ed4277126b6722227bbfd3b4d359a17566e6be47f611cfa761a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/03.png",
+          "sourceSha256": "c515397ebe7d3ed4277126b6722227bbfd3b4d359a17566e6be47f611cfa761a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/03.png",
+          "sha256": "b8cfb61fbf02c2eb55afee7fc7d113f96341c3ec74d308195a86a02f80e90fac",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/04.png",
+          "sourceSha256": "b8cfb61fbf02c2eb55afee7fc7d113f96341c3ec74d308195a86a02f80e90fac",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/04.png",
+          "sha256": "1c5f302f96b16bdb4945223f082d4c34ef226b46ed52b658f1abbe11c6006d1c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/05.png",
+          "sourceSha256": "1c5f302f96b16bdb4945223f082d4c34ef226b46ed52b658f1abbe11c6006d1c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/05.png",
+          "sha256": "23089207b88768914a81c593861d43eb7707388dc6cbd860a78ea5a40cf46ee4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/06.png",
+          "sourceSha256": "23089207b88768914a81c593861d43eb7707388dc6cbd860a78ea5a40cf46ee4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/06.png",
+          "sha256": "255e5cc4adf1b80fbb2012d7974369a2b61474b80d83f2961e97581f98203108",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/07.png",
+          "sourceSha256": "255e5cc4adf1b80fbb2012d7974369a2b61474b80d83f2961e97581f98203108",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/07.png",
+          "sha256": "d43d1f9e2b2619bba444302280245739468a4260650aefd7a932f1e5f5cc4845",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/93c61d28-6ea0-4239-8027-3e8f2d4ad8e6/08.png",
+          "sourceSha256": "d43d1f9e2b2619bba444302280245739468a4260650aefd7a932f1e5f5cc4845",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "notes": "우향 긴 다리와 앞팔이 꺾이며 옆으로 실제 넘어지고, 녹색 몸과 마디가 바닥에 누운 끝자세를 유지하는 단발 KO.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/die1-93c61d28-6ea0-4239-8027-3e8f2d4ad8e6.png"
+    },
+    "hit1": {
+      "label": "피격",
+      "loop": false,
+      "jobId": "2bc7e403-c111-4db9-90cf-fc3866cab4ab",
+      "nativeFacing": "right",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/00.png",
+          "sha256": "52b096cbf59b3f035bc08df454293a682b1724abf4b784c1b2a202fbc1e0d035",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/01.png",
+          "sourceSha256": "52b096cbf59b3f035bc08df454293a682b1724abf4b784c1b2a202fbc1e0d035",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/01.png",
+          "sha256": "acae3e15d3332b2bd34436b82c8f44cc37b970106702b5406cb3d20b6f10f8da",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/02.png",
+          "sourceSha256": "acae3e15d3332b2bd34436b82c8f44cc37b970106702b5406cb3d20b6f10f8da",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/02.png",
+          "sha256": "63250631d49cdfa8cb0b2502b512f54d8bd18fc40b4d0d7209d5b6709df8727c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/03.png",
+          "sourceSha256": "63250631d49cdfa8cb0b2502b512f54d8bd18fc40b4d0d7209d5b6709df8727c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/frames/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/03.png",
+          "sha256": "c83c33c355a1c6fbb43125f1e2e3b83f3103731778935634a44c634936c02ad1",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/2bc7e403-c111-4db9-90cf-fc3866cab4ab/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/hit1/2bc7e403-c111-4db9-90cf-fc3866cab4ab/04.png",
+          "sourceSha256": "c83c33c355a1c6fbb43125f1e2e3b83f3103731778935634a44c634936c02ad1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "notes": "우향 머리와 가시 앞팔을 몸 쪽으로 움츠리며 다리가 굽었다 원래 자세로 복귀하는 실제 피격.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/thorn-mantis/review/hit1-2bc7e403-c111-4db9-90cf-fc3866cab4ab.png"
+    }
+  },
+  "poseTargets": [
+    {
+      "motion": "die1",
+      "localPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/target-corpse-02.png",
+      "recordPath": "public/assets/maplestory/monster-expansion/thorn-mantis/originals/die1/target-corpse-02.json",
+      "drawingId": "bb3d87b1-7b5e-4131-9740-4b3e7e282dbd",
+      "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/bb3d87b1-7b5e-4131-9740-4b3e7e282dbd/assets/native/full.png",
+      "source": "https://api.pixellab.ai/mcp/images/ea93d241-ec0e-4b76-a391-dc834a65df3d/download?index=8",
+      "offset": [
+        0,
+        5
+      ],
+      "angle": -90,
+      "pivot": [
+        48,
+        48
+      ],
+      "sha256": "7a4fa820104f99ba157a9a4e8a0bc954dafbfd89a126bf73ae924ebe35f4ac43",
+      "paidGenerations": 0,
+      "kind": "free exact native end keyframe; intermediate motion generated by PixelLab",
+      "reason": "원본 픽셀로 누운 끝자세를 지정하고 중간 쓰러짐 프레임은 PixelLab에서 실제 생성."
+    }
+  ]
+}

@@ -1,0 +1,543 @@
+{
+  "generation": {
+    "provider": "PixelLab",
+    "interface": "MCP",
+    "tool": "animate_image",
+    "jobId": "50bcd042-363e-4bbd-bf56-41857fe596fc",
+    "assetId": "1632a4ed-b2f9-5d91-bfe6-ff4d2b19b6cc",
+    "createdDate": "2026-10-10",
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download",
+      "last_frame_url": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download",
+      "frame_count": 4,
+      "no_background": true,
+      "action": "A very subtle stationary breathing idle loop. The small body gently rises and settles by about one pixel, and the mushroom cap follows with a tiny soft bob, returning exactly to the starting pose. Both feet remain firmly planted at the same pixel positions throughout. Keep the original face, expression, facing direction, silhouette, scale, colors, native pixel density, teal spore decorations and leaf completely consistent. Keep the character at the same location in the 64x64 transparent canvas. No walking, stepping, sliding, jumping, turning, blinking, healing action, particles, glow, effects, camera motion, background or ground shadow. Finish in the identical original pose for a seamless repeat."
+    },
+    "width": 64,
+    "height": 64,
+    "requestedFrameCount": 4,
+    "returnedFrameCount": 5,
+    "requests": 1,
+    "variants": 1,
+    "retries": 0,
+    "displayedCostGenerations": 1,
+    "actualCostGenerations": 1,
+    "usageBefore": {
+      "remaining": 31,
+      "used": 9,
+      "total": 40,
+      "bonus": 17,
+      "creditsUsd": 0,
+      "subscription": "trial"
+    },
+    "usageAfter": {
+      "remaining": 30,
+      "used": 10,
+      "total": 40,
+      "bonus": 16,
+      "creditsUsd": 0
+    },
+    "sourceUrl": "https://www.pixellab.ai/create?tool=animate_image",
+    "metadataPath": "public/assets/maplestory/mushroom-spirit-ai/idle-generation.json",
+    "status": "applied",
+    "appliedToStand": true,
+    "notes": "원래 입력 PNG + 첫 생성 frame-01,02,03을 대기 모션 실험에 적용. 추가 생성·결제·색 보정·리샘플링 없음. 기존 generation.json·원본·정지 프레임 및 반환 PNG 5장 보존. animation 모델 이름·seed·나머지 서버 기본 설정은 미확인.",
+    "activeFrameCount": 4,
+    "qualityNotes": [
+      "몸·버섯갓 들썩임 외에 눈깜빡임·입 모양·팔과 개별 발 모양 변화가 있음. 이 첫 후보를 대기 모션 실험으로 사용.",
+      "생성본에만 기존 34색에서 중간 50~54색으로 증가한 차이가 있음. 반환 입력 프레임의 불투명 8픽셀도 기존 원본과 달라 서비스 출력의 색 변화를 기록함.",
+      "프레임별 pivot.y=1,1,0,0으로 하단 1픽셀 높이 차이를 맞춤. 수평 피벗은 원본 x=31로 고정해 몸 전체 좌우 이동 없음. 개별 발 모양은 일치하지 않음."
+    ]
+  },
+  "inputOriginal": {
+    "name": "pixellab-pixen-64.png",
+    "kind": "png",
+    "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/pixellab-pixen-64.png",
+    "width": 64,
+    "height": 64,
+    "byteSize": 2915,
+    "sha256": "21314adf1250478d40adc736035cdc4f09dca7687e71e433d87e60201e585956",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download",
+    "key": "pixen-first-candidate",
+    "pageUrl": "https://www.pixellab.ai/create?tool=create_image_pixen"
+  },
+  "preservedStand": {
+    "label": "서 있기 · 정지",
+    "group": "대기",
+    "frames": [
+      {
+        "index": 0,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/stand.png",
+        "sha256": "c85cfa31d2de3be67bdd515f8386fd6d47cbe5aabbbcffcfbb512e0d25592b90",
+        "width": 50,
+        "height": 52,
+        "sourceRect": {
+          "x": 6,
+          "y": 4,
+          "width": 50,
+          "height": 52
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download"
+      }
+    ]
+  },
+  "originals": [
+    {
+      "index": 0,
+      "name": "frame-00.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-00.png",
+      "sha256": "3338b1c0a6c6fbba641bc11d36dbcce6db26207515522635804a30b8e2a6140f",
+      "byteSize": 2909,
+      "width": 64,
+      "height": 64,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/50bcd042-363e-4bbd-bf56-41857fe596fc/download?index=0"
+    },
+    {
+      "index": 1,
+      "name": "frame-01.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-01.png",
+      "sha256": "2bdef0a0167f5e4ce9b56149ee2b548d498b5e598bee26f8c4cd70ce47405861",
+      "byteSize": 3005,
+      "width": 64,
+      "height": 64,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/50bcd042-363e-4bbd-bf56-41857fe596fc/download?index=1"
+    },
+    {
+      "index": 2,
+      "name": "frame-02.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-02.png",
+      "sha256": "e0da427384456005050d2a176dad2378aa2f2746c3a8b381b3f00e69841026ef",
+      "byteSize": 3045,
+      "width": 64,
+      "height": 64,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/50bcd042-363e-4bbd-bf56-41857fe596fc/download?index=2"
+    },
+    {
+      "index": 3,
+      "name": "frame-03.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-03.png",
+      "sha256": "9689b7386f2dca1741e2c6d6de7a49cd316487fc62262e12bc0c4ed0ce19f719",
+      "byteSize": 3067,
+      "width": 64,
+      "height": 64,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/50bcd042-363e-4bbd-bf56-41857fe596fc/download?index=3"
+    },
+    {
+      "index": 4,
+      "name": "frame-04.png",
+      "kind": "png",
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-04.png",
+      "sha256": "ea07322b2cb06ddbcd50b8d55767c823deb17373130e07260c69790499883696",
+      "byteSize": 2910,
+      "width": 64,
+      "height": 64,
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/50bcd042-363e-4bbd-bf56-41857fe596fc/download?index=4"
+    }
+  ],
+  "processing": "원래 입력 PNG와 생성 frame-01,02,03을 동일 sourceRect (6,4,50,53)로 crop. RGBA 색·불투명 픽셀 보존, 리샘플링·색 보정 없음. 원본 x=31 피벗 고정, 하단 높이 차이만 pivot.y=1,1,0,0으로 정렬.",
+  "qualityChecks": {
+    "frames": [
+      {
+        "index": 0,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-00.png",
+        "sha256": "3338b1c0a6c6fbba641bc11d36dbcce6db26207515522635804a30b8e2a6140f",
+        "width": 64,
+        "height": 64,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          6,
+          4,
+          56,
+          56
+        ],
+        "visibleColorCount": 35,
+        "newColorCountVsInput": 1,
+        "silhouetteChangedPixelsVsInput": 0,
+        "changedVisiblePixelsVsInput": 8,
+        "feetBand": {
+          "sourceRect": {
+            "x": 0,
+            "y": 52,
+            "width": 64,
+            "height": 4
+          },
+          "alphaBbox": [
+            20,
+            0,
+            42,
+            4
+          ],
+          "alphaChangedPixelsVsInput": 0,
+          "rgbaMatchesInput": false
+        }
+      },
+      {
+        "index": 1,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-01.png",
+        "sha256": "2bdef0a0167f5e4ce9b56149ee2b548d498b5e598bee26f8c4cd70ce47405861",
+        "width": 64,
+        "height": 64,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          6,
+          5,
+          56,
+          56
+        ],
+        "visibleColorCount": 52,
+        "newColorCountVsInput": 18,
+        "silhouetteChangedPixelsVsInput": 144,
+        "changedVisiblePixelsVsInput": 1090,
+        "feetBand": {
+          "sourceRect": {
+            "x": 0,
+            "y": 52,
+            "width": 64,
+            "height": 4
+          },
+          "alphaBbox": [
+            21,
+            0,
+            41,
+            4
+          ],
+          "alphaChangedPixelsVsInput": 15,
+          "rgbaMatchesInput": false
+        }
+      },
+      {
+        "index": 2,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-02.png",
+        "sha256": "e0da427384456005050d2a176dad2378aa2f2746c3a8b381b3f00e69841026ef",
+        "width": 64,
+        "height": 64,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          6,
+          5,
+          56,
+          57
+        ],
+        "visibleColorCount": 54,
+        "newColorCountVsInput": 20,
+        "silhouetteChangedPixelsVsInput": 281,
+        "changedVisiblePixelsVsInput": 1451,
+        "feetBand": {
+          "sourceRect": {
+            "x": 0,
+            "y": 52,
+            "width": 64,
+            "height": 4
+          },
+          "alphaBbox": [
+            22,
+            0,
+            48,
+            4
+          ],
+          "alphaChangedPixelsVsInput": 36,
+          "rgbaMatchesInput": false
+        }
+      },
+      {
+        "index": 3,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-03.png",
+        "sha256": "9689b7386f2dca1741e2c6d6de7a49cd316487fc62262e12bc0c4ed0ce19f719",
+        "width": 64,
+        "height": 64,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          6,
+          5,
+          56,
+          57
+        ],
+        "visibleColorCount": 50,
+        "newColorCountVsInput": 16,
+        "silhouetteChangedPixelsVsInput": 167,
+        "changedVisiblePixelsVsInput": 1101,
+        "feetBand": {
+          "sourceRect": {
+            "x": 0,
+            "y": 52,
+            "width": 64,
+            "height": 4
+          },
+          "alphaBbox": [
+            21,
+            0,
+            42,
+            4
+          ],
+          "alphaChangedPixelsVsInput": 7,
+          "rgbaMatchesInput": false
+        }
+      },
+      {
+        "index": 4,
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-04.png",
+        "sha256": "ea07322b2cb06ddbcd50b8d55767c823deb17373130e07260c69790499883696",
+        "width": 64,
+        "height": 64,
+        "alphaValues": [
+          0,
+          255
+        ],
+        "bbox": [
+          6,
+          4,
+          56,
+          56
+        ],
+        "visibleColorCount": 37,
+        "newColorCountVsInput": 3,
+        "silhouetteChangedPixelsVsInput": 0,
+        "changedVisiblePixelsVsInput": 10,
+        "feetBand": {
+          "sourceRect": {
+            "x": 0,
+            "y": 52,
+            "width": 64,
+            "height": 4
+          },
+          "alphaBbox": [
+            20,
+            0,
+            42,
+            4
+          ],
+          "alphaChangedPixelsVsInput": 0,
+          "rgbaMatchesInput": false
+        }
+      }
+    ],
+    "inputFrameRgbaMatchesOriginal": false,
+    "inputVisibleChangedPixels": 8,
+    "inputHiddenChangedPixels": 0,
+    "commonCrop": {
+      "x": 6,
+      "y": 4,
+      "width": 50,
+      "height": 53
+    },
+    "lastFrameMatchesInput": false,
+    "adjacentChangedVisiblePixels": [
+      1089,
+      1136,
+      1156,
+      1098,
+      2
+    ]
+  },
+  "loopPreview": {
+    "path": "/Users/3sam3/.codex/visualizations/2026/10/03/01a1029f-ca13-7051-b784-f11c7ec83899/mushroom-idle-loop.gif",
+    "durationSeconds": 0.2,
+    "totalSeconds": 0.8,
+    "frameCount": 4,
+    "notes": "등록된 피벗을 반영한 6배 Nearest 확대·체커 배경 GIF. 디코딩 RGB 픽셀·0.2초 프레임 시간 검증.",
+    "sha256": "7cada521bca553f5b6e544aa06eb0d50ff8d0133f809202c14b4f4c3d48dda54"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/idle/stand-00.png",
+      "sha256": "0aa2ca317365c41d3a28f7916976b44654af1bcdcfa734708b11d997d5589d09",
+      "width": 50,
+      "height": 53,
+      "sourceRect": {
+        "x": 6,
+        "y": 4,
+        "width": 50,
+        "height": 53
+      },
+      "pivot": {
+        "x": 25,
+        "y": 1
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/bf931ad7-11af-4e5f-9f17-333321a5113b/download",
+      "durationSeconds": 0.2,
+      "sourceKey": "input-original"
+    },
+    {
+      "index": 1,
+      "sourceFrameIndex": 1,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/idle/stand-01.png",
+      "sha256": "52798b60519e9515136f1a2df81c198f770474a0d4f26f5db45f09e81ce7136b",
+      "width": 50,
+      "height": 53,
+      "sourceRect": {
+        "x": 6,
+        "y": 4,
+        "width": 50,
+        "height": 53
+      },
+      "pivot": {
+        "x": 25,
+        "y": 1
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/50bcd042-363e-4bbd-bf56-41857fe596fc/download?index=1",
+      "durationSeconds": 0.2
+    },
+    {
+      "index": 2,
+      "sourceFrameIndex": 2,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/idle/stand-02.png",
+      "sha256": "ea255cffef3a30b10ad745aeaf28aaf3f2a5711b470a7444d780ea1d8300a996",
+      "width": 50,
+      "height": 53,
+      "sourceRect": {
+        "x": 6,
+        "y": 4,
+        "width": 50,
+        "height": 53
+      },
+      "pivot": {
+        "x": 25,
+        "y": 0
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/50bcd042-363e-4bbd-bf56-41857fe596fc/download?index=2",
+      "durationSeconds": 0.2
+    },
+    {
+      "index": 3,
+      "sourceFrameIndex": 3,
+      "localPath": "public/assets/maplestory/mushroom-spirit-ai/frames/idle/stand-03.png",
+      "sha256": "d722ec1ea2a7d232ba5b54b40b74908cc40106f10df814ceb1035759eb00c87b",
+      "width": 50,
+      "height": 53,
+      "sourceRect": {
+        "x": 6,
+        "y": 4,
+        "width": 50,
+        "height": 53
+      },
+      "pivot": {
+        "x": 25,
+        "y": 0
+      },
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/50bcd042-363e-4bbd-bf56-41857fe596fc/download?index=3",
+      "durationSeconds": 0.2
+    }
+  ],
+  "alignment": {
+    "commonSourceRect": {
+      "x": 6,
+      "y": 4,
+      "width": 50,
+      "height": 53
+    },
+    "anchorSourceX": 31,
+    "pivotYByFrame": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "excludedSourceFrameIndices": [
+      0,
+      4
+    ],
+    "excludedFrameReason": "반환 frame-00은 불투명 8픽셀 색이 달라 원래 입력 PNG를 첫 자세로 선택. frame-04는 반환 frame-00과 2픽셀 색만 다른 원본 유사 끝 자세라 중복 대기 시간을 줄이기 위해 제외. 반환 PNG 5장은 그대로 보존.",
+    "durationSeconds": 0.2,
+    "totalSeconds": 0.8,
+    "rgbaCropMatchesSources": true,
+    "nontransparentPixelCountsPreserved": true,
+    "qualityNotes": [
+      "몸·버섯갓 들썩임 외에 눈깜빡임·입 모양·팔과 개별 발 모양 변화가 있음. 이 첫 후보를 대기 모션 실험으로 사용.",
+      "생성본에만 기존 34색에서 중간 50~54색으로 증가한 차이가 있음. 반환 입력 프레임의 불투명 8픽셀도 기존 원본과 달라 서비스 출력의 색 변화를 기록함.",
+      "프레임별 pivot.y=1,1,0,0으로 하단 1픽셀 높이 차이를 맞춤. 수평 피벗은 원본 x=31로 고정해 몸 전체 좌우 이동 없음. 개별 발 모양은 일치하지 않음."
+    ],
+    "activeSources": [
+      {
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/pixellab-pixen-64.png",
+        "kind": "input-original"
+      },
+      {
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-01.png",
+        "kind": "generated-frame",
+        "sourceFrameIndex": 1
+      },
+      {
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-02.png",
+        "kind": "generated-frame",
+        "sourceFrameIndex": 2
+      },
+      {
+        "localPath": "public/assets/maplestory/mushroom-spirit-ai/originals/idle/frame-03.png",
+        "kind": "generated-frame",
+        "sourceFrameIndex": 3
+      }
+    ]
+  },
+  "alignedLoopChecks": {
+    "renderAnchor": {
+      "x": 31,
+      "y": 56
+    },
+    "renderedAlphaBboxes": [
+      [
+        6,
+        4,
+        56,
+        56
+      ],
+      [
+        6,
+        5,
+        56,
+        56
+      ],
+      [
+        6,
+        4,
+        56,
+        56
+      ],
+      [
+        6,
+        4,
+        56,
+        56
+      ]
+    ],
+    "horizontalPositionFixed": true,
+    "bottomEdgeByFrame": [
+      56,
+      56,
+      56,
+      56
+    ],
+    "firstRenderedFrameRgbaMatchesInputOriginal": true,
+    "adjacentChangedVisiblePixelsIncludingWrap": [
+      1090,
+      425,
+      1156,
+      297
+    ],
+    "previewRgbMatchesFrames": true,
+    "previewFrameCount": 4,
+    "previewFrameDurationSeconds": 0.2,
+    "previewLoopSeconds": 0.8,
+    "paletteColors": 59
+  }
+}

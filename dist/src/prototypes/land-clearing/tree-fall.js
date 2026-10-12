@@ -1,4 +1,4 @@
-import { treeShape } from '../../rendering/tree-shape.js';
+import { treeShape } from '../../resources/environment/tree-shape.js';
 export const treeFallDuration = 1.05;
 export const treeFallContactTime = 0.9;
 export function treeFallAngle(age) {
@@ -33,25 +33,12 @@ export class TreeFall {
         return true;
     }
     hits(point, radius) {
-        const dx = point.x - this.origin.x;
-        const dz = point.z - this.origin.z;
-        // 쓰러진 수관을 옆에서 본 삼각형과 잡목의 충돌 원이 겹치는지 확인한다.
-        const local = {
-            x: dx * this.direction.x + dz * this.direction.z,
-            z: Math.abs(dx * this.direction.z - dz * this.direction.x),
-        };
-        return treeShape.crowns.some(({ y, radius: crownRadius }) => {
-            const base = (y - treeShape.crownHeight / 2) * this.scale;
-            const tip = (y + treeShape.crownHeight / 2) * this.scale;
-            const width = crownRadius * this.scale;
-            if (local.x >= base &&
-                local.x <= tip &&
-                local.z <= (width * (tip - local.x)) / (tip - base))
-                return true;
-            const lower = { x: base, z: -width };
-            const upper = { x: base, z: width };
-            const end = { x: tip, z: 0 };
-            return (Math.min(distanceToSegment(local, lower, upper), distanceToSegment(local, upper, end), distanceToSegment(local, end, lower)) <= radius);
+        return fallenCrownHits({
+            point,
+            radius,
+            origin: this.origin,
+            direction: this.direction,
+            scale: this.scale,
         });
     }
     get aim() {
@@ -60,4 +47,36 @@ export class TreeFall {
     get finished() {
         return this.age >= treeFallDuration;
     }
+}
+/** 쓰러진 수관의 옆모습을 일반 나무와 거목의 연쇄 판정이 함께 쓴다. */
+export function fallenCrownHits({ point, radius, origin, direction, scale, }) {
+    const dx = point.x - origin.x;
+    const dz = point.z - origin.z;
+    // 회전 후 수관의 옆모습은 공용 수관 단면과 같다. 원뿔 판정을 남기지 않는다.
+    const local = {
+        x: dx * direction.x + dz * direction.z,
+        z: dx * direction.z - dz * direction.x,
+    };
+    return treeShape.crowns.some(({ y, radius: crownRadius }) => {
+        const profile = treeShape.crownProfile.map((p) => ({
+            x: (y + p.y) * scale,
+            z: p.radius * crownRadius * scale,
+        }));
+        const polygon = [
+            ...profile,
+            ...[...profile].reverse().map((p) => ({ x: p.x, z: -p.z })),
+        ];
+        let inside = false;
+        for (let i = 0; i < polygon.length; i++) {
+            const a = polygon[i], b = polygon[(i + 1) % polygon.length];
+            if (a.x === b.x && a.z === b.z)
+                continue;
+            if (distanceToSegment(local, a, b) <= radius)
+                return true;
+            if (a.z > local.z !== b.z > local.z &&
+                local.x < a.x + ((local.z - a.z) * (b.x - a.x)) / (b.z - a.z))
+                inside = !inside;
+        }
+        return inside;
+    });
 }

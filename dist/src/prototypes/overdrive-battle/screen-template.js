@@ -1,3 +1,8 @@
+import { yeonmukPortraitPath } from '../../resources/characters/yeonmuk/yeonmuk-visual.js';
+import manifest from '../../../resources/manifest.json' with { type: 'json' };
+const heroPortrait = manifest.assets.find((asset) => asset.id === 'ai/tiger-hero')?.animations.stand?.frames[0];
+if (!heroPortrait)
+    throw new Error('아타호 초상화 리소스가 없습니다.');
 // 독립 프로토타입과 본게임이 같은 전투 화면을 사용한다.
 export const battleMarkup = `
 <div class="battle-viewport">
@@ -5,7 +10,7 @@ export const battleMarkup = `
       <canvas
         id="battle"
         tabindex="0"
-        aria-label="산길의 결투. 위아래 방향키로 행동을 고르고 Space로 선택합니다. 기술은 오른쪽 방향키로도 목록을 엽니다. 기술창에서 왼쪽 방향키 또는 Esc로 돌아갑니다. 단일 공격은 방향키로 적을 고르고 Space로 실행합니다. 선풍각은 방향키 또는 마우스로 바닥 범위를 지정하고 Space 또는 클릭으로 실행합니다. 분노가 가득 차면 초구취호패타를 선택할 수 있습니다. Esc는 대상 선택 취소입니다. R로 오버드라이브를 발동하고 방향키로 이동, Space 또는 E를 길게 눌러 공격합니다."
+        aria-label="산길의 결투. 위아래 방향키로 행동을 고르고 Space로 선택합니다. 기술이 하나면 바로 선택합니다. 오른쪽 방향키는 기술 목록만 엽니다. 기술창에서 왼쪽 방향키 또는 Esc로 돌아갑니다. 단일 대상 행동은 살아 있는 적이 하나면 즉시 실행합니다. 여러 적이 있으면 방향키로 적을 고르고 Space로 실행합니다. 선풍각은 방향키 또는 마우스로 바닥 범위를 지정하고 Space 또는 클릭으로 실행합니다. 분노가 가득 차면 초구취호패타를 선택할 수 있습니다. Esc는 대상 선택 취소입니다. R로 오버드라이브를 발동하고 방향키로 이동, Space 또는 E를 길게 눌러 공격합니다."
       ></canvas>
       <div class="vignette" aria-hidden="true"></div>
       <header class="heading">
@@ -24,6 +29,7 @@ export const battleMarkup = `
       </p>
       <div id="enemy-labels" class="enemy-labels" aria-label="공격 대상"></div>
       <div id="damage-labels" class="damage-labels" aria-hidden="true"></div>
+      <div id="interaction-labels" class="interaction-labels" aria-hidden="true"></div>
       <div id="drive-banner" class="drive-banner" aria-hidden="true">
         <p>아직, 내 차례다!</p>
         <strong>OVERDRIVE</strong>
@@ -55,7 +61,7 @@ export const battleMarkup = `
       <div id="return-summary" class="return-summary" hidden></div>
       <section id="command-panel" class="command-panel" aria-label="전투 명령">
         <p class="command-heading">
-          <span>아타호</span><span id="selection-step">행동 선택</span>
+          <span id="command-actor">아타호</span><span id="selection-step">행동 선택</span>
         </p>
         <div class="commands">
           <button id="attack" type="button">
@@ -99,6 +105,10 @@ export const battleMarkup = `
           <p id="skill-description" class="skill-description"></p>
           <p class="skill-hint">↑↓ 이동 · Space 선택</p>
         </section>
+        <div id="party-targets" class="party-targets" hidden aria-label="호신부 보호 대상">
+          <button type="button" data-ally="0">아타호</button>
+          <button type="button" data-ally="-1">연묵</button>
+        </div>
         <div class="target-hint">
           <span id="target-name">방향키 이동 · Space 선택</span>
           <button id="cancel-target" type="button" hidden>
@@ -138,12 +148,15 @@ export const battleMarkup = `
           <div class="hero-card">
             <div class="portrait">
               <img
-                src="${new URL('../../../../public/assets/maplestory/ataho/frames/battle-1-6.png', import.meta.url).href}"
+                src="${new URL(`../../../../${heroPortrait.localPath}`, import.meta.url).href}"
                 alt=""
               />
             </div>
             <div class="hero-stats">
-              <p class="hero-name">아타호 <span>무투가</span></p>
+              <div class="hero-heading">
+                <p class="hero-name">아타호 <span>무투가</span></p>
+                <div id="battle-equipment" hidden></div>
+              </div>
               <p id="drunken-status" class="drunken-status" hidden></p>
               <div class="stat-label">
                 <span>체력</span><b id="health-label">180 / 180</b>
@@ -179,6 +192,16 @@ export const battleMarkup = `
             </div>
           </div>
         </div>
+        <section id="companion-card" class="companion-card" hidden aria-label="연묵 상태">
+          <img data-src="${new URL(`../../../../${yeonmukPortraitPath}`, import.meta.url).href}" alt="" />
+          <span class="companion-stats">
+            <span class="hero-name">연묵 <span>부적술사</span></span>
+            <span id="companion-status" class="party-status">대기</span>
+            <span class="stat-label"><span>체력</span><b id="companion-health-label"></b></span>
+            <progress id="companion-health" max="120" value="120" aria-label="연묵 체력"></progress>
+          </span>
+        </section>
+
       </section>
       <footer>
         <span id="footer-hint">방향키 이동 · Space 선택</span>
@@ -191,6 +214,7 @@ export const battleMarkup = `
           >
             개발
           </button>
+          <button id="battle-menu" type="button">메뉴</button>
           <button id="sound" type="button" aria-pressed="false">소리 켬</button
           ><button id="reset" type="button">다시 대결 <span>↻</span></button>
         </div>
@@ -264,11 +288,19 @@ export const battleMarkup = `
           <p class="eyebrow">산길의 결투</p>
           <h2 id="overlay-title">대결 준비 중</h2>
           <p id="overlay-message">아타호와 숲의 손님들을 불러오고 있어요.</p>
-          <button id="resume" type="button" hidden>계속하기</button
-          ><button id="retry" type="button" hidden>다시 대결</button>
-          <button id="return" type="button" hidden>마을로 돌아가기</button>
         </div>
       </section>
+      <button
+        id="battle-victory"
+        class="battle-victory"
+        type="button"
+        aria-label="전투 승리. Space 또는 화면을 눌러 산길로 돌아가기"
+        aria-keyshortcuts="Space"
+        aria-disabled="true"
+        hidden
+      >
+        <span class="battle-victory-title">전투 승리</span>
+      </button>
       <output id="diagnostics" hidden></output>
     </main>
 </div>

@@ -1,0 +1,489 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-11",
+  "round": 4,
+  "provider": "PixelLab",
+  "model": "Pro Flash",
+  "tool": "edit_image_pro_flash",
+  "status": "completed-unselected",
+  "scope": "사용자 선호 원본에서 술주정뱅이 인상이 분명한 전면 디자인 4개 독립 편집.",
+  "candidateLimit": 4,
+  "requestLimit": 4,
+  "retryLimit": 0,
+  "generationBudget": 20,
+  "quotedCostPerCandidate": 5,
+  "balanceBefore": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1833\ngenerations_used: 167\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "referenceImages": [
+    {
+      "role": "edit-target",
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/originals/candidate-05.png",
+      "sourceImageId": "387a856b-5950-5a8a-a752-a9cff72788a1",
+      "selectedByUser": true,
+      "sha256": "c1153a5ff858a5863209b8cd4946d2523cc84d6a1d880a2d22ac8fc60230e5e0"
+    }
+  ],
+  "independentEdits": true,
+  "candidates": [
+    {
+      "id": 1,
+      "label": "붉은 코 · 술 좋아하는 아저씨",
+      "seed": 101401,
+      "change": "Design A: broad rosy nose and flushed cheeks, relaxed sleepy eyes, crooked warm grin, slightly messy cheek fur. A rounded soft belly under an untidy open dark-teal sleeveless vest, loose sand trousers, rust sash tied askew. Shoulders droop and one hand rests on the hip; the other holds a SMALL squat brown sake bottle low beside the thigh. Friendly tipsy uncle, visibly rumpled and comfortably stout.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Redesign this same adult tiger martial artist into a clearly recognizable lovable drunken brawler. Preserve the broad tiger face, amber striped fur, cream muzzle and crisp rounded pixel-art shading, but make the drunken character design and pose substantially different, not a tiny recolor. Full body almost front-facing, standing on both feet. The face must read tipsy at native size: reddish nose and cheek blush, heavy drooping brows, sleepy lopsided smiling squint. Adult comedic martial artist, not an infant or evil monster. Keep 64x64 transparent canvas, head, feet and any small prop entirely inside with margin, no background, floor, baked shadow, text or blur.\nDesign A: broad rosy nose and flushed cheeks, relaxed sleepy eyes, crooked warm grin, slightly messy cheek fur. A rounded soft belly under an untidy open dark-teal sleeveless vest, loose sand trousers, rust sash tied askew. Shoulders droop and one hand rests on the hip; the other holds a SMALL squat brown sake bottle low beside the thigh. Friendly tipsy uncle, visibly rumpled and comfortably stout.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101401
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"e93c85b5-af54-4b26-b0b2-f3593f3820ac\",\n  \"image_id\": \"a3e42c7f-cb81-5046-b773-587ef308f852\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"a3e42c7f-cb81-5046-b773-587ef308f852\",\n  \"job_id\": \"e93c85b5-af54-4b26-b0b2-f3593f3820ac\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/e93c85b5-af54-4b26-b0b2-f3593f3820ac/download\"\n}\nPoll get_image(job_id=\"e93c85b5-af54-4b26-b0b2-f3593f3820ac\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "e93c85b5-af54-4b26-b0b2-f3593f3820ac",
+          "image_id": "a3e42c7f-cb81-5046-b773-587ef308f852",
+          "status": "processing",
+          "source_image_id": "a3e42c7f-cb81-5046-b773-587ef308f852",
+          "job_id": "e93c85b5-af54-4b26-b0b2-f3593f3820ac",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/e93c85b5-af54-4b26-b0b2-f3593f3820ac/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "e93c85b5-af54-4b26-b0b2-f3593f3820ac",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/e93c85b5-af54-4b26-b0b2-f3593f3820ac/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/e93c85b5-af54-4b26-b0b2-f3593f3820ac/download"
+        ],
+        "asset": {
+          "id": "a3e42c7f-cb81-5046-b773-587ef308f852",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: e93c85b5-af54-4b26-b0b2-f3593f3820ac\njob_id: e93c85b5-af54-4b26-b0b2-f3593f3820ac\nframes: 1\ntransparent: yes\nasset_id: a3e42c7f-cb81-5046-b773-587ef308f852\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/e93c85b5-af54-4b26-b0b2-f3593f3820ac/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/originals/drunk-01.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/originals/drunk-01.png",
+        "sha256": "acf825c17236ecc8662d65c308af4594813356285f3f9d66099df95791f130cf",
+        "width": 64,
+        "height": 64,
+        "byteSize": 4274,
+        "alphaBBox": [
+          7,
+          0,
+          55,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": false
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/frames/drunk-01.png",
+        "sha256": "94aea52ca23ba6d7cbbcf730106eb64992f139fcd1952a63a79d676cd3c6f354",
+        "width": 48,
+        "height": 63,
+        "sourceRect": {
+          "x": 7,
+          "y": 0,
+          "width": 48,
+          "height": 63
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/e93c85b5-af54-4b26-b0b2-f3593f3820ac/download",
+        "durationSeconds": 1
+      },
+      "reviewDisposition": "unselected"
+    },
+    {
+      "id": 2,
+      "label": "덩치 큰 취권 고수",
+      "seed": 101402,
+      "change": "Design B: a stocky heavy-set drunken boxing master, huge wide head and very short sturdy body with pronounced round belly. Strong red cheeks, half-closed uneven eyes and a broad laughing grin. Loose faded olive martial jacket with collar slipping open, tan short loose trousers, ivory wraps, crooked dark sash. Empty large paws held loosely at different heights, knees slightly bent as if swaying. No bottle or other props.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Redesign this same adult tiger martial artist into a clearly recognizable lovable drunken brawler. Preserve the broad tiger face, amber striped fur, cream muzzle and crisp rounded pixel-art shading, but make the drunken character design and pose substantially different, not a tiny recolor. Full body almost front-facing, standing on both feet. The face must read tipsy at native size: reddish nose and cheek blush, heavy drooping brows, sleepy lopsided smiling squint. Adult comedic martial artist, not an infant or evil monster. Keep 64x64 transparent canvas, head, feet and any small prop entirely inside with margin, no background, floor, baked shadow, text or blur.\nDesign B: a stocky heavy-set drunken boxing master, huge wide head and very short sturdy body with pronounced round belly. Strong red cheeks, half-closed uneven eyes and a broad laughing grin. Loose faded olive martial jacket with collar slipping open, tan short loose trousers, ivory wraps, crooked dark sash. Empty large paws held loosely at different heights, knees slightly bent as if swaying. No bottle or other props.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101402
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"4356774a-1b31-41b9-bd45-7a2734eb4a8d\",\n  \"image_id\": \"fe9c9534-f760-5e9b-8fe6-9786fa5d4bc2\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"fe9c9534-f760-5e9b-8fe6-9786fa5d4bc2\",\n  \"job_id\": \"4356774a-1b31-41b9-bd45-7a2734eb4a8d\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/4356774a-1b31-41b9-bd45-7a2734eb4a8d/download\"\n}\nPoll get_image(job_id=\"4356774a-1b31-41b9-bd45-7a2734eb4a8d\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "4356774a-1b31-41b9-bd45-7a2734eb4a8d",
+          "image_id": "fe9c9534-f760-5e9b-8fe6-9786fa5d4bc2",
+          "status": "processing",
+          "source_image_id": "fe9c9534-f760-5e9b-8fe6-9786fa5d4bc2",
+          "job_id": "4356774a-1b31-41b9-bd45-7a2734eb4a8d",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/4356774a-1b31-41b9-bd45-7a2734eb4a8d/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "4356774a-1b31-41b9-bd45-7a2734eb4a8d",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/4356774a-1b31-41b9-bd45-7a2734eb4a8d/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/4356774a-1b31-41b9-bd45-7a2734eb4a8d/download"
+        ],
+        "asset": {
+          "id": "fe9c9534-f760-5e9b-8fe6-9786fa5d4bc2",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: 4356774a-1b31-41b9-bd45-7a2734eb4a8d\njob_id: 4356774a-1b31-41b9-bd45-7a2734eb4a8d\nframes: 1\ntransparent: yes\nasset_id: fe9c9534-f760-5e9b-8fe6-9786fa5d4bc2\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/4356774a-1b31-41b9-bd45-7a2734eb4a8d/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/originals/drunk-02.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/originals/drunk-02.png",
+        "sha256": "af43ae68b6e0fa053d6e5dce2bee3c48b4f4361b2b87904b606a73f02ad72b5d",
+        "width": 64,
+        "height": 64,
+        "byteSize": 4640,
+        "alphaBBox": [
+          5,
+          0,
+          60,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": false
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/frames/drunk-02.png",
+        "sha256": "bd8cc93a6ffc56903b9cd232348ee5dd5b44ac891291eb9f023320609703e90c",
+        "width": 55,
+        "height": 63,
+        "sourceRect": {
+          "x": 5,
+          "y": 0,
+          "width": 55,
+          "height": 63
+        },
+        "pivot": {
+          "x": 27,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/4356774a-1b31-41b9-bd45-7a2734eb4a8d/download",
+        "durationSeconds": 1
+      },
+      "reviewDisposition": "unselected"
+    },
+    {
+      "id": 3,
+      "label": "백발 섞인 떠돌이 술꾼",
+      "seed": 101403,
+      "change": "Design C: older scruffy wandering drunk tiger, gray streaks in unruly cream cheek tufts and bushy brows, red nose, sleepy friendly knowing grin. Worn rust-brown short jacket over loose ivory undershirt, charcoal trousers, frayed sash and simple wraps. Slight slouch; one paw holds a SMALL brown drinking gourd at the hip, other arm hangs loosely. Weathered but cheerful, not frail. Simple big shapes and few cloth patches.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Redesign this same adult tiger martial artist into a clearly recognizable lovable drunken brawler. Preserve the broad tiger face, amber striped fur, cream muzzle and crisp rounded pixel-art shading, but make the drunken character design and pose substantially different, not a tiny recolor. Full body almost front-facing, standing on both feet. The face must read tipsy at native size: reddish nose and cheek blush, heavy drooping brows, sleepy lopsided smiling squint. Adult comedic martial artist, not an infant or evil monster. Keep 64x64 transparent canvas, head, feet and any small prop entirely inside with margin, no background, floor, baked shadow, text or blur.\nDesign C: older scruffy wandering drunk tiger, gray streaks in unruly cream cheek tufts and bushy brows, red nose, sleepy friendly knowing grin. Worn rust-brown short jacket over loose ivory undershirt, charcoal trousers, frayed sash and simple wraps. Slight slouch; one paw holds a SMALL brown drinking gourd at the hip, other arm hangs loosely. Weathered but cheerful, not frail. Simple big shapes and few cloth patches.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101403
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"b4c8bf26-4fef-4653-9971-4a9bb1984954\",\n  \"image_id\": \"77b53b61-d5dc-51e0-90a7-f77c6b1d3f26\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"77b53b61-d5dc-51e0-90a7-f77c6b1d3f26\",\n  \"job_id\": \"b4c8bf26-4fef-4653-9971-4a9bb1984954\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/b4c8bf26-4fef-4653-9971-4a9bb1984954/download\"\n}\nPoll get_image(job_id=\"b4c8bf26-4fef-4653-9971-4a9bb1984954\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "b4c8bf26-4fef-4653-9971-4a9bb1984954",
+          "image_id": "77b53b61-d5dc-51e0-90a7-f77c6b1d3f26",
+          "status": "processing",
+          "source_image_id": "77b53b61-d5dc-51e0-90a7-f77c6b1d3f26",
+          "job_id": "b4c8bf26-4fef-4653-9971-4a9bb1984954",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/b4c8bf26-4fef-4653-9971-4a9bb1984954/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "b4c8bf26-4fef-4653-9971-4a9bb1984954",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/b4c8bf26-4fef-4653-9971-4a9bb1984954/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/b4c8bf26-4fef-4653-9971-4a9bb1984954/download"
+        ],
+        "asset": {
+          "id": "77b53b61-d5dc-51e0-90a7-f77c6b1d3f26",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: b4c8bf26-4fef-4653-9971-4a9bb1984954\njob_id: b4c8bf26-4fef-4653-9971-4a9bb1984954\nframes: 1\ntransparent: yes\nasset_id: 77b53b61-d5dc-51e0-90a7-f77c6b1d3f26\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/b4c8bf26-4fef-4653-9971-4a9bb1984954/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/originals/drunk-03.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/originals/drunk-03.png",
+        "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9",
+        "width": 64,
+        "height": 64,
+        "byteSize": 4201,
+        "alphaBBox": [
+          7,
+          0,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": false
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/frames/drunk-03.png",
+        "sha256": "03f2648ac38f1a8152995322d7628d10ba4486d81d3427ed532adc8d7a9b9ff0",
+        "width": 45,
+        "height": 63,
+        "sourceRect": {
+          "x": 7,
+          "y": 0,
+          "width": 45,
+          "height": 63
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b4c8bf26-4fef-4653-9971-4a9bb1984954/download",
+        "durationSeconds": 1
+      },
+      "reviewDisposition": "liked-as-style-reference"
+    },
+    {
+      "id": 4,
+      "label": "능청스러운 취권가",
+      "seed": 101404,
+      "change": "Design D: mischievous drunk martial artist with an oversized wide flattened head, stubby limbs and a tiny squat torso. Deep rosy cheeks, one eye nearly closed and the other heavy-lidded, a very wide crooked grin. Ivory wrap-front martial top loosely open at the neck, deep navy trousers, broad burgundy sash hanging slightly uneven. Stand in a relaxed leaning pose with soft bent knees and loose empty paws. No props. Exaggerated cheerful tipsiness.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "text",
+        "description": "Redesign this same adult tiger martial artist into a clearly recognizable lovable drunken brawler. Preserve the broad tiger face, amber striped fur, cream muzzle and crisp rounded pixel-art shading, but make the drunken character design and pose substantially different, not a tiny recolor. Full body almost front-facing, standing on both feet. The face must read tipsy at native size: reddish nose and cheek blush, heavy drooping brows, sleepy lopsided smiling squint. Adult comedic martial artist, not an infant or evil monster. Keep 64x64 transparent canvas, head, feet and any small prop entirely inside with margin, no background, floor, baked shadow, text or blur.\nDesign D: mischievous drunk martial artist with an oversized wide flattened head, stubby limbs and a tiny squat torso. Deep rosy cheeks, one eye nearly closed and the other heavy-lidded, a very wide crooked grin. Ivory wrap-front martial top loosely open at the neck, deep navy trousers, broad burgundy sash hanging slightly uneven. Stand in a relaxed leaning pose with soft bent knees and loose empty paws. No props. Exaggerated cheerful tipsiness.",
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101404
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"bf330288-4faa-4090-a5a1-f1579e55c286\",\n  \"image_id\": \"cb0af89c-593f-5556-aad9-411f93d098fb\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"cb0af89c-593f-5556-aad9-411f93d098fb\",\n  \"job_id\": \"bf330288-4faa-4090-a5a1-f1579e55c286\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/bf330288-4faa-4090-a5a1-f1579e55c286/download\"\n}\nPoll get_image(job_id=\"bf330288-4faa-4090-a5a1-f1579e55c286\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "bf330288-4faa-4090-a5a1-f1579e55c286",
+          "image_id": "cb0af89c-593f-5556-aad9-411f93d098fb",
+          "status": "processing",
+          "source_image_id": "cb0af89c-593f-5556-aad9-411f93d098fb",
+          "job_id": "bf330288-4faa-4090-a5a1-f1579e55c286",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/bf330288-4faa-4090-a5a1-f1579e55c286/download"
+        },
+        "isError": false
+      },
+      "completion": {
+        "job_id": "bf330288-4faa-4090-a5a1-f1579e55c286",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/bf330288-4faa-4090-a5a1-f1579e55c286/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/bf330288-4faa-4090-a5a1-f1579e55c286/download"
+        ],
+        "asset": {
+          "id": "cb0af89c-593f-5556-aad9-411f93d098fb",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: bf330288-4faa-4090-a5a1-f1579e55c286\njob_id: bf330288-4faa-4090-a5a1-f1579e55c286\nframes: 1\ntransparent: yes\nasset_id: cb0af89c-593f-5556-aad9-411f93d098fb\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/bf330288-4faa-4090-a5a1-f1579e55c286/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/originals/drunk-04.png",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/originals/drunk-04.png",
+        "sha256": "5b32781b35cf82e9c743853832c7f1a80deec1697e9d59a4e8774c826f201f5f",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3108,
+        "alphaBBox": [
+          7,
+          3,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/frames/drunk-04.png",
+        "sha256": "1ce0972ec7e5fb059f13663a7a504632eb784e1df99f366e3e0eb1fb821d460a",
+        "width": 45,
+        "height": 60,
+        "sourceRect": {
+          "x": 7,
+          "y": 3,
+          "width": 45,
+          "height": 60
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/bf330288-4faa-4090-a5a1-f1579e55c286/download",
+        "durationSeconds": 1
+      },
+      "reviewDisposition": "unselected"
+    }
+  ],
+  "selection": null,
+  "userFeedback": "추가 10개가 대동소이해서 술주정뱅이 이미지가 어울리게 4개 더 요청.",
+  "completedCount": 4,
+  "requests": 4,
+  "retries": 0,
+  "actualCostGenerations": 20,
+  "balanceAfter": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1813\ngenerations_used: 187\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "baseFrame": {
+    "index": 0,
+    "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/base.png",
+    "sha256": "42f414a02c34ebd74010c39ceff8c81010b08720fe688381eb2d5f09d05dfb37",
+    "width": 45,
+    "height": 62,
+    "sourceRect": {
+      "x": 7,
+      "y": 1,
+      "width": 45,
+      "height": 62
+    },
+    "pivot": {
+      "x": 25,
+      "y": 0
+    },
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/e0416efe-9298-4b98-81b3-09915bd580c5/download",
+    "durationSeconds": 1
+  },
+  "followupFeedback": {
+    "text": "이 느낌도 나쁘지 않네. 처음에 괜찮다고 한것과 이거 중간의 느낌이 나오면 좋겠다.",
+    "styleReferenceCandidate": 3,
+    "styleReferenceLocalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/originals/drunk-03.png",
+    "styleReferenceSha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9",
+    "attachmentPixelEqualityVerified": true,
+    "finalSelection": null,
+    "proposedDirection": "처음 고른 이미지의 단정한 체형과 옷차림에 3번의 능청스러운 눈매·웃는 입·흐트러진 볼 털을 섞고, 흰 털과 붉은 코는 줄인 술 좋아하는 중년 격투가.",
+    "proposedDirectionGenerated": false
+  },
+  "review": {
+    "contact": {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/review/contact.png",
+      "sha256": "036cd71547b2a449c534db87440858adecb37b38036e8d56cf3be143b009b8a8",
+      "width": 816,
+      "height": 784
+    },
+    "method": "투명 여백만 크롭, 비교용 정수 3배 확대와 원본 1배. 원본 중앙 가로 피벗과 발 바닥 정렬.",
+    "selection": null,
+    "runtimeVerified": false,
+    "visualInspection": "술에 오른 얼굴과 느슨한 표정이 3차보다 뚜렷함. 1번 술병, 2번 둥근 체형, 3번 나이와 떠돌이 옷차림, 4번 대두 비율로 구분됨.",
+    "notes": "1·2·3번의 불투명 픽셀은 원본 캔버스 상단 y=0에 닿음. 원본을 보존하고 임의 보정이나 추가 재생성은 하지 않음. 최종 디자인·게임 연결은 미완료."
+  }
+}

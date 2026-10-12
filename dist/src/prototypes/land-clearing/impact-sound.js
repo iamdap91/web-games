@@ -1,14 +1,31 @@
 /** 사용자 입력 후에만 오디오를 열고 짧은 타격음을 합성한다. */
 export class ImpactSound {
     context = null;
+    output = null;
+    enabled = true;
+    setEnabled(enabled) {
+        this.enabled = enabled;
+        // 이미 울리는 타격음도 설정 변경과 동시에 음소거한다.
+        if (this.output)
+            this.output.gain.value = Number(enabled);
+    }
     unlock() {
-        this.context ??= new AudioContext();
+        if (!this.enabled)
+            return;
+        if (!this.context) {
+            this.context = new AudioContext();
+            this.output = this.context.createGain();
+            this.output.connect(this.context.destination);
+        }
         if (this.context.state === 'suspended')
             void this.context.resume().catch(() => { });
     }
     play(impact) {
         const context = this.context;
-        if (!context || context.state !== 'running')
+        if (!this.enabled ||
+            !context ||
+            !this.output ||
+            context.state !== 'running')
             return;
         const now = context.currentTime;
         const duration = impact.removed ? 0.22 : 0.11;
@@ -20,7 +37,7 @@ export class ImpactSound {
         gain.gain.setValueAtTime(0.0001, now);
         gain.gain.exponentialRampToValueAtTime(impact.removed ? 0.16 : 0.1, now + 0.004);
         gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
-        oscillator.connect(gain).connect(context.destination);
+        oscillator.connect(gain).connect(this.output);
         oscillator.onended = () => {
             oscillator.disconnect();
             gain.disconnect();
@@ -32,5 +49,6 @@ export class ImpactSound {
         if (this.context)
             void this.context.close().catch(() => { });
         this.context = null;
+        this.output = null;
     }
 }

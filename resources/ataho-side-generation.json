@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-13",
+  "status": "approved-for-walk-trial",
+  "provider": "Codex built-in ImageGen",
+  "usedCli": false,
+  "scope": "승인 비도트 원화의 외형·화풍을 유지한 오른쪽 3/4 측면 기준 그림 한 장과 왼쪽 반전 비교.",
+  "references": [
+    {
+      "role": "identity-costume-proportions-and-nonpixel-style",
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/front-01.png",
+      "sha256": "da5bf277025f825de169cbeddacc070a65717deec963c183b2baaf3f7b3c8412"
+    },
+    {
+      "role": "rightward-standing-direction-only",
+      "localPath": "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-right-04.png",
+      "sha256": "df21cfadf36255c90432898fc6d7aed9539771308bf958da87fe7c3c7be3b6ef"
+    }
+  ],
+  "prompt": "Use case: identity-preserve.\nAsset type: ONE complete full-body non-pixel 2D game character, right-facing idle reference on a genuinely transparent background.\n\nInput image 1 is the authoritative approved Ataho illustration: preserve its exact character identity, head-to-body proportions, costume, palette, hand-painted ink contours and soft painted shading.\nInput image 2 is ONLY a supporting reference for how a usable right-facing game character stands. Do not copy its pixel style, resolution, small details or body proportions.\n\nPrimary request: turn the WHOLE character from image 1 into a clearly SCREEN-RIGHT-facing, mildly three-quarter SIDE view for horizontal walking and combat. The chest, pelvis, knees, feet, muzzle and gaze must all face right. Do not keep the body facing the viewer and merely turn the head. The orientation should be mostly side-on (about 65-75 degrees away from the frontal view), with enough of the nearer cheek, eye and arm visible to read his sleepy personality. His nose projects clearly toward the right. The farther eye and limbs may be partly occluded naturally.\n\nKeep the broad oversized orange tiger head, fluffy ivory cheek/jaw fur, messy forehead tuft, half-lidded middle-aged eyes, calm experienced expression, compact stocky short-limbed body, worn brown open short jacket, crossed ivory robe, brown waist sash, dark cropped trousers, wrist wraps, light ankle wraps, orange tiger paws and striped tail from image 1. Preserve the same body mass and age; no new outfit or redesign.\n\nPose: relaxed neutral standing idle suitable as a walking reference, both feet planted on one level baseline, slight natural stagger, knees comfortably bent, arms relaxed with the nearer hand readable. The striped tail emerges behind the pelvis and curves behind him toward the left. This is one assembled character; no parts sheet or action pose.\n\nStyle and output: the same detailed NON-PIXEL hand-drawn artwork as image 1, smooth continuous contours with varied line width, individually shaped fur tufts, restrained warm painted shading and cloth folds. Same gentle diffuse lighting. Full body including ears, hands, tail and feet visible with transparent margin on every side. No ground shadow, scenery, props, labels, arrows, text, watermark, additional characters or extra poses. Preserve real RGBA transparency.",
+  "output": {
+    "id": "right-01",
+    "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png",
+    "originalHostPath": "/Users/3sam3/.codex/generated_images/01a13059-be38-7ee0-9d70-2887b8042ce6/exec-37c63c86-b85c-460d-9ac2-942317d255ab.png",
+    "sha256": "f429358df77528a614df1e6703582dd13ad08dff7c6af61a17b1b46b944f5285",
+    "width": 1199,
+    "height": 1312,
+    "format": "PNG",
+    "mode": "RGBA",
+    "alphaRange": [0, 255],
+    "visibleBoundsAtAlpha8": [113, 28, 1050, 1283],
+    "previewSourceRect": {
+      "x": 111,
+      "y": 26,
+      "width": 941,
+      "height": 1259
+    },
+    "sourcePixelsModified": false,
+    "previewPath": "src/resources/characters/ataho-hybrid/side.html"
+  },
+  "leftPreview": {
+    "source": "public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png",
+    "method": "CSS scaleX(-1)",
+    "generatedSeparately": false,
+    "notes": "같은 오른쪽 원본을 표시 단계에서 반전하며 PNG는 변경하지 않는다. 의상·꼬리의 반전 외형을 검토하기 위한 시안이다."
+  },
+  "usage": {
+    "builtInGenerations": 1,
+    "PixelLabPaidGenerations": 0,
+    "retries": 0
+  },
+  "review": {
+    "status": "approved-for-walk-trial",
+    "checks": [
+      "몸·골반·코·발이 오른쪽을 향함",
+      "승인 원화의 중장년 얼굴·의상·비도트 화풍 유지",
+      "전신·귀·손·발·꼬리 표시 및 실제 알파 투명 배경 확인"
+    ],
+    "unverified": [
+      "걷기·공격 애니메이션",
+      "반전 그림의 최종 채택",
+      "본게임 통합"
+    ],
+    "authorization": "사용자: 다음 작업 진행해줘. 오른쪽 기준 원화를 걷기 시험 입력으로 사용하며 본게임 최종 채택 승인은 아니다."
+  },
+  "verification": {
+    "checks": "npm run check 통과",
+    "build": "npm run build 통과",
+    "browser": [
+      {
+        "options": {
+          "viewport": {
+            "width": 1366,
+            "height": 768
+          },
+          "deviceScaleFactor": 1
+        },
+        "large": {
+          "portraits": [
+            {
+              "height": 320,
+              "bottom": 660.1875,
+              "transform": "none",
+              "source": "../../../../public/assets/maplestory/ataho-nonpixel-ai/20261012/front-01.png"
+            },
+            {
+              "height": 320,
+              "bottom": 660.1875,
+              "transform": "none",
+              "source": "../../../../public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png"
+            },
+            {
+              "height": 320,
+              "bottom": 660.1875,
+              "transform": "matrix(-1, 0, 0, 1, 0, 0)",
+              "source": "../../../../public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png"
+            }
+          ],
+          "overflow": false
+        },
+        "small": {
+          "portraits": [
+            {
+              "height": 112,
+              "bottom": 660.1875,
+              "transform": "none",
+              "source": "../../../../public/assets/maplestory/ataho-nonpixel-ai/20261012/front-01.png"
+            },
+            {
+              "height": 112,
+              "bottom": 660.1875,
+              "transform": "none",
+              "source": "../../../../public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png"
+            },
+            {
+              "height": 112,
+              "bottom": 660.1875,
+              "transform": "matrix(-1, 0, 0, 1, 0, 0)",
+              "source": "../../../../public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png"
+            }
+          ],
+          "overflow": false
+        },
+        "errors": []
+      },
+      {
+        "options": {
+          "viewport": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 2
+        },
+        "large": {
+          "portraits": [
+            {
+              "height": 320,
+              "bottom": 660.1875,
+              "transform": "none",
+              "source": "../../../../public/assets/maplestory/ataho-nonpixel-ai/20261012/front-01.png"
+            },
+            {
+              "height": 320,
+              "bottom": 660.1875,
+              "transform": "none",
+              "source": "../../../../public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png"
+            },
+            {
+              "height": 320,
+              "bottom": 660.1875,
+              "transform": "matrix(-1, 0, 0, 1, 0, 0)",
+              "source": "../../../../public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png"
+            }
+          ],
+          "overflow": false
+        },
+        "small": {
+          "portraits": [
+            {
+              "height": 112,
+              "bottom": 660.1875,
+              "transform": "none",
+              "source": "../../../../public/assets/maplestory/ataho-nonpixel-ai/20261012/front-01.png"
+            },
+            {
+              "height": 112,
+              "bottom": 660.1875,
+              "transform": "none",
+              "source": "../../../../public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png"
+            },
+            {
+              "height": 112,
+              "bottom": 660.1875,
+              "transform": "matrix(-1, 0, 0, 1, 0, 0)",
+              "source": "../../../../public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png"
+            }
+          ],
+          "overflow": false
+        },
+        "errors": []
+      }
+    ],
+    "alignment": "정면·오른쪽·왼쪽의 표시 높이와 하단 기준이 일치한다.",
+    "input": "마우스로 320px/112px 및 밝은/어두운 배경 전환 확인",
+    "transparency": "원본 PNG RGBA 알파 0~255 확인",
+    "sourcePreservation": "워크트리 PNG SHA-256이 ImageGen 저장 원본과 동일",
+    "mobile": "실기기 모바일 검증은 수행하지 않음"
+  }
+}

@@ -1,0 +1,44 @@
+#motion-notes {
+  color: #64776c;
+  font-size: 13px;
+  line-height: 1.7;
+  min-height: 2em;
+}
+.originals-panel {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #c4d2c4;
+  border-radius: 12px;
+  font-size: 13px;
+}
+.originals-panel summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+#originals {
+  display: grid;
+  gap: 20px;
+}
+#originals article {
+  min-width: 0;
+  padding-top: 8px;
+  border-top: 1px solid #c4d2c4;
+}
+#originals h3 {
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+#originals img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+  background: #dce6d7;
+}
+#originals audio {
+  display: block;
+  max-width: 100%;
+}
+a {
+  color: #254637;
+}

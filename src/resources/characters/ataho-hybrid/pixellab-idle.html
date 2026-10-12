@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="pixellab-idle.css" />
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <link rel="stylesheet" href="embedded.css" />
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-hybrid/lab-tabs.js"
+    ></script>
+    <title>아타호 · PixelLab 비도트 대기 시험</title>
+  </head>
+  <body data-lab-tab="idle" data-motion="idle">
+    <main>
+      <header>
+        <p class="eyebrow">아타호 · 원화에서 움직임으로</p>
+        <h1>PixelLab 대기 동작 시험</h1>
+        <p>승인 원화, 축소한 입력, 생성된 움직임을 같은 크기로 비교합니다.</p>
+        <nav>
+          <a href="pixellab-walk.html">측면 걷기 시험</a>
+          <a href="side.html">좌우 기준 그림</a>
+          <a href="index.html">승인 원화</a
+          ><a href="motion.html">기존 하이브리드 비교</a>
+        </nav>
+      </header>
+      <fieldset id="controls" disabled>
+        <legend>대기 동작 살펴보기</legend>
+        <div class="controls">
+          <button id="pause" type="button">일시정지 · Space</button>
+          <label
+            >표시 크기
+            <select id="size">
+              <option value="game">게임 기준 · 720px 화면</option>
+              <option value="112">소형 비교 · 112px</option>
+              <option value="240" selected>자세히 · 240px</option>
+            </select></label
+          >
+          <label
+            >속도
+            <select id="speed">
+              <option value="1">1배</option>
+              <option value="0.25">0.25배</option>
+            </select></label
+          >
+          <label
+            >배경
+            <select id="background">
+              <option value="light">밝게</option>
+              <option value="dark">어둡게</option>
+            </select></label
+          >
+        </div>
+        <div class="timeline">
+          <label for="timeline">한 장씩 보기</label
+          ><input
+            id="timeline"
+            type="range"
+            min="0"
+            max="8"
+            value="0"
+            step="1"
+          /><output id="status" aria-live="off">그림을 준비 중이에요.</output>
+        </div>
+      </fieldset>
+      <section class="comparison" aria-label="원화와 입력 및 생성 결과 비교">
+        <article>
+          <div class="heading">
+            <h2>승인 원화</h2>
+            <span>원본 디테일</span>
+          </div>
+          <canvas id="original" aria-label="승인된 고해상도 원화"></canvas>
+          <p>선택한 원화 01을 그대로 표시</p>
+        </article>
+        <article>
+          <div class="heading">
+            <h2>생성 입력</h2>
+            <span>256 × 256</span>
+          </div>
+          <canvas
+            id="input"
+            aria-label="PixelLab에 전달한 축소 이미지"
+          ></canvas>
+          <p>원화의 디테일이 축소되면서 얼마나 남는지</p>
+        </article>
+        <article>
+          <div class="heading">
+            <h2>PixelLab 대기</h2>
+            <span id="frame-label">입력 자세</span>
+          </div>
+          <canvas
+            id="generated"
+            aria-label="PixelLab이 생성한 비도트 대기 애니메이션"
+          ></canvas>
+          <p>얼굴·옷·발 위치와 반복 경계를 확인</p>
+        </article>
+      </section>
+      <footer>
+        <p>입력 1장 + 생성 8장 · PixMiniMax · 생성 요청 1회, 1 generation</p>
+        <p>
+          게임 기준 크기는 현재 마을·채집 카메라의 세로 비율을 720px 화면에
+          적용한 높이입니다. 전투 크기는 별도입니다.
+        </p>
+        <p>
+          모든 결과에 같은 위치와 배율을 사용합니다. 생성 중 생긴 크기·발 위치
+          변화는 그대로 보입니다. 이번 결과는 외형·움직임 검토용입니다.
+        </p>
+        <a
+          href="https://www.pixellab.ai/pixellab-api"
+          target="_blank"
+          rel="noopener noreferrer"
+          >PixelLab 공식 기능</a
+        >
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-hybrid/pixellab-motion.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

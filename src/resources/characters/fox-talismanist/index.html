@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+    <title>연묵 · 첫 외형 검토</title>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <p><a href="../yeonmuk/">연묵 8방향 · 모션 뷰어</a></p>
+    <main>
+      <header>
+        <p class="eyebrow">이계취호전 · 첫 동료 외형</p>
+        <h1>연묵, 여우 수인 여성 부적술사</h1>
+        <p class="intro">
+          회백색 털과 남색 여행복, 청록 띠. 아타호 옆에서 같은 세계의 동료로
+          보이는지 확인해 주세요.
+        </p>
+        <span class="badge">전면 도트 후보 01 · 외형 기준 04</span>
+      </header>
+
+      <section class="sprite-review" aria-label="게임용 전면 도트 비교">
+        <h2>게임 크기의 전면 후보</h2>
+        <p class="intro">
+          같은 64×64 캔버스를 원래 크기와 4배 정수 배율로 봅니다. 양발 바닥은
+          y=62입니다.
+        </p>
+        <div class="comparison">
+          <article class="character">
+            <div class="card-heading">
+              <p class="eyebrow">현재 64×64 원본</p>
+              <h2>아타호</h2>
+            </div>
+            <div class="sprite-stage">
+              <figure>
+                <img
+                  class="native-sprite"
+                  src="../../../../public/assets/maplestory/fox-talismanist-ai/concept/ataho-front-reference.png"
+                  alt="아타호 전면 원본 64×64, 원래 크기"
+                  width="64"
+                  height="64"
+                />
+                <figcaption>1배 · 64×64</figcaption>
+              </figure>
+              <figure>
+                <img
+                  class="zoom-sprite"
+                  src="../../../../public/assets/maplestory/fox-talismanist-ai/concept/ataho-front-reference.png"
+                  alt="아타호 전면 원본의 4배 확대 도트"
+                  width="64"
+                  height="64"
+                />
+                <figcaption>4배 · 256×256</figcaption>
+              </figure>
+            </div>
+          </article>
+          <article class="character fox">
+            <div class="card-heading">
+              <p class="eyebrow">04 디자인 기준 · 첫 전면 도트</p>
+              <h2>연묵</h2>
+            </div>
+            <div class="sprite-stage">
+              <figure>
+                <img
+                  class="native-sprite"
+                  src="../../../../public/assets/maplestory/fox-talismanist-ai/runtime/yeonmuk-front-01.png"
+                  alt="연묵 남향 전면 대기 후보 64×64, 원래 크기"
+                  width="64"
+                  height="64"
+                />
+                <figcaption>1배 · 64×64</figcaption>
+              </figure>
+              <figure>
+                <img
+                  class="zoom-sprite"
+                  src="../../../../public/assets/maplestory/fox-talismanist-ai/runtime/yeonmuk-front-01.png"
+                  alt="연묵 전면 대기 후보의 4배 확대 도트"
+                  width="64"
+                  height="64"
+                />
+                <figcaption>4배 · 256×256</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+        <p class="scale-note">
+          흰 얼굴·청록 띠·부적·꼬리가 읽히는 첫 후보입니다. JS 내보내기에서
+          알파를 0/255로, 팔레트를 63색과 투명색 한 칸으로 정리했습니다.
+        </p>
+      </section>
+      <h2 class="concept-heading" id="appearance-comparison">
+        외형 기준 컨셉 비교
+      </h2>
+      <section
+        class="comparison"
+        aria-label="아타호와 연묵의 고해상도 컨셉 비교"
+      >
+        <article class="character">
+          <div class="card-heading">
+            <p class="eyebrow">첨부 도트 기준 · 얼굴 연령감 수정안04</p>
+            <h2>아타호</h2>
+          </div>
+          <div class="image-stage">
+            <img
+              src="../../../../public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-04.png"
+              alt="호랑이 수인 격투가 아타호의 정면 전신 컨셉04. 03의 둥근 배와 편안한 자세를 유지하고 눈가·이마의 주름과 짧은 회색 눈썹·관자놀이 털로 얼굴의 연령감을 높인 모습. 따뜻한 작은 웃음과 허리 술병"
+              width="1098"
+              height="1433"
+            />
+          </div>
+          <div class="card-description">
+            <p>둥근 나이살 · 세월이 읽히는 얼굴 · 편안한 미소</p>
+            <p class="size">비교용 컨셉04 · 1098 × 1433 PNG</p>
+          </div>
+        </article>
+        <article class="character fox">
+          <div class="card-heading">
+            <p class="eyebrow">승인한 외형 기준04</p>
+            <h2>연묵</h2>
+          </div>
+          <div class="image-stage">
+            <img
+              src="../../../../public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-04.png"
+              alt="젊은 성인 여성 여우 수인 부적술사 연묵의 수정 후보 04. 02의 얼굴과 머리 모양을 바탕으로 여행복 위 상체·허리·골반의 자연스러운 굴곡을 다듬은 모습. 큰 귀와 풍성한 꼬리, 남색 여행복과 청록 띠, 붉은 문양의 황토색 부적, 허리 주머니와 붓"
+              width="1098"
+              height="1433"
+            />
+          </div>
+          <div class="card-description">
+            <p>회백색 털 · 남색 옷 · 날렵한 부적술사</p>
+            <p class="size">승인 컨셉04 · 1098 × 1433 PNG</p>
+          </div>
+        </article>
+      </section>
+      <p class="scale-note">
+        현재 아타호의 도트를 연묵04의 그림체로 확장한 컨셉입니다. 두 컨셉을 같은
+        높이의 카드에 표시하며, 게임 속 키·표시 배율을 뜻하지 않습니다.
+      </p>
+      <section class="review-notes" aria-label="초안 검토 범위">
+        <h2>외형부터 확인해요</h2>
+        <p>
+          연묵은 젊은 성인 여성 여우 수인 부적술사입니다. 자신감 있는 표정, 큰
+          귀·꼬리, 여행복과 부적술사 소품을 먼저 검토합니다.
+        </p>
+        <p>
+          연묵은 03보다 선호한 02의 얼굴·머리 모양을 기준으로, 여행복의
+          핏·주름과 단계 명암으로 상체·허리·골반의 굴곡만 조금 더 강조했습니다.
+          아타호 컨셉04는 03의 둥근 배와 느슨한 허리띠, 편안한 어깨·손, 따뜻한
+          작은 웃음과 은근한 술기운을 기준으로 얼굴의 연령감만 높였습니다.
+          눈꺼풀과 눈 밑, 눈꼬리·이마의 주름과 짧은 눈썹·관자놀이·이마 털의
+          회색으로 세월을 표현하고, 현재 복장과 허리 술병을 유지했습니다. 게임용
+          64×64 도트는 위에서, 생성한 이동·전투 모션은 상단의 연묵 모션 뷰어에서
+          별도로 확인할 수 있습니다.
+        </p>
+        <p class="provenance">
+          아타호 컨셉01·02·03·04: 내장 생성 각 1회 · PixelLab 사용 없음.
+          연묵01~04와 게임용 전면 도트, 각 생성 원본을 함께 보존합니다.
+        </p>
+      </section>
+      <footer>
+        <a
+          href="../../../../public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-04.png"
+          >아타호 최신 컨셉04 원본 PNG 보기</a
+        >
+        <a
+          href="../../../../public/assets/maplestory/fox-talismanist-ai/concept/references/ataho-user-reference-02.png"
+          >02~04 생성에 사용한 첨부 도트 보기</a
+        >
+        <a
+          href="../../../../public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-03.png"
+          >아타호 이전 컨셉03 원본 PNG 보기</a
+        >
+        <a
+          href="../../../../public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-02.png"
+          >아타호 이전 컨셉02 원본 PNG 보기</a
+        >
+        <a
+          href="../../../../public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-01.png"
+          >아타호 이전 컨셉01 원본 PNG 보기</a
+        >
+        <a href="../../../../resources/ataho-concept.json"
+          >아타호 컨셉 프롬프트와 기록</a
+        >
+        <a
+          href="../../../../public/assets/maplestory/fox-talismanist-ai/review/front-01/yeonmuk-front-01-4x.png"
+          >전면 도트 4배 PNG 보기</a
+        >
+        <a
+          href="../../../../public/assets/maplestory/fox-talismanist-ai/runtime/yeonmuk-front-01.png"
+          >전면 도트 01 PNG 보기</a
+        >
+        <a
+          href="../../../../public/assets/maplestory/fox-talismanist-ai/originals/yeonmuk-front-01-generated.png"
+          >전면 생성 원본 보기</a
+        >
+        <a
+          href="../../../../public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-03.png"
+          >이전안 03 원본 PNG 보기</a
+        >
+        <a
+          href="../../../../public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-02.png"
+          >이전안 02 원본 PNG 보기</a
+        >
+        <a
+          href="../../../../public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-01.png"
+          >이전안 01 원본 PNG 보기</a
+        >
+        <a
+          href="../../../../public/assets/maplestory/fox-talismanist-ai/concept/yeonmuk-04.png"
+          >수정 후보 04 원본 PNG 보기</a
+        >
+        <a href="../../../../resources/fox-talismanist-concept.json"
+          >최초·편집 프롬프트와 기록</a
+        >
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

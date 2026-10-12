@@ -1,0 +1,2998 @@
+{
+  "id": "copper-scorpion",
+  "name": "동빛전갈",
+  "theme": "ridge",
+  "role": "rusher",
+  "appearance": "Rust-copper scorpion with narrow body, compact pincers and one clearly arched segmented tail, pale stone joint accents.",
+  "motions": {
+    "stand": "Facing left, compact pincers open and close in turn, tail stinger tilts forward and back along the single arched segmented tail, small legs flex, return to original ready pose.",
+    "move": "Facing left, quick coordinated alternating leg cycle in place, compact pincers held ahead and single arched segmented tail counterbalances with a small articulated sway. No extra tails.",
+    "attack1": "Facing left, draw the single segmented tail back and up in a clear wind-up, then whip the stinger in a forward downward arc over the body toward left, stop at a clear low strike and retract the tail to the original arch. Pincers stay compact.",
+    "hit1": "Facing left, both pincers shield the head and front legs bend from impact, single tail curls close over the back defensively, recover to ready arch.",
+    "die1": "Facing left, narrow body sinks and legs fold under, pincers relax and the single segmented tail unarches onto the ground behind the body, finish motionless, no dismemberment."
+  },
+  "assetId": "ai/monster-copper-scorpion",
+  "localRoot": "public/assets/maplestory/monster-expansion/copper-scorpion",
+  "attempts": [
+    {
+      "motion": "original",
+      "attempt": 1,
+      "key": "monster-a-copper-scorpion-original-01",
+      "jobId": "d57df53c-4e2e-406d-a546-3a2c025e3ae1",
+      "balanceBefore": 524,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Rust-copper scorpion with narrow body, compact pincers and one clearly arched segmented tail, pale stone joint accents. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 614014,
+        "text_guidance_scale": 8
+      },
+      "queueResponse": "id: d57df53c-4e2e-406d-a546-3a2c025e3ae1\njob_id: d57df53c-4e2e-406d-a546-3a2c025e3ae1\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Rust-copper scorpion with narrow body, compact pincers and one clearly arched segmented tail, pale stone joint accents. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: 1a15b026-9d18-58f6-a339-917618f746a7\nasset_status: pending (saved when generation completes)\nseed: 614014\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d57df53c-4e2e-406d-a546-3a2c025e3ae1\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: d57df53c-4e2e-406d-a546-3a2c025e3ae1\njob_id: d57df53c-4e2e-406d-a546-3a2c025e3ae1\nframes: 1\ntransparent: yes\nasset_id: 1a15b026-9d18-58f6-a339-917618f746a7\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download",
+      "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+      "sha256": "325d116ca3df79c2bbdbcf9acfd30fc5e694083d39b4c1355b4aeedc5b0fdfb5",
+      "byteSize": 2399,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 9,
+        "y": 9,
+        "width": 48,
+        "height": 45
+      },
+      "visiblePixels": 858,
+      "paletteSize": 25,
+      "chargedGenerations": 1,
+      "nativeFacing": "left",
+      "selection": "accepted after silhouette / anatomy / native alpha review"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-copper-scorpion-stand-01",
+      "jobId": "9df6d571-b85f-4c65-9cd1-69214c0c691f",
+      "balanceBefore": 589,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 626301,
+        "action": "Facing left, compact pincers open and close in turn, tail stinger tilts forward and back along the single arched segmented tail, small legs flex, return to original ready pose. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download"
+      },
+      "queueResponse": "id: 9df6d571-b85f-4c65-9cd1-69214c0c691f\njob_id: 9df6d571-b85f-4c65-9cd1-69214c0c691f\naction: Facing left, compact pincers open and close in turn, tail stinger tilts forward and back along the single arched segmented tail, small legs flex, return to original ready pose. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626301\nasset_id: 74917656-d1d2-5bf3-9dcb-ef3ebb5be41e\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"9df6d571-b85f-4c65-9cd1-69214c0c691f\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 9df6d571-b85f-4c65-9cd1-69214c0c691f\njob_id: 9df6d571-b85f-4c65-9cd1-69214c0c691f\nframes: 5\ntransparent: yes\nasset_id: 74917656-d1d2-5bf3-9dcb-ef3ebb5be41e\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+        "sha256": "325d116ca3df79c2bbdbcf9acfd30fc5e694083d39b4c1355b4aeedc5b0fdfb5",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 20,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/00.png",
+          "sourceSha256": "899dc7e8b5033840dab7c88d5b3fbc1edea5b0e250572ee890fc26a09ccb1074",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 858,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/01.png",
+          "sourceSha256": "1078de0e7429ea50c097c9a063c28aac661851356134cc8963c589d0072e7a6d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 43
+          },
+          "visiblePixels": 851,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/02.png",
+          "sourceSha256": "3b84d2fb5b783ac42d7b9f91e95ed8e4a3084323f8ecec53969893d43c85439a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 48,
+            "height": 43
+          },
+          "visiblePixels": 846,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/03.png",
+          "sourceSha256": "beb03a490c8c142225cb137213bac44ff84bbf4d44dc2bf751cb2753b3dff6e4",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 844,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/04.png",
+          "sourceSha256": "8599afa8d30d81e896b5762f5a00201647fac6bd8e83cebf4909cff1da6c4ce7",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 852,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/copper-scorpion/review/stand-9df6d571-b85f-4c65-9cd1-69214c0c691f.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/00.png",
+          "sha256": "1078de0e7429ea50c097c9a063c28aac661851356134cc8963c589d0072e7a6d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/01.png",
+          "sourceSha256": "1078de0e7429ea50c097c9a063c28aac661851356134cc8963c589d0072e7a6d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/01.png",
+          "sha256": "3b84d2fb5b783ac42d7b9f91e95ed8e4a3084323f8ecec53969893d43c85439a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/02.png",
+          "sourceSha256": "3b84d2fb5b783ac42d7b9f91e95ed8e4a3084323f8ecec53969893d43c85439a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/02.png",
+          "sha256": "beb03a490c8c142225cb137213bac44ff84bbf4d44dc2bf751cb2753b3dff6e4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/03.png",
+          "sourceSha256": "beb03a490c8c142225cb137213bac44ff84bbf4d44dc2bf751cb2753b3dff6e4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/03.png",
+          "sha256": "8599afa8d30d81e896b5762f5a00201647fac6bd8e83cebf4909cff1da6c4ce7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/04.png",
+          "sourceSha256": "8599afa8d30d81e896b5762f5a00201647fac6bd8e83cebf4909cff1da6c4ce7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 좌향 두 집게와 한 개 꼬리의 마디가 각각 움직이는 실제 대기. 몸과 꼬리의 형태 유지."
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "monster-a-copper-scorpion-move-01",
+      "jobId": "d1bfb99c-a0a4-4d07-8afc-766ab4448a92",
+      "balanceBefore": 610,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626302,
+        "action": "Facing left, quick coordinated alternating leg cycle in place, compact pincers held ahead and single arched segmented tail counterbalances with a small articulated sway. No extra tails. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download"
+      },
+      "queueResponse": "id: d1bfb99c-a0a4-4d07-8afc-766ab4448a92\njob_id: d1bfb99c-a0a4-4d07-8afc-766ab4448a92\naction: Facing left, quick coordinated alternating leg cycle in place, compact pincers held ahead and single arched segmented tail counterbalances with a small articulated sway. No extra tails. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626302\nasset_id: fe23754f-3e18-5d89-9f7f-1758a7ebe515\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d1bfb99c-a0a4-4d07-8afc-766ab4448a92\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: d1bfb99c-a0a4-4d07-8afc-766ab4448a92\njob_id: d1bfb99c-a0a4-4d07-8afc-766ab4448a92\nframes: 9\ntransparent: yes\nasset_id: fe23754f-3e18-5d89-9f7f-1758a7ebe515\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+        "sha256": "325d116ca3df79c2bbdbcf9acfd30fc5e694083d39b4c1355b4aeedc5b0fdfb5",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 31,
+        "alphaDifferences": 10,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/00.png",
+          "sourceSha256": "8974521b644e64fa51360723510c62a3b2533357e5dc1165344be59b268c7af2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 850,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/01.png",
+          "sourceSha256": "e739fcea7c91a75848d6b2f642d41b16bff503951da477b172d3f4b01625e96c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 47,
+            "height": 46
+          },
+          "visiblePixels": 828,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/02.png",
+          "sourceSha256": "386f47c60ef99f81005fd879e6ace84fb7dc7d200e036b9f268ef8a68d6b6ac6",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 10,
+            "width": 47,
+            "height": 45
+          },
+          "visiblePixels": 843,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/03.png",
+          "sourceSha256": "72a481960b8e54fdb868b017f30062a88f009de66fa98ef3c06debf5c9496768",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 47,
+            "height": 43
+          },
+          "visiblePixels": 832,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/04.png",
+          "sourceSha256": "90bcd7f67ef42bd27016d067e64bb28f6e8ebb1035e58a0560a21fae815eadd5",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 11,
+            "width": 47,
+            "height": 41
+          },
+          "visiblePixels": 825,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/05.png",
+          "sourceSha256": "8253a3519705a91a8e9244d33406914cdedb715854a6182cc71e5f58dae06f06",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 48,
+            "height": 43
+          },
+          "visiblePixels": 842,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/06.png",
+          "sourceSha256": "11e07328230872885596e17002e3d515c9364af69f1c76da9102d4eeb839e9cf",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 9,
+            "width": 48,
+            "height": 46
+          },
+          "visiblePixels": 871,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/07.png",
+          "sourceSha256": "4d00a4924d7d7ea3eb820a9eac1f61e4876a69ddac03efbb7b807b6086652baf",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 9,
+            "width": 49,
+            "height": 46
+          },
+          "visiblePixels": 868,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/08.png",
+          "sourceSha256": "23f87346c90c5d327fc56296f6491bd80b3fb64c276fc21901efc59b94906b62",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 856,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/copper-scorpion/review/move-d1bfb99c-a0a4-4d07-8afc-766ab4448a92.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/00.png",
+          "sha256": "e739fcea7c91a75848d6b2f642d41b16bff503951da477b172d3f4b01625e96c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/01.png",
+          "sourceSha256": "e739fcea7c91a75848d6b2f642d41b16bff503951da477b172d3f4b01625e96c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/01.png",
+          "sha256": "386f47c60ef99f81005fd879e6ace84fb7dc7d200e036b9f268ef8a68d6b6ac6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/02.png",
+          "sourceSha256": "386f47c60ef99f81005fd879e6ace84fb7dc7d200e036b9f268ef8a68d6b6ac6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/02.png",
+          "sha256": "72a481960b8e54fdb868b017f30062a88f009de66fa98ef3c06debf5c9496768",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/03.png",
+          "sourceSha256": "72a481960b8e54fdb868b017f30062a88f009de66fa98ef3c06debf5c9496768",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/03.png",
+          "sha256": "90bcd7f67ef42bd27016d067e64bb28f6e8ebb1035e58a0560a21fae815eadd5",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/04.png",
+          "sourceSha256": "90bcd7f67ef42bd27016d067e64bb28f6e8ebb1035e58a0560a21fae815eadd5",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/04.png",
+          "sha256": "8253a3519705a91a8e9244d33406914cdedb715854a6182cc71e5f58dae06f06",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/05.png",
+          "sourceSha256": "8253a3519705a91a8e9244d33406914cdedb715854a6182cc71e5f58dae06f06",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/05.png",
+          "sha256": "11e07328230872885596e17002e3d515c9364af69f1c76da9102d4eeb839e9cf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/06.png",
+          "sourceSha256": "11e07328230872885596e17002e3d515c9364af69f1c76da9102d4eeb839e9cf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/06.png",
+          "sha256": "4d00a4924d7d7ea3eb820a9eac1f61e4876a69ddac03efbb7b807b6086652baf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/07.png",
+          "sourceSha256": "4d00a4924d7d7ea3eb820a9eac1f61e4876a69ddac03efbb7b807b6086652baf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/07.png",
+          "sha256": "23f87346c90c5d327fc56296f6491bd80b3fb64c276fc21901efc59b94906b62",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/08.png",
+          "sourceSha256": "23f87346c90c5d327fc56296f6491bd80b3fb64c276fc21901efc59b94906b62",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 좌향 작은 다리가 교대로 디디며 집게와 한 개 마디 꼬리가 서로 균형을 잡는 실제 이동."
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "monster-a-copper-scorpion-attack1-01",
+      "jobId": "6293e070-d53c-46d9-97a6-2f614dbbe04c",
+      "balanceBefore": 631,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626303,
+        "action": "Facing left, draw the single segmented tail back and up in a clear wind-up, then whip the stinger in a forward downward arc over the body toward left, stop at a clear low strike and retract the tail to the original arch. Pincers stay compact. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download"
+      },
+      "queueResponse": "id: 6293e070-d53c-46d9-97a6-2f614dbbe04c\njob_id: 6293e070-d53c-46d9-97a6-2f614dbbe04c\naction: Facing left, draw the single segmented tail back and up in a clear wind-up, then whip the stinger in a forward downward arc over the body toward left, stop at a clear low strike and retract the tail to the original arch. Pincers stay compact. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626303\nasset_id: 2f8c91ee-ca93-53e6-8687-7121108dd549\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"6293e070-d53c-46d9-97a6-2f614dbbe04c\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 6293e070-d53c-46d9-97a6-2f614dbbe04c\njob_id: 6293e070-d53c-46d9-97a6-2f614dbbe04c\nframes: 9\ntransparent: yes\nasset_id: 2f8c91ee-ca93-53e6-8687-7121108dd549\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+        "sha256": "325d116ca3df79c2bbdbcf9acfd30fc5e694083d39b4c1355b4aeedc5b0fdfb5",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 10,
+        "alphaDifferences": 3,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/00.png",
+          "sourceSha256": "18796ffac2b3760bcdaee64aed641c918c01008187831319c9287e9461e2a9f3",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 855,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/01.png",
+          "sourceSha256": "57f9e4d2d5c48f86e6718a72ecb2d93a88fd0600307c6ade8ef8dd2cda43d3bf",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 47,
+            "height": 45
+          },
+          "visiblePixels": 837,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/02.png",
+          "sourceSha256": "b779917903bf29a44312bf49b44d70c283a9bc0443e80689ae65e3246b1b4b88",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 9,
+            "width": 45,
+            "height": 44
+          },
+          "visiblePixels": 841,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/03.png",
+          "sourceSha256": "369fd3887f70ab64c621381e95d96c9b81d17e4b61e857a0f0dfd79c00ecd5e4",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 10,
+            "width": 44,
+            "height": 42
+          },
+          "visiblePixels": 824,
+          "colors": 34,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/04.png",
+          "sourceSha256": "9f83ff7b0ee81b5d657646a45789ccb37e0ba8c25d8675595e564f435f4ede2c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 9,
+            "width": 43,
+            "height": 41
+          },
+          "visiblePixels": 779,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/05.png",
+          "sourceSha256": "b93d636bfaebc57ab28ab79bef5048abd08ee6e4658834772aff01ee07a62924",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 9,
+            "width": 43,
+            "height": 41
+          },
+          "visiblePixels": 782,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/06.png",
+          "sourceSha256": "db0cd54580beed39ddcdd2fbe1ea75e5f60b47394da47bd9b926e66f74b78b0e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 9,
+            "width": 45,
+            "height": 42
+          },
+          "visiblePixels": 826,
+          "colors": 24,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/07.png",
+          "sourceSha256": "9e269d5804a16755da747b49fd4415acc0676ecc9ca90cb1cd8eec92fb1eb601",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 9,
+            "width": 46,
+            "height": 44
+          },
+          "visiblePixels": 828,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/08.png",
+          "sourceSha256": "124a22c55f81dce50bbf92a3dc9ba3a81974fc8a1d86be1123da36712a181f44",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 858,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/copper-scorpion/review/attack1-6293e070-d53c-46d9-97a6-2f614dbbe04c.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/00.png",
+          "sha256": "57f9e4d2d5c48f86e6718a72ecb2d93a88fd0600307c6ade8ef8dd2cda43d3bf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/01.png",
+          "sourceSha256": "57f9e4d2d5c48f86e6718a72ecb2d93a88fd0600307c6ade8ef8dd2cda43d3bf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/01.png",
+          "sha256": "b779917903bf29a44312bf49b44d70c283a9bc0443e80689ae65e3246b1b4b88",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/02.png",
+          "sourceSha256": "b779917903bf29a44312bf49b44d70c283a9bc0443e80689ae65e3246b1b4b88",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/02.png",
+          "sha256": "369fd3887f70ab64c621381e95d96c9b81d17e4b61e857a0f0dfd79c00ecd5e4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/03.png",
+          "sourceSha256": "369fd3887f70ab64c621381e95d96c9b81d17e4b61e857a0f0dfd79c00ecd5e4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/03.png",
+          "sha256": "9f83ff7b0ee81b5d657646a45789ccb37e0ba8c25d8675595e564f435f4ede2c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/04.png",
+          "sourceSha256": "9f83ff7b0ee81b5d657646a45789ccb37e0ba8c25d8675595e564f435f4ede2c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/04.png",
+          "sha256": "b93d636bfaebc57ab28ab79bef5048abd08ee6e4658834772aff01ee07a62924",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/05.png",
+          "sourceSha256": "b93d636bfaebc57ab28ab79bef5048abd08ee6e4658834772aff01ee07a62924",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/05.png",
+          "sha256": "db0cd54580beed39ddcdd2fbe1ea75e5f60b47394da47bd9b926e66f74b78b0e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/06.png",
+          "sourceSha256": "db0cd54580beed39ddcdd2fbe1ea75e5f60b47394da47bd9b926e66f74b78b0e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/06.png",
+          "sha256": "9e269d5804a16755da747b49fd4415acc0676ecc9ca90cb1cd8eec92fb1eb601",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/07.png",
+          "sourceSha256": "9e269d5804a16755da747b49fd4415acc0676ecc9ca90cb1cd8eec92fb1eb601",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/07.png",
+          "sha256": "124a22c55f81dce50bbf92a3dc9ba3a81974fc8a1d86be1123da36712a181f44",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/08.png",
+          "sourceSha256": "124a22c55f81dce50bbf92a3dc9ba3a81974fc8a1d86be1123da36712a181f44",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 몸과 꼬리가 뒤로 준비한 뒤 앞의 두 집게를 닫아 찌르는 실제 공격. 4번의 가장 앞으로 나온 닫힌 집게를 접촉으로 선택.",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625,
+      "contactReason": "좌향 몸과 꼬리가 뒤로 준비한 뒤 앞의 두 집게를 닫아 찌르는 실제 공격. 4번의 가장 앞으로 나온 닫힌 집게를 접촉으로 선택."
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "monster-a-copper-scorpion-hit1-01",
+      "jobId": "e2765130-bb56-4c74-bc06-b594aeaedfa9",
+      "balanceBefore": 683,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 626304,
+        "action": "Facing left, both pincers shield the head and front legs bend from impact, single tail curls close over the back defensively, recover to ready arch. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download"
+      },
+      "queueResponse": "id: e2765130-bb56-4c74-bc06-b594aeaedfa9\njob_id: e2765130-bb56-4c74-bc06-b594aeaedfa9\naction: Facing left, both pincers shield the head and front legs bend from impact, single tail curls close over the back defensively, recover to ready arch. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 626304\nasset_id: e35243c0-eb91-58ef-8a75-982ca482ec86\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e2765130-bb56-4c74-bc06-b594aeaedfa9\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: e2765130-bb56-4c74-bc06-b594aeaedfa9\njob_id: e2765130-bb56-4c74-bc06-b594aeaedfa9\nframes: 5\ntransparent: yes\nasset_id: e35243c0-eb91-58ef-8a75-982ca482ec86\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+        "sha256": "325d116ca3df79c2bbdbcf9acfd30fc5e694083d39b4c1355b4aeedc5b0fdfb5",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 29,
+        "alphaDifferences": 6,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/00.png",
+          "sourceSha256": "0b9c9e3d4af95c0fb616ce10c3ce15befecb9252a0395a8b181ae08104ab183c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 852,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/01.png",
+          "sourceSha256": "60f1e294701b63dc98f868495dbb4c549c1f1504b44ec859b9d688b06ea0bc13",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 8,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 834,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/02.png",
+          "sourceSha256": "4f0f0cc63d33cd98ab037f6686c39d88d08f64015ee2dc289481908381f5c17d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 9,
+            "width": 43,
+            "height": 42
+          },
+          "visiblePixels": 818,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/03.png",
+          "sourceSha256": "ad3a6d48c76506a76b6f3c294b33529deb691451e4c77126403203d687cf7622",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 11,
+            "y": 10,
+            "width": 45,
+            "height": 42
+          },
+          "visiblePixels": 822,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/04.png",
+          "sourceSha256": "753854e0767df2fa5a6cd4735d9e54d41fccc8af7d83c6527d092e53750d4f33",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 850,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/copper-scorpion/review/hit1-e2765130-bb56-4c74-bc06-b594aeaedfa9.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/00.png",
+          "sha256": "60f1e294701b63dc98f868495dbb4c549c1f1504b44ec859b9d688b06ea0bc13",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/01.png",
+          "sourceSha256": "60f1e294701b63dc98f868495dbb4c549c1f1504b44ec859b9d688b06ea0bc13",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/01.png",
+          "sha256": "4f0f0cc63d33cd98ab037f6686c39d88d08f64015ee2dc289481908381f5c17d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/02.png",
+          "sourceSha256": "4f0f0cc63d33cd98ab037f6686c39d88d08f64015ee2dc289481908381f5c17d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/02.png",
+          "sha256": "ad3a6d48c76506a76b6f3c294b33529deb691451e4c77126403203d687cf7622",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/03.png",
+          "sourceSha256": "ad3a6d48c76506a76b6f3c294b33529deb691451e4c77126403203d687cf7622",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/03.png",
+          "sha256": "753854e0767df2fa5a6cd4735d9e54d41fccc8af7d83c6527d092e53750d4f33",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/04.png",
+          "sourceSha256": "753854e0767df2fa5a6cd4735d9e54d41fccc8af7d83c6527d092e53750d4f33",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 집게와 다리를 모아 움츠리고 한 꼬리의 마디가 함께 접혔다 돌아오는 실제 피격."
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "monster-a-copper-scorpion-die1-01",
+      "jobId": "4a7c71a3-5b21-4e49-a37e-7369e1fb668c",
+      "balanceBefore": 705,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 626305,
+        "action": "Facing left, narrow body sinks and legs fold under, pincers relax and the single segmented tail unarches onto the ground behind the body, finish motionless, no dismemberment. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes."
+      },
+      "queueResponse": "id: 4a7c71a3-5b21-4e49-a37e-7369e1fb668c\njob_id: 4a7c71a3-5b21-4e49-a37e-7369e1fb668c\naction: Facing left, narrow body sinks and legs fold under, pincers relax and the single segmented tail unarches onto the ground behind the body, finish motionless, no dismemberment. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 626305\nasset_id: 392bd806-b8a2-5578-9dd2-3740f393780a\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"4a7c71a3-5b21-4e49-a37e-7369e1fb668c\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 4a7c71a3-5b21-4e49-a37e-7369e1fb668c\njob_id: 4a7c71a3-5b21-4e49-a37e-7369e1fb668c\nframes: 9\ntransparent: yes\nasset_id: 392bd806-b8a2-5578-9dd2-3740f393780a\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+        "sha256": "325d116ca3df79c2bbdbcf9acfd30fc5e694083d39b4c1355b4aeedc5b0fdfb5",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 134,
+        "alphaDifferences": 7,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/00.png",
+          "sourceSha256": "28f17ce11dd2ff1d3ea8e551c741f2f02fc6daedd8ca6654ed2b06b77f836d47",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 851,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/01.png",
+          "sourceSha256": "5da059977c04dc9eacb6f7c02346781a48ed285775725c02b28171d4b89a1c1c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 9,
+            "width": 51,
+            "height": 45
+          },
+          "visiblePixels": 823,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/02.png",
+          "sourceSha256": "bc1cf701eef6cb62359b80a11a13f1593f7f80bc3d5f922281118146715bc31a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 52,
+            "height": 43
+          },
+          "visiblePixels": 818,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/03.png",
+          "sourceSha256": "be392418d36b178071ae89a131644739fad2887758de7f75a76e71e80165a458",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 52,
+            "height": 43
+          },
+          "visiblePixels": 827,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/04.png",
+          "sourceSha256": "a8b094329bc0ae2b094e5b82d30333272b2115e33dc6a55adecb7c7c781aef5a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 51,
+            "height": 44
+          },
+          "visiblePixels": 816,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/05.png",
+          "sourceSha256": "8da8ee31d3935f783340dccf677e3a41cb4d52814803fcc50caa60f2deffebfb",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 50,
+            "height": 45
+          },
+          "visiblePixels": 819,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/06.png",
+          "sourceSha256": "d4abfdbba978906f29626823bac67469191dfda55b5ad02dfc2d736ad481611c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 50,
+            "height": 45
+          },
+          "visiblePixels": 827,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/07.png",
+          "sourceSha256": "6a0be748192b1611395aff4e4e8bc366e361e7df28b3acb7d6309576a230003c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 50,
+            "height": 45
+          },
+          "visiblePixels": 839,
+          "colors": 26,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/08.png",
+          "sourceSha256": "9ed1fdc8e0204ad8121b7f3e87bcd84083e423b7e0f5df5adc1ff8a8d5a1f5f5",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 10,
+            "width": 49,
+            "height": 44
+          },
+          "visiblePixels": 838,
+          "colors": 25,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/copper-scorpion/review/die1-4a7c71a3-5b21-4e49-a37e-7369e1fb668c.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/00.png",
+          "sha256": "5da059977c04dc9eacb6f7c02346781a48ed285775725c02b28171d4b89a1c1c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/01.png",
+          "sourceSha256": "5da059977c04dc9eacb6f7c02346781a48ed285775725c02b28171d4b89a1c1c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/01.png",
+          "sha256": "bc1cf701eef6cb62359b80a11a13f1593f7f80bc3d5f922281118146715bc31a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/02.png",
+          "sourceSha256": "bc1cf701eef6cb62359b80a11a13f1593f7f80bc3d5f922281118146715bc31a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/02.png",
+          "sha256": "be392418d36b178071ae89a131644739fad2887758de7f75a76e71e80165a458",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/03.png",
+          "sourceSha256": "be392418d36b178071ae89a131644739fad2887758de7f75a76e71e80165a458",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/03.png",
+          "sha256": "a8b094329bc0ae2b094e5b82d30333272b2115e33dc6a55adecb7c7c781aef5a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/04.png",
+          "sourceSha256": "a8b094329bc0ae2b094e5b82d30333272b2115e33dc6a55adecb7c7c781aef5a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/04.png",
+          "sha256": "8da8ee31d3935f783340dccf677e3a41cb4d52814803fcc50caa60f2deffebfb",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/05.png",
+          "sourceSha256": "8da8ee31d3935f783340dccf677e3a41cb4d52814803fcc50caa60f2deffebfb",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/05.png",
+          "sha256": "d4abfdbba978906f29626823bac67469191dfda55b5ad02dfc2d736ad481611c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/06.png",
+          "sourceSha256": "d4abfdbba978906f29626823bac67469191dfda55b5ad02dfc2d736ad481611c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/06.png",
+          "sha256": "6a0be748192b1611395aff4e4e8bc366e361e7df28b3acb7d6309576a230003c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/07.png",
+          "sourceSha256": "6a0be748192b1611395aff4e4e8bc366e361e7df28b3acb7d6309576a230003c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/07.png",
+          "sha256": "9ed1fdc8e0204ad8121b7f3e87bcd84083e423b7e0f5df5adc1ff8a8d5a1f5f5",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/4a7c71a3-5b21-4e49-a37e-7369e1fb668c/08.png",
+          "sourceSha256": "9ed1fdc8e0204ad8121b7f3e87bcd84083e423b7e0f5df5adc1ff8a8d5a1f5f5",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "rejected: final pose remains standing / ready, replace with a pinned overturned KO"
+    },
+    {
+      "motion": "die1",
+      "attempt": 2,
+      "key": "monster-a-copper-scorpion-die1-02",
+      "jobId": "9cf51921-8f1d-43f8-978e-d905a523433c",
+      "balanceBefore": 733,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 627305,
+        "action": "The left-facing copper scorpion's compact legs buckle, pincers relax and the single segmented tail loses tension as the intact body rolls over onto its back into the supplied upside-down end pose. End clearly overturned on the ground, all legs still, the same single tail resting, never stand up again. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/pixel-tools/1f13998e-fda4-477e-9cdb-eb2122cc04b3/assets/native/full.png"
+      },
+      "queueResponse": "id: 9cf51921-8f1d-43f8-978e-d905a523433c\njob_id: 9cf51921-8f1d-43f8-978e-d905a523433c\naction: The left-facing copper scorpion's compact legs buckle, pincers relax and the single segmented tail loses tension as the intact body rolls over onto its back into the supplied upside-down end pose. End clearly overturned on the ground, all legs still, the same single tail resting, never stand up again. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 627305\nasset_id: 2f56ff76-753a-5734-917a-fff7f49cc593\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"9cf51921-8f1d-43f8-978e-d905a523433c\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 9cf51921-8f1d-43f8-978e-d905a523433c\njob_id: 9cf51921-8f1d-43f8-978e-d905a523433c\nframes: 9\ntransparent: yes\nasset_id: 2f56ff76-753a-5734-917a-fff7f49cc593\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+        "sha256": "325d116ca3df79c2bbdbcf9acfd30fc5e694083d39b4c1355b4aeedc5b0fdfb5",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 60,
+        "alphaDifferences": 8,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/00.png",
+          "sourceSha256": "6767c8550a6d898a7a84c7a4466c447cb70466a7c797f41ef66aaf166a4e31fd",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 850,
+          "colors": 25,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/01.png",
+          "sourceSha256": "8890812c2e6dd2594e4c80e8797b50fe00e7b8349904eb1df33d80d347b1276d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 9,
+            "width": 49,
+            "height": 46
+          },
+          "visiblePixels": 808,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/02.png",
+          "sourceSha256": "b25867b1379af6a94ff8ffbffe5dd1a3167b2e9e969b885e8b31d737c333411d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 9,
+            "width": 49,
+            "height": 43
+          },
+          "visiblePixels": 807,
+          "colors": 27,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/03.png",
+          "sourceSha256": "c366f390b858bbb767bc91c4b0d1b3bbd0d8000d53fb4bdcf20ffde67d26b46f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 9,
+            "width": 46,
+            "height": 42
+          },
+          "visiblePixels": 764,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/04.png",
+          "sourceSha256": "ace638fec71beffd4bb1fa6af5b19478a0f20d8553c075bce889e181a0f794f5",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 9,
+            "width": 45,
+            "height": 43
+          },
+          "visiblePixels": 766,
+          "colors": 28,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/05.png",
+          "sourceSha256": "bcf64a71f785c1cbfa1103fc8da7750f8baffe5cdf0b0c090b029ceb5872fccd",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 10,
+            "y": 12,
+            "width": 46,
+            "height": 39
+          },
+          "visiblePixels": 781,
+          "colors": 33,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/06.png",
+          "sourceSha256": "64ba75b744a237da4793d005a5b3066d46d72534ae3b5b8c44c5d7532b32717a",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 12,
+            "y": 15,
+            "width": 42,
+            "height": 32
+          },
+          "visiblePixels": 731,
+          "colors": 29,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/07.png",
+          "sourceSha256": "7556d653c92dbe4aa34805e17e8a7759d055a78dbf1ac5c7ea24c3176bee6573",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 9,
+            "y": 11,
+            "width": 44,
+            "height": 42
+          },
+          "visiblePixels": 822,
+          "colors": 33,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/08.png",
+          "sourceSha256": "03bb36aebc64d355ceeb448c717b906c9b848fabdfab72bff9e7e02a089e7a76",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 8,
+            "y": 9,
+            "width": 48,
+            "height": 45
+          },
+          "visiblePixels": 859,
+          "colors": 28,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/copper-scorpion/review/die1-9cf51921-8f1d-43f8-978e-d905a523433c.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/00.png",
+          "sha256": "8890812c2e6dd2594e4c80e8797b50fe00e7b8349904eb1df33d80d347b1276d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/01.png",
+          "sourceSha256": "8890812c2e6dd2594e4c80e8797b50fe00e7b8349904eb1df33d80d347b1276d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/01.png",
+          "sha256": "b25867b1379af6a94ff8ffbffe5dd1a3167b2e9e969b885e8b31d737c333411d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/02.png",
+          "sourceSha256": "b25867b1379af6a94ff8ffbffe5dd1a3167b2e9e969b885e8b31d737c333411d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/02.png",
+          "sha256": "c366f390b858bbb767bc91c4b0d1b3bbd0d8000d53fb4bdcf20ffde67d26b46f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/03.png",
+          "sourceSha256": "c366f390b858bbb767bc91c4b0d1b3bbd0d8000d53fb4bdcf20ffde67d26b46f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/03.png",
+          "sha256": "ace638fec71beffd4bb1fa6af5b19478a0f20d8553c075bce889e181a0f794f5",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/04.png",
+          "sourceSha256": "ace638fec71beffd4bb1fa6af5b19478a0f20d8553c075bce889e181a0f794f5",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/04.png",
+          "sha256": "bcf64a71f785c1cbfa1103fc8da7750f8baffe5cdf0b0c090b029ceb5872fccd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/05.png",
+          "sourceSha256": "bcf64a71f785c1cbfa1103fc8da7750f8baffe5cdf0b0c090b029ceb5872fccd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/05.png",
+          "sha256": "64ba75b744a237da4793d005a5b3066d46d72534ae3b5b8c44c5d7532b32717a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/06.png",
+          "sourceSha256": "64ba75b744a237da4793d005a5b3066d46d72534ae3b5b8c44c5d7532b32717a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/06.png",
+          "sha256": "7556d653c92dbe4aa34805e17e8a7759d055a78dbf1ac5c7ea24c3176bee6573",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/07.png",
+          "sourceSha256": "7556d653c92dbe4aa34805e17e8a7759d055a78dbf1ac5c7ea24c3176bee6573",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/07.png",
+          "sha256": "03bb36aebc64d355ceeb448c717b906c9b848fabdfab72bff9e7e02a089e7a76",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/08.png",
+          "sourceSha256": "03bb36aebc64d355ceeb448c717b906c9b848fabdfab72bff9e7e02a089e7a76",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 집게와 단일 꼬리의 힘이 풀린 뒤 몸이 뒤집혀 누운 끝자세에 정지하는 실제 KO."
+    }
+  ],
+  "nativeFacing": "left",
+  "selectedOriginal": {
+    "motion": "original",
+    "attempt": 1,
+    "key": "monster-a-copper-scorpion-original-01",
+    "jobId": "d57df53c-4e2e-406d-a546-3a2c025e3ae1",
+    "balanceBefore": 524,
+    "maximumReservedGenerations": 1,
+    "args": {
+      "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Rust-copper scorpion with narrow body, compact pincers and one clearly arched segmented tail, pale stone joint accents. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "direction": "west",
+      "view": "low top-down",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "detail": "medium detail",
+      "seed": 614014,
+      "text_guidance_scale": 8
+    },
+    "queueResponse": "id: d57df53c-4e2e-406d-a546-3a2c025e3ae1\njob_id: d57df53c-4e2e-406d-a546-3a2c025e3ae1\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Rust-copper scorpion with narrow body, compact pincers and one clearly arched segmented tail, pale stone joint accents. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: 1a15b026-9d18-58f6-a339-917618f746a7\nasset_status: pending (saved when generation completes)\nseed: 614014\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d57df53c-4e2e-406d-a546-3a2c025e3ae1\")",
+    "status": "completed",
+    "latestResponse": "status: completed\nid: d57df53c-4e2e-406d-a546-3a2c025e3ae1\njob_id: d57df53c-4e2e-406d-a546-3a2c025e3ae1\nframes: 1\ntransparent: yes\nasset_id: 1a15b026-9d18-58f6-a339-917618f746a7\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download",
+    "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+    "sha256": "325d116ca3df79c2bbdbcf9acfd30fc5e694083d39b4c1355b4aeedc5b0fdfb5",
+    "byteSize": 2399,
+    "width": 64,
+    "height": 64,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "visibleBounds": {
+      "x": 9,
+      "y": 9,
+      "width": 48,
+      "height": 45
+    },
+    "visiblePixels": 858,
+    "paletteSize": 25,
+    "chargedGenerations": 1,
+    "nativeFacing": "left",
+    "selection": "accepted after silhouette / anatomy / native alpha review"
+  },
+  "anchor": {
+    "x": 32,
+    "y": 54
+  },
+  "animations": {
+    "stand": {
+      "label": "대기",
+      "loop": true,
+      "jobId": "9df6d571-b85f-4c65-9cd1-69214c0c691f",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/00.png",
+          "sha256": "1078de0e7429ea50c097c9a063c28aac661851356134cc8963c589d0072e7a6d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/01.png",
+          "sourceSha256": "1078de0e7429ea50c097c9a063c28aac661851356134cc8963c589d0072e7a6d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/01.png",
+          "sha256": "3b84d2fb5b783ac42d7b9f91e95ed8e4a3084323f8ecec53969893d43c85439a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/02.png",
+          "sourceSha256": "3b84d2fb5b783ac42d7b9f91e95ed8e4a3084323f8ecec53969893d43c85439a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/02.png",
+          "sha256": "beb03a490c8c142225cb137213bac44ff84bbf4d44dc2bf751cb2753b3dff6e4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/03.png",
+          "sourceSha256": "beb03a490c8c142225cb137213bac44ff84bbf4d44dc2bf751cb2753b3dff6e4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/03.png",
+          "sha256": "8599afa8d30d81e896b5762f5a00201647fac6bd8e83cebf4909cff1da6c4ce7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9df6d571-b85f-4c65-9cd1-69214c0c691f/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/stand/9df6d571-b85f-4c65-9cd1-69214c0c691f/04.png",
+          "sourceSha256": "8599afa8d30d81e896b5762f5a00201647fac6bd8e83cebf4909cff1da6c4ce7",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 두 집게와 한 개 꼬리의 마디가 각각 움직이는 실제 대기. 몸과 꼬리의 형태 유지.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/copper-scorpion/review/stand-9df6d571-b85f-4c65-9cd1-69214c0c691f.png"
+    },
+    "move": {
+      "label": "이동",
+      "loop": true,
+      "jobId": "d1bfb99c-a0a4-4d07-8afc-766ab4448a92",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/00.png",
+          "sha256": "e739fcea7c91a75848d6b2f642d41b16bff503951da477b172d3f4b01625e96c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/01.png",
+          "sourceSha256": "e739fcea7c91a75848d6b2f642d41b16bff503951da477b172d3f4b01625e96c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/01.png",
+          "sha256": "386f47c60ef99f81005fd879e6ace84fb7dc7d200e036b9f268ef8a68d6b6ac6",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/02.png",
+          "sourceSha256": "386f47c60ef99f81005fd879e6ace84fb7dc7d200e036b9f268ef8a68d6b6ac6",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/02.png",
+          "sha256": "72a481960b8e54fdb868b017f30062a88f009de66fa98ef3c06debf5c9496768",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/03.png",
+          "sourceSha256": "72a481960b8e54fdb868b017f30062a88f009de66fa98ef3c06debf5c9496768",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/03.png",
+          "sha256": "90bcd7f67ef42bd27016d067e64bb28f6e8ebb1035e58a0560a21fae815eadd5",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/04.png",
+          "sourceSha256": "90bcd7f67ef42bd27016d067e64bb28f6e8ebb1035e58a0560a21fae815eadd5",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/04.png",
+          "sha256": "8253a3519705a91a8e9244d33406914cdedb715854a6182cc71e5f58dae06f06",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/05.png",
+          "sourceSha256": "8253a3519705a91a8e9244d33406914cdedb715854a6182cc71e5f58dae06f06",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/05.png",
+          "sha256": "11e07328230872885596e17002e3d515c9364af69f1c76da9102d4eeb839e9cf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/06.png",
+          "sourceSha256": "11e07328230872885596e17002e3d515c9364af69f1c76da9102d4eeb839e9cf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/06.png",
+          "sha256": "4d00a4924d7d7ea3eb820a9eac1f61e4876a69ddac03efbb7b807b6086652baf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/07.png",
+          "sourceSha256": "4d00a4924d7d7ea3eb820a9eac1f61e4876a69ddac03efbb7b807b6086652baf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/07.png",
+          "sha256": "23f87346c90c5d327fc56296f6491bd80b3fb64c276fc21901efc59b94906b62",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/move/d1bfb99c-a0a4-4d07-8afc-766ab4448a92/08.png",
+          "sourceSha256": "23f87346c90c5d327fc56296f6491bd80b3fb64c276fc21901efc59b94906b62",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 작은 다리가 교대로 디디며 집게와 한 개 마디 꼬리가 서로 균형을 잡는 실제 이동.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/copper-scorpion/review/move-d1bfb99c-a0a4-4d07-8afc-766ab4448a92.png"
+    },
+    "attack1": {
+      "label": "공격",
+      "loop": false,
+      "jobId": "6293e070-d53c-46d9-97a6-2f614dbbe04c",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/00.png",
+          "sha256": "57f9e4d2d5c48f86e6718a72ecb2d93a88fd0600307c6ade8ef8dd2cda43d3bf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/01.png",
+          "sourceSha256": "57f9e4d2d5c48f86e6718a72ecb2d93a88fd0600307c6ade8ef8dd2cda43d3bf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/01.png",
+          "sha256": "b779917903bf29a44312bf49b44d70c283a9bc0443e80689ae65e3246b1b4b88",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/02.png",
+          "sourceSha256": "b779917903bf29a44312bf49b44d70c283a9bc0443e80689ae65e3246b1b4b88",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/02.png",
+          "sha256": "369fd3887f70ab64c621381e95d96c9b81d17e4b61e857a0f0dfd79c00ecd5e4",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/03.png",
+          "sourceSha256": "369fd3887f70ab64c621381e95d96c9b81d17e4b61e857a0f0dfd79c00ecd5e4",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/03.png",
+          "sha256": "9f83ff7b0ee81b5d657646a45789ccb37e0ba8c25d8675595e564f435f4ede2c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/04.png",
+          "sourceSha256": "9f83ff7b0ee81b5d657646a45789ccb37e0ba8c25d8675595e564f435f4ede2c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/04.png",
+          "sha256": "b93d636bfaebc57ab28ab79bef5048abd08ee6e4658834772aff01ee07a62924",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/05.png",
+          "sourceSha256": "b93d636bfaebc57ab28ab79bef5048abd08ee6e4658834772aff01ee07a62924",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/05.png",
+          "sha256": "db0cd54580beed39ddcdd2fbe1ea75e5f60b47394da47bd9b926e66f74b78b0e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/06.png",
+          "sourceSha256": "db0cd54580beed39ddcdd2fbe1ea75e5f60b47394da47bd9b926e66f74b78b0e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/06.png",
+          "sha256": "9e269d5804a16755da747b49fd4415acc0676ecc9ca90cb1cd8eec92fb1eb601",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/07.png",
+          "sourceSha256": "9e269d5804a16755da747b49fd4415acc0676ecc9ca90cb1cd8eec92fb1eb601",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/07.png",
+          "sha256": "124a22c55f81dce50bbf92a3dc9ba3a81974fc8a1d86be1123da36712a181f44",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/6293e070-d53c-46d9-97a6-2f614dbbe04c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/attack1/6293e070-d53c-46d9-97a6-2f614dbbe04c/08.png",
+          "sourceSha256": "124a22c55f81dce50bbf92a3dc9ba3a81974fc8a1d86be1123da36712a181f44",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 몸과 꼬리가 뒤로 준비한 뒤 앞의 두 집게를 닫아 찌르는 실제 공격. 4번의 가장 앞으로 나온 닫힌 집게를 접촉으로 선택.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/copper-scorpion/review/attack1-6293e070-d53c-46d9-97a6-2f614dbbe04c.png",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625
+    },
+    "hit1": {
+      "label": "피격",
+      "loop": false,
+      "jobId": "e2765130-bb56-4c74-bc06-b594aeaedfa9",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/00.png",
+          "sha256": "60f1e294701b63dc98f868495dbb4c549c1f1504b44ec859b9d688b06ea0bc13",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/01.png",
+          "sourceSha256": "60f1e294701b63dc98f868495dbb4c549c1f1504b44ec859b9d688b06ea0bc13",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/01.png",
+          "sha256": "4f0f0cc63d33cd98ab037f6686c39d88d08f64015ee2dc289481908381f5c17d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/02.png",
+          "sourceSha256": "4f0f0cc63d33cd98ab037f6686c39d88d08f64015ee2dc289481908381f5c17d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/02.png",
+          "sha256": "ad3a6d48c76506a76b6f3c294b33529deb691451e4c77126403203d687cf7622",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/03.png",
+          "sourceSha256": "ad3a6d48c76506a76b6f3c294b33529deb691451e4c77126403203d687cf7622",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/03.png",
+          "sha256": "753854e0767df2fa5a6cd4735d9e54d41fccc8af7d83c6527d092e53750d4f33",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e2765130-bb56-4c74-bc06-b594aeaedfa9/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/hit1/e2765130-bb56-4c74-bc06-b594aeaedfa9/04.png",
+          "sourceSha256": "753854e0767df2fa5a6cd4735d9e54d41fccc8af7d83c6527d092e53750d4f33",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 집게와 다리를 모아 움츠리고 한 꼬리의 마디가 함께 접혔다 돌아오는 실제 피격.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/copper-scorpion/review/hit1-e2765130-bb56-4c74-bc06-b594aeaedfa9.png"
+    },
+    "die1": {
+      "label": "쓰러짐",
+      "loop": false,
+      "jobId": "9cf51921-8f1d-43f8-978e-d905a523433c",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/00.png",
+          "sha256": "8890812c2e6dd2594e4c80e8797b50fe00e7b8349904eb1df33d80d347b1276d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/01.png",
+          "sourceSha256": "8890812c2e6dd2594e4c80e8797b50fe00e7b8349904eb1df33d80d347b1276d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/01.png",
+          "sha256": "b25867b1379af6a94ff8ffbffe5dd1a3167b2e9e969b885e8b31d737c333411d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/02.png",
+          "sourceSha256": "b25867b1379af6a94ff8ffbffe5dd1a3167b2e9e969b885e8b31d737c333411d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/02.png",
+          "sha256": "c366f390b858bbb767bc91c4b0d1b3bbd0d8000d53fb4bdcf20ffde67d26b46f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/03.png",
+          "sourceSha256": "c366f390b858bbb767bc91c4b0d1b3bbd0d8000d53fb4bdcf20ffde67d26b46f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/03.png",
+          "sha256": "ace638fec71beffd4bb1fa6af5b19478a0f20d8553c075bce889e181a0f794f5",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/04.png",
+          "sourceSha256": "ace638fec71beffd4bb1fa6af5b19478a0f20d8553c075bce889e181a0f794f5",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/04.png",
+          "sha256": "bcf64a71f785c1cbfa1103fc8da7750f8baffe5cdf0b0c090b029ceb5872fccd",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/05.png",
+          "sourceSha256": "bcf64a71f785c1cbfa1103fc8da7750f8baffe5cdf0b0c090b029ceb5872fccd",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/05.png",
+          "sha256": "64ba75b744a237da4793d005a5b3066d46d72534ae3b5b8c44c5d7532b32717a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/06.png",
+          "sourceSha256": "64ba75b744a237da4793d005a5b3066d46d72534ae3b5b8c44c5d7532b32717a",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/06.png",
+          "sha256": "7556d653c92dbe4aa34805e17e8a7759d055a78dbf1ac5c7ea24c3176bee6573",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/07.png",
+          "sourceSha256": "7556d653c92dbe4aa34805e17e8a7759d055a78dbf1ac5c7ea24c3176bee6573",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/frames/die1/9cf51921-8f1d-43f8-978e-d905a523433c/07.png",
+          "sha256": "03bb36aebc64d355ceeb448c717b906c9b848fabdfab72bff9e7e02a089e7a76",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9cf51921-8f1d-43f8-978e-d905a523433c/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/9cf51921-8f1d-43f8-978e-d905a523433c/08.png",
+          "sourceSha256": "03bb36aebc64d355ceeb448c717b906c9b848fabdfab72bff9e7e02a089e7a76",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "집게와 단일 꼬리의 힘이 풀린 뒤 몸이 뒤집혀 누운 끝자세에 정지하는 실제 KO.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/copper-scorpion/review/die1-9cf51921-8f1d-43f8-978e-d905a523433c.png"
+    }
+  },
+  "poseTargets": [
+    {
+      "motion": "die1",
+      "localPath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/target-corpse-02.png",
+      "recordPath": "public/assets/maplestory/monster-expansion/copper-scorpion/originals/die1/target-corpse-02.json",
+      "drawingId": "1f13998e-fda4-477e-9cdb-eb2122cc04b3",
+      "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/1f13998e-fda4-477e-9cdb-eb2122cc04b3/assets/native/full.png",
+      "source": "https://api.pixellab.ai/mcp/images/d57df53c-4e2e-406d-a546-3a2c025e3ae1/download",
+      "offset": [
+        0,
+        -2
+      ],
+      "angle": 180,
+      "pivot": [
+        32,
+        32
+      ],
+      "sha256": "d3df6513899cc0b62f17ed90c6532895c97e0a5f47b61093d4f768a300cde48a",
+      "paidGenerations": 0,
+      "kind": "free exact native end keyframe; intermediate motion generated by PixelLab",
+      "reason": "원본 픽셀로 누운 끝자세를 지정하고 중간 쓰러짐 프레임은 PixelLab에서 실제 생성."
+    }
+  ]
+}

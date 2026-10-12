@@ -1,0 +1,1113 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-11",
+  "round": 5,
+  "provider": "PixelLab",
+  "model": "Pro Flash",
+  "tool": "edit_image_pro_flash",
+  "status": "completed-user-rejected",
+  "scope": "처음 선호한 체형·복장과 4차 3번의 표정·볼 털을 조합한 중간 느낌 전면 후보 6개.",
+  "candidateLimit": 6,
+  "requestLimit": 6,
+  "retryLimit": 0,
+  "generationBudget": 30,
+  "quotedCostPerCandidate": 5,
+  "quote": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"name\": \"Pro Flash\",\n  \"revision\": \"pro-flash-presets-48-128-2026-09-29\",\n  \"grid_recovery\": \"Creation recovers the pixel grid the model drew with Unzoom. An exact grid is kept; drift of at most one pixel is recovered on the expected grid. Images with a background must fill the canvas, so any other size is redrawn with image-to-pixel-art on the generated box only. Sprites without a background keep their own pixels, centred on the canvas, while the drawn pixel is close to the requested one; coarser or oversized sprites are redrawn. Experimental 16x16 creation always uses image-to-pixel-art. Editing and inpainting start at 32x32 and never use image-to-pixel-art conversion.\",\n  \"operations\": {\n    \"create\": {\n      \"sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        },\n        {\n          \"width\": 24,\n          \"height\": 24\n        },\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 48,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        }\n      ],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 16,\n        \"min_height\": 16,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 0,\n      \"supports_no_background\": true,\n      \"supports_style_options\": true,\n      \"output_count\": 1\n    },\n    \"edit\": {\n      \"sizes\": [\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 32,\n        \"min_height\": 32,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 1,\n      \"supports_no_background\": true,\n      \"supports_style_options\": false,\n      \"output_count\": 1,\n      \"edit_methods\": [\n        \"text\",\n        \"reference\"\n      ],\n      \"canvas_growth\": false,\n      \"reference_image_fit\": \"native dimensions must fit the edit canvas\"\n    },\n    \"inpaint\": {\n      \"sizes\": [\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 32,\n        \"min_height\": 32,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 1,\n      \"supports_no_background\": true,\n      \"supports_style_options\": false,\n      \"output_count\": 1,\n      \"canvas_growth\": false,\n      \"crop_to_mask_values\": [\n        true\n      ],\n      \"output_methods\": [\n        \"New layer with changes\",\n        \"Modify current layer, only changes\",\n        \"Modify current layer\"\n      ],\n      \"mask\": {\n        \"white_rgb\": \"generate\",\n        \"black_rgb\": \"preserve\",\n        \"alpha\": \"ignored\",\n        \"binary_rgb_required\": true\n      },\n      \"context\": {\n        \"bounding_box_required\": true,\n        \"max_width_multiple\": 3,\n        \"max_height_multiple\": 3,\n        \"native_pixels\": true\n      }\n    },\n    \"character\": {\n      \"sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        },\n        {\n          \"width\": 24,\n          \"height\": 24\n        },\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 48,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        }\n      ],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 16,\n        \"min_height\": 16,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 0,\n      \"supports_no_background\": true,\n      \"supports_style_options\": true,\n      \"output_count\": 8,\n      \"n_directions\": [\n        8\n      ],\n      \"includes_first_direction\": true,\n      \"supports_existing_source\": true,\n      \"rotation_canvas\": \"Native source padded to a square, minimum 32 pixels, aligned to four pixels.\"\n    },\n    \"object\": {\n      \"sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        },\n        {\n          \"width\": 24,\n          \"height\": 24\n        },\n        {\n          \"width\": 32,\n          \"height\": 32\n        },\n        {\n          \"width\": 32,\n          \"height\": 48\n        },\n        {\n          \"width\": 48,\n          \"height\": 48\n        },\n        {\n          \"width\": 64,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 64\n        },\n        {\n          \"width\": 96,\n          \"height\": 96\n        },\n        {\n          \"width\": 128,\n          \"height\": 128\n        }\n      ],\n      \"experimental_sizes\": [\n        {\n          \"width\": 16,\n          \"height\": 16\n        }\n      ],\n      \"custom_sizes\": {\n        \"enabled\": true,\n        \"min_width\": 16,\n        \"min_height\": 16,\n        \"max_width\": 256,\n        \"max_height\": 256,\n        \"step\": 4,\n        \"beta\": true\n      },\n      \"max_reference_images\": 0,\n      \"supports_no_background\": true,\n      \"supports_style_options\": true,\n      \"output_count\": \"n_directions\",\n      \"n_directions\": [\n        1,\n        8\n      ],\n      \"includes_first_direction\": true,\n      \"supports_existing_source\": true,\n      \"rotation_canvas\": \"Eight views use the square V3 canvas; one direction keeps the native size.\"\n    }\n  },\n  \"style_reference_fit\": \"native dimensions must fit the target canvas; smaller references are centered without resizing\",\n  \"cost\": {\n    \"image\": 5,\n    \"rotations\": 0,\n    \"total\": 5,\n    \"provisional\": true\n  }\n}"
+      }
+    ],
+    "structuredContent": {
+      "name": "Pro Flash",
+      "revision": "pro-flash-presets-48-128-2026-09-29",
+      "grid_recovery": "Creation recovers the pixel grid the model drew with Unzoom. An exact grid is kept; drift of at most one pixel is recovered on the expected grid. Images with a background must fill the canvas, so any other size is redrawn with image-to-pixel-art on the generated box only. Sprites without a background keep their own pixels, centred on the canvas, while the drawn pixel is close to the requested one; coarser or oversized sprites are redrawn. Experimental 16x16 creation always uses image-to-pixel-art. Editing and inpainting start at 32x32 and never use image-to-pixel-art conversion.",
+      "operations": {
+        "create": {
+          "sizes": [
+            {
+              "width": 16,
+              "height": 16
+            },
+            {
+              "width": 24,
+              "height": 24
+            },
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 48,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [
+            {
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 16,
+            "min_height": 16,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 0,
+          "supports_no_background": true,
+          "supports_style_options": true,
+          "output_count": 1
+        },
+        "edit": {
+          "sizes": [
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 32,
+            "min_height": 32,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 1,
+          "supports_no_background": true,
+          "supports_style_options": false,
+          "output_count": 1,
+          "edit_methods": [
+            "text",
+            "reference"
+          ],
+          "canvas_growth": false,
+          "reference_image_fit": "native dimensions must fit the edit canvas"
+        },
+        "inpaint": {
+          "sizes": [
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 32,
+            "min_height": 32,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 1,
+          "supports_no_background": true,
+          "supports_style_options": false,
+          "output_count": 1,
+          "canvas_growth": false,
+          "crop_to_mask_values": [
+            true
+          ],
+          "output_methods": [
+            "New layer with changes",
+            "Modify current layer, only changes",
+            "Modify current layer"
+          ],
+          "mask": {
+            "white_rgb": "generate",
+            "black_rgb": "preserve",
+            "alpha": "ignored",
+            "binary_rgb_required": true
+          },
+          "context": {
+            "bounding_box_required": true,
+            "max_width_multiple": 3,
+            "max_height_multiple": 3,
+            "native_pixels": true
+          }
+        },
+        "character": {
+          "sizes": [
+            {
+              "width": 16,
+              "height": 16
+            },
+            {
+              "width": 24,
+              "height": 24
+            },
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 48,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [
+            {
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 16,
+            "min_height": 16,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 0,
+          "supports_no_background": true,
+          "supports_style_options": true,
+          "output_count": 8,
+          "n_directions": [
+            8
+          ],
+          "includes_first_direction": true,
+          "supports_existing_source": true,
+          "rotation_canvas": "Native source padded to a square, minimum 32 pixels, aligned to four pixels."
+        },
+        "object": {
+          "sizes": [
+            {
+              "width": 16,
+              "height": 16
+            },
+            {
+              "width": 24,
+              "height": 24
+            },
+            {
+              "width": 32,
+              "height": 32
+            },
+            {
+              "width": 32,
+              "height": 48
+            },
+            {
+              "width": 48,
+              "height": 48
+            },
+            {
+              "width": 64,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 64
+            },
+            {
+              "width": 96,
+              "height": 96
+            },
+            {
+              "width": 128,
+              "height": 128
+            }
+          ],
+          "experimental_sizes": [
+            {
+              "width": 16,
+              "height": 16
+            }
+          ],
+          "custom_sizes": {
+            "enabled": true,
+            "min_width": 16,
+            "min_height": 16,
+            "max_width": 256,
+            "max_height": 256,
+            "step": 4,
+            "beta": true
+          },
+          "max_reference_images": 0,
+          "supports_no_background": true,
+          "supports_style_options": true,
+          "output_count": "n_directions",
+          "n_directions": [
+            1,
+            8
+          ],
+          "includes_first_direction": true,
+          "supports_existing_source": true,
+          "rotation_canvas": "Eight views use the square V3 canvas; one direction keeps the native size."
+        }
+      },
+      "style_reference_fit": "native dimensions must fit the target canvas; smaller references are centered without resizing",
+      "cost": {
+        "image": 5,
+        "rotations": 0,
+        "total": 5,
+        "provisional": true
+      }
+    },
+    "isError": false
+  },
+  "balanceBefore": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1813\ngenerations_used: 187\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "referenceImages": [
+    {
+      "role": "edit-target",
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/originals/candidate-05.png",
+      "sourceImageId": "387a856b-5950-5a8a-a752-a9cff72788a1",
+      "selectedByUser": true,
+      "sha256": "c1153a5ff858a5863209b8cd4946d2523cc84d6a1d880a2d22ac8fc60230e5e0"
+    },
+    {
+      "role": "face-and-cheek-fur-only",
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/originals/drunk-03.png",
+      "sourceImageId": "77b53b61-d5dc-51e0-90a7-f77c6b1d3f26",
+      "likedAsStyleReferenceByUser": true,
+      "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9"
+    }
+  ],
+  "independentEdits": true,
+  "candidates": [
+    {
+      "id": 1,
+      "label": "부드러운 중간안",
+      "group": "중간 느낌",
+      "seed": 101501,
+      "change": "Balanced expression: clearly visible narrow half-open eyes, relaxed brow, small off-center closed-mouth smile. Only lightly tousled cheek tips. Gentle, sober-looking face with a subtle cheek blush. This is the restrained halfway design.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "reference",
+        "description": "Edit the source tiger into an intermediate look between the source and reference. Keep the SOURCE's broad oversized head, short stocky adult body, nearly frontal angle, dark-teal sleeveless martial vest, sand trousers, rust sash, ivory wrist wraps, striped amber fur and curled tail. Change chiefly facial expression and cheek-fur silhouette using the reference's playful tipsy personality. A lovable middle-aged drinking-loving martial artist, sturdy and capable. Both eyes and eyebrows must remain readable, not two closed slits. Very faint cheek warmth, natural dark nose, almost no gray fur. Keep crisp 64x64 pixel art and rounded muzzle/cheek shading; transparent background. Full body and ears inside the native canvas with at least one transparent pixel at the edges. Empty paws, no bottle/gourd, no hat, no floor/shadow, no blur/text.\nBalanced expression: clearly visible narrow half-open eyes, relaxed brow, small off-center closed-mouth smile. Only lightly tousled cheek tips. Gentle, sober-looking face with a subtle cheek blush. This is the restrained halfway design.",
+        "reference_image": {
+          "source_image_id": "77b53b61-d5dc-51e0-90a7-f77c6b1d3f26",
+          "usage_description": "Use this second tiger as a FACE AND CHEEK-FUR personality reference only: relaxed uneven eyelids, a knowing crooked smile and mildly unkempt cheek tufts. Keep the source image's clothes, stocky proportions, pose, amber palette and nearly frontal orientation. Reduce the reference's elderly gray/white fur, red nose and blush substantially. Do not copy brown coat, dark pants, gourd or props. Balanced expression: clearly visible narrow half-open eyes, relaxed brow, small off-center closed-mouth smile. Only lightly tousled cheek tips. Gentle, sober-looking face with a subtle cheek blush. This is the restrained halfway design."
+        },
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101501
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"0d44c974-d64d-4e2d-9d18-e868cdb4a21c\",\n  \"image_id\": \"6cb97f3f-9e15-59fa-b2b2-bfecd89776b5\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"6cb97f3f-9e15-59fa-b2b2-bfecd89776b5\",\n  \"job_id\": \"0d44c974-d64d-4e2d-9d18-e868cdb4a21c\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/0d44c974-d64d-4e2d-9d18-e868cdb4a21c/download\"\n}\nPoll get_image(job_id=\"0d44c974-d64d-4e2d-9d18-e868cdb4a21c\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "0d44c974-d64d-4e2d-9d18-e868cdb4a21c",
+          "image_id": "6cb97f3f-9e15-59fa-b2b2-bfecd89776b5",
+          "status": "processing",
+          "source_image_id": "6cb97f3f-9e15-59fa-b2b2-bfecd89776b5",
+          "job_id": "0d44c974-d64d-4e2d-9d18-e868cdb4a21c",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/0d44c974-d64d-4e2d-9d18-e868cdb4a21c/download"
+        },
+        "isError": false
+      },
+      "jobId": "0d44c974-d64d-4e2d-9d18-e868cdb4a21c",
+      "completion": {
+        "job_id": "0d44c974-d64d-4e2d-9d18-e868cdb4a21c",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/0d44c974-d64d-4e2d-9d18-e868cdb4a21c/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/0d44c974-d64d-4e2d-9d18-e868cdb4a21c/download"
+        ],
+        "asset": {
+          "id": "6cb97f3f-9e15-59fa-b2b2-bfecd89776b5",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: 0d44c974-d64d-4e2d-9d18-e868cdb4a21c\njob_id: 0d44c974-d64d-4e2d-9d18-e868cdb4a21c\nframes: 1\ntransparent: yes\nasset_id: 6cb97f3f-9e15-59fa-b2b2-bfecd89776b5\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/0d44c974-d64d-4e2d-9d18-e868cdb4a21c/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/originals/middle-01.png",
+      "reviewDisposition": "rejected-by-user",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/originals/middle-01.png",
+        "sha256": "b6894823bc5da4236f59a6d5686ff9a00194d00d7d1b542bc2c3e6a38556e48c",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3349,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/frames/middle-01.png",
+        "sha256": "6637ca966b90db213dead1f0d2199f64ad886ba56de11edb0aaa05b753cc29fa",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/0d44c974-d64d-4e2d-9d18-e868cdb4a21c/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 2,
+      "label": "반쯤 풀린 눈",
+      "group": "중간 느낌",
+      "seed": 101502,
+      "change": "Sleepier expression: noticeably heavy upper lids but both eye centers visible, uneven lowered brows and a broad crooked closed-mouth grin. Rounded cheek tufts hang loosely with two visibly rumpled tips. Slightly tipsy, amused, not ill or exhausted.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "reference",
+        "description": "Edit the source tiger into an intermediate look between the source and reference. Keep the SOURCE's broad oversized head, short stocky adult body, nearly frontal angle, dark-teal sleeveless martial vest, sand trousers, rust sash, ivory wrist wraps, striped amber fur and curled tail. Change chiefly facial expression and cheek-fur silhouette using the reference's playful tipsy personality. A lovable middle-aged drinking-loving martial artist, sturdy and capable. Both eyes and eyebrows must remain readable, not two closed slits. Very faint cheek warmth, natural dark nose, almost no gray fur. Keep crisp 64x64 pixel art and rounded muzzle/cheek shading; transparent background. Full body and ears inside the native canvas with at least one transparent pixel at the edges. Empty paws, no bottle/gourd, no hat, no floor/shadow, no blur/text.\nSleepier expression: noticeably heavy upper lids but both eye centers visible, uneven lowered brows and a broad crooked closed-mouth grin. Rounded cheek tufts hang loosely with two visibly rumpled tips. Slightly tipsy, amused, not ill or exhausted.",
+        "reference_image": {
+          "source_image_id": "77b53b61-d5dc-51e0-90a7-f77c6b1d3f26",
+          "usage_description": "Use this second tiger as a FACE AND CHEEK-FUR personality reference only: relaxed uneven eyelids, a knowing crooked smile and mildly unkempt cheek tufts. Keep the source image's clothes, stocky proportions, pose, amber palette and nearly frontal orientation. Reduce the reference's elderly gray/white fur, red nose and blush substantially. Do not copy brown coat, dark pants, gourd or props. Sleepier expression: noticeably heavy upper lids but both eye centers visible, uneven lowered brows and a broad crooked closed-mouth grin. Rounded cheek tufts hang loosely with two visibly rumpled tips. Slightly tipsy, amused, not ill or exhausted."
+        },
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101502
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"5ac73d8c-01f1-4366-b8b1-3b85b34bb959\",\n  \"image_id\": \"192c3d55-0e60-5737-a127-16ef2f91ead8\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"192c3d55-0e60-5737-a127-16ef2f91ead8\",\n  \"job_id\": \"5ac73d8c-01f1-4366-b8b1-3b85b34bb959\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/5ac73d8c-01f1-4366-b8b1-3b85b34bb959/download\"\n}\nPoll get_image(job_id=\"5ac73d8c-01f1-4366-b8b1-3b85b34bb959\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "5ac73d8c-01f1-4366-b8b1-3b85b34bb959",
+          "image_id": "192c3d55-0e60-5737-a127-16ef2f91ead8",
+          "status": "processing",
+          "source_image_id": "192c3d55-0e60-5737-a127-16ef2f91ead8",
+          "job_id": "5ac73d8c-01f1-4366-b8b1-3b85b34bb959",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/5ac73d8c-01f1-4366-b8b1-3b85b34bb959/download"
+        },
+        "isError": false
+      },
+      "jobId": "5ac73d8c-01f1-4366-b8b1-3b85b34bb959",
+      "completion": {
+        "job_id": "5ac73d8c-01f1-4366-b8b1-3b85b34bb959",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/5ac73d8c-01f1-4366-b8b1-3b85b34bb959/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/5ac73d8c-01f1-4366-b8b1-3b85b34bb959/download"
+        ],
+        "asset": {
+          "id": "192c3d55-0e60-5737-a127-16ef2f91ead8",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: 5ac73d8c-01f1-4366-b8b1-3b85b34bb959\njob_id: 5ac73d8c-01f1-4366-b8b1-3b85b34bb959\nframes: 1\ntransparent: yes\nasset_id: 192c3d55-0e60-5737-a127-16ef2f91ead8\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/5ac73d8c-01f1-4366-b8b1-3b85b34bb959/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/originals/middle-02.png",
+      "reviewDisposition": "rejected-by-user",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/originals/middle-02.png",
+        "sha256": "bebdb50d282be252b05b52b68923cdb516fea058cc10072b1fb1759ffd475f4b",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3941,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/frames/middle-02.png",
+        "sha256": "236f09210b54ea14ed60e0a3e8a6cc1c5d6885c4d2ef9d9bdf0d1c31453f9dae",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/5ac73d8c-01f1-4366-b8b1-3b85b34bb959/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 3,
+      "label": "장난스러운 웃음",
+      "group": "중간 느낌",
+      "seed": 101503,
+      "change": "Mischievous expression: one eyebrow raised and the other relaxed, both eyes open enough to read, one corner of the mouth lifted into a distinct smirk. Wider side cheek fur with a few asymmetric outward tufts. Wily and playful rather than elderly.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "reference",
+        "description": "Edit the source tiger into an intermediate look between the source and reference. Keep the SOURCE's broad oversized head, short stocky adult body, nearly frontal angle, dark-teal sleeveless martial vest, sand trousers, rust sash, ivory wrist wraps, striped amber fur and curled tail. Change chiefly facial expression and cheek-fur silhouette using the reference's playful tipsy personality. A lovable middle-aged drinking-loving martial artist, sturdy and capable. Both eyes and eyebrows must remain readable, not two closed slits. Very faint cheek warmth, natural dark nose, almost no gray fur. Keep crisp 64x64 pixel art and rounded muzzle/cheek shading; transparent background. Full body and ears inside the native canvas with at least one transparent pixel at the edges. Empty paws, no bottle/gourd, no hat, no floor/shadow, no blur/text.\nMischievous expression: one eyebrow raised and the other relaxed, both eyes open enough to read, one corner of the mouth lifted into a distinct smirk. Wider side cheek fur with a few asymmetric outward tufts. Wily and playful rather than elderly.",
+        "reference_image": {
+          "source_image_id": "77b53b61-d5dc-51e0-90a7-f77c6b1d3f26",
+          "usage_description": "Use this second tiger as a FACE AND CHEEK-FUR personality reference only: relaxed uneven eyelids, a knowing crooked smile and mildly unkempt cheek tufts. Keep the source image's clothes, stocky proportions, pose, amber palette and nearly frontal orientation. Reduce the reference's elderly gray/white fur, red nose and blush substantially. Do not copy brown coat, dark pants, gourd or props. Mischievous expression: one eyebrow raised and the other relaxed, both eyes open enough to read, one corner of the mouth lifted into a distinct smirk. Wider side cheek fur with a few asymmetric outward tufts. Wily and playful rather than elderly."
+        },
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101503
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"e9df44c8-2d59-4e36-bfb3-03c05c75dfbc\",\n  \"image_id\": \"47dae023-3f13-59ad-acf5-cb2e549e0a1e\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"47dae023-3f13-59ad-acf5-cb2e549e0a1e\",\n  \"job_id\": \"e9df44c8-2d59-4e36-bfb3-03c05c75dfbc\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/e9df44c8-2d59-4e36-bfb3-03c05c75dfbc/download\"\n}\nPoll get_image(job_id=\"e9df44c8-2d59-4e36-bfb3-03c05c75dfbc\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "e9df44c8-2d59-4e36-bfb3-03c05c75dfbc",
+          "image_id": "47dae023-3f13-59ad-acf5-cb2e549e0a1e",
+          "status": "processing",
+          "source_image_id": "47dae023-3f13-59ad-acf5-cb2e549e0a1e",
+          "job_id": "e9df44c8-2d59-4e36-bfb3-03c05c75dfbc",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/e9df44c8-2d59-4e36-bfb3-03c05c75dfbc/download"
+        },
+        "isError": false
+      },
+      "jobId": "e9df44c8-2d59-4e36-bfb3-03c05c75dfbc",
+      "completion": {
+        "job_id": "e9df44c8-2d59-4e36-bfb3-03c05c75dfbc",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/e9df44c8-2d59-4e36-bfb3-03c05c75dfbc/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/e9df44c8-2d59-4e36-bfb3-03c05c75dfbc/download"
+        ],
+        "asset": {
+          "id": "47dae023-3f13-59ad-acf5-cb2e549e0a1e",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: e9df44c8-2d59-4e36-bfb3-03c05c75dfbc\njob_id: e9df44c8-2d59-4e36-bfb3-03c05c75dfbc\nframes: 1\ntransparent: yes\nasset_id: 47dae023-3f13-59ad-acf5-cb2e549e0a1e\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/e9df44c8-2d59-4e36-bfb3-03c05c75dfbc/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/originals/middle-03.png",
+      "reviewDisposition": "rejected-by-user",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/originals/middle-03.png",
+        "sha256": "476099a2bb3812236945178f404a36f583af0a3d92c72550710fa017e6c90782",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3479,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/frames/middle-03.png",
+        "sha256": "b0a5db7515b411b9f0ae6332ad56d68f096957ca54e2175f03c000087b5f5966",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/e9df44c8-2d59-4e36-bfb3-03c05c75dfbc/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 4,
+      "label": "노련한 중년",
+      "group": "중간 느낌",
+      "seed": 101504,
+      "change": "Seasoned middle-aged expression: heavier brow shapes, alert small eyes under relaxed lids, broad calm smile with a strong cream muzzle. Broader mature cheek-fur silhouette, only one or two gray pixels at the far tips. Capable, dignified but fond of drink; no beard or old-age wrinkles.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "reference",
+        "description": "Edit the source tiger into an intermediate look between the source and reference. Keep the SOURCE's broad oversized head, short stocky adult body, nearly frontal angle, dark-teal sleeveless martial vest, sand trousers, rust sash, ivory wrist wraps, striped amber fur and curled tail. Change chiefly facial expression and cheek-fur silhouette using the reference's playful tipsy personality. A lovable middle-aged drinking-loving martial artist, sturdy and capable. Both eyes and eyebrows must remain readable, not two closed slits. Very faint cheek warmth, natural dark nose, almost no gray fur. Keep crisp 64x64 pixel art and rounded muzzle/cheek shading; transparent background. Full body and ears inside the native canvas with at least one transparent pixel at the edges. Empty paws, no bottle/gourd, no hat, no floor/shadow, no blur/text.\nSeasoned middle-aged expression: heavier brow shapes, alert small eyes under relaxed lids, broad calm smile with a strong cream muzzle. Broader mature cheek-fur silhouette, only one or two gray pixels at the far tips. Capable, dignified but fond of drink; no beard or old-age wrinkles.",
+        "reference_image": {
+          "source_image_id": "77b53b61-d5dc-51e0-90a7-f77c6b1d3f26",
+          "usage_description": "Use this second tiger as a FACE AND CHEEK-FUR personality reference only: relaxed uneven eyelids, a knowing crooked smile and mildly unkempt cheek tufts. Keep the source image's clothes, stocky proportions, pose, amber palette and nearly frontal orientation. Reduce the reference's elderly gray/white fur, red nose and blush substantially. Do not copy brown coat, dark pants, gourd or props. Seasoned middle-aged expression: heavier brow shapes, alert small eyes under relaxed lids, broad calm smile with a strong cream muzzle. Broader mature cheek-fur silhouette, only one or two gray pixels at the far tips. Capable, dignified but fond of drink; no beard or old-age wrinkles."
+        },
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101504
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85\",\n  \"image_id\": \"115a48eb-7b5b-57b1-8dab-dc6ad304ce0f\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"115a48eb-7b5b-57b1-8dab-dc6ad304ce0f\",\n  \"job_id\": \"cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85/download\"\n}\nPoll get_image(job_id=\"cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85",
+          "image_id": "115a48eb-7b5b-57b1-8dab-dc6ad304ce0f",
+          "status": "processing",
+          "source_image_id": "115a48eb-7b5b-57b1-8dab-dc6ad304ce0f",
+          "job_id": "cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85/download"
+        },
+        "isError": false
+      },
+      "jobId": "cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85",
+      "completion": {
+        "job_id": "cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85/download"
+        ],
+        "asset": {
+          "id": "115a48eb-7b5b-57b1-8dab-dc6ad304ce0f",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85\njob_id: cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85\nframes: 1\ntransparent: yes\nasset_id: 115a48eb-7b5b-57b1-8dab-dc6ad304ce0f\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/originals/middle-04.png",
+      "reviewDisposition": "rejected-by-user",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/originals/middle-04.png",
+        "sha256": "2ef5f53ae88ece4b961daaea8062424785f0303a38e1db7eb98798ef5663b3ce",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3667,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/frames/middle-04.png",
+        "sha256": "74d726edafcaea6062d8431e79ea4dad455b773cbd75642a5c217ec4814da93f",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/cb7ae9d8-1b0d-4fd1-af2c-de0f4cbc5a85/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 5,
+      "label": "호방한 웃음",
+      "group": "중간 느낌",
+      "seed": 101505,
+      "change": "Jovial expression: cheerful visible eyes beneath curved brows, conspicuous wide lopsided laughing mouth with a tiny dark opening. Fuller tousled cheek fur and gently flushed cheeks. A warm hearty laugh rather than an extreme drunk or clown face.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "reference",
+        "description": "Edit the source tiger into an intermediate look between the source and reference. Keep the SOURCE's broad oversized head, short stocky adult body, nearly frontal angle, dark-teal sleeveless martial vest, sand trousers, rust sash, ivory wrist wraps, striped amber fur and curled tail. Change chiefly facial expression and cheek-fur silhouette using the reference's playful tipsy personality. A lovable middle-aged drinking-loving martial artist, sturdy and capable. Both eyes and eyebrows must remain readable, not two closed slits. Very faint cheek warmth, natural dark nose, almost no gray fur. Keep crisp 64x64 pixel art and rounded muzzle/cheek shading; transparent background. Full body and ears inside the native canvas with at least one transparent pixel at the edges. Empty paws, no bottle/gourd, no hat, no floor/shadow, no blur/text.\nJovial expression: cheerful visible eyes beneath curved brows, conspicuous wide lopsided laughing mouth with a tiny dark opening. Fuller tousled cheek fur and gently flushed cheeks. A warm hearty laugh rather than an extreme drunk or clown face.",
+        "reference_image": {
+          "source_image_id": "77b53b61-d5dc-51e0-90a7-f77c6b1d3f26",
+          "usage_description": "Use this second tiger as a FACE AND CHEEK-FUR personality reference only: relaxed uneven eyelids, a knowing crooked smile and mildly unkempt cheek tufts. Keep the source image's clothes, stocky proportions, pose, amber palette and nearly frontal orientation. Reduce the reference's elderly gray/white fur, red nose and blush substantially. Do not copy brown coat, dark pants, gourd or props. Jovial expression: cheerful visible eyes beneath curved brows, conspicuous wide lopsided laughing mouth with a tiny dark opening. Fuller tousled cheek fur and gently flushed cheeks. A warm hearty laugh rather than an extreme drunk or clown face."
+        },
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101505
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"bbdda889-e92e-431e-8e89-57907a3d31d2\",\n  \"image_id\": \"d40d3448-e6c0-52f0-aeeb-ab19142f048f\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"d40d3448-e6c0-52f0-aeeb-ab19142f048f\",\n  \"job_id\": \"bbdda889-e92e-431e-8e89-57907a3d31d2\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/bbdda889-e92e-431e-8e89-57907a3d31d2/download\"\n}\nPoll get_image(job_id=\"bbdda889-e92e-431e-8e89-57907a3d31d2\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "bbdda889-e92e-431e-8e89-57907a3d31d2",
+          "image_id": "d40d3448-e6c0-52f0-aeeb-ab19142f048f",
+          "status": "processing",
+          "source_image_id": "d40d3448-e6c0-52f0-aeeb-ab19142f048f",
+          "job_id": "bbdda889-e92e-431e-8e89-57907a3d31d2",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/bbdda889-e92e-431e-8e89-57907a3d31d2/download"
+        },
+        "isError": false
+      },
+      "jobId": "bbdda889-e92e-431e-8e89-57907a3d31d2",
+      "completion": {
+        "job_id": "bbdda889-e92e-431e-8e89-57907a3d31d2",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/bbdda889-e92e-431e-8e89-57907a3d31d2/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/bbdda889-e92e-431e-8e89-57907a3d31d2/download"
+        ],
+        "asset": {
+          "id": "d40d3448-e6c0-52f0-aeeb-ab19142f048f",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: bbdda889-e92e-431e-8e89-57907a3d31d2\njob_id: bbdda889-e92e-431e-8e89-57907a3d31d2\nframes: 1\ntransparent: yes\nasset_id: d40d3448-e6c0-52f0-aeeb-ab19142f048f\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/bbdda889-e92e-431e-8e89-57907a3d31d2/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/originals/middle-05.png",
+      "reviewDisposition": "rejected-by-user",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/originals/middle-05.png",
+        "sha256": "c1771e2b3064d9e62c61b6652ddd8f9738567c5af151b2a5a06baa8ece5252a1",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3418,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/frames/middle-05.png",
+        "sha256": "a2cbf6195cbcf8a4730100d89d48b9f3ee178f2ec94fd9045ae02d8cc709027d",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/bbdda889-e92e-431e-8e89-57907a3d31d2/download",
+        "durationSeconds": 1
+      }
+    },
+    {
+      "id": 6,
+      "label": "느긋한 고수",
+      "group": "중간 느낌",
+      "seed": 101506,
+      "change": "Confident lazy-master expression: asymmetrical half-open eyes, one subtly arched brow, a knowing diagonal closed-mouth grin. Compact broad muzzle with slightly drooping rumpled side tufts. Comfortable composure with a hint of tipsiness, charismatic and strong.",
+      "request": {
+        "source_image_id": "387a856b-5950-5a8a-a752-a9cff72788a1",
+        "method": "reference",
+        "description": "Edit the source tiger into an intermediate look between the source and reference. Keep the SOURCE's broad oversized head, short stocky adult body, nearly frontal angle, dark-teal sleeveless martial vest, sand trousers, rust sash, ivory wrist wraps, striped amber fur and curled tail. Change chiefly facial expression and cheek-fur silhouette using the reference's playful tipsy personality. A lovable middle-aged drinking-loving martial artist, sturdy and capable. Both eyes and eyebrows must remain readable, not two closed slits. Very faint cheek warmth, natural dark nose, almost no gray fur. Keep crisp 64x64 pixel art and rounded muzzle/cheek shading; transparent background. Full body and ears inside the native canvas with at least one transparent pixel at the edges. Empty paws, no bottle/gourd, no hat, no floor/shadow, no blur/text.\nConfident lazy-master expression: asymmetrical half-open eyes, one subtly arched brow, a knowing diagonal closed-mouth grin. Compact broad muzzle with slightly drooping rumpled side tufts. Comfortable composure with a hint of tipsiness, charismatic and strong.",
+        "reference_image": {
+          "source_image_id": "77b53b61-d5dc-51e0-90a7-f77c6b1d3f26",
+          "usage_description": "Use this second tiger as a FACE AND CHEEK-FUR personality reference only: relaxed uneven eyelids, a knowing crooked smile and mildly unkempt cheek tufts. Keep the source image's clothes, stocky proportions, pose, amber palette and nearly frontal orientation. Reduce the reference's elderly gray/white fur, red nose and blush substantially. Do not copy brown coat, dark pants, gourd or props. Confident lazy-master expression: asymmetrical half-open eyes, one subtly arched brow, a knowing diagonal closed-mouth grin. Compact broad muzzle with slightly drooping rumpled side tufts. Comfortable composure with a hint of tipsiness, charismatic and strong."
+        },
+        "no_background": true,
+        "use_color_palette_correction": false,
+        "seed": 101506
+      },
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"503cb432-51eb-4640-bd14-c066a10d532f\",\n  \"image_id\": \"c0ed7c9e-48e2-5e93-95b9-0d54fddb72aa\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"c0ed7c9e-48e2-5e93-95b9-0d54fddb72aa\",\n  \"job_id\": \"503cb432-51eb-4640-bd14-c066a10d532f\",\n  \"image_size\": {\n    \"width\": 64,\n    \"height\": 64\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/503cb432-51eb-4640-bd14-c066a10d532f/download\"\n}\nPoll get_image(job_id=\"503cb432-51eb-4640-bd14-c066a10d532f\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "503cb432-51eb-4640-bd14-c066a10d532f",
+          "image_id": "c0ed7c9e-48e2-5e93-95b9-0d54fddb72aa",
+          "status": "processing",
+          "source_image_id": "c0ed7c9e-48e2-5e93-95b9-0d54fddb72aa",
+          "job_id": "503cb432-51eb-4640-bd14-c066a10d532f",
+          "image_size": {
+            "width": 64,
+            "height": 64
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/503cb432-51eb-4640-bd14-c066a10d532f/download"
+        },
+        "isError": false
+      },
+      "jobId": "503cb432-51eb-4640-bd14-c066a10d532f",
+      "completion": {
+        "job_id": "503cb432-51eb-4640-bd14-c066a10d532f",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/503cb432-51eb-4640-bd14-c066a10d532f/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/503cb432-51eb-4640-bd14-c066a10d532f/download"
+        ],
+        "asset": {
+          "id": "c0ed7c9e-48e2-5e93-95b9-0d54fddb72aa",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      },
+      "completionText": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: 503cb432-51eb-4640-bd14-c066a10d532f\njob_id: 503cb432-51eb-4640-bd14-c066a10d532f\nframes: 1\ntransparent: yes\nasset_id: c0ed7c9e-48e2-5e93-95b9-0d54fddb72aa\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 5 generations\ndownload: https://api.pixellab.ai/mcp/images/503cb432-51eb-4640-bd14-c066a10d532f/download"
+        }
+      ],
+      "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/originals/middle-06.png",
+      "reviewDisposition": "rejected-by-user",
+      "original": {
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/originals/middle-06.png",
+        "sha256": "14dbb5c1ead01ada319331addd171e1973772ac66c356114c8cc0dd4aa64c8a8",
+        "width": 64,
+        "height": 64,
+        "byteSize": 3904,
+        "alphaBBox": [
+          7,
+          1,
+          52,
+          63
+        ],
+        "alphaValues": [
+          0,
+          255
+        ],
+        "hasTransparentMarginOnEverySide": true
+      },
+      "frame": {
+        "index": 0,
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/frames/middle-06.png",
+        "sha256": "ac6fff6518fc2696ee9ad28cdc649b8d1be3fec7a1b1b400ff6857c90af88a06",
+        "width": 45,
+        "height": 62,
+        "sourceRect": {
+          "x": 7,
+          "y": 1,
+          "width": 45,
+          "height": 62
+        },
+        "pivot": {
+          "x": 25,
+          "y": 0
+        },
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/503cb432-51eb-4640-bd14-c066a10d532f/download",
+        "durationSeconds": 1
+      }
+    }
+  ],
+  "selection": null,
+  "userFeedback": "처음 괜찮다고 한 것과 4차 3번 중간의 느낌을 원하며 이미지 6개 추가 생성 승인.",
+  "planningDirection": "처음 후보의 외형을 유지하고 3번의 눈매·입꼬리·흐트러진 볼 털을 가져오기. 흰 털·붉은 기운은 약하게. 술병은 기본 자세에 고정하지 않기.",
+  "requests": 6,
+  "retries": 0,
+  "completedCount": 6,
+  "actualCostGenerations": 30,
+  "balanceAfter": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 1783\ngenerations_used: 217\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "followupFeedback": {
+    "text": "앞에걸 젊은시절 뒤에걸 중장년기로 할까? 다른것들은 맘에드는게 없네",
+    "newCandidatesDisposition": "rejected-by-user",
+    "ageRolesProposed": [
+      {
+        "role": "young",
+        "referenceRound": 1,
+        "referenceCandidate": 5
+      },
+      {
+        "role": "middle-aged",
+        "referenceRound": 4,
+        "referenceCandidate": 3
+      }
+    ],
+    "gameImplementationApproved": false,
+    "gameImplementationApplied": false,
+    "ageRoleImages": [
+      {
+        "role": "young",
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/originals/candidate-05.png",
+        "sha256": "c1153a5ff858a5863209b8cd4946d2523cc84d6a1d880a2d22ac8fc60230e5e0",
+        "attachmentPixelEqualityVerified": true
+      },
+      {
+        "role": "middle-aged",
+        "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/originals/drunk-03.png",
+        "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9",
+        "attachmentPixelEqualityVerified": true
+      }
+    ],
+    "recommendation": "현재 주인공은 중장년 외형, 젊은 외형은 회상·과거 이야기용으로 활용하는 방향을 추천. 정확한 연령·이야기 사용처·게임 교체는 아직 확정하지 않음."
+  },
+  "baseFrame": {
+    "index": 0,
+    "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-03/frames/base.png",
+    "sha256": "42f414a02c34ebd74010c39ceff8c81010b08720fe688381eb2d5f09d05dfb37",
+    "width": 45,
+    "height": 62,
+    "sourceRect": {
+      "x": 7,
+      "y": 1,
+      "width": 45,
+      "height": 62
+    },
+    "pivot": {
+      "x": 25,
+      "y": 0
+    },
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/e0416efe-9298-4b98-81b3-09915bd580c5/download",
+    "durationSeconds": 1
+  },
+  "styleReferenceFrame": {
+    "index": 0,
+    "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-04/frames/drunk-03.png",
+    "sha256": "03f2648ac38f1a8152995322d7628d10ba4486d81d3427ed532adc8d7a9b9ff0",
+    "width": 45,
+    "height": 63,
+    "sourceRect": {
+      "x": 7,
+      "y": 0,
+      "width": 45,
+      "height": 63
+    },
+    "pivot": {
+      "x": 25,
+      "y": 0
+    },
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/b4c8bf26-4fef-4653-9971-4a9bb1984954/download",
+    "durationSeconds": 1
+  },
+  "review": {
+    "contact": {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/review/contact.png",
+      "sha256": "7cb10cc7899f2882580524098b06c00ce844a15da9c4616cd2e15837455bd4be",
+      "width": 816,
+      "height": 1116
+    },
+    "candidates": {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/review/candidates.png",
+      "sha256": "8b917fbd3e9ca0c2501d1443e36573d221615b3b77f1a259e4d9f49fe36f5bc1",
+      "width": 816,
+      "height": 784
+    },
+    "method": "투명 여백만 크롭, 비교용 정수 3배 확대와 원본 1배. 원본 중앙 가로 피벗과 발 바닥 정렬.",
+    "selection": null,
+    "runtimeVerified": false,
+    "notes": "새 후보6개는 사용자 제외. 1차5번을 젊은 시절, 4차3번을 중장년기로 쓰는 외형 구분안을 검토함. 게임 연결 없음.",
+    "ageRoles": {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/round-05/review/age-roles.png",
+      "sha256": "644d6e053f6f52aa3f1b020c7564ae5f6f8709d9fc0659d6aa36a513d473aeaa",
+      "width": 544,
+      "height": 424
+    },
+    "visualInspection": {
+      "identity": "청록 조끼·모래색 바지·넓은 얼굴·다부진 체형은 유지됨. 모든 새 후보의 알파 경계 높이는62px.",
+      "facialVariation": "4·5·6번의 입과 주둥이 형태 변화가 상대적으로 크지만 전체 외형은 여전히 비슷함. 요청한 양 눈이 읽히는 표정은 모든 후보에서 뚜렷하지 않음.",
+      "userOutcome": "사용자가 새 후보6개를 제외하고, 1차5번을 젊은 시절·4차3번을 중장년기로 쓰는 구분안을 제안함."
+    }
+  }
+}

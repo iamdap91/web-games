@@ -1,0 +1,2569 @@
+{
+  "id": "mud-crab",
+  "name": "진흙게",
+  "theme": "wetland",
+  "role": "armored",
+  "appearance": "Wide clay-brown crab with one oversized stone-encrusted pincer, pale blue underside, legs readable as compact pairs.",
+  "motions": {
+    "stand": "Facing left, eyestalks turn and blink separately, the oversized stone pincer opens then closes slowly while two small walking feet adjust, return to the planted guard.",
+    "move": "Facing left, crab scuttles in place with coordinated alternating compact leg pairs, body stays broad and low, large stone pincer held ahead on the left and small claw counterbalances, seamless cycle.",
+    "attack1": "Facing left, lift and open the oversized stone pincer in a broad wind-up, thrust it left and snap the jaws closed at clear contact, pull the claw back and return to the original low guard. Keep only one oversized pincer.",
+    "hit1": "Facing left, eyestalks pull down and large claw shields the face, leg pairs buckle briefly under the shell, reopen the guard and recover.",
+    "die1": "Facing left, claws relax open and eyestalks droop, paired legs fold under the shell and the crab rolls partly onto the pale-blue side, finish grounded and motionless."
+  },
+  "assetId": "ai/monster-mud-crab",
+  "localRoot": "public/assets/maplestory/monster-expansion/mud-crab",
+  "attempts": [
+    {
+      "motion": "original",
+      "attempt": 1,
+      "key": "monster-a-mud-crab-original-01",
+      "jobId": "83f96be6-3fef-4b1f-b6aa-0f07621459af",
+      "balanceBefore": 512,
+      "maximumReservedGenerations": 1,
+      "args": {
+        "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Wide clay-brown crab with one oversized stone-encrusted pincer, pale blue underside, legs readable as compact pairs. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+        "width": 64,
+        "height": 64,
+        "no_background": true,
+        "direction": "west",
+        "view": "low top-down",
+        "outline": "selective outline",
+        "shading": "basic shading",
+        "detail": "medium detail",
+        "seed": 614008,
+        "text_guidance_scale": 8
+      },
+      "queueResponse": "id: 83f96be6-3fef-4b1f-b6aa-0f07621459af\njob_id: 83f96be6-3fef-4b1f-b6aa-0f07621459af\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Wide clay-brown crab with one oversized stone-encrusted pincer, pale blue underside, legs readable as compact pairs. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: e9ad1a62-f856-53ac-8752-9620424553e8\nasset_status: pending (saved when generation completes)\nseed: 614008\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"83f96be6-3fef-4b1f-b6aa-0f07621459af\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 83f96be6-3fef-4b1f-b6aa-0f07621459af\njob_id: 83f96be6-3fef-4b1f-b6aa-0f07621459af\nframes: 1\ntransparent: yes\nasset_id: e9ad1a62-f856-53ac-8752-9620424553e8\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download",
+      "localPath": "public/assets/maplestory/monster-expansion/mud-crab/originals/original-01.png",
+      "sha256": "39f42d479efa850716282ee431c2a475b85565cf4f9ad5cce84e1b9af87a6122",
+      "byteSize": 2723,
+      "width": 64,
+      "height": 64,
+      "alphaValues": [
+        0,
+        255
+      ],
+      "visibleBounds": {
+        "x": 5,
+        "y": 13,
+        "width": 54,
+        "height": 41
+      },
+      "visiblePixels": 1462,
+      "paletteSize": 35,
+      "chargedGenerations": 1,
+      "nativeFacing": "left",
+      "selection": "accepted after silhouette / anatomy / native alpha review"
+    },
+    {
+      "motion": "stand",
+      "attempt": 1,
+      "key": "monster-a-mud-crab-stand-01",
+      "jobId": "458e8833-0235-4630-9066-83ead94a1efb",
+      "balanceBefore": 565,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625701,
+        "action": "Facing left, eyestalks turn and blink separately, the oversized stone pincer opens then closes slowly while two small walking feet adjust, return to the planted guard. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download"
+      },
+      "queueResponse": "id: 458e8833-0235-4630-9066-83ead94a1efb\njob_id: 458e8833-0235-4630-9066-83ead94a1efb\naction: Facing left, eyestalks turn and blink separately, the oversized stone pincer opens then closes slowly while two small walking feet adjust, return to the planted guard. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625701\nasset_id: dd265d1b-321b-5ab6-ba8f-4da0cc478d67\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"458e8833-0235-4630-9066-83ead94a1efb\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 458e8833-0235-4630-9066-83ead94a1efb\njob_id: 458e8833-0235-4630-9066-83ead94a1efb\nframes: 5\ntransparent: yes\nasset_id: dd265d1b-321b-5ab6-ba8f-4da0cc478d67\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/mud-crab/originals/original-01.png",
+        "sha256": "39f42d479efa850716282ee431c2a475b85565cf4f9ad5cce84e1b9af87a6122",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 49,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/00.png",
+          "sourceSha256": "7c4f932000b04b0fe8e827067cb3e97aaed310c777279c90bc6fd8a545d9310b",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 13,
+            "width": 54,
+            "height": 41
+          },
+          "visiblePixels": 1462,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/01.png",
+          "sourceSha256": "297f7148b5802b75a40678a6e6fbb4534983e8057e26e656cfe1a3fc83647b5c",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 11,
+            "width": 53,
+            "height": 42
+          },
+          "visiblePixels": 1438,
+          "colors": 37,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/02.png",
+          "sourceSha256": "da22dde0ad02461c363801d27aee309d80fe768b7304bd17ba36e264a76f1644",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 7,
+            "y": 11,
+            "width": 52,
+            "height": 42
+          },
+          "visiblePixels": 1381,
+          "colors": 36,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/03.png",
+          "sourceSha256": "1aab28bec4069421c8ebae90847ae56d7747708c0631988c796ca6a78ee79990",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 12,
+            "width": 53,
+            "height": 41
+          },
+          "visiblePixels": 1400,
+          "colors": 38,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/04.png",
+          "sourceSha256": "0cf8e39f9b33d2637ab4eef0ca908e818e633bcb876604ae4165f88d2cfe69c0",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 13,
+            "width": 54,
+            "height": 41
+          },
+          "visiblePixels": 1462,
+          "colors": 35,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/mud-crab/review/stand-458e8833-0235-4630-9066-83ead94a1efb.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/stand/458e8833-0235-4630-9066-83ead94a1efb/00.png",
+          "sha256": "297f7148b5802b75a40678a6e6fbb4534983e8057e26e656cfe1a3fc83647b5c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/01.png",
+          "sourceSha256": "297f7148b5802b75a40678a6e6fbb4534983e8057e26e656cfe1a3fc83647b5c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/stand/458e8833-0235-4630-9066-83ead94a1efb/01.png",
+          "sha256": "da22dde0ad02461c363801d27aee309d80fe768b7304bd17ba36e264a76f1644",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/02.png",
+          "sourceSha256": "da22dde0ad02461c363801d27aee309d80fe768b7304bd17ba36e264a76f1644",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/stand/458e8833-0235-4630-9066-83ead94a1efb/02.png",
+          "sha256": "1aab28bec4069421c8ebae90847ae56d7747708c0631988c796ca6a78ee79990",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/03.png",
+          "sourceSha256": "1aab28bec4069421c8ebae90847ae56d7747708c0631988c796ca6a78ee79990",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/stand/458e8833-0235-4630-9066-83ead94a1efb/03.png",
+          "sha256": "0cf8e39f9b33d2637ab4eef0ca908e818e633bcb876604ae4165f88d2cfe69c0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/04.png",
+          "sourceSha256": "0cf8e39f9b33d2637ab4eef0ca908e818e633bcb876604ae4165f88d2cfe69c0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 좌향 큰 집게가 열리고 닫히며 눈자루와 다리가 움직이는 실제 생성 대기."
+    },
+    {
+      "motion": "move",
+      "attempt": 1,
+      "key": "monster-a-mud-crab-move-01",
+      "jobId": "daff4b14-9313-409b-94cd-c3c8753d7f65",
+      "balanceBefore": 598,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625702,
+        "action": "Facing left, crab scuttles in place with coordinated alternating compact leg pairs, body stays broad and low, large stone pincer held ahead on the left and small claw counterbalances, seamless cycle. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download"
+      },
+      "queueResponse": "id: daff4b14-9313-409b-94cd-c3c8753d7f65\njob_id: daff4b14-9313-409b-94cd-c3c8753d7f65\naction: Facing left, crab scuttles in place with coordinated alternating compact leg pairs, body stays broad and low, large stone pincer held ahead on the left and small claw counterbalances, seamless cycle. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625702\nasset_id: 146451d9-89f8-5735-8f72-f5aa921c5c31\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"daff4b14-9313-409b-94cd-c3c8753d7f65\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: daff4b14-9313-409b-94cd-c3c8753d7f65\njob_id: daff4b14-9313-409b-94cd-c3c8753d7f65\nframes: 9\ntransparent: yes\nasset_id: 146451d9-89f8-5735-8f72-f5aa921c5c31\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/mud-crab/originals/original-01.png",
+        "sha256": "39f42d479efa850716282ee431c2a475b85565cf4f9ad5cce84e1b9af87a6122",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 34,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/00.png",
+          "sourceSha256": "43b071af24b03ac85a8b4a76174bdba941d1125ddd32703e13f841450e13d5de",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 13,
+            "width": 54,
+            "height": 41
+          },
+          "visiblePixels": 1462,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/01.png",
+          "sourceSha256": "9c8bed1f3bdf5bf8dd56e6e27f74753dbc1be557f2a7e185dca5fb6a372dcf23",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 12,
+            "width": 55,
+            "height": 41
+          },
+          "visiblePixels": 1464,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/02.png",
+          "sourceSha256": "180c0076b2efd34f1d50d4b3c395b6e7eab3d56280a0fd718ce0ff71419f7f82",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 4,
+            "y": 11,
+            "width": 55,
+            "height": 41
+          },
+          "visiblePixels": 1471,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/03.png",
+          "sourceSha256": "2c0bf8533089bdb249e38f8f12334715c9be285f862db3e60086b547b5e5bff2",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 11,
+            "width": 54,
+            "height": 41
+          },
+          "visiblePixels": 1480,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/04.png",
+          "sourceSha256": "a91c6446e938514671d07ff4a1b6a54d319cc88fb68a04e1d7cc32cef0694ace",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 10,
+            "width": 54,
+            "height": 42
+          },
+          "visiblePixels": 1515,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/05.png",
+          "sourceSha256": "c2bc2af3d82a93a17f1d30371ac1baa8e96b82caaa1609a02b620fbb27fef5ea",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 11,
+            "width": 54,
+            "height": 41
+          },
+          "visiblePixels": 1509,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/06.png",
+          "sourceSha256": "7f59d1e7829b5993e190e2466050cbaa300a2130f4b02928cdbea4e36c23cead",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 12,
+            "width": 53,
+            "height": 41
+          },
+          "visiblePixels": 1481,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/07.png",
+          "sourceSha256": "39a883538b662485cff0ecf85fe50a09656351a247455438f132fa83dc275e65",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 13,
+            "width": 53,
+            "height": 41
+          },
+          "visiblePixels": 1446,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/08.png",
+          "sourceSha256": "56d8e24d0846f80d2c921272e5ed5646d6e37c1d3349835ffb97b6e840f3c661",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 13,
+            "width": 54,
+            "height": 41
+          },
+          "visiblePixels": 1462,
+          "colors": 35,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/mud-crab/review/move-daff4b14-9313-409b-94cd-c3c8753d7f65.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/00.png",
+          "sha256": "9c8bed1f3bdf5bf8dd56e6e27f74753dbc1be557f2a7e185dca5fb6a372dcf23",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/01.png",
+          "sourceSha256": "9c8bed1f3bdf5bf8dd56e6e27f74753dbc1be557f2a7e185dca5fb6a372dcf23",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/01.png",
+          "sha256": "180c0076b2efd34f1d50d4b3c395b6e7eab3d56280a0fd718ce0ff71419f7f82",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/02.png",
+          "sourceSha256": "180c0076b2efd34f1d50d4b3c395b6e7eab3d56280a0fd718ce0ff71419f7f82",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/02.png",
+          "sha256": "2c0bf8533089bdb249e38f8f12334715c9be285f862db3e60086b547b5e5bff2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/03.png",
+          "sourceSha256": "2c0bf8533089bdb249e38f8f12334715c9be285f862db3e60086b547b5e5bff2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/03.png",
+          "sha256": "a91c6446e938514671d07ff4a1b6a54d319cc88fb68a04e1d7cc32cef0694ace",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/04.png",
+          "sourceSha256": "a91c6446e938514671d07ff4a1b6a54d319cc88fb68a04e1d7cc32cef0694ace",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/04.png",
+          "sha256": "c2bc2af3d82a93a17f1d30371ac1baa8e96b82caaa1609a02b620fbb27fef5ea",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/05.png",
+          "sourceSha256": "c2bc2af3d82a93a17f1d30371ac1baa8e96b82caaa1609a02b620fbb27fef5ea",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/05.png",
+          "sha256": "7f59d1e7829b5993e190e2466050cbaa300a2130f4b02928cdbea4e36c23cead",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/06.png",
+          "sourceSha256": "7f59d1e7829b5993e190e2466050cbaa300a2130f4b02928cdbea4e36c23cead",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/06.png",
+          "sha256": "39a883538b662485cff0ecf85fe50a09656351a247455438f132fa83dc275e65",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/07.png",
+          "sourceSha256": "39a883538b662485cff0ecf85fe50a09656351a247455438f132fa83dc275e65",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/07.png",
+          "sha256": "56d8e24d0846f80d2c921272e5ed5646d6e37c1d3349835ffb97b6e840f3c661",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/08.png",
+          "sourceSha256": "56d8e24d0846f80d2c921272e5ed5646d6e37c1d3349835ffb97b6e840f3c661",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": true,
+      "selection": "accepted: 좌향 집게 아래의 짧은 다리와 몸이 교대 디딤에 따라 움직이는 실제 게걸음 루프."
+    },
+    {
+      "motion": "attack1",
+      "attempt": 1,
+      "key": "monster-a-mud-crab-attack1-01",
+      "jobId": "af39c3f2-cc50-4c17-bbf1-334e737c0041",
+      "balanceBefore": 615,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625703,
+        "action": "Facing left, lift and open the oversized stone pincer in a broad wind-up, thrust it left and snap the jaws closed at clear contact, pull the claw back and return to the original low guard. Keep only one oversized pincer. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download"
+      },
+      "queueResponse": "id: af39c3f2-cc50-4c17-bbf1-334e737c0041\njob_id: af39c3f2-cc50-4c17-bbf1-334e737c0041\naction: Facing left, lift and open the oversized stone pincer in a broad wind-up, thrust it left and snap the jaws closed at clear contact, pull the claw back and return to the original low guard. Keep only one oversized pincer. Preserve the exact creature identity, anatomy, outline and native pixel size from the reference. Keep the same facing throughout. Animate distinct body parts and joints on a fixed transparent canvas, leave a transparent border and keep the creature fully visible. Do not pan the camera, do not zoom or scale the whole creature. No color flashes or unexplained palette changes; fixed lighting throughout. No added background, floor, cast shadow, text, particles, target, weapon or other creature.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625703\nasset_id: b1603c47-eee3-5d84-a48b-118064b7ad0f\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"af39c3f2-cc50-4c17-bbf1-334e737c0041\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: af39c3f2-cc50-4c17-bbf1-334e737c0041\njob_id: af39c3f2-cc50-4c17-bbf1-334e737c0041\nframes: 9\ntransparent: yes\nasset_id: b1603c47-eee3-5d84-a48b-118064b7ad0f\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/mud-crab/originals/original-01.png",
+        "sha256": "39f42d479efa850716282ee431c2a475b85565cf4f9ad5cce84e1b9af87a6122",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 37,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/00.png",
+          "sourceSha256": "e5799c3bd8d3bb8b3cc79363e4b87d54c2f55eac7c22adac7515262de86a4193",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 13,
+            "width": 54,
+            "height": 41
+          },
+          "visiblePixels": 1462,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/01.png",
+          "sourceSha256": "e581b13c166bb0ecf7d31ee62bf08cbb59201a2a6a5b49d09b50614cd1ae6dee",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 12,
+            "width": 54,
+            "height": 42
+          },
+          "visiblePixels": 1434,
+          "colors": 36,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/02.png",
+          "sourceSha256": "bf57a3626f4ee1ce7bad02d7c03b04bb2393ba19554562734224ca659d67f764",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 11,
+            "width": 53,
+            "height": 44
+          },
+          "visiblePixels": 1447,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/03.png",
+          "sourceSha256": "e54d335e1804e1798ed32a1f7732a6bca9a2d71d6ecb6f059a568a19965d9326",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 10,
+            "width": 51,
+            "height": 44
+          },
+          "visiblePixels": 1505,
+          "colors": 36,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/04.png",
+          "sourceSha256": "2959e0f187cf888fe92f0d467829b414c4191a363c037ddf06e29a250a81e3ff",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 10,
+            "width": 49,
+            "height": 43
+          },
+          "visiblePixels": 1504,
+          "colors": 34,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/05.png",
+          "sourceSha256": "478827f4186376291e65bab56a5ff146c5d2a6e9d47d62793d28d6bd81d7a043",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 10,
+            "width": 51,
+            "height": 44
+          },
+          "visiblePixels": 1511,
+          "colors": 36,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/06.png",
+          "sourceSha256": "07afac37455476aab586f5da420b229851c325ef4614c2e043ce5d0c23096b5e",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 11,
+            "width": 53,
+            "height": 44
+          },
+          "visiblePixels": 1477,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/07.png",
+          "sourceSha256": "f54b76c20b36ba4fd60af440ea12061bc45c9424b46019c8d693f996f0c5b862",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 12,
+            "width": 54,
+            "height": 42
+          },
+          "visiblePixels": 1453,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/08.png",
+          "sourceSha256": "9034ae5e6add0fc92a81375bbdbc4b7b5f97faeed84476a2de6b331d05aa27ef",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 13,
+            "width": 54,
+            "height": 41
+          },
+          "visiblePixels": 1462,
+          "colors": 35,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/mud-crab/review/attack1-af39c3f2-cc50-4c17-bbf1-334e737c0041.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/00.png",
+          "sha256": "e581b13c166bb0ecf7d31ee62bf08cbb59201a2a6a5b49d09b50614cd1ae6dee",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/01.png",
+          "sourceSha256": "e581b13c166bb0ecf7d31ee62bf08cbb59201a2a6a5b49d09b50614cd1ae6dee",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/01.png",
+          "sha256": "bf57a3626f4ee1ce7bad02d7c03b04bb2393ba19554562734224ca659d67f764",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/02.png",
+          "sourceSha256": "bf57a3626f4ee1ce7bad02d7c03b04bb2393ba19554562734224ca659d67f764",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/02.png",
+          "sha256": "e54d335e1804e1798ed32a1f7732a6bca9a2d71d6ecb6f059a568a19965d9326",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/03.png",
+          "sourceSha256": "e54d335e1804e1798ed32a1f7732a6bca9a2d71d6ecb6f059a568a19965d9326",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/03.png",
+          "sha256": "2959e0f187cf888fe92f0d467829b414c4191a363c037ddf06e29a250a81e3ff",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/04.png",
+          "sourceSha256": "2959e0f187cf888fe92f0d467829b414c4191a363c037ddf06e29a250a81e3ff",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/04.png",
+          "sha256": "478827f4186376291e65bab56a5ff146c5d2a6e9d47d62793d28d6bd81d7a043",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/05.png",
+          "sourceSha256": "478827f4186376291e65bab56a5ff146c5d2a6e9d47d62793d28d6bd81d7a043",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/05.png",
+          "sha256": "07afac37455476aab586f5da420b229851c325ef4614c2e043ce5d0c23096b5e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/06.png",
+          "sourceSha256": "07afac37455476aab586f5da420b229851c325ef4614c2e043ce5d0c23096b5e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/06.png",
+          "sha256": "f54b76c20b36ba4fd60af440ea12061bc45c9424b46019c8d693f996f0c5b862",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/07.png",
+          "sourceSha256": "f54b76c20b36ba4fd60af440ea12061bc45c9424b46019c8d693f996f0c5b862",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/07.png",
+          "sha256": "9034ae5e6add0fc92a81375bbdbc4b7b5f97faeed84476a2de6b331d05aa27ef",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/08.png",
+          "sourceSha256": "9034ae5e6add0fc92a81375bbdbc4b7b5f97faeed84476a2de6b331d05aa27ef",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 큰 집게를 열어 앞으로 내밀었다 닫는 공격. 4번의 닫힌 집게가 가장 앞에 나온 자세를 접촉으로 선택.",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625,
+      "contactReason": "좌향 큰 집게를 열어 앞으로 내밀었다 닫는 공격. 4번의 닫힌 집게가 가장 앞에 나온 자세를 접촉으로 선택."
+    },
+    {
+      "motion": "hit1",
+      "attempt": 1,
+      "key": "monster-a-mud-crab-hit1-01",
+      "jobId": "28384cf5-3694-4eab-8de8-9b9896ac9c08",
+      "balanceBefore": 657,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download",
+        "frame_count": 4,
+        "no_background": true,
+        "seed": 625704,
+        "action": "Facing left, eyestalks pull down and large claw shields the face, leg pairs buckle briefly under the shell, reopen the guard and recover. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.",
+        "last_frame_url": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download"
+      },
+      "queueResponse": "id: 28384cf5-3694-4eab-8de8-9b9896ac9c08\njob_id: 28384cf5-3694-4eab-8de8-9b9896ac9c08\naction: Facing left, eyestalks pull down and large claw shields the face, leg pairs buckle briefly under the shell, reopen the guard and recover. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 4\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 625704\nasset_id: f11e78ea-9538-5bb2-a10d-334cc4ae24b7\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"28384cf5-3694-4eab-8de8-9b9896ac9c08\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: 28384cf5-3694-4eab-8de8-9b9896ac9c08\njob_id: 28384cf5-3694-4eab-8de8-9b9896ac9c08\nframes: 5\ntransparent: yes\nasset_id: f11e78ea-9538-5bb2-a10d-334cc4ae24b7\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=0 ... ?index=4\n(1 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 5,
+      "generatedFrameCount": 4,
+      "distinctGeneratedFrames": 4,
+      "generatedFramesDifferentFromInput": 4,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/mud-crab/originals/original-01.png",
+        "sha256": "39f42d479efa850716282ee431c2a475b85565cf4f9ad5cce84e1b9af87a6122",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 69,
+        "alphaDifferences": 0,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/00.png",
+          "sourceSha256": "6f12a8487318e218c7d9fe6b0ddb37d140a734abef9f6cff1b9c7543b83d6475",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 13,
+            "width": 54,
+            "height": 41
+          },
+          "visiblePixels": 1462,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/01.png",
+          "sourceSha256": "bef65fd0378ed70cec9b326fd642a289a5d9225531ba57fbe52aae9b50ac057f",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 11,
+            "width": 55,
+            "height": 43
+          },
+          "visiblePixels": 1494,
+          "colors": 36,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/02.png",
+          "sourceSha256": "9681b652bead6bb60d407c08df6dd7cf06fbce114fb9c913c2bd25f3da032ff9",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 10,
+            "width": 55,
+            "height": 44
+          },
+          "visiblePixels": 1487,
+          "colors": 38,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/03.png",
+          "sourceSha256": "58a996edd9c9aa74ab73fa1deea619dd3ca66212e287e4c67b76f2068814ffbf",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 6,
+            "y": 12,
+            "width": 54,
+            "height": 43
+          },
+          "visiblePixels": 1470,
+          "colors": 39,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/04.png",
+          "sourceSha256": "b41cf5a2841732743991375f23a966fffb82f9868754b0f1e64a92f14cc9ff54",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 13,
+            "width": 54,
+            "height": 41
+          },
+          "visiblePixels": 1462,
+          "colors": 35,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/mud-crab/review/hit1-28384cf5-3694-4eab-8de8-9b9896ac9c08.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/00.png",
+          "sha256": "bef65fd0378ed70cec9b326fd642a289a5d9225531ba57fbe52aae9b50ac057f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/01.png",
+          "sourceSha256": "bef65fd0378ed70cec9b326fd642a289a5d9225531ba57fbe52aae9b50ac057f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/01.png",
+          "sha256": "9681b652bead6bb60d407c08df6dd7cf06fbce114fb9c913c2bd25f3da032ff9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/02.png",
+          "sourceSha256": "9681b652bead6bb60d407c08df6dd7cf06fbce114fb9c913c2bd25f3da032ff9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/02.png",
+          "sha256": "58a996edd9c9aa74ab73fa1deea619dd3ca66212e287e4c67b76f2068814ffbf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/03.png",
+          "sourceSha256": "58a996edd9c9aa74ab73fa1deea619dd3ca66212e287e4c67b76f2068814ffbf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/03.png",
+          "sha256": "b41cf5a2841732743991375f23a966fffb82f9868754b0f1e64a92f14cc9ff54",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/04.png",
+          "sourceSha256": "b41cf5a2841732743991375f23a966fffb82f9868754b0f1e64a92f14cc9ff54",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 좌향 집게와 짧은 다리를 움츠려 몸을 보호했다 원래 낮은 자세로 돌아오는 실제 피격."
+    },
+    {
+      "motion": "die1",
+      "attempt": 1,
+      "key": "monster-a-mud-crab-die1-01",
+      "jobId": "e54a743e-917d-4c06-a91d-159297696723",
+      "balanceBefore": 695,
+      "maximumReservedGenerations": 8,
+      "args": {
+        "first_frame_url": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download",
+        "frame_count": 8,
+        "no_background": true,
+        "seed": 625705,
+        "action": "Facing left, claws relax open and eyestalks droop, paired legs fold under the shell and the crab rolls partly onto the pale-blue side, finish grounded and motionless. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes."
+      },
+      "queueResponse": "id: e54a743e-917d-4c06-a91d-159297696723\njob_id: e54a743e-917d-4c06-a91d-159297696723\naction: Facing left, claws relax open and eyestalks droop, paired legs fold under the shell and the crab rolls partly onto the pale-blue side, finish grounded and motionless. Preserve identity, anatomy and native pixel size. Fixed transparent camera; full body with clear border. No zoom, pan, extra effects, objects or color flashes.\nframes: 8\nsize: 64x64px\ntransparent: True\nseed: 625705\nasset_id: 6dfc0d44-555e-51d0-8f1f-980fb3e40578\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e54a743e-917d-4c06-a91d-159297696723\")",
+      "status": "completed",
+      "latestResponse": "status: completed\nid: e54a743e-917d-4c06-a91d-159297696723\njob_id: e54a743e-917d-4c06-a91d-159297696723\nframes: 9\ntransparent: yes\nasset_id: 6dfc0d44-555e-51d0-8f1f-980fb3e40578\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "chargedGenerations": 1,
+      "downloadedFrameCount": 9,
+      "generatedFrameCount": 8,
+      "distinctGeneratedFrames": 8,
+      "generatedFramesDifferentFromInput": 8,
+      "fixedInput": {
+        "localPath": "public/assets/maplestory/monster-expansion/mud-crab/originals/original-01.png",
+        "sha256": "39f42d479efa850716282ee431c2a475b85565cf4f9ad5cce84e1b9af87a6122",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download"
+      },
+      "serviceFrameZeroComparison": {
+        "visiblePixelDifferences": 254,
+        "alphaDifferences": 2,
+        "note": "PixelLab returned frame 0 may preprocess palette or alpha; preserve original and service output separately, do not claim pixel-identical source bookends"
+      },
+      "rawFrames": [
+        {
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=0",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/00.png",
+          "sourceSha256": "5496978bb042bf0a264f6c6176b0352bccf5eebc4f1b8da53882cd13c30f8b22",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 13,
+            "width": 54,
+            "height": 41
+          },
+          "visiblePixels": 1460,
+          "colors": 34,
+          "borderPixels": 0
+        },
+        {
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/01.png",
+          "sourceSha256": "8da5df40b132f3fb1ded0c81cb6142ed1731c3476ccaabef9064e615bd1df16d",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 12,
+            "width": 54,
+            "height": 41
+          },
+          "visiblePixels": 1465,
+          "colors": 36,
+          "borderPixels": 0
+        },
+        {
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/02.png",
+          "sourceSha256": "5e80748320853f2c0fb82faebac1d1790ec55e6711843fc2a48eef1897c1e837",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 13,
+            "width": 53,
+            "height": 40
+          },
+          "visiblePixels": 1421,
+          "colors": 38,
+          "borderPixels": 0
+        },
+        {
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/03.png",
+          "sourceSha256": "8100dcd3759b77e2f3b305f1f50260276764f58eeb25a28c2850d7b50b797561",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 14,
+            "width": 52,
+            "height": 39
+          },
+          "visiblePixels": 1381,
+          "colors": 36,
+          "borderPixels": 0
+        },
+        {
+          "index": 4,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/04.png",
+          "sourceSha256": "0a9f7f3e7b4bb0b74347821f2720fc3c145997812e07eb1cbd64179b4fd22c71",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 14,
+            "width": 52,
+            "height": 38
+          },
+          "visiblePixels": 1380,
+          "colors": 35,
+          "borderPixels": 0
+        },
+        {
+          "index": 5,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/05.png",
+          "sourceSha256": "4b0f1a90dae7e505bd2f87b45a9e3067fc8310f75b8b8990d0a519bffcaf2290",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 15,
+            "width": 53,
+            "height": 37
+          },
+          "visiblePixels": 1362,
+          "colors": 39,
+          "borderPixels": 0
+        },
+        {
+          "index": 6,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/06.png",
+          "sourceSha256": "b33ca903096e2cd34ca63ae6b27a3157a95e861b4479942d12dfcb55176910e9",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 16,
+            "width": 53,
+            "height": 36
+          },
+          "visiblePixels": 1295,
+          "colors": 32,
+          "borderPixels": 0
+        },
+        {
+          "index": 7,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/07.png",
+          "sourceSha256": "f0fd09fb5d9aeb0d8674e744c3044c14ed29d3fd84c68ba818a62058e0633197",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 17,
+            "width": 53,
+            "height": 35
+          },
+          "visiblePixels": 1320,
+          "colors": 37,
+          "borderPixels": 0
+        },
+        {
+          "index": 8,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/08.png",
+          "sourceSha256": "27020a85d4082ef1de9c1ef3c1cfbf580c1a4731e87d16af875c9ae9a6b27b72",
+          "width": 64,
+          "height": 64,
+          "alphaValues": [
+            0,
+            255
+          ],
+          "visibleBounds": {
+            "x": 5,
+            "y": 16,
+            "width": 54,
+            "height": 38
+          },
+          "visiblePixels": 1382,
+          "colors": 36,
+          "borderPixels": 0
+        }
+      ],
+      "reviewPath": "public/assets/maplestory/monster-expansion/mud-crab/review/die1-e54a743e-917d-4c06-a91d-159297696723.png",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/00.png",
+          "sha256": "8da5df40b132f3fb1ded0c81cb6142ed1731c3476ccaabef9064e615bd1df16d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/01.png",
+          "sourceSha256": "8da5df40b132f3fb1ded0c81cb6142ed1731c3476ccaabef9064e615bd1df16d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/01.png",
+          "sha256": "5e80748320853f2c0fb82faebac1d1790ec55e6711843fc2a48eef1897c1e837",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/02.png",
+          "sourceSha256": "5e80748320853f2c0fb82faebac1d1790ec55e6711843fc2a48eef1897c1e837",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/02.png",
+          "sha256": "8100dcd3759b77e2f3b305f1f50260276764f58eeb25a28c2850d7b50b797561",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/03.png",
+          "sourceSha256": "8100dcd3759b77e2f3b305f1f50260276764f58eeb25a28c2850d7b50b797561",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/03.png",
+          "sha256": "0a9f7f3e7b4bb0b74347821f2720fc3c145997812e07eb1cbd64179b4fd22c71",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/04.png",
+          "sourceSha256": "0a9f7f3e7b4bb0b74347821f2720fc3c145997812e07eb1cbd64179b4fd22c71",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/04.png",
+          "sha256": "4b0f1a90dae7e505bd2f87b45a9e3067fc8310f75b8b8990d0a519bffcaf2290",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/05.png",
+          "sourceSha256": "4b0f1a90dae7e505bd2f87b45a9e3067fc8310f75b8b8990d0a519bffcaf2290",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/05.png",
+          "sha256": "b33ca903096e2cd34ca63ae6b27a3157a95e861b4479942d12dfcb55176910e9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/06.png",
+          "sourceSha256": "b33ca903096e2cd34ca63ae6b27a3157a95e861b4479942d12dfcb55176910e9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/06.png",
+          "sha256": "f0fd09fb5d9aeb0d8674e744c3044c14ed29d3fd84c68ba818a62058e0633197",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/07.png",
+          "sourceSha256": "f0fd09fb5d9aeb0d8674e744c3044c14ed29d3fd84c68ba818a62058e0633197",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/07.png",
+          "sha256": "27020a85d4082ef1de9c1ef3c1cfbf580c1a4731e87d16af875c9ae9a6b27b72",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/08.png",
+          "sourceSha256": "27020a85d4082ef1de9c1ef3c1cfbf580c1a4731e87d16af875c9ae9a6b27b72",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "loop": false,
+      "selection": "accepted: 큰 집게와 다리가 아래로 풀리고 낮게 내려앉은 게 몸의 끝자세를 유지하는 실제 KO."
+    }
+  ],
+  "nativeFacing": "left",
+  "selectedOriginal": {
+    "motion": "original",
+    "attempt": 1,
+    "key": "monster-a-mud-crab-original-01",
+    "jobId": "83f96be6-3fef-4b1f-b6aa-0f07621459af",
+    "balanceBefore": 512,
+    "maximumReservedGenerations": 1,
+    "args": {
+      "description": "Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Wide clay-brown crab with one oversized stone-encrusted pincer, pale blue underside, legs readable as compact pairs. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "direction": "west",
+      "view": "low top-down",
+      "outline": "selective outline",
+      "shading": "basic shading",
+      "detail": "medium detail",
+      "seed": 614008,
+      "text_guidance_scale": 8
+    },
+    "queueResponse": "id: 83f96be6-3fef-4b1f-b6aa-0f07621459af\njob_id: 83f96be6-3fef-4b1f-b6aa-0f07621459af\ndescription: Original fantasy RPG enemy sprite, full creature visible, isolated on transparent background. Wide clay-brown crab with one oversized stone-encrusted pincer, pale blue underside, legs readable as compact pairs. Battle-ready stance facing LEFT (west), the head and face point to the left edge and the body extends behind toward the right. Slight three-quarter view toward the viewer, camera only slightly above. Native clean chunky pixel art, compact readable silhouette, dark selective outlines, three restrained shading tones per material, cohesive pixel clusters, warm forest RPG palette. Distinct anatomy as described. A single creature only, no text, no frame, no scenery, no floor, no cast shadow, no blur. Full creature occupies about 44-52 pixels in this 64 pixel canvas with transparent safety margins.\nsize: 64x64px\ntransparent: True\nasset_id: e9ad1a62-f856-53ac-8752-9620424553e8\nasset_status: pending (saved when generation completes)\nseed: 614008\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"83f96be6-3fef-4b1f-b6aa-0f07621459af\")",
+    "status": "completed",
+    "latestResponse": "status: completed\nid: 83f96be6-3fef-4b1f-b6aa-0f07621459af\njob_id: 83f96be6-3fef-4b1f-b6aa-0f07621459af\nframes: 1\ntransparent: yes\nasset_id: e9ad1a62-f856-53ac-8752-9620424553e8\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/83f96be6-3fef-4b1f-b6aa-0f07621459af/download",
+    "localPath": "public/assets/maplestory/monster-expansion/mud-crab/originals/original-01.png",
+    "sha256": "39f42d479efa850716282ee431c2a475b85565cf4f9ad5cce84e1b9af87a6122",
+    "byteSize": 2723,
+    "width": 64,
+    "height": 64,
+    "alphaValues": [
+      0,
+      255
+    ],
+    "visibleBounds": {
+      "x": 5,
+      "y": 13,
+      "width": 54,
+      "height": 41
+    },
+    "visiblePixels": 1462,
+    "paletteSize": 35,
+    "chargedGenerations": 1,
+    "nativeFacing": "left",
+    "selection": "accepted after silhouette / anatomy / native alpha review"
+  },
+  "anchor": {
+    "x": 32,
+    "y": 54
+  },
+  "animations": {
+    "stand": {
+      "label": "대기",
+      "loop": true,
+      "jobId": "458e8833-0235-4630-9066-83ead94a1efb",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/stand/458e8833-0235-4630-9066-83ead94a1efb/00.png",
+          "sha256": "297f7148b5802b75a40678a6e6fbb4534983e8057e26e656cfe1a3fc83647b5c",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/01.png",
+          "sourceSha256": "297f7148b5802b75a40678a6e6fbb4534983e8057e26e656cfe1a3fc83647b5c",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/stand/458e8833-0235-4630-9066-83ead94a1efb/01.png",
+          "sha256": "da22dde0ad02461c363801d27aee309d80fe768b7304bd17ba36e264a76f1644",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/02.png",
+          "sourceSha256": "da22dde0ad02461c363801d27aee309d80fe768b7304bd17ba36e264a76f1644",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/stand/458e8833-0235-4630-9066-83ead94a1efb/02.png",
+          "sha256": "1aab28bec4069421c8ebae90847ae56d7747708c0631988c796ca6a78ee79990",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/03.png",
+          "sourceSha256": "1aab28bec4069421c8ebae90847ae56d7747708c0631988c796ca6a78ee79990",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.18,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/stand/458e8833-0235-4630-9066-83ead94a1efb/03.png",
+          "sha256": "0cf8e39f9b33d2637ab4eef0ca908e818e633bcb876604ae4165f88d2cfe69c0",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/458e8833-0235-4630-9066-83ead94a1efb/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/stand/458e8833-0235-4630-9066-83ead94a1efb/04.png",
+          "sourceSha256": "0cf8e39f9b33d2637ab4eef0ca908e818e633bcb876604ae4165f88d2cfe69c0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 큰 집게가 열리고 닫히며 눈자루와 다리가 움직이는 실제 생성 대기.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/mud-crab/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/mud-crab/review/stand-458e8833-0235-4630-9066-83ead94a1efb.png"
+    },
+    "move": {
+      "label": "이동",
+      "loop": true,
+      "jobId": "daff4b14-9313-409b-94cd-c3c8753d7f65",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/00.png",
+          "sha256": "9c8bed1f3bdf5bf8dd56e6e27f74753dbc1be557f2a7e185dca5fb6a372dcf23",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/01.png",
+          "sourceSha256": "9c8bed1f3bdf5bf8dd56e6e27f74753dbc1be557f2a7e185dca5fb6a372dcf23",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/01.png",
+          "sha256": "180c0076b2efd34f1d50d4b3c395b6e7eab3d56280a0fd718ce0ff71419f7f82",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/02.png",
+          "sourceSha256": "180c0076b2efd34f1d50d4b3c395b6e7eab3d56280a0fd718ce0ff71419f7f82",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/02.png",
+          "sha256": "2c0bf8533089bdb249e38f8f12334715c9be285f862db3e60086b547b5e5bff2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/03.png",
+          "sourceSha256": "2c0bf8533089bdb249e38f8f12334715c9be285f862db3e60086b547b5e5bff2",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/03.png",
+          "sha256": "a91c6446e938514671d07ff4a1b6a54d319cc88fb68a04e1d7cc32cef0694ace",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/04.png",
+          "sourceSha256": "a91c6446e938514671d07ff4a1b6a54d319cc88fb68a04e1d7cc32cef0694ace",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/04.png",
+          "sha256": "c2bc2af3d82a93a17f1d30371ac1baa8e96b82caaa1609a02b620fbb27fef5ea",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/05.png",
+          "sourceSha256": "c2bc2af3d82a93a17f1d30371ac1baa8e96b82caaa1609a02b620fbb27fef5ea",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/05.png",
+          "sha256": "7f59d1e7829b5993e190e2466050cbaa300a2130f4b02928cdbea4e36c23cead",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/06.png",
+          "sourceSha256": "7f59d1e7829b5993e190e2466050cbaa300a2130f4b02928cdbea4e36c23cead",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/06.png",
+          "sha256": "39a883538b662485cff0ecf85fe50a09656351a247455438f132fa83dc275e65",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/07.png",
+          "sourceSha256": "39a883538b662485cff0ecf85fe50a09656351a247455438f132fa83dc275e65",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.1,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/move/daff4b14-9313-409b-94cd-c3c8753d7f65/07.png",
+          "sha256": "56d8e24d0846f80d2c921272e5ed5646d6e37c1d3349835ffb97b6e840f3c661",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/daff4b14-9313-409b-94cd-c3c8753d7f65/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/move/daff4b14-9313-409b-94cd-c3c8753d7f65/08.png",
+          "sourceSha256": "56d8e24d0846f80d2c921272e5ed5646d6e37c1d3349835ffb97b6e840f3c661",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 집게 아래의 짧은 다리와 몸이 교대 디딤에 따라 움직이는 실제 게걸음 루프.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/mud-crab/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/mud-crab/review/move-daff4b14-9313-409b-94cd-c3c8753d7f65.png"
+    },
+    "attack1": {
+      "label": "공격",
+      "loop": false,
+      "jobId": "af39c3f2-cc50-4c17-bbf1-334e737c0041",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/00.png",
+          "sha256": "e581b13c166bb0ecf7d31ee62bf08cbb59201a2a6a5b49d09b50614cd1ae6dee",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/01.png",
+          "sourceSha256": "e581b13c166bb0ecf7d31ee62bf08cbb59201a2a6a5b49d09b50614cd1ae6dee",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/01.png",
+          "sha256": "bf57a3626f4ee1ce7bad02d7c03b04bb2393ba19554562734224ca659d67f764",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/02.png",
+          "sourceSha256": "bf57a3626f4ee1ce7bad02d7c03b04bb2393ba19554562734224ca659d67f764",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/02.png",
+          "sha256": "e54d335e1804e1798ed32a1f7732a6bca9a2d71d6ecb6f059a568a19965d9326",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/03.png",
+          "sourceSha256": "e54d335e1804e1798ed32a1f7732a6bca9a2d71d6ecb6f059a568a19965d9326",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/03.png",
+          "sha256": "2959e0f187cf888fe92f0d467829b414c4191a363c037ddf06e29a250a81e3ff",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/04.png",
+          "sourceSha256": "2959e0f187cf888fe92f0d467829b414c4191a363c037ddf06e29a250a81e3ff",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/04.png",
+          "sha256": "478827f4186376291e65bab56a5ff146c5d2a6e9d47d62793d28d6bd81d7a043",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/05.png",
+          "sourceSha256": "478827f4186376291e65bab56a5ff146c5d2a6e9d47d62793d28d6bd81d7a043",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/05.png",
+          "sha256": "07afac37455476aab586f5da420b229851c325ef4614c2e043ce5d0c23096b5e",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/06.png",
+          "sourceSha256": "07afac37455476aab586f5da420b229851c325ef4614c2e043ce5d0c23096b5e",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/06.png",
+          "sha256": "f54b76c20b36ba4fd60af440ea12061bc45c9424b46019c8d693f996f0c5b862",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/07.png",
+          "sourceSha256": "f54b76c20b36ba4fd60af440ea12061bc45c9424b46019c8d693f996f0c5b862",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.08,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/07.png",
+          "sha256": "9034ae5e6add0fc92a81375bbdbc4b7b5f97faeed84476a2de6b331d05aa27ef",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/af39c3f2-cc50-4c17-bbf1-334e737c0041/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/attack1/af39c3f2-cc50-4c17-bbf1-334e737c0041/08.png",
+          "sourceSha256": "9034ae5e6add0fc92a81375bbdbc4b7b5f97faeed84476a2de6b331d05aa27ef",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 큰 집게를 열어 앞으로 내밀었다 닫는 공격. 4번의 닫힌 집게가 가장 앞에 나온 자세를 접촉으로 선택.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/mud-crab/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/mud-crab/review/attack1-af39c3f2-cc50-4c17-bbf1-334e737c0041.png",
+      "contactFrameIndex": 4,
+      "contactProgress": 0.5625
+    },
+    "hit1": {
+      "label": "피격",
+      "loop": false,
+      "jobId": "28384cf5-3694-4eab-8de8-9b9896ac9c08",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/00.png",
+          "sha256": "bef65fd0378ed70cec9b326fd642a289a5d9225531ba57fbe52aae9b50ac057f",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/01.png",
+          "sourceSha256": "bef65fd0378ed70cec9b326fd642a289a5d9225531ba57fbe52aae9b50ac057f",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/01.png",
+          "sha256": "9681b652bead6bb60d407c08df6dd7cf06fbce114fb9c913c2bd25f3da032ff9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/02.png",
+          "sourceSha256": "9681b652bead6bb60d407c08df6dd7cf06fbce114fb9c913c2bd25f3da032ff9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/02.png",
+          "sha256": "58a996edd9c9aa74ab73fa1deea619dd3ca66212e287e4c67b76f2068814ffbf",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/03.png",
+          "sourceSha256": "58a996edd9c9aa74ab73fa1deea619dd3ca66212e287e4c67b76f2068814ffbf",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.075,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/03.png",
+          "sha256": "b41cf5a2841732743991375f23a966fffb82f9868754b0f1e64a92f14cc9ff54",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/28384cf5-3694-4eab-8de8-9b9896ac9c08/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/hit1/28384cf5-3694-4eab-8de8-9b9896ac9c08/04.png",
+          "sourceSha256": "b41cf5a2841732743991375f23a966fffb82f9868754b0f1e64a92f14cc9ff54",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "좌향 집게와 짧은 다리를 움츠려 몸을 보호했다 원래 낮은 자세로 돌아오는 실제 피격.",
+      "generatedFrameCount": 4,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/mud-crab/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/mud-crab/review/hit1-28384cf5-3694-4eab-8de8-9b9896ac9c08.png"
+    },
+    "die1": {
+      "label": "쓰러짐",
+      "loop": false,
+      "jobId": "e54a743e-917d-4c06-a91d-159297696723",
+      "nativeFacing": "left",
+      "frames": [
+        {
+          "index": 0,
+          "sourceFrameIndex": 1,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/00.png",
+          "sha256": "8da5df40b132f3fb1ded0c81cb6142ed1731c3476ccaabef9064e615bd1df16d",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=1",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/01.png",
+          "sourceSha256": "8da5df40b132f3fb1ded0c81cb6142ed1731c3476ccaabef9064e615bd1df16d",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 1,
+          "sourceFrameIndex": 2,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/01.png",
+          "sha256": "5e80748320853f2c0fb82faebac1d1790ec55e6711843fc2a48eef1897c1e837",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=2",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/02.png",
+          "sourceSha256": "5e80748320853f2c0fb82faebac1d1790ec55e6711843fc2a48eef1897c1e837",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 2,
+          "sourceFrameIndex": 3,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/02.png",
+          "sha256": "8100dcd3759b77e2f3b305f1f50260276764f58eeb25a28c2850d7b50b797561",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=3",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/03.png",
+          "sourceSha256": "8100dcd3759b77e2f3b305f1f50260276764f58eeb25a28c2850d7b50b797561",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 3,
+          "sourceFrameIndex": 4,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/03.png",
+          "sha256": "0a9f7f3e7b4bb0b74347821f2720fc3c145997812e07eb1cbd64179b4fd22c71",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=4",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/04.png",
+          "sourceSha256": "0a9f7f3e7b4bb0b74347821f2720fc3c145997812e07eb1cbd64179b4fd22c71",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 4,
+          "sourceFrameIndex": 5,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/04.png",
+          "sha256": "4b0f1a90dae7e505bd2f87b45a9e3067fc8310f75b8b8990d0a519bffcaf2290",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=5",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/05.png",
+          "sourceSha256": "4b0f1a90dae7e505bd2f87b45a9e3067fc8310f75b8b8990d0a519bffcaf2290",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 5,
+          "sourceFrameIndex": 6,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/05.png",
+          "sha256": "b33ca903096e2cd34ca63ae6b27a3157a95e861b4479942d12dfcb55176910e9",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=6",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/06.png",
+          "sourceSha256": "b33ca903096e2cd34ca63ae6b27a3157a95e861b4479942d12dfcb55176910e9",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 6,
+          "sourceFrameIndex": 7,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/06.png",
+          "sha256": "f0fd09fb5d9aeb0d8674e744c3044c14ed29d3fd84c68ba818a62058e0633197",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=7",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/07.png",
+          "sourceSha256": "f0fd09fb5d9aeb0d8674e744c3044c14ed29d3fd84c68ba818a62058e0633197",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        },
+        {
+          "index": 7,
+          "sourceFrameIndex": 8,
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 10
+          },
+          "durationSeconds": 0.12,
+          "localPath": "public/assets/maplestory/monster-expansion/mud-crab/frames/die1/e54a743e-917d-4c06-a91d-159297696723/07.png",
+          "sha256": "27020a85d4082ef1de9c1ef3c1cfbf580c1a4731e87d16af875c9ae9a6b27b72",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e54a743e-917d-4c06-a91d-159297696723/download?index=8",
+          "sourcePath": "public/assets/maplestory/monster-expansion/mud-crab/originals/die1/e54a743e-917d-4c06-a91d-159297696723/08.png",
+          "sourceSha256": "27020a85d4082ef1de9c1ef3c1cfbf580c1a4731e87d16af875c9ae9a6b27b72",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 64,
+            "height": 64
+          }
+        }
+      ],
+      "notes": "큰 집게와 다리가 아래로 풀리고 낮게 내려앉은 게 몸의 끝자세를 유지하는 실제 KO.",
+      "generatedFrameCount": 8,
+      "sourceOriginal": "public/assets/maplestory/monster-expansion/mud-crab/originals/original-01.png",
+      "reviewPath": "public/assets/maplestory/monster-expansion/mud-crab/review/die1-e54a743e-917d-4c06-a91d-159297696723.png"
+    }
+  }
+}

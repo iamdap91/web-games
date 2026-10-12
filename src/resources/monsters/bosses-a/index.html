@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>갈대나루 보스 원본 검토</title>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+  </head>
+  <body>
+    <main>
+      <a
+        href="../../../../public/assets/maplestory/map-bosses/ferry-claw-crab/review/all-originals-native2.png"
+        >선택 원본15종 비교 시트</a
+      >
+      <h1>갈대나루 · 보스 원본 검토</h1>
+      <p>갈대나루 원본3종 승인 · A15종 기본75모션 완료</p>
+      <div class="controls">
+        <label
+          >PC 기준
+          <select id="profile"></select
+        ></label>
+        <label
+          >배경
+          <select id="background">
+            <option value="light">밝게</option>
+            <option value="dark">어둡게</option>
+          </select></label
+        >
+        <label
+          >게 후보
+          <select id="crab">
+            <option value="3">후보 3 · Pixen 새 원본</option>
+            <option value="2">후보 2 · 좌향 교정</option>
+            <option value="1">후보 1 · 정면</option>
+          </select></label
+        >
+        <label
+          >원본 확대
+          <select id="zoom">
+            <option value="2">2배</option>
+            <option value="3">3배</option>
+          </select></label
+        >
+      </div>
+      <p id="status" role="status">원본 PNG를 불러오는 중…</p>
+      <h2>동일한 원본 픽셀 배율</h2>
+      <p>
+        아타호·기존 몬스터·새 원본을 같은 픽셀 배율과 발 기준으로 비교합니다.
+      </p>
+      <div class="canvas-scroll">
+        <canvas
+          id="native-comparison"
+          aria-label="같은 원본 픽셀 배율 비교"
+        ></canvas>
+      </div>
+      <h2>현재 PC 전투 크기 비교</h2>
+      <p>
+        실측한 기존 전투 카메라·캔버스 크기와 전투 카탈로그의 표시 배율을
+        적용했습니다. 신규 개체의 게임 배치는 미통합 상태입니다.
+      </p>
+      <div class="canvas-scroll">
+        <canvas
+          id="comparison"
+          aria-label="아타호와 기존 몬스터·갈대나루 후보 전투 크기 비교"
+        ></canvas>
+      </div>
+      <h2>황토채석장 초기 후보 검토 이력</h2>
+      <p>
+        초기 후보에서 확인한 방향과 실루엣 문제는 보완했습니다. 아래 시트는 교정
+        전 후보 이력입니다.
+      </p>
+      <a
+        href="../../../../public/assets/maplestory/map-bosses/quarry-hammer-ape/review/quarry-original-quality-contact.png"
+        >동일 2배율 비교 시트</a
+      >
+      <h2>원본 픽셀과 후보</h2>
+      <p>
+        원본 방향과 픽셀을 그대로 정수 배율로 확대합니다. 게 후보 1·2는 정면에
+        가까워 미선택이며, 후보3은 승인된 좌향3/4 원본입니다.
+      </p>
+      <section id="originals" aria-label="무변형 원본 후보"></section>
+      <p>
+        전체15종의 대기·이동·공격·피격·쓰러짐75모션을 생성하고 검토했습니다.
+      </p>
+      <a href="motions.html">전체 보스 실제 모션 재생</a>
+      <a href="../../../../resources/map-bosses-a-generation.json"
+        >생성·예산·선택 기록</a
+      >
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/monsters/bosses-a/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

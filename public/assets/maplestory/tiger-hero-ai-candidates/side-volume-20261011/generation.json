@@ -1,0 +1,959 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-11",
+  "provider": "PixelLab MCP",
+  "model": "Pixen",
+  "tool": "edit_image_pixen",
+  "status": "exact-candidate-review",
+  "scope": "측면 후보01~03 이력을 보관하고 원본을 무료 정밀 도트 편집한04를 같은 배율로 비교. 게임 교체·모션 생성 없음.",
+  "baseMain": "63b178f45c87434e85239bcf594f5cb20e00aa30",
+  "authorization": {
+    "sourcePlanningThread": "01a1035f-95c8-7d82-8553-1d8154506f35",
+    "userReply": "응 진행하자",
+    "previousPaidService": "PixelLab",
+    "previousCharacterBudget": 160,
+    "maximumGenerations": 1,
+    "candidates": 1,
+    "retries": 0,
+    "animationGenerationAuthorized": false,
+    "gameReplacementAuthorized": false,
+    "mainMergeAuthorized": false
+  },
+  "request": {
+    "description": "Edit only this right-facing tiger's silhouette: fuller cheek/neck fur below the jaw, fluffier white chest, brown jacket and belly 2-3 pixels rounder, slightly thicker shoulder/back. Keep the SAME middle-aged face, eye/expression, head size, stripes, outfit, palette, pixel grid, 63px height, exact feet, idle pose, gaze and tail. Add fur volume, not fat or muscle. Do not stretch, resize, turn, move, redraw the face or change background. Transparent 64x64.",
+    "inputLocalPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/references/side-original.png",
+    "width": 64,
+    "height": 64,
+    "no_background": true,
+    "seed": 79111101
+  },
+  "jobId": "b2497189-6ee0-46f2-8159-899d2abfe9e2",
+  "assetId": "29bbde56-6916-5c10-afd3-7c4682077285",
+  "downloadUrl": "https://api.pixellab.ai/mcp/images/b2497189-6ee0-46f2-8159-899d2abfe9e2/download",
+  "actualChargedGenerations": 1,
+  "balance": {
+    "before": 1627,
+    "after": 1626,
+    "creditsBeforeUSD": 0,
+    "creditsAfterUSD": 0
+  },
+  "submission": {
+    "content": [
+      {
+        "type": "text",
+        "text": "id: b2497189-6ee0-46f2-8159-899d2abfe9e2\njob_id: b2497189-6ee0-46f2-8159-899d2abfe9e2\nmodel: pixen\nedit: Edit only this right-facing tiger's silhouette: fuller cheek/neck fur below the jaw, fluffier white chest, brown jacket and belly 2-3 pixels rounder, slightly thicker shoulder/back. Keep the SAME middle-aged face, eye/expression, head size, stripes, outfit, palette, pixel grid, 63px height, exact feet, idle pose, gaze and tail. Add fur volume, not fat or muscle. Do not stretch, resize, turn, move, redraw the face or change background. Transparent 64x64.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nseed: 79111101\nasset_id: 29bbde56-6916-5c10-afd3-7c4682077285\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"b2497189-6ee0-46f2-8159-899d2abfe9e2\")"
+      }
+    ],
+    "isError": false
+  },
+  "previewPath": "src/resources/ataho-side-volume/index.html",
+  "assetsDirectory": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011",
+  "files": [
+    {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/references/front-original.png",
+      "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9",
+      "width": 64,
+      "height": 64,
+      "byteSize": 4201
+    },
+    {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/references/side-original.png",
+      "sha256": "bc8b13a232920f5f0e76c6aef57d77c20b82cadb30bc3ffbfd11c07d2fed0220",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2705
+    },
+    {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/references/user-front.png",
+      "sha256": "717ac049e6919bfa6ac677edb9e0a11d33de839924b913886950901ef0a8c0fb",
+      "width": 124,
+      "height": 134,
+      "byteSize": 14169
+    },
+    {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/references/user-side.png",
+      "sha256": "bd518b9881e1a202661966d39a4bccb1743e249c234bcc5361243fd4dbe06252",
+      "width": 112,
+      "height": 122,
+      "byteSize": 9932
+    },
+    {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/originals/side-volume-01.png",
+      "sha256": "4fb24f4f5ded5cf1987b6e270ca0d36eb66e73ca994e4392f80c07f9da9407cd",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2235
+    },
+    {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/originals/side-volume-02.png",
+      "sha256": "61377f81f5187173843e025e4945473e20f7d732dd3a876eadcc7e90263982d2",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2813
+    },
+    {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/originals/side-volume-03.png",
+      "sha256": "da00c1143907b69f9b56f84eafbc7bfcba0121e8838db4776efa679e27d42c40",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2492
+    },
+    {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/originals/side-volume-04.png",
+      "sha256": "08adb1e73a3f5937a018e7ef65a8e9ccde3d11564215134c4dd49f982865cd8e",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2739
+    }
+  ],
+  "verification": {
+    "canvas": [64, 64],
+    "sourceBoundingBox": [7, 0, 48, 63],
+    "candidateBoundingBox": [7, 0, 48, 63],
+    "spriteHeight": 63,
+    "nativeFootAnchor": {
+      "x": 32,
+      "y": 63
+    },
+    "headAlphaMaskUnchangedRows": [0, 22],
+    "feetAlphaMaskUnchangedRows": [55, 64],
+    "headAndFeetRGBUnchanged": false,
+    "transparentBackground": true,
+    "resamplingPerformed": false,
+    "colorCorrectionPerformed": false,
+    "actualChargedGenerations": 1,
+    "extraGenerations": 0,
+    "notes": "머리와 발의 위치·실루엣은 동일. 얼굴·발의 색상 픽셀은 바뀌었고, 목털·가슴·배·등 외곽이 소폭 달라짐.",
+    "browser": {
+      "viewports": [560, 480],
+      "scaleFactors": [1, 2, 4],
+      "nativeImagesLoaded": 3,
+      "sameFootHeight": true,
+      "consoleErrors": 0,
+      "missingFiles": 0,
+      "reportLocalPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/review/browser-verification.json",
+      "comparisonLocalPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/review/side-comparison-2x.png"
+    },
+    "checks": {
+      "typecheck": "passed",
+      "lint": "passed",
+      "format": "passed",
+      "existingHeroFrameReferencesUnchanged": 572,
+      "otherManifestAssetsUnchanged": true,
+      "gameLogicTests": "이번 후보·정적 비교 페이지 범위에서 변경한 게임 규칙 없음"
+    }
+  },
+  "primaryCandidate": "04",
+  "totalChargedGenerations": 3,
+  "candidate02": {
+    "id": "02",
+    "userFeedback": "원본과 수정의 절반정도로. 그리고 옷이 있는데 측면모습은 털이 옷밖으로 삐져나온거같네",
+    "scope": "원본을 기준으로 도톰함을 절제하고 갈색 겉옷·좁은 옷깃 경계를 유지하는 측면 대기 후보 1장",
+    "authorization": {
+      "previousCharacterBudget": 160,
+      "maximumAdditionalGenerations": 1,
+      "candidates": 1,
+      "retries": 0,
+      "animationGenerationAuthorized": false,
+      "gameReplacementAuthorized": false,
+      "mainMergeAuthorized": false
+    },
+    "request": {
+      "description": "Edit ORIGINAL side tiger: only ~1px fuller torso, halfway to a bulky variant. Back, shoulders, sides and belly stay covered by smooth rounded BROWN CLOTH jacket with subtle folds, NO fur tufts through clothing. White fur only on face/under jaw; keep narrow open collar and ivory inner shirt, no enlarged white chest/belly or bare torso. Keep face/head size, 63px height, feet, tail, arms/hands, gaze, idle pose, palette, pixel grid. No stretch or resize. Transparent 64x64.",
+      "inputLocalPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/references/side-original.png",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "seed": 79111102
+    },
+    "jobId": "d89a8e37-a927-4c9d-87ee-64eb48a55da6",
+    "assetId": "800796a1-c2b5-57bb-b4ce-6eb6d50c8f76",
+    "downloadUrl": "https://api.pixellab.ai/mcp/images/d89a8e37-a927-4c9d-87ee-64eb48a55da6/download",
+    "actualChargedGenerations": 1,
+    "balance": {
+      "before": 1626,
+      "after": 1625,
+      "creditsBeforeUSD": 0,
+      "creditsAfterUSD": 0
+    },
+    "submission": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: d89a8e37-a927-4c9d-87ee-64eb48a55da6\njob_id: d89a8e37-a927-4c9d-87ee-64eb48a55da6\nmodel: pixen\nedit: Edit ORIGINAL side tiger: only ~1px fuller torso, halfway to a bulky variant. Back, shoulders, sides and belly stay covered by smooth rounded BROWN CLOTH jacket with subtle folds, NO fur tufts through clothing. White fur only on face/under jaw; keep narrow open collar and ivory inner shirt, no enlarged white chest/belly or bare torso. Keep face/head size, 63px height, feet, tail, arms/hands, gaze, idle pose, palette, pixel grid. No stretch or resize. Transparent 64x64.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nseed: 79111102\nasset_id: 800796a1-c2b5-57bb-b4ce-6eb6d50c8f76\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"d89a8e37-a927-4c9d-87ee-64eb48a55da6\")"
+        }
+      ],
+      "isError": false
+    },
+    "result": {
+      "job_id": "d89a8e37-a927-4c9d-87ee-64eb48a55da6",
+      "status": "completed",
+      "frames": 1,
+      "download_url": "https://api.pixellab.ai/mcp/images/d89a8e37-a927-4c9d-87ee-64eb48a55da6/download",
+      "download_urls": [
+        "https://api.pixellab.ai/mcp/images/d89a8e37-a927-4c9d-87ee-64eb48a55da6/download"
+      ],
+      "asset": {
+        "id": "800796a1-c2b5-57bb-b4ce-6eb6d50c8f76",
+        "type": "image",
+        "status": "saved"
+      },
+      "charged_generations": 1
+    },
+    "file": {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/originals/side-volume-02.png",
+      "sha256": "61377f81f5187173843e025e4945473e20f7d732dd3a876eadcc7e90263982d2",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2813
+    },
+    "verification": {
+      "canvas": [64, 64],
+      "boundingBox": [7, 0, 48, 63],
+      "spriteHeight": 63,
+      "nativeFootAnchor": {
+        "x": 32,
+        "y": 63
+      },
+      "headAlphaMaskUnchangedRows": [0, 22],
+      "feetAlphaMaskUnchangedRows": [55, 64],
+      "headAndFeetRGBUnchanged": false,
+      "transparentBackground": true,
+      "resamplingPerformed": false,
+      "alphaBlendingPerformed": false,
+      "firstCandidatePreserved": true,
+      "visualReview": "의복 경계는 개선됐으나 몸통 alpha 폭·면적이 01보다 커져 증가분 절반 목표에는 미달.",
+      "volumeTargetMet": false,
+      "browserReport": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/review/browser-verification-02.json"
+    }
+  },
+  "recommendedGameReplacement": false,
+  "currentRevisionChargedGenerations": 0,
+  "candidate03": {
+    "id": "03",
+    "userFeedback": "원본과 수정의 절반정도로. 그리고 옷이 있는데 측면모습은 털이 옷밖으로 삐져나온거같네",
+    "scope": "원본 측면을 거의 유지하며 일부 윤곽만 최대 1픽셀 보완. 흰털·겉옷 경계 유지",
+    "request": {
+      "description": "Keep ORIGINAL side tiger nearly unchanged. Add ONLY 1px at a few neck/back/waist edge spots; no redesign or broad belly. At rows y29,31,33,40, torso widths inside x20..52 must be <=17,19,21,23px. Keep brown jacket smooth across sides/belly; white fur stays only under jaw and narrow collar. Preserve head/face, arm/hand, tail and feet shapes/positions, 63px height, idle pose, colors and 64x64 pixel grid. No wide chest, fur through clothes, stretch or resize.",
+      "inputLocalPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/references/side-original.png",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "seed": 79111103
+    },
+    "jobId": "3f52601c-81a5-4539-b4b9-e3c7bbd54143",
+    "assetId": "a9e325e3-8601-5102-9874-ab13d2886ecb",
+    "downloadUrl": "https://api.pixellab.ai/mcp/images/3f52601c-81a5-4539-b4b9-e3c7bbd54143/download",
+    "maximumChargedGenerations": 1,
+    "noMoreRetries": true,
+    "submission": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 3f52601c-81a5-4539-b4b9-e3c7bbd54143\njob_id: 3f52601c-81a5-4539-b4b9-e3c7bbd54143\nmodel: pixen\nedit: Keep ORIGINAL side tiger nearly unchanged. Add ONLY 1px at a few neck/back/waist edge spots; no redesign or broad belly. At rows y29,31,33,40, torso widths inside x20..52 must be <=17,19,21,23px. Keep brown jacket smooth across sides/belly; white fur stays only under jaw and narrow collar. Preserve head/face, arm/hand, tail and feet shapes/positions, 63px height, idle pose, colors and 64x64 pixel grid. No wide chest, fur through clothes, stretch or resize.\nsource: 64x64px\nsize: 64x64px\ntransparent: True\nseed: 79111103\nasset_id: a9e325e3-8601-5102-9874-ab13d2886ecb\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~10-40s)\n\nhint: get_image(job_id=\"3f52601c-81a5-4539-b4b9-e3c7bbd54143\")"
+        }
+      ],
+      "isError": false
+    },
+    "file": {
+      "localPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/originals/side-volume-03.png",
+      "sha256": "da00c1143907b69f9b56f84eafbc7bfcba0121e8838db4776efa679e27d42c40",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2492
+    },
+    "actualChargedGenerations": 1,
+    "balance": {
+      "before": 1625,
+      "after": 1624
+    },
+    "verification": {
+      "canvas": [64, 64],
+      "boundingBox": [7, 0, 48, 63],
+      "spriteHeight": 63,
+      "nativeFootAnchor": {
+        "x": 32,
+        "y": 63
+      },
+      "headAlphaChangedPixels": 3,
+      "feetAlphaChangedPixels": 1,
+      "headAndFeetRGBUnchanged": false,
+      "transparentBackground": true,
+      "resamplingPerformed": false,
+      "alphaBlendingPerformed": false,
+      "previousCandidatesPreserved": true,
+      "volumeTargetMet": false,
+      "visualReview": "넓은 몸통을 억제한 원본 근접 참고안. y31은 원본보다 1픽셀 좁고, 머리·발 윤곽 4픽셀 변화가 있어 중간 체형 완성안으로 추천하지 않음.",
+      "rowWidthsPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/review/body-widths-03.json",
+      "keyRows": [
+        {
+          "y": 29,
+          "original": {
+            "left": 24,
+            "right": 38,
+            "width": 15
+          },
+          "01": {
+            "left": 23,
+            "right": 42,
+            "width": 20
+          },
+          "02": {
+            "left": 20,
+            "right": 43,
+            "width": 24
+          },
+          "03": {
+            "left": 25,
+            "right": 40,
+            "width": 16
+          }
+        },
+        {
+          "y": 31,
+          "original": {
+            "left": 24,
+            "right": 41,
+            "width": 18
+          },
+          "01": {
+            "left": 24,
+            "right": 42,
+            "width": 19
+          },
+          "02": {
+            "left": 20,
+            "right": 44,
+            "width": 25
+          },
+          "03": {
+            "left": 24,
+            "right": 40,
+            "width": 17
+          }
+        },
+        {
+          "y": 33,
+          "original": {
+            "left": 23,
+            "right": 41,
+            "width": 19
+          },
+          "01": {
+            "left": 23,
+            "right": 44,
+            "width": 22
+          },
+          "02": {
+            "left": 20,
+            "right": 45,
+            "width": 26
+          },
+          "03": {
+            "left": 23,
+            "right": 41,
+            "width": 19
+          }
+        },
+        {
+          "y": 40,
+          "original": {
+            "left": 22,
+            "right": 42,
+            "width": 21
+          },
+          "01": {
+            "left": 20,
+            "right": 45,
+            "width": 26
+          },
+          "02": {
+            "left": 20,
+            "right": 46,
+            "width": 27
+          },
+          "03": {
+            "left": 22,
+            "right": 42,
+            "width": 21
+          }
+        }
+      ],
+      "browser": {
+        "mainImages": 3,
+        "allComparisonImages": 5,
+        "scaleFactor": 2,
+        "viewports": [560, 960, 480],
+        "sameFootHeight": true,
+        "consoleErrors": 0,
+        "missingFiles": 0,
+        "reportPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/review/browser-verification-03.json",
+        "comparisonPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/review/side-comparison-03-all-2x.png"
+      },
+      "format": "passed",
+      "filesHashesVerified": 7,
+      "existingGameManifestAssetsUnchanged": true
+    }
+  },
+  "budgetAudit": {
+    "path": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/review/budget-audit.json",
+    "budget": 160,
+    "spentBefore03": 126,
+    "spentAfter03": 127,
+    "remainingAfter03": 33,
+    "currentRevisionMaximumGenerations": 2,
+    "noMoreRetries": true
+  },
+  "precisionCorrection04": {
+    "userRequest": "원본과 첫 수정01의 절반 정도 체형. 옷 밖으로 털이 삐져나오지 않게.",
+    "generation": {
+      "provider": "PixelLab",
+      "tool": "pixelart_workbench",
+      "operation": "patch_pixels",
+      "createdDate": "2026-10-11",
+      "sourceDrawingId": "fc29b252-ce75-4a41-a99d-fe84d9048c5b",
+      "resultDrawingId": "0e9f76fd-fa9f-474c-b3f4-1d270bff03d2",
+      "actualCostGenerations": 0,
+      "width": 64,
+      "height": 64,
+      "transparentBackground": true,
+      "recordPath": "resources/tiger-hero-side-volume.json"
+    },
+    "originalPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/originals/side-volume-04.png",
+    "additionalPaidGenerations": 0,
+    "priorCandidatesRetained": ["01", "02", "03"],
+    "validation": {
+      "canvas": [64, 64],
+      "originalBoundingBox": [7, 0, 48, 63],
+      "candidateBoundingBox": [7, 0, 48, 63],
+      "changedPixels": 34,
+      "addedOpaquePixels": 24,
+      "removedOpaquePixels": 0,
+      "changedRectangle": [20, 27, 43, 44],
+      "changedOutsideGuardedPixels": 0,
+      "headAndNeckRows0Through25Exact": true,
+      "legsFeetTailRows45Through63Exact": true,
+      "existingVisibleArmAndHandPixelsExact": true,
+      "existingVisibleTailPixelsExact": true,
+      "onlyExistingOutlineAndBrownClothColorsAdded": true,
+      "noNewWhiteOrOrangeFur": true,
+      "noResampling": true,
+      "noAlphaBlending": true,
+      "bodyWidths": [
+        {
+          "y": 27,
+          "original": {
+            "left": 24,
+            "right": 39,
+            "width": 16
+          },
+          "candidate01": {
+            "left": 22,
+            "right": 42,
+            "width": 21
+          },
+          "candidate04": {
+            "left": 23,
+            "right": 39,
+            "width": 17
+          },
+          "midpoint": 18.5
+        },
+        {
+          "y": 28,
+          "original": {
+            "left": 24,
+            "right": 39,
+            "width": 16
+          },
+          "candidate01": {
+            "left": 22,
+            "right": 42,
+            "width": 21
+          },
+          "candidate04": {
+            "left": 23,
+            "right": 39,
+            "width": 17
+          },
+          "midpoint": 18.5
+        },
+        {
+          "y": 29,
+          "original": {
+            "left": 24,
+            "right": 38,
+            "width": 15
+          },
+          "candidate01": {
+            "left": 23,
+            "right": 42,
+            "width": 20
+          },
+          "candidate04": {
+            "left": 23,
+            "right": 39,
+            "width": 17
+          },
+          "midpoint": 17.5
+        },
+        {
+          "y": 30,
+          "original": {
+            "left": 24,
+            "right": 39,
+            "width": 16
+          },
+          "candidate01": {
+            "left": 24,
+            "right": 42,
+            "width": 19
+          },
+          "candidate04": {
+            "left": 23,
+            "right": 40,
+            "width": 18
+          },
+          "midpoint": 17.5
+        },
+        {
+          "y": 31,
+          "original": {
+            "left": 24,
+            "right": 41,
+            "width": 18
+          },
+          "candidate01": {
+            "left": 24,
+            "right": 42,
+            "width": 19
+          },
+          "candidate04": {
+            "left": 23,
+            "right": 41,
+            "width": 19
+          },
+          "midpoint": 18.5
+        },
+        {
+          "y": 32,
+          "original": {
+            "left": 24,
+            "right": 41,
+            "width": 18
+          },
+          "candidate01": {
+            "left": 23,
+            "right": 43,
+            "width": 21
+          },
+          "candidate04": {
+            "left": 23,
+            "right": 41,
+            "width": 19
+          },
+          "midpoint": 19.5
+        },
+        {
+          "y": 33,
+          "original": {
+            "left": 23,
+            "right": 41,
+            "width": 19
+          },
+          "candidate01": {
+            "left": 23,
+            "right": 44,
+            "width": 22
+          },
+          "candidate04": {
+            "left": 22,
+            "right": 41,
+            "width": 20
+          },
+          "midpoint": 20.5
+        },
+        {
+          "y": 34,
+          "original": {
+            "left": 23,
+            "right": 43,
+            "width": 21
+          },
+          "candidate01": {
+            "left": 22,
+            "right": 44,
+            "width": 23
+          },
+          "candidate04": {
+            "left": 22,
+            "right": 43,
+            "width": 22
+          },
+          "midpoint": 22.0
+        },
+        {
+          "y": 35,
+          "original": {
+            "left": 23,
+            "right": 45,
+            "width": 23
+          },
+          "candidate01": {
+            "left": 22,
+            "right": 45,
+            "width": 24
+          },
+          "candidate04": {
+            "left": 22,
+            "right": 45,
+            "width": 24
+          },
+          "midpoint": 23.5
+        },
+        {
+          "y": 36,
+          "original": {
+            "left": 23,
+            "right": 45,
+            "width": 23
+          },
+          "candidate01": {
+            "left": 22,
+            "right": 46,
+            "width": 25
+          },
+          "candidate04": {
+            "left": 22,
+            "right": 45,
+            "width": 24
+          },
+          "midpoint": 24.0
+        },
+        {
+          "y": 37,
+          "original": {
+            "left": 23,
+            "right": 46,
+            "width": 24
+          },
+          "candidate01": {
+            "left": 21,
+            "right": 46,
+            "width": 26
+          },
+          "candidate04": {
+            "left": 22,
+            "right": 46,
+            "width": 25
+          },
+          "midpoint": 25.0
+        },
+        {
+          "y": 38,
+          "original": {
+            "left": 23,
+            "right": 46,
+            "width": 24
+          },
+          "candidate01": {
+            "left": 21,
+            "right": 46,
+            "width": 26
+          },
+          "candidate04": {
+            "left": 22,
+            "right": 46,
+            "width": 25
+          },
+          "midpoint": 25.0
+        },
+        {
+          "y": 39,
+          "original": {
+            "left": 22,
+            "right": 45,
+            "width": 24
+          },
+          "candidate01": {
+            "left": 20,
+            "right": 46,
+            "width": 27
+          },
+          "candidate04": {
+            "left": 21,
+            "right": 45,
+            "width": 25
+          },
+          "midpoint": 25.5
+        },
+        {
+          "y": 40,
+          "original": {
+            "left": 22,
+            "right": 42,
+            "width": 21
+          },
+          "candidate01": {
+            "left": 20,
+            "right": 45,
+            "width": 26
+          },
+          "candidate04": {
+            "left": 21,
+            "right": 43,
+            "width": 23
+          },
+          "midpoint": 23.5
+        },
+        {
+          "y": 41,
+          "original": {
+            "left": 21,
+            "right": 42,
+            "width": 22
+          },
+          "candidate01": {
+            "left": 20,
+            "right": 45,
+            "width": 26
+          },
+          "candidate04": {
+            "left": 20,
+            "right": 43,
+            "width": 24
+          },
+          "midpoint": 24.0
+        },
+        {
+          "y": 42,
+          "original": {
+            "left": 21,
+            "right": 42,
+            "width": 22
+          },
+          "candidate01": {
+            "left": 20,
+            "right": 45,
+            "width": 26
+          },
+          "candidate04": {
+            "left": 20,
+            "right": 43,
+            "width": 24
+          },
+          "midpoint": 24.0
+        },
+        {
+          "y": 43,
+          "original": {
+            "left": 21,
+            "right": 42,
+            "width": 22
+          },
+          "candidate01": {
+            "left": 20,
+            "right": 45,
+            "width": 26
+          },
+          "candidate04": {
+            "left": 20,
+            "right": 43,
+            "width": 24
+          },
+          "midpoint": 24.0
+        },
+        {
+          "y": 44,
+          "original": {
+            "left": 22,
+            "right": 43,
+            "width": 22
+          },
+          "candidate01": {
+            "left": 21,
+            "right": 44,
+            "width": 24
+          },
+          "candidate04": {
+            "left": 21,
+            "right": 43,
+            "width": 23
+          },
+          "midpoint": 23.0
+        }
+      ],
+      "roundingNote": "정수 픽셀 단위여서 폭 18→19px인 y31은 04도 19px이다. 다른 주요 행은 증가분을 약 절반으로 반올림했다.",
+      "sourceSha256": "bc8b13a232920f5f0e76c6aef57d77c20b82cadb30bc3ffbfd11c07d2fed0220",
+      "candidateSha256": "08adb1e73a3f5937a018e7ef65a8e9ccde3d11564215134c4dd49f982865cd8e",
+      "browser": {
+        "viewports": [760, 480],
+        "scales": [1, 2, 4],
+        "nativeImagesLoaded": 4,
+        "sameFootHeight": true,
+        "consoleErrors": 0,
+        "missingFiles": 0,
+        "mobileMainCount": 1,
+        "reportPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/review/browser-verification-04.json"
+      },
+      "checks": {
+        "nativeFileAndSha256": "passed",
+        "protectedPixels": "passed",
+        "bodyWidthsAndSameScaleReview": "passed",
+        "format": "passed",
+        "runtimeAndOtherManifestAssetsUnchanged": true,
+        "gameTests": "게임 규칙/모션을 변경하지 않은 외형 후보·정적 비교 페이지 범위라 실행하지 않음"
+      }
+    },
+    "toolRecordPath": "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/review/exact-edit-04-tool-record.json",
+    "comparisonPaths": [
+      "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/review/side-comparison-04-2x.png",
+      "public/assets/maplestory/tiger-hero-ai-candidates/side-volume-20261011/review/side-comparison-04-4x.png"
+    ],
+    "authorization": {
+      "sourcePlanningThread": "01a1035f-95c8-7d82-8553-1d8154506f35",
+      "userRequest": "원본과 수정의 절반정도로. 그리고 옷이 있는데 측면모습은 털이 옷밖으로 삐져나온거같네",
+      "additionalPaidGenerationAuthorized": false,
+      "gameReplacementAuthorized": false,
+      "mainMergeAuthorized": false
+    }
+  },
+  "gameApplication04": {
+    "appliedDate": "2026-10-11",
+    "motion": "stand-right / stand-left / work-ready[0]",
+    "origin": "free-exact-pixel-edit",
+    "tool": "pixelart_workbench",
+    "approvedCandidate": "ai/tiger-hero-side-volume · 04",
+    "baseMain": "76e923554f520ae01754fb16ad63dbaaccd12ef1",
+    "additionalChargedGenerations": 0,
+    "paidGenerationCalls": 0,
+    "pixelEdits": {
+      "east": 34,
+      "west": 11
+    },
+    "scope": "측면 대기·채집 전환 시작의 갈색 옷 경계. 비율·얼굴·팔다리·꼬리·타격·이동·좌우 방향처리 유지.",
+    "sourceRecord": "resources/tiger-hero-side-volume.json",
+    "validation": {
+      "nativePixelsVerified": true,
+      "croppingOnly": true,
+      "unchangedGameplayAndFacing": true,
+      "originalFilesPreserved": true,
+      "sourceFrames": [
+        {
+          "direction": "east",
+          "originalSource": "public/assets/maplestory/tiger-hero-ai/originals/rotations/east.png",
+          "originalSha256": "bc8b13a232920f5f0e76c6aef57d77c20b82cadb30bc3ffbfd11c07d2fed0220",
+          "editedSource": "public/assets/maplestory/tiger-hero-ai/originals/exact-side/20261011/east-04.png",
+          "editedSha256": "08adb1e73a3f5937a018e7ef65a8e9ccde3d11564215134c4dd49f982865cd8e",
+          "runtimePath": "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-right-04.png",
+          "changedPixels": 34,
+          "aliases": [
+            {
+              "motion": "stand-right",
+              "index": 0
+            },
+            {
+              "motion": "work-ready",
+              "index": 0
+            }
+          ],
+          "boundingBoxPreserved": true,
+          "pivotPreserved": true,
+          "faceFeetTailPreserved": true
+        },
+        {
+          "direction": "west",
+          "originalSource": "public/assets/maplestory/tiger-hero-ai/originals/rotations/west.png",
+          "originalSha256": "18681d3644e81c1c8df289b1c3b8251d023ea0e82c42eb36bf8f0fc97097e648",
+          "editedSource": "public/assets/maplestory/tiger-hero-ai/originals/exact-side/20261011/west-04.png",
+          "editedSha256": "2519fbdc1384b0837f2be0edc5606bf7e970c3a807c2421377d5ac478d49becc",
+          "runtimePath": "public/assets/maplestory/tiger-hero-ai/frames/exact-side/20261011/stand-left-04.png",
+          "changedPixels": 11,
+          "aliases": [
+            {
+              "motion": "stand-left",
+              "index": 0
+            }
+          ],
+          "boundingBoxPreserved": true,
+          "pivotPreserved": true,
+          "faceFeetTailPreserved": true
+        }
+      ],
+      "inventory": {
+        "motionCount": 88,
+        "frameReferenceCount": 572,
+        "changedFrameReferences": 3,
+        "editedNativeSources": 2,
+        "auditedWalkingFrames": 18,
+        "auditedActionFrames": 48,
+        "unchangedWalkingFrames": 16,
+        "unchangedMotions": [
+          "move-right",
+          "move-left",
+          "battle-ready",
+          "tiger-fist",
+          "straight-punch",
+          "battle-kick",
+          "guard",
+          "hit1"
+        ],
+        "decision": "오른쪽 걷기·왼쪽 걷기와 가드 전환 중간 자세의 기존 몸통 볼륨이 충분하므로 유지. 오른쪽 대기와 채집 전환 첫 자세는 승인04로, 왼쪽 대기는 손 뒤 옷자락만 1px 보강."
+      },
+      "browser": {
+        "status": "passed",
+        "reportPath": "public/assets/maplestory/tiger-hero-ai/review/exact-side-20261011/browser-verification.json",
+        "renderSamples": {
+          "town": 325,
+          "clearing": 180,
+          "trail": 54,
+          "battle": 88
+        },
+        "townWalkingFrameIndices": {
+          "right": [0, 1, 2, 3, 4, 5, 6, 7],
+          "left": [0, 1, 2, 3, 4, 5, 6, 7]
+        },
+        "townIdleWalkDiagonalTurn": true,
+        "trailSideStand": true,
+        "clearingSideAttackRecovery": true,
+        "normalBattleGuardAttack": true,
+        "consoleErrors": 0,
+        "missingResponses": 0
+      },
+      "checks": {
+        "typecheck": "passed",
+        "lint": "passed",
+        "format": "passed",
+        "build": "passed",
+        "relatedLogicTests": 48
+      },
+      "allAssets": {
+        "status": "passed",
+        "frameReferences": 572,
+        "uniqueSourceImages": 412,
+        "originalHashChecks": 600,
+        "originalGroups": 79,
+        "editedNativeSources": 2
+      }
+    },
+    "authorization": "사용자가 04를 보고 좋다 저걸로 적용하자 승인. 무료 옷 경계 보정만 허용, 유료 생성 없음.",
+    "westToolRecord": {
+      "importId": "8d93a450-9f86-4390-9402-dc79c825e96b",
+      "resultId": "50bb280f-839b-43bd-bdcc-f72e0e165c20",
+      "operation": "patch_pixels",
+      "pixels": [
+        [41, 39, "#03020200", "#030202ff"],
+        [40, 39, "#030202ff", "#4b1e0cff"],
+        [41, 40, "#03020200", "#030202ff"],
+        [40, 40, "#030202ff", "#4b1e0cff"],
+        [42, 41, "#03020200", "#030202ff"],
+        [41, 41, "#030202ff", "#652b12ff"],
+        [42, 42, "#03020200", "#030202ff"],
+        [41, 42, "#030202ff", "#652b12ff"],
+        [42, 43, "#03020200", "#030202ff"],
+        [41, 43, "#030202ff", "#4b1e0cff"],
+        [41, 44, "#03020200", "#030202ff"]
+      ]
+    }
+  }
+}

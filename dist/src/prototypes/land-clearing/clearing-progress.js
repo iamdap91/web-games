@@ -6,6 +6,10 @@ export function createClearingProgress() {
         version: 1,
         springOpened: false,
         flowerBankReached: false,
+        groveOpened: false,
+        groveDiscovered: false,
+        vineOpened: false,
+        hollowClaimed: false,
         fallenTrees: [],
         claimedLoot: [],
     };
@@ -35,6 +39,15 @@ export function isClearingProgress(value) {
         value.version !== 1 ||
         typeof value.springOpened !== 'boolean' ||
         typeof value.flowerBankReached !== 'boolean' ||
+        (value.groveOpened !== undefined &&
+            typeof value.groveOpened !== 'boolean') ||
+        (value.groveDiscovered !== undefined &&
+            typeof value.groveDiscovered !== 'boolean') ||
+        (value.vineOpened !== undefined && typeof value.vineOpened !== 'boolean') ||
+        (value.hollowClaimed !== undefined &&
+            typeof value.hollowClaimed !== 'boolean') ||
+        (value.hollowClaimed === true && value.vineOpened !== true) ||
+        (value.vineOpened === true && value.groveOpened !== true) ||
         !Array.isArray(value.fallenTrees) ||
         !Array.isArray(value.claimedLoot))
         return false;

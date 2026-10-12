@@ -22,7 +22,7 @@ export class OverdriveCinematic {
         container.append(this.canvas);
     }
     async load() {
-        const frame = manifest.assets.find((asset) => asset.id === 'hwanse/ataho')
+        const frame = manifest.assets.find((asset) => asset.id === 'ai/tiger-hero')
             ?.animations['effect-tiger-fist']?.frames[0];
         if (!frame)
             throw new Error('호격권 호랑이 리소스 정보가 없습니다.');
@@ -33,13 +33,11 @@ export class OverdriveCinematic {
         const context = this.rageTiger.getContext('2d');
         if (!context)
             return;
-        // 원본 도트와 어두운 줄무늬를 보존한 붉은 변형을 한 번만 만든다.
+        // 투명한 내부를 유지하고 원본 선의 알파에만 붉은 기운을 입힌다.
         context.drawImage(this.tiger, 0, 0);
-        context.globalCompositeOperation = 'multiply';
+        context.globalCompositeOperation = 'source-in';
         context.fillStyle = '#ff334d';
         context.fillRect(0, 0, this.rageTiger.width, this.rageTiger.height);
-        context.globalCompositeOperation = 'destination-in';
-        context.drawImage(this.tiger, 0, 0);
         context.globalCompositeOperation = 'source-over';
     }
     renderDrive(options) {
@@ -238,7 +236,7 @@ export class OverdriveCinematic {
         context.fillStyle = glow;
         context.fillRect(-radius, -radius, radius * 2, radius * 2);
         if (!this.reducedMotion) {
-            // 팔의 두 회전과 같은 주기로 기운이 안쪽으로 감긴다.
+            // 기합이 차오르는 동안 기운이 안쪽으로 감긴다.
             const angle = (time / overdriveIntro.windupCycle) * Math.PI * 2;
             for (let i = 0; i < 3; i++) {
                 context.beginPath();
