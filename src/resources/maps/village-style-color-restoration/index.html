@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>색과 길을 되찾는 마을 · 선화·복구·증축 조합</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="intro">
+          <span>VILLAGE / COLOR & CONNECTION</span>
+          <h1>색과 길을 되찾는 마을</h1>
+          <p>
+            공방의 색으로 다리를 잇고, 찻집의 색으로 새 방과 귀환길을 만나요.
+          </p>
+        </div>
+        <nav class="controls" aria-label="시안 조작">
+          <button id="overview" aria-pressed="true">전체 조망 · M</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">재방문 · 입구로</button>
+        </nav>
+      </header>
+      <div class="stage">
+        <canvas
+          tabindex="0"
+          aria-label="WASD와 방향키 또는 바닥 클릭으로 걷고 Space로 가까운 시설을 복구합니다."
+        ></canvas>
+        <aside class="route">
+          <b>흰 골목에 색과 길을</b><span id="west-state"></span
+          ><span id="east-state"></span><span id="loop-state"></span>
+        </aside>
+        <div id="prompt" hidden></div>
+        <div id="notice" role="status"></div>
+        <div id="paused" hidden>
+          잠시 멈춤 <small>Esc 또는 계속 버튼</small>
+        </div>
+      </div>
+      <footer>
+        <span class="help">WASD / 방향키 · 바닥 클릭</span
+        ><button id="interact" disabled>근처 살펴보기 · Space</button
+        ><span id="status">아타호를 불러오는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-color-restoration/index.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>등불 아래 거리 · 횡스크롤·실내 조합</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">
+          VILLAGE COMBINATIONS / SIDE STREET + CUTAWAY + SURFACE LIGHT
+        </p>
+        <h1>등불 아래 거리</h1>
+        <p>
+          공방의 불, 도장의 마루, 계단 위 찻방. 문 안팎으로 이어지는 짧은 답사.
+        </p>
+      </header>
+      <section class="scene" aria-label="등불 아래 거리 답사">
+        <div class="scene-bar">
+          <span>능선 · 상점 · 전경 / 요철 조명</span
+          ><span id="visited">불러오는 중</span>
+        </div>
+        <div class="canvas-wrap">
+          <canvas
+            id="scene"
+            tabindex="0"
+            aria-label="등불 아래 거리. 좌우 이동, 계단에서 위아래, 클릭 길찾기, Space 입장과 시설 이용."
+          ></canvas>
+          <div id="pause-overlay" hidden>
+            잠시 쉬어가기 · 조명과 동작도 멈춥니다
+          </div>
+        </div>
+        <p id="status" role="status">
+          아타호 원본 보행 프레임을 불러오고 있어요.
+        </p>
+      </section>
+      <div class="controls" aria-label="답사와 보기 조작">
+        <button id="workshop">공방으로</button
+        ><button id="dojo">도장으로</button><button id="inn">계단 → 여관</button
+        ><button id="interact" class="accent">
+          들어가기 / 함께하기 · Space</button
+        ><button id="light">등불 방향 바꾸기</button
+        ><button id="overview">전체 거리</button
+        ><button id="pause">잠시 멈춤</button><button id="png">PNG 저장</button
+        ><button id="reset">입구로</button>
+      </div>
+      <footer>
+        <p>
+          ← → / A D 이동 · 계단에서 ↑ ↓ / W S 층 이동 · 화면 클릭 길찾기 · Space
+          입장 / 시설 이용 · Esc 정지
+        </p>
+        <p>
+          공방 풀무 → 도장 수리와 수련 → 바깥 계단 → 2층 차. 문 앞에 다가가면
+          벽이 옅어지고, 들어가면 실내 단면이 열립니다.
+        </p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-lit-street/index.js"
+    ></script>
+  </body>
+</html>

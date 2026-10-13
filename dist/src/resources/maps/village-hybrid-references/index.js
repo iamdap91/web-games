@@ -10,6 +10,10 @@ library.searchParams.set('category', 'maps');
 library.searchParams.set('group', '마을 스타일 실험');
 const mixedLibrary = new URL(library.href);
 mixedLibrary.searchParams.set('q', '기법 조합');
+const experienceLibrary = new URL(library.href);
+experienceLibrary.searchParams.set('q', '생활·탐험 조합');
+const expandedLibrary = new URL(library.href);
+expandedLibrary.searchParams.set('q', '확장 조합');
 function styleUrl(id) {
     const url = new URL(library.href);
     url.searchParams.set('asset', `local/village-style-${id}`);
@@ -18,7 +22,7 @@ function styleUrl(id) {
 function styleName(id) {
     return villageStyleLinks.find((style) => style.id === id)?.name ?? id;
 }
-root.innerHTML = `<header><p class="eyebrow">마을 스타일 연구 · 2026.10.13</p><h1>입체와 도트 그림</h1><p>전체 스타일과 개별 오브젝트의 제작 방식을 함께 살펴봅니다.</p><a href="${library.href}" target="_top">전체 마을 시안 비교 →</a><a href="${mixedLibrary.href}" target="_top">새 네 조합만 비교 →</a></header>
+root.innerHTML = `<header><p class="eyebrow">마을 스타일 연구 · 2026.10.13</p><h1>입체와 도트 그림</h1><p>전체 스타일과 개별 오브젝트의 제작 방식을 함께 살펴봅니다.</p><a href="${library.href}" target="_top">전체 마을 시안 비교 →</a><a href="${mixedLibrary.href}" target="_top">열두 조합 비교 →</a><a href="${experienceLibrary.href}" target="_top">생활·탐험 네 조합 →</a><a href="${expandedLibrary.href}" target="_top">확장·개선 여덟 조합 →</a></header>
 <section><h2>하나의 마을에서도 여러 방식을 섞을 수 있어요</h2><div class="combination"><article><b>건물</b><p>3D 본체 + 픽셀 표면 + 벽에 고정한 간판</p></article><article><b>식생</b><p>3D 줄기 + 입체 수관 + 낮은 풀의 이미지 판</p></article><article><b>화덕 마당</b><p>3D 화덕 + 2D 불꽃·연기 + 바닥과 장식의 빛</p></article></div></section>
 <section><h2>결합 방법과 제작 자료</h2><p class="intro">‘자료에서 확인’은 출처의 설명, ‘시안 적용 제안’은 이 프로젝트에 대한 판단입니다. 조사된 모든 기법을 구현한 것은 아닙니다.</p><div class="method-grid">${hybridReferences.map((item) => `<article id="${item.id}" class="method"><p class="eyebrow">${item.target}</p><h3>${item.name}</h3><dl><dt>자료에서 확인</dt><dd>${item.finding}</dd><dt>시안 적용 제안</dt><dd>${item.proposal}</dd></dl><details><summary>보행하며 확인할 점</summary><p>${item.check}</p></details><nav aria-label="${item.name} 출처">${item.sources.map((source) => `<a href="${source.url}" target="_blank" rel="noopener noreferrer">${source.label} ↗</a>`).join('')}</nav></article>`).join('')}</div></section>
 <section><h2>마을을 바꾸면서 그림을 붙일 때</h2><p class="intro">아래는 여러 표현을 함께 쓰기 위한 프로젝트 적용 제안입니다. 원작 게임의 내부 구현을 설명하는 내용은 아닙니다.</p><div class="combination"><article><h3>큰 형태와 작은 그림</h3><p>가까이 걷는 벽·지붕·뿌리는 형태와 충돌을 유지합니다. 기와 무늬는 표면 UV, 문패는 건물 자식 그림 판, 풀은 빈 부분을 가림에서 제외하는 얇은 판으로 나눠 붙일 수 있습니다.</p></article><article><h3>빛을 받는 그림</h3><p>색 그림과 표면 방향·빛 영역을 같은 좌표로 준비하면 평면 그림에도 방향별 음영이 생깁니다. 승인된 인물 원본은 보존하고, 환경의 빛과 발밑 그림자를 별도로 맞추는 선택도 가능합니다.</p></article><article><h3>증축과 곡면</h3><p>건물이 연결되면 공유 벽·지붕과 장식을 함께 갱신합니다. 지형이 휘어지면 건물·장식·인물의 발에도 같은 변환을 적용합니다. 화면의 모양과 클릭 목적지, 걸을 수 있는 길이 서로 맞아야 합니다.</p></article><article><h3>고정 배경과 움직임</h3><p>배경 색과 깊이를 보관해도 불꽃·인물·시설 변화는 별도로 그릴 수 있습니다. 스톱모션 표현은 장식의 표시 포즈만 단계적으로 바꾸고 입력과 보행 규칙은 연속으로 유지하는 방식으로 비교합니다.</p></article></div></section>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>펼쳐지는 책 속 마을 · 종이·모형·조립 조합</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../catalog/embedded-scene.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <span class="eyebrow">POP-UP COURTYARD</span>
+          <h1>펼쳐지는 책 속 마을</h1>
+          <p>접힌 공방과 두 종이 다리. 복구가 끝나면 다음 장으로 걸어간다.</p>
+        </div>
+        <div class="controls">
+          <button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </div>
+      </header>
+      <div class="stage">
+        <canvas
+          tabindex="0"
+          aria-label="펼쳐지는 책 속 마을 보행 화면"
+        ></canvas>
+        <aside class="route">
+          <b>두 장을 펼치고 돌아오기</b
+          ><span data-place="workshop">01 제본 공방 · 첫 다리</span
+          ><span data-place="dojo">02 종이 도장 · 둘째 다리</span
+          ><span data-place="rest">03 책갈피 전망대 → 귀환</span>
+        </aside>
+        <div id="prompt" hidden></div>
+        <div id="notice" role="status" hidden></div>
+        <div id="paused" hidden>잠시 멈춤<small>Esc 또는 계속 버튼</small></div>
+      </div>
+      <footer>
+        <span>WASD / 방향키 · 눌러 이동 · 조립 중에는 다리 통행 금지</span
+        ><button id="interact" disabled>가까운 시설 사용 · Space</button
+        ><span id="status">아타호 원본을 불러오는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-popup-book/index.js"
+    ></script>
+  </body>
+</html>

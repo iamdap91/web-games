@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>온기 도는 도장 · 실내생활·복구 조합</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main id="village">
+      <header>
+        <div class="intro">
+          <small>VILLAGE LIFE · 01</small>
+          <h1>온기 도는 도장</h1>
+          <p>문을 고치고, 수련 마루를 지나, 뒤뜰로 돌아오는 작은 하루</p>
+        </div>
+        <nav aria-label="마을 비교 조작">
+          <button id="restore" aria-pressed="false">도장 복구 · R</button
+          ><button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="pause" aria-pressed="false">멈춤 · Esc</button
+          ><button id="reset">입구로</button
+          ><button id="light" aria-pressed="false">빛 옮기기</button
+          ><button id="normal" aria-pressed="true">표면 요철</button>
+        </nav>
+      </header>
+      <div class="stage">
+        <canvas
+          tabindex="0"
+          aria-label="온기 도는 도장 보행·실내생활 화면"
+        ></canvas>
+        <aside class="chapter">
+          <span>야외 입체 지형 · 접근 단면 · 열린 뒤문</span
+          ><strong>문 안으로 이어지는 길</strong>
+          <p>문앞 복구 → 수련 마루 → 뒤뜰 → 쉼터</p>
+        </aside>
+        <div class="prompt" hidden></div>
+        <div class="notice" role="status">
+          중앙 계단 끝의 도장 문앞으로 걸어가 복구해 보세요. 열린 수련 마루를
+          통과하면 동쪽 뒤뜰과 쉼터로 이어집니다.
+        </div>
+        <div class="paused" hidden>잠시 멈춤</div>
+        <button id="interact">시설 사용 · Space</button>
+      </div>
+      <footer>
+        <span>WASD / 방향키 · 길 누르기 / 터치 · Space 시설 사용</span
+        ><span id="status">마을을 불러오는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-lived-dojo/index.js"
+    ></script>
+  </body>
+</html>

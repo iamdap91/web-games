@@ -326,9 +326,105 @@ export const villageStyleLinks = [
         reference: 'Three.js · 건물과 장식의 부모 자식 배치',
         url: 'https://threejs.org/docs/pages/Object3D.html',
     },
+    {
+        id: 'lived-dojo',
+        name: '온기 도는 도장 · 실내생활·복구 조합',
+        method: '자연 입체 마을 · 접근할 때 보이는 실내 · 복구와 연결된 생활과 통행',
+        reference: '온빛 도장 / 살아나는 골목 / 개울 골목',
+        url: '../village-style-lived-dojo/',
+    },
+    {
+        id: 'living-diorama',
+        name: '저녁이 깃든 마당 · 디오라마·생활 조합',
+        method: '색·깊이 배경 합성 · 낮과 저녁 · 시설에 반응하는 주민과 생활 소품',
+        reference: '붓결이 머무는 마당 / 개울 골목',
+        url: '../village-style-living-diorama/',
+    },
+    {
+        id: 'root-expedition',
+        name: '포자길 답사 · 숲·발견·귀환 조합',
+        method: '굴곡 뿌리와 이끼 · 조사로 열리는 연결길 · 다른 길로 귀환과 재방문',
+        reference: '이끼 품은 둥지 / 원정 지도 답사',
+        url: '../village-style-root-expedition/',
+    },
+    {
+        id: 'lit-street',
+        name: '등불 아래 거리 · 횡스크롤·실내 조합',
+        method: '횡측면 거리와 패럴랙스 · 생활 공간의 단면 · 표면 방향 조명',
+        reference: '옆길 마을 / 열린 집들 / 불빛 골목',
+        url: '../village-style-lit-street/',
+    },
+    {
+        id: 'popup-book',
+        name: '펼쳐지는 책 속 마을 · 종이·모형·조립 조합',
+        method: '얇은 종이 힌지 · 12fps 조립 · 완성 후 두 다리와 마당 연결',
+        reference: '종이골목 / 손끝 골목 / 이어진 골목',
+        url: '../village-style-popup-book/',
+    },
+    {
+        id: 'window-village',
+        name: '창빛 이어지는 마을 · 픽셀·조명·실내 조합',
+        method: '픽셀 실외와 같은 가구·주민의 실내 · 문 출입 · 창빛 표면 조명',
+        reference: '개울 골목 / 불빛 골목 / 열린 집들',
+        url: '../village-style-window-village/',
+    },
+    {
+        id: 'color-restoration',
+        name: '색과 길을 되찾는 마을 · 선화·복구·증축 조합',
+        method: '구역별 선화와 색 · 복구 완료 후 다리·방·복도 생성',
+        reference: '색돌이 마을 / 살아나는 골목',
+        url: '../village-style-color-restoration/',
+    },
+    {
+        id: 'horizon-harbor',
+        name: '지평선 너머 나루 · 곡면·생활 조합',
+        method: '원통 지평선과 자연 언덕 · 바다 경계와 부두 · 준비/신호/귀환',
+        reference: '둥근 길 / 산들 마을 / 해풍나루',
+        url: '../village-style-horizon-harbor/',
+    },
 ];
 /** 통합 화면의 실제 입력과 렌더 검토를 마친 조합 기록이다. */
 export const reviewedMixedVillages = [
+    {
+        id: 'popup-book',
+        previousStyles: ['paper', 'stopmotion', 'modular'],
+        finding: '제본 공방과 종이 도장에서 건축과 두 다리를 2.4초씩 펼친다. 조립 완료 전에는 통행이 막히고 완료 후 세 마당을 실제로 걷는다. 조립 표시 박자는 12fps이며 원본 인물 보행은 연속으로 유지한다. 전망대 방문 뒤 실제 입구 진입으로 귀환을 판정한다.',
+    },
+    {
+        id: 'window-village',
+        previousStyles: ['pixel2d', 'lit2d', 'cutaway'],
+        finding: '위에서 내려다보는 마을의 창 구멍과 실내는 같은 가구·주민 좌표와 생활 시간을 사용한다. 공방의 열쇠를 받아 수련당을 고치고 개울 다리 건너 찻집에 들어간다. 문은 순간이동 없이 걸어서 통과하며 수동 출입에서도 벽 띠에 갇히지 않는다.',
+    },
+    {
+        id: 'color-restoration',
+        previousStyles: ['line', 'mixed-growth'],
+        finding: '가까운 공방을 복구하면 서쪽만 채색되고 첫 다리가 생긴다. 실제로 다리를 건너 찻집을 복구해야 동쪽 색과 방·문·복도·귀환 다리가 열린다. 새 방 방문과 다른 다리 통과 뒤 걸어서 귀환하며 순간 입구 복귀는 완료로 집계하지 않는다.',
+    },
+    {
+        id: 'horizon-harbor',
+        previousStyles: ['horizon', 'natural'],
+        finding: '원통 곡면에 자연 언덕·서로 다른 나루 시설·부두와 배를 함께 배치한다. 시장과 보급 준비를 창고에 전달하면 부두 종과 돛이 반응한다. 바다는 통행할 수 없고 실제 연결된 부두를 걸으며 항구를 발견한다. 촘촘히 분할한 부두 바닥과 원본 인물의 발·클릭 역변환을 맞춘다.',
+    },
+    {
+        id: 'lived-dojo',
+        previousStyles: ['mixed-dojo', 'mixed-growth', 'pixel2d'],
+        finding: '문앞에서 도장을 복구하면 지붕과 내부 수련 생활, 동쪽 뒤문 통행이 함께 바뀐다. 가까이 걸을 때 주요 도장의 지붕과 앞벽만 걷히고 수련 마루·빨래마당·쉼터로 이어진다. 실제 5개 장소 방문과 뒤문 통과, 입구 복귀의 진행 보존을 확인했다.',
+    },
+    {
+        id: 'living-diorama',
+        previousStyles: ['mixed-diorama', 'pixel2d'],
+        finding: '색·깊이 배경에 공방 작업·도장 수련·천 펼치기·빨래와 천막을 동적으로 합성했다. 낮/저녁 전환은 배경을 다시 굽지만 보행과 작업 시간은 캐시를 재사용한다. 네 시설 방문 뒤 걸어서 귀환하고, 복구 후 저녁 도장 창빛과 정지 중 고정된 Canvas를 확인했다.',
+    },
+    {
+        id: 'root-expedition',
+        previousStyles: ['mixed-forest'],
+        finding: '처음 끊긴 뿌리를 돌아 쉼터를 발견하고 직접 조사하면 연결 뿌리가 자란다. 발견만으로는 길이 열리지 않고 성장 완료 뒤 실제 새 길을 통과한다. 포자 안내를 따라 다른 방향으로 걸어서 귀환하고 재방문에도 개방과 발견 기록을 유지한다.',
+    },
+    {
+        id: 'lit-street',
+        previousStyles: ['side', 'cutaway', 'lit2d'],
+        finding: '서로 다른 속도로 움직이는 거리 전후경에 공방·도장·2층 여관의 단면을 결합했다. 같은 계단 연결로 클릭과 직접 보행이 층을 이동하며 시설 입장 뒤 풀무·수리·수련·차가 반응한다. 표면 높이장에서 만든 normal과 이동 램프의 내적·거리 감쇠로 픽셀 명암을 계산한다.',
+    },
     {
         id: 'mixed-dojo',
         previousStyles: ['hd2d', 'natural', 'painted', 'lit2d'],

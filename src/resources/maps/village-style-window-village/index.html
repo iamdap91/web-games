@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>창빛 이어지는 마을 · 픽셀·조명·실내 조합</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">
+          VILLAGE COMBINATIONS / PIXEL VILLAGE + SURFACE LIGHT + CUTAWAY
+        </p>
+        <h1>창빛 이어지는 마을</h1>
+        <p>
+          밖에서 보던 불과 가구와 주민. 문을 열면 같은 생활이 안으로 이어집니다.
+        </p>
+      </header>
+      <section class="scene" aria-label="위에서 내려다보는 창빛 마을">
+        <div class="scene-bar">
+          <span>개울 골목 · 창빛 · 실내 생활</span
+          ><span id="visited">불러오는 중</span>
+        </div>
+        <div class="canvas-wrap">
+          <canvas
+            id="scene"
+            tabindex="0"
+            aria-label="창빛 마을. 방향키로 걷기, 클릭 길찾기, 문 앞 Space 입장, 실내 시설 가까이 Space 이용."
+          ></canvas>
+          <div id="pause-overlay" hidden>
+            잠시 쉬어가기 · 불과 생활 동작도 멈춥니다
+          </div>
+        </div>
+        <p id="status" role="status">
+          승인된 아타호 원본 프레임을 불러오고 있어요.
+        </p>
+      </section>
+      <div class="controls" aria-label="마을 답사와 실내 조작">
+        <button id="workshop">공방 문으로</button
+        ><button id="dojo">수련당 문으로</button
+        ><button id="teahouse">개울 찻집 문으로</button
+        ><button id="fixture">실내 시설로</button
+        ><button id="interact" class="accent">
+          문 열기 / 시설 이용 · Space</button
+        ><button id="exit">문으로 나가기</button
+        ><button id="light">창빛 방향 바꾸기</button
+        ><button id="overview">전체 마을</button
+        ><button id="pause">잠시 멈춤</button><button id="png">PNG 저장</button
+        ><button id="reset">입구로</button>
+      </div>
+      <footer>
+        <p>
+          방향키 / W A S D 보행 · 클릭 길찾기 · Space 입장 / 시설 이용 · Esc
+          정지
+        </p>
+        <p>
+          공방 풀무와 열쇠 → 수련당 마루 복구와 수련 → 다리 건너 차 → 입구 귀환.
+          실내 시설로 버튼도 직접 걸어갑니다. 잠긴 문은 앞선 생활 작업으로
+          열립니다.
+        </p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-window-village/index.js"
+    ></script>
+  </body>
+</html>

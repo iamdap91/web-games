@@ -1,0 +1,145 @@
+:root {
+  color-scheme: dark;
+  font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  color: #e8dfc5;
+  background: #1d322e;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1400px;
+  margin: auto;
+  padding: 28px;
+}
+header {
+  margin-bottom: 22px;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #b9a579;
+}
+h1 {
+  margin: 9px 0;
+  font-weight: 600;
+  font-size: 32px;
+}
+p {
+  margin: 8px 0;
+  color: #b8bdb6;
+  line-height: 1.5;
+  font-size: 13px;
+}
+.scene {
+  border: 1px solid #485058;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #253d35;
+}
+.scene-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 11px 16px;
+  font-size: 11px;
+  color: #d5c39a;
+}
+.canvas-wrap {
+  position: relative;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: clamp(390px, 52vw, 660px);
+  outline-offset: -3px;
+  touch-action: none;
+}
+#pause-overlay {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  padding: 9px 13px;
+  background: #17212acc;
+  border: 1px solid #a59874;
+  border-radius: 8px;
+  pointer-events: none;
+  font-size: 12px;
+}
+#pause-overlay[hidden] {
+  display: none;
+}
+#status {
+  min-height: 42px;
+  padding: 9px 15px;
+  color: #e1cfad;
+  margin: 0;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 13px 0;
+}
+button {
+  color: #e8dfc5;
+  background: #2b3a43;
+  border: 1px solid #536069;
+  padding: 9px 12px;
+  border-radius: 7px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+}
+button:hover {
+  background: #3c4c55;
+}
+button:focus-visible {
+  outline: 2px solid #ffce88;
+}
+.accent {
+  background: #594e36;
+  border-color: #b49a63;
+}
+footer {
+  margin-top: 15px;
+}
+.embedded-scene main {
+  padding: 10px;
+}
+.embedded-scene header,
+.embedded-scene footer {
+  display: none;
+}
+.embedded-scene .scene-bar {
+  padding: 5px 9px;
+}
+.embedded-scene canvas {
+  height: calc(100vh - 168px);
+  min-height: 270px;
+}
+.embedded-scene .controls {
+  margin: 7px 0;
+}
+.embedded-scene button {
+  padding: 6px 9px;
+}
+@media (max-width: 600px) {
+  main {
+    padding: 10px;
+  }
+  h1 {
+    font-size: 25px;
+  }
+  .scene-bar {
+    font-size: 9px;
+  }
+  canvas {
+    height: 470px;
+  }
+  button {
+    font-size: 11px;
+  }
+}

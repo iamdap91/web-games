@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>지평선 너머 나루 · 곡면·생활 조합</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="intro">
+          <small>VILLAGE MIX · HORIZON HARBOR</small>
+          <h1>지평선 너머 나루</h1>
+          <p>언덕을 넘으면 바다가 보여요. 짐을 챙기고 부두의 종을 울려요.</p>
+        </div>
+        <nav aria-label="마을 보기">
+          <button id="curve" aria-pressed="true">곡선 · C</button
+          ><button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </nav>
+      </header>
+      <section class="stage">
+        <canvas tabindex="0" aria-label="곡선 지평선을 따라 걷는 마을"></canvas>
+        <aside class="chapter">
+          <small>북쪽 ↑ 나루 / 남쪽 ↓ 육로</small
+          ><strong>언덕 너머 바다와 출항 준비</strong>
+          <p>시장·보급소 → 창고 → 부두 종 → 육로 귀환</p>
+          <span>C · 같은 길을 평면과 비교</span>
+        </aside>
+        <div id="prompt" hidden></div>
+        <div id="notice" hidden role="status"></div>
+        <div id="paused" hidden>잠시 멈춤</div>
+        <button id="interact" disabled>시설 사용 · Space</button>
+      </section>
+      <footer>
+        <span>길 누르기 / 터치 · WASD / 방향키 · Space 사용</span
+        ><span id="status">나루를 불러오는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-horizon-harbor/index.js"
+    ></script>
+  </body>
+</html>
