@@ -1,0 +1,258 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background: #d9ccba;
+  color: #34483c;
+}
+main {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  gap: 20px;
+  border-bottom: 1px solid #bac4aa;
+  background: #f1e9db;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: #708268;
+  font-weight: 700;
+}
+h1 {
+  font-size: 26px;
+  margin: 4px 0;
+}
+header p {
+  font-size: 12px;
+  margin: 0;
+  color: #61755e;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+button {
+  border: 1px solid #b3bf9f;
+  border-radius: 5px;
+  background: #faf8e9;
+  color: #3d5544;
+  cursor: pointer;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+button[aria-pressed='true'] {
+  background: #526d50;
+  color: #f8f1d9;
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.stage {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: auto;
+  touch-action: none;
+  outline: none;
+}
+.route {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  padding: 13px 16px;
+  background: #eff1dbc9;
+  border-left: 3px solid #7c9465;
+  pointer-events: none;
+  font-size: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  backdrop-filter: blur(3px);
+}
+.route b {
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+.route span {
+  color: #6c7c61;
+}
+.route .visited {
+  color: #354d39;
+}
+.route .visited:after {
+  content: ' ✓';
+  color: #637f45;
+}
+#prompt {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 16px;
+  background: #f7efd8e8;
+  border: 1px solid #b8ba92;
+  border-radius: 5px;
+  font-size: 12px;
+  pointer-events: none;
+  white-space: nowrap;
+}
+#notice {
+  position: absolute;
+  bottom: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 40px);
+  padding: 12px 18px;
+  background: #304a3ce6;
+  color: #f1f0d7;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 12px;
+  pointer-events: none;
+}
+#paused {
+  position: absolute;
+  inset: 0;
+  background: #263d326b;
+  place-content: center;
+  text-align: center;
+  font-size: 24px;
+  color: #f6eed8;
+  pointer-events: none;
+}
+#paused:not([hidden]) {
+  display: grid;
+}
+#paused small {
+  display: block;
+  font-size: 12px;
+  margin-top: 10px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 20px;
+  font-size: 11px;
+  gap: 12px;
+  background: #f1e9db;
+  color: #697b5e;
+}
+footer button {
+  padding: 6px 12px;
+}
+.embedded-scene header {
+  padding: 9px 14px;
+}
+.embedded-scene h1 {
+  font-size: 21px;
+}
+.embedded-scene .eyebrow {
+  display: none;
+}
+@media (max-width: 600px) {
+  header {
+    padding: 10px 12px;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  h1 {
+    font-size: 21px;
+  }
+  header p {
+    display: none;
+  }
+  .controls {
+    justify-content: flex-end;
+    max-width: 200px;
+    gap: 4px;
+  }
+  button {
+    font-size: 10px;
+    padding: 6px 8px;
+  }
+  .route {
+    top: 10px;
+    left: 10px;
+    padding: 9px;
+    font-size: 9px;
+    gap: 4px;
+  }
+  .route b {
+    font-size: 10px;
+  }
+  footer {
+    padding: 7px 10px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  footer > span:first-child {
+    font-size: 9px;
+  }
+  #status {
+    font-size: 9px;
+  }
+  #notice {
+    font-size: 11px;
+    bottom: 56px;
+    padding: 10px 12px;
+  }
+  #prompt {
+    font-size: 11px;
+    bottom: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .route {
+    display: none;
+  }
+  header {
+    flex-wrap: wrap;
+  }
+  .controls {
+    max-width: none;
+  }
+  #notice {
+    bottom: 50px;
+  }
+}
+
+.embedded-scene header p {
+  display: none;
+}
+
+.embedded-scene header > div:first-child {
+  display: none;
+}
+.embedded-scene header {
+  min-height: 46px;
+  justify-content: center;
+}

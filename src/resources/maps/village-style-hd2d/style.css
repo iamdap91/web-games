@@ -1,0 +1,261 @@
+@import url('../../catalog/embedded-scene.css');
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: #121a1e;
+  color: #eadbc1;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+main {
+  max-width: 1500px;
+  margin: auto;
+}
+header {
+  min-height: 112px;
+  padding: 22px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: linear-gradient(110deg, #18262b, #25343a);
+}
+small {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #b6a680;
+}
+h1 {
+  font-family: serif;
+  font-size: 28px;
+  letter-spacing: 4px;
+  margin: 6px 0;
+}
+header p {
+  font-size: 12px;
+  margin: 0;
+  color: #b2c0ba;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+button {
+  border: 1px solid #8c806455;
+  color: #e9dbc2;
+  border-radius: 5px;
+  background: #233138;
+  padding: 9px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+button:hover {
+  background: #425047;
+}
+button[aria-pressed='true'] {
+  background: #756243;
+}
+.stage {
+  position: relative;
+  height: calc(100vh - 154px);
+  min-height: 420px;
+  overflow: hidden;
+  background: #16252c;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+  image-rendering: pixelated;
+  outline: none;
+}
+.stage:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 110px 22px #061a2055;
+}
+.chapter {
+  position: absolute;
+  top: 24px;
+  left: 30px;
+  pointer-events: none;
+  text-shadow: 0 1px 4px #000;
+}
+.chapter span {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #e2c793;
+}
+.chapter strong {
+  display: block;
+  font: 21px serif;
+  letter-spacing: 2px;
+  margin-top: 6px;
+}
+.chapter p {
+  font-size: 11px;
+  color: #d0c4a9;
+  margin: 8px 0;
+}
+.notice {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 18px;
+  border: 1px solid #debd7333;
+  border-radius: 5px;
+  font-size: 12px;
+  background: #172325df;
+  max-width: 70%;
+  text-align: center;
+}
+.prompt {
+  position: absolute;
+  left: 50%;
+  bottom: 70px;
+  transform: translateX(-50%);
+  font-size: 13px;
+  background: #ede0ba;
+  color: #233037;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+.paused {
+  position: absolute;
+  inset: 0;
+  background: #101c20bb;
+  place-content: center;
+  text-align: center;
+  font-size: 26px;
+  letter-spacing: 6px;
+}
+.paused:not([hidden]) {
+  display: grid;
+}
+.touch {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 12px 24px;
+  font-size: 11px;
+  color: #b4b8a7;
+  background: #162227;
+}
+.embedded-scene body {
+  overflow: hidden;
+}
+.embedded-scene #village {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 100dvh;
+  overflow: hidden;
+}
+.embedded-scene #village > header {
+  display: flex;
+  min-height: 0;
+  padding: 8px 10px;
+}
+.embedded-scene #village > header > div {
+  display: none;
+}
+.embedded-scene #village > header nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100%;
+  margin: 0;
+  gap: 6px;
+}
+.embedded-scene #village > header button {
+  min-height: 36px;
+  padding: 8px 4px;
+  font-size: 11px;
+  white-space: normal;
+}
+.embedded-scene #village .stage {
+  height: auto;
+  min-height: 0;
+}
+.embedded-scene #village footer {
+  display: flex;
+  flex-wrap: wrap;
+  height: auto;
+  min-height: 0;
+  gap: 4px;
+  padding: 8px 10px;
+  line-height: 1.35;
+}
+@media (max-width: 620px) {
+  header {
+    padding: 16px;
+    min-height: 136px;
+    display: block;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  header p {
+    font-size: 10px;
+  }
+  nav {
+    margin-top: 12px;
+  }
+  button {
+    padding: 8px;
+    font-size: 10px;
+  }
+  .stage {
+    height: calc(100svh - 187px);
+    min-height: 380px;
+  }
+  .chapter {
+    left: 14px;
+    top: 14px;
+  }
+  .chapter strong {
+    font-size: 15px;
+  }
+  .chapter p {
+    font-size: 9px;
+  }
+  .notice {
+    max-width: 80%;
+    font-size: 10px;
+    bottom: 60px;
+    width: 290px;
+  }
+  .touch {
+    right: 12px;
+    bottom: 12px;
+  }
+  .prompt {
+    bottom: 104px;
+    width: 240px;
+    text-align: center;
+  }
+  .stage:after {
+    box-shadow: inset 0 0 60px 4px #061a2044;
+  }
+  footer {
+    font-size: 9px;
+    display: block;
+    padding: 10px 14px;
+  }
+  #status {
+    display: block;
+    margin-top: 3px;
+  }
+}

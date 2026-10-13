@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>살아나는 골목 · 연결건축·단면생활 조합</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="intro">
+          <small>VILLAGE STUDY · LIVING ARCHITECTURE</small>
+          <h1>살아나는 골목</h1>
+          <p>방을 잇고 지붕을 열어, 골목 안의 하루를 들여다보세요.</p>
+        </div>
+        <nav aria-label="성장과 표현 비교">
+          <button id="growth">② 복도 잇기 · G</button
+          ><button id="cutaway" aria-pressed="true">외벽 닫기 · C</button
+          ><button id="normal" aria-pressed="true">요철 켜짐</button
+          ><button id="light">빛: 화덕 쪽</button
+          ><button id="restore">도장 복구 · R</button
+          ><button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </nav>
+      </header>
+      <section class="stage">
+        <canvas
+          tabindex="0"
+          aria-label="공방과 도장, 작은 숙소를 잇는 3D 골목"
+        ></canvas>
+        <aside class="chapter">
+          <span id="stage-label">01 · 각자의 작은 방</span>
+          <p id="stage-copy">공방에서 차를 데우고, 도장 마룻장을 고쳐보세요.</p>
+        </aside>
+        <div id="topology"></div>
+        <div id="prompt" hidden></div>
+        <div id="notice" role="status" hidden></div>
+        <div id="paused" hidden>잠시 멈춤</div>
+        <button id="interact" disabled>시설 사용 · Space</button>
+      </section>
+      <footer>
+        <span>길 누르기 · WASD / 방향키 · Space 사용</span
+        ><span id="status">골목을 불러오는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-mixed-growth/index.js"
+    ></script>
+  </body>
+</html>

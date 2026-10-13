@@ -20,7 +20,11 @@ export const libraryCategories = [
         name: '소품·장비',
         description: '생활 소품 · 지역 소품 · 장비',
     },
-    { id: 'effects', name: '효과', description: '부적 · 호신부 · 연출' },
+    {
+        id: 'effects',
+        name: '효과',
+        description: '부적 · 호신부 · 연출 · 애니메이션 실험',
+    },
     { id: 'materials', name: '재질', description: '질감 · 외곽선 비교' },
     { id: 'audio', name: '사운드', description: '전투 · 행동 · 환경음' },
 ];
@@ -121,7 +125,16 @@ function fileEntry(asset) {
             .join(' '),
     };
 }
+const animationLabs = new Set([
+    'local/procedural-creature-lab',
+    'local/sprite-stacking-lab',
+    'local/prerendered-model-lab',
+]);
 function proceduralCategory(id) {
+    if (id === 'local/village-hybrid-references')
+        return 'materials';
+    if (animationLabs.has(id))
+        return 'effects';
     if (id === 'local/2-5d-expression-lab')
         return 'effects';
     if (id.includes('ataho'))
@@ -137,6 +150,12 @@ function proceduralCategory(id) {
     return 'facilities';
 }
 function proceduralGroup(id, category) {
+    if (id.startsWith('local/village-style-'))
+        return '마을 스타일 실험';
+    if (id === 'local/village-hybrid-references')
+        return '혼합 표현 연구';
+    if (animationLabs.has(id))
+        return '애니메이션 실험';
     if (id === 'local/2-5d-expression-lab')
         return '표현 비교';
     if (category === 'characters')
@@ -187,10 +206,48 @@ const characterOrder = {
     연묵: 1,
     'NPC·기타 캐릭터': 2,
 };
-export const libraryEntries = entries.sort((a, b) => categoryOrder.get(a.category) - categoryOrder.get(b.category) ||
+const atahoMembers = entries.filter((entry) => entry.previewPath?.startsWith('src/resources/characters/ataho-hybrid/index.html'));
+const atahoComparison = {
+    id: 'local/ataho-comparison',
+    name: '아타호 비교',
+    category: 'characters',
+    group: '아타호',
+    project: 'tiger-rpg',
+    notes: '비도트 원화·방향·대기·걷기·공격과 기존 하이브리드를 한 작업실에서 비교합니다.',
+    sourceName: 'Codex ImageGen · PixelLab · Three.js 합성',
+    sourcePath: 'src/resources/characters/ataho-hybrid/lab-tabs.ts',
+    thumbnailPath: atahoMembers.find((entry) => entry.id === 'local/ataho-nonpixel-front-draft')?.thumbnailPath,
+    previewPath: 'src/resources/characters/ataho-hybrid/index.html?motion=shoulder-v2#attacks',
+    states: [
+        '공격',
+        '걷기',
+        '좌우 기준 그림',
+        '정면 대기',
+        '승인 원화',
+        '기존 하이브리드',
+    ],
+    kind: 'procedural',
+    keywords: [
+        '아타호 비교',
+        ...atahoMembers.map((entry) => entry.keywords),
+    ].join(' '),
+    members: atahoMembers,
+};
+export const libraryEntries = [
+    atahoComparison,
+    ...entries.filter((entry) => !atahoMembers.includes(entry)),
+].sort((a, b) => categoryOrder.get(a.category) - categoryOrder.get(b.category) ||
     (a.category === 'characters'
         ? (characterOrder[a.group] ?? 2) - (characterOrder[b.group] ?? 2)
         : 0));
+/** 목록에서는 묶되 기존 개별 리소스 주소와 제작 기록 연결은 유지한다. */
+export function findLibraryEntry(id) {
+    return (libraryEntries.find((entry) => entry.id === id) ??
+        entries.find((entry) => entry.id === id));
+}
+export function libraryListEntry(entry) {
+    return libraryEntries.find((item) => item.members?.includes(entry)) ?? entry;
+}
 export function filterLibrary(filter) {
     const words = filter.query?.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean) ?? [];
     return libraryEntries.filter((entry) => (filter.project === 'all' || entry.project === filter.project) &&

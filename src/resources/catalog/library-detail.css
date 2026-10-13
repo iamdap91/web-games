@@ -192,6 +192,23 @@
   border-radius: 12px;
   background: #2d3930;
 }
+.library-detail.comparison-detail .detail-nav,
+.library-detail.comparison-detail header {
+  margin-bottom: 14px;
+}
+.library-detail.comparison-detail h1 {
+  margin: 8px 0;
+  font-size: 24px;
+}
+.library-detail.comparison-detail #preview {
+  margin-top: 18px;
+}
+.library-detail.comparison-detail #preview > h2 {
+  display: none;
+}
+.library-scene.comparison-scene {
+  height: 900px;
+}
 .library-scene.facility-scene {
   height: 760px;
 }
@@ -201,5 +218,14 @@
   }
   .library-scene.facility-scene {
     height: 950px;
+  }
+}
+
+.library-scene.animation-scene {
+  height: 820px;
+}
+@media (max-width: 650px) {
+  .library-scene.animation-scene {
+    height: 1000px;
   }
 }

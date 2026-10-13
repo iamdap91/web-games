@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>이어진 골목 · 연결형 모듈</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main id="modular-village">
+      <header>
+        <div class="intro">
+          <small>VILLAGE STUDY · MODULAR</small>
+          <h1>이어진 골목</h1>
+          <p>
+            집을 이으면 벽과 지붕이 다시 짜이고, 닫힌 문 아래 아치 길이 열려요.
+          </p>
+        </div>
+        <nav aria-label="마을 보기">
+          <button id="restore">도장 잇기 · R</button
+          ><button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </nav>
+      </header>
+      <section class="stage">
+        <canvas tabindex="0" aria-label="이어진 골목을 걷는 답사 화면"></canvas>
+        <aside class="chapter">
+          <span>집이 이어지면 길도 바뀝니다</span
+          ><strong>닫힌 문 아래 길을 만들어볼까요?</strong>
+          <p>차 향 화덕 → 도장 잇기 → 안쪽 마당</p>
+        </aside>
+        <div id="topology"></div>
+        <div id="prompt" hidden></div>
+        <div id="notice" role="status" hidden></div>
+        <div id="paused" hidden>잠시 멈춤</div>
+        <button id="interact" disabled>시설 사용 · Space</button>
+      </section>
+      <footer>
+        <span>화면의 길 누르기 / 터치 · WASD / 방향키 · Space 사용</span
+        ><span id="status">작은 항구를 잇는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-modular/index.js"
+    ></script>
+  </body>
+</html>

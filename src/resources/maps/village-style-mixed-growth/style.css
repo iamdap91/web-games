@@ -1,0 +1,247 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  color: #374d44;
+  background: #a2b8b4;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+main {
+  height: 100dvh;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  max-width: 1500px;
+  margin: auto;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 14px 25px;
+  background: #eee7d4;
+  border-bottom: 1px solid #b9ad8f;
+}
+.intro {
+  min-width: 280px;
+}
+small {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #8c7355;
+}
+h1 {
+  font: 27px serif;
+  letter-spacing: 4px;
+  margin: 5px 0;
+}
+.intro p {
+  font-size: 11px;
+  margin: 0;
+}
+nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 5px;
+  max-width: 630px;
+  width: 58%;
+}
+button {
+  min-height: 34px;
+  border: 1px solid #a8b2a0;
+  background: #fbf5e5;
+  color: #42574d;
+  border-radius: 4px;
+  font-size: 11px;
+  padding: 7px 9px;
+  cursor: pointer;
+}
+button:hover {
+  background: #e2cfaa;
+}
+button[aria-pressed='true'] {
+  background: #d2d9bc;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+button:focus-visible {
+  outline: 2px solid #947750;
+  outline-offset: 2px;
+}
+.stage {
+  position: relative;
+  min-height: 0;
+  overflow: hidden;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+  outline: none;
+}
+.chapter {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  pointer-events: none;
+  text-shadow: 0 1px 1px #ecf0db;
+}
+.chapter span {
+  font: 20px serif;
+  letter-spacing: 2px;
+}
+.chapter p {
+  font-size: 11px;
+  margin: 7px 0;
+  color: #3c5146;
+}
+#topology {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  font-size: 10px;
+  background: #eee7d4d9;
+  padding: 8px 11px;
+  border-radius: 4px;
+  pointer-events: none;
+}
+#interact {
+  position: absolute;
+  bottom: 15px;
+  right: 18px;
+  background: #f5e7c8ed;
+  min-height: 40px;
+}
+#prompt,
+#notice {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  background: #f9eed7ed;
+  border: 1px solid #b9aa88;
+  border-radius: 4px;
+  padding: 8px 13px;
+  max-width: 75%;
+  width: max-content;
+  font-size: 11px;
+  pointer-events: none;
+}
+#prompt {
+  bottom: 69px;
+}
+#notice {
+  bottom: 17px;
+}
+#paused {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: #cad8cfa8;
+  text-align: center;
+  font: 24px serif;
+  letter-spacing: 4px;
+}
+#paused:not([hidden]) {
+  display: grid;
+  place-content: center;
+}
+footer {
+  padding: 9px 20px;
+  background: #eee7d4;
+  font-size: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  border-top: 1px solid #b9ad8f;
+}
+.embedded-scene .intro {
+  display: none;
+}
+.embedded-scene header {
+  padding: 7px 10px;
+}
+.embedded-scene nav {
+  max-width: none;
+  width: 100%;
+}
+.embedded-scene .chapter {
+  display: none;
+}
+@media (max-width: 650px) {
+  header {
+    display: block;
+    padding: 10px 12px;
+  }
+  .intro {
+    min-width: 0;
+  }
+  h1 {
+    font-size: 23px;
+  }
+  .intro p {
+    font-size: 10px;
+  }
+  nav {
+    width: 100%;
+    max-width: none;
+    margin-top: 10px;
+    gap: 4px;
+  }
+  button {
+    font-size: 10px;
+    padding: 7px 2px;
+  }
+  .chapter {
+    left: 13px;
+    top: 13px;
+  }
+  .chapter span {
+    font-size: 16px;
+  }
+  .chapter p {
+    font-size: 9px;
+    width: 200px;
+  }
+  #topology {
+    top: 65px;
+    right: 12px;
+    font-size: 9px;
+    padding: 6px 8px;
+  }
+  #interact {
+    right: 10px;
+    bottom: 10px;
+  }
+  #notice {
+    bottom: 57px;
+    max-width: 92%;
+    width: 330px;
+    font-size: 10px;
+  }
+  #prompt {
+    bottom: 107px;
+    max-width: 90%;
+    font-size: 10px;
+  }
+  footer {
+    font-size: 9px;
+    flex-wrap: wrap;
+    padding: 8px 10px;
+    gap: 4px;
+  }
+  .embedded-scene nav {
+    margin: 0;
+  }
+  .embedded-scene #topology {
+    top: 10px;
+    right: 10px;
+  }
+}

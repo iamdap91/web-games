@@ -1,7 +1,7 @@
 import { resourceUrl } from './resource-url.js';
 import { LibraryDetail } from './library-detail.js';
 import { createText } from './resource-card.js';
-import { filterLibrary, libraryCategories, libraryLocation, libraryEntries, readLibraryFilter, } from './library-data.js';
+import { filterLibrary, findLibraryEntry, libraryListEntry, libraryCategories, libraryLocation, readLibraryFilter, } from './library-data.js';
 function element(id, type) {
     const found = document.getElementById(id);
     if (!(found instanceof type))
@@ -51,7 +51,7 @@ class LibraryPage {
         const url = new URL(location.href);
         this.filter = readLibraryFilter(url);
         this.assetId = url.searchParams.get('asset');
-        const entry = libraryEntries.find((item) => item.id === this.assetId);
+        const entry = findLibraryEntry(this.assetId);
         if (entry?.project === 'other' && !url.searchParams.has('project')) {
             this.filter = { ...this.filter, project: entry.project };
             history.replaceState(null, '', `${libraryLocation(this.filter, entry.id)}${url.hash}`);
@@ -85,7 +85,7 @@ class LibraryPage {
     selectSceneEntry = (assetId) => {
         if (assetId === this.assetId)
             return;
-        const entry = libraryEntries.find((item) => item.id === assetId);
+        const entry = findLibraryEntry(assetId);
         if (!entry || !this.detail?.showSceneSelection(entry))
             return;
         this.assetId = entry.id;
@@ -167,13 +167,14 @@ class LibraryPage {
     updateTree(entry) {
         if (this.treeProject !== this.filter.project)
             this.renderTree();
+        const selectedId = entry ? libraryListEntry(entry).id : this.assetId;
         for (const link of this.tree.querySelectorAll('a')) {
             const assetId = link.dataset.asset;
             const category = libraryCategories.find((item) => item.id === link.dataset.category)?.id;
             const group = link.dataset.group || undefined;
             link.href = libraryLocation(assetId ? this.filter : { ...this.filter, category, group }, assetId);
             const selected = assetId
-                ? assetId === this.assetId
+                ? assetId === selectedId
                 : !this.assetId &&
                     category === this.filter.category &&
                     group === this.filter.group;
@@ -262,7 +263,7 @@ class LibraryPage {
         element('library-description', HTMLParagraphElement).textContent =
             category?.description ??
                 '캐릭터부터 지도와 시설까지, 게임에 쓰는 재료를 살펴보세요.';
-        const entry = libraryEntries.find((item) => item.id === this.assetId);
+        const entry = findLibraryEntry(this.assetId);
         this.updateTree(entry);
         if (this.detail && this.detailAssetId === this.assetId)
             return;

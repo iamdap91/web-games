@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>이끼 품은 둥지 · 자연입체·콜라주 조합</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="intro">
+          <span>VILLAGE MIX / FOREST</span>
+          <h1>이끼 품은 둥지</h1>
+          <p>두 갈래 뿌리 윗길, 속 빈 줄기 마당. 이끼 너머의 작은 쉼터.</p>
+        </div>
+        <nav class="controls" aria-label="시안 조작">
+          <button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="restore">도장 복구 · R</button
+          ><button id="normal" aria-pressed="true">요철 켬 · N</button
+          ><button id="light" aria-pressed="true">불빛 켬 · L</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </nav>
+      </header>
+      <div class="stage">
+        <canvas
+          tabindex="0"
+          aria-label="이끼 품은 둥지 입체 보행 화면"
+        ></canvas>
+        <aside class="route">
+          <b>앞길 혹은 뒤길</b><span data-place="hearth">01 씨앗 화덕</span
+          ><span data-place="dojo">02 버섯 도장</span
+          ><span data-place="refuge">03 이끼 뒤 쉼터</span>
+        </aside>
+        <div id="prompt" hidden></div>
+        <div id="notice" role="status"></div>
+        <div id="paused" hidden>
+          잠시 멈춤 <small>Esc 또는 계속 버튼</small>
+        </div>
+      </div>
+      <footer>
+        <span class="help">WASD / 방향키 · 뿌리 윗면 클릭</span
+        ><button id="interact" disabled>근처 시설 사용 · Space</button
+        ><span id="status">아타호를 불러오는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-mixed-forest/index.js"
+    ></script>
+  </body>
+</html>

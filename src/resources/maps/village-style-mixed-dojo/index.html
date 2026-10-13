@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>온빛 도장 · 입체·자연·회화 조합</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main id="village">
+      <header>
+        <div class="intro">
+          <small>VILLAGE MIX · 01</small>
+          <h1>온빛 도장</h1>
+          <p>입체 계단 위에 자연의 길과 붓의 온기를 얹은 작은 마을</p>
+        </div>
+        <nav aria-label="마을 비교 조작">
+          <button id="restore" aria-pressed="false">도장 복구 · R</button
+          ><button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="pause" aria-pressed="false">멈춤 · Esc</button
+          ><button id="reset">입구로</button
+          ><button id="light" aria-pressed="false">빛 옮기기</button
+          ><button id="normal" aria-pressed="true">표면 요철</button>
+        </nav>
+      </header>
+      <div class="stage">
+        <canvas tabindex="0" aria-label="온빛 도장 마을 보행 화면"></canvas>
+        <aside class="chapter">
+          <span>곡선 흙길 · 계단 · 언덕 샛길</span
+          ><strong>온빛이 머무는 곳</strong>
+          <p>화덕 → 도장 복구 → 나무 뒤 쉼터</p>
+        </aside>
+        <div class="prompt" hidden></div>
+        <div class="notice" role="status">
+          굽은 흙길을 눌러 화덕으로 걸어가 보세요. 중앙 계단과 언덕길, 두 길이
+          도장으로 이어집니다.
+        </div>
+        <div class="paused" hidden>잠시 멈춤</div>
+        <button id="interact">시설 사용 · Space</button>
+      </div>
+      <footer>
+        <span>WASD / 방향키 · 길 누르기 / 터치 · Space 시설 사용</span
+        ><span id="status">마을을 불러오는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-mixed-dojo/index.js"
+    ></script>
+  </body>
+</html>

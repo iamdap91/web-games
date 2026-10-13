@@ -1,0 +1,202 @@
+:root {
+  color-scheme: dark;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  color: #e4e8d3;
+  background: #101e1a;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at 60% 0%, #294036 0%, #101e1a 65%);
+  min-height: 100vh;
+}
+main {
+  width: min(1080px, 100%);
+  margin: auto;
+  padding: 38px 34px 24px;
+}
+.eyebrow {
+  color: #a1b68b;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 0 0 10px;
+}
+h1 {
+  font-size: clamp(27px, 4vw, 38px);
+  font-weight: 650;
+  letter-spacing: -1.5px;
+  margin: 0 0 10px;
+}
+.lead {
+  font-size: 14px;
+  color: #adb8a8;
+  margin: 0 0 24px;
+}
+.scene {
+  border: 1px solid #425b46;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 16px 60px #0005;
+  background: #1b3027;
+}
+.scene-top,
+.scene-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 37px;
+  padding: 9px 15px;
+  font-size: 11px;
+  gap: 8px;
+  color: #bcc7ae;
+  background: #1c3028;
+}
+.scene-top {
+  letter-spacing: 0.4px;
+}
+.scene-top i {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: #b6cd7c;
+  border-radius: 50%;
+  margin-right: 7px;
+}
+#mode {
+  color: #d2dea3;
+}
+#reaction {
+  color: #dce2c3;
+}
+#steps {
+  white-space: nowrap;
+  color: #9bb183;
+  font-variant-numeric: tabular-nums;
+}
+canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 24 / 13;
+  outline-offset: -3px;
+  touch-action: none;
+  image-rendering: pixelated;
+  cursor: grab;
+}
+canvas:active {
+  cursor: grabbing;
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 17px 0;
+}
+.button-group {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+button {
+  padding: 9px 12px;
+  border: 1px solid #425444;
+  border-radius: 7px;
+  background: #22372d;
+  color: #d9dfc8;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  touch-action: none;
+}
+button:hover {
+  background: #324c39;
+  border-color: #7b9565;
+}
+button:active {
+  transform: translateY(1px);
+}
+button[aria-pressed='true'] {
+  color: #e5eccb;
+  background: #435737;
+  border-color: #8a9f61;
+}
+button.accent {
+  color: #efe0b7;
+  border-color: #897547;
+  background: #4b4530;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #dac57b;
+  outline-offset: 3px;
+}
+kbd {
+  font: inherit;
+  font-size: 10px;
+  opacity: 0.65;
+  margin-left: 4px;
+}
+.instructions {
+  border-top: 1px solid #344939;
+  padding-top: 4px;
+  color: #9eaf9b;
+  line-height: 1.7;
+  font-size: 12px;
+}
+.instructions p {
+  margin: 9px 0;
+}
+.instructions strong {
+  color: #cad7b6;
+  font-weight: 500;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 24px;
+  font-size: 11px;
+  color: #718a77;
+}
+a {
+  color: #a6bb88;
+  text-decoration: none;
+}
+a:hover {
+  color: #d2dda9;
+}
+.embedded-scene main {
+  padding: 16px;
+}
+.embedded-scene header {
+  display: none;
+}
+.embedded-scene footer {
+  margin-top: 12px;
+}
+@media (max-width: 640px) {
+  main {
+    padding: 22px 12px 16px;
+  }
+  .lead {
+    font-size: 12px;
+  }
+  .controls {
+    margin: 12px 0;
+  }
+  button {
+    padding: 10px 11px;
+  }
+  .scene-top,
+  .scene-bottom {
+    padding: 9px 10px;
+    font-size: 10px;
+  }
+  footer span {
+    display: none;
+  }
+}

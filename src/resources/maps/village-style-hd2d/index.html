@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../catalog/embedded-scene.css" />
+    <title>계단 위 불빛 · HD-2D 마을</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main id="village">
+      <header>
+        <div>
+          <small>VILLAGE STUDY · 03 / HD-2D</small>
+          <h1>계단 위 불빛</h1>
+          <p>기와와 석벽 사이, 불 켜진 도장으로 오르는 작은 마을</p>
+        </div>
+        <nav>
+          <button id="restore">도장 복구 · R</button
+          ><button id="overview">전체 조망 · M</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </nav>
+      </header>
+      <div class="stage">
+        <canvas tabindex="0" aria-label="HD-2D 계단마을 보행 화면"></canvas>
+        <aside class="chapter">
+          <span>해질녘 · 계단마을</span><strong>등불이 이어지는 골목</strong>
+          <p>화덕 → 계단 위 도장 → 강변 쉼터</p>
+        </aside>
+        <div class="prompt" hidden></div>
+        <div class="notice" role="status">
+          화면의 길을 누르면 계단과 골목을 따라 걸어갑니다.
+        </div>
+        <div class="paused" hidden>잠시 멈춤</div>
+        <div class="touch">
+          <button id="interact">시설 사용 · Space</button>
+        </div>
+      </div>
+      <footer>
+        <span>WASD / 방향키 · 길 누르기 / 터치 · Space 시설 사용</span
+        ><span id="status">마을을 불러오는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-hd2d/index.js"
+    ></script>
+  </body>
+</html>

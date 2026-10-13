@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>목인 프리렌더 작업실</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">ANIMATION LAB · 03</p>
+        <h1>목인 프리렌더 작업실</h1>
+        <p>하나의 3D 모션을 네 방향의 작은 그림으로 구웠어요.</p>
+      </header>
+      <section class="comparison">
+        <article>
+          <div class="label">
+            <h2>원본 3D</h2>
+            <span>연속 자세</span>
+          </div>
+          <div class="stage">
+            <canvas
+              id="model"
+              width="384"
+              height="384"
+              aria-label="원본 3D 목인 모션"
+            ></canvas>
+          </div>
+          <p>관절이 시간을 따라 부드럽게 움직여요.</p>
+        </article>
+        <article>
+          <div class="label">
+            <h2>구운 2D</h2>
+            <span>96 × 96 · 12장</span>
+          </div>
+          <div class="stage">
+            <canvas
+              id="sprite"
+              width="384"
+              height="384"
+              aria-label="PNG 낱장으로 재생하는 목인 모션"
+            ></canvas>
+          </div>
+          <p>저장한 그림만 바꿔서 같은 동작을 재생해요.</p>
+        </article>
+      </section>
+      <section class="controls" aria-label="목인 모션 조작">
+        <label
+          >동작<select id="motion">
+            <option value="idle">대기</option>
+            <option value="walk" selected>걷기</option>
+            <option value="attack">정권</option>
+          </select></label
+        >
+        <label
+          >방향<select id="direction">
+            <option value="0">정면</option>
+            <option value="1">우측</option>
+            <option value="2">후면</option>
+            <option value="3">좌측</option>
+          </select></label
+        >
+        <label
+          >속도<select id="speed">
+            <option value="0.5">0.5 ×</option>
+            <option value="1" selected>1 ×</option>
+            <option value="2">2 ×</option>
+          </select></label
+        >
+        <button id="pause" type="button">일시정지</button>
+        <label class="timeline"
+          >프레임 <output id="frame-output">01 / 12</output
+          ><input id="frame" type="range" min="0" max="11" step="1" value="0"
+        /></label>
+      </section>
+      <footer>
+        <p id="status" role="status">그림을 불러오고 있어요.</p>
+        <div class="downloads">
+          <button id="download" type="button" disabled>
+            스프라이트 시트 PNG</button
+          ><button id="metadata" type="button">프레임 정보 JSON</button>
+        </div>
+        <p class="note">
+          슬라이더를 움직이면 두 화면이 같은 프레임에서 멈춰요. 부드러움과
+          실루엣을 나란히 비교해 보세요.
+        </p>
+        <a class="back" href="../../?asset=local/prerendered-model-lab"
+          >리소스 라이브러리로</a
+        >
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/animation-lab/prerendered-model/index.js"
+    ></script>
+  </body>
+</html>

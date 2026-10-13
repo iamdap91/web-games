@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>색돌이 마을 · 선화와 색칠책</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="description">
+          <p class="eyebrow">마을 스타일 실험 · ⑥</p>
+          <h1>색돌이 마을</h1>
+          <p>굵은 선과 흰 골목. 도장을 고치면 색과 생활이 돌아와요.</p>
+        </div>
+        <nav aria-label="마을 보기">
+          <button id="restore" type="button">색 돌려주기</button
+          ><button id="overview" type="button">가까이 걷기</button
+          ><button id="pause" type="button">잠시 멈춤</button
+          ><button id="reset" type="button">입구로</button>
+        </nav>
+      </header>
+      <section class="stage" aria-label="선화 마을 조작 화면">
+        <canvas
+          id="scene"
+          tabindex="0"
+          aria-label="방향키 또는 WASD로 걷고, 길을 클릭해서 이동합니다. Space로 가까운 시설을 살펴봅니다."
+        ></canvas>
+        <div id="pause-overlay" hidden>잠깐 쉬어가기</div>
+      </section>
+      <footer>
+        <div class="status-area">
+          <p id="status" role="status">마을을 그리고 있어요.</p>
+          <p id="visited">화덕 ○ · 도장 ○ · 정원 ○</p>
+          <p class="help">
+            WASD·방향키 / 길 클릭·터치로 걷기 / Space로 살펴보기
+          </p>
+        </div>
+        <div class="actions">
+          <button id="interact" type="button">근처 살펴보기</button>
+          <div class="direction-pad" aria-label="걷기 방향">
+            <button type="button" data-direction="up" aria-label="위로 걷기">
+              ↑</button
+            ><button
+              type="button"
+              data-direction="left"
+              aria-label="왼쪽으로 걷기"
+            >
+              ←</button
+            ><button
+              type="button"
+              data-direction="down"
+              aria-label="아래로 걷기"
+            >
+              ↓</button
+            ><button
+              type="button"
+              data-direction="right"
+              aria-label="오른쪽으로 걷기"
+            >
+              →
+            </button>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-line/index.js"
+    ></script>
+  </body>
+</html>

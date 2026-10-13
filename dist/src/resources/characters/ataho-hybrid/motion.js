@@ -1,3 +1,4 @@
+import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
 import { MotionPreview, comparisonRules, } from './motion-preview.js';
 import { loadFrameTextures, loadHybridImages, MotionScene, } from './motion-scene.js';
 const labels = {
@@ -14,6 +15,9 @@ class MotionComparison {
     frameRequest = 0;
     previousTime = 0;
     disposed = false;
+    constructor() {
+        registerEmbeddedScene(this.dispose);
+    }
     async start() {
         const status = document.querySelector('#status');
         try {

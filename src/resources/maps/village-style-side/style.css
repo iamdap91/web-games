@@ -1,0 +1,135 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  color: #eed6b0;
+  background: #172b31;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  width: min(1200px, 100%);
+  padding: 22px;
+  margin: auto;
+}
+header {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin-bottom: 14px;
+}
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+header p {
+  margin: 0;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #83b3ac;
+}
+.scene {
+  border: 1px solid #486269;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #14242b;
+}
+.scene-bar {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 11px;
+  color: #aac7be;
+}
+.canvas-wrap {
+  position: relative;
+  height: min(60vh, 580px);
+  min-height: 280px;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  touch-action: none;
+}
+#pause-overlay {
+  position: absolute;
+  inset: 0;
+  background: #14242b88;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+  pointer-events: none;
+}
+#pause-overlay[hidden] {
+  display: none;
+}
+#status {
+  min-height: 35px;
+  margin: 0;
+  padding: 10px 14px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px 0;
+}
+button {
+  border: 1px solid #56716f;
+  background: #273f44;
+  color: #f4dfbb;
+  padding: 9px 12px;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+button:hover {
+  background: #3c595a;
+}
+button.accent {
+  color: #192e31;
+  background: #d9ac69;
+}
+footer {
+  font-size: 12px;
+  color: #9cbbb4;
+  line-height: 1.6;
+}
+.embedded-scene main {
+  padding: 10px;
+}
+.embedded-scene header,
+.embedded-scene footer {
+  display: none;
+}
+.embedded-scene .canvas-wrap {
+  height: calc(100vh - 166px);
+  min-height: 220px;
+}
+@media (max-width: 500px) {
+  main {
+    padding: 10px;
+  }
+  .scene-bar {
+    font-size: 9px;
+    padding: 9px;
+  }
+  button {
+    padding: 8px;
+  }
+  .controls {
+    gap: 5px;
+  }
+}

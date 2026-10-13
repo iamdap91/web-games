@@ -6,6 +6,7 @@ import shoulderRecord from '../../../../resources/ataho-pixellab-shoulder.json' 
 import shoulderV2Record from '../../../../resources/ataho-pixellab-shoulder-v2.json' with { type: 'json' };
 import { rpgView } from '../../../games/tiger-rpg/presentation-contracts.js';
 import { PixellabPlayback } from './pixellab-playback.js';
+import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
 const records = {
     idle: idleRecord,
     walk: walkRecord,
@@ -118,6 +119,7 @@ class PixellabMotionComparison {
     dark = false;
     mirrored = false;
     constructor() {
+        registerEmbeddedScene(this.dispose);
         this.stages = ['original', 'input', 'generated'].map((id) => {
             const canvas = element(`#${id}`);
             const context = canvas.getContext('2d');

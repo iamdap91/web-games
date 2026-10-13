@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>뿌리 둥지 · 자연 콜라주 마을</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">VILLAGE STUDIES · ORGANIC COLLAGE</p>
+          <h1>뿌리 둥지</h1>
+        </div>
+        <p class="lead">
+          큰 나무의 껍질 위, 아주 작은 마을.<br />버섯 지붕과 호두 쉼터 사이를
+          걸어보세요.
+        </p>
+      </header>
+      <section class="scene" aria-label="자연 소재 콜라주 마을 보행 시안">
+        <div class="scene-bar">
+          <span>ROOTS · MOSS · SPORES</span
+          ><span id="visited">화덕 ○ · 도장 ○ · 쉼터 ○</span>
+        </div>
+        <div class="canvas-wrap">
+          <canvas
+            id="scene"
+            tabindex="0"
+            aria-label="뿌리 마을. 방향키나 WASD로 걷고, 화면을 누르면 뿌리길을 따라 갑니다. Space는 시설을 살펴봅니다."
+          ></canvas>
+          <div id="pause-overlay" hidden>잠시 쉬어가기</div>
+          <div class="direction-pad" aria-label="이동 조작">
+            <button data-direction="up" aria-label="위로 이동">↑</button
+            ><button data-direction="left" aria-label="왼쪽으로 이동">←</button
+            ><button data-direction="down" aria-label="아래로 이동">↓</button
+            ><button data-direction="right" aria-label="오른쪽으로 이동">
+              →
+            </button>
+          </div>
+        </div>
+        <p id="status" role="status">아타호를 불러오고 있어요.</p>
+      </section>
+      <div class="controls" aria-label="시설과 마을 보기">
+        <button id="interact" class="accent">
+          근처 살펴보기 <kbd>Space</kbd></button
+        ><button id="restore">도장 복구 <kbd>R</kbd></button
+        ><button id="overview">전체 조망 <kbd>M</kbd></button
+        ><button id="pause">잠시 멈춤 <kbd>Esc</kbd></button
+        ><button id="reset">입구로</button>
+      </div>
+      <footer>
+        <p>
+          <b>걸어볼 길</b> 뿌리 입구 → 씨앗 화덕 → 버섯 도장 → 이끼 뒤 포자 쉼터
+          → 뒤쪽 뿌리로 귀환
+        </p>
+        <p>
+          WASD / 방향키 · 화면을 눌러 길찾기 · 가까이에서 Space · 작은
+          화면에서는 방향 버튼
+        </p>
+        <p class="method">
+          껍질 결·이끼 입자·버섯 반점·얇은 표지판을 직접 그린 Canvas2D 콜라주.
+          승인된 아타호 원본 프레임을 재사용하는 독립 시안입니다.
+        </p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-collage/index.js"
+    ></script>
+  </body>
+</html>

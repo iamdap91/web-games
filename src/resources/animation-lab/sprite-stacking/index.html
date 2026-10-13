@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>단면 운반 마당 · 스프라이트 스태킹</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <a class="library-link" href="../../?asset=local/sprite-stacking-lab"
+            >← 리소스 라이브러리</a
+          >
+          <p class="eyebrow">02 / SPRITE STACKING</p>
+          <h1>단면 운반 마당</h1>
+          <p>27장의 수평 도트 단면이 한 대의 수레가 됩니다.</p>
+        </div>
+        <span class="badge">수평 단면 → 입체</span>
+      </header>
+      <section class="scene">
+        <canvas
+          aria-label="수레 운반 마당. 화살표 또는 WASD로 움직이거나 마당을 누르세요."
+          tabindex="0"
+        ></canvas>
+        <div class="overlay">
+          <span id="delivery">배달 0회 · 짐을 오른쪽 창고로</span
+          ><span id="telemetry">평지</span>
+        </div>
+        <div class="pad" aria-label="수레 조작">
+          <button data-drive="forward" aria-label="전진">↑</button>
+          <div>
+            <button data-drive="left" aria-label="왼쪽 회전">↶</button
+            ><button data-drive="back" aria-label="후진">↓</button
+            ><button data-drive="right" aria-label="오른쪽 회전">↷</button>
+          </div>
+        </div>
+      </section>
+      <section class="controls">
+        <div class="buttons">
+          <button id="pause">일시정지</button
+          ><button id="rotate" aria-pressed="false">자동 회전</button
+          ><button id="flat" aria-pressed="false">평면과 비교</button
+          ><button id="reset">처음으로</button>
+        </div>
+        <label
+          >단면 간격
+          <input
+            id="spacing"
+            type="range"
+            min="0"
+            max="5"
+            step="0.1"
+            value="0"
+          /><output id="spacing-value">0</output></label
+        ><label
+          >높이별 단면
+          <input id="layer" type="range" min="0" max="26" value="10" /><output
+            id="layer-value"
+            >11 / 27</output
+          ></label
+        >
+      </section>
+      <section class="details">
+        <div>
+          <h2>돌려 보고, 경사를 넘겨 보세요</h2>
+          <p>
+            ↑↓ / W·S 전후 이동 · ←→ / A·D 회전<br />마당을 누르고 있으면
+            그곳으로 이동합니다. 짐을 내린 뒤 왼쪽으로 돌아오면 다시 싣습니다.
+          </p>
+          <p class="note">
+            평면 비교는 같은 단면을 한 장으로 겹칩니다. 스태킹은 높이를 가진
+            층마다 따로 그려, 회전과 경사에서 바퀴·짐·옆면이 드러납니다.
+          </p>
+        </div>
+        <div class="slice-panel">
+          <div>
+            <h2>현재 수평 단면</h2>
+            <span>38 × 28px · 원본 1배 / 확대 4배</span>
+          </div>
+          <canvas
+            id="slice"
+            width="152"
+            height="112"
+            aria-label="선택한 높이의 수평 픽셀 단면"
+          ></canvas>
+          <div class="download-buttons">
+            <button id="download">단면 JSON</button
+            ><button id="download-png">단면 시트 PNG</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/animation-lab/sprite-stacking/index.js"
+    ></script>
+  </body>
+</html>

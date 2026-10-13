@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>불빛 골목 · 조명 반응 도트</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="intro">
+          <small>VILLAGE STUDY · LIGHT ON PIXELS</small>
+          <h1>불빛 골목</h1>
+          <p>등불이 지나갈 때, 돌의 모서리와 기와의 결을 살펴보세요.</p>
+        </div>
+        <nav aria-label="마을 조작">
+          <button id="restore">도장 복구</button
+          ><button id="overview">가까이 걷기</button
+          ><button id="pause">잠시 멈춤</button
+          ><button id="reset">입구로</button>
+        </nav>
+      </header>
+      <section class="stage">
+        <canvas
+          id="scene"
+          tabindex="0"
+          aria-label="불빛 골목을 걷는 답사 화면"
+        ></canvas>
+        <div class="study">
+          <span>밤의 작은 마을</span
+          ><strong>같은 그림, 빛을 받는 다른 면</strong>
+        </div>
+        <div id="pause-overlay" hidden>잠시 멈춤</div>
+        <button id="interact">근처 살펴보기 · Space</button>
+      </section>
+      <div class="light-controls">
+        <button id="normal" aria-pressed="true">요철 조명 켜짐</button
+        ><button id="light">등불 위치: 중앙</button
+        ><button id="light-motion" aria-pressed="true">등불 움직임 켜짐</button
+        ><span id="visited">화덕 ○ · 도장 ○ · 쉼터 ○</span>
+      </div>
+      <footer>
+        <span id="status" role="status">불빛 골목을 준비하고 있어요…</span
+        ><span>길 누르기 · WASD / 방향키 · Space 사용</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-lit2d/index.js"
+    ></script>
+  </body>
+</html>

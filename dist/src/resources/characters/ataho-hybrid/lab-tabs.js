@@ -1,4 +1,4 @@
-"use strict";
+import { embeddedScene, registerEmbeddedScene, } from '../../catalog/embedded-scene.js';
 const labTabs = [
     {
         id: 'attacks',
@@ -52,6 +52,7 @@ class AtahoLabTabs {
     frame;
     frameEvents;
     constructor() {
+        registerEmbeddedScene(() => this.dispose());
         const options = { signal: this.events.signal };
         for (const button of this.buttons) {
             button.addEventListener('click', () => this.select(button.dataset.tab), options);
@@ -113,7 +114,7 @@ class AtahoLabTabs {
         this.resize?.disconnect();
         this.frameEvents?.abort();
         window.clearTimeout(this.loadingTimer);
-        this.frame?.remove();
+        this.releaseFrame();
         const frame = document.createElement('iframe');
         this.frame = frame;
         this.frameEvents = new AbortController();
@@ -176,7 +177,13 @@ class AtahoLabTabs {
         this.frameEvents?.abort();
         this.resize?.disconnect();
         window.clearTimeout(this.loadingTimer);
+        this.releaseFrame();
+    }
+    releaseFrame() {
+        if (embeddedScene)
+            this.frame?.contentWindow?.dispatchEvent(new Event('resource-scene-dispose'));
         this.frame?.remove();
+        this.frame = undefined;
     }
 }
 const childTab = document.body.dataset.labTab;
@@ -186,7 +193,6 @@ if (childTab) {
     }
     else {
         const target = new URL('index.html', location.href);
-        target.search = location.search;
         target.search = location.search;
         target.hash = childTab;
         location.replace(target.href);

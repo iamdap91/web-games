@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>열린 집들 · 단면 마을</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="intro">
+          <small>VILLAGE STUDY · CUTAWAY</small>
+          <h1>열린 집들</h1>
+          <p>벽 너머의 하루를 들여다보며, 계단과 복도로 집들을 이어 걸어요.</p>
+        </div>
+        <nav aria-label="마을 보기">
+          <button id="restore">도장 복구 · R</button
+          ><button id="overview" aria-pressed="true">가까이 걷기 · M</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button
+          ><button id="facade">외벽 비교</button>
+        </nav>
+      </header>
+      <section class="stage">
+        <div class="scene-bar">
+          <span>장작 공방 → 계단 → 2층 도장 → 다락 숙소</span
+          ><span id="floor">1층 복도</span>
+        </div>
+        <canvas
+          tabindex="0"
+          aria-label="열린 집의 층별 복도와 계단을 걷는 화면"
+        ></canvas>
+        <div id="paused" hidden>잠시 멈춤</div>
+        <button id="interact" disabled>같은 층의 시설에 다가가세요</button>
+      </section>
+      <div class="status-row">
+        <p id="status">집 안을 여는 중…</p>
+        <span id="visited">화덕 ○ · 도장 ○ · 다락 ○</span>
+      </div>
+      <footer>
+        길 누르기 / 터치 · WASD / 방향키 · Space 사용 · 계단 입구에서 ↑ / ↓
+        <p>
+          왼쪽 안쪽 계단과 오른쪽 바깥 계단을 골라, 서로 다른 집의 생활을
+          지나가세요.
+        </p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-cutaway/index.js"
+    ></script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 import { resourceUrl } from './resource-url.js';
 import { LibraryScene, libraryScenePath } from './library-scene.js';
 import manifest from '../../../resources/manifest.json' with { type: 'json' };
-import { libraryCategories, libraryLocation, readLibraryFilter, } from './library-data.js';
+import { libraryCategories, libraryLocation, libraryListEntry, readLibraryFilter, } from './library-data.js';
 import { createCard, createText } from './resource-card.js';
 import { ResourcePreview } from '../preview/preview.js';
 import { showOriginals } from '../preview/originals.js';
@@ -121,6 +121,7 @@ export class LibraryDetail {
         return node;
     }
     showEntry(entry) {
+        this.root.classList.toggle('comparison-detail', libraryListEntry(entry).members !== undefined);
         this.element('name').textContent = entry.name;
         this.element('category').textContent =
             `${libraryCategories.find((category) => category.id === entry.category).name} / ${entry.group}`;
@@ -140,10 +141,14 @@ export class LibraryDetail {
             specialized.append(comparisonLink(this.scene ? '별도 화면에서 크게 보기 →' : '비교·사용 장면을 열기 →', entry.previewPath, entry));
         if (entry.comparisonPath)
             specialized.append(comparisonLink('외형·제작 과정 비교 →', entry.comparisonPath, entry));
+        if (entry.members) {
+            this.showMembers(entry.members);
+            return;
+        }
         if (entry.asset) {
             this.element('resource-information').append(createCard(entry.asset));
             const motions = Object.values(entry.asset.animations).filter((animation) => animation?.frames.length);
-            if (motions.length && !entry.asset.audio) {
+            if (motions.length && !entry.asset.audio && !this.scene) {
                 this.element('animated-preview').hidden = false;
                 const height = Math.max(...motions.flatMap((animation) => animation.frames.map((frame) => frame.height)));
                 const preview = new ResourcePreview(entry.id, Math.min(4, 220 / height), { root: this.root });
@@ -181,7 +186,7 @@ export class LibraryDetail {
                 information.append(createText('p', state));
             if (entry.sourcePath)
                 information.append(localLink('모델·배치 코드 열기', entry.sourcePath));
-            if (entry.thumbnailPath) {
+            if (entry.thumbnailPath && !this.scene) {
                 const image = new Image();
                 image.src = resourceUrl(entry.thumbnailPath).href;
                 image.alt = entry.name;
@@ -196,5 +201,31 @@ export class LibraryDetail {
         }
         if (!this.element('records').childElementCount)
             this.element('records').append(createText('p', '파일·출처와 연결된 비교 화면에서 제작 내용을 확인하세요.'));
+    }
+    showMembers(members) {
+        for (const member of members) {
+            const details = document.createElement('details');
+            details.append(createText('summary', member.name));
+            if (member.asset)
+                details.append(createCard(member.asset));
+            else {
+                details.append(createText('p', member.notes), createText('p', `출처: ${member.sourceName}`), createText('code', member.id));
+                if (member.sourcePath)
+                    details.append(localLink('모델·그림 코드 열기', member.sourcePath));
+            }
+            const link = localLink('개별 원본·제작 기록 보기 →', libraryLocation(readLibraryFilter(new URL(location.href)), member.id));
+            link.dataset.libraryNavigation = 'true';
+            details.append(link);
+            this.element('resource-information').append(details);
+            const asset = manifest.assets.find((item) => item.id === member.id);
+            const procedural = manifest.proceduralAssets.find((item) => item.id === member.id);
+            const record = asset && 'generationRecord' in asset
+                ? asset.generationRecord
+                : procedural && 'generationRecordPath' in procedural
+                    ? procedural.generationRecordPath
+                    : undefined;
+            if (record)
+                this.element('records').append(localLink(`${member.name} · 제작 기록`, record));
+        }
     }
 }

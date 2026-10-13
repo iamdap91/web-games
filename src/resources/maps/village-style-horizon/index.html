@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>둥근 길 · 곡선 지평선</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="intro">
+          <small>VILLAGE STUDY · CURVED HORIZON</small>
+          <h1>둥근 길</h1>
+          <p>발밑은 익숙한 길, 멀리에는 아직 보이지 않는 작은 마을.</p>
+        </div>
+        <nav aria-label="마을 보기">
+          <button id="curve" aria-pressed="true">곡선 · C</button
+          ><button id="restore">도장 복구 · R</button
+          ><button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </nav>
+      </header>
+      <section class="stage">
+        <canvas tabindex="0" aria-label="곡선 지평선을 따라 걷는 마을"></canvas>
+        <aside class="chapter">
+          <small>저 길 너머에는</small><strong>걷는 만큼 펼쳐지는 마을</strong>
+          <p>차 향 화덕 → 지평 도장 → 언덕 뒤 쉼터</p>
+          <span>C · 같은 길을 평면과 비교</span>
+        </aside>
+        <div id="prompt" hidden></div>
+        <div id="notice" hidden role="status"></div>
+        <div id="paused" hidden>잠시 멈춤</div>
+        <button id="interact" disabled>시설 사용 · Space</button>
+      </section>
+      <footer>
+        <span>길 누르기 / 터치 · WASD / 방향키 · Space 사용</span
+        ><span id="status">둥근 길을 불러오는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-horizon/index.js"
+    ></script>
+  </body>
+</html>

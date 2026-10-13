@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>손끝 골목 · 스톱모션 모형</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main id="stopmotion-village">
+      <header>
+        <div class="intro">
+          <small>VILLAGE STUDY · STOP MOTION</small>
+          <h1>손끝 골목</h1>
+          <p>
+            손으로 맞춘 판지 건물 사이, 톡톡 살아나는 작은 마을을 걸어보세요.
+          </p>
+        </div>
+        <nav aria-label="마을 보기">
+          <button id="cadence" aria-pressed="true">모형 박자 · 12FPS</button>
+          <button id="restore">도장 복구 · R</button
+          ><button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </nav>
+      </header>
+      <section class="stage">
+        <canvas tabindex="0" aria-label="손끝 골목을 걷는 답사 화면"></canvas>
+        <aside class="chapter">
+          <span>손칠과 판지의 작은 무대</span
+          ><strong>조각마다 한 박자씩</strong>
+          <p>작은 화덕 → 도장 복구 → 비틀린 뒷골목</p>
+        </aside>
+        <div id="prompt" hidden></div>
+        <div id="notice" role="status" hidden></div>
+        <div id="paused" hidden>잠시 멈춤</div>
+        <button id="interact" disabled>시설 사용 · Space</button>
+      </section>
+      <footer>
+        <span>화면의 길 누르기 / 터치 · WASD / 방향키 · Space 사용</span
+        ><span id="status">손끝 골목을 펼치는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-stopmotion/index.js"
+    ></script>
+  </body>
+</html>

@@ -1,13 +1,13 @@
 import { resourceUrl } from './resource-url.js';
 import { embeddedScene } from './embedded-scene.js';
-import { libraryCategories, libraryEntries } from './library-data.js';
+import { findLibraryEntry, libraryCategories, libraryEntries, } from './library-data.js';
 import { createText } from './resource-card.js';
 const main = document.querySelector('main');
 if (main && !embeddedScene) {
     const current = new URL(location.href);
     const requested = current.searchParams.get('library-asset') ??
         current.searchParams.get('asset');
-    const entry = libraryEntries.find((item) => item.id === requested) ??
+    const entry = findLibraryEntry(requested) ??
         libraryEntries.find((item) => {
             return [item.previewPath, item.comparisonPath].some((path) => {
                 if (!path)

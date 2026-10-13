@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>이끼숲 도마뱀 · 절차적 움직임</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">ANIMATION LAB / 01 · PROCEDURAL</p>
+        <h1>이끼숲 도마뱀</h1>
+        <p class="lead">그림 장 없이, 땅을 더듬고 몸을 추스르는 작은 생물.</p>
+      </header>
+      <section class="scene" aria-label="절차적 도마뱀 실험">
+        <div class="scene-top">
+          <span><i></i> 발 IK + 몸·꼬리 스프링</span
+          ><span id="mode">자동 산책</span>
+        </div>
+        <canvas
+          id="scene"
+          tabindex="0"
+          aria-label="도마뱀이 걷는 숲. 좌우 방향키로 이동, 스페이스로 밀기. 클릭하거나 드래그하면 돌을 놓습니다."
+        ></canvas>
+        <div class="scene-bottom">
+          <span id="reaction" role="status">걷기 → 딛은 발은 땅에 고정</span
+          ><span id="steps">0 걸음</span>
+        </div>
+      </section>
+      <div class="controls" aria-label="도마뱀 조작">
+        <div class="button-group">
+          <button id="left" type="button" aria-label="왼쪽으로 이동">←</button>
+          <button id="right" type="button" aria-label="오른쪽으로 이동">
+            →
+          </button>
+          <button id="automatic" type="button" aria-pressed="true">
+            자동 산책
+          </button>
+          <button id="reverse" type="button">급회전 <kbd>R</kbd></button>
+          <button id="push" type="button" class="accent">
+            툭 밀기 <kbd>Space</kbd>
+          </button>
+        </div>
+        <div class="button-group">
+          <button id="pause" type="button" aria-pressed="false">
+            일시정지
+          </button>
+          <button id="slow" type="button" aria-pressed="false">
+            느리게 ×¼
+          </button>
+          <button id="skeleton" type="button" aria-pressed="false">
+            관절 보기
+          </button>
+          <button id="reset" type="button">처음으로</button>
+        </div>
+      </div>
+      <section class="instructions">
+        <p>
+          <strong>숲을 바꿔 보세요.</strong> 빈 곳을 클릭하면 돌을 놓습니다.
+          돌을 드래그하면 위치와 높이가 바뀝니다. 선택한 돌은
+          <kbd>Delete</kbd>로 지웁니다.
+        </p>
+        <p>
+          ← → / A D 이동 · R 급회전 · Space 밀기 · P 일시정지. 돌 위에 발을
+          올리는 순간과 급회전 뒤 따라오는 꼬리를 보세요.
+        </p>
+      </section>
+      <footer>
+        <a href="../../?asset=local/procedural-creature-lab"
+          >← 리소스 라이브러리</a
+        ><span>절차적 실험 · 별도 그림 / 외부 리소스 없음</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/animation-lab/procedural-creature/index.js"
+    ></script>
+  </body>
+</html>

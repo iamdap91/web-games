@@ -1,3 +1,4 @@
+import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
 import {
   MotionPreview,
   comparisonRules,
@@ -25,6 +26,10 @@ class MotionComparison {
   private frameRequest = 0;
   private previousTime = 0;
   private disposed = false;
+
+  constructor() {
+    registerEmbeddedScene(this.dispose);
+  }
 
   async start(): Promise<void> {
     const status = document.querySelector<HTMLElement>('#status')!;

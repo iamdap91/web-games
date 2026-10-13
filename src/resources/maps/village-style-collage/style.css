@@ -1,0 +1,259 @@
+:root {
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: #dddcc8;
+  background: #152725;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 28px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+.eyebrow {
+  margin: 0 0 8px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: #9aac8f;
+}
+h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+.lead {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #b5bda5;
+}
+.scene {
+  border: 1px solid #5b6c51;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #1c322d;
+}
+.scene-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: #bfcbb0;
+}
+.canvas-wrap {
+  height: min(63vh, 640px);
+  min-height: 350px;
+  position: relative;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  touch-action: none;
+}
+canvas:focus-visible {
+  outline: 2px solid #c7cb9e;
+  outline-offset: -3px;
+}
+#status {
+  margin: 0;
+  padding: 10px 14px;
+  min-height: 39px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px 0 8px;
+}
+button {
+  font: inherit;
+  font-size: 11px;
+  color: #d6dac1;
+  background: #2b4134;
+  border: 1px solid #667653;
+  border-radius: 5px;
+  padding: 9px 12px;
+  min-height: 36px;
+  cursor: pointer;
+}
+button:hover {
+  background: #43583d;
+}
+button[aria-pressed='true'] {
+  background: #5c6542;
+  color: #f2e7bb;
+}
+.accent {
+  background: #896846;
+  border-color: #ae8960;
+  color: #f4e8c8;
+  min-width: 154px;
+}
+kbd {
+  font:
+    9px ui-monospace,
+    monospace;
+  opacity: 0.6;
+  margin-left: 4px;
+}
+footer {
+  font-size: 11px;
+  color: #a7b79f;
+  line-height: 1.7;
+}
+footer p {
+  margin: 3px 0;
+}
+footer b {
+  color: #c6cfb2;
+  margin-right: 8px;
+}
+.method {
+  font-size: 10px;
+  color: #8fa68f;
+}
+#pause-overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #16312988;
+  letter-spacing: 0.2em;
+  font-size: 20px;
+  pointer-events: none;
+}
+#pause-overlay[hidden] {
+  display: none;
+}
+.direction-pad {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 34px);
+  grid-template-rows: repeat(2, 34px);
+  gap: 3px;
+}
+.direction-pad button {
+  padding: 0;
+  min-height: 34px;
+  background: #203b2fe0;
+  font-size: 17px;
+  touch-action: none;
+}
+.direction-pad button:first-child {
+  grid-column: 2;
+}
+.direction-pad button:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+.direction-pad button:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+.direction-pad button:nth-child(4) {
+  grid-column: 3;
+  grid-row: 2;
+}
+.embedded-scene main {
+  max-width: none;
+  padding: 10px;
+}
+.embedded-scene header,
+.embedded-scene footer {
+  display: none;
+}
+.embedded-scene .canvas-wrap {
+  height: calc(100vh - 145px);
+  min-height: 220px;
+}
+.embedded-scene .controls {
+  gap: 5px;
+  padding: 8px 0 0;
+}
+.embedded-scene button {
+  font-size: 10px;
+  padding: 7px 9px;
+}
+.embedded-scene .scene-bar {
+  padding: 7px 10px;
+}
+.embedded-scene #status {
+  font-size: 11px;
+  padding: 8px 10px;
+  min-height: 36px;
+}
+@media (max-width: 600px) {
+  main {
+    padding: 18px 12px;
+  }
+  header {
+    display: block;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  .lead {
+    margin-top: 8px;
+    font-size: 11px;
+  }
+  .canvas-wrap {
+    min-height: 0;
+    height: 420px;
+  }
+  .scene-bar {
+    font-size: 8px;
+    padding: 8px;
+  }
+  button {
+    font-size: 10px;
+    padding: 8px 10px;
+  }
+  kbd {
+    display: none;
+  }
+  #status {
+    font-size: 11px;
+    min-height: 50px;
+  }
+  .controls {
+    gap: 5px;
+  }
+  .embedded-scene main {
+    padding: 6px;
+  }
+  .embedded-scene .canvas-wrap {
+    height: calc(100vh - 192px);
+    min-height: 220px;
+  }
+  .embedded-scene #status {
+    min-height: 50px;
+  }
+  .accent {
+    min-width: 125px;
+  }
+}

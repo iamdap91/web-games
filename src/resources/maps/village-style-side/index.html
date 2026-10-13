@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>옆길 마을 · 횡스크롤 거리</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">VILLAGE STUDIES / SIDE STREET</p>
+        <h1>옆길 마을</h1>
+        <p>상점 앞에서 지붕길로, 같은 거리의 다른 풍경.</p>
+      </header>
+      <section class="scene" aria-label="횡스크롤 마을 보행 시안">
+        <div class="scene-bar">
+          <span>PARALLAX · THREE PATHS</span
+          ><span id="visited">불러오는 중</span>
+        </div>
+        <div class="canvas-wrap">
+          <canvas
+            id="scene"
+            tabindex="0"
+            aria-label="횡스크롤 마을. 좌우 이동, 계단에서 위아래 길 선택, 클릭 길찾기, Space 시설 이용."
+          ></canvas>
+          <div id="pause-overlay" hidden>잠시 쉬어가기</div>
+        </div>
+        <p id="status" role="status">
+          승인된 아타호 원본 프레임을 불러오고 있어요.
+        </p>
+      </section>
+      <div class="controls" aria-label="보기와 시설 조작">
+        <button id="interact" class="accent">살펴보기 · Space</button
+        ><button id="restore">도장 복구</button
+        ><button id="overview">전체 거리</button
+        ><button id="pause">잠시 멈춤</button><button id="reset">입구로</button>
+      </div>
+      <footer>
+        <p>
+          ← → / A D 이동 · 계단에서 ↑ W 지붕길, ↓ S 뒷골목 · 화면을 눌러 길찾기
+          · Space 시설 이용
+        </p>
+        <p>
+          찻집 화덕 → 도장 → 지붕길 또는 뒷골목 쉼터. 배경·상점·전경의 이동
+          속도와 가림을 비교하세요.
+        </p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-side/index.js"
+    ></script>
+  </body>
+</html>

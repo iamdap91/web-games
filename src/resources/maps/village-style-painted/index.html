@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>빛바랜 광장 · 회화풍 마을</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="description">
+          <a href="../../?category=maps">리소스 라이브러리</a>
+          <h1>빛바랜 광장</h1>
+          <p>
+            잿빛 청색의 광장, 벗겨진 석회벽, 남겨진 찻잔. 붓질로 만든 작은
+            마을을 걸어보세요.
+          </p>
+        </div>
+        <nav aria-label="마을 조작">
+          <button id="restore">도장 복구</button
+          ><button id="overview">가까이 걷기</button
+          ><button id="pause" aria-pressed="false">잠시 멈춤</button
+          ><button id="reset">입구 복귀</button>
+        </nav>
+      </header>
+      <section class="stage">
+        <canvas
+          id="scene"
+          tabindex="0"
+          aria-label="빛바랜 광장. 방향키로 이동하고 Space로 시설을 사용합니다."
+        ></canvas>
+        <div id="pause-overlay" hidden>잠시 멈춤</div>
+      </section>
+      <footer>
+        <div class="feedback">
+          <p id="status" aria-live="polite">마을을 불러오는 중이에요.</p>
+          <p id="visited">화덕 ○ · 도장 ○ · 쉼터 ○</p>
+          <small>WASD / 방향키 · 클릭 경로 이동 · Space 살펴보기</small>
+        </div>
+        <div class="touch-controls">
+          <div class="directions">
+            <button data-direction="up" aria-label="위로 이동">↑</button
+            ><button data-direction="left" aria-label="왼쪽 이동">←</button
+            ><button data-direction="down" aria-label="아래로 이동">↓</button
+            ><button data-direction="right" aria-label="오른쪽 이동">→</button>
+          </div>
+          <button id="interact">근처 살펴보기</button>
+        </div>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-painted/index.js"
+    ></script>
+  </body>
+</html>
