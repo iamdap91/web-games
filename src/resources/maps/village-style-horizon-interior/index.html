@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>둥근 길 속 집 · 기능 전이</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="intro">
+          <small>VILLAGE STUDY · CURVED HORIZON</small>
+          <h1>둥근 길 속 집 · 기능 전이</h1>
+          <p>
+            곡선 지평선형 ← 접근 단면 개방 · 같은 마을에서 직접 걸어 확인하세요.
+          </p>
+        </div>
+        <nav aria-label="마을 보기">
+          <button id="curve" aria-pressed="true">곡선 · C</button
+          ><button id="restore">도장 복구 · R</button
+          ><button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </nav>
+      </header>
+      <section class="stage">
+        <canvas tabindex="0" aria-label="곡선 지평선을 따라 걷는 마을"></canvas>
+        <aside class="chapter">
+          <small>먼 집의 문을 찾아</small><strong>언덕 너머 집 안으로</strong>
+          <p>
+            곡선 지평선형 ← 접근 단면 개방 · 같은 마을에서 직접 걸어 확인하세요.
+          </p>
+          <span>M · 전체 조망에서 먼 집 찾기 / C · 곡면 비교</span>
+        </aside>
+        <div id="prompt" hidden></div>
+        <div id="notice" hidden role="status"></div>
+        <div id="paused" hidden>잠시 멈춤</div>
+        <button id="interact" disabled>시설 사용 · Space</button>
+      </section>
+      <footer>
+        <span>길 누르기 / 터치 · WASD / 방향키 · Space 사용</span
+        ><span id="status">둥근 길을 불러오는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-horizon-interior/index.js"
+    ></script>
+  </body>
+</html>

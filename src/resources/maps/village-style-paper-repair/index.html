@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>종이골목 · 팝업북 마을</title>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main id="paper-village">
+      <header>
+        <div class="intro">
+          <small>VILLAGE STUDY · PAPER</small>
+          <h1>종이골목 · 수선과 인쇄 기능 전이</h1>
+          <p>
+            화덕과 도장 앞에서 찢어진 책장을 수선해요. 인쇄와 종이 발판이
+            완성되면 길이 열립니다.
+          </p>
+        </div>
+        <nav aria-label="마을 보기">
+          <button id="restore">근처 책장 수선 · R</button
+          ><button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </nav>
+      </header>
+      <section class="stage">
+        <canvas tabindex="0" aria-label="종이골목을 걷는 답사 화면"></canvas>
+        <aside class="chapter">
+          <span>접어서 만든 작은 마을</span
+          ><strong>찢어진 책장을 이어볼까요?</strong>
+          <p>화덕 수선 → 북쪽 발판 → 도장 수선 → 동쪽 발판 → 쉼터 → 귀환</p>
+        </aside>
+        <div id="prompt" hidden></div>
+        <div id="notice" role="status" hidden></div>
+        <div id="paused" hidden>잠시 멈춤</div>
+        <button id="interact" disabled>시설 사용 · Space</button>
+      </section>
+      <footer>
+        <span>화면의 길 누르기 / 터치 · WASD / 방향키 · Space 사용</span
+        ><span id="status">종이골목을 펼치는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-paper-repair/index.js"
+    ></script>
+  </body>
+</html>

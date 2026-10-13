@@ -1,0 +1,289 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+body {
+  background: #e4ecd9;
+  color: #42563c;
+  font:
+    14px/1.4 system-ui,
+    sans-serif;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 20px;
+  gap: 14px;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+}
+h1 {
+  margin: 2px 0;
+  font-size: 28px;
+}
+.intro p {
+  margin: 0;
+}
+small {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+button {
+  border: 1px solid #bbc5a9;
+  border-radius: 7px;
+  background: #f7f4e5;
+  color: #475a3d;
+  padding: 8px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+button:hover {
+  background: #e7efcf;
+}
+button:disabled {
+  opacity: 0.48;
+  cursor: default;
+}
+#curve[aria-pressed='true'] {
+  background: #c7dfaa;
+}
+.stage {
+  position: relative;
+  flex: 1;
+  min-height: 430px;
+  height: min(72vh, 770px);
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid #bbc8ad;
+  box-shadow: 0 10px 35px #61745018;
+}
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  outline: none;
+}
+canvas:focus-visible {
+  outline: 2px solid #4c7154;
+  outline-offset: -2px;
+}
+.chapter {
+  position: absolute;
+  left: 22px;
+  top: 20px;
+  pointer-events: none;
+  padding: 13px 18px;
+  background: #f9f5ddcf;
+  border-radius: 9px;
+}
+.chapter strong {
+  display: block;
+  font-size: 17px;
+  margin: 4px 0;
+}
+.chapter p {
+  margin: 4px 0;
+}
+.chapter span {
+  font-size: 11px;
+}
+#interact {
+  position: absolute;
+  bottom: 18px;
+  right: 18px;
+}
+#prompt {
+  position: absolute;
+  bottom: 21px;
+  left: 20px;
+  padding: 7px 12px;
+  background: #fbefcde0;
+  border-radius: 6px;
+}
+#notice {
+  position: absolute;
+  bottom: 66px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: calc(100% - 32px);
+  padding: 9px 14px;
+  background: #fcf9e9ee;
+  border-radius: 7px;
+  text-align: center;
+}
+#paused {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 18px 28px;
+  background: #f9f5dded;
+  border-radius: 10px;
+  font-size: 20px;
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+}
+.embedded-scene main {
+  height: 100vh;
+  min-height: 0;
+  padding: 8px;
+  gap: 7px;
+}
+.embedded-scene .intro,
+.embedded-scene .chapter {
+  display: none;
+}
+.embedded-scene header {
+  justify-content: flex-end;
+}
+.embedded-scene .stage {
+  min-height: 0;
+  height: auto;
+}
+.embedded-scene footer {
+  font-size: 10px;
+}
+@media (max-width: 640px) {
+  main {
+    padding: 10px;
+    gap: 8px;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav {
+    justify-content: flex-start;
+  }
+  button {
+    font-size: 12px;
+    padding: 7px 9px;
+  }
+  .stage {
+    min-height: 450px;
+  }
+  .chapter {
+    left: 10px;
+    top: 10px;
+    padding: 9px 12px;
+  }
+  .chapter strong {
+    font-size: 14px;
+  }
+  .chapter p {
+    font-size: 11px;
+  }
+  #prompt {
+    bottom: 61px;
+    left: 10px;
+    font-size: 12px;
+  }
+  #notice {
+    bottom: 105px;
+    font-size: 12px;
+  }
+  .embedded-scene header {
+    align-items: stretch;
+  }
+}
+
+.embedded-scene body {
+  overflow: hidden;
+}
+.embedded-scene main {
+  width: 100%;
+  height: 100dvh;
+  min-height: 0;
+  min-width: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  padding: 0;
+  gap: 0;
+  position: relative;
+}
+.embedded-scene header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 0;
+  min-width: 0;
+  padding: 8px 10px;
+  gap: 0;
+}
+.embedded-scene header > div:first-child,
+.embedded-scene .intro {
+  display: none;
+}
+.embedded-scene .controls,
+.embedded-scene header nav {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: none;
+  min-width: 0;
+  justify-content: flex-start;
+  gap: 6px;
+}
+.embedded-scene button {
+  padding: 7px 9px;
+  font-size: 11px;
+}
+.embedded-scene .stage {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+}
+.embedded-scene canvas {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: block;
+}
+.embedded-scene footer {
+  position: static;
+  width: 100%;
+  min-width: 0;
+  padding: 7px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 10px;
+  pointer-events: auto;
+}
+.embedded-scene footer > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.embedded-scene .chapter {
+  display: none;
+}

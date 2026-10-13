@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>두빛 마을 · 제한색 도트</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="intro">
+          <small>VILLAGE STUDY / TWO TONES</small>
+          <h1>두빛 마을 · 표면 조명 기능 전이</h1>
+          <p>
+            L로 등불을 옮기고 N으로 조명을 비교해요. 벽돌·기와는 두 색을
+            유지합니다.
+          </p>
+        </div>
+        <nav aria-label="마을 보기">
+          <button id="lamp">등불 동쪽으로 · L</button
+          ><button id="lighting" aria-pressed="true">조명 끄기 · N</button
+          ><button id="restore" aria-pressed="false">도장 복구 · R</button
+          ><button id="overview" aria-pressed="true">가까이 걷기 · M</button
+          ><button id="pause" aria-pressed="false">잠시 멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </nav>
+      </header>
+      <section class="stage">
+        <canvas
+          id="scene"
+          tabindex="0"
+          aria-label="두빛 마을 답사 화면"
+        ></canvas>
+        <aside class="chapter">
+          <span>01 / 두빛 산책</span><strong>짧은 골목, 긴 산책길</strong>
+          <p>빵 화덕 → 빈 도장 → 나무 뒤 쉼터</p>
+        </aside>
+        <div id="paused" hidden>잠시 멈춤</div>
+        <div class="touch-pad" aria-label="방향 이동">
+          <button data-direction="up" aria-label="위로">↑</button
+          ><button data-direction="left" aria-label="왼쪽으로">←</button
+          ><button data-direction="down" aria-label="아래로">↓</button
+          ><button data-direction="right" aria-label="오른쪽으로">→</button>
+        </div>
+        <button id="interact" disabled>시설 앞에서 사용 · Space</button>
+      </section>
+      <footer>
+        <span id="visited">화덕 ○ / 도장 ○ / 쉼터 ○</span
+        ><span id="status" role="status">두빛 마을을 펼치는 중…</span
+        ><span class="instructions"
+          >길 클릭·터치 / WASD·방향키 이동 / Space 사용</span
+        >
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-limited-light/index.js"
+    ></script>
+  </body>
+</html>

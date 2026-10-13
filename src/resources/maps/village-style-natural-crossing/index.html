@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>산들 두 갈래 길 · 기능 전이</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../catalog/embedded-scene.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js",
+          "three/addons/": "../../../../node_modules/three/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <span class="eyebrow">VILLAGE STYLE / 01</span>
+          <h1>산들 두 갈래 길 · 기능 전이</h1>
+          <p>
+            자연 지형형 ← 위아래 통행층 · 같은 마을에서 직접 걸어 확인하세요.
+          </p>
+        </div>
+        <div class="controls">
+          <button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="restore">도장 복구 · R</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </div>
+      </header>
+      <div class="stage">
+        <canvas tabindex="0" aria-label="산들 마을 보행 화면"></canvas>
+        <aside class="route">
+          <b>빠른 길 · 발견하는 길</b><span>높은 다리: 양끝 램프로 진입</span
+          ><span>낮은 길: 남쪽 넓은 입구</span
+          ><span>다리 아래를 지나 물빛 돌 발견</span>
+        </aside>
+        <div id="prompt" hidden></div>
+        <div id="notice" role="status" hidden></div>
+        <div id="paused" hidden>
+          잠시 멈춤 <small>Esc 또는 계속 버튼</small>
+        </div>
+      </div>
+      <footer>
+        <span>WASD / 방향키 · 화면을 눌러 이동</span
+        ><button id="interact" disabled>근처 시설 사용 · Space</button
+        ><span id="status">아타호를 불러오는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-natural-crossing/index.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>자라는 손길 마을 · 기능 전이 · 프리렌더 디오라마 시안</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../catalog/embedded-scene.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js",
+          "three/addons/": "../../../../node_modules/three/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <span class="eyebrow">VILLAGE STYLE / 08</span>
+          <h1>자라는 손길 마을 · 기능 전이</h1>
+          <p>
+            공방 별채를 세우면 골목 문이 열려요. 완성된 모형의 빛과 깊이를 다시
+            담아 둡니다.
+          </p>
+        </div>
+        <div class="controls">
+          <button id="overview" aria-pressed="false">전체 조망 · M</button
+          ><button id="restore">도장 복구 · R</button
+          ><button id="pause">멈춤 · Esc</button
+          ><button id="reset">입구로</button>
+        </div>
+      </header>
+      <div class="stage">
+        <canvas
+          tabindex="0"
+          aria-label="자라는 손길 마을 · 기능 전이 보행 화면"
+        ></canvas>
+        <aside class="route">
+          <b>돌아치 골목 한 바퀴</b><span data-place="hearth">01 화덕 마당</span
+          ><span data-place="dojo">02 돌계단 도장</span
+          ><span data-place="rest">03 수로 끝 쉼터</span>
+        </aside>
+        <div id="prompt" hidden></div>
+        <div id="notice" role="status" hidden></div>
+        <div id="paused" hidden>
+          잠시 멈춤 <small>Esc 또는 계속 버튼</small>
+        </div>
+      </div>
+      <footer>
+        <span>WASD / 방향키 · 화면을 눌러 이동</span
+        ><button id="interact" disabled>근처 시설 사용 · Space</button
+        ><span id="status">아타호를 불러오는 중…</span>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/village-style-diorama-growth/index.js"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+import { travelStep, travelHeight, crossingRoute, } from './crossing.js';
+import { facingFor } from '../../characters/ataho/facing.js';
+import { naturalPlaces, naturalRules } from './layout.js';
+/** 작은 시안의 이동·발동·복구 상태를 소유한다. */
+export class NaturalVisit {
+    position = { x: 0, z: 11, layer: 'ground' };
+    route = [];
+    lowerDiscovery = false;
+    facing = 'front';
+    moving = false;
+    fire = 0;
+    restored = false;
+    notice = null;
+    noticeTime = 0;
+    visited = new Set();
+    shelterDiscovered = false;
+    get snapshot() {
+        const nearby = naturalPlaces
+            .filter((p) => Math.hypot(p.x - this.position.x, p.z - this.position.z) <=
+            naturalRules.interactionDistance)
+            .sort((a, b) => Math.hypot(a.x - this.position.x, a.z - this.position.z) -
+            Math.hypot(b.x - this.position.x, b.z - this.position.z))[0];
+        return {
+            lowerDiscovery: this.lowerDiscovery,
+            routeRemaining: this.route.length,
+            player: {
+                ...this.position,
+                y: travelHeight(this.position),
+                facing: this.facing,
+                moving: this.moving,
+            },
+            nearby: nearby?.id ?? null,
+            visited: [...this.visited],
+            fire: this.fire,
+            restored: this.restored,
+            notice: this.notice,
+            shelterDiscovered: this.shelterDiscovered,
+        };
+    }
+    reset() {
+        this.position = { x: 0, z: 11, layer: 'ground' };
+        this.stop();
+        this.facing = 'front';
+    }
+    stop() {
+        this.moving = false;
+        this.route = [];
+    }
+    routeTo(target) {
+        this.route = crossingRoute(this.position, target);
+        if (!this.route.length)
+            this.tell('길이나 다리의 바닥을 눌러 주세요. 아래 길은 남쪽 입구에서 시작해요.');
+    }
+    walk(delta, input) {
+        this.moving = false;
+        if (!Number.isFinite(delta) ||
+            delta <= 0 ||
+            !Number.isFinite(input.x) ||
+            !Number.isFinite(input.z))
+            return;
+        if (input.x || input.z)
+            this.route = [];
+        const target = this.route[0];
+        if (target && !input.x && !input.z)
+            input = { x: target.x - this.position.x, z: target.z - this.position.z };
+        const length = Math.hypot(input.x, input.z);
+        if (!length)
+            return;
+        this.facing = facingFor(input);
+        const previous = this.position;
+        const distance = Math.min(Math.min(delta, 0.05) *
+            (this.position.layer === 'low' ? 3 : naturalRules.speed), target ? length : Infinity), steps = Math.ceil(distance / 0.04);
+        for (let i = 0; i < steps; i++) {
+            this.move({
+                x: this.position.x + ((input.x / length) * distance) / steps,
+                z: this.position.z,
+            });
+            this.move({
+                x: this.position.x,
+                z: this.position.z + ((input.z / length) * distance) / steps,
+            });
+        }
+        this.moving =
+            Math.hypot(previous.x - this.position.x, previous.z - this.position.z) >
+                0.00001;
+        if (target &&
+            Math.hypot(target.x - this.position.x, target.z - this.position.z) < 0.015)
+            this.route.shift();
+        if (!this.lowerDiscovery &&
+            this.position.layer === 'low' &&
+            this.position.z < 0.7) {
+            this.lowerDiscovery = true;
+            this.tell('다리 아래의 물빛 돌 발견 — 높은 길에서는 보이지 않던 반짝임!');
+        }
+        if (!this.shelterDiscovered &&
+            Math.hypot(this.position.x - 10.7, this.position.z + 8.4) < 2.3) {
+            this.shelterDiscovered = true;
+            this.tell('물소리 쉼터 발견 — 먼 길로 돌아오길 잘했다.');
+        }
+    }
+    move(point) {
+        const next = travelStep(this.position, point);
+        if (next)
+            this.position = next;
+    }
+    interact() {
+        if (this.position.layer === 'low') {
+            this.tell('개울 옆 물빛 돌 · 낮은 길로 내려온 사람만 찾는 작은 풍경.');
+            return true;
+        }
+        const nearby = naturalPlaces.find((p) => p.id === this.snapshot.nearby);
+        if (!nearby)
+            return false;
+        this.visited.add(nearby.id);
+        this.tell(nearby.description);
+        if (nearby.id === 'hearth')
+            this.fire = 12;
+        this.stop();
+        return true;
+    }
+    toggleRestored() {
+        this.restored = !this.restored;
+        this.tell(this.restored
+            ? '도장 복구 — 새 지붕과 등불, 길가의 작은 깃발이 돌아왔다.'
+            : '복구 전 — 빛바랜 지붕과 빈 마당.');
+    }
+    tell(message) {
+        this.notice = message;
+        this.noticeTime = 6;
+    }
+    update(delta) {
+        if (!Number.isFinite(delta) || delta <= 0)
+            return;
+        const step = Math.min(delta, 0.05);
+        this.fire = Math.max(0, this.fire - step);
+        this.noticeTime = Math.max(0, this.noticeTime - step);
+        if (!this.noticeTime)
+            this.notice = null;
+    }
+}
