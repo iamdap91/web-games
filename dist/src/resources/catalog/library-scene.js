@@ -1,6 +1,10 @@
 import { resourceUrl } from './resource-url.js';
 const scenePaths = new Set([
+    'src/resources/maps/herbalist-camp/',
     'src/resources/characters/ataho-hybrid/index.html',
+    'src/resources/characters/ataho-pixel-tests/',
+    'src/resources/characters/ataho-skeleton-walk/',
+    'src/resources/characters/ataho-v2-combos/',
     'src/resources/maps/village-style-natural/',
     'src/resources/maps/village-style-pixel2d/',
     'src/resources/maps/village-style-hd2d/',
@@ -73,7 +77,10 @@ export class LibraryScene {
         url.searchParams.set('embed', '1');
         this.frame.src = url.href;
         this.frame.className = 'library-scene';
-        if (entry.previewPath?.startsWith('src/resources/characters/ataho-hybrid/')) {
+        if (entry.previewPath?.startsWith('src/resources/characters/ataho-hybrid/') ||
+            entry.previewPath?.startsWith('src/resources/characters/ataho-pixel-tests/') ||
+            entry.previewPath?.startsWith('src/resources/characters/ataho-skeleton-walk/') ||
+            entry.previewPath?.startsWith('src/resources/characters/ataho-v2-combos/')) {
             this.frame.classList.add('comparison-scene');
             this.frame.setAttribute('scrolling', 'no');
             this.frame.addEventListener('load', () => this.fitComparison(), {

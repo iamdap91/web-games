@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <title>개울가 약초꾼 야영지</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">숲길 답사</p>
+        <h1>개울가 약초꾼 야영지</h1>
+        <p class="lead">
+          숲길 끝의 모닥불, 작은 목교, 그리고 개울 너머의 약초밭.
+        </p>
+      </header>
+      <section class="scene" aria-label="약초꾼 야영지 보행">
+        <div class="scene-bar">
+          <span>개울가를 걸어보세요</span
+          ><span id="visited">모닥불 ○ · 약초밭 ○</span>
+        </div>
+        <div class="canvas-wrap">
+          <canvas
+            id="scene"
+            tabindex="0"
+            aria-label="WASD 또는 방향키로 걷고 Space로 가까운 곳을 살펴봅니다."
+          ></canvas>
+          <div id="pause-overlay" hidden>잠시 쉬어가기</div>
+          <div class="direction-pad" aria-label="이동 조작">
+            <button disabled data-direction="up" aria-label="위로 이동">
+              ↑
+            </button>
+            <button disabled data-direction="left" aria-label="왼쪽으로 이동">
+              ←
+            </button>
+            <button disabled data-direction="down" aria-label="아래로 이동">
+              ↓
+            </button>
+            <button
+              disabled
+              data-direction="right"
+              aria-label="오른쪽으로 이동"
+            >
+              →
+            </button>
+          </div>
+        </div>
+        <p id="status" role="status">
+          개울가의 풍경과 아타호를 불러오고 있어요.
+        </p>
+      </section>
+      <div class="controls" aria-label="답사 조작">
+        <button disabled id="inspect" class="accent">근처 살펴보기</button>
+        <button disabled id="overview" aria-pressed="true">
+          가까이 걷기 · M
+        </button>
+        <button disabled id="pause" aria-pressed="false">잠시 멈춤</button>
+        <button disabled id="reset">입구로</button>
+      </div>
+      <footer>
+        WASD / 방향키 · 화면 방향 버튼 · Space 살펴보기 · M 전체 조망 · Esc 잠시
+        멈춤
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/maps/herbalist-camp/index.js"
+    ></script>
+  </body>
+</html>

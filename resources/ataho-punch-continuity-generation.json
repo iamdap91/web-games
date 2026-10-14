@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-13",
+  "status": "pending-user-review",
+  "provider": "Codex built-in ImageGen",
+  "scope": "오른쪽 대기 → 정권 → 대기 연결 비교 시안. 기존 게임 교체 없음.",
+  "references": [
+    {
+      "role": "right-facing-identity",
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png",
+      "sha256": "f429358df77528a614df1e6703582dd13ad08dff7c6af61a17b1b46b944f5285"
+    },
+    {
+      "role": "front-identity",
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/front-01.png",
+      "sha256": "da5bf277025f825de169cbeddacc070a65717deec963c183b2baaf3f7b3c8412"
+    }
+  ],
+  "outputs": [
+    {
+      "id": "poses-01",
+      "localPath": "public/assets/maplestory/ataho-punch-continuity/20261013/poses-01.png",
+      "review": "접촉 자세의 팔이 바뀌어 보정 입력으로 보존",
+      "sha256": "3d9e2e8fd3a1b0239316e5c72ee1efaab2e32187c8c097969bb3833d9db1f299",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGBA",
+      "sourcePixelsModified": false,
+      "alphaRange": [0, 254]
+    },
+    {
+      "id": "poses-02",
+      "localPath": "public/assets/maplestory/ataho-punch-continuity/20261013/poses-02.png",
+      "review": "근거리 팔의 정권으로 보정한 표시 시트",
+      "sha256": "0b094c18677e915a244b9c577c8636ead79bc62e093792b4120b883fbd080019",
+      "width": 1536,
+      "height": 1024,
+      "format": "PNG",
+      "mode": "RGBA",
+      "sourcePixelsModified": false,
+      "alphaRange": [0, 254]
+    }
+  ],
+  "prompts": {
+    "generate": "Create ONE production animation key-pose SPRITE SHEET for the character in the two provided images.\nImage 1 is the authoritative RIGHT-FACING three-quarter standing character reference. Image 2 is supporting front identity reference. Preserve the same middle-aged stocky tiger martial artist Ataho, sleepy mature eyes, very broad large head, fluffy ivory cheeks, orange fur and stripe placement, worn brown short open jacket, crossed ivory robe, brown waist sash, charcoal cropped pants, wrist wraps, ankle wraps and striped tail. Match the smooth hand-painted NON-PIXEL 2D game illustration with fine variable ink contours and restrained warm shading. Do not redesign him.\n\nLayout: a strictly regular FOUR COLUMNS by TWO ROWS grid on a truly TRANSPARENT background, eight full-body poses, no cell borders, labels, text, effects, ground shadows or other objects. Wide landscape composition, ideally 1536x1024. Equal-sized cells. Every character stays entirely inside its cell including the extended fist and tail, with at least 12% empty padding. The character's head size and total body scale must be IDENTICAL across all eight cells. Both feet are planted at exactly the SAME positions and baseline relative to each cell in ALL poses. No stepping, jumping or rotating to another view. SAME right-facing 3/4 camera in every pose. The character is punching toward SCREEN RIGHT. Keep face shape, fur markings, costume and proportions consistent as this is ONE animation.\n\nRead poses left-to-right across row one then row two:\n1: relaxed idle, arms down as in image 1, feet planted.\n2: begin bringing the nearer fist up toward waist/chest; shoulders only slightly compress; torso still upright.\n3: wind-up, nearer fist chambered at waist/ribs with bent elbow, opposite hand guarding; slight forward body lean. Face still oriented right. Feet stay fixed.\n4: straight punch extending to about 65 percent reach toward screen right, elbow still bent. Shoulder follows, head shape unchanged.\n5: full straight-punch extension toward screen right, fist at chest height, firm grounded stance. Slight torso lean but no head turn, no extreme foreshortening. Other fist is at waist.\n6: retracting the same punch to about 50 percent reach, elbow bending, same head/camera/feet.\n7: fist back near waist, body returning upright, hands beginning to lower.\n8: exactly the same relaxed idle stance and silhouette as pose 1, arms down. Match pose 1 very closely.\n\nCritical animation continuity: poses 1->2->3->4->5->6->7->8 are one continuous restrained martial-arts punch, not eight unrelated artworks. Use steady identical character dimensions. The head should only translate gently with shoulder motion; NO changes of face, expression, ear shapes, stripes or gaze. Pants, planted feet and tail silhouette should remain nearly unchanged. Prioritize clean readable transition drawings with no duplicate arms or fists. Render high-quality RGBA with actual alpha transparency.",
+    "edit": "Edit the supplied eight-pose transparent tiger animation sheet. Make ONE local correction ONLY to the FIRST CELL OF THE BOTTOM ROW (pose 5, full punch). Its current punching arm is the wrong arm.\nReplace the character in this ONE cell with the SAME near-arm punch shown in the FOURTH CELL OF THE TOP ROW, but fully extended horizontally towards SCREEN RIGHT. The nearer arm begins at the LEFT side of the visible torso, crosses in front of the chest, and extends toward screen right, matching the previous frame. The other fist stays chambered at the right side of the waist. The head remains the same right-facing three-quarter head, no change to gaze, ears or stripes. Keep both feet, pants, tail and cell baseline in the original pose-5 position. Keep head size and body scale identical to the other cells.\nPreserve ALL SEVEN OTHER CELLS exactly. Preserve the 4x2 grid, 1536x1024 size, transparent margins, hand-painted warm nonpixel linework and costume. No added text, lines, shadows, motion effects, extra limbs or background. Output true RGBA transparency. Do not redesign any character. The intended pose sequence is idle, raise near fist, chamber, partial near-arm punch, full SAME near-arm punch, retract, relax, idle."
+  },
+  "usage": {
+    "builtInGenerations": 2,
+    "PixelLabPaidGenerations": 0
+  },
+  "display": {
+    "columns": 4,
+    "rows": 2,
+    "cellWidth": 384,
+    "cellHeight": 512,
+    "frameInfoPath": "src/resources/characters/ataho-hybrid/punch-drawing.ts",
+    "timelinePath": "src/resources/characters/ataho-hybrid/punch-model.ts",
+    "sequence": [0, 1, 2, 3, 4, 3, 5, 2, 1, 0],
+    "contactAt": 0.41,
+    "contactHoldSeconds": 0.07,
+    "duration": 1.25,
+    "idleGap": 1.5,
+    "notes": [
+      "원본 PNG 바이트는 변경하지 않음",
+      "접촉 주먹의 셀 경계 넘침은 상체 표시 범위를 넓혀 보존",
+      "인접 칸의 꼬리·주먹이 들어온 여백은 표시 영역만 제한",
+      "수평 띠의 연속 변형으로 머리 위치와 두 발 기준을 정렬; 서로 다른 하체 그림을 잘라 붙이지 않음",
+      "회수는 전진 자세 3을 재사용하고 마지막 대기는 처음 자세 0을 재사용",
+      "8장 중 6개 자세를 연결 재생하며 원본 전체는 상세에서 확인"
+    ]
+  },
+  "previewPath": "src/resources/characters/ataho-hybrid/index.html#punch",
+  "review": {
+    "verified": [
+      "npm run check 통과",
+      "npm run build 통과",
+      "정권 모델 5개 + 리소스 라이브러리 11개 검사 통과",
+      "Chrome 실제 J 입력으로 타격 1회와 첫 대기 복귀 확인",
+      "Chrome 9초 재생에서 3회 정권과 복귀 확인; 0→1→2→3→4→3→5→2→1→0 순서",
+      "일시정지의 캔버스 픽셀 유지; 0.25배는 400ms 동안 동작 시간 100ms 진행",
+      "240px/112px·밝은/어두운 배경 확인",
+      "1366px와 390px 화면·작업실 iframe 가로 넘침 없음",
+      "생성 PNG 두 장이 도구 반환 원본과 SHA256 일치"
+    ],
+    "limitations": [
+      "핵심 자세 사이의 팔 실루엣 전환은 남아 있음",
+      "승인 원화와 생성 시트의 세부 얼굴·비율은 완전히 같지 않음",
+      "게임 통합·다방향·실기기 모바일은 미검증"
+    ]
+  },
+  "recording": {
+    "localPath": "public/assets/maplestory/ataho-punch-continuity/20261013/preview-01.mp4",
+    "format": "MP4 H264",
+    "width": 960,
+    "height": 390,
+    "seconds": 9,
+    "bytes": 931538,
+    "sha256": "267305c76e57538c1256e044fb9d571b8d7b8fb9cc4e99c486b99372014e285d",
+    "notes": "Chrome 실제 두 캔버스의 재생을 MediaRecorder로 녹화. ImageGen 영상이 아님. 3회 정권·복귀 확인."
+  }
+}

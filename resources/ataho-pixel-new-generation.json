@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-13",
+  "provider": "PixelLab",
+  "model": "Pro Flash",
+  "tool": "mcp__pixellab__create_image_pro_flash",
+  "status": "completed-unapproved",
+  "scope": "신규 정면 도트 아타호 후보 1장. 본게임 통합과 추가 생성은 포함하지 않음.",
+  "userAuthorization": "셋 모두 서브에이전트 통해서 병렬 작업해줘",
+  "reference": null,
+  "capabilities": {
+    "revision": "pro-flash-presets-48-128-2026-09-29",
+    "outputCount": 1,
+    "cost": {
+      "image": 5,
+      "rotations": 0,
+      "total": 5,
+      "provisional": true
+    },
+    "gridRecovery": "Creation recovers the pixel grid the model drew with Unzoom. An exact grid is kept; drift of at most one pixel is recovered on the expected grid. Images with a background must fill the canvas, so any other size is redrawn with image-to-pixel-art on the generated box only. Sprites without a background keep their own pixels, centred on the canvas, while the drawn pixel is close to the requested one; coarser or oversized sprites are redrawn. Experimental 16x16 creation always uses image-to-pixel-art. Editing and inpainting start at 32x32 and never use image-to-pixel-art conversion."
+  },
+  "request": {
+    "description": "A new original pixel-art design of Ataho, a relaxed middle-aged anthropomorphic tiger martial artist, FULL BODY, facing straight FRONT in a neutral standing idle pose. Oversized broad tiger head, small rounded ears, amber-orange fur, dark tiger stripes, ivory cheek tufts and muzzle, half-lidded knowing friendly eyes, a subtle crooked smile. Short stocky sturdy adult body, NOT a child and NOT skinny. Worn rust-brown OPEN short martial jacket over crossed ivory undershirt, dark charcoal loose short trousers, dark waist sash, wrapped wrists and wrapped feet, empty paws resting beside the waist. A curled orange striped tail visible beside the body. Fresh silhouette and pixel design from this written description, not a trace of an existing sprite. Readable 64x64 game sprite with deliberate connected pixel clusters, restrained warm palette around 16 colors, crisp dark one-pixel outlines and simple three-tone shading, no antialiasing or blurred pixels. The entire head, tail and both feet fit inside the canvas with transparent margin on all sides, at least three pixels beneath the feet. Symmetrical front presentation, grounded stance, no perspective camera tilt. Transparent background; no floor, cast shadow, weapons, props, effects or text.",
+    "width": 64,
+    "height": 64,
+    "no_background": true,
+    "seed": 101301
+  },
+  "submission": {
+    "background_job_id": "5929a1d7-c162-4f68-8a35-b78e350bb60d",
+    "image_id": "761d95e0-1d0f-5ea8-b594-e1ca79867458",
+    "status": "processing",
+    "source_image_id": "761d95e0-1d0f-5ea8-b594-e1ca79867458",
+    "job_id": "5929a1d7-c162-4f68-8a35-b78e350bb60d",
+    "image_size": {
+      "width": 64,
+      "height": 64
+    },
+    "output_count": 1,
+    "estimated_generations": 5,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/5929a1d7-c162-4f68-8a35-b78e350bb60d/download"
+  },
+  "usage": {
+    "estimatedGenerations": 5,
+    "budgetGenerations": 5,
+    "acceptedPaidRequests": 1,
+    "accountBaselineGenerations": 732,
+    "baselineSource": "부모 세션 사전 조회",
+    "actualGenerations": 5
+  },
+  "frames": [
+    {
+      "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/new/ataho-pro-flash-front-original.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "d60b9d8e8857c707ee4c26929b76b1b826ecb3c44baba6a0d4364cbd0baa6613",
+      "format": "PNG",
+      "mode": "RGBA",
+      "bytes": 4448,
+      "alphaValues": [0, 255],
+      "nonTransparentBounds": [12, 2, 55, 62],
+      "boundsConvention": "[left, top, rightExclusive, bottomExclusive]",
+      "opaqueColors": 53,
+      "opaquePixelCount": 1726
+    }
+  ],
+  "visualReview": {
+    "method": "원본 view_image와 8배 최근접 확대 preview를 직접 확인",
+    "strengths": [
+      "전신 정면, 호랑이 줄무늬와 아이보리 볼·주둥이, 갈색 열린 겉옷, 교차 속옷, 바지, 아대·발싸개와 옆 꼬리가 모두 식별된다.",
+      "정수 픽셀 경계와 이진 알파로 흐린 외곽선 없이 읽힌다.",
+      "같은 크기의 기존 도트와 비교 가능한 독립 후보다."
+    ],
+    "limitations": [
+      "눈이 크고 또렷하며 얼굴이 둥글어 요청한 반쯤 감긴 눈과 느긋한 중년 인상보다 젊고 귀여운 인상이다.",
+      "몸이 짧고 다부지기보다는 길고 날씬한 편으로 보인다.",
+      "목표 약 16색보다 많은 53개 비투명 RGB 색상을 사용한다.",
+      "발 아래 여백은 2px로 요청한 최소 3px보다 작다.",
+      "대기 1장만 생성되어 방향 전환과 모션의 외형 유지 품질은 검증하지 않았다."
+    ],
+    "decision": "시험 후보로 원본 보존. 사용자 외형 승인 및 본게임 채택은 미확정. 재생성·보정·모션 요청을 추가하지 않았다."
+  },
+  "result": {
+    "job_id": "5929a1d7-c162-4f68-8a35-b78e350bb60d",
+    "status": "completed",
+    "frames": 1,
+    "download_url": "https://api.pixellab.ai/mcp/images/5929a1d7-c162-4f68-8a35-b78e350bb60d/download",
+    "download_urls": [
+      "https://api.pixellab.ai/mcp/images/5929a1d7-c162-4f68-8a35-b78e350bb60d/download"
+    ],
+    "asset": {
+      "id": "761d95e0-1d0f-5ea8-b594-e1ca79867458",
+      "type": "image",
+      "status": "saved"
+    },
+    "charged_generations": 5
+  },
+  "preview": {
+    "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/new/ataho-pro-flash-front-nearest-preview.png",
+    "width": 512,
+    "height": 512,
+    "method": "Pillow Image.Resampling.NEAREST 8x",
+    "originalPixelsUnchanged": true
+  }
+}

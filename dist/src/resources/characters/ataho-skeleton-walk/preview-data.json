@@ -1,0 +1,574 @@
+{
+    "artPath": "public/assets/maplestory/ataho-skeleton-reference/20261013/front-01.png",
+    "directions": [
+        {
+            "id": "south",
+            "label": "정면",
+            "reference": {
+                "localPath": "public/assets/maplestory/ataho-skeleton-reference/20261013/rotations/south.png",
+                "width": 96,
+                "height": 96,
+                "anchor": {
+                    "x": 48.0,
+                    "y": 94
+                }
+            }
+        },
+        {
+            "id": "east",
+            "label": "측면 · 오른쪽",
+            "reference": {
+                "localPath": "public/assets/maplestory/ataho-skeleton-reference/20261013/rotations/east.png",
+                "width": 96,
+                "height": 96,
+                "anchor": {
+                    "x": 48.0,
+                    "y": 94
+                }
+            }
+        },
+        {
+            "id": "north",
+            "label": "후면",
+            "reference": {
+                "localPath": "public/assets/maplestory/ataho-skeleton-reference/20261013/rotations/north.png",
+                "width": 96,
+                "height": 96,
+                "anchor": {
+                    "x": 48.0,
+                    "y": 95
+                }
+            }
+        }
+    ],
+    "tracks": [
+        {
+            "id": "template-south",
+            "direction": "south",
+            "label": "1번 · 템플릿 기반",
+            "method": "공식 걷기 템플릿 · Skeleton V3",
+            "frames": [
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_000.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [34, 26, 100, 119]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_001.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [34, 27, 98, 120]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_002.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [33, 26, 97, 121]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_003.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [32, 26, 98, 119]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_004.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [34, 26, 101, 117]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_005.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [34, 26, 101, 120]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_006.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [35, 26, 102, 121]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_007.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [35, 26, 101, 119]
+                }
+            ]
+        },
+        {
+            "id": "authored-south",
+            "direction": "south",
+            "label": "2번 · 직접 뼈대 지정",
+            "method": "직접 설계한 18관절 · Skeleton V3",
+            "frames": [
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/south/frames/00.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [8, 2, 78, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/south/frames/01.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [9, 2, 78, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/south/frames/02.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [9, 1, 78, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/south/frames/03.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [9, 0, 78, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/south/frames/04.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [10, 2, 78, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/south/frames/05.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [10, 2, 79, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/south/frames/06.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [9, 1, 79, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/south/frames/07.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [10, 0, 79, 95]
+                }
+            ]
+        },
+        {
+            "id": "template-east",
+            "direction": "east",
+            "label": "1번 · 템플릿 기반",
+            "method": "공식 걷기 템플릿 · Skeleton V3",
+            "frames": [
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_000.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [34, 26, 92, 118]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_001.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [30, 26, 100, 119]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_002.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [29, 26, 100, 119]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_003.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [32, 26, 93, 119]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_004.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [36, 26, 92, 117]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_005.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [32, 26, 100, 117]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_006.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [30, 26, 101, 117]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_007.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 118.0
+                    },
+                    "alphaBounds": [31, 26, 94, 118]
+                }
+            ]
+        },
+        {
+            "id": "authored-east",
+            "direction": "east",
+            "label": "2번 · 직접 뼈대 지정",
+            "method": "직접 설계한 18관절 · Skeleton V3",
+            "frames": [
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/east/frames/00.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [10, 2, 68, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/east/frames/01.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [9, 3, 68, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/east/frames/02.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [9, 2, 69, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/east/frames/03.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [11, 1, 71, 94]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/east/frames/04.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [12, 2, 74, 94]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/east/frames/05.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [10, 3, 71, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/east/frames/06.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [9, 2, 68, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/east/frames/07.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 94
+                    },
+                    "alphaBounds": [11, 1, 68, 93]
+                }
+            ]
+        },
+        {
+            "id": "template-north",
+            "direction": "north",
+            "label": "1번 · 템플릿 기반",
+            "method": "공식 걷기 템플릿 · Skeleton V3",
+            "frames": [
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_000.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 119.0
+                    },
+                    "alphaBounds": [44, 28, 109, 118]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_001.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 119.0
+                    },
+                    "alphaBounds": [45, 28, 110, 120]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_002.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 119.0
+                    },
+                    "alphaBounds": [46, 28, 113, 120]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_003.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 119.0
+                    },
+                    "alphaBounds": [45, 28, 109, 118]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_004.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 119.0
+                    },
+                    "alphaBounds": [42, 29, 109, 119]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_005.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 119.0
+                    },
+                    "alphaBounds": [43, 29, 111, 120]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_006.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 119.0
+                    },
+                    "alphaBounds": [43, 28, 110, 120]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_007.png",
+                    "width": 144,
+                    "height": 144,
+                    "anchor": {
+                        "x": 72.0,
+                        "y": 119.0
+                    },
+                    "alphaBounds": [42, 28, 109, 118]
+                }
+            ]
+        },
+        {
+            "id": "authored-north",
+            "direction": "north",
+            "label": "2번 · 직접 뼈대 지정",
+            "method": "직접 설계한 18관절 · Skeleton V3",
+            "frames": [
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/north/frames/00.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 95
+                    },
+                    "alphaBounds": [18, 5, 86, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/north/frames/01.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 95
+                    },
+                    "alphaBounds": [18, 6, 86, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/north/frames/02.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 95
+                    },
+                    "alphaBounds": [18, 5, 89, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/north/frames/03.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 95
+                    },
+                    "alphaBounds": [18, 4, 88, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/north/frames/04.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 95
+                    },
+                    "alphaBounds": [18, 5, 86, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/north/frames/05.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 95
+                    },
+                    "alphaBounds": [19, 6, 87, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/north/frames/06.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 95
+                    },
+                    "alphaBounds": [18, 5, 90, 95]
+                },
+                {
+                    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/authored/north/frames/07.png",
+                    "width": 96,
+                    "height": 96,
+                    "anchor": {
+                        "x": 48,
+                        "y": 95
+                    },
+                    "alphaBounds": [18, 4, 93, 95]
+                }
+            ]
+        }
+    ]
+}

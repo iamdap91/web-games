@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "name": "상자 개폐",
+  "createdDate": "2026-10-14",
+  "tool": "mcp__pixellab__animate_object",
+  "documentationUrl": "https://api.pixellab.ai/mcp/docs",
+  "sourceObjectId": "dbaa3ddc-2444-44d2-9021-1e10c88bc831",
+  "sourceOriginalPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/originals/base.png",
+  "sourceSha256": "3d4aca7dcddaa1e136e8c5b59d6f400600ccb8bef21ef8052d46cfd8b2da6c4f",
+  "request": {
+    "object_id": "dbaa3ddc-2444-44d2-9021-1e10c88bc831",
+    "mode": "v3",
+    "frame_count": 8,
+    "keep_first_frame": false,
+    "display_name": "상자 개폐",
+    "animation_description": "A complete smooth open-close cycle. The chest remains firmly planted and still. Only its hinged rounded lid opens upward, revealing an empty dark interior, briefly holds open, then closes to the same closed pose. Preserve the wooden body, two iron bands and central latch/padlock arrangement, front low-top-down camera, position, size and palette. No jumping, turning, sliding, contents, sparkles, smoke or camera motion. Transparent background."
+  },
+  "requestCount": 1,
+  "initialResponse": {
+    "content": [
+      {
+        "type": "text",
+        "text": "object: dbaa3ddc-2444-44d2-9021-1e10c88bc831\ngroup: cb007626-5617-402b-9b2a-be70010bb1d2\nmode: v3\ndescription: A complete smooth open-close cycle. The chest remains firmly planted and still. Only its hinged rounded lid opens upward, revealing an empty dark interior, briefly holds open, then closes to the same closed pose. Preserve the wooden body, two iron bands and central latch/padlock arrangement, front low-top-down camera, position, size and palette. No jumping, turning, sliding, contents, sparkles, smoke or camera motion. Transparent background.\ndisplay_name: 상자 개폐\nframes: 8\ndirections: unknown (1 queued)\neta: ~30-60s/direction\n\nhint: get_object(object_id=\"dbaa3ddc-2444-44d2-9021-1e10c88bc831\")"
+      }
+    ],
+    "isError": false
+  },
+  "animationGroupId": "cb007626-5617-402b-9b2a-be70010bb1d2",
+  "jobId": "71d4d2e4-9f46-4784-8f73-e3487d76a79e",
+  "status": "completed",
+  "cost": {
+    "actualGenerations": null,
+    "estimatedGenerations": null,
+    "note": "animate_object 최초 응답에는 청구 receipt 또는 예상값이 미표시. v3 도구 설명상 pro보다 저렴하지만 실제 개별청구를 추정값으로 대체하지 않음."
+  },
+  "accountBaseline": {
+    "remaining": 592,
+    "used": 1407,
+    "total": 2000,
+    "note": "부모가 두 애니메이션 요청 전 기록한 계정합계. 다른 작업이 있어 개별청구 근거로 사용하지 않음."
+  },
+  "jobIdEvidence": {
+    "content": [
+      {
+        "type": "text",
+        "text": "1 job(s) finished after 29s, 2 still running:\n71d4d2e4-9f46-4784-8f73-e3487d76a79e completed (generation, took 160s) -> get_object(object_id=\"dbaa3ddc-2444-44d2-9021-1e10c88bc831\")\n7bc0ee2c-bac3-4449-b80b-8d4db227bbd4 still running (pro, eta ~154s) -> get_character(character_id=\"80a9b2dd-a75f-4ff8-af2c-916d76728cc5\")\n95425a19-e0fd-4136-a00f-2cb60e48e24f still running (generation, eta ~804s) -> get_object(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\")\nhint: wait_for_jobs() again for the jobs still running"
+      }
+    ],
+    "isError": false
+  },
+  "completedResponse": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: dbaa3ddc-2444-44d2-9021-1e10c88bc831\nname: 낡은 나무 보물상자\nstate_name: base\ndirections: 1\nsize: 64x64px\nview: low top-down\ngroup: 031cbf25-1d50-460e-93cd-fccaaa2c3c75\n\nrotations:\n  unknown: https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/rotations/unknown.png\n\nanimations (1 groups):\n  상자 개폐 [group: cb007626-5617-402b-9b2a-be70010bb1d2]\n    description: A complete smooth open-close cycle. The chest remains firmly planted and still. Only its hinged rounded lid opens upward, revealing an empty dark interior, briefly holds open, then closes to the same closed pose. Preserve the wooden body, two iron bands and central latch/padlock arrangement, front low-top-down camera, position, size and palette. No jumping, turning, sliding, contents, sparkles, smoke or camera motion. Transparent background.\n    directions: unknown (1/1)\n    frames: 8\n    unknown: https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/animations/4d9a9310-1cbc-47da-b6e4-292392fd5aa7/unknown/{i}.png  (i=0..7)\n\ndownload: https://api.pixellab.ai/mcp/objects/dbaa3ddc-2444-44d2-9021-1e10c88bc831/download\nspritesheet: https://api.pixellab.ai/mcp/objects/dbaa3ddc-2444-44d2-9021-1e10c88bc831/spritesheet (one uniform-grid sheet PNG + layout JSON, zipped)\n\nactions: animate_object(object_id=\"dbaa3ddc-2444-44d2-9021-1e10c88bc831\", ...) | create_object_state(object_id=\"dbaa3ddc-2444-44d2-9021-1e10c88bc831\", ...) | delete_object(object_id=\"dbaa3ddc-2444-44d2-9021-1e10c88bc831\")"
+      }
+    ],
+    "isError": false
+  },
+  "providerAnimationId": "4d9a9310-1cbc-47da-b6e4-292392fd5aa7",
+  "direction": "unknown",
+  "returnedFrameCount": 8,
+  "frameOrder": [0, 1, 2, 3, 4, 5, 6, 7],
+  "durationSeconds": 0.15,
+  "playbackDurationSeconds": 1.2,
+  "keepFirstFrame": false,
+  "rawFrameUrlTemplate": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/animations/4d9a9310-1cbc-47da-b6e4-292392fd5aa7/unknown/{i}.png",
+  "processing": "완료 응답의 PNG 원본 bytes 그대로 보관. 게임 프레임은 리사이즈·정렬·리터치·팔레트 보정 없음. 순서0→7을 그대로 재생.",
+  "previews": {
+    "contactSheetPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/previews/open-close-contact-sheet.png",
+    "gifPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/previews/open-close.gif",
+    "scale": 4,
+    "resampling": "nearest",
+    "background": "checkerboard",
+    "durationMs": 150,
+    "note": "검토용 확대합성본. 게임 원본과 별도."
+  },
+  "alignment": {
+    "allFrameCanvas": {
+      "width": 64,
+      "height": 64
+    },
+    "sourceCanvas": {
+      "width": 64,
+      "height": 64
+    },
+    "commonPivot": {
+      "x": 32,
+      "y": 0
+    },
+    "note": "소품 프리뷰 pivot y는 canvas 바닥에서의 거리. 원본 정적 frame과 같은64canvas, 같은x32/y0를사용. bbox에 따른 프레임별 이동 보정 없음.",
+    "visibleGroundY": 49,
+    "sourceVisibleGroundY": 49
+  },
+  "validation": {
+    "status": "passedWithNotes",
+    "method": "Pillow PNG 크기·alpha·bbox 검증, 원본 프레임 순서0~7 contact sheet 직접 시각검토. 실제 라이브러리 브라우저 재생 검토는 부모 담당.",
+    "observations": [
+      "8프레임 모두 64×64 RGBA, alpha0/255로 투명.",
+      "닫힌0에서 뚜껑1~3열림,4~5가장열림,6~7닫힘. 열린 순간 빈 검은 내부 식별.",
+      "바닥 alpha bbox bottom49가 모든 프레임에 유지되어 들썩임 없음. 중앙 정면 카메라 유지.",
+      "어두운 목재·두 철테·중앙 걸쇠·자물쇠가 유지되며 전체 색감 큰 변화 없음.",
+      "0과7닫힌모습 거의같아 순환연결은큰뛰기없음."
+    ],
+    "limitations": [
+      "공통원본 보존 조건에도 몸체 테두리·철테·자물쇠 형태에 작은픽셀변동 있음. 원본 픽셀고정 애니메이션은 아님.",
+      "닫는 구간은6~7두프레임이라 여는 구간보다빠르고5→6모션변화가큰편.",
+      "keep_first_frame=false로 생성된0프레임도 기존정적원본과 byte-identical하지 않음. 정적stand↔motion사이 작은형태변화가있음.",
+      "단일방향label은 provider unknown 그대로 기록. 게임보상·개봉interaction미통합."
+    ]
+  },
+  "frames": [
+    {
+      "index": 0,
+      "providerIndex": 0,
+      "localPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/animations/open-close/00.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/animations/4d9a9310-1cbc-47da-b6e4-292392fd5aa7/unknown/0.png",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaValues": [0, 255],
+      "alphaBoundingBox": [15, 18, 49, 49],
+      "sha256": "b2bf68752c945b265838effeb71beb4eec74a6e71c2f7e47ce2f93d22cae2882",
+      "byteSize": 1814,
+      "durationSeconds": 0.15,
+      "pivot": {
+        "x": 32,
+        "y": 15
+      }
+    },
+    {
+      "index": 1,
+      "providerIndex": 1,
+      "localPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/animations/open-close/01.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/animations/4d9a9310-1cbc-47da-b6e4-292392fd5aa7/unknown/1.png",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaValues": [0, 255],
+      "alphaBoundingBox": [15, 17, 49, 49],
+      "sha256": "a107417fcf30007420b81cabbaf74e1a46118cf60fc5762fa713dc18f3d240d4",
+      "byteSize": 1894,
+      "durationSeconds": 0.15,
+      "pivot": {
+        "x": 32,
+        "y": 15
+      }
+    },
+    {
+      "index": 2,
+      "providerIndex": 2,
+      "localPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/animations/open-close/02.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/animations/4d9a9310-1cbc-47da-b6e4-292392fd5aa7/unknown/2.png",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaValues": [0, 255],
+      "alphaBoundingBox": [15, 16, 49, 49],
+      "sha256": "af4427963f7cdaed14a18a080799ace171fc6cdd77db46d7efdcb06bc26f01c0",
+      "byteSize": 1772,
+      "durationSeconds": 0.15,
+      "pivot": {
+        "x": 32,
+        "y": 15
+      }
+    },
+    {
+      "index": 3,
+      "providerIndex": 3,
+      "localPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/animations/open-close/03.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/animations/4d9a9310-1cbc-47da-b6e4-292392fd5aa7/unknown/3.png",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaValues": [0, 255],
+      "alphaBoundingBox": [15, 15, 49, 49],
+      "sha256": "cf932bad78c7a8f1676e14fb30aab00b62a44f1a988691e523971f61995883c7",
+      "byteSize": 1733,
+      "durationSeconds": 0.15,
+      "pivot": {
+        "x": 32,
+        "y": 15
+      }
+    },
+    {
+      "index": 4,
+      "providerIndex": 4,
+      "localPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/animations/open-close/04.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/animations/4d9a9310-1cbc-47da-b6e4-292392fd5aa7/unknown/4.png",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaValues": [0, 255],
+      "alphaBoundingBox": [16, 12, 48, 49],
+      "sha256": "eb9cce2cd078b2702032cedb4c8eb76b6e6b8781d56cd879bd45b58cb61cf498",
+      "byteSize": 1511,
+      "durationSeconds": 0.15,
+      "pivot": {
+        "x": 32,
+        "y": 15
+      }
+    },
+    {
+      "index": 5,
+      "providerIndex": 5,
+      "localPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/animations/open-close/05.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/animations/4d9a9310-1cbc-47da-b6e4-292392fd5aa7/unknown/5.png",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaValues": [0, 255],
+      "alphaBoundingBox": [16, 12, 48, 49],
+      "sha256": "d21ca14e7fe642655716e2a9dafc2977966a165e894b39181da2fbaaeab21c1f",
+      "byteSize": 1418,
+      "durationSeconds": 0.15,
+      "pivot": {
+        "x": 32,
+        "y": 15
+      }
+    },
+    {
+      "index": 6,
+      "providerIndex": 6,
+      "localPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/animations/open-close/06.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/animations/4d9a9310-1cbc-47da-b6e4-292392fd5aa7/unknown/6.png",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaValues": [0, 255],
+      "alphaBoundingBox": [15, 17, 49, 49],
+      "sha256": "5f386fba1fbd4b57d3a38164d1fe635264acd192cbf7c546f8391b79c86335a0",
+      "byteSize": 1778,
+      "durationSeconds": 0.15,
+      "pivot": {
+        "x": 32,
+        "y": 15
+      }
+    },
+    {
+      "index": 7,
+      "providerIndex": 7,
+      "localPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/animations/open-close/07.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/animations/4d9a9310-1cbc-47da-b6e4-292392fd5aa7/unknown/7.png",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaValues": [0, 255],
+      "alphaBoundingBox": [15, 18, 49, 49],
+      "sha256": "b5988cb4ebdbe19ce02273d3e30c100cc11daca2f9a0c8ca3acf4a5facc0e1c0",
+      "byteSize": 1813,
+      "durationSeconds": 0.15,
+      "pivot": {
+        "x": 32,
+        "y": 15
+      }
+    }
+  ],
+  "sourceOriginalUnchanged": true,
+  "sourceGenerationRecord": "resources/pixellab-wooden-chest-generation.json",
+  "libraryRegistration": {
+    "assetId": "ai/pixellab-object-wooden-chest",
+    "motion": "open-close",
+    "defaultMotion": "open-close",
+    "staticMotion": "base",
+    "frameCount": 8,
+    "pivot": {
+      "x": 32,
+      "y": 15
+    },
+    "pivotConvention": "pivot.y는 이미지 하단에서 센 바닥 여백이다.",
+    "playbackDurationSeconds": 1.2,
+    "loop": true,
+    "timingSource": "라이브러리 표시 설정. 서비스 원본의 재생 시간은 미제공."
+  }
+}

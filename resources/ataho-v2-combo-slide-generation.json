@@ -1,0 +1,91 @@
+{
+  "characterId": "ai/ataho-v2",
+  "purpose": "슬라이딩 하단 공격에서 가려진 타격 다리를 보강하는 핵심 자세 1장 시험",
+  "date": "2026-10-14",
+  "generator": {
+    "tool": "built-in image_gen.imagegen",
+    "mode": "reference-guided generation",
+    "attempts": 1,
+    "transparentBackground": true
+  },
+  "prompt": "Use case: stylized-concept\nAsset type: one replacement key pose for a 96 x 96 pixel-art combat sprite, animation frame, genuine transparent background.\nPrimary request: Create exactly ONE low leg-sweep impact pose of Ataho v2, matching the supplied original sprite references, with the sweeping foot clearly visible on the RIGHT. This is a missing animation pose, not a redesign.\nInput images: image 1 and image 2 are the original adjacent low sweep poses and define the low body angle, costume and orientation; image 3 is the original fighting stance and is the strict face, proportions, palette and pixel-art identity reference.\nSubject: the same compact orange tiger martial artist, same orange-and-black stripe placement character, cream-white cheek fur and muzzle, brown open martial-arts jacket, light inner chest cloth, loose dark charcoal pants, bare orange tiger paws, thin striped tail. Preserve the original compact head-to-body proportions and recognizable face.\nPose: three-quarter southeast view, facing screen-right. Torso crouched very low and tilted forward. One hand/paw planted firmly on the ground under the torso to support a sweeping turn. One leg extends LONG to the RIGHT with a straight readable shin and bare tiger foot clearly separated from the body silhouette; the extended foot is only about 10 logical sprite pixels above the implied ground. The opposite leg is folded underneath the body. The free arm is back for balance. This is the exact instant the low sweeping kick hits.\nStyle/medium: authentic LOW-RESOLUTION sprite appearance, crisp hard-edged pixel clusters, simple limited palette and the same pixel density as the references, sharp stepped contours and restrained sprite shading. Aim for a 96x96 logical pixel canvas, with a character about the same original scale as the references. If delivered enlarged, enlarge the low-resolution sprite appearance uniformly; do not add high-resolution details.\nComposition: exactly one complete character centered in a square canvas, enough clear transparent margin to keep the extended leg and tail fully visible; match reference perspective and rendering density. No ground plane; the planted support paw establishes the implied ground.\nConstraints: preserve the original face, costume, palette, outline weight, physique, head size and pixel density. Transparent alpha background. No text, frame numbers, watermark, equipment, weapons, extra characters, motion lines, trails, spark effects, ground shadow, UI, panels or sprite sheet.\nAvoid: smooth painted illustration, vector mascot, modern HD pixel art, gradients, blurry antialiasing, oversized new facial features, exaggerated giant foot, new outfit, hidden sweeping leg, extra limbs.",
+  "references": [
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_004.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png"
+  ],
+  "generatedOriginal": {
+    "localPath": "public/assets/maplestory/ataho-v2-combo-generated/20261014/slide-sweep-original.png",
+    "toolSavedPath": "/Users/3sam3/.codex/generated_images/01a1389f-f941-70e3-9902-0461655b6048/exec-776881fa-f2c1-4887-b398-a68f36a31abc.png",
+    "sha256": "f8acabbe6b206512ce7f43b4b55500bf07b10c4c4102c2dad4f860792f2635a4",
+    "byteSize": 277143,
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGBA",
+    "alphaExtrema": [0, 255],
+    "opaqueSubjectBoundsAlphaOver10": {
+      "x": 281,
+      "y": 549,
+      "width": 784,
+      "height": 398
+    },
+    "allAlphaBounds": {
+      "x": 33,
+      "y": 33,
+      "width": 1205,
+      "height": 1189
+    },
+    "pixelChangesApplied": false
+  },
+  "qualityReview": {
+    "status": "inserted-in-independent-comparison; identity-difference-remains",
+    "strengths": [
+      "오른쪽으로 뻗은 차는 다리와 발이 몸통에서 분리되어 보인다.",
+      "낮은 몸통·바닥을 짚은 손·접힌 반대 다리가 요청한 쓸기 동작을 전달한다.",
+      "갈색 상의·밝은 가슴과 볼털·검은 바지·주황색 줄무늬 호랑이의 기본 외형과 도트식 표현은 유지된다."
+    ],
+    "limitations": [
+      "원본보다 얼굴이 둥글고 눈이 크며, 얼굴의 줄무늬와 표정이 완전히 같지는 않다.",
+      "1254px 정사각형 출력이며 원본 96px 프레임과 위치·여백이 다르다.",
+      "아주 약한 alpha 1 픽셀이 넓게 흩어져 있어 원본 getbbox만 사용하면 잘못된 크기로 정렬된다.",
+      "인체 비율과 색상 연결, 다리의 실제 바닥 높이는 96px 축소·정렬 후 실제 재생으로 확인해야 한다."
+    ]
+  },
+  "proposedPostprocess": {
+    "applied": false,
+    "outputCanvas": {
+      "width": 96,
+      "height": 96
+    },
+    "instruction": "원본 파일은 보존한다. alpha>10인 주제 경계 (281,549)-(1065,947)를 기준으로 영역을 잡고, 주제 너비 약 80px·높이 약 41px가 되도록 nearest-neighbor 축소한다. 96px 캔버스 안에서 x 약 8px, 바닥 약 y 80px로 배치해 원본의 발 기준과 얼굴 크기를 비교한다. 최종 수치는 부모 세션이 재생으로 결정한다.",
+    "caution": "현재는 제안만 기록했으며 크롭·알파 보정·축소 이미지나 코드 연결은 만들지 않았다."
+  },
+  "integration": {
+    "manifestUpdated": true,
+    "comparisonInserted": true,
+    "defaultVersion": "original",
+    "userAdopted": false,
+    "gameIntegrated": false
+  },
+  "derivedFrame": {
+    "localPath": "public/assets/maplestory/ataho-v2-combo-generated/20261014/slide-sweep-96.png",
+    "sha256": "4f2b0fb5373f6cb027f903b4efa8cef3018f6d2653a5c2a9b84a2d8b3760af0a",
+    "byteSize": 5067,
+    "width": 96,
+    "height": 96,
+    "subjectBoundsAlphaAtLeast128": [282, 550, 1064, 946],
+    "resampling": "nearest-neighbor",
+    "subjectSize": [80, 41],
+    "offset": [8, 39],
+    "alphaProcessing": "alpha below 128 -> 0; alpha at least 128 -> 255",
+    "groundY": 80,
+    "originalPreserved": true
+  },
+  "playbackReview": {
+    "date": "2026-10-14",
+    "browser": "Codex in-app browser",
+    "comparedWithOriginal": true,
+    "defaultVersion": "original",
+    "assessment": "핵심 자세가 더 분명하지만 얼굴·도트 질감 차이가 남아 비교 후보로 유지. 사용자 채택은 미정."
+  }
+}

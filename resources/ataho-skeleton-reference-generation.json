@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-13",
+  "provider": "Codex built-in ImageGen",
+  "status": "awaiting-user-review",
+  "scope": "장년 아타호의 Skeleton 모션 제작을 위한 새 정면 기준 원화 한 장",
+  "userAuthorization": "응 이미지부터 새로 만드는게 낫겠다. ImageGen으로 하나 만들어줘.",
+  "prompt": "Use case: identity-preserve, animation reference character artwork.\nCreate ONE new full-body reference illustration of the existing middle-aged Ataho tiger martial artist, with a clearer neutral pose suitable for later pixel-art conversion and skeleton animation.\nReference image 1 is the approved hand-drawn character: use it for exact face identity, costume, colors and artistic finish. Reference image 2 is the approved in-game pixel sprite: use it for the broad oversized head, compact stocky body and short limbs. Do not copy the relaxed overlapping arm pose; create the new reference pose below.\nSubject: seasoned middle-aged orange tiger humanoid, broad rounded tiger head, cream shaggy cheek/jaw fur, dark brown stripes, tousled forehead tuft, amber half-lidded but visibly open eyes, relaxed kindly knowing expression, slight understated smile. Preserve a worn short open brown jacket, crossed ivory martial-arts inner robe, brown waist sash, charcoal cropped loose trousers, dark wrist wraps, ivory ankle wraps, orange paw hands and feet, and ONE striped tail. Head roughly 40-45 percent of full figure height; short sturdy adult body, never youthful or tall/slender, no enormous muscles.\nPose and composition: one assembled character, centered, square canvas, complete front/south-facing view, orthographic-like game reference with a very slight elevated camera. Head level and facing forward, shoulders and hips level, torso upright with no twist. Both arms hang diagonally down approximately 20 degrees away from the torso, mild relaxed elbows and loosely closed empty paws; leave clean visible transparent gaps between arms and jacket, wrists not hidden. Both feet fully visible, flat on the same baseline, about shoulder-width apart; legs separated with a readable gap, no crossed limbs. Place tail curving to one side behind the body without obscuring hands, legs or feet. Clear joint landmarks, consistent limb lengths, no accessories obscuring shoulders/elbows/hips/knees. Entire ears, hair, hands, feet and tail within frame with comfortable margin around the silhouette.\nStyle: polished hand-drawn 2D fantasy game character ORIGINAL ART, clean expressive ink edges and restrained cel/painted shading, natural cloth folds and clearly shaped fur tufts, warm earth palette, readable at small scale. Keep the approved character's charm. Smooth non-pixel artwork at this stage, no pixel filter. Simplify microscopic cloth/fur noise and dramatic shading to help later pixel conversion.\nLighting/background: neutral diffuse lighting, genuinely transparent PNG background, clean alpha edges. No scene, horizon, ground shadow, pedestal, glow, directional spotlight, prop, weapon, bottle, text, watermark, diagram, skeleton overlay, parts sheet, multiple characters, multiple poses or panels.",
+  "references": [
+    {
+      "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/front-01.png",
+      "sha256": "da5bf277025f825de169cbeddacc070a65717deec963c183b2baaf3f7b3c8412"
+    },
+    {
+      "localPath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/south.png",
+      "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9"
+    }
+  ],
+  "output": {
+    "localPath": "public/assets/maplestory/ataho-skeleton-reference/20261013/front-01.png",
+    "originalHostPath": "/Users/3sam3/.codex/generated_images/01a1358a-8777-7aa0-9a77-2ae9f72ea365/exec-1cd0e036-4a2e-43d8-b492-3d8025dafd71.png",
+    "sha256": "66fba252263809aa83e58ea85c21c77acf61542e85c77f2bac861523c218cf12",
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGBA",
+    "alphaRange": [0, 255],
+    "visibleBounds": [0, 11, 1226, 1230],
+    "sourcePixelsModified": false
+  },
+  "usage": {
+    "builtInGenerations": 1,
+    "PixelLabPaidGenerations": 0
+  },
+  "review": {
+    "observations": [
+      "정면 전신·한 꼬리·갈색 겉옷·아이보리 도복·장년 표정 유지",
+      "팔과 몸 사이, 양발 사이에 간격 확보",
+      "양팔 소매와 짧은 다리 때문에 관절 추정값의 보정은 필요할 수 있음"
+    ],
+    "unverified": ["사용자 외형 채택", "도트 변환", "관절 추정과 모션 품질"]
+  },
+  "gameIntegrated": false
+}

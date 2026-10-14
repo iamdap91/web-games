@@ -1,6 +1,12 @@
 import { embeddedScene, registerEmbeddedScene, } from '../../catalog/embedded-scene.js';
 const labTabs = [
     {
+        id: 'punch',
+        page: 'punch.html',
+        label: 'ImageGen 정권 연결',
+        description: '오른쪽 대기 → 정권 → 대기. 생성 자세의 일정 간격 재생과 발 위치·리듬을 보정한 연결 시안을 비교합니다.',
+    },
+    {
         id: 'attacks',
         page: 'pixellab-attacks.html',
         label: '공격 모션',
@@ -77,7 +83,7 @@ class AtahoLabTabs {
         location.hash = id;
     }
     showHash() {
-        const tab = labTabs.find((item) => item.id === location.hash.slice(1)) ?? labTabs[0];
+        const tab = labTabs.find((item) => item.id === location.hash.slice(1)) ?? labTabs[1];
         if (location.hash !== `#${tab.id}`)
             history.replaceState(null, '', `#${tab.id}`);
         if (this.current?.id === tab.id)

@@ -1,0 +1,1081 @@
+{
+  "schemaVersion": 1,
+  "name": "개울가 약초꾼 야영지",
+  "createdDate": "2026-10-14",
+  "approvedScope": "32px 타일의 작은 PixelLab 맵과 승인 아타호 독립 보행 샘플",
+  "sources": [
+    "https://www.pixellab.ai/docs/tools/create-tileset",
+    "https://www.pixellab.ai/docs/tools/create-tiles-pro",
+    "pixellab://docs/python/wang-tilesets"
+  ],
+  "requests": [
+    {
+      "kind": "topdown-tileset",
+      "attempt": 1,
+      "args": {
+        "lower_description": "shallow clear woodland stream water, muted blue teal palette, small gentle horizontal ripples, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no stones no plants no objects",
+        "upper_description": "soft moss green short forest grass, muted jade and olive palette, sparse tiny grass blades, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no flowers no trees no objects",
+        "transition_description": "a narrow soft damp earthen riverbank under rounded grass edges, gentle natural bank, no cliff",
+        "tile_size": {
+          "width": 32,
+          "height": 32
+        },
+        "view": "low top-down",
+        "mode": "standard",
+        "shape_style": "round",
+        "enhance": true,
+        "transition_size": 0,
+        "outline": "lineless",
+        "shading": "medium shading",
+        "detail": "medium detail"
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 910da4fa-a20d-4458-81b8-bf5d3d92fbb5\nterrain: shallow clear woodland stream water, muted blue teal palette, small gentle horizontal ripples, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no stones no plants no objects → soft moss green short forest grass, muted jade and olive palette, sparse tiny grass blades, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no flowers no trees no objects\ntransition: a narrow soft damp earthen riverbank under rounded grass edges, gentle natural bank, no cliff (size=0.0)\nshape_style: round\ntiles: 16 (generating ~100s)\n\nbase_tile_ids:\n  lower (shallow clear woodland stream water, muted blue teal palette, small gentle horizontal ripples, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no stones no plants no objects): 76605b91-4bbe-438a-91ed-9705c8a6516a\n  upper (soft moss green short forest grass, muted jade and olive palette, sparse tiny grass blades, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no flowers no trees no objects): b1f0bc65-ee0a-4e65-ac3a-a23fe16e1164\n\nhint: get_topdown_tileset(\"910da4fa-a20d-4458-81b8-bf5d3d92fbb5\")\nresource: pixellab://docs/godot/wang-tilesets"
+          }
+        ],
+        "isError": false
+      },
+      "status": "failed",
+      "error": "Connection timed out. The server took too long to respond."
+    },
+    {
+      "kind": "topdown-tileset",
+      "attempt": 2,
+      "args": {
+        "lower_description": "shallow clear woodland stream water, muted blue teal palette, small gentle horizontal ripples, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no stones no plants no objects",
+        "upper_description": "soft moss green short forest grass, muted jade and olive palette, sparse tiny grass blades, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no flowers no trees no objects",
+        "transition_description": "a narrow soft damp earthen riverbank under rounded grass edges, gentle natural bank, no cliff",
+        "tile_size": {
+          "width": 32,
+          "height": 32
+        },
+        "view": "low top-down",
+        "mode": "standard",
+        "shape_style": "round",
+        "enhance": true,
+        "transition_size": 0,
+        "outline": "lineless",
+        "shading": "medium shading",
+        "detail": "medium detail"
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 98c98ba2-b74f-406d-b9ef-bd0a845d3b00\nterrain: shallow clear woodland stream water, muted blue teal palette, small gentle horizontal ripples, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no stones no plants no objects → soft moss green short forest grass, muted jade and olive palette, sparse tiny grass blades, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no flowers no trees no objects\ntransition: a narrow soft damp earthen riverbank under rounded grass edges, gentle natural bank, no cliff (size=0.0)\nshape_style: round\ntiles: 16 (generating ~100s)\n\nbase_tile_ids:\n  lower (shallow clear woodland stream water, muted blue teal palette, small gentle horizontal ripples, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no stones no plants no objects): fbc66804-fc19-41a7-a694-256a8d25f671\n  upper (soft moss green short forest grass, muted jade and olive palette, sparse tiny grass blades, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no flowers no trees no objects): bc303992-3c70-437f-97ff-a26adc0b53e2\n\nhint: get_topdown_tileset(\"98c98ba2-b74f-406d-b9ef-bd0a845d3b00\")\nresource: pixellab://docs/godot/wang-tilesets"
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "tilesetId": "98c98ba2-b74f-406d-b9ef-bd0a845d3b00"
+    },
+    {
+      "kind": "topdown-tileset",
+      "args": {
+        "lower_description": "warm muted brown packed-earth footpath, finely textured smooth dirt with a few tiny pebbles, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no objects",
+        "upper_description": "soft short forest grass with sparse tiny blades in a muted jade and olive palette featuring gentle surface variation",
+        "upper_base_tile_id": "bc303992-3c70-437f-97ff-a26adc0b53e2",
+        "tile_size": {
+          "width": 32,
+          "height": 32
+        },
+        "view": "low top-down",
+        "mode": "standard",
+        "shape_style": "round",
+        "enhance": true,
+        "transition_size": 0,
+        "outline": "lineless",
+        "shading": "medium shading",
+        "detail": "medium detail"
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 872c3b5d-2bd6-43e0-ad8b-3c954e1a2d69\nterrain: warm muted brown packed-earth footpath, finely textured smooth dirt with a few tiny pebbles, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no objects → soft short forest grass with sparse tiny blades in a muted jade and olive palette featuring gentle surface variation\nshape_style: round\ntiles: 16 (generating ~100s)\n\nbase_tile_ids:\n  lower (warm muted brown packed-earth footpath, finely textured smooth dirt with a few tiny pebbles, restrained contrast, clean hand-crafted 16-bit Japanese RPG pixel art, no objects): cc484782-a4a3-4f0f-9514-575654808889\n  upper (soft short forest grass with sparse tiny blades in a muted jade and olive palette featuring gentle surface variation): bc303992-3c70-437f-97ff-a26adc0b53e2\n\nhint: get_topdown_tileset(\"872c3b5d-2bd6-43e0-ad8b-3c954e1a2d69\")\nresource: pixellab://docs/godot/wang-tilesets"
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "tilesetId": "872c3b5d-2bd6-43e0-ad8b-3c954e1a2d69"
+    },
+    {
+      "kind": "map-object",
+      "key": "hut",
+      "request": {
+        "description": "one small East Asian woodland herbalist cottage, warm weathered timber walls, low moss-green tiled roof, a visible simple front doorway, tiny side window, two steps and a few bundles of herbs under the eaves, cozy hand-crafted 16-bit RPG sprite, low three-quarter top-down view, structure only, no people, no surrounding trees, no background landscape",
+        "background_image": {
+          "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-192.png",
+          "type": "base64"
+        },
+        "inpainting": "{\"type\":\"rectangle\",\"fraction\":0.82}",
+        "view": "low top-down",
+        "outline": "lineless",
+        "shading": "medium shading",
+        "detail": "medium detail"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 55eb877a-d392-43dc-8e09-09fa8dcb3ace\ndescription: one small East Asian woodland herbalist cottage, warm weathered timber walls, low moss-green tiled roof, a visible simple front doorway, tiny side window, two steps and a few bundles of herbs under the eaves, cozy hand-crafted 16-bit RPG sprite, low three-quarter top-down view, structure only, no people, no surrounding trees, no background landscape\nsize: 192x192px\nview: low top-down\nmode: style-match rect 82%\nstatus: processing (~30-90s)\n\nthe object is permanent — place it with place_map_object once ready\nhint: get_map_object(object_id=\"55eb877a-d392-43dc-8e09-09fa8dcb3ace\")"
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "selection": "preserved-replaced"
+    },
+    {
+      "kind": "map-object",
+      "key": "tree",
+      "request": {
+        "description": "one broad rounded old woodland oak tree, dark muted jade and moss-green clustered leaf canopy, visible warm brown trunk and a few exposed roots, elegant clean 16-bit RPG pixel sprite, low three-quarter top-down view, restrained contrast, no fruit, no other plants, no landscape",
+        "background_image": {
+          "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-128.png",
+          "type": "base64"
+        },
+        "inpainting": "{\"type\":\"oval\",\"fraction\":0.85}",
+        "view": "low top-down",
+        "outline": "lineless",
+        "shading": "medium shading",
+        "detail": "medium detail"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: dd7226f3-3151-4bc8-aa1d-d9cbead1c31c\ndescription: one broad rounded old woodland oak tree, dark muted jade and moss-green clustered leaf canopy, visible warm brown trunk and a few exposed roots, elegant clean 16-bit RPG pixel sprite, low three-quarter top-down view, restrained contrast, no fruit, no other plants, no landscape\nsize: 128x128px\nview: low top-down\nmode: style-match oval 85%\nstatus: processing (~30-90s)\n\nthe object is permanent — place it with place_map_object once ready\nhint: get_map_object(object_id=\"dd7226f3-3151-4bc8-aa1d-d9cbead1c31c\")"
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "selection": "selected"
+    },
+    {
+      "kind": "map-object",
+      "key": "bridge",
+      "request": {
+        "description": "one simple narrow wooden footbridge running exactly horizontally from LEFT to RIGHT (east-west), about five 32px tiles long and one tile wide, short low wooden railings along upper and lower sides, walkable brown plank deck seen in low three-quarter top-down view, both ends open, no arch, no water or terrain, clean muted 16-bit RPG sprite",
+        "background_image": {
+          "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-192.png",
+          "type": "base64"
+        },
+        "inpainting": "{\"type\":\"rectangle\",\"fraction\":0.82}",
+        "view": "low top-down",
+        "outline": "lineless",
+        "shading": "medium shading",
+        "detail": "medium detail"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 92c09571-9348-44d6-9c0e-e015bbff15a6\ndescription: one simple narrow wooden footbridge running exactly horizontally from LEFT to RIGHT (east-west), about five 32px tiles long and one tile wide, short low wooden railings along upper and lower sides, walkable brown plank deck seen in low three-quarter top-down view, both ends open, no arch, no water or terrain, clean muted 16-bit RPG sprite\nsize: 192x192px\nview: low top-down\nmode: style-match rect 82%\nstatus: processing (~30-90s)\n\nthe object is permanent — place it with place_map_object once ready\nhint: get_map_object(object_id=\"92c09571-9348-44d6-9c0e-e015bbff15a6\")"
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "selection": "preserved-replaced"
+    },
+    {
+      "kind": "map-object",
+      "key": "campfire",
+      "request": {
+        "description": "one small cozy campfire, two crossed brown logs with a small warm orange flame and five rough stones around it, clean restrained hand-crafted 16-bit RPG pixel sprite, low three-quarter top-down view, no smoke plume, no people, no surrounding terrain",
+        "background_image": {
+          "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-64.png",
+          "type": "base64"
+        },
+        "inpainting": "{\"type\":\"oval\",\"fraction\":0.8}",
+        "view": "low top-down",
+        "outline": "lineless",
+        "shading": "medium shading",
+        "detail": "medium detail"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: f5cb5de5-e5bc-46bd-a9cb-07ad4aabe1e2\ndescription: one small cozy campfire, two crossed brown logs with a small warm orange flame and five rough stones around it, clean restrained hand-crafted 16-bit RPG pixel sprite, low three-quarter top-down view, no smoke plume, no people, no surrounding terrain\nsize: 64x64px\nview: low top-down\nmode: style-match oval 80%\nstatus: processing (~30-90s)\n\nthe object is permanent — place it with place_map_object once ready\nhint: get_map_object(object_id=\"f5cb5de5-e5bc-46bd-a9cb-07ad4aabe1e2\")"
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "selection": "selected"
+    },
+    {
+      "kind": "map-object",
+      "key": "drying-rack",
+      "request": {
+        "description": "one small freestanding wooden herbalist drying rack, two posts and a crossbar, several tied bundles of muted green medicinal herbs hanging beneath, a little woven basket at its feet, clean restrained hand-crafted 16-bit RPG sprite, low three-quarter top-down view, no roof, no people, no surrounding terrain",
+        "background_image": {
+          "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-128.png",
+          "type": "base64"
+        },
+        "inpainting": "{\"type\":\"rectangle\",\"fraction\":0.8}",
+        "view": "low top-down",
+        "outline": "lineless",
+        "shading": "medium shading",
+        "detail": "medium detail"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 9b419c9c-a574-4033-8b25-f502035031b8\ndescription: one small freestanding wooden herbalist drying rack, two posts and a crossbar, several tied bundles of muted green medicinal herbs hanging beneath, a little woven basket at its feet, clean restrained hand-crafted 16-bit RPG sprite, low three-quarter top-down view, no roof, no people, no surrounding terrain\nsize: 128x128px\nview: low top-down\nmode: style-match rect 80%\nstatus: processing (~30-90s)\n\nthe object is permanent — place it with place_map_object once ready\nhint: get_map_object(object_id=\"9b419c9c-a574-4033-8b25-f502035031b8\")"
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "selection": "selected"
+    },
+    {
+      "kind": "map-object",
+      "key": "rock",
+      "request": {
+        "description": "one low rounded woodland boulder, muted cool gray stone, a small patch of dark moss on top, clean hand-crafted 16-bit RPG sprite, restrained contrast, low three-quarter top-down view, no plants around it, no terrain",
+        "background_image": {
+          "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-64.png",
+          "type": "base64"
+        },
+        "inpainting": "{\"type\":\"oval\",\"fraction\":0.8}",
+        "view": "low top-down",
+        "outline": "lineless",
+        "shading": "medium shading",
+        "detail": "medium detail"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: f8420583-f7c2-4ea4-a3cb-cbdc2f9815ec\ndescription: one low rounded woodland boulder, muted cool gray stone, a small patch of dark moss on top, clean hand-crafted 16-bit RPG sprite, restrained contrast, low three-quarter top-down view, no plants around it, no terrain\nsize: 64x64px\nview: low top-down\nmode: style-match oval 80%\nstatus: processing (~30-90s)\n\nthe object is permanent — place it with place_map_object once ready\nhint: get_map_object(object_id=\"f8420583-f7c2-4ea4-a3cb-cbdc2f9815ec\")"
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "selection": "selected"
+    },
+    {
+      "kind": "map-object",
+      "key": "herbs",
+      "request": {
+        "description": "one small harvestable medicinal herb patch, a compact cluster of broad soft jade-green leaves and two tiny pale yellow flowers, clearly distinct from short grass but low and natural, clean restrained hand-crafted 16-bit RPG sprite, low three-quarter top-down view, no pots, no surrounding terrain",
+        "background_image": {
+          "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-96.png",
+          "type": "base64"
+        },
+        "inpainting": "{\"type\":\"oval\",\"fraction\":0.8}",
+        "view": "low top-down",
+        "outline": "lineless",
+        "shading": "medium shading",
+        "detail": "medium detail"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: f9b488ae-7784-49a3-8eed-9e811318d38c\ndescription: one small harvestable medicinal herb patch, a compact cluster of broad soft jade-green leaves and two tiny pale yellow flowers, clearly distinct from short grass but low and natural, clean restrained hand-crafted 16-bit RPG sprite, low three-quarter top-down view, no pots, no surrounding terrain\nsize: 96x96px\nview: low top-down\nmode: style-match oval 80%\nstatus: processing (~30-90s)\n\nthe object is permanent — place it with place_map_object once ready\nhint: get_map_object(object_id=\"f9b488ae-7784-49a3-8eed-9e811318d38c\")"
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "selection": "selected"
+    },
+    {
+      "kind": "map-object",
+      "key": "bridgeRetry",
+      "request": {
+        "description": "one small wooden footbridge running EAST-WEST, viewed from low three-quarter top-down. A LONG HORIZONTAL plank deck spanning from the LEFT side to the RIGHT side of this wide canvas, about 160px wide and 35px deep. Two short straight HORIZONTAL timber rails run along its upper and lower long edges. Small upright posts. Deck planks are short vertical strips across the horizontal walkway. Flat bridge, weathered warm brown wood, restrained colors, clean 16-bit RPG pixels. No water, no land, no surrounding objects.",
+        "background_image": {
+          "localPath": "public/assets/maplestory/herbalist-camp/20261014/bridge-reference-192x96.png",
+          "type": "base64"
+        },
+        "inpainting": "{\"type\":\"rectangle\",\"fraction\":0.88}",
+        "view": "low top-down",
+        "outline": "lineless",
+        "shading": "medium shading",
+        "detail": "medium detail"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: e490d136-9bef-4a95-bd68-1bd2279771d6\ndescription: one small wooden footbridge running EAST-WEST, viewed from low three-quarter top-down. A LONG HORIZONTAL plank deck spanning from the LEFT side to the RIGHT side of this wide canvas, about 160px wide and 35px deep. Two short straight HORIZONTAL timber rails run along its upper and lower long edges. Small upright posts. Deck planks are short vertical strips across the horizontal walkway. Flat bridge, weathered warm brown wood, restrained colors, clean 16-bit RPG pixels. No water, no land, no surrounding objects.\nsize: 192x96px\nview: low top-down\nmode: style-match rect 88%\nstatus: processing (~30-90s)\n\nthe object is permanent — place it with place_map_object once ready\nhint: get_map_object(object_id=\"e490d136-9bef-4a95-bd68-1bd2279771d6\")"
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "selection": "selected"
+    },
+    {
+      "kind": "map-object",
+      "key": "hutRetry",
+      "request": {
+        "description": "one small East Asian herbalist cottage, LOW weathered charcoal gray clay tile roof, dark muted gray roof tiles, warm aged brown timber walls, simple front doorway, one tiny window, small steps and herb bundles at the eaves. Cozy rural woodland hut, clean hand-crafted 16-bit RPG pixel sprite, restrained natural colors, low three-quarter top-down camera, structure only, no people, no trees, no green roof, no background landscape.",
+        "background_image": {
+          "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-192.png",
+          "type": "base64"
+        },
+        "inpainting": "{\"type\":\"rectangle\",\"fraction\":0.82}",
+        "view": "low top-down",
+        "outline": "lineless",
+        "shading": "medium shading",
+        "detail": "medium detail"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 3e53b5b8-4f4e-4e82-a011-2b9022641ecb\ndescription: one small East Asian herbalist cottage, LOW weathered charcoal gray clay tile roof, dark muted gray roof tiles, warm aged brown timber walls, simple front doorway, one tiny window, small steps and herb bundles at the eaves. Cozy rural woodland hut, clean hand-crafted 16-bit RPG pixel sprite, restrained natural colors, low three-quarter top-down camera, structure only, no people, no trees, no green roof, no background landscape.\nsize: 192x192px\nview: low top-down\nmode: style-match rect 82%\nstatus: processing (~30-90s)\n\nthe object is permanent — place it with place_map_object once ready\nhint: get_map_object(object_id=\"3e53b5b8-4f4e-4e82-a011-2b9022641ecb\")"
+          }
+        ],
+        "isError": false
+      },
+      "status": "completed",
+      "selection": "selected"
+    }
+  ],
+  "map": {
+    "id": "6609f901-90aa-4706-85bd-0bd32867813c",
+    "name": "개울가 약초꾼 야영지 · 32px 시험",
+    "operations": [
+      {
+        "op": "rect",
+        "terrain": "soft short forest grass with sparse tiny blades in a muted jade and olive palette featuring gentle surface variation",
+        "x": -2,
+        "y": -2,
+        "width": 37,
+        "height": 29
+      },
+      {
+        "op": "path",
+        "terrain": "shallow clear woodland stream water with gentle horizontal ripples in a muted blue teal palette and soft underlying depth",
+        "points": [
+          [23, 0],
+          [21, 6],
+          [19, 13],
+          [20, 18],
+          [23, 24]
+        ],
+        "width": 3
+      },
+      {
+        "op": "rect",
+        "terrain": "warm muted brown packed-earth footpath with gentle surface variation and soft earthy midtones",
+        "x": 7,
+        "y": 9,
+        "width": 8,
+        "height": 6
+      },
+      {
+        "op": "path",
+        "terrain": "warm muted brown packed-earth footpath with gentle surface variation and soft earthy midtones",
+        "points": [
+          [5, 24],
+          [5, 20],
+          [8, 17],
+          [10, 14]
+        ],
+        "width": 2
+      },
+      {
+        "op": "path",
+        "terrain": "warm muted brown packed-earth footpath with gentle surface variation and soft earthy midtones",
+        "points": [
+          [12, 14],
+          [16, 14]
+        ],
+        "width": 2
+      },
+      {
+        "op": "path",
+        "terrain": "warm muted brown packed-earth footpath with gentle surface variation and soft earthy midtones",
+        "points": [
+          [22, 14],
+          [25, 12],
+          [27, 9]
+        ],
+        "width": 2
+      },
+      {
+        "op": "rect",
+        "terrain": "warm muted brown packed-earth footpath with gentle surface variation and soft earthy midtones",
+        "x": 25,
+        "y": 7,
+        "width": 4,
+        "height": 3
+      }
+    ],
+    "corrections": [
+      {
+        "op": "rect",
+        "terrain": "soft short forest grass with sparse tiny blades in a muted jade and olive palette featuring gentle surface variation",
+        "x": 17,
+        "y": 14,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "op": "rect",
+        "terrain": "soft short forest grass with sparse tiny blades in a muted jade and olive palette featuring gentle surface variation",
+        "x": 21,
+        "y": 14,
+        "width": 1,
+        "height": 1
+      },
+      {
+        "op": "rect",
+        "terrain": "soft short forest grass with sparse tiny blades in a muted jade and olive palette featuring gentle surface variation",
+        "x": 22,
+        "y": 15,
+        "width": 1,
+        "height": 1
+      }
+    ],
+    "terrainRead": "get_map(x=0,y=0,width=33,height=25)",
+    "localComposition": "각 타일의 NW/NE/SW/SE 지형으로 Wang 타일을 선택하고 공식 bounding_box로 PNG를 잘라 32×24타일 바닥을 합성. 서비스 전체 맵 PNG 내보내기는 사용하지 않음.",
+    "remotePlacements": [
+      {
+        "placement": {
+          "id": "hut",
+          "object_id": "3e53b5b8-4f4e-4e82-a011-2b9022641ecb",
+          "x": 11,
+          "y": 11,
+          "layer": 11
+        },
+        "result": [
+          "0 changes — 'one small East Asian herbalist' already stands on cell (11, 11)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "drying-rack",
+          "object_id": "9b419c9c-a574-4033-8b25-f502035031b8",
+          "x": 14,
+          "y": 12,
+          "layer": 12
+        },
+        "result": [
+          "placed 'one small freestanding wooden ' standing on cell (14, 12)\nplacement_id: 30c6630d-67c0-4bd5-8801-c0e4772496e5\nsize_cells: 4x4  layer: 12  objects_on_map: 4\nblocks cells: x 12..16 at y 12\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"30c6630d-67c0-4bd5-8801-c0e4772496e5\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "campfire",
+          "object_id": "f5cb5de5-e5bc-46bd-a9cb-07ad4aabe1e2",
+          "x": 11,
+          "y": 14,
+          "layer": 14
+        },
+        "result": [
+          "moved 'one small cozy campfire, two c' from cell (11, 12) to (11, 14)\nblocks cells: x 10..12 at y 14\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: list_map_objects(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\")"
+        ]
+      },
+      {
+        "placement": {
+          "id": "bridge",
+          "object_id": "e490d136-9bef-4a95-bd68-1bd2279771d6",
+          "x": 20,
+          "y": 15,
+          "layer": 0
+        },
+        "result": [
+          "moved 'one small wooden footbridge ru' from cell (19, 13) to (20, 15)\nblocks cells: x 17..23 at y 15\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: list_map_objects(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\")"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-0",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 2,
+          "y": 5,
+          "layer": 5
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (2, 5)\nplacement_id: 03d9d9fb-8424-4520-a5b6-231b617b61f2\nsize_cells: 4x4  layer: 5  objects_on_map: 5\nblocks cells: x 0..4 at y 5\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"03d9d9fb-8424-4520-a5b6-231b617b61f2\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-1",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 6,
+          "y": 4,
+          "layer": 4
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (6, 4)\nplacement_id: 4ff2242f-2b6a-4935-bea5-7c6478806883\nsize_cells: 4x4  layer: 4  objects_on_map: 6\nblocks cells: x 4..8 at y 4\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"4ff2242f-2b6a-4935-bea5-7c6478806883\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-2",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 9,
+          "y": 5,
+          "layer": 5
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (9, 5)\nplacement_id: 2f3c38cb-7eee-4480-8c9a-64314382f4a8\nsize_cells: 4x4  layer: 5  objects_on_map: 7\nblocks cells: x 7..11 at y 5\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"2f3c38cb-7eee-4480-8c9a-64314382f4a8\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-3",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 13,
+          "y": 4,
+          "layer": 4
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (13, 4)\nplacement_id: 20cd6e07-95c7-4387-9ec5-a5c550deb1e9\nsize_cells: 4x4  layer: 4  objects_on_map: 8\nblocks cells: x 11..15 at y 4\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"20cd6e07-95c7-4387-9ec5-a5c550deb1e9\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-4",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 16,
+          "y": 5,
+          "layer": 5
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (16, 5)\nplacement_id: 4af2d381-26d7-4ced-95cc-915b05329913\nsize_cells: 4x4  layer: 5  objects_on_map: 9\nblocks cells: x 14..18 at y 5\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"4af2d381-26d7-4ced-95cc-915b05329913\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-5",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 27,
+          "y": 4,
+          "layer": 4
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (27, 4)\nplacement_id: 1985bd0d-f482-4d60-bafe-4c0ce3cc9b9f\nsize_cells: 4x4  layer: 4  objects_on_map: 10\nblocks cells: x 25..29 at y 4\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"1985bd0d-f482-4d60-bafe-4c0ce3cc9b9f\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-6",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 31,
+          "y": 5,
+          "layer": 5
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (31, 5)\nplacement_id: 257a044c-81ba-4909-a81f-a49014e8b1de\nsize_cells: 4x4  layer: 5  objects_on_map: 11\nblocks cells: x 29..33 at y 5\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"257a044c-81ba-4909-a81f-a49014e8b1de\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-7",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 2,
+          "y": 9,
+          "layer": 9
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (2, 9)\nplacement_id: d427e626-6e1d-4a94-9d9d-a24aa0f15927\nsize_cells: 4x4  layer: 9  objects_on_map: 12\nblocks cells: x 0..4 at y 9\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"d427e626-6e1d-4a94-9d9d-a24aa0f15927\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-8",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 6,
+          "y": 9,
+          "layer": 9
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (6, 9)\nplacement_id: 05609d08-91f6-4881-bec6-4af8adb7fd64\nsize_cells: 4x4  layer: 9  objects_on_map: 13\nblocks cells: x 4..8 at y 9\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"05609d08-91f6-4881-bec6-4af8adb7fd64\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-9",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 2,
+          "y": 13,
+          "layer": 13
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (2, 13)\nplacement_id: 283c2d4f-a79a-4d5f-81a4-3035f069f667\nsize_cells: 4x4  layer: 13  objects_on_map: 14\nblocks cells: x 0..4 at y 13\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"283c2d4f-a79a-4d5f-81a4-3035f069f667\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-10",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 3,
+          "y": 18,
+          "layer": 18
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (3, 18)\nplacement_id: ec54ef35-e12d-4e47-b5a6-b5adaf4abd87\nsize_cells: 4x4  layer: 18  objects_on_map: 15\nblocks cells: x 1..5 at y 18\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"ec54ef35-e12d-4e47-b5a6-b5adaf4abd87\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-11",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 3,
+          "y": 23,
+          "layer": 23
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (3, 23)\nplacement_id: 75a6d313-568c-4c24-a778-575cdc4b71a5\nsize_cells: 4x4  layer: 23  objects_on_map: 16\nblocks cells: x 1..5 at y 23\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"75a6d313-568c-4c24-a778-575cdc4b71a5\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-12",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 9,
+          "y": 23,
+          "layer": 23
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (9, 23)\nplacement_id: 17270bc3-0389-4032-b2df-b366c1c118c5\nsize_cells: 4x4  layer: 23  objects_on_map: 17\nblocks cells: x 7..11 at y 23\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"17270bc3-0389-4032-b2df-b366c1c118c5\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-13",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 13,
+          "y": 24,
+          "layer": 24
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (13, 24)\nplacement_id: 564f400b-bd63-4678-943d-eb1e60e3a0d5\nsize_cells: 4x4  layer: 24  objects_on_map: 18\nblocks cells: x 11..15 at y 24\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"564f400b-bd63-4678-943d-eb1e60e3a0d5\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-14",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 17,
+          "y": 22,
+          "layer": 22
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (17, 22)\nplacement_id: 50333367-abfa-409f-b58b-f95fd31afbb2\nsize_cells: 4x4  layer: 22  objects_on_map: 19\nblocks cells: x 15..19 at y 22\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"50333367-abfa-409f-b58b-f95fd31afbb2\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-15",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 31,
+          "y": 10,
+          "layer": 10
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (31, 10)\nplacement_id: a4e86e75-454e-434a-bd37-4c03310a201e\nsize_cells: 4x4  layer: 10  objects_on_map: 20\nblocks cells: x 29..33 at y 10\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"a4e86e75-454e-434a-bd37-4c03310a201e\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-16",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 31,
+          "y": 15,
+          "layer": 15
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (31, 15)\nplacement_id: c2a9e216-d453-442b-aabc-517b50f7e402\nsize_cells: 4x4  layer: 15  objects_on_map: 21\nblocks cells: x 29..33 at y 15\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"c2a9e216-d453-442b-aabc-517b50f7e402\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-17",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 30,
+          "y": 19,
+          "layer": 19
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (30, 19)\nplacement_id: 8a62d782-c1e3-4aaa-963d-12d0bfffce38\nsize_cells: 4x4  layer: 19  objects_on_map: 22\nblocks cells: x 28..32 at y 19\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"8a62d782-c1e3-4aaa-963d-12d0bfffce38\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-18",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 30,
+          "y": 24,
+          "layer": 24
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (30, 24)\nplacement_id: 9694e77b-12ab-423d-8281-70e16838c7fb\nsize_cells: 4x4  layer: 24  objects_on_map: 23\nblocks cells: x 28..32 at y 24\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"9694e77b-12ab-423d-8281-70e16838c7fb\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-19",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 26,
+          "y": 23,
+          "layer": 23
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (26, 23)\nplacement_id: 5514315b-f3c5-4246-a898-301ecbfa3ce5\nsize_cells: 4x4  layer: 23  objects_on_map: 24\nblocks cells: x 24..28 at y 23\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"5514315b-f3c5-4246-a898-301ecbfa3ce5\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-20",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 25,
+          "y": 7,
+          "layer": 7
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (25, 7)\nplacement_id: facb2b50-80f8-4b12-beeb-ef29a0da9768\nsize_cells: 4x4  layer: 7  objects_on_map: 25\nblocks cells: x 23..27 at y 7\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"facb2b50-80f8-4b12-beeb-ef29a0da9768\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-21",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 29,
+          "y": 7,
+          "layer": 7
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (29, 7)\nplacement_id: 2b555d79-e1c2-4694-be56-a78213d00829\nsize_cells: 4x4  layer: 7  objects_on_map: 26\nblocks cells: x 27..31 at y 7\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"2b555d79-e1c2-4694-be56-a78213d00829\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-22",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 8,
+          "y": 12,
+          "layer": 12
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (8, 12)\nplacement_id: 5f729b00-24d6-43c0-a661-ec2ca5b5c730\nsize_cells: 4x4  layer: 12  objects_on_map: 27\nblocks cells: x 6..10 at y 12\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"5f729b00-24d6-43c0-a661-ec2ca5b5c730\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-23",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 24,
+          "y": 13,
+          "layer": 13
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (24, 13)\nplacement_id: 01111e95-7276-48ce-b87a-840925f9c39a\nsize_cells: 4x4  layer: 13  objects_on_map: 28\nblocks cells: x 22..26 at y 13\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"01111e95-7276-48ce-b87a-840925f9c39a\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "tree-24",
+          "object_id": "dd7226f3-3151-4bc8-aa1d-d9cbead1c31c",
+          "x": 27,
+          "y": 16,
+          "layer": 16
+        },
+        "result": [
+          "placed 'one broad rounded old woodland' standing on cell (27, 16)\nplacement_id: 5add944d-d29d-42f1-a040-0a04ffbf2acd\nsize_cells: 4x4  layer: 16  objects_on_map: 29\nblocks cells: x 25..29 at y 16\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"5add944d-d29d-42f1-a040-0a04ffbf2acd\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "rock-0",
+          "object_id": "f8420583-f7c2-4ea4-a3cb-cbdc2f9815ec",
+          "x": 4,
+          "y": 12,
+          "layer": 12
+        },
+        "result": [
+          "placed 'one low rounded woodland bould' standing on cell (4, 12)\nplacement_id: 9ba01c06-c9c5-4878-bc7c-6f62e6174345\nsize_cells: 2x2  layer: 12  objects_on_map: 30\nblocks cells: x 3..5 at y 12\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"9ba01c06-c9c5-4878-bc7c-6f62e6174345\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "rock-1",
+          "object_id": "f8420583-f7c2-4ea4-a3cb-cbdc2f9815ec",
+          "x": 15,
+          "y": 7,
+          "layer": 7
+        },
+        "result": [
+          "placed 'one low rounded woodland bould' standing on cell (15, 7)\nplacement_id: 5e5fca05-b2a3-4a6f-b334-e7bc5b94034e\nsize_cells: 2x2  layer: 7  objects_on_map: 31\nblocks cells: x 14..16 at y 7\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"5e5fca05-b2a3-4a6f-b334-e7bc5b94034e\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "rock-2",
+          "object_id": "f8420583-f7c2-4ea4-a3cb-cbdc2f9815ec",
+          "x": 25,
+          "y": 6,
+          "layer": 6
+        },
+        "result": [
+          "placed 'one low rounded woodland bould' standing on cell (25, 6)\nplacement_id: c0e1d9e8-c97a-4a91-a599-6dae9cbee4c5\nsize_cells: 2x2  layer: 6  objects_on_map: 32\nblocks cells: x 24..26 at y 6\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"c0e1d9e8-c97a-4a91-a599-6dae9cbee4c5\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "rock-3",
+          "object_id": "f8420583-f7c2-4ea4-a3cb-cbdc2f9815ec",
+          "x": 30,
+          "y": 14,
+          "layer": 14
+        },
+        "result": [
+          "placed 'one low rounded woodland bould' standing on cell (30, 14)\nplacement_id: dddc1f2c-ef63-4356-a23b-16fe718a07fb\nsize_cells: 2x2  layer: 14  objects_on_map: 33\nblocks cells: x 29..31 at y 14\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"dddc1f2c-ef63-4356-a23b-16fe718a07fb\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "rock-4",
+          "object_id": "f8420583-f7c2-4ea4-a3cb-cbdc2f9815ec",
+          "x": 12,
+          "y": 19,
+          "layer": 19
+        },
+        "result": [
+          "placed 'one low rounded woodland bould' standing on cell (12, 19)\nplacement_id: 07fddf54-372b-4ab2-9c4b-5a7cfa3f9ce5\nsize_cells: 2x2  layer: 19  objects_on_map: 34\nblocks cells: x 11..13 at y 19\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"07fddf54-372b-4ab2-9c4b-5a7cfa3f9ce5\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "rock-5",
+          "object_id": "f8420583-f7c2-4ea4-a3cb-cbdc2f9815ec",
+          "x": 27,
+          "y": 19,
+          "layer": 19
+        },
+        "result": [
+          "placed 'one low rounded woodland bould' standing on cell (27, 19)\nplacement_id: fcd48544-c705-405b-b666-b9a7201bc2ee\nsize_cells: 2x2  layer: 19  objects_on_map: 35\nblocks cells: x 26..28 at y 19\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"fcd48544-c705-405b-b666-b9a7201bc2ee\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "herbs-0",
+          "object_id": "f9b488ae-7784-49a3-8eed-9e811318d38c",
+          "x": 26,
+          "y": 9,
+          "layer": 0
+        },
+        "result": [
+          "placed 'one small harvestable medicina' standing on cell (26, 9)\nplacement_id: 15adc49c-3a2d-40cc-8643-c15472833972\nsize_cells: 3x3  layer: 0  objects_on_map: 36\nblocks cells: x 25..27 at y 9\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"15adc49c-3a2d-40cc-8643-c15472833972\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "herbs-1",
+          "object_id": "f9b488ae-7784-49a3-8eed-9e811318d38c",
+          "x": 28,
+          "y": 9,
+          "layer": 0
+        },
+        "result": [
+          "placed 'one small harvestable medicina' standing on cell (28, 9)\nplacement_id: 5c576ee6-2239-42fd-900d-ffd5160749fe\nsize_cells: 3x3  layer: 0  objects_on_map: 37\nblocks cells: x 27..29 at y 9\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"5c576ee6-2239-42fd-900d-ffd5160749fe\", x=..., y=...) or remove_map_object(...)"
+        ]
+      },
+      {
+        "placement": {
+          "id": "herbs-2",
+          "object_id": "f9b488ae-7784-49a3-8eed-9e811318d38c",
+          "x": 27,
+          "y": 8,
+          "layer": 0
+        },
+        "result": [
+          "placed 'one small harvestable medicina' standing on cell (27, 8)\nplacement_id: 7b9fc88b-25fe-4e6d-8b02-a0007ee39e98\nsize_cells: 3x3  layer: 0  objects_on_map: 38\nblocks cells: x 26..28 at y 8\nnote: the map change is saved. In Game Builder the workspace is refreshed with it before this result is returned, so a deploy later in this turn includes it — if the deploy reports missing map assets, re-run it rather than regenerating art. Other MCP clients must run their own asset sync before building.\nhint: move_map_object(map_id=\"6609f901-90aa-4706-85bd-0bd32867813c\", placement_id=\"7b9fc88b-25fe-4e6d-8b02-a0007ee39e98\", x=..., y=...) or remove_map_object(...)"
+        ]
+      }
+    ],
+    "renderVerification": "개울가 약초꾼 야영지 · 32px 시험 — x 1..32, y 1..24\n1024x768px, 38 objects drawn",
+    "syncNotes": "PixelLab은 원본 캔버스를 정수 지형 셀에 배치한다. 로컬 샘플은 투명 여백 제거 후 픽셀 좌표와 발밑 경계를 사용한다. 약초는 원본 표시 프레임 65×65를 48×48로 표시하며 재생성하지 않았다."
+  },
+  "budget": {
+    "accountUsedBefore": 1365,
+    "accountUsedDuring": 1409,
+    "authorizedAccountUsedLimit": 1500,
+    "creditsBeforeUsd": 0,
+    "creditsDuringUsd": 0,
+    "scope": "타일셋 2종과 투명 소품 7종, 오두막·다리 수정 후보 각각 1종",
+    "note": "동시에 다른 PixelLab 소품 작업의 main 병합이 확인돼 계정 사용량 변화 전체를 이 맵의 단독 비용으로 계산하지 않는다. 추가 크레딧 잔액은 0 USD이며 계정 사용량 승인 한도 1500 이내.",
+    "accountUsedAfterObservation": 1436,
+    "generationsRemainingAfterObservation": 563
+  },
+  "validation": {
+    "check": "npm run check passed",
+    "build": "passed",
+    "mapTests": "5/5 passed",
+    "browser": "별도 설치된 Chrome에서 입구→모닥불→목교→약초밭, 다리 밖 개울 차단, 실제 보행 프레임 0/1/3/4/6 진행, 나무 앞뒤 깊이 전환, 일시정지, 844×390 DPR2 실제 터치 시작·종료·취소, pagehide 종료 확인. 브라우저 오류 없음.",
+    "existingFailure": "tests/resource-library.test.mjs의 아타호 작업실 분류 수가 기대값 6, 현재값 8로 기존 main에서도 동일 실패. 새 맵으로 항목 수를 변경한 것이 아님."
+  },
+  "files": [
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/bridge-horizontal-original.png",
+      "byteSize": 8205,
+      "sha256": "208dd59c3252914f1cfd10d9eb00daf92f311357b6570d2acce60056f0b8d6ac"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/bridge-horizontal.png",
+      "byteSize": 7169,
+      "sha256": "1d439e3c9a44c5dcfd1141d276e61391768049cd6102d76589e72e21c5083235"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/bridge-original.png",
+      "byteSize": 9295,
+      "sha256": "836e85e12b6474de286536822af40d540d86730bdb2a38288154e87c681513ea"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/bridge-reference-192x96.png",
+      "byteSize": 1511,
+      "sha256": "a0b709f3c163784b20bf175e3e930ce5f715d54d7afe39248b23a7b4f6e4a3ef"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/bridge.png",
+      "byteSize": 7886,
+      "sha256": "da4f16d70cd0b4b031c2030830dbb48ba6cb76822534f22e2f9754a958c1f22a"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/campfire-original.png",
+      "byteSize": 2962,
+      "sha256": "d67d12393a09ac58ff2d46349c9548ae4a86ee80039a422a3318670ec36253c9"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/campfire.png",
+      "byteSize": 2438,
+      "sha256": "1edbad0592da76e99d631c96a6fbca4ca2c606ec0d7744b8a2e92679914455ad"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/dirt-grass-metadata.json",
+      "byteSize": 7642,
+      "sha256": "64983440801b029a73c813a583d323d7a1a751a57bf36a62ecb72842be9cdbde"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/dirt-grass.png",
+      "byteSize": 11841,
+      "sha256": "81cb4e12a055c85db9564d80f8f02f0fdecc0bbef76a1f2576ddbd096899a4ef"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/drying-rack-original.png",
+      "byteSize": 3782,
+      "sha256": "f7928f8e6dcb9129e24f8020f3b60bba5c554bf4741891442553907719f0120c"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/drying-rack.png",
+      "byteSize": 3150,
+      "sha256": "980a33e76e25745d2bf3decd42f1fe07cf9a212c734a64b4616783c79f048367"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-128.png",
+      "byteSize": 1484,
+      "sha256": "4ce99f4d00698c02de3c5a67897a4a5866c979ff0d31cc3514b1e66afc94859d"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-160.png",
+      "byteSize": 2090,
+      "sha256": "c9a37147e38e1ab2f516bf4d2cdc4aa27007ef24a01da18de4efb249d7592aa9"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-192.png",
+      "byteSize": 2390,
+      "sha256": "3ea721c569d30fe7c0fdf05f041696f44a0cca9e14746fd1bb0a2fecfa2d4510"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-64.png",
+      "byteSize": 884,
+      "sha256": "c200bcb5bf47338e2e516cfbd7cdd30c34391d3b182f5a50d6c3e11e339b9aa0"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/grass-reference-96.png",
+      "byteSize": 1194,
+      "sha256": "a29faf730fc12f110819f1d5b333d9a7909a5d42ae6620fe90ab0d0185fd3e05"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/ground.png",
+      "byteSize": 193208,
+      "sha256": "3a3b099ee0b6edba322f19106ca2ebe4f3e8ec513094f03597ae044ea80df225"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/herbs-original.png",
+      "byteSize": 5150,
+      "sha256": "26cb0123441f8a4af41efe4949fee34c467434536f2e33ccb3928a3591358a25"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/herbs.png",
+      "byteSize": 4277,
+      "sha256": "c336159fae6c322830a8d6e47d4bb57441762438d0026b5cf2e09b9c2e9f5985"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/hut-charcoal-original.png",
+      "byteSize": 10897,
+      "sha256": "2f840ade6cd23b4b387f9a667e091e05c0990a2acff7f62b5bcaa86cde7b1353"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/hut-charcoal.png",
+      "byteSize": 8786,
+      "sha256": "a9313820e07499126424aaaf92430c211a02839b291467ba639147ac647f2596"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/hut-original.png",
+      "byteSize": 16024,
+      "sha256": "62cd9eea316f80971369bf70e95c52600856a01d90ee969800c4dbe2bd3ae289"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/hut.png",
+      "byteSize": 13403,
+      "sha256": "74caac78d4139d67033dbc57b9d5c57fb884ebda0a8c678be8a904af3be1562f"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/preview.png",
+      "byteSize": 376937,
+      "sha256": "ee298ec807a5733641b9b00c281e33f1397996c6b9e41a32853132e24849bfbf"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/rock-original.png",
+      "byteSize": 2893,
+      "sha256": "45af6da1d0861e724fce5f0e3c78540f39849fb184bcff8a29507b0ea9903612"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/rock.png",
+      "byteSize": 2513,
+      "sha256": "c31ed47100faba539897edf3f3665cba571422911633c881bc74230f0269b455"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/tree-original.png",
+      "byteSize": 10843,
+      "sha256": "f898af5deab408b69a60e36e230bb15aa898d854a20219222f4d227a16b52701"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/tree.png",
+      "byteSize": 9988,
+      "sha256": "08ccb16f26c7981898ad6768b0789fb8a2200c55e96a57ab4ecd6ea00accf63f"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/water-grass-metadata.json",
+      "byteSize": 8076,
+      "sha256": "d8933316c0df9a596edc107263fc572d8f71d6d72dc389224ff092e99e671c2b"
+    },
+    {
+      "localPath": "public/assets/maplestory/herbalist-camp/20261014/water-grass.png",
+      "byteSize": 15527,
+      "sha256": "7dcbe7cfe468f33d4b213134ad642e3a6daea35ad30a9e4cb17713810497630c"
+    }
+  ]
+}

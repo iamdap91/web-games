@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="punch.css" />
+    <title>아타호 · 대기에서 정권으로</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">아타호 · 비도트 동작 시안 01</p>
+        <h1>대기에서 정권으로</h1>
+        <p>
+          힘을 모으고, 짧게 뻗고, 다시 느긋하게. 같은 방향의 동작을 비교해
+          보세요.
+        </p>
+        <a href="index.html#punch">아타호 작업실</a>
+      </header>
+      <fieldset id="controls" disabled>
+        <legend>동작 살펴보기</legend>
+        <div class="controls">
+          <button id="punch" type="button">정권 한 번 · J</button>
+          <button id="pause" type="button">일시정지 · Space</button>
+          <label><input id="loop" type="checkbox" checked /> 자동 반복</label>
+          <label
+            >속도
+            <select id="speed">
+              <option value="1">1배</option>
+              <option value="0.25">0.25배</option>
+            </select></label
+          >
+          <label
+            >크기
+            <select id="size">
+              <option value="240">자세히 · 240px</option>
+              <option value="112">작게 · 112px</option>
+            </select></label
+          >
+          <label
+            >배경
+            <select id="background">
+              <option value="light">밝게</option>
+              <option value="dark">어둡게</option>
+            </select></label
+          >
+          <label><input id="guides" type="checkbox" /> 발 기준 보기</label>
+        </div>
+        <div class="timeline">
+          <label for="timeline">정권 자세 탐색</label
+          ><input
+            id="timeline"
+            type="range"
+            min="0"
+            max="1250"
+            step="1"
+            value="0"
+          /><output id="status" role="status">그림을 준비 중이에요.</output>
+        </div>
+      </fieldset>
+      <section class="comparison" aria-label="생성 자세와 연결 시안 비교">
+        <article>
+          <div class="heading">
+            <h2>그림 순서대로</h2>
+            <span>같은 간격 · 전신 교체</span>
+          </div>
+          <canvas
+            id="raw"
+            aria-label="생성된 여덟 자세를 일정 간격으로 재생"
+          ></canvas>
+          <p>생성본의 자세·얼굴·발 위치 변화를 확인</p>
+        </article>
+        <article>
+          <div class="heading">
+            <h2>연결 시안</h2>
+            <span>힘 모으기 → 타격 → 복귀</span>
+          </div>
+          <canvas
+            id="connected"
+            aria-label="발을 고정하고 동작의 리듬을 조정한 정권"
+          ></canvas>
+          <p>발 고정 · 상체 움직임 · 타격 유지 · 첫 대기로 복귀</p>
+        </article>
+      </section>
+      <details>
+        <summary>생성된 자세 8장 보기</summary>
+        <div id="poses" class="poses"></div>
+        <p>
+          마지막 대기는 새 그림 대신 첫 자세를 재사용합니다.
+          <a
+            href="../../../../public/assets/maplestory/ataho-punch-continuity/20261013/poses-02.png"
+            target="_blank"
+            rel="noreferrer"
+            >원본 시트</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-nonpixel-ai/20261013/right-01.png"
+            target="_blank"
+            rel="noreferrer"
+            >기준 원화</a
+          >
+        </p>
+      </details>
+      <footer>
+        <p>
+          <a
+            href="../../../../public/assets/maplestory/ataho-punch-continuity/20261013/preview-01.mp4"
+            target="_blank"
+            rel="noreferrer"
+            >9초 비교 영상 보기</a
+          >
+        </p>
+        <p>
+          오른쪽 한 방향의 연결 시험입니다. 원화와 생성본의 외형 차이, 공격 중
+          팔과 얼굴의 연결도 함께 살펴봐 주세요.
+        </p>
+        <p>ImageGen 자세 제작 · 독립 비교 시안</p>
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-hybrid/punch.js"
+    ></script>
+  </body>
+</html>

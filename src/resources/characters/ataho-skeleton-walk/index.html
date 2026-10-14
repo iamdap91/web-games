@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <title>아타호 · 두 가지 Skeleton 걷기</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">ATAHO / WALK COMPARISON</p>
+        <h1>아타호의 두 가지 걷기</h1>
+        <p>
+          같은 기준 그림에서 정면·측면·후면의 발 디딤과 외형 유지를 비교해
+          보세요.
+        </p>
+      </header>
+      <div class="controls" aria-label="걷기 비교 설정">
+        <label
+          >방향<select id="direction">
+            <option value="all">세 방향 모두</option>
+            <option value="south">정면</option>
+            <option value="east">측면 · 오른쪽</option>
+            <option value="north">후면</option>
+          </select></label
+        >
+        <button id="pause" type="button" disabled>일시정지</button>
+        <button id="restart" type="button" disabled>처음부터</button>
+        <label
+          >속도<select id="speed">
+            <option value="1">1배</option>
+            <option value="0.25">0.25배</option>
+          </select></label
+        >
+        <label
+          >표시 크기<select id="scale">
+            <option value="2">최대 2배</option>
+            <option value="3">최대 3배</option>
+            <option value="1">1배</option>
+          </select></label
+        >
+        <label><input id="bones" type="checkbox" />2번 목표 관절</label>
+        <label class="seek"
+          >자세<input
+            id="seek"
+            type="range"
+            min="0"
+            max="7"
+            value="0"
+            step="1"
+            aria-label="걷기 자세 선택"
+            disabled
+          /><output id="frame">1 / 8</output></label
+        >
+      </div>
+      <p id="status" role="status">걷기 이미지를 불러오는 중이에요.</p>
+      <div id="comparisons"></div>
+      <p class="note">
+        두 방식은 같은 0.8초 주기로 재생합니다. 방향별 발 기준은 동작 전체에
+        고정하며 프레임마다 위치나 체형을 보정하지 않습니다. 관절선은 2번에
+        전달한 목표 자세이며, 생성 결과에서 추정한 관절은 아닙니다.
+      </p>
+      <details>
+        <summary>공통 기준 그림과 제작 기록</summary>
+        <div id="references" class="references"></div>
+        <p>
+          <a id="art" target="_blank" rel="noopener noreferrer">새 정면 원화</a>
+          ·
+          <a href="../../../../resources/ataho-skeleton-walk-common.json"
+            >공통 입력 기록</a
+          >
+          ·
+          <a
+            href="../../../../resources/ataho-skeleton-template-walk-generation.json"
+            >1번 생성 기록</a
+          >
+          ·
+          <a
+            href="../../../../resources/ataho-skeleton-authored-walk-generation.json"
+            >2번 생성 기록</a
+          >
+        </p>
+        <p>
+          출처:
+          <a
+            href="https://www.pixellab.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >PixelLab</a
+          >
+        </p>
+      </details>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-skeleton-walk/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

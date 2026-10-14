@@ -54,6 +54,8 @@ function assetCategory(asset) {
     return 'characters';
 }
 function assetGroup(asset, category) {
+    if (asset.id.startsWith('ai/herbalist-camp-'))
+        return 'PixelLab 맵 실험';
     if (category === 'characters') {
         if (asset.id.includes('ataho') || asset.id.includes('tiger-hero'))
             return '아타호';
@@ -131,6 +133,8 @@ const animationLabs = new Set([
     'local/prerendered-model-lab',
 ]);
 function proceduralCategory(id) {
+    if (id === 'local/herbalist-camp')
+        return 'maps';
     if (id === 'local/village-hybrid-references')
         return 'materials';
     if (animationLabs.has(id))
@@ -150,6 +154,8 @@ function proceduralCategory(id) {
     return 'facilities';
 }
 function proceduralGroup(id, category) {
+    if (id === 'local/herbalist-camp')
+        return 'PixelLab 맵 실험';
     if (id.startsWith('local/village-style-'))
         return '마을 스타일 실험';
     if (id === 'local/village-hybrid-references')
@@ -219,6 +225,7 @@ const atahoComparison = {
     thumbnailPath: atahoMembers.find((entry) => entry.id === 'local/ataho-nonpixel-front-draft')?.thumbnailPath,
     previewPath: 'src/resources/characters/ataho-hybrid/index.html?motion=shoulder-v2#attacks',
     states: [
+        'ImageGen 정권 연결',
         '공격',
         '걷기',
         '좌우 기준 그림',

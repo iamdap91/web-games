@@ -1,0 +1,916 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-13",
+  "provider": "PixelLab",
+  "status": "completed",
+  "experiment": "1번 템플릿 기반 Skeleton V3 걷기",
+  "scope": "새 장년 아타호 공통 기준으로 정면·측면·후면 걷기 비교. 본게임 통합 없음.",
+  "commonInput": "resources/ataho-skeleton-walk-common.json",
+  "characterId": "25b4fad1-ce50-4e7d-a8ac-cdf5ae841579",
+  "request": {
+    "character_id": "25b4fad1-ce50-4e7d-a8ac-cdf5ae841579",
+    "directions": ["south", "east", "north"],
+    "mode": "skeleton-v3",
+    "template_animation_id": "walking-8-frames",
+    "animation_name": "ataho-walk-comparison-template"
+  },
+  "submission": {
+    "content": [
+      {
+        "type": "text",
+        "text": "character: 25b4fad1-ce50-4e7d-a8ac-cdf5ae841579\nanimation: walking-8-frames\nmode: skeleton-v3\ndirections: south, east, north (3 jobs)\njob_ids: south=1a45c6c5-1e15-488f-96bc-de98073b80f2, east=f4045bd2-8fb1-4216-a698-e55f3f5f8312, north=f8a0342e-dc31-4b9f-8b53-e23aafd6e6a9\ngroup: d944b664-258b-4ad6-adac-e6d026bafa1e\ncost: 9 generations (3/dir x 3)\neta: ~3-5 min/direction\nadd more directions to this group: animate_character(character_id=\"25b4fad1-ce50-4e7d-a8ac-cdf5ae841579\", template_animation_id=\"walking-8-frames\", animation_group_id=\"d944b664-258b-4ad6-adac-e6d026bafa1e\", directions=[...])\n\nhint: get_character(character_id=\"25b4fad1-ce50-4e7d-a8ac-cdf5ae841579\")"
+      }
+    ],
+    "isError": false
+  },
+  "animationGroupId": "d944b664-258b-4ad6-adac-e6d026bafa1e",
+  "jobIds": {
+    "south": "1a45c6c5-1e15-488f-96bc-de98073b80f2",
+    "east": "f4045bd2-8fb1-4216-a698-e55f3f5f8312",
+    "north": "f8a0342e-dc31-4b9f-8b53-e23aafd6e6a9"
+  },
+  "usage": {
+    "quotedGenerations": 9,
+    "generationsPerDirection": 3,
+    "acceptedGenerationCalls": 1,
+    "retryCalls": 0,
+    "balanceBefore": {
+      "content": [
+        {
+          "type": "text",
+          "text": "credits: $0.00\ngenerations_remaining: 685\ngenerations_used: 1314\ngenerations_total: 2000\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+        }
+      ],
+      "isError": false
+    },
+    "attribution": "접수 영수증을 기준으로 기록. 공유 계정의 다른 병렬 요청이 있을 수 있어 전체 잔량 차이를 이 요청만의 비용으로 해석하지 않음."
+  },
+  "keypointProvenance": {
+    "mode": "service-managed-template",
+    "manualKeypointsSupplied": false,
+    "description": "기준 뼈대와 walking-8-frames 모션은 서비스가 관리. 관절값을 직접 입력하지 않음."
+  },
+  "comparison": {
+    "targetLoopSeconds": 0.8,
+    "frameDurationSeconds": 0.1,
+    "inputDirections": ["south", "east", "north"],
+    "inputCanvas": {
+      "width": 96,
+      "height": 96
+    },
+    "sourceFramesPreserved": true
+  },
+  "directions": [
+    {
+      "direction": "south",
+      "frameCount": 8,
+      "loopSeconds": 0.8,
+      "canvas": {
+        "width": 144,
+        "height": 144
+      },
+      "anchorMethod": "기준 96×96와 출력 144×144의 중심이 같다고 가정하고 source anchor에 대칭 padding 24px를 더한 표시 기준. 서비스 spritesheet의 pivot 중앙 규칙을 참고했으나, 실제 raw PNG에 pivot metadata가 없어 내부 pivot 일치를 검증하지 못함. 방향 안의 모든 프레임에 같은 anchor를 사용하며 발 위치 보정이나 원본 PNG 재샘플은 하지 않음.",
+      "visibleGroundRange": {
+        "min": 117,
+        "max": 121,
+        "spanPixels": 4
+      },
+      "uniqueFrames": 8,
+      "transitions": [
+        {
+          "from": 0,
+          "to": 1,
+          "changedVisiblePixels": 1648,
+          "visibleUnionPixels": 3907,
+          "changedVisibleFraction": 0.4218,
+          "wrap": false
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "changedVisiblePixels": 1440,
+          "visibleUnionPixels": 3819,
+          "changedVisibleFraction": 0.3771,
+          "wrap": false
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "changedVisiblePixels": 2559,
+          "visibleUnionPixels": 4008,
+          "changedVisibleFraction": 0.6385,
+          "wrap": false
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "changedVisiblePixels": 1702,
+          "visibleUnionPixels": 4025,
+          "changedVisibleFraction": 0.4229,
+          "wrap": false
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "changedVisiblePixels": 2554,
+          "visibleUnionPixels": 4040,
+          "changedVisibleFraction": 0.6322,
+          "wrap": false
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "changedVisiblePixels": 1894,
+          "visibleUnionPixels": 3985,
+          "changedVisibleFraction": 0.4753,
+          "wrap": false
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "changedVisiblePixels": 1796,
+          "visibleUnionPixels": 3898,
+          "changedVisibleFraction": 0.4607,
+          "wrap": false
+        },
+        {
+          "from": 7,
+          "to": 0,
+          "changedVisiblePixels": 2697,
+          "visibleUnionPixels": 4014,
+          "changedVisibleFraction": 0.6719,
+          "wrap": true
+        }
+      ],
+      "contactSheet": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south-contact-sheet.png",
+      "previewGif": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south-preview.gif",
+      "frames": [
+        {
+          "index": 0,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_000.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/south/frame_000.png",
+          "byteSize": 8400,
+          "sha256": "ff03ad5863a75171d3b16807792c84cfdf495ccac8d77ea527d3374741b63146",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [34, 26, 100, 119],
+          "alpha": {
+            "transparentPixels": 16974,
+            "opaquePixels": 3762,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 1,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_001.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/south/frame_001.png",
+          "byteSize": 8326,
+          "sha256": "b739e719c1a709fcb8c1aadd8808cae9daf0b1ea7e4c9b681318287d581b675b",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [34, 27, 98, 120],
+          "alpha": {
+            "transparentPixels": 17057,
+            "opaquePixels": 3679,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 2,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_002.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/south/frame_002.png",
+          "byteSize": 8285,
+          "sha256": "4fd013ad1458ef96d9892ff8ba793ae2cdfa577c67ae2c2c7b74d8ecb2bb873c",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [33, 26, 97, 121],
+          "alpha": {
+            "transparentPixels": 17052,
+            "opaquePixels": 3684,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 3,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_003.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/south/frame_003.png",
+          "byteSize": 8350,
+          "sha256": "55c5b6ff59ae94cdf90b62873c4dddd67158f1e2f1fa83ea1e0f87854c20f932",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [32, 26, 98, 119],
+          "alpha": {
+            "transparentPixels": 16968,
+            "opaquePixels": 3768,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 4,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_004.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/south/frame_004.png",
+          "byteSize": 8574,
+          "sha256": "2fefc2c1b25ec40faaaa731020c227e8f0c7fc34a155c32e6c77840a17740cf6",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [34, 26, 101, 117],
+          "alpha": {
+            "transparentPixels": 16910,
+            "opaquePixels": 3826,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 5,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_005.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/south/frame_005.png",
+          "byteSize": 8839,
+          "sha256": "1b8abbc38e86660d82133fc42868f1419ed980f010ea12c6892f16582b478fde",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [34, 26, 101, 120],
+          "alpha": {
+            "transparentPixels": 16906,
+            "opaquePixels": 3830,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 6,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_006.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/south/frame_006.png",
+          "byteSize": 8500,
+          "sha256": "befee1d66ccce5345a0ebfdc902854b9a45f98afedf8f47d8bc3a81407d72488",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [35, 26, 102, 121],
+          "alpha": {
+            "transparentPixels": 17023,
+            "opaquePixels": 3713,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 7,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/south/frame_007.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/south/frame_007.png",
+          "byteSize": 8353,
+          "sha256": "88767f83dca51a77a4913e21dae8c2c7f16fa05a928290fdd2a0e1abf31fdfd0",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [35, 26, 101, 119],
+          "alpha": {
+            "transparentPixels": 16995,
+            "opaquePixels": 3741,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        }
+      ]
+    },
+    {
+      "direction": "east",
+      "frameCount": 8,
+      "loopSeconds": 0.8,
+      "canvas": {
+        "width": 144,
+        "height": 144
+      },
+      "anchorMethod": "기준 96×96와 출력 144×144의 중심이 같다고 가정하고 source anchor에 대칭 padding 24px를 더한 표시 기준. 서비스 spritesheet의 pivot 중앙 규칙을 참고했으나, 실제 raw PNG에 pivot metadata가 없어 내부 pivot 일치를 검증하지 못함. 방향 안의 모든 프레임에 같은 anchor를 사용하며 발 위치 보정이나 원본 PNG 재샘플은 하지 않음.",
+      "visibleGroundRange": {
+        "min": 117,
+        "max": 119,
+        "spanPixels": 2
+      },
+      "uniqueFrames": 8,
+      "transitions": [
+        {
+          "from": 0,
+          "to": 1,
+          "changedVisiblePixels": 1716,
+          "visibleUnionPixels": 3021,
+          "changedVisibleFraction": 0.568,
+          "wrap": false
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "changedVisiblePixels": 1932,
+          "visibleUnionPixels": 3047,
+          "changedVisibleFraction": 0.6341,
+          "wrap": false
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "changedVisiblePixels": 2189,
+          "visibleUnionPixels": 3198,
+          "changedVisibleFraction": 0.6845,
+          "wrap": false
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "changedVisiblePixels": 2140,
+          "visibleUnionPixels": 2860,
+          "changedVisibleFraction": 0.7483,
+          "wrap": false
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "changedVisiblePixels": 1804,
+          "visibleUnionPixels": 3058,
+          "changedVisibleFraction": 0.5899,
+          "wrap": false
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "changedVisiblePixels": 1716,
+          "visibleUnionPixels": 3113,
+          "changedVisibleFraction": 0.5512,
+          "wrap": false
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "changedVisiblePixels": 1812,
+          "visibleUnionPixels": 3151,
+          "changedVisibleFraction": 0.5751,
+          "wrap": false
+        },
+        {
+          "from": 7,
+          "to": 0,
+          "changedVisiblePixels": 2032,
+          "visibleUnionPixels": 2910,
+          "changedVisibleFraction": 0.6983,
+          "wrap": true
+        }
+      ],
+      "contactSheet": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east-contact-sheet.png",
+      "previewGif": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east-preview.gif",
+      "frames": [
+        {
+          "index": 0,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_000.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/east/frame_000.png",
+          "byteSize": 6357,
+          "sha256": "d0fd5e3c84857fd5608fdb5af671dd43992dbf4984d53a4dc7f88403d5b6356f",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [34, 26, 92, 118],
+          "alpha": {
+            "transparentPixels": 18217,
+            "opaquePixels": 2519,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 1,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_001.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/east/frame_001.png",
+          "byteSize": 6465,
+          "sha256": "f1cf683ebadbae8c61ae193fc706d95088c2bd4ee976acd9ded5471b16f0fdde",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [30, 26, 100, 119],
+          "alpha": {
+            "transparentPixels": 18054,
+            "opaquePixels": 2682,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 2,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_002.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/east/frame_002.png",
+          "byteSize": 6754,
+          "sha256": "4e64c3226f757511e9f1df277c4fc3cf7828bec659531df993c71e190a48482d",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [29, 26, 100, 119],
+          "alpha": {
+            "transparentPixels": 17937,
+            "opaquePixels": 2799,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 3,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_003.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/east/frame_003.png",
+          "byteSize": 6354,
+          "sha256": "17c1978a5b024f9dd5ffcfc9f25df58d09e9c0258e69a405a83b3f2178861498",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [32, 26, 93, 119],
+          "alpha": {
+            "transparentPixels": 18200,
+            "opaquePixels": 2536,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 4,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_004.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/east/frame_004.png",
+          "byteSize": 6164,
+          "sha256": "9a8118aec10d71a083d9f882653d9dd9ca7072096f4dee5c3b805126a91a0d74",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [36, 26, 92, 117],
+          "alpha": {
+            "transparentPixels": 18239,
+            "opaquePixels": 2497,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 5,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_005.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/east/frame_005.png",
+          "byteSize": 6869,
+          "sha256": "563868ba7e789c50bcdd8fdb9d0caf4a90c1df2f389be727f9cac6fe790cd07b",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [32, 26, 100, 117],
+          "alpha": {
+            "transparentPixels": 18000,
+            "opaquePixels": 2736,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 6,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_006.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/east/frame_006.png",
+          "byteSize": 6916,
+          "sha256": "ffbd31a2637e0537606a2d363e46e4bc5135b704993bc8e671b022078f73dae6",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [30, 26, 101, 117],
+          "alpha": {
+            "transparentPixels": 17939,
+            "opaquePixels": 2797,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 7,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/east/frame_007.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/east/frame_007.png",
+          "byteSize": 6704,
+          "sha256": "f0a5614506076827fd50f128fd99a5ec9b2936ed3f94eb1bfc899562634e9bd6",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 118.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [31, 26, 94, 118],
+          "alpha": {
+            "transparentPixels": 18092,
+            "opaquePixels": 2644,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        }
+      ]
+    },
+    {
+      "direction": "north",
+      "frameCount": 8,
+      "loopSeconds": 0.8,
+      "canvas": {
+        "width": 144,
+        "height": 144
+      },
+      "anchorMethod": "기준 96×96와 출력 144×144의 중심이 같다고 가정하고 source anchor에 대칭 padding 24px를 더한 표시 기준. 서비스 spritesheet의 pivot 중앙 규칙을 참고했으나, 실제 raw PNG에 pivot metadata가 없어 내부 pivot 일치를 검증하지 못함. 방향 안의 모든 프레임에 같은 anchor를 사용하며 발 위치 보정이나 원본 PNG 재샘플은 하지 않음.",
+      "visibleGroundRange": {
+        "min": 118,
+        "max": 120,
+        "spanPixels": 2
+      },
+      "uniqueFrames": 8,
+      "transitions": [
+        {
+          "from": 0,
+          "to": 1,
+          "changedVisiblePixels": 1882,
+          "visibleUnionPixels": 3833,
+          "changedVisibleFraction": 0.491,
+          "wrap": false
+        },
+        {
+          "from": 1,
+          "to": 2,
+          "changedVisiblePixels": 1192,
+          "visibleUnionPixels": 3709,
+          "changedVisibleFraction": 0.3214,
+          "wrap": false
+        },
+        {
+          "from": 2,
+          "to": 3,
+          "changedVisiblePixels": 1628,
+          "visibleUnionPixels": 3842,
+          "changedVisibleFraction": 0.4237,
+          "wrap": false
+        },
+        {
+          "from": 3,
+          "to": 4,
+          "changedVisiblePixels": 1893,
+          "visibleUnionPixels": 3901,
+          "changedVisibleFraction": 0.4853,
+          "wrap": false
+        },
+        {
+          "from": 4,
+          "to": 5,
+          "changedVisiblePixels": 1796,
+          "visibleUnionPixels": 3919,
+          "changedVisibleFraction": 0.4583,
+          "wrap": false
+        },
+        {
+          "from": 5,
+          "to": 6,
+          "changedVisiblePixels": 1523,
+          "visibleUnionPixels": 3794,
+          "changedVisibleFraction": 0.4014,
+          "wrap": false
+        },
+        {
+          "from": 6,
+          "to": 7,
+          "changedVisiblePixels": 1747,
+          "visibleUnionPixels": 3892,
+          "changedVisibleFraction": 0.4489,
+          "wrap": false
+        },
+        {
+          "from": 7,
+          "to": 0,
+          "changedVisiblePixels": 1972,
+          "visibleUnionPixels": 3934,
+          "changedVisibleFraction": 0.5013,
+          "wrap": true
+        }
+      ],
+      "contactSheet": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north-contact-sheet.png",
+      "previewGif": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north-preview.gif",
+      "frames": [
+        {
+          "index": 0,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_000.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/north/frame_000.png",
+          "byteSize": 6836,
+          "sha256": "f28ff494613c8510f5f428feeff5b56f1566577ba0e1e04fd0bb8c08a3f23677",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 119.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [44, 28, 109, 118],
+          "alpha": {
+            "transparentPixels": 17025,
+            "opaquePixels": 3711,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 1,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_001.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/north/frame_001.png",
+          "byteSize": 6744,
+          "sha256": "f5a3f302927ad04c4d4aeb3f4a3fc47abc5170dfab0ccd454db144f4166b7907",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 119.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [45, 28, 110, 120],
+          "alpha": {
+            "transparentPixels": 17110,
+            "opaquePixels": 3626,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 2,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_002.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/north/frame_002.png",
+          "byteSize": 6762,
+          "sha256": "a98f1f1d9862046e320aae24077bfb69e4fad9b5b0c0089b4203ad1c54772fe6",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 119.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [46, 28, 113, 120],
+          "alpha": {
+            "transparentPixels": 17145,
+            "opaquePixels": 3591,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 3,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_003.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/north/frame_003.png",
+          "byteSize": 6972,
+          "sha256": "7cdd0803c4caa77736f69b086fc722f3fc7763ee52266e759a8da19f5a13ad2d",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 119.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [45, 28, 109, 118],
+          "alpha": {
+            "transparentPixels": 17081,
+            "opaquePixels": 3655,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 4,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_004.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/north/frame_004.png",
+          "byteSize": 6801,
+          "sha256": "b12c5350cb90bcfe212fac525bdc54e404ec736ee21a8679f21870a70dbb7706",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 119.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [42, 29, 109, 119],
+          "alpha": {
+            "transparentPixels": 17013,
+            "opaquePixels": 3723,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 5,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_005.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/north/frame_005.png",
+          "byteSize": 6724,
+          "sha256": "e5bc14fc91b35c3f20b9bc3c433517ed21fed436470f267daed391c15f35d1b0",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 119.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [43, 29, 111, 120],
+          "alpha": {
+            "transparentPixels": 17053,
+            "opaquePixels": 3683,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 6,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_006.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/north/frame_006.png",
+          "byteSize": 6823,
+          "sha256": "9d6e687082dc29764993849140550b6886361840d322ba8fe7b3153278990c02",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 119.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [43, 28, 110, 120],
+          "alpha": {
+            "transparentPixels": 17057,
+            "opaquePixels": 3679,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        },
+        {
+          "index": 7,
+          "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/north/frame_007.png",
+          "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+          "archivePath": "Idle/animations/ataho-walk-comparison-template/north/frame_007.png",
+          "byteSize": 6911,
+          "sha256": "eee1a921da127d0196c8fe6291e91a171c6748d3f2ec883b7b18694b31ff62c9",
+          "width": 144,
+          "height": 144,
+          "anchor": {
+            "x": 72.0,
+            "y": 119.0
+          },
+          "durationSeconds": 0.1,
+          "alphaBounds": [42, 28, 109, 118],
+          "alpha": {
+            "transparentPixels": 17012,
+            "opaquePixels": 3724,
+            "partialPixels": 0
+          },
+          "edgeTouched": false
+        }
+      ]
+    }
+  ],
+  "officialReferences": ["https://api.pixellab.ai/v2/openapi.json"],
+  "completionResponse": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: 25b4fad1-ce50-4e7d-a8ac-cdf5ae841579\nname: Middle-aged Ataho skeleton walk comparison\nstate_name: Idle\ndirections: 4 (south, east, north, west)\nsize: 96x96px\nview: low top-down\nstyle: -, -, -\ngroup: c2479d60-34d0-49dd-97ec-cb7673f42551 (1 state)\n\nrotations:\n  south: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/rotations/south.png?t=1791902604\n  east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/rotations/east.png?t=1791902604\n  north: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/rotations/north.png?t=1791902604\n  west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/rotations/west.png?t=1791902604\n\nanimations (1 group, 3 total):\n  ataho-walk-comparison-template — 3 dir (north, east, south), 8f 2026-10-13 [type=walking-8-frames] [group: d944b664-258b-4ad6-adac-e6d026bafa1e]\n    north: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/animations/760e5a2f-5b9a-4ccf-bc39-3b8a3af56011/north/{i}.png?t=1791902942031 (i=0..7)\n    east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/animations/04e0a33a-cb13-4439-8e20-0c79e5af2b5e/east/{i}.png?t=1791902835779 (i=0..7)\n    south: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/animations/d3ef9323-2566-4a0b-9676-2741a88341c0/south/{i}.png?t=1791902834588 (i=0..7)\n\ndownload: https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download\nspritesheet: https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/spritesheet (this state only — one uniform-grid sheet PNG + layout JSON, zipped; cells pivot-centred)\n\navailable_animations: backflip, breathing-idle, cross-punch, crouched-walking, crouching, drinking, falling-back-death, fight-stance-idle-8-frames, fireball, flying-kick, front-flip, getting-up, high-kick, hurricane-kick, jumping-1, jumping-2, lead-jab, leg-sweep, picking-up, pull-heavy-object, pushing, roundhouse-kick, running-4-frames, running-6-frames, running-8-frames, running-jump, running-slide, sad-walk, scary-walk, surprise-uppercut, taking-punch, throw-object, two-footed-jump, walk, walk-1, walk-2, walking, walking-10, walking-2, walking-3, walking-4, walking-4-frames, walking-5, walking-6, walking-6-frames, walking-7, walking-8, walking-8-frames, walking-9\n\nactions: animate_character(character_id=\"25b4fad1-ce50-4e7d-a8ac-cdf5ae841579\", ...) | create_character_state(character_id=\"25b4fad1-ce50-4e7d-a8ac-cdf5ae841579\", ...) | delete_animation(character_id=\"25b4fad1-ce50-4e7d-a8ac-cdf5ae841579\", animation_group_id=\"<group>\") | delete_character(character_id=\"25b4fad1-ce50-4e7d-a8ac-cdf5ae841579\")"
+      }
+    ],
+    "isError": false
+  },
+  "animationIds": {
+    "south": "d3ef9323-2566-4a0b-9676-2741a88341c0",
+    "east": "04e0a33a-cb13-4439-8e20-0c79e5af2b5e",
+    "north": "760e5a2f-5b9a-4ccf-bc39-3b8a3af56011"
+  },
+  "download": {
+    "localPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/completed-character.zip",
+    "sourceUrl": "https://api.pixellab.ai/mcp/characters/25b4fad1-ce50-4e7d-a8ac-cdf5ae841579/download",
+    "byteSize": 212572,
+    "sha256": "6481400f6203acdc05a675e6d7e49b09fb77bed579c5dcf912b787b70f15fdce",
+    "entries": 29,
+    "metadataPath": "public/assets/maplestory/ataho-skeleton-walk/20261013/template/metadata.json",
+    "exportVersion": "3.1",
+    "keypointsPresent": false,
+    "pivotPresent": false
+  },
+  "quality": {
+    "status": "reviewed-contact-sheets",
+    "originalPngBytesPreserved": true,
+    "generatedFrames": 24,
+    "allFramesTransparent": true,
+    "allFramesBinaryAlpha": true,
+    "anyFrameTouchesEdge": false,
+    "allDirectionsHaveEightUniqueFrames": true,
+    "firstLastConnection": "끝 프레임과 첫 프레임의 픽셀 변화량을 모든 인접 프레임과 같은 방식으로 기록. 정면/후면 wrap의 변화율은 일반 인접 쌍 최대보다 각각 약 0.033/0.010 높으며, 측면은 일반 인접 변화율 범위 안. 수치만으로 자연스러운 재생을 보장하지 않으며 담당 세션에서 실제 반복 재생을 추가 확인.",
+    "identity": "세 방향 contact sheet의 24프레임 육안 확인. 큰 호랑이 머리, 갈색 겉옷, 아이보리 속옷, 검은 바지, 줄무늬 꼬리와 색 유지. 측면 보폭과 반대 팔 스윙이 뚜렷하며 꼬리 흔들림은 큰 편. 얼굴/옷의 원본 픽셀 완전 일치는 주장하지 않음.",
+    "ground": "방향별 고정 anchor로 반복 재생하며 정면 4px, 측면/후면 2px의 발 하단 변화를 보존. 프레임별 발맞춤 보정 없음."
+  },
+  "verification": {
+    "download": "공식 MCP download URL의 HTTP 200 application/zip 응답.",
+    "pngExtraction": "24PNG를 ZIP 바이트 그대로 추출하고 바이트 일치 검증.",
+    "rotationBytes": [
+      {
+        "direction": "south",
+        "sameBytes": true,
+        "sha256": "b199ca56734f221d9345ccebdea491dca49a6a8df0935a98128669aa05233166"
+      },
+      {
+        "direction": "east",
+        "sameBytes": true,
+        "sha256": "8e994dc219c4e92daad51000fa24acccec80ff581c217c9c4784956129a35856"
+      },
+      {
+        "direction": "north",
+        "sameBytes": true,
+        "sha256": "1a489aced3bd62cbfe31f1b1a091c57381327614aabe42f1846c4061277785f2"
+      }
+    ],
+    "alpha": "24PNG 모두 알파 0/255이며 반투명 픽셀 없음.",
+    "clipping": "24PNG 모두 캔버스 가장자리 미접촉.",
+    "metadataLimitation": "실제 export v3.1 metadata에 관절값이나 pivot 필드 없음. 공식 API 문서에서 관절 포함으로 설명하지만 이번 결과에서는 받지 못함.",
+    "motion": "방향마다 8개 고유 프레임 확인. 인접 및 끝→첫 픽셀 변화량 기록; 실제 재생 확인은 담당 세션 소유.",
+    "browserPlayback": "담당세션검증예정",
+    "previews": "진단용 contact sheet와 GIF는 원본 PNG에서 파생. GIF 8프레임의 알파 마스크가 각 원본 PNG와 일치함을 확인. 비교 화면은 원본 PNG 사용."
+  }
+}

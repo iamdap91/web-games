@@ -129,9 +129,10 @@ export class ResourcePreview {
         this.state = 'running';
         this.select.disabled = false;
         this.toggle.disabled = false;
-        this.status.textContent = `로컬 이미지 ${this.images.size}개 준비 완료 · 모션을 선택해보세요`;
+        this.status.textContent = `로컬 이미지 ${this.images.size}개 준비 완료 · ←/↑ 이전 · →/↓ 다음 모션`;
         this.select.addEventListener('change', this.handleMotionChange, { signal });
         this.toggle.addEventListener('click', this.handleToggle, { signal });
+        window.addEventListener('keydown', this.handleMotionKeyDown, { signal });
         window.addEventListener('resize', this.resizeCanvas, { signal });
         this.resizeObserver.observe(this.canvas);
         this.animationFrameId = requestAnimationFrame(this.animate);
@@ -175,6 +176,34 @@ export class ResourcePreview {
         this.animation.play(this.select.value);
         this.showMotionNotes();
         this.draw();
+    };
+    handleMotionKeyDown = (event) => {
+        if (event.defaultPrevented ||
+            event.altKey ||
+            event.ctrlKey ||
+            event.metaKey ||
+            event.shiftKey ||
+            this.select.options.length < 2)
+            return;
+        let direction;
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowUp')
+            direction = -1;
+        else if (event.key === 'ArrowRight' || event.key === 'ArrowDown')
+            direction = 1;
+        else
+            return;
+        // 모션 선택 외의 입력창에서는 기존 키보드 조작을 유지한다.
+        const target = event.target;
+        if (target instanceof HTMLElement &&
+            target !== this.select &&
+            (target.isContentEditable || target.closest('input, textarea, select')))
+            return;
+        event.preventDefault();
+        const nextIndex = Math.max(0, Math.min(this.select.options.length - 1, this.select.selectedIndex + direction));
+        if (nextIndex === this.select.selectedIndex)
+            return;
+        this.select.selectedIndex = nextIndex;
+        this.handleMotionChange();
     };
     showMotionNotes() {
         const notes = this.root.querySelector('#motion-notes');

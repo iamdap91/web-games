@@ -1,0 +1,261 @@
+:root {
+  color-scheme: light;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+  color: #35271f;
+  background: #f3eee5;
+}
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 16px 24px 24px;
+}
+header {
+  margin-bottom: 16px;
+}
+.eyebrow {
+  color: #8c5d3c;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+}
+h1 {
+  font-size: clamp(25px, 4vw, 30px);
+  margin: 5px 0 8px;
+}
+h2 {
+  font-size: 19px;
+  margin: 0;
+}
+p {
+  line-height: 1.6;
+  margin: 10px 0;
+}
+button,
+select {
+  font: inherit;
+  color: inherit;
+  background: #fffaf1;
+  border: 1px solid #cdbb9f;
+  border-radius: 7px;
+  padding: 8px 12px;
+}
+button {
+  cursor: pointer;
+}
+button:hover {
+  border-color: #96623b;
+}
+button:focus-visible,
+select:focus-visible,
+input:focus-visible {
+  outline: 3px solid #bc844b;
+  outline-offset: 3px;
+}
+button[aria-pressed='true'] {
+  border-color: #8f4a2d;
+  background: #8f4a2d;
+  color: white;
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+fieldset {
+  padding: 0;
+  margin: 0 0 18px;
+  border: 0;
+  min-width: 0;
+}
+.motion-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 13px;
+}
+.motion-list button {
+  padding: 9px;
+  text-align: left;
+  line-height: 1.4;
+}
+.motion-list small {
+  display: block;
+  font-size: 11px;
+  margin-top: 5px;
+  opacity: 0.8;
+}
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px 13px;
+}
+.toolbar label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+.toolbar select {
+  padding: 7px 8px;
+}
+.stage-panel,
+.review-panel,
+.source-panel {
+  border: 1px solid #d8c8b3;
+  border-radius: 12px;
+  background: #fffaf2;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+.stage-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+#priority {
+  font-size: 12px;
+  color: #86533b;
+  background: #f0e3cf;
+  padding: 5px 9px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+#summary {
+  font-size: 14px;
+  color: #73604d;
+}
+canvas {
+  display: block;
+  width: min(100%, 95vh);
+  margin: 0 auto;
+  aspect-ratio: 900 / 410;
+  border-radius: 8px;
+  background: #efdfbf;
+  image-rendering: pixelated;
+}
+.timeline {
+  display: grid;
+  grid-template-columns: 38px minmax(60px, 1fr) 38px auto;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+.timeline button {
+  padding: 7px 4px;
+}
+.timeline input {
+  width: 100%;
+  accent-color: #8f4a2d;
+}
+output {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  color: #725840;
+  min-width: 200px;
+}
+.review-panel p {
+  font-size: 14px;
+}
+.missing {
+  padding-left: 12px;
+  border-left: 3px solid #c19a64;
+  color: #755732;
+}
+.source-panel {
+  font-size: 13px;
+}
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.frame-strip {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  padding: 8px 0 15px;
+}
+.frame-strip button {
+  flex: 0 0 102px;
+  padding: 5px;
+  background: #eee1cb;
+}
+.frame-strip button.active {
+  outline: 3px solid #8f4a2d;
+  outline-offset: -3px;
+}
+.frame-strip img {
+  display: block;
+  width: 88px;
+  height: 88px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.frame-strip span {
+  display: block;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #624a35;
+}
+a {
+  color: #85512f;
+}
+footer {
+  color: #8a755f;
+  font-size: 12px;
+  line-height: 1.7;
+  padding: 4px 0;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.embedded-scene main {
+  padding: 18px;
+}
+.embedded-scene header {
+  margin-bottom: 16px;
+}
+.embedded-scene footer {
+  display: none;
+}
+@media (max-width: 620px) {
+  main {
+    padding: 18px 12px;
+  }
+  .motion-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .motion-list button:last-child {
+    grid-column: 1 / -1;
+  }
+  .timeline {
+    grid-template-columns: 34px minmax(50px, 1fr) 34px;
+  }
+  output {
+    grid-column: 1 / -1;
+    min-width: 0;
+  }
+  .stage-panel {
+    padding: 10px;
+  }
+  .toolbar {
+    gap: 8px;
+  }
+}

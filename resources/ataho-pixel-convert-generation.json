@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-13",
+  "experiment": "approved-art-to-pro-flash-pixel",
+  "status": "generated-for-review",
+  "provider": "PixelLab Pro Flash",
+  "tool": "mcp__pixellab__image_to_pixelart_pro_flash",
+  "scope": "승인 비도트 정면 원화01을 Pro Flash로 도트 변환한 후보 1장. 실험 비교용이며 게임 적용과 본게임 외형 교체는 승인 범위에 포함하지 않는다.",
+  "source": {
+    "localPath": "public/assets/maplestory/ataho-nonpixel-ai/20261012/front-01.png",
+    "metadataPath": "resources/ataho-nonpixel-generation.json",
+    "sha256": "da5bf277025f825de169cbeddacc070a65717deec963c183b2baaf3f7b3c8412",
+    "width": 1199,
+    "height": 1312,
+    "role": "사용자가 승인한 비도트 원화01",
+    "sourcePixelsModified": false,
+    "upload": {
+      "ref": "upload:22801d83-57f0-4de3-a1b3-709c212bdfb9",
+      "upload_id": "22801d83-57f0-4de3-a1b3-709c212bdfb9",
+      "width": 1199,
+      "height": 1312,
+      "n_frames": 1,
+      "expires_in_days": 3
+    }
+  },
+  "request": {
+    "image_url": "upload:22801d83-57f0-4de3-a1b3-709c212bdfb9",
+    "seed": 131002,
+    "description": "Redraw this exact approved Ataho tiger martial artist illustration as clean deliberate game pixel art. Preserve the same sleepy half-lidded middle-aged eyes, relaxed amused expression, broad oversized head, ivory cheek and jaw fur, orange fur with dark tiger stripes, short stocky sturdy body and limbs. Keep the worn brown short open jacket, crossed ivory inner robe, brown sash, dark charcoal cropped trousers, wrist guards, ivory ankle wraps, orange paws, striped tail and the same front-facing relaxed standing pose. Preserve the source character's identity and proportions, not a new design. Use a restrained warm earth palette, crisp readable silhouettes and solid intentional pixel clusters, selective clean dark outlines and simple 2-3-tone material shading. No soft painted shading, antialiasing, random single-pixel noise, gradients or excessive dithering. One fully assembled full-body character only with all ears, hair, tail, hands and feet visible and comfortable margin. Flat pure white background, no scenery, ground shadow, props, text, watermark, panels, extra characters or extra poses."
+  },
+  "jobs": [
+    {
+      "background_job_id": "5b125095-b48c-405e-977d-377b2b1d2310",
+      "image_id": "4d606891-7a6d-5682-9a51-4cdbbd43e3dd",
+      "status": "processing",
+      "source_image_id": "4d606891-7a6d-5682-9a51-4cdbbd43e3dd",
+      "job_id": "5b125095-b48c-405e-977d-377b2b1d2310",
+      "source_size": {
+        "width": 1199,
+        "height": 1312
+      },
+      "output_count": 1,
+      "estimated_generations": 6,
+      "pricing_provisional": true,
+      "poll_tool": "get_image",
+      "download_path": "/mcp/images/5b125095-b48c-405e-977d-377b2b1d2310/download",
+      "completed": {
+        "job_id": "5b125095-b48c-405e-977d-377b2b1d2310",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/5b125095-b48c-405e-977d-377b2b1d2310/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/5b125095-b48c-405e-977d-377b2b1d2310/download"
+        ],
+        "asset": {
+          "id": "4d606891-7a6d-5682-9a51-4cdbbd43e3dd",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 6
+      },
+      "receiptPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/convert/job-receipt.json"
+    }
+  ],
+  "frames": [
+    {
+      "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/convert/front-01.png",
+      "width": 110,
+      "height": 121,
+      "mode": "RGBA",
+      "format": "PNG",
+      "sha256": "50b24e8ba02dee9270aa4ff2437c043fcd349b2018ce60dec26fe5ef8e27fb1e",
+      "byteLength": 9270,
+      "alphaRange": [255, 255],
+      "visibleBoundsAtAlpha8": [0, 0, 110, 121],
+      "nonWhiteBoundsAtDifference5": [8, 4, 95, 118],
+      "uniqueRgbColors": 40,
+      "whitePixels": 0,
+      "totalPixels": 13310,
+      "cornerRgb": [
+        [254, 254, 254],
+        [254, 254, 254],
+        [254, 254, 254],
+        [254, 254, 254]
+      ],
+      "mostCommonRgbColors": [
+        {
+          "pixels": 7189,
+          "rgb": [254, 254, 254]
+        },
+        {
+          "pixels": 637,
+          "rgb": [22, 13, 9]
+        },
+        {
+          "pixels": 600,
+          "rgb": [251, 231, 203]
+        },
+        {
+          "pixels": 520,
+          "rgb": [134, 68, 43]
+        },
+        {
+          "pixels": 462,
+          "rgb": [246, 134, 35]
+        }
+      ],
+      "sourcePixelsModified": false,
+      "downloadUrl": "https://api.pixellab.ai/mcp/images/5b125095-b48c-405e-977d-377b2b1d2310/download",
+      "frameIndex": 0,
+      "id": "front-01",
+      "background": "불투명한 밝은 배경 RGB(254,254,254). 생성 PNG의 알파·배경·픽셀을 변경하지 않았다."
+    }
+  ],
+  "outputPolicy": {
+    "size": "Pro Flash 변환 도구가 자동 결정. 요청에 크기 인자가 없으며 결과는 110×121.",
+    "transparency": "공식 도구 명세상 입력 투명 영역은 흰색 배경으로 합성된다. 실제 결과는 모든 픽셀 알파255의 불투명 이미지이며 모서리RGB는254,254,254.",
+    "originalPreserved": true,
+    "postProcessing": "없음. 배경 제거·색 보정·추가 생성 없이 다운로드 원본 PNG 보존."
+  },
+  "usage": {
+    "baselineNote": "부모 세션에서 확인한 공유 사용량 기준값. 병렬 작업으로 누적 차이는 이 실험 개별 비용의 증거가 아니다.",
+    "paidCalls": 1,
+    "estimatedGenerations": 6,
+    "chargedGenerations": 6,
+    "costEvidence": "get_image 완료 메타데이터 charged_generations:6",
+    "additionalPaidCalls": 0,
+    "baselineGenerationsRemaining": 732
+  },
+  "review": {
+    "method": "다운로드 원본 PNG를 view_image(detail:original)로 시각 검토하고 Pillow로 해시·크기·알파·색 수·배경색·bounds를 측정.",
+    "observations": [
+      "반쯤 감긴 눈과 느긋한 표정, 주황 털·어두운 줄무늬·아이보리 턱털·갈색 겉옷·교차한 아이보리 내의·띠·짙은 바지·손목 보호대·발목 붕대·꼬리가 유지됐다.",
+      "원화의 손그림 질감이 절제된 40색 도트로 바뀌었다. 윤곽과 주요 의복 주름이 읽히며 전신이 프레임 안에 있다.",
+      "원화보다 머리가 몸 대비 상대적으로 작게 보이고 체형이 길어진 인상이 있다. 얼굴 정체성은 이어지지만 비율 보존은 완벽하지 않다.",
+      "불투명 배경 때문에 현재 파일을 그대로 투명 게임 캐릭터로 사용할 수 없다. 변환 품질 비교용 후보로 보존한다."
+    ],
+    "unverified": [
+      "다른 방향의 외형 유지",
+      "리깅·걷기·공격 모션",
+      "기존 도트 대비 최종 사용자 선호"
+    ]
+  },
+  "verification": {
+    "jsonParse": "JSON 구조 확인",
+    "originalDownload": "무가공 PNG 다운로드 및 SHA256 측정",
+    "sourceHash": "승인 원화01 SHA256이 기존 제작 메타데이터와 일치함. 원본 변경 없음.",
+    "gameTests": "메타데이터와 정지 이미지 실험만 담당하여 게임 테스트는 생략",
+    "browser": "부모 세션의 비교 UI에서 확인 예정"
+  }
+}

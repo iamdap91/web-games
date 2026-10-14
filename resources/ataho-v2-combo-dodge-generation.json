@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "characterId": "ai/ataho-v2",
+  "generatedOn": "2026-10-14",
+  "purpose": "취권 회피 반격 시안의 뒤젖힘 핵심 자세 보강",
+  "mode": "built-in",
+  "tool": "image_gen__imagegen",
+  "attempts": 1,
+  "useCase": "identity-preserve",
+  "transparentBackgroundRequested": true,
+  "prompt": "Use case: identity-preserve\nAsset type: one missing animation keyframe for an existing low-resolution pixel-art game sprite.\nInput images: Image 1 is the exact character identity, outfit, proportions, palette, and pixel-style reference. Images 2 and 3 show the existing mild backward lean; use them only as pose continuity references.\nPrimary request: Create ONE stronger backward-lean dodge keyframe of exactly this Ataho v2 tiger character, facing south-east (three-quarter view toward the right), on a genuinely transparent background.\nPose: Keep both feet planted on the same ground baseline with their original spacing. Bend the knees slightly, shift the hips a little forward, and lean the torso markedly backward toward image-left so the head retreats clearly behind the hips. This is a grounded drunken-boxing evasion, not a fall, seated pose, or backflip. Keep the face oriented toward the opponent on image-right with a calm, unbothered expression. Keep the small fists in a plausible relaxed guard near the chest or waist. Preserve the tail.\nIdentity invariants: Preserve the exact compact tiger face, orange fur and dark stripes, white muzzle and neck area, brown martial-arts jacket, dark cropped trousers, bare tiger feet, original head-to-body ratio, limb thickness, and outline colors. Match the provided character closely enough to sit directly between its existing frames.\nStyle invariants: True crisp low-resolution pixel art on the same approximately 96 by 96 logical pixel grid as the references. The sprite silhouette should remain about 46 by 58 logical pixels, with hard square pixel clusters, the original limited colors and 1-pixel outlines. If the output canvas is enlarged, enlarge the logical pixels as solid nearest-neighbor squares; do not add finer detail or smooth shapes.\nComposition: A single complete uncropped character only, centered, enough transparent margin for the backward lean; both feet fully visible at the same baseline.\nAvoid: smooth illustration, anti-aliasing, painted gradients, vector curves, realistic fur, added clothing or props, weapons, motion lines, dust, glow, cast shadow, text, labels, watermark, multiple poses, multiple characters, sprite sheets.",
+  "references": [
+    {
+      "role": "character-identity-style",
+      "motion": "fight-stance-idle-8-frames-south-east",
+      "frame": 0,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png"
+    },
+    {
+      "role": "pose-continuity",
+      "motion": "ataho-hit-skeleton-south-east-south-east",
+      "frame": 2,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-hit-skeleton-south-east/south-east/frame_002.png"
+    },
+    {
+      "role": "pose-continuity",
+      "motion": "ataho-hit-skeleton-south-east-south-east",
+      "frame": 3,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-hit-skeleton-south-east/south-east/frame_003.png"
+    }
+  ],
+  "output": {
+    "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a1389f-bc50-7061-bb08-6dbe9a09a921/exec-d8a5ae9b-e2f8-49bb-a51a-04c627c339ae.png",
+    "localPath": "public/assets/maplestory/ataho-v2-combo-generated/20261014/dodge-lean-original.png",
+    "width": 1254,
+    "height": 1254,
+    "mode": "RGBA",
+    "sha256": "f030fe3ecf982bc5785be62378c5ff386ba68136c0a2a8aa3d9439419bef96f5",
+    "rawUnmodified": true,
+    "alpha": {
+      "minimum": 0,
+      "maximum": 255,
+      "fullyTransparentPixels": 1410869,
+      "fullyOpaquePixels": 992,
+      "partiallyTransparentPixels": 160655,
+      "mostCommonNonzeroValue": 253,
+      "nontransparentBounds": [146, 63, 1226, 1166],
+      "boundsAtLeast32": [351, 348, 890, 937],
+      "boundsAtLeast128": [351, 348, 889, 937]
+    }
+  },
+  "assessment": {
+    "status": "inserted-in-independent-comparison; identity-difference-remains",
+    "identity": "호랑이 얼굴, 갈색 도복, 검은 바지, 흰 목·주둥이, 꼬리와 태연한 표정은 대체로 보존됐다. 정확한 픽셀 일치가 아니므로 원본 사이 재생에서 확인해야 한다.",
+    "pose": "남동쪽을 보며 상체와 머리가 엉덩이보다 뒤로 물러나는 자세가 읽힌다. 원본 피격 프레임보다 뒤젖힘과 무릎 굽힘이 선명하다.",
+    "feet": "두 발이 모두 보이고 바닥을 디디는 형태다. 두 발의 최하단은 완전히 같은 높이가 아니므로 삽입 단계에서 발 기준 정렬이 필요하다.",
+    "pixelStyle": "큰 사각 픽셀과 원본과 유사한 색·윤곽을 유지하지만 논리 픽셀 격자와 팔레트가 원본만큼 엄격하지 않다. 출력은 96px 원본보다 큰 이미지이므로 크기를 맞춘 후 평가해야 한다.",
+    "transparency": "실제 alpha 채널이 있으며 대부분 배경은 alpha0이다. 캐릭터에서 멀리 떨어진 낮은 alpha 잔여 픽셀이 있어 alpha>0만으로 자르면 불필요한 여백이 포함된다. 원본 raw를 그대로 보존했다.",
+    "integration": "기존 모션 코드와 manifest는 변경하지 않았다. 최종 크기·정렬·선택과 통합 재생 검증은 담당 세션에서 수행한다."
+  },
+  "derivedFrame": {
+    "localPath": "public/assets/maplestory/ataho-v2-combo-generated/20261014/dodge-lean-96.png",
+    "sha256": "d1be02a2e8b308d663c4cc95265ac12281056c430d6c919660555d200cc8569b",
+    "byteSize": 5206,
+    "width": 96,
+    "height": 96,
+    "subjectBoundsAlphaAtLeast128": [351, 348, 889, 937],
+    "resampling": "nearest-neighbor",
+    "subjectSize": [54, 59],
+    "offset": [12, 21],
+    "alphaProcessing": "alpha below 128 -> 0; alpha at least 128 -> 255",
+    "groundY": 80,
+    "originalPreserved": true
+  },
+  "integration": {
+    "manifestUpdated": true,
+    "comparisonInserted": true,
+    "defaultVersion": "original",
+    "userAdopted": false,
+    "gameIntegrated": false
+  },
+  "playbackReview": {
+    "date": "2026-10-14",
+    "browser": "Codex in-app browser",
+    "comparedWithOriginal": true,
+    "defaultVersion": "original",
+    "assessment": "핵심 자세가 더 분명하지만 얼굴·도트 질감 차이가 남아 비교 후보로 유지. 사용자 채택은 미정."
+  },
+  "refinement": {
+    "usedInCurrentMotion": false,
+    "record": "resources/ataho-v2-combo-refinement.json",
+    "reason": "개선 회피는 뒤젖힘 대신 짧은 후퇴 어퍼컷으로 정리한다. 생성 원본은 보존한다."
+  }
+}

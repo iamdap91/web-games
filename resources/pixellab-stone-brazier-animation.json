@@ -1,0 +1,340 @@
+{
+  "asset": "stone-brazier",
+  "name": "돌 화로 · 불꽃 반복",
+  "createdDate": "2026-10-14",
+  "provider": "PixelLab",
+  "interface": "MCP",
+  "model": "v3",
+  "documentationUrl": "https://api.pixellab.ai/mcp/docs",
+  "scope": {
+    "paidGenerationRequests": 1,
+    "nDirections": 1,
+    "requestedGeneratedFrames": 8,
+    "keepFirstFrame": false,
+    "additionalPaidRetries": 0,
+    "referenceUploads": 0
+  },
+  "tool": "animate_object",
+  "source": {
+    "objectId": "bc2606da-db96-42bd-bc19-3c7831e8ee7e",
+    "localPath": "public/assets/maplestory/pixellab-object-props/stone-brazier/originals/base.png",
+    "sha256": "78f8d31152ea274565f9e763ff8cdf0e268ac6ad431872d902c91ab11cb58a9d",
+    "width": 64,
+    "height": 64,
+    "immutable": true,
+    "sourceObjectResponse": {
+      "content": [
+        {
+          "type": "text",
+          "text": "status: completed\nid: bc2606da-db96-42bd-bc19-3c7831e8ee7e\nname: 돌 화로\nstate_name: base\ndirections: 1\nsize: 64x64px\nview: low top-down\ngroup: 98e847b2-8682-4e38-aa47-adc035ae9932\n\nrotations:\n  unknown: https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/rotations/unknown.png\n\nanimations: none\n\ndownload: https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download\nspritesheet: https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/spritesheet (one uniform-grid sheet PNG + layout JSON, zipped)\n\nactions: animate_object(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\", ...) | create_object_state(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\", ...) | delete_object(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\")\nhint: animate_object(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\", animation_description=\"...\")"
+        }
+      ],
+      "isError": false
+    }
+  },
+  "request": {
+    "object_id": "bc2606da-db96-42bd-bc19-3c7831e8ee7e",
+    "mode": "v3",
+    "frame_count": 8,
+    "keep_first_frame": false,
+    "display_name": "불꽃 반복",
+    "animation_description": "Only the small amber orange flame gently flickers and curls in a seamless idle loop, with restrained small fluctuations. The entire gray brazier bowl, rim, base, feet and the firewood logs stay perfectly stationary and unchanged at the same pixel position and size. Preserve the reference silhouette, palette and low top-down front view. The flame returns to its initial small shape. Transparent background. No huge fire, smoke, sparks, particles, spilling embers, body bounce, camera motion or restyling."
+  },
+  "initialResponse": {
+    "content": [
+      {
+        "type": "text",
+        "text": "object: bc2606da-db96-42bd-bc19-3c7831e8ee7e\ngroup: 196a05f5-c655-48cd-91a7-92eb064c19fd\nmode: v3\ndescription: Only the small amber orange flame gently flickers and curls in a seamless idle loop, with restrained small fluctuations. The entire gray brazier bowl, rim, base, feet and the firewood logs stay perfectly stationary and unchanged at the same pixel position and size. Preserve the reference silhouette, palette and low top-down front view. The flame returns to its initial small shape. Transparent background. No huge fire, smoke, sparks, particles, spilling embers, body bounce, camera motion or restyling.\ndisplay_name: 불꽃 반복\nframes: 8\ndirections: unknown (1 queued)\neta: ~30-60s/direction\n\nhint: get_object(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\")"
+      }
+    ],
+    "isError": false
+  },
+  "processingResponse": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: bc2606da-db96-42bd-bc19-3c7831e8ee7e\nname: 돌 화로\nstate_name: base\ndirections: 1\nsize: 64x64px\nview: low top-down\ngroup: 98e847b2-8682-4e38-aa47-adc035ae9932\n\nrotations:\n  unknown: https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/rotations/unknown.png\n\nanimations: none\n\npending jobs (1):\n  Only the small amber orange flame gently flickers (unknown): 3% ~451s\n\ndownload: https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download\nspritesheet: https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/spritesheet (one uniform-grid sheet PNG + layout JSON, zipped)\n\nactions: animate_object(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\", ...) | create_object_state(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\", ...) | delete_object(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\")\nhint: animate_object(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\", animation_description=\"...\")"
+      }
+    ],
+    "isError": false
+  },
+  "animationGroupId": "196a05f5-c655-48cd-91a7-92eb064c19fd",
+  "jobId": "95425a19-e0fd-4136-a00f-2cb60e48e24f",
+  "jobIdNote": "wait_for_jobs가 해당 jobId를 get_object(object_id=bc2606da-db96-42bd-bc19-3c7831e8ee7e)와 연결해 제공함.",
+  "status": "completed",
+  "billing": {
+    "actualCostGenerations": null,
+    "estimatedGenerationsBeforeCanvasGrowth": 1,
+    "estimatedCostNote": "64×64 입력 기준 v3 8프레임은 1 generation 예상. 생성 캔버스 확장 가능성이 있어 개별 실제 청구와 구분함.",
+    "baseline": {
+      "remainingSubscriptionGenerations": 592,
+      "usedSubscriptionGenerations": 1407,
+      "totalSubscriptionGenerations": 2000
+    },
+    "globalAccountDeltaIsIndividualCost": false,
+    "actualCostEvidence": "animate_object 초기 및 완료 get_object 응답 모두 개별 비용이 표시되지 않음. get_balance 계정 변화는 다른 세션 작업이 섞일 수 있어 개별 실청구로 단정하지 않음."
+  },
+  "rawFrames": [
+    {
+      "index": 0,
+      "archiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_000.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/animations/f639eb3f-e761-4ae2-9c21-c3ae174466a8/unknown/0.png",
+      "downloadUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "localPath": "public/assets/maplestory/pixellab-object-props/stone-brazier/animations/flicker/raw/0.png",
+      "byteSize": 2129,
+      "sha256": "383f9b2e825193a42fe811ed149d2a6c563531baa62915b82fba04d1947a52a1",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaBoundingBox": [15, 14, 49, 51],
+      "transparentPixelCount": 3130,
+      "opaquePixelCount": 966,
+      "partialAlphaPixelCount": 0,
+      "sourceArchiveUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "sourceArchiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_000.png"
+    },
+    {
+      "index": 1,
+      "archiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_001.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/animations/f639eb3f-e761-4ae2-9c21-c3ae174466a8/unknown/1.png",
+      "downloadUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "localPath": "public/assets/maplestory/pixellab-object-props/stone-brazier/animations/flicker/raw/1.png",
+      "byteSize": 2087,
+      "sha256": "98c65ccbc6dbb88f3f1d985ed04d11193c9e81a70be2abde9ab5e77167f9c85c",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaBoundingBox": [15, 15, 49, 51],
+      "transparentPixelCount": 3129,
+      "opaquePixelCount": 967,
+      "partialAlphaPixelCount": 0,
+      "sourceArchiveUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "sourceArchiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_001.png"
+    },
+    {
+      "index": 2,
+      "archiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_002.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/animations/f639eb3f-e761-4ae2-9c21-c3ae174466a8/unknown/2.png",
+      "downloadUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "localPath": "public/assets/maplestory/pixellab-object-props/stone-brazier/animations/flicker/raw/2.png",
+      "byteSize": 2066,
+      "sha256": "0ebb917019c382518b2b44ad60ed5daf7f61204ac6d62d24176dcb93f9e3567f",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaBoundingBox": [15, 14, 49, 51],
+      "transparentPixelCount": 3127,
+      "opaquePixelCount": 969,
+      "partialAlphaPixelCount": 0,
+      "sourceArchiveUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "sourceArchiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_002.png"
+    },
+    {
+      "index": 3,
+      "archiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_003.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/animations/f639eb3f-e761-4ae2-9c21-c3ae174466a8/unknown/3.png",
+      "downloadUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "localPath": "public/assets/maplestory/pixellab-object-props/stone-brazier/animations/flicker/raw/3.png",
+      "byteSize": 2052,
+      "sha256": "0e12030918d7b707c1ed373c0806b6a227ff5b56d1fd22d2c94893b69596d110",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaBoundingBox": [15, 13, 49, 51],
+      "transparentPixelCount": 3128,
+      "opaquePixelCount": 968,
+      "partialAlphaPixelCount": 0,
+      "sourceArchiveUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "sourceArchiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_003.png"
+    },
+    {
+      "index": 4,
+      "archiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_004.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/animations/f639eb3f-e761-4ae2-9c21-c3ae174466a8/unknown/4.png",
+      "downloadUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "localPath": "public/assets/maplestory/pixellab-object-props/stone-brazier/animations/flicker/raw/4.png",
+      "byteSize": 2048,
+      "sha256": "f696094001903e93b1ed783c4efcea186ce5bf579a9ff3f2ec3cfa71febc9f1a",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaBoundingBox": [15, 13, 49, 51],
+      "transparentPixelCount": 3132,
+      "opaquePixelCount": 964,
+      "partialAlphaPixelCount": 0,
+      "sourceArchiveUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "sourceArchiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_004.png"
+    },
+    {
+      "index": 5,
+      "archiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_005.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/animations/f639eb3f-e761-4ae2-9c21-c3ae174466a8/unknown/5.png",
+      "downloadUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "localPath": "public/assets/maplestory/pixellab-object-props/stone-brazier/animations/flicker/raw/5.png",
+      "byteSize": 2031,
+      "sha256": "124b1e73724218b10f51b05ef9024b5fc18e017035ced325ddc10b14be81f117",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaBoundingBox": [15, 16, 49, 51],
+      "transparentPixelCount": 3132,
+      "opaquePixelCount": 964,
+      "partialAlphaPixelCount": 0,
+      "sourceArchiveUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "sourceArchiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_005.png"
+    },
+    {
+      "index": 6,
+      "archiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_006.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/animations/f639eb3f-e761-4ae2-9c21-c3ae174466a8/unknown/6.png",
+      "downloadUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "localPath": "public/assets/maplestory/pixellab-object-props/stone-brazier/animations/flicker/raw/6.png",
+      "byteSize": 2010,
+      "sha256": "24802a8cafd6183cffd557c33d2482504d2d2165eb271382a4676e4990502a41",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaBoundingBox": [15, 17, 49, 51],
+      "transparentPixelCount": 3133,
+      "opaquePixelCount": 963,
+      "partialAlphaPixelCount": 0,
+      "sourceArchiveUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "sourceArchiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_006.png"
+    },
+    {
+      "index": 7,
+      "archiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_007.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/animations/f639eb3f-e761-4ae2-9c21-c3ae174466a8/unknown/7.png",
+      "downloadUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "localPath": "public/assets/maplestory/pixellab-object-props/stone-brazier/animations/flicker/raw/7.png",
+      "byteSize": 1981,
+      "sha256": "bc07658ae3af9d55804e58ad1521a100379bce67dea4f59c132f2d093553ceb7",
+      "width": 64,
+      "height": 64,
+      "mode": "RGBA",
+      "alphaBoundingBox": [15, 17, 49, 51],
+      "transparentPixelCount": 3134,
+      "opaquePixelCount": 962,
+      "partialAlphaPixelCount": 0,
+      "sourceArchiveUrl": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+      "sourceArchiveMember": "animations/Only_the_small_amber_orange_flame_gently_flickers/unknown/frame_007.png"
+    }
+  ],
+  "processingPolicy": "서비스의 프레임 PNG 원본 바이트를 그대로 보존한다. 크기·색·위치를 바꾸지 않고 모든 프레임에 공통 pivot을 사용한다.",
+  "completedResponse": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: bc2606da-db96-42bd-bc19-3c7831e8ee7e\nname: 돌 화로\nstate_name: base\ndirections: 1\nsize: 64x64px\nview: low top-down\ngroup: 98e847b2-8682-4e38-aa47-adc035ae9932\n\nrotations:\n  unknown: https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/rotations/unknown.png\n\nanimations (1 groups):\n  불꽃 반복 [group: 196a05f5-c655-48cd-91a7-92eb064c19fd]\n    description: Only the small amber orange flame gently flickers and curls in a seamless idle loop, with restrained small fluctuations. The entire gray brazier bowl, rim, base, feet and the firewood logs stay perfectly stationary and unchanged at the same pixel position and size. Preserve the reference silhouette, palette and low top-down front view. The flame returns to its initial small shape. Transparent background. No huge fire, smoke, sparks, particles, spilling embers, body bounce, camera motion or restyling.\n    directions: unknown (1/1)\n    frames: 8\n    unknown: https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/animations/f639eb3f-e761-4ae2-9c21-c3ae174466a8/unknown/{i}.png  (i=0..7)\n\ndownload: https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download\nspritesheet: https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/spritesheet (one uniform-grid sheet PNG + layout JSON, zipped)\n\nactions: animate_object(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\", ...) | create_object_state(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\", ...) | delete_object(object_id=\"bc2606da-db96-42bd-bc19-3c7831e8ee7e\")"
+      }
+    ],
+    "isError": false
+  },
+  "animationId": "f639eb3f-e761-4ae2-9c21-c3ae174466a8",
+  "actualStoredFrameCount": 8,
+  "download": {
+    "url": "https://api.pixellab.ai/mcp/objects/bc2606da-db96-42bd-bc19-3c7831e8ee7e/download",
+    "type": "official-object-zip",
+    "frameUrlsTemplate": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/bc2606da-db96-42bd-bc19-3c7831e8ee7e/animations/f639eb3f-e761-4ae2-9c21-c3ae174466a8/unknown/{i}.png",
+    "directFrameError": "HTTP 403 Forbidden",
+    "fallback": "동일 get_object가 제공한 공식 다운로드 ZIP 사용. ZIP 내부 PNG 바이트를 변환 없이 복사.",
+    "archive": {
+      "localPath": "public/assets/maplestory/pixellab-object-props/stone-brazier/animations/flicker/original-download.zip",
+      "byteSize": 20570,
+      "sha256": "5ac2eca08553fb7f058bd2511272bbd330100d6586c5746959d0379356362664"
+    }
+  },
+  "validation": {
+    "methods": [
+      "Pillow PNG/RGBA/크기·alpha-bbox 검사",
+      "원본 ZIP 및 프레임 SHA256 검증",
+      "view_image 8프레임 체커 contact sheet 시각 확인",
+      "고정영역 프레임 간 RGBA 변화량 측정"
+    ],
+    "storedFrameCount": 8,
+    "dimensions": {
+      "width": 64,
+      "height": 64
+    },
+    "allFramesTransparent": true,
+    "allFramesPartialAlphaPixelCount": 0,
+    "constantPivot": {
+      "x": 32,
+      "y": 51
+    },
+    "sourceRotationInZipMatchesStaticOriginal": true,
+    "bodyStationarity": {
+      "excludedFlameRect": {
+        "x": 26,
+        "y": 12,
+        "width": 14,
+        "height": 20
+      },
+      "outsideFlameChangesFromFirst": [0, 0, 0, 0, 0, 1, 1, 0],
+      "outsideFlameChangesFromStaticSource": [2, 2, 2, 2, 2, 1, 1, 2],
+      "variableBodyPixel": {
+        "x": 45,
+        "y": 41
+      },
+      "missingSourceBodyEdgePixel": {
+        "x": 18,
+        "y": 41
+      },
+      "note": "불꽃을 넉넉히 제외한 사각형 바깥의 변화량. 장작·화로·발의 위치는 시각적으로 고정되지만 바이트 단위 완전 고정은 아니며 받침 경계1~2픽셀 차이가 있음."
+    },
+    "loop": {
+      "neighborChangedPixelsIncludingWrap": [57, 70, 56, 51, 32, 33, 19, 78],
+      "lastToFirstChangedPixels": 78,
+      "note": "마지막에서 첫 프레임으로 불꽃이 작아졌다 커지는 연결이 있다. 인접19~70픽셀 대비 wrap78픽셀로 완벽한 무봉합 반복은 아님."
+    },
+    "observations": [
+      "작은 주황 불꽃만 위아래로 흔들리고 형태가 변한다.",
+      "그릇 테두리·몸체·장작·짧은 발의 위치와 크기는 시각적으로 고정되어 있다.",
+      "원본처럼 매끈한 회색 테두리가 유지된다.",
+      "frame3·4에는 불꽃 위에 작은 분리된 주황 픽셀이 나타난다."
+    ],
+    "limitations": [
+      "완벽한 불꽃-only 픽셀 고정은 아니다: 받침 경계 한 픽셀이 frame5·6에서 달라지고 정적 원본 대비 받침 경계1~2픽셀이 사라졌다.",
+      "작은 분리 불꽃 픽셀 때문에 no sparks 지시를 완벽히 따르지는 않았다.",
+      "끝에서 처음으로 돌아갈 때 불꽃이 커지는 연결이 있다.",
+      "실제 라이브러리 재생·입력 검증은 부모 세션이 수행한다. 본 기록은 원본프레임·contact sheet·픽셀 검증이다.",
+      "기존 화로의 테두리가 금속처럼 보일 수 있는 재질 한계는 유지했다."
+    ],
+    "constantPivotNote": "초안 pivot(x32,y51)은 원본 이미지 좌표의 바닥점이다. 라이브러리 pivot 규약에 맞춘 최종 변환은 부모 세션이 담당하며 모든 raw 프레임은 같은 기준으로 등록한다."
+  },
+  "previews": {
+    "contactSheet": {
+      "localPath": "public/assets/maplestory/pixellab-object-props/stone-brazier/previews/flicker-contact-sheet.png",
+      "scale": 4,
+      "resampling": "nearest",
+      "background": "checkerboard",
+      "runtimeAsset": false
+    },
+    "gif": {
+      "localPath": "public/assets/maplestory/pixellab-object-props/stone-brazier/previews/flicker-loop.gif",
+      "scale": 4,
+      "resampling": "nearest",
+      "background": "checkerboard",
+      "durationMsPerFrame": 120,
+      "loop": true,
+      "runtimeAsset": false,
+      "note": "검토용 GIF만 확대·체커합성. 런타임은 raw PNG 원본을 사용."
+    }
+  },
+  "sourceGenerationRecord": "resources/pixellab-stone-brazier-generation.json",
+  "libraryRegistration": {
+    "assetId": "ai/pixellab-object-stone-brazier",
+    "motion": "flicker",
+    "defaultMotion": "flicker",
+    "staticMotion": "base",
+    "frameCount": 8,
+    "pivot": {
+      "x": 32,
+      "y": 13
+    },
+    "pivotConvention": "pivot.y는 이미지 하단에서 센 바닥 여백이다.",
+    "playbackDurationSeconds": 0.96,
+    "loop": true,
+    "timingSource": "라이브러리 표시 설정. 서비스 원본의 재생 시간은 미제공."
+  }
+}

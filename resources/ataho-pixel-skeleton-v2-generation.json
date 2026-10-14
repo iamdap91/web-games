@@ -1,0 +1,443 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-13",
+  "provider": "PixelLab",
+  "status": "completed",
+  "experiment": "Skeleton v3 관리형 cross-punch 템플릿 재시험",
+  "scope": "기존 관리 캐릭터에 공식 cross-punch Skeleton v3 템플릿을 새 그룹으로 적용한 독립 비교. 본게임 통합 없음.",
+  "source": {
+    "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/input.png",
+    "originalPath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/south-east.png",
+    "width": 64,
+    "height": 64,
+    "anchor": {
+      "x": 32,
+      "y": 63
+    },
+    "visibleNativeHeight": 63,
+    "alphaBounds": [6, 0, 51, 63],
+    "preprocessing": "로컬 canonical 남동쪽 원본 PNG 바이트복사. 관리형 요청에는 기존 character_id와 direction만 지정하며 입력 이미지 직접 전송하지 않음.",
+    "edgeNote": "기존 canonical 머리 일부가 입력 캔버스 y0에 접촉. 새 생성 결과는 별도 크기 및 bounds 검토.",
+    "sha256": "5f486227b62b5e4af4d92c36553193ffcb111d7fb1510cfd1e153f43e59d57bf",
+    "byteSize": 3501
+  },
+  "request": {
+    "character_id": "359409f4-8eed-4489-be82-627553c7f2a7",
+    "directions": ["south-east"],
+    "mode": "skeleton-v3",
+    "template_animation_id": "cross-punch",
+    "animation_name": "ataho-pixel-tests-skeleton-v2-cross-punch"
+  },
+  "keypoints": [],
+  "first_frame_keypoints": [],
+  "keypointProvenance": {
+    "mode": "service-managed-template",
+    "officialEstimateCalled": false,
+    "description": "공식 estimate-skeleton 직접 호출 경로에는 접근하지 못했으므로 원본 추정값을 받았다고 주장하지 않음. 공식 관리형 Skeleton v3 템플릿 적용 경로 사용. 초기관절/움직임관절은 서비스 내부 처리하며 MCP 응답에 공개되지 않음.",
+    "manualKeypointsSupplied": false,
+    "manualDepthSupplied": false,
+    "overlayAvailable": false
+  },
+  "officialReferences": [
+    {
+      "url": "https://api.pixellab.ai/v2/openapi.json",
+      "note": "CreateCharacterAnimationRequest template_animation_id 필드의 cross-punch 공식 예시 및 관리형 캐릭터 애니메이션 API."
+    },
+    {
+      "tool": "mcp__pixellab__animate_character",
+      "note": "mode=skeleton-v3 beta: template_animation_id clip을 관리형 캐릭터에 적용. 2~4 generations/direction, 반환 영수증 3."
+    }
+  ],
+  "jobId": "3a689ce9-0897-4fdc-853e-f253f529b959",
+  "animationGroupId": "82b1a006-cb96-43aa-979d-0c3614508a59",
+  "usage": {
+    "generations": 3.25,
+    "source": "새캐릭터import0.25 + 새캐릭터animation3 접수영수증합계3.25. 부모세션잔량비교로추가확인예정.",
+    "paidCallsAccepted": 2,
+    "failedPreviousAttemptQuotedGenerations": 3,
+    "failedPreviousAttemptChargedGenerations": 0,
+    "failedPreviousAttemptConfirmation": "부모세션 전체계정 잔량712=718-5-1로 비차감확인, 해당job개별환불 영수증은 미공개.",
+    "prepareGenerations": 0.25,
+    "animationGenerations": 3,
+    "finalChargeConfirmedByIndividualReceipt": false
+  },
+  "comparison": {
+    "previousRecord": "resources/ataho-pixel-skeleton-generation.json",
+    "inputChanged": true,
+    "notes": "v1은92×92 battle-ready에서 수동 관절을 지정. v2는64×64 canonical rotation에 관리형 cross-punch템플릿. 소스 자세/캔버스와 모션 경로가 모두 달라 단일변수비교가 아님."
+  },
+  "frames": [
+    {
+      "index": 0,
+      "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/frames/00.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/characters/359409f4-8eed-4489-be82-627553c7f2a7/download",
+      "archivePath": "Idle/animations/ataho-pixel-tests-skeleton-v2-cross-punch/south-east/frame_000.png",
+      "sha256": "808d81611b2929202d46eecf0ed21a6238e2584213f671ed12fd6aeb983a1393",
+      "byteSize": 3977,
+      "width": 96,
+      "height": 96,
+      "alphaBounds": [25, 21, 69, 78],
+      "alpha": {
+        "transparentPixels": 7657,
+        "opaquePixels": 1559,
+        "partialPixels": 0
+      },
+      "anchor": {
+        "x": 48,
+        "y": 78
+      },
+      "edgeTouched": false
+    },
+    {
+      "index": 1,
+      "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/frames/01.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/characters/359409f4-8eed-4489-be82-627553c7f2a7/download",
+      "archivePath": "Idle/animations/ataho-pixel-tests-skeleton-v2-cross-punch/south-east/frame_001.png",
+      "sha256": "ac4af58ee4b26a2bd1448c1fe81a201cbe4db6432215d286bfb423fe8e1d9340",
+      "byteSize": 3997,
+      "width": 96,
+      "height": 96,
+      "alphaBounds": [27, 21, 70, 78],
+      "alpha": {
+        "transparentPixels": 7648,
+        "opaquePixels": 1568,
+        "partialPixels": 0
+      },
+      "anchor": {
+        "x": 48,
+        "y": 78
+      },
+      "edgeTouched": false
+    },
+    {
+      "index": 2,
+      "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/frames/02.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/characters/359409f4-8eed-4489-be82-627553c7f2a7/download",
+      "archivePath": "Idle/animations/ataho-pixel-tests-skeleton-v2-cross-punch/south-east/frame_002.png",
+      "sha256": "3078a1ae60ae2ca90d7451fc9d7aca686f8bcfaf318e7758377ac026b6c79885",
+      "byteSize": 3955,
+      "width": 96,
+      "height": 96,
+      "alphaBounds": [26, 21, 70, 78],
+      "alpha": {
+        "transparentPixels": 7638,
+        "opaquePixels": 1578,
+        "partialPixels": 0
+      },
+      "anchor": {
+        "x": 48,
+        "y": 78
+      },
+      "edgeTouched": false
+    },
+    {
+      "index": 3,
+      "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/frames/03.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/characters/359409f4-8eed-4489-be82-627553c7f2a7/download",
+      "archivePath": "Idle/animations/ataho-pixel-tests-skeleton-v2-cross-punch/south-east/frame_003.png",
+      "sha256": "b667db931d1aca4c8507651e5994fc126deecd838bca43097fcf8d73eeff8f50",
+      "byteSize": 3895,
+      "width": 96,
+      "height": 96,
+      "alphaBounds": [27, 19, 72, 78],
+      "alpha": {
+        "transparentPixels": 7590,
+        "opaquePixels": 1626,
+        "partialPixels": 0
+      },
+      "anchor": {
+        "x": 48,
+        "y": 78
+      },
+      "edgeTouched": false
+    },
+    {
+      "index": 4,
+      "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/frames/04.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/characters/359409f4-8eed-4489-be82-627553c7f2a7/download",
+      "archivePath": "Idle/animations/ataho-pixel-tests-skeleton-v2-cross-punch/south-east/frame_004.png",
+      "sha256": "4cb5b672f3d816528d79b0f4003728627fd88826141f2912495f2cddc9e8e848",
+      "byteSize": 3746,
+      "width": 96,
+      "height": 96,
+      "alphaBounds": [32, 17, 74, 78],
+      "alpha": {
+        "transparentPixels": 7682,
+        "opaquePixels": 1534,
+        "partialPixels": 0
+      },
+      "anchor": {
+        "x": 48,
+        "y": 78
+      },
+      "edgeTouched": false
+    },
+    {
+      "index": 5,
+      "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/frames/05.png",
+      "sourceUrl": "https://api.pixellab.ai/mcp/characters/359409f4-8eed-4489-be82-627553c7f2a7/download",
+      "archivePath": "Idle/animations/ataho-pixel-tests-skeleton-v2-cross-punch/south-east/frame_005.png",
+      "sha256": "73b47337cd14978a285916648dadd0fa8e6760e54a7cc71f551ece5ca2549b03",
+      "byteSize": 3380,
+      "width": 96,
+      "height": 96,
+      "alphaBounds": [24, 20, 70, 78],
+      "alpha": {
+        "transparentPixels": 7760,
+        "opaquePixels": 1456,
+        "partialPixels": 0
+      },
+      "anchor": {
+        "x": 48,
+        "y": 78
+      },
+      "edgeTouched": false
+    }
+  ],
+  "quality": {
+    "status": "reviewed",
+    "generatedFrames": 6,
+    "alpha": "6장모두alpha0/255로정상투명배경. 반투명0.",
+    "clipping": "6장모두96×96내부캔버스가장자리미접촉.",
+    "ground": "하단78은모두같지만다리/발/몸이움직이며일부수평위치변화있음. 공통anchor로그려실제이동을보존.",
+    "identity": "호랑이·갈색겉옷·아이보리속옷·검은바지·꼬리유지. 얼굴이정면과측면으로크게바뀌며원본외형픽셀동일성은보장하지않음.",
+    "motion": "템플릿고정6프레임크로스펀치. 몸회전이커지고끝프레임은측면으로전환. 끝가드복귀가없고v1수평정권보다타격팔뻗음이약하게보임.",
+    "limitation": "관절공개없이공식템플릿동작을사용했으므로직접8pose를지정한v1과동작/소스자세/출력캔버스모두다름. 좋은정권으로판정하지않고비교용으로보존.",
+    "reviews": [
+      "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/contact-sheet.png"
+    ],
+    "browser": "부모UI에서실제재생검증 담당"
+  },
+  "verification": {
+    "input": "원본 canonical PNG와 바이트동일 확인",
+    "canonicalEightDirections": "모두64×64 PNG view_image 육안검토 및 업로드 원본sha기록. 재샘플/확대 없음.",
+    "postImportHashCheck": "8방향 원본PNG바이트8/8일치 및SHA256확인",
+    "frameCount": "get_character 6f 및 ZIP기록6장일치",
+    "download": "get_character의BackblazePNGURL은403. 공식MCP다운로드ZIP의PNGentry를무가공추출.",
+    "output": "6PNG모두96×96,알파및SHA256검증"
+  },
+  "previousAttempts": [
+    {
+      "request": {
+        "character_id": "a0eb117a-f8a2-47c9-816d-53df564d164d",
+        "directions": ["south-east"],
+        "mode": "skeleton-v3",
+        "template_animation_id": "cross-punch",
+        "animation_name": "ataho-pixel-tests-skeleton-v2-cross-punch"
+      },
+      "jobId": "87cad77d-05e4-4707-ae08-75437be5a21b",
+      "animationGroupId": "1bce9101-4bfb-4b7a-83a6-7cfc089cc303",
+      "submission": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: a0eb117a-f8a2-47c9-816d-53df564d164d\nanimation: cross-punch\nmode: skeleton-v3\ndirections: south-east (1 jobs)\njob_ids: south-east=87cad77d-05e4-4707-ae08-75437be5a21b\ngroup: 1bce9101-4bfb-4b7a-83a6-7cfc089cc303\ncost: 3 generations (3/dir x 1)\neta: ~3-5 min/direction\nadd more directions to this group: animate_character(character_id=\"a0eb117a-f8a2-47c9-816d-53df564d164d\", template_animation_id=\"cross-punch\", animation_group_id=\"1bce9101-4bfb-4b7a-83a6-7cfc089cc303\", directions=[...])\n\nhint: get_character(character_id=\"a0eb117a-f8a2-47c9-816d-53df564d164d\")"
+          }
+        ],
+        "isError": false
+      },
+      "failure": {
+        "jobId": "87cad77d-05e4-4707-ae08-75437be5a21b",
+        "source": "get_character failed jobs, list_jobs status",
+        "message": "cross-punch(south-east): Generation failed: Invalid request: 1 validation error for AnimateWithSkeletonV3Request\nValue error, Template 'custom' does not exist. Us",
+        "serviceMessageTruncated": true,
+        "confirmedCause": "서비스 내부 AnimateWithSkeletonV3Request 검증에서 Template 'custom' 존재하지 않음 오류.",
+        "inference": "관리 캐릭터의 원래 template_id=custom을 관리형 Skeleton v3 요청에 전달했을 가능성. 내부 구현은 확인하지 못함.",
+        "retryAttempted": false
+      },
+      "usage": {
+        "quotedGenerations": 3,
+        "source": "접수 영수증 cost:3generations",
+        "paidCallsAccepted": 1,
+        "estimateGenerations": 0,
+        "finalChargedGenerations": null,
+        "refundStatus": "미확인. 실패 응답에 실제 청구/환불값 없음."
+      }
+    }
+  ],
+  "prerequisite": {
+    "characterId": "359409f4-8eed-4489-be82-627553c7f2a7",
+    "request": {
+      "body_type": "humanoid",
+      "description": "Middle-aged stocky tiger humanoid martial artist with a broad amber striped head, cream cheek tufts, rust-brown jacket, ivory undershirt, charcoal trousers, wraps, dark sash and curled striped tail",
+      "mode": "v3",
+      "n_directions": 8,
+      "name": "Ataho Skeleton v3 canonical mannequin test",
+      "reference_image_url": "upload:deb37b2a-8a58-42ad-9e20-1bb4b035a047",
+      "direction_images": {
+        "south-east": "upload:cc4e3bbb-7787-4798-9e38-18a1f271112c",
+        "east": "upload:f3b4c74e-dd6f-4154-b4cc-4679d2942539",
+        "north-east": "upload:a2af45c4-0be2-4f33-a9e1-f16c78c9705b",
+        "north": "upload:f5248c1b-0074-43f5-83bb-2722ca11546b",
+        "north-west": "upload:2fc2f0cf-22a5-41cc-9189-06543ad39fd1",
+        "west": "upload:917ca43a-8ede-4ebf-ad88-65bf37d0e3fc",
+        "south-west": "upload:26d5618c-bf76-472f-ab7e-5107d5d7306d"
+      },
+      "size": 64,
+      "template": "mannequin",
+      "view": "low top-down"
+    },
+    "submission": {
+      "content": [
+        {
+          "type": "text",
+          "text": "id: 359409f4-8eed-4489-be82-627553c7f2a7\nname: Ataho Skeleton v3 canonical mannequin test\nmode: v3 import (0.25 generations, all 8 directions yours, nothing generated)\nbody: humanoid\nsize: 64x64px\nview: low top-down\nstyle: from reference image (outline/detail hints ignored)\nstatus: processing (~3-5 min)\n\nhint: get_character(character_id=\"359409f4-8eed-4489-be82-627553c7f2a7\")"
+        }
+      ],
+      "isError": false
+    },
+    "canonicalUploads": {
+      "south": {
+        "ref": "upload:deb37b2a-8a58-42ad-9e20-1bb4b035a047",
+        "width": 64,
+        "height": 64,
+        "localPath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/south.png",
+        "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9"
+      },
+      "south-east": {
+        "ref": "upload:cc4e3bbb-7787-4798-9e38-18a1f271112c",
+        "width": 64,
+        "height": 64,
+        "localPath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/south-east.png",
+        "sha256": "5f486227b62b5e4af4d92c36553193ffcb111d7fb1510cfd1e153f43e59d57bf"
+      },
+      "east": {
+        "ref": "upload:f3b4c74e-dd6f-4154-b4cc-4679d2942539",
+        "width": 64,
+        "height": 64,
+        "localPath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/east.png",
+        "sha256": "bc8b13a232920f5f0e76c6aef57d77c20b82cadb30bc3ffbfd11c07d2fed0220"
+      },
+      "north-east": {
+        "ref": "upload:a2af45c4-0be2-4f33-a9e1-f16c78c9705b",
+        "width": 64,
+        "height": 64,
+        "localPath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/north-east.png",
+        "sha256": "5664b3a363b2d7192e52a265d337df6b65c2f4043c9ee836daa6180cfe42d7e4"
+      },
+      "north": {
+        "ref": "upload:f5248c1b-0074-43f5-83bb-2722ca11546b",
+        "width": 64,
+        "height": 64,
+        "localPath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/north.png",
+        "sha256": "21932ae4052123163cb7a1b5f6e01434b2d85bfa443ae761d886121d101ca648"
+      },
+      "north-west": {
+        "ref": "upload:2fc2f0cf-22a5-41cc-9189-06543ad39fd1",
+        "width": 64,
+        "height": 64,
+        "localPath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/north-west.png",
+        "sha256": "8d99c93c6c068392c92f832db5e93311799a3a6213f6fcaf188e77c8a8f7bb59"
+      },
+      "west": {
+        "ref": "upload:917ca43a-8ede-4ebf-ad88-65bf37d0e3fc",
+        "width": 64,
+        "height": 64,
+        "localPath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/west.png",
+        "sha256": "18681d3644e81c1c8df289b1c3b8251d023ea0e82c42eb36bf8f0fc97097e648"
+      },
+      "south-west": {
+        "ref": "upload:26d5618c-bf76-472f-ab7e-5107d5d7306d",
+        "width": 64,
+        "height": 64,
+        "localPath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/south-west.png",
+        "sha256": "d13c6cabdd824fd77d72ecf81fe63d4929a265f88ef0b876a760c704895e931f"
+      }
+    },
+    "quotedGenerations": 0.25,
+    "allEightDirectionsSupplied": true,
+    "imagesGenerated": 0,
+    "template": "mannequin",
+    "keypointProvenance": "공식 create-character-v3 import는 기존8방향을 보존하고 서버에서 Skeleton reconstruction으로 준비. 관절값은 직접 수신하거나 입력하지 않음.",
+    "completedMetadata": {
+      "character": {
+        "id": "359409f4-8eed-4489-be82-627553c7f2a7",
+        "name": "Idle",
+        "prompt": "Middle-aged stocky tiger humanoid martial artist with a broad amber striped head, cream cheek tufts, rust-brown jacket, ivory undershirt, charcoal trousers, wraps, dark sash and curled striped tail",
+        "size": {
+          "width": 64,
+          "height": 64
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-10-13T13:14:01.911394+00:00"
+      },
+      "rotations": [
+        {
+          "direction": "south",
+          "sameBytes": true,
+          "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9",
+          "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/rotations/south.png"
+        },
+        {
+          "direction": "south-east",
+          "sameBytes": true,
+          "sha256": "5f486227b62b5e4af4d92c36553193ffcb111d7fb1510cfd1e153f43e59d57bf",
+          "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/rotations/south-east.png"
+        },
+        {
+          "direction": "east",
+          "sameBytes": true,
+          "sha256": "bc8b13a232920f5f0e76c6aef57d77c20b82cadb30bc3ffbfd11c07d2fed0220",
+          "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/rotations/east.png"
+        },
+        {
+          "direction": "north-east",
+          "sameBytes": true,
+          "sha256": "5664b3a363b2d7192e52a265d337df6b65c2f4043c9ee836daa6180cfe42d7e4",
+          "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/rotations/north-east.png"
+        },
+        {
+          "direction": "north",
+          "sameBytes": true,
+          "sha256": "21932ae4052123163cb7a1b5f6e01434b2d85bfa443ae761d886121d101ca648",
+          "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/rotations/north.png"
+        },
+        {
+          "direction": "north-west",
+          "sameBytes": true,
+          "sha256": "8d99c93c6c068392c92f832db5e93311799a3a6213f6fcaf188e77c8a8f7bb59",
+          "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/rotations/north-west.png"
+        },
+        {
+          "direction": "west",
+          "sameBytes": true,
+          "sha256": "18681d3644e81c1c8df289b1c3b8251d023ea0e82c42eb36bf8f0fc97097e648",
+          "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/rotations/west.png"
+        },
+        {
+          "direction": "south-west",
+          "sameBytes": true,
+          "sha256": "d13c6cabdd824fd77d72ecf81fe63d4929a265f88ef0b876a760c704895e931f",
+          "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/skeleton-v2/rotations/south-west.png"
+        }
+      ]
+    },
+    "jobId": "23cdd292-2bb9-45a5-a400-fc2f98b50549",
+    "status": "completed"
+  },
+  "submission": {
+    "content": [
+      {
+        "type": "text",
+        "text": "character: 359409f4-8eed-4489-be82-627553c7f2a7\nanimation: cross-punch\nmode: skeleton-v3\ndirections: south-east (1 jobs)\njob_ids: south-east=3a689ce9-0897-4fdc-853e-f253f529b959\ngroup: 82b1a006-cb96-43aa-979d-0c3614508a59\ncost: 3 generations (3/dir x 1)\neta: ~3-5 min/direction\nadd more directions to this group: animate_character(character_id=\"359409f4-8eed-4489-be82-627553c7f2a7\", template_animation_id=\"cross-punch\", animation_group_id=\"82b1a006-cb96-43aa-979d-0c3614508a59\", directions=[...])\n\nhint: get_character(character_id=\"359409f4-8eed-4489-be82-627553c7f2a7\")"
+      }
+    ],
+    "isError": false
+  },
+  "frameCount": 6,
+  "animationId": "911ff151-5602-4cc8-b0d8-c15fa924b5e6",
+  "completionResponse": "status: completed\nid: 359409f4-8eed-4489-be82-627553c7f2a7\nname: Ataho Skeleton v3 canonical mannequin test\nstate_name: Idle\ndirections: 8 (south, east, north, west, south-east, north-east, north-west, south-west)\nsize: 64x64px\nview: low top-down\nstyle: -, -, -\ngroup: a1f1409f-0e13-4302-a387-97b5cbf7fe36 (1 state)\n\nrotations:\n  south: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/359409f4-8eed-4489-be82-627553c7f2a7/rotations/south.png?t=1791897313\n  east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/359409f4-8eed-4489-be82-627553c7f2a7/rotations/east.png?t=1791897313\n  north: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/359409f4-8eed-4489-be82-627553c7f2a7/rotations/north.png?t=1791897313\n  west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/359409f4-8eed-4489-be82-627553c7f2a7/rotations/west.png?t=1791897313\n  south-east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/359409f4-8eed-4489-be82-627553c7f2a7/rotations/south-east.png?t=1791897313\n  north-east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/359409f4-8eed-4489-be82-627553c7f2a7/rotations/north-east.png?t=1791897313\n  north-west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/359409f4-8eed-4489-be82-627553c7f2a7/rotations/north-west.png?t=1791897313\n  south-west: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/359409f4-8eed-4489-be82-627553c7f2a7/rotations/south-west.png?t=1791897313\n\nanimations (1 group, 1 total):\n  ataho-pixel-tests-skeleton-v2-cross-punch — 1 dir (south-east), 6f 2026-10-13 [type=cross-punch] [group: 82b1a006-cb96-43aa-979d-0c3614508a59]\n    south-east: https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/359409f4-8eed-4489-be82-627553c7f2a7/animations/911ff151-5602-4cc8-b0d8-c15fa924b5e6/south-east/{i}.png?t=1791897468388 (i=0..5)\n\ndownload: https://api.pixellab.ai/mcp/characters/359409f4-8eed-4489-be82-627553c7f2a7/download\nspritesheet: https://api.pixellab.ai/mcp/characters/359409f4-8eed-4489-be82-627553c7f2a7/spritesheet (this state only — one uniform-grid sheet PNG + layout JSON, zipped; cells pivot-centred)\n\navailable_animations: backflip, breathing-idle, cross-punch, crouched-walking, crouching, drinking, falling-back-death, fight-stance-idle-8-frames, fireball, flying-kick, front-flip, getting-up, high-kick, hurricane-kick, jumping-1, jumping-2, lead-jab, leg-sweep, picking-up, pull-heavy-object, pushing, roundhouse-kick, running-4-frames, running-6-frames, running-8-frames, running-jump, running-slide, sad-walk, scary-walk, surprise-uppercut, taking-punch, throw-object, two-footed-jump, walk, walk-1, walk-2, walking, walking-10, walking-2, walking-3, walking-4, walking-4-frames, walking-5, walking-6, walking-6-frames, walking-7, walking-8, walking-8-frames, walking-9\n\nactions: animate_character(character_id=\"359409f4-8eed-4489-be82-627553c7f2a7\", ...) | create_character_state(character_id=\"359409f4-8eed-4489-be82-627553c7f2a7\", ...) | delete_animation(character_id=\"359409f4-8eed-4489-be82-627553c7f2a7\", animation_group_id=\"<group>\") | delete_character(character_id=\"359409f4-8eed-4489-be82-627553c7f2a7\")",
+  "output": {
+    "width": 96,
+    "height": 96,
+    "anchor": {
+      "x": 48,
+      "y": 78
+    },
+    "visibleNativeHeight": 63,
+    "anchorMethod": "모든프레임에 동일x48(96canvas중심),y78(첫프레임alpha하단)을사용. 실제6장alpha하단은모두78. 프레임별발맞춤보정/크기정규화하지않음.",
+    "sourceToOutputNote": "source는64×64/nativeanchor32,63. 서비스는motion용96×96캔버스로출력하며그림도재생성하므로단순동일픽셀padding이라고주장하지않음."
+  }
+}

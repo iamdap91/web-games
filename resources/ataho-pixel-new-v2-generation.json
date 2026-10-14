@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-13",
+  "provider": "PixelLab",
+  "model": "Pro Flash",
+  "tool": "mcp__pixellab__create_image_pro_flash",
+  "status": "completed-unapproved",
+  "scope": "승인 정면 도트 스타일 참조로 신규 정면 후보 1장 재시험. 본게임 적용 없음.",
+  "userAuthorization": "셋 모두 서브에이전트 통해서 병렬 작업해줘 / 권장 방식으로 해봐",
+  "reference": {
+    "localPath": "public/assets/maplestory/tiger-hero-ai/originals/rotations/south.png",
+    "width": 64,
+    "height": 64,
+    "mode": "RGBA",
+    "sha256": "55373882fa5439275f290116884349d92a816c1d53456baf0c167b8a9dce56f9",
+    "nativePixels": true,
+    "uploadRef": "upload:a14a919c-70aa-4dc1-a010-e2c25e8f53d3"
+  },
+  "officialDocumentation": {
+    "url": "https://api.pixellab.ai/v2/openapi.json",
+    "endpoint": "/create-image-pro-flash",
+    "verifiedDate": "2026-10-13",
+    "summary": "Optional style image, single native output and asynchronous polling. Native style image fits target canvas without resizing; independent color_palette/outline/detail/shading toggles confirmed by tool metadata."
+  },
+  "request": {
+    "description": "Ataho, a middle-aged tiger martial artist, front-facing full body idle. Very broad oversized head, half-closed knowing eyes, ivory cheek tufts, orange striped fur. Short stocky adult body, worn brown open jacket, crossed ivory undershirt, dark short trousers, wrist and foot wraps, curled striped tail. Empty paws. Fresh sprite design matching the reference pixel style. Transparent margin around the entire body.",
+    "width": 64,
+    "height": 64,
+    "no_background": true,
+    "seed": 101311,
+    "style_image": {
+      "url": "upload:a14a919c-70aa-4dc1-a010-e2c25e8f53d3",
+      "usage_description": "Match the native pixel palette, outline, detail and shading; retain the mature broad-head short-body character identity while creating a fresh front-facing design."
+    },
+    "style_options": {
+      "color_palette": true,
+      "outline": true,
+      "detail": true,
+      "shading": true
+    }
+  },
+  "submission": {
+    "background_job_id": "daff6504-f54b-4d5c-947b-2227d8aefd16",
+    "image_id": "0e5cca48-6297-5e91-a8fc-d3ee720a0050",
+    "status": "processing",
+    "source_image_id": "0e5cca48-6297-5e91-a8fc-d3ee720a0050",
+    "job_id": "daff6504-f54b-4d5c-947b-2227d8aefd16",
+    "image_size": {
+      "width": 64,
+      "height": 64
+    },
+    "output_count": 1,
+    "estimated_generations": 5,
+    "pricing_provisional": true,
+    "poll_tool": "get_image",
+    "download_path": "/mcp/images/daff6504-f54b-4d5c-947b-2227d8aefd16/download"
+  },
+  "usage": {
+    "budgetGenerations": 5,
+    "estimatedGenerations": 5,
+    "acceptedPaidRequests": 1,
+    "actualGenerations": 5
+  },
+  "frames": [
+    {
+      "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/new-v2/ataho-pro-flash-style-front-original.png",
+      "width": 64,
+      "height": 64,
+      "sha256": "d6c77ad69e552f7b2574af11d8c3504ebda06673096ba0aad4a160e2e1e3d2ab",
+      "format": "PNG",
+      "mode": "RGBA",
+      "bytes": 5573,
+      "alphaValues": [0, 255],
+      "nonTransparentBounds": [6, 0, 52, 63],
+      "boundsConvention": "[left, top, rightExclusive, bottomExclusive]",
+      "opaqueColors": 59,
+      "opaquePixelCount": 1932
+    }
+  ],
+  "visualReview": {
+    "method": "승인 도트와 결과 원본 view_image 확인, 원본 픽셀을 변형하지 않은 최근접 확대 접촉표로 승인/v1/v2 비교",
+    "strengths": [
+      "반쯤 감긴 눈·넓은 얼굴·아이보리 볼 털과 미소가 승인 중장년 인상에 가깝다.",
+      "v1보다 머리가 넓고 몸이 짧고 다부져 보이며, 갈색 겉옷·교차 속옷·허리띠·짙은 바지·꼬리의 정체성이 잘 유지된다.",
+      "전신 정면과 양 발이 읽히며 픽셀 경계와 이진 알파가 선명하다."
+    ],
+    "limitations": [
+      "승인 도트와 외형과 구도가 매우 비슷하여 독립적인 새 디자인의 차이는 크지 않다.",
+      "비투명 RGB가 59색으로 승인 도트 31색 및 v1 53색보다 많다. color_palette true는 동일 색 수나 정확한 팔레트 보존을 보장하지 않았다.",
+      "비투명 bounds [6,0,52,63]으로 머리 위 여백은 0px, 발 아래 여백은 1px이다. 전신 여백 요청은 충분히 지켜지지 않았다.",
+      "전신 대기 1장 결과이므로 모션과 방향 간 외형 유지 품질은 미검증이다."
+    ],
+    "decision": "중장년 인상과 체형 유지에서 v1보다 성공적. 새 외형 차별성과 캔버스 여백은 한계. 사용자 승인과 본게임 채택은 미확정; 추가 생성·수정·모션 요청 없음."
+  },
+  "result": {
+    "job_id": "daff6504-f54b-4d5c-947b-2227d8aefd16",
+    "status": "completed",
+    "frames": 1,
+    "download_url": "https://api.pixellab.ai/mcp/images/daff6504-f54b-4d5c-947b-2227d8aefd16/download",
+    "download_urls": [
+      "https://api.pixellab.ai/mcp/images/daff6504-f54b-4d5c-947b-2227d8aefd16/download"
+    ],
+    "asset": {
+      "id": "0e5cca48-6297-5e91-a8fc-d3ee720a0050",
+      "type": "image",
+      "status": "saved"
+    },
+    "charged_generations": 5
+  },
+  "preview": {
+    "localPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/new-v2/ataho-pro-flash-style-front-nearest-preview.png",
+    "width": 512,
+    "height": 512,
+    "method": "Pillow Image.Resampling.NEAREST 8x",
+    "originalPixelsUnchanged": true
+  },
+  "comparison": {
+    "contactSheetPath": "public/assets/maplestory/ataho-pixel-experiments/20261013/new-v2/comparison-contact-sheet.png",
+    "columns": ["승인 정면 도트", "v1 텍스트만", "v2 승인 도트 스타일 참조"],
+    "previousExperimentMetadata": "resources/ataho-pixel-new-generation.json",
+    "previousFramePath": "public/assets/maplestory/ataho-pixel-experiments/20261013/new/ataho-pro-flash-front-original.png",
+    "paletteSizes": {
+      "approved": 31,
+      "v1": 53,
+      "v2": 59
+    },
+    "bounds": {
+      "approved": [7, 0, 52, 63],
+      "v1": [12, 2, 55, 62],
+      "v2": [6, 0, 52, 63]
+    },
+    "controlledVariables": [
+      "모델 Pro Flash",
+      "64×64 캔버스",
+      "no_background true"
+    ],
+    "changedVariables": [
+      "native 승인 정면을 style_image로 추가",
+      "color_palette/outline/detail/shading 모두 true",
+      "긴 요청을 핵심 외형 중심으로 단축",
+      "seed 변경"
+    ],
+    "interpretation": "여러 입력 조건을 동시에 바꾸었으므로 스타일 참조 하나의 효과만 분리한 비교는 아니다."
+  }
+}

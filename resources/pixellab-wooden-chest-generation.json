@@ -1,0 +1,434 @@
+{
+  "schemaVersion": 1,
+  "name": "낡은 나무 보물상자",
+  "tool": "mcp__pixellab__create_object_pro_flash",
+  "documentationUrl": "https://api.pixellab.ai/mcp/docs",
+  "request": {
+    "description": "A single squat CLOSED treasure chest made of dark weathered wooden planks, a gently rounded closed lid, exactly two dull iron bands following the lid and continuing down the front, and a small simple dull iron latch with a tiny padlock centered on the front. Quiet East Asian mountain-village RPG prop with HD2D readability. Desaturated dark gray-brown timber and muted warm gray/taupe iron, broad angular flat color planes, only 2-3 tones per material, crisp native pixel clusters, restrained selective colored edges without heavy black outlines. Soft light from the upper left. Straight front/south-facing low top-down orthographic camera, a small amount of the top visible; symmetrical straight-on front, no three-quarter sideways rotation. Isolated full object centered on a transparent 64x64 canvas with comfortable clear margins. A single clean readable pixel-art sprite. No gilding, jewels, open lid, contents, loot particles, floor, baked cast shadow, text, characters, sprite sheet, surrounding environment, noise, dithering, gloss.",
+    "width": 64,
+    "height": 64,
+    "view": "low top-down",
+    "first_frame_direction": "south",
+    "n_directions": 1,
+    "name": "낡은 나무 보물상자",
+    "seed": 0
+  },
+  "requestCount": 1,
+  "capabilities": {
+    "name": "Pro Flash",
+    "revision": "pro-flash-presets-48-128-2026-09-29",
+    "grid_recovery": "Creation recovers the pixel grid the model drew with Unzoom. An exact grid is kept; drift of at most one pixel is recovered on the expected grid. Images with a background must fill the canvas, so any other size is redrawn with image-to-pixel-art on the generated box only. Sprites without a background keep their own pixels, centred on the canvas, while the drawn pixel is close to the requested one; coarser or oversized sprites are redrawn. Experimental 16x16 creation always uses image-to-pixel-art. Editing and inpainting start at 32x32 and never use image-to-pixel-art conversion.",
+    "operations": {
+      "create": {
+        "sizes": [
+          {
+            "width": 16,
+            "height": 16
+          },
+          {
+            "width": 24,
+            "height": 24
+          },
+          {
+            "width": 32,
+            "height": 32
+          },
+          {
+            "width": 32,
+            "height": 48
+          },
+          {
+            "width": 48,
+            "height": 48
+          },
+          {
+            "width": 64,
+            "height": 64
+          },
+          {
+            "width": 96,
+            "height": 64
+          },
+          {
+            "width": 96,
+            "height": 96
+          },
+          {
+            "width": 128,
+            "height": 128
+          }
+        ],
+        "experimental_sizes": [
+          {
+            "width": 16,
+            "height": 16
+          }
+        ],
+        "custom_sizes": {
+          "enabled": true,
+          "min_width": 16,
+          "min_height": 16,
+          "max_width": 256,
+          "max_height": 256,
+          "step": 4,
+          "beta": true
+        },
+        "max_reference_images": 0,
+        "supports_no_background": true,
+        "supports_style_options": true,
+        "output_count": 1
+      },
+      "edit": {
+        "sizes": [
+          {
+            "width": 32,
+            "height": 32
+          },
+          {
+            "width": 32,
+            "height": 48
+          },
+          {
+            "width": 64,
+            "height": 64
+          },
+          {
+            "width": 96,
+            "height": 64
+          },
+          {
+            "width": 96,
+            "height": 96
+          },
+          {
+            "width": 128,
+            "height": 128
+          }
+        ],
+        "experimental_sizes": [],
+        "custom_sizes": {
+          "enabled": true,
+          "min_width": 32,
+          "min_height": 32,
+          "max_width": 256,
+          "max_height": 256,
+          "step": 4,
+          "beta": true
+        },
+        "max_reference_images": 1,
+        "supports_no_background": true,
+        "supports_style_options": false,
+        "output_count": 1,
+        "edit_methods": ["text", "reference"],
+        "canvas_growth": false,
+        "reference_image_fit": "native dimensions must fit the edit canvas"
+      },
+      "inpaint": {
+        "sizes": [
+          {
+            "width": 32,
+            "height": 32
+          },
+          {
+            "width": 32,
+            "height": 48
+          },
+          {
+            "width": 64,
+            "height": 64
+          },
+          {
+            "width": 96,
+            "height": 64
+          },
+          {
+            "width": 96,
+            "height": 96
+          },
+          {
+            "width": 128,
+            "height": 128
+          }
+        ],
+        "experimental_sizes": [],
+        "custom_sizes": {
+          "enabled": true,
+          "min_width": 32,
+          "min_height": 32,
+          "max_width": 256,
+          "max_height": 256,
+          "step": 4,
+          "beta": true
+        },
+        "max_reference_images": 1,
+        "supports_no_background": true,
+        "supports_style_options": false,
+        "output_count": 1,
+        "canvas_growth": false,
+        "crop_to_mask_values": [true],
+        "output_methods": [
+          "New layer with changes",
+          "Modify current layer, only changes",
+          "Modify current layer"
+        ],
+        "mask": {
+          "white_rgb": "generate",
+          "black_rgb": "preserve",
+          "alpha": "ignored",
+          "binary_rgb_required": true
+        },
+        "context": {
+          "bounding_box_required": true,
+          "max_width_multiple": 3,
+          "max_height_multiple": 3,
+          "native_pixels": true
+        }
+      },
+      "character": {
+        "sizes": [
+          {
+            "width": 16,
+            "height": 16
+          },
+          {
+            "width": 24,
+            "height": 24
+          },
+          {
+            "width": 32,
+            "height": 32
+          },
+          {
+            "width": 32,
+            "height": 48
+          },
+          {
+            "width": 48,
+            "height": 48
+          },
+          {
+            "width": 64,
+            "height": 64
+          },
+          {
+            "width": 96,
+            "height": 64
+          },
+          {
+            "width": 96,
+            "height": 96
+          },
+          {
+            "width": 128,
+            "height": 128
+          }
+        ],
+        "experimental_sizes": [
+          {
+            "width": 16,
+            "height": 16
+          }
+        ],
+        "custom_sizes": {
+          "enabled": true,
+          "min_width": 16,
+          "min_height": 16,
+          "max_width": 256,
+          "max_height": 256,
+          "step": 4,
+          "beta": true
+        },
+        "max_reference_images": 0,
+        "supports_no_background": true,
+        "supports_style_options": true,
+        "output_count": 8,
+        "n_directions": [8],
+        "includes_first_direction": true,
+        "supports_existing_source": true,
+        "rotation_canvas": "Native source padded to a square, minimum 32 pixels, aligned to four pixels."
+      },
+      "object": {
+        "sizes": [
+          {
+            "width": 16,
+            "height": 16
+          },
+          {
+            "width": 24,
+            "height": 24
+          },
+          {
+            "width": 32,
+            "height": 32
+          },
+          {
+            "width": 32,
+            "height": 48
+          },
+          {
+            "width": 48,
+            "height": 48
+          },
+          {
+            "width": 64,
+            "height": 64
+          },
+          {
+            "width": 96,
+            "height": 64
+          },
+          {
+            "width": 96,
+            "height": 96
+          },
+          {
+            "width": 128,
+            "height": 128
+          }
+        ],
+        "experimental_sizes": [
+          {
+            "width": 16,
+            "height": 16
+          }
+        ],
+        "custom_sizes": {
+          "enabled": true,
+          "min_width": 16,
+          "min_height": 16,
+          "max_width": 256,
+          "max_height": 256,
+          "step": 4,
+          "beta": true
+        },
+        "max_reference_images": 0,
+        "supports_no_background": true,
+        "supports_style_options": true,
+        "output_count": "n_directions",
+        "n_directions": [1, 8],
+        "includes_first_direction": true,
+        "supports_existing_source": true,
+        "rotation_canvas": "Eight views use the square V3 canvas; one direction keeps the native size."
+      }
+    },
+    "style_reference_fit": "native dimensions must fit the target canvas; smaller references are centered without resizing",
+    "cost": {
+      "image": 5,
+      "rotations": 0,
+      "total": 5,
+      "provisional": true
+    }
+  },
+  "initialResponse": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"background_job_id\": \"ddd966a5-6f25-49a2-b835-c764744b5206\",\n  \"object_id\": \"dbaa3ddc-2444-44d2-9021-1e10c88bc831\",\n  \"status\": \"processing\",\n  \"first_direction_generated\": true,\n  \"estimated_generations\": 5,\n  \"job_id\": \"ddd966a5-6f25-49a2-b835-c764744b5206\",\n  \"n_directions\": 1,\n  \"poll_tool\": \"get_object\",\n  \"status_path\": \"/v2/background-jobs/ddd966a5-6f25-49a2-b835-c764744b5206\",\n  \"download_path\": \"/mcp/objects/dbaa3ddc-2444-44d2-9021-1e10c88bc831/download\"\n}\nid: dbaa3ddc-2444-44d2-9021-1e10c88bc831\nPoll get_object(object_id=\"dbaa3ddc-2444-44d2-9021-1e10c88bc831\") or /v2/background-jobs/ddd966a5-6f25-49a2-b835-c764744b5206; wait for the outer job to complete before downloading or animating. First-direction generation is included; actual image and rotation usage is itemized as billing_stages on the job record at the status path above (REST, not shown by the get_* tools) — get_balance before and after gives the total."
+      }
+    ],
+    "structuredContent": {
+      "background_job_id": "ddd966a5-6f25-49a2-b835-c764744b5206",
+      "object_id": "dbaa3ddc-2444-44d2-9021-1e10c88bc831",
+      "status": "processing",
+      "first_direction_generated": true,
+      "estimated_generations": 5,
+      "job_id": "ddd966a5-6f25-49a2-b835-c764744b5206",
+      "n_directions": 1,
+      "poll_tool": "get_object",
+      "status_path": "/v2/background-jobs/ddd966a5-6f25-49a2-b835-c764744b5206",
+      "download_path": "/mcp/objects/dbaa3ddc-2444-44d2-9021-1e10c88bc831/download"
+    },
+    "isError": false
+  },
+  "status": "completed",
+  "cost": {
+    "estimatedGenerations": 5,
+    "actualGenerations": null,
+    "actualCostEvidence": "The creation response only reports estimated_generations. It states actual billing_stages are on the background-job REST record and not shown by get_object.",
+    "accountDeltaEvidence": {
+      "reportedByParent": true,
+      "before": {
+        "remaining": 634,
+        "used": 1365,
+        "total": 2000
+      },
+      "after": {
+        "remaining": 624,
+        "used": 1375,
+        "total": 2000
+      },
+      "deltaUsed": 10,
+      "note": "두 승인 요청 전후 계정 합계 변화. 다른 작업도 목록에 있으므로 이 오브젝트의 개별 실제 청구를 5로 확정하지 않음."
+    }
+  },
+  "localPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/originals/base.png",
+  "createdDate": "2026-10-14",
+  "objectId": "dbaa3ddc-2444-44d2-9021-1e10c88bc831",
+  "jobId": "ddd966a5-6f25-49a2-b835-c764744b5206",
+  "sourceImageId": null,
+  "sourceImageIdNote": "create_object_pro_flash/get_object do not expose a source image ID in these responses.",
+  "completedResponse": {
+    "content": [
+      {
+        "type": "text",
+        "text": "status: completed\nid: dbaa3ddc-2444-44d2-9021-1e10c88bc831\nname: 낡은 나무 보물상자\nstate_name: base\ndirections: 1\nsize: 64x64px\nview: low top-down\ngroup: 031cbf25-1d50-460e-93cd-fccaaa2c3c75\n\nrotations:\n  unknown: https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/rotations/unknown.png\n\nanimations: none\n\ndownload: https://api.pixellab.ai/mcp/objects/dbaa3ddc-2444-44d2-9021-1e10c88bc831/download\nspritesheet: https://api.pixellab.ai/mcp/objects/dbaa3ddc-2444-44d2-9021-1e10c88bc831/spritesheet (one uniform-grid sheet PNG + layout JSON, zipped)\n\nactions: animate_object(object_id=\"dbaa3ddc-2444-44d2-9021-1e10c88bc831\", ...) | create_object_state(object_id=\"dbaa3ddc-2444-44d2-9021-1e10c88bc831\", ...) | delete_object(object_id=\"dbaa3ddc-2444-44d2-9021-1e10c88bc831\")\nhint: animate_object(object_id=\"dbaa3ddc-2444-44d2-9021-1e10c88bc831\", animation_description=\"...\")"
+      }
+    ],
+    "isError": false
+  },
+  "downloadUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/rotations/unknown.png",
+  "downloadEndpoint": "https://api.pixellab.ai/mcp/objects/dbaa3ddc-2444-44d2-9021-1e10c88bc831/download",
+  "original": {
+    "localPath": "public/assets/maplestory/pixellab-object-props/wooden-chest/originals/base.png",
+    "downloadUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/objects/e6c783d6-3e60-4b00-95f8-120d1915bcb7/dbaa3ddc-2444-44d2-9021-1e10c88bc831/rotations/unknown.png",
+    "sha256": "3d4aca7dcddaa1e136e8c5b59d6f400600ccb8bef21ef8052d46cfd8b2da6c4f",
+    "byteSize": 2008,
+    "width": 64,
+    "height": 64,
+    "mode": "RGBA",
+    "alphaValues": [0, 255],
+    "alphaBoundingBox": [15, 19, 49, 49],
+    "visibleWidth": 34,
+    "visibleHeight": 30,
+    "margins": {
+      "left": 15,
+      "top": 19,
+      "right": 15,
+      "bottom": 15
+    },
+    "processing": "원본 응답 PNG bytes 그대로 다운로드. 리사이즈, 색 보정, 리터치, 이미지 업로드 없음."
+  },
+  "validation": {
+    "status": "passedWithNotes",
+    "method": "Pillow 원본 PNG 검사 및 view_image(detail original) 직접 확인",
+    "observations": [
+      "64×64 RGBA, alpha 값 0/255의 완전 투명 배경.",
+      "닫힌 짙은 목재 상자, 완만한 둥근 뚜껑, 좌우 철테 두 개, 중앙 걸쇠와 작은 자물쇠가 식별된다.",
+      "정면에서 윗면이 약간 보이는 낮은 탑다운 시점. 내용물과 환경, 그림자, 금장, 파티클 없음.",
+      "그레이브라운 목재와 밝은 회색 철테의 차분한 색감. 외곽은 짙은 선택적 가장자리, 작은 읽기 좋은 픽셀 덩어리.",
+      "실제 그림은 34×30 px로 캔버스의 일부만 차지하며 상하좌우 15 px 이상의 여백이 있다."
+    ],
+    "limitations": [
+      "single direction is named unknown by PixelLab even though first_frame_direction south was requested; do not relabel original provider output as a confirmed rotation set.",
+      "공통 스타일은 텍스트로만 전달하여 기존 마을 소품과의 정확한 팔레트 일치는 확인되지 않음.",
+      "사용자 외형 채택, 게임 배치, 열린 상태, 애니메이션 검증은 범위 밖."
+    ]
+  },
+  "manifestPivotNote": "원본 Canvas를 유지하고 alpha bbox의 아래쪽 여백을 pivot.y로 기록하여 보이는 그림의 바닥을 접지선에 맞춘다. preview-renderer.ts의 height - pivot.y 규칙을 따른다.",
+  "manifestAssetId": "ai/pixellab-object-wooden-chest",
+  "manifestPivot": {
+    "x": 32,
+    "y": 15
+  },
+  "parentReview": {
+    "method": "원본 PNG view_image 직접 확인 및 SHA256·크기·alpha·bbox 재검증",
+    "status": "candidate-for-user-review",
+    "alphaBoundingBox": [15, 19, 49, 49],
+    "nativeVisibleSize": {
+      "width": 34,
+      "height": 30
+    },
+    "additionalPaidRequests": 0,
+    "gameIntegration": false
+  }
+}

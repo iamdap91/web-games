@@ -17,7 +17,8 @@ export function showOriginals(assetId, root = document) {
         file.target = '_blank';
         file.rel = 'noopener';
         item.append(title);
-        if (original.localPath.endsWith('.png')) {
+        if (original.localPath.endsWith('.png') ||
+            original.localPath.endsWith('.gif')) {
             const image = new Image();
             image.src = localUrl;
             image.alt = original.name;

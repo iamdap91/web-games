@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <title>아타호 · 세 가지 도트 실험</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">ATAHO / PIXEL LAB</p>
+        <h1>세 가지 도트 실험</h1>
+        <p>새 외형, 원화의 도트 변환, 관절을 지정한 정권을 비교해 보세요.</p>
+      </header>
+      <div class="view-controls" aria-label="공통 표시 설정">
+        <label
+          >비교 결과
+          <select id="version">
+            <option value="recommended">권장 설정 재시험</option>
+            <option value="original">1차 시험</option>
+          </select></label
+        >
+        <label
+          >표시 크기
+          <select id="scale">
+            <option value="height">외형 높이 112px</option>
+            <option value="3">원본 픽셀 3배</option>
+            <option value="1">원본 픽셀 1배</option>
+          </select></label
+        >
+        <label
+          >배경
+          <select id="background">
+            <option value="light">밝게</option>
+            <option value="dark">어둡게</option>
+          </select></label
+        >
+        <a
+          href="https://www.pixellab.ai/pixellab-api"
+          target="_blank"
+          rel="noopener noreferrer"
+          >PixelLab 기능 설명 ↗</a
+        >
+      </div>
+      <p id="status" role="status">그림을 불러오는 중이에요.</p>
+      <section aria-labelledby="appearance-title">
+        <h2 id="appearance-title">외형 · 새로 만들기와 원화 변환</h2>
+        <div id="appearance" class="grid"></div>
+      </section>
+      <section aria-labelledby="motion-title">
+        <h2 id="motion-title">동작 · 관절을 지정한 정권</h2>
+        <div class="motion-controls" aria-label="정권 재생 설정">
+          <button id="pause" type="button" disabled>일시정지</button>
+          <button id="restart" type="button" disabled>처음부터</button>
+          <label
+            >재생 속도
+            <select id="speed">
+              <option value="1">1배</option>
+              <option value="0.25">0.25배</option>
+            </select></label
+          >
+          <label class="seek"
+            >자세
+            <input
+              id="seek"
+              type="range"
+              min="0"
+              max="7"
+              value="0"
+              step="1"
+              aria-label="정권 프레임 선택"
+            /><output id="frame">1 / 8</output></label
+          >
+          <label><input id="bones" type="checkbox" /> 지정한 관절 보기</label>
+        </div>
+        <div id="motion" class="grid"></div>
+        <p class="note">
+          정권은 전체 동작 길이를 맞춰 단계별로 비교 재생합니다. 생성된 프레임의
+          위치·크기는 개별 보정하지 않아 발 디딤과 외형 변화가 그대로 보입니다.
+          관절선은 1차 시험에서 전달한 목표입니다. 공식 템플릿 재시험은 관절
+          좌표가 공개되지 않아 관절 보기를 제공하지 않습니다.
+        </p>
+      </section>
+      <details>
+        <summary>승인 원화와 제작 기록</summary>
+        <div class="reference">
+          <img id="art" alt="도트 변환에 사용한 승인 아타호 원화01" />
+          <div>
+            <p>
+              원화01의 얼굴·체형·갈색 옷을 도트 변환 결과와 비교해 보세요.
+              그림의 실제 픽셀 수와 표시 배율은 각 카드에 표시합니다.
+            </p>
+            <ul id="records"></ul>
+          </div>
+        </div>
+      </details>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-pixel-tests/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

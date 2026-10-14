@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <title>아타호 v2 · 동작 조합실</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">아타호 v2 · 기존 그림으로 만드는 새로운 동작</p>
+        <h1>동작 조합실</h1>
+        <p>1~3번은 이동과 연결을 다듬은 개선 시안입니다.</p>
+      </header>
+      <fieldset id="controls" disabled>
+        <legend class="sr-only">동작 재생</legend>
+        <div id="motions" class="motion-list" aria-label="다섯 가지 동작"></div>
+        <div class="toolbar">
+          <button id="restart" type="button">처음부터</button>
+          <button id="pause" type="button">일시정지</button>
+          <label
+            >속도
+            <select id="speed">
+              <option value="1">1배</option>
+              <option value="0.5">0.5배</option>
+              <option value="0.25">0.25배</option>
+            </select></label
+          >
+          <label
+            >크기
+            <select id="scale">
+              <option value="3">자세히</option>
+              <option value="2">작게</option>
+            </select></label
+          >
+          <label
+            >보기
+            <select id="presentation">
+              <option value="full">이동·타격 연출</option>
+              <option value="movement">타격 효과 없이</option>
+              <option value="poses">자세만</option>
+            </select></label
+          >
+          <label><input id="repeat" type="checkbox" checked /> 반복</label>
+          <label id="supplement-label" hidden
+            >그림
+            <select id="supplement">
+              <option value="original">기존 그림</option>
+              <option value="supplemented">생성 보강</option>
+            </select></label
+          >
+        </div>
+      </fieldset>
+      <section class="stage-panel" aria-label="선택한 동작 재생">
+        <div class="stage-heading">
+          <h2 id="motion-title">동작을 준비하고 있어요</h2>
+          <span id="priority"></span>
+        </div>
+        <p id="summary"></p>
+        <canvas
+          id="stage"
+          width="900"
+          height="410"
+          aria-label="아타호 동작 미리보기"
+        ></canvas>
+        <div class="timeline">
+          <button id="previous" type="button" aria-label="이전 자세" disabled>
+            ◀
+          </button>
+          <input
+            id="timeline"
+            aria-label="동작 시간 탐색"
+            type="range"
+            min="0"
+            max="1000"
+            step="1"
+            value="0"
+            disabled
+          />
+          <button id="next" type="button" aria-label="다음 자세" disabled>
+            ▶
+          </button>
+          <output id="status">원본 그림을 불러오는 중이에요.</output>
+        </div>
+      </section>
+      <section class="review-panel" aria-label="동작별 검토">
+        <h2>살펴볼 부분</h2>
+        <p id="review"></p>
+        <p id="missing" class="missing" hidden></p>
+      </section>
+      <details class="source-panel">
+        <summary>사용한 원본 자세 · 눌러서 확인</summary>
+        <p>
+          기존 그림은 그대로 쓰고, 자세 순서·유지 시간·이동을 조합했습니다. 생성
+          보강은 초기 회피·하단 타격용 비교 후보이며, 개선한 회피는 기존
+          프레임만 사용합니다. 숫자는 원본의 0번부터 시작하는 프레임 번호입니다.
+        </p>
+        <div id="frames" class="frame-strip"></div>
+        <p>
+          효과 없는 실제 재생 기록:
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/refinement/rush-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >원투 GIF</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/refinement/dodge-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >회피 GIF</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/refinement/flying-kick-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >날아차기 GIF</a
+          >
+        </p>
+        <a
+          href="../../../../resources/ataho-v2-generation.json"
+          target="_blank"
+          rel="noopener"
+          >원본 출처와 가져오기 기록</a
+        >
+        <p>
+          <a
+            href="../../../../resources/ataho-v2-combo-dodge-generation.json"
+            target="_blank"
+            rel="noopener"
+            >회피 보강 생성 기록</a
+          >
+          ·
+          <a
+            href="../../../../resources/ataho-v2-combo-slide-generation.json"
+            target="_blank"
+            rel="noopener"
+            >하단 타격 생성 기록</a
+          >
+        </p>
+      </details>
+      <footer>
+        1~5 동작 선택 · Space 정지/재생 · ← → 자세 탐색. 독립 시안이며 본게임
+        적용은 별도 검토합니다. 4·5번은 초기 시안으로 채택을 보류했습니다.
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-v2-combos/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

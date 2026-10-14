@@ -1,0 +1,139 @@
+{
+  "assetId": "local/ataho-v2-combos",
+  "date": "2026-10-14",
+  "baselineCommit": "6f89edd",
+  "approvedScope": ["rush", "dodge", "flying-kick"],
+  "newImageGenerationCalls": 0,
+  "sourceImagesModified": false,
+  "changes": {
+    "rush": "달리기 감속 후 디딤, 공격 중 위치 고정, 두 타격 사이 몸통 전환과 가드 회수 연결",
+    "dodge": "피격·생성 뒤젖힘 제외, 역순 보행으로 한 걸음 후퇴 후 짧은 어퍼컷",
+    "flying-kick": "한 계열 하이킥으로 통일, 공중 몸통 기준 정렬, 웅크린 준비 중 이동 방지, 착지 유지"
+  },
+  "limits": [
+    "원투의 원본 팔 뻗음이 짧아 결정타의 무게는 약하다.",
+    "원본 포즈 사이의 일부 얼굴 변화가 남는다.",
+    "4·5번은 이번 개선 범위에서 제외하고 초기 시안으로 채택 보류한다."
+  ],
+  "browserPlayback": {
+    "browser": "Codex in-app browser",
+    "testedSpeeds": [1, 0.25],
+    "effects": "off",
+    "consoleErrors": 0
+  },
+  "previews": [
+    {
+      "kind": "actual-browser-playback",
+      "browser": "Codex in-app browser",
+      "presentation": "movement",
+      "captureSpeed": 0.25,
+      "exportSpeed": 1,
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/refinement/rush-effects-off.gif",
+      "sha256": "d1566f20ed70f71ef1fd9a1b163881630b5828641c32c54a5ed3c064d07e965d",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 54,
+      "durationMs": 1880,
+      "phases": [
+        "준비 · 자세 1/17 · 0.08초",
+        "돌진 시작 · 자세 2/17 · 0.11초",
+        "돌진 · 자세 3/17 · 0.21초",
+        "감속 · 자세 5/17 · 0.32초",
+        "앞발 디딤 · 자세 6/17 · 0.41초",
+        "잽 뻗기 · 자세 7/17 · 0.51초",
+        "첫 타격 · 자세 8/17 · 0.54초",
+        "잽 회수 · 자세 9/17 · 0.61초",
+        "몸통 전환 · 자세 10/17 · 0.65초",
+        "뒷손 장전 · 자세 11/17 · 0.69초",
+        "두 번째 타격 · 자세 12/17 · 0.77초",
+        "팔 회수 · 자세 13/17 · 0.85초",
+        "힘 풀기 · 자세 14/17 · 0.89초",
+        "가드 되돌리기 · 자세 15/17 · 0.95초",
+        "가드 복귀 · 자세 16/17 · 0.99초",
+        "복귀 · 자세 17/17 · 1.13초"
+      ]
+    },
+    {
+      "kind": "actual-browser-playback",
+      "browser": "Codex in-app browser",
+      "presentation": "movement",
+      "captureSpeed": 0.25,
+      "exportSpeed": 1,
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/refinement/dodge-effects-off.gif",
+      "sha256": "a0d452cfbd7f06842b7be4a9a3b92facfc4230430b59ab18330f7468a9d7f012",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 54,
+      "durationMs": 1730,
+      "phases": [
+        "근접 대치 · 자세 1/15 · 0.08초",
+        "후퇴 시작 · 자세 2/15 · 0.12초",
+        "한 걸음 후퇴 · 자세 3/15 · 0.17초",
+        "후퇴 감속 · 자세 5/15 · 0.30초",
+        "후퇴 디딤 · 자세 6/15 · 0.37초",
+        "낮게 장전 · 자세 7/15 · 0.43초",
+        "앞발로 밀기 · 자세 8/15 · 0.51초",
+        "어퍼컷 올리기 · 자세 9/15 · 0.56초",
+        "어퍼컷 정점 · 자세 10/15 · 0.63초",
+        "타격 여운 · 자세 11/15 · 0.69초",
+        "주먹 회수 · 자세 12/15 · 0.76초",
+        "몸통 되돌리기 · 자세 13/15 · 0.79초",
+        "가드 복귀 · 자세 14/15 · 0.89초",
+        "복귀 · 자세 15/15 · 0.94초"
+      ]
+    },
+    {
+      "kind": "actual-browser-playback",
+      "browser": "Codex in-app browser",
+      "presentation": "movement",
+      "captureSpeed": 0.25,
+      "exportSpeed": 1,
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/refinement/flying-kick-effects-off.gif",
+      "sha256": "f0b63bacf665db530a0fbb506e0eed53971d27bac79007c441fd8491ce0326c9",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 54,
+      "durationMs": 1750,
+      "phases": [
+        "준비 · 자세 1/18 · 0.08초",
+        "힘 모으기 · 자세 2/18 · 0.11초",
+        "무릎 굽히기 · 자세 3/18 · 0.17초",
+        "도약 준비 · 자세 4/18 · 0.22초",
+        "지면 밀기 · 자세 5/18 · 0.33초",
+        "도약 · 자세 6/18 · 0.37초",
+        "무릎 들기 · 자세 7/18 · 0.41초",
+        "킥 장전 · 자세 8/18 · 0.47초",
+        "발 올리기 · 자세 9/18 · 0.50초",
+        "발 뻗기 · 자세 10/18 · 0.58초",
+        "공중 타격 · 자세 11/18 · 0.61초",
+        "타격 풀기 · 자세 12/18 · 0.69초",
+        "다리 거두기 · 자세 13/18 · 0.71초",
+        "착지 준비 · 자세 14/18 · 0.75초",
+        "착지 직전 · 자세 15/18 · 0.81초",
+        "착지 충격 받기 · 자세 16/18 · 0.85초",
+        "일어서기 · 자세 17/18 · 0.95초",
+        "자세 회복 · 자세 18/18 · 1.03초"
+      ]
+    }
+  ],
+  "userAdopted": false,
+  "gameIntegrated": false,
+  "validation": {
+    "check": "passed",
+    "build": "passed",
+    "relatedTests": {
+      "passed": 21,
+      "failed": 0
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "desktopCanvas": {
+      "cssWidth": 684,
+      "backingWidth": 1368,
+      "dpr": 2
+    },
+    "screenshot": "public/assets/maplestory/ataho-v2-combo-lab/20261014/refinement/verification.jpg"
+  }
+}
