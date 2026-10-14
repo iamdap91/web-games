@@ -14,6 +14,17 @@ import {
 } from './source-frames.js';
 import type { ComboMotion } from './types.js';
 
+const priorityLabels: Readonly<
+  Record<
+    ComboMotion['priority'],
+    { readonly subtitle: string; readonly badge: string }
+  >
+> = {
+  recommended: { subtitle: '먼저 살펴볼 동작', badge: '우선 추천' },
+  review: { subtitle: '새 시안 · 연결 검토', badge: '연결 검토' },
+  experimental: { subtitle: '초기 시안 · 채택 보류', badge: '채택 보류' },
+};
+
 function element<T extends HTMLElement>(selector: string): T {
   const result = document.querySelector<T>(selector);
   if (!result) throw new Error(`화면 요소가 없습니다: ${selector}`);
@@ -78,10 +89,7 @@ class ComboScreen {
       button.setAttribute('aria-pressed', 'false');
       button.append(document.createTextNode(`${index + 1}. ${motion.title}`));
       const subtitle = document.createElement('small');
-      subtitle.textContent =
-        motion.priority === 'recommended'
-          ? '먼저 살펴볼 동작'
-          : '초기 시안 · 채택 보류';
+      subtitle.textContent = priorityLabels[motion.priority].subtitle;
       button.append(subtitle);
       button.addEventListener('click', () => this.select(motion), {
         signal: this.events.signal,
@@ -108,8 +116,7 @@ class ComboScreen {
     element('#motion-title').textContent = motion.title;
     element('#summary').textContent = motion.summary;
     element('#review').textContent = activeMotion.review;
-    element('#priority').textContent =
-      motion.priority === 'recommended' ? '우선 추천' : '채택 보류';
+    element('#priority').textContent = priorityLabels[motion.priority].badge;
     const missing = element('#missing');
     missing.hidden = !activeMotion.missingPose;
     missing.textContent = activeMotion.missingPose

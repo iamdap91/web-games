@@ -1,0 +1,285 @@
+{
+  "assetId": "local/ataho-v2-combos",
+  "date": "2026-10-14",
+  "baselineCommit": "62b9d6a6622db7d834b0c6ec3046354db7f3930b",
+  "approvedScope": ["ground-spin", "elbow-chop"],
+  "previousRecord": "resources/ataho-v2-combo-additions.json",
+  "originalRecord": "resources/ataho-v2-generation.json",
+  "newImageGenerationCalls": 0,
+  "sourceImagesModified": false,
+  "parallelImplementation": ["motions/ground-spin.ts", "motions/elbow-chop.ts"],
+  "changes": {
+    "ground-spin": {
+      "sourceMotion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+      "sourceSize": {
+        "width": 96,
+        "height": 96
+      },
+      "sourceFrames": [0, 1, 2, 3, 4, 5, 6],
+      "contactFrame": 4,
+      "comboDurationMs": 1060,
+      "priority": "review",
+      "description": "가드→회전 발차기 0~6번→원투 15~16번→가드. 제자리 접지와 접힌 다리의 짧은 타격으로 구성한다."
+    },
+    "elbow-chop": {
+      "sourceMotion": "ataho-firewood-elbow-chop-south-east-south-east",
+      "sourceSize": {
+        "width": 76,
+        "height": 92
+      },
+      "sourceFrames": [0, 1, 2, 3, 4, 5, 6, 8, 10, 12],
+      "contactFrame": 4,
+      "comboDurationMs": 1240,
+      "priority": "review",
+      "description": "보행 두 자세로 14px 접근한 뒤 발·높이를 고정한다. 첫 생성 계열로 팔을 올려 4번에서 짧게 내려치고 원투 15~16번으로 가드를 잇는다.",
+      "sourceChoice": "빠른 버전 4~6번의 모호한 큰 흰 형체를 피하기 위해 첫 생성 76×92 계열을 재사용했다."
+    }
+  },
+  "limits": [
+    "지상 회전은 원본에서 다리를 충분히 뻗지 않아 큰 돌려차기 윤곽이 없고, 회전 중 얼굴·몸 방향 변화가 남는다.",
+    "팔꿈치는 첫 생성에서도 몸통 숙임과 팔꿈치 윤곽이 작아 효과 없이 보면 팔을 내리는 몸짓으로 보일 수 있다."
+  ],
+  "browserPlayback": {
+    "browser": "Codex in-app browser",
+    "testedSpeeds": [1, 0.25],
+    "effects": "off",
+    "keyboardSelection": [8, 9],
+    "pauseResume": "passed",
+    "standaloneConsoleErrors": 0,
+    "capturedAllPhases": true
+  },
+  "previews": [
+    {
+      "id": "ground-spin",
+      "kind": "actual-browser-playback",
+      "browser": "Codex in-app browser",
+      "presentation": "movement",
+      "captureSpeed": 0.25,
+      "exportSpeed": 1,
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/review/ground-spin-effects-off.gif",
+      "sha256": "0f0b2ef7bc529b6ca3c647a3cfb64d2dc6edb448ece9dfc1788d5e6091c787a6",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 215,
+      "exportedFrames": 29,
+      "durationMs": 1800,
+      "phases": [
+        "가드 준비",
+        "무게 낮추기",
+        "발 디딤",
+        "몸 회전",
+        "무릎 올리기",
+        "접힌 다리 타격",
+        "타격 풀기",
+        "다리 거두기",
+        "중심 회복",
+        "손 되돌리기",
+        "가드 올리기",
+        "가드 복귀"
+      ]
+    },
+    {
+      "id": "elbow-chop",
+      "kind": "actual-browser-playback",
+      "browser": "Codex in-app browser",
+      "presentation": "movement",
+      "captureSpeed": 0.25,
+      "exportSpeed": 1,
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/review/elbow-chop-effects-off.gif",
+      "sha256": "09a70cfd10355916c5b3d981efde271c4bd92b0fca0f2337d7442533875ee609",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 242,
+      "exportedFrames": 38,
+      "durationMs": 2000,
+      "phases": [
+        "가드 준비",
+        "한 걸음 접근",
+        "앞발 디딤",
+        "발 고정",
+        "팔 올리기 시작",
+        "팔 들어올리기",
+        "내려치기 준비",
+        "짧은 내려치기",
+        "내려치기 마무리",
+        "타격 후 힘 풀기",
+        "팔 회수",
+        "어깨 힘 풀기",
+        "몸통 복귀",
+        "가드 되찾기",
+        "가드 올리기",
+        "가드 복귀"
+      ]
+    }
+  ],
+  "sourceCaptures": {
+    "ground-spin": "public/assets/maplestory/ataho-v2-combo-lab/20261014/review/ground-spin-capture/capture.json",
+    "elbow-chop": "public/assets/maplestory/ataho-v2-combo-lab/20261014/review/elbow-chop-final-capture/capture.json"
+  },
+  "userAdopted": false,
+  "gameIntegrated": false,
+  "validation": {
+    "check": "passed",
+    "build": "passed",
+    "relatedTests": {
+      "passed": 24,
+      "failed": 0
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "canvasCssWidth": 344,
+      "dpr": 1,
+      "motionButtonCount": 9
+    },
+    "desktopCanvas": {
+      "cssWidth": 684,
+      "backingWidth": 1368,
+      "dpr": 2
+    },
+    "screenshots": [
+      "public/assets/maplestory/ataho-v2-combo-lab/20261014/review/mobile.jpg",
+      "public/assets/maplestory/ataho-v2-combo-lab/20261014/review/verification.jpg"
+    ],
+    "previousSevenMotionDataUnchanged": true
+  },
+  "sourceVerification": {
+    "checkedFrames": 22,
+    "allOriginalHashesMatch": true,
+    "frames": [
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png",
+        "sha256": "e5cb58c7951dd6bf844df1e2649aeb0fd564cbda44291236e00dac9aaf550f8e",
+        "width": 96,
+        "height": 96
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_000.png",
+        "sha256": "b3a7697df28edaad4c81e82a9c59354a1773bb9056b6afd7dbf3d73ac04969a8",
+        "width": 96,
+        "height": 96
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_001.png",
+        "sha256": "62e31a2a1aee2de18f090e8eb6315a7534b69a425852aaf264d287e98d5c9c63",
+        "width": 96,
+        "height": 96
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_002.png",
+        "sha256": "bc210996ed0d7c75d253f877580972d12a78f19deba722a5afe4668e61fe5440",
+        "width": 96,
+        "height": 96
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_003.png",
+        "sha256": "4748c162bc9dd3e98c2a4378e59bd5dc17751735184ff4948a39a56ac485d482",
+        "width": 96,
+        "height": 96
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_004.png",
+        "sha256": "26934855664899ab53fa4ea268e66a004a3b6f780761c5ad47276903c24d8632",
+        "width": 96,
+        "height": 96
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_005.png",
+        "sha256": "a86905099100622f6f914efd0590b59b0702684d01b3fb63b25c4d88d89113b2",
+        "width": 96,
+        "height": 96
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_006.png",
+        "sha256": "b1b1e3215d77b6c5270a5a37ac60ebb26d74bc5c1ac2f91504007b7f9af90f74",
+        "width": 96,
+        "height": 96
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_015.png",
+        "sha256": "6a51ad800a5a62fd2bc2f0837f4395272d9f00e784dae5e81d2fc7aa04153420",
+        "width": 96,
+        "height": 96
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_016.png",
+        "sha256": "14726df2d8fd09e095dda200287a8bec8dfd571ee00b5128964e81600a7eb1d0",
+        "width": 96,
+        "height": 96
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Walking/south-east/frame_000.png",
+        "sha256": "4052932158051988c1936389b0be169d76e50ee22e7e4150c13cc2d3e14f0894",
+        "width": 96,
+        "height": 96
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Walking/south-east/frame_001.png",
+        "sha256": "c25a92e9a71d8fef5685c58869cb7c50c56876ba428b7fcc384b45e9126cb2d6",
+        "width": 96,
+        "height": 96
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_000.png",
+        "sha256": "b28c32f0b7e6552e18b91c336e656f2224a6cc0b5776610f847af457c2b70483",
+        "width": 76,
+        "height": 92
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_001.png",
+        "sha256": "9e76ca931e0745f1ca585e40533053c212ae3afa7f9a8e02b6920e6e20675c02",
+        "width": 76,
+        "height": 92
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_002.png",
+        "sha256": "67687ad39613d5bacb2bba067a11228543e4eca1c773d9dc9becd23355fa11f8",
+        "width": 76,
+        "height": 92
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_003.png",
+        "sha256": "7c49acbedb1ea8b5d3429952568a132bb9f8dd71e60b587b07b667665df0e7fe",
+        "width": 76,
+        "height": 92
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_004.png",
+        "sha256": "3fa808173f702f4055145e953e84e1c34b221d4de7724bc29ea148a3b5b79880",
+        "width": 76,
+        "height": 92
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_005.png",
+        "sha256": "905a70253c96aad99b8dece4db0102e8a7e5b10b67334025a9d6e10bd88bffe4",
+        "width": 76,
+        "height": 92
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_006.png",
+        "sha256": "6f2b9a10fbc8dcacd952ae885fb653468a45f3e5ba576f535605acc3045b2991",
+        "width": 76,
+        "height": 92
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_008.png",
+        "sha256": "1edab4d0c7c73f1d27789e5c27f645381ceb1f89604c65034db9527bc126c734",
+        "width": 76,
+        "height": 92
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_010.png",
+        "sha256": "446246d819eaa6fe2714f88bcf3b46f381b8e20b2451ba5ae5ebb735982015af",
+        "width": 76,
+        "height": 92
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_012.png",
+        "sha256": "615651c6ab1d798f25fcd66e9e9fd895268726ae25ce7a6a845a99f3656d22ec",
+        "width": 76,
+        "height": 92
+      }
+    ]
+  }
+}

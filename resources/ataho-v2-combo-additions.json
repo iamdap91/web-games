@@ -1,0 +1,218 @@
+{
+  "assetId": "local/ataho-v2-combos",
+  "date": "2026-10-14",
+  "baselineCommit": "cd1e96af2b4dcf94e0f99ed9bd9915665fbd1209",
+  "approvedScope": ["cheolsango", "drink-guard"],
+  "previousRecord": "resources/ataho-v2-combo-refinement.json",
+  "originalRecord": "resources/ataho-v2-generation.json",
+  "newImageGenerationCalls": 0,
+  "sourceImagesModified": false,
+  "changes": {
+    "cheolsango": "기존 짧은 버전 01~04, 0-based 0~3 네 장으로 교체. 3번 충돌 유지 뒤 2→1→0 역순 회수. 준비 중 제자리, 왼쪽으로 40px 진입, 충돌 뒤 제자리 복귀.",
+    "drink-guard": "남동쪽 마시기 0~5번 순방향 뒤 원투 15~16번으로 손 회수·가드 연결. 1.7초, 전 단계 접지·위치 고정, 공격 접촉 없음."
+  },
+  "limits": [
+    "철산고 원본의 어깨 회전 폭은 작아 효과 없이 충돌감이 충분한지 사용자 검토가 필요하다.",
+    "마시기의 물체를 꺼내고 넣는 연결 그림이 부족해 등장·소멸이 남는다."
+  ],
+  "browserPlayback": {
+    "browser": "Codex in-app browser",
+    "testedSpeeds": [1, 0.25],
+    "effects": "off",
+    "keyboardSelection": [6, 7],
+    "pauseResume": "passed",
+    "frameNavigation": "passed",
+    "standaloneConsoleErrors": 0,
+    "librarySelection": "passed",
+    "libraryBrowserShellErrors": 1,
+    "browserToolingNote": "라이브러리 로드 중 내장 브라우저의 익명 스크립트에서 MutationObserver 오류가 관찰됐다. CDP 예외 스택은 빈 URL의 압축 스크립트와 node:electron/js2c/sandbox_bundle이며 저장소 스크립트가 아니다. 두 새 모션의 라이브러리 선택·재생과 별도 조합실은 정상 동작했다.",
+    "browserToolingDiagnostic": "public/assets/maplestory/ataho-v2-combo-lab/20261014/additions/browser-shell-exception.json"
+  },
+  "previews": [
+    {
+      "kind": "actual-browser-playback",
+      "browser": "Codex in-app browser",
+      "presentation": "movement",
+      "captureSpeed": 0.25,
+      "exportSpeed": 1,
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/additions/cheolsango-short-effects-off.gif",
+      "sha256": "5acb3dd383a5bd8c462ee04b0b8436dcca948d1ca6d007b085835c9397dbb7ea",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 179,
+      "exportedFrames": 30,
+      "durationMs": 1500,
+      "phases": [
+        "가드 준비",
+        "몸통 장전",
+        "발 디딤",
+        "몸통 밀기",
+        "등·어깨 충돌",
+        "충돌 풀기",
+        "몸통 회수",
+        "팔 내리기",
+        "가드 되돌리기",
+        "가드 복귀"
+      ]
+    },
+    {
+      "kind": "actual-browser-playback",
+      "browser": "Codex in-app browser",
+      "presentation": "movement",
+      "captureSpeed": 0.25,
+      "exportSpeed": 1,
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/additions/drink-effects-off.gif",
+      "sha256": "181825851a7fc4a9ea7b189cc7a4f535b1750d6943127ec571f73b93ec9b54a7",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 287,
+      "exportedFrames": 27,
+      "durationMs": 2400,
+      "phases": [
+        "잠깐 여유",
+        "마실 준비",
+        "손 들어올리기",
+        "입으로 가져가기",
+        "한 모금",
+        "모금 마무리",
+        "물체 거두기",
+        "손 되돌리기",
+        "가드 올리기",
+        "가드 복귀"
+      ]
+    }
+  ],
+  "userAdopted": false,
+  "gameIntegrated": false,
+  "validation": {
+    "check": "passed",
+    "build": "passed",
+    "relatedTests": {
+      "passed": 23,
+      "failed": 0
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844,
+      "documentWidth": 390,
+      "canvasCssWidth": 344,
+      "dpr": 1
+    },
+    "desktopCanvas": {
+      "cssWidth": 684,
+      "backingWidth": 1368,
+      "dpr": 2
+    },
+    "screenshots": [
+      "public/assets/maplestory/ataho-v2-combo-lab/20261014/additions/mobile.jpg",
+      "public/assets/maplestory/ataho-v2-combo-lab/20261014/additions/verification.jpg",
+      "public/assets/maplestory/ataho-v2-combo-lab/20261014/additions/cheolsango-short-verification.jpg"
+    ]
+  },
+  "sourceVerification": {
+    "checkedFrames": 13,
+    "allOriginalHashesMatch": true,
+    "frames": [
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png",
+        "sha256": "e5cb58c7951dd6bf844df1e2649aeb0fd564cbda44291236e00dac9aaf550f8e"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/cheolsango/00.png",
+        "sha256": "dbd732bf8936be51456dffa36c601a3101e0af971c0d4302dff78f77c933acce"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/cheolsango/01.png",
+        "sha256": "f43acc1fc1d507af3ed64f068fa886b1f7b97f811d04a9dba1dc65e991016158"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/cheolsango/02.png",
+        "sha256": "621f5c6338cfc4a9d1565139c54719ea03f6bf6cea76258a0a0a2a14dbeed572"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/cheolsango/03.png",
+        "sha256": "a948c673c9adfe2a725666bee405f576ceb47a06a1f4cd2ca3df137cbdc2e973"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Drinking/south-east/frame_000.png",
+        "sha256": "ee0c8038d6b86bfa9d85390008e0ae405e2babb4991fbd27a2b778959ec5047c"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Drinking/south-east/frame_001.png",
+        "sha256": "5774c8aa430fb54597d867569746a37fb775748c24c589a26e9b3c5a0f9381bf"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Drinking/south-east/frame_002.png",
+        "sha256": "ab5c4167463c00803aef56fafd08ab459d2c6a4bff62e5c6534a9aadd2cd6b57"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Drinking/south-east/frame_003.png",
+        "sha256": "da9419fdf70b086e868f20f39b90ee0c623f0b8e90ad90cc8c7df70441084f22"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Drinking/south-east/frame_004.png",
+        "sha256": "390536f1e5faf553c2585b1c8b6c408b77afc3cc55bf65f452668e1f00d0d564"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Drinking/south-east/frame_005.png",
+        "sha256": "e517b57cbada739216dc4755272978f11d88071e964ecf9fb8b28c71a65b4fd4"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_015.png",
+        "sha256": "6a51ad800a5a62fd2bc2f0837f4395272d9f00e784dae5e81d2fc7aa04153420"
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_016.png",
+        "sha256": "14726df2d8fd09e095dda200287a8bec8dfd571ee00b5128964e81600a7eb1d0"
+      }
+    ]
+  },
+  "supersededPreviews": [
+    {
+      "kind": "actual-browser-playback",
+      "browser": "Codex in-app browser",
+      "presentation": "movement",
+      "captureSpeed": 0.25,
+      "exportSpeed": 1,
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/additions/cheolsango-effects-off.gif",
+      "sha256": "5279b75f65fef3ef7c420dedcbbfd93908be6cbf859760a6fc7dc478ce491da5",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 219,
+      "exportedFrames": 35,
+      "durationMs": 1840,
+      "phases": [
+        "가드 준비",
+        "몸통 장전",
+        "팔 거두기",
+        "발 디딤",
+        "몸통 밀기",
+        "왼쪽 등·어깨 진입",
+        "등·어깨 충돌",
+        "충돌 풀기",
+        "무게 받기",
+        "몸통 회수",
+        "몸 세우기",
+        "중심 회복",
+        "팔 내리기",
+        "가드 되돌리기",
+        "가드 복귀"
+      ]
+    }
+  ],
+  "revisions": [
+    {
+      "baselineCommit": "3c310dc07854bf679da3c7e86b8ae4204316d789",
+      "date": "2026-10-14",
+      "scope": ["cheolsango"],
+      "request": "기존에 잘린 철산고 버전으로 재적용",
+      "sourceMotion": "cheolsango-short",
+      "sourceFrames": [0, 1, 2, 3],
+      "poseOrder": [0, 1, 2, 3, 2, 1, 0],
+      "comboDurationMs": 790,
+      "sourceImagesModified": false,
+      "browserSpeeds": [1, 0.25],
+      "standaloneConsoleErrors": 0
+    }
+  ]
+}
