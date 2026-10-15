@@ -14,7 +14,7 @@
 
 `window.villageStyleDioramaGrowth`는 ready/snapshot/project/screenPositions/paused/disposed/diagnostics를 읽기만 제공한다. `snapshot.growth.progress`가 공사 진행률이고 `diagnostics.constructionDynamic`/`annexInCache`는 별채의 현재 합성 위치다. `backgroundRenders`로 공사 중 배경 캐시 유지와 완료 재굽기를 확인할 수 있다. embed=1에서도 조작 버튼을 유지한다. 승인된 아타호의 원본 RGBA·프레임 비율·방향 프레임을 보존한다.
 
-검증: 빌드/담당 lint/로직 2개(공사장·문·울타리·작업대 충돌, 단계완료, 중복 요청, 마당 실제 이동, 닫힘 끼임 보정). Chrome embed 실행에서 공사 진행 중 `backgroundRenders=1`, 완료 후 `2`, 동적 → 캐시 편입 확인. 클릭으로 새 마당 `(-4.75,-2.75)` 도착, 직접키/Space/멈춤 시간 정지/430px resize/pagehide dispose와 오류 0을 확인했다.
+당시 검증: 빌드/담당 lint/로직 검사 2개(공사장·문·울타리·작업대 충돌, 단계완료, 중복 요청, 마당 실제 이동, 닫힘 끼임 보정). Chrome embed 실행에서 공사 진행 중 `backgroundRenders=1`, 완료 후 `2`, 동적 → 캐시 편입 확인. 클릭으로 새 마당 `(-4.75,-2.75)` 도착, 직접키/Space/멈춤 시간 정지/430px resize/pagehide dispose와 오류 0을 확인했다.
 
 ## 라이브러리 통합 검토 · 2026-10-13
 

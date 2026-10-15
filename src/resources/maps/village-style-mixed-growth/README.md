@@ -30,7 +30,7 @@
 
 ## 검증과 한계
 
-회귀 테스트는 `tests/village-style-mixed-growth.test.mjs`에 있다. 성장 adjacency/실내 같은 상태, 실제 벽·가구 우회와 연결 뒤 경로 단축, 세 시설/귀환, 입구 복귀 보존, 새 벽 끼임의 근거리 보정, 계단 발높이/대각선 속도/잘못된 입력/불시간을 검증한다.
+당시 로직 검사로 성장 adjacency/실내 같은 상태, 실제 벽·가구 우회와 연결 뒤 경로 단축, 세 시설/귀환, 입구 복귀 보존, 새 벽 끼임의 근거리 보정, 계단 발높이/대각선 속도/잘못된 입력/불시간을 확인했다.
 
 `npm run check`, `npm run build`, 6개 로직 회귀가 통과했다. 실제 Chrome 1100×620 DPR2에서 초기 BODY focus, 키보드/지면 클릭/세 시설 Space, 세 성장 단계의 공유벽·지붕 갱신, 외벽/단면의 상태 보존, 주민 작업 반응, normal/광원 비교, 계단 발높이0.7, 귀환을 확인했다. Canvas PNG는 정지 중 동일했고 정지 resize에서 renderCount가 정확히1회 증가했다. 종료 후 ready=false/disposed=true와 textureCache=0을 확인했다.
 

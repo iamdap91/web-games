@@ -41,3 +41,15 @@ export function withSupplement(motion) {
     }
     return motion;
 }
+export function applySupplement(motion) {
+    // 현재 선택한 박자에 그림 교체를 적용해 두 설정이 서로 덮어쓰지 않게 한다.
+    const supplemented = withSupplement(motion);
+    if (!supplemented.supplementedSteps)
+        return motion;
+    return {
+        ...motion,
+        steps: supplemented.supplementedSteps,
+        review: supplemented.supplementedReview ?? motion.review,
+        missingPose: supplemented.supplementedMissingPose,
+    };
+}

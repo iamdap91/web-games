@@ -54,7 +54,12 @@ if (main && !embeddedScene) {
     const observer = new MutationObserver(refreshContents);
     let contentSignature = '';
     let sectionIndex = 0;
-    observer.observe(main, { childList: true, subtree: true });
+    observer.observe(main, {
+        childList: true,
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['hidden'],
+    });
     refreshContents();
     window.addEventListener('pagehide', (event) => {
         if (!event.persisted) {
@@ -67,7 +72,7 @@ if (main && !embeddedScene) {
             return;
         const headings = [
             ...main.querySelectorAll('h2, details > summary'),
-        ];
+        ].filter((heading) => !heading.closest('[hidden]'));
         const signature = headings
             .map((heading) => heading.textContent?.trim())
             .join('\n');

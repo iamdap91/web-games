@@ -18,7 +18,7 @@ WASD/방향키·길 클릭으로 이동, Space 근처 사용, R 도장복구, C 
 
 `RetroVisit`은 연속 보행/입력/시설과 비교 모드, `ModelCadence`는 표시 시간, `RetroScenery`는 시간에 따른 실제 간판·차양·바퀴 mesh 변환을 소유한다.
 
-`tests/village-style-retro-cadence.test.mjs`에서 같은 12fps 프레임 안의 매 입력 이동, 연속 시간 비교, delta0 정지를 검사한다. Chrome 실제키보드 이동·간판/차양/바퀴 진행·비교 모드·일시정지·모바일 resize·dispose를 확인했고 페이지 오류가 없었다. 타입 빌드·담당 ESLint를 통과했다.
+당시 로직 검사로 같은 12fps 프레임 안의 매 입력 이동, 연속 시간 비교, delta0 정지를 확인했다. Chrome 실제키보드 이동·간판/차양/바퀴 진행·비교 모드·일시정지·모바일 resize·dispose를 확인했고 페이지 오류가 없었다. 타입 빌드·담당 ESLint를 통과했다.
 
 ## 라이브러리 통합 검토 · 2026-10-13
 

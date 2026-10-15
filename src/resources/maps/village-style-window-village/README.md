@@ -19,10 +19,10 @@
 
 읽기 전용 `window.villageStyleWindowVillage`: ready, snapshot, paused, overview, disposed, project({x,z}), screenPositions(door/fixture), diagnostics(camera/light/windows/normal/pixel/inside/transition). 진단용 복사본으로 진행을 바꿀 수 없다.
 
-검증: `npm run check`, `npm run build`, `node --test tests/village-style-window-village.test.mjs`. 실제 입력·시각 검토는 담당 root가 통합 환경에서 진행한다.
+검증: `npm run check`, `npm run build`. 실제 입력·시각 검토는 담당 root가 통합 환경에서 진행한다.
 
 ## 확장 조합 통합 검토 · 2026-10-13
 
-공방 문과 풀무→수련당 문과 복구/수련→개울 다리→찻집 문과 차를 실제 보행해 worked/repaired/trained/tea 및 세 방 방문을 확인했다. 정면 보행 모션명을 원본 move/stand에 맞춘 빌드에서 출입이 계속 진행됐다. 최종 문턱 수정 뒤 수동 S 출구와 D 외부 보행으로 벽 띠 고착이 사라짐을 확인했다. 정지 snapshot/Canvas PNG 동일, 390×620 가로 넘침 없음, 재방문의 기록 보존과 종료 ready=false/disposed=true를 확인했다. 전용 테스트 7개가 통과했다.
+공방 문과 풀무→수련당 문과 복구/수련→개울 다리→찻집 문과 차를 실제 보행해 worked/repaired/trained/tea 및 세 방 방문을 확인했다. 정면 보행 모션명을 원본 move/stand에 맞춘 빌드에서 출입이 계속 진행됐다. 최종 문턱 수정 뒤 수동 S 출구와 D 외부 보행으로 벽 띠 고착이 사라짐을 확인했다. 정지 snapshot/Canvas PNG 동일, 390×620 가로 넘침 없음, 재방문의 기록 보존과 종료 ready=false/disposed=true를 확인했다. 당시 로직 검사 7개가 통과했다.
 
 화면 크기 검사는 데스크톱 내장 브라우저 뷰포트 검사이며 실제 휴대전화 검증은 아니다. 대표 이미지는 통합 환경의 실제 렌더이며 PNG 크기·SHA256은 resources/manifest.json에 기록했다.

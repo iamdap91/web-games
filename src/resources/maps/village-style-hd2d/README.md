@@ -38,7 +38,7 @@
 
 2026-10-13, 전용 워크트리와 `8197` 서버에서 검증했다.
 
-- `npm run check`, `npm run build`, `node --test tests/village-style-hd2d.test.mjs`: 통과. 핵심 규칙 테스트 3개는 계단 실제 높이·옹벽 차단·강과 다리·건물과 화덕 충돌·계단/경사로 경로·시설 상태를 확인한다.
+- `npm run check`, `npm run build`: 통과. 당시 로직 검사 3개로 계단 실제 높이·옹벽 차단·강과 다리·건물과 화덕 충돌·계단/경사로 경로·시설 상태를 확인했다.
 - 설치된 Google Chrome와 Playwright로 1366×768에서 화면을 실제 렌더링하고 입력했다. 화덕 → 도장 → 강변 쉼터를 길 누르기로 방문하고 Space 사용, 화덕 불꽃 진행, 도장 높이 2.8, 복구 전후, 직접 키보드 계단 상승과 도장 벽 충돌을 확인했다. 원본 정면 45×63px의 세계 크기 1.5×2.1과 카메라 세로 보정 1.2080909763, 걷는 중 발 높이=지면+0.035를 검사했다. 도장 뒤 골목(-0.0003, -10.35, 높이 2.8)에서 실제 건물 가림 화면도 확인했다.
 - Esc 정지 중 보행 불변, M 조망, 입구로 초기화, `?embed=1`의 `resource-scene-dispose` 후 `ready=false`, `disposed=true`와 embedded 초기 자동 canvas focus가 없는 것을 확인했다. console/pageerror 0.
 - Chrome 390×844, DPR 2, touch emulation에서 실제 tap 경로 이동·화덕 사용·복구 버튼과 화면 배치를 확인했다. 실제 휴대폰 검증은 아니다.

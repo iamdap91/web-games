@@ -20,7 +20,7 @@ WASD / 방향키 보행, 클릭·터치 장애물 우회 이동, Space / 사용 
 
 ## 검증
 
-`tests/village-style-natural-crossing.test.mjs`에서 같은 xz 교점의 통행층 분리·램프와 낮은 입구 경유·실제 보행 도달·발견을 검증한다. Chrome 실제 실행으로 높은 다리 횡단, 낮은 입구 → 다리 아래 → 물빛 돌 클릭 이동, Space, 정지·재개, DPR 2와 세로 화면 리사이즈를 확인한다.
+당시 로직 검사로 같은 xz 교점의 통행층 분리·램프와 낮은 입구 경유·실제 보행 도달·발견을 확인했다. Chrome 실제 실행으로 높은 다리 횡단, 낮은 입구 → 다리 아래 → 물빛 돌 클릭 이동, Space, 정지·재개, DPR 2와 세로 화면 리사이즈를 확인한다.
 
 `window.villageStyleNaturalCrossing`는 읽기 전용 화면 조회용 진단이다. `ready`, `snapshot`, `project`, `screenPositions`, `paused`, `disposed`, `diagnostics`를 제공하며 게임 상태를 바꾸는 디버그 명령을 공개하지 않는다. 좌표는 canvas CSS 픽셀 기준이며 페이지의 canvas bounds를 더해 입력한다.
 

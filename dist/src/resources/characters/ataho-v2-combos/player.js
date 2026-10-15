@@ -2,6 +2,42 @@ export const repeatGapMs = 700;
 export function comboDuration(motion) {
     return motion.steps.reduce((sum, step) => sum + step.durationMs, 0);
 }
+function movementProgress(progress, curve) {
+    if (curve === 'ease-in')
+        return progress * progress;
+    if (curve === 'ease-out')
+        return 1 - (1 - progress) * (1 - progress);
+    return progress;
+}
+// 잔상도 재생 시점에서 계산해 정지·시간 탐색·다시 재생의 결과를 같게 유지한다.
+export function sampleComboMotion(motion, timeMs) {
+    const durationMs = comboDuration(motion);
+    const elapsedMs = Math.max(0, Math.min(Number.isFinite(timeMs) ? timeMs : 0, durationMs));
+    let remaining = Math.min(elapsedMs, durationMs);
+    let stepIndex = motion.steps.length - 1;
+    for (const [index, step] of motion.steps.entries()) {
+        if (remaining < step.durationMs || index === stepIndex) {
+            stepIndex = index;
+            break;
+        }
+        remaining -= step.durationMs;
+    }
+    const step = motion.steps[stepIndex];
+    const next = motion.steps[stepIndex + 1] ?? step;
+    const blend = Math.min(1, remaining / step.durationMs);
+    const horizontalBlend = movementProgress(blend, step.movementCurve?.x);
+    const verticalBlend = movementProgress(blend, step.movementCurve?.y);
+    return {
+        motion,
+        step,
+        stepIndex,
+        stepElapsedMs: remaining,
+        elapsedMs,
+        durationMs,
+        x: step.x + (next.x - step.x) * horizontalBlend,
+        y: (step.y ?? 0) + ((next.y ?? 0) - (step.y ?? 0)) * verticalBlend,
+    };
+}
 /** 동작 선택·시간·정지를 소유하며 그리기와 입력에 의존하지 않는다. */
 export class ComboPlayer {
     motion;
@@ -51,28 +87,9 @@ export class ComboPlayer {
     }
     get snapshot() {
         const durationMs = comboDuration(this.motion);
-        let remaining = Math.min(this.elapsedMs, durationMs);
-        let stepIndex = this.motion.steps.length - 1;
-        for (const [index, step] of this.motion.steps.entries()) {
-            if (remaining < step.durationMs || index === stepIndex) {
-                stepIndex = index;
-                break;
-            }
-            remaining -= step.durationMs;
-        }
-        const step = this.motion.steps[stepIndex];
-        const next = this.motion.steps[stepIndex + 1] ?? step;
-        const blend = Math.min(1, remaining / step.durationMs);
         const waiting = this.elapsedMs >= durationMs;
         return {
-            motion: this.motion,
-            step,
-            stepIndex,
-            stepElapsedMs: remaining,
-            elapsedMs: Math.min(this.elapsedMs, durationMs),
-            durationMs,
-            x: step.x + (next.x - step.x) * blend,
-            y: (step.y ?? 0) + ((next.y ?? 0) - (step.y ?? 0)) * blend,
+            ...sampleComboMotion(this.motion, this.elapsedMs),
             paused: this.paused,
             waiting,
             opacity: waiting && this.repeating && !this.paused

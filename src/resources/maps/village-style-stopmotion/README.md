@@ -31,7 +31,7 @@
 
 ## 검증 기록
 
-- `npm run check`, `npm run build`, `node --test tests/village-style-stopmotion.test.mjs`: 통과. 의미 있는 로직 테스트 7개로 경로·시설 한 바퀴·우회·반경 충돌·대각선 속도·잘못된 시간·12FPS 경계 유지와 그 사이 보행 연속성을 검증했다.
+- `npm run check`, `npm run build`: 통과. 당시 로직 검사 7개로 경로·시설 한 바퀴·우회·반경 충돌·대각선 속도·잘못된 시간·12FPS 경계 유지와 그 사이 보행 연속성을 검증했다.
 - 설치된 Playwright와 실제 `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome`을 격리 실행했다. 1100×620 / DPR2에서 실제 표시 포즈 증가, 같은 displayFrame의 포즈 유지, simulationTime 증가, 실제 키보드 보행과 화덕→도장→쉼터→동쪽 귀환을 검증했다.
 - 12FPS/연속 비교 버튼에서 같은 표시 frame 내부의 포즈 변화 차이를 확인했다. 일시정지 후 snapshot·diagnostics와 두 PNG가 동일함을 확인했다. 정지 상태에서 1100→390 너비로 바꿔 backing 크기·aspect를 갱신하면서 위치·시간·표시 포즈가 고정됨도 확인했다.
 - 390×620 / DPR2의 embed 화면에서 여섯 버튼, 연속 보행, 전체 조망, 시설 세 곳과 귀환 한 바퀴, canvas backing width 780을 확인했다. 실제 휴대전화 기기 검증은 아니다.

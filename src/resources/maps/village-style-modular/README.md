@@ -40,7 +40,7 @@
 ## 검증
 
 - `npm run check`, `npm run build` 통과.
-- `node --test tests/village-style-modular.test.mjs` 5개 통과: 인접 형태 변화, 통행 경로 단축, 시설 한 바퀴와 기록, 증축/분리 끼임 보정, 보행·화덕·잘못된 입력.
+- 당시 로직 검사 5개 통과: 인접 형태 변화, 통행 경로 단축, 시설 한 바퀴와 기록, 증축/분리 끼임 보정, 보행·화덕·잘못된 입력.
 - 설치된 실제 Chrome에서 키보드 이동과 캔버스 좌표 클릭으로 화덕 → 도장 → 아치 통행 → 안마당 → 귀환을 검증했다. 세 배치 geometrySignature와 통행 변화, 닫힌 아치 안 플레이어의 안전 보정도 확인했다.
 - 정지 뒤 500ms 동안 실제 snapshot과 canvas PNG 픽셀이 동일함을 확인했다. 390×620 라이브러리 iframe 형태와 1100×620, deviceScaleFactor 2의 실제 좌표 클릭을 확인했다. 이는 실제 휴대전화 검증은 아니다.
 - 초기 포커스·embed 버튼·콘솔 오류·dispose 뒤 시간 정지를 확인했다. 첫/완성 단계 검토 그림은 `/private/tmp/modular-stage-0.png`, `/private/tmp/modular-stage-2.png`, 실제 플레이 그림은 `/private/tmp/modular-stage-2-play.png`, 좁은 화면은 `/private/tmp/modular-narrow.png`에 저장했다.

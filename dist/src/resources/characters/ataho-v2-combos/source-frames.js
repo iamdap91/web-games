@@ -22,19 +22,33 @@ export function originalFrame(step) {
     };
 }
 export async function loadComboFrames(motions) {
-    const unique = new Map(motions.flatMap((motion) => [...motion.steps, ...(motion.supplementedSteps ?? [])].map((step) => [frameKey(step), step])));
+    const unique = new Map(motions.flatMap((motion) => [
+        ...motion.steps,
+        ...(motion.effects ?? []).flatMap((effect) => effect.kind === 'pose'
+            ? effect.replacements.map((item) => item.replacement)
+            : []),
+        ...(motion.supplementedSteps ?? []),
+        ...(motion.presentations?.flatMap((presentation) => presentation.steps) ?? []),
+    ].map((step) => [frameKey(step), step])));
     const loaded = await Promise.all([...unique].map(async ([key, step]) => {
         const { frame, label, kind } = originalFrame(step);
         const image = new Image();
         image.src = resourceUrl(frame.localPath).href;
         await image.decode();
         const canvas = document.createElement('canvas');
-        canvas.width = image.naturalWidth;
-        canvas.height = image.naturalHeight;
+        canvas.width = frame.width;
+        canvas.height = frame.height;
         const context = canvas.getContext('2d', { willReadFrequently: true });
         if (!context)
             throw new Error('원본 발 기준을 읽을 수 없습니다.');
-        context.drawImage(image, 0, 0);
+        // 큰 생성 원본도 선언한 논리 픽셀 크기로만 재생하며 파일의 원본은 보존한다.
+        context.imageSmoothingEnabled = false;
+        context.drawImage(image, 0, 0, canvas.width, canvas.height);
+        if (image.naturalWidth !== frame.width ||
+            image.naturalHeight !== frame.height) {
+            image.src = canvas.toDataURL('image/png');
+            await image.decode();
+        }
         const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
         let feetY = 0;
         for (let y = 0; y < canvas.height; y++) {

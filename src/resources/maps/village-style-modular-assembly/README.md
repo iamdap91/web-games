@@ -11,7 +11,7 @@
 
 `window.villageStyleModularAssembly`은 ready/snapshot/project/screenPositions/paused/disposed/diagnostics를 읽기만 제공한다. `snapshot.assembly.phase`는 1~3, `diagnostics.routeOpen`은 실제 충돌 개방 상태다. embed=1에서도 조작 버튼을 남긴다. 승인된 아타호 원본 RGBA·프레임 비율·pivot·방향 프레임을 그대로 사용한다.
 
-검증: 담당 TypeScript 빌드와 ESLint, node 로직 테스트에서 3단계 시간 진행·중복 요청·완료 전 충돌·완료 후 안마당 이동·닫힘 시 끼임 보정. Chrome embed 실제 실행에서 phase 2 진행 → 완료 → 클릭 안마당 `(0,-2.603)` 도착, Space 사용/멈춤/430px resize/두 번째 증축/pagehide 종료와 오류 0을 확인했다. 입구 순간 귀환은 한 바퀴 완주를 새로 만들지 않는다. 본게임 저장·경제와 연결하지 않는다.
+당시 검증: 담당 TypeScript 빌드와 ESLint, 로직 검사로 3단계 시간 진행·중복 요청·완료 전 충돌·완료 후 안마당 이동·닫힘 시 끼임 보정. Chrome embed 실제 실행에서 phase 2 진행 → 완료 → 클릭 안마당 `(0,-2.603)` 도착, Space 사용/멈춤/430px resize/두 번째 증축/pagehide 종료와 오류 0을 확인했다. 입구 순간 귀환은 한 바퀴 완주를 새로 만들지 않는다. 본게임 저장·경제와 연결하지 않는다.
 
 ## 라이브러리 통합 검토 · 2026-10-13
 

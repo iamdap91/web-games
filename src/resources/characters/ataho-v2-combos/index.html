@@ -5,100 +5,270 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="review.css" />
     <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
     <title>아타호 v2 · 동작 조합실</title>
   </head>
   <body>
     <main>
       <header>
-        <p class="eyebrow">아타호 v2 · 기존 그림으로 만드는 새로운 동작</p>
+        <p class="eyebrow">아타호 v2 · 모션 미리보기</p>
         <h1>동작 조합실</h1>
-        <p>지상 회전 공격과 팔꿈치 내려치기를 더해 아홉 동작을 비교합니다.</p>
+        <p>동작을 고르고, 연출과 타격 효과를 바꿔 재생해 보세요.</p>
       </header>
       <fieldset id="controls" disabled>
-        <legend class="sr-only">동작 재생</legend>
-        <div id="motions" class="motion-list" aria-label="동작 목록"></div>
-        <div class="toolbar">
-          <button id="restart" type="button">처음부터</button>
-          <button id="pause" type="button">일시정지</button>
-          <label
-            >속도
-            <select id="speed">
-              <option value="1">1배</option>
-              <option value="0.5">0.5배</option>
-              <option value="0.25">0.25배</option>
-            </select></label
-          >
-          <label
-            >크기
-            <select id="scale">
-              <option value="3">자세히</option>
-              <option value="2">작게</option>
-            </select></label
-          >
-          <label
-            >보기
-            <select id="presentation">
-              <option value="full">이동·타격 연출</option>
-              <option value="movement">타격 효과 없이</option>
-              <option value="poses">자세만</option>
-            </select></label
-          >
-          <label><input id="repeat" type="checkbox" checked /> 반복</label>
-          <label id="supplement-label" hidden
-            >그림
-            <select id="supplement">
-              <option value="original">기존 그림</option>
-              <option value="supplemented">생성 보강</option>
-            </select></label
-          >
+        <legend class="sr-only">동작과 연출 설정</legend>
+        <div class="workspace">
+          <aside class="motion-browser" aria-label="동작 선택">
+            <fieldset class="kind-picker">
+              <legend class="control-heading">종류</legend>
+              <div id="motion-kinds" class="kind-options"></div>
+            </fieldset>
+            <fieldset class="motion-picker">
+              <legend class="control-heading">동작</legend>
+              <p id="motion-count" class="field-hint" aria-live="polite"></p>
+              <div id="motion-options" class="motion-options"></div>
+            </fieldset>
+          </aside>
+          <div class="preview-column">
+            <section
+              class="stage-panel"
+              aria-label="동작 재생"
+              data-motion-playback
+            >
+              <div class="stage-heading">
+                <h2 id="motion-title">동작을 준비하고 있어요</h2>
+                <span id="priority"></span>
+              </div>
+              <p id="summary"></p>
+              <div class="attack-timeline">
+                <span id="duration"></span>
+                <div id="hits" aria-label="타격 시점 · 눌러서 자세 보기"></div>
+              </div>
+              <canvas
+                id="stage"
+                width="900"
+                height="410"
+                aria-label="아타호 동작 미리보기"
+              ></canvas>
+              <div class="timeline">
+                <button
+                  id="previous"
+                  type="button"
+                  aria-label="이전 자세"
+                  disabled
+                >
+                  ◀
+                </button>
+                <input
+                  id="timeline"
+                  aria-label="동작 시간 탐색"
+                  type="range"
+                  min="0"
+                  max="1000"
+                  step="1"
+                  value="0"
+                  disabled
+                />
+                <button id="next" type="button" aria-label="다음 자세" disabled>
+                  ▶
+                </button>
+                <output id="status">원본 그림을 불러오는 중이에요.</output>
+              </div>
+              <div class="toolbar" role="group" aria-label="재생 조작">
+                <button id="pause" type="button">일시정지</button>
+                <button id="restart" type="button">처음부터</button>
+                <label
+                  >속도
+                  <select id="speed">
+                    <option value="1">1배</option>
+                    <option value="1.5">1.5배</option>
+                    <option value="2">2배</option>
+                    <option value="0.5">0.5배</option>
+                    <option value="0.25">0.25배</option>
+                  </select>
+                </label>
+                <label
+                  ><input id="repeat" type="checkbox" checked /> 반복</label
+                >
+                <details class="display-options">
+                  <summary>화면 설정</summary>
+                  <div>
+                    <label
+                      >크기
+                      <select id="scale">
+                        <option value="3">자세히</option>
+                        <option value="2">작게</option>
+                      </select>
+                    </label>
+                    <label id="supplement-label" hidden
+                      >그림
+                      <select id="supplement">
+                        <option value="original">기존 그림</option>
+                        <option value="supplemented">생성 보강</option>
+                      </select>
+                    </label>
+                  </div>
+                </details>
+              </div>
+            </section>
+            <fieldset class="presentation-controls">
+              <legend class="control-heading">연출</legend>
+              <div class="presentation-toggles">
+                <label
+                  ><input id="movement" type="checkbox" checked /> 이동
+                  포함</label
+                >
+                <label
+                  ><input id="contacts" type="checkbox" checked /> 타격
+                  효과</label
+                >
+              </div>
+              <fieldset
+                id="effect-controls"
+                class="presentation-subgroup"
+                hidden
+              >
+                <legend>동작 효과 · 함께 선택</legend>
+                <div id="effect-options" class="presentation-options"></div>
+              </fieldset>
+              <fieldset
+                id="timing-controls"
+                class="presentation-subgroup"
+                hidden
+              >
+                <legend>박자</legend>
+                <div
+                  id="presentation-options"
+                  class="presentation-options"
+                  aria-describedby="presentation-description"
+                ></div>
+                <p id="presentation-description" class="field-hint"></p>
+              </fieldset>
+            </fieldset>
+          </div>
         </div>
       </fieldset>
-      <section class="stage-panel" aria-label="선택한 동작 재생">
-        <div class="stage-heading">
-          <h2 id="motion-title">동작을 준비하고 있어요</h2>
-          <span id="priority"></span>
+      <details id="gif-review" class="source-panel gif-review">
+        <summary>GIF 자료</summary>
+        <p class="field-hint">
+          타격 효과를 끈 동작과 생성 결과를 비교합니다. 이미지를 누르면 크게 볼
+          수 있습니다.
+        </p>
+        <div id="gif-gallery" aria-live="polite">
+          GIF 자료를 준비하고 있어요.
         </div>
-        <p id="summary"></p>
-        <canvas
-          id="stage"
-          width="900"
-          height="410"
-          aria-label="아타호 동작 미리보기"
-        ></canvas>
-        <div class="timeline">
-          <button id="previous" type="button" aria-label="이전 자세" disabled>
-            ◀
-          </button>
-          <input
-            id="timeline"
-            aria-label="동작 시간 탐색"
-            type="range"
-            min="0"
-            max="1000"
-            step="1"
-            value="0"
-            disabled
-          />
-          <button id="next" type="button" aria-label="다음 자세" disabled>
-            ▶
-          </button>
-          <output id="status">원본 그림을 불러오는 중이에요.</output>
-        </div>
-      </section>
-      <section class="review-panel" aria-label="동작별 검토">
-        <h2>살펴볼 부분</h2>
+      </details>
+      <details class="review-panel">
+        <summary>동작 메모</summary>
         <p id="review"></p>
         <p id="missing" class="missing" hidden></p>
-      </section>
-      <details class="source-panel">
-        <summary>사용한 원본 자세 · 눌러서 확인</summary>
+      </details>
+      <details class="source-panel" data-motion-playback>
+        <summary>원본 자세·제작 기록</summary>
         <p>
           기존 그림은 그대로 쓰고, 자세 순서·유지 시간·이동을 조합했습니다. 생성
           보강은 초기 회피·하단 타격용 비교 후보이며, 개선한 회피는 기존
           프레임만 사용합니다. 숫자는 원본의 0번부터 시작하는 프레임 번호입니다.
         </p>
         <div id="frames" class="frame-strip"></div>
+        <p>
+          새 복합 공격 · 효과 없는 실제 재생 GIF:
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-uppercut-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >10. 원투 → 어퍼컷</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-sweep-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >11. 원투 → 하단</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/spin-one-two-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >12. 회전 → 원투</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-elbow-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >13. 원투 → 팔꿈치</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/punch-barrage-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >14. 연속 원투</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-leap-kick-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >15. 원투 → 날아차기</a
+          >
+        </p>
+        <p>
+          선택한 3종·4종 연계 · 효과 없는 실제 재생 GIF:
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/three-four-review/three-ground-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >16. 원투 → 어퍼컷 → 내려치기</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/three-four-review/three-air-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >17. 원투 → 어퍼컷 → 날아차기</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/three-four-review/four-chain-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >18. 원투 → 어퍼컷 → 내려치기 → 날아차기</a
+          >
+        </p>
+        <p>
+          9번 박자 비교:
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-original-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >원래 박자</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-fast-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >전체 빠르게</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-rapid-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >가속과 멈춤 · 0.42초</a
+          >
+          ·
+          <a
+            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-sharp-effects-off.gif"
+            target="_blank"
+            rel="noopener"
+            >이전 가속과 멈춤 · 0.72초</a
+          >
+        </p>
         <p>
           효과 없는 실제 재생 기록:
           <a
@@ -151,6 +321,27 @@
           >
         </p>
         <a
+          href="../../../../resources/ataho-v2-combo-multi-stage.json"
+          target="_blank"
+          rel="noopener"
+          >선택한 3종·4종 연계 적용 기록</a
+        >
+        ·
+        <a
+          href="../../../../resources/ataho-v2-combo-shortlist.json"
+          target="_blank"
+          rel="noopener"
+          >조합 선별·더 빠른 9번 기록</a
+        >
+        ·
+        <a
+          href="../../../../resources/ataho-v2-combo-compound.json"
+          target="_blank"
+          rel="noopener"
+          >복합 공격·9번 박자 비교 기록</a
+        >
+        ·
+        <a
           href="../../../../resources/ataho-v2-generation.json"
           target="_blank"
           rel="noopener"
@@ -186,9 +377,10 @@
           >
         </p>
       </details>
-      <footer>
-        1~9 동작 선택 · Space 정지/재생 · ← → 자세 탐색. 독립 시안이며 본게임
-        적용은 별도 검토합니다. 4·5번은 초기 시안으로 채택을 보류했습니다.
+      <footer data-motion-playback>
+        전체 동작은 왼쪽 목록에서 선택 · Space 정지/재생 · ← → 자세 탐색. 독립
+        시안이며 본게임 적용은 별도 검토합니다. 슬라이딩 하단 공격과 공중회피 후
+        재진입은 초기 시안으로 채택을 보류했습니다.
       </footer>
     </main>
     <script

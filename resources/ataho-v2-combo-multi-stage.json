@@ -1,0 +1,1106 @@
+{
+  "assetId": "local/ataho-v2-combos",
+  "createdAt": "2026-10-14",
+  "previousRecord": "resources/ataho-v2-combo-approved.json",
+  "reviewRecord": "public/assets/maplestory/ataho-v2-combo-lab/20261014/three-four-review/review.json",
+  "approval": {
+    "userRequest": "다 작업해줘",
+    "scope": "검토한 A·B·C 세 조합을 모두 조합실에서 선택한 동작으로 적용한다.",
+    "selectedMotionIds": ["three-ground", "three-air", "four-chain"]
+  },
+  "method": "기존 원투·어퍼컷·빠른 내려치기·날아차기 프레임을 재사용한다. 검토 GIF의 steps와 실제 동작 데이터를 완전히 일치시킨다.",
+  "motions": [
+    {
+      "id": "three-ground",
+      "title": "3종 지상 연계 · 4타",
+      "types": 3,
+      "summary": "짧은 지상 연계 · 위로 올린 뒤 내려치는 박자",
+      "steps": [
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 110,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 준비"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 0,
+          "durationMs": 80,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 앞발 디딤",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 뻗기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 2,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "1타 · 첫 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 37,
+            "reach": 29
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 3,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 몸통 전환",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 11,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 뒷손 장전",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 12,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "2타 · 두 번째 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 35,
+            "reach": 20
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 13,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 팔 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 14,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 힘 풀기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 0,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 낮게 장전",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 앞발로 밀기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 2,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 어퍼컷 올리기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 3,
+          "durationMs": 90,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "3타 · 어퍼컷 정점",
+          "contact": {
+            "kind": "punch",
+            "height": 51,
+            "reach": 10
+          },
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 타격 여운",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 5,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 주먹 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 3,
+          "durationMs": 50,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "내려치기 · 한 박자 준비"
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 4,
+          "durationMs": 15,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "내려치기 · 빠른 하강"
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 5,
+          "durationMs": 40,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "4타 · 빠른 내려치기",
+          "contact": {
+            "kind": "elbow",
+            "height": 32,
+            "reach": 18
+          }
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 6,
+          "durationMs": 25,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "내려치기 · 타격 후 힘 풀기"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 15,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "손 회수"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 16,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 올리기"
+        },
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 160,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "연속 공격 완료"
+        }
+      ],
+      "durationMs": 1285,
+      "number": 16,
+      "hits": 4,
+      "priority": "selected"
+    },
+    {
+      "id": "three-air",
+      "title": "3종 공중 연계 · 4타",
+      "types": 3,
+      "summary": "지상에서 연속으로 올리고 공중 전진 킥으로 마무리",
+      "steps": [
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 110,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 준비"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 0,
+          "durationMs": 80,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 앞발 디딤",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 뻗기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 2,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "1타 · 첫 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 37,
+            "reach": 29
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 3,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 몸통 전환",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 11,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 뒷손 장전",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 12,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "2타 · 두 번째 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 35,
+            "reach": 20
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 13,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 팔 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 14,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 힘 풀기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 0,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 낮게 장전",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 앞발로 밀기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 2,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 어퍼컷 올리기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 3,
+          "durationMs": 90,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "3타 · 어퍼컷 정점",
+          "contact": {
+            "kind": "punch",
+            "height": 51,
+            "reach": 10
+          },
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 타격 여운",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 5,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 주먹 회수",
+          "y": 0
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 0,
+          "durationMs": 45,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 힘 모으기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 1,
+          "durationMs": 50,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 무릎 굽히기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 2,
+          "durationMs": 75,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 도약 준비"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 2,
+          "durationMs": 40,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 지면 밀기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 3,
+          "durationMs": 45,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 도약"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 0,
+          "durationMs": 40,
+          "x": 17,
+          "y": -18,
+          "anchor": {
+            "x": 49,
+            "y": 81
+          },
+          "phase": "도약 · 무릎 들기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 1,
+          "durationMs": 40,
+          "x": 25,
+          "y": -26,
+          "anchor": {
+            "x": 49,
+            "y": 81
+          },
+          "phase": "도약 · 킥 장전"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 2,
+          "durationMs": 45,
+          "x": 35,
+          "y": -34,
+          "anchor": {
+            "x": 49,
+            "y": 82
+          },
+          "phase": "도약 · 발 올리기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 3,
+          "durationMs": 45,
+          "x": 47,
+          "y": -35,
+          "anchor": {
+            "x": 48,
+            "y": 83
+          },
+          "phase": "도약 · 발 뻗기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 4,
+          "durationMs": 60,
+          "x": 60,
+          "y": -30,
+          "anchor": {
+            "x": 50,
+            "y": 84
+          },
+          "phase": "4타 · 공중 타격",
+          "contact": {
+            "kind": "kick",
+            "height": 67,
+            "reach": 12
+          }
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 4,
+          "durationMs": 25,
+          "x": 60,
+          "y": -30,
+          "anchor": {
+            "x": 50,
+            "y": 84
+          },
+          "phase": "도약 · 타격 풀기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 5,
+          "durationMs": 45,
+          "x": 66,
+          "y": -20,
+          "anchor": {
+            "x": 49,
+            "y": 83
+          },
+          "phase": "도약 · 다리 거두기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 6,
+          "durationMs": 45,
+          "x": 70,
+          "y": -10,
+          "anchor": {
+            "x": 49,
+            "y": 81
+          },
+          "phase": "도약 · 착지 준비"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 6,
+          "durationMs": 45,
+          "x": 73,
+          "y": -4,
+          "anchor": "feet",
+          "phase": "도약 · 착지 직전"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 7,
+          "durationMs": 85,
+          "x": 74,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 착지 충격 받기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 8,
+          "durationMs": 60,
+          "x": 74,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 일어서기"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 15,
+          "durationMs": 50,
+          "x": 74,
+          "anchor": "feet",
+          "phase": "손 회수"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 16,
+          "durationMs": 70,
+          "x": 74,
+          "anchor": "feet",
+          "phase": "가드 올리기"
+        },
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 160,
+          "x": 74,
+          "anchor": "feet",
+          "phase": "연속 공격 완료"
+        }
+      ],
+      "durationMs": 1945,
+      "number": 17,
+      "hits": 4,
+      "priority": "selected"
+    },
+    {
+      "id": "four-chain",
+      "title": "4종 연속 공격 · 5타",
+      "types": 4,
+      "summary": "네 동작 연계 · 짧은 내려치기 뒤 다시 도약",
+      "steps": [
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 110,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 준비"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 0,
+          "durationMs": 80,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 앞발 디딤",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 뻗기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 2,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "1타 · 첫 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 37,
+            "reach": 29
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 3,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 몸통 전환",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 11,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 뒷손 장전",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 12,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "2타 · 두 번째 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 35,
+            "reach": 20
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 13,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 팔 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 14,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 힘 풀기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 0,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 낮게 장전",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 앞발로 밀기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 2,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 어퍼컷 올리기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 3,
+          "durationMs": 90,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "3타 · 어퍼컷 정점",
+          "contact": {
+            "kind": "punch",
+            "height": 51,
+            "reach": 10
+          },
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 타격 여운",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 5,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 주먹 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 3,
+          "durationMs": 50,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "내려치기 · 한 박자 준비"
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 4,
+          "durationMs": 15,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "내려치기 · 빠른 하강"
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 5,
+          "durationMs": 40,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "4타 · 빠른 내려치기",
+          "contact": {
+            "kind": "elbow",
+            "height": 32,
+            "reach": 18
+          }
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 6,
+          "durationMs": 25,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "내려치기 · 타격 후 힘 풀기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 0,
+          "durationMs": 45,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 힘 모으기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 1,
+          "durationMs": 50,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 무릎 굽히기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 2,
+          "durationMs": 75,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 도약 준비"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 2,
+          "durationMs": 40,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 지면 밀기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 3,
+          "durationMs": 45,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 도약"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 0,
+          "durationMs": 40,
+          "x": 17,
+          "y": -18,
+          "anchor": {
+            "x": 49,
+            "y": 81
+          },
+          "phase": "도약 · 무릎 들기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 1,
+          "durationMs": 40,
+          "x": 25,
+          "y": -26,
+          "anchor": {
+            "x": 49,
+            "y": 81
+          },
+          "phase": "도약 · 킥 장전"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 2,
+          "durationMs": 45,
+          "x": 35,
+          "y": -34,
+          "anchor": {
+            "x": 49,
+            "y": 82
+          },
+          "phase": "도약 · 발 올리기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 3,
+          "durationMs": 45,
+          "x": 47,
+          "y": -35,
+          "anchor": {
+            "x": 48,
+            "y": 83
+          },
+          "phase": "도약 · 발 뻗기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 4,
+          "durationMs": 60,
+          "x": 60,
+          "y": -30,
+          "anchor": {
+            "x": 50,
+            "y": 84
+          },
+          "phase": "5타 · 공중 타격",
+          "contact": {
+            "kind": "kick",
+            "height": 67,
+            "reach": 12
+          }
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 4,
+          "durationMs": 25,
+          "x": 60,
+          "y": -30,
+          "anchor": {
+            "x": 50,
+            "y": 84
+          },
+          "phase": "도약 · 타격 풀기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 5,
+          "durationMs": 45,
+          "x": 66,
+          "y": -20,
+          "anchor": {
+            "x": 49,
+            "y": 83
+          },
+          "phase": "도약 · 다리 거두기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 6,
+          "durationMs": 45,
+          "x": 70,
+          "y": -10,
+          "anchor": {
+            "x": 49,
+            "y": 81
+          },
+          "phase": "도약 · 착지 준비"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 6,
+          "durationMs": 45,
+          "x": 73,
+          "y": -4,
+          "anchor": "feet",
+          "phase": "도약 · 착지 직전"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 7,
+          "durationMs": 85,
+          "x": 74,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 착지 충격 받기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 8,
+          "durationMs": 60,
+          "x": 74,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 일어서기"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 15,
+          "durationMs": 50,
+          "x": 74,
+          "anchor": "feet",
+          "phase": "손 회수"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 16,
+          "durationMs": 70,
+          "x": 74,
+          "anchor": "feet",
+          "phase": "가드 올리기"
+        },
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 160,
+          "x": 74,
+          "anchor": "feet",
+          "phase": "연속 공격 완료"
+        }
+      ],
+      "durationMs": 2075,
+      "number": 18,
+      "hits": 5,
+      "priority": "selected"
+    }
+  ],
+  "previewExports": [
+    {
+      "id": "four-chain",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/three-four-review/four-chain-effects-off.gif",
+      "sha256": "7ac6cd2a1b427135a43f0d6fb985e73675abc69f3c7c15aff943136b7e2a44d6",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 654,
+      "exportedFrames": 67,
+      "durationMs": 2900,
+      "motionDurationMs": 2075,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "/tmp/ataho-multi-type-review/captures/four-chain/capture.json",
+      "playbackSpeed": 0.25,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at20ms intervals",
+      "status": "사용자가 검토한 GIF 그대로 조합실에 적용"
+    },
+    {
+      "id": "three-air",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/three-four-review/three-air-effects-off.gif",
+      "sha256": "3cda6a6e78b42fd72492b75bf4705b4d47c7b25c88fad1651d79e3a3ad4e0dfd",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 622,
+      "exportedFrames": 63,
+      "durationMs": 2780,
+      "motionDurationMs": 1945,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "/tmp/ataho-multi-type-review/captures/three-air/capture.json",
+      "playbackSpeed": 0.25,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at20ms intervals",
+      "status": "사용자가 검토한 GIF 그대로 조합실에 적용"
+    },
+    {
+      "id": "three-ground",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/three-four-review/three-ground-effects-off.gif",
+      "sha256": "c5b7e62408a421c2466af676b9a510ddc366d9b0048b1efb6939868a20ca7df8",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 465,
+      "exportedFrames": 41,
+      "durationMs": 2120,
+      "motionDurationMs": 1285,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "/tmp/ataho-multi-type-review/captures/three-ground/capture.json",
+      "playbackSpeed": 0.25,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at20ms intervals",
+      "status": "사용자가 검토한 GIF 그대로 조합실에 적용"
+    }
+  ],
+  "notes": [
+    "원투는 한 공격 계열이며 두 번 타격한다. 3종은 4타, 4종은 5타다.",
+    "16번은 발을 고정하고 위로 올린 뒤 빠른 내려치기로 마무리한다.",
+    "17·18번은 지상 준비 뒤 도약하며 x74에 착지한다.",
+    "팔꿈치 실루엣과 원본 얼굴·발 위치 전환, 18번의 도약 준비 호흡은 검토한 상태 그대로다.",
+    "기존 9번0.42초·10·15번 선택과 11~14번 비교를 유지한다.",
+    "GIF는 임시 검토 화면에서 같은 ComboPlayer/drawCombo로 실제 기록한 화면이다. 최소20ms 유지시간이며 반복 대기시간이 포함된다.",
+    "이번 승인은 조합실 적용이며 본게임 연결과 main 병합은 별도다."
+  ],
+  "validation": {
+    "commands": [
+      "npm run check",
+      "npm run build",
+      "node --test tests/ataho-v2-combos.test.mjs tests/resource-library.test.mjs"
+    ],
+    "passedTests": 29,
+    "reviewParity": "세 조합의 steps 전체가 사용자가 검토한 review.json과 일치",
+    "browserChecks": [
+      "16~18 선택 표시 및 실제0.25배 재생에서23·35·39자세 전부 진행",
+      "13개 타격 버튼의 해당 자세 정지",
+      "390×844 선택·공중 타격 탐색 및 가로 넘침 없음",
+      "9번 기본0.42초 sharp 유지",
+      "콘솔 오류 없음"
+    ],
+    "browserRecord": "public/assets/maplestory/ataho-v2-combo-lab/20261014/multi-stage/browser-verification.json",
+    "screenshot": "public/assets/maplestory/ataho-v2-combo-lab/20261014/multi-stage/verification.jpg",
+    "mobileScreenshot": "public/assets/maplestory/ataho-v2-combo-lab/20261014/multi-stage/mobile-verification.jpg",
+    "gifChecks": "세 GIF의 SHA256·HTTP경로·크기·총 재생시간·최소20ms 프레임 유지시간 확인"
+  }
+}

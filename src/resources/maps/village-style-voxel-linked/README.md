@@ -11,7 +11,7 @@
 
 `window.villageStyleVoxelLinked`의 ready/snapshot/project/screenPositions/paused/disposed/diagnostics는 읽기 전용이다. `snapshot.linkStage`와 `diagnostics.connection`이 현재 연결 결과를 보여준다. embed=1에서도 상단 조작과 시설 사용을 유지한다. 본게임 저장·경제와 연결하지 않는다.
 
-검증: 빌드·담당 lint, 로직 테스트(단계별 공유벽 충돌·문 폭·관통 경로·실제 Visit 이동·초기화 끼임 보정), Chrome embed 실제 R 2회 후 `(-9,6)` → `(-9,-4)` 관통 클릭 도착, 직접키/Space/멈춤/430px resize/pagehide 종료와 오류 0 확인. 신규 창고와 기존 작업대가 겹치므로 작업대를 동쪽으로 1.7 옮기고 충돌을 동기화했다.
+검증: 빌드·담당 lint, 당시 로직 검사(단계별 공유벽 충돌·문 폭·관통 경로·실제 Visit 이동·초기화 끼임 보정), Chrome embed 실제 R 2회 후 `(-9,6)` → `(-9,-4)` 관통 클릭 도착, 직접키/Space/멈춤/430px resize/pagehide 종료와 오류 0 확인. 신규 창고와 기존 작업대가 겹치므로 작업대를 동쪽으로 1.7 옮기고 충돌을 동기화했다.
 
 ## 라이브러리 통합 검토 · 2026-10-13
 

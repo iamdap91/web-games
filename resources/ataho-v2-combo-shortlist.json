@@ -1,0 +1,348 @@
+{
+  "assetId": "local/ataho-v2-combos",
+  "createdAt": "2026-10-14",
+  "previousRecord": "resources/ataho-v2-combo-compound.json",
+  "request": "9번을 더 빠르게 하고 다른 복합 공격 조합안을 더 추린다.",
+  "selection": {
+    "preferred": ["one-two-uppercut", "one-two-leap-kick"],
+    "comparisonOnly": ["punch-barrage"],
+    "deferred": ["one-two-sweep", "spin-one-two", "one-two-elbow"],
+    "reasons": {
+      "one-two-uppercut": "짧은 지상 연계. 두 가로 펀치 뒤 낮게 모아 위로 마무리한다.",
+      "one-two-leap-kick": "도약·전진 연계. 지상 원투 뒤 공중 이동과 착지로 역할을 구분한다.",
+      "punch-barrage": "원투 반복과 어퍼컷으로 10번을 늘린 연타 비교용.",
+      "one-two-sweep": "마지막 쓸기의 다리가 몸 뒤에 가려 타격 실루엣이 약하다.",
+      "spin-one-two": "첫 회전은 다리를 뻗는 타격보다 무릎 들기에 가까워 우선안에서 보류한다.",
+      "one-two-elbow": "마지막 팔꿈치가 팔을 내리는 몸짓처럼 읽히는 한계가 남는다."
+    },
+    "method": "실제 GIF 시간순 샘플과 원본 프레임·중간 가드 여부·동작 반복·타격 높이 및 이동으로 비교한 추천. 최종 품질 판정은 사용자 검토."
+  },
+  "elbow": {
+    "defaultVariant": "sharp",
+    "durationMs": 420,
+    "previousDurationMs": 720,
+    "steps": [
+      {
+        "motion": "fight-stance-idle-8-frames-south-east",
+        "frame": 0,
+        "durationMs": 45,
+        "x": 0,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "가드 준비"
+      },
+      {
+        "motion": "walking-3-south-east",
+        "frame": 0,
+        "durationMs": 25,
+        "x": 0,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "한 걸음 접근"
+      },
+      {
+        "motion": "walking-3-south-east",
+        "frame": 1,
+        "durationMs": 30,
+        "x": 8,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "앞발 디딤"
+      },
+      {
+        "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+        "frame": 0,
+        "durationMs": 20,
+        "x": 14,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "발 고정"
+      },
+      {
+        "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+        "frame": 3,
+        "durationMs": 50,
+        "x": 14,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "한 박자 준비"
+      },
+      {
+        "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+        "frame": 4,
+        "durationMs": 15,
+        "x": 14,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "빠른 하강"
+      },
+      {
+        "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+        "frame": 5,
+        "durationMs": 40,
+        "x": 14,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "내려친 자세 멈춤",
+        "contact": {
+          "kind": "elbow",
+          "height": 32,
+          "reach": 18
+        }
+      },
+      {
+        "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+        "frame": 6,
+        "durationMs": 25,
+        "x": 14,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "타격 후 힘 풀기"
+      },
+      {
+        "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+        "frame": 8,
+        "durationMs": 20,
+        "x": 14,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "팔 회수"
+      },
+      {
+        "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+        "frame": 12,
+        "durationMs": 20,
+        "x": 14,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "몸통 복귀"
+      },
+      {
+        "motion": "ataho-one-two-punch-south-east-south-east",
+        "frame": 15,
+        "durationMs": 25,
+        "x": 14,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "가드 되찾기"
+      },
+      {
+        "motion": "ataho-one-two-punch-south-east-south-east",
+        "frame": 16,
+        "durationMs": 30,
+        "x": 14,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "가드 올리기"
+      },
+      {
+        "motion": "fight-stance-idle-8-frames-south-east",
+        "frame": 0,
+        "durationMs": 75,
+        "x": 14,
+        "y": 0,
+        "anchor": "feet",
+        "phase": "가드 복귀"
+      }
+    ],
+    "comparisonVariants": [
+      {
+        "id": "sharp-previous",
+        "label": "이전 가속과 멈춤",
+        "durationMs": 720
+      },
+      {
+        "id": "fast",
+        "label": "전체 빠르게",
+        "durationMs": 808
+      },
+      {
+        "id": "original",
+        "label": "원래 박자",
+        "durationMs": 1240
+      }
+    ],
+    "method": "동일한 자세 순서에서 준비·하강·접촉·회수 시간을 줄였다. 준비50ms·하강15ms·접촉40ms. 원본 픽셀과 접지 위치는 유지한다."
+  },
+  "previewExports": [
+    {
+      "id": "elbow-fast",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-fast-effects-off.gif",
+      "sha256": "b8fc9cf591fa63931bf76cd47d1457c9f801cd012f31e7ccf468943d70a5750a",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 90,
+      "exportedFrames": 33,
+      "durationMs": 1500,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/elbow-fast-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    },
+    {
+      "id": "elbow-original",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-original-effects-off.gif",
+      "sha256": "1342f11555497bfd47787fc29ce54121b818b22c892ac96a6316a6b84090a024",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 117,
+      "exportedFrames": 37,
+      "durationMs": 1960,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/elbow-original-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    },
+    {
+      "id": "elbow-sharp",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-sharp-effects-off.gif",
+      "sha256": "144602382b63822b47856b4b5bf8beb2f6c0005167170af7efbbbdc2e40db857",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 85,
+      "exportedFrames": 31,
+      "durationMs": 1420,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/elbow-sharp-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    },
+    {
+      "id": "one-two-elbow",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-elbow-effects-off.gif",
+      "sha256": "31106b23df8fbd7a6ddf47394684f2fef314bc04889022412562d246bafe2f31",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 123,
+      "exportedFrames": 43,
+      "durationMs": 2040,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-elbow-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    },
+    {
+      "id": "one-two-leap-kick",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-leap-kick-effects-off.gif",
+      "sha256": "5741b52a412ea783e6faefbd9619101fdfd914a2886532d9e1c9e3f333c4c025",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 139,
+      "exportedFrames": 54,
+      "durationMs": 2320,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-leap-kick-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    },
+    {
+      "id": "one-two-sweep",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-sweep-effects-off.gif",
+      "sha256": "22d6f3840795f5ad6ca84c82c207443943bdbdeb500716380c47c94be8b0bb3f",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 115,
+      "exportedFrames": 36,
+      "durationMs": 1920,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-sweep-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    },
+    {
+      "id": "one-two-uppercut",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-uppercut-effects-off.gif",
+      "sha256": "7ae154f2ffc6922ae5767f72a131037bd1c4c042ad17fbc249d641cc0078651e",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 115,
+      "exportedFrames": 36,
+      "durationMs": 1920,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-uppercut-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    },
+    {
+      "id": "punch-barrage",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/punch-barrage-effects-off.gif",
+      "sha256": "844b9bc84d2e98c0a133b0d38418a9d19d8421e65f10dc21a815b2dcba06cdd2",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 138,
+      "exportedFrames": 45,
+      "durationMs": 2300,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/punch-barrage-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    },
+    {
+      "id": "spin-one-two",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/spin-one-two-effects-off.gif",
+      "sha256": "83f3b2d23cd5843946d293b02e213783da3a8a8ccf0c8dc03cb78e131e90834b",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 118,
+      "exportedFrames": 36,
+      "durationMs": 1960,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/spin-one-two-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    },
+    {
+      "id": "elbow-rapid",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-rapid-effects-off.gif",
+      "sha256": "e0924234b45b02b7fd5e70222d20c78ecad9afb227affee5bf15e4159a2cdff7",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 272,
+      "exportedFrames": 32,
+      "durationMs": 1180,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-rapid-capture/capture.json",
+      "playbackSpeed": 0.25,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    }
+  ],
+  "gifTiming": {
+    "previous": "이전 GIF 일부에 10ms 유지 구간이 있었고 WebKit은 11ms 미만을 100ms로 재생한다.",
+    "sourceUrl": "https://github.com/WebKit/WebKit/blob/main/Source/WebCore/platform/graphics/cg/ImageDecoderCG.cpp",
+    "new": "실제 브라우저 capture timestamp를 재생 속도로 환산하고 20ms 간격에서 가장 가까운 관찰 프레임을 골라 50fps 이하로 내보낸다. 모든 저장된 GIF 프레임 유지시간이 20ms 이상인지 검사한다.",
+    "oldFiles": "compound 폴더와 이전 SHA256 기록은 그대로 보존한다."
+  },
+  "validation": {
+    "commands": [
+      "npm run check",
+      "npm run build",
+      "node --test tests/ataho-v2-combos.test.mjs tests/resource-library.test.mjs"
+    ],
+    "passedTests": 27,
+    "browserChecks": [
+      "0.42초 기본 선택",
+      "이전0.72초 비교 보존",
+      "실제0.25배 재생으로 새 하강·접촉·회수 촬영",
+      "별도로1배 재생 확인",
+      "추린10·15번 표시와 다른조합 펼치기",
+      "정지·재개·타격자세 선택",
+      "390x844 화면의 가로 넘침 없음",
+      "콘솔 오류 없음"
+    ],
+    "screenshots": [
+      "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-rapid-verification.jpg",
+      "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/verification.jpg",
+      "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/mobile.jpg"
+    ]
+  }
+}

@@ -29,7 +29,7 @@
 
 환경은 코드로만 작성했고 새 ignored 미디어 파일은 없다. `public/assets/maplestory/tiger-hero-ai/`에 있는 기존 승인된 아타호 그림을 워크트리의 읽기 symlink로 재사용한다. 썸네일은 통합 담당자가 최종 라이브러리의 실제 Canvas를 캡처하여 등록한다.
 
-- `npm run check`, `npm run build`와 `tests/village-style-paper.test.mjs` 핵심 규칙 5개가 통과했다.
+- `npm run check`, `npm run build`와 당시 로직 검사 5개가 통과했다.
 - 실제 Chrome에서 포인터 시설 순환, Space 사용, 도장 경사로 접지, 좁은 골목·서쪽 우회·동쪽 귀환, 도장 뒤 가림, 복구 상태 변화를 확인했다.
 - 멈춤 시 읽기 snapshot과 반응 시간이 고정되는지 확인했다. iframe 종료 이벤트 `resource-scene-dispose`와 `pagehide`에서 RAF·입력 리스너·GPU를 정리한다.
 - 1100/390 CSS 폭 × 620 높이 실제 iframe과 DPR2 터치 에뮬레이션에서 버튼·시설사용·이동·가로 넘침을 검사했다. 실제 휴대전화 검증을 뜻하지 않는다.

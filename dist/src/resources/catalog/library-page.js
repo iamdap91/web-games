@@ -1,7 +1,7 @@
 import { resourceUrl } from './resource-url.js';
 import { LibraryDetail } from './library-detail.js';
 import { createText } from './resource-card.js';
-import { filterLibrary, findLibraryEntry, libraryListEntry, libraryCategories, libraryLocation, readLibraryFilter, } from './library-data.js';
+import { atahoNavigationEntries, filterLibrary, findLibraryEntry, libraryListEntry, libraryCategories, libraryLocation, readLibraryFilter, } from './library-data.js';
 function element(id, type) {
     const found = document.getElementById(id);
     if (!(found instanceof type))
@@ -149,13 +149,22 @@ class LibraryPage {
                     group,
                 }));
                 groupNode.append(heading);
-                for (const entry of items.filter((item) => item.group === group)) {
-                    const item = createText('a', entry.name);
-                    item.href = this.detailLocation(entry);
-                    item.className = 'tree-entry';
-                    item.dataset.libraryNavigation = 'true';
-                    item.dataset.asset = entry.id;
-                    groupNode.append(item);
+                const groupEntries = items.filter((item) => item.group === group);
+                if (category.id === 'characters' && group === '아타호') {
+                    let currentSection = '';
+                    for (const { section, label, entry } of atahoNavigationEntries(groupEntries)) {
+                        if (section !== currentSection) {
+                            const sectionHeading = createText('p', section);
+                            sectionHeading.className = 'tree-section-label';
+                            groupNode.append(sectionHeading);
+                            currentSection = section;
+                        }
+                        groupNode.append(this.treeEntry(entry, label));
+                    }
+                }
+                else {
+                    for (const entry of groupEntries)
+                        groupNode.append(this.treeEntry(entry));
                 }
                 branch.append(groupNode);
             }
@@ -163,6 +172,18 @@ class LibraryPage {
         }
         this.tree.replaceChildren(nodes);
         this.treeProject = this.filter.project;
+    }
+    treeEntry(entry, label = entry.name) {
+        const item = createText('a', label);
+        item.href = this.detailLocation(entry);
+        item.className = 'tree-entry';
+        item.dataset.libraryNavigation = 'true';
+        item.dataset.asset = entry.id;
+        if (label !== entry.name) {
+            item.title = entry.name;
+            item.setAttribute('aria-label', `${label} · ${entry.name}`);
+        }
+        return item;
     }
     updateTree(entry) {
         if (this.treeProject !== this.filter.project)

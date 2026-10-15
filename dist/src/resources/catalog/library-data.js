@@ -247,6 +247,42 @@ export const libraryEntries = [
     (a.category === 'characters'
         ? (characterOrder[a.group] ?? 2) - (characterOrder[b.group] ?? 2)
         : 0));
+const atahoNavigation = [
+    ['v2 동작', 'local/ataho-v2-combos', '동작 조합실'],
+    ['v2 동작', 'ai/ataho-v2', 'v2 원본 모션'],
+    ['기존 캐릭터', 'ai/tiger-hero', '기본 아타호'],
+    ['기존 캐릭터', 'ai/young-ataho', '젊은 아타호'],
+    ['외형·동작 연구', 'local/ataho-comparison', '비도트·하이브리드 비교'],
+    [
+        '외형·동작 연구',
+        'local/ataho-skeleton-walk-comparison',
+        'Skeleton 걷기 비교',
+    ],
+    [
+        '외형·동작 연구',
+        'local/ataho-skeleton-reference-front',
+        'Skeleton 기준 원화',
+    ],
+    ['외형·동작 연구', 'local/ataho-pixel-three-tests', '세 가지 도트 실험'],
+    ['외형·동작 연구', 'ai/tiger-hero-side-volume', '측면 보정'],
+    ['외형·동작 연구', 'ai/tiger-hero-candidates', '연령별 외형'],
+];
+/** 사이드바의 아타호 자료만 용도별로 정리하고 상세 이름은 유지한다. */
+export function atahoNavigationEntries(entries) {
+    const remaining = new Map(entries.map((entry) => [entry.id, entry]));
+    const navigation = [];
+    for (const [section, id, label] of atahoNavigation) {
+        const entry = remaining.get(id);
+        if (!entry)
+            continue;
+        navigation.push({ section, label, entry });
+        remaining.delete(id);
+    }
+    // 새 연구 자료도 이름을 등록하기 전부터 목록에서 찾을 수 있게 한다.
+    for (const entry of remaining.values())
+        navigation.push({ section: '외형·동작 연구', label: entry.name, entry });
+    return navigation;
+}
 /** 목록에서는 묶되 기존 개별 리소스 주소와 제작 기록 연결은 유지한다. */
 export function findLibraryEntry(id) {
     return (libraryEntries.find((entry) => entry.id === id) ??

@@ -35,7 +35,7 @@ diagnostics는 radius/centerZ/curved/camera/actorFoot/actorPitch, 원본 sourceF
 
 ## 검증
 
-- `npm run check`, `npm run build`와 전용 Node 테스트 4개 통과: 곡면/평면 변환과 역변환, 법선 및 발 높이 관계, 건물·화덕 충돌 경로, 세 시설 답사와 귀환, 반응 시간·초기화, 정규화 이동과 잘못된 입력 제한.
+- `npm run check`, `npm run build`와 당시 로직 검사 4개 통과: 곡면/평면 변환과 역변환, 법선 및 발 높이 관계, 건물·화덕 충돌 경로, 세 시설 답사와 귀환, 반응 시간·초기화, 정규화 이동과 잘못된 입력 제한.
 - 설치된 실제 Chrome + Playwright에서 1100×620/DPR2와 390×620/DPR2의 embed 화면 확인. 실제 키 입력 보행, 곡면/평면 숨김 차이, 카메라 z 추적, 원통 역투영 클릭으로 세 시설 도착 및 Space 반응, 쉼터 발견, 입구 귀환, pause 동안 snapshot 동결, 버튼 보존·가로 overflow 없음, dispose 이후 RAF 정지, browser 오류 0을 확인했다.
 - 스크린샷은 곡면/평면 초기 시점, 복구 도장 가까운 시점, 발견한 쉼터, 좁은 조망을 각각 확인했다. 390px 검증은 브라우저 크기 조절이며 실제 휴대전화 검증은 아니다.
 

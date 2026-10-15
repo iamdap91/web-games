@@ -38,7 +38,7 @@
 
 새 ignored 환경 미디어는 없다. `public/assets/maplestory/tiger-hero-ai/`의 기존 승인 아타호 PNG를 워크트리의 읽기 symlink로 재사용한다. 라이브러리 썸네일은 통합 담당자가 최종 Canvas를 실제 캡처하여 등록한다.
 
-- `npm run check`, `npm run build`, `tests/village-style-cutaway.test.mjs`의 핵심 규칙 5개가 통과했다. 층 순간이동 방지, 계단 경로, 세 시설 실제 도착, 타이머, 입구 복귀의 기록 보존을 검사했다.
+- `npm run check`, `npm run build`, 당시 로직 검사 5개가 통과했다. 층 순간이동 방지, 계단 경로, 세 시설 실제 도착, 타이머, 입구 복귀의 기록 보존을 검사했다.
 - 실제 Chrome의 1100/390 CSS 폭 × 620 높이 iframe에서 키보드 보행과 세 시설 포인터 답사, Space, 복구·외벽 비교·정지 입력·입구 복귀·종료 이벤트, 버튼 노출과 가로 넘침을 검사했다. 마지막 전체 조망 보정 후 다시 확인했다.
 - 390 폭 DPR2 터치 iframe에서도 세 층을 실제 탭으로 답사하고 주민·차 김 그림의 시간 변화, 멈춤 중 동일한 Canvas 픽셀, `pagehide` 정리를 확인했다. 실제 휴대전화 검증을 뜻하지 않는다.
 - 전체 조망의 지붕과 초기 인물, 좁은 화면의 가까이 보기를 실제 스크린샷으로 검토했다. 브라우저 예외·console error는 없었다.

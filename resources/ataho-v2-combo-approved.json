@@ -1,0 +1,104 @@
+{
+  "assetId": "local/ataho-v2-combos",
+  "createdAt": "2026-10-14",
+  "previousRecord": "resources/ataho-v2-combo-shortlist.json",
+  "approval": {
+    "userRequest": "응 작업해줘",
+    "scope": "조합실에서 9번0.42초와10·15번선별안을 기본 동작으로 적용한다.",
+    "selectedMotionIds": ["elbow-chop", "one-two-uppercut", "one-two-leap-kick"]
+  },
+  "defaults": {
+    "elbow-chop": {
+      "timing": "sharp",
+      "durationMs": 420,
+      "contactFrame": 5,
+      "comparisonDurationsMs": {
+        "original": 1240,
+        "fast": 808,
+        "sharp-previous": 720
+      }
+    },
+    "one-two-uppercut": {
+      "durationMs": 1210,
+      "hits": 3
+    },
+    "one-two-leap-kick": {
+      "durationMs": 1610,
+      "hits": 3
+    }
+  },
+  "changes": [
+    "9번 기본 steps를 sharpElbowSteps로 확정해 직접ComboPlayer 재생과 화면 기본 선택을 일치시킨다.",
+    "9·10·15번을 selected 상태로 표시한다.",
+    "10·15번을 기본 표시하고14·11~13번은 비교 펼침에 보존한다."
+  ],
+  "previewExports": [
+    {
+      "id": "one-two-leap-kick",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-leap-kick-effects-off.gif",
+      "sha256": "5741b52a412ea783e6faefbd9619101fdfd914a2886532d9e1c9e3f333c4c025",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 139,
+      "exportedFrames": 54,
+      "durationMs": 2320,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-leap-kick-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    },
+    {
+      "id": "one-two-uppercut",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-uppercut-effects-off.gif",
+      "sha256": "7ae154f2ffc6922ae5767f72a131037bd1c4c042ad17fbc249d641cc0078651e",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 115,
+      "exportedFrames": 36,
+      "durationMs": 1920,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-uppercut-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    },
+    {
+      "id": "elbow-rapid",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-rapid-effects-off.gif",
+      "sha256": "e0924234b45b02b7fd5e70222d20c78ecad9afb227affee5bf15e4159a2cdff7",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 272,
+      "exportedFrames": 32,
+      "durationMs": 1180,
+      "minimumFrameDurationMs": 20,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-rapid-capture/capture.json",
+      "playbackSpeed": 0.25,
+      "exportSpeed": 1,
+      "timestampResampling": "nearest observed frame at 20ms intervals"
+    }
+  ],
+  "unchanged": [
+    "기존원본그림",
+    "승인한세GIF의재생·순서·접지·궤적",
+    "이전9번박자비교",
+    "다른조합데이터"
+  ],
+  "validation": {
+    "commands": [
+      "npm run check",
+      "npm run build",
+      "node --test tests/ataho-v2-combos.test.mjs tests/resource-library.test.mjs"
+    ],
+    "passedTests": 28,
+    "browserChecks": [
+      "9·10·15 선택 표시",
+      "9번 기본0.42초와원래1.24초비교",
+      "10·15기본목록과다른조합펼침",
+      "실제프레임진행과정지·재개",
+      "콘솔오류없음"
+    ],
+    "screenshot": "public/assets/maplestory/ataho-v2-combo-lab/20261014/approved/verification.jpg"
+  }
+}

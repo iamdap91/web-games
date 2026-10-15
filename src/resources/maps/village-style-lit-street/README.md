@@ -17,7 +17,7 @@
 
 읽기 전용 `window.villageStyleLitStreet`: ready, snapshot, paused, overview, disposed, project({x,z}), screenPositions, diagnostics(layer/camera/light/normal/inside/floor). 진단으로 게임 상태를 변경할 수 없다.
 
-검증: `npm run check`, `npm run build`, `node --test tests/village-style-lit-street.test.mjs`. 실제 입력·렌더링은 담당 세션의 브라우저에서 확인한다.
+검증: `npm run check`, `npm run build`. 실제 입력·렌더링은 담당 세션의 브라우저에서 확인한다.
 
 ## 통합 화면 검토 · 2026-10-13
 
@@ -33,6 +33,6 @@
 
 ## 확장 조합 통합 검토 · 2026-10-13
 
-공방 경첩→도장 수리/수련→경사 계단을 통한 2층 여관→차를 실제 조작해 worked/repaired/trained/tea와 inside=inn/floor=1을 확인했다. 조명 방향 전환, 서로 다른 전후경 offset, 직접 작성 픽셀 주민과 긴 도장 처마/여관 지붕 창을 확인했다. 정지 snapshot/Canvas PNG 동일, 390×620 실내·버튼·가로폭 보존, 입구 복귀의 기록 보존과 종료 disposed=true를 확인했다. 전용 규칙 테스트 6개가 통과했다.
+공방 경첩→도장 수리/수련→경사 계단을 통한 2층 여관→차를 실제 조작해 worked/repaired/trained/tea와 inside=inn/floor=1을 확인했다. 조명 방향 전환, 서로 다른 전후경 offset, 직접 작성 픽셀 주민과 긴 도장 처마/여관 지붕 창을 확인했다. 정지 snapshot/Canvas PNG 동일, 390×620 실내·버튼·가로폭 보존, 입구 복귀의 기록 보존과 종료 disposed=true를 확인했다. 당시 로직 검사 6개가 통과했다.
 
 화면 크기 검사는 데스크톱 내장 브라우저 뷰포트 검사이며 실제 휴대전화 검증은 아니다. 대표 이미지는 통합 환경의 실제 렌더이며 PNG 크기·SHA256은 resources/manifest.json에 기록했다.

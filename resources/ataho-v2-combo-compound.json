@@ -1,0 +1,3452 @@
+{
+  "assetId": "local/ataho-v2-combos",
+  "createdAt": "2026-10-14",
+  "previousRecord": "resources/ataho-v2-combo-review-motions.json",
+  "sourceRecord": "resources/ataho-v2-generation.json",
+  "method": "기존 남동쪽 프레임만 순서·재생 박자·이동으로 조합. 새로운 자세 생성과 원본 픽셀 수정 없음.",
+  "motions": [
+    {
+      "id": "one-two-uppercut",
+      "title": "원투 → 어퍼컷 · 3타",
+      "durationMs": 1210,
+      "hitCount": 3,
+      "steps": [
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 110,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 준비"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 0,
+          "durationMs": 80,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 앞발 디딤",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 뻗기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 2,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "1타 · 첫 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 37,
+            "reach": 29
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 3,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 몸통 전환",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 11,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 뒷손 장전",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 12,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "2타 · 두 번째 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 35,
+            "reach": 20
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 13,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 팔 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 14,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 힘 풀기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 0,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 낮게 장전",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 앞발로 밀기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 2,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 어퍼컷 올리기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 3,
+          "durationMs": 90,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "3타 · 어퍼컷 정점",
+          "contact": {
+            "kind": "punch",
+            "height": 51,
+            "reach": 10
+          },
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 타격 여운",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 5,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 주먹 회수",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 6,
+          "durationMs": 55,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 몸통 되돌리기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 15,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "손 회수"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 16,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 올리기"
+        },
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 160,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "연속 공격 완료"
+        }
+      ],
+      "review": "두 번의 짧은 펀치 뒤 낮은 장전과 긴 어퍼컷 멈춤을 붙였다. 중간 가드와 돌진을 빼고 같은 발 위치에서 연속 타격한다. 원투에서 낮은 어퍼컷 준비로 바뀌는 몸통 연결을 효과 없이 비교한다."
+    },
+    {
+      "id": "one-two-sweep",
+      "title": "원투 → 하단 쓸기 · 3타",
+      "durationMs": 1215,
+      "hitCount": 3,
+      "steps": [
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 110,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 준비"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 0,
+          "durationMs": 80,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 앞발 디딤",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 뻗기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 2,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "1타 · 첫 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 37,
+            "reach": 29
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 3,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 몸통 전환",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 11,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 뒷손 장전",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 12,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "2타 · 두 번째 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 35,
+            "reach": 20
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 13,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 팔 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 14,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 힘 풀기",
+          "y": 0
+        },
+        {
+          "motion": "leg-sweep-south-east",
+          "frame": 0,
+          "durationMs": 55,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "하단 · 무게 낮추기"
+        },
+        {
+          "motion": "leg-sweep-south-east",
+          "frame": 1,
+          "durationMs": 45,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "하단 · 다리 접기"
+        },
+        {
+          "motion": "leg-sweep-south-east",
+          "frame": 2,
+          "durationMs": 40,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "하단 · 쓸기 준비",
+          "y": 0
+        },
+        {
+          "motion": "leg-sweep-south-east",
+          "frame": 3,
+          "durationMs": 60,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "3타 · 하단 쓸기",
+          "contact": {
+            "kind": "sweep",
+            "height": 10
+          },
+          "y": 0
+        },
+        {
+          "motion": "leg-sweep-south-east",
+          "frame": 3,
+          "durationMs": 25,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "하단 · 타격 풀기",
+          "y": 0
+        },
+        {
+          "motion": "leg-sweep-south-east",
+          "frame": 4,
+          "durationMs": 55,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "하단 · 회전 마무리",
+          "y": 0
+        },
+        {
+          "motion": "leg-sweep-south-east",
+          "frame": 5,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "하단 · 몸 세우기",
+          "y": 0
+        },
+        {
+          "motion": "leg-sweep-south-east",
+          "frame": 6,
+          "durationMs": 65,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "하단 · 무게중심 회복",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 15,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "손 회수"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 16,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 올리기"
+        },
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 160,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "연속 공격 완료"
+        }
+      ],
+      "review": "원투의 손 회수에서 하단 쓸기의 낮추기 자세로 이어 상단 두 타와 하단 한 타를 구분한다. 공격 동안 발 위치를 고정했다. 원본 쓸기는 차는 다리가 몸 뒤에 가려져 마지막 타격의 실루엣이 약하다."
+    },
+    {
+      "id": "spin-one-two",
+      "title": "짧은 회전 → 원투 · 3타",
+      "durationMs": 1275,
+      "hitCount": 3,
+      "steps": [
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 90,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 준비"
+        },
+        {
+          "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+          "frame": 0,
+          "durationMs": 70,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "회전 · 무게 낮추기"
+        },
+        {
+          "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+          "frame": 1,
+          "durationMs": 75,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "회전 · 발 디딤"
+        },
+        {
+          "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+          "frame": 2,
+          "durationMs": 55,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "회전 · 몸 회전"
+        },
+        {
+          "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+          "frame": 3,
+          "durationMs": 50,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "회전 · 무릎 올리기"
+        },
+        {
+          "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+          "frame": 4,
+          "durationMs": 70,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "1타 · 접힌 다리 타격",
+          "contact": {
+            "kind": "kick",
+            "height": 24,
+            "reach": 12
+          }
+        },
+        {
+          "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+          "frame": 4,
+          "durationMs": 25,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "회전 · 타격 풀기"
+        },
+        {
+          "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+          "frame": 5,
+          "durationMs": 55,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "회전 · 다리 거두기"
+        },
+        {
+          "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+          "frame": 6,
+          "durationMs": 75,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "회전 · 중심 회복"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 0,
+          "durationMs": 80,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 앞발 디딤",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 뻗기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 2,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "2타 · 첫 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 37,
+            "reach": 29
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 3,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 몸통 전환",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 11,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 뒷손 장전",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 12,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "3타 · 두 번째 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 35,
+            "reach": 20
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 13,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 팔 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 14,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 힘 풀기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 15,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "손 회수"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 16,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 올리기"
+        },
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 160,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "연속 공격 완료"
+        }
+      ],
+      "review": "회전 후 중심 회복 자세에서 원투의 앞발 디딤으로 이어 가드 복귀를 한 번으로 줄였다. 세 타격은 모두 제자리에서 진행한다. 원본 회전은 다리가 충분히 뻗지 않고 몸 방향이 변하므로 짧은 무릎 타격에 가까울 수 있다."
+    },
+    {
+      "id": "one-two-elbow",
+      "title": "원투 → 팔꿈치 내려치기 · 3타",
+      "durationMs": 1355,
+      "hitCount": 3,
+      "steps": [
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 100,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 준비"
+        },
+        {
+          "motion": "walking-3-south-east",
+          "frame": 0,
+          "durationMs": 65,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "연속 공격 접근"
+        },
+        {
+          "motion": "walking-3-south-east",
+          "frame": 1,
+          "durationMs": 70,
+          "x": 8,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "앞발 내딛기"
+        },
+        {
+          "motion": "walking-3-south-east",
+          "frame": 2,
+          "durationMs": 60,
+          "x": 14,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "거리 좁히기 완료"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 0,
+          "durationMs": 80,
+          "x": 14,
+          "anchor": "feet",
+          "phase": "원투 · 앞발 디딤",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 14,
+          "anchor": "feet",
+          "phase": "원투 · 잽 뻗기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 2,
+          "durationMs": 45,
+          "x": 14,
+          "anchor": "feet",
+          "phase": "1타 · 첫 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 37,
+            "reach": 29
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 3,
+          "durationMs": 35,
+          "x": 14,
+          "anchor": "feet",
+          "phase": "원투 · 잽 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 14,
+          "anchor": "feet",
+          "phase": "원투 · 몸통 전환",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 11,
+          "durationMs": 35,
+          "x": 14,
+          "anchor": "feet",
+          "phase": "원투 · 뒷손 장전",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 12,
+          "durationMs": 70,
+          "x": 14,
+          "anchor": "feet",
+          "phase": "2타 · 두 번째 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 35,
+            "reach": 20
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 13,
+          "durationMs": 45,
+          "x": 14,
+          "anchor": "feet",
+          "phase": "원투 · 팔 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 14,
+          "durationMs": 45,
+          "x": 14,
+          "anchor": "feet",
+          "phase": "원투 · 힘 풀기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 2,
+          "durationMs": 35,
+          "x": 14,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "내려치기 · 팔 들어올리기"
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 3,
+          "durationMs": 90,
+          "x": 14,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "내려치기 · 내려치기 준비"
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 4,
+          "durationMs": 30,
+          "x": 14,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "내려치기 · 짧은 내려치기"
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 5,
+          "durationMs": 75,
+          "x": 14,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "3타 · 내려치기 멈춤",
+          "contact": {
+            "kind": "elbow",
+            "height": 32,
+            "reach": 18
+          }
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 6,
+          "durationMs": 50,
+          "x": 14,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "내려치기 · 타격 후 힘 풀기"
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 8,
+          "durationMs": 35,
+          "x": 14,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "내려치기 · 팔 회수"
+        },
+        {
+          "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+          "frame": 10,
+          "durationMs": 35,
+          "x": 14,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "내려치기 · 어깨 힘 풀기"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 15,
+          "durationMs": 50,
+          "x": 14,
+          "anchor": "feet",
+          "phase": "손 회수"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 16,
+          "durationMs": 70,
+          "x": 14,
+          "anchor": "feet",
+          "phase": "가드 올리기"
+        },
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 160,
+          "x": 14,
+          "anchor": "feet",
+          "phase": "연속 공격 완료"
+        }
+      ],
+      "review": "보행으로 접근한 뒤 발을 고정하고 원투와 내려치기를 잇는다. 내려치기의 준비와 끝 자세는 남기고 하강 시간을 짧게 해 연타 뒤의 마지막 박자를 구분했다. 원본의 몸통 숙임과 팔꿈치 윤곽은 작아 손을 내리는 몸짓으로 보일 수 있다."
+    },
+    {
+      "id": "punch-barrage",
+      "title": "연속 원투 → 어퍼컷 · 5타",
+      "durationMs": 1605,
+      "hitCount": 5,
+      "steps": [
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 110,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 준비"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 0,
+          "durationMs": 80,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 앞발 디딤",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 뻗기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 2,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "1타 · 첫 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 37,
+            "reach": 29
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 3,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 몸통 전환",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 11,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 뒷손 장전",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 12,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "2타 · 두 번째 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 35,
+            "reach": 20
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 13,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 팔 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 14,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 힘 풀기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 0,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 앞발 디딤",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 1,
+          "durationMs": 25,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 뻗기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 2,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "3타 · 첫 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 37,
+            "reach": 29
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 3,
+          "durationMs": 25,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 4,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 몸통 전환",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 11,
+          "durationMs": 25,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 뒷손 장전",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 12,
+          "durationMs": 60,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "4타 · 두 번째 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 35,
+            "reach": 20
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 13,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 팔 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 14,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 힘 풀기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 0,
+          "durationMs": 120,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 낮게 장전",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 앞발로 밀기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 2,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 어퍼컷 올리기",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 3,
+          "durationMs": 90,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "5타 · 어퍼컷 정점",
+          "contact": {
+            "kind": "punch",
+            "height": 51,
+            "reach": 10
+          },
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 타격 여운",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 5,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 주먹 회수",
+          "y": 0
+        },
+        {
+          "motion": "surprise-uppercut-south-east",
+          "frame": 6,
+          "durationMs": 55,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "어퍼컷 · 몸통 되돌리기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 15,
+          "durationMs": 50,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "손 회수"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 16,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 올리기"
+        },
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 160,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "연속 공격 완료"
+        }
+      ],
+      "review": "첫 원투의 힘 풀기에서 두 번째 원투의 앞발 디딤으로 이어 다섯 타격을 만든다. 뒤 원투는 더 촘촘하게, 마지막 어퍼컷 장전은 길게 두었다. 같은 주먹 프레임의 반복이라 앞 네 타격의 실루엣은 같으며, 연타와 마무리의 박자 차이를 비교하는 시안이다."
+    },
+    {
+      "id": "one-two-leap-kick",
+      "title": "원투 → 도약 날아차기 · 3타",
+      "durationMs": 1610,
+      "hitCount": 3,
+      "steps": [
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 110,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "가드 준비"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 0,
+          "durationMs": 80,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 앞발 디딤",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 1,
+          "durationMs": 30,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 뻗기",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 2,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "1타 · 첫 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 37,
+            "reach": 29
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 3,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 잽 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 4,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 몸통 전환",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 11,
+          "durationMs": 35,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 뒷손 장전",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 12,
+          "durationMs": 70,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "2타 · 두 번째 타격",
+          "contact": {
+            "kind": "punch",
+            "height": 35,
+            "reach": 20
+          },
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 13,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 팔 회수",
+          "y": 0
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 14,
+          "durationMs": 45,
+          "x": 0,
+          "anchor": "feet",
+          "phase": "원투 · 힘 풀기",
+          "y": 0
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 0,
+          "durationMs": 45,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 힘 모으기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 1,
+          "durationMs": 50,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 무릎 굽히기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 2,
+          "durationMs": 75,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 도약 준비"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 2,
+          "durationMs": 40,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 지면 밀기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 3,
+          "durationMs": 45,
+          "x": 0,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 도약"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 0,
+          "durationMs": 40,
+          "x": 17,
+          "y": -18,
+          "anchor": {
+            "x": 49,
+            "y": 81
+          },
+          "phase": "도약 · 무릎 들기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 1,
+          "durationMs": 40,
+          "x": 25,
+          "y": -26,
+          "anchor": {
+            "x": 49,
+            "y": 81
+          },
+          "phase": "도약 · 킥 장전"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 2,
+          "durationMs": 45,
+          "x": 35,
+          "y": -34,
+          "anchor": {
+            "x": 49,
+            "y": 82
+          },
+          "phase": "도약 · 발 올리기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 3,
+          "durationMs": 45,
+          "x": 47,
+          "y": -35,
+          "anchor": {
+            "x": 48,
+            "y": 83
+          },
+          "phase": "도약 · 발 뻗기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 4,
+          "durationMs": 60,
+          "x": 60,
+          "y": -30,
+          "anchor": {
+            "x": 50,
+            "y": 84
+          },
+          "phase": "3타 · 공중 타격",
+          "contact": {
+            "kind": "kick",
+            "height": 67,
+            "reach": 12
+          }
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 4,
+          "durationMs": 25,
+          "x": 60,
+          "y": -30,
+          "anchor": {
+            "x": 50,
+            "y": 84
+          },
+          "phase": "도약 · 타격 풀기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 5,
+          "durationMs": 45,
+          "x": 66,
+          "y": -20,
+          "anchor": {
+            "x": 49,
+            "y": 83
+          },
+          "phase": "도약 · 다리 거두기"
+        },
+        {
+          "motion": "high-kick-south-east",
+          "frame": 6,
+          "durationMs": 45,
+          "x": 70,
+          "y": -10,
+          "anchor": {
+            "x": 49,
+            "y": 81
+          },
+          "phase": "도약 · 착지 준비"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 6,
+          "durationMs": 45,
+          "x": 73,
+          "y": -4,
+          "anchor": "feet",
+          "phase": "도약 · 착지 직전"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 7,
+          "durationMs": 85,
+          "x": 74,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 착지 충격 받기"
+        },
+        {
+          "motion": "jumping-1-south-east",
+          "frame": 8,
+          "durationMs": 60,
+          "x": 74,
+          "y": 0,
+          "anchor": "feet",
+          "phase": "도약 · 일어서기"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 15,
+          "durationMs": 50,
+          "x": 74,
+          "anchor": "feet",
+          "phase": "손 회수"
+        },
+        {
+          "motion": "ataho-one-two-punch-south-east-south-east",
+          "frame": 16,
+          "durationMs": 70,
+          "x": 74,
+          "anchor": "feet",
+          "phase": "가드 올리기"
+        },
+        {
+          "motion": "fight-stance-idle-8-frames-south-east",
+          "frame": 0,
+          "durationMs": 160,
+          "x": 74,
+          "anchor": "feet",
+          "phase": "연속 공격 완료"
+        }
+      ],
+      "review": "원투의 손 회수에서 기존 도약 준비로 연결한다. 준비 중에는 발과 위치를 유지하며 도약 뒤에만 전진한다. 공중 킥은 기존 골반 기준 정렬과 궤적을 유지한다. 손 공격에서 도약 자세로 넘어가는 짧은 전환과 원본의 얼굴 변화는 남는다."
+    }
+  ],
+  "elbowComparison": {
+    "id": "elbow-chop",
+    "defaultVariant": "sharp",
+    "originalDurationMs": 1240,
+    "variants": [
+      {
+        "id": "sharp",
+        "label": "가속과 멈춤",
+        "durationMs": 720,
+        "steps": [
+          {
+            "motion": "fight-stance-idle-8-frames-south-east",
+            "frame": 0,
+            "durationMs": 80,
+            "x": 0,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "가드 준비"
+          },
+          {
+            "motion": "walking-3-south-east",
+            "frame": 0,
+            "durationMs": 40,
+            "x": 0,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "한 걸음 접근"
+          },
+          {
+            "motion": "walking-3-south-east",
+            "frame": 1,
+            "durationMs": 50,
+            "x": 8,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "앞발 디딤"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 0,
+            "durationMs": 35,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "발 고정"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 3,
+            "durationMs": 90,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "한 박자 준비"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 4,
+            "durationMs": 30,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "빠른 하강"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 5,
+            "durationMs": 75,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "내려친 자세 멈춤",
+            "contact": {
+              "kind": "elbow",
+              "height": 32,
+              "reach": 18
+            }
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 6,
+            "durationMs": 45,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "타격 후 힘 풀기"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 8,
+            "durationMs": 35,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "팔 회수"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 12,
+            "durationMs": 40,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "몸통 복귀"
+          },
+          {
+            "motion": "ataho-one-two-punch-south-east-south-east",
+            "frame": 15,
+            "durationMs": 40,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "가드 되찾기"
+          },
+          {
+            "motion": "ataho-one-two-punch-south-east-south-east",
+            "frame": 16,
+            "durationMs": 50,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "가드 올리기"
+          },
+          {
+            "motion": "fight-stance-idle-8-frames-south-east",
+            "frame": 0,
+            "durationMs": 110,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "가드 복귀"
+          }
+        ],
+        "review": "변화가 작은 팔 올림·회수 자세를 덜고, 들어올린 3번을 90ms 유지한 뒤 4번 하강을 30ms로 줄였다. 약하게 몸을 낮춘 5번을 75ms 멈춰 대비를 만든다. 공격 박자를 비교하는 시안이며 팔꿈치 실루엣 자체는 원래 그림과 같다. 타격 효과를 끄고 원래 박자·전체 빠르게와 비교한다."
+      },
+      {
+        "id": "fast",
+        "label": "전체 빠르게",
+        "durationMs": 808,
+        "steps": [
+          {
+            "motion": "fight-stance-idle-8-frames-south-east",
+            "frame": 0,
+            "durationMs": 78,
+            "x": 0,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "가드 준비"
+          },
+          {
+            "motion": "walking-3-south-east",
+            "frame": 0,
+            "durationMs": 39,
+            "x": 0,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "한 걸음 접근"
+          },
+          {
+            "motion": "walking-3-south-east",
+            "frame": 1,
+            "durationMs": 49,
+            "x": 8,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "앞발 디딤"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 0,
+            "durationMs": 52,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "발 고정"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 1,
+            "durationMs": 33,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "팔 올리기 시작"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 2,
+            "durationMs": 42,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "팔 들어올리기"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 3,
+            "durationMs": 65,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "내려치기 준비"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 4,
+            "durationMs": 46,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "짧은 내려치기",
+            "contact": {
+              "kind": "elbow",
+              "height": 32,
+              "reach": 18
+            }
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 5,
+            "durationMs": 29,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "내려치기 마무리"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 6,
+            "durationMs": 59,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "타격 후 힘 풀기"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 8,
+            "durationMs": 42,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "팔 회수"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 10,
+            "durationMs": 39,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "어깨 힘 풀기"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 12,
+            "durationMs": 46,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "몸통 복귀"
+          },
+          {
+            "motion": "ataho-one-two-punch-south-east-south-east",
+            "frame": 15,
+            "durationMs": 36,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "가드 되찾기"
+          },
+          {
+            "motion": "ataho-one-two-punch-south-east-south-east",
+            "frame": 16,
+            "durationMs": 49,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "가드 올리기"
+          },
+          {
+            "motion": "fight-stance-idle-8-frames-south-east",
+            "frame": 0,
+            "durationMs": 104,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "가드 복귀"
+          }
+        ],
+        "review": "원래 자세와 타격 위치를 그대로 두고 모든 유지 시간을 65%로 줄였다. 약 1.54배 재생에 해당한다. 팔을 올리고 내리는 비율은 같으므로 단순 가속으로 공격감이 얼마나 바뀌는지 비교한다."
+      },
+      {
+        "id": "original",
+        "label": "원래 박자",
+        "durationMs": 1240,
+        "steps": [
+          {
+            "motion": "fight-stance-idle-8-frames-south-east",
+            "frame": 0,
+            "durationMs": 120,
+            "x": 0,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "가드 준비"
+          },
+          {
+            "motion": "walking-3-south-east",
+            "frame": 0,
+            "durationMs": 60,
+            "x": 0,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "한 걸음 접근"
+          },
+          {
+            "motion": "walking-3-south-east",
+            "frame": 1,
+            "durationMs": 75,
+            "x": 8,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "앞발 디딤"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 0,
+            "durationMs": 80,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "발 고정"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 1,
+            "durationMs": 50,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "팔 올리기 시작"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 2,
+            "durationMs": 65,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "팔 들어올리기"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 3,
+            "durationMs": 100,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "내려치기 준비"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 4,
+            "durationMs": 70,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "짧은 내려치기",
+            "contact": {
+              "kind": "elbow",
+              "height": 32,
+              "reach": 18
+            }
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 5,
+            "durationMs": 45,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "내려치기 마무리"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 6,
+            "durationMs": 90,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "타격 후 힘 풀기"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 8,
+            "durationMs": 65,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "팔 회수"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 10,
+            "durationMs": 60,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "어깨 힘 풀기"
+          },
+          {
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 12,
+            "durationMs": 70,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "몸통 복귀"
+          },
+          {
+            "motion": "ataho-one-two-punch-south-east-south-east",
+            "frame": 15,
+            "durationMs": 55,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "가드 되찾기"
+          },
+          {
+            "motion": "ataho-one-two-punch-south-east-south-east",
+            "frame": 16,
+            "durationMs": 75,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "가드 올리기"
+          },
+          {
+            "motion": "fight-stance-idle-8-frames-south-east",
+            "frame": 0,
+            "durationMs": 160,
+            "x": 14,
+            "y": 0,
+            "anchor": "feet",
+            "phase": "가드 복귀"
+          }
+        ],
+        "review": "첫 생성 장작패기 76×92 원본만 사용한다. 1→2→3번으로 팔을 올려 준비하고, 팔이 내려오며 접힌 윤곽이 남는 4번을 짧은 타격으로 유지한 뒤 5→6번에서 힘을 푼다. 접근 뒤에는 위치와 높이를 고정하고 원본 pivot·발 하단으로 접지한다. 빠른 버전 4~6번의 큰 흰 형체는 이 계열에 없어 제외했다. 다만 첫 생성도 몸통 숙임과 팔꿈치 윤곽이 작아 효과 없이 보면 팔을 내리는 몸짓에 가까울 수 있다. 타격 표시를 끈 상태에서 단발 공격으로 읽히는지 검토해야 한다."
+      }
+    ],
+    "limitation": "접힌 팔꿈치가 아래로 뻗는 윤곽과 몸통이 함께 숙여지는 타격 자세가 부족하다. 손을 내리는 동작과 팔꿈치 공격을 명확히 구분하려면 그 자세가 필요하다."
+  },
+  "previewExports": [
+    {
+      "id": "elbow-fast",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/elbow-fast-effects-off.gif",
+      "sha256": "905dcd5b145e5191c6a83dfab782a88aca2011a1a81300f63e6b6f0389daeea9",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 90,
+      "durationMs": 1500,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/elbow-fast-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampQuantization": "cumulative 10ms endpoints"
+    },
+    {
+      "id": "elbow-original",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/elbow-original-effects-off.gif",
+      "sha256": "a1dfeee88c93e54202cc4c2ebbb198a64f474216d5b4ced537af1ffb7c3ad801",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 117,
+      "durationMs": 1950,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/elbow-original-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampQuantization": "cumulative 10ms endpoints"
+    },
+    {
+      "id": "elbow-sharp",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/elbow-sharp-effects-off.gif",
+      "sha256": "339b46b2f0bb0f0d3f86c257d27452f74ede8d8393f9963fdd49d053bfccf4eb",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 85,
+      "durationMs": 1420,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/elbow-sharp-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampQuantization": "cumulative 10ms endpoints"
+    },
+    {
+      "id": "one-two-elbow",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-elbow-effects-off.gif",
+      "sha256": "5ece5f278edbabdbf98d9028b8b7caee76c2f7ac5a8fe7f2f4fb80be70939dbc",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 123,
+      "durationMs": 2050,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-elbow-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampQuantization": "cumulative 10ms endpoints"
+    },
+    {
+      "id": "one-two-leap-kick",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-leap-kick-effects-off.gif",
+      "sha256": "cba5457e5e3f7c7a51ec97997ef7e95d46ca73bd7df04c33966df78649ff007f",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 139,
+      "durationMs": 2320,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-leap-kick-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampQuantization": "cumulative 10ms endpoints"
+    },
+    {
+      "id": "one-two-sweep",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-sweep-effects-off.gif",
+      "sha256": "1eba7d114616618d9926d31e4db10e7f8eded7d05aa0bb4e65c1e647869edf4b",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 115,
+      "durationMs": 1920,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-sweep-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampQuantization": "cumulative 10ms endpoints"
+    },
+    {
+      "id": "one-two-uppercut",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-uppercut-effects-off.gif",
+      "sha256": "da8d766f7f81b0472740aef261fbb7f7723fa8216ca6a7ffeff774c24c79601b",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 115,
+      "durationMs": 1920,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/one-two-uppercut-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampQuantization": "cumulative 10ms endpoints"
+    },
+    {
+      "id": "punch-barrage",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/punch-barrage-effects-off.gif",
+      "sha256": "5994d0b721b41b87bda9e2b25027b9ff11421679ac4dfef492f991dcabc8795f",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 138,
+      "durationMs": 2300,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/punch-barrage-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampQuantization": "cumulative 10ms endpoints"
+    },
+    {
+      "id": "spin-one-two",
+      "localPath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/spin-one-two-effects-off.gif",
+      "sha256": "86a97514bc1d999c283af7a6156bd52bb308aa077e258cc3aab27bc7196ca292",
+      "width": 684,
+      "height": 312,
+      "capturedFrames": 118,
+      "durationMs": 1970,
+      "capturePath": "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/spin-one-two-capture/capture.json",
+      "playbackSpeed": 0.5,
+      "exportSpeed": 1,
+      "timestampQuantization": "cumulative 10ms endpoints"
+    }
+  ],
+  "sourceFrames": [
+    {
+      "motion": "fight-stance-idle-8-frames-south-east",
+      "frame": 0,
+      "index": 0,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 17
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/20373254-a8b7-4cfc-b867-722499b66e46/south-east/0.png?t=1791910950902",
+      "sourceSha256": "e5cb58c7951dd6bf844df1e2649aeb0fd564cbda44291236e00dac9aaf550f8e",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "e5cb58c7951dd6bf844df1e2649aeb0fd564cbda44291236e00dac9aaf550f8e"
+    },
+    {
+      "motion": "ataho-one-two-punch-south-east-south-east",
+      "frame": 0,
+      "index": 0,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_000.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_000.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/0.png?t=1791914728037",
+      "sourceSha256": "e5cb58c7951dd6bf844df1e2649aeb0fd564cbda44291236e00dac9aaf550f8e",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "e5cb58c7951dd6bf844df1e2649aeb0fd564cbda44291236e00dac9aaf550f8e"
+    },
+    {
+      "motion": "ataho-one-two-punch-south-east-south-east",
+      "frame": 1,
+      "index": 1,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_001.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_001.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/1.png?t=1791914728037",
+      "sourceSha256": "963a301c4021b8d4bbbaa0da089cddb99e7dedd3c83bfe2795f53f70aa972f72",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "963a301c4021b8d4bbbaa0da089cddb99e7dedd3c83bfe2795f53f70aa972f72"
+    },
+    {
+      "motion": "ataho-one-two-punch-south-east-south-east",
+      "frame": 2,
+      "index": 2,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_002.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_002.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/2.png?t=1791914728037",
+      "sourceSha256": "c324f6b3e5b7c1ce7fa579bdaba224a8c5c501ffcc9b611d73f0fe50d0436a91",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "c324f6b3e5b7c1ce7fa579bdaba224a8c5c501ffcc9b611d73f0fe50d0436a91"
+    },
+    {
+      "motion": "ataho-one-two-punch-south-east-south-east",
+      "frame": 3,
+      "index": 3,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_003.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_003.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/3.png?t=1791914728037",
+      "sourceSha256": "9d16646347df209872f9009b03cdf681d544753adb37f4cfb1c99239b682553b",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "9d16646347df209872f9009b03cdf681d544753adb37f4cfb1c99239b682553b"
+    },
+    {
+      "motion": "ataho-one-two-punch-south-east-south-east",
+      "frame": 4,
+      "index": 4,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_004.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_004.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/4.png?t=1791914728037",
+      "sourceSha256": "a8bd624c4aa0db358651ff905a628a407077a171794cdb6c1de5bef735ebafdb",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "a8bd624c4aa0db358651ff905a628a407077a171794cdb6c1de5bef735ebafdb"
+    },
+    {
+      "motion": "ataho-one-two-punch-south-east-south-east",
+      "frame": 11,
+      "index": 11,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_011.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_011.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/11.png?t=1791914728037",
+      "sourceSha256": "c3c377e84cd0b32356373c4d1215b0206c5de8aaed3dfa52e2265e3607bf0822",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "c3c377e84cd0b32356373c4d1215b0206c5de8aaed3dfa52e2265e3607bf0822"
+    },
+    {
+      "motion": "ataho-one-two-punch-south-east-south-east",
+      "frame": 12,
+      "index": 12,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_012.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_012.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/12.png?t=1791914728037",
+      "sourceSha256": "944fcdcfde4b7c3f9b4b0cb8d655233a40c26a9063cbaf7419637ec034b1d286",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "944fcdcfde4b7c3f9b4b0cb8d655233a40c26a9063cbaf7419637ec034b1d286"
+    },
+    {
+      "motion": "ataho-one-two-punch-south-east-south-east",
+      "frame": 13,
+      "index": 13,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_013.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_013.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/13.png?t=1791914728037",
+      "sourceSha256": "a22503902c2bebd0493dcf86381238e4148f32d7c7237bff6a0f162650ddaabd",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "a22503902c2bebd0493dcf86381238e4148f32d7c7237bff6a0f162650ddaabd"
+    },
+    {
+      "motion": "ataho-one-two-punch-south-east-south-east",
+      "frame": 14,
+      "index": 14,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_014.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_014.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/14.png?t=1791914728037",
+      "sourceSha256": "6ca68df6a56991a8711ad2f5b67a289333eae63905c3890ecf025bfa38bd0677",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "6ca68df6a56991a8711ad2f5b67a289333eae63905c3890ecf025bfa38bd0677"
+    },
+    {
+      "motion": "surprise-uppercut-south-east",
+      "frame": 0,
+      "index": 0,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_000.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_000.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/ccf356b4-1cb3-4712-a39e-454c29ed470e/south-east/0.png?t=1791913362824",
+      "sourceSha256": "d49fea47770474682b8494b31348f95430688f2db2a217d43d41377e1ba09eeb",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "d49fea47770474682b8494b31348f95430688f2db2a217d43d41377e1ba09eeb"
+    },
+    {
+      "motion": "surprise-uppercut-south-east",
+      "frame": 1,
+      "index": 1,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_001.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_001.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/ccf356b4-1cb3-4712-a39e-454c29ed470e/south-east/1.png?t=1791913362824",
+      "sourceSha256": "e8b251b208ae2d756e0b57f68649baff7f1bbeac0c9e6ad20cee7483b6143bc0",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "e8b251b208ae2d756e0b57f68649baff7f1bbeac0c9e6ad20cee7483b6143bc0"
+    },
+    {
+      "motion": "surprise-uppercut-south-east",
+      "frame": 2,
+      "index": 2,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_002.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_002.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/ccf356b4-1cb3-4712-a39e-454c29ed470e/south-east/2.png?t=1791913362824",
+      "sourceSha256": "bb704ae669a7c317a5a5a35de55b3d778f91b0184620f7bc40e21da75fb2e72c",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "bb704ae669a7c317a5a5a35de55b3d778f91b0184620f7bc40e21da75fb2e72c"
+    },
+    {
+      "motion": "surprise-uppercut-south-east",
+      "frame": 3,
+      "index": 3,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_003.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_003.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/ccf356b4-1cb3-4712-a39e-454c29ed470e/south-east/3.png?t=1791913362824",
+      "sourceSha256": "9e1cc3779ceb195c3ef97f11479f188cc6500fac27fa7920b86a56c602a64d43",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "9e1cc3779ceb195c3ef97f11479f188cc6500fac27fa7920b86a56c602a64d43"
+    },
+    {
+      "motion": "surprise-uppercut-south-east",
+      "frame": 4,
+      "index": 4,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_004.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_004.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/ccf356b4-1cb3-4712-a39e-454c29ed470e/south-east/4.png?t=1791913362824",
+      "sourceSha256": "c9934c087344d33fb9d091ee3ee506a2011d270c977694e92dc8a593d17c1add",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "c9934c087344d33fb9d091ee3ee506a2011d270c977694e92dc8a593d17c1add"
+    },
+    {
+      "motion": "surprise-uppercut-south-east",
+      "frame": 5,
+      "index": 5,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_005.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_005.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/ccf356b4-1cb3-4712-a39e-454c29ed470e/south-east/5.png?t=1791913362824",
+      "sourceSha256": "6b3985e42f3cc7160e1026d7f461898ba37a38a0ea16ae1f87ce17aca3f28609",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "6b3985e42f3cc7160e1026d7f461898ba37a38a0ea16ae1f87ce17aca3f28609"
+    },
+    {
+      "motion": "surprise-uppercut-south-east",
+      "frame": 6,
+      "index": 6,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_006.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_006.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/ccf356b4-1cb3-4712-a39e-454c29ed470e/south-east/6.png?t=1791913362824",
+      "sourceSha256": "d61c7656cc63b0d0c8f7cb597782ea2fbdfb317b712b2b0520a549777856fbe3",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "d61c7656cc63b0d0c8f7cb597782ea2fbdfb317b712b2b0520a549777856fbe3"
+    },
+    {
+      "motion": "ataho-one-two-punch-south-east-south-east",
+      "frame": 15,
+      "index": 15,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_015.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_015.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/15.png?t=1791914728037",
+      "sourceSha256": "6a51ad800a5a62fd2bc2f0837f4395272d9f00e784dae5e81d2fc7aa04153420",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "6a51ad800a5a62fd2bc2f0837f4395272d9f00e784dae5e81d2fc7aa04153420"
+    },
+    {
+      "motion": "ataho-one-two-punch-south-east-south-east",
+      "frame": 16,
+      "index": 16,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_016.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_016.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/16.png?t=1791914728037",
+      "sourceSha256": "14726df2d8fd09e095dda200287a8bec8dfd571ee00b5128964e81600a7eb1d0",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "14726df2d8fd09e095dda200287a8bec8dfd571ee00b5128964e81600a7eb1d0"
+    },
+    {
+      "motion": "leg-sweep-south-east",
+      "frame": 0,
+      "index": 0,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_000.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_000.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/b4ced1c7-335e-403a-8e34-20cda67f387c/south-east/0.png?t=1791914195191",
+      "sourceSha256": "7666855bc36fb004679df913ad54c3cf29d49a65bfa039de17f3f47fe8a8591b",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "7666855bc36fb004679df913ad54c3cf29d49a65bfa039de17f3f47fe8a8591b"
+    },
+    {
+      "motion": "leg-sweep-south-east",
+      "frame": 1,
+      "index": 1,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_001.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_001.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/b4ced1c7-335e-403a-8e34-20cda67f387c/south-east/1.png?t=1791914195191",
+      "sourceSha256": "22eda4807586caa96b4bd8ee03fcdd5c876916950278fb867390e124426d6801",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "22eda4807586caa96b4bd8ee03fcdd5c876916950278fb867390e124426d6801"
+    },
+    {
+      "motion": "leg-sweep-south-east",
+      "frame": 2,
+      "index": 2,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_002.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_002.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/b4ced1c7-335e-403a-8e34-20cda67f387c/south-east/2.png?t=1791914195191",
+      "sourceSha256": "8d9f44053b61594dd2309b279da82f44b652da6eb448fd53b00f251c5864c302",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "8d9f44053b61594dd2309b279da82f44b652da6eb448fd53b00f251c5864c302"
+    },
+    {
+      "motion": "leg-sweep-south-east",
+      "frame": 3,
+      "index": 3,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_003.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_003.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/b4ced1c7-335e-403a-8e34-20cda67f387c/south-east/3.png?t=1791914195191",
+      "sourceSha256": "b3a903162df06ea678928f21dd76471683f43d9736707d5778a62f2bc47aff9a",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "b3a903162df06ea678928f21dd76471683f43d9736707d5778a62f2bc47aff9a"
+    },
+    {
+      "motion": "leg-sweep-south-east",
+      "frame": 4,
+      "index": 4,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_004.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_004.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/b4ced1c7-335e-403a-8e34-20cda67f387c/south-east/4.png?t=1791914195191",
+      "sourceSha256": "6fa7b4c2ea97f51d59eeba0173a82a6a82ee88fac5e947ab297317ac10fc537b",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "6fa7b4c2ea97f51d59eeba0173a82a6a82ee88fac5e947ab297317ac10fc537b"
+    },
+    {
+      "motion": "leg-sweep-south-east",
+      "frame": 5,
+      "index": 5,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_005.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_005.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/b4ced1c7-335e-403a-8e34-20cda67f387c/south-east/5.png?t=1791914195191",
+      "sourceSha256": "536419d7ecc1297f0fc7eddf832d06d677a012c7e962250ba9aba4f864e3f847",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "536419d7ecc1297f0fc7eddf832d06d677a012c7e962250ba9aba4f864e3f847"
+    },
+    {
+      "motion": "leg-sweep-south-east",
+      "frame": 6,
+      "index": 6,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_006.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_006.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/b4ced1c7-335e-403a-8e34-20cda67f387c/south-east/6.png?t=1791914195191",
+      "sourceSha256": "9f77b0462c4a91654403deed1d38a24ca530f2632b5189f6f77b0c5156609d2b",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "9f77b0462c4a91654403deed1d38a24ca530f2632b5189f6f77b0c5156609d2b"
+    },
+    {
+      "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+      "frame": 0,
+      "index": 0,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_000.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_000.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/28eacbd9-7958-4426-9cd6-60ff45ac9962/south-east/0.png?t=1791941994592",
+      "sourceSha256": "b3a7697df28edaad4c81e82a9c59354a1773bb9056b6afd7dbf3d73ac04969a8",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "b3a7697df28edaad4c81e82a9c59354a1773bb9056b6afd7dbf3d73ac04969a8"
+    },
+    {
+      "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+      "frame": 1,
+      "index": 1,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_001.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_001.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/28eacbd9-7958-4426-9cd6-60ff45ac9962/south-east/1.png?t=1791941994592",
+      "sourceSha256": "62e31a2a1aee2de18f090e8eb6315a7534b69a425852aaf264d287e98d5c9c63",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "62e31a2a1aee2de18f090e8eb6315a7534b69a425852aaf264d287e98d5c9c63"
+    },
+    {
+      "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+      "frame": 2,
+      "index": 2,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_002.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_002.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/28eacbd9-7958-4426-9cd6-60ff45ac9962/south-east/2.png?t=1791941994592",
+      "sourceSha256": "bc210996ed0d7c75d253f877580972d12a78f19deba722a5afe4668e61fe5440",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "bc210996ed0d7c75d253f877580972d12a78f19deba722a5afe4668e61fe5440"
+    },
+    {
+      "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+      "frame": 3,
+      "index": 3,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_003.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_003.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/28eacbd9-7958-4426-9cd6-60ff45ac9962/south-east/3.png?t=1791941994592",
+      "sourceSha256": "4748c162bc9dd3e98c2a4378e59bd5dc17751735184ff4948a39a56ac485d482",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "4748c162bc9dd3e98c2a4378e59bd5dc17751735184ff4948a39a56ac485d482"
+    },
+    {
+      "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+      "frame": 4,
+      "index": 4,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_004.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_004.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/28eacbd9-7958-4426-9cd6-60ff45ac9962/south-east/4.png?t=1791941994592",
+      "sourceSha256": "26934855664899ab53fa4ea268e66a004a3b6f780761c5ad47276903c24d8632",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "26934855664899ab53fa4ea268e66a004a3b6f780761c5ad47276903c24d8632"
+    },
+    {
+      "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+      "frame": 5,
+      "index": 5,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_005.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_005.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/28eacbd9-7958-4426-9cd6-60ff45ac9962/south-east/5.png?t=1791941994592",
+      "sourceSha256": "a86905099100622f6f914efd0590b59b0702684d01b3fb63b25c4d88d89113b2",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "a86905099100622f6f914efd0590b59b0702684d01b3fb63b25c4d88d89113b2"
+    },
+    {
+      "motion": "ataho-roundhouse-kick-skeleton-south-east-south-east",
+      "frame": 6,
+      "index": 6,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_006.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-roundhouse-kick-skeleton-south-east/south-east/frame_006.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/28eacbd9-7958-4426-9cd6-60ff45ac9962/south-east/6.png?t=1791941994592",
+      "sourceSha256": "b1b1e3215d77b6c5270a5a37ac60ebb26d74bc5c1ac2f91504007b7f9af90f74",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "b1b1e3215d77b6c5270a5a37ac60ebb26d74bc5c1ac2f91504007b7f9af90f74"
+    },
+    {
+      "motion": "walking-3-south-east",
+      "frame": 0,
+      "index": 0,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Walking/south-east/frame_000.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Walking/south-east/frame_000.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/87a74467-6456-438f-94e6-856d89f9f6fa/south-east/0.png?t=1791913352624",
+      "sourceSha256": "4052932158051988c1936389b0be169d76e50ee22e7e4150c13cc2d3e14f0894",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "4052932158051988c1936389b0be169d76e50ee22e7e4150c13cc2d3e14f0894"
+    },
+    {
+      "motion": "walking-3-south-east",
+      "frame": 1,
+      "index": 1,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Walking/south-east/frame_001.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Walking/south-east/frame_001.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/87a74467-6456-438f-94e6-856d89f9f6fa/south-east/1.png?t=1791913352624",
+      "sourceSha256": "c25a92e9a71d8fef5685c58869cb7c50c56876ba428b7fcc384b45e9126cb2d6",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "c25a92e9a71d8fef5685c58869cb7c50c56876ba428b7fcc384b45e9126cb2d6"
+    },
+    {
+      "motion": "walking-3-south-east",
+      "frame": 2,
+      "index": 2,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Walking/south-east/frame_002.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Walking/south-east/frame_002.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/87a74467-6456-438f-94e6-856d89f9f6fa/south-east/2.png?t=1791913352624",
+      "sourceSha256": "cc4483a305de556cc0283212e93005cd55c35a0d2bd6a23bea8680aa8849b3e5",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "cc4483a305de556cc0283212e93005cd55c35a0d2bd6a23bea8680aa8849b3e5"
+    },
+    {
+      "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+      "frame": 2,
+      "index": 2,
+      "width": 76,
+      "height": 92,
+      "pivot": {
+        "x": 38,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_002.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_002.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/3c32e8ce-9612-4454-adda-50e66f8abea2/south-east/2.png?t=1791934754500",
+      "sourceSha256": "67687ad39613d5bacb2bba067a11228543e4eca1c773d9dc9becd23355fa11f8",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 76,
+        "height": 92
+      },
+      "sha256": "67687ad39613d5bacb2bba067a11228543e4eca1c773d9dc9becd23355fa11f8"
+    },
+    {
+      "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+      "frame": 3,
+      "index": 3,
+      "width": 76,
+      "height": 92,
+      "pivot": {
+        "x": 38,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_003.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_003.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/3c32e8ce-9612-4454-adda-50e66f8abea2/south-east/3.png?t=1791934754500",
+      "sourceSha256": "7c49acbedb1ea8b5d3429952568a132bb9f8dd71e60b587b07b667665df0e7fe",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 76,
+        "height": 92
+      },
+      "sha256": "7c49acbedb1ea8b5d3429952568a132bb9f8dd71e60b587b07b667665df0e7fe"
+    },
+    {
+      "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+      "frame": 4,
+      "index": 4,
+      "width": 76,
+      "height": 92,
+      "pivot": {
+        "x": 38,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_004.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_004.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/3c32e8ce-9612-4454-adda-50e66f8abea2/south-east/4.png?t=1791934754500",
+      "sourceSha256": "3fa808173f702f4055145e953e84e1c34b221d4de7724bc29ea148a3b5b79880",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 76,
+        "height": 92
+      },
+      "sha256": "3fa808173f702f4055145e953e84e1c34b221d4de7724bc29ea148a3b5b79880"
+    },
+    {
+      "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+      "frame": 5,
+      "index": 5,
+      "width": 76,
+      "height": 92,
+      "pivot": {
+        "x": 38,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_005.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_005.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/3c32e8ce-9612-4454-adda-50e66f8abea2/south-east/5.png?t=1791934754500",
+      "sourceSha256": "905a70253c96aad99b8dece4db0102e8a7e5b10b67334025a9d6e10bd88bffe4",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 76,
+        "height": 92
+      },
+      "sha256": "905a70253c96aad99b8dece4db0102e8a7e5b10b67334025a9d6e10bd88bffe4"
+    },
+    {
+      "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+      "frame": 6,
+      "index": 6,
+      "width": 76,
+      "height": 92,
+      "pivot": {
+        "x": 38,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_006.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_006.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/3c32e8ce-9612-4454-adda-50e66f8abea2/south-east/6.png?t=1791934754500",
+      "sourceSha256": "6f2b9a10fbc8dcacd952ae885fb653468a45f3e5ba576f535605acc3045b2991",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 76,
+        "height": 92
+      },
+      "sha256": "6f2b9a10fbc8dcacd952ae885fb653468a45f3e5ba576f535605acc3045b2991"
+    },
+    {
+      "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+      "frame": 8,
+      "index": 8,
+      "width": 76,
+      "height": 92,
+      "pivot": {
+        "x": 38,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_008.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_008.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/3c32e8ce-9612-4454-adda-50e66f8abea2/south-east/8.png?t=1791934754500",
+      "sourceSha256": "1edab4d0c7c73f1d27789e5c27f645381ceb1f89604c65034db9527bc126c734",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 76,
+        "height": 92
+      },
+      "sha256": "1edab4d0c7c73f1d27789e5c27f645381ceb1f89604c65034db9527bc126c734"
+    },
+    {
+      "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+      "frame": 10,
+      "index": 10,
+      "width": 76,
+      "height": 92,
+      "pivot": {
+        "x": 38,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_010.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_010.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/3c32e8ce-9612-4454-adda-50e66f8abea2/south-east/10.png?t=1791934754500",
+      "sourceSha256": "446246d819eaa6fe2714f88bcf3b46f381b8e20b2451ba5ae5ebb735982015af",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 76,
+        "height": 92
+      },
+      "sha256": "446246d819eaa6fe2714f88bcf3b46f381b8e20b2451ba5ae5ebb735982015af"
+    },
+    {
+      "motion": "jumping-1-south-east",
+      "frame": 0,
+      "index": 0,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_000.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_000.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/30fbf4be-2d6d-4ee7-a55f-839772f941aa/south-east/0.png?t=1791914046149",
+      "sourceSha256": "62c08e26953b4f330fd2b864b0f520bfc66d4992ef2c1729559ebba2ddb774af",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "62c08e26953b4f330fd2b864b0f520bfc66d4992ef2c1729559ebba2ddb774af"
+    },
+    {
+      "motion": "jumping-1-south-east",
+      "frame": 1,
+      "index": 1,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_001.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_001.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/30fbf4be-2d6d-4ee7-a55f-839772f941aa/south-east/1.png?t=1791914046149",
+      "sourceSha256": "1a63d91cba06183bedf63e4ed5eb74c5a87fc1cfaee02b3ac8889009e2a94898",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "1a63d91cba06183bedf63e4ed5eb74c5a87fc1cfaee02b3ac8889009e2a94898"
+    },
+    {
+      "motion": "jumping-1-south-east",
+      "frame": 2,
+      "index": 2,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_002.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_002.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/30fbf4be-2d6d-4ee7-a55f-839772f941aa/south-east/2.png?t=1791914046149",
+      "sourceSha256": "88a425c8dee18bfe20c8d3d197aa4e5d68f4f44da9265e0b0d721e7402371336",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "88a425c8dee18bfe20c8d3d197aa4e5d68f4f44da9265e0b0d721e7402371336"
+    },
+    {
+      "motion": "jumping-1-south-east",
+      "frame": 3,
+      "index": 3,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_003.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_003.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/30fbf4be-2d6d-4ee7-a55f-839772f941aa/south-east/3.png?t=1791914046149",
+      "sourceSha256": "022697bc72da28d7f8080e3f67827c1227bace6ffca33b98b3a2fcfc05e59bba",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "022697bc72da28d7f8080e3f67827c1227bace6ffca33b98b3a2fcfc05e59bba"
+    },
+    {
+      "motion": "high-kick-south-east",
+      "frame": 0,
+      "index": 0,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 13
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_000.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_000.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/abd9bc7e-02d0-4fd6-b287-bebcb2c914c1/south-east/0.png?t=1791913044599",
+      "sourceSha256": "7ffbc62e577075fa08bbbd69fba7557dbc09482f9d4ec1239867f2508328b029",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "7ffbc62e577075fa08bbbd69fba7557dbc09482f9d4ec1239867f2508328b029"
+    },
+    {
+      "motion": "high-kick-south-east",
+      "frame": 1,
+      "index": 1,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 13
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_001.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_001.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/abd9bc7e-02d0-4fd6-b287-bebcb2c914c1/south-east/1.png?t=1791913044599",
+      "sourceSha256": "627f45708f377558c32f342c3e7da57c5cc8b1e271595d84e5c0f649c6b26683",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "627f45708f377558c32f342c3e7da57c5cc8b1e271595d84e5c0f649c6b26683"
+    },
+    {
+      "motion": "high-kick-south-east",
+      "frame": 2,
+      "index": 2,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 13
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_002.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_002.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/abd9bc7e-02d0-4fd6-b287-bebcb2c914c1/south-east/2.png?t=1791913044599",
+      "sourceSha256": "3d9cd16ae874f33217e26e6e1e319b4845f676a19913302ef63b7445dc93658c",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "3d9cd16ae874f33217e26e6e1e319b4845f676a19913302ef63b7445dc93658c"
+    },
+    {
+      "motion": "high-kick-south-east",
+      "frame": 3,
+      "index": 3,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 13
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_003.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_003.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/abd9bc7e-02d0-4fd6-b287-bebcb2c914c1/south-east/3.png?t=1791913044599",
+      "sourceSha256": "62da7aaccc26c69a1a2acb48c1205a34afb4bb0ceb801faf832acdf119ab7a2c",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "62da7aaccc26c69a1a2acb48c1205a34afb4bb0ceb801faf832acdf119ab7a2c"
+    },
+    {
+      "motion": "high-kick-south-east",
+      "frame": 4,
+      "index": 4,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 13
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_004.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_004.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/abd9bc7e-02d0-4fd6-b287-bebcb2c914c1/south-east/4.png?t=1791913044599",
+      "sourceSha256": "98143903812447a101eabd3f49a5f39e85cf859b03406bedab3f11bf61bb8e3a",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "98143903812447a101eabd3f49a5f39e85cf859b03406bedab3f11bf61bb8e3a"
+    },
+    {
+      "motion": "high-kick-south-east",
+      "frame": 5,
+      "index": 5,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 13
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_005.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_005.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/abd9bc7e-02d0-4fd6-b287-bebcb2c914c1/south-east/5.png?t=1791913044599",
+      "sourceSha256": "e6ad6a401178d53355f17c793485c1d177d1d28a06f1b30ffd4cba7501b9adce",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "e6ad6a401178d53355f17c793485c1d177d1d28a06f1b30ffd4cba7501b9adce"
+    },
+    {
+      "motion": "high-kick-south-east",
+      "frame": 6,
+      "index": 6,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 13
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_006.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/High_Kick/south-east/frame_006.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/abd9bc7e-02d0-4fd6-b287-bebcb2c914c1/south-east/6.png?t=1791913044599",
+      "sourceSha256": "323aa86f1dd6469ae7ce67f00717c943eb6d72168bb1f06588b25a9f9fc86062",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "323aa86f1dd6469ae7ce67f00717c943eb6d72168bb1f06588b25a9f9fc86062"
+    },
+    {
+      "motion": "jumping-1-south-east",
+      "frame": 6,
+      "index": 6,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_006.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_006.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/30fbf4be-2d6d-4ee7-a55f-839772f941aa/south-east/6.png?t=1791914046149",
+      "sourceSha256": "272d01df7b1a6d325981b0af9eaef5f76c3d33a76228f8652597ddf8ce41b4f6",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "272d01df7b1a6d325981b0af9eaef5f76c3d33a76228f8652597ddf8ce41b4f6"
+    },
+    {
+      "motion": "jumping-1-south-east",
+      "frame": 7,
+      "index": 7,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_007.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_007.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/30fbf4be-2d6d-4ee7-a55f-839772f941aa/south-east/7.png?t=1791914046149",
+      "sourceSha256": "be8faca4431a92a9dfed6b6d4d2163c57b2175e50da62c6538d38bdcfa8cf7f2",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "be8faca4431a92a9dfed6b6d4d2163c57b2175e50da62c6538d38bdcfa8cf7f2"
+    },
+    {
+      "motion": "jumping-1-south-east",
+      "frame": 8,
+      "index": 8,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 16
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_008.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_008.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/30fbf4be-2d6d-4ee7-a55f-839772f941aa/south-east/8.png?t=1791914046149",
+      "sourceSha256": "da3747e92f7ed6f6e0fa4751a3bc92cb162979af1c6c0820866307c5a30eafb9",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "sha256": "da3747e92f7ed6f6e0fa4751a3bc92cb162979af1c6c0820866307c5a30eafb9"
+    },
+    {
+      "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+      "frame": 0,
+      "index": 0,
+      "width": 76,
+      "height": 92,
+      "pivot": {
+        "x": 38,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_000.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_000.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/3c32e8ce-9612-4454-adda-50e66f8abea2/south-east/0.png?t=1791934754500",
+      "sourceSha256": "b28c32f0b7e6552e18b91c336e656f2224a6cc0b5776610f847af457c2b70483",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 76,
+        "height": 92
+      },
+      "sha256": "b28c32f0b7e6552e18b91c336e656f2224a6cc0b5776610f847af457c2b70483"
+    },
+    {
+      "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+      "frame": 1,
+      "index": 1,
+      "width": 76,
+      "height": 92,
+      "pivot": {
+        "x": 38,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_001.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_001.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/3c32e8ce-9612-4454-adda-50e66f8abea2/south-east/1.png?t=1791934754500",
+      "sourceSha256": "9e76ca931e0745f1ca585e40533053c212ae3afa7f9a8e02b6920e6e20675c02",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 76,
+        "height": 92
+      },
+      "sha256": "9e76ca931e0745f1ca585e40533053c212ae3afa7f9a8e02b6920e6e20675c02"
+    },
+    {
+      "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+      "frame": 12,
+      "index": 12,
+      "width": 76,
+      "height": 92,
+      "pivot": {
+        "x": 38,
+        "y": 15
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_012.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_012.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/3c32e8ce-9612-4454-adda-50e66f8abea2/south-east/12.png?t=1791934754500",
+      "sourceSha256": "615651c6ab1d798f25fcd66e9e9fd895268726ae25ce7a6a845a99f3656d22ec",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 76,
+        "height": 92
+      },
+      "sha256": "615651c6ab1d798f25fcd66e9e9fd895268726ae25ce7a6a845a99f3656d22ec"
+    }
+  ],
+  "capture": {
+    "browser": "Codex 내장 브라우저",
+    "presentation": "타격 효과 없이",
+    "playbackSpeed": 0.5,
+    "exportSpeed": 1,
+    "method": "실제 조합실 화면의 CDP screencast를 Canvas 경계로 잘라 GIF로 보관. 기록 timestamp의 절반을 누적 10ms 끝점으로 환산해 재생 길이 오차를 누적시키지 않는다.",
+    "includes": ["준비", "모든 타격", "회수", "착지", "반복 간격"]
+  },
+  "validation": {
+    "commands": [
+      "npm run check",
+      "npm run build",
+      "node --test tests/ataho-v2-combos.test.mjs tests/resource-library.test.mjs"
+    ],
+    "passedTests": 27,
+    "browserChecks": [
+      "15개 동작 선택",
+      "복합 공격 6개의 실제 0.5배 프레임 진행",
+      "9번 박자 3종 실제 재생",
+      "타격 자세 버튼 탐색",
+      "390x844 가로 넘침 없음",
+      "모바일 15번 공중 타격 선택",
+      "일시정지와 키보드 재개",
+      "콘솔 오류 없음",
+      "정상 1배 재생",
+      "1.5/2배 선택과 실제 시간 진행",
+      "데스크톱 DPR2 CSS684px/백킹1368px",
+      "일시정지 중 시간·자세 유지와 Space 재개"
+    ],
+    "screenshots": [
+      "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/mobile.jpg",
+      "public/assets/maplestory/ataho-v2-combo-lab/20261014/compound/verification.jpg"
+    ],
+    "finalQualityDecision": "사용자 검토. 본게임 채택과 main 병합은 별도.",
+    "responsive": {
+      "mobile": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "scrollWidth": 390,
+        "canvasCssWidth": 344
+      },
+      "desktop": {
+        "dpr": 2,
+        "canvasCssWidth": 684,
+        "backingWidth": 1368,
+        "backingHeight": 623
+      }
+    }
+  }
+}

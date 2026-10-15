@@ -30,7 +30,7 @@
 ## 검증
 
 - `npm run check`, `npm run build`
-- `node --test tests/village-style-living-diorama.test.mjs`: 계단·수로·담 충돌, 복구 안전 위치, 시설 간 실제 경로/귀환, 독립 작업 타이머, 시간대와 캐시키, delta 0 생활 정지 등 12개 검증.
+- 당시 로직 검사: 계단·수로·담 충돌, 복구 안전 위치, 시설 간 실제 경로/귀환, 독립 작업 타이머, 시간대와 캐시키, delta 0 생활 정지 등 12개 검증.
 - 브라우저 제공 도구는 이 서브에이전트에서 `Browser is not available: chrome` 및 빈 브라우저 목록을 반환했다. 실제 입력·화면·DPR/resize·embed·dispose 검증은 담당 세션의 최종 통합 검토에서 수행한다.
 
 정적 광원은 낮/저녁 두 상태에서만 굽는다. 연속적인 해 이동과 주민 자유 보행/AI는 범위 밖이다. 바람 천막은 동적 깊이로 가림을 처리하며 움직임에 따른 정적 지형의 그림자는 매 프레임 다시 굽지 않는다.
@@ -43,6 +43,6 @@
 
 ## 확장 조합 통합 검토 · 2026-10-13
 
-화덕 준비→도장 복구/수련→쉼터→천시장으로 실제 보행해 workshopReady/practiced/clothPrepared와 4/4 방문을 확인했다. 보행·시설 반응 중 배경 굽기는 2회로 유지됐고 저녁 전환에서 3회로 늘었다. 재방문 직후 returned=false이며 실제 입구 진입 뒤 true였다. 정지 snapshot/Canvas PNG 동일, 390×620 가로 넘침 없음과 종료 disposed=true를 확인했다. 실제 보행 진입으로 완주를 판정하는 회귀 테스트를 포함해 전용 13개가 통과했다.
+화덕 준비→도장 복구/수련→쉼터→천시장으로 실제 보행해 workshopReady/practiced/clothPrepared와 4/4 방문을 확인했다. 보행·시설 반응 중 배경 굽기는 2회로 유지됐고 저녁 전환에서 3회로 늘었다. 재방문 직후 returned=false이며 실제 입구 진입 뒤 true였다. 정지 snapshot/Canvas PNG 동일, 390×620 가로 넘침 없음과 종료 disposed=true를 확인했다. 실제 보행 진입으로 완주를 판정하는 회귀 사례를 포함한 당시 로직 검사 13개가 통과했다.
 
 화면 크기 검사는 데스크톱 내장 브라우저 뷰포트 검사이며 실제 휴대전화 검증은 아니다. 대표 이미지는 통합 환경의 실제 렌더이며 PNG 크기·SHA256은 resources/manifest.json에 기록했다.

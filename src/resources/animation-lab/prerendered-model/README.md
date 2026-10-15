@@ -48,6 +48,6 @@ PLAYWRIGHT_MODULE_PATH=/Users/3sam3/.cache/codex-runtimes/codex-primary-runtime/
 
 ## 확인과 한계
 
-`npm run check`, `npm run build`, `node --test tests/prerendered-model.test.mjs` 통과. 별도 실제 headless Chrome에서 PNG 베이크·기본 PNG 재로드·프레임 진행·일시정지·3모션 × 4방향 탐색·2배속·PNG/JSON 다운로드·DPR 2·라이브러리 종료 후 프레임 정지·390px 화면 수평 넘침 없음·pageerror 없음 확인. 390px 검사는 CSS 뷰포트 검증이며 실제 모바일 기기 검증은 아니다.
+구현 당시 `npm run check`, `npm run build`와 프리렌더 프레임 재생 로직 검사가 통과했다. 별도 실제 headless Chrome에서 PNG 베이크·기본 PNG 재로드·프레임 진행·일시정지·3모션 × 4방향 탐색·2배속·PNG/JSON 다운로드·DPR 2·라이브러리 종료 후 프레임 정지·390px 화면 수평 넘침 없음·pageerror 없음 확인. 390px 검사는 CSS 뷰포트 검증이며 실제 모바일 기기 검증은 아니다.
 
 낮은 해상도로 구운 3D라 경계에 중간 색이 있다. 손으로 정리한 도트 픽셀과 같지는 않다. 걷기는 제자리 걷기이며 이동·지형 접촉은 이 시안의 범위 밖이다. PNG 시트는 3D 모델이 없어도 재생 가능하지만 이 **비교 화면**은 원본 미리보기 때문에 WebGL을 사용한다.

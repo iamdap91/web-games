@@ -1,8 +1,8 @@
 import { frameKey } from './source-frames.js';
-export const stageWidth = 900;
-export const stageHeight = 410;
-const groundY = 325;
-const startX = 245;
+import { drawMotionEffects } from './effects-drawing.js';
+import { drawPoseWithParts } from './parts-drawing.js';
+import { drawPose, posePosition, stageWidth, stageHeight, groundY, } from './pose-drawing.js';
+export { stageWidth, stageHeight } from './pose-drawing.js';
 function drawDojo(ctx) {
     ctx.fillStyle = '#efdfbf';
     ctx.fillRect(0, 0, stageWidth, stageHeight);
@@ -53,13 +53,22 @@ function drawContact(ctx, x, y, elapsed) {
 }
 export function drawCombo(ctx, snapshot, frames, options) {
     drawDojo(ctx);
-    const source = frames.get(frameKey(snapshot.step));
+    const replacement = options.showMovement
+        ? (snapshot.motion.effects ?? [])
+            .filter((effect) => effect.kind === 'pose' && options.enabledEffects.has(effect.id))
+            .flatMap((effect) => effect.kind === 'pose' ? effect.replacements : [])
+            .find((item) => item.motion === snapshot.step.motion &&
+            item.frame === snapshot.step.frame)
+        : undefined;
+    const pose = replacement
+        ? { ...snapshot, step: { ...snapshot.step, ...replacement.replacement } }
+        : snapshot;
+    const source = frames.get(frameKey(pose.step));
     if (!source)
         return;
     const scale = options.scale;
-    const moving = options.presentation !== 'poses';
-    const x = startX + (moving ? snapshot.x : 0) * scale;
-    const y = groundY + (moving ? snapshot.y : 0) * scale;
+    const moving = options.showMovement;
+    const { x, y } = posePosition(pose, source, options);
     ctx.save();
     ctx.globalAlpha = snapshot.opacity;
     const airborne = moving ? Math.max(0, -snapshot.y) : 0;
@@ -67,22 +76,21 @@ export function drawCombo(ctx, snapshot, frames, options) {
     ctx.beginPath();
     ctx.ellipse(x, groundY + 3, Math.max(16, 34 - airborne * 0.4), 7, 0, 0, Math.PI * 2);
     ctx.fill();
-    ctx.imageSmoothingEnabled = false;
-    const anchor = snapshot.step.anchor;
-    const anchorX = typeof anchor === 'object' ? anchor.x : source.anchorX;
-    const anchorY = typeof anchor === 'object'
-        ? anchor.y
-        : anchor === 'feet'
-            ? source.feetY
-            : source.anchorY;
-    ctx.drawImage(source.image, Math.round(x - anchorX * scale), Math.round(y - anchorY * scale), source.image.naturalWidth * scale, source.image.naturalHeight * scale);
-    if (options.presentation === 'full' &&
+    drawMotionEffects(ctx, snapshot, frames, { ...options, layer: 'back' });
+    if (replacement)
+        drawPose(ctx, pose, source, options);
+    else
+        drawPoseWithParts(ctx, snapshot, source, options);
+    drawMotionEffects(ctx, snapshot, frames, { ...options, layer: 'front' });
+    if (options.showMovement &&
+        options.showContacts &&
         snapshot.step.contact &&
         !snapshot.waiting) {
         drawContact(ctx, x +
             (snapshot.step.contact.reach ??
                 (snapshot.step.contact.kind === 'sweep' ? 35 : 26)) *
-                scale, groundY - snapshot.step.contact.height * scale, snapshot.stepElapsedMs);
+                scale, (snapshot.step.contact.heightReference === 'body' ? y : groundY) -
+            snapshot.step.contact.height * scale, snapshot.stepElapsedMs);
     }
     ctx.restore();
     ctx.fillStyle = '#614630';

@@ -20,7 +20,7 @@ WASD / 방향키 보행, 클릭·터치 장애물 우회 이동, Space / 사용 
 
 ## 검증
 
-`tests/village-style-horizon-interior.test.mjs`에서 실제 문·가구 충돌 및 보행 도달과 곡면 역변환, 순간 복귀 미완주·실제 경계 보행 완주·기존 기록 보존을 검증한다. Chrome 실제 실행으로 클릭 입장/이동, Space, 정지·재개, DPR 2와 세로 화면 리사이즈를 확인한다.
+당시 로직 검사로 실제 문·가구 충돌 및 보행 도달과 곡면 역변환, 순간 복귀 미완주·실제 경계 보행 완주·기존 기록 보존을 확인했다. Chrome 실제 실행으로 클릭 입장/이동, Space, 정지·재개, DPR 2와 세로 화면 리사이즈를 확인한다.
 
 `window.villageStyleHorizonInterior`는 읽기 전용 화면 조회용 진단이다. `ready`, `snapshot`, `project`, `screenPositions`, `paused`, `disposed`, `diagnostics`를 제공하며 게임 상태를 바꾸는 디버그 명령을 공개하지 않는다. 좌표는 canvas CSS 픽셀 기준이며 페이지의 canvas bounds를 더해 입력한다.
 
