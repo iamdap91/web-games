@@ -2,6 +2,49 @@ export const stageWidth = 900;
 export const stageHeight = 410;
 export const groundY = 325;
 export const startX = 245;
+function selectedDrawing(motion, step, enabledEffects) {
+    for (const effect of motion.effects ?? []) {
+        if (effect.kind !== 'pose' || !enabledEffects.has(effect.id))
+            continue;
+        const replacement = effect.replacements.find((item) => item.motion === step.motion && item.frame === step.frame);
+        if (replacement)
+            return replacement;
+    }
+    return undefined;
+}
+export function motionWithDrawingContacts(motion, enabledEffects) {
+    return {
+        ...motion,
+        steps: motion.steps.map((step) => {
+            if (!step.contact)
+                return step;
+            const drawing = selectedDrawing(motion, step, enabledEffects);
+            // 원본 팔꿈치는 그림 비교만 허용하고, 전용 그림을 쓸 때만 공격으로 센다.
+            if (step.motion === 'ataho-firewood-elbow-chop-south-east-south-east' &&
+                drawing?.replacement.motion !== 'presentation-elbow-keyposes-south-east')
+                return { ...step, contact: undefined };
+            const contact = drawing?.contact;
+            return contact
+                ? { ...step, contact: { ...step.contact, ...contact } }
+                : step;
+        }),
+    };
+}
+export function poseWithDrawing(pose, enabledEffects) {
+    const replacement = selectedDrawing(pose.motion, pose.step, enabledEffects);
+    if (!replacement)
+        return pose;
+    return {
+        ...pose,
+        step: {
+            ...pose.step,
+            ...replacement.replacement,
+            ...(pose.step.contact && replacement.contact
+                ? { contact: { ...pose.step.contact, ...replacement.contact } }
+                : {}),
+        },
+    };
+}
 export function posePosition(pose, source, options) {
     const anchor = pose.step.anchor;
     const anchorX = typeof anchor === 'object' ? anchor.x : source.anchorX;

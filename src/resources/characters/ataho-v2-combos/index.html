@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="review.css" />
     <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
     <title>아타호 v2 · 동작 조합실</title>
   </head>
   <body>
     <main>
-      <header>
-        <p class="eyebrow">아타호 v2 · 모션 미리보기</p>
-        <h1>동작 조합실</h1>
-        <p>동작을 고르고, 연출과 타격 효과를 바꿔 재생해 보세요.</p>
+      <header class="page-heading">
+        <div>
+          <p class="eyebrow">아타호 v2 · 모션 미리보기</p>
+          <h1>동작 조합실</h1>
+          <p>동작을 고르고, 연출과 타격 효과를 바꿔 재생해 보세요.</p>
+        </div>
+        <a
+          class="reference-link"
+          href="review.html"
+          target="_blank"
+          rel="noopener"
+          >연출·제작 자료 ↗</a
+        >
       </header>
       <fieldset id="controls" disabled>
         <legend class="sr-only">동작과 연출 설정</legend>
@@ -40,10 +48,39 @@
                 <h2 id="motion-title">동작을 준비하고 있어요</h2>
                 <span id="priority"></span>
               </div>
+              <fieldset class="direction-picker">
+                <legend class="control-heading">방향</legend>
+                <div id="direction-options" class="direction-options"></div>
+                <p
+                  id="direction-description"
+                  class="field-hint"
+                  aria-live="polite"
+                  hidden
+                ></p>
+              </fieldset>
               <p id="summary"></p>
+              <fieldset id="variant-controls" class="direction-picker" hidden>
+                <legend class="control-heading">기공 연출</legend>
+                <div id="variant-options" class="direction-options"></div>
+              </fieldset>
+              <div
+                id="finisher-phases"
+                class="finisher-phases"
+                role="group"
+                aria-label="필살기 구간 · 눌러서 자세 보기"
+                hidden
+              ></div>
               <div class="attack-timeline">
                 <span id="duration"></span>
-                <div id="hits" aria-label="타격 시점 · 눌러서 자세 보기"></div>
+                <details id="hit-details" open>
+                  <summary id="hit-details-label" hidden>
+                    개별 타격 자세
+                  </summary>
+                  <div
+                    id="hits"
+                    aria-label="타격 시점 · 눌러서 자세 보기"
+                  ></div>
+                </details>
               </div>
               <canvas
                 id="stage"
@@ -123,7 +160,73 @@
                   ><input id="contacts" type="checkbox" checked /> 타격
                   효과</label
                 >
+                <label
+                  ><input id="directional-impacts" type="checkbox" /> 공격별
+                  충격 모양</label
+                >
+                <label
+                  ><input id="ground-effects" type="checkbox" /> 접지·착지
+                  반응</label
+                >
+                <label
+                  ><input id="speed-lines" type="checkbox" /> 배경 속도선</label
+                >
+                <label
+                  ><input id="sandbag" type="checkbox" /> 샌드백 반응</label
+                >
+                <label
+                  ><input id="hit-stop" type="checkbox" disabled /> 강타
+                  히트스톱</label
+                >
+                <label
+                  ><input id="camera-recoil" type="checkbox" disabled /> 강타
+                  카메라 반동</label
+                >
               </div>
+              <p id="target-description" class="field-hint">
+                샌드백은 첫 타격 위치에 고정됩니다. 닿은 공격만 반응합니다.
+              </p>
+              <p class="field-hint">
+                접지·착지 반응은 발밑에 작게 표시합니다. 카메라 반동은 샌드백에
+                명중한 강한 마무리 타격에서만 짧게 작동합니다.
+              </p>
+              <div id="finisher-controls" class="presentation-subgroup" hidden>
+                <label
+                  ><input id="finisher-effects" type="checkbox" checked />
+                  필살기 무대·연타 궤적</label
+                >
+                <p class="field-hint">
+                  기술별 응축·공간 궤적·나선 시동·상승 잔광과 타격수를
+                  표시합니다. 끄더라도 공격 분신과 공간 안무는 유지하며 샌드백은
+                  실제 명중만 셉니다.
+                </p>
+              </div>
+              <fieldset
+                id="camera-controls"
+                class="presentation-subgroup"
+                hidden
+              >
+                <legend>카메라 구도 · 하나 선택</legend>
+                <div
+                  id="camera-options"
+                  class="camera-options"
+                  aria-describedby="camera-description"
+                ></div>
+                <p id="camera-description" class="field-hint"></p>
+              </fieldset>
+              <fieldset
+                id="emphasis-controls"
+                class="presentation-subgroup"
+                hidden
+              >
+                <legend>명암 강조 · 하나 선택</legend>
+                <div
+                  id="emphasis-options"
+                  class="emphasis-options"
+                  aria-describedby="emphasis-description"
+                ></div>
+                <p id="emphasis-description" class="field-hint"></p>
+              </fieldset>
               <fieldset
                 id="effect-controls"
                 class="presentation-subgroup"
@@ -149,238 +252,24 @@
           </div>
         </div>
       </fieldset>
-      <details id="gif-review" class="source-panel gif-review">
-        <summary>GIF 자료</summary>
-        <p class="field-hint">
-          타격 효과를 끈 동작과 생성 결과를 비교합니다. 이미지를 누르면 크게 볼
-          수 있습니다.
-        </p>
-        <div id="gif-gallery" aria-live="polite">
-          GIF 자료를 준비하고 있어요.
-        </div>
-      </details>
       <details class="review-panel">
         <summary>동작 메모</summary>
         <p id="review"></p>
         <p id="missing" class="missing" hidden></p>
       </details>
       <details class="source-panel" data-motion-playback>
-        <summary>원본 자세·제작 기록</summary>
+        <summary>원본 자세</summary>
         <p>
-          기존 그림은 그대로 쓰고, 자세 순서·유지 시간·이동을 조합했습니다. 생성
-          보강은 초기 회피·하단 타격용 비교 후보이며, 개선한 회피는 기존
-          프레임만 사용합니다. 숫자는 원본의 0번부터 시작하는 프레임 번호입니다.
+          현재 동작에 사용한 원본 그림과 자세 순서입니다. 숫자는 원본의 0번부터
+          시작하는 프레임 번호입니다. 비교 GIF와 제작 기록은 상단의 연출·제작
+          자료에서 확인할 수 있습니다.
         </p>
         <div id="frames" class="frame-strip"></div>
-        <p>
-          새 복합 공격 · 효과 없는 실제 재생 GIF:
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-uppercut-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >10. 원투 → 어퍼컷</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-sweep-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >11. 원투 → 하단</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/spin-one-two-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >12. 회전 → 원투</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-elbow-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >13. 원투 → 팔꿈치</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/punch-barrage-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >14. 연속 원투</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/one-two-leap-kick-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >15. 원투 → 날아차기</a
-          >
-        </p>
-        <p>
-          선택한 3종·4종 연계 · 효과 없는 실제 재생 GIF:
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/three-four-review/three-ground-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >16. 원투 → 어퍼컷 → 내려치기</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/three-four-review/three-air-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >17. 원투 → 어퍼컷 → 날아차기</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/three-four-review/four-chain-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >18. 원투 → 어퍼컷 → 내려치기 → 날아차기</a
-          >
-        </p>
-        <p>
-          9번 박자 비교:
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-original-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >원래 박자</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-fast-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >전체 빠르게</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-rapid-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >가속과 멈춤 · 0.42초</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/shortlist/elbow-sharp-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >이전 가속과 멈춤 · 0.72초</a
-          >
-        </p>
-        <p>
-          효과 없는 실제 재생 기록:
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/refinement/rush-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >원투 GIF</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/refinement/dodge-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >회피 GIF</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/refinement/flying-kick-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >날아차기 GIF</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/additions/cheolsango-short-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >철산고 · 짧은 버전 GIF</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/additions/drink-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >마시기 GIF</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/review/ground-spin-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >지상 회전 GIF</a
-          >
-          ·
-          <a
-            href="../../../../public/assets/maplestory/ataho-v2-combo-lab/20261014/review/elbow-chop-effects-off.gif"
-            target="_blank"
-            rel="noopener"
-            >팔꿈치 GIF</a
-          >
-        </p>
-        <a
-          href="../../../../resources/ataho-v2-combo-multi-stage.json"
-          target="_blank"
-          rel="noopener"
-          >선택한 3종·4종 연계 적용 기록</a
-        >
-        ·
-        <a
-          href="../../../../resources/ataho-v2-combo-shortlist.json"
-          target="_blank"
-          rel="noopener"
-          >조합 선별·더 빠른 9번 기록</a
-        >
-        ·
-        <a
-          href="../../../../resources/ataho-v2-combo-compound.json"
-          target="_blank"
-          rel="noopener"
-          >복합 공격·9번 박자 비교 기록</a
-        >
-        ·
-        <a
-          href="../../../../resources/ataho-v2-generation.json"
-          target="_blank"
-          rel="noopener"
-          >원본 출처와 가져오기 기록</a
-        >
-        <p>
-          <a
-            href="../../../../resources/ataho-v2-combo-additions.json"
-            target="_blank"
-            rel="noopener"
-            >철산고·마시기 조합 기록</a
-          >
-          ·
-          <a
-            href="../../../../resources/ataho-v2-combo-review-motions.json"
-            target="_blank"
-            rel="noopener"
-            >지상 회전·팔꿈치 조합 기록</a
-          >
-          ·
-          <a
-            href="../../../../resources/ataho-v2-combo-dodge-generation.json"
-            target="_blank"
-            rel="noopener"
-            >회피 보강 생성 기록</a
-          >
-          ·
-          <a
-            href="../../../../resources/ataho-v2-combo-slide-generation.json"
-            target="_blank"
-            rel="noopener"
-            >하단 타격 생성 기록</a
-          >
-        </p>
       </details>
       <footer data-motion-playback>
         전체 동작은 왼쪽 목록에서 선택 · Space 정지/재생 · ← → 자세 탐색. 독립
-        시안이며 본게임 적용은 별도 검토합니다. 슬라이딩 하단 공격과 공중회피 후
-        재진입은 초기 시안으로 채택을 보류했습니다.
+        시안이며 본게임 적용은 별도 검토합니다. 이전 연계와 회피·반격 조합은
+        연출·제작 자료에 보존했습니다.
       </footer>
     </main>
     <script

@@ -9,7 +9,7 @@ const effectsByMotion = {
         {
             id: 'rush-running-afterimage',
             label: '달리기 잔상',
-            summary: '달리는 동안에만 이전 두 자세를 옅게 남깁니다.',
+            summary: '달리기 자세 두 개를 짧게 남기고 디딤으로 넘어가며 지웁니다.',
             kind: 'afterimage',
             sources: [{ motion: 'running-4-frames-south-east' }],
             intervalMs: 35,
@@ -45,7 +45,7 @@ const effectsByMotion = {
         {
             id: 'flying-kick-afterimage',
             label: '공중 잔상',
-            summary: '공중 킥 구간에만 이전 자세를 남기고 착지할 때 걷어 냅니다.',
+            summary: '공중 킥 자세를 짧게 남기고 착지 초반까지 각자 옅어지며 사라집니다.',
             kind: 'afterimage',
             sources: [{ motion: highKickSource }],
             intervalMs: 35,

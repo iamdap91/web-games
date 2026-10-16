@@ -1,0 +1,287 @@
+{
+  "id": "ataho-v2-motion-catalog",
+  "recordedAt": "2026-10-16",
+  "baselineCommit": "61ab857",
+  "scope": "단독 기술을 공격으로 이름 바꾸고 이전 복합 연계·회피/반격 조합을 활성 목록에서 제외. 고유 구간을 분리해 공격·이동/회피에 배치하고 GIF 비교를 별도 자료실로 정리. 이후 필살기4종을 추가하고 공격 적합성 재검토 대상3종을 보류로 분리했다.",
+  "active": {
+    "groupedMotions": 24,
+    "directionalVariants": 28,
+    "defaultSection": "attack",
+    "defaultMotion": "rush",
+    "sections": [
+      {
+        "id": "attack",
+        "label": "공격",
+        "groupedMotions": 14,
+        "motionIds": [
+          "rush",
+          "flying-kick",
+          "slide-sweep",
+          "cheolsango",
+          "ground-spin",
+          "elbow-chop",
+          "quick-jab",
+          "double-jab",
+          "charged-uppercut",
+          "new-horizontal-elbow-south-east",
+          "new-horizontal-elbow-north-east",
+          "new-smear-hook-south-east",
+          "new-smear-hammerfist-south-east",
+          "landing-one-two-standalone",
+          "ground-high-kick"
+        ],
+        "directionalVariants": 15
+      },
+      {
+        "id": "finisher",
+        "label": "필살기",
+        "groupedMotions": 4,
+        "motionIds": [
+          "finisher-demon",
+          "finisher-omnislash-v5",
+          "finisher-drunken-tiger",
+          "finisher-ryuko-ranbu"
+        ],
+        "directionalVariants": 4
+      },
+      {
+        "id": "movement",
+        "label": "이동·회피",
+        "groupedMotions": 2,
+        "motionIds": ["backflip", "step-back"],
+        "directionalVariants": 2
+      },
+      {
+        "id": "support",
+        "label": "보조",
+        "groupedMotions": 1,
+        "motionIds": ["drink-guard"],
+        "directionalVariants": 1
+      },
+      {
+        "id": "deferred",
+        "label": "보류",
+        "groupedMotions": 3,
+        "motionIds": [
+          "new-front-push-kick-south-east",
+          "new-front-push-kick-north-east",
+          "new-double-palm-south-east",
+          "new-double-palm-north-east",
+          "new-visible-low-sweep-south-east",
+          "new-visible-low-sweep-north-east"
+        ],
+        "directionalVariants": 6
+      }
+    ]
+  },
+  "separated": [
+    {
+      "id": "landing-one-two-standalone",
+      "title": "착지 원투 · 2타",
+      "steps": 16,
+      "hits": 2,
+      "durationMs": 970,
+      "review": "기존 날아차기 → 착지 원투에서 첫 지상 점프 7번부터 종료 가드까지 분리했다. 낮은 착지 100ms·일어서기 70ms·연결 1번과 0번 각45ms 뒤 기존 원투와 회수를 유지하며 두 접촉을 1·2타로 다시 표시한다. x74·높이0과 기존 발 기준을 끝까지 보존한다. 선행 비행이나 낙하는 없고 낮은 착지 자세에서 시작하므로 실제 낙하 충격을 추가하지 않는다. 일어서기와 원투 사이의 얼굴·발 간격 전환은 남는다.",
+      "effects": [
+        {
+          "id": "landing-compression-drawing",
+          "label": "착지 눌림 그림"
+        }
+      ],
+      "presentations": [
+        {
+          "id": "landing-one-two-recovery-rhythm",
+          "label": "착지 유지·원투 마무리",
+          "durationMs": 890,
+          "hits": 2
+        }
+      ]
+    },
+    {
+      "id": "ground-high-kick",
+      "title": "지상 하이킥 · 1타",
+      "steps": 11,
+      "hits": 1,
+      "durationMs": 800,
+      "review": "기존 잽 → 지상 킥에서 잽을 제외하고 같은 시작 가드·하이킥 0~6번·회수를 쓴다. 프레임별 지지발 앵커와 x0·높이0, 접촉 80ms를 유지하며 킥을 1타로 표시한다. 같은 하이킥 원본의 발끝 선과 짧은 잔상은 지상 앵커로 다시 투영한다. 원본의 다리 뻗음·몸통 기울임과 가드 전환의 발 간격 한계는 남는다.",
+      "effects": [
+        {
+          "id": "ground-high-kick-afterimage",
+          "label": "킥 잔상"
+        },
+        {
+          "id": "ground-high-kick-foot-line",
+          "label": "발끝 상승선"
+        }
+      ],
+      "presentations": [
+        {
+          "id": "ground-high-kick-accent",
+          "label": "킥 장전·접촉 유지",
+          "durationMs": 760,
+          "hits": 1
+        }
+      ]
+    },
+    {
+      "id": "backflip",
+      "title": "뒤공중돌기",
+      "steps": 13,
+      "hits": 0,
+      "durationMs": 960,
+      "review": "기존 공중회피 후 재진입의 첫 가드부터 뒤공중돌기 1~9번, 점프 7~8번의 착지·일어서기까지 같은 그림·박자·이동을 쓴다. 이후 달리기와 펀치는 제외하고 착지 위치 x−44에서 기존 가드 그림을 100ms 유지한다. 회전 뒤 착지 그림은 같은 점프 7번에만 적용한다. 회전 원본의 얼굴·몸 방향과 착지에서 가드로 바뀌는 발 간격의 한계는 남는다.",
+      "effects": [
+        {
+          "id": "backflip-landing-drawing",
+          "label": "회전 뒤 착지 그림"
+        }
+      ]
+    },
+    {
+      "id": "step-back",
+      "title": "한 걸음 후퇴",
+      "steps": 7,
+      "hits": 0,
+      "durationMs": 550,
+      "review": "기존 취권 회피 반격의 첫 가드 110ms와 역순 보행 3→2→1→0번, 후퇴 디딤 65ms를 그대로 쓴다. x46에서 x22로 물러난 뒤 어퍼컷을 제외하고 기존 종료 가드를 같은 x22에서 140ms 유지한다. 새로운 취권 뒤젖힘이나 반격은 없으며, 역순 보행이 후퇴로 읽히는지 비교하는 이동 구간이다."
+    }
+  ],
+  "preserved": {
+    "source": "src/resources/characters/ataho-v2-combos/motions.ts",
+    "directionalVariants": 36,
+    "archivedFromActiveList": [
+      {
+        "id": "dodge",
+        "title": "취권 회피 반격"
+      },
+      {
+        "id": "backflip-reentry",
+        "title": "공중회피 후 재진입"
+      },
+      {
+        "id": "one-two-uppercut",
+        "title": "원투 → 어퍼컷 · 3타"
+      },
+      {
+        "id": "one-two-sweep",
+        "title": "원투 → 하단 쓸기 · 3타"
+      },
+      {
+        "id": "spin-one-two",
+        "title": "짧은 회전 → 원투 · 3타"
+      },
+      {
+        "id": "one-two-elbow",
+        "title": "원투 → 팔꿈치 내려치기 · 3타"
+      },
+      {
+        "id": "punch-barrage",
+        "title": "연속 원투 → 어퍼컷 · 5타"
+      },
+      {
+        "id": "one-two-leap-kick",
+        "title": "원투 → 도약 날아차기 · 3타"
+      },
+      {
+        "id": "three-ground",
+        "title": "3종 지상 연계 · 4타"
+      },
+      {
+        "id": "three-air",
+        "title": "3종 공중 연계 · 4타"
+      },
+      {
+        "id": "four-chain",
+        "title": "4종 연속 공격 · 5타"
+      },
+      {
+        "id": "retreat-one-two",
+        "title": "한 걸음 후퇴 → 원투 · 2타"
+      },
+      {
+        "id": "landing-one-two",
+        "title": "날아차기 → 착지 원투 · 3타"
+      },
+      {
+        "id": "jab-ground-kick",
+        "title": "잽 → 지상 킥 · 2타"
+      },
+      {
+        "id": "one-two-horizontal-elbow",
+        "title": "원투 → 가로 팔꿈치 · 3타"
+      },
+      {
+        "id": "push-kick-reentry-one-two",
+        "title": "앞 밀어차기 → 재진입 원투 · 3타"
+      }
+    ],
+    "artwork": "기존 이미지와 이전 GIF·제작 기록을 보존. 새 그림·방향 합성·소리를 추가하지 않음."
+  },
+  "referenceLibrary": {
+    "path": "src/resources/characters/ataho-v2-combos/review.html",
+    "label": "연출·제작 자료",
+    "navigation": "조합실 상단에서 새 탭으로 열어 현재 재생·정지·선택 상태 유지",
+    "groups": ["최근 연출 비교", "그림·부위 비교", "제작 기록"],
+    "loading": "선택한 분류의 열린 묶음만 GIF src 연결, 닫거나 분류를 바꾸면 해제",
+    "historical": "이전 연계와 제작 당시 번호는 현재 동작과 구분해 보관"
+  },
+  "limits": [
+    "착지 원투는 선행 비행·낙하 없이 낮은 자세에서 시작하며 실제 낙하 충격을 추가하지 않는다.",
+    "뒤공중돌기의 회전 원본과 가드 전환, 지상 하이킥의 디딤·발 간격 한계는 기존과 동일하다.",
+    "분리본에는 해당 구간의 그림·효과·박자만 사용하고 전체 연계의 인덱스는 복사하지 않는다."
+  ],
+  "deferred": {
+    "baselineCommit": "639375d",
+    "reason": "사용자 판단: 양손 밀어치기·앞 밀어차기·발이 보이는 하단 쓸기는 공격모션으로 부적합하여 보류로 이동.",
+    "groupedMotions": 3,
+    "directionalVariants": 6,
+    "displayPriority": "experimental",
+    "displayLabel": "보류",
+    "preserved": "남동·북동 원본과 기존 그림·박자·연출·방향 선택을 보존한다. 전체24개·방향28개에 포함한다.",
+    "finisherPolicy": "세 동작의 준비·접촉·회수 그림을 필살기에 사용하지 않는다. 대체 구성과 유지 타수는 resources/ataho-v2-finishers.json 참조."
+  },
+  "verificationHistory": [
+    {
+      "scope": "필살기 추가와 보류 분리 이전 목록 정리의 검증. 전체20·공격17·방향24는 당시 값이다.",
+      "baselineCommit": "61ab857",
+      "verification": {
+        "static": [
+          "npm run check 통과",
+          "npm run build 통과",
+          "git diff --check 통과"
+        ],
+        "dataInspection": "공격17·이동/회피2·보조1, 묶음20·방향24개. 기존 방향36개와 활성 목록에서 제외한16개 조합 보존. 분리본의 접촉 수는 착지 원투2·지상 하이킥1·뒤공중돌기0·후퇴0.",
+        "pcPlayback": [
+          "네 분리 동작을0.25배로 선택·재생해 시간/자세 진행과 종료 가드를 확인. 착지 원투16자세0.97초, 하이킥11자세0.80초, 뒤공중돌기13자세0.96초, 후퇴7자세0.55초.",
+          "착지 원투의 첫 타격을 탐색한 정지 상태에서 그림·박자 전환 후에도0.37초·자세7/16·정지 상태 유지. 두 타격 버튼과 추가 박자0.89초 확인.",
+          "이동/회피의 무타격 안내와 샌드백 반응 비활성, 전체20·공격17·이동/회피2 필터 및 자료실 새 탭 진입 확인."
+        ],
+        "referenceLibrary": [
+          "세 분류 전환·카메라 묶음 펼침·같은 분류의 이전 묶음 접힘·분류 밖 GIF src 해제 확인.",
+          "전체45개 미리보기 중 최초 열린4개 GIF만 src 연결. 네 파일의 로드 완료와600×852 크기 확인.",
+          "기존 #smear-attacks 직접 링크가 제작 기록의 해당 묶음을 열고2개 GIF만 로드하는 것을 확인.",
+          "기존 review의 모든 GIF 링크와 조합실에서 옮긴20개 GIF·8개 JSON 링크 보존. 로컬 링크의 대상 파일 누락 없음."
+        ],
+        "console": "조합실과 자료실의 브라우저 콘솔 경고·오류 없음.",
+        "tests": "별도 테스트 코드는 추가하거나 실행하지 않음."
+      }
+    }
+  ],
+  "verification": {
+    "scope": "보류 분류 및 전체24·공격14·필살기4·이동/회피2·보조1·보류3·방향28 구성 검증",
+    "status": "완료 · 현재 분류와 보류 표시 및 교체 필살기 PC 재생 확인",
+    "static": [
+      "npm run typecheck 통과",
+      "npm run lint 통과",
+      "npm run format:check 통과",
+      "npm run build 통과"
+    ],
+    "dataInspection": "컴파일된 현재 동작 목록에서 공격14·방향15, 필살기4·방향4, 이동/회피2·방향2, 보조1·방향1, 보류3·방향6, 전체24·방향28을 확인했다. 보류3종의 원본6방향은 유지하며 필살기4종의 모든 자세에서 해당 원본 키가 제외됐다.",
+    "pcPlayback": [
+      "공격 필터14개에 보류3종이 없는 것을 확인. 보류 필터에 앞 밀어차기·양손 밀어치기·발이 보이는 하단 쓸기만 표시.",
+      "보류에서 양손 밀어치기를 선택해 상세 보류 상태와 남동·북동 방향 선택 표시 확인. 필터 변경 시 진행 중인 재생 유지.",
+      "교체된 필살기4종을1배로 선택해 실제 시간·자세 진행과15/6/9/13타·종결 확인. 용호난무의 대체4타 하이킥을 개별 탐색해 실제 접촉 자세 확인."
+    ],
+    "tests": "별도 테스트 코드는 추가하거나 실행하지 않는다."
+  }
+}

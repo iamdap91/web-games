@@ -1,0 +1,197 @@
+{
+    "version": 1,
+    "date": "2026-10-16",
+    "assetId": "presentation-ki-beam-poses-south-east",
+    "purpose": "파동포 준비·발사 유지·반동을 기존 원투 자세에서 분리한 기공 전용 키포즈. VFX는 그림에 굽지 않고 Canvas에서 별도로 렌더링한다.",
+    "authorization": "사용자가 기공 기술 전체 구현과 직전 제안의 v2 준비·발사 유지·반동 자세 보강을 승인했다.",
+    "generation": {
+        "tool": "built-in image_gen.imagegen",
+        "mode": "identity-preserve",
+        "transparentBackground": true,
+        "requestedAssets": 3,
+        "calls": 3,
+        "paidPixelLabCalls": 0,
+        "postProcessing": "파일 복사만 수행. 원본 픽셀·알파는 수정하지 않았다. 런타임 로더가 sourceRect를 destinationRect에 nearest-neighbor로 그려 논리 프레임을 만든다."
+    },
+    "referenceFrames": [
+        {
+            "role": "canonical identity and direction reference",
+            "motion": "ataho-one-two-punch-south-east-south-east",
+            "frame": 0,
+            "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_000.png",
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 16
+            },
+            "sha256": "e5cb58c7951dd6bf844df1e2649aeb0fd564cbda44291236e00dac9aaf550f8e"
+        },
+        {
+            "role": "adjacent original pose and style reference",
+            "motion": "ataho-one-two-punch-south-east-south-east",
+            "frame": 11,
+            "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_011.png",
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 16
+            },
+            "sha256": "c3c377e84cd0b32356373c4d1215b0206c5de8aaed3dfa52e2265e3607bf0822"
+        },
+        {
+            "role": "adjacent original pose and style reference",
+            "motion": "ataho-one-two-punch-south-east-south-east",
+            "frame": 12,
+            "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_012.png",
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 16
+            },
+            "sha256": "944fcdcfde4b7c3f9b4b0cb8d655233a40c26a9063cbaf7419637ec034b1d286"
+        }
+    ],
+    "frames": [
+        {
+            "index": 0,
+            "label": "기공 준비 · 두 손 응축",
+            "pose": "charge",
+            "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/beam-charge-south-east-original.png",
+            "generatorOriginalPath": "/Users/3sam3/.codex/generated_images/01a141fb-c7f1-7ba1-ad52-df079c83bfe5/exec-972f4f2a-6380-4734-85ef-92088d76fb9f.png",
+            "sourceSha256": "4e6697be61323834469c6c6f3062cd4ec0ecc1cc15807b5ed45aeef4990f6655",
+            "originalWidth": 1254,
+            "originalHeight": 1254,
+            "alphaMin": 0,
+            "alphaMax": 255,
+            "sourceRect": {
+                "x": 333,
+                "y": 300,
+                "width": 603,
+                "height": 740
+            },
+            "sourceRectCriterion": "알파 > 24인 가시 몸체 경계. 원본의 낮은 알파 외곽 잡음은 파일을 수정하지 않고 런타임 표시 범위로만 제외한다.",
+            "destinationRect": {
+                "x": 23,
+                "y": 20,
+                "width": 49,
+                "height": 60
+            },
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 16
+            },
+            "feetY": 80,
+            "prompt": "Use case: identity-preserve.\nAsset type: one game-ready full-body pixel-art sprite, a new keyframe of the exact tiger martial artist in the references.\nInput images: Image 1 is the canonical identity, face, clothing, body proportions and south-east direction reference. Images 2 and 3 are adjacent original animation poses for anatomy, foot placement, the identical small sprite pixel style and the same direction. They are supporting pose references only. Generate a new keyframe; do not copy their punching action.\nSubject: the SAME short stocky anthropomorphic orange tiger martial artist. Exactly the same orange-and-black striped head, small rounded tiger ears, white muzzle and cheek tufts, pale muzzle expression, gray-beige upper garment with dark lapel and belt, brown/black trousers and sandals, orange black-striped tail, short limbs and chibi proportions as Image 1.\nStyle/medium: authentic low-resolution game pixel art, dark 1-pixel outlines at logical 96 by 96 sprite resolution, limited crisp color clusters. Preserve the original pixel style, not smooth vector, painted, 3D, high detail, or a redesigned character. If output canvas is large, show a large nearest-neighbor-like sprite with crisp square pixel blocks, to be displayed at a logical 96 by 96 size.\nComposition: exactly one entire body, head through both feet and entire tail visible, centered with clear fully transparent space around every side. View three-quarter south-east, facing right and slightly toward viewer, identical camera/view angle to references, tail trailing toward left.\nBackdrop: genuine alpha-transparent background, no floor or cast shadow, no checkerboard pixels.\nInvariants: original identity, face, hairstyle, ears, clothing design/colors, feet, body proportions and camera direction; both feet planted on ground; tail attached correctly.\nAvoid: VFX, energy balls, beams, particles, motion lines, glowing light, text, labels, watermark, multiple characters, sheets, panels, weapons, a new costume, realistic anatomy, extra fingers/arms, white or checkerboard background.\nPose: two-handed ki beam preparation. Lower the hips and bend both knees into a wide braced stance. Keep the head and eyes facing right/south-east at the target. Bring BOTH hands close together beside the rightward-facing body's waist/ribcage, elbows bent and tucked, cupped hands facing toward right but no energy drawn. Hands and forearms are clearly readable in front of the torso. Weight loaded slightly back; feet stay planted. This is the anticipatory gather pose before pushing both hands forward."
+        },
+        {
+            "index": 1,
+            "label": "기공 발사 유지 · 양손 지지",
+            "pose": "release",
+            "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/beam-release-south-east-original.png",
+            "generatorOriginalPath": "/Users/3sam3/.codex/generated_images/01a141fb-c7f1-7ba1-ad52-df079c83bfe5/exec-d59734cb-c791-45dc-89b4-ce0a8b260913.png",
+            "sourceSha256": "58e3dafb4afedb0443d029b3abfd89e0b85df271f6262c60a7bedf39c91290f1",
+            "originalWidth": 1254,
+            "originalHeight": 1254,
+            "alphaMin": 0,
+            "alphaMax": 255,
+            "sourceRect": {
+                "x": 325,
+                "y": 280,
+                "width": 637,
+                "height": 728
+            },
+            "sourceRectCriterion": "알파 > 24인 가시 몸체 경계. 원본의 낮은 알파 외곽 잡음은 파일을 수정하지 않고 런타임 표시 범위로만 제외한다.",
+            "destinationRect": {
+                "x": 23,
+                "y": 20,
+                "width": 53,
+                "height": 60
+            },
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 16
+            },
+            "feetY": 80,
+            "prompt": "Use case: identity-preserve.\nAsset type: one game-ready full-body pixel-art sprite, a new keyframe of the exact tiger martial artist in the references.\nInput images: Image 1 is the canonical identity, face, clothing, body proportions and south-east direction reference. Images 2 and 3 are adjacent original animation poses for anatomy, foot placement, the identical small sprite pixel style and the same direction. They are supporting pose references only. Generate a new keyframe; do not copy their punching action.\nSubject: the SAME short stocky anthropomorphic orange tiger martial artist. Exactly the same orange-and-black striped head, small rounded tiger ears, white muzzle and cheek tufts, pale muzzle expression, gray-beige upper garment with dark lapel and belt, brown/black trousers and sandals, orange black-striped tail, short limbs and chibi proportions as Image 1.\nStyle/medium: authentic low-resolution game pixel art, dark 1-pixel outlines at logical 96 by 96 sprite resolution, limited crisp color clusters. Preserve the original pixel style, not smooth vector, painted, 3D, high detail, or a redesigned character. If output canvas is large, show a large nearest-neighbor-like sprite with crisp square pixel blocks, to be displayed at a logical 96 by 96 size.\nComposition: exactly one entire body, head through both feet and entire tail visible, centered with clear fully transparent space around every side. View three-quarter south-east, facing right and slightly toward viewer, identical camera/view angle to references, tail trailing toward left.\nBackdrop: genuine alpha-transparent background, no floor or cast shadow, no checkerboard pixels.\nInvariants: original identity, face, hairstyle, ears, clothing design/colors, feet, body proportions and camera direction; both feet planted on ground; tail attached correctly.\nAvoid: VFX, energy balls, beams, particles, motion lines, glowing light, text, labels, watermark, multiple characters, sheets, panels, weapons, a new costume, realistic anatomy, extra fingers/arms, white or checkerboard background.\nPose: two-handed sustained ki-beam release. Wide braced low-center stance, both knees flexed, torso leans only slightly forward and head still upright looking right/south-east. BOTH arms extend toward right/south-east together at lower chest height. Two open palms face outward toward right, upper hand just above lower hand, thumbs visible, hands close together but visibly two hands. Keep arms proportionate and short like the reference. Feet planted, rear heel braced. It must read as resisting a powerful beam's recoil, not a running punch. No beam or energy is drawn."
+        },
+        {
+            "index": 2,
+            "label": "기공 반동 · 무릎 흡수",
+            "pose": "recoil",
+            "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/beam-recoil-south-east-original.png",
+            "generatorOriginalPath": "/Users/3sam3/.codex/generated_images/01a141fb-c7f1-7ba1-ad52-df079c83bfe5/exec-63fe1b8a-59e2-44de-bad0-2a4f95af75e0.png",
+            "sourceSha256": "b6ed48d16dadaaa62bae7253f378d9ef421c6faab2174572e4fc47057f727a64",
+            "originalWidth": 1254,
+            "originalHeight": 1254,
+            "alphaMin": 0,
+            "alphaMax": 255,
+            "sourceRect": {
+                "x": 344,
+                "y": 271,
+                "width": 573,
+                "height": 749
+            },
+            "sourceRectCriterion": "알파 > 24인 가시 몸체 경계. 원본의 낮은 알파 외곽 잡음은 파일을 수정하지 않고 런타임 표시 범위로만 제외한다.",
+            "destinationRect": {
+                "x": 25,
+                "y": 20,
+                "width": 46,
+                "height": 60
+            },
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 16
+            },
+            "feetY": 80,
+            "prompt": "Use case: identity-preserve.\nAsset type: one game-ready full-body pixel-art sprite, a new keyframe of the exact tiger martial artist in the references.\nInput images: Image 1 is the canonical identity, face, clothing, body proportions and south-east direction reference. Images 2 and 3 are adjacent original animation poses for anatomy, foot placement, the identical small sprite pixel style and the same direction. They are supporting pose references only. Generate a new keyframe; do not copy their punching action.\nSubject: the SAME short stocky anthropomorphic orange tiger martial artist. Exactly the same orange-and-black striped head, small rounded tiger ears, white muzzle and cheek tufts, pale muzzle expression, gray-beige upper garment with dark lapel and belt, brown/black trousers and sandals, orange black-striped tail, short limbs and chibi proportions as Image 1.\nStyle/medium: authentic low-resolution game pixel art, dark 1-pixel outlines at logical 96 by 96 sprite resolution, limited crisp color clusters. Preserve the original pixel style, not smooth vector, painted, 3D, high detail, or a redesigned character. If output canvas is large, show a large nearest-neighbor-like sprite with crisp square pixel blocks, to be displayed at a logical 96 by 96 size.\nComposition: exactly one entire body, head through both feet and entire tail visible, centered with clear fully transparent space around every side. View three-quarter south-east, facing right and slightly toward viewer, identical camera/view angle to references, tail trailing toward left.\nBackdrop: genuine alpha-transparent background, no floor or cast shadow, no checkerboard pixels.\nInvariants: original identity, face, hairstyle, ears, clothing design/colors, feet, body proportions and camera direction; both feet planted on ground; tail attached correctly.\nAvoid: VFX, energy balls, beams, particles, motion lines, glowing light, text, labels, watermark, multiple characters, sheets, panels, weapons, a new costume, realistic anatomy, extra fingers/arms, white or checkerboard background.\nPose: recovery/absorption immediately AFTER a two-handed ki beam. Feet remain planted in the same wide braced stance; knees absorb force and hips shift back only a little. BOTH forearms draw back from extension to the front of the chest; elbows bend, palms still facing right/south-east, two hands close and readable. Head and eyes still face the same target at right. Chest slightly reclines as the arms soften, then ready to return to guard. No damage reaction and no falling. No beam or energy is drawn."
+        }
+    ],
+    "emission": {
+        "frame": 1,
+        "logicalOrigin": {
+            "x": 70,
+            "y": 52
+        },
+        "anchorRelativeOrigin": {
+            "x": 22,
+            "y": -28
+        }
+    },
+    "verification": {
+        "referenceImagesViewed": [0, 11, 12],
+        "generatedImagesViewed": [0, 1, 2],
+        "alphaAndHashesAnalyzed": true,
+        "originalFilesPreserved": true,
+        "status": "integrated-keyposes-awaiting-user-review",
+        "notes": [
+            "3장 모두 전체 몸·남동 방향·머리와 옷·꼬리·양발·두 팔을 직접 확인했다.",
+            "원작 게임의 프레임을 복제한 그림이 아니라 기존 아타호 v2 원투 자세를 참조한 새 생성 키포즈다.",
+            "최종 품질과 기존 모션과의 어울림은 실제 재생/GIF를 보여주고 사용자가 채택을 판단한다.",
+            "보류된 양손 밀어치기를 생성 입력·편집 대상·공격 동작으로 사용하지 않았다.",
+            "실제 PC 조합실에서 파동포의1배 준비·발사 유지·반동·가드 복귀와2배·3배 표시를 확인했다.",
+            "충전 손 기준(6,-22)과 발사 포구 기준(22,-28)을 실제 표시된 양손 위치에 맞추고 충전핵·연결 빔이 이어짐을 확인했다.",
+            "1.29초 정지에서 타격 효과를 꺼도 빔은 유지되고 접촉 섬광만 사라졌다. 이동 포함을 껐다 켜면 같은 시점·정지와 기공 명중을 복원했다.",
+            "통합 PC 실행의 콘솔 경고·오류는 없었으며 새 그림은 사용자 채택 검토를 기다린다."
+        ]
+    },
+    "runtimeHandAnchors": {
+        "charge": {
+            "x": 6,
+            "y": -22
+        },
+        "release": {
+            "x": 22,
+            "y": -28
+        },
+        "basis": "논리96x96·발 기준(anchor48,80)에서 양손 사이 중심. 발사는 위손70,49와 아래손65,55를 묶는70,52를 사용한다."
+    }
+}

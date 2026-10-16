@@ -1,0 +1,266 @@
+{
+  "date": "2026-10-15",
+  "characterId": "ai/ataho-v2",
+  "scope": "팔꿈치 내려치기 핵심 그림·36ms 접촉 창·상승 하강 수평 반동",
+  "generator": "built-in image_gen",
+  "qualityStatus": "generated-awaiting-user-gif-review",
+  "originalPixelsPreserved": true,
+  "drawings": [
+    {
+      "index": 0,
+      "id": "load",
+      "label": "팔꿈치 장전",
+      "width": 76,
+      "height": 92,
+      "pivot": {
+        "x": 38,
+        "y": 15
+      },
+      "localPath": "public/assets/maplestory/ataho-v2-elbow-contact/20261015/originals/load.png",
+      "originalSize": {
+        "width": 1140,
+        "height": 1380
+      },
+      "sha256": "3245704beab28732dded0323853f75732d75f34f6f8d80da13911b5afb410cdb",
+      "sourceRect": {
+        "x": 342,
+        "y": 399,
+        "width": 493,
+        "height": 659
+      },
+      "destinationRect": {
+        "x": 15,
+        "y": 15,
+        "width": 46,
+        "height": 62
+      },
+      "normalization": "원본 RGBA 보존, 로더 최근접 샘플링으로76x92 논리 캔버스·인접 자세 높이·발 기준77px에 정렬",
+      "prompt": "Use case: precise-object-edit. Create ONE anticipation key pose for a DOWNWARD ELBOW STRIKE by this exact tiny tiger martial artist. Image1 is the preparation sprite to improve, image2 adjacent contact, image3 identity/face/scale reference. Same south-east camera and face looking screen right, orange tiger stripes, cream muzzle, brown jacket and cream collar, dark grey pants, striped tail, bare paws. Keep exact original head size and face design; low-resolution chunky pixel art. Change only the arm/upper-body pose: striking forearm folds tightly, the elbow is raised clearly beside and slightly above the head on SCREEN RIGHT, fist near the same-side shoulder/neck; opposite hand guards the ribs. Torso rotates just a little back to load; knees soft and both feet fixed at original baseline/spacing. This MUST read as a bent ELBOW raised for a downward elbow strike, not a fist punch, two hands together, weapon swing or arm held straight. Clear elbow triangular silhouette. Original anatomy two arms/two legs, full body. Match 76x92 logical canvas and original character scale, about 58-60 logical pixels tall and baseline y77. Output one complete isolated sprite with generous transparent margin, genuine transparent alpha. No text, background, shadow, smear, flash or action lines.",
+      "inputPaths": [
+        "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_003.png",
+        "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_004.png",
+        "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png"
+      ]
+    },
+    {
+      "index": 1,
+      "id": "impact",
+      "label": "팔꿈치 하강 접촉",
+      "width": 76,
+      "height": 92,
+      "pivot": {
+        "x": 38,
+        "y": 15
+      },
+      "localPath": "public/assets/maplestory/ataho-v2-elbow-contact/20261015/originals/impact.png",
+      "originalSize": {
+        "width": 1140,
+        "height": 1380
+      },
+      "sha256": "5892b06e400997c152ba01eaf7f4c2eb101bddfc2268cd3264a931e25a453549",
+      "sourceRect": {
+        "x": 212,
+        "y": 291,
+        "width": 727,
+        "height": 828
+      },
+      "destinationRect": {
+        "x": 12,
+        "y": 17,
+        "width": 53,
+        "height": 60
+      },
+      "normalization": "원본 RGBA 보존, 로더 최근접 샘플링으로76x92 논리 캔버스·인접 자세 높이·발 기준77px에 정렬",
+      "prompt": "Use case: precise-object-edit. EDIT ONLY the striking arm and torso pose in image1. Image2 is original low-resolution style/reference only. Preserve the EXACT head, tiger face, expression, clothing palette, tail, feet positions, character scale and transparent canvas of image1. The current image reads as a fist guard; it must clearly be a DOWNWARD ELBOW CONTACT. The screen-right arm must form a prominent bent V: shoulder near upper chest, upper arm goes diagonally DOWN-RIGHT to an ELBOW POINT in front of the lower chest; forearm folds diagonally UP-LEFT from that elbow to a closed fist tucked against the upper chest. The ELBOW POINT, not fist, is the lowest/leading striking surface. Make an angular brown sleeve silhouette at screen-right around logical x55,y48 relative to a 76x92 canvas; fist tucked around x40,y34. Opposite hand remains guarding near ribs, no extra arms/hands. Torso and head lean FORWARD slightly (about15degrees) with pelvis over planted bent knees; preserve face orientation toward screen right. Keep head size, original chibi anatomy and coarse pixel clusters; do not render a new character or change the facial design. Draw only this ONE complete isolated contact pose, no labels, VFX, shadows, motion lines, props or floor. Real transparent background. Important: NOT an upright boxing guard, NOT a forward fist punch; the bent elbow must make a pointed forward/down silhouette.",
+      "inputPaths": [
+        "public/assets/maplestory/ataho-v2-elbow-contact/20261015/originals/impact-attempt-1.png",
+        "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_004.png"
+      ]
+    }
+  ],
+  "supersededDrawings": [
+    {
+      "localPath": "public/assets/maplestory/ataho-v2-elbow-contact/20261015/originals/impact-attempt-1.png",
+      "sha256": "1de9c5a04e87ee26af18b96b81682d6064af3eff30576143eef39d41542116ec",
+      "reason": "주먹 가드에 가까운 윤곽으로 팔꿈치 접촉을 구분하기 어려워 팔 각도 보정",
+      "prompt": "Use case: precise-object-edit. Create ONE improved DOWNWARD ELBOW CONTACT key pose for this exact small pixel-art tiger martial artist. Image1 is contact target, image2 following recovery, image3 identity/face reference. Same south-east view looking screen right. Preserve exact original tiger face proportions and head size, orange stripes, cream muzzle, brown jacket cream collar, dark grey pants, bare paws and single striped tail. Make the strike unambiguous: torso inclines forward about 15 degrees with hip and knees braced, striking arm sharply BENT, fist tucked near upper chest and ELBOW POINT driving DOWN and slightly SCREEN RIGHT at lower-chest/upper-abdomen height. Elbow should be the leading lowest point of the bent striking arm, visibly in front of the torso. Other hand guards on the opposite side. Do not extend a straight fist, chop with hand, carry a weapon, or bury both arms in the jacket. Head follows torso without turning, gaze remains right. Both feet planted at same original positions/baseline; no translation or jump. Low-resolution coarse pixel clusters with dark outline, same 76x92 logical canvas and ~58-60px subject height baseline y77. Full body, exactly one sprite with real transparent alpha. No text, labels, effects, smear, floor or shadow.",
+      "inputPaths": [
+        "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_004.png",
+        "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-firewood-elbow-chop-south-east/south-east/frame_005.png",
+        "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png"
+      ]
+    }
+  ],
+  "contactPoint": {
+    "x": 61,
+    "y": 55,
+    "height": 22,
+    "reach": 23,
+    "reference": "정규화된 새 접촉 그림의 전방·아래쪽 팔꿈치 끝"
+  },
+  "previews": [
+    {
+      "id": "elbow-contact-01-elbow-keyposes",
+      "label": "팔꿈치 장전·하강 그림",
+      "localPath": "public/assets/maplestory/ataho-v2-elbow-contact/20261015/previews/01-elbow-keyposes.gif",
+      "method": "standalone-project-renderer-before-after",
+      "beforeCommit": "8741c05",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 137,
+      "durationMs": 13100,
+      "byteSize": 2114018,
+      "sha256": "a6dfa7e4ed41fc8576cec149bf831f5feb546dddb2c2b402ee498b3b2655da50"
+    },
+    {
+      "id": "elbow-contact-02-directional-contact",
+      "label": "상승·하강·수평 명중 반동",
+      "localPath": "public/assets/maplestory/ataho-v2-elbow-contact/20261015/previews/02-directional-contact.gif",
+      "method": "standalone-project-renderer-before-after",
+      "beforeCommit": "8741c05",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 147,
+      "durationMs": 6700,
+      "byteSize": 2013651,
+      "sha256": "9c37cdb980e4359f9d25a3ffd23eaba64dc6c06c6e8d2fda485756b05b619aa2"
+    }
+  ],
+  "previewRendering": {
+    "method": "standalone-project-renderer-before-after",
+    "beforeCommit": "8741c05",
+    "baseline": "drawing and sandbag from8741c05; unchanged base steps; current shared frame loader",
+    "speed": 0.5,
+    "width": 600,
+    "height": 852,
+    "groups": [
+      {
+        "id": "01-elbow-keyposes",
+        "label": "팔꿈치 장전·하강 그림",
+        "motions": [
+          "elbow-chop",
+          "one-two-elbow",
+          "three-ground",
+          "four-chain"
+        ],
+        "effects": ["elbow-down-keyposes"],
+        "clips": [
+          {
+            "id": "elbow-chop",
+            "title": "짧은 팔꿈치 내려치기",
+            "startFrame": 0,
+            "beforeDurationMs": 420,
+            "afterDurationMs": 420,
+            "durationMs": 770
+          },
+          {
+            "id": "one-two-elbow",
+            "title": "원투 → 팔꿈치 내려치기 · 3타",
+            "startFrame": 77,
+            "beforeDurationMs": 1355,
+            "afterDurationMs": 1355,
+            "durationMs": 1710
+          },
+          {
+            "id": "three-ground",
+            "title": "3종 지상 연계 · 4타",
+            "startFrame": 248,
+            "beforeDurationMs": 1285,
+            "afterDurationMs": 1285,
+            "durationMs": 1640
+          },
+          {
+            "id": "four-chain",
+            "title": "4종 연속 공격 · 5타",
+            "startFrame": 412,
+            "beforeDurationMs": 2075,
+            "afterDurationMs": 2075,
+            "durationMs": 2430
+          }
+        ],
+        "frameCount": 655,
+        "frameDurationMs": 20
+      },
+      {
+        "id": "02-directional-contact",
+        "label": "상승·하강·수평 명중 반동",
+        "motions": [
+          "charged-uppercut",
+          "new-smear-hammerfist-south-east",
+          "new-double-palm-south-east"
+        ],
+        "effects": [],
+        "target": true,
+        "clips": [
+          {
+            "id": "charged-uppercut",
+            "title": "모아치는 어퍼컷 · 1타",
+            "startFrame": 0,
+            "beforeDurationMs": 805,
+            "afterDurationMs": 805,
+            "durationMs": 1160
+          },
+          {
+            "id": "new-smear-hammerfist-south-east",
+            "title": "대각 망치주먹 · 남동쪽",
+            "startFrame": 116,
+            "beforeDurationMs": 650,
+            "afterDurationMs": 650,
+            "durationMs": 1000
+          },
+          {
+            "id": "new-double-palm-south-east",
+            "title": "양손 밀어치기 · 남동쪽",
+            "startFrame": 216,
+            "beforeDurationMs": 840,
+            "afterDurationMs": 840,
+            "durationMs": 1190
+          }
+        ],
+        "frameCount": 335,
+        "frameDurationMs": 20
+      }
+    ]
+  },
+  "verification": {
+    "commands": ["npm run check", "npm run build", "git diff --check"],
+    "desktopBrowser": {
+      "actions": 32,
+      "sourceVariants": 36,
+      "categories": {
+        "single": 15,
+        "chain": 13,
+        "counter": 3,
+        "support": 1
+      },
+      "checked": [
+        "4기술 남동/북동8개 원본 선택",
+        "방향 전환 후0.26초·정지·박자1개·공통 효과4개 보존",
+        "북동 팔꿈치 미지원 꼬리 효과 안내·해제",
+        "단독과연계3종의 팔꿈치 그림 선택 및실제표시",
+        "새 접촉점과 샌드백 표시",
+        "어퍼컷 실제명중 정지true 후false 재개",
+        "GIF2개600x852 디코드"
+      ],
+      "consoleWarningsOrErrors": []
+    },
+    "resourceRetention": {
+      "copiedNewFilesToMain": 20,
+      "sha256Differences": 0,
+      "missingReferencesInMain": 0,
+      "symlinkReferencesInMain": 0
+    },
+    "newDrawingsStatus": "awaiting-user-gif-review"
+  },
+  "attackUsagePolicy": {
+    "recordedAt": "2026-10-16",
+    "requiredDrawing": "팔꿈치 장전·하강 그림",
+    "allowedUse": "전용 그림과 접촉 좌표를 필수 적용한 중간 공격에만 사용한다.",
+    "forbiddenUse": "그림 적용 여부와 관계없이 연계·필살기의 마지막 본체 공격과 마지막 동시 협공에 사용하지 않는다.",
+    "standalone": "선택 시 전용 그림을 기본으로 켠다. 끄면 원본 그림만 비교하고 접촉·명중·충격 효과를 발생시키지 않는다.",
+    "enforcement": "FinisherSequence가 원본 팔꿈치 접촉과 전용 그림 팔꿈치 종결을 구성 시 거부한다. 필살기 안에서는 전용 그림을 데이터에 직접 적용하므로 무대 연출 해제로 원본 공격이 되돌아오지 않는다.",
+    "tiger": "짧은 팔꿈치는 전용 그림으로 중간11타에 사용한다. 마지막 본체14타는200ms 장전 뒤 대각 망치주먹이며 두 분신과 동시 협공한다."
+  }
+}

@@ -5,7 +5,7 @@ function isPartEffect(effect) {
         effect.kind === 'follow-through' ||
         effect.kind === 'overshoot');
 }
-function partProgress(part, snapshot) {
+function partTime(part, snapshot) {
     if (snapshot.step.motion !== part.motion ||
         snapshot.step.frame !== part.frame)
         return undefined;
@@ -36,7 +36,27 @@ function partProgress(part, snapshot) {
         snapshot.stepIndex > run.lastIndex)
         return undefined;
     // 접촉과 유지가 같은 자세이면 연속 구간 전체에서 한 번만 변형을 진행한다.
-    return Math.max(0, Math.min(1, (snapshot.elapsedMs - run.startMs) / run.durationMs));
+    const elapsedMs = Math.max(0, snapshot.elapsedMs - run.startMs);
+    return {
+        elapsedMs,
+        progress: Math.min(1, elapsedMs / run.durationMs),
+    };
+}
+function timedAmount(keyframes, elapsedMs) {
+    const first = keyframes[0];
+    if (!first || elapsedMs < first.atMs)
+        return 0;
+    for (let index = 1; index < keyframes.length; index++) {
+        const next = keyframes[index];
+        if (elapsedMs >= next.atMs)
+            continue;
+        const previous = keyframes[index - 1];
+        const progress = (elapsedMs - previous.atMs) / (next.atMs - previous.atMs);
+        // 각 극점에서 속도를 풀어 꼬리 끝이 기계적으로 방향을 꺾지 않게 한다.
+        const eased = progress * progress * (3 - 2 * progress);
+        return previous.amount + (next.amount - previous.amount) * eased;
+    }
+    return keyframes.at(-1).amount;
 }
 function unitAxis(part) {
     const length = Math.hypot(part.axis.x, part.axis.y);
@@ -49,24 +69,24 @@ function partTransform(actions) {
     let offsetX = 0;
     let offsetY = 0;
     const stretches = [];
-    for (const { effect, part, progress } of actions) {
-        const envelope = Math.sin(Math.PI * progress);
+    for (const { effect, part, progress, elapsedMs } of actions) {
         if (effect.kind === 'part-smear') {
             const axis = unitAxis(part);
             stretches.push({
                 angle: Math.atan2(axis.y, axis.x),
-                scale: Math.max(0.05, 1 + effect.stretch * envelope),
+                scale: Math.max(0.05, 1 + effect.stretch * Math.sin(Math.PI * progress)),
             });
         }
         else if (effect.kind === 'follow-through') {
-            const swing = Math.sin(Math.PI * 2 * progress) * (1 - progress);
-            rotation += (effect.swingDegrees * Math.PI * swing) / 180;
+            const amount = timedAmount(effect.timing, elapsedMs);
+            rotation += (effect.swingDegrees * Math.PI * amount) / 180;
         }
         else if (effect.kind === 'overshoot') {
             const axis = unitAxis(part);
-            rotation += (effect.rotationDegrees * Math.PI * envelope) / 180;
-            offsetX += axis.x * effect.distance * envelope;
-            offsetY += axis.y * effect.distance * envelope;
+            const amount = timedAmount(effect.timing, elapsedMs);
+            rotation += (effect.rotationDegrees * Math.PI * amount) / 180;
+            offsetX += axis.x * effect.distance * amount;
+            offsetY += axis.y * effect.distance * amount;
         }
     }
     return { rotation, offsetX, offsetY, stretches };
@@ -79,15 +99,15 @@ function partPlans(snapshot, enabledEffects) {
         for (const part of effect.parts) {
             if (part.mask.length < 3)
                 continue;
-            const progress = partProgress(part, snapshot);
-            if (progress === undefined)
+            const time = partTime(part, snapshot);
+            if (!time)
                 continue;
             let group = groups.get(part.id);
             if (!group) {
                 group = { part, actions: [] };
                 groups.set(part.id, group);
             }
-            group.actions.push({ effect, part, progress });
+            group.actions.push({ effect, part, ...time });
         }
     }
     return [...groups.values()].map((group) => {
@@ -126,10 +146,10 @@ function drawPart(ctx, plan, source, position, scale, exposure = { x: 0, y: 0 })
     ctx.restore();
 }
 function drawPartExposures(ctx, plan, source, position, scale) {
-    for (const { effect, part, progress } of plan.actions) {
+    for (const { effect, part, elapsedMs } of plan.actions) {
         if (effect.kind !== 'part-blur')
             continue;
-        const distance = effect.distance * Math.sin(Math.PI * progress);
+        const distance = effect.distance * Math.max(0, timedAmount(effect.timing, elapsedMs));
         const samples = Math.floor(effect.samples);
         if (distance <= 0.000001 || !Number.isFinite(samples) || samples < 1)
             continue;

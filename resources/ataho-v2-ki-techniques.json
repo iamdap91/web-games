@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-16",
+  "scope": "아타호 v2 동작 조합실에 몸동작과 별도 비행·유지·명중 규칙을 가진 기공6종과 호격권2변형을 추가한 독립 시안.",
+  "authorization": "사용자가 호격권·권기탄·파동포·광파참·지열파·부유기탄 전체와 파동포의 준비·발사 유지·반동 자세 보강을 승인했다.",
+  "catalog": {
+    "selectableMotions": 30,
+    "activeData": 35,
+    "previousActiveData": 28,
+    "newKiData": 7,
+    "sections": {
+      "attack": 14,
+      "finisher": 4,
+      "ki": 6,
+      "movement": 2,
+      "support": 1,
+      "deferred": 3
+    },
+    "variant": {
+      "groupId": "ki-tiger",
+      "groupTitle": "호격권",
+      "detailControl": "기공 연출",
+      "motionIds": ["ki-tiger", "ki-tiger-wave"],
+      "labels": ["대상에 호랑이 형상", "호랑이 선두 파동"],
+      "direction": "south-east"
+    }
+  },
+  "evidencePolicy": {
+    "method": "원작성자 공식 영상과 기술명 식별을 위한 비공식 실제 플레이 비교 영상을 다운로드한 뒤 지정 구간의 연속 프레임을 직접 열람했다.",
+    "notPerformed": [
+      "실시간 연속 영상 재생",
+      "원작 게임 조작",
+      "외부 공개 구현 코드 열람",
+      "외부 공개 구현 코드 실행"
+    ],
+    "interpretation": "observed는 실제 프레임에서 본 표현이며 projectUse는 기존 아타호 그림과2D Canvas에 맞춘 해석이다. 타수·비행 시간·피해 판정은 조합실의 설계값으로 원작의 정확한 수치를 복제했다는 뜻이 아니다.",
+    "temporaryEvidence": "localEvidence는 조사용 임시 프레임 표다. 저장소·배포용 리소스로 가져오지 않는다."
+  },
+  "references": [
+    {
+      "id": "gensei-plus-official",
+      "author": "대원미디어DAEWON",
+      "title": "[KR] 『환세취호전 플러스』 공식 트레일러",
+      "url": "https://www.youtube.com/watch?v=lcs8qu48z1Y",
+      "sourceType": "official-video",
+      "observedRanges": [
+        {
+          "startSeconds": 52,
+          "endSeconds": 55.9,
+          "framesPerSecond": 8
+        }
+      ],
+      "observed": [
+        "발밑의 흰 기류와 금빛 충전 뒤 호랑이 머리를 선두로 긴 금빛 기운이 뻗는다.",
+        "굵은 기운 뒤에 붉은 흔들림 선이 남고 사라진다."
+      ],
+      "limits": [
+        "이 구간에는 기술명·등급 UI가 없어 공식 영상만으로 호격권/신기라고 단정하지 않는다.",
+        "정확한 타수·피해 판정·광선의 실제 유지 시간은 확인하지 않았다."
+      ],
+      "projectUse": [
+        "ki-tiger-wave의 호랑이 선두·굵은 기운·늦게 사라지는 잔류선"
+      ],
+      "localEvidence": "/private/tmp/ataho-ki-references-hogyeok/frames-plus-02.jpg"
+    },
+    {
+      "id": "gensei-original-plus-comparison",
+      "author": "헤이호우(Heyhou)",
+      "url": "https://www.youtube.com/watch?v=P-fLbBzbsac",
+      "sourceType": "unofficial-gameplay-comparison",
+      "purpose": "원작과 플러스의 호격권/신기 명칭·등급 식별을 위한 보조 자료",
+      "observedRanges": [
+        {
+          "startSeconds": 50,
+          "endSeconds": 52.4,
+          "framesPerSecond": 8,
+          "version": "original"
+        },
+        {
+          "startSeconds": 55.1,
+          "endSeconds": 57.9,
+          "framesPerSecond": 8,
+          "version": "plus"
+        }
+      ],
+      "observed": [
+        "원작 구간 UI의 호격권/신기와 대상 위치의 금빛 호랑이 얼굴 반복 점멸을 확인했다. 이 구간에는 이동하는 머리나 이어진 광선이 보이지 않는다.",
+        "플러스 구간 UI의 호격권/신기와 충전 뒤 호랑이 머리·긴 광선·붉은 잔류선을 확인했다. 형상은 공식 트레일러와 일치한다."
+      ],
+      "limits": [
+        "비공식 실제 플레이 자료이며 원작성자 공식 설명과 구분한다.",
+        "피해 이벤트 수·명중률·게임 내부 구현을 확인하지 않았다."
+      ],
+      "projectUse": [
+        "ki-tiger의 대상 현현과 ki-tiger-wave의 선두 비행을 같은 기술의 다른 연출로 분리"
+      ],
+      "localEvidence": [
+        "/private/tmp/ataho-ki-references-hogyeok/frames-original-01.jpg",
+        "/private/tmp/ataho-ki-references-hogyeok/frames-original-02.jpg"
+      ]
+    },
+    {
+      "id": "gensei-original-catalog",
+      "author": "D4Enterprise / Compile 원작 자료 보관",
+      "url": "https://www.amusement-center.com/project/compile/pdf/catalog/gensei_sui.pdf",
+      "sourceType": "original-catalog-pdf",
+      "observed": ["6페이지에서 虎撃拳을 명중률 높은 펀치 공격으로 소개한다."],
+      "limits": [
+        "기공의 형상·비행·실제 프레임을 설명하는 근거로 사용하지 않는다."
+      ],
+      "projectUse": ["원작 기술 명칭·설명의 보조 근거"]
+    },
+    {
+      "id": "dbfz-goku-gt",
+      "author": "Bandai Namco Entertainment America",
+      "title": "DRAGON BALL FighterZ - Goku [GT] Gameplay Trailer",
+      "url": "https://www.youtube.com/watch?v=fEcSDuQWiRA",
+      "sourceType": "official-video",
+      "observedRanges": [
+        {
+          "startSeconds": 7.5,
+          "endSeconds": 10,
+          "framesPerSecond": 8
+        }
+      ],
+      "observed": [
+        "장전·변신 뒤 손에 연결된 청백색 핵과 푸른 외피의 굵은 빔을 유지한다."
+      ],
+      "limits": [
+        "컷 편집이 있어 정확한 빔 유지 시간은 확정하지 않았다.",
+        "원작 내부 충돌 판정·피해 간격을 확인하지 않았다."
+      ],
+      "projectUse": ["ki-beam의 응축 핵·선두광·연결된 빔 유지·수축과 반동"],
+      "localEvidence": "/private/tmp/ataho-ki-references/goku-beam-detail-01.jpg"
+    },
+    {
+      "id": "kof-xv-terry",
+      "author": "SNK OFFICIAL",
+      "title": "KOF XV｜TERRY BOGARD｜Trailer #10【TEAM FATAL FURY】",
+      "url": "https://www.youtube.com/watch?v=3B1GXLeMQdo",
+      "sourceType": "official-video",
+      "observedRanges": [
+        {
+          "startSeconds": 38.5,
+          "endSeconds": 41.5,
+          "framesPerSecond": 8,
+          "coreRangeSeconds": [39.125, 39.875]
+        }
+      ],
+      "observed": [
+        "바닥을 찍은 뒤 지면에 고정된 불꽃 기둥이 솟고 상대가 상승하며 마지막 불씨가 사라진다."
+      ],
+      "limits": [
+        "해당 화면에 기술명이 없어 특정 기술명으로 단정하지 않는다.",
+        "작은 분출의 전진·최종3타는 조합실에서 추가한 해석이며 영상의 정확한 타수 복제가 아니다."
+      ],
+      "projectUse": [
+        "ki-eruption의 지면 발동·대상 아래 분출·상승 반응·불씨 소멸"
+      ],
+      "localEvidence": "/private/tmp/ataho-ki-references/terry-wave-clear-01.jpg"
+    },
+    {
+      "id": "ggst-venom",
+      "author": "Arc System Works",
+      "title": "Guilty Gear -Strive- Starter Guide - Venom",
+      "url": "https://www.youtube.com/watch?v=gh0aqa-3xWs",
+      "sourceType": "official-video",
+      "observedRanges": [
+        {
+          "startSeconds": 70,
+          "endSeconds": 86,
+          "framesPerSecond": 6,
+          "onScreenName": "Ball Set (Multiple)"
+        },
+        {
+          "startSeconds": 134,
+          "endSeconds": 141,
+          "framesPerSecond": 6,
+          "onScreenName": "Stinger Aim"
+        }
+      ],
+      "observed": [
+        "Ball Set (Multiple)에서 네 공이 배치되어 대기한 뒤 각각 사출·연속 충돌한다.",
+        "Stinger Aim에서136.33초 준비,136.5~136.667초 분리된 보라 탄과 꼬리,136.83초 원거리 충격을 확인했다."
+      ],
+      "limits": [
+        "원작의 배치 입력·탄 충돌 규칙·위력·정확한 궤적을 실행 확인하지 않았다."
+      ],
+      "projectUse": [
+        "ki-orbit의 네 구체 배치·대기·각개 사출",
+        "ki-orb의 손에서 분리되는 탄·비행 꼬리·원거리 명중"
+      ],
+      "localEvidence": [
+        "/private/tmp/ataho-ki-references/venom-balls-detail-01.jpg",
+        "/private/tmp/ataho-ki-references/venom-projectile-detail-01.jpg"
+      ]
+    }
+  ],
+  "motions": [
+    {
+      "id": "ki-tiger",
+      "title": "호격권",
+      "variant": "대상에 호랑이 형상",
+      "style": "tiger-manifest",
+      "durationMs": 1580,
+      "bodySteps": 7,
+      "bodyContacts": 0,
+      "shots": 0,
+      "hits": 3,
+      "chargeStartMs": 120,
+      "releaseMs": 600,
+      "hitTimesMs": [760, 920, 1080],
+      "presentation": "기존 큰 선화 점멸을 Canvas 금빛 호랑이의 입 벌림·포효·발톱 압력으로 재구성한다. 대상 현현의3타는 유지한다."
+    },
+    {
+      "id": "ki-tiger-wave",
+      "title": "호격권",
+      "variant": "호랑이 선두 파동",
+      "style": "tiger-wave",
+      "durationMs": 1630,
+      "bodySteps": 7,
+      "bodyContacts": 0,
+      "shots": 1,
+      "hits": 1,
+      "chargeStartMs": 120,
+      "releaseMs": 780,
+      "hitTimesMs": [960],
+      "presentation": "주먹에 연결된 금빛 핵이 호랑이 선두로 관통하고 두 기류 궤선과 붉은 잔류선이 남는다. 분리 얼굴 탄으로 표현하지 않는다."
+    },
+    {
+      "id": "ki-orb",
+      "title": "권기탄",
+      "style": "orb",
+      "durationMs": 1100,
+      "bodySteps": 7,
+      "bodyContacts": 0,
+      "shots": 1,
+      "hits": 1,
+      "chargeStartMs": 100,
+      "releaseMs": 340,
+      "hitTimesMs": [620],
+      "presentation": "짧은 응축 뒤 분리된 작은 선두핵이 날고 가로 압축·측면 조각으로 파열한다."
+    },
+    {
+      "id": "ki-beam",
+      "title": "파동포",
+      "style": "beam",
+      "durationMs": 2050,
+      "bodySteps": 5,
+      "bodyContacts": 0,
+      "shots": 1,
+      "hits": 4,
+      "chargeStartMs": 120,
+      "releaseMs": 900,
+      "hitTimesMs": [1030, 1200, 1370, 1540],
+      "presentation": "첫 선두파 뒤 두꺼운 연결 코어·변화하는 외피·이동 유동 띠를 유지하고 포구부터 수축한다.",
+      "origin": {
+        "x": 22,
+        "y": -28
+      },
+      "chargeOrigin": {
+        "x": 6,
+        "y": -22
+      },
+      "newPoseMotion": "presentation-ki-beam-poses-south-east"
+    },
+    {
+      "id": "ki-crescent",
+      "title": "광파참",
+      "style": "crescent",
+      "durationMs": 1100,
+      "bodySteps": 7,
+      "bodyContacts": 0,
+      "shots": 1,
+      "hits": 1,
+      "chargeStartMs": 90,
+      "releaseMs": 350,
+      "hitTimesMs": [660],
+      "presentation": "공통 충전구 대신 팔 뒤의 얇은 반호를 만들고 내부가 열린 C자 기공면을 분리해 절단 방향으로 흩뜨린다."
+    },
+    {
+      "id": "ki-eruption",
+      "title": "지열파",
+      "style": "eruption",
+      "durationMs": 1770,
+      "bodySteps": 8,
+      "bodyContacts": 0,
+      "shots": 0,
+      "hits": 3,
+      "chargeStartMs": 120,
+      "releaseMs": 660,
+      "hitTimesMs": [960, 1100, 1240],
+      "presentation": "실측 손점에서 바닥으로 기운을 전달하고 균열이 전진한 뒤 대상 아래 한 분출에서 세 압력을 발생시킨다.",
+      "origin": {
+        "x": 25,
+        "y": -21
+      }
+    },
+    {
+      "id": "ki-orbit",
+      "title": "부유기탄",
+      "style": "orbit",
+      "durationMs": 2400,
+      "bodySteps": 9,
+      "bodyContacts": 0,
+      "shots": 4,
+      "hits": 4,
+      "chargeStartMs": 120,
+      "releaseMs": 900,
+      "launchTimesMs": [980, 1160, 1320, 1480],
+      "hitTimesMs": [1320, 1510, 1700, 1890],
+      "presentation": "배치된 네 작은 구체가 제자리에서 대기하고 선택된 탄만 활성화되어 각기 가속 사출한다.",
+      "travelCurve": "ease-in"
+    }
+  ],
+  "implementation": {
+    "bodyData": "src/resources/characters/ataho-v2-combos/motions/ki-motions.ts",
+    "types": "src/resources/characters/ataho-v2-combos/ki-types.ts",
+    "sampling": "src/resources/characters/ataho-v2-combos/ki-sampling.ts",
+    "drawing": "src/resources/characters/ataho-v2-combos/ki-drawing.ts",
+    "ownership": "ComboPlayer가 동작 시간을 소유하고 기공 샘플은 전달된 절대 시간만으로 계산한다. 그리기와 샌드백은 같은 정의·비행 좌표·명중 시점을 사용한다.",
+    "rules": [
+      "몸동작의 접촉은0개이며 기공의 도착·현현·압력 시점만 타격을 발생시킨다.",
+      "발 위치는 x0/y0으로 고정하고 각 몸 시간 합계는 기공 endMs와 일치한다.",
+      "투사체는 손 또는 공중 준비 위치에서 출발해 같은 결정적 곡선을 따라가며 도착 뒤 목표 좌표에 머문다.",
+      "탐색·일시정지·반복은 별도 이력을 쌓지 않아 같은 시간에 같은 위치와 명중 상태를 낸다.",
+      "타격 효과를 꺼도 기공 자체는 유지하고 접촉 섬광만 해제한다.",
+      "호랑이의 기류 궤선·붉은 잔류선·지면 균열·내부 장식 압력·소멸 잔광은 추가 타수나 피해를 만들지 않는다.",
+      "보류3동작의 준비·발동·회수와 짧은 팔꿈치를 사용하지 않는다.",
+      "본게임 전투·저장·기존 소리는 변경하지 않는다."
+    ],
+    "excludedSources": [
+      "new-double-palm",
+      "new-front-push-kick",
+      "new-visible-low-sweep",
+      "ataho-firewood-elbow-chop-south-east-south-east",
+      "presentation-elbow-keyposes-south-east"
+    ],
+    "modules": {
+      "ki-drawing.ts": "무대 변환·기술별 디스패치·실제 명중 위치 전달",
+      "ki-shapes.ts": "상태 없는 Canvas 도형 그리기",
+      "ki-tiger-drawing.ts": "호격권의 금빛 머리·입 벌림·발톱·연결 코어·기류 궤선·잔류",
+      "ki-projectile-drawing.ts": "권기탄·파동포의 응축·방출·비행/유지·고유 충격",
+      "ki-spatial-drawing.ts": "광파참·지열파·부유기탄의 공간 형상·충전·사출·충격"
+    },
+    "removed": "ki-assets.ts와 index.ts의 이전 독립 VFX 로딩을 제거했다. 원본 리소스와 제작 기록은 보존한다."
+  },
+  "assets": {
+    "reusedEffects": [],
+    "reuseBoundary": "현재 기공은 Canvas 형상으로 재구성한다. 초기 호랑이 선화·충전·광파참 이미지 로딩은 제거했으며 그 원본과 사용 이력은 보존한다. 기존 아타호 v2 몸 그림과 이전 파동포3키포즈는 유지한다.",
+    "newPoseRecord": "resources/ataho-v2-ki-pose-generation.json",
+    "newPoseMotion": "presentation-ki-beam-poses-south-east",
+    "newPoseCount": 3,
+    "newPoseRoles": ["준비", "발사 유지", "반동"],
+    "newPosePolicy": "기존 v2 원투의 같은 방향·외형을 참조한 생성 키포즈다. 원본 PNG 픽셀·알파를 보존하고 런타임의 sourceRect/destinationRect로 논리96px에 표시한다. 보류 양손 밀어치기를 입력으로 사용하지 않았다.",
+    "newPoseReview": "얼굴·의복·방향·양발·두 팔과 알파·해시는 확인했으며 최종 품질·모션 연결의 채택은 사용자 검토를 따른다.",
+    "newBodyArtInReconstruction": false
+  },
+  "verification": {
+    "currentRecord": "resources/ataho-v2-ki-reconstruction.json",
+    "note": "재구성 이후 모델·실행·최종 검사는 해당 기록의 verification을 따른다. 초기 검증은 verificationHistory에 보존한다."
+  },
+  "verificationHistory": [
+    {
+      "date": "2026-10-16",
+      "stage": "initial-ki-effects-before-reconstruction",
+      "note": "기술별 실루엣·충전·충격 재구성 이전의 모델·그림 재사용·PC 검증 이력이다. 현재 재구성 결과의 검증으로 사용하지 않는다.",
+      "motions": [
+        {
+          "id": "ki-tiger",
+          "title": "호격권",
+          "variant": "대상에 호랑이 형상",
+          "style": "tiger-manifest",
+          "durationMs": 1580,
+          "bodySteps": 7,
+          "bodyContacts": 0,
+          "shots": 0,
+          "hits": 3,
+          "chargeStartMs": 120,
+          "releaseMs": 600,
+          "hitTimesMs": [760, 920, 1080],
+          "presentation": "대상 위치의 호랑이 얼굴이 세 번 점멸하며 명중한다. 비행 탄은 없다."
+        },
+        {
+          "id": "ki-tiger-wave",
+          "title": "호격권",
+          "variant": "호랑이 선두 파동",
+          "style": "tiger-wave",
+          "durationMs": 1630,
+          "bodySteps": 7,
+          "bodyContacts": 0,
+          "shots": 1,
+          "hits": 1,
+          "chargeStartMs": 120,
+          "releaseMs": 780,
+          "hitTimesMs": [1110],
+          "presentation": "호랑이 머리를 선두로 긴 기운이 날고 도착 때 한 번 명중한다. 뒤 기운과 잔류선은 장식이다."
+        },
+        {
+          "id": "ki-orb",
+          "title": "권기탄",
+          "style": "orb",
+          "durationMs": 1380,
+          "bodySteps": 7,
+          "bodyContacts": 0,
+          "shots": 1,
+          "hits": 1,
+          "chargeStartMs": 100,
+          "releaseMs": 520,
+          "hitTimesMs": [920],
+          "presentation": "작은 기공핵이 몸에서 분리되어 비행하고 도착점에서 파열한다."
+        },
+        {
+          "id": "ki-beam",
+          "title": "파동포",
+          "style": "beam",
+          "durationMs": 2050,
+          "bodySteps": 5,
+          "bodyContacts": 0,
+          "shots": 1,
+          "hits": 4,
+          "chargeStartMs": 120,
+          "releaseMs": 900,
+          "hitTimesMs": [1030, 1200, 1370, 1540],
+          "presentation": "선두광이 도착한 뒤 연결된 빔의 네 압력 타격을 발생시키고 수축·반동으로 회수한다.",
+          "origin": {
+            "x": 22,
+            "y": -28
+          },
+          "chargeOrigin": {
+            "x": 6,
+            "y": -22
+          },
+          "newPoseMotion": "presentation-ki-beam-poses-south-east"
+        },
+        {
+          "id": "ki-crescent",
+          "title": "광파참",
+          "style": "crescent",
+          "durationMs": 1300,
+          "bodySteps": 7,
+          "bodyContacts": 0,
+          "shots": 1,
+          "hits": 1,
+          "chargeStartMs": 90,
+          "releaseMs": 490,
+          "hitTimesMs": [850],
+          "presentation": "큰 휘두름에서 분리된 초승달 기공이 도착하고 빛 조각으로 흩어진다."
+        },
+        {
+          "id": "ki-eruption",
+          "title": "지열파",
+          "style": "eruption",
+          "durationMs": 1770,
+          "bodySteps": 8,
+          "bodyContacts": 0,
+          "shots": 0,
+          "hits": 3,
+          "chargeStartMs": 120,
+          "releaseMs": 660,
+          "hitTimesMs": [960, 1100, 1240],
+          "presentation": "대각 망치주먹으로 지면기를 발동한다. 작은 전방 분출은 장식이고 최종 대상 아래 큰 분출 세 번만 명중한다."
+        },
+        {
+          "id": "ki-orbit",
+          "title": "부유기탄",
+          "style": "orbit",
+          "durationMs": 2400,
+          "bodySteps": 9,
+          "bodyContacts": 0,
+          "shots": 4,
+          "hits": 4,
+          "chargeStartMs": 120,
+          "releaseMs": 900,
+          "launchTimesMs": [980, 1160, 1320, 1480],
+          "hitTimesMs": [1320, 1510, 1700, 1890],
+          "presentation": "서로 다른 높이에 배치한 네 구체를 잠깐 멈춘 뒤 다른 곡선과 박자로 차례로 사출한다."
+        }
+      ],
+      "assets": {
+        "reusedAssetId": "ai/tiger-hero",
+        "reusedEffects": [
+          "effect-tiger-fist",
+          "energy-charge",
+          "effect-lightslash"
+        ],
+        "reuseBoundary": "호랑이·충전·광파참의 독립 효과만 읽고 다른 세대의 몸 그림은 가져오지 않는다.",
+        "newPoseRecord": "resources/ataho-v2-ki-pose-generation.json",
+        "newPoseMotion": "presentation-ki-beam-poses-south-east",
+        "newPoseCount": 3,
+        "newPoseRoles": ["준비", "발사 유지", "반동"],
+        "newPosePolicy": "기존 v2 원투의 같은 방향·외형을 참조한 생성 키포즈다. 원본 PNG 픽셀·알파를 보존하고 런타임의 sourceRect/destinationRect로 논리96px에 표시한다. 보류 양손 밀어치기를 입력으로 사용하지 않았다.",
+        "newPoseReview": "얼굴·의복·방향·양발·두 팔과 알파·해시는 확인했으며 최종 품질·모션 연결의 채택은 사용자 검토를 따른다."
+      },
+      "verification": {
+        "dataInspection": {
+          "status": "completed",
+          "method": "동작·기공 정의와 두 표시 배율의 샌드백 명중 샘플 조회. 별도 테스트 코드 추가·실행과 구분한다.",
+          "scales": [2, 3],
+          "connectedHitsByMotionOrder": [3, 1, 1, 4, 1, 3, 4],
+          "motionOrder": [
+            "ki-tiger",
+            "ki-tiger-wave",
+            "ki-orb",
+            "ki-beam",
+            "ki-crescent",
+            "ki-eruption",
+            "ki-orbit"
+          ],
+          "bodyContacts": 0,
+          "bodyGrounded": true,
+          "bodyDurationEqualsKiEnd": true,
+          "excludedSourcesUsed": false
+        },
+        "pcBrowser": {
+          "status": "completed",
+          "method": "담당 세션이 실제 PC 조합실의1배 재생·종결·선택 변경·정지·설정 전환을 확인했다. 데이터 샘플 조회와 구분한다.",
+          "playback": {
+            "motionOrder": [
+              "ki-tiger",
+              "ki-tiger-wave",
+              "ki-orb",
+              "ki-beam",
+              "ki-crescent",
+              "ki-eruption",
+              "ki-orbit"
+            ],
+            "speed": 1,
+            "progressionAndCompletionObserved": true,
+            "finalConnectedHits": [3, 1, 1, 4, 1, 3, 4]
+          },
+          "selectionAndSettings": [
+            "호격권의 두 연출을 전환해도 절대 경과 시간과 일시정지를 보존했다.",
+            "파동포의1.29초 정지에서 타격 효과·이동 포함을 껐다 켜도 시점과 일시정지가 유지됐다.",
+            "타격 효과를 끄면 접촉 섬광 수가0이 되고 파동포의 빔 자체는 유지됐다.",
+            "이동 포함을 끄면 기공 집계가0이 되며 다시 켜면 같은 시점의2명중을 복원했다.",
+            "샌드백을 끄면2/4타, 켜면2/4명중으로 표시했다.",
+            "파동포의2배·3배 표시에서 몸과 충전핵·발사 빔을 직접 확인했다."
+          ],
+          "finalHitEmphasis": {
+            "motionId": "ki-orbit",
+            "observedTimeMs": 1906,
+            "impactCount": 1,
+            "cameraZoom": 1.06,
+            "palette": true,
+            "note": "몸의 가드 복귀 뒤 도착하는 끝타에도 접촉 효과·명중 확대·제한 팔레트가 반응했다."
+          },
+          "visualAlignment": [
+            "파동포 충전 손 기준(6,-22), 발사 포구 기준(22,-28)이 실제 표시된 양손 위치와 이어짐을 확인했다.",
+            "호격권의 호랑이 선화 대비 보강을 실제 표시에서 확인했다."
+          ],
+          "consoleWarnings": [],
+          "consoleErrors": []
+        },
+        "finalChecks": {
+          "status": "passed",
+          "commands": ["npm run check", "npm run build"],
+          "note": "통합 코드의 타입·린트·포맷 검사와 빌드를 통과했다. 담당 세션이 최종 문서 포맷 후 다시 확인한다."
+        },
+        "separateTestsAddedOrRun": false,
+        "mobileVerificationPerformed": false
+      }
+    }
+  ],
+  "reconstructionRecord": "resources/ataho-v2-ki-reconstruction.json"
+}

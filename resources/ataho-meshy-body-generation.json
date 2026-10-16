@@ -1,0 +1,282 @@
+{
+  "createdDate": "2026-10-15",
+  "resourceId": "ai/ataho-meshy-body",
+  "viewerPath": "src/resources/characters/ataho-meshy-body/",
+  "status": "accepted-for-rigging-followup-completed",
+  "provider": "Meshy MCP",
+  "sourceUrl": "https://docs.meshy.ai/en/api/image-to-3d",
+  "approvedScope": {
+    "modelGenerations": 1,
+    "modelGenerationCredits": 30,
+    "riggingExecuted": false,
+    "regenerationExecuted": false
+  },
+  "inputImage": {
+    "key": "approved-reference",
+    "name": "승인된 받침옷·드로즈 T 포즈",
+    "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/references/ataho-base-t-pose-approved.png",
+    "sha256": "ee8a61b7efa6b2b5b05436c4cd56fbd89eb44589330671c5618abc0d9841adf3",
+    "byteSize": 971939,
+    "width": 1377,
+    "height": 1142,
+    "pageUrl": "https://openai.com/",
+    "provider": "built-in image_gen",
+    "status": "user-approved-for-image-to-3d",
+    "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a14001-0cca-7210-8195-d24eebb9ce9d/exec-07800400-bc05-4d5b-8e29-fc81cf9bcd91.png",
+    "sourcePixelsUnmodified": true,
+    "prompt": "Use case: identity-preserve.\nAsset type: a SINGLE clean front-view character modeling reference image for Meshy image-to-3D and humanoid rigging.\nEdit target and identity reference: the attached original adult male anthropomorphic tiger martial artist. Change ONLY his clothing and pose as specified. Preserve his exact recognizable face design, rounded ears, orange/black striped fur, cream muzzle and shaggy cheek ruff, amber half-lidded eyes, sly friendly smile, head tuft, short stocky adult proportions, broad torso, big round protruding belly, thick limbs, broad tiger paws, striped tail, and original hand-painted anime/cartoon cel-shaded illustration style. Do not slim him down or make him muscular, younger, taller, realistic, or human.\nClothing: remove the brown outer jacket, all baggy trousers, waist sash/belt and hanging ties, flask and ropes, wrist wraps, and ankle wraps. He wears ONLY (1) an opaque ivory, close-fitting sleeveless wrap-style undershirt based on his original cream crossover inner shirt, with simple shallow crossover V neckline and a smooth fitted hem reaching the top of the hips, covering his entire chest and large belly; and (2) plain opaque dark charcoal fitted boxer briefs with short upper-thigh legs, a simple waistband, no logo, no fly details. These are practical neutral base-layer garments, smooth and close to the body with minimal fabric folds to clearly reveal the overall body silhouette; fully clothed, nonsexual character production reference. Arms, wrists, lower thighs, shins, ankles and feet show his natural striped tiger fur. No bare torso. No other clothing or accessories.\nPose: exact symmetrical straight-on FRONT T-POSE, head level looking directly at the camera, spine upright, both arms straight horizontally out to the sides at shoulder height, elbows extended, relaxed open tiger hands with digits distinguishable and the same paw-like anatomy as the reference. Both feet planted at the same baseline and separated about shoulder width, legs straight without touching, knees facing front. Keep his large round belly and heavy stocky proportions. Tail naturally curves out to the viewer's left below the arm so its silhouette is distinct from the legs, hands, and torso. No limb/tail intersections.\nComposition: one character only, entire body including both outstretched hands, ears, feet, and tail fully in frame, centered, generous even margin, square or sufficiently wide canvas to accommodate the full T-pose. Orthographic-like front elevation without perspective foreshortening, no head tilt, no three-quarter body view. Clean and legible shapes with restrained soft cel shading, original warm colors and original linework character. Genuinely transparent background, no floor, no cast shadow, no text, no labels, no turnaround panels, no extra views, no weapons or props.",
+    "sourceName": "내장 ImageGen"
+  },
+  "originalReference": {
+    "key": "original-outfit-reference",
+    "name": "사용자 첨부 원본 의상",
+    "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/references/ataho-original-outfit-reference.png",
+    "sha256": "0b2bd04caf5538ea10e747ff30fc790452a77f75cab1b8ec218abcc1e01ba7b9",
+    "byteSize": 1410434,
+    "width": 1098,
+    "height": 1433,
+    "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d",
+    "sourceName": "사용자 첨부 이미지",
+    "composition": "원저작 출처 URL은 제공되지 않음. pageUrl은 사용한 3D 변환 도구 문서이며 원화의 출처가 아니다."
+  },
+  "request": {
+    "tool": "meshy_image_to_3d",
+    "arguments": {
+      "ai_model": "meshy-7.1",
+      "file_path": "public/assets/maplestory/ataho-meshy-body/20261015/references/ataho-base-t-pose-approved.png",
+      "model_type": "standard",
+      "pose_mode": "t-pose",
+      "geometry_resolution": "standard",
+      "image_enhancement": false,
+      "should_texture": true,
+      "texture_resolution": "4k",
+      "enable_pbr": false,
+      "should_remesh": true,
+      "target_polycount": 50000,
+      "topology": "quad",
+      "save_pre_remeshed_model": true,
+      "target_formats": ["glb", "fbx"],
+      "alpha_thumbnail": true,
+      "multi_view_thumbnails": true,
+      "response_format": "json"
+    }
+  },
+  "task": {
+    "id": "01a1400b-c186-771e-bbf4-17466e55b04b",
+    "type": "image-to-3d",
+    "status": "SUCCEEDED",
+    "consumedCredits": 30,
+    "createdAt": "2026-10-15T23:51:15.947000+09:00",
+    "finishedAt": "2026-10-15T23:53:48.590000+09:00",
+    "downloadUrlsExpireAt": "2026-10-18T23:53:48.590000+09:00",
+    "rawResponseLocalPath": "public/assets/maplestory/ataho-meshy-body/20261015/metadata/task-result.json"
+  },
+  "observedOutput": {
+    "glb": {
+      "meshCount": 1,
+      "primitiveCount": 1,
+      "triangleCount": 99131,
+      "vertexCount": 64028,
+      "nodeCount": 1,
+      "skinCount": 0,
+      "animationCount": 0,
+      "extensionsUsed": [],
+      "positionBounds": [
+        {
+          "min": [
+            -0.9516350030899048, -0.8044571280479431, -0.3182860314846039
+          ],
+          "max": [0.9513429999351501, 0.8092111349105835, 0.33488503098487854]
+        }
+      ]
+    },
+    "preRemeshGlb": {
+      "meshCount": 1,
+      "primitiveCount": 1,
+      "triangleCount": 520742,
+      "vertexCount": 260373,
+      "nodeCount": 1,
+      "skinCount": 0,
+      "animationCount": 0,
+      "extensionsUsed": [],
+      "positionBounds": [
+        {
+          "min": [
+            -0.9522640109062195, -0.8044808506965637, -0.3188198506832123
+          ],
+          "max": [0.951260507106781, 0.8098137378692627, 0.33490613102912903]
+        }
+      ]
+    },
+    "fbx": {
+      "version": 7400,
+      "polygonCount": 49964,
+      "controlPointCount": 49590,
+      "polygonSizeCounts": {
+        "3": 1368,
+        "4": 47988,
+        "5": 608
+      },
+      "verifiedBy": "FBX PolygonVertexIndex 음수 종료 인덱스와 압축 배열을 읽어 확인"
+    },
+    "textureSize": [4096, 4096],
+    "topologyNotes": "FBX는 약 5만 면의 사각형 위주 메시이며 전부 사각형은 아니다. GLB는 삼각화되어 99,131 triangles이며 요청 면수와 구분한다."
+  },
+  "review": {
+    "method": "서비스 정면·측면·후면 PNG 및 GLB·FBX 바이너리 구조 확인 후, 로컬 Three.js 뷰어에서 실제 모델 렌더링과 마우스 회전·휠 확대·시점 전환·화면 맞춤·와이어프레임을 확인. 리깅·동작 재생은 미실행.",
+    "findings": [
+      "밀착 흰 받침옷·검은 드로즈와 둥근 배가 재현됨.",
+      "승인 이미지의 긴 꼬리가 짧은 돌기처럼 생성되어 후면 허리 부근에 보임. 리깅 전 형상 수정 또는 재생성 방향 검토 필요.",
+      "뒷면과 측면은 정면 한 장에서 생성한 추정 형상이며 별도 승인된 방향 이미지가 아님."
+    ],
+    "riggingStatus": "completed-see-followup-record",
+    "gameIntegrationStatus": "not-integrated",
+    "pagesDeploymentNotes": "현재 Pages 리소스 수집기는 GLB·FBX 확장자를 복사하지 않음. 이번 작업은 로컬 파일 보존이며 배포 설정은 변경하지 않음.",
+    "userDecision": "꼬리는 아쉽지만 현재모델로 리깅과 의상·소품 병렬 제작 진행을 승인함. 꼬리 형상 변경은 미실행."
+  },
+  "files": [
+    {
+      "key": "approved-reference",
+      "name": "승인된 받침옷·드로즈 T 포즈",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/references/ataho-base-t-pose-approved.png",
+      "sha256": "ee8a61b7efa6b2b5b05436c4cd56fbd89eb44589330671c5618abc0d9841adf3",
+      "byteSize": 971939,
+      "width": 1377,
+      "height": 1142,
+      "pageUrl": "https://openai.com/",
+      "sourceName": "내장 ImageGen"
+    },
+    {
+      "key": "original-outfit-reference",
+      "name": "사용자 첨부 원본 의상",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/references/ataho-original-outfit-reference.png",
+      "sha256": "0b2bd04caf5538ea10e747ff30fc790452a77f75cab1b8ec218abcc1e01ba7b9",
+      "byteSize": 1410434,
+      "width": 1098,
+      "height": 1433,
+      "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d",
+      "sourceName": "사용자 첨부 이미지",
+      "composition": "원저작 출처 URL은 제공되지 않음. pageUrl은 사용한 3D 변환 도구 문서이며 원화의 출처가 아니다."
+    },
+    {
+      "key": "glb",
+      "name": "몸체 모델 · GLB",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/models/ataho-body.glb",
+      "sha256": "1a81285e66a58dd63ddffc6ea4629a762a18327744519b13591cc05e78799af5",
+      "byteSize": 11555412,
+      "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+    },
+    {
+      "key": "fbx",
+      "name": "몸체 모델 · FBX",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/models/ataho-body.fbx",
+      "sha256": "8f516d3b88fbdd351589e2c9a29bf788b4a035703b77c6ef456e51cda22903ae",
+      "byteSize": 15172236,
+      "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+    },
+    {
+      "key": "pre-remesh-glb",
+      "name": "리메시 전 모델 · GLB",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/models/ataho-body-pre-remesh.glb",
+      "sha256": "ad8a58d66a9e133eae53752030be69724b57119ed7d3350db8ff7d55d394636b",
+      "byteSize": 12498804,
+      "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+    },
+    {
+      "key": "base-color",
+      "name": "4K 기본색 텍스처",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/models/ataho-body_base_color.png",
+      "sha256": "49a11143948cf1240989c90cfb559e54f647a8426391e18d7c51015d03295825",
+      "byteSize": 12280237,
+      "width": 4096,
+      "height": 4096,
+      "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+    },
+    {
+      "key": "preview-front",
+      "name": "Meshy 생성 미리보기 · front",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/previews/front.png",
+      "sha256": "e19f83a2f324344dd3f231648d9fb39c5ed95375f1639f2168eb572d5bf40bdd",
+      "byteSize": 94111,
+      "width": 512,
+      "height": 512,
+      "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+    },
+    {
+      "key": "preview-right",
+      "name": "Meshy 생성 미리보기 · right",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/previews/right.png",
+      "sha256": "fc5015bc157f990eb8d506780fcabe83d6c231c9f8f101e65629c1d7f1d83927",
+      "byteSize": 69884,
+      "width": 512,
+      "height": 512,
+      "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+    },
+    {
+      "key": "preview-back",
+      "name": "Meshy 생성 미리보기 · back",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/previews/back.png",
+      "sha256": "63d37ace23b3e761d2c23d369325ddbaf43189745db0979ffb48b36bfcc7bd00",
+      "byteSize": 87941,
+      "width": 512,
+      "height": 512,
+      "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+    },
+    {
+      "key": "preview-left",
+      "name": "Meshy 생성 미리보기 · left",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/previews/left.png",
+      "sha256": "c2c51bde4ebbe6d415e4e915c882717b4521dfa0a949176d921ebd0b2e1c6488",
+      "byteSize": 71804,
+      "width": 512,
+      "height": 512,
+      "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+    },
+    {
+      "key": "preview-preview",
+      "name": "Meshy 생성 미리보기 · preview",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/previews/preview.png",
+      "sha256": "e19f83a2f324344dd3f231648d9fb39c5ed95375f1639f2168eb572d5bf40bdd",
+      "byteSize": 94111,
+      "width": 512,
+      "height": 512,
+      "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+    },
+    {
+      "key": "preview-preview-alpha",
+      "name": "Meshy 생성 미리보기 · preview-alpha",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/previews/preview-alpha.png",
+      "sha256": "e19f83a2f324344dd3f231648d9fb39c5ed95375f1639f2168eb572d5bf40bdd",
+      "byteSize": 94111,
+      "width": 512,
+      "height": 512,
+      "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+    }
+  ],
+  "validation": {
+    "repositoryChecks": ["npm run check", "npm run build"],
+    "preservedFiles": "12개 파일의 존재·바이트 수·SHA256 확인",
+    "modelStructure": "GLB 정점·인덱스 범위·텍스처 해상도와 FBX PolygonVertexIndex 확인",
+    "visualScope": "서비스 정적 미리보기 및 실제 GLB 브라우저 렌더링·입력 확인"
+  },
+  "viewerValidation": {
+    "verifiedDate": "2026-10-16",
+    "localUrl": "http://127.0.0.1:8031/src/resources/characters/ataho-meshy-body/",
+    "checks": [
+      "GLB 로딩 및 4K 텍스처 표시",
+      "정면·우측·후면·좌측 버튼",
+      "실제 마우스 드래그 회전과 휠 확대",
+      "화면 맞춤과 와이어프레임 전환",
+      "DPR 1 및 DPR 2에서 캔버스 크기와 화면 맞춤 확인"
+    ],
+    "limits": [
+      "리깅·애니메이션 미실행",
+      "로딩 실패 재시도 및 BFCache 실제 복귀는 별도 실행 검증하지 않음"
+    ],
+    "lifecycle": "입력·ResizeObserver·예약 렌더 프레임·OrbitControls·GPU 리소스는 ModelViewer가 종료 시 정리. BFCache 보관 시에는 종료하지 않고 pageshow에서 화면 크기를 갱신.",
+    "automatedTestCodeAdded": false,
+    "scope": "리깅 전 원본 몸체의 최초 뷰어 확인. 후속 모델·동작 확인은 followupGenerationRecord 참조."
+  },
+  "followupGenerationRecord": "resources/ataho-meshy-outfit-generation.json",
+  "scopeNotes": "approvedScope는 최초 30크레딧 몸체 생성 범위이며, 후속 5크레딧 리깅 결과는 followupGenerationRecord에 기록."
+}

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>아타호 · 3D 모델 확인</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "../../../../node_modules/three/build/three.module.js",
+          "three/addons/": "../../../../node_modules/three/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">CHARACTER STUDY · MESHY 7.1</p>
+          <h1>아타호 <span>3D 모델 확인</span></h1>
+        </div>
+        <a class="back" href="../../?asset=ai/ataho-meshy-body"
+          >리소스 목록 ↗</a
+        >
+      </header>
+      <div class="workspace">
+        <section class="viewer" aria-label="3D 모델 확인">
+          <div class="stage-heading">
+            <h2 id="model-title">리깅 몸체</h2>
+            <span class="badge" id="model-badge">자동 리깅 결과</span>
+          </div>
+          <div class="model-picker">
+            <label for="model-select">확인할 모델</label>
+            <select id="model-select" aria-label="확인할 모델"></select>
+            <span>몸체와 부품을 각각 확인합니다.</span>
+          </div>
+          <fieldset id="view-controls" disabled aria-label="시점과 표시">
+            <div class="views" role="group" aria-label="모델 시점">
+              <button type="button" data-view="front">정면</button>
+              <button type="button" data-view="right">우측</button>
+              <button type="button" data-view="back">후면</button>
+              <button type="button" data-view="left">좌측</button>
+            </div>
+            <div class="display-controls">
+              <button type="button" id="fit">화면 맞춤</button>
+              <button type="button" id="wireframe" aria-pressed="false">
+                와이어프레임
+              </button>
+            </div>
+          </fieldset>
+          <fieldset
+            id="animation-controls"
+            class="animation-controls"
+            disabled
+            aria-label="애니메이션 재생"
+          >
+            <select id="clip-select" aria-label="애니메이션 클립"></select>
+            <button type="button" id="play" aria-pressed="false">재생</button>
+            <button type="button" id="replay">처음부터</button>
+            <button type="button" id="loop" aria-pressed="true">반복</button>
+            <span id="playback-info">애니메이션 클립 없음</span>
+          </fieldset>
+          <div class="stage" id="stage" data-state="loading">
+            <canvas
+              id="model"
+              aria-label="드래그로 회전하고 휠로 확대하는 아타호 3D 모델"
+            ></canvas>
+            <div id="loading" class="loading" role="status">
+              <p id="status">모델을 불러오는 중…</p>
+              <button id="retry" type="button" hidden>다시 불러오기</button>
+            </div>
+          </div>
+          <div class="stage-footer">
+            <p>
+              드래그 <b>회전</b> <span>·</span> 휠 <b>확대</b>
+              <span>·</span> 우클릭 드래그 <b>이동</b>
+            </p>
+            <span id="model-info">GLB 불러오는 중</span>
+          </div>
+        </section>
+        <aside>
+          <section class="reference-card">
+            <div class="card-heading">
+              <h2>생성 기준 이미지</h2>
+              <span>생성 기준</span>
+            </div>
+            <div class="reference-stage">
+              <img
+                id="reference"
+                alt="모델 생성에 사용한 받침옷·드로즈 차림의 아타호 T 포즈"
+              />
+            </div>
+            <p id="reference-note">얼굴과 체형, 손발의 모양을 비교해 보세요.</p>
+          </section>
+          <section class="review-card">
+            <h2 id="review-title">몸체와 관절 확인</h2>
+            <p id="review-note">
+              짧게 생성된 꼬리를 제거하고 뿌리를 메웠습니다. 후면과 측면에서
+              확인할 수 있어요.
+            </p>
+            <button type="button" data-view="back" id="review-back" disabled>
+              후면에서 보기 →
+            </button>
+          </section>
+          <section class="download-card">
+            <h2>모델 파일</h2>
+            <div class="downloads" id="downloads"></div>
+          </section>
+        </aside>
+      </div>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/ataho-meshy-body/index.js"
+    ></script>
+  </body>
+</html>

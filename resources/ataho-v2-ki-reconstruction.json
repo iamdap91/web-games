@@ -1,0 +1,656 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-16",
+  "scope": "기공6종7데이터의 실루엣·준비·방출·비행/유지·명중·소멸을 실제 공식 영상 프레임을 참고해 재구성한다.",
+  "authorization": "사용자가 레퍼런스를 찾아보고 기공 기술을 재구성해 달라고 요청했다.",
+  "baseRecord": "resources/ataho-v2-ki-techniques.json",
+  "evidencePolicy": {
+    "downloadedMediaAndSequentialFramesViewed": true,
+    "rootReviewedSequentialFrames": true,
+    "continuousVideoPlaybackViewed": false,
+    "originalGamesExecuted": false,
+    "externalCodeReviewed": false,
+    "externalCodeExecuted": false,
+    "samplingBoundary": "fps는 조사용 프레임 추출 간격이다. 게임 원래 애니메이션 fps·입력 지연·판정 프레임과 구분한다.",
+    "observationAndInterpretation": "observed는 실제 영상 화면의 관찰이고 projectInterpretation은 기존 아타호 몸 그림과2D Canvas에 맞춘 해석이다. 기술명·타수·피해 판정을 영상만으로 확정하지 않는다.",
+    "temporaryEvidence": "임시 영상과 프레임 표는 조사용이며 제품·배포 리소스로 가져오지 않는다."
+  },
+  "references": [
+    {
+      "id": "sf6-ryu-hadoken",
+      "title": "Street Fighter 6 Character Guide | Ryu",
+      "publisher": "Street Fighter",
+      "sourceType": "official-video",
+      "url": "https://www.youtube.com/watch?v=iAs1p3LVdAs&t=21",
+      "observedRanges": [
+        {
+          "startSeconds": 21.25,
+          "endSecondsExclusive": 22.75,
+          "sampleFps": 16
+        }
+      ],
+      "observed": [
+        "21.375-21.625초에는 자세를 낮추고 양손을 당기며 손안에 작은 푸른 핵이 나타난다.",
+        "21.688-21.938초에는 발사 순간의 외피가 뒤따라 나오는 탄보다 크게 퍼진다.",
+        "22.000-22.125초에는 작고 밝은 선두핵이 몸에서 분리되고 뒤에 가는 기류가 남는다.",
+        "22.188초에 접촉하고22.250-22.500초에는 대상 위치의 파열과 잔광이 보인다. 공격자는22.375초에 이미 가드로 돌아가는 중이다."
+      ],
+      "projectInterpretation": [
+        "작은 핵을 짧게 응축한다.",
+        "발사 순간에 한 번 퍼지는 방출광을 둔다.",
+        "작고 둥근 선두핵이 몸에서 분리되어 짧은 꼬리와 함께 날아간다.",
+        "명중할 때 충격을 가로로 압축하고 옆으로 조각을 퍼뜨린다.",
+        "탄의 명중과 별개로 공격자는 먼저 자세를 회수한다."
+      ],
+      "limits": [
+        "관찰 fps는 프레임 추출 간격이며 게임의 원래 fps·입력·판정 프레임이 아니다.",
+        "원작의 정확한 타수·충돌·피해 수치·카메라 내부 구현을 확인하지 않았다."
+      ],
+      "localEvidence": [
+        "/private/tmp/ataho-ki-rework-ref-a/ryu-orb-detail-01.jpg"
+      ]
+    },
+    {
+      "id": "sf6-guile-sonic-boom",
+      "title": "Street Fighter 6 Character Guide | Guile",
+      "publisher": "Street Fighter",
+      "sourceType": "official-video",
+      "url": "https://www.youtube.com/watch?v=xjJaXn45S0E&t=29",
+      "observedRanges": [
+        {
+          "startSeconds": 29.05,
+          "endSecondsExclusive": 30.3,
+          "sampleFps": 16
+        }
+      ],
+      "observed": [
+        "29.175-29.238초에는 팔을 벌리며 몸을 돌린다.",
+        "29.300-29.488초에는 교차한 팔 앞에서 끝이 뾰족한 큰 흰 방출광이 나타난다.",
+        "29.550-29.800초에는 납작한 이중 고리가 몸에서 분리되어 독립적으로 날아간다.",
+        "29.863초에 처음 접촉한 뒤29.988-30.113초에는 공격 방향으로 길게 퍼지는 파열이 보인다. 공격자는 이미 가드 자세다."
+      ],
+      "projectInterpretation": [
+        "기술마다 실루엣을 구분한다. 모든 기공에 같은 고리를 붙이지 않고 권기탄은 작고 응축된 구체를 유지한다."
+      ],
+      "limits": [
+        "관찰 fps는 프레임 추출 간격이며 게임의 원래 fps·입력·판정 프레임이 아니다.",
+        "원작의 정확한 타수·충돌·피해 수치·카메라 내부 구현을 확인하지 않았다."
+      ],
+      "localEvidence": [
+        "/private/tmp/ataho-ki-rework-ref-a/guile-orb-detail-01.jpg"
+      ]
+    },
+    {
+      "id": "dbfz-cell-beam",
+      "title": "DRAGON BALL FighterZ - Cell Character Trailer | X1, PS4, PC",
+      "publisher": "Bandai Namco Entertainment America",
+      "sourceType": "official-video",
+      "url": "https://www.youtube.com/watch?v=jl8W1Mz91OI&t=19",
+      "observedRanges": [
+        {
+          "startSeconds": 18.5,
+          "endSecondsExclusive": 22.5,
+          "sampleFps": 12
+        }
+      ],
+      "observed": [
+        "19.083-20.083초에는 얼굴과 손을 가까이 잡는 컷이 이어지고20.000초에는 펼친 큰 손바닥이 화면 앞쪽에 보인다.",
+        "20.167초에는 양발을 넓게 벌려 버티는 자세로 바뀌고20.250초에는 청록빛과 흰빛의 큰 선두파가 나타난다.",
+        "20.333-21.083초에는 두꺼운 흰 코어가 이어지고 청록 외피의 모양과 가로로 걸친 유동 띠가 움직인다.",
+        "21.083-21.583초에는 빔이 유지되는 동안 앞쪽의 바위 조각들이 계속 화면을 가로지른다.",
+        "21.667초에 편집 전환이 일어나 빔이 끝나는 순간과 자세 회수는 보이지 않는다."
+      ],
+      "projectInterpretation": [
+        "발사 직전에 충전핵을 짧게 압축한다.",
+        "첫 선두파를 크게 내보낸 뒤 몸에 연결된 코어가 맥동하도록 구성한다.",
+        "고정된 쐐기 모양 대신 외피 윤곽을 변화시키고 가로 유동 띠를 이동시킨다.",
+        "진행 방향의 압력을 표현하고 중간 압력은 절제하며 마지막 압력을 강하게 만든다.",
+        "포구부터 좁아지며 회수하는 구성은 영상에서 확인한 셀의 종료 동작이 아니라 아타호용 설계다."
+      ],
+      "limits": [
+        "관찰 fps는 프레임 추출 간격이며 게임의 원래 fps·입력·판정 프레임이 아니다.",
+        "원작의 정확한 타수·충돌·피해 수치·카메라 내부 구현을 확인하지 않았다.",
+        "21.667초 편집 전환으로 빔의 종료·회수는 보이지 않는다. 포구부터 수축·회수하는 구성은 아타호용 해석이다."
+      ],
+      "localEvidence": ["/private/tmp/ataho-ki-rework-ref-a/cell-beam-01.jpg"]
+    },
+    {
+      "id": "sf6-guile-plane",
+      "title": "Street Fighter 6 - Guile Gameplay Trailer",
+      "publisher": "Street Fighter / CAPCOM",
+      "sourceType": "official-video",
+      "url": "https://www.youtube.com/watch?v=dPyZ5Noum9g&t=41s",
+      "observedRanges": [
+        {
+          "startSeconds": 40.5,
+          "endSeconds": 43,
+          "sampleFps": 16
+        },
+        {
+          "startSeconds": 41.25,
+          "endSeconds": 42,
+          "sampleFps": 12,
+          "detail": true
+        }
+      ],
+      "observed": [
+        "A detached thin ring remains in the air at 41.25 seconds while the body prepares another arm motion.",
+        "At 41.50 to 41.667 seconds a localized hand flash and thin leading line reach the existing ring.",
+        "At 41.75 to 41.833 seconds a finite bright leading surface and backward flowing thin edges remain distinct, with visible empty interior.",
+        "The localized target impact follows at 41.917 seconds."
+      ],
+      "projectInterpretation": "Borrow finite leading surface, open interior, and detached release grammar for an original C-shaped ki blade.",
+      "limits": [
+        "The video does not label the move. The observed source is circular/ring-like, so it is not evidence for a move literally named crescent or a confirmed Sonic Cross variant."
+      ],
+      "localEvidence": [
+        "/private/tmp/ataho-ki-rework-ref-b/guile-sonic-release-01.jpg",
+        "/private/tmp/ataho-ki-rework-ref-b/guile-plane-leading-edge-01.jpg"
+      ]
+    },
+    {
+      "id": "kof-xv-terry-ground-reconstruction",
+      "title": "KOF XV｜TERRY BOGARD｜Trailer #10【TEAM FATAL FURY】",
+      "publisher": "SNK OFFICIAL",
+      "sourceType": "official-video",
+      "url": "https://www.youtube.com/watch?v=3B1GXLeMQdo&t=39s",
+      "observedRanges": [
+        {
+          "startSeconds": 38.5,
+          "endSeconds": 41.5,
+          "sampleFps": 12
+        },
+        {
+          "startSeconds": 23,
+          "endSeconds": 25.5,
+          "sampleFps": 12,
+          "detail": true
+        }
+      ],
+      "observed": [
+        "The hand/body descend toward the ground before the first small floor flash.",
+        "At 39.083 seconds the user holds a low release posture and a small ground flash precedes the much taller target column at 39.167 seconds.",
+        "The column keeps its base on the floor while its volume expands and the target moves upward.",
+        "The upper volume breaks away around 39.667 seconds while thin floor residue remains."
+      ],
+      "projectInterpretation": "Ground transfer followed by a single sustained floor-anchored column with internal hit pressure, rather than repeated round midair explosions.",
+      "limits": [
+        "No move name HUD is visible; a precise Power Geyser variant was not identified. Ataho's existing hammerfist does not touch the floor, so the implementation uses a visible hand-to-floor conduit rather than claiming a ground punch."
+      ],
+      "localEvidence": [
+        "/private/tmp/ataho-ki-rework-ref-b/terry-eruption-origin-01.jpg",
+        "/private/tmp/ataho-ki-rework-ref-b/terry-eruption-wide-01.jpg"
+      ]
+    },
+    {
+      "id": "ggst-venom-placement-reconstruction",
+      "title": "Guilty Gear -Strive- Starter Guide - Venom",
+      "publisher": "arcsystemworks",
+      "sourceType": "official-video",
+      "url": "https://www.youtube.com/watch?v=gh0aqa-3xWs&t=70s",
+      "observedRanges": [
+        {
+          "startSeconds": 70,
+          "endSeconds": 78,
+          "sampleFps": 8
+        },
+        {
+          "startSeconds": 74.25,
+          "endSeconds": 76.5,
+          "sampleFps": 8,
+          "detail": true
+        }
+      ],
+      "observed": [
+        "Several small blue balls preserve separate positions at different heights during 70 to 74 seconds.",
+        "Between 74.25 and 74.625 seconds an active ball becomes pink/purple and moves right while other blue balls remain.",
+        "Between 74.875 and 75.125 seconds a low arm motion and another active ball take a lower route, while a higher ball remains.",
+        "At 75.50 to 75.875 seconds the upward arm/weapon path coincides with a higher ball becoming active.",
+        "At 76.125 to 76.625 seconds staggered target flashes coexist with active traveling and still placed balls."
+      ],
+      "projectInterpretation": "Keep fixed waiting orbs, activate only the selected orb before each launch, then remove only that orb and accelerate independent trajectories.",
+      "limits": [
+        "No original game input or ball collision rules were executed. Exact input-to-ball selection is not claimed. The giant orb sequence at 297 to 302 seconds was inspected but excluded from the small-orb design."
+      ],
+      "localEvidence": [
+        "/private/tmp/ataho-ki-rework-ref-b/venom-staged-deploy-01.jpg",
+        "/private/tmp/ataho-ki-rework-ref-b/venom-staged-deploy-02.jpg",
+        "/private/tmp/ataho-ki-rework-ref-b/venom-ball-activation-01.jpg"
+      ]
+    },
+    {
+      "id": "gensei-plus-official",
+      "author": "대원미디어DAEWON",
+      "title": "[KR] 『환세취호전 플러스』 공식 트레일러",
+      "url": "https://www.youtube.com/watch?v=lcs8qu48z1Y",
+      "sourceType": "official-video",
+      "observedRanges": [
+        {
+          "startSeconds": 52,
+          "endSeconds": 55.9,
+          "framesPerSecond": 8
+        }
+      ],
+      "observed": [
+        "발밑의 흰 기류와 금빛 충전 뒤 호랑이 머리를 선두로 긴 금빛 기운이 뻗는다.",
+        "굵은 기운 뒤에 붉은 흔들림 선이 남고 사라진다."
+      ],
+      "limits": [
+        "이 구간에는 기술명·등급 UI가 없어 공식 영상만으로 호격권/신기라고 단정하지 않는다.",
+        "정확한 타수·피해 판정·광선의 실제 유지 시간은 확인하지 않았다."
+      ],
+      "projectUse": [
+        "큰 호랑이 선화를 Canvas 금빛 형상·입 벌림·발톱 압력으로 바꾸고 플러스식 파동은 연결 코어·두 기류 궤선·붉은 잔류로 재구성한다."
+      ],
+      "localEvidence": "/private/tmp/ataho-ki-references-hogyeok/frames-plus-02.jpg",
+      "recheckedInReconstruction": true
+    },
+    {
+      "id": "gensei-original-plus-comparison",
+      "author": "헤이호우(Heyhou)",
+      "url": "https://www.youtube.com/watch?v=P-fLbBzbsac",
+      "sourceType": "unofficial-gameplay-comparison",
+      "purpose": "원작과 플러스의 호격권/신기 명칭·등급 식별을 위한 보조 자료",
+      "observedRanges": [
+        {
+          "startSeconds": 50,
+          "endSeconds": 52.4,
+          "framesPerSecond": 8,
+          "version": "original"
+        },
+        {
+          "startSeconds": 55.1,
+          "endSeconds": 57.9,
+          "framesPerSecond": 8,
+          "version": "plus"
+        }
+      ],
+      "observed": [
+        "원작 구간 UI의 호격권/신기와 대상 위치의 금빛 호랑이 얼굴 반복 점멸을 확인했다. 이 구간에는 이동하는 머리나 이어진 광선이 보이지 않는다.",
+        "플러스 구간 UI의 호격권/신기와 충전 뒤 호랑이 머리·긴 광선·붉은 잔류선을 확인했다. 형상은 공식 트레일러와 일치한다."
+      ],
+      "limits": [
+        "비공식 실제 플레이 자료이며 원작성자 공식 설명과 구분한다.",
+        "피해 이벤트 수·명중률·게임 내부 구현을 확인하지 않았다."
+      ],
+      "projectUse": [
+        "큰 호랑이 선화를 Canvas 금빛 형상·입 벌림·발톱 압력으로 바꾸고 플러스식 파동은 연결 코어·두 기류 궤선·붉은 잔류로 재구성한다."
+      ],
+      "localEvidence": [
+        "/private/tmp/ataho-ki-references-hogyeok/frames-original-01.jpg",
+        "/private/tmp/ataho-ki-references-hogyeok/frames-original-02.jpg"
+      ],
+      "recheckedInReconstruction": true
+    }
+  ],
+  "reconstruction": {
+    "removed": [
+      "모든 기술에 동일하게 적용하던 발밑 고리·회수 입자·공통 충전 이미지",
+      "모든 명중에 동일하게 적용하던 타원과7방사선 충격",
+      "큰 호랑이 선화 한 장의 확대 점멸",
+      "ki-assets.ts 및 index.ts의 기존 독립 VFX 이미지 로딩"
+    ],
+    "families": [
+      {
+        "motionIds": ["ki-tiger"],
+        "identity": "대상 현현",
+        "preparation": "주먹의 권세와 대상 예고",
+        "releaseAndMotion": "Canvas 금빛 호랑이의 입 벌림·포효·발톱 압력",
+        "contact": "세 명중 시각에 국소 압력. 비행 탄 없음"
+      },
+      {
+        "motionIds": ["ki-tiger-wave"],
+        "identity": "주먹에 연결된 관통 파동",
+        "preparation": "금빛 권기",
+        "releaseAndMotion": "180ms 선두 전진·연결된 금빛 핵·두 기류 궤선·붉은 잔류선",
+        "contact": "960ms 한 타. 유지와 잔류에는 추가 타격 없음"
+      },
+      {
+        "motionIds": ["ki-orb"],
+        "identity": "빠른 단발",
+        "preparation": "짧게 압축되는 작은 핵",
+        "releaseAndMotion": "방출광 뒤 분리되는 밝은 선두핵·짧은 꼬리",
+        "contact": "가로 압축과 측면 조각"
+      },
+      {
+        "motionIds": ["ki-beam"],
+        "identity": "연결된 압력 유지",
+        "preparation": "양손의 핵을 발사 직전 압축",
+        "releaseAndMotion": "첫 선두파·두꺼운 코어·변화하는 외피·이동 유동 띠·포구부터 수축",
+        "contact": "중간 압력은 절제하고 끝 압력을 크게 표현"
+      },
+      {
+        "motionIds": ["ki-crescent"],
+        "identity": "내부가 열린 얇은 기공면",
+        "preparation": "팔 뒤의 반호. 충전 구체 없음",
+        "releaseAndMotion": "하나의 C자 선두와 가는 잔선",
+        "contact": "세로 분리 파편과 짧은 가로 절단광"
+      },
+      {
+        "motionIds": ["ki-eruption"],
+        "identity": "지면 전파와 한 분출",
+        "preparation": "실측 손점(25,-21)의 기운",
+        "releaseAndMotion": "손에서 바닥으로 전달→전진 균열→바닥에 고정된 하나의 큰 분출",
+        "contact": "같은 분출의 세 압력과 마지막 상승. 지면에 주먹이 직접 닿는다고 표현하지 않음"
+      },
+      {
+        "motionIds": ["ki-orbit"],
+        "identity": "배치·대기·선택 활성·각개 사출",
+        "preparation": "네 자리에 고정된 작은 대기 구체",
+        "releaseAndMotion": "발사 직전 선택된 구체만 활성색. 공유된 ease-in 궤적으로 가속",
+        "contact": "시간차4타. 남은 대기 구체와 비행 구체를 함께 표시"
+      }
+    ],
+    "modules": {
+      "ki-drawing.ts": "무대 변환·기술별 디스패치·실제 명중 위치 전달",
+      "ki-shapes.ts": "상태 없는 Canvas 도형 그리기",
+      "ki-tiger-drawing.ts": "호격권의 금빛 머리·입 벌림·발톱·연결 코어·기류 궤선·잔류",
+      "ki-projectile-drawing.ts": "권기탄·파동포의 응축·방출·비행/유지·고유 충격",
+      "ki-spatial-drawing.ts": "광파참·지열파·부유기탄의 공간 형상·충전·사출·충격"
+    },
+    "sharedRules": [
+      "ComboPlayer의 절대 동작 시각을 사용한다. 누적 이동·프레임별 랜덤 상태를 만들지 않는다.",
+      "샷 선두와 타격 좌표는 sampleKiShot/kiHitPoint를 공유한다. 이미지·도형 중심을 선두와 혼동하지 않는다.",
+      "hitId/shotId·기공 명중 사건 수를 유지하고 장식에 접촉을 추가하지 않는다.",
+      "타격 효과를 끄면 기술 실체는 유지하고 접촉 섬광만 숨긴다.",
+      "실제 접촉 효과는 샌드백의 connected와 실제 명중 시각을 따른다.",
+      "기공 끝타의 카메라·명암은 몸의 가드 복귀와 독립되어 기공 여운까지 유지한다.",
+      "비행 중 활성 섬광과 초승달 외곽도 실제 샷 선두에서 잘라 명중 전 조기 접촉처럼 보이지 않게 한다."
+    ],
+    "motionData": [
+      {
+        "id": "ki-tiger",
+        "title": "호격권",
+        "variant": "대상에 호랑이 형상",
+        "style": "tiger-manifest",
+        "durationMs": 1580,
+        "bodySteps": 7,
+        "bodyContacts": 0,
+        "shots": 0,
+        "hits": 3,
+        "chargeStartMs": 120,
+        "releaseMs": 600,
+        "hitTimesMs": [760, 920, 1080],
+        "presentation": "기존 큰 선화 점멸을 Canvas 금빛 호랑이의 입 벌림·포효·발톱 압력으로 재구성한다. 대상 현현의3타는 유지한다."
+      },
+      {
+        "id": "ki-tiger-wave",
+        "title": "호격권",
+        "variant": "호랑이 선두 파동",
+        "style": "tiger-wave",
+        "durationMs": 1630,
+        "bodySteps": 7,
+        "bodyContacts": 0,
+        "shots": 1,
+        "hits": 1,
+        "chargeStartMs": 120,
+        "releaseMs": 780,
+        "hitTimesMs": [960],
+        "presentation": "주먹에 연결된 금빛 핵이 호랑이 선두로 관통하고 두 기류 궤선과 붉은 잔류선이 남는다. 분리 얼굴 탄으로 표현하지 않는다."
+      },
+      {
+        "id": "ki-orb",
+        "title": "권기탄",
+        "style": "orb",
+        "durationMs": 1100,
+        "bodySteps": 7,
+        "bodyContacts": 0,
+        "shots": 1,
+        "hits": 1,
+        "chargeStartMs": 100,
+        "releaseMs": 340,
+        "hitTimesMs": [620],
+        "presentation": "짧은 응축 뒤 분리된 작은 선두핵이 날고 가로 압축·측면 조각으로 파열한다."
+      },
+      {
+        "id": "ki-beam",
+        "title": "파동포",
+        "style": "beam",
+        "durationMs": 2050,
+        "bodySteps": 5,
+        "bodyContacts": 0,
+        "shots": 1,
+        "hits": 4,
+        "chargeStartMs": 120,
+        "releaseMs": 900,
+        "hitTimesMs": [1030, 1200, 1370, 1540],
+        "presentation": "첫 선두파 뒤 두꺼운 연결 코어·변화하는 외피·이동 유동 띠를 유지하고 포구부터 수축한다.",
+        "origin": {
+          "x": 22,
+          "y": -28
+        },
+        "chargeOrigin": {
+          "x": 6,
+          "y": -22
+        },
+        "newPoseMotion": "presentation-ki-beam-poses-south-east"
+      },
+      {
+        "id": "ki-crescent",
+        "title": "광파참",
+        "style": "crescent",
+        "durationMs": 1100,
+        "bodySteps": 7,
+        "bodyContacts": 0,
+        "shots": 1,
+        "hits": 1,
+        "chargeStartMs": 90,
+        "releaseMs": 350,
+        "hitTimesMs": [660],
+        "presentation": "공통 충전구 대신 팔 뒤의 얇은 반호를 만들고 내부가 열린 C자 기공면을 분리해 절단 방향으로 흩뜨린다."
+      },
+      {
+        "id": "ki-eruption",
+        "title": "지열파",
+        "style": "eruption",
+        "durationMs": 1770,
+        "bodySteps": 8,
+        "bodyContacts": 0,
+        "shots": 0,
+        "hits": 3,
+        "chargeStartMs": 120,
+        "releaseMs": 660,
+        "hitTimesMs": [960, 1100, 1240],
+        "presentation": "실측 손점에서 바닥으로 기운을 전달하고 균열이 전진한 뒤 대상 아래 한 분출에서 세 압력을 발생시킨다.",
+        "origin": {
+          "x": 25,
+          "y": -21
+        }
+      },
+      {
+        "id": "ki-orbit",
+        "title": "부유기탄",
+        "style": "orbit",
+        "durationMs": 2400,
+        "bodySteps": 9,
+        "bodyContacts": 0,
+        "shots": 4,
+        "hits": 4,
+        "chargeStartMs": 120,
+        "releaseMs": 900,
+        "launchTimesMs": [980, 1160, 1320, 1480],
+        "hitTimesMs": [1320, 1510, 1700, 1890],
+        "presentation": "배치된 네 작은 구체가 제자리에서 대기하고 선택된 탄만 활성화되어 각기 가속 사출한다.",
+        "travelCurve": "ease-in"
+      }
+    ]
+  },
+  "assets": {
+    "newBodyImagesInReconstruction": false,
+    "existingBodyFramesPreserved": true,
+    "existingBeamKeyposesPreserved": 3,
+    "existingBeamPoseRecord": "resources/ataho-v2-ki-pose-generation.json",
+    "newSound": false,
+    "originalVfxFilesPreserved": true,
+    "originalVfxImagesLoadedInReconstruction": false,
+    "newEffectGeometry": "Canvas 코드에서 그리는 형상이며 원작 영상·스크린샷을 게임 그림으로 가져오지 않는다."
+  },
+  "plannedGifExports": {
+    "status": "completed",
+    "directory": "public/assets/maplestory/ataho-v2-ki/20261016/reconstruction/",
+    "method": "현재 프로젝트 재생·그리기 모듈의 별도 GIF 출력. 실제 PC UI 촬영과 구분한다.",
+    "files": [
+      {
+        "id": "ki-reconstruction-ki-tiger",
+        "label": "호격권 · 대상 현현",
+        "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/reconstruction/ki-tiger.gif",
+        "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+        "speed": 1,
+        "width": 720,
+        "height": 438,
+        "frames": 41,
+        "durationMs": 1920,
+        "byteSize": 281817,
+        "sha256": "50f319dff18ca2aff3e9a9f7aa3918062a98f6d3d277c671fe84625be4642fe8"
+      },
+      {
+        "id": "ki-reconstruction-ki-tiger-wave",
+        "label": "호격권 · 선두 파동",
+        "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/reconstruction/ki-tiger-wave.gif",
+        "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+        "speed": 1,
+        "width": 720,
+        "height": 438,
+        "frames": 42,
+        "durationMs": 1960,
+        "byteSize": 277334,
+        "sha256": "192cca701e0420393c8a934b9a6d732ce70f6c86aef96f78206d609823f0ea1b"
+      },
+      {
+        "id": "ki-reconstruction-ki-orb",
+        "label": "권기탄",
+        "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/reconstruction/ki-orb.gif",
+        "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+        "speed": 1,
+        "width": 720,
+        "height": 438,
+        "frames": 29,
+        "durationMs": 1440,
+        "byteSize": 185018,
+        "sha256": "0135c016cdc9011f0c49733b1c2b68c371ed0ab30c99fc72153b33297ce0e4b6"
+      },
+      {
+        "id": "ki-reconstruction-ki-beam",
+        "label": "파동포",
+        "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/reconstruction/ki-beam.gif",
+        "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+        "speed": 1,
+        "width": 720,
+        "height": 438,
+        "frames": 53,
+        "durationMs": 2400,
+        "byteSize": 366207,
+        "sha256": "bf8ba61e0ee294b0633ff55f8c962dc47686896f1ba53909fb84c5ad7828b9ef"
+      },
+      {
+        "id": "ki-reconstruction-ki-crescent",
+        "label": "광파참",
+        "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/reconstruction/ki-crescent.gif",
+        "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+        "speed": 1,
+        "width": 720,
+        "height": 438,
+        "frames": 29,
+        "durationMs": 1440,
+        "byteSize": 203085,
+        "sha256": "b92bc021a7a5042b598819604ea65203ba1edcabb2c3f474730c56f313d4be45"
+      },
+      {
+        "id": "ki-reconstruction-ki-eruption",
+        "label": "지열파",
+        "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/reconstruction/ki-eruption.gif",
+        "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+        "speed": 1,
+        "width": 720,
+        "height": 438,
+        "frames": 46,
+        "durationMs": 2120,
+        "byteSize": 285114,
+        "sha256": "b422764afef3b790cca227201843e3a7a002407f75309fb665a283e16b8423ed"
+      },
+      {
+        "id": "ki-reconstruction-ki-orbit",
+        "label": "부유기탄",
+        "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/reconstruction/ki-orbit.gif",
+        "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+        "speed": 1,
+        "width": 720,
+        "height": 438,
+        "frames": 61,
+        "durationMs": 2720,
+        "byteSize": 376763,
+        "sha256": "6ed4c959564b59d795a80e53eec820f39d444812a19577edc7ff5670ff65567a"
+      },
+      {
+        "id": "ki-reconstruction-all",
+        "label": "기공 전체",
+        "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/reconstruction/ataho-ki-all.gif",
+        "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+        "speed": 1,
+        "width": 720,
+        "height": 438,
+        "frames": 301,
+        "durationMs": 14000,
+        "byteSize": 1905271,
+        "sha256": "d28d3519dd85e38bafb9cfda4590047bc6def85fab73cceb54f510cc01d954e9"
+      }
+    ],
+    "frameDurationMs": 40,
+    "speed": 1,
+    "overviewDurationMs": 14000,
+    "browserProof": "public/assets/maplestory/ataho-v2-ki/20261016/reconstruction/browser.jpg"
+  },
+  "verification": {
+    "modelInspection": {
+      "status": "completed",
+      "method": "실제 모듈 데이터 조회. 별도 테스트 코드 추가/실행과 구분한다.",
+      "bodyContacts": 0,
+      "positiveStepDurations": true,
+      "bodyDurationEqualsKiEnd": true,
+      "bodyStepsByMotionOrder": [7, 7, 7, 5, 7, 8, 9],
+      "durationMsByMotionOrder": [1580, 1630, 1100, 2050, 1100, 1770, 2400],
+      "hitCountsByMotionOrder": [3, 1, 1, 4, 1, 3, 4],
+      "motionOrder": [
+        "ki-tiger",
+        "ki-tiger-wave",
+        "ki-orb",
+        "ki-beam",
+        "ki-crescent",
+        "ki-eruption",
+        "ki-orbit"
+      ]
+    },
+    "sandbagDataInspection": {
+      "status": "completed",
+      "method": "실제 모듈의 접촉 샘플 조회. 별도 테스트 코드와 구분한다.",
+      "scales": [2, 3],
+      "connectedHitsByMotionOrder": [3, 1, 1, 4, 1, 3, 4],
+      "orbitMidFlightDistanceProgress": 0.25
+    },
+    "pcBrowser": {
+      "status": "completed",
+      "method": "PC 조합실에서 실제1배 재생·시각 탐색·설정 전환과 콘솔을 확인했다.",
+      "progressionAndCompletionObserved": true,
+      "finalConnectedHitsByMotionOrder": [3, 1, 1, 4, 1, 3, 4],
+      "observations": [
+        "기술별 준비·비행/유지·실제 명중·소멸 및 종료 가드를 확인했다.",
+        "지열파0.72초에서 실제 손점→지면 도관·전진 균열을 확인했다.",
+        "호격권0.78초 정지에서 현현→파동으로 바꿔도 절대 시각과 정지를 보존했다.",
+        "부유기탄0.67초에서 네 대기 탄이 모두 보이며 남은 탄과 개별 사출이 구분됐다. 뒤 탄은 머리 위로 우회한다.",
+        "부유기탄1.906초의4타 집계·접촉1개·확대1.06배·팔레트true를 확인했다.",
+        "파동포 충전핵이 몸 앞의 양손 사이에 보이고 방출 코어는 손에서 선두까지 이어진다.",
+        "파동포1.29초 정지에서 타격 효과 off는 충격0·빔 유지, 이동 off-on은0→2명중과 같은 시점·정지를 복원한다.",
+        "샌드백 off-on은2/4타→2/4명중으로 전환하고 시각·정지를 유지한다.",
+        "파동포의 표시 배율2/3에서 몸·포구·명중 위치 정렬을 확인했다."
+      ],
+      "consoleWarnings": [],
+      "consoleErrors": []
+    },
+    "finalChecks": {
+      "status": "passed",
+      "commands": ["npm run check", "npm run build"]
+    },
+    "separateTestsAddedOrRun": false,
+    "mobileVerificationPerformed": false
+  }
+}

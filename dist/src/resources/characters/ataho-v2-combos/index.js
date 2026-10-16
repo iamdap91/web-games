@@ -1,32 +1,25 @@
 import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
-import { comboMotions } from './motions.js';
-import { ComboPlayer } from './player.js';
+import { activeMotions, motionSections } from './motion-catalog.js';
+import { ComboPlayer, comboDuration } from './player.js';
+import { collectContactCues, finisherContactPhase } from './finisher-actors.js';
 import { applySupplement } from './supplements.js';
 import { drawCombo, stageWidth, stageHeight, } from './drawing.js';
 import { frameKey, loadComboFrames, } from './source-frames.js';
-const initialMotion = comboMotions[9];
+import { sampleKi } from './ki-sampling.js';
+import { collectSandbagContacts, contactHitStopMs } from './sandbag.js';
+import { hasGroundEffects } from './ground-effects.js';
+import { hasSpeedLines } from './speed-lines.js';
+import { availableEmphasisModes, emphasisChoices, emphasisNeedsTarget, } from './emphasis-effects.js';
+import { availableCameraModes, cameraStagingChoices, } from './camera-staging.js';
+import { directionLabels, directionSelection, groupMotionOptions, motionDirection, motionOptionId, motionOptionTitle, } from './motion-options.js';
+const initialMotion = activeMotions[0];
+const motionOptions = groupMotionOptions(activeMotions);
 const priorityLabels = {
     selected: '채택',
     recommended: '추천',
     review: '검토 중',
     experimental: '보류',
 };
-const motionSections = [
-    {
-        id: 'single',
-        label: '단독 기술',
-        numbers: [
-            1, 3, 4, 6, 8, 9, 19, 20, 22, 25, 26, 27, 28, 29, 30, 31, 32, 35, 36,
-        ],
-    },
-    {
-        id: 'chain',
-        label: '복합 연계',
-        numbers: [10, 11, 12, 13, 14, 15, 16, 17, 18, 23, 24, 33, 34],
-    },
-    { id: 'counter', label: '회피·반격', numbers: [2, 5, 21] },
-    { id: 'support', label: '보조', numbers: [7] },
-];
 function element(selector) {
     const result = document.querySelector(selector);
     if (!result)
@@ -56,6 +49,19 @@ function presentationChoice(choice, settings) {
     label.append(input, text);
     return label;
 }
+function sceneChoice(choice, name) {
+    const label = document.createElement('label');
+    label.className = 'choice-button';
+    const input = document.createElement('input');
+    input.type = 'radio';
+    input.name = name;
+    input.value = choice.id;
+    const title = document.createElement('span');
+    title.className = 'choice-name';
+    title.textContent = choice.label;
+    label.append(input, title);
+    return label;
+}
 class ComboScreen {
     canvas = element('#stage');
     context = this.canvas.getContext('2d');
@@ -64,9 +70,10 @@ class ComboScreen {
     pauseButton = element('#pause');
     player = new ComboPlayer(initialMotion);
     selectedMotion = initialMotion;
-    selectedSection = 'all';
+    selectedSection = 'attack';
     selectedPresentationId = 'base';
     presentationReady = false;
+    directionNotice = '';
     motionChoices = new Map();
     sectionChoices = new Map();
     events = new AbortController();
@@ -76,24 +83,83 @@ class ComboScreen {
         scale: 3,
         showMovement: true,
         showContacts: true,
+        showSandbag: false,
+        directionalImpacts: false,
+        showGroundEffects: false,
+        showCameraRecoil: false,
+        cameraMode: 'none',
+        emphasisMode: 'none',
+        showSpeedLines: false,
+        showFinisher: true,
         enabledEffects: new Set(),
     };
     frameButtons = [];
+    phaseButtons = [];
     frameRequest = 0;
     previousTime = 0;
     disposed = false;
-    gifReviewLoaded = false;
+    hitStopEnabled = false;
+    updatePresentationInputs(settings = {}) {
+        const contacts = collectSandbagContacts(this.player.snapshot.motion, {
+            scale: this.options.scale,
+            enabledEffects: this.options.enabledEffects,
+        });
+        const finisher = element('#finisher-effects');
+        element('#finisher-controls').hidden = !this.selectedMotion.finisher;
+        finisher.disabled = !this.options.showMovement;
+        finisher.checked =
+            !finisher.disabled && this.options.showFinisher !== false;
+        const target = element('#sandbag');
+        target.disabled = !this.options.showMovement || !contacts.length;
+        target.checked = !target.disabled && !!this.options.showSandbag;
+        const hitStop = element('#hit-stop');
+        hitStop.disabled = !target.checked;
+        hitStop.checked = !hitStop.disabled && this.hitStopEnabled;
+        const directional = element('#directional-impacts');
+        directional.disabled =
+            !this.options.showMovement ||
+                !this.options.showContacts ||
+                !contacts.length;
+        directional.checked =
+            !directional.disabled && !!this.options.directionalImpacts;
+        const ground = element('#ground-effects');
+        ground.disabled =
+            !this.options.showMovement ||
+                !hasGroundEffects(this.player.snapshot.motion);
+        ground.checked = !ground.disabled && !!this.options.showGroundEffects;
+        const speedLines = element('#speed-lines');
+        speedLines.disabled =
+            !this.options.showMovement || !hasSpeedLines(this.player.snapshot.motion);
+        speedLines.checked = !speedLines.disabled && !!this.options.showSpeedLines;
+        const camera = element('#camera-recoil');
+        camera.disabled =
+            !target.checked ||
+                !contacts.some((contact, index) => contactHitStopMs(contact, {
+                    finalContact: index === contacts.length - 1,
+                }));
+        camera.checked = !camera.disabled && !!this.options.showCameraRecoil;
+        this.updateCameraInputs();
+        this.updateEmphasisInputs();
+        if (settings.refreshHitStops !== false)
+            this.player.setHitStops(hitStop.checked
+                ? contacts.flatMap((contact, index) => {
+                    const durationMs = contactHitStopMs(contact, {
+                        finalContact: index === contacts.length - 1,
+                    });
+                    return durationMs ? [{ timeMs: contact.timeMs, durationMs }] : [];
+                })
+                : []);
+        element('#target-description').textContent = contacts.length
+            ? '샌드백은 첫 타격 위치에 고정됩니다. 켜면 닿은 공격에만 충격 모양이 표시됩니다. 히트스톱은 강한 마무리 타격에 적용합니다.'
+            : '이 동작에는 타격이 없어 샌드백 반응을 사용하지 않습니다.';
+    }
     async start() {
         registerEmbeddedScene(this.dispose);
         window.addEventListener('pagehide', this.dispose, {
             signal: this.events.signal,
         });
-        element('#gif-review').addEventListener('toggle', (event) => {
-            if (event.currentTarget.open)
-                void this.loadGifReview();
-        }, { signal: this.events.signal });
         try {
-            this.frames = await loadComboFrames(comboMotions);
+            this.frames = await loadComboFrames(activeMotions);
             if (this.disposed)
                 return;
             this.createMotionOptions();
@@ -119,12 +185,15 @@ class ComboScreen {
         this.resize.disconnect();
         cancelAnimationFrame(this.frameRequest);
     };
+    matchesSection(option, motions) {
+        return !motions || option.motions.some((motion) => motions.has(motion));
+    }
     createMotionOptions() {
         const sections = [
             {
                 id: 'all',
                 label: '전체',
-                numbers: comboMotions.map((_, index) => index + 1),
+                motions: activeMotions,
             },
             ...motionSections,
         ];
@@ -141,48 +210,102 @@ class ComboScreen {
             title.textContent = section.label;
             const count = document.createElement('span');
             count.className = 'choice-count';
-            count.textContent = ` ${section.numbers.length}`;
+            const motions = new Set(section.motions);
+            count.textContent = ` ${motionOptions.filter((option) => this.matchesSection(option, motions)).length}`;
             choice.append(input, title, count);
             this.sectionChoices.set(section.id, input);
             element('#motion-kinds').append(choice);
         }
-        for (const motion of comboMotions) {
+        for (const option of motionOptions) {
             const choice = document.createElement('label');
             choice.className = 'choice-button';
             const input = document.createElement('input');
             input.type = 'radio';
             input.name = 'motion';
-            input.value = motion.id;
-            input.checked = motion === this.selectedMotion;
+            input.value = option.id;
+            input.checked = option.id === motionOptionId(this.selectedMotion);
             const title = document.createElement('span');
             title.className = 'choice-name';
-            title.textContent = motion.title;
+            title.textContent = option.title;
             choice.append(input, title);
-            if (motion.presentations?.length || motion.effects?.length) {
+            if (option.motions.some((motion) => motion.presentations?.length ||
+                motion.ki ||
+                motion.effects?.length ||
+                availableCameraModes(motion).length > 1 ||
+                availableEmphasisModes(motion).length > 1 ||
+                hasSpeedLines(motion))) {
                 const badge = document.createElement('span');
                 badge.className = 'choice-badge';
                 badge.textContent = '연출';
                 choice.append(badge);
             }
-            this.motionChoices.set(motion.id, choice);
+            this.motionChoices.set(option.id, choice);
             element('#motion-options').append(choice);
         }
         this.filterMotions();
     }
     filterMotions() {
         const section = motionSections.find((item) => item.id === this.selectedSection);
-        const numbers = section ? new Set(section.numbers) : undefined;
-        for (const [index, motion] of comboMotions.entries()) {
-            this.motionChoices.get(motion.id).hidden =
-                !!numbers && !numbers.has(index + 1);
+        const motions = section ? new Set(section.motions) : undefined;
+        const visible = motionOptions.filter((option) => this.matchesSection(option, motions));
+        for (const option of motionOptions) {
+            this.motionChoices.get(option.id).hidden = !this.matchesSection(option, motions);
         }
-        for (const [id, input] of this.sectionChoices) {
+        for (const [id, input] of this.sectionChoices)
             input.checked = id === this.selectedSection;
-        }
-        const count = section?.numbers.length ?? comboMotions.length;
-        const playingElsewhere = this.motionChoices.get(this.selectedMotion.id).hidden;
+        const playingElsewhere = this.motionChoices.get(motionOptionId(this.selectedMotion)).hidden;
         element('#motion-count').textContent =
-            `${count}개 동작${playingElsewhere ? ' · 현재 재생은 다른 종류의 동작입니다.' : ''}`;
+            `${visible.length}개 동작${playingElsewhere ? ' · 현재 재생은 다른 종류의 동작입니다.' : ''}`;
+    }
+    createDirectionOptions(motion) {
+        const container = element('#direction-options');
+        const option = motionOptions.find((item) => item.id === motionOptionId(motion));
+        if (option.motions.length === 1 || motion.variant) {
+            const fixed = document.createElement('span');
+            fixed.className = 'direction-fixed';
+            fixed.textContent = motion.finisher
+                ? '여러 방향 · 공간 안무'
+                : directionLabels[motionDirection(motion)];
+            container.replaceChildren(fixed);
+        }
+        else {
+            container.replaceChildren(...option.motions.map((variant) => {
+                const choice = document.createElement('label');
+                choice.className = 'choice-button';
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = 'direction';
+                input.value = variant.id;
+                input.checked = variant === motion;
+                const title = document.createElement('span');
+                title.className = 'choice-name';
+                title.textContent = directionLabels[motionDirection(variant)];
+                choice.append(input, title);
+                return choice;
+            }));
+        }
+        const notice = element('#direction-description');
+        notice.hidden = !this.directionNotice;
+        notice.textContent = this.directionNotice;
+    }
+    createVariantOptions(motion) {
+        const controls = element('#variant-controls');
+        controls.hidden = !motion.variant;
+        const variants = activeMotions.filter((item) => motion.variant && item.variant?.groupId === motion.variant.groupId);
+        element('#variant-options').replaceChildren(...variants.map((variant) => {
+            const choice = document.createElement('label');
+            choice.className = 'choice-button';
+            const input = document.createElement('input');
+            input.type = 'radio';
+            input.name = 'ki-variant';
+            input.value = variant.id;
+            input.checked = variant === motion;
+            const title = document.createElement('span');
+            title.className = 'choice-name';
+            title.textContent = variant.variant.label;
+            choice.append(input, title);
+            return choice;
+        }));
     }
     createPresentationOptions(motion) {
         const effects = element('#effect-options');
@@ -201,7 +324,7 @@ class ComboScreen {
         description.hidden = alternatives.length < 2;
         description.textContent =
             alternatives.length > 1
-                ? '박자 하나를 선택하면 처음부터 재생합니다.'
+                ? '박자를 바꿔도 재생 시점과 정지 상태를 유지합니다.'
                 : '';
         if (!alternatives.length)
             return;
@@ -223,6 +346,36 @@ class ComboScreen {
             }));
         }
     }
+    createCameraOptions(motion) {
+        const available = availableCameraModes(motion);
+        if (!available.includes(this.options.cameraMode ?? 'none'))
+            this.options = { ...this.options, cameraMode: 'none' };
+        const choices = cameraStagingChoices.filter((choice) => available.includes(choice.id));
+        element('#camera-controls').hidden = choices.length <= 1;
+        element('#camera-options').replaceChildren(...choices.map((choice) => sceneChoice(choice, 'camera')));
+    }
+    updateCameraInputs() {
+        const mode = this.options.cameraMode ?? 'none';
+        const active = this.options.showMovement &&
+            (mode !== 'impact' || element('#sandbag').checked);
+        for (const input of element('#camera-options').querySelectorAll('input')) {
+            input.disabled =
+                !this.options.showMovement ||
+                    (input.value === 'impact' &&
+                        !element('#sandbag').checked);
+            input.title =
+                input.value === 'impact' && !this.options.showSandbag
+                    ? '샌드백 반응을 켜면 선택할 수 있습니다.'
+                    : '';
+            input.checked = input.value === (active ? mode : 'none');
+        }
+        const choice = cameraStagingChoices.find((item) => item.id === mode);
+        element('#camera-description').textContent = !this.options.showMovement
+            ? '이동 포함을 켜면 선택한 카메라 구도를 다시 사용합니다.'
+            : mode === 'impact' && !this.options.showSandbag
+                ? '샌드백 반응을 켜면 명중 스냅 확대를 사용할 수 있습니다.'
+                : choice.summary;
+    }
     updateEffectInputs() {
         for (const input of element('#effect-options').querySelectorAll('input')) {
             input.disabled = !this.options.showMovement;
@@ -231,54 +384,109 @@ class ComboScreen {
                     this.options.enabledEffects.has(input.value);
         }
     }
-    async loadGifReview() {
-        if (this.gifReviewLoaded)
-            return;
-        this.gifReviewLoaded = true;
-        const gallery = element('#gif-gallery');
-        try {
-            const response = await fetch('review.html', {
-                signal: this.events.signal,
-            });
-            if (!response.ok)
-                throw new Error('GIF 비교 자료를 불러오지 못했어요.');
-            const document = new DOMParser().parseFromString(await response.text(), 'text/html');
-            if (this.disposed)
-                return;
-            const sections = [
-                ...document.querySelectorAll('main > section, main > footer'),
-            ];
-            if (!sections.length)
-                throw new Error('GIF 비교 자료가 비어 있어요.');
-            gallery.replaceChildren(...sections.map((section) => section.cloneNode(true)));
-            for (const link of gallery.querySelectorAll('a')) {
-                link.target = '_blank';
-                link.rel = 'noopener';
-            }
+    createEmphasisOptions(motion) {
+        const available = availableEmphasisModes(motion);
+        if (!available.includes(this.options.emphasisMode ?? 'none'))
+            this.options = { ...this.options, emphasisMode: 'none' };
+        const choices = emphasisChoices.filter((choice) => available.includes(choice.id));
+        element('#emphasis-controls').hidden = choices.length <= 1;
+        element('#emphasis-options').replaceChildren(...choices.map((choice) => sceneChoice(choice, 'emphasis')));
+    }
+    updateEmphasisInputs() {
+        const motion = this.player.snapshot.motion;
+        const mode = this.options.emphasisMode ?? 'none';
+        const target = element('#sandbag').checked;
+        const active = this.options.showMovement &&
+            (!emphasisNeedsTarget(motion, mode) || target);
+        for (const input of element('#emphasis-options').querySelectorAll('input')) {
+            const choice = emphasisChoices.find((item) => item.id === input.value);
+            const needsTarget = !!choice && emphasisNeedsTarget(motion, choice.id);
+            input.disabled = !this.options.showMovement || (needsTarget && !target);
+            input.checked = input.value === (active ? mode : 'none');
+            input.title =
+                needsTarget && !target
+                    ? '샌드백 반응을 켜면 실제 명중에서 사용할 수 있습니다.'
+                    : '';
         }
-        catch (error) {
-            if (this.disposed)
-                return;
-            this.gifReviewLoaded = false;
-            gallery.textContent = `${error instanceof Error ? error.message : 'GIF 자료를 불러오지 못했어요.'} 자료를 접었다가 다시 열어 주세요.`;
-        }
+        const choice = emphasisChoices.find((item) => item.id === mode);
+        element('#emphasis-description').textContent = !this.options.showMovement
+            ? '이동 포함을 켜면 선택한 명암 강조를 다시 사용합니다.'
+            : emphasisNeedsTarget(motion, mode) && !target
+                ? '샌드백 반응을 켜면 선택한 명암 강조를 사용할 수 있습니다.'
+                : choice.summary;
     }
     select(motion) {
-        if (this.selectedMotion !== motion || !this.presentationReady) {
+        const previous = this.selectedMotion;
+        const switchingDirection = previous !== motion &&
+            motionOptionId(previous) === motionOptionId(motion);
+        const playback = switchingDirection ? this.player.snapshot : undefined;
+        if (switchingDirection) {
+            const selection = directionSelection(previous, motion, {
+                presentationId: this.selectedPresentationId,
+                enabledEffects: this.options.enabledEffects,
+            });
+            this.selectedPresentationId = selection.presentationId;
+            this.options = {
+                ...this.options,
+                enabledEffects: selection.enabledEffects,
+            };
+            this.directionNotice = selection.resetLabels.length
+                ? `${directionLabels[motionDirection(motion)]}에 없는 ${selection.resetLabels.join(', ')} 설정은 해제했어요.`
+                : '';
+            const cameraMode = this.options.cameraMode ?? 'none';
+            if (!availableCameraModes(motion).includes(cameraMode)) {
+                const label = cameraStagingChoices.find((item) => item.id === cameraMode).label;
+                this.options = { ...this.options, cameraMode: 'none' };
+                this.directionNotice = [
+                    this.directionNotice,
+                    `${directionLabels[motionDirection(motion)]}에 없는 ${label} 구도는 해제했어요.`,
+                ]
+                    .filter(Boolean)
+                    .join(' ');
+            }
+            const emphasisMode = this.options.emphasisMode ?? 'none';
+            if (!availableEmphasisModes(motion).includes(emphasisMode)) {
+                const label = emphasisChoices.find((item) => item.id === emphasisMode).label;
+                this.options = { ...this.options, emphasisMode: 'none' };
+                this.directionNotice = [
+                    this.directionNotice,
+                    `${directionLabels[motionDirection(motion)]}에 없는 명암 강조(${label})를 해제했어요.`,
+                ]
+                    .filter(Boolean)
+                    .join(' ');
+            }
+        }
+        else if (previous !== motion || !this.presentationReady) {
             this.selectedPresentationId = 'base';
-            this.options = { ...this.options, enabledEffects: new Set() };
-            this.createPresentationOptions(motion);
-            this.presentationReady = true;
+            this.options = {
+                ...this.options,
+                enabledEffects: new Set(motion.id === 'elbow-chop' ? ['elbow-down-keyposes'] : []),
+                cameraMode: motion.finisher ? 'finisher' : 'none',
+                emphasisMode: 'none',
+            };
+            this.directionNotice = '';
         }
         this.selectedMotion = motion;
-        const choice = this.motionChoices.get(motion.id);
+        this.createPresentationOptions(motion);
+        this.createDirectionOptions(motion);
+        this.createVariantOptions(motion);
+        this.presentationReady = true;
+        const choice = this.motionChoices.get(motionOptionId(motion));
         choice.querySelector('input').checked = true;
         if (choice.hidden)
             this.selectedSection = 'all';
         this.filterMotions();
         this.playSelectedMotion();
+        if (playback) {
+            this.player.seek(playback.elapsedMs);
+            this.player.setPaused(playback.paused);
+            this.render();
+        }
     }
-    playSelectedMotion() {
+    playSelectedMotion(settings = {}) {
+        const playback = settings.preservePlayback
+            ? this.player.snapshot
+            : undefined;
         const motion = this.selectedMotion;
         const presentation = motion.presentations?.find((item) => item.id === this.selectedPresentationId);
         const supplemented = element('#supplement').value === 'supplemented' &&
@@ -290,9 +498,23 @@ class ComboScreen {
             ? applySupplement(timedMotion)
             : timedMotion;
         this.player.play(activeMotion);
+        this.createCameraOptions(activeMotion);
+        this.createEmphasisOptions(activeMotion);
+        this.updatePresentationInputs();
         element('#supplement-label').hidden = !motion.supplementedSteps;
-        element('#motion-title').textContent = motion.title;
+        element('#motion-title').textContent = motionOptionTitle(motion);
         element('#summary').textContent = motion.summary;
+        const phases = element('#finisher-phases');
+        phases.hidden = !activeMotion.finisher;
+        this.phaseButtons = (activeMotion.finisher?.beats ?? []).map((beat) => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.textContent = beat.label;
+            button.dataset.step = String(beat.fromStep);
+            button.dataset.endStep = String(beat.toStep);
+            return button;
+        });
+        phases.replaceChildren(...this.phaseButtons);
         element('#review').textContent = activeMotion.review;
         element('#priority').textContent = priorityLabels[motion.priority];
         const missing = element('#missing');
@@ -317,28 +539,52 @@ class ComboScreen {
             return button;
         });
         element('#frames').replaceChildren(...this.frameButtons);
-        let elapsedMs = 0;
-        let hit = 0;
-        const hitButtons = [];
-        for (const [index, step] of activeMotion.steps.entries()) {
-            if (step.contact) {
-                const button = document.createElement('button');
-                button.type = 'button';
-                button.dataset.step = String(index);
-                button.textContent = `${++hit}타 · ${(elapsedMs / 1000).toFixed(2)}초`;
-                button.title = step.phase;
-                button.setAttribute('aria-label', `${hit}타 타격 자세 보기 · ${step.phase}`);
-                hitButtons.push(button);
-            }
-            elapsedMs += step.durationMs;
-        }
+        const elapsedMs = comboDuration(activeMotion);
+        const cues = collectContactCues(activeMotion);
+        const hit = cues.length;
+        const hitButtons = cues.map((cue, index) => {
+            const button = document.createElement('button');
+            const actor = cue.actorId.startsWith('ki:')
+                ? '기공'
+                : cue.actorId === 'body'
+                    ? '본체'
+                    : activeMotion.finisher?.actors?.find((item) => item.id === cue.actorId)?.role === 'echo'
+                        ? '공격 잔상'
+                        : '분신';
+            button.type = 'button';
+            button.dataset.time = String(cue.plannedTimeMs);
+            button.dataset.actor = cue.actorId;
+            button.textContent = `${index + 1}타 · ${(cue.plannedTimeMs / 1000).toFixed(2)}초`;
+            button.title = `${cue.step.phase} · ${actor}`;
+            button.setAttribute('aria-label', `${index + 1}타 타격 자세 보기 · ${cue.step.phase} · ${actor}`);
+            return button;
+        });
         element('#hits').replaceChildren(...hitButtons);
+        const hitDetails = element('#hit-details');
+        const hitDetailsLabel = element('#hit-details-label');
+        hitDetailsLabel.hidden = !activeMotion.finisher;
+        hitDetailsLabel.textContent = `개별 타격 자세 · ${hit}타`;
+        if (!settings.preservePlayback)
+            hitDetails.open = !activeMotion.finisher;
         element('#duration').textContent =
             `${hit ? `${hit}타 · ` : ''}${(elapsedMs / 1000).toFixed(2)}초`;
+        if (playback) {
+            this.player.seek(playback.elapsedMs);
+            this.player.setPaused(playback.paused);
+        }
         this.render();
     }
     bindInput() {
         const options = { signal: this.events.signal };
+        element('#variant-options').addEventListener('change', (event) => {
+            if (!(event.target instanceof HTMLInputElement))
+                return;
+            const id = event.target.value;
+            const motion = activeMotions.find((item) => item.id === id);
+            if (motion?.variant &&
+                motion.variant.groupId === this.selectedMotion.variant?.groupId)
+                this.select(motion);
+        }, options);
         element('#motion-kinds').addEventListener('change', (event) => {
             if (!(event.target instanceof HTMLInputElement))
                 return;
@@ -349,10 +595,24 @@ class ComboScreen {
         element('#motion-options').addEventListener('change', (event) => {
             if (!(event.target instanceof HTMLInputElement))
                 return;
+            const optionId = event.target.value;
+            const option = motionOptions.find((item) => item.id === optionId);
+            if (option)
+                this.select(option.motions.find((item) => item === this.selectedMotion) ??
+                    option.motions[0]);
+        }, options);
+        element('#direction-options').addEventListener('change', (event) => {
+            if (!(event.target instanceof HTMLInputElement))
+                return;
             const motionId = event.target.value;
-            const motion = comboMotions.find((item) => item.id === motionId);
-            if (motion)
-                this.select(motion);
+            const motion = activeMotions.find((item) => item.id === motionId);
+            if (!motion ||
+                motionOptionId(motion) !== motionOptionId(this.selectedMotion))
+                return;
+            this.select(motion);
+            element('#direction-options')
+                .querySelector('input:checked')
+                ?.focus();
         }, options);
         element('#effect-options').addEventListener('change', (event) => {
             if (!(event.target instanceof HTMLInputElement))
@@ -363,6 +623,7 @@ class ComboScreen {
             else
                 enabledEffects.delete(event.target.value);
             this.options = { ...this.options, enabledEffects };
+            this.updatePresentationInputs();
             this.render();
         }, options);
         element('#presentation-options').addEventListener('change', (event) => {
@@ -371,7 +632,7 @@ class ComboScreen {
             this.selectedPresentationId = event.target.checked
                 ? event.target.value
                 : 'base';
-            this.playSelectedMotion();
+            this.playSelectedMotion({ preservePlayback: true });
         }, options);
         element('#frames').addEventListener('click', (event) => {
             const target = event.target instanceof Element
@@ -380,8 +641,15 @@ class ComboScreen {
             if (target)
                 this.player.showStep(Number(target.dataset.step));
         }, options);
-        element('#supplement').addEventListener('change', () => this.playSelectedMotion(), options);
+        element('#supplement').addEventListener('change', () => this.playSelectedMotion({ preservePlayback: true }), options);
         element('#hits').addEventListener('click', (event) => {
+            const target = event.target instanceof Element
+                ? event.target.closest('button[data-time]')
+                : null;
+            if (target)
+                this.player.seek(Number(target.dataset.time));
+        }, options);
+        element('#finisher-phases').addEventListener('click', (event) => {
             const target = event.target instanceof Element
                 ? event.target.closest('button[data-step]')
                 : null;
@@ -389,7 +657,10 @@ class ComboScreen {
                 this.player.showStep(Number(target.dataset.step));
         }, options);
         this.pauseButton.addEventListener('click', () => this.player.setPaused(!this.player.snapshot.paused), options);
-        element('#restart').addEventListener('click', () => this.player.play(), options);
+        element('#restart').addEventListener('click', () => {
+            this.player.play();
+            this.updatePresentationInputs();
+        }, options);
         element('#speed').addEventListener('change', (event) => {
             this.player.setSpeed(Number(event.currentTarget.value));
         }, options);
@@ -398,6 +669,7 @@ class ComboScreen {
                 ...this.options,
                 scale: event.currentTarget.value === '2' ? 2 : 3,
             };
+            this.updatePresentationInputs();
         }, options);
         element('#movement').addEventListener('change', (event) => {
             this.options = {
@@ -409,6 +681,7 @@ class ComboScreen {
             contacts.checked =
                 this.options.showMovement && this.options.showContacts;
             this.updateEffectInputs();
+            this.updatePresentationInputs();
             this.render();
         }, options);
         element('#contacts').addEventListener('change', (event) => {
@@ -416,6 +689,57 @@ class ComboScreen {
                 ...this.options,
                 showContacts: event.currentTarget.checked,
             };
+            this.updatePresentationInputs({ refreshHitStops: false });
+            this.render();
+        }, options);
+        element('#sandbag').addEventListener('change', (event) => {
+            this.options = {
+                ...this.options,
+                showSandbag: event.currentTarget.checked,
+            };
+            this.updatePresentationInputs();
+            this.render();
+        }, options);
+        element('#hit-stop').addEventListener('change', (event) => {
+            this.hitStopEnabled = event.currentTarget.checked;
+            this.updatePresentationInputs();
+        }, options);
+        for (const [id, key] of [
+            ['directional-impacts', 'directionalImpacts'],
+            ['ground-effects', 'showGroundEffects'],
+            ['camera-recoil', 'showCameraRecoil'],
+            ['speed-lines', 'showSpeedLines'],
+            ['finisher-effects', 'showFinisher'],
+        ]) {
+            element(`#${id}`).addEventListener('change', (event) => {
+                this.options = {
+                    ...this.options,
+                    [key]: event.currentTarget.checked,
+                };
+                this.updatePresentationInputs({ refreshHitStops: false });
+                this.render();
+            }, options);
+        }
+        element('#camera-options').addEventListener('change', (event) => {
+            if (!(event.target instanceof HTMLInputElement))
+                return;
+            const value = event.target.value;
+            const mode = cameraStagingChoices.find((choice) => choice.id === value)?.id;
+            if (!mode)
+                return;
+            this.options = { ...this.options, cameraMode: mode };
+            this.updatePresentationInputs({ refreshHitStops: false });
+            this.render();
+        }, options);
+        element('#emphasis-options').addEventListener('change', (event) => {
+            if (!(event.target instanceof HTMLInputElement))
+                return;
+            const value = event.target.value;
+            const mode = emphasisChoices.find((choice) => choice.id === value)?.id;
+            if (!mode)
+                return;
+            this.options = { ...this.options, emphasisMode: mode };
+            this.updatePresentationInputs({ refreshHitStops: false });
             this.render();
         }, options);
         element('#repeat').addEventListener('change', (event) => {
@@ -468,25 +792,101 @@ class ComboScreen {
     }
     render() {
         const snapshot = this.player.snapshot;
-        drawCombo(this.context, snapshot, this.frames, this.options);
+        const drawn = drawCombo(this.context, snapshot, this.frames, this.options);
+        const cameraValue = element('#camera-options').querySelector('input:checked')?.value;
+        const cameraChoice = cameraStagingChoices.find((choice) => choice.id === cameraValue);
+        const emphasisValue = element('#emphasis-options').querySelector('input:checked')?.value;
+        const emphasisChoice = emphasisChoices.find((choice) => choice.id === emphasisValue);
         const presentation = this.selectedMotion.presentations?.find((item) => item.id === this.selectedPresentationId);
         const effects = this.options.showMovement
             ? (snapshot.motion.effects ?? []).filter((effect) => this.options.enabledEffects.has(effect.id))
             : [];
         this.canvas.setAttribute('aria-label', [
-            snapshot.motion.title,
+            motionOptionTitle(this.selectedMotion),
+            this.selectedMotion.finisher
+                ? '여러 방향 공간 안무'
+                : directionLabels[motionDirection(this.selectedMotion)],
             presentation?.label ??
                 this.selectedMotion.presentationLabel ??
                 '기본 박자',
             ...effects.map((effect) => effect.label),
+            ...(drawn.finisherBeat
+                ? ['필살기 무대·연타 궤적', drawn.finisherBeat]
+                : []),
+            ...(cameraChoice && cameraChoice.id !== 'none'
+                ? [cameraChoice.label]
+                : []),
+            ...(emphasisChoice && emphasisChoice.id !== 'none'
+                ? [emphasisChoice.label]
+                : []),
+            ...(element('#speed-lines').checked
+                ? ['배경 속도선']
+                : []),
+            ...(element('#directional-impacts').checked
+                ? ['공격별 충격 모양']
+                : []),
+            ...(element('#ground-effects').checked
+                ? ['접지·착지 반응']
+                : []),
+            ...(element('#camera-recoil').checked
+                ? ['강타 카메라 반동']
+                : []),
+            ...(this.options.showMovement &&
+                this.options.showSandbag &&
+                collectContactCues(snapshot.motion).length > 0
+                ? ['샌드백 반응', ...(this.hitStopEnabled ? ['강타 히트스톱'] : [])]
+                : []),
             '아타호 동작 미리보기',
         ].join(' · '));
         this.timeline.value = String(Math.round((snapshot.elapsedMs / snapshot.durationMs) * 1000));
         this.pauseButton.textContent = snapshot.paused ? '재생' : '일시정지';
-        this.status.textContent = `${snapshot.step.phase} · 자세 ${snapshot.stepIndex + 1}/${snapshot.motion.steps.length} · ${(snapshot.elapsedMs / 1000).toFixed(2)}초`;
+        const ki = snapshot.motion.ki;
+        const kiSample = ki ? sampleKi(ki, snapshot.elapsedMs) : undefined;
+        const kiContacts = ki && this.options.showMovement
+            ? collectSandbagContacts(snapshot.motion, { scale: this.options.scale })
+            : [];
+        const kiHits = kiContacts.filter((contact) => (!this.options.showSandbag || contact.connected) &&
+            snapshot.elapsedMs >=
+                (this.options.showSandbag ? contact.timeMs : contact.plannedTimeMs)).length;
+        const phase = (this.options.showMovement
+            ? finisherContactPhase(snapshot.motion, snapshot.elapsedMs)
+            : undefined) ?? snapshot.step.phase;
+        const statusParts = [phase];
+        if (ki)
+            statusParts.push(`기공 ${kiHits}/${ki.hits.length}${this.options.showSandbag ? '명중' : '타'}`);
+        statusParts.push(`${snapshot.motion.finisher ? '본체 자세' : '자세'} ${snapshot.stepIndex + 1}/${snapshot.motion.steps.length}`, `${(snapshot.elapsedMs / 1000).toFixed(2)}초`);
+        if (this.player.hitStopped)
+            statusParts.push('명중 정지');
+        this.status.textContent = statusParts.join(' · ');
         this.canvas.dataset.motion = snapshot.motion.id;
         this.canvas.dataset.step = String(snapshot.stepIndex);
         this.canvas.dataset.paused = String(snapshot.paused);
+        this.canvas.dataset.hitStop = String(this.player.hitStopped);
+        this.canvas.dataset.impacts = String(drawn.impactCount);
+        this.canvas.dataset.groundEffects = String(drawn.groundCount);
+        this.canvas.dataset.cameraX = drawn.cameraX.toFixed(3);
+        this.canvas.dataset.cameraY = drawn.cameraY.toFixed(3);
+        this.canvas.dataset.cameraZoom = drawn.cameraZoom.toFixed(4);
+        this.canvas.dataset.cameraMode = cameraChoice?.id ?? 'none';
+        this.canvas.dataset.emphasisMode = emphasisChoice?.id ?? 'none';
+        this.canvas.dataset.backgroundDim = drawn.backgroundDim.toFixed(4);
+        this.canvas.dataset.palette = String(drawn.palette);
+        this.canvas.dataset.emphasisPhase = drawn.emphasisPhase;
+        this.canvas.dataset.speedLines = String(drawn.speedLineCount);
+        this.canvas.dataset.finisherBeat = drawn.finisherBeat;
+        this.canvas.dataset.finisherHits = String(drawn.finisherHits);
+        this.canvas.dataset.kiHits = String(kiHits);
+        this.canvas.dataset.kiPhase = kiSample?.phase ?? '';
+        this.canvas.dataset.kiStyle = ki?.style ?? '';
+        this.phaseButtons.forEach((button) => {
+            const active = snapshot.stepIndex >= Number(button.dataset.step) &&
+                snapshot.stepIndex <= Number(button.dataset.endStep);
+            button.classList.toggle('active', active);
+            if (active)
+                button.setAttribute('aria-current', 'step');
+            else
+                button.removeAttribute('aria-current');
+        });
         this.frameButtons.forEach((button, index) => button.classList.toggle('active', index === snapshot.stepIndex));
     }
     tick = (time) => {

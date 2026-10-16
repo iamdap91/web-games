@@ -1,0 +1,285 @@
+{
+  "id": "ataho-v2-camera-staging",
+  "recordedAt": "2026-10-15",
+  "scope": "동작별 선택 가능한 네 카메라 구도. 같은 그림과 박자를 유지하며 준비·명중·마무리·공중 전개를 강조한다.",
+  "baselineCommit": "c666e27",
+  "defaultMode": "none",
+  "controls": [
+    {
+      "id": "preparation",
+      "label": "준비 집중",
+      "targetZoom": 1.08
+    },
+    {
+      "id": "impact",
+      "label": "명중 스냅 확대",
+      "targetZoom": 1.06
+    },
+    {
+      "id": "finish",
+      "label": "마무리 여운",
+      "targetZoom": 1.04
+    },
+    {
+      "id": "airborne",
+      "label": "공중 와이드",
+      "targetZoom": 0.94
+    }
+  ],
+  "combination": "카메라 구도는 하나만 선택. 기존 강타 반동은 별도로 합성하며 원본 알파 범위·전체 이동·샌드백 반동에 맞춰 잘림을 제한한다.",
+  "references": [
+    {
+      "url": "https://filmdaft.com/camera-shots-and-angles/",
+      "media": "https://filmdaft.com/wp-content/uploads/2019/11/zoom-example-compressed.gif",
+      "checked": "원저자 GIF 26프레임·2.6초의 확대 전후를 디코딩해 확인. 준비 집중과 짧은 명중 확대의 강도 차이 참고."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rvPjsz7itF8",
+      "checked": "공식 Steam의 Street Fighter 6 Akuma 트레일러 원본 동영상 프레임을 실제 확인. 확대·컷 전환 뒤 마무리 자세 유지 참고. 프로젝트 실행이나 같은 기법의 직접 재현을 뜻하지 않음."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=WAvVdlrHAKA",
+      "checked": "공식 Steam의 Tekken 8 트레일러 원본 동영상 프레임을 실제 확인. 준비 근접·공중 전개·착지 마무리의 화면 구성 참고. 3D 카메라 회전은 구현하지 않음."
+    }
+  ],
+  "previews": [
+    {
+      "id": "camera-staging-01-preparation",
+      "label": "준비 집중",
+      "localPath": "public/assets/maplestory/ataho-v2-camera-staging/20261015/previews/01-preparation.gif",
+      "method": "standalone-project-renderer-before-after",
+      "baselineCommit": "c666e27",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 128,
+      "durationMs": 6600,
+      "byteSize": 1865116,
+      "sha256": "f4a18034eefbc50ac9b5251ed7d4cfdc8d8d05fbf594dc7596336eb164b1d342"
+    },
+    {
+      "id": "camera-staging-02-impact",
+      "label": "명중 스냅 확대",
+      "localPath": "public/assets/maplestory/ataho-v2-camera-staging/20261015/previews/02-impact.gif",
+      "method": "standalone-project-renderer-before-after",
+      "baselineCommit": "c666e27",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 148,
+      "durationMs": 6200,
+      "byteSize": 2429362,
+      "sha256": "bdd0ecf674d819cbfe547758ac3ff7e6d12cca1ba2247d687de727418b4f5796"
+    },
+    {
+      "id": "camera-staging-03-finish",
+      "label": "마무리 여운",
+      "localPath": "public/assets/maplestory/ataho-v2-camera-staging/20261015/previews/03-finish.gif",
+      "method": "standalone-project-renderer-before-after",
+      "baselineCommit": "c666e27",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 134,
+      "durationMs": 6900,
+      "byteSize": 1736555,
+      "sha256": "3b7380a872645526b0d10d90c15b2327dc94d01161386aff8d660aa27e8e66cb"
+    },
+    {
+      "id": "camera-staging-04-airborne",
+      "label": "공중 와이드",
+      "localPath": "public/assets/maplestory/ataho-v2-camera-staging/20261015/previews/04-airborne.gif",
+      "method": "standalone-project-renderer-before-after",
+      "baselineCommit": "c666e27",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 383,
+      "durationMs": 11800,
+      "byteSize": 4919043,
+      "sha256": "07427c87f766bd71b9e41ee0b5dc10c2d7e22ae722d3f025fc2316be7fcb887f"
+    }
+  ],
+  "previewRendering": {
+    "method": "standalone-project-renderer-before-after",
+    "baselineCommit": "c666e27",
+    "baseline": "same current renderer with camera mode set to none; base steps and artwork unchanged",
+    "speed": 0.5,
+    "width": 600,
+    "height": 852,
+    "groups": [
+      {
+        "id": "01-preparation",
+        "label": "준비 집중",
+        "mode": "preparation",
+        "motions": [
+          "charged-uppercut",
+          "cheolsango",
+          "new-smear-hammerfist-south-east"
+        ],
+        "effects": [],
+        "clips": [
+          {
+            "id": "charged-uppercut",
+            "title": "모아치는 어퍼컷 · 1타",
+            "startFrame": 0,
+            "beforeDurationMs": 805,
+            "afterDurationMs": 805,
+            "durationMs": 1160
+          },
+          {
+            "id": "cheolsango",
+            "title": "철산고",
+            "startFrame": 116,
+            "beforeDurationMs": 790,
+            "afterDurationMs": 790,
+            "durationMs": 1140
+          },
+          {
+            "id": "new-smear-hammerfist-south-east",
+            "title": "대각 망치주먹 · 남동쪽",
+            "startFrame": 230,
+            "beforeDurationMs": 650,
+            "afterDurationMs": 650,
+            "durationMs": 1000
+          }
+        ],
+        "frameCount": 330,
+        "frameDurationMs": 20
+      },
+      {
+        "id": "02-impact",
+        "label": "명중 스냅 확대",
+        "mode": "impact",
+        "motions": ["cheolsango", "new-double-palm-south-east", "elbow-chop"],
+        "effects": [],
+        "target": true,
+        "recoil": true,
+        "clips": [
+          {
+            "id": "cheolsango",
+            "title": "철산고",
+            "startFrame": 0,
+            "beforeDurationMs": 790,
+            "afterDurationMs": 790,
+            "durationMs": 1140
+          },
+          {
+            "id": "new-double-palm-south-east",
+            "title": "양손 밀어치기 · 남동쪽",
+            "startFrame": 114,
+            "beforeDurationMs": 840,
+            "afterDurationMs": 840,
+            "durationMs": 1190
+          },
+          {
+            "id": "elbow-chop",
+            "title": "짧은 팔꿈치 내려치기",
+            "startFrame": 233,
+            "beforeDurationMs": 420,
+            "afterDurationMs": 420,
+            "durationMs": 770
+          }
+        ],
+        "frameCount": 310,
+        "frameDurationMs": 20
+      },
+      {
+        "id": "03-finish",
+        "label": "마무리 여운",
+        "mode": "finish",
+        "motions": ["charged-uppercut", "elbow-chop", "flying-kick"],
+        "effects": [],
+        "ground": true,
+        "clips": [
+          {
+            "id": "charged-uppercut",
+            "title": "모아치는 어퍼컷 · 1타",
+            "startFrame": 0,
+            "beforeDurationMs": 805,
+            "afterDurationMs": 805,
+            "durationMs": 1160
+          },
+          {
+            "id": "elbow-chop",
+            "title": "짧은 팔꿈치 내려치기",
+            "startFrame": 116,
+            "beforeDurationMs": 420,
+            "afterDurationMs": 420,
+            "durationMs": 770
+          },
+          {
+            "id": "flying-kick",
+            "title": "도약 날아차기",
+            "startFrame": 193,
+            "beforeDurationMs": 1165,
+            "afterDurationMs": 1165,
+            "durationMs": 1520
+          }
+        ],
+        "frameCount": 345,
+        "frameDurationMs": 20
+      },
+      {
+        "id": "04-airborne",
+        "label": "공중 와이드",
+        "mode": "airborne",
+        "motions": ["flying-kick", "backflip-reentry", "four-chain"],
+        "effects": [],
+        "target": true,
+        "ground": true,
+        "clips": [
+          {
+            "id": "flying-kick",
+            "title": "도약 날아차기",
+            "startFrame": 0,
+            "beforeDurationMs": 1165,
+            "afterDurationMs": 1165,
+            "durationMs": 1520
+          },
+          {
+            "id": "backflip-reentry",
+            "title": "공중회피 후 재진입",
+            "startFrame": 152,
+            "beforeDurationMs": 1595,
+            "afterDurationMs": 1595,
+            "durationMs": 1950
+          },
+          {
+            "id": "four-chain",
+            "title": "4종 연속 공격 · 5타",
+            "startFrame": 347,
+            "beforeDurationMs": 2075,
+            "afterDurationMs": 2075,
+            "durationMs": 2430
+          }
+        ],
+        "frameCount": 590,
+        "frameDurationMs": 20
+      }
+    ]
+  },
+  "verification": {
+    "environment": "PC in-app browser, DPR2; no mobile validation",
+    "browser": [
+      "준비 집중의 실제 진행·가드 복귀",
+      "철산고 실제 재생·명중 1.06 확대·히트스톱/강타 반동 조합",
+      "날아차기 공중 0.94와 착지·일어서기 진행 중 마무리 1.04 복귀",
+      "양손 밀어치기의 선택 박자·남동/북동 방향 전환 시 카메라·정지 시점 유지",
+      "이동/샌드백 off-on에서 카메라 선호 복원",
+      "빗나간 원투 연계의 마지막 어퍼컷에서 확대0",
+      "빠른 잽의 미지원 카메라 영역 숨김",
+      "표시2/3배와 CSS684px·backing1368px·DPR2",
+      "조합실에서 새 GIF4개600x852 로드; 콘솔 경고·오류0"
+    ],
+    "renderer": "실제 알파171프레임·원본과 박자68개·544설정에서 모드 배율 및 전체 이동 경로의 프레이밍 수치 확인. 실제 브라우저 입력 검증과 구분.",
+    "tests": "별도 테스트 코드는 추가하거나 실행하지 않음.",
+    "commands": ["npm run check", "npm run build", "git diff --check"]
+  },
+  "limits": [
+    "확대·축소와 평행이동만 사용한다. 새 캐릭터 그림·소리·3D 궤도 이동은 추가하지 않음.",
+    "명중 스냅 확대는 샌드백에 실제 연결된 마지막 강타에서만 발생한다.",
+    "GIF는 같은 현재 프로젝트 렌더러에서 기본 구도와 선택 구도를 각각 재생한 자료이며 실제 브라우저 촬영이 아니다."
+  ],
+  "rendererCommit": "1aa7824"
+}

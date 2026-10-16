@@ -21,8 +21,8 @@ export const elbowTimingMotion = {
     ...elbowChopMotion,
     steps: sharpElbowSteps,
     priority: 'selected',
-    review: '조합실에서 선택한 0.42초 내려치기다. 준비 50ms·하강 15ms·접촉 40ms로 재생한다. 원본 그림과 접지 위치를 유지하며 이전 박자는 비교용으로 보존한다.',
-    summary: '짧게 준비한 뒤 빠르게 내려치고 가드로 돌아온다.',
+    review: '조합실에서 선택한 0.42초 내려치기다. 준비 50ms·하강 15ms·접촉 40ms로 재생한다. 공격에 사용할 때는 팔꿈치 장전·하강 그림을 반드시 적용하며 연계·필살기의 마지막 공격에는 사용하지 않는다. 그림을 끄면 원본 비교만 하고 타격은 발생시키지 않는다. 이전 박자도 비교용으로 보존한다.',
+    summary: '장전·하강 그림을 적용해야 공격에 사용할 수 있다. 연계·필살기의 마지막 공격으로는 쓰지 않는다.',
     presentationLabel: '빠른 하강·짧은 멈춤 · 0.42초',
     presentationSummary: '팔을 올린 뒤 빠르게 내려치고 짧게 멈춘 다음 가드로 돌아옵니다.',
     presentations: [

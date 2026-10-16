@@ -1,0 +1,212 @@
+{
+  "id": "ataho-v2-impact-ground",
+  "recordedAt": "2026-10-15",
+  "scope": "아타호 v2 동작 조합실의 시각 연출 선택항목. 소리와 새 캐릭터 그림은 제외.",
+  "baselineCommit": "bf2ea87",
+  "controls": [
+    {
+      "id": "directional-impacts",
+      "label": "공격별 충격 모양",
+      "default": false
+    },
+    {
+      "id": "ground-effects",
+      "label": "접지·착지 반응",
+      "default": false
+    },
+    {
+      "id": "camera-recoil",
+      "label": "강타 카메라 반동",
+      "default": false
+    }
+  ],
+  "references": [
+    {
+      "url": "https://www.gdquest.com/library/juicy_attack/",
+      "checked": "실제 MP4는 앞선 조사에서 다운로드·브라우저 로드, 이번에는 접촉 입자 방향 구현 코드 확인. Godot 프로젝트는 실행하지 않음."
+    },
+    {
+      "url": "https://kidscancode.org/godot_recipes/4.x/2d/screen_shake/index.html",
+      "media": "https://kidscancode.org/godot_recipes/3.x/img/shake_noise01.gif",
+      "checked": "원본 GIF62프레임·4.13초와 코드 확인. Godot 프로젝트는 실행하지 않음."
+    }
+  ],
+  "previews": [
+    {
+      "id": "impact-ground-01-directional-impacts",
+      "label": "공격별 충격 모양",
+      "localPath": "public/assets/maplestory/ataho-v2-impact-ground/20261015/previews/01-directional-impacts.gif",
+      "method": "standalone-project-renderer-before-after",
+      "baselineCommit": "bf2ea87",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 173,
+      "durationMs": 8140,
+      "byteSize": 2550809,
+      "sha256": "f34ae6a303821952d7e72e45a92cf8b2ff51ce86ce7621177b5ef92f6b4e668d"
+    },
+    {
+      "id": "impact-ground-02-ground-contact",
+      "label": "접지·착지 반응",
+      "localPath": "public/assets/maplestory/ataho-v2-impact-ground/20261015/previews/02-ground-contact.gif",
+      "method": "standalone-project-renderer-before-after",
+      "baselineCommit": "bf2ea87",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 275,
+      "durationMs": 9780,
+      "byteSize": 2877100,
+      "sha256": "e2e212a86e1be45045104be712e364f6504cccfa668e928e12533c8c7673d447"
+    },
+    {
+      "id": "impact-ground-03-camera-recoil",
+      "label": "강타 카메라 반동",
+      "localPath": "public/assets/maplestory/ataho-v2-impact-ground/20261015/previews/03-camera-recoil.gif",
+      "method": "standalone-project-renderer-before-after",
+      "baselineCommit": "bf2ea87",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 162,
+      "durationMs": 6980,
+      "byteSize": 2989975,
+      "sha256": "32a5ecc738c73803f78f2d91b6d13b56ad91167e5f60ef9cf3fde8b176af2465"
+    }
+  ],
+  "previewRendering": {
+    "method": "standalone-project-renderer-before-after",
+    "baselineCommit": "bf2ea87",
+    "baseline": "same current renderer with only the compared checkbox off; base steps and artwork unchanged",
+    "speed": 0.5,
+    "width": 600,
+    "height": 852,
+    "groups": [
+      {
+        "id": "01-directional-impacts",
+        "label": "공격별 충격 모양",
+        "motions": [
+          "quick-jab",
+          "charged-uppercut",
+          "new-smear-hammerfist-south-east",
+          "new-double-palm-south-east"
+        ],
+        "effects": [],
+        "target": true,
+        "impact": true,
+        "clips": [
+          {
+            "id": "quick-jab",
+            "title": "빠른 잽 · 1타",
+            "startFrame": 0,
+            "beforeDurationMs": 365,
+            "afterDurationMs": 365,
+            "durationMs": 720
+          },
+          {
+            "id": "charged-uppercut",
+            "title": "모아치는 어퍼컷 · 1타",
+            "startFrame": 72,
+            "beforeDurationMs": 805,
+            "afterDurationMs": 805,
+            "durationMs": 1160
+          },
+          {
+            "id": "new-smear-hammerfist-south-east",
+            "title": "대각 망치주먹 · 남동쪽",
+            "startFrame": 188,
+            "beforeDurationMs": 650,
+            "afterDurationMs": 650,
+            "durationMs": 1000
+          },
+          {
+            "id": "new-double-palm-south-east",
+            "title": "양손 밀어치기 · 남동쪽",
+            "startFrame": 288,
+            "beforeDurationMs": 840,
+            "afterDurationMs": 840,
+            "durationMs": 1190
+          }
+        ],
+        "frameCount": 407,
+        "frameDurationMs": 20
+      },
+      {
+        "id": "02-ground-contact",
+        "label": "접지·착지 반응",
+        "motions": ["flying-kick", "backflip-reentry", "slide-sweep"],
+        "effects": [],
+        "ground": true,
+        "clips": [
+          {
+            "id": "flying-kick",
+            "title": "도약 날아차기",
+            "startFrame": 0,
+            "beforeDurationMs": 1165,
+            "afterDurationMs": 1165,
+            "durationMs": 1520
+          },
+          {
+            "id": "backflip-reentry",
+            "title": "공중회피 후 재진입",
+            "startFrame": 152,
+            "beforeDurationMs": 1595,
+            "afterDurationMs": 1595,
+            "durationMs": 1950
+          },
+          {
+            "id": "slide-sweep",
+            "title": "슬라이딩 하단 공격",
+            "startFrame": 347,
+            "beforeDurationMs": 1070,
+            "afterDurationMs": 1070,
+            "durationMs": 1420
+          }
+        ],
+        "frameCount": 489,
+        "frameDurationMs": 20
+      },
+      {
+        "id": "03-camera-recoil",
+        "label": "강타 카메라 반동",
+        "motions": [
+          "cheolsango",
+          "charged-uppercut",
+          "new-double-palm-south-east"
+        ],
+        "effects": [],
+        "target": true,
+        "camera": true,
+        "clips": [
+          {
+            "id": "cheolsango",
+            "title": "철산고",
+            "startFrame": 0,
+            "beforeDurationMs": 790,
+            "afterDurationMs": 790,
+            "durationMs": 1140
+          },
+          {
+            "id": "charged-uppercut",
+            "title": "모아치는 어퍼컷 · 1타",
+            "startFrame": 114,
+            "beforeDurationMs": 805,
+            "afterDurationMs": 805,
+            "durationMs": 1160
+          },
+          {
+            "id": "new-double-palm-south-east",
+            "title": "양손 밀어치기 · 남동쪽",
+            "startFrame": 230,
+            "beforeDurationMs": 840,
+            "afterDurationMs": 840,
+            "durationMs": 1190
+          }
+        ],
+        "frameCount": 349,
+        "frameDurationMs": 20
+      }
+    ]
+  }
+}

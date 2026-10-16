@@ -1,0 +1,317 @@
+{
+  "id": "ataho-v2-scene-presentation",
+  "recordedAt": "2026-10-16",
+  "baselineCommit": "6e818ab",
+  "rendererCommit": "4d11aaa",
+  "scope": "사용자가 승인한 네 장면 연출. 샌드백 국부 눌림은 제외하며 기존 샌드백의 모양·반동·명중 판정은 변경하지 않는다.",
+  "controls": [
+    {
+      "id": "background",
+      "label": "배경 명암 분리",
+      "group": "emphasis",
+      "default": false,
+      "supportMotionVariants": 26,
+      "preparationMaximumDim": 0.18,
+      "connectedFinalHitMaximumDim": 0.32,
+      "hitHoldMotionMs": 24,
+      "hitTotalMotionMs": 120
+    },
+    {
+      "id": "palette",
+      "label": "제한 팔레트 컷",
+      "group": "emphasis",
+      "default": false,
+      "supportMotionVariants": 26,
+      "connectedFinalHitOnly": true,
+      "durationMotionMs": 28,
+      "backgroundDim": 0.75,
+      "paletteRGB": [
+        [25, 20, 18],
+        [134, 83, 48],
+        [255, 233, 184]
+      ]
+    },
+    {
+      "id": "tracking",
+      "label": "선행·지연 추적",
+      "group": "camera",
+      "default": false,
+      "supportMotionVariants": 11,
+      "maximumOffsetLogicalPixels": 10,
+      "zoom": 1,
+      "leadMotionMs": 90,
+      "lagMotionMs": 120,
+      "returnBeforeGuardMs": 16
+    },
+    {
+      "id": "speed-lines",
+      "label": "배경 속도선",
+      "group": "independent-checkbox",
+      "default": false,
+      "supportMotionVariants": 11,
+      "maximumLines": 6,
+      "maximumOpacity": 0.16,
+      "maximumBoundaryFadeMotionMs": 60
+    }
+  ],
+  "state": "명암과 카메라는 그룹마다 하나 선택. 같은 동작의 방향/박자는 선호 유지, 다른 동작은 기본 명암/구도로 시작. 속도선은 공통 선호를 보존하고 미지원 구간에 표시하지 않음. 연출 변경은 시점·pause·진행중 히트스톱을 보존.",
+  "references": [
+    {
+      "url": "https://media.gdcvault.com/gdc2015/presentations/Keren_Itay_ScrollBack.pdf",
+      "checked": "공식 발표 PDF의 forward/projected focus와 기존 조사에서 확인한 원작성자 문서의 실제 게임 GIF 프레임을 참고. 원게임이나 GDC 프로젝트 자체를 실행한 것은 아님."
+    },
+    {
+      "url": "https://saint11.art/img/pixel-tutorials/Impact-export.gif",
+      "checked": "27프레임·2.1초 원저자 GIF의 여러 시점을 확인. 준비·접촉·대상 반응의 시간 배분 참고. 이번 배경 억제와3색 변환은 프로젝트의 적용안이며 이 GIF가 같은 팔레트 컷을 구현했다고 주장하지 않음."
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rvPjsz7itF8",
+      "checked": "앞선 조사에서 공식 Steam 고우키 트레일러의 실제 프레임 확인. 빠른 타격 뒤 명암·마무리 구도 전환 참고. 본 작업은 같은3D시점이나 컷 편집의 재현이 아님."
+    }
+  ],
+  "previews": [
+    {
+      "id": "scene-presentation-01-background-contrast",
+      "label": "배경 명암 분리",
+      "localPath": "public/assets/maplestory/ataho-v2-scene-presentation/20261016/previews/01-background-contrast.gif",
+      "method": "standalone-project-renderer-before-after",
+      "baselineCommit": "6e818ab",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 201,
+      "durationMs": 6600,
+      "byteSize": 2839956,
+      "sha256": "a86478a25ed3a630882019ce75f32d8b394f8a235dadd961aeb7c00c67bb11c0"
+    },
+    {
+      "id": "scene-presentation-02-speed-lines",
+      "label": "배경 속도선",
+      "localPath": "public/assets/maplestory/ataho-v2-scene-presentation/20261016/previews/02-speed-lines.gif",
+      "method": "standalone-project-renderer-before-after",
+      "baselineCommit": "6e818ab",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 280,
+      "durationMs": 10160,
+      "byteSize": 3318235,
+      "sha256": "53305bc293a8226c66598357d0c7525fbc5a692a4d885c65314520f7c332718c"
+    },
+    {
+      "id": "scene-presentation-03-tracking-camera",
+      "label": "선행·지연 추적",
+      "localPath": "public/assets/maplestory/ataho-v2-scene-presentation/20261016/previews/03-tracking-camera.gif",
+      "method": "standalone-project-renderer-before-after",
+      "baselineCommit": "6e818ab",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 374,
+      "durationMs": 9960,
+      "byteSize": 7239868,
+      "sha256": "ce29f20aef8dff201939b90128c639653e5e35c161bc7d77fe4b91ec83b86b8a"
+    },
+    {
+      "id": "scene-presentation-04-palette-cut",
+      "label": "제한 팔레트 컷",
+      "localPath": "public/assets/maplestory/ataho-v2-scene-presentation/20261016/previews/04-palette-cut.gif",
+      "method": "standalone-project-renderer-before-after",
+      "baselineCommit": "6e818ab",
+      "speed": 0.5,
+      "width": 600,
+      "height": 852,
+      "frames": 149,
+      "durationMs": 6600,
+      "byteSize": 2494102,
+      "sha256": "a782663c75ba37e777f865a045a70fa340d234c867a0f9d1b7ce7f8b2f064029"
+    }
+  ],
+  "previewRendering": {
+    "method": "standalone-project-renderer-before-after",
+    "baselineCommit": "6e818ab",
+    "baseline": "same current renderer with only the reviewed scene addition disabled; artwork, timing and common target/camera settings identical",
+    "speed": 0.5,
+    "width": 600,
+    "height": 852,
+    "groups": [
+      {
+        "id": "01-background-contrast",
+        "label": "배경 명암 분리",
+        "emphasis": "background",
+        "motions": [
+          "charged-uppercut",
+          "cheolsango",
+          "new-smear-hammerfist-south-east"
+        ],
+        "effects": [],
+        "target": true,
+        "clips": [
+          {
+            "id": "charged-uppercut",
+            "title": "모아치는 어퍼컷 · 1타",
+            "startFrame": 0,
+            "beforeDurationMs": 805,
+            "afterDurationMs": 805,
+            "durationMs": 1160
+          },
+          {
+            "id": "cheolsango",
+            "title": "철산고",
+            "startFrame": 116,
+            "beforeDurationMs": 790,
+            "afterDurationMs": 790,
+            "durationMs": 1140
+          },
+          {
+            "id": "new-smear-hammerfist-south-east",
+            "title": "대각 망치주먹 · 남동쪽",
+            "startFrame": 230,
+            "beforeDurationMs": 650,
+            "afterDurationMs": 650,
+            "durationMs": 1000
+          }
+        ],
+        "frameCount": 330,
+        "frameDurationMs": 20
+      },
+      {
+        "id": "02-speed-lines",
+        "label": "배경 속도선",
+        "speedLines": true,
+        "motions": ["rush", "flying-kick", "backflip-reentry"],
+        "effects": [],
+        "ground": true,
+        "clips": [
+          {
+            "id": "rush",
+            "title": "돌진 원투",
+            "startFrame": 0,
+            "beforeDurationMs": 1255,
+            "afterDurationMs": 1255,
+            "durationMs": 1610
+          },
+          {
+            "id": "flying-kick",
+            "title": "도약 날아차기",
+            "startFrame": 161,
+            "beforeDurationMs": 1165,
+            "afterDurationMs": 1165,
+            "durationMs": 1520
+          },
+          {
+            "id": "backflip-reentry",
+            "title": "공중회피 후 재진입",
+            "startFrame": 313,
+            "beforeDurationMs": 1595,
+            "afterDurationMs": 1595,
+            "durationMs": 1950
+          }
+        ],
+        "frameCount": 508,
+        "frameDurationMs": 20
+      },
+      {
+        "id": "03-tracking-camera",
+        "label": "선행·지연 추적",
+        "mode": "tracking",
+        "motions": ["rush", "slide-sweep", "backflip-reentry"],
+        "effects": [],
+        "target": true,
+        "ground": true,
+        "clips": [
+          {
+            "id": "rush",
+            "title": "돌진 원투",
+            "startFrame": 0,
+            "beforeDurationMs": 1255,
+            "afterDurationMs": 1255,
+            "durationMs": 1610
+          },
+          {
+            "id": "slide-sweep",
+            "title": "슬라이딩 하단 공격",
+            "startFrame": 161,
+            "beforeDurationMs": 1070,
+            "afterDurationMs": 1070,
+            "durationMs": 1420
+          },
+          {
+            "id": "backflip-reentry",
+            "title": "공중회피 후 재진입",
+            "startFrame": 303,
+            "beforeDurationMs": 1595,
+            "afterDurationMs": 1595,
+            "durationMs": 1950
+          }
+        ],
+        "frameCount": 498,
+        "frameDurationMs": 20
+      },
+      {
+        "id": "04-palette-cut",
+        "label": "제한 팔레트 컷",
+        "emphasis": "palette",
+        "motions": [
+          "cheolsango",
+          "charged-uppercut",
+          "new-smear-hammerfist-south-east"
+        ],
+        "effects": [],
+        "target": true,
+        "recoil": true,
+        "commonCamera": "impact",
+        "clips": [
+          {
+            "id": "cheolsango",
+            "title": "철산고",
+            "startFrame": 0,
+            "beforeDurationMs": 790,
+            "afterDurationMs": 790,
+            "durationMs": 1140
+          },
+          {
+            "id": "charged-uppercut",
+            "title": "모아치는 어퍼컷 · 1타",
+            "startFrame": 114,
+            "beforeDurationMs": 805,
+            "afterDurationMs": 805,
+            "durationMs": 1160
+          },
+          {
+            "id": "new-smear-hammerfist-south-east",
+            "title": "대각 망치주먹 · 남동쪽",
+            "startFrame": 230,
+            "beforeDurationMs": 650,
+            "afterDurationMs": 650,
+            "durationMs": 1000
+          }
+        ],
+        "frameCount": 330,
+        "frameDurationMs": 20
+      }
+    ]
+  },
+  "limits": [
+    "별도 GIF 렌더링이며 실제 브라우저 촬영이 아니다. 같은 원본·박자와 공통 타격/카메라 설정을 유지하고 비교 항목만 바꾼다.",
+    "제한 팔레트는 같은 자세의 명도 구분을 줄이므로 얼굴·팔다리 세부는 사용자 스타일 검토 대상이다.",
+    "새 캐릭터 원본 그림·소리·샌드백 국부 눌림은 추가하지 않는다."
+  ],
+  "verification": {
+    "static": [
+      "npm run check 통과",
+      "npm run build 통과",
+      "git diff --check 통과"
+    ],
+    "playback": [
+      "PC 브라우저에서 준비·명중·회수 구간의 실제 재생을 확인. 1배 및 느린 재생에서 명암과 팔레트가 원상 복귀함.",
+      "준비 명암 최대0.18, 실제 끝 강타 명암0.32, 팔레트 컷0.75를 확인. 빗나간 원투 끝 어퍼컷에는 명중 강조가 발생하지 않음.",
+      "돌진 속도선 최대6개, 추적 카메라 수평 진행과 종료 복귀 확인. 확대1·수직0 유지.",
+      "방향·박자 전환의 정지 시점 유지, 이동/대상 OFF→ON의 연출 선호 복원, 미지원 동작의 입력 숨김·비활성 확인.",
+      "선택 부위 블러와 팔레트의 동시 표시 및 2/3배 표시 확인. DPR2에서 CSS684px·백킹1368px 정렬 확인.",
+      "새 GIF 네 개가 실제 조합실의 GIF 자료에 로드됨을 확인. 모두600×852px. 브라우저 콘솔 경고·오류 없음."
+    ],
+    "review": "독립 코드 검토에서 명중 조건·선택 상태·히트스톱 보존·월드 변환·알파와 좌표 보존에 중요한 결함을 찾지 못함.",
+    "tests": "별도 테스트 코드는 추가하거나 실행하지 않음."
+  }
+}

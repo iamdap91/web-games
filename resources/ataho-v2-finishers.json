@@ -1,0 +1,667 @@
+{
+  "id": "ataho-v2-finishers",
+  "recordedAt": "2026-10-16",
+  "baselineCommit": "e3116d8",
+  "scope": "아타호 v2 동작 조합실의 필살기4종. 기존 남동·동·서 공격 그림으로 좌우·높낮이 교차, 분신 동시 협공, 공격 잔상 추격타를 구성한다. 새 그림·방향 합성·미러링·소리·본게임 판정은 추가하지 않는다.",
+  "activeCatalog": {
+    "groupedMotions": 24,
+    "directionalVariants": 28,
+    "sections": {
+      "attack": 14,
+      "finisher": 4,
+      "movement": 2,
+      "support": 1,
+      "deferred": 3
+    }
+  },
+  "motions": [
+    {
+      "id": "finisher-demon",
+      "title": "순옥살 · 21타",
+      "designHits": 21,
+      "intent": "고요한 준비와 짧은 돌입 → 암중 좌우 분신 협공 → 응축한 끝타 → 정적인 종결",
+      "adaptation": "기존 남동 맨손15접촉에 실제 동·서 방향 원본의 분신6접촉을 더한다. 다섯 구간에서 본체와 분신이 동시에 닿으며 하나의 유지 자세에 피해 횟수만 더하지 않는다. 이21타와 분신 배치는 조합실용 설계이며 아래 영상의 직접 관찰 결과나 원작 타수로 주장하지 않는다.",
+      "limits": "원작 전용 잡기·뒤돌림·등 그림이 없어 가드 여운과天 글자로 종결한다. 분신은 기존2D 방향 그림의 배치이며3D 공간이나 실제 다인 전투 판정을 추가하지 않는다.",
+      "choreography": {
+        "bodyContacts": 15,
+        "additionalContacts": 6,
+        "additionalActorTracks": 6,
+        "simultaneousBodyAndClonePairs": 5,
+        "durationMs": 3500,
+        "bodySteps": 90,
+        "chargeHoldMs": 220
+      }
+    },
+    {
+      "id": "finisher-omnislash-v5",
+      "title": "초구무신패참 ver.5 · 6타",
+      "designHits": 6,
+      "intent": "접근 → 표적 좌우를 가르는 높낮이 교차 → 반대편 정권·하이킥 → 정점 한 박자 → 하강 일격 → 착지 수습",
+      "adaptation": "검 분리·회수와 전용 검격 대신 기존 맨손 공격을 여섯 접촉으로 설계한다. 실제 동·서 정권과 서쪽 하이킥, 남동 상승권·망치주먹을 사용해 표적의 양쪽에서 공격한다.2D 무대의 좌우 이동과 높이 차이이며3D 선회·원작의 정확한 명중 수를 재현하지 않는다.",
+      "limits": "횡단 중 높이는 논리−40~−42px까지 올라가며 실제 접촉은 각 공격 자세에 맞춰 따로 구성한다. 점프·하강 망치·착지 원본을 연결하며 실제 검이나 전용 수직 낙하 그림은 없다.",
+      "choreography": {
+        "bodyContacts": 6,
+        "additionalContacts": 0,
+        "additionalActorTracks": 0,
+        "durationMs": 4097,
+        "bodySteps": 88,
+        "chargeHoldMs": 180
+      }
+    },
+    {
+      "id": "finisher-drunken-tiger",
+      "title": "초구취호패타 · 14타",
+      "designHits": 14,
+      "intent": "후퇴 유인 → 원투와 하강 망치 → 세 방향 협공 → 표적 뒤로 재진입 → 상승·하강 연격 → 두 분신과 동시 종결",
+      "adaptation": "기존 본게임의 일정 간격 피해20회와 별개로 본체10접촉·분신4접촉을 다시 짠다. 본체도 표적 반대편으로 넘어가 서쪽 정권을 내며 두 협공 구간에서는 본체와 두 분신이 동시에 공격한다. 각 공격자는 준비·접촉·회수 자세와 자신의 시작 시각을 가진다. 짧은 팔꿈치는 전용 장전·하강 그림으로 중간 연격에만 쓰고 마지막 본체 공격은 대각 망치주먹으로 구성한다.",
+      "existingGame": {
+        "source": "src/prototypes/overdrive-battle/tiger-barrage.ts",
+        "integration": "tiger-rpg의 game-screen.ts가 mountBattle을 통해 사용하는 프로토타입 전투 구현",
+        "codeInspection": "0.32~1.40초60ms 간격19회와1.73초 끝타로20피해 이벤트, 총230피해·2.15초. 피해 시각과 표시 모션의 접촉은 별개다.",
+        "execution": "이번 조사에서는 기존 본게임 기술을 직접 실행하지 않았으며 코드와 연결 경로만 확인했다."
+      },
+      "limits": "취권 전용 휘청임·던지기·종결 그림은 없다. 본게임의 기술·게이지·피해 수치는 수정하지 않는다.",
+      "choreography": {
+        "bodyContacts": 10,
+        "additionalContacts": 4,
+        "additionalActorTracks": 4,
+        "simultaneousThreeActorGroups": 2,
+        "durationMs": 4518,
+        "bodySteps": 103,
+        "chargeHoldMs": 200
+      }
+    },
+    {
+      "id": "finisher-ryuko-ranbu",
+      "title": "용호난무 · 17타",
+      "designHits": 17,
+      "intent": "근접 발동 → 지상 권각 압박 → 반대편 잔상 추격타 → 권격 가속 → 상승권과 뒤따르는 잔상 → 정리 자세",
+      "adaptation": "SNK 공식 료 영상의 난무와 상승 마무리를 참고한 기존 본체13접촉에65ms 늦게 닿는 공격 잔상4접촉을 더한다. 장식용 이전 자세와 달리 잔상도 실제 공격 트랙과 접촉을 가진다. 영상의 기술명 식별은 추론이며 원작17타를 검증했다는 뜻이 아니다.",
+      "limits": "원작 전용 돌진·난무·상승 자세가 없고 기존 원본 사이의 얼굴·발 간격 전환이 남는다.",
+      "choreography": {
+        "bodyContacts": 13,
+        "additionalContacts": 4,
+        "additionalActorTracks": 4,
+        "echoDelayMs": 65,
+        "durationMs": 3070,
+        "bodySteps": 83,
+        "chargeHoldMs": 160
+      }
+    }
+  ],
+  "references": [
+    {
+      "author": "Capcom USA",
+      "title": "Street Fighter 6 - Akuma Gameplay Trailer",
+      "url": "https://www.youtube.com/watch?v=rvPjsz7itF8",
+      "range": "2:41~2:51",
+      "observed": "흑백 발동과 여러 팔 잔상 → 암중 근접 다중 공격 → 검은 공간의 상부 구도 → 붉은天과 등돌림 종결",
+      "evidence": "브라우저 구간 재생과 선택 프레임 확인. 원작 게임 실행·공개 구현 코드 열람 없음. 짧은 돌입 자체의 직접 관찰 근거는 없음."
+    },
+    {
+      "author": "Square Enix",
+      "title": "FINAL FANTASY VII ADVENT CHILDREN COMPLETE 4K 비교 영상",
+      "url": "https://www.youtube.com/watch?v=ayB3k_pDL0A",
+      "officialLink": "https://jp.finalfantasy.com/news/3545",
+      "range": "1:54~2:25",
+      "observed": "첫 접근·충돌 → 분리검과 넓은 정지 구도 → 푸른 궤적의 다중 높이 교차 연격 → 마지막 하강 → 착지 수습",
+      "evidence": "공식 포털이 연결한 COMPLETE판 HLS 영상의 해당 구간을2fps로 추출해 직접 프레임 열람. 브라우저 연속 재생·원작 게임 실행·공개 코드 확인 없음. 정확한6회 명중을 확정하지 않음."
+    },
+    {
+      "author": "ImmaXehanort 재게시",
+      "title": "Advent Children 원본·COMPLETE 비교 클립",
+      "url": "https://www.youtube.com/watch?v=LjJmIlEnmnA",
+      "range": "원본AC0~21초, COMPLETE25~52초",
+      "evidence": "원본AC 구간4fps·COMPLETE 구간1fps 프레임 확인. 원제작사 게시물이 아닌 보조 비교 자료이며 공식 COMPLETE 영상과 원본AC의 완전 동일 편집을 주장하지 않음."
+    },
+    {
+      "author": "SNK OFFICIAL",
+      "title": "THE KING OF FIGHTERS XV - Ryo & Robert Trailer",
+      "url": "https://www.youtube.com/watch?v=9zhnEChRrmg",
+      "range": "1:17~1:21",
+      "observed": "료의 근접 슈퍼 발동 → 몸통/상단 권격 난무 → 상승 타격 → 착지 후 정리 포즈",
+      "evidence": "브라우저 구간 재생과 선택 프레임 확인. 영상에 기술명/HIT 수가 없어 용호난무 계열 식별은 추론. 정확한 원작 타수·모든 연결 동작의 연속 식별·원작 게임 실행·공개 코드 확인 없음."
+    }
+  ],
+  "implementation": {
+    "sequences": "motions/finisher-sequence.ts, motions/cinematic-finishers.ts, motions/classic-finishers.ts",
+    "actors": "finisher-actors.ts",
+    "presentation": "finisher-presentation.ts",
+    "ownership": "FinisherSequence가 본체 자세·타격 번호·단계와 추가 공격 트랙의 시작 시각을 소유한다. finisher-actors.ts가 공격자별 자세와 공통 접촉 시각을 절대 동작 시각에서 계산하며 렌더·샌드백·충격·카운터·개별 타격 탐색이 이를 함께 사용한다. ComboScreen이 선택과 탐색을 연결한다.",
+    "controls": "필살기 분류·단계 바로가기·공격자별 개별 타격 탐색·무대/궤적 체크박스·별도의 필살기 카메라 선택",
+    "counting": "본체·분신·공격 잔상의 각 실제 접촉당1타. 동시에 닿는 서로 다른 공격자도 각각 센다. 대상이 없으면 타격 구성, 샌드백을 켜면 각 공격자가 실제 교차한 명중만 집계한다.",
+    "decorationToggle": "필살기 무대·연타 궤적을 끄면 암전·선·장식 잔상을 해제한다. 실제 타격이 있는 분신·공격 잔상과 공간 안무는 유지한다.",
+    "framing": "표적의 논리 중앙은76이며 본체와 모든 추가 공격 트랙의 이동 경계를 합산해 전용 구도에 담는다. 기존 방향 원본을 사용하며 그림 미러링은 하지 않는다.",
+    "signature": "finisher-signatures.ts",
+    "signatureRules": "실제 장전 그림의 고정 hold·가속 박자·접촉선 축적·교차 흔적·나선 시동·압박·상승 잔광·최종 동시 명중의 단일 방출. 절대 시각에서 읽으며 별도 타격을 생성하지 않는다."
+  },
+  "deferredExclusion": {
+    "baselineCommit": "639375d",
+    "reason": "사용자가 공격모션으로 부적합하다고 판단한 세 동작을 보류로 분리하고 필살기에서 제외하도록 요청했다.",
+    "motionPrefixes": [
+      "new-double-palm",
+      "new-front-push-kick",
+      "new-visible-low-sweep"
+    ],
+    "sourcePolicy": "남동·북동 원본과 기존 보류 동작의 그림·박자·연출은 보존한다. 필살기 본체·분신·공격 잔상의 모든 트랙에서 세 동작의 준비·접촉·회수 그림을 사용하지 않는다.",
+    "replacements": [
+      {
+        "finisherId": "finisher-demon",
+        "hit": 15,
+        "from": "palm",
+        "to": "straight"
+      },
+      {
+        "finisherId": "finisher-omnislash-v5",
+        "hit": 4,
+        "from": "palm",
+        "to": "elbow-down"
+      },
+      {
+        "finisherId": "finisher-drunken-tiger",
+        "hit": 3,
+        "from": "sweep",
+        "to": "hammer"
+      },
+      {
+        "finisherId": "finisher-drunken-tiger",
+        "hit": 9,
+        "from": "palm",
+        "to": "elbow-down"
+      },
+      {
+        "finisherId": "finisher-ryuko-ranbu",
+        "hit": 4,
+        "from": "push-kick",
+        "to": "high-kick"
+      },
+      {
+        "finisherId": "finisher-ryuko-ranbu",
+        "hit": 12,
+        "from": "palm",
+        "to": "straight"
+      }
+    ],
+    "designHits": "보류 제외 당시15/6/9/13타를 보존했다. 현재 공간 안무는21/6/14/17타이며 시간·자세 수와 접촉 검사 결과는 현재 verification을 따른다.",
+    "replacementScope": "아래 replacements는42006f0의 보류 제외 당시 교체 이력이다. 이후 공간 안무에서 공격 순서와 타수가 달라져 현재 타격 번호와는 다를 수 있다."
+  },
+  "verificationHistory": [
+    {
+      "scope": "보류 분리와 필살기 교체 이전의 최초 구현 검증. 아래 시간·자세 수·명중 수는 현재 교체본의 실측값이 아니다.",
+      "implementationCommit": "71b24cf",
+      "verification": {
+        "tests": "별도 테스트 코드는 추가하거나 실행하지 않는다.",
+        "status": "완료 · PC 내장 브라우저에서 실제 조작·시간 진행과 선택 자세를 확인했다.",
+        "staticChecks": [
+          "npm run check 통과",
+          "npm run build 통과",
+          "git diff --check 통과"
+        ],
+        "sequenceInspection": [
+          {
+            "id": "finisher-demon",
+            "durationMs": 3605,
+            "steps": 93,
+            "contacts": 15,
+            "connectedAtScale3": 15
+          },
+          {
+            "id": "finisher-omnislash-v5",
+            "durationMs": 3667,
+            "steps": 84,
+            "contacts": 6,
+            "connectedAtScale3": 6
+          },
+          {
+            "id": "finisher-drunken-tiger",
+            "durationMs": 4260,
+            "steps": 94,
+            "contacts": 9,
+            "connectedAtScale3": 9
+          },
+          {
+            "id": "finisher-ryuko-ranbu",
+            "durationMs": 3210,
+            "steps": 91,
+            "contacts": 13,
+            "connectedAtScale3": 13
+          }
+        ],
+        "browser": [
+          "필살기 분류4개와 전체24개 표시, 각 기술의 실제 시간·자세 진행과 최종15/6/9/13타·종결 확인. 용호난무는1배, 나머지는0.25/0.5배 진행을 관찰했다.",
+          "초구무신패참 정점 단계의 공중 자세와6타 접촉 자세를 확인. 샌드백을 켠6타 접촉에서6명중·타격 효과 표시.",
+          "단계 버튼은 해당 구간으로 이동하며 정지. 개별 타격 펼침과6타 바로가기 확인.",
+          "필살기 무대 해제 시 암전·단계·카운터 해제. 전용 카메라 선택은 독립 유지.",
+          "초구무신패참2.06초·정지 상태에서 이동 해제 시 무대와 카메라 해제, 재활성화 시 같은 시점·정지 상태·전용 구도 복원.",
+          "앱 콘솔의 경고·오류 없음. 모바일·기기 에뮬레이션 검증은 수행하지 않음."
+        ],
+        "limits": "원작 실행 검증과 신규 전용 그림 평가는 포함하지 않는다. 전체 재생의 시간 진행과 선택 자세를 확인했으며 모든 프레임을 연속 영상으로 보관하지 않았다."
+      }
+    },
+    {
+      "scope": "42006f0의 보류 제외와 대체 공격 검증. 공간 안무·분신·공격 잔상 추가 이전의 결과이며 현재 구성의 실측값이 아니다.",
+      "implementationCommit": "42006f0",
+      "verification": {
+        "scope": "보류 세 동작 제외와 대체 공격 연결 이후 검증",
+        "status": "완료 · 보류 원본 제외와 교체 후 PC 재생 확인",
+        "staticChecks": [
+          "npm run typecheck 통과",
+          "npm run lint 통과",
+          "npm run format:check 통과",
+          "npm run build 통과"
+        ],
+        "sequenceInspection": [
+          {
+            "id": "finisher-demon",
+            "durationMs": 3430,
+            "steps": 89,
+            "contacts": 15,
+            "connectedAtScale3": 15,
+            "excludedSourceKeysAbsent": true
+          },
+          {
+            "id": "finisher-omnislash-v5",
+            "durationMs": 3665,
+            "steps": 82,
+            "contacts": 6,
+            "connectedAtScale3": 6,
+            "excludedSourceKeysAbsent": true
+          },
+          {
+            "id": "finisher-drunken-tiger",
+            "durationMs": 4000,
+            "steps": 87,
+            "contacts": 9,
+            "connectedAtScale3": 9,
+            "excludedSourceKeysAbsent": true
+          },
+          {
+            "id": "finisher-ryuko-ranbu",
+            "durationMs": 2920,
+            "steps": 81,
+            "contacts": 13,
+            "connectedAtScale3": 13,
+            "excludedSourceKeysAbsent": true
+          }
+        ],
+        "browser": [
+          "네 필살기를1배·반복 끔으로 선택해 실제 자세·시간 진행과 종결 확인. 순옥살89자세3.43초15타, 초구무신패참82자세3.67초6타, 초구취호패타87자세4.00초9타, 용호난무81자세2.92초13타.",
+          "용호난무 개별 타격 자세를 펼치고 교체된4타 지상 하이킥으로 이동.0.92초·26/81자세·4타·정지 상태와 실제 그림·타격 효과 확인.",
+          "앱 콘솔 경고·오류 없음. 원작 영상을 다시 조사하거나 새 그림·소리·모바일 검증을 추가하지 않음."
+        ],
+        "tests": "별도 테스트 코드는 추가하거나 실행하지 않는다."
+      }
+    },
+    {
+      "scope": "추가 필살기 레퍼런스와 박자·응축·방출 반영 전 공간 안무 검증",
+      "implementationCommit": "1b503e5",
+      "verification": {
+        "scope": "좌우·높낮이 공간 안무와 본체·분신·공격 잔상의 공통 접촉 적용 후 현재 검증",
+        "status": "완료 · 타입·린트·포맷·빌드와 실제 PC 조작·재생 확인",
+        "sequenceInspectionSource": "구현 담당의 현재 Node 데이터 계산. 두 표시 배율에서 모든 공격 트랙의 샌드백 접촉과 보류 원본 제외를 확인했다. 실제 브라우저 재생 확인과 구분한다.",
+        "staticChecks": [
+          "npm run check 통과",
+          "npm run build 통과",
+          "git diff --check 통과"
+        ],
+        "sequenceInspection": [
+          {
+            "id": "finisher-demon",
+            "durationMs": 3430,
+            "steps": 89,
+            "bodyContacts": 15,
+            "additionalActorTracks": 6,
+            "additionalContacts": 6,
+            "contacts": 21,
+            "connectedAtScale2": 21,
+            "connectedAtScale3": 21,
+            "excludedSourceKeysAbsent": true
+          },
+          {
+            "id": "finisher-omnislash-v5",
+            "durationMs": 4107,
+            "steps": 86,
+            "bodyContacts": 6,
+            "additionalActorTracks": 0,
+            "additionalContacts": 0,
+            "contacts": 6,
+            "connectedAtScale2": 6,
+            "connectedAtScale3": 6,
+            "excludedSourceKeysAbsent": true
+          },
+          {
+            "id": "finisher-drunken-tiger",
+            "durationMs": 4658,
+            "steps": 106,
+            "bodyContacts": 10,
+            "additionalActorTracks": 4,
+            "additionalContacts": 4,
+            "contacts": 14,
+            "connectedAtScale2": 14,
+            "connectedAtScale3": 14,
+            "excludedSourceKeysAbsent": true
+          },
+          {
+            "id": "finisher-ryuko-ranbu",
+            "durationMs": 2920,
+            "steps": 81,
+            "bodyContacts": 13,
+            "additionalActorTracks": 4,
+            "additionalContacts": 4,
+            "contacts": 17,
+            "connectedAtScale2": 17,
+            "connectedAtScale3": 17,
+            "excludedSourceKeysAbsent": true
+          }
+        ],
+        "browser": [
+          "PC 내장 브라우저에서 네 필살기를1배로 재생해 자세·시간 진행과21/6/14/17타 종결을 확인했다. 순옥살의 암중 좌우 분신, 초구무신패참의 표적 위 횡단, 초구취호패타의 동시 협공, 용호난무의 반대편 공격 잔상을 연속 화면으로 확인했다.",
+          "3배에서 초구취호패타4타 분신 탐색은1.14초에 정지하며 본체·분신3명의 접촉과6명중·충격3개를 표시한다.2배에서도 재생·접촉을 확인했다. 장식 해제 후에도 공격 분신은 유지한다. 이동 off-on은 같은 시점과 정지 상태를 유지하고0→3개의 충격 및6명중을 복원한다.",
+          "용호난무17타는2.45초의 서쪽 어퍼컷 공격 잔상으로 탐색한다. 카메라 반동을 켜면 같은 시점의 변위가(-1.62,-5.4)만큼 바뀌고 제한 팔레트 컷은본체와 잔상에 함께 적용된다. 하단 단계도17타를 표시하고 자세 번호는본체 기준임을 구분한다.",
+          "앱 콘솔 경고·오류는 없었다. 참고 영상의 기존 조사 범위는 유지하며 이번 작업에서 원작 게임을 실행하거나 새 그림·소리·모바일 검증을 추가하지 않았다."
+        ],
+        "tests": "별도 테스트 코드는 추가하거나 실행하지 않는다. 모바일·기기 에뮬레이션 검증은 수행하지 않는다.",
+        "limits": "현재 조합실의2D 안무·조작·명중을 검증했다. 원작 게임 실행·원작의 정확한 타수 검증·3D 선회·분리검·신규 전용 그림 평가는 포함하지 않는다."
+      }
+    },
+    {
+      "implementationCommit": "dc03d44",
+      "verification": {
+        "scope": "다른 공식 필살기 영상4편을 참고한 박자·응축·방출 반영 후 현재 검증",
+        "status": "완료 · 필수 검사·빌드와 실제 PC 조작·재생 확인",
+        "staticChecks": [
+          "npm run check 통과",
+          "npm run build 통과",
+          "git diff --check 통과"
+        ],
+        "sequenceInspectionSource": "현재 빌드의 구성 데이터·공통 접촉 계산. 실제 PC 재생 확인과 구분한다.",
+        "sequenceInspection": [
+          {
+            "id": "finisher-demon",
+            "durationMs": 3500,
+            "steps": 90,
+            "totalActorSteps": 151,
+            "bodyContacts": 15,
+            "additionalActorTracks": 6,
+            "additionalContacts": 6,
+            "contacts": 21,
+            "connectedAtScale2": 21,
+            "connectedAtScale3": 21,
+            "chargeHolds": [
+              {
+                "atMs": 2650,
+                "durationMs": 220,
+                "motion": "ataho-one-two-punch-south-east-south-east",
+                "frame": 11,
+                "positionDelta": {
+                  "x": 0,
+                  "y": 0
+                }
+              }
+            ],
+            "finalSimultaneousGroup": 1,
+            "excludedSourceKeysAbsent": true,
+            "allActorsFinishWithinMotion": true
+          },
+          {
+            "id": "finisher-omnislash-v5",
+            "durationMs": 4097,
+            "steps": 88,
+            "totalActorSteps": 88,
+            "bodyContacts": 6,
+            "additionalActorTracks": 0,
+            "additionalContacts": 0,
+            "contacts": 6,
+            "connectedAtScale2": 6,
+            "connectedAtScale3": 6,
+            "chargeHolds": [
+              {
+                "atMs": 3072,
+                "durationMs": 180,
+                "motion": "smear-hammerfist-clean-south-east",
+                "frame": 3,
+                "positionDelta": {
+                  "x": 0,
+                  "y": 0
+                }
+              }
+            ],
+            "finalSimultaneousGroup": 1,
+            "excludedSourceKeysAbsent": true,
+            "allActorsFinishWithinMotion": true
+          },
+          {
+            "id": "finisher-drunken-tiger",
+            "durationMs": 4633,
+            "steps": 107,
+            "totalActorSteps": 148,
+            "bodyContacts": 10,
+            "additionalActorTracks": 4,
+            "additionalContacts": 4,
+            "contacts": 14,
+            "connectedAtScale2": 14,
+            "connectedAtScale3": 14,
+            "chargeHolds": [
+              {
+                "atMs": 3618,
+                "durationMs": 200,
+                "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+                "frame": 3,
+                "positionDelta": {
+                  "x": 0,
+                  "y": 0
+                }
+              }
+            ],
+            "finalSimultaneousGroup": 3,
+            "excludedSourceKeysAbsent": true,
+            "allActorsFinishWithinMotion": true
+          },
+          {
+            "id": "finisher-ryuko-ranbu",
+            "durationMs": 3070,
+            "steps": 83,
+            "totalActorSteps": 125,
+            "bodyContacts": 13,
+            "additionalActorTracks": 4,
+            "additionalContacts": 4,
+            "contacts": 17,
+            "connectedAtScale2": 17,
+            "connectedAtScale3": 17,
+            "chargeHolds": [
+              {
+                "atMs": 2340,
+                "durationMs": 160,
+                "motion": "surprise-uppercut-south-east",
+                "frame": 2,
+                "positionDelta": {
+                  "x": 0,
+                  "y": 0
+                }
+              }
+            ],
+            "finalSimultaneousGroup": 1,
+            "excludedSourceKeysAbsent": true,
+            "allActorsFinishWithinMotion": true
+          }
+        ],
+        "browser": [
+          "PC 내장 브라우저에서1배·반복 끔으로 네 기술의 실제 자세·시간 진행과21/6/14/17타 종결을 확인했다. 순옥살의 축적선과 가속, 초구무신패참의 교차 흔적·정점 응축·하강 방출·착지, 용호난무의 압박과 상승 잔광을 확인했다.",
+          "초구취호패타는2배 표시·0.25배속에서 나선 시동의 진행을 확인하고3배 표시의3.74초 정지에서 준비 자세·나선 응축과 구도 집중을 확인했다. 장전 hold의 좌표 고정은 구성 데이터에서도 확인했다.",
+          "샌드백을 켠 초구취호패타3.98초의 마지막 삼면 명중은14명중·충격3개와 한 번의 세 갈래 방출을 표시한다. 타격 효과 off-on과 무대 연출 off-on은 시간 탐색값860·정지 상태를 유지하며 장식과 충격을 복원한다. 무대 off에도 실제 공격 분신은 남는다.",
+          "앱 콘솔 경고·오류 없음. 참고 원작 영상은 순차 프레임 확인이며 이번 프로젝트 재생 검증과 구분한다. 새 그림·소리·원작 게임 실행·본게임 통합·모바일 검증은 수행하지 않았다."
+        ],
+        "tests": "별도 테스트 코드는 추가하거나 실행하지 않았다.",
+        "limits": "실제 게임의 피해 지연·정확한 원작 타수·3D 공간·원작 코드 실행을 검증하지 않았다. 조사 범위는 별도 reference-study 기록을 따른다."
+      }
+    }
+  ],
+  "verification": {
+    "scope": "팔꿈치 그림 필수·끝타 금지와 취호패타 공격 순서 변경",
+    "status": "completed",
+    "staticChecks": [
+      "npm run check 통과",
+      "npm run build 통과",
+      "git diff --check 통과"
+    ],
+    "sequenceInspectionSource": "현재 컴파일된 활성 필살기·공통 접촉·샌드백 계산을 조회했다. 별도 테스트 코드는 추가하거나 실행하지 않았다.",
+    "sequenceInspection": [
+      {
+        "id": "finisher-demon",
+        "durationMs": 3500,
+        "steps": 90,
+        "totalActorSteps": 151,
+        "bodyContacts": 15,
+        "additionalActorTracks": 6,
+        "additionalContacts": 6,
+        "contacts": 21,
+        "connectedAtScale2": 21,
+        "connectedAtScale3": 21,
+        "chargeHolds": [
+          {
+            "atMs": 2650,
+            "durationMs": 220,
+            "motion": "ataho-one-two-punch-south-east-south-east",
+            "frame": 11,
+            "positionDelta": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "finalSimultaneousGroup": 1,
+        "excludedSourceKeysAbsent": true,
+        "allActorsFinishWithinMotion": true,
+        "rawElbowContacts": 0,
+        "drawnElbowContacts": [],
+        "lastBodySource": "ataho-one-two-punch-south-east-south-east",
+        "finalGroupSources": ["ataho-one-two-punch-south-east-south-east"]
+      },
+      {
+        "id": "finisher-omnislash-v5",
+        "durationMs": 4097,
+        "steps": 88,
+        "totalActorSteps": 88,
+        "bodyContacts": 6,
+        "additionalActorTracks": 0,
+        "additionalContacts": 0,
+        "contacts": 6,
+        "connectedAtScale2": 6,
+        "connectedAtScale3": 6,
+        "chargeHolds": [
+          {
+            "atMs": 3072,
+            "durationMs": 180,
+            "motion": "smear-hammerfist-clean-south-east",
+            "frame": 3,
+            "positionDelta": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "finalSimultaneousGroup": 1,
+        "excludedSourceKeysAbsent": true,
+        "allActorsFinishWithinMotion": true,
+        "rawElbowContacts": 0,
+        "drawnElbowContacts": [],
+        "lastBodySource": "smear-hammerfist-clean-south-east",
+        "finalGroupSources": ["smear-hammerfist-clean-south-east"]
+      },
+      {
+        "id": "finisher-drunken-tiger",
+        "durationMs": 4518,
+        "steps": 103,
+        "totalActorSteps": 144,
+        "bodyContacts": 10,
+        "additionalActorTracks": 4,
+        "additionalContacts": 4,
+        "contacts": 14,
+        "connectedAtScale2": 14,
+        "connectedAtScale3": 14,
+        "chargeHolds": [
+          {
+            "atMs": 3618,
+            "durationMs": 200,
+            "motion": "smear-hammerfist-clean-south-east",
+            "frame": 3,
+            "positionDelta": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "finalSimultaneousGroup": 3,
+        "excludedSourceKeysAbsent": true,
+        "allActorsFinishWithinMotion": true,
+        "rawElbowContacts": 0,
+        "drawnElbowContacts": [
+          {
+            "plannedTimeMs": 3313,
+            "frame": 1,
+            "contact": {
+              "kind": "elbow",
+              "height": 22,
+              "reach": 23
+            }
+          }
+        ],
+        "lastBodySource": "smear-hammerfist-clean-south-east",
+        "finalGroupSources": [
+          "high-kick-west",
+          "cross-punch-east",
+          "smear-hammerfist-clean-south-east"
+        ]
+      },
+      {
+        "id": "finisher-ryuko-ranbu",
+        "durationMs": 3070,
+        "steps": 83,
+        "totalActorSteps": 125,
+        "bodyContacts": 13,
+        "additionalActorTracks": 4,
+        "additionalContacts": 4,
+        "contacts": 17,
+        "connectedAtScale2": 17,
+        "connectedAtScale3": 17,
+        "chargeHolds": [
+          {
+            "atMs": 2340,
+            "durationMs": 160,
+            "motion": "surprise-uppercut-south-east",
+            "frame": 2,
+            "positionDelta": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "finalSimultaneousGroup": 1,
+        "excludedSourceKeysAbsent": true,
+        "allActorsFinishWithinMotion": true,
+        "rawElbowContacts": 0,
+        "drawnElbowContacts": [],
+        "lastBodySource": "surprise-uppercut-south-east",
+        "finalGroupSources": ["surprise-uppercut-west"]
+      }
+    ],
+    "browser": [
+      "PC 브라우저에서 짧은 팔꿈치 내려치기 선택 시 전용 그림이 기본으로 켜짐을 확인했다.0.185초 타격 자세 정지에서 그림 on은 충격1개, off는0개이며 off에서 샌드백 반응이 비활성화된다. 같은 탐색값440과 정지 상태를 유지하며 그림을 복원했다.",
+      "전용 그림과 샌드백을 켠 단독 팔꿈치를1배·반복 끔으로 실제 재생해0.42초 종결까지 확인했다.",
+      "샌드백을 켠 취호패타를1배·반복 끔으로 실제 재생해4.518초·14명중 종결을 확인했다.3.316초 중간11타에서 전용 하강 그림,3.931초에서 마지막 망치주먹·두 분신·14명중·충격3개를 확인했다.",
+      "앱 콘솔 경고·오류 없음. 나머지 세 필살기는 이번에 코드·박자를 바꾸지 않았으며 실제 재생 증거는dc03d44 이력을 참고한다."
+    ],
+    "tests": "별도 테스트 코드·모바일 검증 없음",
+    "limits": "실제 재생은 변경한 단독 팔꿈치와 취호패타에 한정한다. 새 그림과 소리는 추가하지 않았다."
+  },
+  "additionalReferenceStudy": "resources/ataho-v2-finisher-reference-study.json",
+  "elbowUsagePolicy": {
+    "recordedAt": "2026-10-16",
+    "requiredDrawing": "팔꿈치 장전·하강 그림",
+    "allowedUse": "전용 그림과 접촉 좌표를 필수 적용한 중간 공격에만 사용한다.",
+    "forbiddenUse": "그림 적용 여부와 관계없이 연계·필살기의 마지막 본체 공격과 마지막 동시 협공에 사용하지 않는다.",
+    "standalone": "선택 시 전용 그림을 기본으로 켠다. 끄면 원본 그림만 비교하고 접촉·명중·충격 효과를 발생시키지 않는다.",
+    "enforcement": "FinisherSequence가 원본 팔꿈치 접촉과 전용 그림 팔꿈치 종결을 구성 시 거부한다. 필살기 안에서는 전용 그림을 데이터에 직접 적용하므로 무대 연출 해제로 원본 공격이 되돌아오지 않는다.",
+    "tiger": "짧은 팔꿈치는 전용 그림으로 중간11타에 사용한다. 마지막 본체14타는200ms 장전 뒤 대각 망치주먹이며 두 분신과 동시 협공한다."
+  }
+}

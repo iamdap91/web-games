@@ -1,11 +1,16 @@
-import type { ComboMotion, ComboPart, ComboPartEffect } from '../types.js';
+import type {
+  ComboMotion,
+  ComboPart,
+  ComboPartEffect,
+  ComboPartKeyframe,
+} from '../types.js';
 
 const oneTwoSource = 'ataho-one-two-punch-south-east-south-east';
 const highKickSource = 'high-kick-south-east';
 const spinSource = 'ataho-roundhouse-kick-skeleton-south-east-south-east';
 
 // 원본 PNG 좌표다. one-two/south-east/frame_002.png의 손목 바깥 주먹만 잡는다.
-// 새 잽 중간 그림이 들어갈 1번은 건드리지 않고 접촉 2번에서만 흐림을 더한다.
+// 새 잽 중간 그림이 들어갈 1번은 건드리지 않고 접촉 2번 진입 직후만 흐린다.
 const jabHand: ComboPart = {
   id: 'jab-contact-hand',
   motion: oneTwoSource,
@@ -25,23 +30,35 @@ const jabHand: ComboPart = {
 const jabBlur: ComboPartEffect = {
   id: 'jab-tip-blur',
   label: '잽 손끝 블러',
-  summary: '잽이 닿는 자세의 주먹 끝에만 짧은 수평 흐림을 더합니다.',
+  summary: '잽이 닿는 순간만 손끝을 흐리고 유지 자세는 선명하게 둡니다.',
   kind: 'part-blur',
   distance: 1.5,
   samples: 4,
+  timing: [
+    { atMs: 0, amount: 1 },
+    { atMs: 8, amount: 0.55 },
+    { atMs: 22, amount: 0 },
+  ],
   parts: [jabHand],
 };
 
 // Fight_Stance_Idle/south-east/frame_000.png의 x 23~35 꼬리 끝이다.
-// x 36 이후의 몸·바지와 뿌리는 제외하고 바깥 꼬리만 최대 약 1px 흔든다.
+// x 36 이후의 몸·바지와 뿌리는 제외하고 바깥 꼬리 끝만 약1~1.5px 흔든다.
 // 몸 반대쪽은 투명 여백까지 포함해 검은 외곽선이 마스크 경계에 잘리지 않게 한다.
-// 같은 가드가 준비에도 나오므로 마지막 연속 run에서만 늦게 가라앉힌다.
+// 같은 가드가 준비에도 나오므로 마지막 연속 run만 사용하고 동작별 정착 시간을 둔다.
 const guardTail: ComboPartEffect = {
   id: 'guard-tail-follow-through',
   label: '꼬리 끝 후속 움직임',
-  summary: '마지막 가드에서 몸이 멈춘 뒤 바깥 꼬리 끝만 작게 따라옵니다.',
+  summary: '돌진 뒤 가드를 세우면 꼬리 끝이 늦게 따라와 작게 가라앉습니다.',
   kind: 'follow-through',
-  swingDegrees: 5,
+  swingDegrees: 4,
+  timing: [
+    { atMs: 0, amount: 0 },
+    { atMs: 8, amount: 0 },
+    { atMs: 30, amount: 1 },
+    { atMs: 62, amount: -0.22 },
+    { atMs: 110, amount: 0 },
+  ],
   parts: [
     {
       id: 'final-guard-tail-tip',
@@ -59,6 +76,14 @@ const guardTail: ComboPartEffect = {
     },
   ],
 };
+
+function guardTailResponse(response: {
+  readonly summary: string;
+  readonly swingDegrees: number;
+  readonly timing: readonly ComboPartKeyframe[];
+}): ComboPartEffect {
+  return { ...guardTail, ...response };
+}
 
 // High_Kick/south-east의 3·4번에서 바지 밖으로 나온 공중 발끝만 분리한다.
 // 지지발과 골반은 마스크에 포함하지 않으며 3번 늘어남은 약 2px 이내다.
@@ -293,9 +318,16 @@ const sweepNeFoot: ComboPart = {
 const elbowSeTail: ComboPartEffect = {
   id: 'elbow-tail-follow-through',
   label: '꼬리 끝 후속 움직임',
-  summary: '팔을 거둔 마지막 가드에서 몸 밖 꼬리 끝만 작게 따라옵니다.',
+  summary: '가로 회수 뒤 꼬리 끝이 반대쪽으로 늦게 따라오고 짧게 정착합니다.',
   kind: 'follow-through',
-  swingDegrees: 5,
+  swingDegrees: 4,
+  timing: [
+    { atMs: 0, amount: 0 },
+    { atMs: 12, amount: 0 },
+    { atMs: 34, amount: -1 },
+    { atMs: 68, amount: 0.24 },
+    { atMs: 116, amount: 0 },
+  ],
   parts: [
     {
       id: 'elbow-se-final-tail-tip',
@@ -323,9 +355,17 @@ const elbowSeTail: ComboPartEffect = {
 const hookTail: ComboPartEffect = {
   id: 'hook-tail-follow-through',
   label: '꼬리 끝 후속 움직임',
-  summary: '훅을 거둔 마지막 가드에서 바깥 꼬리 끝이 늦게 가라앉습니다.',
+  summary:
+    '훅을 거두면 꼬리 끝이 회전 방향을 따라온 뒤 작은 반동을 거쳐 가라앉습니다.',
   kind: 'follow-through',
   swingDegrees: 5,
+  timing: [
+    { atMs: 0, amount: 0 },
+    { atMs: 6, amount: 0 },
+    { atMs: 30, amount: 1 },
+    { atMs: 78, amount: -0.32 },
+    { atMs: 125, amount: 0 },
+  ],
   parts: [
     {
       id: 'hook-final-tail-tip',
@@ -349,9 +389,17 @@ const hookTail: ComboPartEffect = {
 const hammerTail: ComboPartEffect = {
   id: 'hammer-tail-follow-through',
   label: '꼬리 끝 후속 움직임',
-  summary: '내려친 팔을 거둔 마지막 가드에서 바깥 꼬리 끝만 작게 따라옵니다.',
+  summary:
+    '내려친 몸을 세운 뒤 꼬리 끝이 아래로 늦게 따라오고 짧게 가라앉습니다.',
   kind: 'follow-through',
   swingDegrees: 5,
+  timing: [
+    { atMs: 0, amount: 0 },
+    { atMs: 16, amount: 0 },
+    { atMs: 42, amount: -1 },
+    { atMs: 82, amount: 0.28 },
+    { atMs: 120, amount: 0 },
+  ],
   parts: [
     {
       id: 'hammer-final-tail-tip',
@@ -384,37 +432,119 @@ const effectsByMotion: Readonly<Record<string, readonly ComboPartEffect[]>> = {
     {
       id: 'flying-toe-blur',
       label: '공중 발끝 블러',
-      summary: '뻗은 발끝에만 상승 방향의 짧은 흐림을 남깁니다.',
+      summary:
+        '발끝이 도착한 순간만 상승 방향으로 흐리고 공중 유지에서는 선명해집니다.',
       kind: 'part-blur',
       distance: 1.5,
       samples: 4,
+      timing: [
+        { atMs: 0, amount: 1 },
+        { atMs: 10, amount: 0.5 },
+        { atMs: 28, amount: 0 },
+      ],
       parts: [flyingContactFoot],
     },
-    guardTail,
+    guardTailResponse({
+      summary:
+        '착지 뒤 몸을 세우면 꼬리 끝이 아래로 늦게 따라온 뒤 짧게 정착합니다.',
+      swingDegrees: 6,
+      timing: [
+        { atMs: 0, amount: 0 },
+        { atMs: 16, amount: 0 },
+        { atMs: 40, amount: -1 },
+        { atMs: 78, amount: 0.24 },
+        { atMs: 130, amount: 0 },
+      ],
+    }),
   ],
   // 이 네 동작의 몸·팔다리는 원본에서 겹침이 커 바깥 꼬리 끝만 움직인다.
-  'slide-sweep': [guardTail],
-  cheolsango: [guardTail],
-  'elbow-chop': [guardTail],
-  'charged-uppercut': [guardTail],
+  'slide-sweep': [
+    guardTailResponse({
+      summary: '낮은 이동을 멈춘 뒤 꼬리 끝이 뒤로 따라오고 짧게 가라앉습니다.',
+      swingDegrees: 5,
+      timing: [
+        { atMs: 0, amount: 0 },
+        { atMs: 6, amount: 0 },
+        { atMs: 24, amount: 1 },
+        { atMs: 62, amount: -0.28 },
+        { atMs: 106, amount: 0 },
+      ],
+    }),
+  ],
+  cheolsango: [
+    guardTailResponse({
+      summary: '몸통 충돌을 거두면 꼬리 끝이 짧게 따라와 가라앉습니다.',
+      swingDegrees: 6,
+      timing: [
+        { atMs: 0, amount: 0 },
+        { atMs: 4, amount: 0 },
+        { atMs: 22, amount: -1 },
+        { atMs: 52, amount: 0.32 },
+        { atMs: 98, amount: 0 },
+      ],
+    }),
+  ],
+  'elbow-chop': [
+    guardTailResponse({
+      summary:
+        '빠른 내려치기 뒤 꼬리 끝도 짧게 반응하고 가드 안에서 가라앉습니다.',
+      swingDegrees: 4,
+      timing: [
+        { atMs: 0, amount: 0 },
+        { atMs: 6, amount: 0 },
+        { atMs: 20, amount: -1 },
+        { atMs: 42, amount: 0.22 },
+        { atMs: 68, amount: 0 },
+      ],
+    }),
+  ],
+  'charged-uppercut': [
+    guardTailResponse({
+      summary: '올려친 몸을 낮추면 꼬리 끝이 늦게 따라오고 짧게 정착합니다.',
+      swingDegrees: 5,
+      timing: [
+        { atMs: 0, amount: 0 },
+        { atMs: 8, amount: 0 },
+        { atMs: 30, amount: 1 },
+        { atMs: 60, amount: -0.24 },
+        { atMs: 108, amount: 0 },
+      ],
+    }),
+  ],
   'ground-spin': [
     {
       id: 'spin-toe-blur',
       label: '회전 발끝 블러',
-      summary: '회전 타격의 바깥 발끝에만 짧은 수평 흐림을 더합니다.',
+      summary: '회전 발끝이 도착한 순간만 흐리고 멈춘 자세는 선명하게 둡니다.',
       kind: 'part-blur',
       distance: 1.4,
       samples: 4,
+      timing: [
+        { atMs: 0, amount: 1 },
+        { atMs: 10, amount: 0.55 },
+        { atMs: 30, amount: 0 },
+      ],
       parts: [spinFoot],
     },
-    guardTail,
+    guardTailResponse({
+      summary: '회전 회수 뒤 꼬리 끝이 늦게 돌아온 다음 가라앉습니다.',
+      swingDegrees: 5,
+      timing: [
+        { atMs: 0, amount: 0 },
+        { atMs: 8, amount: 0 },
+        { atMs: 30, amount: 1 },
+        { atMs: 70, amount: -0.3 },
+        { atMs: 122, amount: 0 },
+      ],
+    }),
   ],
   'quick-jab': [jabBlur],
   'double-jab': [
     {
       ...jabBlur,
       id: 'double-jab-tip-blur',
-      summary: '두 번의 잽 접촉에서 각각 주먹 끝의 짧은 흐림을 더합니다.',
+      summary:
+        '두 잽 각각 접촉 순간만 손끝을 흐리고 유지 자세는 선명하게 둡니다.',
       parts: [
         { ...jabHand, occurrence: 0 },
         { ...jabHand, id: 'second-jab-contact-hand', occurrence: 1 },
@@ -436,10 +566,16 @@ const effectsByMotion: Readonly<Record<string, readonly ComboPartEffect[]>> = {
     {
       id: 'push-kick-toe-blur',
       label: '앞차기 발끝 블러',
-      summary: '뻗은 발끝에만 짧은 흐림을 더해 밀어내는 방향을 읽힙니다.',
+      summary:
+        '발을 뻗은 직후 짧은 흐림을 걷어 밀어낸 끝 자세를 선명하게 둡니다.',
       kind: 'part-blur',
       distance: 1.5,
       samples: 4,
+      timing: [
+        { atMs: 0, amount: 1 },
+        { atMs: 12, amount: 0.45 },
+        { atMs: 34, amount: 0 },
+      ],
       parts: [pushKickSeContact],
     },
     {
@@ -450,6 +586,12 @@ const effectsByMotion: Readonly<Record<string, readonly ComboPartEffect[]>> = {
       kind: 'overshoot',
       rotationDegrees: -3,
       distance: 0.4,
+      timing: [
+        { atMs: 0, amount: 0 },
+        { atMs: 12, amount: 1 },
+        { atMs: 38, amount: -0.16 },
+        { atMs: 64, amount: 0 },
+      ],
       parts: [pushKickSeContact],
     },
   ],
@@ -465,10 +607,15 @@ const effectsByMotion: Readonly<Record<string, readonly ComboPartEffect[]>> = {
     {
       id: 'push-kick-toe-blur',
       label: '앞차기 발끝 블러',
-      summary: '뒤에서 보이는 발끝에만 위로 뻗는 방향의 흐림을 더합니다.',
+      summary: '뒤에서 보이는 발끝도 도착 직후 흐림이 빠르게 걷힙니다.',
       kind: 'part-blur',
       distance: 1.5,
       samples: 4,
+      timing: [
+        { atMs: 0, amount: 1 },
+        { atMs: 10, amount: 0.45 },
+        { atMs: 30, amount: 0 },
+      ],
       parts: [pushKickNeContact],
     },
     {
@@ -479,6 +626,12 @@ const effectsByMotion: Readonly<Record<string, readonly ComboPartEffect[]>> = {
       kind: 'overshoot',
       rotationDegrees: 3,
       distance: 0.4,
+      timing: [
+        { atMs: 0, amount: 0 },
+        { atMs: 15, amount: 1 },
+        { atMs: 43, amount: -0.14 },
+        { atMs: 70, amount: 0 },
+      ],
       parts: [pushKickNeContact],
     },
   ],
@@ -494,10 +647,16 @@ const effectsByMotion: Readonly<Record<string, readonly ComboPartEffect[]>> = {
     {
       id: 'palm-fingertip-blur',
       label: '앞 손끝 블러',
-      summary: '몸 밖에 드러난 앞 손끝에만 짧은 밀기 방향의 흐림을 남깁니다.',
+      summary:
+        '양손이 도착한 순간만 바깥 손끝에 흐림을 남기고 유지 때 걷습니다.',
       kind: 'part-blur',
       distance: 1.2,
       samples: 4,
+      timing: [
+        { atMs: 0, amount: 1 },
+        { atMs: 9, amount: 0.5 },
+        { atMs: 28, amount: 0 },
+      ],
       parts: [palmSeContact],
     },
   ],
@@ -513,10 +672,16 @@ const effectsByMotion: Readonly<Record<string, readonly ComboPartEffect[]>> = {
     {
       id: 'palm-fingertip-blur',
       label: '앞 손끝 블러',
-      summary: '뒤에서 보이는 바깥 손끝에만 짧은 진행 방향의 흐림을 더합니다.',
+      summary:
+        '뒤에서 보이는 손끝의 흐림이 빠르게 걷히고 끝 자세는 선명하게 남습니다.',
       kind: 'part-blur',
       distance: 1.2,
       samples: 4,
+      timing: [
+        { atMs: 0, amount: 1 },
+        { atMs: 8, amount: 0.5 },
+        { atMs: 26, amount: 0 },
+      ],
       parts: [palmNeContact],
     },
   ],
@@ -524,10 +689,15 @@ const effectsByMotion: Readonly<Record<string, readonly ComboPartEffect[]>> = {
     {
       id: 'sweep-toe-blur',
       label: '낮은 발끝 블러',
-      summary: '바닥을 쓸어 나간 왼쪽 발끝에만 낮은 수평 흐림을 남깁니다.',
+      summary: '낮은 쓸기의 도착 직후만 발끝을 흐리고 접지 각도는 보존합니다.',
       kind: 'part-blur',
       distance: 1.2,
       samples: 4,
+      timing: [
+        { atMs: 0, amount: 1 },
+        { atMs: 12, amount: 0.5 },
+        { atMs: 32, amount: 0 },
+      ],
       parts: [sweepSeFoot],
     },
   ],
@@ -536,10 +706,15 @@ const effectsByMotion: Readonly<Record<string, readonly ComboPartEffect[]>> = {
       id: 'sweep-toe-blur',
       label: '낮은 발끝 블러',
       summary:
-        '뒤에서 보이는 왼쪽 발끝에만 접지 각도를 보존한 흐림을 더합니다.',
+        '뒤에서 보이는 낮은 발끝도 도착 직후 흐림이 걷히고 접지 각도를 보존합니다.',
       kind: 'part-blur',
       distance: 1.2,
       samples: 4,
+      timing: [
+        { atMs: 0, amount: 1 },
+        { atMs: 11, amount: 0.5 },
+        { atMs: 30, amount: 0 },
+      ],
       parts: [sweepNeFoot],
     },
   ],
@@ -547,7 +722,7 @@ const effectsByMotion: Readonly<Record<string, readonly ComboPartEffect[]>> = {
 
 // 가로 팔꿈치 NE의 마지막 가드0는 꼬리가 몸·바지 외곽에 겹쳐 있어 제외한다.
 // 가로 팔꿈치의 겹친 팔과 훅·망치의 기존 스미어 띠는 분리·변형하지 않는다.
-// 기존 효과와 박자·접지·원본 프레임은 유지하고 안전한 부위 선택만 추가한다.
+// 원본 마스크·발 기준·기본 자세는 유지하고 노출과 정착 시간만 동작별로 조절한다.
 export function withPartEffects(motion: ComboMotion): ComboMotion {
   const effects = effectsByMotion[motion.id];
   if (!effects) return motion;

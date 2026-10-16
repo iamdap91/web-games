@@ -1,0 +1,316 @@
+{
+    "date": "2026-10-15",
+    "characterId": "ai/ataho-v2",
+    "scope": "레퍼런스를 바탕으로 기존 연출의 시점 조정과 철산고 핵심 자세 후보 보강",
+    "generator": "built-in image_gen",
+    "qualityStatus": "generated-awaiting-user-gif-review",
+    "sourceMotion": "cheolsango-short",
+    "originalPixelsPreserved": true,
+    "references": [
+        "https://saint11.art/img/pixel-tutorials/Easings.gif",
+        "https://saint11.art/img/pixel-tutorials/AttackSheet.gif",
+        "https://www.gdquest.com/library/juicy_attack/",
+        "https://shirzadbahrami.com/physics-based-animation-undulation/"
+    ],
+    "drawings": [
+        {
+            "index": 0,
+            "id": "charge",
+            "label": "어깨를 뒤로 모으는 장전",
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 12
+            },
+            "localPath": "public/assets/maplestory/ataho-v2-motion-refinement/20261015/originals/cheolsango/charge.png",
+            "originalSize": {
+                "width": 1254,
+                "height": 1254
+            },
+            "sha256": "2c4dae6c99d3127795ec734de1fb0e0dfabfc0148b1430584779233f9d6b0dd1",
+            "sourceRect": {
+                "x": 372,
+                "y": 323,
+                "width": 559,
+                "height": 637
+            },
+            "destinationRect": {
+                "x": 19,
+                "y": 24,
+                "width": 53,
+                "height": 60
+            },
+            "normalization": "원본 RGBA를 보존하고 로더의 최근접 샘플링으로 알파 주제 높이60px·발 기준84px·발 중앙49px에 맞춤",
+            "prompt": "Use case: precise-object-edit. Asset: ONE alternate anticipation key drawing for the exact provided small 96x96 pixel-art tiger martial artist, to blend into an existing shoulder/body-check animation.\nInput image 1 is the edit target, the original crouched preparation sprite. Input image 2 is adjacent-frame identity and scale reference only.\nRedraw the preparation pose to read as a clear SHORT loading of the upper body toward SCREEN RIGHT before the subsequent shoulder strike toward SCREEN LEFT. Keep BOTH FEET planted in essentially the same positions and at the same baseline, knees bent; pelvis low and nearly centered; pull ribcage and shoulders 3-4 logical pixels screen right relative to the pelvis. Elbows tucked, fists guarding the chest; retain the exact orange tiger face, cream muzzle, brown open jacket with cream collar, black/grey trousers, striped tail and bare paws. Preserve original head size and the same face direction toward screen right; keep body anatomy connected and chibi proportions. This is a compact martial-arts loading pose, with visible shoulder-versus-hip opposition, not a deep bow, head turn, punch, jump or uniform body squash.\nComposition: match the complete reference canvas proportions, 96x96 logical pixel grid, generous transparent margin. Character occupies approximately x=25..72 and y=22..83 of the logical canvas. Preserve the character's scale, nearest-neighbor style chunky pixel clusters, dark 1-logical-pixel outline and limited palette. Crisp pixel art suitable for a 96x96 sprite, not smooth illustration. Exactly ONE full-body isolated tiger pose. Real transparent alpha background. No floor shadow, no ground, no text, no border, no VFX, no smear, no duplicate limbs or accessory changes.",
+            "inputPaths": [
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/cheolsango/00.png",
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/cheolsango/03.png"
+            ]
+        },
+        {
+            "index": 1,
+            "id": "drive",
+            "label": "어깨를 실어내는 연결",
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 12
+            },
+            "localPath": "public/assets/maplestory/ataho-v2-motion-refinement/20261015/originals/cheolsango/drive.png",
+            "originalSize": {
+                "width": 1254,
+                "height": 1254
+            },
+            "sha256": "babd4286e43d7b6e83332b97c5384ee68dfca58a8c8b4f2fbbafba08356842f7",
+            "sourceRect": {
+                "x": 341,
+                "y": 337,
+                "width": 590,
+                "height": 629
+            },
+            "destinationRect": {
+                "x": 16,
+                "y": 24,
+                "width": 56,
+                "height": 60
+            },
+            "normalization": "원본 RGBA를 보존하고 로더의 최근접 샘플링으로 알파 주제 높이60px·발 기준84px·발 중앙49px에 맞춤",
+            "prompt": "Use case: precise-object-edit. Asset: ONE intermediate driving pose between these two pixel-art tiger key drawings for a shoulder/body-check animation.\nInput 1 is the anticipation pose and identity reference. Input 2 is the contact pose and identity reference. Same exact tiger individual, same head and face proportions, same orange stripes, cream muzzle, brown jacket, cream collar, dark grey pants, bare paws and striped tail. Keep the original pixel-cluster density.\nDraw the in-between pose: the ribs and LEFT shoulder have begun to drive toward SCREEN LEFT, the upper torso tilts diagonally left about halfway between the upright/loaded first pose and the shoulder-leading second pose. The pelvis remains over the braced bent legs, and both feet stay planted with the same spacing and baseline as both references. Fists stay tucked near the chest; no punch and no jump. Head follows the shoulder 2 logical pixels left without turning; face still looks to screen right. The contact pose at input 2 is the limit: this drawing has less shoulder displacement than input 2. Both arms connected and short, no duplicated limbs.\nOutput exactly ONE complete isolated transparent sprite on the same canvas proportions and blank margins as the references, at the same scale. Coarse low-resolution pixel art, no smooth brush shading. Preserve head scale and eye/muzzle design exactly. No text, labels, shadows, effects, action lines, backgrounds or extra objects. True transparent alpha.",
+            "inputPaths": [
+                "public/assets/maplestory/ataho-v2-motion-refinement/20261015/originals/cheolsango/charge.png",
+                "public/assets/maplestory/ataho-v2-motion-refinement/20261015/originals/cheolsango/impact.png"
+            ]
+        },
+        {
+            "index": 2,
+            "id": "impact",
+            "label": "어깨가 먼저 닿는 충돌",
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 12
+            },
+            "localPath": "public/assets/maplestory/ataho-v2-motion-refinement/20261015/originals/cheolsango/impact.png",
+            "originalSize": {
+                "width": 1254,
+                "height": 1254
+            },
+            "sha256": "eb20bf196567178bdef0d94887b213e7ae0988e646a604a12c35cc28a4212bd6",
+            "sourceRect": {
+                "x": 294,
+                "y": 284,
+                "width": 645,
+                "height": 723
+            },
+            "destinationRect": {
+                "x": 19,
+                "y": 24,
+                "width": 54,
+                "height": 60
+            },
+            "normalization": "원본 RGBA를 보존하고 로더의 최근접 샘플링으로 알파 주제 높이60px·발 기준84px·발 중앙49px에 맞춤",
+            "prompt": "Use case: precise-object-edit. Asset: ONE stronger shoulder-impact key drawing for the exact provided tiger pixel sprite, same camera view and same 96x96 logical canvas.\nInput image 1 is the original shoulder-check contact pose to edit. Image 2 is the original preparation/identity reference.\nPrimary change: make a compact Baji-style shoulder/body check toward SCREEN LEFT. The LEFT silhouette, the tiger's back and outer shoulder, is the leading striking surface. The shoulder and upper torso lean clearly LEFT relative to the pelvis, by about 5 logical pixels, with bent braced knees and connected anatomy. Left shoulder is low and forward; head follows the upper torso slightly left while maintaining the SAME head size and exact original face looking toward screen right. Both elbows and fists stay tucked protectively in front of the chest toward screen right; do not throw a punch. Make the impact pose visibly different from upright preparation: diagonal load through the torso, shoulder leading, hips behind, front knee braced. Feet stay planted on the original baseline and at the same approximate x locations. Do not translate the entire sprite across the canvas; runtime handles world travel.\nPreserve this exact tiger's original facial proportions, eyes, muzzle, stripes, brown open jacket with cream collar, grey dark trousers, bare paws and single striped tail. Match low-resolution pixel clusters and black outline. Do not redraw as a smooth high-resolution cartoon. Preserve the original composition and empty margins: character lives in the middle approximately x=25..72, y=22..83 within the 96x96 logical canvas, at exactly the original visual scale. Full body with feet and tail visible.\nOutput exactly ONE isolated pose with true transparent alpha. No text, panels, shadows, motion lines, rings, impact effects, extra limbs, weapons or environment.",
+            "inputPaths": [
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/cheolsango/00.png",
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/cheolsango/03.png"
+            ]
+        }
+    ],
+    "previews": [
+        {
+            "id": "motion-refinement-01-contact-clarity",
+            "label": "도착 순간의 블러 · 발끝 정착",
+            "localPath": "public/assets/maplestory/ataho-v2-motion-refinement/20261015/previews/01-contact-clarity.gif",
+            "method": "standalone-project-renderers-before-after",
+            "beforeCommit": "0cba313",
+            "speed": 0.5,
+            "width": 600,
+            "height": 852,
+            "frames": 45,
+            "durationMs": 5620,
+            "byteSize": 486676,
+            "sha256": "2c779381a9bbfc8a5819ff0644d6bb158a89d0a6c769375b49640b6d61dc95ba"
+        },
+        {
+            "id": "motion-refinement-02-tail-response",
+            "label": "동작별 꼬리 반응",
+            "localPath": "public/assets/maplestory/ataho-v2-motion-refinement/20261015/previews/02-tail-response.gif",
+            "method": "standalone-project-renderers-before-after",
+            "beforeCommit": "0cba313",
+            "speed": 0.5,
+            "width": 600,
+            "height": 852,
+            "frames": 107,
+            "durationMs": 6560,
+            "byteSize": 1076137,
+            "sha256": "f6923c03ff7f8309cffaed924b90bf6dfbb38215a807adbb9351c937592ec287"
+        },
+        {
+            "id": "motion-refinement-03-smear-exposure",
+            "label": "훅 · 망치주먹 스미어 노출",
+            "localPath": "public/assets/maplestory/ataho-v2-motion-refinement/20261015/previews/03-smear-exposure.gif",
+            "method": "standalone-project-renderers-before-after",
+            "beforeCommit": "0cba313",
+            "speed": 0.5,
+            "width": 600,
+            "height": 852,
+            "frames": 20,
+            "durationMs": 3500,
+            "byteSize": 286343,
+            "sha256": "6b024f5ba7ba160f75bb33bde27045e0151dc2a24ac844f5344bd8bea68888a4"
+        },
+        {
+            "id": "motion-refinement-04-shoulder-keyposes",
+            "label": "철산고 어깨 장전 · 충돌 그림",
+            "localPath": "public/assets/maplestory/ataho-v2-motion-refinement/20261015/previews/04-shoulder-keyposes.gif",
+            "method": "standalone-project-renderers-before-after",
+            "beforeCommit": "0cba313",
+            "speed": 0.5,
+            "width": 600,
+            "height": 852,
+            "frames": 24,
+            "durationMs": 2020,
+            "byteSize": 285289,
+            "sha256": "a7e3a9e3eab8ac2fd2d7741cbc0b7369610dad14403a2cafaf0b29e87c655e4a"
+        }
+    ],
+    "previewRendering": {
+        "method": "standalone-project-renderers-before-after",
+        "beforeCommit": "0cba313",
+        "speed": 0.5,
+        "width": 600,
+        "height": 852,
+        "groups": [
+            {
+                "id": "01-contact-clarity",
+                "label": "도착 순간의 블러 · 발끝 정착",
+                "motions": [
+                    "quick-jab",
+                    "new-front-push-kick-south-east",
+                    "new-front-push-kick-north-east"
+                ],
+                "effects": [
+                    "jab-tip-blur",
+                    "push-kick-toe-smear",
+                    "push-kick-toe-blur",
+                    "push-kick-toe-overshoot"
+                ],
+                "clips": [
+                    {
+                        "id": "quick-jab",
+                        "title": "빠른 잽 · 1타",
+                        "startFrame": 0,
+                        "beforeDurationMs": 315,
+                        "afterDurationMs": 315,
+                        "durationMs": 670
+                    },
+                    {
+                        "id": "new-front-push-kick-south-east",
+                        "title": "앞 밀어차기 · 남동쪽",
+                        "startFrame": 67,
+                        "beforeDurationMs": 720,
+                        "afterDurationMs": 720,
+                        "durationMs": 1070
+                    },
+                    {
+                        "id": "new-front-push-kick-north-east",
+                        "title": "앞 밀어차기 · 북동쪽",
+                        "startFrame": 174,
+                        "beforeDurationMs": 720,
+                        "afterDurationMs": 720,
+                        "durationMs": 1070
+                    }
+                ],
+                "frameCount": 281,
+                "frameDurationMs": 20
+            },
+            {
+                "id": "02-tail-response",
+                "label": "동작별 꼬리 반응",
+                "motions": ["cheolsango", "flying-kick", "new-smear-hook-south-east"],
+                "effects": ["guard-tail-follow-through", "hook-tail-follow-through"],
+                "clips": [
+                    {
+                        "id": "cheolsango",
+                        "title": "철산고",
+                        "startFrame": 0,
+                        "beforeDurationMs": 660,
+                        "afterDurationMs": 660,
+                        "durationMs": 1010
+                    },
+                    {
+                        "id": "flying-kick",
+                        "title": "도약 날아차기",
+                        "startFrame": 101,
+                        "beforeDurationMs": 1070,
+                        "afterDurationMs": 1070,
+                        "durationMs": 1420
+                    },
+                    {
+                        "id": "new-smear-hook-south-east",
+                        "title": "크게 감아치는 훅 · 남동쪽",
+                        "startFrame": 243,
+                        "beforeDurationMs": 495,
+                        "afterDurationMs": 495,
+                        "durationMs": 850
+                    }
+                ],
+                "frameCount": 328,
+                "frameDurationMs": 20
+            },
+            {
+                "id": "03-smear-exposure",
+                "label": "훅 · 망치주먹 스미어 노출",
+                "motions": [
+                    "new-smear-hook-south-east",
+                    "new-smear-hammerfist-south-east"
+                ],
+                "effects": [],
+                "clips": [
+                    {
+                        "id": "new-smear-hook-south-east",
+                        "title": "크게 감아치는 훅 · 남동쪽",
+                        "startFrame": 0,
+                        "beforeDurationMs": 495,
+                        "afterDurationMs": 495,
+                        "durationMs": 850
+                    },
+                    {
+                        "id": "new-smear-hammerfist-south-east",
+                        "title": "대각 망치주먹 · 남동쪽",
+                        "startFrame": 85,
+                        "beforeDurationMs": 550,
+                        "afterDurationMs": 550,
+                        "durationMs": 900
+                    }
+                ],
+                "frameCount": 175,
+                "frameDurationMs": 20
+            },
+            {
+                "id": "04-shoulder-keyposes",
+                "label": "철산고 어깨 장전 · 충돌 그림",
+                "motions": ["cheolsango"],
+                "effects": [
+                    "cheolsango-shoulder-keyposes",
+                    "guard-tail-follow-through"
+                ],
+                "clips": [
+                    {
+                        "id": "cheolsango",
+                        "title": "철산고",
+                        "startFrame": 0,
+                        "beforeDurationMs": 660,
+                        "afterDurationMs": 660,
+                        "durationMs": 1010
+                    }
+                ],
+                "frameCount": 101,
+                "frameDurationMs": 20
+            }
+        ]
+    }
+}

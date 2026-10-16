@@ -1,11 +1,41 @@
 import type { ComboSnapshot } from './player.js';
+import { finisherContactPhase } from './finisher-actors.js';
 import { frameKey, type SourceFrame } from './source-frames.js';
 
 import { drawMotionEffects } from './effects-drawing.js';
 import { drawPoseWithParts } from './parts-drawing.js';
+import { sampleSandbag } from './sandbag.js';
+import { drawSandbag } from './sandbag-drawing.js';
+import { drawImpacts, sampleImpacts } from './impact-effects.js';
+import { sampleCameraRecoil } from './camera-effects.js';
+import {
+  sampleCameraStaging,
+  type CameraStagingMode,
+} from './camera-staging.js';
+import { composeCameraView, type CameraView } from './camera-framing.js';
+import { groundShadow, sampleGroundEffects } from './ground-effects.js';
+import { drawGroundEffects } from './ground-drawing.js';
+import { sampleEmphasis, type EmphasisMode } from './emphasis-effects.js';
+import { drawSpeedLines, sampleSpeedLines } from './speed-lines.js';
+import {
+  drawKiBackdrop,
+  drawKiForeground,
+  drawKiOverlay,
+} from './ki-drawing.js';
+import { collectSandbagContacts } from './sandbag.js';
+import {
+  drawFinisherBackdrop,
+  drawFinisherPaths,
+  drawFinisherActors,
+  drawFinisherEchoes,
+  drawFinisherOverlay,
+  drawFinisherStrikes,
+  sampleFinisher,
+} from './finisher-presentation.js';
 import {
   drawPose,
   posePosition,
+  poseWithDrawing,
   stageWidth,
   stageHeight,
   groundY,
@@ -15,17 +45,46 @@ export { stageWidth, stageHeight } from './pose-drawing.js';
 
 export type DrawingOptions = PoseDrawingOptions & {
   readonly showContacts: boolean;
+  readonly showSandbag?: boolean;
+  readonly directionalImpacts?: boolean;
+  readonly showGroundEffects?: boolean;
+  readonly showCameraRecoil?: boolean;
+  readonly cameraMode?: CameraStagingMode;
+  readonly emphasisMode?: EmphasisMode;
+  readonly showSpeedLines?: boolean;
+  readonly showFinisher?: boolean;
   readonly enabledEffects: ReadonlySet<string>;
 };
 
-function drawDojo(ctx: CanvasRenderingContext2D): void {
+export type ComboDrawingState = {
+  readonly impactCount: number;
+  readonly groundCount: number;
+  readonly cameraX: number;
+  readonly cameraY: number;
+  readonly cameraZoom: number;
+  readonly backgroundDim: number;
+  readonly palette: boolean;
+  readonly emphasisPhase: 'none' | 'preparation' | 'impact';
+  readonly speedLineCount: number;
+  readonly finisherBeat: string;
+  readonly finisherHits: number;
+};
+
+function drawDojo(ctx: CanvasRenderingContext2D, view: CameraView): void {
+  const left = Math.floor(Math.min(-12, view.visibleBounds.left)) - 2;
+  const top = Math.floor(Math.min(-12, view.visibleBounds.top)) - 2;
+  const right =
+    Math.ceil(Math.max(stageWidth + 12, view.visibleBounds.right)) + 2;
+  const bottom =
+    Math.ceil(Math.max(stageHeight + 12, view.visibleBounds.bottom)) + 2;
   ctx.fillStyle = '#efdfbf';
-  ctx.fillRect(0, 0, stageWidth, stageHeight);
+  // 축소 구도의 역변환 범위까지 채워도 기둥·창문·바닥의 월드 위치는 유지한다.
+  ctx.fillRect(left, top, right - left, bottom - top);
   ctx.fillStyle = '#e6cfa7';
-  ctx.fillRect(0, 42, stageWidth, groundY - 42);
+  ctx.fillRect(left, 42, right - left, groundY - 42);
   ctx.fillStyle = '#7c5844';
-  for (const x of [42, 435, 830]) ctx.fillRect(x, 0, 13, groundY);
-  ctx.fillRect(0, 25, stageWidth, 14);
+  for (const x of [42, 435, 830]) ctx.fillRect(x, top, 13, groundY - top);
+  ctx.fillRect(left, 25, right - left, 14);
   ctx.fillStyle = '#f7eacb';
   ctx.fillRect(96, 68, 295, 131);
   ctx.fillRect(487, 68, 295, 131);
@@ -38,41 +97,15 @@ function drawDojo(ctx: CanvasRenderingContext2D): void {
     ctx.stroke();
   }
   ctx.fillStyle = '#b88961';
-  ctx.fillRect(0, groundY, stageWidth, stageHeight - groundY);
+  ctx.fillRect(left, groundY, right - left, bottom - groundY);
   ctx.strokeStyle = '#946e50';
   ctx.lineWidth = 2;
   for (const y of [groundY + 2, 352, 383]) {
     ctx.beginPath();
-    ctx.moveTo(0, y);
-    ctx.lineTo(stageWidth, y);
+    ctx.moveTo(left, y);
+    ctx.lineTo(right, y);
     ctx.stroke();
   }
-}
-
-function drawContact(
-  ctx: CanvasRenderingContext2D,
-  x: number,
-  y: number,
-  elapsed: number,
-): void {
-  const progress = Math.min(1, elapsed / 140);
-  ctx.save();
-  ctx.globalAlpha *= 1 - progress;
-  ctx.translate(x, y);
-  ctx.strokeStyle = '#fff7d5';
-  ctx.lineWidth = 4;
-  const radius = 16 + progress * 35;
-  for (let i = 0; i < 7; i++) {
-    const angle = (i * Math.PI * 2) / 7;
-    ctx.beginPath();
-    ctx.moveTo(
-      Math.cos(angle) * radius * 0.35,
-      Math.sin(angle) * radius * 0.35,
-    );
-    ctx.lineTo(Math.cos(angle) * radius, Math.sin(angle) * radius);
-    ctx.stroke();
-  }
-  ctx.restore();
 }
 
 export function drawCombo(
@@ -80,73 +113,188 @@ export function drawCombo(
   snapshot: ComboSnapshot,
   frames: ReadonlyMap<string, SourceFrame>,
   options: DrawingOptions,
-): void {
-  drawDojo(ctx);
-  const replacement = options.showMovement
-    ? (snapshot.motion.effects ?? [])
-        .filter(
-          (effect) =>
-            effect.kind === 'pose' && options.enabledEffects.has(effect.id),
-        )
-        .flatMap((effect) =>
-          effect.kind === 'pose' ? effect.replacements : [],
-        )
-        .find(
-          (item) =>
-            item.motion === snapshot.step.motion &&
-            item.frame === snapshot.step.frame,
-        )
-    : undefined;
-  const pose = replacement
-    ? { ...snapshot, step: { ...snapshot.step, ...replacement.replacement } }
+): ComboDrawingState {
+  const finisher = sampleFinisher(snapshot, options);
+  const kiOptions = snapshot.motion.ki
+    ? { ...options, contacts: collectSandbagContacts(snapshot.motion, options) }
+    : options;
+  const impacts =
+    options.showMovement && (options.showContacts || options.showCameraRecoil)
+      ? sampleImpacts(snapshot, options)
+      : [];
+  const camera =
+    options.showMovement && options.showSandbag && options.showCameraRecoil
+      ? sampleCameraRecoil(snapshot, impacts, options)
+      : { x: 0, y: 0 };
+  const staging = sampleCameraStaging(snapshot, {
+    ...options,
+    mode: options.showMovement ? (options.cameraMode ?? 'none') : 'none',
+  });
+  const view = composeCameraView(snapshot, frames, {
+    ...options,
+    staging,
+    recoil: camera,
+  });
+  const ground =
+    options.showMovement && options.showGroundEffects
+      ? sampleGroundEffects(snapshot, frames, options)
+      : [];
+  const emphasis = sampleEmphasis(snapshot, {
+    ...options,
+    mode: options.showMovement ? (options.emphasisMode ?? 'none') : 'none',
+  });
+  const backgroundDim = Math.max(
+    emphasis.backgroundDim,
+    finisher?.backgroundDim ?? 0,
+  );
+  const speedLines =
+    options.showMovement && options.showSpeedLines
+      ? sampleSpeedLines(snapshot, options)
+      : [];
+  const state = {
+    impactCount: options.showContacts ? impacts.length : 0,
+    groundCount: ground.length,
+    cameraX: view.translateX,
+    cameraY: view.translateY,
+    cameraZoom: view.zoom,
+    backgroundDim,
+    palette: emphasis.palette,
+    emphasisPhase: emphasis.phase,
+    speedLineCount: speedLines.length,
+    finisherBeat: finisher?.beat.label ?? '',
+    finisherHits: finisher?.hitCount ?? 0,
+  };
+  ctx.save();
+  ctx.beginPath();
+  ctx.rect(0, 0, stageWidth, stageHeight);
+  ctx.clip();
+  ctx.translate(view.translateX, view.translateY);
+  ctx.scale(view.zoom, view.zoom);
+  drawDojo(ctx, view);
+  if (backgroundDim > 0) {
+    ctx.save();
+    ctx.globalAlpha = backgroundDim;
+    ctx.fillStyle = '#242331';
+    const bounds = view.visibleBounds;
+    ctx.fillRect(
+      bounds.left - 2,
+      bounds.top - 2,
+      bounds.right - bounds.left + 4,
+      bounds.bottom - bounds.top + 4,
+    );
+    ctx.restore();
+  }
+  if (finisher) drawFinisherBackdrop(ctx, snapshot, finisher, options);
+  drawKiBackdrop(ctx, snapshot, frames, kiOptions);
+  const pose = options.showMovement
+    ? poseWithDrawing(snapshot, options.enabledEffects)
     : snapshot;
-  const source = frames.get(frameKey(pose.step));
-  if (!source) return;
+  const replacement = pose !== snapshot;
+  const originalSource = frames.get(frameKey(pose.step));
+  const source =
+    originalSource && emphasis.palette && originalSource.emphasisImage
+      ? { ...originalSource, image: originalSource.emphasisImage }
+      : originalSource;
+  if (source) {
+    const position = posePosition(pose, source, options);
+    const bounds = source.bounds;
+    drawSpeedLines(ctx, speedLines, {
+      exclusion: {
+        left: position.left + (bounds?.left ?? 0) * options.scale - 8,
+        top: position.top + (bounds?.top ?? 0) * options.scale - 8,
+        right:
+          position.left +
+          (bounds?.right ?? source.image.naturalWidth) * options.scale +
+          8,
+        bottom:
+          position.top +
+          (bounds?.bottom ?? source.image.naturalHeight) * options.scale +
+          8,
+      },
+    });
+  }
+  if (options.showMovement && options.showSandbag) {
+    const target = sampleSandbag(snapshot, {
+      scale: options.scale,
+      enabledEffects: options.enabledEffects,
+    });
+    if (target) {
+      ctx.save();
+      ctx.globalAlpha = finisher?.actorOpacity ?? 1;
+      drawSandbag(ctx, target);
+      ctx.restore();
+    }
+  }
+  if (!source) {
+    ctx.restore();
+    return state;
+  }
   const scale = options.scale;
   const moving = options.showMovement;
-  const { x, y } = posePosition(pose, source, options);
+  const { x } = posePosition(pose, source, options);
   ctx.save();
   ctx.globalAlpha = snapshot.opacity;
   const airborne = moving ? Math.max(0, -snapshot.y) : 0;
+  const shadow =
+    moving && options.showGroundEffects
+      ? groundShadow(snapshot)
+      : { opacity: 1, widthScale: 1, heightScale: 1 };
+  ctx.save();
+  ctx.globalAlpha *= shadow.opacity;
   ctx.fillStyle = '#59413230';
   ctx.beginPath();
   ctx.ellipse(
     x,
     groundY + 3,
-    Math.max(16, 34 - airborne * 0.4),
-    7,
+    Math.max(16, 34 - airborne * 0.4) * shadow.widthScale,
+    7 * shadow.heightScale,
     0,
     0,
     Math.PI * 2,
   );
   ctx.fill();
+  ctx.restore();
+  drawGroundEffects(ctx, ground, options);
+  if (finisher) drawFinisherPaths(ctx, snapshot, finisher, frames, options);
+  if (finisher) drawFinisherEchoes(ctx, snapshot, finisher, frames, options);
+  if (snapshot.motion.finisher && options.showMovement)
+    drawFinisherActors(ctx, snapshot, frames, {
+      ...options,
+      palette: emphasis.palette,
+    });
   drawMotionEffects(ctx, snapshot, frames, { ...options, layer: 'back' });
+  ctx.save();
+  ctx.globalAlpha *= finisher?.actorOpacity ?? 1;
   if (replacement) drawPose(ctx, pose, source, options);
   else drawPoseWithParts(ctx, snapshot, source, options);
-  drawMotionEffects(ctx, snapshot, frames, { ...options, layer: 'front' });
-  if (
-    options.showMovement &&
-    options.showContacts &&
-    snapshot.step.contact &&
-    !snapshot.waiting
-  ) {
-    drawContact(
-      ctx,
-      x +
-        (snapshot.step.contact.reach ??
-          (snapshot.step.contact.kind === 'sweep' ? 35 : 26)) *
-          scale,
-      (snapshot.step.contact.heightReference === 'body' ? y : groundY) -
-        snapshot.step.contact.height * scale,
-      snapshot.stepElapsedMs,
-    );
-  }
   ctx.restore();
-  ctx.fillStyle = '#614630';
+  drawMotionEffects(ctx, snapshot, frames, { ...options, layer: 'front' });
+  if (options.showMovement && options.showContacts)
+    drawImpacts(
+      ctx,
+      impacts.filter((impact) => !impact.contact.actorId.startsWith('ki:')),
+      {
+        scale,
+        directional: !!options.directionalImpacts,
+      },
+    );
+  if (finisher && options.showContacts)
+    drawFinisherStrikes(ctx, snapshot, finisher, options);
+  drawKiForeground(ctx, snapshot, frames, kiOptions);
+  drawKiOverlay(ctx, snapshot, frames, kiOptions);
+  ctx.restore();
+  ctx.restore();
+  if (finisher) drawFinisherOverlay(ctx, snapshot, finisher);
+  ctx.fillStyle = finisher || backgroundDim > 0.4 ? '#f6e8c9' : '#614630';
   ctx.font = '15px sans-serif';
   ctx.fillText(
-    snapshot.waiting ? '한 동작 완료' : snapshot.step.phase,
+    snapshot.waiting
+      ? '한 동작 완료'
+      : ((options.showMovement
+          ? finisherContactPhase(snapshot.motion, snapshot.elapsedMs)
+          : undefined) ?? snapshot.step.phase),
     28,
     391,
   );
+  return state;
 }

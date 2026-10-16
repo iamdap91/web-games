@@ -1,5 +1,25 @@
+import refinement from '../../../../resources/ataho-v2-motion-refinement.json' with { type: 'json' };
+import continuity from '../../../../resources/ataho-v2-motion-continuity.json' with { type: 'json' };
+import elbowContact from '../../../../resources/ataho-v2-elbow-contact.json' with { type: 'json' };
+import kiPoses from '../../../../resources/ataho-v2-ki-pose-generation.json' with { type: 'json' };
 const generatedPath = 'public/assets/maplestory/ataho-v2-combo-generated/20261014/';
 export const supplementFrames = {
+    'presentation-ki-beam-poses-south-east': {
+        label: '파동포 준비·발사·반동 그림',
+        frames: kiPoses.frames,
+    },
+    'presentation-elbow-keyposes-south-east': {
+        label: '팔꿈치 장전·하강 접촉 그림',
+        frames: elbowContact.drawings,
+    },
+    'presentation-motion-connections-south-east': {
+        label: '접지·소품 연결 그림',
+        frames: continuity.drawings,
+    },
+    'presentation-cheolsango-keyposes-south-east': {
+        label: '어깨 장전·충돌 추가 그림',
+        frames: refinement.drawings,
+    },
     'generated-dodge-lean': {
         label: '생성 보강 · 뒤젖힘',
         frames: [
@@ -23,12 +43,23 @@ export const supplementFrames = {
         ],
     },
 };
+export function supplementFrameView(step) {
+    if (step.motion === 'presentation-ki-beam-poses-south-east')
+        return kiPoses.frames[step.frame];
+    if (step.motion === 'presentation-elbow-keyposes-south-east')
+        return elbowContact.drawings[step.frame];
+    if (step.motion === 'presentation-motion-connections-south-east')
+        return continuity.drawings[step.frame];
+    return step.motion === 'presentation-cheolsango-keyposes-south-east'
+        ? refinement.drawings[step.frame]
+        : undefined;
+}
 export function withSupplement(motion) {
     if (motion.id === 'slide-sweep') {
         return {
             ...motion,
             supplementedReview: '기존 쓸기의 정점과 짧은 유지 구간을 생성 자세 한 장으로 교체해 오른쪽으로 뻗은 다리와 발을 보이게 했다. 얼굴과 도트 질감은 원본과 조금 달라 비교 후보로 둔다. 누운 슬라이딩에서 한 손을 짚는 회전 자세로 넘어가는 연결은 보완할 여지가 있다.',
-            supplementedMissingPose: '옆으로 누운 슬라이딩 자세에서 한 손을 바닥에 짚고 골반을 돌리며 쓸기 자세로 들어가는 연결 그림 한 장.',
+            supplementedMissingPose: '연출에서 손 짚고 회전하는 그림도 켜면 낮은 연결과 생성 하단 타격을 함께 비교할 수 있다.',
             supplementedSteps: motion.steps.map((step) => step.motion === 'leg-sweep-south-east' && step.frame === 3
                 ? {
                     ...step,

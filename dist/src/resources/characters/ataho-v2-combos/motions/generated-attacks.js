@@ -1,4 +1,5 @@
 import { guard, oneTwo, recover } from './attack-phrases.js';
+import { withChainTiming } from './chain-timing.js';
 const directions = [
     { id: 'south-east', label: '남동쪽' },
     { id: 'north-east', label: '북동쪽' },
@@ -76,6 +77,11 @@ export const generatedAttacks = techniques.flatMap((technique) => directions.map
     return {
         id: `new-${source}`,
         title: `${technique.title} · ${direction.label}`,
+        technique: {
+            id: `new-${technique.id}`,
+            title: technique.title,
+            direction: direction.id,
+        },
         summary: technique.summary,
         priority: 'review',
         review: technique.review,
@@ -152,4 +158,4 @@ export const hybridAttacks = [
             ...recover(22),
         ],
     },
-];
+].map(withChainTiming);

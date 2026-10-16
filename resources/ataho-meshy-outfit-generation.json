@@ -1,0 +1,1128 @@
+{
+  "createdDate": "2026-10-16",
+  "status": "generated-and-fitting-followup-completed",
+  "provider": "built-in image_gen; Meshy MCP",
+  "referenceBodyResourceId": "ai/ataho-meshy-body",
+  "sourceReferences": [
+    {
+      "role": "원본 복장 디자인",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/references/ataho-original-outfit-reference.png",
+      "sourceName": "사용자 첨부 이미지",
+      "sourceUrl": null
+    },
+    {
+      "role": "본체 비율과 T 포즈",
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/references/ataho-base-t-pose-approved.png",
+      "sourceName": "사용자 승인 ImageGen 이미지"
+    }
+  ],
+  "authorization": {
+    "referenceImageGenerations": 3,
+    "paidScopeConfirmed": true,
+    "paidCallsExecuted": 4,
+    "note": "사용자가 Meshy 7.1·4K 세 모델 90 + 본체 리깅 5, 신규 총95크레딧 진행을 승인함. 각1회이며 추가 재생성은 포함하지 않음.",
+    "approvedCredits": 95
+  },
+  "plannedScope": {
+    "modelGenerations": 3,
+    "creditsPerTexturedModel": 30,
+    "riggingCredits": 5,
+    "estimatedTotalCredits": 95,
+    "aiModel": "meshy-7.1",
+    "pricingUrl": "https://docs.meshy.ai/en/api/pricing",
+    "regenerationIncluded": false,
+    "sashDeferredUntilFitting": true
+  },
+  "rigging": {
+    "plannedRequest": {
+      "tool": "meshy_rig",
+      "arguments": {
+        "input_task_id": "01a1400b-c186-771e-bbf4-17466e55b04b",
+        "height_meters": 1.613668,
+        "response_format": "json"
+      }
+    },
+    "heightNotes": "현재 GLB 높이 보존용이며 캐릭터 설정상 신장 확정이 아님.",
+    "task": {
+      "id": "01a1402e-5001-7509-8e9b-3ff89dcdd9e7",
+      "type": "rigging",
+      "status": "SUCCEEDED",
+      "creationResponseLocalPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/metadata/rigging-created.json",
+      "consumedCredits": 5,
+      "resultResponseLocalPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/metadata/rigging-result.json",
+      "observedAt": "2026-10-15T15:32:14.291164+00:00",
+      "downloadUrlsExpireAt": "2026-10-18T15:29:26+00:00"
+    },
+    "files": [
+      {
+        "key": "rigged-glb",
+        "name": "리깅 몸체 · GLB",
+        "localPath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-rigged.glb",
+        "sha256": "457641a0dc3346376fe0ffb977e9623f6c32aa28984a4ce4d319b59a5b2dea1e",
+        "byteSize": 13353164,
+        "pageUrl": "https://docs.meshy.ai/en/api/rigging"
+      },
+      {
+        "key": "rigged-fbx",
+        "name": "리깅 몸체 · FBX",
+        "localPath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-rigged.fbx",
+        "sha256": "5446f25014d5cf994dcdb07cbbaf383311eb5fa081a30923f7e102aff062a84e",
+        "byteSize": 12258460,
+        "pageUrl": "https://docs.meshy.ai/en/api/rigging"
+      },
+      {
+        "key": "walk-glb",
+        "name": "기본 걷기 · GLB",
+        "localPath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-walk.glb",
+        "sha256": "6d9e4354b4ba2172fde0c87324f5f43070e56c3cb10ffec20a12204b842bbb26",
+        "byteSize": 13333268,
+        "pageUrl": "https://docs.meshy.ai/en/api/rigging"
+      },
+      {
+        "key": "walk-fbx",
+        "name": "기본 걷기 · FBX",
+        "localPath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-walk.fbx",
+        "sha256": "0fb5307b98bd1d6dce979cd9679de68498d4eb76901481a9c5be6f30148bb8c5",
+        "byteSize": 12296348,
+        "pageUrl": "https://docs.meshy.ai/en/api/rigging"
+      },
+      {
+        "key": "run-glb",
+        "name": "기본 달리기 · GLB",
+        "localPath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-run.glb",
+        "sha256": "7a2407c0118fa07cb60400a03003eaa81b9cd033d66e8c0c6548cf1f216e0a01",
+        "byteSize": 13322656,
+        "pageUrl": "https://docs.meshy.ai/en/api/rigging"
+      },
+      {
+        "key": "run-fbx",
+        "name": "기본 달리기 · FBX",
+        "localPath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-run.fbx",
+        "sha256": "404f21a6b7b0f9062e317d374e9d0bdb1a145b469b3a2e01ccf8b9aadea73106",
+        "byteSize": 12279228,
+        "pageUrl": "https://docs.meshy.ai/en/api/rigging"
+      }
+    ],
+    "observedOutput": {
+      "rigged": {
+        "meshCount": 1,
+        "primitiveCount": 1,
+        "totalVertices": 64142,
+        "totalTriangles": 99131,
+        "localPositionBounds": {
+          "min": [-0.9514889717102051, 0.0, -0.3265855014324188],
+          "max": [0.9514889121055603, 1.6136680841445923, 0.3265855014324188],
+          "span": [1.9029778838157654, 1.6136680841445923, 0.6531710028648376]
+        },
+        "nodeCount": 26,
+        "skinCount": 1,
+        "skins": [
+          {
+            "index": 0,
+            "name": "Armature",
+            "jointCount": 24,
+            "rootJoints": [23],
+            "jointNames": [
+              "Hips",
+              "Spine02",
+              "Spine01",
+              "Spine",
+              "neck",
+              "Head",
+              "head_end",
+              "headfront",
+              "LeftShoulder",
+              "LeftArm",
+              "LeftForeArm",
+              "LeftHand",
+              "RightShoulder",
+              "RightArm",
+              "RightForeArm",
+              "RightHand",
+              "LeftUpLeg",
+              "LeftLeg",
+              "LeftFoot",
+              "LeftToeBase",
+              "RightUpLeg",
+              "RightLeg",
+              "RightFoot",
+              "RightToeBase"
+            ],
+            "invalidJointNodeIndices": [],
+            "inverseBindMatrixCount": 24,
+            "inverseBindMatrixNonfiniteComponents": 0
+          }
+        ],
+        "animationCount": 1,
+        "animations": [
+          {
+            "index": 0,
+            "name": "Armature|clip0|baselayer",
+            "start": 0.03333333507180214,
+            "end": 0.03333333507180214,
+            "duration": 0.0,
+            "channels": 72,
+            "nonfiniteComponents": 0,
+            "translationChannelCount": 24,
+            "rootTranslations": [
+              {
+                "node": 23,
+                "name": "Hips",
+                "isSkinRoot": true,
+                "isSceneRoot": false,
+                "bounds": {
+                  "min": [
+                    -0.8210341334342957, 68.29955291748047, 0.020250584930181503
+                  ],
+                  "max": [
+                    -0.8210341334342957, 68.29955291748047, 0.020250584930181503
+                  ],
+                  "span": [0.0, 0.0, 0.0]
+                },
+                "first": [
+                  -0.8210341334342957, 68.29955291748047, 0.020250584930181503
+                ],
+                "last": [
+                  -0.8210341334342957, 68.29955291748047, 0.020250584930181503
+                ]
+              }
+            ],
+            "movingTranslations": []
+          }
+        ],
+        "materialCount": 1,
+        "images": [
+          {
+            "index": 0,
+            "mimeType": "image/jpeg",
+            "format": "JPEG",
+            "width": 4096,
+            "height": 4096
+          }
+        ],
+        "issues": [],
+        "limits": [
+          "Bounds are mesh-local positions, not world-deformed or animated bounds.",
+          "Binary checks do not validate visual deformation, cloth fitting, or silhouette quality."
+        ]
+      },
+      "walk": {
+        "meshCount": 1,
+        "primitiveCount": 1,
+        "totalVertices": 64142,
+        "totalTriangles": 99131,
+        "localPositionBounds": {
+          "min": [-0.9514889717102051, 0.0, -0.3265855014324188],
+          "max": [0.9514889121055603, 1.6136680841445923, 0.3265855014324188],
+          "span": [1.9029778838157654, 1.6136680841445923, 0.6531710028648376]
+        },
+        "nodeCount": 26,
+        "skinCount": 1,
+        "skins": [
+          {
+            "index": 0,
+            "name": "Armature",
+            "jointCount": 24,
+            "rootJoints": [23],
+            "jointNames": [
+              "Hips",
+              "Spine02",
+              "Spine01",
+              "Spine",
+              "neck",
+              "Head",
+              "head_end",
+              "headfront",
+              "LeftShoulder",
+              "LeftArm",
+              "LeftForeArm",
+              "LeftHand",
+              "RightShoulder",
+              "RightArm",
+              "RightForeArm",
+              "RightHand",
+              "LeftUpLeg",
+              "LeftLeg",
+              "LeftFoot",
+              "LeftToeBase",
+              "RightUpLeg",
+              "RightLeg",
+              "RightFoot",
+              "RightToeBase"
+            ],
+            "invalidJointNodeIndices": [],
+            "inverseBindMatrixCount": 24,
+            "inverseBindMatrixNonfiniteComponents": 0
+          }
+        ],
+        "animationCount": 1,
+        "animations": [
+          {
+            "index": 0,
+            "name": "Armature|walking_man|baselayer",
+            "start": 0.03333333507180214,
+            "end": 1.066666603088379,
+            "duration": 1.0333332680165768,
+            "channels": 66,
+            "nonfiniteComponents": 0,
+            "translationChannelCount": 22,
+            "rootTranslations": [
+              {
+                "node": 23,
+                "name": "Hips",
+                "isSkinRoot": true,
+                "isSceneRoot": false,
+                "bounds": {
+                  "min": [
+                    -1.6682595014572144, 64.76025390625, 0.3670531213283539
+                  ],
+                  "max": [
+                    3.398853063583374, 70.90739440917969, 4.5820770263671875
+                  ],
+                  "span": [
+                    5.067112565040588, 6.1471405029296875, 4.215023905038834
+                  ]
+                },
+                "first": [
+                  -0.7479844093322754, 70.30976867675781, 1.292038083076477
+                ],
+                "last": [
+                  -0.7479830980300903, 70.30976104736328, 1.2920385599136353
+                ]
+              }
+            ],
+            "movingTranslations": [
+              {
+                "node": 23,
+                "name": "Hips",
+                "isSkinRoot": true,
+                "isSceneRoot": false,
+                "bounds": {
+                  "min": [
+                    -1.6682595014572144, 64.76025390625, 0.3670531213283539
+                  ],
+                  "max": [
+                    3.398853063583374, 70.90739440917969, 4.5820770263671875
+                  ],
+                  "span": [
+                    5.067112565040588, 6.1471405029296875, 4.215023905038834
+                  ]
+                },
+                "first": [
+                  -0.7479844093322754, 70.30976867675781, 1.292038083076477
+                ],
+                "last": [
+                  -0.7479830980300903, 70.30976104736328, 1.2920385599136353
+                ]
+              }
+            ]
+          }
+        ],
+        "materialCount": 1,
+        "images": [
+          {
+            "index": 0,
+            "mimeType": "image/jpeg",
+            "format": "JPEG",
+            "width": 4096,
+            "height": 4096
+          }
+        ],
+        "issues": [],
+        "limits": [
+          "Bounds are mesh-local positions, not world-deformed or animated bounds.",
+          "Binary checks do not validate visual deformation, cloth fitting, or silhouette quality."
+        ]
+      },
+      "run": {
+        "meshCount": 1,
+        "primitiveCount": 1,
+        "totalVertices": 64142,
+        "totalTriangles": 99131,
+        "localPositionBounds": {
+          "min": [-0.9514889717102051, 0.0, -0.3265855014324188],
+          "max": [0.9514889121055603, 1.6136680841445923, 0.3265855014324188],
+          "span": [1.9029778838157654, 1.6136680841445923, 0.6531710028648376]
+        },
+        "nodeCount": 26,
+        "skinCount": 1,
+        "skins": [
+          {
+            "index": 0,
+            "name": "Armature",
+            "jointCount": 24,
+            "rootJoints": [23],
+            "jointNames": [
+              "Hips",
+              "Spine02",
+              "Spine01",
+              "Spine",
+              "neck",
+              "Head",
+              "head_end",
+              "headfront",
+              "LeftShoulder",
+              "LeftArm",
+              "LeftForeArm",
+              "LeftHand",
+              "RightShoulder",
+              "RightArm",
+              "RightForeArm",
+              "RightHand",
+              "LeftUpLeg",
+              "LeftLeg",
+              "LeftFoot",
+              "LeftToeBase",
+              "RightUpLeg",
+              "RightLeg",
+              "RightFoot",
+              "RightToeBase"
+            ],
+            "invalidJointNodeIndices": [],
+            "inverseBindMatrixCount": 24,
+            "inverseBindMatrixNonfiniteComponents": 0
+          }
+        ],
+        "animationCount": 1,
+        "animations": [
+          {
+            "index": 0,
+            "name": "Armature|running|baselayer",
+            "start": 0.03333333507180214,
+            "end": 0.6666666865348816,
+            "duration": 0.6333333514630795,
+            "channels": 66,
+            "nonfiniteComponents": 0,
+            "translationChannelCount": 22,
+            "rootTranslations": [
+              {
+                "node": 23,
+                "name": "Hips",
+                "isSkinRoot": true,
+                "isSceneRoot": false,
+                "bounds": {
+                  "min": [
+                    -1.3595266342163086, 62.819664001464844, -2.621504783630371
+                  ],
+                  "max": [
+                    0.24957819283008575, 69.04351806640625, 3.901301622390747
+                  ],
+                  "span": [
+                    1.6091048270463943, 6.223854064941406, 6.522806406021118
+                  ]
+                },
+                "first": [
+                  -0.5404490232467651, 64.406982421875, 1.5065971612930298
+                ],
+                "last": [
+                  -0.5404471755027771, 64.406982421875, 1.506598711013794
+                ]
+              }
+            ],
+            "movingTranslations": [
+              {
+                "node": 23,
+                "name": "Hips",
+                "isSkinRoot": true,
+                "isSceneRoot": false,
+                "bounds": {
+                  "min": [
+                    -1.3595266342163086, 62.819664001464844, -2.621504783630371
+                  ],
+                  "max": [
+                    0.24957819283008575, 69.04351806640625, 3.901301622390747
+                  ],
+                  "span": [
+                    1.6091048270463943, 6.223854064941406, 6.522806406021118
+                  ]
+                },
+                "first": [
+                  -0.5404490232467651, 64.406982421875, 1.5065971612930298
+                ],
+                "last": [
+                  -0.5404471755027771, 64.406982421875, 1.506598711013794
+                ]
+              }
+            ]
+          }
+        ],
+        "materialCount": 1,
+        "images": [
+          {
+            "index": 0,
+            "mimeType": "image/jpeg",
+            "format": "JPEG",
+            "width": 4096,
+            "height": 4096
+          }
+        ],
+        "issues": [],
+        "limits": [
+          "Bounds are mesh-local positions, not world-deformed or animated bounds.",
+          "Binary checks do not validate visual deformation, cloth fitting, or silhouette quality."
+        ]
+      }
+    },
+    "limitations": [
+      "꼬리·개별 손가락·표정 전용 뼈 없음.",
+      "리깅 몸체의 단일 키 정지 클립은 재생 가능한 모션에서 제외.",
+      "원본 FBX의 사각형 위주 토폴로지와 달리 리깅 FBX는 삼각형 99,131개.",
+      "걷기·달리기는 제자리 루프이며 실제 전방 이동은 게임 측 책임."
+    ],
+    "review": {
+      "method": "로컬 Three.js 실제 GLB 렌더링과 걷기·달리기 재생, 걷기 측면·일시정지, 달리기 반복 해제·처음부터·종료 확인.",
+      "findings": [
+        "24개 관절로 팔다리가 변형되고 걷기·달리기가 제자리에서 재생됨.",
+        "꼬리·개별 손가락·표정 전용 뼈 없음.",
+        "어깨·골반의 최종 스킨 보정과 착의 후 관통 검사는 남아 있음."
+      ],
+      "keyframeSpanSeconds": {
+        "walking": 1.033333,
+        "running": 0.633333
+      },
+      "threeJsPlaybackDurationSeconds": {
+        "walking": 1.066667,
+        "running": 0.666667
+      },
+      "durationNotes": "Meshy 키 시간은 1/30초에서 시작. 바이너리 시간범위(end-start)와 Three.js 최대 키 시간 기반 duration을 구분."
+    }
+  },
+  "assets": [
+    {
+      "key": "jacket",
+      "inputImage": {
+        "key": "jacket-reference",
+        "name": "겉옷 제작 참조",
+        "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/references/ataho-jacket-reference.png",
+        "sha256": "5c09dc65a0ad63e1bfab99dc3bb8d5851b1ccbf6f53a924b797ffabb64703526",
+        "byteSize": 1420161,
+        "width": 1536,
+        "height": 1024,
+        "provider": "built-in image_gen",
+        "pageUrl": "https://openai.com/",
+        "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a14001-5f0a-7441-b190-83d67a99629a/exec-79a009ed-ac62-4068-82dd-a508272d6cba.png",
+        "sourcePixelsUnmodified": true,
+        "prompt": "Use case: stylized-concept.\nAsset type: ONE isolated empty outer-jacket reference image for later Meshy image-to-3D generation; a separate wearable game-character garment.\nInput images: Image 1 is the authoritative JACKET DESIGN, COLORS, MATERIAL and ILLUSTRATION STYLE reference: the adult tiger wearing his original outfit. Image 2 is ONLY the wearer's BODY PROPORTIONS and HORIZONTAL T-POSE fit reference. Do not draw either character or the clothing from Image 2.\nPrimary request: Show ONLY the original short OPEN BROWN kimono-like outer jacket as a hollow, unoccupied garment. Preserve the original warm earthy brown fabric, wide dark-edged front lapels and thick hem, short broad loose sleeves, and muted golden-tan/cream turned-back sleeve cuffs. It belongs to the same broad-shouldered, round-bellied, short stocky tiger character, so retain a generously wide, short barrel-shaped torso and roomy armpits rather than a slim human jacket. Open front panels hang apart with space for the large belly; the jacket does not close across the stomach. Keep the design plain and worn-in as in Image 1, with restrained broad fabric folds and slightly scuffed cuff edges; no new ornamentation.\nPose and geometry: the garment is displayed as if its wearer held both arms STRAIGHT HORIZONTALLY out to the sides in a T-pose, matching Image 2. Both empty sleeves extend horizontally from the shoulders with generous shoulder and armpit clearance. Show actual empty sleeve openings with turned-back cuffs, the neck opening, the back fabric visible inside the open front, and believable cloth thickness along the open front edges and lower hem. The jacket is empty and contains NO wearer, mannequin, body, torso, arms, hands, head, fur or undershirt. Do not fill the front opening with a cream shirt or skin. This is ONE complete connected outer jacket, not disconnected sleeve parts.\nStyle/medium: match Image 1's hand-painted anime/game concept illustration with crisp dark ink contours, warm flat colors, restrained cel-shaded volume and a few clear fabric folds. Keep the original brown-and-muted-tan jacket palette. No photorealistic cloth, shiny plastic, metal, armor or sculpted character.\nComposition/framing: a single jacket centered and fully visible, near-front product reference with only a slight three-quarter turn, close to orthographic with very little perspective so both horizontal sleeves and open front are easy to read. Entire cuffs and hem in frame, comfortable even transparent margins. Make the silhouette and empty openings clear. One view only, no turnaround panels or duplicate objects.\nBackground: genuinely transparent RGBA; no floor, ground shadow, scenery, stand, hanger, display mannequin, text, labels, border or watermark.\nAvoid: any character/body part, orange tiger fur, the ivory crossover inner shirt, trousers, boxer briefs, sash, belt, hanging ties, cords, wine bottle, wrist wraps, ankle wraps, accessories, extra garments, closed front, long narrow sleeves, downward arms, slim fitted waist.",
+        "review": [
+          "열린 앞판과 속의 등판, 수평 T 소매와 양 소매 개구부 확인.",
+          "몸·셔츠·끈 혼입 없음.",
+          "요청한 약간 3/4보다 대칭 정면에 가까움. 실제 3D 내부 구조와 몸체 피팅은 미검증."
+        ],
+        "referenceImagePaths": [
+          "public/assets/maplestory/ataho-meshy-body/20261015/references/ataho-original-outfit-reference.png",
+          "public/assets/maplestory/ataho-meshy-body/20261015/references/ataho-base-t-pose-approved.png"
+        ],
+        "transparentBackgroundRequested": true
+      },
+      "plannedRequest": {
+        "tool": "meshy_image_to_3d",
+        "arguments": {
+          "ai_model": "meshy-7.1",
+          "file_path": "/Users/3sam3/.codex/worktrees/ataho-meshy-body/web-games/public/assets/maplestory/ataho-meshy-outfit/20261016/references/ataho-jacket-reference.png",
+          "model_type": "standard",
+          "geometry_resolution": "standard",
+          "image_enhancement": false,
+          "should_texture": true,
+          "texture_resolution": "4k",
+          "enable_pbr": false,
+          "should_remesh": true,
+          "target_polycount": 15000,
+          "topology": "quad",
+          "save_pre_remeshed_model": true,
+          "target_formats": ["glb", "fbx"],
+          "alpha_thumbnail": true,
+          "multi_view_thumbnails": true,
+          "response_format": "json"
+        },
+        "estimatedCredits": 30
+      },
+      "task": {
+        "id": "01a1402e-83ca-70e4-8a7b-e6ee199eebd7",
+        "type": "image-to-3d",
+        "status": "SUCCEEDED",
+        "creationResponseLocalPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/metadata/jacket-created.json",
+        "consumedCredits": 30,
+        "resultResponseLocalPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/metadata/jacket-result.json",
+        "observedAt": "2026-10-15T15:32:14.291598+00:00",
+        "downloadUrlsExpireAt": "2026-10-18T15:30:41+00:00"
+      },
+      "files": [
+        {
+          "key": "jacket--glb",
+          "name": "겉옷 · GLB",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-jacket.glb",
+          "sha256": "3a3ee87f7d6af42b088f7e99586ac2943d7fcd3b3e4fe018dee5e7353979f74f",
+          "byteSize": 6566824,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+        },
+        {
+          "key": "jacket--fbx",
+          "name": "겉옷 · FBX",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-jacket.fbx",
+          "sha256": "28b258c3b1f63b9d3a39673278528885365097930b276941445c84c02333c3c6",
+          "byteSize": 10838204,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+        },
+        {
+          "key": "jacket--pre-remesh-glb",
+          "name": "겉옷 · 리메시 전 GLB",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-jacket-pre-remesh.glb",
+          "sha256": "8dc0353a88e73a075cf43f47ca765f707da51224a1fdbd46941a2067443813d8",
+          "byteSize": 5067584,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+        },
+        {
+          "key": "jacket-_base_color-png",
+          "name": "겉옷 · 4K 기본색 텍스처",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-jacket_base_color.png",
+          "sha256": "dead4bf1cc4dacdc9e811dc2633531b246d5e9885367d349646e209caf23f8c8",
+          "byteSize": 10033151,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d",
+          "width": 4096,
+          "height": 4096
+        },
+        {
+          "key": "jacket-preview.png",
+          "name": "겉옷 · 서비스 미리보기",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/previews/jacket.png",
+          "sha256": "d687eba10c7dd182b20928eac625cb3c0306687c27a4ae38e73d1447586d008b",
+          "byteSize": 86649,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "key": "jacket-preview-alpha.png",
+          "name": "겉옷 · 서비스 미리보기",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/previews/jacket-alpha.png",
+          "sha256": "d687eba10c7dd182b20928eac625cb3c0306687c27a4ae38e73d1447586d008b",
+          "byteSize": 86649,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d",
+          "width": 512,
+          "height": 512
+        }
+      ],
+      "observedOutput": {
+        "glb": {
+          "meshCount": 1,
+          "primitiveCount": 1,
+          "totalVertices": 17751,
+          "totalTriangles": 29402,
+          "localPositionBounds": {
+            "min": [
+              -0.9518719911575317, -0.47175711393356323, -0.4146120846271515
+            ],
+            "max": [0.9498040080070496, 0.47049009799957275, 0.411918044090271],
+            "span": [1.9016759991645813, 0.942247211933136, 0.8265301287174225]
+          },
+          "nodeCount": 1,
+          "skinCount": 0,
+          "skins": [],
+          "animationCount": 0,
+          "animations": [],
+          "materialCount": 1,
+          "images": [
+            {
+              "index": 0,
+              "mimeType": "image/jpeg",
+              "format": "JPEG",
+              "width": 4096,
+              "height": 4096
+            }
+          ],
+          "issues": [],
+          "limits": [
+            "Bounds are mesh-local positions, not world-deformed or animated bounds.",
+            "Binary checks do not validate visual deformation, cloth fitting, or silhouette quality."
+          ]
+        },
+        "fbx": {
+          "format": "FBX",
+          "version": 7400,
+          "bytes": 10838204,
+          "sha256": "28b258c3b1f63b9d3a39673278528885365097930b276941445c84c02333c3c6",
+          "geometries": [
+            {
+              "name": "temp\u0000\u0001Geometry",
+              "controlPoints": 14716,
+              "polygons": 14702,
+              "polygonVertexCounts": {
+                "3": 2,
+                "4": 14700
+              },
+              "quadFraction": 0.9998639640865188,
+              "triangulatedTriangleCount": 29402,
+              "invalidIndices": 0,
+              "nonfinitePositionComponents": 0,
+              "positionBounds": {
+                "min": [
+                  -0.9518719911575317, -0.4717569947242737, -0.4146119952201843
+                ],
+                "max": [
+                  0.9498040080070496, 0.4704900085926056, 0.4119180142879486
+                ],
+                "span": [
+                  1.9016759991645813, 0.9422470033168793, 0.8265300095081329
+                ]
+              }
+            }
+          ],
+          "limbNodeCount": 0,
+          "deformerTypes": {},
+          "issues": [],
+          "limits": [
+            "FBX topology diagnostics only; no DCC import, shader, or animation playback validation."
+          ]
+        }
+      },
+      "review": {
+        "status": "reviewed-awaiting-fitting",
+        "fittingStatus": "not-fitted",
+        "skinningStatus": "not-skinned",
+        "findings": [
+          "브라우저 실제 GLB 정면·후면 확인. 열린 앞판 실루엣과 등판·소매·밝은 소매단이 유지됨.",
+          "불필요한 몸체·손·셔츠 혼입 없음. 목·소매 안쪽 통로와 최종 착용성은 DCC 확인 필요."
+        ]
+      }
+    },
+    {
+      "key": "pants",
+      "inputImage": {
+        "key": "pants-reference",
+        "name": "바지 제작 참조",
+        "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/references/ataho-pants-reference.png",
+        "sha256": "04bff5245524f0bd350dbf5c41210d514e45ce342e231dea09ffba9daf22982b",
+        "byteSize": 1147451,
+        "width": 1377,
+        "height": 1142,
+        "provider": "built-in image_gen",
+        "pageUrl": "https://openai.com/",
+        "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a14027-20e0-7450-9e0e-9d9a752471b2/exec-5f76b408-5d6b-4c15-820f-b2ab2c3a70de.png",
+        "sourcePixelsUnmodified": true,
+        "prompt": "Use case: stylized-concept\nAsset type: isolated clothing reference for image-to-3D modeling, one single pair of trousers.\nInput images: Image 1 is the original character outfit and the authoritative reference for the trousers' design, charcoal color, folds, and illustrated material. Image 2 is a supporting body proportion reference only: preserve enough room for this stocky adult tiger character's broad pelvis and thick thighs. Do not depict either character.\nPrimary request: Extract and faithfully reconstruct ONLY the original dark charcoal martial-arts trousers as one empty, hollow, wearable garment. It has a wide rounded hip volume, extremely loose balloon-shaped thighs and lower legs, a dropped roomy crotch, and fabric that gathers down to small ankle openings. Retain the simple original cut and dark gray cloth with broad angular folds, without inventing decorative details.\nComposition/framing: a single complete pair of trousers centered in the image, facing almost straight forward with only a small three-quarter turn so the silhouette and volume are clear. Waist opening is visible from a slightly raised camera angle. Legs are slightly separated in a neutral stance; both ankle openings and complete hems are visible. Show the empty dark fabric-lined interior at the waist, and hollow ends at the two ankles. The trousers retain a natural worn volume as if on an invisible form, but there is absolutely no form or anatomy inside.\nStyle/medium: match the original's clean hand-painted cartoon game concept art, dark outlines, simple angular cel-shaded folds, soft charcoal fabric, neither photorealistic nor glossy plastic. Keep the entire garment crisp and large, with generous transparent margin around all edges.\nScene/backdrop: genuinely transparent alpha background. No floor, cast shadow, stand, mannequin, scenery, label, text, logo, or watermark.\nConstraints: Exactly one connected wearable pair of long trousers, with one waist opening and two separate leg openings. No torso, skin, fur, tiger, tail, paws, legs, feet, hands, underwear, outer jacket, shirt, sash, separate belt, rope, flask, wrist or ankle wraps, shoes, accessory, or extra garment. The waistband is only the plain narrow edge of the trousers themselves, without a knot or hanging ends. Do not add or emphasize a speculative tail hole; this is a front-oriented reference.",
+        "review": [
+          "차콜색 넓은 바지통, 좁아지는 발목, 허리·양 발목 개구부 확인.",
+          "몸·꼬리·허리끈·소품 없음.",
+          "원본보다 봉제된 발목 단이 조금 더 뚜렷함. 실제 3D 개구부와 착용 적합성은 미검증."
+        ],
+        "referenceImagePaths": [
+          "public/assets/maplestory/ataho-meshy-body/20261015/references/ataho-original-outfit-reference.png",
+          "public/assets/maplestory/ataho-meshy-body/20261015/references/ataho-base-t-pose-approved.png"
+        ],
+        "transparentBackgroundRequested": true
+      },
+      "plannedRequest": {
+        "tool": "meshy_image_to_3d",
+        "arguments": {
+          "ai_model": "meshy-7.1",
+          "file_path": "/Users/3sam3/.codex/worktrees/ataho-meshy-body/web-games/public/assets/maplestory/ataho-meshy-outfit/20261016/references/ataho-pants-reference.png",
+          "model_type": "standard",
+          "geometry_resolution": "standard",
+          "image_enhancement": false,
+          "should_texture": true,
+          "texture_resolution": "4k",
+          "enable_pbr": false,
+          "should_remesh": true,
+          "target_polycount": 15000,
+          "topology": "quad",
+          "save_pre_remeshed_model": true,
+          "target_formats": ["glb", "fbx"],
+          "alpha_thumbnail": true,
+          "multi_view_thumbnails": true,
+          "response_format": "json"
+        },
+        "estimatedCredits": 30
+      },
+      "task": {
+        "id": "01a1402e-72c3-72a7-9c48-0da911d9dc22",
+        "type": "image-to-3d",
+        "status": "SUCCEEDED",
+        "creationResponseLocalPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/metadata/pants-created.json",
+        "consumedCredits": 30,
+        "resultResponseLocalPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/metadata/pants-result.json",
+        "observedAt": "2026-10-15T15:32:14.291801+00:00",
+        "downloadUrlsExpireAt": "2026-10-18T15:30:47+00:00"
+      },
+      "files": [
+        {
+          "key": "pants--glb",
+          "name": "바지 · GLB",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-pants.glb",
+          "sha256": "556baad60fdf41600c918402fc15b8cc297c174b7fcac6986790236c3da89438",
+          "byteSize": 5060772,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+        },
+        {
+          "key": "pants--fbx",
+          "name": "바지 · FBX",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-pants.fbx",
+          "sha256": "3dc117e79571092edf0928778cc07c81e6226337eba60738d239440a2db3e9e0",
+          "byteSize": 9703708,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+        },
+        {
+          "key": "pants--pre-remesh-glb",
+          "name": "바지 · 리메시 전 GLB",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-pants-pre-remesh.glb",
+          "sha256": "87545d66dbb8f20f41eaad28c5e13616f58fd3f47a42423c1d416ece1cb48731",
+          "byteSize": 8305044,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+        },
+        {
+          "key": "pants-_base_color-png",
+          "name": "바지 · 4K 기본색 텍스처",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-pants_base_color.png",
+          "sha256": "43b9efaa8d5a596159bd25f7c8eb1e2cce9d581a0845a89e43bebd9587e4e5aa",
+          "byteSize": 9020781,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d",
+          "width": 4096,
+          "height": 4096
+        },
+        {
+          "key": "pants-preview.png",
+          "name": "바지 · 서비스 미리보기",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/previews/pants.png",
+          "sha256": "6ed23230766f7a3ac96bb74a01950bec2a65283a3d8ed250536e020f78c3244a",
+          "byteSize": 120079,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "key": "pants-preview-alpha.png",
+          "name": "바지 · 서비스 미리보기",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/previews/pants-alpha.png",
+          "sha256": "6ed23230766f7a3ac96bb74a01950bec2a65283a3d8ed250536e020f78c3244a",
+          "byteSize": 120079,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d",
+          "width": 512,
+          "height": 512
+        }
+      ],
+      "observedOutput": {
+        "glb": {
+          "meshCount": 1,
+          "primitiveCount": 1,
+          "totalVertices": 16009,
+          "totalTriangles": 24180,
+          "localPositionBounds": {
+            "min": [
+              -0.9435240030288696, -0.8666000962257385, -0.3926219940185547
+            ],
+            "max": [0.9478899836540222, 0.8682491183280945, 0.3921390175819397],
+            "span": [1.8914139866828918, 1.734849214553833, 0.7847610116004944]
+          },
+          "nodeCount": 1,
+          "skinCount": 0,
+          "skins": [],
+          "animationCount": 0,
+          "animations": [],
+          "materialCount": 1,
+          "images": [
+            {
+              "index": 0,
+              "mimeType": "image/jpeg",
+              "format": "JPEG",
+              "width": 4096,
+              "height": 4096
+            }
+          ],
+          "issues": [],
+          "limits": [
+            "Bounds are mesh-local positions, not world-deformed or animated bounds.",
+            "Binary checks do not validate visual deformation, cloth fitting, or silhouette quality."
+          ]
+        },
+        "fbx": {
+          "format": "FBX",
+          "version": 7400,
+          "bytes": 9703708,
+          "sha256": "3dc117e79571092edf0928778cc07c81e6226337eba60738d239440a2db3e9e0",
+          "geometries": [
+            {
+              "name": "temp\u0000\u0001Geometry",
+              "controlPoints": 12124,
+              "polygons": 12108,
+              "polygonVertexCounts": {
+                "3": 35,
+                "4": 12073
+              },
+              "quadFraction": 0.9971093491906178,
+              "triangulatedTriangleCount": 24181,
+              "invalidIndices": 0,
+              "nonfinitePositionComponents": 0,
+              "positionBounds": {
+                "min": [
+                  -0.9435240030288696, -0.866599977016449, -0.3926219940185547
+                ],
+                "max": [
+                  0.9478899836540222, 0.8682489991188049, 0.3921389877796173
+                ],
+                "span": [
+                  1.8914139866828918, 1.734848976135254, 0.784760981798172
+                ]
+              }
+            }
+          ],
+          "limbNodeCount": 0,
+          "deformerTypes": {},
+          "issues": [],
+          "limits": [
+            "FBX topology diagnostics only; no DCC import, shader, or animation playback validation."
+          ]
+        }
+      },
+      "review": {
+        "status": "reviewed-awaiting-fitting",
+        "fittingStatus": "not-fitted",
+        "skinningStatus": "not-skinned",
+        "findings": [
+          "브라우저 실제 GLB 정면과 마우스 회전한 상단에서 허리 안쪽을 메우는 면을 확인. 착의 전 제거 필요.",
+          "발목 안쪽 통로·꼬리 주변·본체 피팅은 미완료."
+        ]
+      }
+    },
+    {
+      "key": "flask",
+      "inputImage": {
+        "key": "flask-reference",
+        "name": "술병 제작 참조",
+        "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/references/ataho-flask-reference.png",
+        "sha256": "484a36707e1b98618a0ca39fc8ed77ee4af7ca7238463c48d5bb16c7363393a0",
+        "byteSize": 1072064,
+        "width": 1201,
+        "height": 1309,
+        "provider": "built-in image_gen",
+        "pageUrl": "https://openai.com/",
+        "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a14001-0cca-7210-8195-d24eebb9ce9d/exec-7b20bb2f-4538-4553-a261-ab9acead3415.png",
+        "sourcePixelsUnmodified": true,
+        "prompt": "Create ONE isolated game-asset reference image of the small brown drinking flask hanging at the tiger martial artist's waist in the supplied original character artwork. Use the supplied artwork as a design/color/style reference only. Extract and clearly reconstruct that flask as the sole object: a squat pear-shaped or rounded oval earthenware bottle, a short narrow neck, a simple chunky dark brown cork stopper, a beige coarse rope loop wrapped around the neck with a small knot and short dangling end. The body is warm earthy brown with a few irregular pale tan worn patches like the original. Modest stylized hand-painted/cel-shaded game aesthetic matching the source, bold clean silhouette and simple broad shading, readable ceramic surface. Upright, near-front slight three-quarter product view, fully in frame with generous padding. Make the whole bottle and stopper visible, including the bottom, so a single-image 3D model generator can infer the volume. Keep small rope detail close to the neck, no long thin loose loops. Transparent background. No tiger, no character, no body, no hands, no clothes, no sash, no belt, no extra props, no duplicate object, no ground plane, no cast shadow, no label, no lettering, no watermark. Preserve the humble worn traveling flask character of the original; not a modern hip flask and not a two-lobed gourd.",
+        "review": [
+          "갈색 둥근 도기 몸체, 마개, 목의 밧줄과 낡은 밝은 반점 확인.",
+          "인물·허리끈 등 다른 물체 없음.",
+          "가는 밧줄과 매듭의 실제 메시 연결은 3D 생성 후 확인 필요."
+        ],
+        "referenceImagePaths": [
+          "public/assets/maplestory/ataho-meshy-body/20261015/references/ataho-original-outfit-reference.png"
+        ],
+        "transparentBackgroundRequested": true
+      },
+      "plannedRequest": {
+        "tool": "meshy_image_to_3d",
+        "arguments": {
+          "ai_model": "meshy-7.1",
+          "file_path": "/Users/3sam3/.codex/worktrees/ataho-meshy-body/web-games/public/assets/maplestory/ataho-meshy-outfit/20261016/references/ataho-flask-reference.png",
+          "model_type": "standard",
+          "geometry_resolution": "standard",
+          "image_enhancement": false,
+          "should_texture": true,
+          "texture_resolution": "4k",
+          "enable_pbr": false,
+          "should_remesh": true,
+          "target_polycount": 5000,
+          "topology": "quad",
+          "save_pre_remeshed_model": true,
+          "target_formats": ["glb", "fbx"],
+          "alpha_thumbnail": true,
+          "multi_view_thumbnails": true,
+          "response_format": "json"
+        },
+        "estimatedCredits": 30
+      },
+      "task": {
+        "id": "01a1402e-9b02-7426-bc36-27a23b7766c1",
+        "type": "image-to-3d",
+        "status": "SUCCEEDED",
+        "creationResponseLocalPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/metadata/flask-created.json",
+        "consumedCredits": 30,
+        "resultResponseLocalPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/metadata/flask-result.json",
+        "observedAt": "2026-10-15T15:32:14.291937+00:00",
+        "downloadUrlsExpireAt": "2026-10-18T15:30:44+00:00"
+      },
+      "files": [
+        {
+          "key": "flask--glb",
+          "name": "술병 · GLB",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-flask.glb",
+          "sha256": "33e6844d33a9436fe44c3dd3b2fbb6031f2e03759b11035404bbe81c333eb9fd",
+          "byteSize": 7924640,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+        },
+        {
+          "key": "flask--fbx",
+          "name": "술병 · FBX",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-flask.fbx",
+          "sha256": "5d9e5f53916f2829f5453408a690af87f88b64cee2aba2c0cbf3397057627049",
+          "byteSize": 14544108,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+        },
+        {
+          "key": "flask--pre-remesh-glb",
+          "name": "술병 · 리메시 전 GLB",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-flask-pre-remesh.glb",
+          "sha256": "1f477c534a7df799787cf8a011319f5449d0ef4b44c59f4ac3f88d7295e77392",
+          "byteSize": 4562860,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d"
+        },
+        {
+          "key": "flask-_base_color-png",
+          "name": "술병 · 4K 기본색 텍스처",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-flask_base_color.png",
+          "sha256": "4fe66f7e8aa021f06868fd7c54e03fbd5c41b62cf2004ed0b517ca85d191b569",
+          "byteSize": 14243330,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d",
+          "width": 4096,
+          "height": 4096
+        },
+        {
+          "key": "flask-preview.png",
+          "name": "술병 · 서비스 미리보기",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/previews/flask.png",
+          "sha256": "ed597612b5d64e358c7bdf6a330e6158911303bec4a9498a15e366ae3ae11008",
+          "byteSize": 126654,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d",
+          "width": 512,
+          "height": 512
+        },
+        {
+          "key": "flask-preview-alpha.png",
+          "name": "술병 · 서비스 미리보기",
+          "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/previews/flask-alpha.png",
+          "sha256": "ed597612b5d64e358c7bdf6a330e6158911303bec4a9498a15e366ae3ae11008",
+          "byteSize": 126654,
+          "pageUrl": "https://docs.meshy.ai/en/api/image-to-3d",
+          "width": 512,
+          "height": 512
+        }
+      ],
+      "observedOutput": {
+        "glb": {
+          "meshCount": 1,
+          "primitiveCount": 1,
+          "totalVertices": 6915,
+          "totalTriangles": 10348,
+          "localPositionBounds": {
+            "min": [
+              -0.6082710027694702, -0.9518851041793823, -0.60887610912323
+            ],
+            "max": [0.6075779795646667, 0.9503371119499207, 0.6086810231208801],
+            "span": [1.215848982334137, 1.902222216129303, 1.21755713224411]
+          },
+          "nodeCount": 1,
+          "skinCount": 0,
+          "skins": [],
+          "animationCount": 0,
+          "animations": [],
+          "materialCount": 1,
+          "images": [
+            {
+              "index": 0,
+              "mimeType": "image/jpeg",
+              "format": "JPEG",
+              "width": 4096,
+              "height": 4096
+            }
+          ],
+          "issues": [],
+          "limits": [
+            "Bounds are mesh-local positions, not world-deformed or animated bounds.",
+            "Binary checks do not validate visual deformation, cloth fitting, or silhouette quality."
+          ]
+        },
+        "fbx": {
+          "format": "FBX",
+          "version": 7400,
+          "bytes": 14544108,
+          "sha256": "5d9e5f53916f2829f5453408a690af87f88b64cee2aba2c0cbf3397057627049",
+          "geometries": [
+            {
+              "name": "temp\u0000\u0001Geometry",
+              "controlPoints": 5173,
+              "polygons": 5175,
+              "polygonVertexCounts": {
+                "3": 2,
+                "4": 5173
+              },
+              "quadFraction": 0.9996135265700483,
+              "triangulatedTriangleCount": 10348,
+              "invalidIndices": 0,
+              "nonfinitePositionComponents": 0,
+              "positionBounds": {
+                "min": [
+                  -0.6082710027694702, -0.9518849849700928, -0.6088759899139404
+                ],
+                "max": [
+                  0.6075779795646667, 0.9503369927406311, 0.6086810231208801
+                ],
+                "span": [
+                  1.215848982334137, 1.9022219777107239, 1.2175570130348206
+                ]
+              }
+            }
+          ],
+          "limbNodeCount": 0,
+          "deformerTypes": {},
+          "issues": [],
+          "limits": [
+            "FBX topology diagnostics only; no DCC import, shader, or animation playback validation."
+          ]
+        }
+      },
+      "review": {
+        "status": "reviewed-awaiting-fitting",
+        "fittingStatus": "not-fitted",
+        "skinningStatus": "not-skinned",
+        "findings": [
+          "브라우저 실제 GLB 정면과 회전한 측면에서 병 몸통·마개·밧줄·매듭·술 확인.",
+          "독립 정규화된 크기이므로 캐릭터 허리 부착 전 크기·위치 조정 필요."
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "별도로 생성한 의상의 자동 피팅과 스키닝은 보장되지 않음.",
+    "참조 이미지의 열린 부분이 실제 3D 메시에서도 열려 있는지 생성 후 검사 필요.",
+    "현재 짧은 꼬리는 유지하며 꼬리 형상 수정·재생성은 실행하지 않음."
+  ],
+  "validation": {
+    "imagesVisuallyReviewed": true,
+    "sourceCopiesPreserved": true,
+    "testCodeAddedOrExecuted": false,
+    "repositoryChecks": ["npm run check", "npm run build", "git diff --check"],
+    "binaryAuditLocalPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/metadata/model-audit.json",
+    "binaryAuditScope": "GLB6개·FBX6개의 정점/인덱스/스킨/웨이트/클립/텍스처/FBX면 구조 확인",
+    "modelFilesPreserved": 24
+  },
+  "consumedCredits": 95,
+  "viewerPath": "src/resources/characters/ataho-meshy-body/",
+  "viewerValidation": {
+    "verifiedDate": "2026-10-16",
+    "localUrl": "http://127.0.0.1:8031/src/resources/characters/ataho-meshy-body/",
+    "checks": [
+      "신규 GLB6개 실제 로딩과 참조·다운로드 링크 전환",
+      "리깅 몸체 단일키 정지클립을 재생가능0으로 분류",
+      "걷기·달리기 실제 자세 변화와 일시정지",
+      "달리기 반복 해제·처음부터·마지막프레임 종료",
+      "겉옷 정면·후면, 술병 정면·마우스 회전, 바지 정면·상단 확인",
+      "걷기 직접 링크 진입과 마우스 회전 확인, 앱 출처 경고·오류 로그 0개"
+    ],
+    "limits": [
+      "본체 피팅·스키닝·착의 후 동작 확인 미실행",
+      "FBX의 DCC 가져오기·실제 재생 미실행",
+      "로딩 실패·재시도·BFCache 복귀는 이번 실행 검증에서 제외"
+    ],
+    "screenshots": [
+      "public/assets/maplestory/ataho-meshy-outfit/20261016/reviews/body-walk-viewer.jpg",
+      "public/assets/maplestory/ataho-meshy-outfit/20261016/reviews/body-run-viewer.jpg",
+      "public/assets/maplestory/ataho-meshy-outfit/20261016/reviews/pants-top-viewer.jpg"
+    ],
+    "scope": "생성 직후 독립 부품 검사. 후속 착의 통합·컨셉 비율 보정은 fittingFollowupRecord 참조."
+  },
+  "fittingFollowupRecord": "resources/ataho-meshy-fitting.json",
+  "nextStepsAtGenerationReview": [
+    "바지 허리 입구를 막는 면과 목·소매·발목 안쪽 구조 정리",
+    "본체에 맞춰 의상 크기·형상을 조정하고 같은 뼈대에 연결",
+    "허리끈 제작과 술병 강체 부착",
+    "착의 후 걷기·달리기의 관통과 변형 확인"
+  ]
+}

@@ -1,0 +1,3343 @@
+{
+  "name": "아타호 의상 피팅과 컨셉 실루엣 보정",
+  "date": "2026-10-16",
+  "timezone": "Asia/Seoul",
+  "status": "concept-fit-ready-for-review",
+  "authorization": {
+    "userRequest": "응 작업해줘.",
+    "scope": "겉옷·바지·술병 병렬 보정, 기존 뼈대 통합, 허리끈과 부착, 걷기·달리기 확인·보정",
+    "userCorrections": [
+      "옷이 너무 커보여. 컨셉이미지와 너무 다른 인상을 주고있어.",
+      "뒤쪽도 이상하다",
+      "상의가 앞쪽으로 과하게 튀어나온 부분도 정리해줘.",
+      "꼬리는 그냥 잘라내버려. 꼬리는 나중에 필요하면 만들어서 붙이는게 낫겠다."
+    ]
+  },
+  "tool": "Blender 5.2.2 LTS, local isolated background processes",
+  "paidCallsExecuted": 0,
+  "consumedCredits": 0,
+  "sourceGenerationRecords": [
+    "resources/ataho-meshy-body-generation.json",
+    "resources/ataho-meshy-outfit-generation.json"
+  ],
+  "sourceFilesUnchanged": true,
+  "sourceInputs": [
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-rigged.glb",
+      "byteSize": 13353164,
+      "sha256": "457641a0dc3346376fe0ffb977e9623f6c32aa28984a4ce4d319b59a5b2dea1e"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-walk.glb",
+      "byteSize": 13333268,
+      "sha256": "6d9e4354b4ba2172fde0c87324f5f43070e56c3cb10ffec20a12204b842bbb26"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-run.glb",
+      "byteSize": 13322656,
+      "sha256": "7a2407c0118fa07cb60400a03003eaa81b9cd033d66e8c0c6548cf1f216e0a01"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-body/20261015/models/ataho-body.glb",
+      "byteSize": 11555412,
+      "sha256": "1a81285e66a58dd63ddffc6ea4629a762a18327744519b13591cc05e78799af5"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-jacket.glb",
+      "byteSize": 6566824,
+      "sha256": "3a3ee87f7d6af42b088f7e99586ac2943d7fcd3b3e4fe018dee5e7353979f74f"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-pants.glb",
+      "byteSize": 5060772,
+      "sha256": "556baad60fdf41600c918402fc15b8cc297c174b7fcac6986790236c3da89438"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-flask.glb",
+      "byteSize": 7924640,
+      "sha256": "33e6844d33a9436fe44c3dd3b2fbb6031f2e03759b11035404bbe81c333eb9fd"
+    }
+  ],
+  "scripts": [
+    {
+      "localPath": "scripts/ataho-meshy-fitting/fit-jacket.py",
+      "byteSize": 28706,
+      "sha256": "3c08665be5af4051460d280fe1f651e113a0b42e49554eb1f903f48ce2ba00c3"
+    },
+    {
+      "localPath": "scripts/ataho-meshy-fitting/fit-pants.py",
+      "byteSize": 21321,
+      "sha256": "ad4b802ee8ab938cad7dca94228d0379c3e9c8fdd4f28b2ded863dd4a4b993d4"
+    },
+    {
+      "localPath": "scripts/ataho-meshy-fitting/fit-flask.py",
+      "byteSize": 10674,
+      "sha256": "f31eb266c1c90928bf3e9d0f4704dfedc786c6c0faf16dc682a321e2cc41112a"
+    },
+    {
+      "localPath": "scripts/ataho-meshy-fitting/make-sash-concept.py",
+      "byteSize": 24491,
+      "sha256": "90089f0963505f9aa37ddf5f9e3b12a122445eb6870bea98d3965fdfebba4e1e"
+    },
+    {
+      "localPath": "scripts/ataho-meshy-fitting/remove-tail.py",
+      "byteSize": 22739,
+      "sha256": "89f667112aece923acdb8cdbadc39883b3ecd3f4a11390419ea270216d687027"
+    },
+    {
+      "localPath": "scripts/ataho-meshy-fitting/assemble-outfit.py",
+      "byteSize": 22604,
+      "sha256": "7f53d004c8106c599705892ad552aa0738fcdefbf5969d18d75846274595d488"
+    }
+  ],
+  "initialFit": {
+    "status": "revised-after-user-proportion-feedback",
+    "directory": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted",
+    "note": "초기 착의 파일은 별도 보존. 현재 기본 뷰어는 concept 하위의 수정본을 표시."
+  },
+  "workflow": [
+    "기존 본체 좌표와 24개 뼈대를 공통 기준으로 고정하고 부품별 독립 파일에서 보정.",
+    "겉옷 소매 안쪽 캡과 바지 허리·양 발목을 열고 원본 UV·4K 텍스처를 보존하며 피팅.",
+    "초기 착의의 큰 어깨·긴 소매·좁고 긴 앞판 인상이 컨셉과 다르다는 사용자 피드백으로 실루엣을 재보정.",
+    "소매를 팔꿈치 부근까지 줄이고 상완 중심 웨이트로 변경. 깃·어깨를 낮추고 앞단을 올려 배 앞을 넓게 개방.",
+    "후면 피드백을 반영해 등 몸판의 빈 깊이를 몸 표면 기준으로 줄이고 뒤 어깨를 최대3.5cm 낮춤. 앞판·소매의 UV와 웨이트는 유지.",
+    "측면 앞돌출 피드백을 반영해 가슴·앞몸판 깊이를 본체 전면 기준으로 줄이고 열린 앞섶·배의 체형을 유지.",
+    "바지의 넓은 총폭은 유지하며 상부 앞뒤 부피·가랑이 뭉침·조거형 발목을 정리하고 좌우·높이별 연속 웨이트로 연결.",
+    "짙은 갈색 감긴 띠·접힌 매듭·주름과 비틀림을 가진 두 끝·술병 연결 끈을 메시와 정점색으로 제작.",
+    "술병은 본체 키의20.25%로 줄여 오른허리에 Hips 강체 연결.",
+    "사용자의 꼬리 제거 승인에 따라 원본 무리깅·리깅·걷기·달리기 본체의 파생본에서 짧은 꼬리를 제거하고 뿌리를 메움. 착의 사본에도 동일 절차를 적용.",
+    "착의용 본체 사본의 가려지는 하체·팔·옆가슴·어깨·등·뒤허리 누락 면을 마스킹하고 머리·목 영향이 있는 면은 보호.",
+    "착의용 본체 배 웨이트와 UV 경계 웨이트를 정리. 띠 상단은 본체의 Hips→Spine02 높이별 웨이트를 따르고 겉·안면 삼각분할을 일치시켜 교차를 제거. 가려질 면을 포함한 본체로 띠를 먼저 피팅하고 정적 여유를 실제 수치로 기록한 뒤 걷기 끝32번 샘플 보존.",
+    "팔을 내린 정지 비교 자세는 기존 뼈대의 단일키 액션으로 기록. 웹에서 이를 적용하되 재생 루프를 돌리지 않음."
+  ],
+  "partDiagnostics": {
+    "jacket-concept": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/diagnostics.json",
+    "pants-concept": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/pants-concept/diagnostics.json",
+    "sash-concept": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/diagnostics.json",
+    "flask": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/flask/diagnostics.json",
+    "body-tailless": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/diagnostics.json"
+  },
+  "assembly": {
+    "variant": "concept",
+    "waistLockedVertices": {
+      "pants": 2735,
+      "jacket": 4662
+    },
+    "bodyTorsoSmoothedVertices": 11055,
+    "bodySeamWeightGroups": 11043,
+    "jacketCinchedVertices": 3124,
+    "tailRemoved": {
+      "status": "tail-removed-root-closed",
+      "coordinateOriginWorld": [
+        -8.940696716308594e-8, 2.9802322387695312e-8, 1.0005216211084189e-7
+      ],
+      "canonicalScale": 1.0,
+      "sourceVertices": 64142,
+      "sourceFaces": 99131,
+      "localSeamVerticesWelded": 636,
+      "tailFacesRemoved": 2900,
+      "tailWarmColorFacesConfirmed": 1891,
+      "rootBoundaryEdgesBeforeCap": 158,
+      "rootOpenEdgesAfterCap": 0,
+      "capVerticesAdded": 310,
+      "capFacesAdded": 776,
+      "capBackwardsNormalFaces": 0,
+      "capNormals": "analytic derivative of fitted quadratic surface, cap corners only",
+      "outsidePatchCoordinatesUnchanged": true,
+      "weightAudit": {
+        "skinned": true,
+        "localVerticesNormalized": 2594,
+        "localMaxInfluences": 4,
+        "localWeightSumMin": 0.999999962747097,
+        "localWeightSumMax": 1.0000000298023224,
+        "wholeBodyMaxInfluences": 4
+      },
+      "resultVertices": 62444,
+      "resultFaces": 97007,
+      "sourceWorldBounds": [
+        [-0.9514892101287842, 0.9514890313148499],
+        [-0.3265855610370636, 0.3265856206417084],
+        [1.0005216211084189e-7, 1.6136682033538818]
+      ],
+      "resultWorldBounds": [
+        [-0.9514892101287842, 0.9514890313148499],
+        [-0.3265855610370636, 0.23806160688400269],
+        [1.0005216211084189e-7, 1.6136682033538818]
+      ],
+      "removedCanonicalBox": {
+        "absXMax": 0.12,
+        "yMin": 0.2,
+        "zMin": 0.62,
+        "zMax": 0.87
+      },
+      "capSurface": "constrained triangles with quadratic fitted height, 12mm boundary blend and harmonic colors; boundary geometry retained",
+      "capWeights": "six nearest boundary samples, top four normalized; original rig and motion unchanged",
+      "untouched": "raw files, head/neck positions and UVs, rest bones and original animation actions"
+    },
+    "bodyFacesMasked": 44369,
+    "sashBandGeometryBeforeBodyMask": {
+      "boundaryEdges": 0,
+      "nonManifoldEdges": 0,
+      "signedVolume": 0.0006367137602758361,
+      "nonAdjacentTriangleOverlapPairs": 0,
+      "radialClearanceRange": [0.012132354742866502, 0.01799569174377147],
+      "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+      "maximumInfluences": 2
+    },
+    "paidCredits": 0,
+    "bones": 24,
+    "parts": {
+      "AtahoBody": {
+        "vertices": 37735,
+        "polygons": 52638,
+        "matrixWorld": [
+          [0.009999999776482582, 0.0, 0.0, 0.0],
+          [0.0, 0.009999999776482582, 0.0, 0.0],
+          [0.0, 0.0, 0.009999999776482582, 0.0],
+          [0.0, 0.0, 0.0, 1.0]
+        ]
+      },
+      "Jacket": {
+        "vertices": 17601,
+        "polygons": 29021,
+        "matrixWorld": [
+          [1.0, 0.0, 0.0, 0.0],
+          [0.0, 1.0, 0.0, 0.0],
+          [0.0, 0.0, 1.0, 0.0],
+          [0.0, 0.0, 0.0, 1.0]
+        ]
+      },
+      "Pants": {
+        "vertices": 10607,
+        "polygons": 20467,
+        "matrixWorld": [
+          [1.0, 0.0, 0.0, 0.0],
+          [0.0, 1.0, 0.0, 0.0],
+          [0.0, 0.0, 1.0, 0.0],
+          [0.0, 0.0, 0.0, 1.0]
+        ]
+      },
+      "Flask": {
+        "vertices": 6915,
+        "polygons": 10348,
+        "matrixWorld": [
+          [1.0, 0.0, 0.0, 0.0],
+          [0.0, 1.0, 0.0, 0.0],
+          [0.0, 0.0, 1.0, 0.0],
+          [0.0, 0.0, 0.0, 1.0]
+        ]
+      },
+      "SashBand": {
+        "vertices": 4800,
+        "polygons": 9600,
+        "matrixWorld": [
+          [1.0, 0.0, 0.0, 0.0],
+          [0.0, 1.0, 0.0, 0.0],
+          [0.0, 0.0, 1.0, 0.0],
+          [0.0, 0.0, 0.0, 1.0]
+        ]
+      },
+      "SashKnot": {
+        "vertices": 756,
+        "polygons": 752,
+        "matrixWorld": [
+          [1.0, 0.0, 0.0, 0.0],
+          [0.0, 1.0, 0.0, 0.0],
+          [0.0, 0.0, 1.0, 0.0],
+          [0.0, 0.0, 0.0, 1.0]
+        ]
+      },
+      "SashTail1": {
+        "vertices": 882,
+        "polygons": 880,
+        "matrixWorld": [
+          [1.0, 0.0, 0.0, 0.0],
+          [0.0, 1.0, 0.0, 0.0],
+          [0.0, 0.0, 1.0, 0.0],
+          [0.0, 0.0, 0.0, 1.0]
+        ]
+      },
+      "SashTail2": {
+        "vertices": 882,
+        "polygons": 880,
+        "matrixWorld": [
+          [1.0, 0.0, 0.0, 0.0],
+          [0.0, 1.0, 0.0, 0.0],
+          [0.0, 0.0, 1.0, 0.0],
+          [0.0, 0.0, 0.0, 1.0]
+        ]
+      },
+      "FlaskConnector": {
+        "vertices": 210,
+        "polygons": 202,
+        "matrixWorld": [
+          [1.0, 0.0, 0.0, 0.0],
+          [0.0, 1.0, 0.0, 0.0],
+          [0.0, 0.0, 1.0, 0.0],
+          [0.0, 0.0, 0.0, 1.0]
+        ]
+      }
+    },
+    "actions": {
+      "walk": [1.0, 32.0],
+      "run": [1.0, 20.0],
+      "neutral": [1.0, 1.0]
+    }
+  },
+  "glbAudit": {
+    "inspection": "read-only final GLB binary asset inspection",
+    "models": [
+      {
+        "mode": "rigged",
+        "kind": "clothing",
+        "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-rigged.glb",
+        "status": "stable",
+        "bytes": 31392072,
+        "sha256": "cd08b38eac06a7318a46de9ba90dd86f4cace2d7636de6251bcfcede468c37dc",
+        "meshes": 9,
+        "skins": 1,
+        "jointsPerSkin": [24],
+        "jointNames": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand"
+          ]
+        ],
+        "allSkinsSameJointNodes": true,
+        "skinIndicesUsed": [0],
+        "finiteInverseBindMatrices": true,
+        "finiteNodeTransforms": true,
+        "parts": [
+          {
+            "name": "AtahoBody",
+            "mesh": 0,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 37719,
+            "triangles": 52638,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998733401299, 1.0000001154839993],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0",
+                "positionAccessor": 0,
+                "positionAccessorCount": 37719,
+                "referencedVertices": 37719,
+                "triangles": 52638,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "COLOR_1",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998733401299, 1.0000001154839993],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "Flask",
+            "mesh": 1,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 7071,
+            "triangles": 10348,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0.005",
+                "positionAccessor": 9,
+                "positionAccessorCount": 7071,
+                "referencedVertices": 7071,
+                "triangles": 10348,
+                "finiteAttributes": true,
+                "hasColor0": false,
+                "attributes": [
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "FlaskConnector",
+            "mesh": 2,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 210,
+            "triangles": 416,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+            "maximumInfluences": 2,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 15,
+                "positionAccessorCount": 210,
+                "referencedVertices": 210,
+                "triangles": 416,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 2,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "Jacket",
+            "mesh": 3,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 17636,
+            "triangles": 29021,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998658895493, 1.0000001322478056],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0.003",
+                "positionAccessor": 21,
+                "positionAccessorCount": 17636,
+                "referencedVertices": 17636,
+                "triangles": 29021,
+                "finiteAttributes": true,
+                "hasColor0": false,
+                "attributes": [
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998658895493, 1.0000001322478056],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "Pants",
+            "mesh": 4,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 13509,
+            "triangles": 20697,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998590210453, 1.0000001154839993],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0.004",
+                "positionAccessor": 27,
+                "positionAccessorCount": 13509,
+                "referencedVertices": 13509,
+                "triangles": 20697,
+                "finiteAttributes": true,
+                "hasColor0": false,
+                "attributes": [
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998590210453, 1.0000001154839993],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashBand",
+            "mesh": 5,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 4800,
+            "triangles": 9600,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+            "maximumInfluences": 2,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 33,
+                "positionAccessorCount": 4800,
+                "referencedVertices": 4800,
+                "triangles": 9600,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 2,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashKnot",
+            "mesh": 6,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 756,
+            "triangles": 1504,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 39,
+                "positionAccessorCount": 756,
+                "referencedVertices": 756,
+                "triangles": 1504,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashTail1",
+            "mesh": 7,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 882,
+            "triangles": 1760,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 45,
+                "positionAccessorCount": 882,
+                "referencedVertices": 882,
+                "triangles": 1760,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashTail2",
+            "mesh": 8,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 882,
+            "triangles": 1760,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 51,
+                "positionAccessorCount": 882,
+                "referencedVertices": 882,
+                "triangles": 1760,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          }
+        ],
+        "totalVertices": 83465,
+        "totalTriangles": 127744,
+        "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+        "textures": 4,
+        "images": [
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 8315127
+          },
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 7577396
+          },
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 5644154
+          },
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 4256509
+          }
+        ],
+        "animations": [],
+        "failures": []
+      },
+      {
+        "mode": "neutral",
+        "kind": "clothing",
+        "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-neutral.glb",
+        "status": "stable",
+        "bytes": 31408220,
+        "sha256": "7c57cde91c631b8cc59936f460e01d64dad878e7d21cb104659cf1d3ee816e0d",
+        "meshes": 9,
+        "skins": 1,
+        "jointsPerSkin": [24],
+        "jointNames": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand"
+          ]
+        ],
+        "allSkinsSameJointNodes": true,
+        "skinIndicesUsed": [0],
+        "finiteInverseBindMatrices": true,
+        "finiteNodeTransforms": true,
+        "parts": [
+          {
+            "name": "AtahoBody",
+            "mesh": 0,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 37719,
+            "triangles": 52638,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998733401299, 1.0000001154839993],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0",
+                "positionAccessor": 0,
+                "positionAccessorCount": 37719,
+                "referencedVertices": 37719,
+                "triangles": 52638,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "COLOR_1",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998733401299, 1.0000001154839993],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "Flask",
+            "mesh": 1,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 7071,
+            "triangles": 10348,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0.005",
+                "positionAccessor": 9,
+                "positionAccessorCount": 7071,
+                "referencedVertices": 7071,
+                "triangles": 10348,
+                "finiteAttributes": true,
+                "hasColor0": false,
+                "attributes": [
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "FlaskConnector",
+            "mesh": 2,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 210,
+            "triangles": 416,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+            "maximumInfluences": 2,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 15,
+                "positionAccessorCount": 210,
+                "referencedVertices": 210,
+                "triangles": 416,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 2,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "Jacket",
+            "mesh": 3,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 17636,
+            "triangles": 29021,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998658895493, 1.0000001322478056],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0.003",
+                "positionAccessor": 21,
+                "positionAccessorCount": 17636,
+                "referencedVertices": 17636,
+                "triangles": 29021,
+                "finiteAttributes": true,
+                "hasColor0": false,
+                "attributes": [
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998658895493, 1.0000001322478056],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "Pants",
+            "mesh": 4,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 13509,
+            "triangles": 20697,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998590210453, 1.0000001154839993],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0.004",
+                "positionAccessor": 27,
+                "positionAccessorCount": 13509,
+                "referencedVertices": 13509,
+                "triangles": 20697,
+                "finiteAttributes": true,
+                "hasColor0": false,
+                "attributes": [
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998590210453, 1.0000001154839993],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashBand",
+            "mesh": 5,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 4800,
+            "triangles": 9600,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+            "maximumInfluences": 2,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 33,
+                "positionAccessorCount": 4800,
+                "referencedVertices": 4800,
+                "triangles": 9600,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 2,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashKnot",
+            "mesh": 6,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 756,
+            "triangles": 1504,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 39,
+                "positionAccessorCount": 756,
+                "referencedVertices": 756,
+                "triangles": 1504,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashTail1",
+            "mesh": 7,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 882,
+            "triangles": 1760,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 45,
+                "positionAccessorCount": 882,
+                "referencedVertices": 882,
+                "triangles": 1760,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashTail2",
+            "mesh": 8,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 882,
+            "triangles": 1760,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 51,
+                "positionAccessorCount": 882,
+                "referencedVertices": 882,
+                "triangles": 1760,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          }
+        ],
+        "totalVertices": 83465,
+        "totalTriangles": 127744,
+        "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+        "textures": 4,
+        "images": [
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 8315127
+          },
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 7577396
+          },
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 5644154
+          },
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 4256509
+          }
+        ],
+        "animations": [
+          {
+            "name": "AtahoNeutral",
+            "channels": 72,
+            "samplers": 72,
+            "sampleCountRange": [1, 1],
+            "timeStart": 0.03333333507180214,
+            "timeEnd": 0.03333333507180214,
+            "duration": 0.0,
+            "inputsSorted": true,
+            "finiteOutputs": true,
+            "targetNodes": 24
+          }
+        ],
+        "failures": []
+      },
+      {
+        "mode": "walk",
+        "kind": "clothing",
+        "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-walk.glb",
+        "status": "stable",
+        "bytes": 31420896,
+        "sha256": "c7f30493ac41e1842409dfadefdc30786aedbf9cafcd85fb12c5c8c3ebca0ae1",
+        "meshes": 9,
+        "skins": 1,
+        "jointsPerSkin": [24],
+        "jointNames": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand"
+          ]
+        ],
+        "allSkinsSameJointNodes": true,
+        "skinIndicesUsed": [0],
+        "finiteInverseBindMatrices": true,
+        "finiteNodeTransforms": true,
+        "parts": [
+          {
+            "name": "AtahoBody",
+            "mesh": 0,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 37719,
+            "triangles": 52638,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998733401299, 1.0000001154839993],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0",
+                "positionAccessor": 0,
+                "positionAccessorCount": 37719,
+                "referencedVertices": 37719,
+                "triangles": 52638,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "COLOR_1",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998733401299, 1.0000001154839993],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "Flask",
+            "mesh": 1,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 7071,
+            "triangles": 10348,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0.005",
+                "positionAccessor": 9,
+                "positionAccessorCount": 7071,
+                "referencedVertices": 7071,
+                "triangles": 10348,
+                "finiteAttributes": true,
+                "hasColor0": false,
+                "attributes": [
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "FlaskConnector",
+            "mesh": 2,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 210,
+            "triangles": 416,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+            "maximumInfluences": 2,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 15,
+                "positionAccessorCount": 210,
+                "referencedVertices": 210,
+                "triangles": 416,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 2,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "Jacket",
+            "mesh": 3,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 17636,
+            "triangles": 29021,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998658895493, 1.0000001322478056],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0.003",
+                "positionAccessor": 21,
+                "positionAccessorCount": 17636,
+                "referencedVertices": 17636,
+                "triangles": 29021,
+                "finiteAttributes": true,
+                "hasColor0": false,
+                "attributes": [
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998658895493, 1.0000001322478056],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "Pants",
+            "mesh": 4,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 13509,
+            "triangles": 20697,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998590210453, 1.0000001154839993],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0.004",
+                "positionAccessor": 27,
+                "positionAccessorCount": 13509,
+                "referencedVertices": 13509,
+                "triangles": 20697,
+                "finiteAttributes": true,
+                "hasColor0": false,
+                "attributes": [
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998590210453, 1.0000001154839993],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashBand",
+            "mesh": 5,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 4800,
+            "triangles": 9600,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+            "maximumInfluences": 2,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 33,
+                "positionAccessorCount": 4800,
+                "referencedVertices": 4800,
+                "triangles": 9600,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 2,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashKnot",
+            "mesh": 6,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 756,
+            "triangles": 1504,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 39,
+                "positionAccessorCount": 756,
+                "referencedVertices": 756,
+                "triangles": 1504,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashTail1",
+            "mesh": 7,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 882,
+            "triangles": 1760,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 45,
+                "positionAccessorCount": 882,
+                "referencedVertices": 882,
+                "triangles": 1760,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashTail2",
+            "mesh": 8,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 882,
+            "triangles": 1760,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 51,
+                "positionAccessorCount": 882,
+                "referencedVertices": 882,
+                "triangles": 1760,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          }
+        ],
+        "totalVertices": 83465,
+        "totalTriangles": 127744,
+        "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+        "textures": 4,
+        "images": [
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 8315127
+          },
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 7577396
+          },
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 5644154
+          },
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 4256509
+          }
+        ],
+        "animations": [
+          {
+            "name": "AtahoWalk",
+            "channels": 72,
+            "samplers": 72,
+            "sampleCountRange": [2, 32],
+            "timeStart": 0.03333333507180214,
+            "timeEnd": 1.0666667222976685,
+            "duration": 1.0333333872258663,
+            "inputsSorted": true,
+            "finiteOutputs": true,
+            "targetNodes": 24
+          }
+        ],
+        "failures": []
+      },
+      {
+        "mode": "run",
+        "kind": "clothing",
+        "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-run.glb",
+        "status": "stable",
+        "bytes": 31416764,
+        "sha256": "afc50f37ac918cb1af9d2cbcdd2ba65db60fe53be239403c0075d5cc8e80a384",
+        "meshes": 9,
+        "skins": 1,
+        "jointsPerSkin": [24],
+        "jointNames": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand"
+          ]
+        ],
+        "allSkinsSameJointNodes": true,
+        "skinIndicesUsed": [0],
+        "finiteInverseBindMatrices": true,
+        "finiteNodeTransforms": true,
+        "parts": [
+          {
+            "name": "AtahoBody",
+            "mesh": 0,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 37719,
+            "triangles": 52638,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998733401299, 1.0000001154839993],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0",
+                "positionAccessor": 0,
+                "positionAccessorCount": 37719,
+                "referencedVertices": 37719,
+                "triangles": 52638,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "COLOR_1",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998733401299, 1.0000001154839993],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "Flask",
+            "mesh": 1,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 7071,
+            "triangles": 10348,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0.005",
+                "positionAccessor": 9,
+                "positionAccessorCount": 7071,
+                "referencedVertices": 7071,
+                "triangles": 10348,
+                "finiteAttributes": true,
+                "hasColor0": false,
+                "attributes": [
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "FlaskConnector",
+            "mesh": 2,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 210,
+            "triangles": 416,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+            "maximumInfluences": 2,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 15,
+                "positionAccessorCount": 210,
+                "referencedVertices": 210,
+                "triangles": 416,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 2,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "Jacket",
+            "mesh": 3,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 17636,
+            "triangles": 29021,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998658895493, 1.0000001322478056],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0.003",
+                "positionAccessor": 21,
+                "positionAccessorCount": 17636,
+                "referencedVertices": 17636,
+                "triangles": 29021,
+                "finiteAttributes": true,
+                "hasColor0": false,
+                "attributes": [
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998658895493, 1.0000001322478056],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "Pants",
+            "mesh": 4,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 13509,
+            "triangles": 20697,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998590210453, 1.0000001154839993],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0.004",
+                "positionAccessor": 27,
+                "positionAccessorCount": 13509,
+                "referencedVertices": 13509,
+                "triangles": 20697,
+                "finiteAttributes": true,
+                "hasColor0": false,
+                "attributes": [
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998590210453, 1.0000001154839993],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashBand",
+            "mesh": 5,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 4800,
+            "triangles": 9600,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+            "maximumInfluences": 2,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 33,
+                "positionAccessorCount": 4800,
+                "referencedVertices": 4800,
+                "triangles": 9600,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999999701976776, 1.0000000298023224],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 2,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashKnot",
+            "mesh": 6,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 756,
+            "triangles": 1504,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 39,
+                "positionAccessorCount": 756,
+                "referencedVertices": 756,
+                "triangles": 1504,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashTail1",
+            "mesh": 7,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 882,
+            "triangles": 1760,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 45,
+                "positionAccessorCount": 882,
+                "referencedVertices": 882,
+                "triangles": 1760,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          },
+          {
+            "name": "SashTail2",
+            "mesh": 8,
+            "skin": 0,
+            "primitiveCount": 1,
+            "uniquePositionAccessorVertices": 882,
+            "triangles": 1760,
+            "finiteAttributes": true,
+            "weightSumRange": [1.0, 1.0],
+            "maximumInfluences": 1,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Folded dark brown sash cloth",
+                "positionAccessor": 51,
+                "positionAccessorCount": 882,
+                "referencedVertices": 882,
+                "triangles": 1760,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [1.0, 1.0],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 1,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          }
+        ],
+        "totalVertices": 83465,
+        "totalTriangles": 127744,
+        "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+        "textures": 4,
+        "images": [
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 8315127
+          },
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 7577396
+          },
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 5644154
+          },
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 4256509
+          }
+        ],
+        "animations": [
+          {
+            "name": "AtahoRun",
+            "channels": 72,
+            "samplers": 72,
+            "sampleCountRange": [2, 20],
+            "timeStart": 0.03333333507180214,
+            "timeEnd": 0.6666666865348816,
+            "duration": 0.6333333514630795,
+            "inputsSorted": true,
+            "finiteOutputs": true,
+            "targetNodes": 24
+          }
+        ],
+        "failures": []
+      }
+    ],
+    "bodyModels": [
+      {
+        "mode": "original",
+        "kind": "body",
+        "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-original-tailless.glb",
+        "status": "stable",
+        "bytes": 11659524,
+        "sha256": "0de26dcbd5d19ea12fcd65a02eb48f250a80681fef9ced299269d7284a76895e",
+        "meshes": 1,
+        "skins": 0,
+        "jointsPerSkin": [],
+        "jointNames": [],
+        "allSkinsSameJointNodes": true,
+        "skinIndicesUsed": [],
+        "finiteInverseBindMatrices": true,
+        "finiteNodeTransforms": true,
+        "parts": [
+          {
+            "name": "AtahoBodyTailless",
+            "mesh": 0,
+            "skin": null,
+            "primitiveCount": 2,
+            "uniquePositionAccessorVertices": 62721,
+            "triangles": 97007,
+            "finiteAttributes": true,
+            "weightSumRange": null,
+            "maximumInfluences": 0,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0",
+                "positionAccessor": 0,
+                "positionAccessorCount": 62253,
+                "referencedVertices": 62253,
+                "triangles": 96231,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": ["COLOR_0", "NORMAL", "POSITION", "TEXCOORD_0"],
+                "skin": null
+              },
+              {
+                "primitive": 1,
+                "material": "Tail root matched shirt and briefs",
+                "positionAccessor": 5,
+                "positionAccessorCount": 468,
+                "referencedVertices": 468,
+                "triangles": 776,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": ["COLOR_0", "NORMAL", "POSITION", "TEXCOORD_0"],
+                "skin": null
+              }
+            ]
+          }
+        ],
+        "totalVertices": 62721,
+        "totalTriangles": 97007,
+        "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+        "textures": 1,
+        "images": [
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 8315127
+          }
+        ],
+        "animations": [],
+        "patchPreservation": {
+          "evidenceSource": "generator diagnostics plus current raw-source SHA256; outside coordinates not independently compared in this binary inspection",
+          "outsidePatchCoordinatesUnchanged": true,
+          "sourceUnchangedReported": true,
+          "rawSourcePath": "public/assets/maplestory/ataho-meshy-body/20261015/models/ataho-body.glb",
+          "rawSourceSha256": "1a81285e66a58dd63ddffc6ea4629a762a18327744519b13591cc05e78799af5",
+          "rawSourceMatchesGenerationHash": true,
+          "rootOpenEdgesAfterCapReported": 0,
+          "capBackwardsNormalFacesReported": 0,
+          "capVerticesAddedReported": 310
+        },
+        "failures": []
+      },
+      {
+        "mode": "rigged",
+        "kind": "body",
+        "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-rigged-tailless.glb",
+        "status": "stable",
+        "bytes": 12924372,
+        "sha256": "0986e9812adcc361f4bcea3234eabae48f2439521de2a27424e87f05ea117b02",
+        "meshes": 1,
+        "skins": 1,
+        "jointsPerSkin": [24],
+        "jointNames": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand"
+          ]
+        ],
+        "allSkinsSameJointNodes": true,
+        "skinIndicesUsed": [0],
+        "finiteInverseBindMatrices": true,
+        "finiteNodeTransforms": true,
+        "parts": [
+          {
+            "name": "AtahoBodyTailless",
+            "mesh": 0,
+            "skin": 0,
+            "primitiveCount": 2,
+            "uniquePositionAccessorVertices": 62752,
+            "triangles": 97007,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998821294867, 1.000000111758709],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0",
+                "positionAccessor": 0,
+                "positionAccessorCount": 62284,
+                "referencedVertices": 62284,
+                "triangles": 96231,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998821294867, 1.0000001043081284],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              },
+              {
+                "primitive": 1,
+                "material": "Tail root matched shirt and briefs",
+                "positionAccessor": 7,
+                "positionAccessorCount": 468,
+                "referencedVertices": 468,
+                "triangles": 776,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.999999888241291, 1.000000111758709],
+                "weightRange": [0.04936595633625984, 0.5516650080680847],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          }
+        ],
+        "totalVertices": 62752,
+        "totalTriangles": 97007,
+        "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+        "textures": 1,
+        "images": [
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 8315127
+          }
+        ],
+        "animations": [],
+        "patchPreservation": {
+          "evidenceSource": "generator diagnostics plus current raw-source SHA256; outside coordinates not independently compared in this binary inspection",
+          "outsidePatchCoordinatesUnchanged": true,
+          "sourceUnchangedReported": true,
+          "rawSourcePath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-rigged.glb",
+          "rawSourceSha256": "457641a0dc3346376fe0ffb977e9623f6c32aa28984a4ce4d319b59a5b2dea1e",
+          "rawSourceMatchesGenerationHash": true,
+          "rootOpenEdgesAfterCapReported": 0,
+          "capBackwardsNormalFacesReported": 0,
+          "capVerticesAddedReported": 310
+        },
+        "failures": []
+      },
+      {
+        "mode": "walk",
+        "kind": "body",
+        "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-walk-tailless.glb",
+        "status": "stable",
+        "bytes": 12971256,
+        "sha256": "70ea523e254afb924a3b4d9b5a93f602da8ea9803a0a45f25f1d02fc36d296a6",
+        "meshes": 1,
+        "skins": 1,
+        "jointsPerSkin": [24],
+        "jointNames": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand"
+          ]
+        ],
+        "allSkinsSameJointNodes": true,
+        "skinIndicesUsed": [0],
+        "finiteInverseBindMatrices": true,
+        "finiteNodeTransforms": true,
+        "parts": [
+          {
+            "name": "AtahoBodyTailless",
+            "mesh": 0,
+            "skin": 0,
+            "primitiveCount": 2,
+            "uniquePositionAccessorVertices": 62752,
+            "triangles": 97007,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998821294867, 1.000000111758709],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0",
+                "positionAccessor": 0,
+                "positionAccessorCount": 62284,
+                "referencedVertices": 62284,
+                "triangles": 96231,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998821294867, 1.0000001043081284],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              },
+              {
+                "primitive": 1,
+                "material": "Tail root matched shirt and briefs",
+                "positionAccessor": 7,
+                "positionAccessorCount": 468,
+                "referencedVertices": 468,
+                "triangles": 776,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.999999888241291, 1.000000111758709],
+                "weightRange": [0.04936595633625984, 0.5516650080680847],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          }
+        ],
+        "totalVertices": 62752,
+        "totalTriangles": 97007,
+        "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+        "textures": 1,
+        "images": [
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 8315127
+          }
+        ],
+        "animations": [
+          {
+            "name": "Animation",
+            "channels": 72,
+            "samplers": 72,
+            "sampleCountRange": [32, 32],
+            "timeStart": 0.03333333507180214,
+            "timeEnd": 1.0666667222976685,
+            "duration": 1.0333333872258663,
+            "inputsSorted": true,
+            "finiteOutputs": true,
+            "targetNodes": 24
+          }
+        ],
+        "patchPreservation": {
+          "evidenceSource": "generator diagnostics plus current raw-source SHA256; outside coordinates not independently compared in this binary inspection",
+          "outsidePatchCoordinatesUnchanged": true,
+          "sourceUnchangedReported": true,
+          "rawSourcePath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-walk.glb",
+          "rawSourceSha256": "6d9e4354b4ba2172fde0c87324f5f43070e56c3cb10ffec20a12204b842bbb26",
+          "rawSourceMatchesGenerationHash": true,
+          "rootOpenEdgesAfterCapReported": 0,
+          "capBackwardsNormalFacesReported": 0,
+          "capVerticesAddedReported": 310
+        },
+        "failures": []
+      },
+      {
+        "mode": "run",
+        "kind": "body",
+        "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-run-tailless.glb",
+        "status": "stable",
+        "bytes": 12959688,
+        "sha256": "15528ed67c6fc5542d5c216ab387ca72ea54ec7ef09725ac76a558d00aab148c",
+        "meshes": 1,
+        "skins": 1,
+        "jointsPerSkin": [24],
+        "jointNames": [
+          [
+            "Hips",
+            "LeftUpLeg",
+            "LeftLeg",
+            "LeftFoot",
+            "LeftToeBase",
+            "RightUpLeg",
+            "RightLeg",
+            "RightFoot",
+            "RightToeBase",
+            "Spine02",
+            "Spine01",
+            "Spine",
+            "LeftShoulder",
+            "LeftArm",
+            "LeftForeArm",
+            "LeftHand",
+            "neck",
+            "Head",
+            "head_end",
+            "headfront",
+            "RightShoulder",
+            "RightArm",
+            "RightForeArm",
+            "RightHand"
+          ]
+        ],
+        "allSkinsSameJointNodes": true,
+        "skinIndicesUsed": [0],
+        "finiteInverseBindMatrices": true,
+        "finiteNodeTransforms": true,
+        "parts": [
+          {
+            "name": "AtahoBodyTailless",
+            "mesh": 0,
+            "skin": 0,
+            "primitiveCount": 2,
+            "uniquePositionAccessorVertices": 62752,
+            "triangles": 97007,
+            "finiteAttributes": true,
+            "weightSumRange": [0.9999998821294867, 1.000000111758709],
+            "maximumInfluences": 4,
+            "unweightedVertices": 0,
+            "negativeWeights": 0,
+            "invalidJoints": 0,
+            "primitives": [
+              {
+                "primitive": 0,
+                "material": "Material_0",
+                "positionAccessor": 0,
+                "positionAccessorCount": 62284,
+                "referencedVertices": 62284,
+                "triangles": 96231,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.9999998821294867, 1.0000001043081284],
+                "weightRange": [0.0, 1.0],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              },
+              {
+                "primitive": 1,
+                "material": "Tail root matched shirt and briefs",
+                "positionAccessor": 7,
+                "positionAccessorCount": 468,
+                "referencedVertices": 468,
+                "triangles": 776,
+                "finiteAttributes": true,
+                "hasColor0": true,
+                "attributes": [
+                  "COLOR_0",
+                  "JOINTS_0",
+                  "NORMAL",
+                  "POSITION",
+                  "TEXCOORD_0",
+                  "WEIGHTS_0"
+                ],
+                "skin": 0,
+                "weightSumRange": [0.999999888241291, 1.000000111758709],
+                "weightRange": [0.04936595633625984, 0.5516650080680847],
+                "maximumInfluences": 4,
+                "unweightedVertices": 0,
+                "negativeWeights": 0,
+                "invalidJoints": 0
+              }
+            ]
+          }
+        ],
+        "totalVertices": 62752,
+        "totalTriangles": 97007,
+        "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+        "textures": 1,
+        "images": [
+          {
+            "embedded": true,
+            "mimeType": "image/jpeg",
+            "size": [4096, 4096],
+            "bytes": 8315127
+          }
+        ],
+        "animations": [
+          {
+            "name": "Animation",
+            "channels": 72,
+            "samplers": 72,
+            "sampleCountRange": [20, 20],
+            "timeStart": 0.03333333507180214,
+            "timeEnd": 0.6666666865348816,
+            "duration": 0.6333333514630795,
+            "inputsSorted": true,
+            "finiteOutputs": true,
+            "targetNodes": 24
+          }
+        ],
+        "patchPreservation": {
+          "evidenceSource": "generator diagnostics plus current raw-source SHA256; outside coordinates not independently compared in this binary inspection",
+          "outsidePatchCoordinatesUnchanged": true,
+          "sourceUnchangedReported": true,
+          "rawSourcePath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-run.glb",
+          "rawSourceSha256": "7a2407c0118fa07cb60400a03003eaa81b9cd033d66e8c0c6548cf1f216e0a01",
+          "rawSourceMatchesGenerationHash": true,
+          "rootOpenEdgesAfterCapReported": 0,
+          "capBackwardsNormalFacesReported": 0,
+          "capVerticesAddedReported": 310
+        },
+        "failures": []
+      }
+    ],
+    "failures": [],
+    "bodyGenerationDiagnostics": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/diagnostics.json",
+    "bodyHelperSha256": "89f667112aece923acdb8cdbadc39883b3ecd3f4a11390419ea270216d687027",
+    "bodyHelperMatchesDiagnostics": true,
+    "status": "passed"
+  },
+  "outputs": [
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/assembly-diagnostics.json",
+      "byteSize": 6621,
+      "sha256": "f9854515b55bac1400e40006d1eed7131522a8e2b1cbd0ae4cca1f99842133f0"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-neutral.fbx",
+      "byteSize": 31706380,
+      "sha256": "cb7b4488404f794964e64310625f31a7b21e1988d9a1ede42102b381e952bfc0"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-neutral.glb",
+      "byteSize": 31408220,
+      "sha256": "7c57cde91c631b8cc59936f460e01d64dad878e7d21cb104659cf1d3ee816e0d"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-rigged.fbx",
+      "byteSize": 31590716,
+      "sha256": "c847cd2a2887138d599bb8cb82b05e74b19383bc509a8bf8c9816222893f6891"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-rigged.glb",
+      "byteSize": 31392072,
+      "sha256": "cd08b38eac06a7318a46de9ba90dd86f4cace2d7636de6251bcfcede468c37dc"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-run.fbx",
+      "byteSize": 31721516,
+      "sha256": "19cef36c9c280c257bd10936626f2e7f771d676a9ad714605a9850fc7fa4bfe9"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-run.glb",
+      "byteSize": 31416764,
+      "sha256": "afc50f37ac918cb1af9d2cbcdd2ba65db60fe53be239403c0075d5cc8e80a384"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-walk.fbx",
+      "byteSize": 31729484,
+      "sha256": "ab0f8fd9f825f7d40e826cb301f0a8d45eb7be4392ca4ceae9e17e0be7151083"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-walk.glb",
+      "byteSize": 31420896,
+      "sha256": "c7f30493ac41e1842409dfadefdc30786aedbf9cafcd85fb12c5c8c3ebca0ae1"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit.blend",
+      "byteSize": 48402972,
+      "sha256": "573d02c614de4bfffd44516a55db5fad7bc0eb1783ac31b0b38220ff03ad79bd"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/metadata/final-glb-audit.json",
+      "byteSize": 78838,
+      "sha256": "65bcdf10261b2c3e2d06092a46a8b5debf8eaa7c5f703b46cf0ecbcc3767109c"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/references/user-concept-reference.png",
+      "byteSize": 1410434,
+      "sha256": "0b2bd04caf5538ea10e747ff30fc790452a77f75cab1b8ec218abcc1e01ba7b9"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/references/user-feedback-front-depth.png",
+      "byteSize": 463664,
+      "sha256": "5efb6d9439a61ca810bc52fd42ac2ce5fe36aba664f2f74b097765e12acb3434"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/references/user-feedback-initial-fit.png",
+      "byteSize": 773606,
+      "sha256": "41644ac370e6b96d82a58cfa91c0004d96e5d02b43d85acc124c42b93dccc576"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/references/user-feedback-rear.png",
+      "byteSize": 765265,
+      "sha256": "b461ddeede6e8076b5d23f114016ac88f7341aae7a6547cf99b7b92676a90e33"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/ataho-final-front-depth-side.png",
+      "byteSize": 191910,
+      "sha256": "2f683fd976a16cefd8b6110d25cd8d174bcc12880aeead4ab995ea1a3bf30ab7"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/ataho-tailless-body-back.png",
+      "byteSize": 177688,
+      "sha256": "1367052ac7c2d40bd4f5b75ef1daeeb6aaa17c7640b3638b09c5fae53058b5fa"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/ataho-tailless-outfit-neutral-back.png",
+      "byteSize": 213825,
+      "sha256": "aeedd8929bf588102134a178e906716b0dd125db0f697735fda9e67b736d7e15"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/ataho-tailless-outfit-neutral-front.png",
+      "byteSize": 246681,
+      "sha256": "96e473ed22c7a12c17912bb85524e0c83ccda9924167518c50dacc9616e7768f"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/ataho-tailless-outfit-run-back.png",
+      "byteSize": 168926,
+      "sha256": "5c8cd3f4abddd3c112d683adddc0403b43f3f98658b6029561e4d9df554f9dfc"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-back.png",
+      "byteSize": 834914,
+      "sha256": "7d7abdb907085306192427cb232d47174656f63a7c8800f018ddbc0e62d524fc"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-front.png",
+      "byteSize": 867792,
+      "sha256": "807436dbd21f50b86c935b4a956ac92b670a4cf83e1df68e4e9e8b3131d7e647"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-neutral-back.png",
+      "byteSize": 837402,
+      "sha256": "be7877f73eb3fff9bf1020f9c71931bc44452e309ccf78262d0937d11aab7521"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-neutral-front.png",
+      "byteSize": 863460,
+      "sha256": "385a37d5e9846ade00d753c9c9d0144f632573e341d4d680b8395f9605f78b64"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-neutral-rear-three-quarter.png",
+      "byteSize": 816967,
+      "sha256": "2afcf13db80cfc69c7bf6c6a338fe8c6743dfb705f23fb0dae091a9cadd0e2d5"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-neutral-side.png",
+      "byteSize": 817796,
+      "sha256": "20c79c8a7359ab0e86efd1c71f0815935757f5e02660f57bafd73ceb4507954a"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-neutral-three-quarter.png",
+      "byteSize": 861965,
+      "sha256": "bdb54a9e2e4a986dadca558b3e112c6f4c8898ef521ed707d4f6398f5bd9370d"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-run-01.png",
+      "byteSize": 868766,
+      "sha256": "cf04f83488a847c27d3bdb4721e01ac38c6987b69adfcb3a401b02cfc52651d9"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-run-07-rear-three-quarter.png",
+      "byteSize": 824094,
+      "sha256": "37def426e629fa4ad788bcdee8cbc3636620b550b6199e26f16f1e3a72436043"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-run-07-side.png",
+      "byteSize": 830375,
+      "sha256": "5ca9066b732e4c14b2a588cd0a6baae3630655763a5b7f077eadceee289abcc7"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-run-07.png",
+      "byteSize": 845094,
+      "sha256": "2cc587b6e88759bbb17d6fe568b7973d3c060965e7c951fc5ad1aedd450ac622"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-run-13-rear-three-quarter.png",
+      "byteSize": 844307,
+      "sha256": "6ea596663d89f51485b2786d5dc210d6e69950a3c1cea9e7784053e31a9ff28f"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-run-13.png",
+      "byteSize": 848808,
+      "sha256": "5ba162ae7b009820d3684c0c697d15eaf19ada6c490d9a00da72b180af0529f9"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-run-20.png",
+      "byteSize": 868926,
+      "sha256": "e6378b31bbc29a6222ae0f452bff4d0011134bfced577dd0fe5c4efaf537324b"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-side.png",
+      "byteSize": 809180,
+      "sha256": "291d05a84f556bf5cb9669253ddec905321ef8852a1dbfae9d888f528e3f873a"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-walk-01.png",
+      "byteSize": 850887,
+      "sha256": "625619ec5691671ead3a72980d5d56d4db4b72d9bf3dd9e85a50b1301f63a483"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-walk-11-side.png",
+      "byteSize": 837042,
+      "sha256": "d2fd6928dbe34b773ee90416817e83780270efaa3298b70e7e86715c4b50e3d4"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-walk-11.png",
+      "byteSize": 855379,
+      "sha256": "9a14601856db4e9e62be6ac9f2e30f451294f9e9d1cb53f0daf528333e76bffc"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-walk-21.png",
+      "byteSize": 853761,
+      "sha256": "e56bf2b7a6c80eb5ac02796f570f6b9b8106915132330c689dd4041d20e509c7"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/reviews/outfit-walk-32.png",
+      "byteSize": 851056,
+      "sha256": "f6ca35242becc3b6c7409a3ab0d429a54c92d34bade8f2e52f1df300e0139fd2"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/ataho-jacket-fitted.glb",
+      "byteSize": 6744936,
+      "sha256": "44731a246e79504cd04408578e9271a08e8c18f452fd6dae799bec588d296cf7"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/back-depth-after-neutral-back-three-quarter.png",
+      "byteSize": 836395,
+      "sha256": "8530fa7448b41f22c07c090d0a0eac70d10eb9a5261bdf7142eecb9d736baff7"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/back-depth-after-neutral-three-quarter.png",
+      "byteSize": 863158,
+      "sha256": "edda23d7011e1eb7c83c1fb53dd15024cf9575fa7db74c121018db11c8aa1157"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/back-depth-after-run-07-back-three-quarter.png",
+      "byteSize": 824850,
+      "sha256": "edb2e12499112f15931e404ab6ff929714603600de51cb814a7ebb736a698fe8"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/back-depth-after-run-07.png",
+      "byteSize": 844615,
+      "sha256": "90372b7d893dd64bf73c0c5805fe38bad9ee759288c4cf538f8584fad5008068"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/back-depth-after-run-13-back-three-quarter.png",
+      "byteSize": 831233,
+      "sha256": "86192ccd6c2ac9767b2ad3002d1b2909640ea2c496c9aa2b5cdb17126358c831"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/back-depth-after-run-13.png",
+      "byteSize": 852074,
+      "sha256": "7a5bf0fe082f6a0e478a2f764cd4e65f49dc69c8327e2aa6af9a575cd0e9f4b6"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/back-depth-before-neutral-back-three-quarter.png",
+      "byteSize": 832221,
+      "sha256": "89e5fab33ba98a267ca88affbc5f628a08aeae7e9f24c2ab665f122c1826629e"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/back-depth-before-neutral-three-quarter.png",
+      "byteSize": 863456,
+      "sha256": "7dbae0d45541ad7acc36d6da18bdf20223c3db5efc0b4ff160a08d82548f174d"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/back-depth-before-run-07-back-three-quarter.png",
+      "byteSize": 822905,
+      "sha256": "c248e1dc57a60a3d131f4de90baf8f988e0908c9933ebbdb3cef1f054665ccc3"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/back-depth-before-run-07.png",
+      "byteSize": 845613,
+      "sha256": "c1192b5f316411274a4e44512249af8008839b9d0c07c077da93e44c0241c4e7"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/back-depth-before-run-13-back-three-quarter.png",
+      "byteSize": 829558,
+      "sha256": "9e9750a947f5d4e714d67effc2b3f875c800382a271e2733a1512a1afe0f0116"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/back-depth-before-run-13.png",
+      "byteSize": 852800,
+      "sha256": "2a99a011a6d5512bfe2e41d246d82f73801e7346b8a1f64921d681fa433a5b86"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/cap-weight-hold-after-neutral-three-quarter.png",
+      "byteSize": 863968,
+      "sha256": "d863171a3666cbd5d1bdc1ac8157cefb1389c4198f0ff2e627b99fc9e866857d"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/cap-weight-hold-after-run-07.png",
+      "byteSize": 843090,
+      "sha256": "508583871972b9a7b56c81e1886b9cbd8119306592829c88aeda3d52f35106c9"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/cap-weight-hold-after-run-13.png",
+      "byteSize": 852793,
+      "sha256": "242a54be7e8e3c52e2ef3ea51e8a3622b11400999f86bdeb6539b69e4c892ab6"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/cap-weight-hold-before-neutral-three-quarter.png",
+      "byteSize": 863456,
+      "sha256": "a12b8619e64ef5989e51f50002f9e0eb96ff52764398fdec16fcf23bc89bf137"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/cap-weight-hold-before-run-07.png",
+      "byteSize": 845350,
+      "sha256": "6a626d9d21467669164d3a55dd5d2bd273b2272ba885bdb8141df427c042b8ae"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/cap-weight-hold-before-run-13.png",
+      "byteSize": 852800,
+      "sha256": "88ab12960fcfd96e61debc639d6face6768d333ce62e1515a5976cce6f54e28f"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/diagnostics.json",
+      "byteSize": 14056,
+      "sha256": "410f62196e989769441b1082a8374e0da35708f9ab9a90816a5a58751808f388"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/fit-jacket.blend",
+      "byteSize": 20705628,
+      "sha256": "256d034d2ff6682769ad5a373744304cb46b74109bc5a853b92f2e3f1dc54588"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-clearance-audit.json",
+      "byteSize": 372,
+      "sha256": "879cfb8a6a5fe91afbabc9a6ba510aebdb5d09c6fde8200180ab312fbe86621a"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-after-neutral-side.png",
+      "byteSize": 821573,
+      "sha256": "2bb1f87d4045cafba659ba646fe7cc8f7c84b440ad6b1aa440ae9f121167171f"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-after-neutral-three-quarter.png",
+      "byteSize": 862415,
+      "sha256": "1c505d7ff19dbedea36c92f569856c3f656b9dcc4474c1eb9f1330d68b2056b1"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-after-run-07.png",
+      "byteSize": 846406,
+      "sha256": "7f3b4c3a14b860dde2a7c1b9ca217d74dabb3be1d28c2a03bf957bbe6889f17f"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-after-run-13.png",
+      "byteSize": 849970,
+      "sha256": "e67c5d42a7dc0941b103cdcc0daa39b939f4b98a87a646e5789d7c37077077e8"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-after-run-side-07.png",
+      "byteSize": 832150,
+      "sha256": "e067e6e547c31b5bfdfb42af82ec082e40ab4cd7341f8edb9d3af0f0b7989223"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-after-run-side-13.png",
+      "byteSize": 850080,
+      "sha256": "32c8c7e2cc943d7b42951b95db763c017e84742f0ebddd0359ab8ad228b9aa93"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-after-walk-side-11.png",
+      "byteSize": 837703,
+      "sha256": "7a55935e1c4dd84ceeb05664242e2332f946c22b139e95665513ba5a67805d26"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-before-neutral-side.png",
+      "byteSize": 823618,
+      "sha256": "6e5f3c59e62508da2c84838b6cf978f5596338b9b6471311421fe8517c526288"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-before-neutral-three-quarter.png",
+      "byteSize": 863112,
+      "sha256": "ab014d85936fbd3fd23d52774b820dc9c1b436553ee87a1326632bf7a98d41bf"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-before-run-07.png",
+      "byteSize": 845042,
+      "sha256": "0fe03088b749ada538470f6c09e43705e7a987697e135e0914192c7eefbf9c9e"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-before-run-13.png",
+      "byteSize": 852859,
+      "sha256": "1e4d2b5624e3a16b53cbdb949efde75d4d0d7778be5f8a425e915ef05f293636"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-before-run-side-07.png",
+      "byteSize": 835021,
+      "sha256": "149a10ec674076f71c356c6bfac7065cf217243e6f62ac284367ddb508686cbe"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-before-run-side-13.png",
+      "byteSize": 852169,
+      "sha256": "ae5915ac5df48a36547f1814dea90eb7c6df41d1cd4b775e8d237f222f0981b5"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/front-depth-before-walk-side-11.png",
+      "byteSize": 838949,
+      "sha256": "f2257b02fb0578f4c63ff61115aed8c12096d44f9fcd3c1fe95eb895f0a6cf50"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/jacket-concept-arms-down-back-three-quarter.png",
+      "byteSize": 797044,
+      "sha256": "c7ea0fa3317e5a1d20af48847807d22f9ce691510eb813bf60b520c554e30a20"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/jacket-concept-arms-down-front.png",
+      "byteSize": 808006,
+      "sha256": "46cf637574c1260b326d8acb3b2222ecebeeb8aa0f13179b8097634528eee7cc"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/jacket-concept-arms-down-three-quarter.png",
+      "byteSize": 800746,
+      "sha256": "036c581328ef3ddd81eb2b19ec6d4e4718c14bce7b093239364105e7e30486b5"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/jacket-concept-shoulder-local-attempt-rejected.png",
+      "byteSize": 794672,
+      "sha256": "23ac4ba26845c852dc9b0b4907faa88b27502608ad3a8982a01e651c4cd3f7b7"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/jacket-fit-back.png",
+      "byteSize": 804860,
+      "sha256": "b3596250546818f0a73de444f15cecf18333c71190ff1cc7f26a95c0fd688ec9"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/jacket-fit-front.png",
+      "byteSize": 814813,
+      "sha256": "f968b400427920b0cf83662c49dfff70d9d4cf31c4d18ec473fdffb026a283f9"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/jacket-fit-side.png",
+      "byteSize": 761708,
+      "sha256": "0c6d62f8fe4c45593064ae1b6cc4a90c16499c2c8bcdedea3d82224516c5c711"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/jacket-walk-frame-08.png",
+      "byteSize": 791500,
+      "sha256": "213367475525e627964e84224619e52d88580b44745e712ae15b654d7b09ca8f"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/jacket-concept/jacket-walk-frame-23.png",
+      "byteSize": 802617,
+      "sha256": "aac021e18cd750437431ff58bdc0c17e437fcb5a0d57cfe2863004bd0eab6f25"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/pants-concept/ataho-pants-fitted.glb",
+      "byteSize": 5092760,
+      "sha256": "1ef5a32feb07795d69c87f01d547edc8bfefa2a1b00aa6e36c92ec6ccf57c577"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/pants-concept/diagnostics.json",
+      "byteSize": 16055,
+      "sha256": "951952ef05fdf9960e686a4954c2fff9733156f0bb4be1dcf6eb6d68619ebb5b"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/pants-concept/fit-pants.blend",
+      "byteSize": 18900144,
+      "sha256": "f0880c2e12b32b6a377020bee2696a2e40aec9fbf3fae71f1bc2e271a812f962"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/pants-concept/front.png",
+      "byteSize": 951691,
+      "sha256": "ad6798fbf53ec9755110d858aa40f3b554be613364fbd30d7e8b3dd6a076eef4"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/pants-concept/run-06.png",
+      "byteSize": 956657,
+      "sha256": "d2a98396348b25409eca8352d6fd5126710128bc1d6ffb02a06eb742f5695b24"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/pants-concept/run-11.png",
+      "byteSize": 964226,
+      "sha256": "251350a3979ce7abe385f163e6e680a2393da086492ed051f6784970468b4932"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/pants-concept/side.png",
+      "byteSize": 900936,
+      "sha256": "4c58ccd00f1b0c8ebbc7405e1d9798ea67ec5273494f2a3e69f625e398c22285"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/pants-concept/three-quarter.png",
+      "byteSize": 936349,
+      "sha256": "b413fe252668b0d7158391299960eb0608fd0fab57d65b4528a56e3211f411e7"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/pants-concept/waist.png",
+      "byteSize": 839127,
+      "sha256": "f1d4925c1d73ab1a49e58e38353a17efc69631a40e6245e521792066d384ccad"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/ataho-sash-concept.glb",
+      "byteSize": 515932,
+      "sha256": "6cca506ac8c9d2ffadc5903a2edd2f67598df50f4feb5749d4ee005120d378f0"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/diagnostics.json",
+      "byteSize": 2748,
+      "sha256": "73c74c4cfe063567ca38713354ea0f5f249fa330eb3ca3e1baa9897d41ac5691"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/fit-sash-concept.blend",
+      "byteSize": 49008224,
+      "sha256": "23dc39d4a275e96b8683ada5451cc0fb8de304fd0efa73132d5071cb6787a2c7"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/sash-concept-detail.png",
+      "byteSize": 1156678,
+      "sha256": "9b0fc7c023e231e977bab9edc3092e5bdae9dfd561f501831bd26e65221c8f80"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/sash-concept-front.png",
+      "byteSize": 801612,
+      "sha256": "504650c4d82b3d3236bd1b32beef18f55049d12c584a75cb16fc2dff6aaf6267"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/sash-concept-three-quarter.png",
+      "byteSize": 782079,
+      "sha256": "e652b190cbb2cbfee6ad5594ada1a39448df22a3f83fc84b2043f0efd836489c"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/sash-follow-run-07-after.png",
+      "byteSize": 1202806,
+      "sha256": "6e83f0c3ff5bc4a059ebd91e7bfd9422e503219d39ad073eb30d0eb3463f6ef9"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/sash-follow-run-07-before.png",
+      "byteSize": 1202720,
+      "sha256": "042fe0544e542a87e3d22708cfba3f467387be0e05686525220017d6f93a6b7e"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/sash-follow-run-07-final.png",
+      "byteSize": 1202096,
+      "sha256": "90e05677ec50ecef1682283643970adb590f12c3ee1880449b1529f4155c6bca"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/sash-follow-run-13-after.png",
+      "byteSize": 1203663,
+      "sha256": "09c00ab8949f65c612099dbb1c5013b8e21d92d3d519a617b6079ecb63be761e"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/sash-follow-run-13-before.png",
+      "byteSize": 1203191,
+      "sha256": "9200e1fe6a8e0d8fc83a2dfdbf2ba8fa3a06a45a2838a5b82f94e8bce1f68545"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/sash-follow-run-13-final.png",
+      "byteSize": 1202989,
+      "sha256": "9c7b597e3c7a7f753fa6a18e7f1c09008ea7bffcabdc5c6278df04df643db6e9"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/weight-follow-final-review.json",
+      "byteSize": 1084,
+      "sha256": "b0fec3ff1c49acb3c0bc5bcda96442e512ddf8766a85897c67fedc2470a77ea5"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/sash-concept/weight-follow-review.json",
+      "byteSize": 1134,
+      "sha256": "a6849d056f47f324e2a8a2ead8e17f2a1f363bef3d212de208058254aa239aa5"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/flask/ataho-flask-fitted.glb",
+      "byteSize": 8017312,
+      "sha256": "ca5fd262c7b87172c16f625f57917b2a345be852be5562e17a1aa82f94fe511a"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/flask/body-flask-front.png",
+      "byteSize": 678300,
+      "sha256": "5f02882dd029d56b7c782ffd18a7226012c080e7885c328a0ad4c6b441637f09"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/flask/body-flask-three-quarter.png",
+      "byteSize": 665727,
+      "sha256": "5899b69bfc86d713f124c8403be0524c038c144d0ec1b254d1e705b1ae37f7ae"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/flask/diagnostics.json",
+      "byteSize": 2747,
+      "sha256": "a73d3971ed3fdeb09e8aa9fe5bfe671e652f3cbc5c76117864486a6da94988d2"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/flask/fit-flask.blend",
+      "byteSize": 21736636,
+      "sha256": "f2ec455ee249b439740c07f92c277b24da6e8e5a2b5775ea8f3e4030daf016b3"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-original-tailless.blend",
+      "byteSize": 13185007,
+      "sha256": "78f6a8203e2aa2ef5e811b9cb9c6d5380a058253a955ae1d2d1f108e00d2436b"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-original-tailless.fbx",
+      "byteSize": 12250284,
+      "sha256": "525c8b4219511e0f23fdb052b0768cc93b7db4b92daaaff856fe6b0c6bb6853f"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-original-tailless.glb",
+      "byteSize": 11659524,
+      "sha256": "0de26dcbd5d19ea12fcd65a02eb48f250a80681fef9ced299269d7284a76895e"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-rigged-tailless.blend",
+      "byteSize": 13654436,
+      "sha256": "ef5461a683250e7b6549c909b96ddbdfe524f575607418b4b1048babd031a3d7"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-rigged-tailless.fbx",
+      "byteSize": 12964604,
+      "sha256": "d65c7a93a32c7fc7ee433c61130e34c9d65df939fb766a52bbee8454c4969021"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-rigged-tailless.glb",
+      "byteSize": 12924372,
+      "sha256": "0986e9812adcc361f4bcea3234eabae48f2439521de2a27424e87f05ea117b02"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-run-tailless.blend",
+      "byteSize": 13701553,
+      "sha256": "08a5fd893258b7ce52b5835e6b33552bb6b888b037b9092c8b64f1700d79c13a"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-run-tailless.fbx",
+      "byteSize": 13095468,
+      "sha256": "e3a23f42566bbc929791b9bfe238dbe2eec3130cd447e57fadf4df9bfc1af550"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-run-tailless.glb",
+      "byteSize": 12959688,
+      "sha256": "15528ed67c6fc5542d5c216ab387ca72ea54ec7ef09725ac76a558d00aab148c"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-walk-tailless.blend",
+      "byteSize": 13725579,
+      "sha256": "c89877e99e15cb8ea31ebd53b04b7fed529adc9808ebd650947cf7fed3af18f4"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-walk-tailless.fbx",
+      "byteSize": 13103404,
+      "sha256": "e741ad99d503112e3275bb97306e9f50bf5a89c6e984aa2e3b00e51c237afc7d"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-walk-tailless.glb",
+      "byteSize": 12971256,
+      "sha256": "70ea523e254afb924a3b4d9b5a93f602da8ea9803a0a45f25f1d02fc36d296a6"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/diagnostics.json",
+      "byteSize": 10938,
+      "sha256": "0608e6f668c3b9f47b0d93d89de91845e6922be90ff076c80d5620b6a3278299"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/original-01-rear.png",
+      "byteSize": 847121,
+      "sha256": "26c37869e2317ffef895de44069eb52d56a716df74be2f1dadef3d8690e50b58"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/original-01-root-detail.png",
+      "byteSize": 835069,
+      "sha256": "2d48517b8108fc4106f714f8e3d8c58c1fa7f88e05d3f4f39bc917cb9d2e15a4"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/original-01-side.png",
+      "byteSize": 801044,
+      "sha256": "0d21ce389110ba5275e744dee585979d3a30652808b12c4731041af27a991470"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/rigged-01-rear.png",
+      "byteSize": 846680,
+      "sha256": "9a886748b6f86bff90717823fd94f72f2a8f1d70d1dfdd034f1819f7e044bb6d"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/rigged-01-root-detail.png",
+      "byteSize": 835139,
+      "sha256": "8576be1d359c7c36ab7c46fb2a6669cf70bd6727535c72fbe1da2feb169eb149"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/rigged-01-side.png",
+      "byteSize": 801693,
+      "sha256": "3a5415a95b998cef6649e26e572bb0f83a49d5c0db98e2349f5564b6bc95fa7b"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/run-07-rear.png",
+      "byteSize": 839688,
+      "sha256": "d5054eac86cc5f5d3198b4ae6bb33858b7311740e8840b4d5fb3c3f382dedd52"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/run-07-root-detail.png",
+      "byteSize": 891206,
+      "sha256": "292b0fbf4747a41d6c27493962db7c055b9dc6ac71e34460bd38a0c4b071c5a5"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/run-07-side.png",
+      "byteSize": 827731,
+      "sha256": "dc40ab2c48c67efc3b0a6f3ca700912ae0bbbf44429650df062eb03a67af268e"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/walk-16-rear.png",
+      "byteSize": 855490,
+      "sha256": "345a5030924c41cb9ba372440cee46a1b10210d5f9b27c16e3dbcf70324b6ace"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/walk-16-root-detail.png",
+      "byteSize": 867537,
+      "sha256": "932336c20b7f53dc94539e060e3d731a5bace3f43d53ddab7822014e30c2b0db"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/walk-16-side.png",
+      "byteSize": 819165,
+      "sha256": "1d310080bb276ed05254b4d246f15d05d15f03ca67fd0d5e78769f35a6dddd69"
+    }
+  ],
+  "viewer": {
+    "path": "src/resources/characters/ataho-meshy-body/",
+    "defaultModel": "outfit-neutral",
+    "localUrl": "http://127.0.0.1:8031/src/resources/characters/ataho-meshy-body/?model=outfit-neutral",
+    "keys": [
+      "outfit-neutral",
+      "outfit-rigged",
+      "outfit-walk",
+      "outfit-run",
+      "body-original",
+      "body-rigged",
+      "body-walk",
+      "body-run",
+      "jacket",
+      "pants",
+      "flask"
+    ]
+  },
+  "validation": {
+    "repositoryChecks": ["npm run check", "npm run build", "git diff --check"],
+    "testCodeAddedOrExecuted": false,
+    "browserChecks": [
+      "정지 비교 자세의 단일키 적용과 재생 버튼 비활성",
+      "착의 걷기·달리기 실제 자세 변화와 반복",
+      "일시정지·처음부터·반복 해제 후 종료",
+      "정면·측면·후면의 의상·술병 추종",
+      "꼬리 제거 몸체·착의 사본 후면 확인"
+    ],
+    "renderChecks": "정지 비교 자세·T포즈 앞/옆/뒤와 걷기·달리기 표본 프레임, 달리기7/13번 뒤3/4 실제 렌더 후 검토.",
+    "consoleErrors": 0
+  },
+  "limitations": [
+    "기존 본체의 얼굴·체형을 바탕으로 의상 비율을 보정한 것으로 원본2D를 완전히 재현한 결과는 아님.",
+    "기본 걷기·달리기와 확인한 뷰·표본 프레임 범위이며 모든 극단 자세의 무관통을 보장하지 않음.",
+    "띠 상단은 골반과 하부 척추에 연결되고 매듭·끝자락·술병은 Hips 연결이며 별도 천 시뮬레이션·흔들림 전용 뼈 없음.",
+    "바지 원본의 작은 사타구니 미세홀과 비다양체 모서리3개 보존. 확대·극단 자세에서 추가 보정 여지 있음.",
+    "꼬리 제거부의 받침옷 메움 색 경계는 근접 확대에서 남아 있으며 착의 모델에서는 의복 아래로 가려짐.",
+    "FBX는 텍스처를 내장해 내보냈으나 별도 DCC 재수입·재생은 검증 범위에서 제외.",
+    "게임 연동은 수행하지 않음."
+  ]
+}

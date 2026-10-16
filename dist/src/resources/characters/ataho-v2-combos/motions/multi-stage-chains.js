@@ -1,6 +1,7 @@
 import { guard, recover, oneTwo, uppercut } from './attack-phrases.js';
 import { sharpElbowSteps } from './elbow-timing.js';
 import { flyingKickMotion } from './flying-kick.js';
+import { withChainTiming } from './chain-timing.js';
 // GIF로 확인한 연결을 유지한다. 다음 공격 전에 어퍼컷의 마지막 회수만 뺀다.
 const linkedUppercutSteps = uppercut(0).filter((step) => step.frame !== 6);
 const linkedElbowSteps = sharpElbowSteps
@@ -63,4 +64,4 @@ export const multiStageChains = [
             ...recover(74),
         ],
     },
-];
+].map(withChainTiming);

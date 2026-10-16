@@ -1,0 +1,106 @@
+{
+  "status": "fitted-rigid-part-ready-for-master-rig",
+  "coordinateSpace": {
+    "up": "Z",
+    "front": "-Y",
+    "unit": "meter",
+    "characterRight": "-X"
+  },
+  "sourceBody": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-rigged.glb",
+  "sourceFlask": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-flask.glb",
+  "bodyHeight": 1.6136681033017197,
+  "sourceBounds": {
+    "min": [
+      -0.6082710027694702,
+      -0.6086810231208801,
+      -0.9518851041793823
+    ],
+    "max": [
+      0.6075779795646667,
+      0.60887610912323,
+      0.9503371119499207
+    ]
+  },
+  "uniformScale": 0.16966136654478345,
+  "rotationRadiansXYZ": [
+    0,
+    0.13962634015954636,
+    0
+  ],
+  "centerWorld": [
+    -0.3050000071525574,
+    -0.2849999964237213,
+    0.6990000009536743
+  ],
+  "fittedBounds": {
+    "min": [
+      -0.4182850420475006,
+      -0.38828620314598083,
+      0.5319222211837769
+    ],
+    "max": [
+      -0.2114185094833374,
+      -0.1817137897014618,
+      0.8587402701377869
+    ]
+  },
+  "fittedSize": [
+    0.2068665325641632,
+    0.20657241344451904,
+    0.32681804895401
+  ],
+  "actualHeightRatioToBody": 0.20253114521214674,
+  "attachment": {
+    "object": "FlaskSashAttachment",
+    "bone": "Hips",
+    "positionWorld": [
+      -0.29107609391212463,
+      -0.2849999964237213,
+      0.7980737686157227
+    ],
+    "mode": "all vertices Hips weight 1.0; armature modifier; no bone parenting"
+  },
+  "mesh": {
+    "vertices": 6915,
+    "polygons": 10348,
+    "materialSlots": 1,
+    "uvLayers": 1
+  },
+  "bodyClearance": {
+    "method": "rest-pose body front-surface projection along Blender +Y",
+    "projectedFlaskVertices": 2007,
+    "minimumFrontClearance": 0.08255177736282349,
+    "verticesBehindBodyFront": 0,
+    "attachmentProjectsOutsideBody": true,
+    "scope": "원래 본체와 정적 포즈만 검사. 최종 의상과 애니메이션 간섭은 통합 단계에서 확인."
+  },
+  "exportObservation": {
+    "vertices": 7071,
+    "weightSumRange": [
+      1.0,
+      1.0
+    ],
+    "skinJoints": 24,
+    "note": "UV와 법선 경계의 정점 분리로 GLB의 정점 수가 증가할 수 있다. 원본 Blend의 정점과 면은 보존한다."
+  },
+  "preserved": [
+    "source topology",
+    "UV",
+    "4K base-color texture",
+    "stopper",
+    "neck rope",
+    "knot",
+    "tassel"
+  ],
+  "pending": [
+    "의상 확정 후 허리띠와 목 끈 연결",
+    "걷기와 달리기에서 옷 또는 오른다리와의 간섭 확인",
+    "부모 통합 시 동일 이름 Hips를 가진 master armature로 modifier 대상 변경"
+  ],
+  "outputs": [
+    "fit-flask.blend",
+    "ataho-flask-fitted.glb",
+    "body-flask-front.png",
+    "body-flask-three-quarter.png"
+  ]
+}

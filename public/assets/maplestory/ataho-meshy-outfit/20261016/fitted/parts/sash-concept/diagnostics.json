@@ -1,0 +1,113 @@
+{
+  "status": "concept-sash-ready-for-parent-integration",
+  "previewScope": "현재 concept 통합본의 몸체·옷·소품을 읽어 새 띠만 교체한 팔내림 정지 포즈.",
+  "paidCredits": 0,
+  "materials": "dark brown cloth with geometry folds and GLB vertex colors; no external texture",
+  "parts": {
+    "SashBand": {
+      "vertices": 4800,
+      "polygons": 9600,
+      "bounds": {
+        "min": [
+          -0.3316839337348938,
+          -0.3560299873352051,
+          0.7153992652893066
+        ],
+        "max": [
+          0.32398730516433716,
+          0.3432517349720001,
+          0.8241416811943054
+        ]
+      },
+      "skin": "continuous Hips/Spine02",
+      "vertexColor": "SashClothColor"
+    },
+    "SashKnot": {
+      "vertices": 756,
+      "polygons": 752,
+      "bounds": {
+        "min": [
+          -0.04242723807692528,
+          -0.41259756684303284,
+          0.7242535948753357
+        ],
+        "max": [
+          0.06391385197639465,
+          -0.36262646317481995,
+          0.8070901036262512
+        ]
+      },
+      "skin": "Hips weight 1.0",
+      "vertexColor": "SashClothColor"
+    },
+    "SashTail1": {
+      "vertices": 882,
+      "polygons": 880,
+      "bounds": {
+        "min": [
+          -0.09245157241821289,
+          -0.4156058132648468,
+          0.3464501202106476
+        ],
+        "max": [
+          0.032400596886873245,
+          -0.36349859833717346,
+          0.7729904055595398
+        ]
+      },
+      "skin": "Hips weight 1.0",
+      "vertexColor": "SashClothColor"
+    },
+    "SashTail2": {
+      "vertices": 882,
+      "polygons": 880,
+      "bounds": {
+        "min": [
+          0.0015311226015910506,
+          -0.4364722967147827,
+          0.45154592394828796
+        ],
+        "max": [
+          0.12413601577281952,
+          -0.3723014295101166,
+          0.7761492133140564
+        ]
+      },
+      "skin": "Hips weight 1.0",
+      "vertexColor": "SashClothColor"
+    },
+    "FlaskConnector": {
+      "vertices": 210,
+      "polygons": 202,
+      "bounds": {
+        "min": [
+          -0.2927309572696686,
+          -0.28884387016296387,
+          0.7872273921966553
+        ],
+        "max": [
+          -0.23024620115756989,
+          -0.24227681756019592,
+          0.8058001399040222
+        ]
+      },
+      "skin": "continuous Hips/Spine02",
+      "vertexColor": "SashClothColor"
+    }
+  },
+  "bandGeometry": {
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "signedVolume": 0.0006578788198726787,
+    "nonAdjacentTriangleOverlapPairs": 0,
+    "radialClearanceRange": [
+      0.012132354742866502,
+      0.01799569174377147
+    ],
+    "weightSumRange": [
+      0.9999999701976776,
+      1.0000000298023224
+    ],
+    "maximumInfluences": 2
+  }
+}

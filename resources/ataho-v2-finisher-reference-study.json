@@ -1,0 +1,328 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-16",
+  "scope": "아타호 v2 필살기4종의 기존 다방향 안무에 준비·가속·흔적 축적·공간 압축·결정타 방출·종결 여백을 더하기 위한 공식 움직이는 자료 조사와 프로젝트 해석.",
+  "evidencePolicy": {
+    "media": "공식 원작성자 영상 파일을 내려받아 지정 구간의 연속 프레임을 직접 열람했다. 제목·설명·정적 썸네일만으로 동작을 판단하지 않는다.",
+    "playback": "아래 구간은 프레임 확인이며 실시간 영상 재생으로 기록하지 않는다.",
+    "code": "외부 공개 구현 코드의 열람·실행과 원작 게임 조작은 수행하지 않았다.",
+    "adaptation": "observed는 영상에서 본 표현, projectInterpretation은 아타호의 기존 그림과2D 무대에 맞춘 해석이다. 원작 기술의 정확한 타수·피해 판정·3D 카메라를 복제했다는 뜻이 아니다.",
+    "temporaryEvidence": "localEvidence의 영상과 접촉표는 조사용 임시 파일이다. 저장소 리소스나 배포용 영상으로 가져오지 않는다."
+  },
+  "references": [
+    {
+      "id": "dbfz-hit",
+      "author": "Bandai Namco Entertainment America",
+      "title": "Dragon Ball FighterZ - Hit Character Trailer | PS4, X1, PC",
+      "url": "https://www.youtube.com/watch?v=2b9WSwQaHUA",
+      "observedRange": {
+        "startSeconds": 22,
+        "endSeconds": 28,
+        "framesPerSecond": 8,
+        "method": "다운로드 영상에서 추출한 연속 프레임 직접 열람"
+      },
+      "observed": [
+        "짧은 소실·재등장으로 공격자 이동 과정이 생략되듯 보인다.",
+        "표적에 보라색 타격선이 겹쳐 쌓이며 여러 방향에서 집중되는 인상을 준다.",
+        "종결 직전 주먹·표정의 가까운 구도로 끊은 뒤 큰 타격과 마무리 구도로 결산한다."
+      ],
+      "unconfirmed": [
+        "모든 피해가 나중에 한꺼번에 발생하는 실제 판정인지 확정하지 않았다.",
+        "원작의 정확한 명중 수·이동 수치·기술 내부 구현은 확인하지 않았다.",
+        "실시간 영상 재생·원작 게임 입력·공개 코드 실행은 수행하지 않았다."
+      ],
+      "projectInterpretation": {
+        "motionId": "finisher-demon",
+        "designHits": 21,
+        "treatments": [
+          "기존 암중 좌우 분신 협공의 박자를 뒤로 갈수록 가속한다.",
+          "실제 접촉점의 가는 선을 짧게 축적하고 결정타 직전 중심으로 수축한다.",
+          "최종 실제 명중 이후 한 번 방출하며 장식에 별도 피해나 타수를 부여하지 않는다."
+        ]
+      },
+      "localEvidence": {
+        "video": "/private/tmp/ataho-hit-reference.mp4",
+        "sequenceSheet": "/private/tmp/ataho-hit-super-sequence.jpg",
+        "sheetLayout": "6열8행,22초부터0.125초 간격"
+      }
+    },
+    {
+      "id": "sf6-ed",
+      "author": "Capcom USA",
+      "title": "Street Fighter 6 - Ed Gameplay Trailer",
+      "url": "https://www.youtube.com/watch?v=CNyA8i47VG4",
+      "observedRange": {
+        "startSeconds": 141,
+        "endSeconds": 156,
+        "framesPerSecond": 4,
+        "method": "138~156초 추출표 중141~156초 연속 프레임 직접 열람"
+      },
+      "observed": [
+        "주먹 쪽으로 힘을 모은 뒤 상대를 띄우고 묶인 듯 유지되는 공간에서 연타한다.",
+        "빠른 공격 도중 근접 구도와 짧은 정적을 끼워 넣는다.",
+        "팔을 크게 회수해 준비하는 자세와 마지막 강타·종결 자세를 구분한다."
+      ],
+      "unconfirmed": [
+        "영상 속 여러 변형의 정확한 기술명·발동 조건·원작 타수는 확정하지 않았다.",
+        "상대를 묶는 원작 판정을 아타호에 구현하거나 검증한 것이 아니다.",
+        "실시간 영상 재생·원작 게임 입력·공개 코드 실행은 수행하지 않았다."
+      ],
+      "projectInterpretation": {
+        "motionId": "finisher-ryuko-ranbu",
+        "designHits": 17,
+        "treatments": [
+          "기존 반대편 공격 잔상 추격을 유지하며 연타 구간의 타격 공간을 시각적으로 조인다.",
+          "마지막 상승권 전에 기존 팔 준비 자세를 잠시 유지한다.",
+          "상승권의 실제 명중 이후 세로 방향으로 방출해 이전 지상 난무와 종결을 구분한다."
+        ]
+      },
+      "localEvidence": {
+        "video": "/private/tmp/ataho-ed-reference.mp4",
+        "sequenceSheet": "/private/tmp/ataho-ed-super-detail.jpg",
+        "sheetLayout": "6열12행,138초부터0.25초 간격"
+      }
+    },
+    {
+      "id": "dmc5se-launch",
+      "author": "Official Capcom Europe",
+      "title": "Devil May Cry 5 Special Edition - Launch Trailer",
+      "url": "https://www.youtube.com/watch?v=izY0cIOQ5ds",
+      "observedRange": {
+        "startSeconds": 234.9,
+        "endSeconds": 238.8,
+        "framesPerSecond": 8,
+        "method": "다운로드 영상에서 추출한 연속 프레임을 조사 담당과 통합 담당이 직접 열람"
+      },
+      "observed": [
+        "준비 자세 뒤 강한 발광으로 공격 시작을 분리한다.",
+        "검은 공간에 교차선이 넓게 남아 공격이 지난 공간을 읽게 한다.",
+        "선이 정리된 뒤 자세를 유지해 종결 여백을 남긴다."
+      ],
+      "unconfirmed": [
+        "확인 구간에 기술명·HUD가 표시되지 않아 특정 기술명과 정확한 타수를 확정하지 않았다.",
+        "영상의 검격을 아타호의 맨손 공격과 같은 기술로 분류하지 않는다.",
+        "실시간 영상 재생·원작 게임 입력·공개 코드 실행은 수행하지 않았다."
+      ],
+      "projectInterpretation": {
+        "motionId": "finisher-omnislash-v5",
+        "designHits": 6,
+        "treatments": [
+          "실제 좌우·상하 횡단 경로를 공간 흔적으로 남긴다.",
+          "정점에서 흔적과 시선을 압축하고 기존 하강 일격의 실제 명중에서 결산한다.",
+          "착지 후 흔적을 정리하며 종결 자세를 읽을 시간을 둔다."
+        ]
+      },
+      "localEvidence": {
+        "video": "/private/tmp/ataho-finisher-rhythm-reference/vergil.mp4",
+        "sequenceSheets": [
+          "/private/tmp/ataho-finisher-rhythm-reference/vergil-judgement-01.jpg",
+          "/private/tmp/ataho-finisher-rhythm-reference/vergil-judgement-02.jpg"
+        ],
+        "filenameCaution": "임시 증거 파일명의 judgement는 원작 기술명이 확인됐다는 근거가 아니다."
+      }
+    },
+    {
+      "id": "ggst-chipp",
+      "author": "Arc System Works",
+      "title": "Guilty Gear -Strive- Starter Guide #5 - Chipp",
+      "url": "https://www.youtube.com/watch?v=R4YMb-fhT1M",
+      "observedRange": {
+        "startSeconds": 233,
+        "endSeconds": 240,
+        "framesPerSecond": 6,
+        "method": "Banki Messai 구간의 다운로드 영상 연속 프레임을 조사 담당과 통합 담당이 직접 열람"
+      },
+      "observed": [
+        "금빛 나선으로 발동과 돌입의 시작을 구분한다.",
+        "백색 공격 분신이 공격 구간에서 나타나며 연격에 겹친다.",
+        "착지한 뒤 공격 효과가 정리된 여백을 둔다."
+      ],
+      "unconfirmed": [
+        "분신 각각의 원작 피해 판정·정확한 타수·원작 이동 수치는 검증하지 않았다.",
+        "실시간 영상 재생·원작 게임 입력·공개 코드 실행은 수행하지 않았다."
+      ],
+      "projectInterpretation": {
+        "motionId": "finisher-drunken-tiger",
+        "designHits": 14,
+        "treatments": [
+          "느슨한 준비에서 나선 시동을 거쳐 연격을 가속한다.",
+          "분신이 타격 전후의 좁은 구간에 등장하도록 해 기존 실제 협공에 집중한다.",
+          "동시 명중에서 방출을 모으고 종결 뒤 여백을 남긴다."
+        ]
+      },
+      "localEvidence": {
+        "video": "/private/tmp/ataho-finisher-rhythm-reference/chipp.mp4",
+        "sequenceSheets": [
+          "/private/tmp/ataho-finisher-rhythm-reference/chipp-banki-01.jpg",
+          "/private/tmp/ataho-finisher-rhythm-reference/chipp-banki-02.jpg"
+        ]
+      }
+    }
+  ],
+  "implementationPolicy": {
+    "assets": "기존 남동·동·서 원본을 사용한다. 새 그림·방향 합성·미러링·음성·효과음은 추가하지 않는다.",
+    "contacts": "본체·분신·공격 잔상의 실제 접촉과21/6/14/17타를 유지한다. 박자와 장식의 변경이 피해·타수를 재발동하지 않는다.",
+    "deferredExclusion": "양손 밀어치기·앞 밀어차기·발이 보이는 하단 쓸기의 준비·접촉·회수 그림을 본체와 모든 추가 공격 트랙에서 계속 제외한다.",
+    "presentationToggle": "새 무대 장식은 필살기 무대·연타 궤적 설정을 따른다. 실제 공격자의 안무와 타격은 장식 해제 시에도 유지한다.",
+    "impactToggle": "접촉선 축적과 명중 후 방출은 타격 효과 설정도 따른다. 샌드백을 켜면 실제 명중 필터를 함께 적용한다.",
+    "sampling": "준비·축적·방출은 절대 동작 시각과 공통 접촉 정보에서 계산해 탐색·정지·반복에서 실행 이력을 누적하지 않는다.",
+    "gameIntegration": "조합실의2D 시각·박자 실험이다. 본게임의 기술·게이지·피해 판정은 변경하지 않는다."
+  },
+  "verification": {
+    "status": "completed",
+    "scope": "dc03d44 시점의 추가 레퍼런스 적용 검증 이력. 후속 팔꿈치 사용 제한 이후 현재 수치는 resources/ataho-v2-finishers.json의 verification을 따른다.",
+    "owner": "담당 세션이 통합 구현·검증을 완료했다.",
+    "priorVerification": {
+      "implementationCommit": "1b503e5",
+      "record": "resources/ataho-v2-finishers.json",
+      "scope": "기존 공간 안무·분신·공격 잔상 검증 이력. 새 박자·무대 연출 변경 후의 시간·자세 수·PC 실행 검증으로 사용하지 않는다."
+    },
+    "currentSequenceInspection": [
+      {
+        "id": "finisher-demon",
+        "durationMs": 3500,
+        "steps": 90,
+        "totalActorSteps": 151,
+        "bodyContacts": 15,
+        "additionalActorTracks": 6,
+        "additionalContacts": 6,
+        "contacts": 21,
+        "connectedAtScale2": 21,
+        "connectedAtScale3": 21,
+        "chargeHolds": [
+          {
+            "atMs": 2650,
+            "durationMs": 220,
+            "motion": "ataho-one-two-punch-south-east-south-east",
+            "frame": 11,
+            "positionDelta": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "finalSimultaneousGroup": 1,
+        "excludedSourceKeysAbsent": true,
+        "allActorsFinishWithinMotion": true
+      },
+      {
+        "id": "finisher-omnislash-v5",
+        "durationMs": 4097,
+        "steps": 88,
+        "totalActorSteps": 88,
+        "bodyContacts": 6,
+        "additionalActorTracks": 0,
+        "additionalContacts": 0,
+        "contacts": 6,
+        "connectedAtScale2": 6,
+        "connectedAtScale3": 6,
+        "chargeHolds": [
+          {
+            "atMs": 3072,
+            "durationMs": 180,
+            "motion": "smear-hammerfist-clean-south-east",
+            "frame": 3,
+            "positionDelta": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "finalSimultaneousGroup": 1,
+        "excludedSourceKeysAbsent": true,
+        "allActorsFinishWithinMotion": true
+      },
+      {
+        "id": "finisher-drunken-tiger",
+        "durationMs": 4633,
+        "steps": 107,
+        "totalActorSteps": 148,
+        "bodyContacts": 10,
+        "additionalActorTracks": 4,
+        "additionalContacts": 4,
+        "contacts": 14,
+        "connectedAtScale2": 14,
+        "connectedAtScale3": 14,
+        "chargeHolds": [
+          {
+            "atMs": 3618,
+            "durationMs": 200,
+            "motion": "ataho-firewood-elbow-chop-south-east-south-east",
+            "frame": 3,
+            "positionDelta": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "finalSimultaneousGroup": 3,
+        "excludedSourceKeysAbsent": true,
+        "allActorsFinishWithinMotion": true
+      },
+      {
+        "id": "finisher-ryuko-ranbu",
+        "durationMs": 3070,
+        "steps": 83,
+        "totalActorSteps": 125,
+        "bodyContacts": 13,
+        "additionalActorTracks": 4,
+        "additionalContacts": 4,
+        "contacts": 17,
+        "connectedAtScale2": 17,
+        "connectedAtScale3": 17,
+        "chargeHolds": [
+          {
+            "atMs": 2340,
+            "durationMs": 160,
+            "motion": "surprise-uppercut-south-east",
+            "frame": 2,
+            "positionDelta": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "finalSimultaneousGroup": 1,
+        "excludedSourceKeysAbsent": true,
+        "allActorsFinishWithinMotion": true
+      }
+    ],
+    "currentStaticChecks": [
+      "npm run check 통과",
+      "npm run build 통과",
+      "git diff --check 통과"
+    ],
+    "currentBrowser": [
+      "PC 내장 브라우저에서1배·반복 끔으로 네 기술의 실제 자세·시간 진행과21/6/14/17타 종결을 확인했다. 순옥살의 축적선과 가속, 초구무신패참의 교차 흔적·정점 응축·하강 방출·착지, 용호난무의 압박과 상승 잔광을 확인했다.",
+      "초구취호패타는2배 표시·0.25배속에서 나선 시동의 진행을 확인하고3배 표시의3.74초 정지에서 준비 자세·나선 응축과 구도 집중을 확인했다. 장전 hold의 좌표 고정은 구성 데이터에서도 확인했다.",
+      "샌드백을 켠 초구취호패타3.98초의 마지막 삼면 명중은14명중·충격3개와 한 번의 세 갈래 방출을 표시한다. 타격 효과 off-on과 무대 연출 off-on은 시간 탐색값860·정지 상태를 유지하며 장식과 충격을 복원한다. 무대 off에도 실제 공격 분신은 남는다.",
+      "앱 콘솔 경고·오류 없음. 참고 원작 영상은 순차 프레임 확인이며 이번 프로젝트 재생 검증과 구분한다. 새 그림·소리·원작 게임 실행·본게임 통합·모바일 검증은 수행하지 않았다."
+    ],
+    "documentChecks": [
+      "python3 -m json.tool로 새 조사 JSON 파싱 성공",
+      "문서3개의 저장소 Prettier 포맷 검사 통과",
+      "수정 README2개의 git diff --check 통과"
+    ],
+    "tests": "별도 테스트 코드는 추가하거나 실행하지 않는다. 모바일·기기 에뮬레이션 검증은 수행하지 않는다.",
+    "implementationCommit": "dc03d44"
+  },
+  "implementation": {
+    "sampling": "finisher-signatures.ts",
+    "presentation": "finisher-presentation.ts",
+    "timing": "motions/finisher-sequence.ts",
+    "chargeHold": "실제 준비 그림을 복제한 비접촉 hold를 원래 준비 단계 앞에 삽입한다. 스미어는 길게 정지하지 않는다.",
+    "release": "최종 예정 시각이 같은 실제 명중들을 묶어 한 번 방출하며 장식으로 접촉을 다시 발동하지 않는다."
+  },
+  "elbowUsageFollowup": {
+    "policy": {
+      "recordedAt": "2026-10-16",
+      "requiredDrawing": "팔꿈치 장전·하강 그림",
+      "allowedUse": "전용 그림과 접촉 좌표를 필수 적용한 중간 공격에만 사용한다.",
+      "forbiddenUse": "그림 적용 여부와 관계없이 연계·필살기의 마지막 본체 공격과 마지막 동시 협공에 사용하지 않는다.",
+      "standalone": "선택 시 전용 그림을 기본으로 켠다. 끄면 원본 그림만 비교하고 접촉·명중·충격 효과를 발생시키지 않는다.",
+      "enforcement": "FinisherSequence가 원본 팔꿈치 접촉과 전용 그림 팔꿈치 종결을 구성 시 거부한다. 필살기 안에서는 전용 그림을 데이터에 직접 적용하므로 무대 연출 해제로 원본 공격이 되돌아오지 않는다.",
+      "tiger": "짧은 팔꿈치는 전용 그림으로 중간11타에 사용한다. 마지막 본체14타는200ms 장전 뒤 대각 망치주먹이며 두 분신과 동시 협공한다."
+    },
+    "currentVerification": "resources/ataho-v2-finishers.json#verification"
+  }
+}

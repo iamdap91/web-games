@@ -1,3 +1,4 @@
+import { withChainTiming } from './chain-timing.js';
 import { elbow, guard, oneTwo, recover, spin, sweep, } from './attack-phrases.js';
 export const groundChains = [
     {
@@ -56,4 +57,4 @@ export const groundChains = [
             ...recover(14),
         ],
     },
-];
+].map(withChainTiming);

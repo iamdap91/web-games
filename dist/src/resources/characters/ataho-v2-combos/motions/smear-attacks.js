@@ -11,6 +11,11 @@ export const smearAttacks = [
     {
         id: 'new-smear-hook-south-east',
         title: '크게 감아치는 훅 · 남동쪽',
+        technique: {
+            id: 'new-smear-hook',
+            title: '크게 감아치는 훅',
+            direction: 'south-east',
+        },
         summary: '가로로 이어지는 짧은 팔 궤적 뒤 주먹을 멈추고 가드로 거둔다.',
         priority: 'review',
         review: '남동쪽 두 번째 생성 원본의 0→2→3→4→6→7→8번을 사용한다. 첫 가로 변형인 1번은 빼고 3번 띠를 40ms만 재생해 하나의 공격으로 잇는다. 4번의 분명한 주먹을 접촉 후보로 100ms 유지하고 발·높이는 고정한다. 얼굴은 오른쪽을 향하지만 준비 중 몸통이 크게 돌아가고, 띠가 몸 앞을 감싸는 형체와 끝 자세의 짧은 팔 뻗음은 남는다. 효과 없는 GIF로 동작과 회수를 검토하는 시안이다.',
@@ -33,6 +38,11 @@ export const smearAttacks = [
     {
         id: 'new-smear-hammerfist-south-east',
         title: '대각 망치주먹 · 남동쪽',
+        technique: {
+            id: 'new-smear-hammerfist',
+            title: '대각 망치주먹',
+            direction: 'south-east',
+        },
         summary: '올린 주먹을 대각 띠로 내려친 뒤 낮은 타격 자세에서 거둔다.',
         priority: 'review',
         review: '남동쪽 두 번째 생성 원본의 0→1→3→4→5→6→7→8번을 사용한다. 4번 대각 띠는 40ms, 5번 낮은 주먹은 접촉 후보로 100ms 유지한다. 첫 생성의 분리된 선과 흰 섬광은 사용하지 않으며 원본 픽셀 수정 없이 발·높이를 고정한다. 준비 주먹이 머리 위로 충분히 올라가지 않고 띠의 가느다란 시작점이 팔과 분리돼 보일 수 있다. 하향 망치주먹을 남동쪽 화면의 대각 연출로 비교하는 시안이다.',

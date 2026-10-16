@@ -1,0 +1,382 @@
+{
+  "variant": "concept",
+  "waistLockedVertices": {
+    "pants": 2735,
+    "jacket": 4662
+  },
+  "bodyTorsoSmoothedVertices": 11055,
+  "bodySeamWeightGroups": 11043,
+  "jacketCinchedVertices": 3124,
+  "tailRemoved": {
+    "status": "tail-removed-root-closed",
+    "coordinateOriginWorld": [
+      -8.940696716308594e-08,
+      2.9802322387695312e-08,
+      1.0005216211084189e-07
+    ],
+    "canonicalScale": 1.0,
+    "sourceVertices": 64142,
+    "sourceFaces": 99131,
+    "localSeamVerticesWelded": 636,
+    "tailFacesRemoved": 2900,
+    "tailWarmColorFacesConfirmed": 1891,
+    "rootBoundaryEdgesBeforeCap": 158,
+    "rootOpenEdgesAfterCap": 0,
+    "capVerticesAdded": 310,
+    "capFacesAdded": 776,
+    "capBackwardsNormalFaces": 0,
+    "capNormals": "analytic derivative of fitted quadratic surface, cap corners only",
+    "outsidePatchCoordinatesUnchanged": true,
+    "weightAudit": {
+      "skinned": true,
+      "localVerticesNormalized": 2594,
+      "localMaxInfluences": 4,
+      "localWeightSumMin": 0.999999962747097,
+      "localWeightSumMax": 1.0000000298023224,
+      "wholeBodyMaxInfluences": 4
+    },
+    "resultVertices": 62444,
+    "resultFaces": 97007,
+    "sourceWorldBounds": [
+      [
+        -0.9514892101287842,
+        0.9514890313148499
+      ],
+      [
+        -0.3265855610370636,
+        0.3265856206417084
+      ],
+      [
+        1.0005216211084189e-07,
+        1.6136682033538818
+      ]
+    ],
+    "resultWorldBounds": [
+      [
+        -0.9514892101287842,
+        0.9514890313148499
+      ],
+      [
+        -0.3265855610370636,
+        0.23806160688400269
+      ],
+      [
+        1.0005216211084189e-07,
+        1.6136682033538818
+      ]
+    ],
+    "removedCanonicalBox": {
+      "absXMax": 0.12,
+      "yMin": 0.2,
+      "zMin": 0.62,
+      "zMax": 0.87
+    },
+    "capSurface": "constrained triangles with quadratic fitted height, 12mm boundary blend and harmonic colors; boundary geometry retained",
+    "capWeights": "six nearest boundary samples, top four normalized; original rig and motion unchanged",
+    "untouched": "raw files, head/neck positions and UVs, rest bones and original animation actions"
+  },
+  "bodyFacesMasked": 44369,
+  "sashBandGeometryBeforeBodyMask": {
+    "boundaryEdges": 0,
+    "nonManifoldEdges": 0,
+    "signedVolume": 0.0006367137602758361,
+    "nonAdjacentTriangleOverlapPairs": 0,
+    "radialClearanceRange": [
+      0.012132354742866502,
+      0.01799569174377147
+    ],
+    "weightSumRange": [
+      0.9999999701976776,
+      1.0000000298023224
+    ],
+    "maximumInfluences": 2
+  },
+  "paidCredits": 0,
+  "bones": 24,
+  "parts": {
+    "AtahoBody": {
+      "vertices": 37735,
+      "polygons": 52638,
+      "matrixWorld": [
+        [
+          0.009999999776482582,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.009999999776482582,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.009999999776482582,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Jacket": {
+      "vertices": 17601,
+      "polygons": 29021,
+      "matrixWorld": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Pants": {
+      "vertices": 10607,
+      "polygons": 20467,
+      "matrixWorld": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "Flask": {
+      "vertices": 6915,
+      "polygons": 10348,
+      "matrixWorld": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "SashBand": {
+      "vertices": 4800,
+      "polygons": 9600,
+      "matrixWorld": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "SashKnot": {
+      "vertices": 756,
+      "polygons": 752,
+      "matrixWorld": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "SashTail1": {
+      "vertices": 882,
+      "polygons": 880,
+      "matrixWorld": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "SashTail2": {
+      "vertices": 882,
+      "polygons": 880,
+      "matrixWorld": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    "FlaskConnector": {
+      "vertices": 210,
+      "polygons": 202,
+      "matrixWorld": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    }
+  },
+  "actions": {
+    "walk": [
+      1.0,
+      32.0
+    ],
+    "run": [
+      1.0,
+      20.0
+    ],
+    "neutral": [
+      1.0,
+      1.0
+    ]
+  }
+}

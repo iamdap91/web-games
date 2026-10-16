@@ -22,6 +22,30 @@ main {
 header {
   margin-bottom: 16px;
 }
+.page-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+.reference-link {
+  flex: 0 0 auto;
+  margin-top: 10px;
+  padding: 9px 12px;
+  border: 1px solid #cdbb9f;
+  border-radius: 7px;
+  color: #614630;
+  background: #fffaf1;
+  text-decoration: none;
+  font-size: 14px;
+}
+.reference-link:hover {
+  border-color: #96623b;
+}
+.reference-link:focus-visible {
+  outline: 3px solid #bc844b;
+  outline-offset: 3px;
+}
 .eyebrow {
   color: #8c5d3c;
   font-size: 12px;
@@ -88,6 +112,46 @@ fieldset {
   border-radius: 12px;
   background: #fffaf2;
 }
+.direction-picker {
+  margin: 12px 0 0;
+}
+.direction-picker .control-heading {
+  margin-bottom: 6px;
+  color: #73604d;
+  font-size: 12px;
+}
+.direction-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.camera-options,
+.emphasis-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.camera-options .choice-button,
+.emphasis-options .choice-button {
+  align-items: center;
+  padding: 7px 26px 7px 10px;
+  font-size: 13px;
+}
+.direction-options .choice-button {
+  min-width: 88px;
+  align-items: center;
+  padding: 6px 25px 6px 10px;
+  font-size: 13px;
+}
+.direction-fixed {
+  display: inline-block;
+  padding: 5px 10px;
+  border: 1px solid #dfd0bb;
+  border-radius: 6px;
+  color: #73604d;
+  background: #f6efe3;
+  font-size: 13px;
+}
 .motion-browser fieldset,
 .presentation-controls {
   min-width: 0;
@@ -108,6 +172,31 @@ fieldset {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 6px;
+}
+.finisher-phases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0;
+}
+.finisher-phases[hidden] {
+  display: none;
+}
+.finisher-phases button {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+.finisher-phases button.active {
+  background: #7b4830;
+  color: #fff7df;
+}
+#hit-details > summary {
+  cursor: pointer;
+  color: #744830;
+  font-size: 12px;
+}
+#hit-details[open] > summary:not([hidden]) {
+  margin-bottom: 7px;
 }
 .motion-options {
   max-height: 520px;

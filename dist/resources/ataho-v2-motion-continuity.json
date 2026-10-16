@@ -1,0 +1,373 @@
+{
+    "date": "2026-10-15",
+    "characterId": "ai/ataho-v2",
+    "scope": "슬라이딩 회전·공중회피 착지·마시기 소품 연결 그림과 연속기/잔상/샌드백 연출",
+    "generator": "built-in image_gen",
+    "qualityStatus": "generated-awaiting-user-gif-review",
+    "originalPixelsPreserved": true,
+    "references": [
+        "https://saint11.art/img/pixel-tutorials/Easings.gif",
+        "https://www.gdquest.com/library/juicy_attack/",
+        "https://github.com/saltmire/saltmire-trail"
+    ],
+    "drawings": [
+        {
+            "index": 0,
+            "id": "slide-pivot",
+            "label": "손 짚고 골반 돌리기",
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 16
+            },
+            "localPath": "public/assets/maplestory/ataho-v2-motion-continuity/20261015/originals/slide-pivot.png",
+            "originalSize": {
+                "width": 1254,
+                "height": 1254
+            },
+            "sha256": "fa1b0172445ef7194a5f1576b1974179fe136ab771404f72bced994700714e8d",
+            "sourceRect": {
+                "x": 332,
+                "y": 587,
+                "width": 654,
+                "height": 432
+            },
+            "destinationRect": {
+                "x": 18,
+                "y": 33,
+                "width": 70,
+                "height": 46
+            },
+            "normalization": "원본 RGBA 보존; 알파24초과 경계를 로더에서 최근접 샘플링하여 인접 자세 높이와 접지점에 정렬",
+            "prompt": "Use case: precise-object-edit. Create ONE connecting pixel-art pose for the exact tiger martial artist shown. Image 1 is the preceding slide pose, image 2 the current low recovery pose to improve, image 3 the following sweep preparation. Draw a middle pose: body stays low, one hand planted firmly on the floor, pelvis rotates from the side-lying slide toward the crouched sweep, bent support leg under the hips, other leg starting to extend toward SCREEN RIGHT. Do not draw a completed attack or extra limbs. Match original orange tiger face, head size, muzzle, brown jacket, cream collar, grey trousers, striped tail and bare paws exactly. Same south-east view, face toward screen right. Match coarse pixel clusters and low-res black outline. Full body at the same logical scale on a 96x96 logical canvas; floor baseline about y80, no floor drawn. ONE isolated sprite, genuine transparent background, no text, shadows or effects. Use adjacent images for continuity, never combine their bodies.",
+            "inputPaths": [
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Slide/south-east/frame_003.png",
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Slide/south-east/frame_004.png",
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Leg_Sweep/south-east/frame_002.png"
+            ]
+        },
+        {
+            "index": 1,
+            "id": "backflip-landing",
+            "label": "뒤공중회피 낮은 착지",
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 16
+            },
+            "localPath": "public/assets/maplestory/ataho-v2-motion-continuity/20261015/originals/backflip-landing.png",
+            "originalSize": {
+                "width": 1254,
+                "height": 1254
+            },
+            "sha256": "6e81f4df1c65365d93eb94902cedb9e35788caa21d700c34ea5a2a15c286333a",
+            "sourceRect": {
+                "x": 356,
+                "y": 533,
+                "width": 542,
+                "height": 395
+            },
+            "destinationRect": {
+                "x": 21,
+                "y": 33,
+                "width": 64,
+                "height": 47
+            },
+            "normalization": "원본 RGBA 보존; 알파24초과 경계를 로더에서 최근접 샘플링하여 인접 자세 높이와 접지점에 정렬",
+            "prompt": "Use case: precise-object-edit. Create ONE missing landing pose of this exact tiny pixel-art tiger. Image 1 is the immediately preceding backflip descent, image 2 is the following compressed landing, image 3 is identity and facing reference. Draw the transition after a backward rotation: BOTH bare paws just planted on the same floor baseline, knees bent, pelvis low, torso tilted forward less than image1, head and hands halfway toward image2. Face remains south-east toward screen right, same head size, exact face stripes, cream muzzle, brown jacket with cream collar, dark grey pants and single striped tail. Body anatomy connected, two arms/two legs only; no tumble, no airborne feet and no generic standing pose. Preserve adjacent-frame character scale, chibi proportions and coarse pixel clusters of the original 96x96 sprite. Full body at baseline about y80 with generous transparent margins. ONE isolated sprite, real transparent alpha, no text, ground, shadow or VFX.",
+            "inputPaths": [
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Backflip/south-east/frame_009.png",
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_007.png",
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png"
+            ]
+        },
+        {
+            "index": 2,
+            "id": "drink-reach",
+            "label": "허리에서 마실 물체 꺼내기",
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 16
+            },
+            "localPath": "public/assets/maplestory/ataho-v2-motion-continuity/20261015/originals/drink-reach.png",
+            "originalSize": {
+                "width": 1254,
+                "height": 1254
+            },
+            "sha256": "b3652a85982789d4e78549d14112e8a65c79eb9713c480d3a6e2ad61ccbe837d",
+            "sourceRect": {
+                "x": 351,
+                "y": 293,
+                "width": 537,
+                "height": 701
+            },
+            "destinationRect": {
+                "x": 25,
+                "y": 19,
+                "width": 46,
+                "height": 60
+            },
+            "normalization": "원본 RGBA 보존; 알파24초과 경계를 로더에서 최근접 샘플링하여 인접 자세 높이와 접지점에 정렬",
+            "prompt": "Use case: precise-object-edit. Create ONE prop-handling transition sprite for this exact small pixel-art tiger. Image 1 is the preceding empty-handed guard, image 2 the following drinking preparation and EXACT drinking vessel reference. Draw an intermediate reaching pose: tiger still south-east, feet planted at original positions, one hand reaches down near the jacket waist to lift the SAME small brown drinking vessel from image2, vessel partly occluded by hand/jacket at waist height, other hand relaxing from guard. Mouth closed; do not drink yet. Preserve vessel shape/color, do not invent a bottle, label, weapon or belt accessory. Preserve exact original tiger head/face, orange stripes, cream muzzle, brown jacket cream collar, grey trousers, bare paws and tail. Same body/head size and 96x96 logical composition, crisp coarse pixel clusters, black outline. ONE full body sprite, genuine transparent background; no text, effects, floor or shadow.",
+            "inputPaths": [
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png",
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Drinking/south-east/frame_000.png"
+            ]
+        },
+        {
+            "index": 3,
+            "id": "drink-stow",
+            "label": "허리로 마실 물체 거두기",
+            "width": 96,
+            "height": 96,
+            "pivot": {
+                "x": 48,
+                "y": 16
+            },
+            "localPath": "public/assets/maplestory/ataho-v2-motion-continuity/20261015/originals/drink-stow.png",
+            "originalSize": {
+                "width": 1254,
+                "height": 1254
+            },
+            "sha256": "62d142deccf1c01cced4addf59a98f24e43f5c9c4c026882ed72bf227e64ff47",
+            "sourceRect": {
+                "x": 397,
+                "y": 333,
+                "width": 471,
+                "height": 639
+            },
+            "destinationRect": {
+                "x": 26,
+                "y": 19,
+                "width": 44,
+                "height": 60
+            },
+            "normalization": "원본 RGBA 보존; 알파24초과 경계를 로더에서 최근접 샘플링하여 인접 자세 높이와 접지점에 정렬",
+            "prompt": "Use case: precise-object-edit. Create ONE missing putting-away transition sprite of the exact provided pixel-art tiger. Image1 is preceding drinking recovery, image2 following empty-handed guard, image3 exact vessel reference. Draw the hand lowering the SAME brown drinking vessel to the jacket waist, vessel mostly hidden behind the hand and jacket edge, while the other fist begins returning to guard. No raised cup at mouth. Feet remain planted at same positions and baseline; body and head orientation south-east looking screen right. Keep same exact tiger face, head scale, stripes, cream muzzle, brown open jacket with cream collar, dark grey trousers, bare paws and single striped tail. No extra accessories or limbs. Match low-res 96x96 logical pixel art scale and coarse clusters, full body and transparent margins, true transparent alpha. ONE sprite only, no text, ground, shadow, panel or effects.",
+            "inputPaths": [
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Drinking/south-east/frame_005.png",
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png",
+                "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Drinking/south-east/frame_000.png"
+            ]
+        }
+    ],
+    "previews": [
+        {
+            "id": "motion-continuity-01-linked-rhythm",
+            "label": "연속기 전용 연결 박자",
+            "localPath": "public/assets/maplestory/ataho-v2-motion-continuity/20261015/previews/01-linked-rhythm.gif",
+            "method": "standalone-project-renderer-base-vs-selected",
+            "speed": 0.5,
+            "width": 600,
+            "height": 852,
+            "frames": 128,
+            "durationMs": 7920,
+            "byteSize": 1116641,
+            "sha256": "a60c65ecee6de6bb4cc08edf1919f4ee3bbcb5402d2e8d2c79036dee480cd2e0"
+        },
+        {
+            "id": "motion-continuity-02-trail-lifetime",
+            "label": "잔상·궤적 꼬리 소멸",
+            "localPath": "public/assets/maplestory/ataho-v2-motion-continuity/20261015/previews/02-trail-lifetime.gif",
+            "method": "standalone-project-renderer-base-vs-selected",
+            "speed": 0.5,
+            "width": 600,
+            "height": 852,
+            "frames": 154,
+            "durationMs": 9080,
+            "byteSize": 1823167,
+            "sha256": "e2d5d4d120c3e8292752b2989120192c8ba712b82f0217704356cb1a4cd071b9"
+        },
+        {
+            "id": "motion-continuity-03-connection-drawings",
+            "label": "접지·소품 연결 그림",
+            "localPath": "public/assets/maplestory/ataho-v2-motion-continuity/20261015/previews/03-connection-drawings.gif",
+            "method": "standalone-project-renderer-base-vs-selected",
+            "speed": 0.5,
+            "width": 600,
+            "height": 852,
+            "frames": 179,
+            "durationMs": 10840,
+            "byteSize": 2293600,
+            "sha256": "bcd7f4db53952c50a18907de8181f27aff044929e1c0b1ffa3b74cc59522cfd6"
+        },
+        {
+            "id": "motion-continuity-04-sandbag-response",
+            "label": "고정 샌드백 반동·강타 히트스톱",
+            "localPath": "public/assets/maplestory/ataho-v2-motion-continuity/20261015/previews/04-sandbag-response.gif",
+            "method": "standalone-project-renderer-base-vs-selected",
+            "speed": 0.5,
+            "width": 600,
+            "height": 852,
+            "frames": 112,
+            "durationMs": 4660,
+            "byteSize": 1015796,
+            "sha256": "5a0df0caa2b362fdb50e1ffff85626fad8a17dc479e284b9cb981c695bb68e8e"
+        }
+    ],
+    "previewRendering": {
+        "method": "standalone-project-renderer-base-vs-selected",
+        "sourceCommit": "e5b61b1 plus working changes",
+        "speed": 0.5,
+        "width": 600,
+        "height": 852,
+        "groups": [
+            {
+                "id": "01-linked-rhythm",
+                "label": "연속기 전용 연결 박자",
+                "motions": ["one-two-horizontal-elbow", "three-air"],
+                "effects": [],
+                "timing": true,
+                "clips": [
+                    {
+                        "id": "one-two-horizontal-elbow",
+                        "title": "원투 → 가로 팔꿈치 · 3타",
+                        "startFrame": 0,
+                        "beforeDurationMs": 1310,
+                        "afterDurationMs": 1055,
+                        "durationMs": 1660
+                    },
+                    {
+                        "id": "three-air",
+                        "title": "3종 공중 연계 · 4타",
+                        "startFrame": 166,
+                        "beforeDurationMs": 1945,
+                        "afterDurationMs": 1590,
+                        "durationMs": 2300
+                    }
+                ],
+                "frameCount": 396,
+                "frameDurationMs": 20
+            },
+            {
+                "id": "02-trail-lifetime",
+                "label": "잔상·궤적 꼬리 소멸",
+                "motions": ["rush", "flying-kick", "ground-spin"],
+                "effects": [
+                    "rush-running-afterimage",
+                    "rush-punch-lines",
+                    "flying-kick-afterimage",
+                    "flying-kick-foot-line",
+                    "ground-spin-knee-ribbon"
+                ],
+                "clips": [
+                    {
+                        "id": "rush",
+                        "title": "돌진 원투",
+                        "startFrame": 0,
+                        "beforeDurationMs": 1255,
+                        "afterDurationMs": 1255,
+                        "durationMs": 1610
+                    },
+                    {
+                        "id": "flying-kick",
+                        "title": "도약 날아차기",
+                        "startFrame": 161,
+                        "beforeDurationMs": 1165,
+                        "afterDurationMs": 1165,
+                        "durationMs": 1520
+                    },
+                    {
+                        "id": "ground-spin",
+                        "title": "짧은 지상 회전 공격",
+                        "startFrame": 313,
+                        "beforeDurationMs": 1060,
+                        "afterDurationMs": 1060,
+                        "durationMs": 1410
+                    }
+                ],
+                "frameCount": 454,
+                "frameDurationMs": 20
+            },
+            {
+                "id": "03-connection-drawings",
+                "label": "접지·소품 연결 그림",
+                "motions": ["slide-sweep", "backflip-reentry", "drink-guard"],
+                "effects": [
+                    "slide-pivot-drawing",
+                    "backflip-landing-drawing",
+                    "drink-prop-handling-drawing"
+                ],
+                "clips": [
+                    {
+                        "id": "slide-sweep",
+                        "title": "슬라이딩 하단 공격",
+                        "startFrame": 0,
+                        "beforeDurationMs": 1070,
+                        "afterDurationMs": 1070,
+                        "durationMs": 1420
+                    },
+                    {
+                        "id": "backflip-reentry",
+                        "title": "공중회피 후 재진입",
+                        "startFrame": 142,
+                        "beforeDurationMs": 1595,
+                        "afterDurationMs": 1595,
+                        "durationMs": 1950
+                    },
+                    {
+                        "id": "drink-guard",
+                        "title": "한 모금 후 가드 복귀",
+                        "startFrame": 337,
+                        "beforeDurationMs": 1700,
+                        "afterDurationMs": 1700,
+                        "durationMs": 2050
+                    }
+                ],
+                "frameCount": 542,
+                "frameDurationMs": 20
+            },
+            {
+                "id": "04-sandbag-response",
+                "label": "고정 샌드백 반동·강타 히트스톱",
+                "motions": ["cheolsango", "new-double-palm-south-east"],
+                "effects": [],
+                "target": true,
+                "clips": [
+                    {
+                        "id": "cheolsango",
+                        "title": "철산고",
+                        "startFrame": 0,
+                        "beforeDurationMs": 790,
+                        "afterDurationMs": 790,
+                        "durationMs": 1140
+                    },
+                    {
+                        "id": "new-double-palm-south-east",
+                        "title": "양손 밀어치기 · 남동쪽",
+                        "startFrame": 114,
+                        "beforeDurationMs": 840,
+                        "afterDurationMs": 840,
+                        "durationMs": 1190
+                    }
+                ],
+                "frameCount": 233,
+                "frameDurationMs": 20
+            }
+        ]
+    },
+    "verification": {
+        "commands": ["npm run check", "npm run build"],
+        "desktopBrowser": {
+            "devicePixelRatio": 2,
+            "canvasCssWidth": 684,
+            "canvasBackingSize": [1368, 623],
+            "scales": [2, 3],
+            "checked": [
+                "복합 연계13종의 박자 전환과 마지막 타격 탐색",
+                "연결 그림4장의 실제 표시와 접지",
+                "공중 잔상/궤적 재생 진행",
+                "철산고 명중 정지 true에서false로 재개",
+                "이동off에서 대상/정지/효과 비활성 및on에서선호 복원",
+                "비공격 마시기의 샌드백/정지 비활성",
+                "GIF4개 600x852 디코드"
+            ],
+            "consoleWarningsOrErrors": []
+        },
+        "newDrawingsStatus": "awaiting-user-gif-review"
+    }
+}

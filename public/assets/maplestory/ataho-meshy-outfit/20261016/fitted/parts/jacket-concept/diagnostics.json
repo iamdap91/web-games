@@ -1,0 +1,399 @@
+{
+  "sourceBody": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-rigged.glb",
+  "sourceJacket": "public/assets/maplestory/ataho-meshy-outfit/20261016/models/ataho-jacket.glb",
+  "coordinates": "Blender Z-up, original body import world coordinates; Jacket world matrix identity",
+  "originalCounts": {
+    "vertices": 17751,
+    "triangles": 29402
+  },
+  "fittedCounts": {
+    "vertices": 17601,
+    "triangles": 29021
+  },
+  "transform": {
+    "xScale": 0.68,
+    "yScale": 0.9,
+    "sleeveYShiftMeters": 0.14,
+    "heightAnchors": [
+      [
+        -0.472,
+        0.68
+      ],
+      [
+        0.0,
+        1.13
+      ],
+      [
+        0.25,
+        1.315
+      ],
+      [
+        0.471,
+        1.4
+      ]
+    ]
+  },
+  "originalTextureAndUvsPreserved": true,
+  "sleeveCapFacesRemoved": 381,
+  "bodyClearance": {
+    "verticesAdjusted": 6772,
+    "clearanceMeters": 0.012,
+    "maximumAdjustmentMeters": 0.11922398371351314
+  },
+  "variant": "concept",
+  "conceptShape": {
+    "verticesAdjusted": 13192,
+    "sleeveLengthFactorBeyondX027": 0.6,
+    "sleeveYWidthFactor": 0.78,
+    "sleeveZWidthFactor": 0.84,
+    "collarMaximumLoweringMeters": 0.06,
+    "shoulderDropMaximumMeters": 0.025,
+    "frontHemMaximumRaiseMeters": 0.1,
+    "frontOpeningMaximumWidenEachSideMeters": 0.045
+  },
+  "conceptBackShape": {
+    "backDepthAdjustedVertices": 4135,
+    "backDepthMaximumReductionMeters": 0.0932107800106462,
+    "backDepthMeanReductionMeters": 0.02670792532733572,
+    "targetBodyBackClearanceMeters": 0.02,
+    "remainingExcessDepthFraction": 0.25,
+    "tailExitProtection": "Keep original rear depth only around absX0..0.18 and Zbelow0.93, smoothly fading; no new tail obstruction or global enlargement.",
+    "shoulderAdjustedVertices": 1108,
+    "shoulderMaximumDropMeters": 0.03499780143731682,
+    "rayMisses": 0,
+    "bodyBackField": {
+      "gridStepMeters": 0.025,
+      "columns": 33,
+      "rows": 25,
+      "smoothingPasses": 3
+    },
+    "weightsPreservedFromPriorConcept": true,
+    "integrationRequirement": "Mask covered body shoulder faces up to Z1.36 while preserving head and neck weighted faces; do not enlarge the jacket to avoid hidden body patches."
+  },
+  "conceptFrontShape": {
+    "frontDepthAdjustedVertices": 3923,
+    "maximumDepthReductionMeters": 0.13573147702878288,
+    "meanDepthReductionMeters": 0.04021842667760378,
+    "targetBodyFrontClearanceMeters": 0.022,
+    "remainingExcessDepthFraction": 0.25,
+    "rawRayMinimumClearanceMeters": 0.01200000000000001,
+    "rawRayClippingPreventedVertices": 14,
+    "preexistingInsideBodySamplesNotEnlarged": 0,
+    "bodyFrontField": {
+      "gridStepMeters": 0.025,
+      "columns": 33,
+      "rows": 25,
+      "smoothingPasses": 3
+    },
+    "xAndZPreserved": true,
+    "uvAndWeightsPreserved": true
+  },
+  "sleeveWeightControl": "UpperArm dominant, ForeArm maximum 10 percent near cuff",
+  "bounds": [
+    [
+      -0.5065281391143799,
+      0.5057807564735413
+    ],
+    [
+      -0.35045063495635986,
+      0.37315088510513306
+    ],
+    [
+      0.7702974081039429,
+      1.3576490879058838
+    ]
+  ],
+  "apertureRays": {
+    "neck": {
+      "origin": [
+        0,
+        0,
+        1.6
+      ],
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "firstHit": null,
+      "distanceMeters": null
+    },
+    "leftSleeveCenter": {
+      "origin": [
+        0.8,
+        0.02,
+        1.19
+      ],
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "firstHit": [
+        0.2749468684196472,
+        0.019999999552965164,
+        1.190000057220459
+      ],
+      "distanceMeters": 0.5250531435012817
+    },
+    "rightSleeveCenter": {
+      "origin": [
+        -0.8,
+        0.02,
+        1.19
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "firstHit": [
+        -0.2712492346763611,
+        0.019999999552965164,
+        1.190000057220459
+      ],
+      "distanceMeters": 0.5287507772445679
+    },
+    "leftSleeveLower": {
+      "origin": [
+        0.8,
+        0.02,
+        1.14
+      ],
+      "direction": [
+        -1,
+        0,
+        0
+      ],
+      "firstHit": [
+        0.27708178758621216,
+        0.019999999552965164,
+        1.1399999856948853
+      ],
+      "distanceMeters": 0.5229182243347168
+    },
+    "rightSleeveLower": {
+      "origin": [
+        -0.8,
+        0.02,
+        1.14
+      ],
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "firstHit": [
+        -0.25908511877059937,
+        0.019999999552965164,
+        1.1399999856948853
+      ],
+      "distanceMeters": 0.5409148931503296
+    }
+  },
+  "weights": {
+    "method": "nearest body triangle barycentric weights; anatomical side filtering; two adjacency smoothing passes",
+    "boneCount": 24,
+    "sharedPositionGroupsStitched": 2753,
+    "usedBones": [
+      "Hips",
+      "LeftArm",
+      "LeftForeArm",
+      "LeftShoulder",
+      "RightArm",
+      "RightForeArm",
+      "RightShoulder",
+      "Spine",
+      "Spine01",
+      "Spine02",
+      "neck"
+    ],
+    "maximumInfluences": 4,
+    "weightSumRange": [
+      0.9999999536084943,
+      1.0000000447034836
+    ],
+    "unweightedVertices": 0
+  },
+  "limitations": [
+    "Ray checks sample the neck center and two sleeve center heights, not every possible passage direction.",
+    "Rest-pose body clearance is geometric; final combined walk/run clipping requires actual playback review.",
+    "Loose cloth has skin deformation only; no cloth simulation or new bones were introduced.",
+    "The exposed wrist/hand/neck must remain visible if covered body faces are masked during integration."
+  ],
+  "review": {
+    "primaryStyleReview": "Actual neutral arms-down static pose generated with existing rig bone rotations, not a new image or animation",
+    "staticViews": [
+      "jacket-concept-arms-down-front.png",
+      "jacket-concept-arms-down-three-quarter.png",
+      "jacket-concept-arms-down-back-three-quarter.png"
+    ],
+    "upperArmTargetDirection": [
+      0.3,
+      -0.035,
+      -0.953
+    ],
+    "forearmTargetDirection": [
+      0.1,
+      -0.1,
+      -0.99
+    ],
+    "supplementalSourceAnimation": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-walk.glb",
+    "supplementalFrames": [
+      8,
+      23
+    ],
+    "supplementalImages": [
+      "jacket-walk-frame-08.png",
+      "jacket-walk-frame-23.png"
+    ],
+    "observations": [
+      "Short sleeve cuffs end near the elbows rather than the lower forearms.",
+      "UpperArm-driven sleeves avoid the previous large spherical fold when elbows bend in the sampled walk poses.",
+      "Lowered collar, shorter front hem and wider belly opening visually inspected in three neutral static views.",
+      "Original reference body remains unchanged and unmasked; full outfit silhouette and hidden-body masking belong to integration.",
+      "This review does not constitute continuous motion playback or final combined outfit approval."
+    ]
+  },
+  "localShoulderExperiment": {
+    "accepted": false,
+    "currentVariant": "Pre-experiment version restored byte-for-byte, including GLB and blend.",
+    "hypothesisCheck": "498 rear-shoulder vertices above Z1.27 had zero nearest body faces with combined head/neck weight greater than 0.4; Head fur did not explain this local corner.",
+    "testedAdjustment": "1108 rear-shoulder vertices locally lowered by up to 0.035 meters after body clearance; no global enlargement.",
+    "result": "Slightly rounder rear silhouette but visible underlying body shoulder patches appeared, so the one requested local trial was rejected.",
+    "evidence": "jacket-concept-shoulder-local-attempt-rejected.png",
+    "nextConstraint": "Further lowering this area requires coordinated covered-shoulder body masking or a body proportion revision; body source was kept unchanged."
+  },
+  "proximalCapWeightTrial": {
+    "accepted": false,
+    "currentVariant": "Previous concept weights restored byte-for-byte in GLB and blend.",
+    "method": "Upper proximal sleeve cap blended toward Shoulder85/Spine15; hold faded continuously across X0.24..0.36, leaving distal sleeve and cuff policy unchanged.",
+    "comparedOn": "Existing combined concept blend loaded without saving; only Jacket vertex weights replaced in memory. Existing geometry, body mask, clothing, props, lighting and camera were retained.",
+    "fps": 30,
+    "poses": [
+      "neutral three-quarter frame1",
+      "sourceRun frame7",
+      "sourceRun frame13"
+    ],
+    "observations": [
+      "Run7 upward shoulder tip was reduced.",
+      "Run13 retained shoulder cap formed a higher fixed peak and neutral shoulders looked thicker.",
+      "Overall style improvement was not consistent, so the one requested trial was rejected."
+    ],
+    "geometryChecks": {
+      "positionBytesUnchanged": true,
+      "normalBytesUnchanged": true,
+      "uvBytesUnchanged": true,
+      "weightsBytesChangedDuringTrial": true
+    },
+    "beforeImages": [
+      "cap-weight-hold-before-neutral-three-quarter.png",
+      "cap-weight-hold-before-run-07.png",
+      "cap-weight-hold-before-run-13.png"
+    ],
+    "afterImages": [
+      "cap-weight-hold-after-neutral-three-quarter.png",
+      "cap-weight-hold-after-run-07.png",
+      "cap-weight-hold-after-run-13.png"
+    ]
+  },
+  "backDepthReview": {
+    "acceptedForIntegration": true,
+    "comparisonScene": "Existing root concept blend loaded read-only; geometry delta added in memory; root skeleton, weights, props, materials and cinch offsets retained.",
+    "previewMask": "1056 covered rear-shoulder faces removed only in the unsaved comparison scene; head/neck weighted faces preserved. Root must implement its final mask independently.",
+    "fps": 30,
+    "poses": [
+      "neutral three-quarter frame1",
+      "neutral rear three-quarter frame1",
+      "sourceRun frame7 front/rear three-quarter",
+      "sourceRun frame13 front/rear three-quarter"
+    ],
+    "beforeImages": [
+      "back-depth-before-neutral-three-quarter.png",
+      "back-depth-before-neutral-back-three-quarter.png",
+      "back-depth-before-run-07.png",
+      "back-depth-before-run-13.png",
+      "back-depth-before-run-07-back-three-quarter.png",
+      "back-depth-before-run-13-back-three-quarter.png"
+    ],
+    "afterImages": [
+      "back-depth-after-neutral-three-quarter.png",
+      "back-depth-after-neutral-back-three-quarter.png",
+      "back-depth-after-run-07.png",
+      "back-depth-after-run-13.png",
+      "back-depth-after-run-07-back-three-quarter.png",
+      "back-depth-after-run-13-back-three-quarter.png"
+    ],
+    "binaryChecks": {
+      "positionChanged": true,
+      "normalsRecomputed": true,
+      "uvBytesPreserved": true,
+      "jointIndicesPreserved": true,
+      "weightBytesPreserved": true
+    },
+    "observations": [
+      "Rear torso excess depth and high rear shoulder cap reduced in neutral and both sampled run poses.",
+      "Front panels and short sleeve length/width retained; neck and cuff ray samples remain open.",
+      "Original low central back depth smoothly retained around tail exit to avoid new tail penetration.",
+      "Rear waist white shirt fragments existed identically in the before scene and remain an integration mask issue.",
+      "Final combined clipping and continuous playback remain root validation work."
+    ]
+  },
+  "frontClearanceAudit": {
+    "changedVertices": 3923,
+    "changedFrontFacesWithBodyRay": 6077,
+    "faceCenterMinimumClearanceMeters": 0.009774670004844666,
+    "preexistingInsideFaceCenters": 0,
+    "newInsideFaceCenters": [],
+    "rayMisses": 949,
+    "method": "Rest pose, actual body front ray at the center of every triangle touching a changed front vertex; original body and original rig unchanged."
+  },
+  "frontDepthReview": {
+    "acceptedForIntegration": true,
+    "comparisonScene": "Current root concept blend loaded without saving; only the part front-geometry delta was added in memory. Root weights, props, pose actions and scene settings were retained.",
+    "fps": 30,
+    "poses": [
+      "neutral side",
+      "neutral three-quarter",
+      "walk frame11 side",
+      "run frame7 front three-quarter and side",
+      "run frame13 front three-quarter and side"
+    ],
+    "beforeImages": [
+      "front-depth-before-neutral-side.png",
+      "front-depth-before-neutral-three-quarter.png",
+      "front-depth-before-walk-side-11.png",
+      "front-depth-before-run-07.png",
+      "front-depth-before-run-13.png",
+      "front-depth-before-run-side-07.png",
+      "front-depth-before-run-side-13.png"
+    ],
+    "afterImages": [
+      "front-depth-after-neutral-side.png",
+      "front-depth-after-neutral-three-quarter.png",
+      "front-depth-after-walk-side-11.png",
+      "front-depth-after-run-07.png",
+      "front-depth-after-run-13.png",
+      "front-depth-after-run-side-07.png",
+      "front-depth-after-run-side-13.png"
+    ],
+    "binaryChecks": {
+      "uvPreserved": true,
+      "jointIndicesPreserved": true,
+      "weightsPreserved": true,
+      "worldXAndZPreserved": true,
+      "allBackVertexPositionsPreserved": true
+    },
+    "observations": [
+      "Upper chest and lapel forward projection reduced in neutral, walk-side and sampled run poses.",
+      "Round belly, open front and collar border retained; short sleeves and previous back geometry unchanged.",
+      "Actual body-front rays at 6077 changed face centers had minimum rest clearance 0.0097746700m, zero newly inside faces; 949 other centers had no body ray hit.",
+      "Small side-chest shirt pokes in animated comparison frames belong to the existing body/jacket weight mismatch and mask boundary; root owns the approved mask lower-X extension from 0.205 to 0.18.",
+      "These are sampled actual renders, not continuous playback validation."
+    ]
+  },
+  "latestUserScopeUpdate": {
+    "tailRemovalApproved": true,
+    "note": "The user subsequently authorized tail removal; parent and the body-variant owner handle it. Jacket front/back shape is now fixed; this worker made no additional tail-related geometry changes."
+  }
+}

@@ -1,0 +1,2806 @@
+{
+  "inspection": "read-only final GLB binary asset inspection",
+  "models": [
+    {
+      "mode": "rigged",
+      "kind": "clothing",
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-rigged.glb",
+      "status": "stable",
+      "bytes": 31392072,
+      "sha256": "cd08b38eac06a7318a46de9ba90dd86f4cace2d7636de6251bcfcede468c37dc",
+      "meshes": 9,
+      "skins": 1,
+      "jointsPerSkin": [
+        24
+      ],
+      "jointNames": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand"
+        ]
+      ],
+      "allSkinsSameJointNodes": true,
+      "skinIndicesUsed": [
+        0
+      ],
+      "finiteInverseBindMatrices": true,
+      "finiteNodeTransforms": true,
+      "parts": [
+        {
+          "name": "AtahoBody",
+          "mesh": 0,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 37719,
+          "triangles": 52638,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998733401299,
+            1.0000001154839993
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0",
+              "positionAccessor": 0,
+              "positionAccessorCount": 37719,
+              "referencedVertices": 37719,
+              "triangles": 52638,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "COLOR_1",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998733401299,
+                1.0000001154839993
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Flask",
+          "mesh": 1,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 7071,
+          "triangles": 10348,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0.005",
+              "positionAccessor": 9,
+              "positionAccessorCount": 7071,
+              "referencedVertices": 7071,
+              "triangles": 10348,
+              "finiteAttributes": true,
+              "hasColor0": false,
+              "attributes": [
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "FlaskConnector",
+          "mesh": 2,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 210,
+          "triangles": 416,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999999701976776,
+            1.0000000298023224
+          ],
+          "maximumInfluences": 2,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 15,
+              "positionAccessorCount": 210,
+              "referencedVertices": 210,
+              "triangles": 416,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999999701976776,
+                1.0000000298023224
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 2,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Jacket",
+          "mesh": 3,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 17636,
+          "triangles": 29021,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998658895493,
+            1.0000001322478056
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0.003",
+              "positionAccessor": 21,
+              "positionAccessorCount": 17636,
+              "referencedVertices": 17636,
+              "triangles": 29021,
+              "finiteAttributes": true,
+              "hasColor0": false,
+              "attributes": [
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998658895493,
+                1.0000001322478056
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Pants",
+          "mesh": 4,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 13509,
+          "triangles": 20697,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998590210453,
+            1.0000001154839993
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0.004",
+              "positionAccessor": 27,
+              "positionAccessorCount": 13509,
+              "referencedVertices": 13509,
+              "triangles": 20697,
+              "finiteAttributes": true,
+              "hasColor0": false,
+              "attributes": [
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998590210453,
+                1.0000001154839993
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashBand",
+          "mesh": 5,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 4800,
+          "triangles": 9600,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999999701976776,
+            1.0000000298023224
+          ],
+          "maximumInfluences": 2,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 33,
+              "positionAccessorCount": 4800,
+              "referencedVertices": 4800,
+              "triangles": 9600,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999999701976776,
+                1.0000000298023224
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 2,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashKnot",
+          "mesh": 6,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 756,
+          "triangles": 1504,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 39,
+              "positionAccessorCount": 756,
+              "referencedVertices": 756,
+              "triangles": 1504,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashTail1",
+          "mesh": 7,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 882,
+          "triangles": 1760,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 45,
+              "positionAccessorCount": 882,
+              "referencedVertices": 882,
+              "triangles": 1760,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashTail2",
+          "mesh": 8,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 882,
+          "triangles": 1760,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 51,
+              "positionAccessorCount": 882,
+              "referencedVertices": 882,
+              "triangles": 1760,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        }
+      ],
+      "totalVertices": 83465,
+      "totalTriangles": 127744,
+      "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+      "textures": 4,
+      "images": [
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 8315127
+        },
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 7577396
+        },
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 5644154
+        },
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 4256509
+        }
+      ],
+      "animations": [],
+      "failures": []
+    },
+    {
+      "mode": "neutral",
+      "kind": "clothing",
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-neutral.glb",
+      "status": "stable",
+      "bytes": 31408220,
+      "sha256": "7c57cde91c631b8cc59936f460e01d64dad878e7d21cb104659cf1d3ee816e0d",
+      "meshes": 9,
+      "skins": 1,
+      "jointsPerSkin": [
+        24
+      ],
+      "jointNames": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand"
+        ]
+      ],
+      "allSkinsSameJointNodes": true,
+      "skinIndicesUsed": [
+        0
+      ],
+      "finiteInverseBindMatrices": true,
+      "finiteNodeTransforms": true,
+      "parts": [
+        {
+          "name": "AtahoBody",
+          "mesh": 0,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 37719,
+          "triangles": 52638,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998733401299,
+            1.0000001154839993
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0",
+              "positionAccessor": 0,
+              "positionAccessorCount": 37719,
+              "referencedVertices": 37719,
+              "triangles": 52638,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "COLOR_1",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998733401299,
+                1.0000001154839993
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Flask",
+          "mesh": 1,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 7071,
+          "triangles": 10348,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0.005",
+              "positionAccessor": 9,
+              "positionAccessorCount": 7071,
+              "referencedVertices": 7071,
+              "triangles": 10348,
+              "finiteAttributes": true,
+              "hasColor0": false,
+              "attributes": [
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "FlaskConnector",
+          "mesh": 2,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 210,
+          "triangles": 416,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999999701976776,
+            1.0000000298023224
+          ],
+          "maximumInfluences": 2,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 15,
+              "positionAccessorCount": 210,
+              "referencedVertices": 210,
+              "triangles": 416,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999999701976776,
+                1.0000000298023224
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 2,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Jacket",
+          "mesh": 3,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 17636,
+          "triangles": 29021,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998658895493,
+            1.0000001322478056
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0.003",
+              "positionAccessor": 21,
+              "positionAccessorCount": 17636,
+              "referencedVertices": 17636,
+              "triangles": 29021,
+              "finiteAttributes": true,
+              "hasColor0": false,
+              "attributes": [
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998658895493,
+                1.0000001322478056
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Pants",
+          "mesh": 4,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 13509,
+          "triangles": 20697,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998590210453,
+            1.0000001154839993
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0.004",
+              "positionAccessor": 27,
+              "positionAccessorCount": 13509,
+              "referencedVertices": 13509,
+              "triangles": 20697,
+              "finiteAttributes": true,
+              "hasColor0": false,
+              "attributes": [
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998590210453,
+                1.0000001154839993
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashBand",
+          "mesh": 5,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 4800,
+          "triangles": 9600,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999999701976776,
+            1.0000000298023224
+          ],
+          "maximumInfluences": 2,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 33,
+              "positionAccessorCount": 4800,
+              "referencedVertices": 4800,
+              "triangles": 9600,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999999701976776,
+                1.0000000298023224
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 2,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashKnot",
+          "mesh": 6,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 756,
+          "triangles": 1504,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 39,
+              "positionAccessorCount": 756,
+              "referencedVertices": 756,
+              "triangles": 1504,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashTail1",
+          "mesh": 7,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 882,
+          "triangles": 1760,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 45,
+              "positionAccessorCount": 882,
+              "referencedVertices": 882,
+              "triangles": 1760,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashTail2",
+          "mesh": 8,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 882,
+          "triangles": 1760,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 51,
+              "positionAccessorCount": 882,
+              "referencedVertices": 882,
+              "triangles": 1760,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        }
+      ],
+      "totalVertices": 83465,
+      "totalTriangles": 127744,
+      "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+      "textures": 4,
+      "images": [
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 8315127
+        },
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 7577396
+        },
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 5644154
+        },
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 4256509
+        }
+      ],
+      "animations": [
+        {
+          "name": "AtahoNeutral",
+          "channels": 72,
+          "samplers": 72,
+          "sampleCountRange": [
+            1,
+            1
+          ],
+          "timeStart": 0.03333333507180214,
+          "timeEnd": 0.03333333507180214,
+          "duration": 0.0,
+          "inputsSorted": true,
+          "finiteOutputs": true,
+          "targetNodes": 24
+        }
+      ],
+      "failures": []
+    },
+    {
+      "mode": "walk",
+      "kind": "clothing",
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-walk.glb",
+      "status": "stable",
+      "bytes": 31420896,
+      "sha256": "c7f30493ac41e1842409dfadefdc30786aedbf9cafcd85fb12c5c8c3ebca0ae1",
+      "meshes": 9,
+      "skins": 1,
+      "jointsPerSkin": [
+        24
+      ],
+      "jointNames": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand"
+        ]
+      ],
+      "allSkinsSameJointNodes": true,
+      "skinIndicesUsed": [
+        0
+      ],
+      "finiteInverseBindMatrices": true,
+      "finiteNodeTransforms": true,
+      "parts": [
+        {
+          "name": "AtahoBody",
+          "mesh": 0,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 37719,
+          "triangles": 52638,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998733401299,
+            1.0000001154839993
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0",
+              "positionAccessor": 0,
+              "positionAccessorCount": 37719,
+              "referencedVertices": 37719,
+              "triangles": 52638,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "COLOR_1",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998733401299,
+                1.0000001154839993
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Flask",
+          "mesh": 1,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 7071,
+          "triangles": 10348,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0.005",
+              "positionAccessor": 9,
+              "positionAccessorCount": 7071,
+              "referencedVertices": 7071,
+              "triangles": 10348,
+              "finiteAttributes": true,
+              "hasColor0": false,
+              "attributes": [
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "FlaskConnector",
+          "mesh": 2,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 210,
+          "triangles": 416,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999999701976776,
+            1.0000000298023224
+          ],
+          "maximumInfluences": 2,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 15,
+              "positionAccessorCount": 210,
+              "referencedVertices": 210,
+              "triangles": 416,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999999701976776,
+                1.0000000298023224
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 2,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Jacket",
+          "mesh": 3,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 17636,
+          "triangles": 29021,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998658895493,
+            1.0000001322478056
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0.003",
+              "positionAccessor": 21,
+              "positionAccessorCount": 17636,
+              "referencedVertices": 17636,
+              "triangles": 29021,
+              "finiteAttributes": true,
+              "hasColor0": false,
+              "attributes": [
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998658895493,
+                1.0000001322478056
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Pants",
+          "mesh": 4,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 13509,
+          "triangles": 20697,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998590210453,
+            1.0000001154839993
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0.004",
+              "positionAccessor": 27,
+              "positionAccessorCount": 13509,
+              "referencedVertices": 13509,
+              "triangles": 20697,
+              "finiteAttributes": true,
+              "hasColor0": false,
+              "attributes": [
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998590210453,
+                1.0000001154839993
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashBand",
+          "mesh": 5,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 4800,
+          "triangles": 9600,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999999701976776,
+            1.0000000298023224
+          ],
+          "maximumInfluences": 2,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 33,
+              "positionAccessorCount": 4800,
+              "referencedVertices": 4800,
+              "triangles": 9600,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999999701976776,
+                1.0000000298023224
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 2,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashKnot",
+          "mesh": 6,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 756,
+          "triangles": 1504,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 39,
+              "positionAccessorCount": 756,
+              "referencedVertices": 756,
+              "triangles": 1504,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashTail1",
+          "mesh": 7,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 882,
+          "triangles": 1760,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 45,
+              "positionAccessorCount": 882,
+              "referencedVertices": 882,
+              "triangles": 1760,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashTail2",
+          "mesh": 8,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 882,
+          "triangles": 1760,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 51,
+              "positionAccessorCount": 882,
+              "referencedVertices": 882,
+              "triangles": 1760,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        }
+      ],
+      "totalVertices": 83465,
+      "totalTriangles": 127744,
+      "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+      "textures": 4,
+      "images": [
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 8315127
+        },
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 7577396
+        },
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 5644154
+        },
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 4256509
+        }
+      ],
+      "animations": [
+        {
+          "name": "AtahoWalk",
+          "channels": 72,
+          "samplers": 72,
+          "sampleCountRange": [
+            2,
+            32
+          ],
+          "timeStart": 0.03333333507180214,
+          "timeEnd": 1.0666667222976685,
+          "duration": 1.0333333872258663,
+          "inputsSorted": true,
+          "finiteOutputs": true,
+          "targetNodes": 24
+        }
+      ],
+      "failures": []
+    },
+    {
+      "mode": "run",
+      "kind": "clothing",
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/concept/ataho-outfit-run.glb",
+      "status": "stable",
+      "bytes": 31416764,
+      "sha256": "afc50f37ac918cb1af9d2cbcdd2ba65db60fe53be239403c0075d5cc8e80a384",
+      "meshes": 9,
+      "skins": 1,
+      "jointsPerSkin": [
+        24
+      ],
+      "jointNames": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand"
+        ]
+      ],
+      "allSkinsSameJointNodes": true,
+      "skinIndicesUsed": [
+        0
+      ],
+      "finiteInverseBindMatrices": true,
+      "finiteNodeTransforms": true,
+      "parts": [
+        {
+          "name": "AtahoBody",
+          "mesh": 0,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 37719,
+          "triangles": 52638,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998733401299,
+            1.0000001154839993
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0",
+              "positionAccessor": 0,
+              "positionAccessorCount": 37719,
+              "referencedVertices": 37719,
+              "triangles": 52638,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "COLOR_1",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998733401299,
+                1.0000001154839993
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Flask",
+          "mesh": 1,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 7071,
+          "triangles": 10348,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0.005",
+              "positionAccessor": 9,
+              "positionAccessorCount": 7071,
+              "referencedVertices": 7071,
+              "triangles": 10348,
+              "finiteAttributes": true,
+              "hasColor0": false,
+              "attributes": [
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "FlaskConnector",
+          "mesh": 2,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 210,
+          "triangles": 416,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999999701976776,
+            1.0000000298023224
+          ],
+          "maximumInfluences": 2,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 15,
+              "positionAccessorCount": 210,
+              "referencedVertices": 210,
+              "triangles": 416,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999999701976776,
+                1.0000000298023224
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 2,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Jacket",
+          "mesh": 3,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 17636,
+          "triangles": 29021,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998658895493,
+            1.0000001322478056
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0.003",
+              "positionAccessor": 21,
+              "positionAccessorCount": 17636,
+              "referencedVertices": 17636,
+              "triangles": 29021,
+              "finiteAttributes": true,
+              "hasColor0": false,
+              "attributes": [
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998658895493,
+                1.0000001322478056
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "Pants",
+          "mesh": 4,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 13509,
+          "triangles": 20697,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998590210453,
+            1.0000001154839993
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0.004",
+              "positionAccessor": 27,
+              "positionAccessorCount": 13509,
+              "referencedVertices": 13509,
+              "triangles": 20697,
+              "finiteAttributes": true,
+              "hasColor0": false,
+              "attributes": [
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998590210453,
+                1.0000001154839993
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashBand",
+          "mesh": 5,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 4800,
+          "triangles": 9600,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999999701976776,
+            1.0000000298023224
+          ],
+          "maximumInfluences": 2,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 33,
+              "positionAccessorCount": 4800,
+              "referencedVertices": 4800,
+              "triangles": 9600,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999999701976776,
+                1.0000000298023224
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 2,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashKnot",
+          "mesh": 6,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 756,
+          "triangles": 1504,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 39,
+              "positionAccessorCount": 756,
+              "referencedVertices": 756,
+              "triangles": 1504,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashTail1",
+          "mesh": 7,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 882,
+          "triangles": 1760,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 45,
+              "positionAccessorCount": 882,
+              "referencedVertices": 882,
+              "triangles": 1760,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        },
+        {
+          "name": "SashTail2",
+          "mesh": 8,
+          "skin": 0,
+          "primitiveCount": 1,
+          "uniquePositionAccessorVertices": 882,
+          "triangles": 1760,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            1.0,
+            1.0
+          ],
+          "maximumInfluences": 1,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Folded dark brown sash cloth",
+              "positionAccessor": 51,
+              "positionAccessorCount": 882,
+              "referencedVertices": 882,
+              "triangles": 1760,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                1.0,
+                1.0
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 1,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        }
+      ],
+      "totalVertices": 83465,
+      "totalTriangles": 127744,
+      "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+      "textures": 4,
+      "images": [
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 8315127
+        },
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 7577396
+        },
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 5644154
+        },
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 4256509
+        }
+      ],
+      "animations": [
+        {
+          "name": "AtahoRun",
+          "channels": 72,
+          "samplers": 72,
+          "sampleCountRange": [
+            2,
+            20
+          ],
+          "timeStart": 0.03333333507180214,
+          "timeEnd": 0.6666666865348816,
+          "duration": 0.6333333514630795,
+          "inputsSorted": true,
+          "finiteOutputs": true,
+          "targetNodes": 24
+        }
+      ],
+      "failures": []
+    }
+  ],
+  "bodyModels": [
+    {
+      "mode": "original",
+      "kind": "body",
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-original-tailless.glb",
+      "status": "stable",
+      "bytes": 11659524,
+      "sha256": "0de26dcbd5d19ea12fcd65a02eb48f250a80681fef9ced299269d7284a76895e",
+      "meshes": 1,
+      "skins": 0,
+      "jointsPerSkin": [],
+      "jointNames": [],
+      "allSkinsSameJointNodes": true,
+      "skinIndicesUsed": [],
+      "finiteInverseBindMatrices": true,
+      "finiteNodeTransforms": true,
+      "parts": [
+        {
+          "name": "AtahoBodyTailless",
+          "mesh": 0,
+          "skin": null,
+          "primitiveCount": 2,
+          "uniquePositionAccessorVertices": 62721,
+          "triangles": 97007,
+          "finiteAttributes": true,
+          "weightSumRange": null,
+          "maximumInfluences": 0,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0",
+              "positionAccessor": 0,
+              "positionAccessorCount": 62253,
+              "referencedVertices": 62253,
+              "triangles": 96231,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0"
+              ],
+              "skin": null
+            },
+            {
+              "primitive": 1,
+              "material": "Tail root matched shirt and briefs",
+              "positionAccessor": 5,
+              "positionAccessorCount": 468,
+              "referencedVertices": 468,
+              "triangles": 776,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0"
+              ],
+              "skin": null
+            }
+          ]
+        }
+      ],
+      "totalVertices": 62721,
+      "totalTriangles": 97007,
+      "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+      "textures": 1,
+      "images": [
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 8315127
+        }
+      ],
+      "animations": [],
+      "patchPreservation": {
+        "evidenceSource": "generator diagnostics plus current raw-source SHA256; outside coordinates not independently compared in this binary inspection",
+        "outsidePatchCoordinatesUnchanged": true,
+        "sourceUnchangedReported": true,
+        "rawSourcePath": "public/assets/maplestory/ataho-meshy-body/20261015/models/ataho-body.glb",
+        "rawSourceSha256": "1a81285e66a58dd63ddffc6ea4629a762a18327744519b13591cc05e78799af5",
+        "rawSourceMatchesGenerationHash": true,
+        "rootOpenEdgesAfterCapReported": 0,
+        "capBackwardsNormalFacesReported": 0,
+        "capVerticesAddedReported": 310
+      },
+      "failures": []
+    },
+    {
+      "mode": "rigged",
+      "kind": "body",
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-rigged-tailless.glb",
+      "status": "stable",
+      "bytes": 12924372,
+      "sha256": "0986e9812adcc361f4bcea3234eabae48f2439521de2a27424e87f05ea117b02",
+      "meshes": 1,
+      "skins": 1,
+      "jointsPerSkin": [
+        24
+      ],
+      "jointNames": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand"
+        ]
+      ],
+      "allSkinsSameJointNodes": true,
+      "skinIndicesUsed": [
+        0
+      ],
+      "finiteInverseBindMatrices": true,
+      "finiteNodeTransforms": true,
+      "parts": [
+        {
+          "name": "AtahoBodyTailless",
+          "mesh": 0,
+          "skin": 0,
+          "primitiveCount": 2,
+          "uniquePositionAccessorVertices": 62752,
+          "triangles": 97007,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998821294867,
+            1.000000111758709
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0",
+              "positionAccessor": 0,
+              "positionAccessorCount": 62284,
+              "referencedVertices": 62284,
+              "triangles": 96231,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998821294867,
+                1.0000001043081284
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            },
+            {
+              "primitive": 1,
+              "material": "Tail root matched shirt and briefs",
+              "positionAccessor": 7,
+              "positionAccessorCount": 468,
+              "referencedVertices": 468,
+              "triangles": 776,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.999999888241291,
+                1.000000111758709
+              ],
+              "weightRange": [
+                0.04936595633625984,
+                0.5516650080680847
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        }
+      ],
+      "totalVertices": 62752,
+      "totalTriangles": 97007,
+      "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+      "textures": 1,
+      "images": [
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 8315127
+        }
+      ],
+      "animations": [],
+      "patchPreservation": {
+        "evidenceSource": "generator diagnostics plus current raw-source SHA256; outside coordinates not independently compared in this binary inspection",
+        "outsidePatchCoordinatesUnchanged": true,
+        "sourceUnchangedReported": true,
+        "rawSourcePath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-rigged.glb",
+        "rawSourceSha256": "457641a0dc3346376fe0ffb977e9623f6c32aa28984a4ce4d319b59a5b2dea1e",
+        "rawSourceMatchesGenerationHash": true,
+        "rootOpenEdgesAfterCapReported": 0,
+        "capBackwardsNormalFacesReported": 0,
+        "capVerticesAddedReported": 310
+      },
+      "failures": []
+    },
+    {
+      "mode": "walk",
+      "kind": "body",
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-walk-tailless.glb",
+      "status": "stable",
+      "bytes": 12971256,
+      "sha256": "70ea523e254afb924a3b4d9b5a93f602da8ea9803a0a45f25f1d02fc36d296a6",
+      "meshes": 1,
+      "skins": 1,
+      "jointsPerSkin": [
+        24
+      ],
+      "jointNames": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand"
+        ]
+      ],
+      "allSkinsSameJointNodes": true,
+      "skinIndicesUsed": [
+        0
+      ],
+      "finiteInverseBindMatrices": true,
+      "finiteNodeTransforms": true,
+      "parts": [
+        {
+          "name": "AtahoBodyTailless",
+          "mesh": 0,
+          "skin": 0,
+          "primitiveCount": 2,
+          "uniquePositionAccessorVertices": 62752,
+          "triangles": 97007,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998821294867,
+            1.000000111758709
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0",
+              "positionAccessor": 0,
+              "positionAccessorCount": 62284,
+              "referencedVertices": 62284,
+              "triangles": 96231,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998821294867,
+                1.0000001043081284
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            },
+            {
+              "primitive": 1,
+              "material": "Tail root matched shirt and briefs",
+              "positionAccessor": 7,
+              "positionAccessorCount": 468,
+              "referencedVertices": 468,
+              "triangles": 776,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.999999888241291,
+                1.000000111758709
+              ],
+              "weightRange": [
+                0.04936595633625984,
+                0.5516650080680847
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        }
+      ],
+      "totalVertices": 62752,
+      "totalTriangles": 97007,
+      "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+      "textures": 1,
+      "images": [
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 8315127
+        }
+      ],
+      "animations": [
+        {
+          "name": "Animation",
+          "channels": 72,
+          "samplers": 72,
+          "sampleCountRange": [
+            32,
+            32
+          ],
+          "timeStart": 0.03333333507180214,
+          "timeEnd": 1.0666667222976685,
+          "duration": 1.0333333872258663,
+          "inputsSorted": true,
+          "finiteOutputs": true,
+          "targetNodes": 24
+        }
+      ],
+      "patchPreservation": {
+        "evidenceSource": "generator diagnostics plus current raw-source SHA256; outside coordinates not independently compared in this binary inspection",
+        "outsidePatchCoordinatesUnchanged": true,
+        "sourceUnchangedReported": true,
+        "rawSourcePath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-walk.glb",
+        "rawSourceSha256": "6d9e4354b4ba2172fde0c87324f5f43070e56c3cb10ffec20a12204b842bbb26",
+        "rawSourceMatchesGenerationHash": true,
+        "rootOpenEdgesAfterCapReported": 0,
+        "capBackwardsNormalFacesReported": 0,
+        "capVerticesAddedReported": 310
+      },
+      "failures": []
+    },
+    {
+      "mode": "run",
+      "kind": "body",
+      "localPath": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/ataho-body-run-tailless.glb",
+      "status": "stable",
+      "bytes": 12959688,
+      "sha256": "15528ed67c6fc5542d5c216ab387ca72ea54ec7ef09725ac76a558d00aab148c",
+      "meshes": 1,
+      "skins": 1,
+      "jointsPerSkin": [
+        24
+      ],
+      "jointNames": [
+        [
+          "Hips",
+          "LeftUpLeg",
+          "LeftLeg",
+          "LeftFoot",
+          "LeftToeBase",
+          "RightUpLeg",
+          "RightLeg",
+          "RightFoot",
+          "RightToeBase",
+          "Spine02",
+          "Spine01",
+          "Spine",
+          "LeftShoulder",
+          "LeftArm",
+          "LeftForeArm",
+          "LeftHand",
+          "neck",
+          "Head",
+          "head_end",
+          "headfront",
+          "RightShoulder",
+          "RightArm",
+          "RightForeArm",
+          "RightHand"
+        ]
+      ],
+      "allSkinsSameJointNodes": true,
+      "skinIndicesUsed": [
+        0
+      ],
+      "finiteInverseBindMatrices": true,
+      "finiteNodeTransforms": true,
+      "parts": [
+        {
+          "name": "AtahoBodyTailless",
+          "mesh": 0,
+          "skin": 0,
+          "primitiveCount": 2,
+          "uniquePositionAccessorVertices": 62752,
+          "triangles": 97007,
+          "finiteAttributes": true,
+          "weightSumRange": [
+            0.9999998821294867,
+            1.000000111758709
+          ],
+          "maximumInfluences": 4,
+          "unweightedVertices": 0,
+          "negativeWeights": 0,
+          "invalidJoints": 0,
+          "primitives": [
+            {
+              "primitive": 0,
+              "material": "Material_0",
+              "positionAccessor": 0,
+              "positionAccessorCount": 62284,
+              "referencedVertices": 62284,
+              "triangles": 96231,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.9999998821294867,
+                1.0000001043081284
+              ],
+              "weightRange": [
+                0.0,
+                1.0
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            },
+            {
+              "primitive": 1,
+              "material": "Tail root matched shirt and briefs",
+              "positionAccessor": 7,
+              "positionAccessorCount": 468,
+              "referencedVertices": 468,
+              "triangles": 776,
+              "finiteAttributes": true,
+              "hasColor0": true,
+              "attributes": [
+                "COLOR_0",
+                "JOINTS_0",
+                "NORMAL",
+                "POSITION",
+                "TEXCOORD_0",
+                "WEIGHTS_0"
+              ],
+              "skin": 0,
+              "weightSumRange": [
+                0.999999888241291,
+                1.000000111758709
+              ],
+              "weightRange": [
+                0.04936595633625984,
+                0.5516650080680847
+              ],
+              "maximumInfluences": 4,
+              "unweightedVertices": 0,
+              "negativeWeights": 0,
+              "invalidJoints": 0
+            }
+          ]
+        }
+      ],
+      "totalVertices": 62752,
+      "totalTriangles": 97007,
+      "vertexCountMethod": "unique POSITION accessors per mesh; shared material primitive buffers counted once",
+      "textures": 1,
+      "images": [
+        {
+          "embedded": true,
+          "mimeType": "image/jpeg",
+          "size": [
+            4096,
+            4096
+          ],
+          "bytes": 8315127
+        }
+      ],
+      "animations": [
+        {
+          "name": "Animation",
+          "channels": 72,
+          "samplers": 72,
+          "sampleCountRange": [
+            20,
+            20
+          ],
+          "timeStart": 0.03333333507180214,
+          "timeEnd": 0.6666666865348816,
+          "duration": 0.6333333514630795,
+          "inputsSorted": true,
+          "finiteOutputs": true,
+          "targetNodes": 24
+        }
+      ],
+      "patchPreservation": {
+        "evidenceSource": "generator diagnostics plus current raw-source SHA256; outside coordinates not independently compared in this binary inspection",
+        "outsidePatchCoordinatesUnchanged": true,
+        "sourceUnchangedReported": true,
+        "rawSourcePath": "public/assets/maplestory/ataho-meshy-body/20261016/rigging/ataho-body-run.glb",
+        "rawSourceSha256": "7a2407c0118fa07cb60400a03003eaa81b9cd033d66e8c0c6548cf1f216e0a01",
+        "rawSourceMatchesGenerationHash": true,
+        "rootOpenEdgesAfterCapReported": 0,
+        "capBackwardsNormalFacesReported": 0,
+        "capVerticesAddedReported": 310
+      },
+      "failures": []
+    }
+  ],
+  "failures": [],
+  "bodyGenerationDiagnostics": "public/assets/maplestory/ataho-meshy-outfit/20261016/fitted/parts/body-tailless/diagnostics.json",
+  "bodyHelperSha256": "89f667112aece923acdb8cdbadc39883b3ecd3f4a11390419ea270216d687027",
+  "bodyHelperMatchesDiagnostics": true,
+  "status": "passed"
+}

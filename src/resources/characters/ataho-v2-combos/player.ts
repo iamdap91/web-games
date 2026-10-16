@@ -2,6 +2,11 @@ import type { ComboMotion, ComboStep } from './types.js';
 
 export const repeatGapMs = 700;
 
+export type ComboHitStop = {
+  readonly timeMs: number;
+  readonly durationMs: number;
+};
+
 export type ComboSnapshot = {
   readonly motion: ComboMotion;
   readonly step: ComboStep;
@@ -74,6 +79,9 @@ export class ComboPlayer {
   private paused = false;
   private speed = 1;
   private repeating = true;
+  private hitStops: readonly ComboHitStop[] = [];
+  private nextHitStop = 0;
+  private hitStopRemainingMs = 0;
 
   constructor(motion: ComboMotion) {
     this.motion = motion;
@@ -83,10 +91,37 @@ export class ComboPlayer {
     this.motion = motion;
     this.elapsedMs = 0;
     this.paused = false;
+    this.nextHitStop = 0;
+    this.hitStopRemainingMs = 0;
+  }
+
+  setHitStops(hitStops: readonly ComboHitStop[]): void {
+    this.hitStops = hitStops
+      .filter(
+        (stop) =>
+          Number.isFinite(stop.timeMs) &&
+          stop.timeMs >= 0 &&
+          Number.isFinite(stop.durationMs) &&
+          stop.durationMs > 0,
+      )
+      .sort((a, b) => a.timeMs - b.timeMs);
+    this.resetHitStopCursor();
+  }
+
+  private resetHitStopCursor(): void {
+    const next = this.hitStops.findIndex(
+      (stop) => stop.timeMs > this.elapsedMs,
+    );
+    this.nextHitStop = next < 0 ? this.hitStops.length : next;
+    this.hitStopRemainingMs = 0;
   }
 
   setPaused(paused: boolean): void {
     this.paused = paused;
+  }
+
+  get hitStopped(): boolean {
+    return this.hitStopRemainingMs > 0;
   }
 
   setSpeed(speed: number): void {
@@ -96,6 +131,7 @@ export class ComboPlayer {
   setRepeating(repeating: boolean): void {
     this.repeating = repeating;
     this.elapsedMs = Math.min(this.elapsedMs, comboDuration(this.motion));
+    this.resetHitStopCursor();
   }
 
   seek(elapsedMs: number): void {
@@ -105,6 +141,7 @@ export class ComboPlayer {
       Math.min(elapsedMs, comboDuration(this.motion)),
     );
     this.paused = true;
+    this.resetHitStopCursor();
   }
 
   showStep(index: number): void {
@@ -119,10 +156,37 @@ export class ComboPlayer {
   update(deltaMs: number): void {
     if (this.paused || !Number.isFinite(deltaMs) || deltaMs <= 0) return;
     const duration = comboDuration(this.motion);
-    const elapsed = this.elapsedMs + deltaMs * this.speed;
-    this.elapsedMs = this.repeating
-      ? elapsed % (duration + repeatGapMs)
-      : Math.min(elapsed, duration);
+    let remaining = deltaMs * this.speed;
+    // 명중 정지는 재생 시간을 소비하지만 동작 시각은 진행하지 않는다.
+    // 시점 탐색은 정지 이벤트를 건너뛰며 반복 시작에서만 다시 무장한다.
+    while (remaining > 0) {
+      if (this.hitStopRemainingMs > 0) {
+        const consumed = Math.min(remaining, this.hitStopRemainingMs);
+        this.hitStopRemainingMs -= consumed;
+        remaining -= consumed;
+        continue;
+      }
+      const stop = this.hitStops[this.nextHitStop];
+      if (
+        stop &&
+        stop.timeMs <= duration &&
+        stop.timeMs >= this.elapsedMs &&
+        stop.timeMs <= this.elapsedMs + remaining
+      ) {
+        remaining -= stop.timeMs - this.elapsedMs;
+        this.elapsedMs = stop.timeMs;
+        this.hitStopRemainingMs = stop.durationMs;
+        this.nextHitStop++;
+        continue;
+      }
+      const end = duration + (this.repeating ? repeatGapMs : 0);
+      const advance = Math.min(remaining, end - this.elapsedMs);
+      this.elapsedMs += advance;
+      remaining -= advance;
+      if (this.elapsedMs < end || !this.repeating) break;
+      this.elapsedMs = 0;
+      this.nextHitStop = 0;
+    }
   }
 
   get snapshot(): ComboSnapshot {

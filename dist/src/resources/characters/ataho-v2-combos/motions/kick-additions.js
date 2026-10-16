@@ -1,6 +1,7 @@
 import { guard, oneTwo, recover } from './attack-phrases.js';
 import { flyingKickMotion } from './flying-kick.js';
-const landingOneTwo = {
+import { withChainTiming } from './chain-timing.js';
+export const landingOneTwo = {
     id: 'landing-one-two',
     title: '날아차기 → 착지 원투 · 3타',
     summary: '앞으로 날아차고 무릎으로 착지 충격을 받은 뒤 같은 자리에서 원투를 잇는다.',
@@ -46,7 +47,7 @@ const groundKickPoses = [
     { frame: 5, durationMs: 55, anchor: { x: 33, y: 81 }, phase: '다리 거두기' },
     { frame: 6, durationMs: 70, anchor: { x: 33, y: 77 }, phase: '발 내리기' },
 ];
-const groundKickSteps = groundKickPoses.map((pose) => ({
+export const groundKickSteps = groundKickPoses.map((pose) => ({
     ...pose,
     motion: 'high-kick-south-east',
     x: 0,
@@ -71,4 +72,4 @@ const jabGroundKick = {
 export const kickAdditions = [
     landingOneTwo,
     jabGroundKick,
-];
+].map(withChainTiming);

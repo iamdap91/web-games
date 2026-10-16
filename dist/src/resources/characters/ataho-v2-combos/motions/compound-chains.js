@@ -1,14 +1,15 @@
 import { guard, recover, oneTwo, uppercut } from './attack-phrases.js';
 import { flyingKickMotion } from './flying-kick.js';
-export const boxingChain = {
+import { withChainTiming } from './chain-timing.js';
+export const boxingChain = withChainTiming({
     id: 'one-two-uppercut',
     title: '원투 → 어퍼컷 · 3타',
     summary: '잽·스트레이트로 열고, 가드로 쉬지 않고 몸을 낮춰 어퍼컷으로 끝낸다.',
     priority: 'selected',
     review: '두 번의 짧은 펀치 뒤 낮은 장전과 긴 어퍼컷 멈춤을 붙였다. 중간 가드와 돌진을 빼고 같은 발 위치에서 연속 타격한다. 원투에서 낮은 어퍼컷 준비로 바뀌는 몸통 연결을 효과 없이 비교한다.',
     steps: [guard(0), ...oneTwo(0), ...uppercut(0), ...recover(0)],
-};
-export const barrageChain = {
+});
+export const barrageChain = withChainTiming({
     id: 'punch-barrage',
     title: '연속 원투 → 어퍼컷 · 5타',
     summary: '원투를 두 차례 빠르게 몰아친 뒤 한 박자 낮춰 모으고 어퍼컷을 올린다.',
@@ -27,8 +28,8 @@ export const barrageChain = {
         })),
         ...recover(0),
     ],
-};
-export const leapChain = {
+});
+export const leapChain = withChainTiming({
     id: 'one-two-leap-kick',
     title: '원투 → 도약 날아차기 · 3타',
     summary: '지상 원투 뒤 무릎을 굽혀 뛰고, 앞으로 날아차기를 이어 착지한다.',
@@ -44,4 +45,4 @@ export const leapChain = {
         })),
         ...recover(74),
     ],
-};
+});

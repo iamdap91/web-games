@@ -270,8 +270,8 @@ const presentationsByMotion = {
     'new-smear-hook-south-east': {
         id: 'short-smear-fast-recovery',
         label: '짧은 스미어·빠른 회수',
-        summary: '팔 궤적을 짧게 지나 주먹을 보여 준 뒤 빠르게 거둡니다.',
-        review: '기존 0→2→3→4→6→7→8번과 발 기준을 그대로 쓴다. 준비는 110ms, 궤적은 40ms에서 20ms, 접촉 후보는 65ms로 배분하고 여운 30ms 뒤 회수 50ms로 잇는다. 띠를 짧게 보여 준비·타격·회수의 속도 차이를 비교한다. 큰 몸통 회전과 몸 앞을 감싸는 띠, 끝 자세의 짧은 팔 윤곽은 수정하지 않는다.',
+        summary: '연결되는 팔 궤적을 읽힌 뒤 주먹을 보여 주고 빠르게 거둡니다.',
+        review: '기존 0→2→3→4→6→7→8번과 발 기준을 그대로 쓴다. 준비는 110ms, 연결 궤적은 35ms로 읽히게 두고 접촉 후보는 60ms로 유지한다. 여운 30ms 뒤 회수 40ms로 이어 전체 495ms 안에서 준비·타격·회수의 속도 차이를 만든다. 큰 몸통 회전과 몸 앞을 감싸는 띠, 끝 자세의 짧은 팔 윤곽은 수정하지 않는다.',
         steps: [
             {
                 motion: 'smear-hook-stable-south-east',
@@ -294,7 +294,7 @@ const presentationsByMotion = {
             {
                 motion: 'smear-hook-stable-south-east',
                 frame: 3,
-                durationMs: 20,
+                durationMs: 35,
                 x: 0,
                 y: 0,
                 anchor: 'feet',
@@ -303,7 +303,7 @@ const presentationsByMotion = {
             {
                 motion: 'smear-hook-stable-south-east',
                 frame: 4,
-                durationMs: 65,
+                durationMs: 60,
                 x: 0,
                 y: 0,
                 anchor: 'feet',
@@ -322,7 +322,7 @@ const presentationsByMotion = {
             {
                 motion: 'smear-hook-stable-south-east',
                 frame: 7,
-                durationMs: 50,
+                durationMs: 40,
                 x: 0,
                 y: 0,
                 anchor: 'feet',
@@ -342,8 +342,8 @@ const presentationsByMotion = {
     'new-smear-hammerfist-south-east': {
         id: 'short-smear-held-contact',
         label: '짧은 스미어·타격 유지',
-        summary: '내려치기 직전에 모으고 짧은 궤적 뒤 낮은 주먹을 잠깐 유지합니다.',
-        review: '기존 0→1→3→4→5→6→7→8번과 발 기준을 그대로 쓴다. 내려치기 직전은 110ms, 대각 궤적은 40ms에서 20ms, 낮은 접촉 후보는 75ms로 배분한다. 거두기는 35→55ms로 이어 훅보다 끝 자세의 여운을 조금 더 남긴다. 낮은 준비 주먹과 팔에서 분리돼 보일 수 있는 띠 시작점은 원본 그대로이며 박자 비교 시안이다.',
+        summary: '내려치기 직전에 모으고 연결 궤적을 읽힌 뒤 낮은 주먹을 잠깐 유지합니다.',
+        review: '기존 0→1→3→4→5→6→7→8번과 발 기준을 그대로 쓴다. 내려치기 직전은 110ms, 연결되는 대각 궤적은 35ms, 낮은 접촉 후보는 70ms로 배분한다. 거두기는 30→50ms로 이어 전체 550ms를 유지하며 훅보다 끝 자세의 여운을 조금 더 남긴다. 낮은 준비 주먹과 팔에서 분리돼 보일 수 있는 띠 시작점은 원본 그대로이며 박자 비교 시안이다.',
         steps: [
             {
                 motion: 'smear-hammerfist-clean-south-east',
@@ -375,7 +375,7 @@ const presentationsByMotion = {
             {
                 motion: 'smear-hammerfist-clean-south-east',
                 frame: 4,
-                durationMs: 20,
+                durationMs: 35,
                 x: 0,
                 y: 0,
                 anchor: 'feet',
@@ -384,7 +384,7 @@ const presentationsByMotion = {
             {
                 motion: 'smear-hammerfist-clean-south-east',
                 frame: 5,
-                durationMs: 75,
+                durationMs: 70,
                 x: 0,
                 y: 0,
                 anchor: 'feet',
@@ -394,7 +394,7 @@ const presentationsByMotion = {
             {
                 motion: 'smear-hammerfist-clean-south-east',
                 frame: 6,
-                durationMs: 35,
+                durationMs: 30,
                 x: 0,
                 y: 0,
                 anchor: 'feet',
@@ -403,7 +403,7 @@ const presentationsByMotion = {
             {
                 motion: 'smear-hammerfist-clean-south-east',
                 frame: 7,
-                durationMs: 55,
+                durationMs: 50,
                 x: 0,
                 y: 0,
                 anchor: 'feet',
