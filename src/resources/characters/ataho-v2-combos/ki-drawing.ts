@@ -1,4 +1,5 @@
 import { kiHitPoint, sampleKi } from './ki-sampling.js';
+import { line } from './ki-shapes.js';
 import {
   drawBeam,
   drawBeamCharge,
@@ -51,7 +52,7 @@ function beginWorld(
 export function drawKiBackdrop(
   ctx: CanvasRenderingContext2D,
   snapshot: ComboSnapshot,
-  _frames: Frames,
+  frames: Frames,
   options: KiDrawingOptions,
 ): void {
   const definition = snapshot.motion.ki;
@@ -62,20 +63,20 @@ export function drawKiBackdrop(
   switch (definition.style) {
     case 'tiger-manifest':
     case 'tiger-wave':
-      drawTigerCharge(ctx, definition, sample);
+      drawTigerCharge(ctx, definition, sample, frames);
       break;
     case 'crescent':
-      drawCrescentCharge(ctx, definition, sample);
+      drawCrescentCharge(ctx, definition, sample, frames);
       break;
     case 'eruption':
-      drawEruptionCharge(ctx, definition, sample);
+      drawEruptionCharge(ctx, definition, sample, frames);
       break;
   }
   if (definition.style === 'orbit') {
-    drawOrbitHeld(ctx, definition, sample);
+    drawOrbitHeld(ctx, definition, sample, frames);
     for (const shot of sample.shots)
       if (shot.point.x < definition.origin.x + 18)
-        drawOrbitShot(ctx, shot, sample);
+        drawOrbitShot(ctx, shot, sample, frames);
   }
   ctx.restore();
 }
@@ -84,7 +85,7 @@ export function drawKiBackdrop(
 export function drawKiForeground(
   ctx: CanvasRenderingContext2D,
   snapshot: ComboSnapshot,
-  _frames: Frames,
+  frames: Frames,
   options: KiDrawingOptions,
 ): void {
   const definition = snapshot.motion.ki;
@@ -93,23 +94,48 @@ export function drawKiForeground(
   if (sample.phase === 'done') return;
   beginWorld(ctx, options);
   // 손 안의 핵은 몸 앞에 있어야 장전 그림에 가려지지 않는다.
-  if (definition.style === 'orb') drawOrbCharge(ctx, definition, sample);
-  if (definition.style === 'beam') drawBeamCharge(ctx, definition, sample);
+  if (definition.style === 'orb')
+    drawOrbCharge(ctx, definition, sample, frames);
+  if (definition.style === 'beam')
+    drawBeamCharge(ctx, definition, sample, frames);
   if (definition.style === 'tiger-manifest')
-    drawTigerManifest(ctx, definition, sample);
-  if (definition.style === 'tiger-wave') drawTigerWave(ctx, definition, sample);
-  if (definition.style === 'beam') drawBeam(ctx, definition, sample);
-  if (definition.style === 'eruption') drawEruption(ctx, definition, sample);
+    drawTigerManifest(ctx, definition, sample, frames);
+  if (definition.style === 'tiger-wave')
+    drawTigerWave(ctx, definition, sample, frames);
+  if (definition.style === 'beam') drawBeam(ctx, definition, sample, frames);
+  if (definition.style === 'eruption')
+    drawEruption(ctx, definition, sample, frames);
   for (const shot of sample.shots) {
     if (definition.style === 'orb')
-      drawOrbProjectile(ctx, shot, sample, definition.accent);
-    if (definition.style === 'crescent') drawCrescent(ctx, shot, sample);
+      drawOrbProjectile(ctx, shot, sample, definition.accent, frames);
+    if (definition.style === 'crescent')
+      drawCrescent(ctx, shot, sample, frames);
     if (
       definition.style === 'orbit' &&
       shot.point.x >= definition.origin.x + 18
     )
-      drawOrbitShot(ctx, shot, sample);
+      drawOrbitShot(ctx, shot, sample, frames);
   }
+  if (definition.style === 'orb')
+    for (const hit of sample.hits)
+      drawOrbImpact(
+        ctx,
+        hit.point,
+        hit.ageMs,
+        hit.hit.strength,
+        definition.accent,
+        frames,
+      );
+  if (definition.style === 'crescent' || definition.style === 'orbit')
+    for (const hit of sample.hits)
+      drawSpatialImpact(
+        ctx,
+        definition,
+        hit.point,
+        hit.ageMs,
+        hit.hit.strength,
+        frames,
+      );
   ctx.restore();
 }
 
@@ -117,7 +143,7 @@ export function drawKiForeground(
 export function drawKiOverlay(
   ctx: CanvasRenderingContext2D,
   snapshot: ComboSnapshot,
-  _frames: Frames,
+  frames: Frames,
   options: KiDrawingOptions,
 ): void {
   const definition = snapshot.motion.ki;
@@ -142,18 +168,38 @@ export function drawKiOverlay(
     switch (definition.style) {
       case 'tiger-manifest':
       case 'tiger-wave':
-        drawTigerImpact(ctx, point, ageMs, hit.strength);
-        break;
-      case 'orb':
-        drawOrbImpact(ctx, point, ageMs, hit.strength, definition.accent);
+        drawTigerImpact(ctx, point, ageMs, hit.strength, frames);
         break;
       case 'beam':
-        drawBeamImpact(ctx, point, ageMs, hit.strength, definition.accent);
+        drawBeamImpact(
+          ctx,
+          point,
+          ageMs,
+          hit.strength,
+          definition.accent,
+          frames,
+        );
         break;
       case 'crescent':
       case 'eruption':
       case 'orbit':
-        drawSpatialImpact(ctx, definition, point, ageMs, hit.strength);
+      case 'orb':
+        if (ageMs < 95) {
+          ctx.save();
+          ctx.globalAlpha = (1 - ageMs / 95) * 0.8;
+          const reach = 4 + ageMs * 0.13;
+          for (const direction of [-1, 1])
+            line(
+              ctx,
+              [
+                { x: point.x - reach, y: point.y - direction * reach },
+                { x: point.x + reach, y: point.y + direction * reach },
+              ],
+              definition.accent,
+              1.2,
+            );
+          ctx.restore();
+        }
         break;
     }
   }

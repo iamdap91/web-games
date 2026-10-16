@@ -289,7 +289,7 @@ export const kiMotions: readonly KiMotion[] = [
     priority: 'review',
     ki: tigerManifest,
     review:
-      '원작 신기 영상의 대상 현현을 참고한다. 주먹의 권세를 짧게 내고 대상의 포효·발톱 압력으로 잇는다. 이동하는 투사체와 손 앞의 장시간 충전구는 만들지 않으며 세 압력 시점만 명중으로 센다. 기존 호랑이 선화는 형상 식별을 돕고 세 박자는 이 조합실의 해석이다.',
+      '원작 신기의 대상 현현과 던파 공식 영상의 기운 결집·호랑이 형상·파열을 참고한다. 전용 호랑이 그림이 첫 명중부터 선명해지고 두 번째 포효를 유지한 뒤 마지막 압력에서 조각으로 갈라진다. 세 압력 시점만 명중으로 세며 세 박자는 이 조합실의 해석이다.',
     steps: poses(tigerManifest.endMs, [
       guard(0),
       { ...punch(120, 11, '권기 응축'), emphasis: 'charge' },
@@ -347,7 +347,7 @@ export const kiMotions: readonly KiMotion[] = [
     id: 'ki-beam',
     title: '파동포',
     summary:
-      '양손에 응축한 핵에서 가는 선두광을 열고 굵은 빔을 유지한 뒤 반동을 거둔다.',
+      '양손에 압축한 핵에서 갈라지는 빔을 쏟고, 손에서 분리된 후단을 앞으로 보내며 반동을 거둔다.',
     priority: 'review',
     ki: beam,
     review:
@@ -371,7 +371,7 @@ export const kiMotions: readonly KiMotion[] = [
         atMs: 1700,
         motion: 'presentation-ki-beam-poses-south-east',
         frame: 2,
-        phase: '포구 수축 · 발사 반동',
+        phase: '포구 분리 · 발사 반동',
       },
       guard(1880, '파동포 뒤 가드 복귀'),
     ]),
@@ -384,7 +384,7 @@ export const kiMotions: readonly KiMotion[] = [
     priority: 'recommended',
     ki: crescent,
     review:
-      '크게 감아치는 훅의 짧은 준비·휘두름과 기존 광파참 전개8프레임을 조합한다. 둥근 충전구 대신 팔에서 분리되는 얇은 기공면과 절단 방향의 빛 조각으로 구분한다. 초승달이660ms에 도착할 때만 한 번 명중한다.',
+      '크게 감아치는 훅의 짧은 준비·휘두름에 전용 초승달 그림을 연결한다. 열린 기공면의 밝은 날과 깨진 후면이 다르게 변하고 도착 뒤 두 갈래의 긴 파편으로 흩어진다. 초승달이660ms에 도착할 때만 한 번 명중한다.',
     steps: poses(crescent.endMs, [
       guard(0),
       {

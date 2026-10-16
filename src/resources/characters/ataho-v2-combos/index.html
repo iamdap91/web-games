@@ -160,6 +160,15 @@
                   ><input id="contacts" type="checkbox" checked /> 타격
                   효과</label
                 >
+                <label id="ink-controls" hidden
+                  ><input
+                    id="ink-effects"
+                    type="checkbox"
+                    aria-describedby="ink-description"
+                    checked
+                  />
+                  수묵 공격 효과</label
+                >
                 <label
                   ><input id="directional-impacts" type="checkbox" /> 공격별
                   충격 모양</label
@@ -183,6 +192,10 @@
                   카메라 반동</label
                 >
               </div>
+              <p id="ink-description" class="field-hint" hidden>
+                공격 방향을 따라 먹획이 흐르고 명중 시 먹이 튑니다. 끄면 기존
+                궤적과 타격 효과를 비교할 수 있습니다.
+              </p>
               <p id="target-description" class="field-hint">
                 샌드백은 첫 타격 위치에 고정됩니다. 닿은 공격만 반응합니다.
               </p>
@@ -234,6 +247,7 @@
               >
                 <legend>동작 효과 · 함께 선택</legend>
                 <div id="effect-options" class="presentation-options"></div>
+                <p id="effect-description" class="field-hint" hidden></p>
               </fieldset>
               <fieldset
                 id="timing-controls"

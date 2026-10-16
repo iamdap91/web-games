@@ -16,6 +16,9 @@ import {
 } from './source-frames.js';
 import type { ComboMotion } from './types.js';
 import { sampleKi } from './ki-sampling.js';
+import { loadKiSpriteFrames } from './ki-sprites.js';
+import { hasInkEffects } from './ink-effects.js';
+import { loadInkSpriteFrames } from './ink-sprites.js';
 import { collectSandbagContacts, contactHitStopMs } from './sandbag.js';
 import { hasGroundEffects } from './ground-effects.js';
 import { hasSpeedLines } from './speed-lines.js';
@@ -127,6 +130,7 @@ class ComboScreen {
     scale: 3,
     showMovement: true,
     showContacts: true,
+    showInkEffects: true,
     showSandbag: false,
     directionalImpacts: false,
     showGroundEffects: false,
@@ -144,9 +148,19 @@ class ComboScreen {
   private disposed = false;
   private hitStopEnabled = false;
 
+  private get inkEffectsEnabled(): boolean {
+    return (
+      this.options.showMovement &&
+      !!this.options.showInkEffects &&
+      hasInkEffects(this.selectedMotion)
+    );
+  }
+
   private updatePresentationInputs(
     settings: { readonly refreshHitStops?: boolean } = {},
   ): void {
+    this.updateInkInputs();
+    this.updateEffectInputs();
     const contacts = collectSandbagContacts(this.player.snapshot.motion, {
       scale: this.options.scale,
       enabledEffects: this.options.enabledEffects,
@@ -164,11 +178,15 @@ class ComboScreen {
     hitStop.checked = !hitStop.disabled && this.hitStopEnabled;
     const directional = element<HTMLInputElement>('#directional-impacts');
     directional.disabled =
+      this.inkEffectsEnabled ||
       !this.options.showMovement ||
       !this.options.showContacts ||
       !contacts.length;
     directional.checked =
       !directional.disabled && !!this.options.directionalImpacts;
+    directional.title = this.inkEffectsEnabled
+      ? '수묵 공격 효과를 끄면 기존 공격별 충격 모양을 비교할 수 있습니다.'
+      : '';
     const ground = element<HTMLInputElement>('#ground-effects');
     ground.disabled =
       !this.options.showMovement ||
@@ -211,7 +229,12 @@ class ComboScreen {
       signal: this.events.signal,
     });
     try {
-      this.frames = await loadComboFrames(activeMotions);
+      const [bodyFrames, kiFrames, inkFrames] = await Promise.all([
+        loadComboFrames(activeMotions),
+        loadKiSpriteFrames(),
+        loadInkSpriteFrames(),
+      ]);
+      this.frames = new Map([...bodyFrames, ...kiFrames, ...inkFrames]);
       if (this.disposed) return;
       this.createMotionOptions();
       this.bindInput();
@@ -476,14 +499,44 @@ class ComboScreen {
   }
 
   private updateEffectInputs(): void {
+    const effects = this.selectedMotion.effects ?? [];
+    const replacesTrails = this.inkEffectsEnabled;
     for (const input of element(
       '#effect-options',
     ).querySelectorAll<HTMLInputElement>('input')) {
-      input.disabled = !this.options.showMovement;
+      const effect = effects.find((item) => item.id === input.value);
+      const replaced =
+        replacesTrails &&
+        (effect?.kind === 'line' || effect?.kind === 'ribbon');
+      input.disabled = !this.options.showMovement || replaced;
       input.checked =
-        this.options.showMovement &&
-        this.options.enabledEffects.has(input.value);
+        !input.disabled && this.options.enabledEffects.has(input.value);
+      input.title = replaced
+        ? '수묵 공격 효과를 끄면 선택한 기존 궤적을 다시 사용합니다.'
+        : '';
     }
+    const description = element('#effect-description');
+    description.hidden =
+      !replacesTrails ||
+      !effects.some(
+        (effect) => effect.kind === 'line' || effect.kind === 'ribbon',
+      );
+    description.textContent = description.hidden
+      ? ''
+      : '수묵 공격 효과가 기존 선·면 궤적을 대신합니다. 수묵을 끄면 이전 궤적 선택을 복원하며 잔상·부위 효과는 함께 사용할 수 있습니다.';
+  }
+
+  private updateInkInputs(): void {
+    const available = hasInkEffects(this.selectedMotion);
+    element('#ink-controls').hidden = !available;
+    const ink = element<HTMLInputElement>('#ink-effects');
+    ink.disabled = !available || !this.options.showMovement;
+    ink.checked = !ink.disabled && !!this.options.showInkEffects;
+    const description = element('#ink-description');
+    description.hidden = !available;
+    description.textContent = !this.options.showMovement
+      ? '이동 포함을 켜면 선택한 수묵 공격 효과를 다시 사용합니다.'
+      : '공격 방향을 따라 먹획이 흐르고 명중 시 먹이 튑니다. 타격 효과를 꺼도 먹획은 유지하며 수묵을 끄면 기존 효과를 비교할 수 있습니다.';
   }
 
   private createEmphasisOptions(motion: ComboMotion): void {
@@ -884,6 +937,18 @@ class ComboScreen {
       },
       options,
     );
+    element<HTMLInputElement>('#ink-effects').addEventListener(
+      'change',
+      (event) => {
+        this.options = {
+          ...this.options,
+          showInkEffects: (event.currentTarget as HTMLInputElement).checked,
+        };
+        this.updatePresentationInputs({ refreshHitStops: false });
+        this.render();
+      },
+      options,
+    );
     element<HTMLInputElement>('#sandbag').addEventListener(
       'change',
       (event) => {
@@ -1069,8 +1134,13 @@ class ComboScreen {
       (item) => item.id === this.selectedPresentationId,
     );
     const effects = this.options.showMovement
-      ? (snapshot.motion.effects ?? []).filter((effect) =>
-          this.options.enabledEffects.has(effect.id),
+      ? (snapshot.motion.effects ?? []).filter(
+          (effect) =>
+            this.options.enabledEffects.has(effect.id) &&
+            !(
+              this.inkEffectsEnabled &&
+              (effect.kind === 'line' || effect.kind === 'ribbon')
+            ),
         )
       : [];
     this.canvas.setAttribute(
@@ -1084,6 +1154,7 @@ class ComboScreen {
           this.selectedMotion.presentationLabel ??
           '기본 박자',
         ...effects.map((effect) => effect.label),
+        ...(this.inkEffectsEnabled ? ['수묵 공격 효과'] : []),
         ...(drawn.finisherBeat
           ? ['필살기 무대·연타 궤적', drawn.finisherBeat]
           : []),
@@ -1149,6 +1220,8 @@ class ComboScreen {
     this.canvas.dataset.paused = String(snapshot.paused);
     this.canvas.dataset.hitStop = String(this.player.hitStopped);
     this.canvas.dataset.impacts = String(drawn.impactCount);
+    this.canvas.dataset.inkCount = String(drawn.inkCount);
+    this.canvas.dataset.inkEnabled = String(this.inkEffectsEnabled);
     this.canvas.dataset.groundEffects = String(drawn.groundCount);
     this.canvas.dataset.cameraX = drawn.cameraX.toFixed(3);
     this.canvas.dataset.cameraY = drawn.cameraY.toFixed(3);

@@ -1,95 +1,51 @@
 import { clamp, ellipse, line, polygon } from './ki-shapes.js';
-/** 선두를 좌표에 맞추고 빛으로 된 이마·귀·벌어지는 턱을 따로 그린다. */
-function tigerHead(ctx, tip, size, mouth) {
-    ctx.save();
-    ctx.translate(tip.x, tip.y);
-    ctx.scale(size, size);
-    ellipse(ctx, { x: -28, y: -2 }, 28, 23, '#ffc35b40');
-    polygon(ctx, [
-        { x: -57, y: -9 },
-        { x: -48, y: -25 },
-        { x: -36, y: -20 },
-        { x: -28, y: -28 },
-        { x: -23, y: -17 },
-        { x: -10, y: -15 },
-        { x: 0, y: -7 },
-        { x: -3, y: -1 },
-        { x: -14, y: 3 },
-        { x: -31, y: 5 },
-        { x: -48, y: 12 },
-        { x: -43, y: 1 },
-        { x: -58, y: 5 },
-    ], '#e68a27');
-    polygon(ctx, [
-        { x: -49, y: -10 },
-        { x: -44, y: -20 },
-        { x: -34, y: -15 },
-        { x: -28, y: -23 },
-        { x: -24, y: -12 },
-        { x: -10, y: -11 },
-        { x: -2, y: -6 },
-        { x: -15, y: 0 },
-        { x: -33, y: 1 },
-        { x: -47, y: 7 },
-        { x: -40, y: -2 },
-    ], '#ffe6a1');
-    polygon(ctx, [
-        { x: -34, y: 4 },
-        { x: -12, y: 2 },
-        { x: -5, y: 6 + mouth * 7 },
-        { x: -14, y: 13 + mouth * 8 },
-        { x: -34, y: 13 + mouth * 6 },
-        { x: -47, y: 18 },
-    ], '#ffcf65');
-    polygon(ctx, [
-        { x: -26, y: 3 },
-        { x: -8, y: 2 },
-        { x: -10, y: 5 + mouth * 6 },
-        { x: -29, y: 7 + mouth * 4 },
-    ], '#8c3e24');
-    polygon(ctx, [
-        { x: -13, y: 2 },
-        { x: -10, y: 2 },
-        { x: -13, y: 8 + mouth * 3 },
-    ], '#fffbed');
-    line(ctx, [
-        { x: -30, y: -7 },
-        { x: -17, y: -5 },
-        { x: -22, y: -1 },
-    ], '#fffbea', 2);
-    line(ctx, [
-        { x: -42, y: -13 },
-        { x: -35, y: -6 },
-        { x: -39, y: -3 },
-    ], '#c97525', 2);
-    line(ctx, [
-        { x: -34, y: -14 },
-        { x: -29, y: -9 },
-    ], '#c97525', 2);
-    line(ctx, [
-        { x: -38, y: 8 },
-        { x: -29, y: 11 },
-    ], '#fff8d2', 1.3);
-    ctx.restore();
+import { drawKiSprite, kiSpriteFrame, } from './ki-sprites.js';
+/** 호랑이의 실체는 그림이 맡고 흐르는 권기와 발톱 압력만 좌표로 연결한다. */
+function drawTigerForm(ctx, frames, options) {
+    drawKiSprite(ctx, frames, {
+        sheet: 'tiger',
+        ...options,
+        // 64px 셀의 실체는 61px, 옅은 끝은 62px까지라 주둥이를 자르지 않는다.
+        anchorX: 62 / 64,
+        anchorY: 0.5,
+    });
 }
-export function drawTigerCharge(ctx, definition, sample) {
+export function drawTigerCharge(ctx, definition, sample, frames) {
     if (sample.phase !== 'charge')
         return;
     const amount = sample.charge;
     const origin = definition.origin;
     ctx.save();
-    // 주먹으로 모이는 기세와 바닥의 역류만 두어 다른 기공의 구체와 구분한다.
-    for (let index = 0; index < 4; index++) {
-        const cycle = (sample.timeMs / 290 + index * 0.25) % 1;
+    // 대상에는 예고 명중을 만들지 않고 주먹에 빨려 드는 기세만 보인다.
+    for (let index = 0; index < 5; index++) {
+        const cycle = (sample.timeMs / 310 + index * 0.2) % 1;
+        const angle = index * 1.3 + cycle * 0.45;
+        const radius = 5 + cycle * (13 + amount * 9);
+        const point = {
+            x: origin.x + Math.cos(angle) * radius,
+            y: origin.y + Math.sin(angle) * radius * 0.58,
+        };
         ctx.globalAlpha = (1 - cycle) * amount * 0.75;
-        const x = origin.x - 8 - cycle * 22;
-        const y = origin.y + (index - 1.5) * 4;
         line(ctx, [
-            { x, y: y + cycle * 3 },
-            { x: origin.x + 3, y },
-        ], '#ffd56b', 1.2);
+            point,
+            {
+                x: origin.x + Math.cos(angle - 0.25) * radius * 0.55,
+                y: origin.y + Math.sin(angle - 0.25) * radius * 0.3,
+            },
+            origin,
+        ], index % 2 ? '#fff0b6' : '#eeb456', index % 2 ? 0.8 : 1.2);
     }
-    ctx.globalAlpha = amount * 0.6;
+    ctx.globalAlpha = 1;
+    ellipse(ctx, origin, 5 + amount * 5, 3 + amount * 3, '#ffd36920');
+    drawKiSprite(ctx, frames, {
+        sheet: 'tiger',
+        frame: Math.min(3, Math.floor(amount * 4)),
+        point: origin,
+        width: 15 + amount * 15,
+        height: 12 + amount * 14,
+        alpha: clamp(amount * 1.8),
+    });
+    ctx.globalAlpha = amount * 0.45;
     for (let index = 0; index < 2; index++) {
         const progress = (sample.timeMs / 500 + index * 0.5) % 1;
         ctx.strokeStyle = index ? '#fff3bc' : '#d58c38';
@@ -98,45 +54,101 @@ export function drawTigerCharge(ctx, definition, sample) {
         ctx.ellipse(-3, 0, 15 + progress * 13, 3 + progress, -progress * 0.08, 0, Math.PI * 1.6);
         ctx.stroke();
     }
-    if (definition.style === 'tiger-manifest' && amount > 0.62) {
-        ctx.globalAlpha = (amount - 0.62) * 0.8;
-        const point = definition.target;
-        for (const sign of [-1, 1])
-            line(ctx, [
-                { x: point.x + sign * 16, y: point.y - 13 },
-                { x: point.x + sign * 20, y: point.y },
-                { x: point.x + sign * 16, y: point.y + 13 },
-            ], '#cb8a38', 0.7);
-    }
     ctx.restore();
 }
-export function drawTigerManifest(ctx, definition, sample) {
-    const active = sample.hits.filter((hit) => hit.active).at(-1);
-    if (!active)
+function manifestFrame(ageMs, pulseIndex) {
+    // 첫 두 박자는 한 형상의 포효를 이어 가고 마지막에만 완전히 파열한다.
+    if (pulseIndex < 2) {
+        const first = pulseIndex ? 6 : 4;
+        return ageMs < 50
+            ? first
+            : kiSpriteFrame(ageMs - 50, {
+                start: first + 1,
+                count: pulseIndex ? 1 : 2,
+                frameMs: 45,
+            });
+    }
+    if (ageMs < 50)
+        return 8;
+    if (ageMs < 185)
+        return kiSpriteFrame(ageMs - 50, {
+            start: 9,
+            count: 3,
+            frameMs: 45,
+        });
+    return kiSpriteFrame(ageMs - 185, {
+        start: 12,
+        count: 4,
+        frameMs: 40,
+    });
+}
+export function drawTigerManifest(ctx, definition, sample, frames) {
+    const pulse = sample.hits.filter((hit) => hit.occurred).at(-1);
+    if (!pulse)
         return;
-    const age = active.ageMs;
-    const life = clamp(age / 180);
-    const index = definition.hits.indexOf(active.hit);
+    const index = definition.hits.indexOf(pulse.hit);
+    const age = pulse.ageMs;
+    if (index === definition.hits.length - 1 && age >= 345)
+        return;
+    const final = index === definition.hits.length - 1;
+    const push = age < 50 ? 0 : Math.sin(clamp((age - 50) / 110) * Math.PI);
+    const width = (final ? 116 : 96 + index * 6) + push * (final ? 9 : 3);
+    const height = (final ? 94 : 80 + index * 4) - push * 2;
     ctx.save();
-    ctx.globalAlpha = age < 24 ? 0.75 + age / 96 : 1 - clamp((age - 24) / 156);
-    const target = active.point;
-    const size = (0.75 + index * 0.07) * (1 + Math.sin(life * Math.PI) * 0.08);
-    ellipse(ctx, target, 27 + life * 11, 20 + life * 9, '#f8bd4b28');
-    tigerHead(ctx, { x: target.x + 18, y: target.y - 1 }, size, 1 - life);
-    for (let claw = 0; claw < 3; claw++) {
-        const offset = (claw - 1) * 8;
-        line(ctx, [
-            { x: target.x - 27 + life * 8, y: target.y - 22 + offset },
-            { x: target.x - 7, y: target.y - 3 + offset },
-            { x: target.x + 18 + life * 4, y: target.y + 10 + offset },
-        ], claw === 1 ? '#fff9dd' : '#ffd775', 1.6 - life);
-    }
+    ellipse(ctx, pulse.point, width * 0.25, height * 0.3, '#ffc96814');
+    drawTigerForm(ctx, frames, {
+        point: pulse.point,
+        frame: manifestFrame(age, index),
+        width,
+        height,
+    });
     ctx.restore();
 }
-export function drawTigerWave(ctx, definition, sample) {
+/** 금빛 꼬리의 두께와 끊김을 흘려 보내 호랑이를 균일한 띠와 구분한다. */
+function drawTigerFlow(ctx, from, head, timeMs, width) {
+    const length = Math.max(0, head.x - from.x);
+    if (length < 4 || width <= 0)
+        return;
+    for (let strand = 0; strand < 3; strand++) {
+        const top = [];
+        const bottom = [];
+        for (let index = 0; index <= 24; index++) {
+            const progress = index / 24;
+            const taper = Math.sin(progress * Math.PI * 0.82);
+            const flow = progress * 17 - timeMs / 38 + strand * 2;
+            const ripple = Math.sin(flow) * (1.3 + strand * 0.65) * taper;
+            const center = from.y +
+                (head.y - from.y) * progress +
+                Math.sin(progress * Math.PI * 2.4 - timeMs / 80 + strand * 2.1) *
+                    (strand === 0 ? 2 : 7) *
+                    taper;
+            const spread = width *
+                (strand === 0 ? 0.68 : strand === 1 ? 0.31 : 0.12) *
+                (0.2 + taper * 0.8) *
+                (0.8 + Math.sin(flow * 1.7) * 0.2);
+            const x = from.x + length * progress;
+            top.push({ x, y: center - spread + ripple });
+            bottom.unshift({ x, y: center + spread + ripple });
+        }
+        polygon(ctx, [...top, ...bottom], strand === 0 ? '#d99435' : strand === 1 ? '#ffcb67' : '#fff0bb');
+    }
+    // 짧은 암부와 떨어진 조각이 기운 속에서 각기 다른 속도로 흐른다.
+    for (let index = 0; index < 6; index++) {
+        const progress = (timeMs / 240 + index / 6) % 1;
+        const x = from.x + length * progress;
+        const y = from.y +
+            (head.y - from.y) * progress +
+            Math.sin(progress * Math.PI * 3 - timeMs / 90) * width * 0.55;
+        const size = 2 + (index % 3);
+        ctx.fillStyle = index % 2 ? '#fff6d4' : '#ad622c';
+        ctx.fillRect(x - size, y, size, index % 2 ? 1 : 2);
+    }
+}
+export function drawTigerWave(ctx, definition, sample, frames) {
     const shot = sample.shots[0];
     if (!shot || shot.ageMs < 0)
         return;
+    const contactAge = sample.timeMs - shot.shot.arriveMs;
     const coreEnd = shot.shot.arriveMs + 170;
     const residue = clamp((sample.timeMs - coreEnd) / 300);
     if (residue >= 1)
@@ -145,44 +157,30 @@ export function drawTigerWave(ctx, definition, sample) {
     const head = shot.point;
     const length = Math.max(0, head.x - from.x);
     ctx.save();
+    // 비행 중 그림이 앞서 튀어나오지 않게 선두와 판정의 도착 시각을 맞춘다.
     ctx.beginPath();
-    ctx.rect(from.x - 2, -150, 240, 210);
+    ctx.rect(from.x - 65, -150, head.x - from.x + 65, 210);
     ctx.clip();
-    const width = (9 + clamp(shot.ageMs / 75) * 5) * (1 - residue);
-    if (sample.timeMs < coreEnd) {
-        const top = [];
-        const bottom = [];
-        for (let index = 0; index <= 18; index++) {
-            const progress = index / 18;
-            const x = from.x + length * progress;
-            const y = from.y + (head.y - from.y) * progress;
-            const ripple = Math.sin(progress * 19 - sample.timeMs / 26) * 1.4;
-            const spread = width * (0.38 + Math.sin(progress * Math.PI) * 0.52);
-            top.push({ x, y: y - spread + ripple });
-            bottom.unshift({ x, y: y + spread + ripple });
-        }
-        polygon(ctx, [...top, ...bottom], '#ecaa3d');
-        line(ctx, [from, head], '#fff1b3', width * 0.95);
-        line(ctx, [from, head], '#fffcec', width * 0.42);
-        for (let strand = 0; strand < 2; strand++) {
-            const points = Array.from({ length: 25 }, (_, index) => {
-                const progress = index / 24;
-                return {
-                    x: from.x + length * progress,
-                    y: from.y +
-                        (head.y - from.y) * progress +
-                        Math.sin(progress * Math.PI * 3 + sample.timeMs / 85 + strand * Math.PI) *
-                            Math.sin(progress * Math.PI) *
-                            23,
-                };
-            });
-            line(ctx, points, strand ? '#ffe7a6' : '#d59339', strand ? 0.9 : 1.6);
-        }
-        tigerHead(ctx, head, 0.73 + clamp(shot.ageMs / 90) * 0.1, 0.7);
+    const width = (8 + clamp(shot.ageMs / 75) * 6) * (1 - clamp(contactAge / 230));
+    drawTigerFlow(ctx, from, head, sample.timeMs, width);
+    if (contactAge < 50) {
+        const growth = clamp(shot.ageMs / 70);
+        drawTigerForm(ctx, frames, {
+            point: head,
+            frame: growth < 1
+                ? Math.min(3, Math.floor(growth * 4))
+                : kiSpriteFrame(shot.ageMs - 70, {
+                    start: 4,
+                    count: 4,
+                    frameMs: 45,
+                    loop: true,
+                }),
+            width: 30 + growth * 64,
+            height: 24 + growth * 52,
+        });
     }
     if (shot.progress > 0.65) {
-        const fade = sample.timeMs < coreEnd ? 0.3 : 1 - residue;
-        ctx.globalAlpha = fade;
+        ctx.globalAlpha = sample.timeMs < coreEnd ? 0.25 : 1 - residue;
         const points = Array.from({ length: 30 }, (_, index) => {
             const progress = index / 29;
             return {
@@ -196,19 +194,41 @@ export function drawTigerWave(ctx, definition, sample) {
         line(ctx, points, '#ffc677', 0.85);
     }
     ctx.restore();
-}
-export function drawTigerImpact(ctx, point, ageMs, strength) {
-    if (ageMs < 0 || ageMs > 190)
+    if (contactAge < 50 || contactAge >= 345)
         return;
-    const life = ageMs / 190;
+    drawTigerForm(ctx, frames, {
+        point: head,
+        frame: manifestFrame(contactAge, definition.hits.length + 1),
+        width: 112,
+        height: 90,
+    });
+}
+export function drawTigerImpact(ctx, point, ageMs, strength, frames) {
+    if (ageMs < 0 || ageMs > 170)
+        return;
+    const life = ageMs / 170;
     ctx.save();
+    if (strength > 1)
+        drawKiSprite(ctx, frames, {
+            sheet: 'tiger',
+            frame: kiSpriteFrame(ageMs, {
+                start: 12,
+                count: 4,
+                frameMs: 40,
+            }),
+            point,
+            width: 48 + life * 16,
+            height: 40 + life * 16,
+            alpha: 0.55,
+        });
     ctx.globalAlpha = (1 - life) * 0.9;
     for (let index = 0; index < 3; index++) {
         const offset = (index - 1) * 8;
+        const travel = Math.max(0, ageMs - 35) / 135;
         line(ctx, [
-            { x: point.x - 10, y: point.y - 18 + offset },
-            { x: point.x + life * 17, y: point.y + offset },
-            { x: point.x + 14 + life * 15, y: point.y + 13 + offset },
+            { x: point.x - 11 + travel * 4, y: point.y - 18 + offset },
+            { x: point.x + travel * 15, y: point.y + offset },
+            { x: point.x + 13 + travel * 19, y: point.y + 13 + offset },
         ], index === 1 ? '#fff8d3' : '#efbb59', (1 - life) * strength + 0.6);
     }
     ctx.restore();

@@ -240,7 +240,8 @@ export function drawMotionEffects(ctx, snapshot, frames, options) {
             if (options.layer === 'back')
                 drawAfterimages(ctx, effect, snapshot, frames, options);
         }
-        else if (effect.kind === 'line' || effect.kind === 'ribbon')
+        else if (!options.suppressTrails &&
+            (effect.kind === 'line' || effect.kind === 'ribbon'))
             drawTrail(ctx, effect, snapshot, frames, options);
     }
 }

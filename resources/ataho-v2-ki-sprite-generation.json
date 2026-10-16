@@ -1,0 +1,253 @@
+{
+  "date": "2026-10-16",
+  "generator": "Codex built-in image_gen",
+  "sourceType": "new-original-vfx-atlases",
+  "scope": "기공6종 효과 전용 그림. 기존 몸 자세 및 명중 시각 유지.",
+  "assetDirectory": "public/assets/maplestory/ataho-v2-ki/20261016/sprites",
+  "layout": {
+    "columns": 4,
+    "rows": 4,
+    "logicalCellSize": 64,
+    "logicalAtlasSize": 256
+  },
+  "runtimeProcessing": [
+    "생성 PNG 원본 픽셀과 알파를 보존한다.",
+    "표시용 메모리 사본만 256x256 최근접 리샘플링한다.",
+    "표시용 사본의 alpha<48인 옅은 잔여점을 제외한다."
+  ],
+  "assets": [
+    {
+      "kind": "tiger",
+      "generatorOriginalPath": "/Users/3sam3/.codex/generated_images/01a13b4d-6b73-7ec2-871d-296fa7967195/exec-7833803d-930b-4804-bbb6-70276d17704f.png",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/tiger-atlas-original.png",
+      "prompt": "Use case: stylized-concept.\nAsset type: production sprite atlas for an existing low-resolution 2D tiger martial-arts game, effects only.\nCreate ONE square transparent PNG sprite sheet with EXACTLY 4 columns and 4 rows, sixteen equal square cells edge-to-edge, no gutters or grid lines. Every cell is one successive animation drawing in left-to-right reading order. Keep the same coordinate center and size basis in every cell. Entire image 1024 by 1024 if possible, each cell representing a 64 by 64 logical pixel sprite enlarged with sharp square pixel clusters.\nSubject: a GOLDEN TIGER SPIRIT energy attack facing RIGHT in three-quarter side view. A recognizably rounded tiger muzzle, small rounded ears, broad brow with dark gold stripes, open roaring mouth and short front claws; flowing gold energy behind the head. Proud powerful tiger, never a dragon, fox, wolf, lion or geometric emblem. Effects only, NO human or anthropomorphic character.\nAnimation layout EXACT:\ntop row cells 0,1,2,3: golden streaks gather into a small compressed swirl, a tiger brow and muzzle emerge, head half forms, head almost fully forms.\nsecond row cells 4,5,6,7: full tiger spirit head and foreclaws actively roaring, mouth opens and closes slightly, energy mane and loose sparks change shape each frame. Clear readable tiger identity maintained. The forward nose/claw stays no farther than 85 percent of cell width. Energy trails extend left. Design occupies roughly x=12..85%, y=18..80% in each active cell.\nthird row cells 8,9,10,11: forceful bite/roar impact, tiger silhouette contracts then bursts into broad angular golden ribbons and white-gold light fragments. Change shape rather than fading a copied head.\nbottom row cells 12,13,14,15: progressively torn tiger outline and glowing shreds disperse, then sparse small sparks. Last cell has only a few small gold pixels.\nPalette: warm ochre, amber, gold, pale cream and near white, 5-7 deliberate solid colors. Brighter core inside golden contours, small dark gold internal facial lines only. Preserve transparent holes between energy ribbons. Crisp intentional limited-color PIXEL ART, readable at actual 64px size, no soft-focus glow or antialias gradients.\nBackdrop: genuinely alpha transparent in every cell, including holes. NO floor, colored rectangle, black background, checkerboard pixels, text, numbers, labels, borders, contact sheet separators, watermark. Do not crop across cell boundaries. Align every frame to its equal cell.",
+      "sha256": "7938f7fb49cf77ed6bdd3a7b00fe2c7a60cfb8fdc8e924c940f24c67a1a083a5",
+      "originalWidth": 1254,
+      "originalHeight": 1254,
+      "frameCount": 16,
+      "alphaRange": [0, 255]
+    },
+    {
+      "kind": "beam",
+      "generatorOriginalPath": "/Users/3sam3/.codex/generated_images/01a13b4d-6b73-7ec2-871d-296fa7967195/exec-2208fd9c-792e-49af-858e-857793bef190.png",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/beam-atlas-original.png",
+      "prompt": "Use case: stylized-concept. Asset type: production pixel-art VFX sprite atlas for a low-resolution 2D martial-arts game. One square transparent PNG, EXACTLY 4 columns by 4 rows of sixteen equal square cells, no gutters, no grid, no text. Aim for 1024x1024 canvas and 64x64 logical pixels per cell enlarged with crisp square pixel clusters. Reading order left to right, top to bottom. Same anchors and coordinate scale for every related drawing. Limited 5-7 solid colors, deliberate pixel clusters, broken silhouettes and transparent holes, bright white cores, no painted smooth gradients, no blurred glow, no black outlines around light. Genuine alpha-transparent background everywhere including holes; no visible checkerboard. No character, hands, floor, environment, numbers, labels, border or watermark. Each drawing stays within its own cell.\nSubject: cyan-white sustained KI ENERGY BEAM with electric blue broken flowing skin.\nEXACT layout:\nRow 1 cells0-3: circular hand charge, small inward blue streaks gather, larger white core forms, then tight compressed ready-to-fire core. Each charge centered at50%50%, diameter20..45%cell.\nRow 2 cells4-7: FOUR seamless horizontal beam BODY tiles. Beam flows LEFT to RIGHT through each square cell. Bright white thin core on y=50% runs entirely from left cell edge to right cell edge. Same core width and color at left/right joins in every tile. Cyan sheath occupies y=34..66%, changing into irregular lobes, empty slits, streaks and detached pixel fragments across the four frames. No pointed head, muzzle, circles or caps in this row. This is a TILEABLE middle section of a long beam.\nRow3 cell8 and9: two muzzle-flare loop frames centered50%50%, a strong asymmetrical circular energy flare with blue arcs and white center; no attached long beam.\nRow3 cell10 and11: two RIGHT-facing beam HEAD frames, broad leading rounded white-cyan energy front at85%cellx and y50%, narrow open neck touches LEFT edge around middle; head itself from50..85%x.\nRow4 cells12 and13: two detached beam TAIL frames, taper at LEFT x15%, growing to constant beam width byx60%, reachingRIGHTcell edge. Same whitecore and bluesheath asbody. This is the REAR end moving away from the caster.\nRow4 cell14 and15: two target impact frames, dense white-cyan contact spark at50%50% bursting to right and up/down into broken arcs; compact, no huge sphere.\nShape language: turbulent high-pressure glowing energy, not a smooth plastic pipe, arrow, lightning zigzag or mechanical tube. Strong topology change in sheath while core remains readable.",
+      "sha256": "65be3721a0ea64f299b48f2e4732c8f98c2f599117278f5a8cc6ae922a4dde30",
+      "originalWidth": 1254,
+      "originalHeight": 1254,
+      "frameCount": 16,
+      "alphaRange": [0, 255]
+    },
+    {
+      "kind": "orb",
+      "generatorOriginalPath": "/Users/3sam3/.codex/generated_images/01a13b4d-6b73-7ec2-871d-296fa7967195/exec-8421c20a-b0cb-4af3-93f5-92e56c9548f4.png",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/orb-atlas-original.png",
+      "prompt": "Use case: stylized-concept. Asset type: production pixel-art VFX sprite atlas for a low-resolution 2D martial-arts game. One square transparent PNG, EXACTLY 4 columns by 4 rows of sixteen equal square cells, no gutters, no grid, no text. Aim for 1024x1024 canvas and 64x64 logical pixels per cell enlarged with crisp square pixel clusters. Reading order left to right, top to bottom. Same anchors and coordinate scale for every related drawing. Limited 5-7 solid colors, deliberate pixel clusters, broken silhouettes and transparent holes, bright white cores, no painted smooth gradients, no blurred glow, no black outlines around light. Genuine alpha-transparent background everywhere including holes; no visible checkerboard. No character, hands, floor, environment, numbers, labels, border or watermark. Each drawing stays within its own cell.\nSubject: compact CYAN-WHITE KI PROJECTILE. A densely compressed energy ball with uneven white core, blue/cyan patches and a short flowing tail to LEFT, flies RIGHT.\nExactlayout:\nToprow0-3: gathering at50%50%: little sparks pull inward to a compact blue point then bright ball then compressed white-hot core, diameter12%,20%,28%,24%cell respectively.\nSecondrow4-7: four stable looping flight frames, ball center at65%50%, forward tip at85%x, sizeabout38%celldiameter. Short irregular tail trails left tox15%. White core changes its shape/position in each frame, cyan rim opens and closes small gaps, outer pixel clusters detach. Frame4roundwhitecore,frame5diagonalcore,frame6twolobecore,frame7compactcore. Never repeat an identical ellipse.\nThirdrow8-11: independent IMPACT atcenter50%50%: compressed smallcore, briefbright angularburst, expanding broken cyan ring, ring breaks into handful of large crisp clusters. It must look like a little forceful projectile pop, no fire/smoke.\nBottomrow12-15: larger broken ring collapsing into shortbluewhite shreds, fewer separated sparks, verysmallblueflecks, lastcell just3tinysparks.\nKeep all actual flight FRONTs aligned85%x and center50%y. All impact frames centered50%50%. Preserve generous transparent margins. Palette darkblue only tinyaccents, saturatedcyan, paleblue and white.",
+      "sha256": "96285dd40537274d5e2e8c16679dac9327868f9c019bfc3fc710f53a7577fec8",
+      "originalWidth": 1254,
+      "originalHeight": 1254,
+      "frameCount": 16,
+      "alphaRange": [0, 255]
+    },
+    {
+      "kind": "crescent",
+      "generatorOriginalPath": "/Users/3sam3/.codex/generated_images/01a13b4d-6b73-7ec2-871d-296fa7967195/exec-97bcdabb-cd12-44a3-b04b-f3e4e07f025a.png",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/crescent-atlas-original.png",
+      "prompt": "Use case: stylized-concept. Asset type: production pixel-art VFX sprite atlas for a low-resolution 2D martial-arts game. One square transparent PNG, EXACTLY 4 columns by 4 rows of sixteen equal square cells, no gutters, no grid, no text. Aim for 1024x1024 canvas and 64x64 logical pixels per cell enlarged with crisp square pixel clusters. Reading order left to right, top to bottom. Same anchors and coordinate scale for every related drawing. Limited 5-7 solid colors, deliberate pixel clusters, broken silhouettes and transparent holes, bright white cores, no painted smooth gradients, no blurred glow, no black outlines around light. Genuine alpha-transparent background everywhere including holes; no visible checkerboard. No character, hands, floor, environment, numbers, labels, border or watermark. Each drawing stays within its own cell.\nSubject: luminous thin CYAN-WHITE CRESCENT ENERGY CUTTER, facingRIGHT, a finite open crescent with pointed upper/lower horns. NOT a circular ring, not a sphere, not a weapon.\nExact layout:\nToprow0-3: thin curved arc condenses from2shortstreaks intoquarterarc thenhalfarc thentightreadycrescent; center50%50%.\nSecondrow4-7: four flight loop drawings. Everycrescent spansy15..85%, forwardmost edge x85% y50%, tips end atx40% y15% andy85%. Interior LEFT side stays fully transparent and open. Narrow bright white frontedge, cyanbrokenrear edge, a few short detached strips trailleft towardx15%. Outeroutline, internal cuts and detached slivers change each frame; keep leading edge aligned. Deliberately uneven broad-to-fine thickness conveys sharp cutting surface, no dark external stroke.\nThirdrow8-11: impact: crescent compresses atcenter then splits across a thin diagonal white cut, two energy halves peel apart up-right/down-right leaving clear center, shatter into elongated cyan fragments.\nBottomrow12-15: slivers spread and fragment, increasingly sparse tinyshards, lastcell3tinypale pixels.\nNo glow cloud or circular explosion. Crisp elegant energy blade, thin edge and readable transparent interior.",
+      "sha256": "f127ce41cee1ba41056001d40481b2ec61ba2399301650f170b8920d65dccf0b",
+      "originalWidth": 1254,
+      "originalHeight": 1254,
+      "frameCount": 16,
+      "alphaRange": [0, 255]
+    },
+    {
+      "kind": "eruption",
+      "generatorOriginalPath": "/Users/3sam3/.codex/generated_images/01a13b4d-6b73-7ec2-871d-296fa7967195/exec-039bc7a1-552e-4fc8-b2dc-59c936024597.png",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/eruption-atlas-original.png",
+      "prompt": "Use case: stylized-concept. Asset type: production pixel-art VFX sprite atlas for a low-resolution 2D martial-arts game. One square transparent PNG, EXACTLY 4 columns by 4 rows, sixteen equal square cells edge to edge with NO gutters, grid lines or labels. Prefer1024x1024total, eachcell64x64logicalpixel art enlarged with crisp squarepixelclusters. Reading orderleft-to-righttop-to-bottom. Same fixed anchors in everycell. Limited5-7solid colors, intentional broken silhouettes, transparent holes, strong white orcreamcore. No smooth gradients, bloom, blurred glow, opaque backgrounds, checkerboard pixels, characters, floor scenes, text, numbers, watermark. Effect containedwithin eachowncell.\nSubject: AMBER GOLD EARTH KI ERUPTION, force bursts UPWARD from a fixed point in the ground. It is high-pressure luminous energy and a few small brown stone chips, not ordinary bonfire. Everycell has ground outlet atx50%,y90%. Tallestpillarreachesy12%. Preserveanchorforallframes. Wideheavybase, irregularflamelikepressurelobes, brightwhitecreamcenter, amberbrokenedges, darkochre onlytiny accents.\nToprow0-3: thin gold crack aroundoutlet, compressed flattenedgoldpressuremass, widerchargedbasewithlittlechips, swellingbud poisedupwards. Topremainingarea transparent.\nSecondrow4-7: single sustainedcolumn, strongrisingpressure; widebase, ascending white-hot center with angular gold tongues, shape continually splits and shifts. Height~75%cell, width~40%cell. Three different rising clusters in the column, no disconnected separate pillars.\nThirdrow8-11: finalpowered eruption: smallcompression atbase, largest broad upwardburst, pillar tearing into goldribbons abovebase, large chunks separating.\nBottomrow12-15: decreasing upwardfloatingribbons and smallstonechips, fewer brokenstrips, sparsegoldflecks, lastcell only3smallwarm sparksaboveoutlet. Do not make the whole pillar merely uniformly transparent.",
+      "sha256": "44c1aedc5fce65b65ce58001a329c5027ea828e3775fa58bd5709992a92ffd26",
+      "originalWidth": 1254,
+      "originalHeight": 1254,
+      "frameCount": 16,
+      "alphaRange": [0, 255]
+    },
+    {
+      "kind": "orbit",
+      "generatorOriginalPath": "/Users/3sam3/.codex/generated_images/01a13b4d-6b73-7ec2-871d-296fa7967195/exec-b884d7f0-75a2-40e7-ab0a-48accb0a9d5e.png",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/orbit-atlas-original.png",
+      "prompt": "Use case: stylized-concept. Asset type: production pixel-art VFX sprite atlas for a low-resolution 2D martial-arts game. One square transparent PNG, EXACTLY 4 columns by 4 rows, sixteen equal square cells edge to edge with NO gutters, grid lines or labels. Prefer1024x1024total, eachcell64x64logicalpixel art enlarged with crisp squarepixelclusters. Reading orderleft-to-righttop-to-bottom. Same fixed anchors in everycell. Limited5-7solid colors, intentional broken silhouettes, transparent holes, strong white orcreamcore. No smooth gradients, bloom, blurred glow, opaque backgrounds, checkerboard pixels, characters, floor scenes, text, numbers, watermark. Effect containedwithin eachowncell.\nSubject: VIOLET-WHITE AUTONOMOUS KI ORB, a small compressed purpleenergycore with a few rotating broken crescents, layeredplumvioletlavenderwhite. This is magical denseenergy, not a glassmarble, eye, planet, rune, ringdiagramor metallicobject.\nToprow0-3: held orb atx50%y50%, diameter42%cell; four stable LOOP drawings with sameoverallsize. Irregularwhitecenter shaped differently ineach, violetbroken rim and two tinyorbital arcfragments turn independently. Roughly spherical silhouette, transparent holesbetweenrim arcs. No tail.\nSecondrow4-7: RIGHT-facing flying orb. Centerat65%50%, frontat85%cellx. Compact brightwhitecorewithvioletedges and short asymmetricalplumtailtoleftx15%. Frame4stretchedlaunch,5twistedcore,6two-lobedcore,7compressedcore. Nose positionfixedacrossfourframes.\nThirdrow8-11: centeredimpactat50%50%: smallwhitecorepressure, angularlavenderwhiteburst, brokenvioletringwithwhitechunks, ringtearsintotwoarcs. Do not addhugeblackstroke.\nBottomrow12-15: clockwise curlingpurplewhite fragments, fewerbrokenshreds, sparsevioletsparks, finalcell3tinylavenderpixels.\nKeepreservedpaletteandclearwhitecore, richcrispclusterchangeswithoutsoftglow.",
+      "sha256": "ec0bab62868f215ebdbd2dbd220768005b6c044306ba3f86652b93a02bd754e1",
+      "originalWidth": 1254,
+      "originalHeight": 1254,
+      "frameCount": 16,
+      "alphaRange": [0, 255]
+    }
+  ],
+  "references": [
+    {
+      "title": "DFO Neo Nen Master",
+      "url": "https://www.youtube.com/watch?v=wRyho4PpV6s&t=18",
+      "checked": "18.4-20.7초 공식 영상의 연속 프레임. 원작 프로젝트 실행 없음.",
+      "observed": "금빛 나선이 호랑이 형상으로 결집한 뒤 백색 파열과 바닥 충격환."
+    },
+    {
+      "title": "kiddolink Energy Beam",
+      "url": "https://kiddolink.itch.io/vfx-energy-beam-pixel-art-effects",
+      "checked": "공개 GIF 2개 연속 프레임. 유료 원본팩 및 제작도구 미확인.",
+      "observed": "빔 외피의 빈 공간·조각·코어가 서로 다르게 변형."
+    },
+    {
+      "title": "pimen Battle VFX Projectile",
+      "url": "https://pimen.itch.io/battle-vfx-projectile",
+      "checked": "공개 GIF 연속 프레임, 원본팩 미확인.",
+      "observed": "작은 탄의 밝은 핵과 깨진 테두리 변화."
+    },
+    {
+      "title": "CreativeKind Magic Spell Effects 2",
+      "url": "https://creativekind.itch.io/magic-spell-effects-2",
+      "checked": "공개 레이저·지면 기둥·혜성 GIF 연속 프레임. 원본팩 미확인.",
+      "observed": "응축과 팽창, 중심 밝기·외곽 파편의 분리."
+    },
+    {
+      "title": "WsT Anime Ki Auras",
+      "url": "https://westudesign.itch.io/anime-ki-auras-energy-vfx-tintable-pixel-art-auras-ki-blasts-beams-godot",
+      "checked": "공개 충전·수명 GIF 연속 프레임. 원본팩·effects.json·프로젝트 미확인.",
+      "observed": "종료 시 손에서 끊긴 빔 후단이 표적까지 전진."
+    }
+  ],
+  "status": "integrated-awaiting-user-art-review",
+  "previews": [
+    {
+      "id": "ki-sprites-ataho-ki-all",
+      "label": "ataho-ki-all",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/previews/ataho-ki-all.gif",
+      "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+      "speed": 1,
+      "width": 720,
+      "height": 438,
+      "frames": 350,
+      "durationMs": 14000,
+      "byteSize": 2041576,
+      "sha256": "ca39c0bd30800e49c89dada5e9f9b496ad482de010d5af73caf82f4e5d45ca11"
+    },
+    {
+      "id": "ki-sprites-ki-beam",
+      "label": "ki-beam",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/previews/ki-beam.gif",
+      "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+      "speed": 1,
+      "width": 720,
+      "height": 438,
+      "frames": 60,
+      "durationMs": 2400,
+      "byteSize": 505464,
+      "sha256": "8b431199c3ac3ddab4a308e03de3b65037e5f233c32c3add03480c4793ae7dd0"
+    },
+    {
+      "id": "ki-sprites-ki-crescent",
+      "label": "ki-crescent",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/previews/ki-crescent.gif",
+      "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+      "speed": 1,
+      "width": 720,
+      "height": 438,
+      "frames": 36,
+      "durationMs": 1440,
+      "byteSize": 197960,
+      "sha256": "af1319f1fd97575af2093ce2602368f161b61013a7ac7aab0075d01200a420e3"
+    },
+    {
+      "id": "ki-sprites-ki-eruption",
+      "label": "ki-eruption",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/previews/ki-eruption.gif",
+      "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+      "speed": 1,
+      "width": 720,
+      "height": 438,
+      "frames": 53,
+      "durationMs": 2120,
+      "byteSize": 292027,
+      "sha256": "fcbe23fde82bf5f85612cdec0d72c696af0ce0b0031ccd21fb66a68479e944dc"
+    },
+    {
+      "id": "ki-sprites-ki-orb",
+      "label": "ki-orb",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/previews/ki-orb.gif",
+      "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+      "speed": 1,
+      "width": 720,
+      "height": 438,
+      "frames": 36,
+      "durationMs": 1440,
+      "byteSize": 168981,
+      "sha256": "f5e7428d66706a1f2ef606160dbe55aa1c202fd1f48c5a5fed65025f695305e3"
+    },
+    {
+      "id": "ki-sprites-ki-orbit",
+      "label": "ki-orbit",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/previews/ki-orbit.gif",
+      "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+      "speed": 1,
+      "width": 720,
+      "height": 438,
+      "frames": 68,
+      "durationMs": 2720,
+      "byteSize": 423626,
+      "sha256": "67f0292435025b427605c47b5de5ad71a117f095d811d4c7973f77a1a75208a4"
+    },
+    {
+      "id": "ki-sprites-ki-tiger-wave",
+      "label": "ki-tiger-wave",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/previews/ki-tiger-wave.gif",
+      "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+      "speed": 1,
+      "width": 720,
+      "height": 438,
+      "frames": 49,
+      "durationMs": 1960,
+      "byteSize": 319780,
+      "sha256": "21ff0042106c62050f28e7f2ea7ac5e6c7667af17e76bb225101d8e24c9ac1f0"
+    },
+    {
+      "id": "ki-sprites-ki-tiger",
+      "label": "ki-tiger",
+      "localPath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/previews/ki-tiger.gif",
+      "method": "standalone-current-project-ComboPlayer-and-drawCombo",
+      "speed": 1,
+      "width": 720,
+      "height": 438,
+      "frames": 48,
+      "durationMs": 1920,
+      "byteSize": 361079,
+      "sha256": "8a4f48921b3cfed8833aad0c8948ee1ae1e4cd1cdeae55838e4fc3798a556abd"
+    }
+  ],
+  "verification": {
+    "check": "passed",
+    "build": "passed",
+    "testsAddedOrRun": false,
+    "browser": "Chromium PC 1600x1000",
+    "liveMotionSelection": [
+      "ki-tiger",
+      "ki-tiger-wave",
+      "ki-orb",
+      "ki-beam",
+      "ki-crescent",
+      "ki-eruption",
+      "ki-orbit"
+    ],
+    "observed": [
+      "6종과 호격권2변형 실제 UI 선택·시간 진행·명중 카운터 확인",
+      "1배·2배 속도와 반복 진행 확인",
+      "정지 상태에서2배/3배 표시 전환 시 시점 유지",
+      "이동 포함을 껐다 켜면 동일 시점과 정지 상태·그림을 복원",
+      "타격 효과 끔에서도 빔 실체와 권기탄 파열 유지",
+      "브라우저 콘솔 오류·경고0",
+      "호랑이 선두62/64 앵커·지열파 밑동62/64 앵커로 실제 그림 경계 보정",
+      "빔 타일3px중첩으로 코어의 세로 빈줄 제거",
+      "종료 후 몸통 마스크를 줄여 뾰족한 후단이 표적 방향으로 전진"
+    ],
+    "gif": "현재 프로젝트 렌더러 별도 출력, 720x438, 25fps, 1배속. 브라우저 녹화 영상은 아님.",
+    "quality": "새 효과 그림의 최종 채택은 사용자 검토."
+  }
+}

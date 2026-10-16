@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-16",
+  "scope": "아타호 v2 동작 조합실 공격 14종·15방향 데이터의 선택형 수묵 효과",
+  "generator": "built-in image_gen",
+  "sourceReference": {
+    "author": "Eric VFX Studio",
+    "pageUrl": "https://ericwang86.artstation.com/projects/BXBbP6",
+    "videoUrl": "https://youtu.be/vIogr2onCBg",
+    "observed": "찢긴 먹색 외곽, 백색·청백색 안쪽 강조, 반원 베기, 하강 궤적, 먹 튀김과 바닥 흔적",
+    "verificationBoundary": "원작자 영상의 시간별 storyboard 프레임 확인. 원본 Unity 프로젝트·셰이더 코드 실행 및 연속 영상 감상은 하지 않음.",
+    "assetReuse": "원작자 에셋은 다운로드하거나 복제하지 않음. 표현을 참고하여 새로 생성한 2D 효과"
+  },
+  "prompts": {
+    "arc": "Use case: stylized-concept. Asset type: production game VFX flipbook spritesheet. Create original ink brush martial arts combat effects. Transparent background with actual alpha. Square canvas divided mathematically into 4 columns and 4 rows of equal cells, 16 frames in reading order. No grid lines, no text, no characters, no weapon, no paper, no checkerboard. Each frame must remain fully within its cell with 12 percent transparent margin, exactly identical pivot and framing across all 16 cells. Sharp graphic dry-brush ink, ragged torn edges, internal negative-space slits, wispy bristle tips, tiny separated ink shards. Dense near-black ink silhouette plus a crisp thin icy white/very pale blue accent along the leading edge. Minimal glow. Readable at 64 or 96 pixels per cell, intentional broad shapes, no dense tiny fuzzy noise. Cohesive high quality stylized realtime combat VFX. Animation must visibly EVOLVE: initial short stroke -> fast extended powerful full form -> tearing into separated pieces -> final sparse fragments. Not 16 identical stamp poses. Preserve strong forward movement and weight. Specific subject: one right-bulging C-shaped crescent brush slash. Its empty center stays at the center of every cell. The crescent occupies the right half and top/bottom quadrants around that center; two tapered tips on the left, bold bowed outer edge on the right. A 200-degree OPEN arc, never a closed ring. Frame 1 tiny mark at lower-left tip; frames 2-5 progressively sweeping around the right side upward, frame 6-8 full curved blade with pointed ends and dry-brush filaments, frames 9-12 progressively tear the C shape into long separated curved shards, frames 13-16 shrinking scattered ink fragments following the same curve. Thin white leading edge is secondary to the black body. Side view, flat 2D sprites. Each frame same center and scale.",
+    "stroke": "Use case: stylized-concept. Asset type: production game VFX flipbook spritesheet. Create original ink brush martial arts combat effects. Transparent background with actual alpha. Square canvas divided mathematically into 4 columns and 4 rows of equal cells, 16 frames in reading order. No grid lines, no text, no characters, no weapon, no paper, no checkerboard. Each frame must remain fully within its cell with 12 percent transparent margin, exactly identical pivot and framing across all 16 cells. Sharp graphic dry-brush ink, ragged torn edges, internal negative-space slits, wispy bristle tips, tiny separated ink shards. Dense near-black ink silhouette plus a crisp thin icy white/very pale blue accent along the leading edge. Minimal glow. Readable at 64 or 96 pixels per cell, intentional broad shapes, no dense tiny fuzzy noise. Cohesive high quality stylized realtime combat VFX. Animation must visibly EVOLVE: initial short stroke -> fast extended powerful full form -> tearing into separated pieces -> final sparse fragments. Not 16 identical stamp poses. Preserve strong forward movement and weight. Specific subject: one HORIZONTAL straight punching brush streak moving RIGHT. Fixed emission point at 20 percent of the cell width and 50 percent cell height. Maximum front at 88 percent cell width. Narrow white spine with chunky ripped near-black brush body tapering back to the left and a sharp front to right. Frames 1-3 short growing black brush mark at the emission pivot, frames 4-7 forcefully extending to right with 3 split ragged tails, frames 8-10 front breaks away and body gets internal holes, frames 11-14 breaks into forward-traveling thin shards, frames 15-16 sparse remaining ink shards. Remain in the middle 40 percent of the cell vertically throughout. NOT crescents, NOT curved, no circular explosion, no star. Always left to right.",
+    "impact": "Use case: stylized-concept. Asset type: production game VFX flipbook spritesheet. Create original ink brush martial arts combat effects. Transparent background with actual alpha. Square canvas divided mathematically into 4 columns and 4 rows of equal cells, 16 frames in reading order. No grid lines, no text, no characters, no weapon, no paper, no checkerboard. Each frame must remain fully within its cell with 12 percent transparent margin, exactly identical pivot and framing across all 16 cells. Sharp graphic dry-brush ink, ragged torn edges, internal negative-space slits, wispy bristle tips, tiny separated ink shards. Dense near-black ink silhouette plus a crisp thin icy white/very pale blue accent along the leading edge. Minimal glow. Readable at 64 or 96 pixels per cell, intentional broad shapes, no dense tiny fuzzy noise. Cohesive high quality stylized realtime combat VFX. Animation must visibly EVOLVE: initial short stroke -> fast extended powerful full form -> tearing into separated pieces -> final sparse fragments. Not 16 identical stamp poses. Preserve strong forward movement and weight. Specific subject: one ASYMMETRIC RIGHTWARD ink impact burst. Fixed collision pivot at 35 percent cell width and 50 percent cell height. Burst fans RIGHT in a 100-degree cone. Compact white contact notch at pivot and ragged black brush splashes fan outward right. Frames 1-3 compact compressed black/white contact; frames 4-6 powerful directional ink splash with 3 broad torn tapered lobes and separated drops; frames 7-10 center opens up while lobes break into separated splinters; frames 11-14 widely separated small black droplets and shards continue rightward; frames 15-16 nearly gone few small shards. Keep left half mostly empty. No circular ring, no symmetrical star, no full-screen flash."
+  },
+  "assets": [
+    {
+      "id": "ink-vfx-arc",
+      "localPath": "public/assets/maplestory/ataho-v2-ink/20261016/sprites/arc-atlas-original.png",
+      "sha256": "a913469b510631968539867b60f47846aa06a33716b0d222cf7e5651633a9394",
+      "width": 1254,
+      "height": 1254,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "runtimeCellSize": 96,
+      "sourceName": "Codex built-in ImageGen",
+      "generationRecordPath": "resources/ataho-v2-ink-effects.json"
+    },
+    {
+      "id": "ink-vfx-stroke",
+      "localPath": "public/assets/maplestory/ataho-v2-ink/20261016/sprites/stroke-atlas-original.png",
+      "sha256": "569feceb34f2bfa7e9a301805fa640316f8baca976ec2e6aff6e590e64b7370e",
+      "width": 1254,
+      "height": 1254,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "runtimeCellSize": 96,
+      "sourceName": "Codex built-in ImageGen",
+      "generationRecordPath": "resources/ataho-v2-ink-effects.json"
+    },
+    {
+      "id": "ink-vfx-impact",
+      "localPath": "public/assets/maplestory/ataho-v2-ink/20261016/sprites/impact-atlas-original.png",
+      "sha256": "86f4970e031be1765612a70659c38985a15c445777f86f1ea7c31ff05f6ff9bf",
+      "width": 1254,
+      "height": 1254,
+      "columns": 4,
+      "rows": 4,
+      "frameCount": 16,
+      "runtimeCellSize": 96,
+      "sourceName": "Codex built-in ImageGen",
+      "generationRecordPath": "resources/ataho-v2-ink-effects.json"
+    }
+  ],
+  "rendering": {
+    "columns": 4,
+    "rows": 4,
+    "framesPerSheet": 16,
+    "logicalCellSize": 96,
+    "originals": "원본 PNG 픽셀과 알파 보존",
+    "sampling": "실제 자세 구간에서 시작·접촉·회수 시간을 읽어 절대 경과시간으로 같은 모양을 계산",
+    "alignment": "시트 원본의 고정 셀을 유지하며 접촉점과 직선 중심선은 프레임별 앵커 메타데이터로 정렬"
+  },
+  "verification": {
+    "status": "verified",
+    "checks": ["npm run check", "npm run build", "git diff --check"],
+    "pcPlayback": {
+      "motions": 14,
+      "directionData": 15,
+      "allAttacks": "1배 재생에서 14종 각각 모든 준비·접촉·회수 자세의 진행과 수묵 발생을 확인",
+      "northEastElbow": "남동→북동 전환에서 0.29초 정지 시점 유지, 북동 먹 튀김과 1배 회수 종료 확인",
+      "appearance": "훅·망치주먹·어퍼컷·하이킥의 발생·본획·찢김·소멸 프레임을 비교하고 몸에 가리던 곡선과 망치주먹 하강 방향을 조정",
+      "scale": "2/3배 표시에서 같은 훅 접촉 0.26초의 효과 정렬 확인",
+      "highDpi": {
+        "devicePixelRatio": 2,
+        "cssCanvasWidth": 914,
+        "backingCanvasWidth": 1828
+      }
+    },
+    "interaction": [
+      "돌진 원투 0.53초 정지에서 수묵 on/off가 시점·정지를 유지",
+      "기존 주먹선 선택은 수묵 on에서 비활성화하고 off에서 복원",
+      "이동 포함 off는 효과를 숨기고 on에서 선호 복원",
+      "타격 효과 off는 impact 0개와 수묵 궤적 1개를 표시",
+      "샌드백 원투의 connected=false인 두 번째 타격에는 충돌 효과가 없고 궤적만 유지",
+      "팔꿈치 전용 그림 off는 같은 정지 시점에서 수묵 2→0, 충격 1→0으로 바꾸고 샌드백 비활성화",
+      "어퍼컷의 면 궤적 선호도 수묵 on/off에서 복원되며 0.39초 정지 유지",
+      "호격권·순옥살·보류 앞 밀어차기·뒤공중돌기·마시기를 각각 선택하면 수묵 선택 숨김, inkEnabled=false, inkCount=0",
+      "미지원 동작에서 공격으로 돌아오면 수묵 선호 복원"
+    ],
+    "console": "PC 브라우저 콘솔 경고·오류 없음",
+    "independentReview": "원본 모션 불변·절대 시간 샘플링·미지원 gate·소유권·중복 금색 억제의 독립 코드 검토 완료",
+    "boundary": "프로젝트 PC 실행과 렌더 확인이며 최종 표현 채택은 사용자 검토를 따른다. 별도 테스트 코드와 모바일 검증은 추가하거나 실행하지 않음.",
+    "independentPcReview": "별도 Playwright 탭에서 위 입력·명중·방향·숨김 조건을 실제 조작하고 새로고침 후 기본 수묵 on 및 콘솔 오류·경고 0 확인"
+  }
+}

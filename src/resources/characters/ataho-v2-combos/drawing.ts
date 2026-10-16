@@ -7,6 +7,8 @@ import { drawPoseWithParts } from './parts-drawing.js';
 import { sampleSandbag } from './sandbag.js';
 import { drawSandbag } from './sandbag-drawing.js';
 import { drawImpacts, sampleImpacts } from './impact-effects.js';
+import { hasInkEffects, sampleInkEffects } from './ink-effects.js';
+import { drawInkEffects } from './ink-drawing.js';
 import { sampleCameraRecoil } from './camera-effects.js';
 import {
   sampleCameraStaging,
@@ -45,6 +47,7 @@ export { stageWidth, stageHeight } from './pose-drawing.js';
 
 export type DrawingOptions = PoseDrawingOptions & {
   readonly showContacts: boolean;
+  readonly showInkEffects?: boolean;
   readonly showSandbag?: boolean;
   readonly directionalImpacts?: boolean;
   readonly showGroundEffects?: boolean;
@@ -58,6 +61,7 @@ export type DrawingOptions = PoseDrawingOptions & {
 
 export type ComboDrawingState = {
   readonly impactCount: number;
+  readonly inkCount: number;
   readonly groundCount: number;
   readonly cameraX: number;
   readonly cameraY: number;
@@ -118,10 +122,16 @@ export function drawCombo(
   const kiOptions = snapshot.motion.ki
     ? { ...options, contacts: collectSandbagContacts(snapshot.motion, options) }
     : options;
+  const inkEnabled =
+    options.showMovement &&
+    !!options.showInkEffects &&
+    hasInkEffects(snapshot.motion);
   const impacts =
-    options.showMovement && (options.showContacts || options.showCameraRecoil)
+    options.showMovement &&
+    ((!inkEnabled && options.showContacts) || options.showCameraRecoil)
       ? sampleImpacts(snapshot, options)
       : [];
+  const ink = inkEnabled ? sampleInkEffects(snapshot, frames, options) : [];
   const camera =
     options.showMovement && options.showSandbag && options.showCameraRecoil
       ? sampleCameraRecoil(snapshot, impacts, options)
@@ -152,7 +162,12 @@ export function drawCombo(
       ? sampleSpeedLines(snapshot, options)
       : [];
   const state = {
-    impactCount: options.showContacts ? impacts.length : 0,
+    impactCount: inkEnabled
+      ? ink.filter((sample) => sample.phase === 'impact').length
+      : options.showContacts
+        ? impacts.length
+        : 0,
+    inkCount: ink.length,
     groundCount: ground.length,
     cameraX: view.translateX,
     cameraY: view.translateY,
@@ -262,14 +277,23 @@ export function drawCombo(
       ...options,
       palette: emphasis.palette,
     });
-  drawMotionEffects(ctx, snapshot, frames, { ...options, layer: 'back' });
+  const motionEffectOptions = { ...options, suppressTrails: inkEnabled };
+  drawMotionEffects(ctx, snapshot, frames, {
+    ...motionEffectOptions,
+    layer: 'back',
+  });
+  drawInkEffects(ctx, ink, frames, { layer: 'back' });
   ctx.save();
   ctx.globalAlpha *= finisher?.actorOpacity ?? 1;
   if (replacement) drawPose(ctx, pose, source, options);
   else drawPoseWithParts(ctx, snapshot, source, options);
   ctx.restore();
-  drawMotionEffects(ctx, snapshot, frames, { ...options, layer: 'front' });
-  if (options.showMovement && options.showContacts)
+  drawMotionEffects(ctx, snapshot, frames, {
+    ...motionEffectOptions,
+    layer: 'front',
+  });
+  drawInkEffects(ctx, ink, frames, { layer: 'front' });
+  if (options.showMovement && options.showContacts && !inkEnabled)
     drawImpacts(
       ctx,
       impacts.filter((impact) => !impact.contact.actorId.startsWith('ki:')),
