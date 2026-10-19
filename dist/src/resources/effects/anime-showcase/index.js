@@ -1,7 +1,8 @@
 import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
-import { samples, drawSample } from './catalog.js';
+import { samples, drawSample, disposeSampleSurfaces } from './catalog.js';
 import { exportGif } from './export.js';
 import { ShowcasePlayer } from './player.js';
+import { loadBattleAssets } from './battle-assets.js';
 import { categories, height, width, } from './types.js';
 function element(id, kind) {
     const value = document.getElementById(id);
@@ -11,6 +12,7 @@ function element(id, kind) {
 }
 /** 선택·입력·Canvas·실행 루프·내보내기의 수명을 소유한다. */
 class ShowcaseScreen {
+    assets;
     events = new AbortController();
     player = new ShowcasePlayer();
     canvas = element('stage', HTMLCanvasElement);
@@ -38,7 +40,8 @@ class ShowcaseScreen {
     lastTime = 0;
     disposed = false;
     exporting = null;
-    constructor() {
+    constructor(assets) {
+        this.assets = assets;
         if (!this.context || !this.baseContext)
             throw new Error('Canvas를 준비할 수 없습니다.');
         if (samples.length !== 90 || new Set(samples.map((s) => s.id)).size !== 90)
@@ -250,6 +253,7 @@ class ShowcaseScreen {
                 continue;
             ctx.setTransform(canvas.width / width, 0, 0, canvas.height / height, 0, 0);
             drawSample(ctx, this.current, {
+                assets: this.assets,
                 timeMs: snapshot.timeMs,
                 enhanced,
                 reducedMotion: this.reduced.checked,
@@ -303,6 +307,7 @@ class ShowcaseScreen {
         this.cancel.hidden = false;
         try {
             const blob = await exportGif({
+                assets: this.assets,
                 sample: this.current,
                 reducedMotion: this.reduced.checked,
                 signal: controller.signal,
@@ -352,7 +357,44 @@ class ShowcaseScreen {
         for (const url of this.urls)
             URL.revokeObjectURL(url);
         this.urls.clear();
+        if (this.context)
+            disposeSampleSurfaces(this.context);
+        if (this.baseContext)
+            disposeSampleSurfaces(this.baseContext);
     }
 }
-const screen = new ShowcaseScreen();
-registerEmbeddedScene(() => screen.dispose());
+async function start() {
+    const loading = document.getElementById('loading');
+    const lifecycle = new AbortController();
+    let disposed = false;
+    let screen;
+    const dispose = () => {
+        disposed = true;
+        screen?.dispose();
+        lifecycle.abort();
+    };
+    registerEmbeddedScene(dispose);
+    window.addEventListener('pagehide', dispose, {
+        once: true,
+        signal: lifecycle.signal,
+    });
+    try {
+        const assets = await loadBattleAssets();
+        if (disposed)
+            return;
+        screen = new ShowcaseScreen(assets);
+        if (loading)
+            loading.hidden = true;
+    }
+    catch (error) {
+        if (disposed)
+            return;
+        lifecycle.abort();
+        if (loading)
+            loading.hidden = true;
+        const box = element('error', HTMLElement);
+        box.hidden = false;
+        box.textContent = error instanceof Error ? error.message : String(error);
+    }
+}
+void start();

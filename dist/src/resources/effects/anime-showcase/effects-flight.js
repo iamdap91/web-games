@@ -1,116 +1,244 @@
-import { clamp, ellipse, label, line, mix, noise, palette, polygon, ring, smooth, } from './drawing.js';
-function targetAt(timeMs) {
+import { clamp, ellipse, line, mix, noise, palette, polygon, ring, smooth, stage, } from './drawing.js';
+import { atahoPosition, battleLayout, drawAtaho, drawBear } from './battle.js';
+/** 새 회피 자세를 합성하지 않고 승인된 몸의 발 위치를 두 번 옆·깊이로 옮긴다. */
+function bearEvasion(timeMs, reducedMotion) {
+    const stops = [
+        { timeMs: 0, x: 0, depth: 0 },
+        { timeMs: 510, x: 0, depth: 0 },
+        { timeMs: 940, x: 140, depth: -86 },
+        { timeMs: 1290, x: 70, depth: 82 },
+        { timeMs: 1770, x: 0, depth: 0 },
+    ];
+    const amount = reducedMotion ? 0.42 : 1;
+    for (let index = 1; index < stops.length; index++) {
+        const prior = stops[index - 1];
+        const next = stops[index];
+        if (timeMs > next.timeMs)
+            continue;
+        const p = smooth((timeMs - prior.timeMs) / (next.timeMs - prior.timeMs));
+        return {
+            x: battleLayout.target.x + mix(prior.x, next.x, p) * amount,
+            height: 0,
+            depth: mix(prior.depth, next.depth, p) * amount,
+        };
+    }
+    return { x: battleLayout.target.x, height: 0, depth: 0 };
+}
+function projectFlight(point, frame) {
+    const camera = frame.reducedMotion
+        ? 0
+        : smooth((frame.timeMs - 350) / 260) *
+            (1 - smooth((frame.timeMs - 1500) / 300));
+    const lens = 700 - camera * 160;
+    const depth = point.depth * (frame.reducedMotion ? 0.55 : 1);
+    const scale = frame.enhanced ? lens / (lens - depth) : 1;
     return {
-        x: 714 + Math.sin(timeMs / 370) * 53,
-        y: 226 + Math.cos(timeMs / 510) * 61,
+        x: 480 + (point.x - 480) * scale,
+        y: 440 + depth * 0.32 - point.height * scale,
+        scale,
     };
 }
-function craft(ctx, point) {
-    polygon(ctx, [
-        { x: point.x - 30, y: point.y + 12 },
-        { x: point.x + 29, y: point.y },
-        { x: point.x - 19, y: point.y - 15 },
-        { x: point.x - 8, y: point.y },
-    ], '#b5c8ce');
-    line(ctx, [
-        { x: point.x - 12, y: point.y },
-        { x: point.x + 15, y: point.y },
-    ], '#2c465a', 3);
+function shotLaunch(index, kind) {
+    return kind === 'muraki'
+        ? [400, 520, 660, 920, 1030, 1140, 1250][index]
+        : 380 + index * 95;
 }
-function missile(ctx, point, prior, color, flame) {
+/** 절대 시각부터 고정 간격으로 적분해 스크럽과 GIF의 추격 경로를 같게 한다. */
+function samplePursuit(index, kind, frame) {
+    const launch = shotLaunch(index, kind);
+    const now = Math.min(frame.timeMs, launch + 1160);
+    if (now <= launch || frame.timeMs >= 1770)
+        return [];
+    const actor = atahoPosition(frame, { timeMs: launch });
+    let position = {
+        x: actor.x + 65,
+        height: 165,
+        depth: (index % 2 ? 1 : -1) * 12,
+    };
+    let velocity = {
+        x: 270,
+        height: 45 - (index % 3) * 38,
+        depth: (index % 2 ? 1 : -1) * 145,
+    };
+    const samples = [{ ...position, timeMs: launch }];
+    const initial = bearEvasion(launch, frame.reducedMotion);
+    const guideUntil = Math.min(launch + 610 + index * 34, 1660);
+    for (let timeMs = launch; timeMs < now; timeMs += 20) {
+        const nextTime = Math.min(timeMs + 20, now);
+        const dt = (nextTime - timeMs) / 1000;
+        const elapsed = timeMs - launch;
+        const personality = index % 3;
+        const lookAhead = personality === 0 ? 0 : personality === 1 ? 130 : -100;
+        const target = frame.enhanced
+            ? bearEvasion(timeMs + lookAhead, frame.reducedMotion)
+            : initial;
+        const lane = (index % 2 ? 1 : -1) * (48 + (index % 3) * 16);
+        const aim = {
+            x: target.x - 66,
+            height: 194 + Math.sin(index * 1.8) * 25,
+            depth: target.depth +
+                (frame.enhanced ? lane : 0) +
+                (frame.enhanced && personality === 2
+                    ? Math.sin(elapsed / 210) * 85 * (1 - clamp(elapsed / 900))
+                    : 0),
+        };
+        const dx = aim.x - position.x;
+        const dy = aim.height - position.height;
+        const dz = aim.depth - position.depth;
+        const distance = Math.max(1, Math.hypot(dx, dy, dz));
+        const delayed = frame.enhanced && kind === 'muraki' && index >= 2;
+        const speed = delayed
+            ? elapsed < 140
+                ? 160
+                : elapsed < 285
+                    ? 34
+                    : 540 + smooth((elapsed - 285) / 210) * 360
+            : 390 + smooth(elapsed / 250) * 360;
+        if (timeMs < guideUntil) {
+            // 회피 전 위치를 놓친 탄은 더 꺾지 않고 통과하므로 전부 한 점에 모이지 않는다.
+            const steer = frame.enhanced ? (personality === 1 ? 0.13 : 0.09) : 0.17;
+            velocity = {
+                x: mix(velocity.x, (dx / distance) * speed, steer),
+                height: mix(velocity.height, (dy / distance) * speed, steer),
+                depth: mix(velocity.depth, (dz / distance) * speed, steer),
+            };
+        }
+        if (delayed && elapsed >= 140 && elapsed < 285) {
+            velocity = {
+                x: velocity.x * 0.78,
+                height: velocity.height * 0.78,
+                depth: velocity.depth * 0.78,
+            };
+        }
+        position = {
+            x: position.x + velocity.x * dt,
+            height: position.height + velocity.height * dt,
+            depth: Math.max(-190, Math.min(190, position.depth + velocity.depth * dt)),
+        };
+        samples.push({ ...position, timeMs: nextTime });
+    }
+    return samples;
+}
+function drawEnergyHead(ctx, point, prior, thrust) {
     ctx.save();
     ctx.translate(point.x, point.y);
     ctx.rotate(Math.atan2(point.y - prior.y, point.x - prior.x));
+    ctx.scale(point.scale, point.scale);
+    ellipse(ctx, 0, 0, 7, 4, palette.paper);
     polygon(ctx, [
-        { x: 10, y: 0 },
-        { x: -7, y: -5 },
-        { x: -7, y: 5 },
-    ], color);
-    if (flame > 0)
-        polygon(ctx, [
-            { x: -7, y: -3 },
-            { x: -7 - flame, y: 0 },
-            { x: -7, y: 3 },
-        ], '#eec76f');
+        { x: -5, y: -3 },
+        { x: -5 - thrust, y: 0 },
+        { x: -5, y: 3 },
+    ], '#edbb62');
     ctx.restore();
 }
-function circusPoint(p, index, enhanced) {
-    const arrival = 1970 + index * 93;
-    const destination = targetAt(arrival);
-    const start = { x: 179 + (index % 3) * 25, y: 385 - (index % 4) * 37 };
-    if (!enhanced)
-        return {
-            x: mix(start.x, destination.x, p),
-            y: mix(start.y, destination.y, p),
-        };
-    const arc = Math.sin(p * Math.PI);
-    return {
-        x: mix(start.x, destination.x, p) +
-            Math.sin(p * Math.PI * 2 + index * 0.85) * arc * 109,
-        y: mix(start.y, destination.y, p) +
-            Math.sin(p * Math.PI * 2.2 + index * 1.3) * arc * (92 + (index % 3) * 35),
-    };
-}
-function drawItano(ctx, frame) {
-    const reduced = frame.reducedMotion;
-    const t = reduced ? 1850 : frame.timeMs;
-    craft(ctx, targetAt(t));
-    for (let index = 0; index < 9; index++) {
-        const launch = 800 + index * 93;
-        const p = (t - launch) / 1170;
-        if (p < 0 || p > 1.15)
+function circusLayers(kind, frame) {
+    const bear = bearEvasion(frame.timeMs, frame.reducedMotion);
+    const layers = [
+        { kind: 'bear', depth: bear.depth },
+        { kind: 'ataho', depth: 0.01 },
+    ];
+    const count = kind === 'itano' ? 9 : 7;
+    const fade = 1 - smooth((frame.timeMs - 1630) / 140);
+    for (let index = 0; index < count; index++) {
+        const samples = samplePursuit(index, kind, frame);
+        const head = samples[samples.length - 1];
+        if (!head)
             continue;
-        const position = circusPoint(clamp(p), index, frame.enhanced);
-        if (p <= 1) {
-            const points = Array.from({ length: 29 }, (_, step) => circusPoint(clamp(p - 0.32 + (step / 28) * 0.32), index, frame.enhanced));
-            line(ctx, points, frame.enhanced ? '#e6e3c199' : '#8da6bb66', frame.enhanced ? 3 : 2);
-            missile(ctx, position, circusPoint(clamp(p - 0.006), index, frame.enhanced), palette.paper, 11);
+        const trailMs = kind === 'itano' ? 440 : index < 2 ? 330 : 230;
+        for (let step = 1; step < samples.length; step++) {
+            const from = samples[step - 1];
+            const to = samples[step];
+            const age = frame.timeMs - to.timeMs;
+            if (age < 0 || age > trailMs)
+                continue;
+            layers.push({
+                kind: 'trail',
+                depth: (from.depth + to.depth) / 2,
+                from,
+                to,
+                alpha: (1 - age / trailMs) * fade,
+            });
         }
-        else {
-            const life = (p - 1) / 0.15;
-            ctx.save();
-            ctx.globalAlpha *= 1 - life;
-            ring(ctx, position.x, position.y, 4 + life * 28, 4 + life * 28, palette.gold, 2);
-            ctx.restore();
-        }
+        if (frame.timeMs - head.timeMs > 40)
+            continue;
+        const elapsed = frame.timeMs - shotLaunch(index, kind);
+        layers.push({
+            kind: 'head',
+            depth: head.depth,
+            point: head,
+            prior: samples[Math.max(0, samples.length - 2)],
+            thrust: frame.enhanced && kind === 'muraki' && index >= 2 && elapsed > 285
+                ? 31
+                : 12,
+            alpha: fade,
+        });
     }
+    return layers.sort((a, b) => a.depth - b.depth);
 }
-function murakiPoint(p, index, enhanced) {
-    const movement = !enhanced
-        ? p
-        : p < 0.43
-            ? p * 0.28
-            : 0.12 + (1 - (1 - clamp((p - 0.43) / 0.57)) ** 1.6) * 0.88;
-    const spread = Math.sin(movement * Math.PI);
-    return {
-        x: 232 + movement * 555,
-        y: 335 -
-            movement * 94 +
-            (index - 3) * 24 * (1 - movement) +
-            (enhanced
-                ? Math.sin(movement * Math.PI * 1.7) * (index % 2 ? 113 : -113) * spread
-                : 0),
-    };
+function contactRing(ctx, frame) {
+    const age = frame.timeMs - battleLayout.contactMs;
+    if (age < 0 || age >= 230)
+        return;
+    ctx.save();
+    ctx.globalAlpha *= (1 - age / 230) * (frame.reducedMotion ? 0.4 : 0.7);
+    ring(ctx, battleLayout.impact.x, battleLayout.impact.y, 6 + age * 0.12, 6 + age * 0.12, palette.gold, 2);
+    ctx.restore();
 }
-function drawMuraki(ctx, frame) {
-    const t = frame.reducedMotion ? 1850 : frame.timeMs;
-    craft(ctx, { x: 787, y: 241 });
-    for (let index = 0; index < 7; index++) {
-        const age = t - 790 - index * 61;
-        const p = age / 1450;
-        if (p < 0 || p > 1)
-            continue;
-        const head = murakiPoint(p, index, frame.enhanced);
-        const trail = Array.from({ length: 25 }, (_, j) => murakiPoint(clamp(p - 0.21 + (j / 24) * 0.21), index, frame.enhanced));
-        line(ctx, trail, '#a9bbd58c', frame.enhanced ? 4 : 2);
-        const thrust = frame.enhanced && p >= 0.43 ? 36 + Math.sin(age / 71) * 9 : 7;
-        missile(ctx, head, murakiPoint(clamp(p - 0.007), index, frame.enhanced), '#dce8e4', thrust);
-        if (frame.enhanced && p > 0.43)
-            for (let k = 0; k < 4; k++) {
-                const tail = murakiPoint(clamp(p - 0.025 - k * 0.032), index, true);
-                ellipse(ctx, tail.x, tail.y, 5 + k * 2, 2 + k, '#a9c0d65c');
+/** 탄·배우를 깊이 순으로 합성하며 접촉 직전에는 공유 어퍼컷 구도로 돌아온다. */
+export function drawCircusScene(ctx, id, frame) {
+    if (id !== 'fx-itano' && id !== 'fx-muraki')
+        return false;
+    const kind = id === 'fx-itano' ? 'itano' : 'muraki';
+    const bear = bearEvasion(frame.timeMs, frame.reducedMotion);
+    const bearFeet = projectFlight(bear, frame);
+    const actor = atahoPosition(frame);
+    const camera = frame.enhanced && !frame.reducedMotion
+        ? smooth((frame.timeMs - 350) / 260) *
+            (1 - smooth((frame.timeMs - 1500) / 300))
+        : 0;
+    const lag = bearEvasion(frame.timeMs - 130, frame.reducedMotion);
+    ctx.save();
+    try {
+        ctx.translate(480, 270);
+        ctx.scale(1 + camera * 0.16, 1 + camera * 0.16);
+        ctx.rotate((lag.depth / 90) * camera * 0.012);
+        ctx.translate(-480 - (lag.x - battleLayout.target.x) * camera * 0.28, -270 - lag.depth * camera * 0.12);
+        stage(ctx, 0);
+        ellipse(ctx, actor.x, 448, 58, 10, '#14293b32');
+        ellipse(ctx, bearFeet.x, bearFeet.y + 8, 115 * bearFeet.scale, 15 * bearFeet.scale, '#14293b32');
+        for (const layer of circusLayers(kind, frame)) {
+            if (layer.kind === 'ataho') {
+                drawAtaho(ctx, frame);
             }
+            else if (layer.kind === 'bear') {
+                drawBear(ctx, frame, {
+                    x: bearFeet.x,
+                    ground: bearFeet.y,
+                    scale: battleLayout.target.scale * bearFeet.scale,
+                });
+            }
+            else if (layer.kind === 'trail') {
+                const from = projectFlight(layer.from, frame);
+                const to = projectFlight(layer.to, frame);
+                ctx.save();
+                ctx.globalAlpha *= layer.alpha * (frame.reducedMotion ? 0.45 : 0.72);
+                line(ctx, [from, to], frame.enhanced ? '#e4e4c9' : '#a4b7c6', (frame.enhanced ? 3.1 : 1.8) * to.scale);
+                ctx.restore();
+            }
+            else {
+                ctx.save();
+                ctx.globalAlpha *= layer.alpha * (frame.reducedMotion ? 0.65 : 1);
+                drawEnergyHead(ctx, projectFlight(layer.point, frame), projectFlight(layer.prior, frame), layer.thrust);
+                ctx.restore();
+            }
+        }
+        contactRing(ctx, frame);
     }
+    finally {
+        ctx.restore();
+    }
+    return true;
 }
 function shardShape(ctx, point, radius, index, color) {
     const points = Array.from({ length: 7 }, (_, k) => {
@@ -124,7 +252,7 @@ function shardShape(ctx, point, radius, index, color) {
     polygon(ctx, points, color);
 }
 function drawIsoDebris(ctx, frame) {
-    const age = frame.timeMs - 1030;
+    const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 2100)
         return;
     const seconds = age / 1000;
@@ -144,7 +272,7 @@ function drawIsoDebris(ctx, frame) {
                 vy * seconds * motion +
                 seconds * seconds * 122 +
                 (noise(index + 12) - 0.5) * spread * seconds;
-            if (y > 432)
+            if (y > 625)
                 continue;
             if (frame.enhanced) {
                 ctx.save();
@@ -175,28 +303,9 @@ function cube(ctx, x, y, size, rotation) {
     ctx.restore();
 }
 function drawNakamura(ctx, frame) {
-    const age = frame.timeMs - 1100;
-    if (age < 0) {
-        polygon(ctx, [
-            { x: 463, y: 354 },
-            { x: 550, y: 328 },
-            { x: 643, y: 355 },
-            { x: 551, y: 385 },
-        ], '#b8bba8');
-        polygon(ctx, [
-            { x: 463, y: 354 },
-            { x: 551, y: 385 },
-            { x: 551, y: 422 },
-            { x: 463, y: 392 },
-        ], '#728b89');
-        polygon(ctx, [
-            { x: 551, y: 385 },
-            { x: 643, y: 355 },
-            { x: 643, y: 391 },
-            { x: 551, y: 422 },
-        ], '#425d6d');
+    const age = frame.timeMs - battleLayout.contactMs;
+    if (age < 0)
         return;
-    }
     if (age > 2350)
         return;
     const motion = frame.reducedMotion ? 0.5 : 1;
@@ -204,7 +313,7 @@ function drawNakamura(ctx, frame) {
         const s = age / 1000;
         const x = 551 + (noise(i) - 0.5) * s * 330 * motion;
         const y = 389 - (118 + noise(i + 17) * 125) * s * motion + s * s * 151;
-        if (y > 431)
+        if (y > 625)
             continue;
         const size = 7 + (i % 4) * 5;
         if (frame.enhanced)
@@ -219,13 +328,13 @@ function drawNakamura(ctx, frame) {
             const s = (age - 370) / 1000;
             const x = 551 + (noise(i + 54) - 0.5) * s * 440 * motion;
             const y = 394 - (80 + noise(i + 32) * 125) * s * motion + s * s * 125;
-            if (y > 429)
+            if (y > 625)
                 continue;
             cube(ctx, x, y, 2 + (i % 3) * 1.5, s * (i % 2 ? 3 : -3));
         }
 }
 function drawMori(ctx, frame) {
-    const age = frame.timeMs - 1150;
+    const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 1800)
         return;
     const s = age / 1000;
@@ -234,7 +343,7 @@ function drawMori(ctx, frame) {
     ctx.globalAlpha *= 1 - smooth((age - 1200) / 600);
     for (let i = 0; i < 19; i++) {
         const angle = -0.75 + noise(i) * 1.5;
-        const dist = (36 + s * (100 + noise(i + 8) * 160)) * motion;
+        const dist = s * (100 + noise(i + 8) * 160) * motion;
         const x = 410 + Math.cos(angle) * dist;
         const y = 310 + Math.sin(angle) * dist + s * s * 28;
         if (!frame.enhanced)
@@ -259,7 +368,7 @@ function drawMori(ctx, frame) {
     ctx.restore();
 }
 function drawAnimeR(ctx, frame) {
-    const age = frame.timeMs - 900;
+    const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 2800)
         return;
     const motion = frame.reducedMotion ? 0.55 : 1;
@@ -269,7 +378,7 @@ function drawAnimeR(ctx, frame) {
         const speed = 80 + noise(i + 8) * 160;
         const x = 548 + Math.cos(a) * speed * s * motion;
         const y = 371 + Math.sin(a) * speed * s * motion + s * s * 76;
-        if (y > 429)
+        if (y > 625)
             continue;
         const dissolveAt = 570 + (i % 5) * 165;
         const split = clamp((age - dissolveAt) / 900);
@@ -292,11 +401,7 @@ function drawAnimeR(ctx, frame) {
     }
 }
 export function drawFlightEffects(ctx, id, frame) {
-    if (id === 'fx-itano')
-        drawItano(ctx, frame);
-    else if (id === 'fx-muraki')
-        drawMuraki(ctx, frame);
-    else if (id === 'fx-iso-debris')
+    if (id === 'fx-iso-debris')
         drawIsoDebris(ctx, frame);
     else if (id === 'fx-nakamura')
         drawNakamura(ctx, frame);
@@ -306,10 +411,5 @@ export function drawFlightEffects(ctx, id, frame) {
         drawAnimeR(ctx, frame);
     else
         return false;
-    label(ctx, frame.reducedMotion && (id === 'fx-itano' || id === 'fx-muraki')
-        ? '움직임 줄이기 · 고정 경로 도해'
-        : frame.enhanced
-            ? '궤도 · 추진 · 파편의 묶임과 분열'
-            : '직선 경로와 균일한 점으로 비교');
     return true;
 }

@@ -1,4 +1,5 @@
-import { actor, burst, ellipse, face, label, line, mix, noise, palette, polygon, ring, smooth, stage, star, windowed, } from './drawing.js';
+import { burst, ellipse, label, line, noise, palette, polygon, ring, smooth, stage, star, windowed, } from './drawing.js';
+import { battleLayout, drawAtaho, drawBattle, drawBattleActors, drawBear, drawPortrait, } from './battle.js';
 import { height, width, } from './types.js';
 export const impactSamples = [
     {
@@ -6,184 +7,152 @@ export const impactSamples = [
         name: '임팩트 프레임',
         category: 'impact',
         previewMs: 1840,
-        description: '접촉 순간을 날카로운 흑백 추상화 한 장으로 바꿉니다.',
-        distinction: '밝기를 더하는 대신 원래 구도를 잠깐 다른 그림으로 대체합니다.',
+        description: '어퍼컷이 곰왕에게 닿는 순간을 실제 두 원본의 검은 윤곽과 추상 충격선으로 바꿉니다.',
+        distinction: '새 몸을 그리지 않고 접촉 컷의 화면 표현만 잠깐 교체합니다.',
     },
     {
         id: 'beta-flash',
         name: '베타 플래시',
         category: 'impact',
         previewMs: 1810,
-        description: '검게 채운 주변부와 비워 둔 흰 초점 공간으로 충격을 모읍니다.',
-        distinction: '화면 전체를 반전하지 않고 검정과 흰 여백의 면적을 설계합니다.',
+        description: '검은 주변부와 비워 둔 흰 초점 공간 안에 아타호와 곰왕의 실제 윤곽을 남깁니다.',
+        distinction: '화면 전체 반전과 달리 검정과 흰 여백의 면적을 설계합니다.',
     },
     {
         id: 'monochrome-invert',
         name: '흑백 반전',
         category: 'impact',
         previewMs: 1840,
-        description: '같은 타격 구도의 명암 관계를 접촉 순간 뒤집습니다.',
-        distinction: '형태를 새 추상화로 교체하는 임팩트 프레임과 달리 구도를 보존합니다.',
+        description: '같은 어퍼컷과 곰왕 피격 구도의 밝고 어두운 관계를 접촉 순간 뒤집습니다.',
+        distinction: '원본 형태·비율·방향은 유지하고 명암 관계만 바꿉니다.',
     },
     {
         id: 'screen-shatter',
         name: '화면 갈라짐',
         category: 'impact',
         previewMs: 2170,
-        description: '충격 컷의 실제 내용을 조각에 남긴 채 화면을 벌립니다.',
-        distinction: '배우나 지형의 파괴가 아니라 한 장의 합성 화면이 갈라집니다.',
+        description: '실제 아타호와 곰왕이 담긴 접촉 화면을 조각에 남긴 채 벌립니다.',
+        distinction: '원본 배우의 새 회전 자세가 아니라 합성 화면의 조각이 이동합니다.',
     },
     {
         id: 'hisashi-punch',
         name: '히사시 펀치',
         category: 'impact',
         previewMs: 2260,
-        description: '주먹이 닿은 자세와 상대의 눌리는 반응을 길게 붙잡습니다.',
-        distinction: '접촉 직전과 회수는 정상 속도이고 접촉 구간만 길어집니다. 작가 계보의 재현은 아닙니다.',
+        description: '실제 어퍼컷의 접촉 프레임과 곰왕 피격 반응을 오래 붙잡습니다.',
+        distinction: '접촉 구간의 재생 시간만 늘리고 몸과 상대 반응은 기존 프레임을 사용합니다.',
     },
     {
         id: 'action-cutin',
         name: '컷인',
         category: 'impact',
         previewMs: 1250,
-        description: '진행 중인 공격 위에 결의에 찬 얼굴의 별도 패널을 끼웁니다.',
-        distinction: '본래 행동과 얼굴을 동시에 남기며 전체 화면을 근접 컷으로 바꾸지 않습니다.',
+        description: '곰왕을 향한 공격 위에 기존 아타호 얼굴의 별도 패널을 끼웁니다.',
+        distinction: '행동을 남긴 채 같은 실제 인물의 눈 크롭을 함께 보여줍니다.',
     },
     {
         id: 'pon-yori',
         name: '퐁요리',
         category: 'impact',
         previewMs: 1900,
-        description: '와이드에서 근접 구도로 중간 줌 이동 없이 순간 전환합니다.',
-        distinction: '카메라가 다가가는 과정 대신 처음과 끝 크기를 컷으로 바로 잇습니다.',
+        description: '어퍼컷 와이드에서 타점 근접 구도로 중간 줌 이동 없이 전환합니다.',
+        distinction: '원본 배우는 같은 비율이며 처음과 끝 구도를 컷으로 잇습니다.',
     },
     {
         id: 'obari-punch',
-        name: '오바리 펀치',
+        name: '오바리 펀치 (원화 필요·미재현)',
         category: 'impact',
         previewMs: 1870,
-        description: '뒤로 접힌 몸에서 거대한 전경 주먹을 앞으로 꽂습니다.',
-        distinction: '배우 전체 확대가 아니라 주먹·팔·머리의 원근 비율을 직접 다르게 그립니다.',
+        description: '가슴을 열어 화면 앞으로 뻗는 전용 정권 원화가 없어 오바리 펀치는 미재현 상태입니다.',
+        distinction: '현재 두 판은 기존 어퍼컷의 일반 구도와 근접 구도만 비교합니다. 화면 확대를 오바리 펀치 완성으로 취급하지 않습니다.',
     },
     {
         id: 'inazuma-kick',
         name: '이나즈마 킥',
         category: 'impact',
         previewMs: 1900,
-        description: '높이 솟은 몸에서 큰 발을 선두로 사선 낙하합니다.',
-        distinction: '번개 선만 붙이지 않고 공중 장전과 발이 앞서는 낙하 자세를 따로 그립니다.',
+        description: '기존 A/B 사선 날아차기와 곰왕 피격에 낙하 방향의 번개 궤적을 더합니다.',
+        distinction: '기존 점프·장전·신전·착지를 재사용하며 PNG를 돌리거나 발을 새로 키우지 않습니다.',
     },
     {
         id: 'kurumada-fall',
-        name: '쿠루마다 낙하',
+        name: '쿠루마다 낙하 (원화 필요·미재현)',
         category: 'impact',
-        previewMs: 2410,
-        description: '맞고 날아간 몸이 뒤집힌 뒤 머리부터 지면에 꽂히듯 떨어집니다.',
-        distinction: '중립 도형 배우의 만화적인 낙하·접지 압축이며 피나 상처는 없습니다.',
+        previewMs: 2820,
+        description: '머리부터 떨어지는 곰왕 전용 낙하 원화가 없어 쿠루마다 낙하는 미재현 상태입니다.',
+        distinction: '현재는 정자세 피격 그림의 일반 포물선·착지 비교입니다. PNG 회전으로 새 낙하 자세를 만들지 않습니다.',
     },
 ];
-const contactMs = 1800;
+const contactMs = battleLayout.contactMs;
+const impact = battleLayout.impact;
 function sceneTime(frame) {
     return Math.max(0, frame.timeMs);
 }
-function drawCombat(ctx, timeMs, reducedMotion) {
-    stage(ctx, reducedMotion ? 0 : timeMs);
-    const thrust = smooth((timeMs - 1460) / 340);
-    const recover = smooth((timeMs - 2280) / 720);
-    const reach = thrust * (1 - recover);
-    const recoil = windowed(timeMs, contactMs, 2220, 140);
-    actor(ctx, 310 + reach * 160, 420, 1, {
-        arm: reach * 2,
-        lean: reach * 20,
-        crouch: (1 - thrust) * windowed(timeMs, 700, 1400, 300) * 0.5,
-    });
-    actor(ctx, 665 + recoil * (reducedMotion ? 13 : 42), 420, 1, {
-        color: palette.blue,
-        facing: -1,
-        arm: 0.55,
-        lean: -recoil * (reducedMotion ? 10 : 43),
-    });
-    if (timeMs >= contactMs && timeMs < contactMs + 130)
-        ring(ctx, 652, 245, 15, 11, palette.paper, 2);
+function drawCombat(ctx, frame, timeMs = frame.timeMs) {
+    drawBattle(ctx, frame, { timeMs, action: 'uppercut' });
 }
-function drawAbstractImpact(ctx, reducedMotion) {
-    ctx.fillStyle = reducedMotion ? '#353548' : palette.paper;
+function frameCamera(ctx, scale, focus, destination) {
+    const x = Math.max(width * (1 - scale), Math.min(0, destination.x - focus.x * scale));
+    const y = Math.max(height * (1 - scale), Math.min(0, destination.y - focus.y * scale));
+    ctx.translate(x, y);
+    ctx.scale(scale, scale);
+}
+function drawSilhouettes(ctx, frame, timeMs = frame.timeMs) {
+    drawAtaho(ctx, frame, { timeMs, action: 'uppercut', silhouette: true });
+    drawBear(ctx, frame, { timeMs, silhouette: true });
+}
+function drawAbstractImpact(ctx, frame) {
+    ctx.fillStyle = frame.reducedMotion ? '#353548' : palette.paper;
     ctx.fillRect(0, 0, width, height);
-    const center = { x: 644, y: 250 };
     for (let i = 0; i < 19; i++) {
-        const angle = (i * Math.PI * 2) / 19 + noise(i + 9) * 0.15;
-        const distance = 95 + noise(i) * 65;
+        const a = (i * Math.PI * 2) / 19 + noise(i + 9) * 0.15;
+        const r = 95 + noise(i) * 65;
         polygon(ctx, [
             {
-                x: center.x + Math.cos(angle - 0.04) * distance,
-                y: center.y + Math.sin(angle - 0.04) * distance,
+                x: impact.x + Math.cos(a - 0.04) * r,
+                y: impact.y + Math.sin(a - 0.04) * r,
             },
+            { x: impact.x + Math.cos(a) * 1100, y: impact.y + Math.sin(a) * 1100 },
             {
-                x: center.x + Math.cos(angle) * 1100,
-                y: center.y + Math.sin(angle) * 1100,
-            },
-            {
-                x: center.x + Math.cos(angle + 0.12) * 1100,
-                y: center.y + Math.sin(angle + 0.12) * 1100,
+                x: impact.x + Math.cos(a + 0.12) * 1100,
+                y: impact.y + Math.sin(a + 0.12) * 1100,
             },
         ], palette.ink);
     }
-    polygon(ctx, [
-        { x: 196, y: 435 },
-        { x: 303, y: 319 },
-        { x: 365, y: 269 },
-        { x: 438, y: 248 },
-        { x: 478, y: 190 },
-        { x: 524, y: 213 },
-        { x: 500, y: 259 },
-        { x: 627, y: 226 },
-        { x: 658, y: 251 },
-        { x: 605, y: 282 },
-        { x: 461, y: 315 },
-        { x: 408, y: 361 },
-        { x: 430, y: 438 },
-        { x: 370, y: 445 },
-        { x: 338, y: 367 },
-    ], palette.ink);
-    star(ctx, center.x, center.y, 99, reducedMotion ? '#aeabbc' : palette.paper, 7, 0.13);
-    line(ctx, [
-        { x: 681, y: 170 },
-        { x: 731, y: 252 },
-        { x: 697, y: 335 },
-    ], palette.ink, 39);
+    drawSilhouettes(ctx, frame);
+    star(ctx, impact.x, impact.y, frame.reducedMotion ? 57 : 92, frame.reducedMotion ? '#aeabbc' : palette.paper, 7, 0.13);
 }
-function drawBeta(ctx, amount, reducedMotion) {
+function drawBeta(ctx, frame) {
+    const amount = windowed(sceneTime(frame), 1500, 2130, 130);
     ctx.save();
-    ctx.globalAlpha *= amount * (reducedMotion ? 0.6 : 1);
+    ctx.globalAlpha *= amount * (frame.reducedMotion ? 0.6 : 1);
     ctx.fillStyle = '#080c17';
     ctx.fillRect(0, 0, width, height);
-    const center = { x: 620, y: 254 };
-    ellipse(ctx, center.x, center.y, 144, 122, palette.paper);
+    ellipse(ctx, impact.x, impact.y, 146, 122, palette.paper);
     for (let i = 0; i < 38; i++) {
         const a = (i * Math.PI * 2) / 38;
         const inner = 140 + noise(i + 24) * 45;
         polygon(ctx, [
             {
-                x: center.x + Math.cos(a) * inner,
-                y: center.y + Math.sin(a) * inner * 0.83,
+                x: impact.x + Math.cos(a) * inner,
+                y: impact.y + Math.sin(a) * inner * 0.83,
             },
             {
-                x: center.x + Math.cos(a - 0.026) * 1100,
-                y: center.y + Math.sin(a - 0.026) * 1100,
+                x: impact.x + Math.cos(a - 0.026) * 1100,
+                y: impact.y + Math.sin(a - 0.026) * 1100,
             },
             {
-                x: center.x + Math.cos(a + 0.026) * 1100,
-                y: center.y + Math.sin(a + 0.026) * 1100,
+                x: impact.x + Math.cos(a + 0.026) * 1100,
+                y: impact.y + Math.sin(a + 0.026) * 1100,
             },
         ], palette.paper);
     }
-    actor(ctx, 475, 420, 1, { arm: 2, lean: 20, silhouette: true });
-    actor(ctx, 680, 420, 1, { facing: -1, lean: -28, silhouette: true });
+    drawSilhouettes(ctx, frame);
     ctx.restore();
 }
-function drawInverted(ctx, timeMs, reducedMotion) {
-    const negative = timeMs >= 1800 && timeMs < 1940;
-    ctx.fillStyle = reducedMotion
+function drawInverted(ctx, frame) {
+    const negative = sceneTime(frame) >= 1800 && sceneTime(frame) < 1940;
+    ctx.fillStyle = frame.reducedMotion
         ? negative
             ? '#343d4b'
             : '#929494'
@@ -191,57 +160,39 @@ function drawInverted(ctx, timeMs, reducedMotion) {
             ? '#0e1421'
             : '#e4dfd1';
     ctx.fillRect(0, 0, width, height);
-    const color = reducedMotion
-        ? negative
-            ? '#c7c7c2'
-            : '#353d4b'
-        : negative
-            ? '#f3eddd'
-            : '#172030';
-    const reach = smooth((timeMs - 1460) / 340);
-    actor(ctx, 310 + reach * 160, 420, 1, {
-        arm: reach * 2,
-        lean: reach * 20,
-        color,
-    });
-    actor(ctx, 665, 420, 1, {
-        facing: -1,
-        lean: negative && !reducedMotion ? -33 : 0,
-        color,
-    });
-    for (let i = 0; i < 6; i++)
-        line(ctx, [
-            { x: 80 + i * 150, y: 420 },
-            { x: 45 + i * 170, y: 540 },
-        ], color, 2);
+    ctx.save();
+    ctx.filter = negative ? 'brightness(0) invert(1)' : 'brightness(0)';
+    ctx.globalAlpha *= frame.reducedMotion ? 0.72 : 1;
+    drawBattleActors(ctx, frame, { action: 'uppercut' });
+    ctx.restore();
+    const color = negative ? '#d5d5cf' : '#303645';
     line(ctx, [
-        { x: 0, y: 420 },
-        { x: width, y: 420 },
+        { x: 0, y: 440 },
+        { x: width, y: 440 },
     ], color, 3);
 }
 function drawShatter(ctx, frame) {
     const t = sceneTime(frame);
-    drawCombat(ctx, t, frame.reducedMotion);
+    drawCombat(ctx, frame);
     if (!frame.enhanced || t < contactMs || t > 3000)
         return;
     const age = (t - contactMs) / 1000;
     if (frame.reducedMotion) {
-        const opacity = 1 - smooth(age / 0.6);
         ctx.save();
-        ctx.globalAlpha *= opacity;
+        ctx.globalAlpha *= 1 - smooth(age / 0.6);
         for (let i = 0; i < 11; i++) {
             const a = (i * Math.PI * 2) / 11;
             line(ctx, [
-                { x: 644, y: 250 },
-                { x: 644 + Math.cos(a) * 1100, y: 250 + Math.sin(a) * 1100 },
+                impact,
+                {
+                    x: impact.x + Math.cos(a) * 1100,
+                    y: impact.y + Math.sin(a) * 1100,
+                },
             ], palette.paper, 2);
         }
         ctx.restore();
         return;
     }
-    stage(ctx, 0);
-    face(ctx, 520, 285, 0.95, 'shock');
-    const origin = { x: 644, y: 250 };
     const boundary = [
         { x: 0, y: 0 },
         { x: 270, y: 0 },
@@ -258,57 +209,55 @@ function drawShatter(ctx, frame) {
         const a = boundary[i];
         const b = boundary[(i + 1) % boundary.length];
         const center = {
-            x: (a.x + b.x + origin.x) / 3,
-            y: (a.y + b.y + origin.y) / 3,
+            x: (a.x + b.x + impact.x) / 3,
+            y: (a.y + b.y + impact.y) / 3,
         };
         const p = Math.max(0, age - noise(i) * 0.13);
         const fly = p * p * 0.85 + p * 0.3;
         ctx.save();
         ctx.globalAlpha *= 1 - smooth((age - 0.65) / 0.45);
-        ctx.translate(center.x + (center.x - origin.x) * fly, center.y + (center.y - origin.y) * fly + 130 * p * p);
+        ctx.translate(center.x + (center.x - impact.x) * fly, center.y + (center.y - impact.y) * fly + 130 * p * p);
         ctx.rotate((noise(i + 18) - 0.5) * p * 1.4);
         ctx.translate(-center.x, -center.y);
         ctx.beginPath();
-        ctx.moveTo(origin.x, origin.y);
+        ctx.moveTo(impact.x, impact.y);
         ctx.lineTo(a.x, a.y);
         ctx.lineTo(b.x, b.y);
         ctx.closePath();
         ctx.clip();
-        drawCombat(ctx, contactMs, false);
-        line(ctx, [origin, a, b, origin], palette.paper, 3);
+        // 배우의 자세를 회전시키지 않고 접촉 화면 전체가 담긴 합성 조각만 돌린다.
+        drawCombat(ctx, frame, contactMs);
+        line(ctx, [impact, a, b, impact], palette.paper, 3);
         ctx.restore();
     }
 }
-function hisashiTime(timeMs) {
-    if (timeMs < contactMs)
-        return timeMs;
-    if (timeMs < 2800)
-        return contactMs + (timeMs - contactMs) * 0.12;
-    return 1920 + (timeMs - 2800) * 1.2;
+function hisashiTime(t) {
+    if (t < contactMs)
+        return t;
+    if (t < 2800)
+        return contactMs + (t - contactMs) * 0.12;
+    return 1920 + (t - 2800) * 1.2;
 }
 function drawHisashi(ctx, frame) {
     const t = sceneTime(frame);
-    const actionTime = frame.enhanced ? hisashiTime(t) : t;
-    drawCombat(ctx, actionTime, frame.reducedMotion);
-    if (frame.enhanced && t >= contactMs && t < 3000) {
-        const pressure = windowed(t, contactMs, 2800, 160);
-        ctx.save();
-        ctx.globalAlpha *= pressure * 0.8;
-        const squeeze = smooth((t - contactMs) / 1000);
-        ellipse(ctx, 653 + squeeze * 9, 246, 18 + squeeze * 8, 24 - squeeze * 7, palette.gold);
-        for (let i = 0; i < 4; i++) {
-            const y = 230 + i * 10;
-            line(ctx, [
-                { x: 681, y },
-                { x: 688 + squeeze * 13, y: y + 4 },
-            ], palette.ink, 2);
-        }
-        ctx.restore();
-    }
+    drawCombat(ctx, frame, frame.enhanced ? hisashiTime(t) : t);
+    if (!frame.enhanced || t < contactMs || t >= 3000)
+        return;
+    ctx.save();
+    ctx.globalAlpha *=
+        windowed(t, contactMs, 2800, 160) * (frame.reducedMotion ? 0.35 : 0.7);
+    const p = smooth((t - contactMs) / 1000);
+    ring(ctx, impact.x, impact.y, 21 + p * 12, 31 - p * 9, palette.paper, 2);
+    for (let i = 0; i < 4; i++)
+        line(ctx, [
+            { x: impact.x + 30, y: impact.y - 15 + i * 10 },
+            { x: impact.x + 39 + p * 12, y: impact.y - 11 + i * 10 },
+        ], palette.ink, 2);
+    ctx.restore();
 }
 function drawCutIn(ctx, frame) {
     const t = sceneTime(frame);
-    drawCombat(ctx, t, frame.reducedMotion);
+    drawCombat(ctx, frame);
     if (!frame.enhanced)
         return;
     const amount = windowed(t, 780, 1670, 180);
@@ -336,172 +285,85 @@ function drawCutIn(ctx, frame) {
             { x: 345, y: 60 + i * 16 },
             { x: 940, y: 5 + i * 16 },
         ], '#8b4d65', 4);
-    face(ctx, 660 + (frame.reducedMotion ? 0 : (1 - amount) * 35), 149, 1.1, 'anger');
+    drawPortrait(ctx, frame, {
+        x: 472,
+        y: 48,
+        width: 415,
+        height: 174,
+        crop: 'eyes',
+    });
     ctx.restore();
 }
 function drawPonYori(ctx, frame) {
     const t = sceneTime(frame);
-    const close = frame.enhanced && t >= 1600 && t < 2650;
-    if (!close) {
-        drawCombat(ctx, t, frame.reducedMotion);
+    if (!frame.enhanced || t < 1600 || t >= 2650) {
+        drawCombat(ctx, frame);
         return;
     }
     ctx.save();
     const scale = frame.reducedMotion ? 1.3 : 2.2;
-    ctx.translate(480, 285);
-    ctx.scale(scale, scale);
-    ctx.translate(-615, -263);
-    drawCombat(ctx, t, frame.reducedMotion);
+    frameCamera(ctx, scale, impact, { x: 480, y: 285 });
+    drawCombat(ctx, frame);
     ctx.restore();
-}
-function giantFist(ctx, x, y, radius) {
-    polygon(ctx, [
-        { x: x - radius * 0.8, y: y - radius * 0.48 },
-        { x: x - radius * 0.33, y: y - radius * 0.91 },
-        { x: x + radius * 0.52, y: y - radius * 0.78 },
-        { x: x + radius, y: y - radius * 0.22 },
-        { x: x + radius * 0.91, y: y + radius * 0.58 },
-        { x: x + radius * 0.3, y: y + radius * 0.89 },
-        { x: x - radius * 0.75, y: y + radius * 0.63 },
-    ], palette.gold);
-    for (let i = 0; i < 3; i++)
-        line(ctx, [
-            { x: x - radius * 0.32 + i * radius * 0.31, y: y - radius * 0.65 },
-            { x: x - radius * 0.26 + i * radius * 0.31, y: y - radius * 0.19 },
-        ], '#855330', Math.max(2, radius * 0.045));
-    line(ctx, [
-        { x: x - radius * 0.6, y: y + radius * 0.34 },
-        { x: x + radius * 0.52, y: y + radius * 0.28 },
-    ], '#855330', Math.max(2, radius * 0.045));
 }
 function drawObari(ctx, frame) {
     const t = sceneTime(frame);
-    if (!frame.enhanced || t < 1420 || t > 2800) {
-        drawCombat(ctx, t, frame.reducedMotion);
-        return;
+    const active = frame.enhanced && t >= 1420 && t < 2800;
+    ctx.save();
+    if (active) {
+        const scale = frame.reducedMotion ? 1.08 : 1.28;
+        frameCamera(ctx, scale, { x: battleLayout.attacker.x, y: 347 }, { x: 470, y: 353 });
     }
-    stage(ctx, frame.reducedMotion ? 0 : t);
-    const punch = smooth((t - 1420) / 380) * (1 - smooth((t - 2400) / 400));
-    actor(ctx, 680 + punch * 25, 420, 1, {
-        color: palette.blue,
-        facing: -1,
-        lean: -punch * 35,
-    });
-    actor(ctx, 402, 432, 0.9, {
-        lean: -33 + punch * 38,
-        crouch: 0.6 - punch * 0.3,
-        arm: -0.6,
-    });
-    const wrist = { x: mix(375, 576, punch), y: mix(320, 275, punch) };
-    polygon(ctx, [
-        { x: 409, y: 299 },
-        { x: 438, y: 323 },
-        { x: wrist.x + 31, y: wrist.y + 42 },
-        { x: wrist.x + 38, y: wrist.y - 37 },
-    ], '#c68747');
-    giantFist(ctx, wrist.x + 27, wrist.y, mix(19, frame.reducedMotion ? 70 : 103, punch));
-    if (t >= contactMs && t < 2070)
-        burst(ctx, 678, 269, (t - contactMs) / 270, palette.paper, 9);
-}
-function drawKickBody(ctx, x, y, dive) {
-    const shoulder = { x: x - 30, y: y - 83 };
-    const hip = { x: x + 6, y: y - 29 };
-    line(ctx, [shoulder, hip], palette.gold, 37);
-    ellipse(ctx, shoulder.x - 14, shoulder.y - 27, 22, 26, palette.gold);
-    line(ctx, [shoulder, { x: x - 78, y: y - 59 }, { x: x - 55, y: y - 107 }], palette.gold, 14);
-    line(ctx, [shoulder, { x: x + 24, y: y - 97 }, { x: x + 37, y: y - 140 }], palette.gold, 14);
-    line(ctx, [hip, { x: x - 44, y: y + 11 }, { x: x - 85, y: y - 13 }], palette.gold, 18);
-    const foot = { x: x + 45 + dive * 38, y: y + 60 + dive * 29 };
-    line(ctx, [hip, { x: x + 29, y: y + 18 }, foot], palette.gold, 24);
-    polygon(ctx, [
-        { x: foot.x - 26, y: foot.y - 14 },
-        { x: foot.x + 16, y: foot.y - 29 },
-        { x: foot.x + 48, y: foot.y + 5 },
-        { x: foot.x - 4, y: foot.y + 33 },
-    ], palette.paper);
+    drawCombat(ctx, frame);
+    if (active && t >= contactMs && t < 2070)
+        burst(ctx, impact.x, impact.y, (t - contactMs) / 270, palette.paper, 9);
+    ctx.restore();
 }
 function drawInazuma(ctx, frame) {
     const t = sceneTime(frame);
-    stage(ctx, frame.reducedMotion ? 0 : t);
-    const up = smooth((t - 500) / 700);
-    const dive = smooth((t - 1500) / 480);
-    const settle = smooth((t - 2350) / 700);
-    actor(ctx, 711, 420, 1, {
-        color: palette.blue,
-        facing: -1,
-        lean: -windowed(t, 1980, 2450, 100) * 39,
-    });
-    if (t < 500 || t >= 2350) {
-        actor(ctx, t < 500 ? 310 : 635, 420, 1, {
-            crouch: t < 500 ? 0.2 : (1 - settle) * 0.8,
-        });
+    drawBattle(ctx, frame, { action: 'kick' });
+    if (!frame.enhanced)
         return;
-    }
-    const x = mix(mix(310, 440, up), 635, dive);
-    const y = mix(mix(327, 144, up), 298, dive);
-    if (frame.enhanced) {
-        if (dive > 0 && dive < 1) {
-            const alpha = frame.reducedMotion ? 0.3 : 0.75;
-            ctx.save();
-            ctx.globalAlpha *= alpha;
-            polygon(ctx, [
-                { x: x - 205, y: y - 293 },
-                { x: x - 39, y: y - 85 },
-                { x: x - 80, y: y - 94 },
-                { x: x + 65, y: y + 72 },
-                { x: x - 154, y: y - 134 },
-                { x: x - 98, y: y - 132 },
-            ], palette.blue);
-            ctx.restore();
-        }
-        drawKickBody(ctx, x, y, dive);
-    }
-    else
-        actor(ctx, x, y + 93 + dive * 29, 1, {
-            kick: dive,
-            crouch: (1 - dive) * 0.8,
-        });
-    if (t >= 1980 && t < 2350)
-        burst(ctx, 718, 412, (t - 1980) / 370, palette.paper, 11);
+    const amount = windowed(t, 1430, 1980, 160);
+    ctx.save();
+    ctx.globalAlpha *= amount * (frame.reducedMotion ? 0.28 : 0.68);
+    polygon(ctx, [
+        { x: impact.x - 204, y: impact.y - 253 },
+        { x: impact.x - 38, y: impact.y - 45 },
+        { x: impact.x - 79, y: impact.y - 54 },
+        { x: impact.x + 26, y: impact.y + 38 },
+        { x: impact.x - 154, y: impact.y - 94 },
+        { x: impact.x - 97, y: impact.y - 92 },
+    ], palette.blue);
+    ctx.restore();
+    if (t >= contactMs && t < 2180)
+        burst(ctx, impact.x, impact.y, (t - contactMs) / 380, palette.paper, 11);
 }
 function drawKurumada(ctx, frame) {
     const t = sceneTime(frame);
-    stage(ctx, frame.reducedMotion ? 0 : t);
-    actor(ctx, 286, 420, 1, {
-        arm: windowed(t, 600, 1150, 180) * 2,
-        color: palette.blue,
+    if (!frame.enhanced || t < contactMs) {
+        drawCombat(ctx, frame);
+        return;
+    }
+    stage(ctx, 0);
+    drawAtaho(ctx, frame, { action: 'uppercut' });
+    const progress = smooth((t - contactMs) / 1000);
+    const airborne = t < 2800 ? Math.sin(progress * Math.PI) : 0;
+    const target = battleLayout.target;
+    const displacement = frame.reducedMotion ? 14 : 42;
+    drawBear(ctx, frame, {
+        x: target.x + progress * displacement,
+        ground: target.ground - airborne * (frame.reducedMotion ? 45 : 105),
+        state: 'hit',
     });
-    if (t < 850) {
-        actor(ctx, 450, 420);
-        return;
-    }
-    const launch = smooth((t - 850) / 850);
-    const fall = smooth((t - 1700) / 650);
-    const x = mix(450, frame.reducedMotion ? 650 : 718, launch);
-    const ground = mix(mix(420, 210, launch), 420, fall);
-    if (!frame.enhanced) {
-        actor(ctx, x, ground, 1, {
-            lean: launch * 35 * (1 - fall),
-            crouch: fall * 0.45,
-        });
-        return;
-    }
-    const rotation = launch * Math.PI;
-    const squeeze = windowed(t, 2350, 2600, 90);
-    ctx.save();
-    ctx.translate(x, ground - mix(82, 108, launch) * (1 - squeeze * 0.22));
-    ctx.rotate(rotation);
-    ctx.scale(1 + squeeze * 0.2, 1 - squeeze * 0.22);
-    // 반전 뒤 머리가 지면에 닿도록 회전 중심에서 배우의 머리까지를 보정한다.
-    actor(ctx, 0, 82, 1, { arm: 1.1, kick: 0.5 });
-    ctx.restore();
-    if (t >= 2350 && t < 2900) {
-        burst(ctx, x, 422, (t - 2350) / 550, palette.paper, 13);
-        const dust = smooth((t - 2350) / 350);
+    if (t >= 2800 && t < 3350) {
+        const age = (t - 2800) / 550;
+        const x = target.x + displacement;
+        burst(ctx, x, target.ground, age, palette.paper, 13);
         ctx.save();
-        ctx.globalAlpha *= (1 - smooth((t - 2650) / 500)) * 0.5;
-        ellipse(ctx, x - 54 - dust * 34, 426, 52, 15, '#ac9d94');
-        ellipse(ctx, x + 49 + dust * 34, 426, 50, 15, '#ac9d94');
+        ctx.globalAlpha *= (1 - age) * 0.38;
+        ellipse(ctx, x - 54, target.ground + 3, 56 + age * 25, 14, '#ac9d94');
+        ellipse(ctx, x + 50, target.ground + 3, 54 + age * 25, 14, '#ac9d94');
         ctx.restore();
     }
 }
@@ -511,72 +373,72 @@ export function drawImpact(ctx, id, frame) {
     try {
         switch (id) {
             case 'impact-frame':
-                drawCombat(ctx, t, frame.reducedMotion);
+                drawCombat(ctx, frame);
                 if (frame.enhanced && t >= 1780 && t < 1920)
-                    drawAbstractImpact(ctx, frame.reducedMotion);
+                    drawAbstractImpact(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '접촉의 140ms만 다른 그림으로 대체'
-                    : '원래 접촉 동작');
+                    ? '실제 원본 윤곽 + 접촉의 140ms 추상 충격 컷'
+                    : '실제 어퍼컷과 곰왕 피격');
                 break;
             case 'beta-flash':
-                drawCombat(ctx, t, frame.reducedMotion);
+                drawCombat(ctx, frame);
                 if (frame.enhanced)
-                    drawBeta(ctx, windowed(t, 1500, 2130, 130), frame.reducedMotion);
+                    drawBeta(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '검은 주변부 / 비워 둔 흰 타점'
-                    : '원래 배경에서 같은 타격');
+                    ? '검은 주변부 / 흰 타점 공간 / 실제 배우 윤곽'
+                    : '같은 실제 공격과 피격');
                 break;
             case 'monochrome-invert':
                 if (frame.enhanced && t >= 1450 && t < 2250)
-                    drawInverted(ctx, t, frame.reducedMotion);
+                    drawInverted(ctx, frame);
                 else
-                    drawCombat(ctx, t, frame.reducedMotion);
+                    drawCombat(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '같은 형태의 밝고 어두운 관계를 한 번 뒤집음'
-                    : '원래 색과 명도');
+                    ? '같은 PNG의 명암 관계만 반전'
+                    : '같은 실제 공격과 피격');
                 break;
             case 'screen-shatter':
                 drawShatter(ctx, frame);
-                label(ctx, '화면의 내용이 남은 조각 / 실제 신체·지형 파괴 없음');
+                label(ctx, '아타호·곰왕 접촉 화면의 합성 조각');
                 break;
             case 'hisashi-punch':
                 drawHisashi(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '접촉 구간만 길게 잡아 압력을 남김'
-                    : '같은 일격을 정상 속도로 통과');
+                    ? '같은 접촉·피격 프레임을 길게 붙잡음'
+                    : '같은 실제 일격의 정상 재생');
                 break;
             case 'action-cutin':
                 drawCutIn(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '행동을 남긴 채 얼굴 패널 삽입'
-                    : '하나의 와이드 구도');
+                    ? '실제 얼굴의 눈 크롭을 별도 패널에 삽입'
+                    : '어퍼컷 와이드 유지');
                 break;
             case 'pon-yori':
                 drawPonYori(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '와이드 → 즉시 근접 컷 → 즉시 와이드'
-                    : '와이드 구도 유지');
+                    ? '와이드 → 타점 근접 컷 → 와이드'
+                    : '같은 실제 일격의 와이드');
                 break;
             case 'obari-punch':
                 drawObari(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '작은 몸 뒤 / 큰 주먹 앞 — 직접 그린 원근'
-                    : '옆으로 뻗는 보통 정권');
+                    ? '오바리 펀치 미재현 · 현재는 일반 어퍼컷 근접 구도'
+                    : '실제 어퍼컷 기본 구도');
                 break;
             case 'inazuma-kick':
                 drawInazuma(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '공중 장전 → 큰 발이 앞서는 사선 낙하'
-                    : '같은 도약과 낙하의 단순한 몸');
+                    ? '기존 A/B 사선 날아차기 + 낙하 방향 번개'
+                    : '같은 기존 A/B 날아차기');
                 break;
             case 'kurumada-fall':
                 drawKurumada(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '뒤집힌 몸 → 머리부터 접지 → 만화적 압축'
-                    : '직립을 유지한 보통 낙하');
+                    ? '쿠루마다 낙하 미재현 · 현재는 정자세 피격·포물선'
+                    : '같은 어퍼컷의 기본 피격');
                 break;
             default:
-                stage(ctx, frame.reducedMotion ? 0 : t);
+                drawCombat(ctx, frame);
         }
     }
     finally {

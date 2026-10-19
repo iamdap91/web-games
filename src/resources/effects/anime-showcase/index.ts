@@ -1,7 +1,8 @@
 import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
-import { samples, drawSample } from './catalog.js';
+import { samples, drawSample, disposeSampleSurfaces } from './catalog.js';
 import { exportGif } from './export.js';
 import { ShowcasePlayer } from './player.js';
+import { loadBattleAssets, type BattleAssets } from './battle-assets.js';
 import {
   categories,
   height,
@@ -47,7 +48,7 @@ class ShowcaseScreen {
   private disposed = false;
   private exporting: AbortController | null = null;
 
-  constructor() {
+  constructor(private readonly assets: BattleAssets) {
     if (!this.context || !this.baseContext)
       throw new Error('Canvas를 준비할 수 없습니다.');
     if (samples.length !== 90 || new Set(samples.map((s) => s.id)).size !== 90)
@@ -350,6 +351,7 @@ class ShowcaseScreen {
         0,
       );
       drawSample(ctx, this.current, {
+        assets: this.assets,
         timeMs: snapshot.timeMs,
         enhanced,
         reducedMotion: this.reduced.checked,
@@ -400,6 +402,7 @@ class ShowcaseScreen {
     this.cancel.hidden = false;
     try {
       const blob = await exportGif({
+        assets: this.assets,
         sample: this.current,
         reducedMotion: this.reduced.checked,
         signal: controller.signal,
@@ -441,7 +444,37 @@ class ShowcaseScreen {
     cancelAnimationFrame(this.frameId);
     for (const url of this.urls) URL.revokeObjectURL(url);
     this.urls.clear();
+    if (this.context) disposeSampleSurfaces(this.context);
+    if (this.baseContext) disposeSampleSurfaces(this.baseContext);
   }
 }
-const screen = new ShowcaseScreen();
-registerEmbeddedScene(() => screen.dispose());
+async function start(): Promise<void> {
+  const loading = document.getElementById('loading');
+  const lifecycle = new AbortController();
+  let disposed = false;
+  let screen: ShowcaseScreen | undefined;
+  const dispose = () => {
+    disposed = true;
+    screen?.dispose();
+    lifecycle.abort();
+  };
+  registerEmbeddedScene(dispose);
+  window.addEventListener('pagehide', dispose, {
+    once: true,
+    signal: lifecycle.signal,
+  });
+  try {
+    const assets = await loadBattleAssets();
+    if (disposed) return;
+    screen = new ShowcaseScreen(assets);
+    if (loading) loading.hidden = true;
+  } catch (error) {
+    if (disposed) return;
+    lifecycle.abort();
+    if (loading) loading.hidden = true;
+    const box = element('error', HTMLElement);
+    box.hidden = false;
+    box.textContent = error instanceof Error ? error.message : String(error);
+  }
+}
+void start();

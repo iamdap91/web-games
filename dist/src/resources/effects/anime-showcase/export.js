@@ -1,5 +1,5 @@
 import { GIFEncoder, applyPalette, quantize } from 'gifenc';
-import { drawSample } from './catalog.js';
+import { drawSample, disposeSampleSurfaces } from './catalog.js';
 import { durationMs } from './types.js';
 export async function exportGif(options) {
     const canvas = document.createElement('canvas');
@@ -15,7 +15,9 @@ export async function exportGif(options) {
             options.signal.throwIfAborted();
             ctx.setTransform(2 / 3, 0, 0, 2 / 3, 0, 0);
             drawSample(ctx, options.sample, {
-                timeMs,
+                assets: options.assets,
+                // 짧은 연결 그림도 프레임의 가운데 노출 시각에서 표본화한다.
+                timeMs: timeMs + 25,
                 enhanced: true,
                 reducedMotion: options.reducedMotion,
             });
@@ -32,6 +34,7 @@ export async function exportGif(options) {
         return new Blob([new Uint8Array(gif.bytes())], { type: 'image/gif' });
     }
     finally {
+        disposeSampleSurfaces(ctx);
         canvas.width = canvas.height = 1;
     }
 }

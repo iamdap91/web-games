@@ -1,6 +1,7 @@
-import { clamp, ellipse, label, line, mix, noise, palette, polygon, ring, smooth, star, } from './drawing.js';
+import { clamp, ellipse, line, noise, palette, polygon, ring, smooth, star, } from './drawing.js';
+import { battleLayout } from './battle.js';
 function drawKanadaLight(ctx, frame) {
-    const age = frame.timeMs - 1150;
+    const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 1150)
         return;
     const size = frame.reducedMotion ? 0.62 : 1;
@@ -26,52 +27,85 @@ function drawKanadaLight(ctx, frame) {
     }
     ctx.restore();
 }
+function beamAxis(u, length, bend, tipHeight) {
+    const v = 1 - u;
+    return {
+        x: 267 + length * (3 * v * v * u * 0.2 + 3 * v * u * u * 0.72 + u ** 3),
+        y: 300 +
+            3 * v * v * u * bend -
+            3 * v * u * u * bend * 0.8 +
+            u ** 3 * tipHeight,
+    };
+}
 function drawKanadaBeam(ctx, frame) {
-    const age = frame.timeMs - 900;
+    const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 2100)
         return;
-    const progress = clamp(age / 480);
+    const progress = clamp(age / 620);
     const fade = 1 - clamp((age - 1500) / 600);
-    const head = mix(275, 815, smooth(progress));
-    const amount = frame.reducedMotion ? 0.65 : 1;
+    const length = 548 * smooth(progress);
+    const amount = frame.reducedMotion ? 0.45 : 1;
+    const cellTime = frame.reducedMotion ? Math.floor(age / 250) * 250 : age;
+    const beats = [80, 160, 245, 380, 540, 760, 1020, 1280, 1560, 1800];
+    const phase = beats.filter((timeMs) => cellTime >= timeMs).length;
+    const bends = [0, -250, 310, -340, 360, -290, 330, -350, 270, -160, 90];
+    const tips = [0, -30, 70, -65, 45, 80, -70, 55, -45, 30, 0];
+    const bend = bends[phase] * amount * Math.min(1, progress * 1.5);
+    const tipHeight = tips[phase] * amount;
+    const head = beamAxis(1, length, bend, tipHeight);
     ctx.save();
-    ctx.globalAlpha *= fade;
-    if (!frame.enhanced)
+    ctx.globalAlpha *= fade * (frame.reducedMotion ? 0.72 : 1);
+    if (!frame.enhanced) {
         line(ctx, [
             { x: 267, y: 300 },
-            { x: head, y: 300 },
+            { x: 267 + length, y: 300 },
         ], palette.blue, 25);
-    else {
-        const phase = Math.floor(age / (frame.reducedMotion ? 280 : 105));
-        const top = [];
-        const bottom = [];
-        for (let index = 0; index <= 19; index++) {
-            const x = mix(267, head, index / 19);
-            const ridge = (9 +
-                noise(index + phase * 3) * 33 +
-                (index % 4 === phase % 4 ? 28 : 0)) *
-                amount;
-            top.push({ x, y: 300 - ridge });
-            bottom.unshift({ x, y: 300 + ridge * (0.55 + noise(index + 17) * 0.55) });
-        }
-        polygon(ctx, [...top, ...bottom], palette.blue);
-        line(ctx, top, '#d7f3ed', 3);
-        line(ctx, bottom, '#386d9b', 4);
-        line(ctx, [
-            { x: 267, y: 300 },
-            { x: head, y: 300 },
-        ], '#fff5cd', 8);
-        for (let index = 0; index < 5; index++) {
-            const x = mix(285, head, (index + 0.5) / 5);
-            polygon(ctx, [
-                { x: x - 12, y: 288 },
-                { x: x + 27, y: 296 },
-                { x: x + 8, y: 312 },
-                { x: x - 25, y: 306 },
-            ], '#29475b');
-        }
-        star(ctx, head, 300, 33 + (phase % 3) * 6, palette.paper, 5, 0.3);
+        ctx.restore();
+        return;
     }
+    const top = [];
+    const bottom = [];
+    const axis = [];
+    for (let index = 0; index <= 26; index++) {
+        const u = index / 26;
+        const point = beamAxis(u, length, bend, tipHeight);
+        const prior = beamAxis(Math.max(0, u - 0.012), length, bend, tipHeight);
+        const next = beamAxis(Math.min(1, u + 0.012), length, bend, tipHeight);
+        const distance = Math.max(1, Math.hypot(next.x - prior.x, next.y - prior.y));
+        const nx = -(next.y - prior.y) / distance;
+        const ny = (next.x - prior.x) / distance;
+        const ridge = (7 +
+            u * 18 +
+            noise(index + phase * 7) * 21 +
+            (index % 5 === phase % 5 ? 20 : 0)) *
+            (frame.reducedMotion ? 0.7 : 1);
+        axis.push(point);
+        top.push({ x: point.x + nx * ridge, y: point.y + ny * ridge });
+        bottom.unshift({
+            x: point.x - nx * ridge * 0.73,
+            y: point.y - ny * ridge * 0.73,
+        });
+    }
+    polygon(ctx, [...top, ...bottom], palette.blue);
+    line(ctx, top, '#d7f3ed', 3);
+    line(ctx, bottom, '#386d9b', 4);
+    line(ctx, axis, '#fff5cd', 7);
+    for (let index = 0; index < 5; index++) {
+        const u = (index + 0.6) / 6;
+        const point = beamAxis(u, length, bend, tipHeight);
+        const prior = beamAxis(u - 0.015, length, bend, tipHeight);
+        ctx.save();
+        ctx.translate(point.x, point.y);
+        ctx.rotate(Math.atan2(point.y - prior.y, point.x - prior.x));
+        polygon(ctx, [
+            { x: -12, y: -12 },
+            { x: 24, y: -2 },
+            { x: 5, y: 12 },
+            { x: -21, y: 4 },
+        ], '#29475b');
+        ctx.restore();
+    }
+    star(ctx, head.x, head.y, 28 + (phase % 3) * 5, palette.paper, 5, 0.3 + phase * 0.21);
     ctx.restore();
 }
 function dragonPoint(progress, trail) {
@@ -83,7 +117,7 @@ function dragonPoint(progress, trail) {
     };
 }
 function drawDragon(ctx, frame) {
-    const age = frame.timeMs - 830;
+    const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 2400)
         return;
     const p = clamp(age / 1900);
@@ -101,7 +135,7 @@ function drawDragon(ctx, frame) {
     const bottom = [];
     for (let index = 0; index <= count; index++) {
         const u = index / count;
-        const point = dragonPoint(frame.reducedMotion ? 0.58 : p, u);
+        const point = dragonPoint(p, u);
         const thick = (1 - u) * 35 + 2;
         top.push({
             x: point.x,
@@ -111,8 +145,8 @@ function drawDragon(ctx, frame) {
     }
     polygon(ctx, [...top, ...bottom], '#dc7947');
     line(ctx, top, '#f5d374', 3);
-    const center = dragonPoint(frame.reducedMotion ? 0.58 : p, 0);
-    const spine = Array.from({ length: count }, (_, index) => dragonPoint(frame.reducedMotion ? 0.58 : p, index / count));
+    const center = dragonPoint(p, 0);
+    const spine = Array.from({ length: count }, (_, index) => dragonPoint(p, index / count));
     line(ctx, spine, '#f8d98f', 11);
     const x = center.x;
     const y = center.y;
@@ -139,19 +173,7 @@ function drawDragon(ctx, frame) {
     ctx.restore();
 }
 function drawAraki(ctx, frame) {
-    line(ctx, [
-        { x: 349, y: 410 },
-        { x: 666, y: 151 },
-    ], '#9296a5', 13);
-    line(ctx, [
-        { x: 365, y: 394 },
-        { x: 668, y: 150 },
-    ], '#e4e7de', 3);
-    line(ctx, [
-        { x: 332, y: 377 },
-        { x: 383, y: 427 },
-    ], palette.gold, 8);
-    const age = frame.timeMs - 1200;
+    const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 1350)
         return;
     const p = clamp(age / 1350);
@@ -203,11 +225,11 @@ function viscousBody(ctx, head, neck, connected) {
     ctx.stroke();
 }
 function drawKozuma(ctx, frame) {
-    const age = frame.timeMs - 860;
+    const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 2400)
         return;
     const p = clamp(age / 1900);
-    const head = { x: 325 + p * 430, y: 294 - Math.sin(p * Math.PI) * 48 };
+    const head = { x: 285 + p * 430, y: 300 - Math.sin(p * Math.PI) * 48 };
     ctx.save();
     ctx.globalAlpha *= 1 - clamp((age - 2000) / 400);
     if (!frame.enhanced)
@@ -228,8 +250,7 @@ function drawKozuma(ctx, frame) {
     ctx.restore();
 }
 function drawTatsuzo(ctx, frame) {
-    ellipse(ctx, 551, 284, 245, 171, '#c2c2aa');
-    const age = frame.timeMs - 930;
+    const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 2400)
         return;
     const p = clamp(age / 2400);
@@ -238,7 +259,7 @@ function drawTatsuzo(ctx, frame) {
     ctx.save();
     ctx.globalAlpha *= smooth(p * 9) * (1 - smooth((p - 0.82) / 0.18));
     if (!frame.enhanced)
-        ellipse(ctx, 555, 280, 90, 90, '#070a12');
+        ellipse(ctx, 551, 284, 90, 90, '#070a12');
     else {
         ctx.beginPath();
         ctx.moveTo(361, 311);
@@ -254,51 +275,7 @@ function drawTatsuzo(ctx, frame) {
     ctx.restore();
 }
 function drawShigeta(ctx, frame) {
-    const approach = 1 - smooth((frame.timeMs - 850) / 400);
-    ctx.save();
-    ctx.translate(-approach * 48, 0);
-    polygon(ctx, [
-        { x: 259, y: 190 },
-        { x: 313, y: 167 },
-        { x: 548, y: 297 },
-        { x: 514, y: 320 },
-    ], '#788895');
-    polygon(ctx, [
-        { x: 259, y: 190 },
-        { x: 514, y: 320 },
-        { x: 505, y: 334 },
-        { x: 255, y: 212 },
-    ], '#3b4c62');
-    line(ctx, [
-        { x: 313, y: 171 },
-        { x: 548, y: 297 },
-    ], '#d6e0df', 4);
-    ctx.restore();
-    ctx.save();
-    ctx.translate(approach * 46, 0);
-    polygon(ctx, [
-        { x: 548, y: 303 },
-        { x: 610, y: 278 },
-        { x: 769, y: 362 },
-        { x: 724, y: 417 },
-        { x: 591, y: 371 },
-    ], '#586f85');
-    polygon(ctx, [
-        { x: 548, y: 303 },
-        { x: 591, y: 371 },
-        { x: 724, y: 417 },
-        { x: 708, y: 433 },
-        { x: 576, y: 387 },
-    ], '#283c54');
-    line(ctx, [
-        { x: 548, y: 303 },
-        { x: 610, y: 278 },
-        { x: 769, y: 362 },
-    ], '#bdcece', 4);
-    for (let i = 0; i < 3; i++)
-        ellipse(ctx, 616 + i * 42, 337 + i * 21, 4, 4, '#26384b');
-    ctx.restore();
-    const age = frame.timeMs - 1250;
+    const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 1500)
         return;
     const motion = frame.reducedMotion ? 0.55 : 1;
@@ -405,7 +382,7 @@ function drawShigeta(ctx, frame) {
     ctx.restore();
 }
 function drawKutsuna(ctx, frame) {
-    const age = frame.timeMs - 1080;
+    const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 1700)
         return;
     const p = age / 1700;
@@ -463,8 +440,5 @@ export function drawLightEffects(ctx, id, frame) {
         drawKutsuna(ctx, frame);
     else
         return false;
-    label(ctx, frame.enhanced
-        ? '형태와 박자 · 잔여를 함께 비교'
-        : '특징을 생략한 기본 표현');
     return true;
 }

@@ -1,4 +1,6 @@
-import { actor, burst, clamp, ellipse, face, line, noise, palette, polygon, smooth, stage, star, windowed, } from './drawing.js';
+import { drawBattle, drawAtaho, drawBear, sampleAtahoSprite, } from './battle.js';
+import { drawEmotionPortrait, portraitEyes, } from './emotion-face.js';
+import { burst, clamp, ellipse, line, noise, palette, polygon, smooth, stage, star, windowed, } from './drawing.js';
 export const emotionSamples = [
     {
         id: 'emotion-sweat',
@@ -36,9 +38,9 @@ export const emotionSamples = [
         id: 'emotion-face-fault',
         name: '즈코 넘어짐',
         category: 'emotion',
-        previewMs: 1800,
-        description: '잠깐의 정적 뒤 전신이 옆으로 무너지는 큰 리액션입니다.',
-        distinction: '맞고 날아가는 낙하와 달리 어이없는 순간의 갑작스러운 균형 상실입니다.',
+        previewMs: 3250,
+        description: '어퍼컷을 버틴 곰왕이 허세를 부린 뒤 정적을 깨고 맥없이 주저앉습니다.',
+        distinction: '허세→빈 박자→쓰러짐의 코믹한 엇박입니다. 얼굴부터 바닥에 꽂히는 새 자세는 추가하지 않습니다.',
     },
     {
         id: 'emotion-tears',
@@ -68,7 +70,7 @@ export const emotionSamples = [
         id: 'emotion-eye-sparks',
         name: '시선 불꽃',
         category: 'emotion',
-        previewMs: 2000,
+        previewMs: 750,
         description: '마주 본 두 인물 사이의 시선이 팽팽해지고 짧은 번개가 잇습니다.',
         distinction: '공격 투사체가 아니라 두 시선 사이의 긴장을 나타냅니다.',
     },
@@ -113,25 +115,28 @@ function flower(ctx, x, y, size, angle) {
     ctx.restore();
 }
 function eyeSparks(ctx, frame) {
-    face(ctx, 250, 285, 0.8, frame.enhanced ? 'anger' : 'calm');
-    ctx.save();
-    ctx.translate(710, 0);
-    ctx.scale(-1, 1);
-    face(ctx, 0, 285, 0.8, frame.enhanced ? 'anger' : 'calm');
-    ctx.restore();
-    if (!frame.enhanced)
+    drawBattle(ctx, frame);
+    if (!frame.enhanced || frame.timeMs >= 1100)
         return;
-    const p = windowed(frame.timeMs, 650, 3450, 500);
+    const sprite = sampleAtahoSprite(frame);
+    const from = {
+        x: sprite.left + sprite.width * (46 / 96),
+        y: sprite.top + sprite.height * (33 / 96),
+    };
+    const to = { x: 650 + (64 - 80) * 2.7, y: 440 - (135 - 38) * 2.7 };
+    const p = windowed(frame.timeMs, 250, 850, 150);
     ctx.save();
     ctx.globalAlpha *= p;
     const key = Math.floor(frame.timeMs / (frame.reducedMotion ? 350 : 150));
-    const pts = Array.from({ length: 17 }, (_, i) => ({
-        x: 282 + i * 24.75,
-        y: 282 + Math.sin(i * 1.8 + key * 0.8) * (i === 0 || i === 16 ? 0 : 13),
+    const points = Array.from({ length: 17 }, (_, i) => ({
+        x: from.x + ((to.x - from.x) * i) / 16,
+        y: from.y +
+            ((to.y - from.y) * i) / 16 +
+            Math.sin(i * 1.8 + key * 0.8) * (i === 0 || i === 16 ? 0 : 6),
     }));
-    line(ctx, pts, '#9d83c0', 11);
-    line(ctx, pts, palette.paper, 3);
-    star(ctx, 480, 282, 18, palette.gold, 4);
+    line(ctx, points, '#9d83c0', 8);
+    line(ctx, points, palette.paper, 2);
+    star(ctx, (from.x + to.x) / 2, (from.y + to.y) / 2, 13, palette.gold, 4);
     ctx.restore();
 }
 export function drawEmotion(ctx, id, frame) {
@@ -139,19 +144,22 @@ export function drawEmotion(ctx, id, frame) {
     try {
         const t = frame.timeMs;
         const p = frame.enhanced ? windowed(t, 500, 3400, 400) : 0;
-        stage(ctx, 0);
+        drawBattle(ctx, frame);
         if (id === 'emotion-face-fault') {
-            actor(ctx, 470, 430, 1.5);
-            if (frame.enhanced) {
+            if (frame.enhanced && t > 2050) {
                 stage(ctx, 0);
-                const fall = smooth((t - 1300) / 240) * (1 - smooth((t - 3200) / 500));
-                ctx.save();
-                ctx.translate(470 + fall * 80, 430);
-                ctx.rotate(fall * (frame.reducedMotion ? 0.7 : 1.45));
-                actor(ctx, 0, 0, 1.5, { arm: fall, crouch: fall * 0.25 });
-                ctx.restore();
-                if (t > 1400 && t < 2200)
-                    burst(ctx, 580, 426, (t - 1400) / 800, palette.paper, 7);
+                drawAtaho(ctx, frame, { timeMs: 2800 });
+                if (t < 2750) {
+                    drawBear(ctx, frame, { state: 'stand', timeMs: 0 });
+                    ctx.fillStyle = palette.paper;
+                    ctx.font = '700 25px sans-serif';
+                    ctx.fillText(t < 2500 ? '이 정도쯤은…' : '…', 615, 110);
+                }
+                else {
+                    drawBear(ctx, frame, { state: 'defeat', timeMs: 1800 + t - 2750 });
+                    if (t < 3100)
+                        burst(ctx, 650, 435, clamp((t - 2750) / 350), palette.paper, 5);
+                }
             }
             return;
         }
@@ -167,6 +175,8 @@ export function drawEmotion(ctx, id, frame) {
                 flower(ctx, 70 + noise(i + 1) * 820, 70 + noise(i + 15) * 420, (40 + noise(i + 7) * 40) * growth, noise(i + 9) * 6.28);
             }
         }
+        ctx.save();
+        ctx.translate(-250, 0);
         let emotion = 'calm';
         if (p > 0.3) {
             if (id === 'emotion-white-eyes')
@@ -182,9 +192,11 @@ export function drawEmotion(ctx, id, frame) {
             if (id === 'emotion-sweat')
                 emotion = 'shock';
         }
-        face(ctx, 480, 270, 1.35, emotion);
-        if (p <= 0)
+        drawEmotionPortrait(ctx, frame, emotion, p);
+        if (p <= 0) {
+            ctx.restore();
             return;
+        }
         ctx.save();
         ctx.globalAlpha *= p;
         if (id === 'emotion-sweat') {
@@ -236,8 +248,8 @@ export function drawEmotion(ctx, id, frame) {
             ctx.save();
             ctx.globalAlpha *= Math.sin(drift * Math.PI) * 0.9;
             line(ctx, [
-                { x: 480, y: 342 },
-                { x: 510, y: 327 },
+                { x: 480, y: 328 },
+                { x: 510, y: 315 },
                 { x: x - 25, y: y + 40 },
                 { x, y },
             ], palette.paper, 9);
@@ -254,25 +266,26 @@ export function drawEmotion(ctx, id, frame) {
             ctx.restore();
         }
         else if (id === 'emotion-tears') {
-            for (const s of [-1, 1]) {
-                const x = 480 + s * 51;
+            for (const eye of portraitEyes) {
+                const { x, side: s } = eye;
+                const origin = eye.y + 8;
                 const length = smooth((t - 600) / 600) * 240;
                 polygon(ctx, [
-                    { x: x - 21, y: 273 },
-                    { x: x + 21, y: 273 },
-                    { x: x + 29 + s * 9, y: 273 + length },
-                    { x: x - 23 + s * 9, y: 273 + length },
+                    { x: x - 21, y: origin },
+                    { x: x + 21, y: origin },
+                    { x: x + 29 + s * 9, y: origin + length },
+                    { x: x - 23 + s * 9, y: origin + length },
                 ], palette.blue);
                 for (let j = 0; j < 5; j++) {
                     if (length < 8)
                         continue;
-                    const top = 276 + ((t / 700 + j * 0.2) % 1) * (length - 6);
+                    const top = origin + 3 + ((t / 700 + j * 0.2) % 1) * (length - 6);
                     line(ctx, [
                         { x: x - 6, y: top },
-                        { x: x - 6 + s * 4, y: Math.min(top + 22, 270 + length) },
+                        { x: x - 6 + s * 4, y: Math.min(top + 22, origin + length) },
                     ], palette.paper, 3);
                 }
-                ellipse(ctx, x + s * 9, 273 + length, 31, 6, '#81bdd577');
+                ellipse(ctx, x + s * 9, origin + length, 31, 6, '#81bdd577');
             }
         }
         else if (id === 'emotion-white-eyes') {
@@ -294,6 +307,7 @@ export function drawEmotion(ctx, id, frame) {
                 star(ctx, x, y, (7 + noise(i + 7) * 17) * pulse, palette.paper, 4, noise(i) * 0.4);
             }
         }
+        ctx.restore();
         ctx.restore();
     }
     finally {

@@ -4,10 +4,10 @@
   "status": "presentation-studies",
   "title": "애니 연출 견본집 · 90종",
   "sourceArtifact": "https://claude.ai/artifact/59raaYDpH7yFHta6687KXh",
-  "scope": "사용자가 지정한 6개 분류·90개 연출을 각각 독립된 4.2초 Canvas 견본으로 구성한다. 도형 배우·절차 작화로 형태·박자·구도에 집중한다.",
+  "scope": "아타호가 서리갈기 곰왕을 때리는 공통 구도에서 90개 연출을 비교한다. 기본은 기존 모아치는 어퍼컷, 이나즈마 킥은 기존 도약 날아차기 A/B 강화 모션이다.",
   "authoring": {
-    "actors": "직접 그린 중립 도형 배우·얼굴",
-    "effects": "절대 시각에 따른 Canvas 작화·촬영·편집",
+    "actors": "기존 아타호 어퍼컷·날아차기·얼굴 및 서리갈기 곰왕 대기·피격·쓰러짐 원본",
+    "effects": "공통 접촉과 원본 배우 위에 합성하는 Canvas 효과·촬영·편집",
     "externalAssets": [],
     "paidGenerationCalls": 0,
     "audio": false,
@@ -16,12 +16,52 @@
       "width": 640,
       "height": 360,
       "fps": 20
-    }
+    },
+    "reusedFiles": [
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_000.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_001.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_002.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_003.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_004.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_005.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_006.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_016.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_000.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_001.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_002.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_003.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_004.png",
+      "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/revision-2/originals/pose-a-airborne-chamber.png",
+      "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/revision-2/originals/pose-b-diagonal-extension.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_005.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_006.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_007.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_008.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/stand/0ecf517b-d19d-4abd-8a20-9915187b0836/00.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/stand/0ecf517b-d19d-4abd-8a20-9915187b0836/01.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/stand/0ecf517b-d19d-4abd-8a20-9915187b0836/02.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/stand/0ecf517b-d19d-4abd-8a20-9915187b0836/03.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/hit1/e5f87465-60db-45a0-b0a8-39ac9faa629a/00.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/hit1/e5f87465-60db-45a0-b0a8-39ac9faa629a/01.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/hit1/e5f87465-60db-45a0-b0a8-39ac9faa629a/02.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/hit1/e5f87465-60db-45a0-b0a8-39ac9faa629a/03.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/00.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/01.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/02.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/03.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/04.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/05.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/06.png",
+      "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/07.png",
+      "public/assets/maplestory/ataho-v2-effects/20261016/cutin/ataho-face-original.png"
+    ]
   },
-  "referenceBoundary": "이번 구현은 사용자 90개 목록과 기존 용어집 검토·동작/카메라 관찰 기록을 재사용했다. 90개 원작 영상의 신규 전수 재생이나 특정 작가의 원화 복제가 아니다. 인명 기법은 설명된 형태·타이밍을 도형으로 해석한 견본이다. 무라키 서커스 등 계보가 불확실한 항목은 원작 재현으로 확정하지 않는다.",
+  "referenceBoundary": "2026-10-19 감사에서 제작자·현업자의 설명과 공개 그림을 코드에 대조했다. Ednöra 25~26초 구간은 음소거 재생 및 프레임 확인했다. 90개 원작 영상 전수 재생은 하지 않았다. 작가명 효과는 특정 원작의 동작 복제가 아닌 원리 해석이며 정의 불확실성과 미재현 범위를 개별 설명에 남긴다.",
   "records": [
     "docs/ataho-v2-glossary-review/README.md",
-    "resources/dramatic-anime-studies.json"
+    "resources/dramatic-anime-studies.json",
+    "resources/ataho-v2-inazuma-kick-keyposes-r2.json"
   ],
   "references": [
     {
@@ -39,6 +79,30 @@
     {
       "url": "https://w.atwiki.jp/sakuga/pages/28.html",
       "use": "기존 용어집의 작화·촬영 설명 출처. 이번 원작 영상 전수 확인은 하지 않음."
+    },
+    {
+      "url": "https://www.toonboom.com/etienne-cote-on-animating-smear-frames-and-multiples-in-ednora",
+      "use": "원제작자의 스미어 노출·연결 그림 설명. 연결된 Ednöra 25~26초 음소거 재생·프레임 확인."
+    },
+    {
+      "url": "https://www.inouejet.com/camera/",
+      "use": "현업 연출가의 휘날림·촬영 용어 정의. 용례 차이는 보류하며 설명에 반영."
+    },
+    {
+      "url": "https://news.mynavi.jp/techplus/article/20100810-itano/2",
+      "use": "이타노 본인 인터뷰의 추격·피사체·카메라 관계. 문헌 대조이며 원작 비행 영상 검증은 아님."
+    },
+    {
+      "url": "https://animation-nerima.jp/topics/topic-news/2654/",
+      "use": "하모니 제작진 행사 기록의 색면·선화·배경 통합 원리. 디지털 안료 재구성으로 응용."
+    },
+    {
+      "url": "https://konstone.s-kon.net/modules/notebook/archives/423",
+      "use": "곤 사토시 본인의 ダブラシ影 설명. 몸 잔상과 구분되는 반투명 지면 그림자로 수정."
+    },
+    {
+      "url": "https://tips.clip-studio.com/en-us/articles/10736",
+      "use": "원작성자의 표정 구성 설명·공개 이미지 참고. 감정 기호와 눈썹·눈·입을 함께 변화."
     }
   ],
   "categories": [
@@ -79,367 +143,367 @@
       "name": "임팩트 프레임",
       "category": "impact",
       "previewMs": 1840,
-      "description": "접촉 순간을 날카로운 흑백 추상화 한 장으로 바꿉니다.",
-      "distinction": "밝기를 더하는 대신 원래 구도를 잠깐 다른 그림으로 대체합니다."
+      "description": "어퍼컷이 곰왕에게 닿는 순간을 실제 두 원본의 검은 윤곽과 추상 충격선으로 바꿉니다.",
+      "distinction": "새 몸을 그리지 않고 접촉 컷의 화면 표현만 잠깐 교체합니다."
     },
     {
       "id": "beta-flash",
       "name": "베타 플래시",
       "category": "impact",
       "previewMs": 1810,
-      "description": "검게 채운 주변부와 비워 둔 흰 초점 공간으로 충격을 모읍니다.",
-      "distinction": "화면 전체를 반전하지 않고 검정과 흰 여백의 면적을 설계합니다."
+      "description": "검은 주변부와 비워 둔 흰 초점 공간 안에 아타호와 곰왕의 실제 윤곽을 남깁니다.",
+      "distinction": "화면 전체 반전과 달리 검정과 흰 여백의 면적을 설계합니다."
     },
     {
       "id": "monochrome-invert",
       "name": "흑백 반전",
       "category": "impact",
       "previewMs": 1840,
-      "description": "같은 타격 구도의 명암 관계를 접촉 순간 뒤집습니다.",
-      "distinction": "형태를 새 추상화로 교체하는 임팩트 프레임과 달리 구도를 보존합니다."
+      "description": "같은 어퍼컷과 곰왕 피격 구도의 밝고 어두운 관계를 접촉 순간 뒤집습니다.",
+      "distinction": "원본 형태·비율·방향은 유지하고 명암 관계만 바꿉니다."
     },
     {
       "id": "screen-shatter",
       "name": "화면 갈라짐",
       "category": "impact",
       "previewMs": 2170,
-      "description": "충격 컷의 실제 내용을 조각에 남긴 채 화면을 벌립니다.",
-      "distinction": "배우나 지형의 파괴가 아니라 한 장의 합성 화면이 갈라집니다."
+      "description": "실제 아타호와 곰왕이 담긴 접촉 화면을 조각에 남긴 채 벌립니다.",
+      "distinction": "원본 배우의 새 회전 자세가 아니라 합성 화면의 조각이 이동합니다."
     },
     {
       "id": "hisashi-punch",
       "name": "히사시 펀치",
       "category": "impact",
       "previewMs": 2260,
-      "description": "주먹이 닿은 자세와 상대의 눌리는 반응을 길게 붙잡습니다.",
-      "distinction": "접촉 직전과 회수는 정상 속도이고 접촉 구간만 길어집니다. 작가 계보의 재현은 아닙니다."
+      "description": "실제 어퍼컷의 접촉 프레임과 곰왕 피격 반응을 오래 붙잡습니다.",
+      "distinction": "접촉 구간의 재생 시간만 늘리고 몸과 상대 반응은 기존 프레임을 사용합니다."
     },
     {
       "id": "action-cutin",
       "name": "컷인",
       "category": "impact",
       "previewMs": 1250,
-      "description": "진행 중인 공격 위에 결의에 찬 얼굴의 별도 패널을 끼웁니다.",
-      "distinction": "본래 행동과 얼굴을 동시에 남기며 전체 화면을 근접 컷으로 바꾸지 않습니다."
+      "description": "곰왕을 향한 공격 위에 기존 아타호 얼굴의 별도 패널을 끼웁니다.",
+      "distinction": "행동을 남긴 채 같은 실제 인물의 눈 크롭을 함께 보여줍니다."
     },
     {
       "id": "pon-yori",
       "name": "퐁요리",
       "category": "impact",
       "previewMs": 1900,
-      "description": "와이드에서 근접 구도로 중간 줌 이동 없이 순간 전환합니다.",
-      "distinction": "카메라가 다가가는 과정 대신 처음과 끝 크기를 컷으로 바로 잇습니다."
+      "description": "어퍼컷 와이드에서 타점 근접 구도로 중간 줌 이동 없이 전환합니다.",
+      "distinction": "원본 배우는 같은 비율이며 처음과 끝 구도를 컷으로 잇습니다."
     },
     {
       "id": "obari-punch",
-      "name": "오바리 펀치",
+      "name": "오바리 펀치 (원화 필요·미재현)",
       "category": "impact",
       "previewMs": 1870,
-      "description": "뒤로 접힌 몸에서 거대한 전경 주먹을 앞으로 꽂습니다.",
-      "distinction": "배우 전체 확대가 아니라 주먹·팔·머리의 원근 비율을 직접 다르게 그립니다."
+      "description": "가슴을 열어 화면 앞으로 뻗는 전용 정권 원화가 없어 오바리 펀치는 미재현 상태입니다.",
+      "distinction": "현재 두 판은 기존 어퍼컷의 일반 구도와 근접 구도만 비교합니다. 화면 확대를 오바리 펀치 완성으로 취급하지 않습니다."
     },
     {
       "id": "inazuma-kick",
       "name": "이나즈마 킥",
       "category": "impact",
       "previewMs": 1900,
-      "description": "높이 솟은 몸에서 큰 발을 선두로 사선 낙하합니다.",
-      "distinction": "번개 선만 붙이지 않고 공중 장전과 발이 앞서는 낙하 자세를 따로 그립니다."
+      "description": "기존 A/B 사선 날아차기와 곰왕 피격에 낙하 방향의 번개 궤적을 더합니다.",
+      "distinction": "기존 점프·장전·신전·착지를 재사용하며 PNG를 돌리거나 발을 새로 키우지 않습니다."
     },
     {
       "id": "kurumada-fall",
-      "name": "쿠루마다 낙하",
+      "name": "쿠루마다 낙하 (원화 필요·미재현)",
       "category": "impact",
-      "previewMs": 2410,
-      "description": "맞고 날아간 몸이 뒤집힌 뒤 머리부터 지면에 꽂히듯 떨어집니다.",
-      "distinction": "중립 도형 배우의 만화적인 낙하·접지 압축이며 피나 상처는 없습니다."
+      "previewMs": 2820,
+      "description": "머리부터 떨어지는 곰왕 전용 낙하 원화가 없어 쿠루마다 낙하는 미재현 상태입니다.",
+      "distinction": "현재는 정자세 피격 그림의 일반 포물선·착지 비교입니다. PNG 회전으로 새 낙하 자세를 만들지 않습니다."
     },
     {
       "id": "smear-frame",
       "name": "스미어 프레임",
       "category": "motion",
-      "previewMs": 1530,
-      "description": "빠른 통과 구간의 몸을 한 장의 길게 이어진 쓸림 그림으로 바꿉니다.",
-      "distinction": "과거 자세 여러 장을 겹치는 잔상과 달리 하나의 새 연결 형태입니다."
+      "previewMs": 1780,
+      "description": "상승에서 접촉으로 넘어가는 40ms 동안 실제 아타호의 실루엣을 동작 방향으로 길게 잇습니다.",
+      "distinction": "기존 PNG의 픽셀 행을 잠깐 늘린 연결 그림이며 별도 빛 궤적이나 새 픽셀 자세가 아닙니다."
     },
     {
       "id": "obake",
       "name": "오바케",
       "category": "motion",
-      "previewMs": 1540,
-      "description": "튀어 오르는 중간 몸의 외곽을 물결지고 늘어진 형태로 직접 그립니다.",
-      "distinction": "일정한 비율로 늘리는 변형 대신 머리·몸·팔다리가 다른 방향으로 일그러집니다."
+      "previewMs": 1773,
+      "description": "어퍼컷의 연결 구간 55ms에 실제 몸 외곽을 비대칭으로 흐트러뜨렸다 접촉 자세로 돌아옵니다.",
+      "distinction": "기존 몸 그림의 매우 짧은 변형 중간그림입니다. 독립 오라의 외곽 변형과 구별합니다."
     },
     {
       "id": "background-animation",
       "name": "배경 동화",
       "category": "motion",
       "previewMs": 2050,
-      "description": "배우 뒤의 회랑을 깊이와 방향에 맞춰 매 시점 다시 그립니다.",
-      "distinction": "완성된 배경 한 장을 옮기는 대신 벽·바닥의 원근 형태가 함께 변합니다."
+      "description": "같은 아타호와 곰왕 뒤 회랑의 벽·바닥 원근을 다시 그립니다.",
+      "distinction": "배우 PNG는 같은 비율로 유지하고 배경 형태와 깊이만 변합니다."
     },
     {
       "id": "nakanuki",
       "name": "나카누키",
       "category": "motion",
       "previewMs": 1650,
-      "description": "장전과 도착 자세를 남기고 사이의 연결 자세를 과감히 생략합니다.",
-      "distinction": "재생 시간을 빠르게 하는 대신 움직임의 연결 그림 수를 줄입니다."
+      "description": "실제 어퍼컷의 준비와 접촉은 남기고 사이 프레임을 생략합니다.",
+      "distinction": "PNG를 변형하거나 새 포즈를 만들지 않고 기존 원화의 노출 순서만 조정합니다."
     },
     {
       "id": "midareuchi",
       "name": "미다레우치",
       "category": "motion",
       "previewMs": 1230,
-      "description": "같은 다섯 타를 짧은 두 타와 긴 쉼이 섞인 불규칙한 박자로 칩니다.",
-      "distinction": "매번 같은 고정 박자 배열을 쓰며 실행 중 무작위로 바뀌지 않습니다."
+      "description": "실제 어퍼컷과 곰왕 피격을 고정된 불규칙 박자의 다섯 타로 잇습니다.",
+      "distinction": "두 판 모두 다섯 타이며 짧은 두 타와 긴 쉼의 배열만 다릅니다."
     },
     {
       "id": "strobe",
       "name": "스트로보",
       "category": "motion",
       "previewMs": 1840,
-      "description": "달려온 실제 과거 자세를 일정 시간 간격으로 남깁니다.",
-      "distinction": "중간 몸을 늘리는 스미어와 달리 서로 떨어진 여러 시각의 온전한 자세입니다."
+      "description": "어퍼컷에 진입한 실제 과거 프레임을 일정 시간 간격으로 남깁니다.",
+      "distinction": "원본 비율의 여러 과거 자세이며 늘린 몸이나 새 도형 배우가 아닙니다."
     },
     {
       "id": "motion-metamorphosis",
       "name": "메타모르포제",
       "category": "motion",
       "previewMs": 1750,
-      "description": "둥근 먹덩어리의 같은 외곽에서 날개·부리·꼬리가 연속해서 갈라집니다.",
-      "distinction": "두 그림의 투명도 교대 대신 윤곽 꼭짓점 자체가 이동합니다."
+      "description": "아타호의 타격 빛이 둥근 덩어리에서 초승달 외곽으로 연속 변형합니다.",
+      "distinction": "캐릭터의 변신이 아니라 독립 기공 효과입니다. 두 그림의 페이드와 실제 외곽 이동을 비교합니다."
     },
     {
       "id": "wave-propagation",
       "name": "물결 보내기",
       "category": "motion",
       "previewMs": 1900,
-      "description": "손목에서 한 번 만든 물결을 천의 끝까지 순서대로 보냅니다.",
-      "distinction": "천 전체가 동시에 흔들리지 않고 구간마다 반응이 늦게 도착합니다."
+      "description": "어퍼컷의 손 쪽에서 독립 기맥 띠의 끝까지 한 물결을 보냅니다.",
+      "distinction": "배우의 옷을 새로 만들거나 변형하지 않고 보조 띠의 구간마다 반응을 늦춥니다."
     },
     {
       "id": "araki-flutter",
       "name": "아라키 휘날림",
       "category": "motion",
       "previewMs": 1250,
-      "description": "돌아서는 몸 뒤 망토가 큰 뾰족한 면으로 펼쳐졌다 반대쪽으로 접힙니다.",
-      "distinction": "작은 반복 흔들림 대신 한 번의 큰 펼침·엇갈린 주름·반동을 그립니다. 작가 원전의 복제는 아닙니다."
+      "description": "실제 준비 원본의 머리 위 털·꼬리 털·옷 가장자리가 서로 다른 위상으로 반복 나부낍니다.",
+      "distinction": "얼굴과 몸 중심을 고정하고 기존 픽셀 영역만 움직이는 제한 시안입니다. 원작 작화의 복제나 새 망토가 아닙니다."
     },
     {
       "id": "squash-stretch",
       "name": "스쿼시 앤 스트레치",
       "category": "motion",
-      "previewMs": 2330,
-      "description": "낙하 중 길어지고 접지에서 눌린 몸이 탄력 있게 복원됩니다.",
-      "distinction": "위치 이동만 바꾸지 않고 몸의 폭과 높이를 반대 방향으로 바꿉니다."
+      "previewMs": 1980,
+      "description": "접촉의 기공 덩어리가 길어졌다 눌린 뒤 탄성 있게 복원됩니다.",
+      "distinction": "전용 변형 몸 원화가 없어 캐릭터 PNG는 보존합니다. 폭과 높이의 반대 변화는 독립 효과에만 적용합니다."
     },
     {
       "id": "kanada-motion",
       "name": "카나다계 동작",
       "category": "motion",
       "previewMs": 1720,
-      "description": "비대칭 장전·날카로운 통과·넓게 벌린 도착을 서로 다른 실루엣으로 잇습니다.",
-      "distinction": "효과선 추가 대신 관절 각도와 자세 대비를 직접 그린 원리 시안입니다."
+      "description": "실제 어퍼컷의 준비·통과·접촉 원화를 선명하게 끊어 노출합니다.",
+      "distinction": "새로운 각진 관절 원화는 없습니다. 기존 원화 대비와 노출 박자를 참고한 시안이며 작가 원전의 복제가 아닙니다."
     },
     {
       "id": "kanada-perspective",
       "name": "카나다 파스",
       "category": "motion",
-      "previewMs": 1930,
-      "description": "멀어지는 머리와 몸 뒤에서 커다란 발이 전경으로 튀어나옵니다.",
-      "distinction": "배우 전체를 확대하지 않고 가까운 발과 먼 머리의 비율·겹침을 바꿉니다."
+      "previewMs": 1820,
+      "description": "기존 킥 B의 발 쪽은 가깝게, 몸통 쪽은 멀게 투영해 부분마다 다른 원근 배율을 만듭니다.",
+      "distinction": "전체 균등 확대를 없앤 기존 원화의 투영 견본입니다. 별도 발앞 자세·새 관절 그림을 만들지 않으며 전용 원화의 대체는 아닙니다."
     },
     {
       "id": "focus-lines",
       "name": "집중선",
       "category": "motion",
       "previewMs": 1900,
-      "description": "배경의 선들이 하나의 초점 공간으로 모여 시선을 붙잡습니다.",
-      "distinction": "검게 채우는 베타 플래시와 달리 원래 배경 위에 가는 수렴선을 남깁니다."
+      "description": "아타호와 곰왕의 실제 접촉 공간으로 배경 선들을 모읍니다.",
+      "distinction": "원본 PNG와 타점은 유지하며 한 점으로 수렴하는 배경선만 더합니다."
     },
     {
       "id": "speed-streamlines",
       "name": "속도선·유선",
       "category": "motion",
       "previewMs": 1800,
-      "description": "이동 반대 방향의 긴 선과 몸 둘레를 흐르는 곡선으로 속도를 보입니다.",
-      "distinction": "한 점으로 모이는 집중선과 달리 흐름의 방향과 물체 둘레의 경로를 그립니다."
+      "description": "실제 어퍼컷 진입 뒤 긴 평행선과 몸 둘레를 흐르는 곡선을 그립니다.",
+      "distinction": "집중선처럼 한 점에 모이지 않고 이동 반대 방향과 둘레의 흐름을 보입니다."
     },
     {
       "id": "fx-kanada-light",
       "name": "카나다 빛",
       "category": "effects",
-      "previewMs": 1280,
-      "description": "점광이 긴 십자와 비스듬한 링으로 바뀌는 짧은 섬광 견본입니다.",
-      "distinction": "광점 → 십자 → 링의 서로 다른 노출 길이를 비교합니다."
+      "previewMs": 1930,
+      "description": "십자와 단단한 링을 조합한 해석 견본입니다. 브러시 링 질감과 작가 원작 동작의 재현은 미검증입니다.",
+      "distinction": "십자와 링의 노출 길이를 비교하며 원작의 부드러운 링을 그대로 복제한 것은 아닙니다."
     },
     {
       "id": "fx-kanada-beam",
       "name": "카나다 빔",
       "category": "effects",
-      "previewMs": 1750,
-      "description": "직선 광선의 외피가 각진 덩어리와 가는 목으로 급변하는 견본입니다.",
-      "distinction": "색이나 두께의 진동 대신 광선 외곽의 꺾임과 빈틈이 바뀝니다."
+      "previewMs": 2570,
+      "description": "중심축부터 S자로 굽어 뻗고, 각진 외피와 빈틈이 셀마다 교체되는 광선의 원리 견본입니다. 원작 동작 재현은 미검증입니다.",
+      "distinction": "직선 위 두께 변화와 달리 중심선·선두 방향·실루엣이 함께 바뀝니다."
     },
     {
       "id": "fx-kanada-explosion",
       "name": "카나다 폭발",
       "category": "effects",
-      "previewMs": 1350,
-      "description": "압축된 핵이 뾰족한 불꽃 면과 방사 쐐기로 열리는 견본입니다.",
-      "distinction": "둥근 팽창에 비해 각진 외곽과 짧은 정점이 두드러집니다."
+      "previewMs": 2110,
+      "description": "압축 핵·창·방사형·갈고리·갈라진 불꽃을 서로 다른 길이의 셀로 바꾸는 해석 견본입니다. 원작 동작 재현은 미검증입니다.",
+      "distinction": "같은 별모양 확대 대신 짧은 돌출과 긴 유지, 수축과 재확대, 형태 교체를 비교합니다."
     },
     {
       "id": "fx-kanada-dragon",
       "name": "카나다 드래곤",
       "category": "effects",
-      "previewMs": 1900,
-      "description": "팬 통칭을 용의 뿔·주둥이와 굽는 화염 몸통으로 해석한 견본입니다. 고정된 원전 정의는 아닙니다.",
-      "distinction": "같은 이동 경로의 에너지 덩어리를 동물 실루엣으로 연결합니다."
+      "previewMs": 2870,
+      "description": "팬 통칭을 고정된 용 머리와 굽는 리본 몸통으로 해석한 견본입니다. 화염의 형태 변환과 원작 동작은 미검증입니다.",
+      "distinction": "동물 실루엣을 가진 리본 경로이며 용의 외형만으로 특정 작가의 표현을 입증하지 않습니다."
     },
     {
       "id": "fx-itano",
       "name": "이타노 서커스",
       "category": "effects",
-      "previewMs": 1850,
-      "description": "서로 다른 고도에서 표적을 감아 돌아 합류하는 유도탄 궤도 견본입니다.",
-      "distinction": "각 탄의 긴 곡선·시간차·표적 회피가 공간을 만듭니다."
+      "previewMs": 1260,
+      "description": "곰왕의 회피를 다른 시각·깊이에서 쫓는 기공탄과 지연 추적 카메라를 조합한 원리 견본입니다. 원작 장면 복제는 아닙니다.",
+      "distinction": "탄은 회피 전 위치를 놓쳐 통과하고 앞뒤 가림·원근·추적 구도가 달라집니다. 마무리는 같은 1800ms 어퍼컷 한 번입니다."
     },
     {
       "id": "fx-muraki",
       "name": "무라키 서커스",
       "category": "effects",
-      "previewMs": 1850,
-      "description": "명칭을 추진 화염과 급격한 경로 압축 박자에 초점을 맞춰 해석한 견본입니다. 영향 계보를 판정하지 않습니다.",
-      "distinction": "이타노 견본의 긴 유도곡선과 달리 정체 → 추진 → 짧은 고속 교차를 보여줍니다."
+      "previewMs": 1450,
+      "description": "선행탄과 잠깐 정체한 뒤 추진하는 후속탄이 서로 다른 깊이에서 회피를 쫓는 해석입니다. 작가 고유 동작·계보는 미검증입니다.",
+      "distinction": "동시 수렴 대신 선행·정체·추진을 비동기로 배치하며, 빗나가는 궤도 뒤 같은 어퍼컷으로 끝납니다."
     },
     {
       "id": "fx-anno",
       "name": "안노 폭발",
       "category": "effects",
-      "previewMs": 2000,
-      "description": "지면의 섬광에서 치솟는 큰 분진 기둥과 작은 잔해 층을 나눈 견본입니다.",
-      "distinction": "정점 뒤 오래 남는 무거운 분진과 세밀한 비산을 비교합니다."
+      "previewMs": 2760,
+      "description": "접촉에서 치솟는 큰 분진 기둥과 작은 비산을 나눈 해석입니다. 타타키 질감과 작가 고유 동작 재현은 포함하지 않습니다.",
+      "distinction": "연기 기둥·지면 덩어리·작은 원형 비산의 층을 비교합니다."
     },
     {
       "id": "fx-iso-explosion",
       "name": "이소 폭발",
       "category": "effects",
-      "previewMs": 2100,
-      "description": "팽창하는 외곽과 안쪽으로 말리는 그림자 면을 분리한 부피 견본입니다.",
-      "distinction": "외곽만 커지는 연기와 달리 내부 암부가 서로 다른 시각에 흐릅니다."
+      "previewMs": 2800,
+      "description": "외곽 팽창과 내부 암부의 말림을 단순화한 부피 견본입니다. 작가 고유 형상·동작의 재현은 미검증입니다.",
+      "distinction": "초승달·원호 암부가 외곽과 다르게 흐르며, 복잡한 Y·삼각형 암부를 모두 구현한 것은 아닙니다."
     },
     {
       "id": "fx-iso-debris",
       "name": "이소 파편",
       "category": "effects",
-      "previewMs": 1750,
-      "description": "잔해가 큰 무리로 날아가다 작은 비대칭 덩어리로 풀리는 견본입니다.",
-      "distinction": "균일한 점 분산 대신 군집의 공통 운동과 내부 분열을 보여줍니다."
+      "previewMs": 2520,
+      "description": "독립 잔해가 세 군집의 공통 운동을 따르다 간격을 벌리는 해석입니다. 원작 동작 재현은 미검증입니다.",
+      "distinction": "조각이 새로 분열하는 대신 처음부터 있는 조각의 군집 운동과 간격 변화를 비교합니다."
     },
     {
       "id": "fx-nakamura",
       "name": "나카무라 큐브",
       "category": "effects",
-      "previewMs": 1720,
-      "description": "석재 덩어리에서 면색을 가진 입방 조각과 작은 잔해가 이어지는 견본입니다.",
-      "distinction": "평면 사각형이 아닌 회전하는 입방 면과 크기 위계를 비교합니다."
+      "previewMs": 2420,
+      "description": "곰왕 접촉점에서 입방 외형의 효과 조각과 작은 잔여가 이어집니다. 원작 동작 재현과 실제 지형 파괴는 포함하지 않습니다.",
+      "distinction": "면색이 고정된 입방 도형의 평면 회전과 크기 위계이며, 입체 회전 중 면이 바뀌는 구현은 아닙니다."
     },
     {
       "id": "fx-hashimoto",
       "name": "하시모토 스팀·폭발",
       "category": "effects",
-      "previewMs": 1750,
-      "description": "눌린 둥근 김 덩어리가 부풀고 검은 파편이 먼저 튀는 견본입니다.",
-      "distinction": "각진 불꽃이나 말리는 회색 암부와 달리 깨끗한 원형 외곽의 압축·팽창을 강조합니다."
+      "previewMs": 2440,
+      "description": "눌린 둥근 김 덩어리와 검은 파편을 조합한 단순 해석입니다. 복합 김 층과 작가 고유 동작의 재현은 포함하지 않습니다.",
+      "distinction": "둥근 외곽의 압축·팽창을 비교하며, 투과와 내부 재료가 겹치는 스팀 전체를 재현한 것은 아닙니다."
     },
     {
       "id": "fx-norio",
       "name": "노리오 연기",
       "category": "effects",
-      "previewMs": 1850,
-      "description": "내부 음영을 비운 큰 연기 실루엣이 덩어리로 밀려가는 견본입니다.",
-      "distinction": "색면 하나의 외곽 분열과 긴 끌림으로 읽히게 합니다."
+      "previewMs": 2560,
+      "description": "내부 음영을 비운 연기 덩어리를 겹쳐 이동시키는 해석입니다. 작가 고유 동작의 재현은 미검증입니다.",
+      "distinction": "색면 하나인 덩어리의 겹침과 외곽 이동을 비교합니다."
     },
     {
       "id": "fx-mori",
       "name": "모리 이펙트·파편",
       "category": "effects",
-      "previewMs": 1500,
-      "description": "굵은 파열 획에서 길쭉하고 거친 파편이 같은 방향으로 쏟아지는 견본입니다.",
-      "distinction": "입방 블록·둥근 입자와 다른 비정형 조각의 방향성을 비교합니다."
+      "previewMs": 2150,
+      "description": "길쭉하고 거친 고정형 파편이 방향을 따라 쏟아지는 해석입니다. 작가 특유의 형태 변화와 박자는 미검증입니다.",
+      "distinction": "입방 블록·둥근 입자와 다른 파편 외형과 이동·평면 회전·축소를 비교합니다."
     },
     {
       "id": "fx-araki",
       "name": "아라키 이펙트",
       "category": "effects",
-      "previewMs": 1320,
-      "description": "날을 스치는 두 교차 광선과 작은 빛 거품이 이어지는 견본입니다.",
-      "distinction": "칼날을 따라 모였다가 교차하고, 둥근 빛 잔여만 늦게 남습니다."
+      "previewMs": 1920,
+      "description": "교차 광선과 작은 빛 거품을 권격 접촉에 옮긴 해석입니다. 검 연출이나 작가 고유 동작의 재현은 미검증입니다.",
+      "distinction": "같은 어퍼컷 접촉점에서 광선이 교차하고 둥근 빛 잔여가 늦게 남습니다."
     },
     {
       "id": "fx-yoshinari",
       "name": "요시나리 폭발",
       "category": "effects",
-      "previewMs": 1650,
-      "description": "ゝ 모양의 굽은 터치를 여러 층에 배치한 데포르메 폭발의 해석 견본입니다. 특정 장면 복제는 아닙니다.",
-      "distinction": "큰 불덩어리 안팎의 짧고 굽은 터치가 팽창 방향을 만듭니다."
+      "previewMs": 2384,
+      "description": "ゝ 모양 터치를 여러 층에 배치한 데포르메 폭발의 해석입니다. 요시나리 요의 원작 동작 재현은 미검증입니다.",
+      "distinction": "고정 배치된 굽은 터치와 큰 불덩어리가 팽창하는 형태를 비교합니다."
     },
     {
       "id": "fx-oki",
       "name": "오키 폭발",
       "category": "effects",
-      "previewMs": 1900,
-      "description": "거품 같은 덩어리가 부글거리며 계속 부푸는 폭발의 해석 견본입니다.",
-      "distinction": "큰 원의 일회 팽창 대신 크기가 다른 거품이 비동기로 솟고 꺼집니다."
+      "previewMs": 2648,
+      "description": "크기가 다른 거품이 비동기로 솟고 꺼지는 폭발의 해석입니다. 작가 원작의 박자·동작 재현은 미검증입니다.",
+      "distinction": "큰 원의 한 번 팽창 대신 여러 거품의 크기 주기와 상승 시점을 비교합니다."
     },
     {
       "id": "fx-kozuma",
       "name": "코즈마 이펙트",
       "category": "effects",
-      "previewMs": 2050,
-      "description": "점성 있는 에너지의 목이 길어졌다 끊어지고 비대칭 방울이 남는 견본입니다.",
-      "distinction": "탄 복제 잔상이 아닌 연결 → 가는 목 → 분리라는 형태 변화입니다."
+      "previewMs": 2990,
+      "description": "점성 있는 목을 늘린 뒤 분리 도형과 방울로 교체하는 해석입니다. 작가 고유의 구체 혼합·박자 재현은 미검증입니다.",
+      "distinction": "가는 목은 연속으로 줄지만 분리 순간은 두 도형 사이의 전환이며 잔상 효과는 아닙니다."
     },
     {
       "id": "fx-tatsuzo",
       "name": "타츠조 이펙트",
       "category": "effects",
-      "previewMs": 1800,
-      "description": "곡선형 구체의 검은 실루엣이 매끄럽게 늘고 합쳐지는 평면 효과 견본입니다. 원작 재현을 뜻하지 않습니다.",
-      "distinction": "내부 음영을 비우고 곡률과 연결 형태의 연속 변화에 집중합니다."
+      "previewMs": 2670,
+      "description": "검은 연결 덩어리 하나의 곡률이 한 주기로 부드럽게 변하는 해석입니다. 작가 원작 동작 재현은 미검증입니다.",
+      "distinction": "내부 음영 없는 곡면 실루엣의 변형이며, 별개 구체의 합체·분열은 없습니다."
     },
     {
       "id": "fx-shigeta",
       "name": "시게타 불꽃",
       "category": "effects",
-      "previewMs": 1450,
-      "description": "기계 전투의 금속 접촉점에서 파열하고 갈라져 날아가는 스파크의 해석 견본입니다.",
-      "distinction": "접촉점의 짧은 가지형 파열 뒤 발광 금속편이 포물선으로 날며 작게 갈라지고 식어 사라집니다."
+      "previewMs": 2000,
+      "description": "기계 전투 스파크의 모티프를 권격 접촉에 옮긴 해석입니다. 실제 금속 파괴와 작가 고유 동작 재현은 포함하지 않습니다.",
+      "distinction": "짧은 가지형 파열 뒤 발광 조각이 갈라져 날며 식어 사라집니다."
     },
     {
       "id": "fx-anime-r",
       "name": "아니메R의 사라지는 파편",
       "category": "effects",
-      "previewMs": 1750,
-      "description": "날아가는 조각이 가늘어지고 작은 잔편을 남기며 차례로 사라지는 해석 견본입니다.",
-      "distinction": "모든 조각을 같은 알파로 지우지 않고 크기와 속도에 따라 외곽부터 거둡니다."
+      "previewMs": 2650,
+      "description": "큰 파편이 줄어들며 작은 잔편을 남기는 소멸의 해석입니다. 특정 작가·원작의 시간 배분 재현은 미검증입니다.",
+      "distinction": "같은 알파로 한꺼번에 지우는 대신 조각 크기를 줄이고 작은 잔편을 따로 남깁니다."
     },
     {
       "id": "fx-kutsuna",
       "name": "쿠츠나 번개",
       "category": "effects",
-      "previewMs": 1700,
-      "description": "스파게티처럼 엉킨 가는 선 덩어리가 짧은 노출 박자로 바뀌는 번개의 해석 견본입니다.",
-      "distinction": "한 줄의 꺾인 번개와 달리 매듭처럼 얽힌 여러 곡선이 함께 압축·확장됩니다."
+      "previewMs": 2420,
+      "description": "엉킨 선 덩어리라는 통칭에 기대어 여러 곡선을 교체한 해석입니다. 원작성자 자료와 원작 번개 동작은 미검증입니다.",
+      "distinction": "가는 사인 곡선 11개의 엉킴과 셀 교체이며 작가 특유의 번개 형상을 입증한 견본은 아닙니다."
     },
     {
       "id": "camera-transmitted-light",
       "name": "투과광",
       "category": "camera",
       "previewMs": 2100,
-      "description": "문양 안의 선택한 선을 밝은 핵과 좁은 번짐으로 발광시킵니다.",
+      "description": "아타호 어퍼컷이 곰왕에 닿는 지점의 짧은 선을 밝은 핵과 좁은 번짐으로 강조합니다.",
       "distinction": "그림 내부의 빛 처리이며 공간을 가로지르는 입사광과 다릅니다."
     },
     {
@@ -455,7 +519,7 @@
       "name": "파도 유리",
       "category": "camera",
       "previewMs": 2000,
-      "description": "같은 장면의 수평 띠들을 파형에 따라 좌우로 어긋나게 합니다.",
+      "description": "같은 장면을 한 줄씩 연속 파형으로 굴절시키고 화면 가장자리까지 채웁니다.",
       "distinction": "윤곽 자체의 굴절을 재해석하며 초점 블러와 구별합니다."
     },
     {
@@ -471,7 +535,7 @@
       "name": "블러",
       "category": "camera",
       "previewMs": 2100,
-      "description": "배경·인물·대비 무늬의 윤곽을 함께 흐립니다.",
+      "description": "같은 설원 전투의 배경·아타호·곰왕 윤곽을 함께 흐립니다.",
       "distinction": "선명한 원본을 중첩하지 않는 초점 흐림이며 화면 안내는 선명합니다."
     },
     {
@@ -510,8 +574,8 @@
       "id": "camera-contact-multi",
       "name": "밀착 멀티",
       "category": "camera",
-      "previewMs": 3000,
-      "description": "가까운 나무·인물·산 셀을 다른 속도로 수평 이송합니다.",
+      "previewMs": 2250,
+      "description": "설원의 앞 나무·아타호와 곰왕·먼 산 셀을 다른 속도로 수평 이송합니다.",
       "distinction": "평면 셀의 크기는 고정합니다. z 투영으로 크기까지 변하는 멀티플레인과 구별합니다."
     },
     {
@@ -526,16 +590,16 @@
       "id": "camera-rack-focus",
       "name": "초점 넘기기",
       "category": "camera",
-      "previewMs": 2900,
-      "description": "전경 부적에서 뒤쪽 인물로 초점을 넘깁니다.",
-      "distinction": "구도와 위치를 고정하고 앞뒤 레이어의 선명도만 교대합니다."
+      "previewMs": 2500,
+      "description": "어퍼컷을 치는 아타호에서 맞은 곰왕으로 초점을 넘깁니다.",
+      "distinction": "같은 전투의 구도와 원본 동작을 공유하고 두 배우 레이어의 선명도만 교대합니다."
     },
     {
       "id": "camera-follow-pan",
       "name": "따라가는 PAN",
       "category": "camera",
       "previewMs": 2200,
-      "description": "오른쪽으로 이동하는 인물을 일정한 화면 위치에 두며 배경을 이송합니다.",
+      "description": "기존 어퍼컷 접근 중의 실제 아타호 위치를 따라 배경과 전장을 이송합니다.",
       "distinction": "애니메이션 그림의 2D 수평 이송입니다. 3D 카메라의 제자리 회전은 아닙니다."
     },
     {
@@ -543,7 +607,7 @@
       "name": "지와 PAN·퀵 PAN",
       "category": "camera",
       "previewMs": 2400,
-      "description": "주변을 천천히 훑다가 화면 밖 상대 쪽으로 빠르게 전환합니다.",
+      "description": "설원의 공격자 쪽을 천천히 훑다가 곰왕 쪽으로 빠르게 전환합니다.",
       "distinction": "배율을 고정한 수평 이송의 속도 대비이며 급확대가 아닙니다."
     },
     {
@@ -567,47 +631,47 @@
       "name": "멀티 보케",
       "category": "camera",
       "previewMs": 2100,
-      "description": "중경 인물은 선명하게 두고 전경과 원경의 흐림 크기를 다르게 합니다.",
-      "distinction": "초점은 고정하고 깊이층마다 다른 흐림을 줍니다. 정밀한 렌즈 조리개 시뮬레이션은 아닙니다."
+      "description": "같은 크기·배치의 전경 나무와 배경 설원·빛망울을 다르게 흐리고 전투 배우는 선명하게 둡니다.",
+      "distinction": "전경·전투·배경을 세 깊이 판으로 나눈 고정 초점입니다. 연속 깊이·렌즈 조리개 시뮬레이션은 아닙니다."
     },
     {
       "id": "camera-foggy",
       "name": "포기",
       "category": "camera",
       "previewMs": 2100,
-      "description": "젖빛 막과 광원 주변 확산으로 화면 대비를 부드럽게 낮춥니다.",
-      "distinction": "정적인 포그 필터의 재해석이며 실제 연기·안개 입자를 추가하지 않습니다."
+      "description": "젖빛 막으로 대비를 낮추고 실제 달과 접촉광의 주변에만 확산을 더합니다.",
+      "distinction": "포그 필터의 재해석입니다. 접촉광의 확산은 같은 광원의 점멸과 함께 생기고 사라집니다."
     },
     {
       "id": "camera-double-shadow",
       "name": "이중노출 그림자",
       "category": "camera",
       "previewMs": 2100,
-      "description": "실제 몸 뒤에 위치가 다른 두 개의 어두운 노출을 겹칩니다.",
-      "distinction": "별도 배우가 아닌 그림자 합성이며 바닥 투영 물리를 계산하지 않습니다."
+      "description": "影ダブラシ로 해석해 실제 배우 아래 별도 반투명 지면 그림자를 합성하고 눈밭 무늬를 비춥니다.",
+      "distinction": "몸의 잔상이 아닌 그림자 영역의 반노출입니다. 같은 배우의 동작을 유지하며 정밀한 광원 투영은 생략합니다."
     },
     {
       "id": "camera-glow",
       "name": "글로우",
       "category": "camera",
       "previewMs": 2100,
-      "description": "구체의 선명한 핵을 유지하며 광원 바깥으로만 빛을 넓게 퍼뜨립니다.",
+      "description": "비교 양쪽의 같은 선명한 접촉광을 유지하며 효과 쪽에서만 핵 주변으로 빛을 퍼뜨립니다.",
       "distinction": "장면 전체의 대비를 바꾸는 디퓨전·포기와 달리 한 광원의 주변만 처리합니다."
     },
     {
       "id": "camera-incident-light",
-      "name": "입사광",
+      "name": "입사광 — 사선 광주·틴들 해석",
       "category": "camera",
       "previewMs": 2100,
-      "description": "창 밖에서 들어오는 사선 빛이 먼지와 바닥의 밝은 자리를 드러냅니다.",
-      "distinction": "공간 안의 빛줄기이며 화면 렌즈의 고스트나 그림 내부의 투과광과 다릅니다."
+      "description": "이 견본의 입사광은 수관 밖의 빛이 먼지에서 산란하는 사선 광주·틴들 현상으로 해석합니다.",
+      "distinction": "入射光의 렌즈 플레어 용법과 구분한 해석입니다. 화면 렌즈의 고스트와 달리 공간 안에 빛줄기가 있습니다."
     },
     {
       "id": "camera-multiplane",
       "name": "멀티플레인 카메라",
       "category": "camera",
-      "previewMs": 3000,
-      "description": "z 깊이에 놓인 평면들을 카메라 전진·옆 이동에 맞춰 원근 투영합니다.",
+      "previewMs": 2350,
+      "description": "아타호와 곰왕 원본을 수직 판에 두고 앞 나무와 먼 산을 z 깊이에 따라 원근 투영합니다.",
       "distinction": "가까운 층이 더 빨리 이동하고 커집니다. 고정 크기 셀 이송이나 단순 전체 줌과 다릅니다."
     },
     {
@@ -646,9 +710,9 @@
       "id": "emotion-face-fault",
       "name": "즈코 넘어짐",
       "category": "emotion",
-      "previewMs": 1800,
-      "description": "잠깐의 정적 뒤 전신이 옆으로 무너지는 큰 리액션입니다.",
-      "distinction": "맞고 날아가는 낙하와 달리 어이없는 순간의 갑작스러운 균형 상실입니다."
+      "previewMs": 3250,
+      "description": "어퍼컷을 버틴 곰왕이 허세를 부린 뒤 정적을 깨고 맥없이 주저앉습니다.",
+      "distinction": "허세→빈 박자→쓰러짐의 코믹한 엇박입니다. 얼굴부터 바닥에 꽂히는 새 자세는 추가하지 않습니다."
     },
     {
       "id": "emotion-tears",
@@ -678,7 +742,7 @@
       "id": "emotion-eye-sparks",
       "name": "시선 불꽃",
       "category": "emotion",
-      "previewMs": 2000,
+      "previewMs": 750,
       "description": "마주 본 두 인물 사이의 시선이 팽팽해지고 짧은 번개가 잇습니다.",
       "distinction": "공격 투사체가 아니라 두 시선 사이의 긴장을 나타냅니다."
     },
@@ -703,22 +767,22 @@
       "name": "하모니",
       "category": "editing",
       "previewMs": 2500,
-      "description": "셀처럼 움직이던 장면이 종이·붓결을 가진 한 장의 종결화로 정착합니다.",
-      "distinction": "멈춤만 주는 정지화와 달리 배경·인물의 질감과 색면을 함께 설계합니다."
+      "description": "어퍼컷 접촉의 인물과 배경을 같은 안료와 붓자국으로 다시 칠한 종결 판으로 전환합니다.",
+      "distinction": "원본 위 세피아 필터가 아니라 색면과 경계선을 재구성한 디지털 원리 견본입니다. 전용 수작업 하모니 원화는 아닙니다."
     },
     {
       "id": "editing-still",
       "name": "멈춘 그림",
       "category": "editing",
       "previewMs": 2150,
-      "description": "공중의 결정 자세를 멈춰 보여준 뒤 움직임을 이어갑니다.",
+      "description": "어퍼컷의 접촉 자세를 멈춰 보여준 뒤 같은 동작을 이어갑니다.",
       "distinction": "회화 질감이나 새로운 그림 없이 한 자세의 유지 시간만 바꿉니다."
     },
     {
       "id": "editing-triple",
       "name": "반복 쇼트",
       "category": "editing",
-      "previewMs": 2940,
+      "previewMs": 2400,
       "description": "같은 접촉을 와이드·근접·타점의 세 컷으로 다시 보여줍니다.",
       "distinction": "세 번 때리는 동작이 아니라 같은 사건을 반복하는 편집입니다."
     },
@@ -726,7 +790,7 @@
       "id": "editing-split",
       "name": "화면 분할",
       "category": "editing",
-      "previewMs": 2250,
+      "previewMs": 1450,
       "description": "떨어진 두 인물의 준비를 동시에 보여준 뒤 하나의 장면으로 합칩니다.",
       "distinction": "인서트 한 장보다 두 시간선의 동시 진행에 초점을 둡니다."
     },
@@ -735,8 +799,8 @@
       "name": "마와리코미",
       "category": "editing",
       "previewMs": 2200,
-      "description": "카메라가 인물 주위를 돌며 앞뒤 기둥과 관절의 시점이 함께 바뀝니다.",
-      "distinction": "평면 그림 회전 대신 공간 좌표를 투영해 시점과 가림 순서가 바뀝니다."
+      "description": "카메라가 두 인물 주위를 돌며 앞뒤 기둥과 인물 레이어의 가림 순서가 바뀝니다.",
+      "distinction": "원화 방향은 보존하고 공간 좌표를 투영하는 2.5D 회전 구도입니다."
     },
     {
       "id": "editing-text-cuts",
@@ -759,16 +823,16 @@
       "name": "이마이시 연출",
       "category": "editing",
       "previewMs": 2200,
-      "description": "과장된 전경 주먹·뚝 끊기는 자세·거대 글자를 강한 박자로 연결합니다.",
+      "description": "아타호 어퍼컷의 장전·접촉 컷과 거대 글자를 강한 박자로 연결합니다.",
       "distinction": "원근·타이밍·문자 구성을 한 장면의 정점에 모으는 견본입니다."
     },
     {
       "id": "editing-shadow-play",
-      "name": "그림자극 소녀",
+      "name": "그림자극 소녀 · 원리 응용",
       "category": "editing",
       "previewMs": 2300,
-      "description": "밝은 무대 안의 검은 인물과 상징 소품이 막간극처럼 움직입니다.",
-      "distinction": "충격용 실루엣과 달리 단순한 행위와 상징으로 작은 이야기를 만듭니다."
+      "description": "왕관을 쓴 큰 곰왕과 작은 아타호의 한 방으로 왕관의 주인이 바뀌는 짧은 막간극입니다.",
+      "distinction": "왕관이라는 상징과 질문→행동→반전의 막간극 원리를 응용합니다. 원작의 소녀·대사·장면을 재현하지 않습니다."
     },
     {
       "id": "editing-overlap",
@@ -793,6 +857,38 @@
       "previewMs": 2200,
       "description": "장면이 흰 빛에 잠겼다가 다음 장소가 천천히 돌아옵니다.",
       "distinction": "짧은 타격 섬광보다 긴 노출 변화로 장면 사이의 시간을 만듭니다."
+    }
+  ],
+  "actorPair": {
+    "attacker": "ai/ataho-v2",
+    "target": "ai/monster-hoarfrost-bear",
+    "defaultMotion": "charged-uppercut",
+    "kickMotion": "flying-kick-enhanced",
+    "contactMs": 1800,
+    "contactPoint": {
+      "x": 584,
+      "y": 246
+    },
+    "stage": "설원",
+    "reaction": "기존 곰왕 hit1·die1 원본"
+  },
+  "adaptationBoundary": "기존 아타호·곰왕 원본을 재사용한다. 스미어·오바케는 동작 연결 순간의 픽셀 행 변형, 휘날림은 털·옷 부분 합성, 카나다 파스는 기존 킥의 부분 깊이 투영이다. 신규 전용 자세를 그린 것이 아니다. 오바리·쿠루마다는 전용 원화가 없어 미재현으로 표시한다. 하모니는 원본을 밑그림으로 색면·붓자국을 다시 쌓는 디지털 원리 응용이며 전용 수작업 원화가 아니다. 새 몸 원화·유료 생성·전투 판정·소리는 추가하지 않는다.",
+  "previews": [
+    {
+      "id": "hisashi-punch",
+      "localPath": "public/assets/maplestory/anime-showcase-previews/ataho-bear/hisashi-punch.gif"
+    },
+    {
+      "id": "inazuma-kick",
+      "localPath": "public/assets/maplestory/anime-showcase-previews/ataho-bear/inazuma-kick.gif"
+    },
+    {
+      "id": "fx-kanada-explosion",
+      "localPath": "public/assets/maplestory/anime-showcase-previews/ataho-bear/fx-kanada-explosion.gif"
+    },
+    {
+      "id": "smear-frame",
+      "localPath": "public/assets/maplestory/anime-showcase-previews/ataho-bear/smear-frame.gif"
     }
   ]
 }

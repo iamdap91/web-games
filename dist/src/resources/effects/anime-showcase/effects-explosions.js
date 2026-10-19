@@ -1,4 +1,5 @@
-import { clamp, ellipse, label, noise, palette, polygon, ring, smooth, } from './drawing.js';
+import { clamp, ellipse, noise, palette, polygon, ring, smooth, } from './drawing.js';
+import { battleLayout } from './battle.js';
 function cloudPoints(x, y, rx, ry, phase, seed) {
     return Array.from({ length: 56 }, (_, index) => {
         const a = (index / 56) * Math.PI * 2;
@@ -13,60 +14,126 @@ function path(ctx, points) {
     points.forEach((point, index) => index ? ctx.lineTo(point.x, point.y) : ctx.moveTo(point.x, point.y));
     ctx.closePath();
 }
-function simple(ctx, age, color = palette.gold) {
+function simple(ctx, age, color, origin) {
     if (age < 0 || age > 1900)
         return;
     const p = age / 1900;
     ctx.save();
     ctx.globalAlpha *= Math.sin(p * Math.PI);
-    ellipse(ctx, 548, 332 - p * 40, 28 + p * 93, 28 + p * 93, color);
+    ellipse(ctx, origin.x, origin.y - p * 40, 28 + p * 93, 28 + p * 93, color);
     ctx.restore();
 }
-function drawKanadaExplosion(ctx, frame) {
-    const age = frame.timeMs - 1050;
-    if (!frame.enhanced)
-        return simple(ctx, age);
-    if (age < 0 || age > 1700)
-        return;
-    const p = clamp(age / 1700);
-    const expand = 1 - (1 - clamp(age / 510)) ** 3;
-    const size = frame.reducedMotion ? 0.68 : 1;
-    ctx.save();
-    ctx.globalAlpha *= 1 - smooth((p - 0.57) / 0.43);
-    for (let layer = 0; layer < 3; layer++) {
-        const radius = (135 - layer * 31) * expand * size;
-        const points = Array.from({ length: 30 }, (_, i) => {
-            const a = (i / 30) * Math.PI * 2;
-            const spike = i % 2 ? 0.43 + noise(i + 8) * 0.22 : 1 + noise(i + layer) * 0.49;
-            return {
-                x: 550 + Math.cos(a) * radius * spike,
-                y: 334 + Math.sin(a) * radius * spike * 1.07,
-            };
-        });
-        polygon(ctx, points, ['#dd654d', '#f2bc62', '#f7e7a9'][layer]);
+/** 각진 방사형·창·갈고리를 서로 다른 셀에 써서 확대만으로 폭발을 대신하지 않는다. */
+function kanadaFlame(ctx, center, radius, kind, seed, color) {
+    let points;
+    if (kind === 1) {
+        points = [
+            { x: -0.25, y: 0.6 },
+            { x: -0.5, y: -0.3 },
+            { x: -0.12, y: -0.15 },
+            { x: 0.04, y: -1.7 },
+            { x: 0.3, y: -0.55 },
+            { x: 0.75, y: -0.9 },
+            { x: 0.35, y: 0.12 },
+            { x: 0.13, y: 0.8 },
+        ];
     }
-    if (age > 210)
-        for (let i = 0; i < 12; i++) {
-            const a = (i / 12) * Math.PI * 2 + 0.13;
-            const fly = (age - 210) / 1200;
-            const radius = 75 + fly * 143 * size;
-            const x = 550 + Math.cos(a) * radius;
-            const y = 334 + Math.sin(a) * radius;
-            polygon(ctx, [
-                { x, y },
-                {
-                    x: x + Math.cos(a) * 34 * (1 - p),
-                    y: y + Math.sin(a) * 34 * (1 - p),
-                },
-                { x: x - Math.sin(a) * 6, y: y + Math.cos(a) * 6 },
-            ], palette.paper);
+    else if (kind === 2) {
+        points = [
+            { x: -0.9, y: 0.45 },
+            { x: -0.8, y: -0.12 },
+            { x: -0.23, y: -0.96 },
+            { x: 0.5, y: -1.1 },
+            { x: 0.97, y: -0.32 },
+            { x: 0.3, y: -0.56 },
+            { x: 0.04, y: -0.17 },
+            { x: 0.67, y: 0.02 },
+            { x: 0.28, y: 0.6 },
+            { x: -0.15, y: 0.12 },
+            { x: -0.45, y: 0.68 },
+        ];
+    }
+    else {
+        const count = 12 + (seed % 3) * 2;
+        points = Array.from({ length: count }, (_, index) => {
+            const angle = (index / count) * Math.PI * 2 + noise(seed + 3) * 0.7;
+            const spike = index % 2
+                ? 0.24 + noise(index * 3 + seed) * 0.22
+                : 0.64 + noise(index + seed * 11) * 0.66;
+            return { x: Math.cos(angle) * spike, y: Math.sin(angle) * spike };
+        });
+    }
+    polygon(ctx, points.map((point) => ({
+        x: center.x + point.x * radius,
+        y: center.y + point.y * radius,
+    })), color);
+}
+function drawKanadaExplosion(ctx, frame) {
+    const age = (frame.timeMs - battleLayout.contactMs) * 1.25;
+    if (!frame.enhanced)
+        return simple(ctx, age, palette.gold, { x: 550, y: 334 });
+    if (age < 0 || age >= 1700)
+        return;
+    const cellTime = frame.reducedMotion ? Math.floor(age / 240) * 240 : age;
+    const ends = [65, 110, 185, 260, 360, 485, 650, 900, 1180, 1460, 1700];
+    const cell = ends.findIndex((end) => cellTime < end);
+    const radii = [21, 84, 156, 104, 145, 117, 136, 97, 72, 45, 24];
+    const radius = radii[Math.max(0, cell)] * (frame.reducedMotion ? 0.6 : 1);
+    const colors = frame.reducedMotion
+        ? ['#b87853', '#c6a365', '#d4c28d']
+        : ['#b64c42', '#ed9d53', '#f1deb0'];
+    ctx.save();
+    ctx.globalAlpha *=
+        (frame.reducedMotion ? 0.65 : 1) * (1 - smooth((age - 1300) / 400));
+    if (cell === 0) {
+        polygon(ctx, [
+            { x: 550, y: 334 - radius },
+            { x: 550 + radius * 0.45, y: 334 },
+            { x: 550, y: 334 + radius },
+            { x: 550 - radius * 0.45, y: 334 },
+        ], colors[2]);
+    }
+    else if (cell < 4) {
+        for (let layer = 0; layer < 3; layer++) {
+            kanadaFlame(ctx, { x: 550 + (cell === 3 ? layer * 11 : 0), y: 334 - layer * 8 }, radius * (1 - layer * 0.24), cell === 1 ? 1 : cell === 3 ? 2 : 0, cell * 19 + layer, colors[layer]);
         }
+        if (cell === 3)
+            kanadaFlame(ctx, { x: 540, y: 336 }, radius * 0.32, 2, 9, '#342e36');
+    }
+    else if (cell === 4) {
+        for (let branch = 0; branch < 3; branch++) {
+            ctx.save();
+            ctx.translate(550 + (branch - 1) * radius * 0.44, 334 - radius * 0.12);
+            ctx.rotate((branch - 1) * 0.83);
+            for (let layer = 0; layer < 3; layer++)
+                kanadaFlame(ctx, { x: 0, y: 0 }, radius * (0.7 - layer * 0.16), 1, branch * 3 + layer, colors[layer]);
+            ctx.restore();
+        }
+    }
+    else {
+        const count = Math.max(2, 12 - cell);
+        for (let index = 0; index < count; index++) {
+            const angle = (index / count) * Math.PI * 2 - 1.6 + cell * 0.17;
+            const spread = (cell - 3) * (frame.reducedMotion ? 9 : 15);
+            const center = {
+                x: 550 + Math.cos(angle) * spread,
+                y: 334 + Math.sin(angle) * spread - (cell - 4) * 7,
+            };
+            ctx.save();
+            ctx.translate(center.x, center.y);
+            ctx.rotate(angle + 1.4);
+            const size = radius * (0.4 + noise(index + cell * 17) * 0.23);
+            kanadaFlame(ctx, { x: 0, y: 0 }, size, index % 3 === 0 ? 0 : 2, index + cell * 7, colors[0]);
+            kanadaFlame(ctx, { x: 0, y: -size * 0.1 }, size * 0.68, 2, index + cell * 7, colors[1]);
+            ctx.restore();
+        }
+    }
     ctx.restore();
 }
 function drawAnno(ctx, frame) {
-    const age = frame.timeMs - 800;
+    const age = (frame.timeMs - battleLayout.contactMs) * 1.25;
     if (!frame.enhanced)
-        return simple(ctx, age, '#847f7e');
+        return simple(ctx, age, '#847f7e', { x: 546, y: 407 });
     if (age < 0 || age > 2900)
         return;
     const p = age / 2900;
@@ -86,7 +153,7 @@ function drawAnno(ctx, frame) {
         polygon(ctx, cloudPoints(x, 409 - (i % 3) * 9, 22 + rise * 19, 13 + rise * 7, p, i), '#55505a');
     }
     if (age < 310)
-        ellipse(ctx, 546, 381 - age * 0.19, 28 * (1 - age / 310), 74 * (1 - age / 310), '#f5dfb2');
+        ellipse(ctx, 546, 407 - age * 0.19, 28 * (1 - age / 310), 74 * (1 - age / 310), '#f5dfb2');
     for (let i = 0; i < 59; i++) {
         const a = -Math.PI + noise(i) * Math.PI;
         const speed = 95 + noise(i + 12) * 230;
@@ -101,9 +168,9 @@ function drawAnno(ctx, frame) {
     ctx.restore();
 }
 function drawIso(ctx, frame) {
-    const age = frame.timeMs - 850;
+    const age = (frame.timeMs - battleLayout.contactMs) * 1.25;
     if (!frame.enhanced)
-        return simple(ctx, age, '#a9aca7');
+        return simple(ctx, age, '#a9aca7', { x: 548, y: 352 });
     if (age < 0 || age > 2900)
         return;
     ctx.save();
@@ -139,9 +206,9 @@ function drawIso(ctx, frame) {
     ctx.restore();
 }
 function drawHashimoto(ctx, frame) {
-    const age = frame.timeMs - 950;
+    const age = (frame.timeMs - battleLayout.contactMs) * 1.25;
     if (!frame.enhanced)
-        return simple(ctx, age, '#c8c8bb');
+        return simple(ctx, age, '#c8c8bb', { x: 548, y: 387 });
     if (age < 0 || age > 2600)
         return;
     const motion = frame.reducedMotion ? 0.6 : 1;
@@ -178,9 +245,9 @@ function drawHashimoto(ctx, frame) {
     ctx.restore();
 }
 function drawNorio(ctx, frame) {
-    const age = frame.timeMs - 900;
+    const age = (frame.timeMs - battleLayout.contactMs) * 1.25;
     if (!frame.enhanced)
-        return simple(ctx, age, '#b8b4a8');
+        return simple(ctx, age, '#b8b4a8', { x: 548, y: 372 });
     if (age < 0 || age > 2800)
         return;
     const p = age / 2800;
@@ -190,7 +257,7 @@ function drawNorio(ctx, frame) {
     // 내부 음영 없이 같은 색 외곽의 겹침과 분열만으로 연기를 읽힌다.
     for (let i = 0; i < 8; i++) {
         const drift = frame.reducedMotion ? 0 : p * (70 + i * 12);
-        const x = 380 + i * 35 + drift;
+        const x = 548 + (i - 3.5) * 35 * grow + drift;
         const y = 372 - Math.sin(i * 0.73 + p * 2) * 23 * grow;
         const rx = (30 + (i % 3) * 13) * grow * (1 + p * 0.2);
         polygon(ctx, cloudPoints(x, y, rx, (31 + (i % 4) * 9) * grow, p * 2, i), '#bbb8ac');
@@ -198,9 +265,9 @@ function drawNorio(ctx, frame) {
     ctx.restore();
 }
 function drawYoshinari(ctx, frame) {
-    const age = frame.timeMs - 920;
+    const age = (frame.timeMs - battleLayout.contactMs) * 1.25;
     if (!frame.enhanced)
-        return simple(ctx, age, '#cfae72');
+        return simple(ctx, age, '#cfae72', { x: 548, y: 325 });
     if (age < 0 || age > 2350)
         return;
     const p = age / 2350;
@@ -231,9 +298,9 @@ function drawYoshinari(ctx, frame) {
     ctx.restore();
 }
 function drawOki(ctx, frame) {
-    const age = frame.timeMs - 840;
+    const age = (frame.timeMs - battleLayout.contactMs) * 1.25;
     if (!frame.enhanced)
-        return simple(ctx, age, '#d58d5b');
+        return simple(ctx, age, '#d58d5b', { x: 550, y: 330 });
     if (age < 0 || age > 2900)
         return;
     const whole = smooth(age / 370) * (1 - smooth((age - 2400) / 500));
@@ -271,8 +338,5 @@ export function drawExplosionEffects(ctx, id, frame) {
         drawOki(ctx, frame);
     else
         return false;
-    label(ctx, frame.enhanced
-        ? '외곽 · 내부의 면 · 남는 순서를 비교'
-        : '한 덩어리가 커졌다 사라지는 기본 표현');
     return true;
 }

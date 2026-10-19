@@ -4,6 +4,9 @@ import { effectSamples, drawEffects } from './effects.js';
 import { cameraSamples, drawCamera } from './camera.js';
 import { emotionSamples, drawEmotion } from './emotion.js';
 import { editingSamples, drawEditing } from './editing.js';
+import { disposeCameraOptics } from './camera-optics.js';
+import { disposeHarmonyPlate } from './harmony-plate.js';
+import { disposeEmotionPortrait } from './emotion-face.js';
 import { height, width, } from './types.js';
 export const samples = [
     ...impactSamples,
@@ -21,6 +24,11 @@ const renderers = {
     emotion: drawEmotion,
     editing: drawEditing,
 };
+export function disposeSampleSurfaces(ctx) {
+    disposeCameraOptics(ctx);
+    disposeHarmonyPlate(ctx);
+    disposeEmotionPortrait(ctx);
+}
 /** 같은 절대 시각을 화면·시간 탐색·GIF에서 공유한다. */
 export function drawSample(ctx, sample, frame) {
     ctx.save();
@@ -33,7 +41,10 @@ export function drawSample(ctx, sample, frame) {
         ctx.beginPath();
         ctx.rect(0, 0, width, height);
         ctx.clip();
-        renderers[sample.category](ctx, sample.id, frame);
+        renderers[sample.category](ctx, sample.id, {
+            ...frame,
+            sampleId: sample.id,
+        });
     }
     finally {
         ctx.restore();
