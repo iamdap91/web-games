@@ -1,0 +1,251 @@
+{
+  "createdDate": "2026-10-18",
+  "status": "superseded-by-revision-2",
+  "approval": "사용자가 도약 날아차기 강화안의 공중 장전 A / 발을 앞으로 뻗은 B 원화 제작을 요청했다. 정면·남동 기준 PNG와 자세 설명의 PixelLab 전송 및 우선 각 1회 생성을 추가로 허용했다.",
+  "scope": "동일한 발앞 구도에 연결할 A/B 핵심 원화 두 장과 검토용 비교판·전환 GIF. 중간 동화·추가 방향·게임 안무 연결은 이번 제작 범위에 포함하지 않는다.",
+  "characterId": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+  "service": "PixelLab",
+  "tool": "create_image_pro",
+  "canvas": {
+    "width": 128,
+    "height": 128,
+    "noBackground": true
+  },
+  "referenceGenerationRecord": "resources/ataho-v2-generation.json",
+  "attempts": [
+    {
+      "pose": "A",
+      "attempt": 1,
+      "jobId": "9f06e898-633f-48fc-b7a3-887a731d53b4",
+      "assetId": "3b7176f4-6e5e-53b6-8c47-122fe4cfeb72",
+      "request": {
+        "description": "Same approved stocky orange tiger fighter as the supplied reference images. Broad striped tiger head, ivory muzzle and cheek fur, short thick body, open reddish-brown jacket with long sleeves, ivory undershirt covering chest, knotted brown waist sash, loose charcoal trousers, brown wrist wraps, bare ochre tiger paws, exactly one striped tail. Preserve the reference character, outfit and crisp pixel clustering. No footwear, bottle, weapon, armor or new accessories.\n\nA single transparent 128x128 pixel-art game-sprite key pose: AIRBORNE KNEE CHAMBER, the anticipation for one kick toward the lens. Low camera from the target side looking slightly upward, with a mild three-quarter angle. The tiger is suspended in the air, torso leaning backward diagonally, head and shoulders in the upper half. The near kicking knee is pulled tightly toward the chest; its bare paw remains tucked near the bent knee, ready to extend along a diagonal toward the lower-right foreground. The opposite leg stays folded behind the hips. Both feet are clearly off the ground. Compact clenched hands balance the body, face visible. This is the held preparation BEFORE extension, not a completed kick. All body parts fully inside the canvas with transparent margin. One character, one pose, no floor, opponent, shadow, text, panel, speed lines, glow, trail or effects. Match the supplied tiger identity and original game-pixel style; do not copy the standing pose or the top-down camera of the identity references.",
+        "width": 128,
+        "height": 128,
+        "no_background": true,
+        "reference_images": [
+          {
+            "url": "upload:3d617d6f-e7e2-426b-a4e1-26f5227a11ad",
+            "usage": "Approved Ataho v2 front identity: exact character, outfit, bare paws, head and body proportions, original pixel-art style. Identity only; change pose and camera."
+          },
+          {
+            "url": "upload:66b74f37-647c-4bad-aee3-66bcbca14a32",
+            "usage": "Same approved Ataho v2, three-quarter design identity and clothing silhouette. Identity only; draw the requested low-camera airborne pose."
+          }
+        ],
+        "seed": 17923201
+      },
+      "chargedGenerations": 10,
+      "candidateCount": 4,
+      "selectedIndex": 1,
+      "candidates": [
+        {
+          "localPath": "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/originals/pose-a-candidate-00.png",
+          "sha256": "a2569bcb003e23be6dd58c735f1bc354fcc7cda7c46354505dc6542717a19199",
+          "byteSize": 4939,
+          "width": 128,
+          "height": 128,
+          "frameCount": 1,
+          "alphaBounds": [25, 15, 109, 115],
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9f06e898-633f-48fc-b7a3-887a731d53b4/download?index=0"
+        },
+        {
+          "localPath": "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/originals/pose-a-candidate-01.png",
+          "sha256": "e62874f9b893af20a624c17e8da49fc039a5fd9e96c56ef1c17afa2df13cb854",
+          "byteSize": 4869,
+          "width": 128,
+          "height": 128,
+          "frameCount": 1,
+          "alphaBounds": [23, 13, 105, 115],
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9f06e898-633f-48fc-b7a3-887a731d53b4/download?index=1"
+        },
+        {
+          "localPath": "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/originals/pose-a-candidate-02.png",
+          "sha256": "74f020ad8e7d03b8254711d77fd387ab617408bb83ad20526e239e82a05165fc",
+          "byteSize": 4869,
+          "width": 128,
+          "height": 128,
+          "frameCount": 1,
+          "alphaBounds": [26, 13, 101, 114],
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9f06e898-633f-48fc-b7a3-887a731d53b4/download?index=2"
+        },
+        {
+          "localPath": "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/originals/pose-a-candidate-03.png",
+          "sha256": "c9b1a9fb39616ea62cbad7c489416c0c228692678222b92ded097cabdf44e792",
+          "byteSize": 4951,
+          "width": 128,
+          "height": 128,
+          "frameCount": 1,
+          "alphaBounds": [28, 13, 112, 112],
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9f06e898-633f-48fc-b7a3-887a731d53b4/download?index=3"
+        }
+      ]
+    },
+    {
+      "pose": "B",
+      "attempt": 1,
+      "jobId": "0ca27c19-f78b-4921-8ed4-c92c51f99d9f",
+      "assetId": "1518dc2b-b545-5bc3-b423-398c7f36b7ed",
+      "request": {
+        "description": "A single 128x128 transparent pixel-art game sprite, one character, one key pose B: FULL EXTENSION of the same airborne knee-chamber kick in reference A. Same approved stocky orange tiger fighter: broad striped head, ivory muzzle/cheek fur, short thick body, reddish-brown long-sleeved jacket, ivory undershirt, brown sash, loose charcoal trousers, wrist wraps, bare tiger paws, one striped tail.\n\nUse A as the immediate preceding key pose. Keep the same low camera, mild three-quarter view, backward-leaning torso, head/shoulder/hip positions and sizes, hands, outfit, kicking leg and folded rear leg. Keep A's head in the upper half, slightly turned to screen-right. Extend ONLY the same near leg forcefully toward the lower-right FOREGROUND, toward the lens. Its single bare tiger paw is nearest the camera and much larger than the head. Show the SOLE facing the viewer, with strong drawn foreshortening of the connected shin and thigh back to the hip. This is a new perspective drawing, not an enlargement of the whole character. The torso and head remain smaller behind the foot. Keep the face visible beside the leg. The other leg remains tucked back with a small rear foot: NOT a double kick. Natural tiger paw with short toes, no long human foot, no shoes, boot tread or new accessories. The leg must look fully extended, never still bent at the knee or raised sideways. Entire figure and tail inside the canvas with transparent margins. Match A's crisp original pixel style, face, proportions and costume. No floor, opponent, shadow, text, panel, trail, speed line, glow or effects.",
+        "width": 128,
+        "height": 128,
+        "no_background": true,
+        "reference_images": [
+          {
+            "url": "https://api.pixellab.ai/mcp/images/9f06e898-633f-48fc-b7a3-887a731d53b4/download?index=1",
+            "usage": "Selected pose A, immediate previous key pose. Keep exact tiger identity, outfit, backward-leaning torso, camera angle, head/hip placement, kicking leg and rear-leg fold. Change ONLY the forward leg from knee-chamber to a strongly foreshortened forward extension toward the lens. Preserve the anatomy and do not rotate the whole character to a new side view."
+          },
+          {
+            "url": "upload:3d617d6f-e7e2-426b-a4e1-26f5227a11ad",
+            "usage": "Approved front identity and palette: exact tiger muzzle and broad head, jacket over ivory undershirt, brown sash, charcoal trousers, wrist wraps and bare tiger paws. No new costume or accessories."
+          },
+          {
+            "url": "upload:66b74f37-647c-4bad-aee3-66bcbca14a32",
+            "usage": "Same approved three-quarter character design, stripe pattern, clothing silhouette, bare paws and one tail. Identity only."
+          }
+        ],
+        "seed": 17923202
+      },
+      "chargedGenerations": 10,
+      "candidateCount": 4,
+      "selectedIndex": 1,
+      "candidates": [
+        {
+          "localPath": "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/originals/pose-b-candidate-00.png",
+          "sha256": "b532b8fcbdae9ce2bb781f573022e3a7b3e103a80c4c76baca42d4144019edb6",
+          "byteSize": 5545,
+          "width": 128,
+          "height": 128,
+          "frameCount": 1,
+          "alphaBounds": [21, 18, 121, 113],
+          "index": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0ca27c19-f78b-4921-8ed4-c92c51f99d9f/download?index=0"
+        },
+        {
+          "localPath": "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/originals/pose-b-candidate-01.png",
+          "sha256": "4562c8c28c274dee89a2eed62c54da752087e488e3b4b260c9f133d1039abb59",
+          "byteSize": 5426,
+          "width": 128,
+          "height": 128,
+          "frameCount": 1,
+          "alphaBounds": [16, 18, 114, 111],
+          "index": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0ca27c19-f78b-4921-8ed4-c92c51f99d9f/download?index=1"
+        },
+        {
+          "localPath": "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/originals/pose-b-candidate-02.png",
+          "sha256": "660827dd56f2763a21e3a3e4180256eda39281c15525ff8c83c68d9e651ef356",
+          "byteSize": 4995,
+          "width": 128,
+          "height": 128,
+          "frameCount": 1,
+          "alphaBounds": [10, 21, 122, 103],
+          "index": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0ca27c19-f78b-4921-8ed4-c92c51f99d9f/download?index=2"
+        },
+        {
+          "localPath": "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/originals/pose-b-candidate-03.png",
+          "sha256": "1c76e2c97bba7b6ce32cb4aa058bd775758c9a1d6abc5f662969847054239df3",
+          "byteSize": 5452,
+          "width": 128,
+          "height": 128,
+          "frameCount": 1,
+          "alphaBounds": [25, 11, 104, 107],
+          "index": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/0ca27c19-f78b-4921-8ed4-c92c51f99d9f/download?index=3"
+        }
+      ]
+    }
+  ],
+  "usage": {
+    "generationsBefore": 132.35,
+    "generationsAfter": 112.35,
+    "chargedGenerations": 20,
+    "generationCalls": 2,
+    "paidRetries": 0
+  },
+  "selection": {
+    "status": "사용자 품질 승인 전 임시 연결 후보",
+    "poseA": "01은 네 후보 중 몸통의 뒤기울임과 앞무릎 장전이 가장 뚜렷해 B 제작의 참조로 선택했다.",
+    "poseB": "01은 A01과 얼굴·몸의 각도가 가깝고 00보다 넓은 발바닥을 전경에 크게 보여준다.",
+    "limitations": [
+      "A01은 발앞의 극저각보다 일반적인 비스듬한 전신 장전 구도에 가깝다. A/B에서 얼굴·몸의 원근이 자연스럽게 이어지는지는 사용자 검토가 필요하다.",
+      "B의 발바닥 패드 세부는 기존 방향별 기립 원화에서 보이지 않았던 신규 표현이며 기존 디자인과 완전히 일치한다고 확인한 것이 아니다."
+    ],
+    "userReviewed": true
+  },
+  "preview": {
+    "composition": "생성된 A/B 원본 두 장을 같은 128×128 좌표로 유지하고 최근접 보간으로 4배 표시했다. 원본 픽셀·색·알파를 수정하거나 방향을 합성하지 않았다. GIF는 A 700ms→B 1000ms의 2프레임 반복이며 중간 동화·효과를 생성하지 않았다.",
+    "frameCount": 2,
+    "frameDurationMs": [700, 1000],
+    "scale": 4
+  },
+  "references": [
+    {
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south.png?t=1791934584",
+      "sourceSha256": "633b8eb4b653408d5a45d80308ba946246ae3d79a51ef361664ad5ad85e1e079",
+      "width": 64,
+      "height": 64
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south-east.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south-east.png?t=1791934584",
+      "sourceSha256": "9252454bece5169c263158813806999b45dfe70f6ff8bb08ab0e9669bdd7c65d",
+      "width": 64,
+      "height": 64
+    }
+  ],
+  "deliverables": [
+    {
+      "localPath": "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/originals/pose-a-airborne-chamber.png",
+      "sha256": "e62874f9b893af20a624c17e8da49fc039a5fd9e96c56ef1c17afa2df13cb854",
+      "byteSize": 4869,
+      "width": 128,
+      "height": 128,
+      "frameCount": 1,
+      "alphaBounds": [23, 13, 105, 115],
+      "label": "이나즈마 킥 · A 공중 장전",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/9f06e898-633f-48fc-b7a3-887a731d53b4/download?index=1"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/originals/pose-b-forward-extension.png",
+      "sha256": "4562c8c28c274dee89a2eed62c54da752087e488e3b4b260c9f133d1039abb59",
+      "byteSize": 5426,
+      "width": 128,
+      "height": 128,
+      "frameCount": 1,
+      "alphaBounds": [16, 18, 114, 111],
+      "label": "이나즈마 킥 · B 발앞 신전",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/0ca27c19-f78b-4921-8ed4-c92c51f99d9f/download?index=1"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/previews/inazuma-kick-keyposes-a-b.png",
+      "sha256": "df20c118ad5be032857b8a83b56f95489f1e0fc2028ca3a8e15300aee9e09762",
+      "byteSize": 27741,
+      "width": 1088,
+      "height": 600,
+      "frameCount": 1,
+      "alphaBounds": [0, 0, 1088, 600],
+      "label": "이나즈마 킥 · A/B 병렬 비교",
+      "sourceUrl": "resources/ataho-v2-inazuma-kick-keyposes.json"
+    },
+    {
+      "localPath": "public/assets/maplestory/ataho-v2-inazuma-kick/20261018/previews/inazuma-kick-keyposes-a-b.gif",
+      "sha256": "0bd291867025f49115ece032dc76c33675c5afa7ef046d2159f1267ba907ff06",
+      "byteSize": 53037,
+      "width": 544,
+      "height": 600,
+      "frameCount": 2,
+      "label": "이나즈마 킥 · A/B 2프레임 전환 GIF",
+      "sourceUrl": "resources/ataho-v2-inazuma-kick-keyposes.json"
+    }
+  ],
+  "supersededBy": "resources/ataho-v2-inazuma-kick-keyposes-r2.json",
+  "userFeedback": "기존 아타호의 짧고 두꺼운 체형으로 B부터 다시 제작. 다리는 대각선 완전 신전, 발바닥은 조금 비스듬히 보이게 하며 그 B에 맞춰 A를 구성한다."
+}

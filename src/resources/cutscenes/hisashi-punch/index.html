@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아타호 · 히사시 펀치 — 컷씬</title>
+    <link rel="stylesheet" href="../shared/style.css" />
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">이계취호전 <span>/</span> 컷씬 03</p>
+          <h1>히사시 펀치</h1>
+          <p class="intro">맞닿은 한순간을 길게. 풀리는 힘은 한 번에.</p>
+        </div>
+        <a
+          class="library-link"
+          href="../../?category=cutscenes&amp;group=아타호&amp;asset=local%2Fataho-hisashi-punch-cutscene"
+          >컷씬 목록 ↗</a
+        >
+      </header>
+      <section class="theatre" aria-label="아타호 히사시 펀치 컷씬">
+        <div class="viewport">
+          <canvas
+            id="scene"
+            width="960"
+            height="540"
+            aria-label="아타호의 필살기 컷씬. 아래 재생과 장면 탐색으로 감상할 수 있습니다."
+          ></canvas>
+          <div id="loading" role="status">컷씬 그림을 준비하고 있습니다.</div>
+          <button id="start" class="start" disabled>
+            <span aria-hidden="true">▶</span> 컷씬 재생
+          </button>
+        </div>
+        <div class="transport">
+          <div class="buttons">
+            <button id="play" class="primary" disabled>재생</button>
+            <button id="restart" disabled>처음부터</button>
+          </div>
+          <div class="options">
+            <label
+              >속도
+              <select id="speed" aria-label="재생 속도">
+                <option value="0.5">0.5배</option>
+                <option value="1" selected>1배</option>
+              </select></label
+            >
+            <label
+              ><input id="reduced-motion" type="checkbox" /> 섬광·흔들림
+              줄이기</label
+            >
+          </div>
+        </div>
+        <div class="timeline">
+          <output id="time">0.00 / 2.90초</output>
+          <input
+            id="scrub"
+            type="range"
+            min="0"
+            max="2900"
+            step="10"
+            value="0"
+            aria-label="컷씬 재생 시점"
+            disabled
+          />
+          <output id="cut-name" aria-live="polite">대치</output>
+        </div>
+        <nav id="cuts" class="cuts" aria-label="컷별로 멈춰 보기"></nav>
+      </section>
+      <footer>
+        <p id="status" role="status">그림을 불러오는 중</p>
+        <p class="keyboard">Space 재생·정지 <span>·</span> ← → 0.08초 탐색</p>
+      </footer>
+      <details class="notes">
+        <summary>이 컷씬에 관하여</summary>
+        <p>
+          제자리에서 장전을 시작하면 흑백으로 바뀝니다. 주먹을 뻗으며 순식간에
+          다가가 맞닿으면 짧은 먹선 파열과 화면 반동이 충격을 더합니다. 예티를
+          느리게 밀어붙인 뒤 원색으로 돌아와 멀리 날려 보냅니다.
+        </p>
+        <p>
+          기존 아타호 남동 정권과 예티의 넘어지는 그림을 재사용한 무음2.9초
+          컷씬입니다.
+        </p>
+        <a
+          href="../../../../resources/ataho-hisashi-punch.json"
+          target="_blank"
+          rel="noreferrer"
+          >원본·제작 기록 ↗</a
+        >
+      </details>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/cutscenes/hisashi-punch/index.js"
+    ></script>
+  </body>
+</html>

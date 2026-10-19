@@ -2,6 +2,7 @@ import { contactPoint } from './contact-geometry.js';
 import { comboDuration } from './player.js';
 import { collectContactCues, sampleActorPose } from './finisher-actors.js';
 import { groundY, startX, motionWithDrawingContacts } from './pose-drawing.js';
+import { sampleCircusShot, sampleCircusTarget, } from './meteor-circus-flight.js';
 import { kiHitPoint } from './ki-sampling.js';
 // 접촉 자세를 유지하는 꼬리까지 명중 창을 늘리지 않는다.
 const contactWindowMs = 36;
@@ -9,6 +10,8 @@ function clamp(value, min, max) {
     return Math.max(min, Math.min(value, max));
 }
 function contactStrength(step) {
+    if (step.contact?.strength !== undefined)
+        return clamp(step.contact.strength, 0, 1);
     const kind = step.contact?.kind;
     if (kind === 'shoulder')
         return 1;
@@ -25,10 +28,10 @@ function contactStrength(step) {
 }
 function contactReaction(step) {
     const source = `${step.motion} ${step.phase}`;
-    if (/uppercut|어퍼/.test(source))
+    if (/uppercut|어퍼|backflip/.test(source))
         return 'rising';
     // 가로 팔꿈치는 수평으로 두고 원래 내려치기·망치주먹만 하강으로 구분한다.
-    if (/firewood-elbow-chop|elbow-chop|hammer|내려치|망치/.test(source))
+    if (/firewood-elbow-chop|elbow-chop|hammer|aerial-smash|stomp|진각|내려찍|내려치|망치/.test(source))
         return 'falling';
     return 'horizontal';
 }
@@ -75,6 +78,9 @@ function plannedContacts(motion, options) {
                 directionY: reaction === 'rising' ? -1 : reaction === 'falling' ? 1 : 0,
                 reaction,
                 strength: contactStrength(step),
+                holdUntilMs: contact.reactionHold === 'motion-end'
+                    ? comboDuration(motion)
+                    : undefined,
                 connected: false,
             });
         }
@@ -100,12 +106,23 @@ export function sampleSandbagReaction(contacts, timeMs, durationMs, options) {
     let verticalCompression = 0;
     let offsetY = 0;
     let flash = 0;
+    let hitHeld = false;
     for (const contact of contacts) {
         if (!contact.connected)
             continue;
         const age = timeMs - contact.timeMs;
+        if (age < 0)
+            continue;
+        if (contact.holdUntilMs !== undefined && timeMs < contact.holdUntilMs) {
+            // 최초 충격에서 같은 피격 자세로 정착하며 탐색에도 이력을 쌓지 않는다.
+            const amount = Math.min(1, age / 95) * contact.strength;
+            rotation -= contact.directionX * 0.145 * amount;
+            horizontalCompression += 0.1 * amount;
+            offsetY += 2 * options.scale * amount;
+            hitHeld = true;
+        }
         const settleMs = Math.min(620, durationMs - contact.timeMs);
-        if (age < 0 || age >= settleMs)
+        if (age >= settleMs)
             continue;
         // 타임라인 끝에서 원위치로 정착해 반복 대기 구간에서도 멈춘 반동이 남지 않는다.
         const envelope = Math.exp(-age / 280) * (1 - age / settleMs) ** 2;
@@ -135,6 +152,7 @@ export function sampleSandbagReaction(contacts, timeMs, durationMs, options) {
         scaleX: clamp(1 - horizontalCompression + verticalCompression * 0.5, 0.82, 1.12),
         scaleY: clamp(1 + horizontalCompression * 0.3 - verticalCompression, 0.82, 1.08),
         flash,
+        hitHeld,
     };
 }
 /** 몸통의 동일한 아핀 변환을 Canvas 그리기와 교차 판정 양쪽에 전달한다. */
@@ -228,6 +246,20 @@ function collectContacts(motion, options) {
     const first = planned[0];
     if (!first)
         return [];
+    // 추격 시안은 샌드백 대신 같은 공간 안무의 박쥐와 실제 도착점을 비교한다.
+    if (motion.ki?.shots.some((shot) => shot.circusFlight)) {
+        return planned.map((contact, index) => {
+            const flight = motion.ki.shots[index]?.circusFlight;
+            if (!flight)
+                return contact;
+            const point = sampleCircusShot(flight, contact.timeMs);
+            const target = sampleCircusTarget(contact.timeMs);
+            return {
+                ...contact,
+                connected: Math.hypot(point.x - target.x, point.y - target.y, point.z - target.z) <= 6,
+            };
+        });
+    }
     const geometry = sandbagGeometry(first, options);
     const contacts = [];
     for (const contact of planned) {
@@ -246,8 +278,14 @@ export function collectSandbagContacts(motion, options) {
 }
 /** 마지막 강타의 제안값이며, 빗나감과 짧은 잽에는 재생 정지를 추가하지 않는다. */
 export function contactHitStopMs(contact, options) {
-    if (!contact.connected || !options.finalContact || contact.strength < 0.8)
+    if (!contact.connected ||
+        !options.finalContact ||
+        (contact.strength < 0.8 && !options.finisherClimax))
         return 0;
+    if (contact.kind === 'punch' &&
+        contact.strength >= 1 &&
+        contact.holdUntilMs !== undefined)
+        return 48;
     if (contact.kind === 'shoulder')
         return 40;
     if (contact.kind === 'kick')

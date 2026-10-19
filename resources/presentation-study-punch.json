@@ -1,0 +1,506 @@
+{
+  "schemaVersion": 1,
+  "id": "presentation-study-punch",
+  "createdAt": "2026-10-19",
+  "status": "awaiting-user-review",
+  "approvalPending": false,
+  "userGIFReviewPending": true,
+  "budget": {
+    "approvedGenerations": 20,
+    "internalMaximumGenerations": 16,
+    "availablePlanGenerationsAtCheck": 20.35,
+    "availableCreditsUsd": 0,
+    "generationsSpent": 16,
+    "generationCalls": 7,
+    "uploadCount": 0,
+    "spendUsdCredits": false,
+    "purchaseSubscription": false,
+    "generationsReserved": 0,
+    "expectedTotalGenerations": 16,
+    "availablePlanGenerationsAtLatestCheck": 4.35,
+    "availableCreditsUsdAtLatestCheck": 0,
+    "additionalCallsPlanned": 0
+  },
+  "constraints": {
+    "endpointDirections": ["south-east", "north-west"],
+    "keyPoses": ["load", "strike", "recover"],
+    "nativeWidth": 64,
+    "nativeHeight": 64,
+    "noBackground": true,
+    "maxAttemptsPerDirectionPoseAndMethod": 2,
+    "generateInbetweens": false,
+    "expandDirectionsBeforeUserGIFReview": false,
+    "mirrorDirections": false,
+    "sourceUploadsReusedFrom": "resources/anime-signature-poses.json"
+  },
+  "evidence": {
+    "baseImagesViewed": true,
+    "baseImagesViewedCount": 2,
+    "baseImagesViewedWith": "view_image",
+    "methodDecision": "PixelLab search_help는 edit_image 동일편집만지원/per-index 자세 미지원, edit_image_pixen 고정1generation을확인했다. 기존업로드2개를6call에재사용했다.",
+    "qualityAcceptance": "부모 세션이 두 Pro 후보를 검토용으로 선택했다. 사용자 시각 품질 승인과 구분하며 대표 두 방향의 GIF 판단을 기다린다.",
+    "originalBytesPreserved": true,
+    "allGeneratedImagesViewedWith": "view_image",
+    "allGeneratedImagesViewedCount": 8,
+    "alphaBoundsConvention": "right/bottom은 PIL getbbox의 배타적 경계다. PNG 색·알파·native크기는 수정하지 않았다.",
+    "assetVerification": "8개 생성 PNG의 view_image 정적 확인·native64×64·SHA·alphaBounds를 기록했다. 실제 동작 연결/재생과 GIF 품질 검토는 담당 세션에서 수행한다."
+  },
+  "directions": {
+    "south-east": {
+      "source": {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south-east.png",
+        "ref": "upload:a4722d35-9cff-4164-9e3e-ca0ac50cb055",
+        "width": 64,
+        "height": 64
+      },
+      "frames": [
+        {
+          "pose": "load",
+          "localPath": "public/assets/maplestory/presentation-studies-ai/punch/south-east/load.png",
+          "width": 64,
+          "height": 64,
+          "frameIndex": 0,
+          "sourceDirection": "south-east",
+          "mirrored": false,
+          "generation": {
+            "provider": "PixelLab",
+            "tool": "edit_image_pixen",
+            "attempt": 1,
+            "jobId": "9b3a8888-fa8e-4535-a948-50e34b9bf891",
+            "assetId": "17d6f201-9045-53e7-8ec8-135c7ad595c8",
+            "description": "Ataho, mature orange tiger, brown/ivory sleeveless martial clothes, tail. New crisp pixel-art KEY POSE, same identity. Whole 64x64 transparent canvas, ears/soles/tail inside 2px margin. No effects, text, rotation or mirroring. Keep SOUTH-EAST front 3/4 body. Deep punch windup: knees bent, hips braced, torso coiled, striking fist pulled far behind ribs, elbow back, opposite hand forward. Broad stable planted feet.",
+            "seed": 861901,
+            "quotedGenerations": 1,
+            "spentGenerations": 1,
+            "status": "completed",
+            "request": {
+              "image_url": "upload:a4722d35-9cff-4164-9e3e-ca0ac50cb055",
+              "description": "Ataho, mature orange tiger, brown/ivory sleeveless martial clothes, tail. New crisp pixel-art KEY POSE, same identity. Whole 64x64 transparent canvas, ears/soles/tail inside 2px margin. No effects, text, rotation or mirroring. Keep SOUTH-EAST front 3/4 body. Deep punch windup: knees bent, hips braced, torso coiled, striking fist pulled far behind ribs, elbow back, opposite hand forward. Broad stable planted feet.",
+              "width": 64,
+              "height": 64,
+              "no_background": true,
+              "seed": 861901
+            },
+            "actualChargedGenerations": 1
+          },
+          "alphaBounds": {
+            "left": 5,
+            "top": 1,
+            "right": 58,
+            "bottom": 63
+          },
+          "sizeBytes": 3116,
+          "sha256": "417b600c4b0b2f93f3352098042276eebdbd41bf85cb5d210f2da5a7ec6d56c2",
+          "canvasEdgeContact": false,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9b3a8888-fa8e-4535-a948-50e34b9bf891/download",
+          "observation": "기본 방향의 장전 시안. 강한 전경 깊이와 전후 연결감은 사용자 GIF 검토 대상이다.",
+          "selectedForPreview": true
+        },
+        {
+          "pose": "strike",
+          "direction": "south-east",
+          "localPath": "public/assets/maplestory/presentation-studies-ai/punch/attempt-pro/south-east/strike.png",
+          "width": 64,
+          "height": 64,
+          "sizeBytes": 2584,
+          "sha256": "0d2a48fed62dc63bda64861dcfaa6f7f93a253d75d1b8390edd4fe7b1cf2a2d8",
+          "alphaBounds": {
+            "left": 9,
+            "top": 1,
+            "right": 59,
+            "bottom": 63
+          },
+          "canvasEdgeContact": false,
+          "frameIndex": 0,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/642184e3-f3e7-453c-985a-202f83bd59db/download?index=0",
+          "sourceDirection": "south-east",
+          "mirrored": false,
+          "observation": "대형 전경 주먹이 몸 앞을 가리는 새 원근 시안이다. 최종 형태·앞뒤 연결은 사용자 GIF 확인 대기.",
+          "meetsForegroundFistGoal": true,
+          "selectedForPreview": true,
+          "perspectiveQuality": "awaiting-user-review",
+          "note": "거대한 전경 주먹과 후방 몸통의 대비를 검토하는 시안",
+          "generation": {
+            "provider": "PixelLab",
+            "tool": "edit_image",
+            "attempt": 1,
+            "jobId": "642184e3-f3e7-453c-985a-202f83bd59db",
+            "assetId": "c7748f79-303a-589b-8bb9-130a6abaa8a9",
+            "status": "completed",
+            "request": {
+              "image_urls": [
+                "upload:a4722d35-9cff-4164-9e3e-ca0ac50cb055",
+                "upload:6aa737dd-bdfb-4998-9796-7f5b275894c1"
+              ],
+              "description": "Redraw each supplied Ataho sprite into ONE extreme forced-perspective straight-punch KEY POSE directly INTO THE CAMERA LENS. The closest clenched tiger fist MUST be enormous, 25-30 pixels wide in this 64x64 image and visibly larger than the rear head. This fist fills the lower foreground and overlaps part of the body. Draw a very short broad foreshortened wrist and forearm receding away from the giant fist to a SMALL shoulder, SMALL chest, and SMALL rear head. Strong actual arm anatomy and severe depth, not an ordinary sideways punch, not an outstretched long lateral arm, not merely enlarging the entire character. The torso and legs stay farther back and smaller. Preserve the first input's SOUTH-EAST front/side body and the second input's NORTH-WEST back/side body separately, including the visible back on the second; do not turn both into the same front pose. The near punching arm reaches toward the viewer even while the torso retains its own direction. Preserve Ataho's mature orange tiger face, stripes, ears, tail, brown and ivory sleeveless martial clothes with charcoal accents. Planted feet and solid stance. Crisp original 64x64 pixel-art grid, transparent background, one complete character per frame, no text, no speed effects, no aura, no mirroring or full-sprite rotation. Entire ears, giant fist, feet and tail fit inside 64x64 with at least 1 transparent pixel at canvas edges.",
+              "width": 64,
+              "height": 64,
+              "no_background": true,
+              "seed": 861927
+            },
+            "quotedGenerationsForBatch": 10,
+            "actualChargedGenerationsForBatch": 10,
+            "batchChargeSharedAcrossDirections": true,
+            "sourceUploadRef": "upload:a4722d35-9cff-4164-9e3e-ca0ac50cb055",
+            "originalBytesPreserved": true
+          }
+        },
+        {
+          "pose": "recover",
+          "localPath": "public/assets/maplestory/presentation-studies-ai/punch/south-east/recover.png",
+          "width": 64,
+          "height": 64,
+          "frameIndex": 0,
+          "sourceDirection": "south-east",
+          "mirrored": false,
+          "generation": {
+            "provider": "PixelLab",
+            "tool": "edit_image_pixen",
+            "attempt": 1,
+            "jobId": "3d6064e2-82dc-4742-827b-040ddcfe185b",
+            "assetId": "7fcd82c2-0434-5b94-9c39-8433573d24a2",
+            "description": "Ataho, mature orange tiger, brown/ivory sleeveless martial clothes, tail. New crisp pixel-art KEY POSE, same identity. Whole 64x64 transparent canvas, ears/soles/tail inside 2px margin. No effects, text, rotation or mirroring. Keep SOUTH-EAST front 3/4 body. After forward punch, pull striking fist halfway back toward ribs, bent elbow, shoulders uncoiling, weight settling into braced grounded feet; opposite hand returns toward cheek.",
+            "seed": 861903,
+            "quotedGenerations": 1,
+            "spentGenerations": 1,
+            "status": "completed",
+            "request": {
+              "image_url": "upload:a4722d35-9cff-4164-9e3e-ca0ac50cb055",
+              "description": "Ataho, mature orange tiger, brown/ivory sleeveless martial clothes, tail. New crisp pixel-art KEY POSE, same identity. Whole 64x64 transparent canvas, ears/soles/tail inside 2px margin. No effects, text, rotation or mirroring. Keep SOUTH-EAST front 3/4 body. After forward punch, pull striking fist halfway back toward ribs, bent elbow, shoulders uncoiling, weight settling into braced grounded feet; opposite hand returns toward cheek.",
+              "width": 64,
+              "height": 64,
+              "no_background": true,
+              "seed": 861903
+            },
+            "actualChargedGenerations": 1
+          },
+          "alphaBounds": {
+            "left": 9,
+            "top": 1,
+            "right": 55,
+            "bottom": 63
+          },
+          "sizeBytes": 2644,
+          "sha256": "a5dd6589b7d0d6cb6aa1ff7c92c436cb54287f408348db5d084e5075f8f4f590",
+          "canvasEdgeContact": false,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/3d6064e2-82dc-4742-827b-040ddcfe185b/download",
+          "observation": "주먹 회수와 기본 방향의 시안. 전후 연결감은 사용자 GIF 검토 대상이다.",
+          "selectedForPreview": true
+        }
+      ],
+      "previousCandidates": {
+        "pixenStrike": {
+          "pose": "strike",
+          "localPath": "public/assets/maplestory/presentation-studies-ai/punch/south-east/strike.png",
+          "width": 64,
+          "height": 64,
+          "frameIndex": 0,
+          "sourceDirection": "south-east",
+          "mirrored": false,
+          "generation": {
+            "provider": "PixelLab",
+            "tool": "edit_image_pixen",
+            "attempt": 1,
+            "jobId": "b38f9cf0-d206-44e8-8d52-ba5bc08027b6",
+            "assetId": "50907a32-7c79-54b2-b7cb-da6ba7a370a5",
+            "description": "Ataho, mature orange tiger, brown/ivory sleeveless martial clothes, tail. New crisp pixel-art KEY POSE, same identity. Whole 64x64 transparent canvas, ears/soles/tail inside 2px margin. No effects, text, rotation or mirroring. Keep SOUTH-EAST front 3/4 body. Extreme foreshortened straight punch TOWARD VIEWER: closed fist clearly BIGGER THAN HEAD, near wrist foreshortened, shoulder/chest far behind fist, legs/torso remain smaller. Planted feet.",
+            "seed": 861902,
+            "quotedGenerations": 1,
+            "spentGenerations": 1,
+            "status": "completed",
+            "request": {
+              "image_url": "upload:a4722d35-9cff-4164-9e3e-ca0ac50cb055",
+              "description": "Ataho, mature orange tiger, brown/ivory sleeveless martial clothes, tail. New crisp pixel-art KEY POSE, same identity. Whole 64x64 transparent canvas, ears/soles/tail inside 2px margin. No effects, text, rotation or mirroring. Keep SOUTH-EAST front 3/4 body. Extreme foreshortened straight punch TOWARD VIEWER: closed fist clearly BIGGER THAN HEAD, near wrist foreshortened, shoulder/chest far behind fist, legs/torso remain smaller. Planted feet.",
+              "width": 64,
+              "height": 64,
+              "no_background": true,
+              "seed": 861902
+            },
+            "actualChargedGenerations": 1
+          },
+          "alphaBounds": {
+            "left": 5,
+            "top": 2,
+            "right": 57,
+            "bottom": 63
+          },
+          "sizeBytes": 3283,
+          "sha256": "670659c4134cab9bd27d38ffc408c9f43192ef1a70099a50e26c761c84a5bb2f",
+          "canvasEdgeContact": false,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/b38f9cf0-d206-44e8-8d52-ba5bc08027b6/download",
+          "observation": "1차 Pixen은 머리보다 큰 전경 주먹이 나오지 않아 미채택. Pro 방식의 별도 후보를 제작하며 이 원본은 보존한다.",
+          "selectedForPreview": false
+        }
+      },
+      "perspectiveQuality": "awaiting-user-review",
+      "note": "남동 Pro 키포즈를 검토용으로 선택, 사용자 GIF 확인 대기",
+      "selectedForPreview": true
+    },
+    "north-west": {
+      "source": {
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/north-west.png",
+        "ref": "upload:6aa737dd-bdfb-4998-9796-7f5b275894c1",
+        "width": 64,
+        "height": 64
+      },
+      "frames": [
+        {
+          "pose": "load",
+          "localPath": "public/assets/maplestory/presentation-studies-ai/punch/north-west/load.png",
+          "width": 64,
+          "height": 64,
+          "frameIndex": 0,
+          "sourceDirection": "north-west",
+          "mirrored": false,
+          "generation": {
+            "provider": "PixelLab",
+            "tool": "edit_image_pixen",
+            "attempt": 1,
+            "jobId": "88f8c425-e33b-4895-b57f-1019582a69e5",
+            "assetId": "d6b0c5c0-7cf3-560b-94e4-c306d9f8fa3a",
+            "description": "Ataho, mature orange tiger, brown/ivory sleeveless martial clothes, tail. New crisp pixel-art KEY POSE, same identity. Whole 64x64 transparent canvas, ears/soles/tail inside 2px margin. No effects, text, rotation or mirroring. Keep NORTH-WEST back 3/4 body, visible back, not frontal. Deep punch windup: knees bent, hips braced, torso coiled, striking fist pulled far behind ribs, elbow back, opposite hand forward. Broad stable planted feet.",
+            "seed": 861904,
+            "quotedGenerations": 1,
+            "spentGenerations": 1,
+            "status": "completed",
+            "request": {
+              "image_url": "upload:6aa737dd-bdfb-4998-9796-7f5b275894c1",
+              "description": "Ataho, mature orange tiger, brown/ivory sleeveless martial clothes, tail. New crisp pixel-art KEY POSE, same identity. Whole 64x64 transparent canvas, ears/soles/tail inside 2px margin. No effects, text, rotation or mirroring. Keep NORTH-WEST back 3/4 body, visible back, not frontal. Deep punch windup: knees bent, hips braced, torso coiled, striking fist pulled far behind ribs, elbow back, opposite hand forward. Broad stable planted feet.",
+              "width": 64,
+              "height": 64,
+              "no_background": true,
+              "seed": 861904
+            },
+            "actualChargedGenerations": 1
+          },
+          "alphaBounds": {
+            "left": 5,
+            "top": 2,
+            "right": 58,
+            "bottom": 62
+          },
+          "sizeBytes": 2269,
+          "sha256": "4ad1f8f4f49243ae8468034e3b54ee55dc09e57e5ac4dc27d8b464332ce35b62",
+          "canvasEdgeContact": false,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/88f8c425-e33b-4895-b57f-1019582a69e5/download",
+          "observation": "기본 방향의 장전 시안. 강한 전경 깊이와 전후 연결감은 사용자 GIF 검토 대상이다.",
+          "selectedForPreview": true
+        },
+        {
+          "pose": "strike",
+          "direction": "north-west",
+          "localPath": "public/assets/maplestory/presentation-studies-ai/punch/attempt-pro/north-west/strike.png",
+          "width": 64,
+          "height": 64,
+          "sizeBytes": 2185,
+          "sha256": "9aa46c7e3e16cc4805df8a4ff7f6d756eb773855950574d1aa853d41fdb9c013",
+          "alphaBounds": {
+            "left": 11,
+            "top": 2,
+            "right": 59,
+            "bottom": 63
+          },
+          "canvasEdgeContact": false,
+          "frameIndex": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/642184e3-f3e7-453c-985a-202f83bd59db/download?index=1",
+          "sourceDirection": "north-west",
+          "mirrored": false,
+          "observation": "뒤옆 몸 방향은 보존했지만 주먹은 머리보다 작고 전경 원근이 부족하다. 원하는 전경 정권의 완성으로 분류하지 않는다.",
+          "meetsForegroundFistGoal": false,
+          "selectedForPreview": true,
+          "perspectiveQuality": "needs-review",
+          "note": "북서 전경 주먹 과장이 목표보다 약함",
+          "generation": {
+            "provider": "PixelLab",
+            "tool": "edit_image",
+            "attempt": 1,
+            "jobId": "642184e3-f3e7-453c-985a-202f83bd59db",
+            "assetId": "c7748f79-303a-589b-8bb9-130a6abaa8a9",
+            "status": "completed",
+            "request": {
+              "image_urls": [
+                "upload:a4722d35-9cff-4164-9e3e-ca0ac50cb055",
+                "upload:6aa737dd-bdfb-4998-9796-7f5b275894c1"
+              ],
+              "description": "Redraw each supplied Ataho sprite into ONE extreme forced-perspective straight-punch KEY POSE directly INTO THE CAMERA LENS. The closest clenched tiger fist MUST be enormous, 25-30 pixels wide in this 64x64 image and visibly larger than the rear head. This fist fills the lower foreground and overlaps part of the body. Draw a very short broad foreshortened wrist and forearm receding away from the giant fist to a SMALL shoulder, SMALL chest, and SMALL rear head. Strong actual arm anatomy and severe depth, not an ordinary sideways punch, not an outstretched long lateral arm, not merely enlarging the entire character. The torso and legs stay farther back and smaller. Preserve the first input's SOUTH-EAST front/side body and the second input's NORTH-WEST back/side body separately, including the visible back on the second; do not turn both into the same front pose. The near punching arm reaches toward the viewer even while the torso retains its own direction. Preserve Ataho's mature orange tiger face, stripes, ears, tail, brown and ivory sleeveless martial clothes with charcoal accents. Planted feet and solid stance. Crisp original 64x64 pixel-art grid, transparent background, one complete character per frame, no text, no speed effects, no aura, no mirroring or full-sprite rotation. Entire ears, giant fist, feet and tail fit inside 64x64 with at least 1 transparent pixel at canvas edges.",
+              "width": 64,
+              "height": 64,
+              "no_background": true,
+              "seed": 861927
+            },
+            "quotedGenerationsForBatch": 10,
+            "actualChargedGenerationsForBatch": 10,
+            "batchChargeSharedAcrossDirections": true,
+            "sourceUploadRef": "upload:6aa737dd-bdfb-4998-9796-7f5b275894c1",
+            "originalBytesPreserved": true
+          }
+        },
+        {
+          "pose": "recover",
+          "localPath": "public/assets/maplestory/presentation-studies-ai/punch/north-west/recover.png",
+          "width": 64,
+          "height": 64,
+          "frameIndex": 0,
+          "sourceDirection": "north-west",
+          "mirrored": false,
+          "generation": {
+            "provider": "PixelLab",
+            "tool": "edit_image_pixen",
+            "attempt": 1,
+            "jobId": "3d2bfe85-f134-43b6-9d19-fb273d74e5d5",
+            "assetId": "4e01b9be-e0e0-579c-aa05-937dfa5df400",
+            "description": "Ataho, mature orange tiger, brown/ivory sleeveless martial clothes, tail. New crisp pixel-art KEY POSE, same identity. Whole 64x64 transparent canvas, ears/soles/tail inside 2px margin. No effects, text, rotation or mirroring. Keep NORTH-WEST back 3/4 body, visible back, not frontal. After forward punch, pull striking fist halfway back toward ribs, bent elbow, shoulders uncoiling, weight settling into braced grounded feet; opposite hand returns toward cheek.",
+            "seed": 861906,
+            "quotedGenerations": 1,
+            "spentGenerations": 1,
+            "status": "completed",
+            "request": {
+              "image_url": "upload:6aa737dd-bdfb-4998-9796-7f5b275894c1",
+              "description": "Ataho, mature orange tiger, brown/ivory sleeveless martial clothes, tail. New crisp pixel-art KEY POSE, same identity. Whole 64x64 transparent canvas, ears/soles/tail inside 2px margin. No effects, text, rotation or mirroring. Keep NORTH-WEST back 3/4 body, visible back, not frontal. After forward punch, pull striking fist halfway back toward ribs, bent elbow, shoulders uncoiling, weight settling into braced grounded feet; opposite hand returns toward cheek.",
+              "width": 64,
+              "height": 64,
+              "no_background": true,
+              "seed": 861906
+            },
+            "actualChargedGenerations": 1
+          },
+          "alphaBounds": {
+            "left": 8,
+            "top": 2,
+            "right": 56,
+            "bottom": 63
+          },
+          "sizeBytes": 2486,
+          "sha256": "c695c7dedba38da7f8ef1073999dcfd80ca50f14e98ffcb369c85acc2c67f7a2",
+          "canvasEdgeContact": false,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/3d2bfe85-f134-43b6-9d19-fb273d74e5d5/download",
+          "observation": "주먹 회수와 기본 방향의 시안. 전후 연결감은 사용자 GIF 검토 대상이다.",
+          "selectedForPreview": true
+        }
+      ],
+      "previousCandidates": {
+        "pixenStrike": {
+          "pose": "strike",
+          "localPath": "public/assets/maplestory/presentation-studies-ai/punch/north-west/strike.png",
+          "width": 64,
+          "height": 64,
+          "frameIndex": 0,
+          "sourceDirection": "north-west",
+          "mirrored": false,
+          "generation": {
+            "provider": "PixelLab",
+            "tool": "edit_image_pixen",
+            "attempt": 1,
+            "jobId": "e73aacaf-25da-4190-ae7e-39e4e8d765e5",
+            "assetId": "7d1e0e9a-41ff-59dc-8d5c-5136d0ddb380",
+            "description": "Ataho, mature orange tiger, brown/ivory sleeveless martial clothes, tail. New crisp pixel-art KEY POSE, same identity. Whole 64x64 transparent canvas, ears/soles/tail inside 2px margin. No effects, text, rotation or mirroring. Keep NORTH-WEST back 3/4 body, visible back, not frontal. Extreme foreshortened straight punch TOWARD VIEWER: closed fist clearly BIGGER THAN HEAD, near wrist foreshortened, shoulder/chest far behind fist, legs/torso remain smaller. Planted feet.",
+            "seed": 861905,
+            "quotedGenerations": 1,
+            "spentGenerations": 1,
+            "status": "completed",
+            "request": {
+              "image_url": "upload:6aa737dd-bdfb-4998-9796-7f5b275894c1",
+              "description": "Ataho, mature orange tiger, brown/ivory sleeveless martial clothes, tail. New crisp pixel-art KEY POSE, same identity. Whole 64x64 transparent canvas, ears/soles/tail inside 2px margin. No effects, text, rotation or mirroring. Keep NORTH-WEST back 3/4 body, visible back, not frontal. Extreme foreshortened straight punch TOWARD VIEWER: closed fist clearly BIGGER THAN HEAD, near wrist foreshortened, shoulder/chest far behind fist, legs/torso remain smaller. Planted feet.",
+              "width": 64,
+              "height": 64,
+              "no_background": true,
+              "seed": 861905
+            },
+            "actualChargedGenerations": 1
+          },
+          "alphaBounds": {
+            "left": 6,
+            "top": 2,
+            "right": 58,
+            "bottom": 63
+          },
+          "sizeBytes": 2533,
+          "sha256": "04b7c462c46433984b323f5eaab0ac8b08d898b8e4696701776998db62cb55fa",
+          "canvasEdgeContact": false,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/e73aacaf-25da-4190-ae7e-39e4e8d765e5/download",
+          "observation": "1차 Pixen은 머리보다 큰 전경 주먹이 나오지 않아 미채택. Pro 방식의 별도 후보를 제작하며 이 원본은 보존한다.",
+          "selectedForPreview": false
+        }
+      },
+      "perspectiveQuality": "needs-review",
+      "note": "북서 전경 주먹 과장이 목표보다 약함",
+      "selectedForPreview": true
+    }
+  },
+  "proStrikeCandidate": {
+    "status": "selected-for-user-review",
+    "provider": "PixelLab",
+    "tool": "edit_image",
+    "attemptPerDirection": 1,
+    "jobId": "642184e3-f3e7-453c-985a-202f83bd59db",
+    "assetId": "c7748f79-303a-589b-8bb9-130a6abaa8a9",
+    "quotedGenerations": 10,
+    "request": {
+      "image_urls": [
+        "upload:a4722d35-9cff-4164-9e3e-ca0ac50cb055",
+        "upload:6aa737dd-bdfb-4998-9796-7f5b275894c1"
+      ],
+      "description": "Redraw each supplied Ataho sprite into ONE extreme forced-perspective straight-punch KEY POSE directly INTO THE CAMERA LENS. The closest clenched tiger fist MUST be enormous, 25-30 pixels wide in this 64x64 image and visibly larger than the rear head. This fist fills the lower foreground and overlaps part of the body. Draw a very short broad foreshortened wrist and forearm receding away from the giant fist to a SMALL shoulder, SMALL chest, and SMALL rear head. Strong actual arm anatomy and severe depth, not an ordinary sideways punch, not an outstretched long lateral arm, not merely enlarging the entire character. The torso and legs stay farther back and smaller. Preserve the first input's SOUTH-EAST front/side body and the second input's NORTH-WEST back/side body separately, including the visible back on the second; do not turn both into the same front pose. The near punching arm reaches toward the viewer even while the torso retains its own direction. Preserve Ataho's mature orange tiger face, stripes, ears, tail, brown and ivory sleeveless martial clothes with charcoal accents. Planted feet and solid stance. Crisp original 64x64 pixel-art grid, transparent background, one complete character per frame, no text, no speed effects, no aura, no mirroring or full-sprite rotation. Entire ears, giant fist, feet and tail fit inside 64x64 with at least 1 transparent pixel at canvas edges.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "seed": 861927
+    },
+    "outputPaths": {
+      "south-east": "public/assets/maplestory/presentation-studies-ai/punch/attempt-pro/south-east/strike.png",
+      "north-west": "public/assets/maplestory/presentation-studies-ai/punch/attempt-pro/north-west/strike.png"
+    },
+    "actualChargedGenerations": 10,
+    "originalBytesPreserved": true,
+    "frames": [
+      {
+        "direction": "south-east",
+        "localPath": "public/assets/maplestory/presentation-studies-ai/punch/attempt-pro/south-east/strike.png",
+        "width": 64,
+        "height": 64,
+        "sizeBytes": 2584,
+        "sha256": "0d2a48fed62dc63bda64861dcfaa6f7f93a253d75d1b8390edd4fe7b1cf2a2d8",
+        "alphaBounds": {
+          "left": 9,
+          "top": 1,
+          "right": 59,
+          "bottom": 63
+        },
+        "canvasEdgeContact": false,
+        "frameIndex": 0,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/642184e3-f3e7-453c-985a-202f83bd59db/download?index=0",
+        "sourceDirection": "south-east",
+        "mirrored": false,
+        "observation": "대형 전경 주먹이 몸 앞을 가리는 새 원근 시안이다. 최종 형태·앞뒤 연결은 사용자 GIF 확인 대기.",
+        "meetsForegroundFistGoal": true
+      },
+      {
+        "direction": "north-west",
+        "localPath": "public/assets/maplestory/presentation-studies-ai/punch/attempt-pro/north-west/strike.png",
+        "width": 64,
+        "height": 64,
+        "sizeBytes": 2185,
+        "sha256": "9aa46c7e3e16cc4805df8a4ff7f6d756eb773855950574d1aa853d41fdb9c013",
+        "alphaBounds": {
+          "left": 11,
+          "top": 2,
+          "right": 59,
+          "bottom": 63
+        },
+        "canvasEdgeContact": false,
+        "frameIndex": 1,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/642184e3-f3e7-453c-985a-202f83bd59db/download?index=1",
+        "sourceDirection": "north-west",
+        "mirrored": false,
+        "observation": "뒤옆 몸 방향은 보존했지만 주먹은 머리보다 작고 전경 원근이 부족하다. 원하는 전경 정권의 완성으로 분류하지 않는다.",
+        "meetsForegroundFistGoal": false
+      }
+    ],
+    "selectedForPreview": true
+  },
+  "userApproval": {
+    "generationScopeApproved": true,
+    "visualQualityApproved": false,
+    "gifReviewPending": true
+  }
+}

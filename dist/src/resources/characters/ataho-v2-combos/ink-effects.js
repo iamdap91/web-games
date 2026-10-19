@@ -1,148 +1,21 @@
 import { contactPoint } from './contact-geometry.js';
+import { finisherInkSpriteSheets, hasFinisherInkEffects, sampleFinisherInkEffects, } from './finisher-ink-effects.js';
+import { inkProfiles, } from './ink-profiles.js';
 import { inkPivots } from './ink-types.js';
 import { motionOptionId } from './motion-options.js';
 import { sampleComboMotion } from './player.js';
 import { groundY, motionWithDrawingContacts, posePosition, startX, } from './pose-drawing.js';
 import { collectSandbagContacts } from './sandbag.js';
 import { frameKey } from './source-frames.js';
-const shortPunch = {
-    sweep: {
-        sheet: 'stroke',
-        width: 26,
-        height: 8,
-        opacity: 0.9,
-        layer: 'front',
-        tailRatio: 0.72,
-    },
-    impact: { width: 20, height: 18, tailRatio: 0.25, opacity: 0.9 },
-};
-const highKick = {
-    trailId: 'flying-kick-foot-line',
-    sweep: {
-        sheet: 'arc',
-        width: 38,
-        height: 46,
-        opacity: 0.88,
-        layer: 'back',
-        rotation: -0.18,
-        offsetY: 9,
-        tailRatio: 0.8,
-    },
-    impact: { width: 27, height: 23, tailRatio: 0.4, opacity: 0.95 },
-};
-// 크기는 원본 논리 픽셀이다. 접힌 다리·팔꿈치를 큰 검기처럼 늘리지 않는다.
-const profiles = {
-    rush: { ...shortPunch, trailId: 'rush-punch-lines' },
-    'landing-one-two-standalone': shortPunch,
-    'quick-jab': { ...shortPunch, trailId: 'quick-jab-line' },
-    'double-jab': { ...shortPunch, trailId: 'double-jab-lines' },
-    'flying-kick': highKick,
-    'ground-high-kick': { ...highKick, trailId: 'ground-high-kick-foot-line' },
-    'ground-spin': {
-        trailId: 'ground-spin-knee-ribbon',
-        sweep: {
-            sheet: 'arc',
-            width: 29,
-            height: 30,
-            opacity: 0.85,
-            layer: 'back',
-            rotation: -0.12,
-            offsetY: 5,
-            tailRatio: 0.64,
-        },
-        impact: { width: 23, height: 20, tailRatio: 0.3, opacity: 0.9 },
-    },
-    'charged-uppercut': {
-        trailId: 'charged-uppercut-ribbon',
-        sweep: {
-            sheet: 'arc',
-            width: 33,
-            height: 49,
-            opacity: 0.92,
-            layer: 'back',
-            rotation: -0.35,
-            offsetY: 11,
-            tailRatio: 0.8,
-        },
-        impact: { width: 26, height: 22, tailRatio: 0.4, opacity: 0.95 },
-    },
-    'new-smear-hook': {
-        trailId: 'hook-outer-line',
-        sweep: {
-            sheet: 'arc',
-            width: 52,
-            height: 34,
-            opacity: 0.9,
-            layer: 'back',
-            rotation: 0.08,
-            tailRatio: 0.65,
-        },
-        impact: { width: 25, height: 23, tailRatio: 0.4, opacity: 0.95 },
-    },
-    'new-smear-hammerfist': {
-        trailId: 'hammerfist-diagonal-line',
-        trimStart: 1,
-        sweep: {
-            sheet: 'stroke',
-            width: 43,
-            height: 15,
-            rotation: Math.PI * 0.34,
-            opacity: 0.94,
-            layer: 'back',
-            tailRatio: 0.72,
-        },
-        impact: { width: 28, height: 24, tailRatio: 0.5, opacity: 0.98 },
-    },
-    'new-horizontal-elbow': {
-        trailId: 'compact-elbow-curve',
-        sweep: {
-            sheet: 'stroke',
-            width: 21,
-            height: 9,
-            opacity: 0.88,
-            layer: 'front',
-            tailRatio: 0.58,
-        },
-        impact: { width: 22, height: 21, tailRatio: 0.35, opacity: 0.9 },
-    },
-    'elbow-chop': {
-        sweep: {
-            sheet: 'stroke',
-            width: 29,
-            height: 13,
-            opacity: 0.9,
-            layer: 'back',
-            tailRatio: 0.72,
-        },
-        impact: { width: 25, height: 23, tailRatio: 0.5, opacity: 0.96 },
-    },
-    cheolsango: {
-        sweep: {
-            sheet: 'stroke',
-            width: 29,
-            height: 27,
-            opacity: 0.86,
-            layer: 'back',
-            tailRatio: 0.6,
-        },
-        impact: { width: 34, height: 30, tailRatio: 0.5, opacity: 0.98 },
-    },
-    'slide-sweep': {
-        trailId: 'slide-ground-line',
-        trimStart: 2,
-        sweep: {
-            sheet: 'stroke',
-            width: 38,
-            height: 6,
-            opacity: 0.66,
-            layer: 'back',
-            tailRatio: 0.35,
-        },
-        impact: { width: 25, height: 13, tailRatio: 0.4, opacity: 0.9 },
-    },
-};
 export function hasInkEffects(motion) {
-    return profiles[motionOptionId(motion)] !== undefined;
+    return (hasFinisherInkEffects(motion) ||
+        inkProfiles[motionOptionId(motion)] !== undefined);
+}
+export function inkSpriteSheets(motion) {
+    if (motion.finisher)
+        return finisherInkSpriteSheets(motion);
+    const profile = inkProfiles[motionOptionId(motion)];
+    return profile ? [profile.sweep.sheet, 'impact'] : [];
 }
 function stepStarts(motion) {
     let timeMs = 0;
@@ -337,8 +210,10 @@ function impactSamples(snapshot, profile, options) {
 }
 /** 현재 박자의 실제 자세 구간에서 계산하므로 정지·탐색·반복에 누적 상태가 없다. */
 export function sampleInkEffects(snapshot, frames, options) {
+    if (snapshot.motion.finisher)
+        return sampleFinisherInkEffects(snapshot, frames, options);
     const id = motionOptionId(snapshot.motion);
-    const profile = profiles[id];
+    const profile = inkProfiles[id];
     if (!profile || snapshot.waiting)
         return [];
     const motion = motionWithDrawingContacts(snapshot.motion, options.enabledEffects);

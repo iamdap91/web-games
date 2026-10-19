@@ -20,7 +20,19 @@ const backflip = {
             phase: '뒤공중돌기 뒤 가드 복귀',
         },
     ],
-    effects: withPoseEffects(backflipMotion).effects?.filter((effect) => effect.id === 'backflip-landing-drawing'),
+    effects: [
+        ...(withPoseEffects(backflipMotion).effects?.filter((effect) => effect.id === 'backflip-landing-drawing') ?? []),
+        {
+            id: 'backflip-short-afterimage',
+            label: '회전 구간 짧은 잔상',
+            summary: '공중 회전의 두 자세만 남기고 착지 전에 지워 발 디딤을 선명하게 둡니다.',
+            kind: 'afterimage',
+            sources: [{ motion: 'backflip-south-east', frames: [5, 6, 7] }],
+            intervalMs: 40,
+            count: 2,
+            opacity: 0.12,
+        },
+    ],
 };
 const stepBack = {
     id: 'step-back',

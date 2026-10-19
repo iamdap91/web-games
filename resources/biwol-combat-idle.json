@@ -1,0 +1,462 @@
+{
+  "assetId": "ai/biwol-combat-idle",
+  "displayName": "비월 · 전투 대기 모션",
+  "createdDate": "2026-10-18",
+  "sourcePoseAssetId": "ai/biwol-combat-idle-poses",
+  "provider": "PixelLab PixMiniMax · A/B 고정 보간",
+  "status": "user-review-pending",
+  "scope": "승인된 남동·북서 A/B 사이 중간 프레임과 독립 복귀 프레임을 생성해 전투 대기 루프로 연결한다.",
+  "endpointAlignment": {
+    "south-east": {
+      "A": {
+        "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/inputs/south-east-a.png",
+        "sourceOriginalPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/south-east-a.png",
+        "sourceSha256": "e235413929bdec71bd83a57ca6da1eece008ec7d1bc72635ede228ad6272241b",
+        "sha256": "9abc9477ddeb80fb47afb11b78b7dbf0389d28e90ee73396b3453e49fd8bbdd8",
+        "canvasTranslation": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 32,
+          "y": 1
+        }
+      },
+      "B": {
+        "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/inputs/south-east-b.png",
+        "sourceOriginalPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/south-east-b.png",
+        "sourceSha256": "0c5e6106a7ab947ffaebbacee7123bcccf56da0d6bc234246db4a9a866e805ed",
+        "sha256": "3ab0b3e5ca15251afcf9e0d555fbaf5a4583ba2713ee809f6f6463d869f5b5fe",
+        "canvasTranslation": {
+          "x": 0,
+          "y": 2
+        },
+        "pivot": {
+          "x": 32,
+          "y": 1
+        }
+      }
+    },
+    "north-west": {
+      "A": {
+        "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/inputs/north-west-a.png",
+        "sourceOriginalPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/north-west-a.png",
+        "sourceSha256": "26384e836e2df5f766536cb89ef8490ccb76a2ece446613a79c5d439d44be483",
+        "sha256": "c155dd8e83cb20973b00f060020b6c3a63540acc154ee5360eb073873ecd8704",
+        "canvasTranslation": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 32,
+          "y": 1
+        }
+      },
+      "B": {
+        "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/inputs/north-west-b.png",
+        "sourceOriginalPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/north-west-b.png",
+        "sourceSha256": "caffe89907ef6d3f434a48bc1d6c4a9c0c1218987bcf8884fb040c7780399fbc",
+        "sha256": "b2b6e8830af1a3b4b845af94c0865aab7151df156ed99e0507d1fbd741ed54e9",
+        "canvasTranslation": {
+          "x": 0,
+          "y": 0
+        },
+        "pivot": {
+          "x": 32,
+          "y": 1
+        }
+      }
+    }
+  },
+  "directions": {
+    "south-east": {
+      "loop": true,
+      "durationSeconds": 1.8,
+      "frames": [
+        {
+          "index": 0,
+          "phase": "A",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/south-east/00.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.3,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/inputs/south-east-a.png",
+          "sourceSha256": "9abc9477ddeb80fb47afb11b78b7dbf0389d28e90ee73396b3453e49fd8bbdd8",
+          "sourceUrl": "https://www.pixellab.ai/create",
+          "endpoint": "A"
+        },
+        {
+          "index": 1,
+          "phase": "down",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/south-east/01.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.21,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/south-east/down/01.png",
+          "sourceSha256": "6e76ff19f7fa70f3d445fbaee1dce909f9ba46d0f2f9db70aadcd9e63e7f0df9",
+          "jobId": "3e05b500-6414-4db9-8ee0-94b17cb30b5b",
+          "sourceFrameIndex": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/3e05b500-6414-4db9-8ee0-94b17cb30b5b/download?index=1"
+        },
+        {
+          "index": 2,
+          "phase": "down",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/south-east/02.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.21,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/south-east/down/02.png",
+          "sourceSha256": "1b9883c10dc3c6b35402e512be8852b721861d3b4311c7d7d43ac23e5bb65e8f",
+          "jobId": "3e05b500-6414-4db9-8ee0-94b17cb30b5b",
+          "sourceFrameIndex": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/3e05b500-6414-4db9-8ee0-94b17cb30b5b/download?index=2"
+        },
+        {
+          "index": 3,
+          "phase": "down",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/south-east/03.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.21,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/south-east/down/03.png",
+          "sourceSha256": "8e7ba210df37cdbaedc6b1d42f941a40299708eaf233154843c092d879eed3a4",
+          "jobId": "3e05b500-6414-4db9-8ee0-94b17cb30b5b",
+          "sourceFrameIndex": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/3e05b500-6414-4db9-8ee0-94b17cb30b5b/download?index=3"
+        },
+        {
+          "index": 4,
+          "phase": "B",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/south-east/04.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.24,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/inputs/south-east-b.png",
+          "sourceSha256": "3ab0b3e5ca15251afcf9e0d555fbaf5a4583ba2713ee809f6f6463d869f5b5fe",
+          "sourceUrl": "https://www.pixellab.ai/create",
+          "endpoint": "B"
+        },
+        {
+          "index": 5,
+          "phase": "up",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/south-east/05.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.21,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/south-east/up/01.png",
+          "sourceSha256": "85cb1562573c4becc93fe641255838cd7d3d40b24ceedccc4b2e9d3ef8a87156",
+          "jobId": "9bf5c658-55c3-4394-8d88-805bb092d489",
+          "sourceFrameIndex": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9bf5c658-55c3-4394-8d88-805bb092d489/download?index=1"
+        },
+        {
+          "index": 6,
+          "phase": "up",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/south-east/06.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.21,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/south-east/up/02.png",
+          "sourceSha256": "510182ff9b72fb47469d932fe101a5c20e9fb6fbb34a968771834136ac1ce282",
+          "jobId": "9bf5c658-55c3-4394-8d88-805bb092d489",
+          "sourceFrameIndex": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9bf5c658-55c3-4394-8d88-805bb092d489/download?index=2"
+        },
+        {
+          "index": 7,
+          "phase": "up",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/south-east/07.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.21,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/south-east/up/03.png",
+          "sourceSha256": "cab461f9f8853c968014b093093fd21bc4305468b8701318c5940dd443e503b8",
+          "jobId": "9bf5c658-55c3-4394-8d88-805bb092d489",
+          "sourceFrameIndex": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/9bf5c658-55c3-4394-8d88-805bb092d489/download?index=3"
+        }
+      ]
+    },
+    "north-west": {
+      "loop": true,
+      "durationSeconds": 1.8,
+      "frames": [
+        {
+          "index": 0,
+          "phase": "A",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/north-west/00.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.3,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/inputs/north-west-a.png",
+          "sourceSha256": "c155dd8e83cb20973b00f060020b6c3a63540acc154ee5360eb073873ecd8704",
+          "sourceUrl": "https://www.pixellab.ai/create",
+          "endpoint": "A"
+        },
+        {
+          "index": 1,
+          "phase": "down",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/north-west/01.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.21,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/north-west/down/01.png",
+          "sourceSha256": "5c3cace07999ceb54e7a8392833fd169348f11fbc19e60593159a5a90f7912ad",
+          "jobId": "adca11cf-192c-43ad-b99f-22d3144cf606",
+          "sourceFrameIndex": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/adca11cf-192c-43ad-b99f-22d3144cf606/download?index=1"
+        },
+        {
+          "index": 2,
+          "phase": "down",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/north-west/02.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.21,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/north-west/down/02.png",
+          "sourceSha256": "45366ed2554b85fa6c527aad4da81f2693f5c25431ed62baf5287d2366036808",
+          "jobId": "adca11cf-192c-43ad-b99f-22d3144cf606",
+          "sourceFrameIndex": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/adca11cf-192c-43ad-b99f-22d3144cf606/download?index=2"
+        },
+        {
+          "index": 3,
+          "phase": "down",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/north-west/03.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.21,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/north-west/down/03.png",
+          "sourceSha256": "3083d576a115a1d3b14455bfb2ce1f1d4565030294a0bf684505cbcfaa9c681c",
+          "jobId": "adca11cf-192c-43ad-b99f-22d3144cf606",
+          "sourceFrameIndex": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/adca11cf-192c-43ad-b99f-22d3144cf606/download?index=3"
+        },
+        {
+          "index": 4,
+          "phase": "B",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/north-west/04.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.24,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/inputs/north-west-b.png",
+          "sourceSha256": "b2b6e8830af1a3b4b845af94c0865aab7151df156ed99e0507d1fbd741ed54e9",
+          "sourceUrl": "https://www.pixellab.ai/create",
+          "endpoint": "B"
+        },
+        {
+          "index": 5,
+          "phase": "up",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/north-west/05.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.21,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/north-west/up/01.png",
+          "sourceSha256": "38c5205522f828e19344e2d4cfc9d21a0fb0089e4432533f65d6901b5c2f3b65",
+          "jobId": "ec3a7ca0-a83d-4890-b3a4-079531040db4",
+          "sourceFrameIndex": 1,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ec3a7ca0-a83d-4890-b3a4-079531040db4/download?index=1"
+        },
+        {
+          "index": 6,
+          "phase": "up",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/north-west/06.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.21,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/north-west/up/02.png",
+          "sourceSha256": "54acc245289c38ec4cd340afa5afac7a548af3365cc7bbc947aa16981b52ff0f",
+          "jobId": "ec3a7ca0-a83d-4890-b3a4-079531040db4",
+          "sourceFrameIndex": 2,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ec3a7ca0-a83d-4890-b3a4-079531040db4/download?index=2"
+        },
+        {
+          "index": 7,
+          "phase": "up",
+          "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/runtime/north-west/07.png",
+          "width": 64,
+          "height": 64,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          },
+          "durationSeconds": 0.21,
+          "sourceOriginalPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/north-west/up/03.png",
+          "sourceSha256": "d525c34953c23937c9e63bc987f8acff472fef151d28718b5c89bac2e97e250e",
+          "jobId": "ec3a7ca0-a83d-4890-b3a4-079531040db4",
+          "sourceFrameIndex": 3,
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/ec3a7ca0-a83d-4890-b3a4-079531040db4/download?index=3"
+        }
+      ]
+    }
+  },
+  "generation": {
+    "attempts": [
+      {
+        "direction": "south-east",
+        "phase": "down",
+        "from": "A",
+        "to": "B",
+        "jobId": "3e05b500-6414-4db9-8ee0-94b17cb30b5b",
+        "mode": "animate_image_pixminimax",
+        "attempt": 1,
+        "chargedGenerations": 1,
+        "requestedFrameCount": 4,
+        "returnedFrameCount": 5,
+        "selectedSourceFrameIndices": [1, 2, 3],
+        "requestPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/inputs/south-east-down-request.json",
+        "receiptPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/south-east-down-receipt.json",
+        "resultPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/south-east-down-result.json"
+      },
+      {
+        "direction": "south-east",
+        "phase": "up",
+        "from": "B",
+        "to": "A",
+        "jobId": "9bf5c658-55c3-4394-8d88-805bb092d489",
+        "mode": "animate_image_pixminimax",
+        "attempt": 1,
+        "chargedGenerations": 1,
+        "requestedFrameCount": 4,
+        "returnedFrameCount": 5,
+        "selectedSourceFrameIndices": [1, 2, 3],
+        "requestPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/inputs/south-east-up-request.json",
+        "receiptPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/south-east-up-receipt.json",
+        "resultPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/south-east-up-result.json"
+      },
+      {
+        "direction": "north-west",
+        "phase": "down",
+        "from": "A",
+        "to": "B",
+        "jobId": "adca11cf-192c-43ad-b99f-22d3144cf606",
+        "mode": "animate_image_pixminimax",
+        "attempt": 1,
+        "chargedGenerations": 1,
+        "requestedFrameCount": 4,
+        "returnedFrameCount": 5,
+        "selectedSourceFrameIndices": [1, 2, 3],
+        "requestPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/inputs/north-west-down-request.json",
+        "receiptPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/north-west-down-receipt.json",
+        "resultPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/north-west-down-result.json"
+      },
+      {
+        "direction": "north-west",
+        "phase": "up",
+        "from": "B",
+        "to": "A",
+        "jobId": "ec3a7ca0-a83d-4890-b3a4-079531040db4",
+        "mode": "animate_image_pixminimax",
+        "attempt": 1,
+        "chargedGenerations": 1,
+        "requestedFrameCount": 4,
+        "returnedFrameCount": 5,
+        "selectedSourceFrameIndices": [1, 2, 3],
+        "requestPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/inputs/north-west-up-request.json",
+        "receiptPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/north-west-up-receipt.json",
+        "resultPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/originals/north-west-up-result.json"
+      }
+    ],
+    "totalChargedGenerations": 4
+  },
+  "assembly": {
+    "sequence": [
+      "A",
+      "down 1",
+      "down 2",
+      "down 3",
+      "B",
+      "up 1",
+      "up 2",
+      "up 3"
+    ],
+    "endpointPolicy": "A/B는 정렬한 원본을 직접 사용한다. 생성 결과의 0번은 입력 중복, 4번은 끝 자세 구간이라 보존만 하고 재생에는 중복 삽입하지 않는다.",
+    "loopSeam": "마지막 복귀 중간 프레임 뒤 첫 A로 반복한다. 마지막에 A를 한 번 더 넣지 않는다.",
+    "pivotPolicy": "x=32 고정. y는 알파>24의 발밑 하단으로 수직 접지만 맞추며, 단검이 발보다 내려가지 않는지 프레임을 확인한다.",
+    "preservation": "원본 A/B와 생성 원본은 보존한다. runtime PNG는 해당 입력/원본의 무가공 복사이며 GIF에만 최근접 확대·배경·설명을 넣는다."
+  },
+  "review": {
+    "comparisonGif": {
+      "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/review/biwol-combat-idle.gif",
+      "width": 744,
+      "height": 430,
+      "byteSize": 109865,
+      "sha256": "8212b19595ab23fc89f0153179c881d4fe1f7250ff7740bd5e2f085da157d61a",
+      "frameCount": 8,
+      "durationMilliseconds": [300, 210, 210, 210, 240, 210, 210, 210]
+    },
+    "contactSheet": {
+      "localPath": "public/assets/maplestory/biwol-combat-idle-ai/20261018/review/biwol-combat-idle-frames.png",
+      "width": 1696,
+      "height": 566,
+      "byteSize": 36855,
+      "sha256": "eeeed65b0af1b6338ca2cc831621ee25b43c941baf2d33c0ddfd2ba017dacd26"
+    },
+    "qualityGate": "실제 루프와 GIF로 사용자 검토. 남동 A/B 발 간격과 북서 귀 기울기의 원본 차이가 중간 프레임에서도 자연스럽게 연결되는지 확인한다.",
+    "knownDifferences": [
+      "A/B의 원래 발 간격 차이가 중간 프레임에서도 이어지므로, 발을 완전히 고정한 미세 호흡이 아니라 발 간격이 벌어지는 웅크림이다.",
+      "북서 복귀 마지막 중간 장면은 귀 상단이 A보다 1px 높다. 반복 경계의 발밑은 같은 높이다.",
+      "생성한 중간 프레임에는 얼굴·목도리·장비 외곽의 작은 픽셀 변화가 있다. 최종 품질은 GIF로 판단한다."
+    ]
+  }
+}

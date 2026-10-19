@@ -1,0 +1,125 @@
+{
+  "character": {
+    "id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+    "name": "Idle",
+    "prompt": "The SAME young adult anthropomorphic rabbit ninja as the supplied approved SOUTH sprite 04. Preserve its exact native pixel-art identity and compact RPG proportions across rotations. Cream/ivory rabbit fur, softly rounded yet gently tapered cheeks (the approved midpoint head shape), calm half-lidded amber eyes, small rabbit nose/muzzle, long pink-lined rabbit ears with ONE upright ear and ONE bent ear. Deep plum crossover ninja jacket, charcoal loose trousers, plum forearm and shin wraps, short muted brick-red scarf worn below the exposed face, dark waist sash, small brown belt pouch, climbing-cord coil, small sheathed belt dagger, rabbit hands/feet and one small round rabbit tail. Keep clothing coverage, equipment placement, palette, head/body size and bold readable clustered pixel shading consistent. Humanoid biped. Neutral standing pose. Use the supplied south image unchanged as the existing front direction; generate only its remaining directions. No new outfit, hair, weapons, armor, face mask or extra decoration.",
+    "size": {
+      "width": 64,
+      "height": 64
+    },
+    "directions": 8,
+    "view": "low top-down"
+  },
+  "spritesheet": {
+    "path": "-_v3_mannequin-Idle.png",
+    "cell_size": {
+      "width": 96,
+      "height": 96
+    },
+    "sheet_size": {
+      "width": 864,
+      "height": 1056
+    },
+    "columns": 9,
+    "pivot": "cell-center",
+    "rows": [
+      {
+        "row": 0,
+        "type": "rotations",
+        "frame_count": 8,
+        "directions": [
+          "south",
+          "south-east",
+          "east",
+          "north-east",
+          "north",
+          "north-west",
+          "west",
+          "south-west"
+        ]
+      },
+      {
+        "row": 1,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "biwol-basic-horizontal-slash-study-20261017",
+        "animation_group_id": "cf601626-6baf-4c38-9a66-3d0a20e813b8",
+        "direction": "south-east"
+      },
+      {
+        "row": 2,
+        "type": "animation",
+        "frame_count": 9,
+        "animation": "biwol-basic-horizontal-slash-study-20261017",
+        "animation_group_id": "cf601626-6baf-4c38-9a66-3d0a20e813b8",
+        "direction": "north-west"
+      },
+      {
+        "row": 3,
+        "type": "animation",
+        "frame_count": 6,
+        "animation": "Walking",
+        "animation_group_id": "e45648cc-6532-436a-b42c-3dcd31e32754",
+        "direction": "south"
+      },
+      {
+        "row": 4,
+        "type": "animation",
+        "frame_count": 6,
+        "animation": "Walking",
+        "animation_group_id": "e45648cc-6532-436a-b42c-3dcd31e32754",
+        "direction": "south-east"
+      },
+      {
+        "row": 5,
+        "type": "animation",
+        "frame_count": 6,
+        "animation": "Walking",
+        "animation_group_id": "e45648cc-6532-436a-b42c-3dcd31e32754",
+        "direction": "east"
+      },
+      {
+        "row": 6,
+        "type": "animation",
+        "frame_count": 6,
+        "animation": "Walking",
+        "animation_group_id": "e45648cc-6532-436a-b42c-3dcd31e32754",
+        "direction": "north-east"
+      },
+      {
+        "row": 7,
+        "type": "animation",
+        "frame_count": 6,
+        "animation": "Walking",
+        "animation_group_id": "e45648cc-6532-436a-b42c-3dcd31e32754",
+        "direction": "north"
+      },
+      {
+        "row": 8,
+        "type": "animation",
+        "frame_count": 6,
+        "animation": "Walking",
+        "animation_group_id": "e45648cc-6532-436a-b42c-3dcd31e32754",
+        "direction": "north-west"
+      },
+      {
+        "row": 9,
+        "type": "animation",
+        "frame_count": 6,
+        "animation": "Walking",
+        "animation_group_id": "e45648cc-6532-436a-b42c-3dcd31e32754",
+        "direction": "west"
+      },
+      {
+        "row": 10,
+        "type": "animation",
+        "frame_count": 6,
+        "animation": "Walking",
+        "animation_group_id": "e45648cc-6532-436a-b42c-3dcd31e32754",
+        "direction": "south-west"
+      }
+    ]
+  },
+  "export_version": "1.0",
+  "export_date": "2026-10-16T17:26:42.714440+00:00"
+}

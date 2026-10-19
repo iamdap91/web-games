@@ -11,6 +11,9 @@ export function motionOptionTitle(motion) {
 export function motionDirection(motion) {
     return motion.technique?.direction ?? 'south-east';
 }
+export function hasViscousOrbit(motion) {
+    return motion.ki?.style === 'orbit';
+}
 export function groupMotionOptions(motions) {
     const groups = new Map();
     for (const motion of motions) {

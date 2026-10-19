@@ -1,0 +1,397 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-17",
+  "scope": "아타호 v2 동작 조합실의 철산고 접촉과 낮은 지면 충격. 기존 몸 원화·안무·타수·접촉시각은 유지.",
+  "generator": "PixelLab create_vfx lite + vfx_workbench",
+  "selection": {
+    "reviewed": "공격15종·필살기7종의 기존 효과 경로와 시트 확인",
+    "created": ["철산고 방향성 압축 파열", "내려찍기·진각의 낮은 지면 먼지"],
+    "retained": "일반 권격·발차기의 기존 수묵 arc/stroke/impact와 기공 atlas, 화면 균열·집중선·실제 손발 경로 궤적은 재사용"
+  },
+  "assets": [
+    {
+      "id": "combat-vfx-shoulder-crush",
+      "sheet": "shoulder-crush",
+      "jobId": "64552548-211a-4c9f-b135-1e4ae154bb20",
+      "effectId": "e8b971d1-38fe-46e4-8ccf-e574736ff394",
+      "request": {
+        "artist": "lite",
+        "name": "Ataho shoulder crush",
+        "description": "A standalone transparent pixel-art melee impact for a small warm-coloured tiger martial artist. ONLY the effect, no character, no target, no floor, no text. A heavy shoulder/back body-check contact burst, canonical force direction to the RIGHT. Keep an OPEN contact origin near the left quarter; all mass spreads mostly right, no long trail behind the attacker. One-shot, about 180ms, ideally six deliberately different frames on a stable 64x40 pixel logical canvas: 1 narrow compressed ivory wedge at the contact, 2 squat wide cream slab split by a dark ink seam, 3 three jagged ochre lobes bursting horizontally outwards, 4 small chunky angular fragments with empty holes, 5 a few rapidly shrinking ochre crumbs, 6 fully transparent. Irregular pixel clusters, hard opaque pixel edges, no anti-aliasing, no soft glow. Palette limited to warm ivory #fff0cf, ochre #c5a268, dark umber #594332. Read as blunt HEAVY compression rather than a sword slash, explosion or fire. Keep effect low and horizontally wide, do not use a circular ring, starburst spokes, tiger head, claws, lightning, smoke cloud or screen flash. Fixed contact anchor across every frame; transparent background. Output GIF, spritesheet and anchor metadata for Canvas game integration.",
+        "game_pack": true
+      },
+      "chargedGenerations": 2,
+      "originalImageId": "21f2f8a7-5c36-4199-b7f5-c17409566314",
+      "originalDirectory": "public/assets/maplestory/ataho-v2-combat-vfx/20261017/shoulder-crush",
+      "selectedImageId": "1c7324ed-95f5-48d9-9370-18501976e6b8",
+      "selectedDirectory": "public/assets/maplestory/ataho-v2-combat-vfx/20261017/shoulder-crush/refined",
+      "fileStem": "ataho-shoulder-crush",
+      "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/1c7324ed-95f5-48d9-9370-18501976e6b8/ataho-shoulder-crush.png",
+      "pageUrl": "https://pixellab.ai/create-vfx?effect=e8b971d1-38fe-46e4-8ccf-e574736ff394",
+      "refinement": {
+        "tool": "vfx_workbench",
+        "stepIds": [
+          "1d28eb52-8d2a-4045-9be9-42961653e2f9",
+          "91bdf6f5-a917-487c-a8c1-b4c2d9b8878f",
+          "edd63742-feeb-4557-b190-37cd7afb55eb"
+        ],
+        "reason": "생성본의 반듯한 평행 막대를 비대칭 압축 덩어리·갈라진 세 파편으로 수정. 원본 메타데이터의 중앙(32,20)을 실제 압축핵 원점(16,20)으로 PixelLab에서 정정. 원본과 최종 파일을 모두 보존.",
+        "patches": [
+          [
+            {
+              "op": "set",
+              "path": "origin",
+              "value": [16, 20]
+            },
+            {
+              "op": "set",
+              "path": "layers.slab.x",
+              "value": 26
+            },
+            {
+              "op": "set",
+              "path": "layers.slab.pixels",
+              "value": [
+                "....22233332........",
+                "..222333333322......",
+                ".223333333333322....",
+                "233333311333333322..",
+                "33333111113333333322",
+                ".233331..1333333322.",
+                "..223333113333322...",
+                "....22333333322.....",
+                "......2223322......."
+              ]
+            },
+            {
+              "op": "set",
+              "path": "layers.lobe_a.x",
+              "value": 28
+            },
+            {
+              "op": "set",
+              "path": "layers.lobe_a.pixels",
+              "value": [
+                "2222......",
+                "223322....",
+                ".2333322..",
+                "..22333222",
+                "....22222."
+              ]
+            },
+            {
+              "op": "set",
+              "path": "layers.lobe_b.x",
+              "value": 32
+            },
+            {
+              "op": "set",
+              "path": "layers.lobe_b.pixels",
+              "value": [
+                "....222......",
+                "2222333322...",
+                "233333332222.",
+                ".223331333322",
+                "...22223322.."
+              ]
+            },
+            {
+              "op": "set",
+              "path": "layers.lobe_c.x",
+              "value": 29
+            },
+            {
+              "op": "set",
+              "path": "layers.lobe_c.y",
+              "value": 25
+            },
+            {
+              "op": "set",
+              "path": "layers.lobe_c.pixels",
+              "value": [
+                "22222.....",
+                "22333322..",
+                ".223333222",
+                "...223322.",
+                ".....222.."
+              ]
+            },
+            {
+              "op": "set",
+              "path": "layers.frag1.pixels",
+              "value": ["222.", "2332", "22.."]
+            },
+            {
+              "op": "set",
+              "path": "layers.frag2.pixels",
+              "value": ["22...", "2332.", ".2322", "..22."]
+            },
+            {
+              "op": "set",
+              "path": "layers.frag3.pixels",
+              "value": ["..22", ".232", "22.."]
+            },
+            {
+              "op": "set",
+              "path": "layers.frag4.pixels",
+              "value": ["22..", "2332", ".22."]
+            },
+            {
+              "op": "set",
+              "path": "layers.frag5.pixels",
+              "value": [".222", "2332", "22.."]
+            }
+          ],
+          [
+            {
+              "op": "set",
+              "path": "layers.slab.pixels",
+              "value": [
+                "....22233332........",
+                "..222333333322......",
+                ".223333333333322....",
+                "23333333333311111111",
+                "3333333311111.......",
+                ".2333333333333322...",
+                "..223333333333322...",
+                "....22333333322.....",
+                "......2223322......."
+              ]
+            }
+          ]
+        ]
+      },
+      "runtime": [
+        {
+          "motion": "cheolsango",
+          "durationMs": 130,
+          "size": 1
+        },
+        {
+          "motion": "finisher-drunken-tiger",
+          "contact": 2,
+          "durationMs": 130,
+          "size": 0.85
+        },
+        {
+          "motion": "finisher-drunken-tiger",
+          "contact": 8,
+          "durationMs": 180,
+          "size": 1.2
+        }
+      ],
+      "localPath": "public/assets/maplestory/ataho-v2-combat-vfx/20261017/shoulder-crush/refined/ataho-shoulder-crush.png",
+      "metadataPath": "public/assets/maplestory/ataho-v2-combat-vfx/20261017/shoulder-crush/refined/ataho-shoulder-crush.json",
+      "sha256": "02138468e287ce0f8d9b272fcbd75ead1b521bd1faf6231d955e2102efbb550e",
+      "metadataSha256": "0d51ba5f80aeb5c74e9dffd15e76272aab0f9c1fd3c3fca908625a503d55756b",
+      "atlas": {
+        "width": 192,
+        "height": 80,
+        "frameWidth": 64,
+        "frameHeight": 40,
+        "columns": 3,
+        "rows": 2,
+        "frameCount": 6,
+        "sourceFrameDurationsMs": [30, 30, 30, 30, 30, 30],
+        "anchor": {
+          "kind": "origin",
+          "x": 16,
+          "y": 20
+        }
+      }
+    },
+    {
+      "id": "combat-vfx-ground-impact",
+      "sheet": "ground-impact",
+      "jobId": "153fbb1c-e250-4a75-b99d-3a8cb3ff3bdf",
+      "effectId": "bd3b16f1-2f6c-4d47-b13a-73441bdc111a",
+      "request": {
+        "artist": "lite",
+        "name": "Ataho low ground impact",
+        "description": "A standalone transparent pixel-art martial arts GROUND IMPACT for a small warm-coloured pixel fighter. ONLY the effect, no character, no target, no text, no permanent ground damage. For both a heavy aerial two-handed downward smash and a short planted-foot stomp. Low squat silhouette, about 6 different frames over 180ms, ideally a stable 80x32 logical pixel canvas, ground/contact pivot at horizontal center near bottom (x40 y26). Frame 1 very narrow tiny ivory ground compression centered at the pivot; frame 2 a jagged low ochre clod splits into two unequal groups just left/right of the pivot with dark umber gaps; frames 3-4 irregular small flat dirt/wood-dust clusters leap outwards in two low arcs; frame 5 only a few shrinking granular crumbs far from the center; frame 6 completely transparent. Leave the center/top open for the actor's legs. Material is dry dusty wooden dojo floor, not rocks, smoke, fire, magic or a crater. Hard opaque pixel clusters with intentional negative spaces, no antialias, no blur, no glow, no tall clouds, no radial ring, no starburst spokes, no beams, no shockwave ellipse. Limited palette warm ivory #fff0cf, ochre #c5a268, dark umber #594332. Stable ground contact anchor and transparent background. Output GIF, spritesheet PNG, and anchor metadata for Canvas game integration.",
+        "game_pack": true
+      },
+      "chargedGenerations": 1,
+      "originalImageId": "413c3d17-58f0-41b4-9ac6-e97ad3f86189",
+      "originalDirectory": "public/assets/maplestory/ataho-v2-combat-vfx/20261017/ground-impact",
+      "selectedImageId": "9ffcfd82-af8d-4278-b72b-7b0f9dfa9f2f",
+      "selectedDirectory": "public/assets/maplestory/ataho-v2-combat-vfx/20261017/ground-impact/refined",
+      "fileStem": "ataho-low-ground-impact",
+      "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/9ffcfd82-af8d-4278-b72b-7b0f9dfa9f2f/ataho-low-ground-impact.png",
+      "pageUrl": "https://pixellab.ai/create-vfx?effect=bd3b16f1-2f6c-4d47-b13a-73441bdc111a",
+      "refinement": {
+        "tool": "vfx_workbench",
+        "stepIds": [
+          "4f45ea12-3b9e-4b8a-a9aa-f1fd57f5fd46",
+          "353ce695-ef72-4147-9a3a-68223f4df3e1",
+          "93fbbb61-2e6b-4cef-adb8-d2611d0c0feb"
+        ],
+        "reason": "첫 실제 합성에서 발 아래에 가려진 먼지를 같은 픽셀 덩어리·낮은 높이로 양옆에 분산. 시트 가장자리 투명 여백 보존.",
+        "patches": [
+          [
+            {
+              "op": "set",
+              "path": "layers.clods_l.x",
+              "value": 32
+            },
+            {
+              "op": "set",
+              "path": "layers.clods_r.x",
+              "value": 48
+            },
+            {
+              "op": "set",
+              "path": "layers.clods_l.speed",
+              "value": 32
+            },
+            {
+              "op": "set",
+              "path": "layers.clods_r.speed",
+              "value": 32
+            },
+            {
+              "op": "set",
+              "path": "layers.clods_l.direction",
+              "value": -165
+            },
+            {
+              "op": "set",
+              "path": "layers.clods_r.direction",
+              "value": -15
+            },
+            {
+              "op": "set",
+              "path": "layers.clods_l.spread",
+              "value": 24
+            },
+            {
+              "op": "set",
+              "path": "layers.clods_r.spread",
+              "value": 24
+            },
+            {
+              "op": "set",
+              "path": "layers.clods_l.gravity",
+              "value": 8
+            },
+            {
+              "op": "set",
+              "path": "layers.clods_r.gravity",
+              "value": 8
+            }
+          ],
+          [
+            {
+              "op": "set",
+              "path": "layers.clods_l.x",
+              "value": 34
+            },
+            {
+              "op": "set",
+              "path": "layers.clods_r.x",
+              "value": 46
+            },
+            {
+              "op": "set",
+              "path": "layers.clods_l.speed",
+              "value": 28
+            },
+            {
+              "op": "set",
+              "path": "layers.clods_r.speed",
+              "value": 28
+            }
+          ]
+        ]
+      },
+      "runtime": [
+        {
+          "motion": "aerial-smash",
+          "durationMs": 190
+        },
+        {
+          "motion": "martial-stomp",
+          "durationMs": 150
+        },
+        {
+          "motion": "finisher-demon",
+          "contact": 21,
+          "durationMs": 190,
+          "gate": "필살기 무대 및 과장 컨셉"
+        }
+      ],
+      "localPath": "public/assets/maplestory/ataho-v2-combat-vfx/20261017/ground-impact/refined/ataho-low-ground-impact.png",
+      "metadataPath": "public/assets/maplestory/ataho-v2-combat-vfx/20261017/ground-impact/refined/ataho-low-ground-impact.json",
+      "sha256": "1d8060c7f1d617dfb2d44a79544ca3761cca4249f576d51255eec195f4213c93",
+      "metadataSha256": "615b90229877c138e49a50099f1047f2a560c5e2510180344e8c9462f82713d1",
+      "atlas": {
+        "width": 240,
+        "height": 64,
+        "frameWidth": 80,
+        "frameHeight": 32,
+        "columns": 3,
+        "rows": 2,
+        "frameCount": 6,
+        "sourceFrameDurationsMs": [30, 30, 30, 30, 30, 30],
+        "anchor": {
+          "kind": "origin",
+          "x": 40,
+          "y": 26
+        }
+      }
+    }
+  ],
+  "rendering": {
+    "source": "원본 PNG/GIF/JSON/game.zip과 refined 버전은 Git 제외 로컬 리소스로 보존. 외부 서비스의 실행 코드는 사용하지 않음.",
+    "timing": "6개 고정 셀을 각 동작의 접촉 후 절대 경과시간/수명으로 한 번 재생. 최종 빈 셀 이후 반복·고정 표시하지 않음.",
+    "ownership": "MotionFrameLoader가 선택 모션에 필요한 그림만 로드하고 공유. combat-effect-sprites.ts는 셀·원점·그리기를 담당.",
+    "direction": "오른쪽 힘 방향의 효과만 접촉 directionX로 수평 배치. 캐릭터 몸 그림 반전·회전·변형 없음.",
+    "replacement": "단발 철산고의 기존 먹 impact와 일반 충격, 취호 shoulder의 일반 충격과 전용 마름모, 내려찍기·진각의 바닥 타원·입자만 대체.",
+    "ground": "실제 손끝 타점과 바닥 y를 분리. 지면 먼지는 groundY에 고정하고 명중 판정을 추가하지 않음."
+  },
+  "verification": {
+    "status": "verified-pc-rendering-and-build",
+    "checks": ["npm run check", "npm run build", "git diff --check"],
+    "pcPlayback": {
+      "browser": "Codex in-app browser",
+      "motions": [
+        {
+          "id": "cheolsango",
+          "durationMs": 790,
+          "contacts": 1
+        },
+        {
+          "id": "aerial-smash",
+          "durationMs": 880,
+          "contacts": 1
+        },
+        {
+          "id": "martial-stomp",
+          "durationMs": 540,
+          "contacts": 1
+        },
+        {
+          "id": "finisher-drunken-tiger",
+          "durationMs": 3816,
+          "contacts": 8
+        },
+        {
+          "id": "finisher-demon",
+          "durationMs": 4130,
+          "contacts": 21
+        }
+      ],
+      "observed": "다섯 적용 모션을 실제1배 재생해 접촉·회수·종료, 두 refined PNG의 로드, 접촉 압축→파편 및 낮은 지면 퍼짐을 확인. 지면 첫 합성의 발 가림을 수정하고 최종 버전 재생을 다시 기록.",
+      "consoleErrors": 0,
+      "consoleWarnings": 0,
+      "reviewGifs": [
+        "public/assets/maplestory/ataho-v2-combat-vfx/20261017/review/cheolsango.gif",
+        "public/assets/maplestory/ataho-v2-combat-vfx/20261017/review/aerial-smash.gif",
+        "public/assets/maplestory/ataho-v2-combat-vfx/20261017/review/martial-stomp.gif",
+        "public/assets/maplestory/ataho-v2-combat-vfx/20261017/review/finisher-drunken-tiger.gif",
+        "public/assets/maplestory/ataho-v2-combat-vfx/20261017/review/finisher-demon.gif"
+      ]
+    },
+    "boundary": "최종 미감 채택은 합성 GIF와 사용자 재생 비교로 판단. 별도 테스트 코드·모바일 검증은 수행하지 않았으며, 사용자 요청에 따라 병합 전 추가 테스트는 생략."
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "key": "plunge",
+  "direction": "north-west",
+  "attempt": 2,
+  "mode": "pixminimax",
+  "request": {
+    "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+    "animation_name": "biwol-add-plunge-nw-pixminimax-v2-20261017",
+    "mode": "pixminimax",
+    "directions": [
+      "north-west"
+    ],
+    "frame_count": 12,
+    "keep_first_frame": true,
+    "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+    "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+    "subject_description": "Exact source rabbit ninja, back-three-quarter NORTH-WEST. Cream fur, one upright and one bent ear, plum ninja jacket, dark pants, short red scarf, round tail. ONE original TINY waist dagger: its short metal blade is about HALF the rabbit head height, never a sword.",
+    "initial_pose": "Exact original north-west standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+    "action_description": "ONE downward attack with the ORIGINAL TINY BELT DAGGER, never a sword. Most important: the dagger's METAL BLADE stays approximately HALF the rabbit head height and ALWAYS SHORTER THAN THE HEAD HEIGHT in every frame, including when raised beside the head. Keep the original small hilt and one short blade, do not extend the weapon during the attack. Begin from the exact NORTH-WEST idle. Keep the back-three-quarter NORTH-WEST body axis; back of the head and jacket stay visible, do not show face or chest toward camera. Crouch briefly, make an airborne tucked-leg pose while raising the tiny dagger beside the head with elbow bent, make ONE compact vertical DOWNWARD knife chop toward the UPPER LEFT / LEFT target side, then low bent-knee landing and return to the exact source idle. Show clear preparation, tucked-leg blade lift, downward cut and landing/recovery. Preserve one permanently bent ear and one upright ear, source clothes and asymmetry. The game adds all jump height, falling arc and translation: draw body poses around a fixed root only, do not translate the whole sprite. Transparent background. No long sword, katana, spear or second weapon. No blade trails, particles, flashes, added effects or duplicate bodies."
+  },
+  "result": {
+    "status": "completed",
+    "sourceAnimationId": "78c46533-37fb-435c-9b56-1a068ea8ddb5",
+    "frameCountIncludingReference": 13,
+    "rawDirectory": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2",
+    "sheetPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/sheet.png",
+    "pivotEvidence": {
+      "originalSize": {
+        "width": 64,
+        "height": 64
+      },
+      "animationSize": {
+        "width": 64,
+        "height": 96
+      },
+      "referencePadding": {
+        "x": 0,
+        "y": 16
+      },
+      "visiblePixelsAndAlphaMatchOriginal": true,
+      "sourceFootY": 63,
+      "paddedFootY": 79,
+      "pivot": {
+        "x": 32,
+        "y": 17
+      },
+      "method": "reference0 중앙 원본 영역을 검정/흰 불투명 배경 합성 및 alpha로 대조; 발 아래 경계를 같은 padding으로 이동한다."
+    },
+    "selectedForContract": true,
+    "selectionStatus": "부모가 공중 단검 길이 개선을 직접 확인하여 v2 선택을 확정했다. 원본 8번 큰 회색 형태의 칼날/잔상 모호함은 제한사항으로 유지한다.",
+    "observations": [
+      "공중에서 단검을 든 2~7번의 칼날은 첫 후보 3~6번보다 짧고 머리 높이보다 작아졌다.",
+      "8번 내려베기에는 머리보다 훨씬 긴 회청색 면이 손에서 이어져 칼 확대인지 내장 궤적인지 정적 시트만으로 모호하다.",
+      "9번에는 작은 흰 잔여 모양이 있고 9~10번 낮은 착지 후 11~12번 원래 대기로 돌아온다.",
+      "접힌 귀는 일부 프레임에서 펴진다."
+    ],
+    "qualityGate": "사용자 GIF 판정 대기",
+    "contactFrame": {
+      "sourceFrameIndex": 8,
+      "bodyFrameIndex": 7,
+      "description": "원본 참조 0번을 제외한 선택 index 7이 실제 수직 내려베기 접점이다."
+    }
+  },
+  "jobId": "55a062ce-d372-4141-ad99-bd92cc60e9bc",
+  "animationGroupId": "6efca564-7161-41b1-bb9f-94be14edb727",
+  "costGenerations": 1,
+  "reason": "Parent directly inspected first-pass NW plunge and requested one final correction for sword-length drift.",
+  "selectionCriterion": "Replace NW contract only if original short dagger scale improves and preparation/airborne/downstroke/landing poses remain; otherwise keep first candidate.",
+  "noFurtherGenerations": true
+}

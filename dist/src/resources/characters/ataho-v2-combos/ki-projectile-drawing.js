@@ -1,4 +1,5 @@
 import { clamp, line } from './ki-shapes.js';
+import { beamChargePoint } from './ki-sampling.js';
 import { drawKiSprite, kiSpriteFrame, } from './ki-sprites.js';
 /** 모여드는 선은 외형을 대신하지 않고, 그려진 핵으로 수렴하는 작은 빛만 보탠다. */
 function drawChargeSparks(ctx, point, sample, options) {
@@ -102,12 +103,8 @@ export function drawBeamCharge(ctx, definition, sample, frames) {
     if (sample.phase !== 'charge')
         return;
     ctx.save();
-    const chargeOrigin = definition.chargeOrigin ?? definition.origin;
     const compression = clamp((sample.charge - 0.84) / 0.16);
-    const point = {
-        x: chargeOrigin.x + (definition.origin.x - chargeOrigin.x) * compression,
-        y: chargeOrigin.y + (definition.origin.y - chargeOrigin.y) * compression,
-    };
+    const point = beamChargePoint(definition, sample);
     drawChargeSparks(ctx, point, sample, {
         count: 5,
         reach: 20 + sample.charge * 7,
@@ -224,7 +221,7 @@ export function drawBeam(ctx, definition, sample, frames) {
     ctx.restore();
 }
 /** 접촉 때 압축·파열·흩어지는 그림을 차례로 보내 비행 구체와 구분한다. */
-export function drawOrbImpact(ctx, point, ageMs, strength, accent, frames) {
+export function drawOrbImpact(ctx, point, ageMs, strength, accent, frames, options = {}) {
     if (ageMs < 0 || ageMs >= 240)
         return;
     ctx.save();
@@ -243,11 +240,17 @@ export function drawOrbImpact(ctx, point, ageMs, strength, accent, frames) {
         height: size,
         alpha: ageMs < 190 ? 1 : 1 - (ageMs - 190) / 50,
     });
-    if (ageMs > 45) {
+    const fragmentStartMs = options.showEffectHierarchy ? 60 : 45;
+    const fragmentEndMs = options.showEffectHierarchy ? 205 : 240;
+    if (ageMs > fragmentStartMs && ageMs < fragmentEndMs) {
         for (let index = 0; index < 4; index += 1) {
+            if (options.showEffectHierarchy && index % 2 === 1)
+                continue;
             const angle = index * 1.57 + 0.45;
-            const distance = 8 + (ageMs - 45) * 0.12 * strength;
-            ctx.globalAlpha = (1 - ageMs / 240) * 0.7;
+            const distance = 8 + (ageMs - fragmentStartMs) * 0.12 * strength;
+            ctx.globalAlpha =
+                (1 - ageMs / fragmentEndMs) *
+                    (options.showEffectHierarchy ? 0.42 : 0.7);
             line(ctx, [
                 {
                     x: point.x + Math.cos(angle) * distance,
@@ -263,12 +266,19 @@ export function drawOrbImpact(ctx, point, ageMs, strength, accent, frames) {
     ctx.restore();
 }
 /** 빔 접촉 그림은 출력 방향으로 부풀며 마지막 타격에서 크게 파열한다. */
-export function drawBeamImpact(ctx, point, ageMs, strength, accent, frames) {
-    if (ageMs < 0 || ageMs >= 260)
+export function drawBeamImpact(ctx, point, ageMs, strength, accent, frames, options = {}) {
+    const hierarchy = !!options.showEffectHierarchy;
+    const fragmentEndMs = hierarchy ? (strength > 1 ? 210 : 165) : 260;
+    if (ageMs < 0 || ageMs >= fragmentEndMs)
         return;
     ctx.save();
     const expansion = clamp(ageMs / 75);
-    const fade = ageMs < 150 ? 1 : 1 - (ageMs - 150) / 110;
+    const spriteEndMs = hierarchy ? (strength > 1 ? 150 : 115) : 260;
+    const fade = hierarchy
+        ? 1 - clamp((ageMs - 45) / (spriteEndMs - 45))
+        : ageMs < 150
+            ? 1
+            : 1 - (ageMs - 150) / 110;
     drawKiSprite(ctx, frames, {
         sheet: 'beam',
         frame: kiSpriteFrame(ageMs, {
@@ -280,11 +290,15 @@ export function drawBeamImpact(ctx, point, ageMs, strength, accent, frames) {
         point: { x: point.x + expansion * 5, y: point.y },
         width: (31 + expansion * 14) * (0.7 + strength * 0.5),
         height: (36 + expansion * 17) * (0.6 + strength * 0.6),
-        alpha: fade * 0.9,
+        alpha: fade * (hierarchy ? 0.62 : 0.9),
     });
     for (const direction of [-1, 1]) {
+        if (hierarchy && ageMs < 35)
+            continue;
         const distance = (8 + expansion * 19) * strength;
-        ctx.globalAlpha = fade * 0.65;
+        ctx.globalAlpha = hierarchy
+            ? (1 - clamp((ageMs - 35) / (fragmentEndMs - 35))) * 0.38
+            : fade * 0.65;
         line(ctx, [
             { x: point.x + 4 + ageMs * 0.02, y: point.y + direction * distance },
             {

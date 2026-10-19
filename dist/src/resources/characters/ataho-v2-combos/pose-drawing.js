@@ -30,6 +30,22 @@ export function motionWithDrawingContacts(motion, enabledEffects) {
         }),
     };
 }
+/** 본체와 실제 공격 분신에 같은 그림 교체·접촉 사용 조건을 적용한다. */
+export function motionWithActorDrawingContacts(motion, enabledEffects) {
+    const body = motionWithDrawingContacts(motion, enabledEffects);
+    if (!body.finisher?.actors?.length)
+        return body;
+    return {
+        ...body,
+        finisher: {
+            ...body.finisher,
+            actors: body.finisher.actors.map((actor) => ({
+                ...actor,
+                steps: motionWithDrawingContacts({ ...body, steps: actor.steps }, enabledEffects).steps,
+            })),
+        },
+    };
+}
 export function poseWithDrawing(pose, enabledEffects) {
     const replacement = selectedDrawing(pose.motion, pose.step, enabledEffects);
     if (!replacement)

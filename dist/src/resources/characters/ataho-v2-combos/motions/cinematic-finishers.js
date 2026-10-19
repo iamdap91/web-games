@@ -1,4 +1,7 @@
+import { finisherAuthoringTargetX } from '../finisher-actors.js';
 import { FinisherSequence } from './finisher-sequence.js';
+import { drunkenTigerFinisher } from './drunken-tiger-finisher.js';
+import { impactAttacks } from './impact-attacks.js';
 const demon = new FinisherSequence();
 demon
     .beat('静 · 눈앞의 기척', 'intro', (sequence) => {
@@ -41,137 +44,162 @@ demon
     .beat('滅 · 응축한 결정타', 'climax', (sequence) => {
     sequence.attack('uppercut', { pace: 0.5, contactMs: 50 });
     sequence.attack('hammer', { pace: 0.55, contactMs: 60 });
-    sequence.attack('straight', {
-        pace: 0.45,
-        contactMs: 60,
-        recoveryMs: 100,
-        windupHoldMs: 220,
-    });
+    const smash = impactAttacks.find((motion) => motion.id === 'aerial-smash');
+    const contact = smash?.steps.find((step) => step.contact);
+    if (!smash || !contact?.contact?.reach)
+        throw new Error('순옥살 끝타의 공중 양손 내려찍기 원본이 없습니다.');
+    // 낮은 실제 손끝은 그대로 두고, 그 접촉점만 고정 표적의 x에 맞춘다.
+    const xOffset = finisherAuthoringTargetX - contact.x - contact.contact.reach;
+    sequence.move(smash.steps[0].x + xOffset, '순옥살 · 양손 내려찍기를 위해 뒤로 발 디딤', 100);
+    sequence.append(smash.steps.map((step) => ({
+        ...step,
+        x: step.x + xOffset,
+        durationMs: step.frame === 3 ? 220 : step.durationMs,
+        emphasis: step.frame === 3 ? 'charge' : step.emphasis,
+        phase: `순옥살 · ${step.phase.replace(/^\d+타 · /, '')}`,
+    })));
 })
     .beat('天 · 마지막 정적', 'finish', (sequence) => {
     sequence.poseHold('순옥살 · 일격을 거둔 정적', 180);
-    sequence.hold('순옥살 · 고요한 종결', 240);
+    sequence.poseHold('순옥살 · 두 발을 디딘 고요한 종결', 240);
 });
-const omnislash = new FinisherSequence();
+const omnislash = new FinisherSequence({ relocation: 'teleport' });
 omnislash
     .beat('분리 · 공격의 기점', 'intro', (sequence) => {
     sequence.hold('초구무신패참 ver.5 · 맨손으로 힘 모으기', 180);
-    sequence.dash(112, '초구무신패참 ver.5 · 첫 돌입', 120);
 })
     .beat('일섬 · 첫 접근', 'rush', (sequence) => {
-    sequence.attack('straight', { pace: 0.5, contactMs: 45 });
+    sequence.attack('straight', { pace: 0.5, contactMs: 45, approachMs: 110 });
 })
     .beat('교차 · 표적을 가르는 세 궤도', 'rush', (sequence) => {
-    sequence.cross(218, -30, '초구무신패참 · 표적 위를 넘어 오른쪽으로', 150);
     sequence.attack('straight', {
         direction: 'west',
         pace: 0.55,
         contactMs: 45,
         y: -18,
+        approachMs: 100,
     });
-    sequence.cross(50, -40, '초구무신패참 · 왼쪽 상공으로 역횡단', 125);
     sequence.attack('straight', {
         direction: 'east',
         pace: 0.55,
         contactMs: 45,
         y: -24,
+        approachMs: 90,
     });
-    sequence.cross(215, -12, '초구무신패참 · 낮은 대각선으로 재횡단', 105);
     sequence.attack('high-kick', {
         direction: 'west',
         pace: 0.55,
         contactMs: 45,
+        approachMs: 80,
     });
 })
-    .beat('정점 · 다섯 번째 궤도', 'climax', (sequence) => {
-    sequence.cross(74, -12, '초구무신패참 · 마지막 상승의 기점으로', 150);
-    sequence.attack('uppercut', { pace: 0.6, contactMs: 50, y: -10 });
-    sequence.cross(102, -42, '초구무신패참 ver.5 · 마지막 정점으로 상승', 160);
-    sequence.poseHold('초구무신패참 ver.5 · 낙하 전 정점의 한 박자', 120);
-    sequence.attack('hammer', {
-        pace: 0.7,
-        contactMs: 60,
-        recoveryMs: 80,
-        windupHoldMs: 180,
-        y: -24,
-        endY: -4,
+    .beat('정점 · 교차 뒤 응축한 상승 일격', 'climax', (sequence) => {
+    sequence.attack('uppercut', {
+        pace: 0.6,
+        contactMs: 50,
+        y: -10,
+        approachMs: 90,
     });
-    sequence.land('초구무신패참 ver.5 · 무릎으로 착지 받기');
+    // 동쪽 원본4의 주먹끝(60,24)을 발81·중심48에 맞추며 공통 어퍼 판정은 바꾸지 않는다.
+    const uppercutPose = {
+        motion: 'surprise-uppercut-east',
+        x: finisherAuthoringTargetX - 12,
+        y: 0,
+        anchor: 'feet',
+        movementCurve: { x: 'hold', y: 'hold' },
+    };
+    sequence.append([
+        {
+            ...uppercutPose,
+            motion: 'surprise-uppercut-south-east',
+            frame: 6,
+            x: sequence.x,
+            y: -10,
+            durationMs: 27.5,
+            teleport: 'vanish',
+            phase: '6타 앞 · 순간이동 · 공중 상승권의 기척 소실',
+        },
+        {
+            ...uppercutPose,
+            frame: 0,
+            durationMs: 55,
+            teleport: 'hidden',
+            phase: '6타 앞 · 순간이동 · 몸이 사라진 공백',
+        },
+        {
+            ...uppercutPose,
+            frame: 0,
+            durationMs: 27.5,
+            teleport: 'appear',
+            phase: '6타 앞 · 순간이동 · 표적 옆 지상에 재등장',
+        },
+        {
+            ...uppercutPose,
+            frame: 0,
+            durationMs: 50,
+            phase: '초구무신패참 ver.5 · 지상에서 발을 고정하기',
+        },
+        {
+            ...uppercutPose,
+            frame: 1,
+            durationMs: 300,
+            emphasis: 'charge',
+            phase: '초구무신패참 ver.5 · 동쪽 상승권을 모으기',
+        },
+        {
+            ...uppercutPose,
+            frame: 1,
+            durationMs: 45,
+            phase: '초구무신패참 ver.5 · 응축한 주먹을 풀기 직전',
+        },
+        {
+            ...uppercutPose,
+            frame: 2,
+            durationMs: 35,
+            phase: '초구무신패참 ver.5 · 지상에서 주먹을 올리기',
+        },
+        {
+            ...uppercutPose,
+            frame: 3,
+            durationMs: 35,
+            phase: '초구무신패참 ver.5 · 몸통으로 상승권을 밀어 올리기',
+        },
+        {
+            ...uppercutPose,
+            frame: 4,
+            durationMs: 70,
+            contact: { kind: 'punch', reach: 12, height: 57 },
+            phase: '초구무신패참 ver.5 · 모아친 동쪽 상승 일격',
+        },
+        {
+            ...uppercutPose,
+            frame: 5,
+            durationMs: 90,
+            phase: '초구무신패참 ver.5 · 상승권의 주먹을 거두기',
+        },
+        {
+            ...uppercutPose,
+            frame: 6,
+            durationMs: 110,
+            phase: '초구무신패참 ver.5 · 지상 가드로 되돌아오기',
+        },
+    ]);
 })
-    .beat('종결 · 착지 뒤의 정적', 'finish', (sequence) => {
-    sequence.poseHold('초구무신패참 ver.5 · 착지를 받은 여운', 180);
-    sequence.hold('초구무신패참 ver.5 · 착지 뒤 수습', 180);
-});
-const drunkenTiger = new FinisherSequence();
-drunkenTiger
-    .beat('취 · 한 걸음 내주기', 'intro', (sequence) => {
-    sequence.hold('초구취호패타 · 취권의 느슨한 대치', 180);
-    sequence.move(58, '초구취호패타 · 후퇴로 유인', 180);
-})
-    .beat('호 · 가까이 파고들기', 'rush', (sequence) => {
-    sequence.attack('one-two', { pace: 0.6, contactMs: 40 });
-    sequence.attack('hammer', { pace: 0.65, contactMs: 50 });
-})
-    .beat('패 · 몸통을 감는 두 타', 'rush', (sequence) => {
-    sequence.attack('horizontal-elbow', { pace: 0.45, contactMs: 45 });
-    sequence.assist('straight', {
-        direction: 'west',
-        atMs: sequence.lastHitMs,
-        pace: 0.55,
-        y: -3,
-    });
-    sequence.assist('straight', {
-        direction: 'east',
-        atMs: sequence.lastHitMs,
-        pace: 0.55,
-        y: -22,
-    });
-    sequence.attack('hook', { pace: 0.4, contactMs: 45 });
-    sequence.cross(196, 0, '초구취호패타 · 표적 뒤를 감아 반대편으로', 180);
-    sequence.attack('straight', {
-        direction: 'west',
-        pace: 0.4,
-        contactMs: 45,
-    });
-})
-    .beat('타 · 올리고 내리기', 'climax', (sequence) => {
-    sequence.cross(100, -10, '초구취호패타 · 낮게 미끄러져 다시 파고들기', 150);
-    sequence.attack('uppercut', { pace: 0.65, contactMs: 55 });
-    sequence.attack('air-kick', { pace: 0.6, contactMs: 45 });
-    sequence.attack('elbow-down', { pace: 0.65, contactMs: 55 });
-    sequence.attack('hammer', {
-        pace: 0.7,
-        contactMs: 60,
-        recoveryMs: 85,
-        windupHoldMs: 200,
-    });
-    sequence.assist('high-kick', {
-        direction: 'west',
-        atMs: sequence.lastHitMs,
-        pace: 0.55,
-    });
-    sequence.assist('straight', {
-        direction: 'east',
-        atMs: sequence.lastHitMs,
-        pace: 0.55,
-        y: -20,
-    });
-})
-    .beat('호 · 두 발을 디딘 종결', 'finish', (sequence) => {
-    sequence.poseHold('초구취호패타 · 협공을 거둔 여운', 180);
-    sequence.hold('초구취호패타 · 두 발을 디딘 정착', 240);
+    .beat('종결 · 지상 가드의 정적', 'finish', (sequence) => {
+    sequence.poseHold('초구무신패참 ver.5 · 상승권을 거둔 지상 가드', 260);
+    sequence.poseHold('초구무신패참 ver.5 · 두 발로 버티는 여운', 180);
 });
 export const cinematicFinishers = [
     demon.build({
         id: 'finisher-demon',
         title: '순옥살 · 21타',
-        summary: '어둠 속 좌우 협공이 점점 빨라진다. 마지막 주먹을 당겨 고요히 모았다가 한 번에 쏟고 여운을 남긴다.',
+        summary: '어둠 속 좌우 협공이 점점 빨라진다. 마지막은 낮게 뛰어 정점에서 양손을 모았다가 내려찍고, 착지한 두 발과 정적으로 끝낸다.',
         priority: 'review',
-        review: '공식 영상의 고요한 준비·암중 난타·정적 종결을 참고한 맨손 재해석이다. 본체15접촉에 실제 동·서쪽 원본의 공격 분신6접촉을 더했다. 네 묶음의 원투를 점차 가속하고 마지막 스트레이트 직전의 장전 그림을220ms 더 유지해 정적과 폭발을 나눈다. 다섯 번의 좌우 동시 타격과 상단 추격을 서로 다른 시점에 배치한다. 분신도 준비·접촉·회수를 재생하고 같은 고정 표적에 닿는다. 21타는 조합실용 설계이며 원작의 정확한 타수나 안무를 복제한 것은 아니다.',
+        review: '공식 영상의 고요한 준비·암중 난타·정적 종결을 참고한 맨손 재해석이다. 좌우 협공과 상단 추격을 가속하고, 마지막에는 공중에서 양손을 모아 내려찍은 뒤 두 발을 디디며 끝낸다. 본체15타와 실제 공격 분신6타를 합친21타 구성이며 첫20타의 순서와 시각은 유지한다. 끝타는 기존 공중 양손 내려찍기 그림을 재사용한다.',
         missingPose: '원작 전용 발동·등돌림·天 자세 그림과 잡기 상대는 없다. 기존 그림을 조합한 연출 비교 시안이며 tiger-rpg 본게임 판정을 옮기지 않는다.',
         finisher: {
             theme: 'demon',
-            subtitle: '가속하는 암중 협공 · 장전의 정적 · 마지막 일격',
+            subtitle: '가속하는 암중 협공 · 공중 양손 장전 · 내려찍기와 착지의 정적',
             accent: '#b53a47',
             endGlyph: '天',
         },
@@ -179,29 +207,16 @@ export const cinematicFinishers = [
     omnislash.build({
         id: 'finisher-omnislash-v5',
         title: '초구무신패참 ver.5 · 6타',
-        summary: '좌우와 상공의 교차가 점점 빨라진다. 정점에서 멈춰 망치주먹을 모은 뒤 내려치고 착지의 여운을 잇는다.',
+        summary: '몸이 짧게 사라졌다가 표적의 좌우·상공에 번갈아 재등장한다. 마지막은 지상에서 주먹을 오래 모아 동쪽 상승권을 꽂고 가드의 여운으로 끝낸다.',
         priority: 'review',
-        review: 'AC 비교 영상의 다중 높이 교차·정점·하강·착지를 맨손6타로 재해석했다. 실제 동·서쪽 정권과 서쪽 하이킥을 사용해 오른쪽→왼쪽→오른쪽으로 표적을 횡단하며, 이동 중 최대42px 높이로 상승한다. 교차 이동은150→125→105ms로 가속하고 마지막 망치주먹의 준비 그림을180ms 더 유지한 뒤 내려친다. 원본 그림을 반전하거나 회전하지 않는다. 푸른 궤적은 실제 지난 몸 위치를 잇고 명중은 손발 접촉에서만 센다. 정확한 원작 타수는 확인하지 않았으며 분리검과 검 회수는 재현하지 않는다.',
-        missingPose: '분리검·검 회수·전용 공중 검격·수직 낙하 자세가 없다. 기존 팔꿈치·훅·스트레이트·어퍼컷·망치 그림을 사용하는 맨손 재해석이다.',
+        review: '첫5타의 실제 동·서쪽 정권·서쪽 하이킥·남동 상승권과 접촉 시각을 유지하고, 각 공격 준비 위치로 소실→공백→재등장한다. 공격마다 화면 고정 균열을 누적하고 마지막 상승권에서 화면 유리를 파쇄한다. 이동과 장전의 사각 틀은 사용하지 않는다. 기존 Hit 공식 영상에서 확인한 짧은 소실·재등장을 참고했으며 원작 게임이나 코드 실행은 하지 않았다. 마지막은 공중 망치주먹 대신 지상에 재등장한 동쪽 어퍼컷 원본0~6을 쓴다. 준비 원본1을300ms 유지하고 원본2·3을각35ms로 잇는 뒤 원본4의 실제 주먹끝(60,24), 발81, 중심48에 reach12·height57의 한 접촉을 맞춘다. 남동 공중 상승권과 지상 장전·몸 방향·완급을 대비하고 동쪽 가드로 종결한다. 원본 그림을 늘이거나 반전·회전하지 않으며 총6타를 유지한다. 정확한 원작 타수는 확인하지 않았고 분리검과 검 회수는 재현하지 않는다.',
+        missingPose: '분리검·검 회수·전용 공중 검격·수직 낙하 자세가 없다. 기존 정권·하이킥·남동과 동쪽 어퍼컷을 사용하는 맨손 재해석이며 마지막은 검의 하강 대신 지상 상승권으로 재구성했다.',
         finisher: {
             theme: 'omnislash',
-            subtitle: '가속하는 교차 궤도 · 정점의 장전 · 하강과 착지',
+            subtitle: '소실과 재등장 · 지상에서 응축한 상승권 · 가드의 여운',
             accent: '#4f95c7',
             endGlyph: '終',
         },
     }),
-    drunkenTiger.build({
-        id: 'finisher-drunken-tiger',
-        title: '초구취호패타 · 14타',
-        summary: '느슨한 유인 뒤 갑자기 빨라져 표적 뒤를 감는다. 장전·하강 그림의 팔꿈치는 중간에 잇고 망치주먹의 삼면 협공으로 끝낸다.',
-        priority: 'review',
-        review: '기존 본게임의 균등 피해 이벤트를 복사하지 않고 본체10타·분신4타로 다시 구성했다. 느슨한 첫 원투와 망치 뒤 가로 팔꿈치·훅·반대편 정권을 가속해 완급을 나눈다. 후퇴 유인→근접 권격→본체·좌우 분신의 동시 세 타→표적 뒤로 횡단한 서쪽 정권→상하 연격→마지막 세 방향 협공으로 구분한다. 짧은 내려치기는 전용 장전·하강 그림과 접촉 좌표를 필수 적용해 중간 연격에만 사용한다. 마지막은 대각 망치주먹으로 바꾸고 준비 그림을200ms 더 유지하며 동시 협공의 명중 시점은 함께 이동한다. 분신의 접촉도 개별 타격 탐색·샌드백·카운터에 반영한다. 보류 세 동작의 모든 그림을 제외하며 본게임 피해·분노 규칙과 소리는 추가하지 않는다.',
-        missingPose: '취권 전용 휘청임·적을 넘기는 던지기·전용 종결 그림은 없다. 서로 다른 원본의 얼굴·발 간격 전환은 실제 재생으로 비교해야 한다.',
-        finisher: {
-            theme: 'drunken-tiger',
-            subtitle: '느슨한 유인 · 급격한 연격 · 응축한 삼면 협공',
-            accent: '#cb8742',
-            endGlyph: '虎',
-        },
-    }),
+    drunkenTigerFinisher,
 ];

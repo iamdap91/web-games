@@ -1,10 +1,15 @@
 import { resourceUrl } from './resource-url.js';
 const scenePaths = new Set([
+    'src/resources/effects/anime-signatures/',
+    'src/resources/characters/companion-basic-attacks/',
     'src/resources/maps/herbalist-camp/',
     'src/resources/characters/ataho-hybrid/index.html',
     'src/resources/characters/ataho-pixel-tests/',
     'src/resources/characters/ataho-skeleton-walk/',
     'src/resources/characters/ataho-v2-combos/',
+    'src/resources/cutscenes/ataho-shadow/index.html',
+    'src/resources/cutscenes/tiger-awakening/index.html',
+    'src/resources/cutscenes/hisashi-punch/index.html',
     'src/resources/maps/village-style-natural/',
     'src/resources/maps/village-style-pixel2d/',
     'src/resources/maps/village-style-hd2d/',
@@ -44,6 +49,9 @@ const scenePaths = new Set([
     'src/resources/maps/village-style-horizon-interior/',
     'src/resources/maps/village-style-natural-crossing/',
     'src/resources/maps/village-style-retro-cadence/',
+    'src/resources/maps/boss-battle-stages/',
+    'src/resources/maps/regional-trails/',
+    'src/resources/maps/regional-settlements/',
     'src/resources/maps/village-hybrid-references/',
     'src/resources/animation-lab/procedural-creature/',
     'src/resources/animation-lab/sprite-stacking/',
@@ -67,6 +75,7 @@ export class LibraryScene {
     frame = document.createElement('iframe');
     events = new AbortController();
     path;
+    regionalMap;
     resize;
     constructor(entry, onSelection) {
         const path = libraryScenePath(entry);
@@ -74,13 +83,21 @@ export class LibraryScene {
             throw new Error(`내부 장면이 없습니다: ${entry.id}`);
         const url = new URL(path, location.origin);
         this.path = url.pathname;
+        this.regionalMap =
+            (entry.previewPath?.startsWith('src/resources/maps/regional-trails/') ||
+                entry.previewPath?.startsWith('src/resources/maps/regional-settlements/')) ??
+                false;
         url.searchParams.set('embed', '1');
         this.frame.src = url.href;
         this.frame.className = 'library-scene';
         if (entry.previewPath?.startsWith('src/resources/characters/ataho-hybrid/') ||
             entry.previewPath?.startsWith('src/resources/characters/ataho-pixel-tests/') ||
             entry.previewPath?.startsWith('src/resources/characters/ataho-skeleton-walk/') ||
-            entry.previewPath?.startsWith('src/resources/characters/ataho-v2-combos/')) {
+            entry.previewPath?.startsWith('src/resources/characters/ataho-v2-combos/') ||
+            entry.previewPath?.startsWith('src/resources/maps/boss-battle-stages/') ||
+            entry.previewPath?.startsWith('src/resources/maps/regional-trails/') ||
+            entry.previewPath?.startsWith('src/resources/maps/regional-settlements/') ||
+            entry.previewPath?.startsWith('src/resources/cutscenes/')) {
             this.frame.classList.add('comparison-scene');
             this.frame.setAttribute('scrolling', 'no');
             this.frame.addEventListener('load', () => this.fitComparison(), {
@@ -110,7 +127,21 @@ export class LibraryScene {
     }
     accepts(entry) {
         const path = libraryScenePath(entry);
-        return !!path && new URL(path, location.origin).pathname === this.path;
+        if (!path)
+            return false;
+        const url = new URL(path, location.origin);
+        if (url.pathname !== this.path)
+            return false;
+        if (!this.regionalMap)
+            return true;
+        // 내부에서 선택한 지역·길을 부모와 맞추고 카메라 뷰는 유지한다.
+        const activeUrl = new URL(this.frame.contentWindow?.location.href ?? this.frame.src);
+        const routeFor = (target) => {
+            const route = target.searchParams.get('route');
+            return route === 'alternate' || route === 'seamless' ? route : 'original';
+        };
+        return (url.searchParams.get('region') === activeUrl.searchParams.get('region') &&
+            routeFor(url) === routeFor(activeUrl));
     }
     describe(entry) {
         this.frame.title = `${entry.name} · 조작 미리보기`;

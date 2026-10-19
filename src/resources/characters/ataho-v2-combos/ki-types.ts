@@ -1,3 +1,4 @@
+import type { CircusFlightShot } from './meteor-circus-flight.js';
 import type { ComboMotion } from './types.js';
 
 /** 몸의 시작 위치·지면을 원점으로 하는 96px 원본 배율의 좌표다. */
@@ -11,6 +12,8 @@ export type KiShot = {
   readonly to: KiPoint;
   // 비행 구간의 가운데에서 가장 크게 휘는 높이이며 끝점에는 영향을 주지 않는다.
   readonly curveY?: number;
+  // 추격 컷의 비행과 명중은 동일한 공간 안무를 시간으로 샘플한다.
+  readonly circusFlight?: CircusFlightShot;
   // 설치 탄의 가속도 그림·도달 판정이 같은 시간 샘플을 쓰게 한다.
   readonly travelCurve?: 'ease-in';
   readonly radius: number;
@@ -36,7 +39,8 @@ export type KiDefinition = {
     | 'beam'
     | 'crescent'
     | 'eruption'
-    | 'orbit';
+    | 'orbit'
+    | 'meteor';
   readonly accent: string;
   readonly chargeStartMs: number;
   readonly releaseMs: number;

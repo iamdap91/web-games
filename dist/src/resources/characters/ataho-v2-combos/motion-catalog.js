@@ -1,5 +1,9 @@
+import { phoenixFinisher } from './motions/phoenix-finisher.js';
+import { galacticaFinisher } from './motions/galactica-finisher.js';
+import { meteorFinishers } from './motions/meteor-finisher.js';
 import { comboMotions } from './motions.js';
 import { movementPrimitives } from './motions/movement-primitives.js';
+import { impactAttacks } from './motions/impact-attacks.js';
 import { standaloneAttacks } from './motions/standalone-attacks.js';
 import { cinematicFinishers } from './motions/cinematic-finishers.js';
 import { classicFinishers } from './motions/classic-finishers.js';
@@ -15,7 +19,6 @@ const attackIds = new Set([
     'quick-jab',
     'double-jab',
     'charged-uppercut',
-    'new-horizontal-elbow',
     'new-smear-hook',
     'new-smear-hammerfist',
 ]);
@@ -24,6 +27,7 @@ const deferredIds = new Set([
     'new-front-push-kick',
     'new-visible-low-sweep',
 ]);
+const supportIds = new Set(['new-horizontal-elbow', 'drink-guard']);
 // 제작 당시 번호 대신 화면에 남길 동작의 역할과 고정된 ID로 분류한다.
 export const motionSections = [
     {
@@ -32,6 +36,7 @@ export const motionSections = [
         motions: [
             ...comboMotions.filter((motion) => attackIds.has(motionOptionId(motion))),
             ...standaloneAttacks,
+            ...impactAttacks,
         ],
     },
     {
@@ -42,13 +47,21 @@ export const motionSections = [
     {
         id: 'finisher',
         label: '필살기',
-        motions: [...cinematicFinishers, ...classicFinishers],
+        motions: [
+            ...cinematicFinishers,
+            ...classicFinishers,
+            phoenixFinisher,
+            galacticaFinisher,
+            ...meteorFinishers,
+        ],
     },
-    { id: 'movement', label: '이동·회피', motions: movementPrimitives },
     {
         id: 'support',
         label: '보조',
-        motions: comboMotions.filter((motion) => motion.id === 'drink-guard'),
+        motions: [
+            ...comboMotions.filter((motion) => supportIds.has(motionOptionId(motion))),
+            ...movementPrimitives,
+        ],
     },
     {
         id: 'deferred',

@@ -36,16 +36,23 @@
       "id": "finisher-omnislash-v5",
       "title": "초구무신패참 ver.5 · 6타",
       "designHits": 6,
-      "intent": "접근 → 표적 좌우를 가르는 높낮이 교차 → 반대편 정권·하이킥 → 정점 한 박자 → 하강 일격 → 착지 수습",
-      "adaptation": "검 분리·회수와 전용 검격 대신 기존 맨손 공격을 여섯 접촉으로 설계한다. 실제 동·서 정권과 서쪽 하이킥, 남동 상승권·망치주먹을 사용해 표적의 양쪽에서 공격한다.2D 무대의 좌우 이동과 높이 차이이며3D 선회·원작의 정확한 명중 수를 재현하지 않는다.",
-      "limits": "횡단 중 높이는 논리−40~−42px까지 올라가며 실제 접촉은 각 공격 자세에 맞춰 따로 구성한다. 점프·하강 망치·착지 원본을 연결하며 실제 검이나 전용 수직 낙하 그림은 없다.",
+      "intent": "짧은 소실 → 좌우·상공의 타격 위치에 재등장 → 여섯 실제 접촉 → 정점 장전 → 하강 일격 → 착지 수습",
+      "adaptation": "기존 여섯 맨손 접촉과 실제 동·서 방향 공격 그림을 유지한다. 각 공격의 준비 root에 직접 재등장하여 달리기·이중 재진입·중간 좌표 보간을 제거하고 출발·도착의 국소 파편만 남긴다. 원작의 정확한 타수·검격·3D 이동을 재현한 것은 아니다.",
+      "limits": "전용 순간이동 그림은 만들지 않고 기존 출발·공격 준비 자세를 소실·공백·재등장으로 잇는다. 마지막 망치주먹과 착지는 기존 그림이며 검 분리·회수·전용 수직 낙하 그림은 없다.",
       "choreography": {
         "bodyContacts": 6,
         "additionalContacts": 0,
         "additionalActorTracks": 0,
-        "durationMs": 4097,
-        "bodySteps": 88,
-        "chargeHoldMs": 180
+        "durationMs": 3150,
+        "bodySteps": 62,
+        "chargeHoldMs": 300,
+        "teleportTransitions": 6,
+        "teleportDurationMs": [110, 100, 90, 80, 90, 110],
+        "transitionPortions": {
+          "vanish": 0.25,
+          "hidden": 0.5,
+          "appear": 0.25
+        }
       }
     },
     {
@@ -494,165 +501,205 @@
         "tests": "별도 테스트 코드는 추가하거나 실행하지 않았다.",
         "limits": "실제 게임의 피해 지연·정확한 원작 타수·3D 공간·원작 코드 실행을 검증하지 않았다. 조사 범위는 별도 reference-study 기록을 따른다."
       }
+    },
+    {
+      "scope": "순간이동 수정 이전의 팔꿈치 사용 제한 검증. 초구무신패참 시간·자세 수는 현재 수치가 아니다.",
+      "implementationCommit": "f951ea8",
+      "verification": {
+        "scope": "팔꿈치 그림 필수·끝타 금지와 취호패타 공격 순서 변경",
+        "status": "completed",
+        "staticChecks": [
+          "npm run check 통과",
+          "npm run build 통과",
+          "git diff --check 통과"
+        ],
+        "sequenceInspectionSource": "현재 컴파일된 활성 필살기·공통 접촉·샌드백 계산을 조회했다. 별도 테스트 코드는 추가하거나 실행하지 않았다.",
+        "sequenceInspection": [
+          {
+            "id": "finisher-demon",
+            "durationMs": 3500,
+            "steps": 90,
+            "totalActorSteps": 151,
+            "bodyContacts": 15,
+            "additionalActorTracks": 6,
+            "additionalContacts": 6,
+            "contacts": 21,
+            "connectedAtScale2": 21,
+            "connectedAtScale3": 21,
+            "chargeHolds": [
+              {
+                "atMs": 2650,
+                "durationMs": 220,
+                "motion": "ataho-one-two-punch-south-east-south-east",
+                "frame": 11,
+                "positionDelta": {
+                  "x": 0,
+                  "y": 0
+                }
+              }
+            ],
+            "finalSimultaneousGroup": 1,
+            "excludedSourceKeysAbsent": true,
+            "allActorsFinishWithinMotion": true,
+            "rawElbowContacts": 0,
+            "drawnElbowContacts": [],
+            "lastBodySource": "ataho-one-two-punch-south-east-south-east",
+            "finalGroupSources": ["ataho-one-two-punch-south-east-south-east"]
+          },
+          {
+            "id": "finisher-omnislash-v5",
+            "durationMs": 4097,
+            "steps": 88,
+            "totalActorSteps": 88,
+            "bodyContacts": 6,
+            "additionalActorTracks": 0,
+            "additionalContacts": 0,
+            "contacts": 6,
+            "connectedAtScale2": 6,
+            "connectedAtScale3": 6,
+            "chargeHolds": [
+              {
+                "atMs": 3072,
+                "durationMs": 180,
+                "motion": "smear-hammerfist-clean-south-east",
+                "frame": 3,
+                "positionDelta": {
+                  "x": 0,
+                  "y": 0
+                }
+              }
+            ],
+            "finalSimultaneousGroup": 1,
+            "excludedSourceKeysAbsent": true,
+            "allActorsFinishWithinMotion": true,
+            "rawElbowContacts": 0,
+            "drawnElbowContacts": [],
+            "lastBodySource": "smear-hammerfist-clean-south-east",
+            "finalGroupSources": ["smear-hammerfist-clean-south-east"]
+          },
+          {
+            "id": "finisher-drunken-tiger",
+            "durationMs": 4518,
+            "steps": 103,
+            "totalActorSteps": 144,
+            "bodyContacts": 10,
+            "additionalActorTracks": 4,
+            "additionalContacts": 4,
+            "contacts": 14,
+            "connectedAtScale2": 14,
+            "connectedAtScale3": 14,
+            "chargeHolds": [
+              {
+                "atMs": 3618,
+                "durationMs": 200,
+                "motion": "smear-hammerfist-clean-south-east",
+                "frame": 3,
+                "positionDelta": {
+                  "x": 0,
+                  "y": 0
+                }
+              }
+            ],
+            "finalSimultaneousGroup": 3,
+            "excludedSourceKeysAbsent": true,
+            "allActorsFinishWithinMotion": true,
+            "rawElbowContacts": 0,
+            "drawnElbowContacts": [
+              {
+                "plannedTimeMs": 3313,
+                "frame": 1,
+                "contact": {
+                  "kind": "elbow",
+                  "height": 22,
+                  "reach": 23
+                }
+              }
+            ],
+            "lastBodySource": "smear-hammerfist-clean-south-east",
+            "finalGroupSources": [
+              "high-kick-west",
+              "cross-punch-east",
+              "smear-hammerfist-clean-south-east"
+            ]
+          },
+          {
+            "id": "finisher-ryuko-ranbu",
+            "durationMs": 3070,
+            "steps": 83,
+            "totalActorSteps": 125,
+            "bodyContacts": 13,
+            "additionalActorTracks": 4,
+            "additionalContacts": 4,
+            "contacts": 17,
+            "connectedAtScale2": 17,
+            "connectedAtScale3": 17,
+            "chargeHolds": [
+              {
+                "atMs": 2340,
+                "durationMs": 160,
+                "motion": "surprise-uppercut-south-east",
+                "frame": 2,
+                "positionDelta": {
+                  "x": 0,
+                  "y": 0
+                }
+              }
+            ],
+            "finalSimultaneousGroup": 1,
+            "excludedSourceKeysAbsent": true,
+            "allActorsFinishWithinMotion": true,
+            "rawElbowContacts": 0,
+            "drawnElbowContacts": [],
+            "lastBodySource": "surprise-uppercut-south-east",
+            "finalGroupSources": ["surprise-uppercut-west"]
+          }
+        ],
+        "browser": [
+          "PC 브라우저에서 짧은 팔꿈치 내려치기 선택 시 전용 그림이 기본으로 켜짐을 확인했다.0.185초 타격 자세 정지에서 그림 on은 충격1개, off는0개이며 off에서 샌드백 반응이 비활성화된다. 같은 탐색값440과 정지 상태를 유지하며 그림을 복원했다.",
+          "전용 그림과 샌드백을 켠 단독 팔꿈치를1배·반복 끔으로 실제 재생해0.42초 종결까지 확인했다.",
+          "샌드백을 켠 취호패타를1배·반복 끔으로 실제 재생해4.518초·14명중 종결을 확인했다.3.316초 중간11타에서 전용 하강 그림,3.931초에서 마지막 망치주먹·두 분신·14명중·충격3개를 확인했다.",
+          "앱 콘솔 경고·오류 없음. 나머지 세 필살기는 이번에 코드·박자를 바꾸지 않았으며 실제 재생 증거는dc03d44 이력을 참고한다."
+        ],
+        "tests": "별도 테스트 코드·모바일 검증 없음",
+        "limits": "실제 재생은 변경한 단독 팔꿈치와 취호패타에 한정한다. 새 그림과 소리는 추가하지 않았다."
+      }
     }
   ],
   "verification": {
-    "scope": "팔꿈치 그림 필수·끝타 금지와 취호패타 공격 순서 변경",
+    "scope": "초구무신패참의 달리기 횡단을 순간 소실·재등장으로 변경",
     "status": "completed",
     "staticChecks": [
       "npm run check 통과",
       "npm run build 통과",
       "git diff --check 통과"
     ],
-    "sequenceInspectionSource": "현재 컴파일된 활성 필살기·공통 접촉·샌드백 계산을 조회했다. 별도 테스트 코드는 추가하거나 실행하지 않았다.",
+    "sequenceInspectionSource": "현재 컴파일된 활성 구성 데이터의 시간·접촉·전환을 조회했다. 별도 테스트 코드는 추가하거나 실행하지 않았다.",
     "sequenceInspection": [
       {
-        "id": "finisher-demon",
-        "durationMs": 3500,
-        "steps": 90,
-        "totalActorSteps": 151,
-        "bodyContacts": 15,
-        "additionalActorTracks": 6,
-        "additionalContacts": 6,
-        "contacts": 21,
-        "connectedAtScale2": 21,
-        "connectedAtScale3": 21,
-        "chargeHolds": [
-          {
-            "atMs": 2650,
-            "durationMs": 220,
-            "motion": "ataho-one-two-punch-south-east-south-east",
-            "frame": 11,
-            "positionDelta": {
-              "x": 0,
-              "y": 0
-            }
-          }
-        ],
-        "finalSimultaneousGroup": 1,
-        "excludedSourceKeysAbsent": true,
-        "allActorsFinishWithinMotion": true,
-        "rawElbowContacts": 0,
-        "drawnElbowContacts": [],
-        "lastBodySource": "ataho-one-two-punch-south-east-south-east",
-        "finalGroupSources": ["ataho-one-two-punch-south-east-south-east"]
-      },
-      {
         "id": "finisher-omnislash-v5",
-        "durationMs": 4097,
-        "steps": 88,
-        "totalActorSteps": 88,
-        "bodyContacts": 6,
-        "additionalActorTracks": 0,
-        "additionalContacts": 0,
+        "durationMs": 3150,
+        "steps": 62,
         "contacts": 6,
         "connectedAtScale2": 6,
         "connectedAtScale3": 6,
-        "chargeHolds": [
-          {
-            "atMs": 3072,
-            "durationMs": 180,
-            "motion": "smear-hammerfist-clean-south-east",
-            "frame": 3,
-            "positionDelta": {
-              "x": 0,
-              "y": 0
-            }
-          }
-        ],
-        "finalSimultaneousGroup": 1,
-        "excludedSourceKeysAbsent": true,
-        "allActorsFinishWithinMotion": true,
-        "rawElbowContacts": 0,
-        "drawnElbowContacts": [],
-        "lastBodySource": "smear-hammerfist-clean-south-east",
-        "finalGroupSources": ["smear-hammerfist-clean-south-east"]
-      },
-      {
-        "id": "finisher-drunken-tiger",
-        "durationMs": 4518,
-        "steps": 103,
-        "totalActorSteps": 144,
-        "bodyContacts": 10,
-        "additionalActorTracks": 4,
-        "additionalContacts": 4,
-        "contacts": 14,
-        "connectedAtScale2": 14,
-        "connectedAtScale3": 14,
-        "chargeHolds": [
-          {
-            "atMs": 3618,
-            "durationMs": 200,
-            "motion": "smear-hammerfist-clean-south-east",
-            "frame": 3,
-            "positionDelta": {
-              "x": 0,
-              "y": 0
-            }
-          }
-        ],
-        "finalSimultaneousGroup": 3,
-        "excludedSourceKeysAbsent": true,
-        "allActorsFinishWithinMotion": true,
-        "rawElbowContacts": 0,
-        "drawnElbowContacts": [
-          {
-            "plannedTimeMs": 3313,
-            "frame": 1,
-            "contact": {
-              "kind": "elbow",
-              "height": 22,
-              "reach": 23
-            }
-          }
-        ],
-        "lastBodySource": "smear-hammerfist-clean-south-east",
-        "finalGroupSources": [
-          "high-kick-west",
-          "cross-punch-east",
-          "smear-hammerfist-clean-south-east"
-        ]
-      },
-      {
-        "id": "finisher-ryuko-ranbu",
-        "durationMs": 3070,
-        "steps": 83,
-        "totalActorSteps": 125,
-        "bodyContacts": 13,
-        "additionalActorTracks": 4,
-        "additionalContacts": 4,
-        "contacts": 17,
-        "connectedAtScale2": 17,
-        "connectedAtScale3": 17,
-        "chargeHolds": [
-          {
-            "atMs": 2340,
-            "durationMs": 160,
-            "motion": "surprise-uppercut-south-east",
-            "frame": 2,
-            "positionDelta": {
-              "x": 0,
-              "y": 0
-            }
-          }
-        ],
-        "finalSimultaneousGroup": 1,
-        "excludedSourceKeysAbsent": true,
-        "allActorsFinishWithinMotion": true,
-        "rawElbowContacts": 0,
-        "drawnElbowContacts": [],
-        "lastBodySource": "surprise-uppercut-south-east",
-        "finalGroupSources": ["surprise-uppercut-west"]
+        "teleportTransitions": 6,
+        "hiddenBodyAndShadow": true,
+        "contactTimesMs": [345, 750, 1085, 1370, 1700, 2405],
+        "finalChargeHoldMs": 300
       }
     ],
     "browser": [
-      "PC 브라우저에서 짧은 팔꿈치 내려치기 선택 시 전용 그림이 기본으로 켜짐을 확인했다.0.185초 타격 자세 정지에서 그림 on은 충격1개, off는0개이며 off에서 샌드백 반응이 비활성화된다. 같은 탐색값440과 정지 상태를 유지하며 그림을 복원했다.",
-      "전용 그림과 샌드백을 켠 단독 팔꿈치를1배·반복 끔으로 실제 재생해0.42초 종결까지 확인했다.",
-      "샌드백을 켠 취호패타를1배·반복 끔으로 실제 재생해4.518초·14명중 종결을 확인했다.3.316초 중간11타에서 전용 하강 그림,3.931초에서 마지막 망치주먹·두 분신·14명중·충격3개를 확인했다.",
-      "앱 콘솔 경고·오류 없음. 나머지 세 필살기는 이번에 코드·박자를 바꾸지 않았으며 실제 재생 증거는dc03d44 이력을 참고한다."
+      "PC 브라우저에서1배·반복 끔으로 실제 재생해 소실·반대편 재등장·마지막 하강과 착지를 확인했다. 두 표시 크기 모두6명중으로 끝났다.",
+      "0.25초 공백에서 본체와 그림자가 사라지고, 무대 장식만 꺼도 소실이 유지됨을 화면으로 확인했다. 이동 해제 시 같은 시점의 원본 자세가 보이며 다시 켜면 같은 시점·정지 상태·소실이 복원됐다.",
+      "필살기 프리즈·컷인과 강타 충격 조합을 켜고1배 재생해6명중으로 끝났다."
     ],
+    "reference": {
+      "url": "https://www.youtube.com/watch?v=2b9WSwQaHUA",
+      "localEvidence": "/private/tmp/ataho-hit-super-sequence.jpg",
+      "scope": "기존 공식 영상22~28초의8fps 연속 프레임을 재열람. 짧은 소실·재등장 표현만 참고했으며 원작 입력·공개 코드 실행은 하지 않았다."
+    },
     "tests": "별도 테스트 코드·모바일 검증 없음",
-    "limits": "실제 재생은 변경한 단독 팔꿈치와 취호패타에 한정한다. 새 그림과 소리는 추가하지 않았다."
+    "limits": "다른 세 필살기의 안무는 변경하지 않았으며 이번 실제 재생 검증은 초구무신패참에 한정한다. 새 그림·방향 합성·소리·본게임 판정은 추가하지 않았다."
   },
   "additionalReferenceStudy": "resources/ataho-v2-finisher-reference-study.json",
   "elbowUsagePolicy": {

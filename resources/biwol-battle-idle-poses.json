@@ -1,0 +1,212 @@
+{
+  "assetId": "ai/biwol-combat-idle-poses",
+  "displayName": "비월 · 전투 대기 A/B 자세 시안",
+  "createdDate": "2026-10-18",
+  "provider": "PixelLab Edit Image Pro · Create Image Pro",
+  "status": "user-review-pending",
+  "scope": "승인한 전투 대기 컨셉의 A/B 정적 자세. 대표 남동향과 반대편 북서향을 먼저 제작한다.",
+  "poseIntent": {
+    "A": "단검을 낮게 들고 빈손을 앞에 둔 차분한 경계 자세",
+    "B": "같은 발 위치에서 무릎과 골반을 조금 낮춰 힘을 모은 자세"
+  },
+  "directions": {
+    "south-east": {
+      "base": {
+        "localPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/inputs/base-south-east.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2544,
+        "sha256": "f03340378d1f6e0eca9cf3acaba62efc43ac80962a06ead4a50d071f0626afd3",
+        "sourceOriginalPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/v3-mannequin/rotations/south-east.png"
+      },
+      "poses": {
+        "A": {
+          "localPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/south-east-a.png",
+          "width": 64,
+          "height": 64,
+          "byteSize": 1584,
+          "sha256": "e235413929bdec71bd83a57ca6da1eece008ec7d1bc72635ede228ad6272241b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/12639337-dd88-40c8-888f-880e1460971a/download?index=0",
+          "jobId": "12639337-dd88-40c8-888f-880e1460971a",
+          "sourceFrameIndex": 0,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          }
+        },
+        "B": {
+          "localPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/south-east-b.png",
+          "width": 64,
+          "height": 64,
+          "byteSize": 1526,
+          "sha256": "0c5e6106a7ab947ffaebbacee7123bcccf56da0d6bc234246db4a9a866e805ed",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/de192868-de33-4997-9243-6e7964029522/download?index=0",
+          "jobId": "de192868-de33-4997-9243-6e7964029522",
+          "sourceFrameIndex": 0,
+          "pivot": {
+            "x": 32,
+            "y": 3
+          }
+        }
+      }
+    },
+    "north-west": {
+      "base": {
+        "localPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/inputs/base-north-west.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 1894,
+        "sha256": "7b509b5591ebb2fb21b42edfc15d593e0b38f3f206e3345babd16f806486b298",
+        "sourceOriginalPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/v3-mannequin/rotations/north-west.png"
+      },
+      "poses": {
+        "A": {
+          "localPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/north-west-a.png",
+          "width": 64,
+          "height": 64,
+          "byteSize": 1275,
+          "sha256": "26384e836e2df5f766536cb89ef8490ccb76a2ece446613a79c5d439d44be483",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/12639337-dd88-40c8-888f-880e1460971a/download?index=1",
+          "jobId": "12639337-dd88-40c8-888f-880e1460971a",
+          "sourceFrameIndex": 1,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          }
+        },
+        "B": {
+          "localPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/north-west-b.png",
+          "width": 64,
+          "height": 64,
+          "byteSize": 1313,
+          "sha256": "caffe89907ef6d3f434a48bc1d6c4a9c0c1218987bcf8884fb040c7780399fbc",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/f933c81f-2d99-486e-94a9-111dcb316519/download?index=5",
+          "jobId": "f933c81f-2d99-486e-94a9-111dcb316519",
+          "sourceFrameIndex": 5,
+          "pivot": {
+            "x": 32,
+            "y": 1
+          }
+        }
+      }
+    }
+  },
+  "generation": {
+    "mode": "edit_image text",
+    "attempts": [
+      {
+        "pose": "A",
+        "jobId": "12639337-dd88-40c8-888f-880e1460971a",
+        "directions": ["south-east", "north-west"],
+        "attempt": 1,
+        "input": "방향별 기존 승인 기립 도트",
+        "chargedGenerations": 10,
+        "requestPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/inputs/pose-a-request.json",
+        "receiptPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/pose-a-receipt.json"
+      },
+      {
+        "pose": "B",
+        "jobId": "839c9b54-217f-4c36-85ca-c60235e8f912",
+        "directions": ["south-east", "north-west"],
+        "attempt": 1,
+        "input": "동일 방향 A 생성 원본",
+        "chargedGenerations": 10,
+        "selection": "보류. 남동향 전체 위치가 오른쪽으로 밀렸고 두 방향 모두 낮아짐이 충분하지 않음.",
+        "preservedPaths": [
+          "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/south-east-b-attempt-01.png",
+          "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/north-west-b-attempt-01.png"
+        ],
+        "requestPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/inputs/pose-b-request.json",
+        "receiptPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/pose-b-receipt.json"
+      },
+      {
+        "pose": "B",
+        "jobId": "b5146edc-8889-4833-b536-d59cd01b954a",
+        "directions": ["south-east", "north-west"],
+        "attempt": 2,
+        "input": "동일 방향 A 생성 원본. 발 고정과 낮아진 상체를 더 명시한다.",
+        "chargedGenerations": 10,
+        "selection": "보류. 자세 낮아짐이 충분하지 않고 남동 발 위치가 달라짐.",
+        "preservedPaths": [
+          "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/south-east-b-attempt-02.png",
+          "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/north-west-b-attempt-02.png"
+        ],
+        "requestPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/inputs/pose-b-attempt-02-request.json",
+        "receiptPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/pose-b-attempt-02-receipt.json"
+      },
+      {
+        "pose": "B",
+        "mode": "create_image_pixflux img2img",
+        "attempt": 1,
+        "directions": ["south-east", "north-west"],
+        "jobIds": {
+          "south-east": "72fd4bad-7cb5-4b89-997a-514b956782a6",
+          "north-west": "8a3e9937-7dde-473c-8170-a38966dddfda"
+        },
+        "chargedGenerations": 2,
+        "selection": "보류. 얼굴·옷의 외형과 도트 스타일이 달라짐.",
+        "preservedPaths": [
+          "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/south-east-b-pixflux.png",
+          "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/north-west-b-pixflux.png"
+        ]
+      },
+      {
+        "pose": "B",
+        "mode": "create_image_pro labelled references",
+        "attempt": 1,
+        "directions": ["south-east", "north-west"],
+        "jobIds": {
+          "south-east": "de192868-de33-4997-9243-6e7964029522",
+          "north-west": "f933c81f-2d99-486e-94a9-111dcb316519"
+        },
+        "chargedGenerations": 20,
+        "candidatesPerDirection": 16,
+        "reviewCandidateIndices": {
+          "south-east": 0,
+          "north-west": 5
+        },
+        "input": "A는 외형·귀·손·무기 기준, 동일 방향 기존 낙영 베기 준비 그림은 무릎·골반 자세만 참조.",
+        "requestPaths": [
+          "public/assets/maplestory/biwol-battle-idle-ai/20261018/inputs/pose-b-pro-south-east-request.json",
+          "public/assets/maplestory/biwol-battle-idle-ai/20261018/inputs/pose-b-pro-north-west-request.json"
+        ],
+        "receiptPaths": [
+          "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/pose-b-pro-south-east-receipt.json",
+          "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/pose-b-pro-north-west-receipt.json"
+        ],
+        "preservedCandidateDirectories": [
+          "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/pro-b-south-east",
+          "public/assets/maplestory/biwol-battle-idle-ai/20261018/originals/pro-b-north-west"
+        ]
+      }
+    ],
+    "totalChargedGenerations": 52
+  },
+  "review": {
+    "comparison": {
+      "localPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/review/biwol-idle-ab-comparison.png",
+      "width": 1104,
+      "height": 900,
+      "byteSize": 35032,
+      "sha256": "59cea839879de2b0ddb437db81eb07395859bc65de669fdecb91a854a9a81a79"
+    },
+    "endpointToggle": {
+      "localPath": "public/assets/maplestory/biwol-battle-idle-ai/20261018/review/biwol-idle-ab-toggle.gif",
+      "width": 744,
+      "height": 430,
+      "byteSize": 29964,
+      "sha256": "1dd390b305dc448e6e38c80b8932cc852c8652d487d0c7b2e59d37d362d853ba",
+      "frameCount": 2,
+      "frameDurationsMs": [800, 800]
+    },
+    "purpose": "동일 방향의 A/B 정적 자세를 교대로 확인하는 비교용이다. 중간 프레임이나 완성한 대기 루프가 아니다.",
+    "knownDifferences": [
+      "남동 B는 초안보다 깊은 웅크림이며 발 간격·표정·목도리 외곽이 A와 달라진다.",
+      "북서 B는 상단이 3px 낮아지고 하단은 같지만, 선 귀 기울기·발·손 외곽이 A와 달라진다.",
+      "일정한 발 접지를 유지하는 미세 호흡의 연결 키포즈로 바로 확정하기에는 추가 검토가 필요하다."
+    ],
+    "displayAlignment": "발밑 알파 경계로 수직 지면만 맞춘다. 남동 B 표시는 아래로 2px 이동하며 생성 PNG 자체는 수정하지 않는다.",
+    "qualityGate": "사용자가 A/B 그림과 교대 비교 GIF를 보고 판단한다."
+  },
+  "preservation": "생성 원본 PNG는 무가공 보존. 비교본에만 nearest-neighbor 확대와 배경·설명을 적용한다."
+}

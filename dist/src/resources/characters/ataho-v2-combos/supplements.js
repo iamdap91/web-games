@@ -2,8 +2,31 @@ import refinement from '../../../../resources/ataho-v2-motion-refinement.json' w
 import continuity from '../../../../resources/ataho-v2-motion-continuity.json' with { type: 'json' };
 import elbowContact from '../../../../resources/ataho-v2-elbow-contact.json' with { type: 'json' };
 import kiPoses from '../../../../resources/ataho-v2-ki-pose-generation.json' with { type: 'json' };
+import impactAttacks from '../../../../resources/ataho-v2-impact-attacks.json' with { type: 'json' };
+import finisherIdentities from '../../../../resources/ataho-v2-finisher-identities.json' with { type: 'json' };
+import inazumaKick from '../../../../resources/ataho-v2-inazuma-kick-keyposes-r2.json' with { type: 'json' };
 const generatedPath = 'public/assets/maplestory/ataho-v2-combo-generated/20261014/';
 export const supplementFrames = {
+    [inazumaKick.playback.sourceMotionId]: {
+        label: '강화 날아차기 · 공중 장전 A / 대각 신전 B',
+        frames: inazumaKick.playback.frames,
+    },
+    'presentation-galactica-charge-east': {
+        label: '팬텀 동쪽 전용 장전',
+        frames: finisherIdentities.chargeSource.frames,
+    },
+    'presentation-aerial-smash-south-east': {
+        label: '공중 양손 내려찍기 원본',
+        frames: impactAttacks.sources.aerial.frames,
+    },
+    'presentation-martial-stomp-load-south-east': {
+        label: '진각 발 들기 원본',
+        frames: impactAttacks.sources.stompLoad.frames,
+    },
+    'presentation-martial-stomp-impact-south-east': {
+        label: '진각 수직 디딤 원본',
+        frames: impactAttacks.sources.stompImpact.frames,
+    },
     'presentation-ki-beam-poses-south-east': {
         label: '파동포 준비·발사·반동 그림',
         frames: kiPoses.frames,

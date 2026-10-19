@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-19",
+  "authorization": "사용자가 추가 검토한 5종을 모두 작업하도록 승인. 기존 컷씬 비교실 확장, 무음, 본게임 규칙 미변경.",
+  "status": "awaiting-user-review",
+  "previewDirectory": "public/assets/maplestory/presentation-studies-ai/previews/",
+  "previews": [
+    {
+      "scene": "split-screen",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/presentation-studies-ai/previews/split-screen-south-east.gif"
+    },
+    {
+      "scene": "split-screen",
+      "facing": "north-west",
+      "localPath": "public/assets/maplestory/presentation-studies-ai/previews/split-screen-north-west.gif"
+    },
+    {
+      "scene": "perspective-punch",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/presentation-studies-ai/previews/perspective-punch-south-east.gif"
+    },
+    {
+      "scene": "perspective-punch",
+      "facing": "north-west",
+      "localPath": "public/assets/maplestory/presentation-studies-ai/previews/perspective-punch-north-west.gif"
+    },
+    {
+      "scene": "metamorphosis",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/presentation-studies-ai/previews/metamorphosis-south-east.gif"
+    },
+    {
+      "scene": "rolling-smoke",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/presentation-studies-ai/previews/rolling-smoke-south-east.gif"
+    },
+    {
+      "scene": "cube-debris",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/presentation-studies-ai/previews/cube-debris-south-east.gif"
+    }
+  ],
+  "punchRecordPath": "resources/presentation-study-punch.json",
+  "relatedStudyRecordPath": "resources/acting-studies.json",
+  "reusedMotionRecordPaths": [
+    "resources/companion-basic-attacks/biwol-additions.json",
+    "resources/companion-basic-attacks/yeonmuk-additions.json",
+    "resources/ataho-tiger-awakening-cutscene.json"
+  ],
+  "referenceBoundary": "공식 제작 설명과 정적 원근/표정 예시를 참고했다. Saint11 SmokeSheet 40프레임·Explosion 20프레임의 각 12시점을 무음으로 확인했다. OLM은 슬라이드 열람이며 작가 시그니처 원전 영상 재생이나 원본 프로젝트 실행으로 주장하지 않는다.",
+  "entries": [
+    {
+      "id": "split-screen",
+      "mechanism": "동료의 실제 몸 프레임과 첫 접촉 시각을 공유해 동시 준비 2분할에서 한 무대로 합류한다.",
+      "sources": ["https://naruto-official.com/en/news/01_1909"]
+    },
+    {
+      "id": "metamorphosis",
+      "mechanism": "승인된 호랑이의 알파 윤곽을 표본화하고 먹덩어리 외곽에서 귀·앞발이 분리되는 연속 변형을 그린다.",
+      "sourceImagePath": "public/assets/maplestory/ataho-cutscene/20261017/tiger-awakening/tiger-spirit-body.png",
+      "sources": ["https://speakerdeck.com/olmdrd/matsuri2024-toonfx"]
+    },
+    {
+      "id": "perspective-punch",
+      "mechanism": "남동·북서 장전/타격/회수의 3키포즈 컷. 남동은 주먹과 몸통의 비율을 새 원화에서 달리 그린다. 북서는 전경 주먹 과장이 약한 검토용 시안이다. 두 방향의 새 중간 몸 그림은 사용자 GIF 확인 뒤 제작한다.",
+      "qualityLimit": "북서 원근 과장 품질은 목표 미달이며 사용자 채택으로 취급하지 않는다.",
+      "sources": ["https://www.ggxrd.com/Motomura_Junya_GuiltyGearXrd.pdf"]
+    },
+    {
+      "id": "rolling-smoke",
+      "mechanism": "시간차 외곽 팽창과 내부 그림자 면의 회전·말림을 분리한 절차 FX. 이소 원전의 복제를 주장하지 않는다.",
+      "sources": [
+        "https://saint11.art/img/pixel-tutorials/SmokeSheet.gif",
+        "https://speakerdeck.com/olmdrd/matsuri2024-toonfx"
+      ]
+    },
+    {
+      "id": "cube-debris",
+      "mechanism": "석재 바닥의 큰 입방 파편이 면색·회전·높이차를 보이며 날아가고 작은 조각이 뒤따른다. 목재 도장에는 생성하지 않는다.",
+      "sources": ["https://saint11.art/img/pixel-tutorials/Explosion.gif"],
+      "attributionLimit": "나카무라 큐브를 검토한 입방 파편 시안이며 작가 원전 영상 재현 판정은 아니다."
+    }
+  ]
+}

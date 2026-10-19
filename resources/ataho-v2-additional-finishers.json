@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-16",
+  "scope": "동작 조합실에 기존 몸 그림을 재사용하는 신규 필살기3종을 추가한다.",
+  "authorization": "봉황천무각·갤럭티카 팬텀·페가수스 유성권 추가 제안 뒤 사용자가 응 작업해줘로 승인했다.",
+  "implementation": {
+    "bodyFramesGenerated": false,
+    "paidGeneration": false,
+    "runtimeRemoteMedia": false,
+    "mainMerged": false,
+    "projectileRule": "유성32발은 KiShot.arriveMs와 KiHit.atMs가 같고 본체 접촉은 없다.",
+    "absoluteTime": "연출은 현재 시각에서 계산하며 탐색·반복·정지에 이력을 누적하지 않는다."
+  },
+  "motions": [
+    {
+      "id": "finisher-phoenix",
+      "label": "봉황천무각 · 8타",
+      "durationMs": 3195,
+      "contacts": 8,
+      "concept": "황금·진홍 깃 궤적과 상승 연속 차기",
+      "sourceFrames": [
+        "jumping-1-south-east",
+        "high-kick-south-east",
+        "fight-stance-idle-8-frames-south-east"
+      ],
+      "limits": "기존 하이킥·점프·착지 그림의 재조합이다. 원작 공중 교대·회전 차기 전용 자세는 없다.",
+      "preview": {
+        "id": "finisher-phoenix",
+        "label": "봉황천무각 · 8타",
+        "localPath": "public/assets/maplestory/ataho-v2-additional-finishers/20261016/previews/finisher-phoenix.gif",
+        "byteSize": 2867702,
+        "sha256": "99388be3ebe177a7269a5829a853cf149a5a711c6706223211a665e0c2dfcaff",
+        "method": "actual-browser-canvas-recording-transcoded-to-gif",
+        "speed": 1,
+        "width": 640,
+        "height": 291,
+        "frames": 85,
+        "durationMs": 3400,
+        "video": {
+          "localPath": "public/assets/maplestory/ataho-v2-additional-finishers/20261016/previews/finisher-phoenix.webm",
+          "byteSize": 597686,
+          "sha256": "838b020dab622dd5168f40a14501d3597407efc6bc12323099531694870b8a3d"
+        }
+      }
+    },
+    {
+      "id": "finisher-galactica-phantom",
+      "label": "갤럭티카 팬텀 · 1타",
+      "durationMs": 2410,
+      "contacts": 1,
+      "concept": "긴 압축 장전·단 한 번의 가로 섬광·늦게 퍼지는 압력",
+      "sourceFrames": ["cross-punch-east"],
+      "limits": "기존 크로스 펀치 그림을 사용한다. 원작의 깊은 장전과 큰 보폭 전용 자세는 없다.",
+      "preview": {
+        "id": "finisher-galactica-phantom",
+        "label": "갤럭티카 팬텀 · 1타",
+        "localPath": "public/assets/maplestory/ataho-v2-additional-finishers/20261016/previews/finisher-galactica-phantom.gif",
+        "byteSize": 3263865,
+        "sha256": "6b96961aa12d2a2f1cc8bab62eef20927cd3261db8bb4200e62d962443748c32",
+        "method": "actual-browser-canvas-recording-transcoded-to-gif",
+        "speed": 1,
+        "width": 640,
+        "height": 291,
+        "frames": 66,
+        "durationMs": 2640,
+        "video": {
+          "localPath": "public/assets/maplestory/ataho-v2-additional-finishers/20261016/previews/finisher-galactica-phantom.webm",
+          "byteSize": 448546,
+          "sha256": "d41b1d0d5b4090ad45e1afb80076ac720bda541b53304d6501803e49bc9860f3"
+        }
+      }
+    },
+    {
+      "id": "finisher-pegasus-meteor",
+      "label": "페가수스 유성권 · 32타",
+      "durationMs": 3105,
+      "contacts": 32,
+      "concept": "제자리 양주먹·교차하는 푸른 광탄·후반 가속 유성우",
+      "sourceFrames": ["ataho-one-two-punch-south-east-south-east"],
+      "limits": "기존 원투를 잇는다. 성좌 준비·초고속 양주먹 전용 그림은 없고 정확한 원작 타수·타이밍 재현이 아니다.",
+      "preview": {
+        "id": "finisher-pegasus-meteor",
+        "label": "페가수스 유성권 · 32타",
+        "localPath": "public/assets/maplestory/ataho-v2-additional-finishers/20261016/previews/finisher-pegasus-meteor.gif",
+        "byteSize": 3354393,
+        "sha256": "47a30bb75e204f85a84e2bd602ca530209fdae7a8429c63ef3f518342ce46003",
+        "method": "actual-browser-canvas-recording-transcoded-to-gif",
+        "speed": 1,
+        "width": 640,
+        "height": 291,
+        "frames": 84,
+        "durationMs": 3360,
+        "video": {
+          "localPath": "public/assets/maplestory/ataho-v2-additional-finishers/20261016/previews/finisher-pegasus-meteor.webm",
+          "byteSize": 551624,
+          "sha256": "58ba6a7a0f2cff34da32c1a44dd8c0589f3724c3746a4c1965343962a9219bab"
+        }
+      }
+    }
+  ],
+  "references": [
+    {
+      "id": "snk-kim-phoenix-combo02",
+      "sourceUrl": "https://game.snk-corp.co.jp/official/kof-mi-ra-plus/hikaeshitsu/04/img/pv_video_kim02.swf",
+      "sourcePage": "https://game.snk-corp.co.jp/official/kof-mi-ra-plus/hikaeshitsu/04/index3.html",
+      "localPath": "public/assets/maplestory/ataho-v2-additional-finishers/20261016/reference/snk-kim-combo02-original.swf",
+      "byteSize": 2338415,
+      "sha256": "effb5e37d5e3a091588e15dc2b6acf32e8587bf29c4720e59b2df6d8aa5309b1",
+      "width": 640,
+      "height": 480,
+      "frames": 476,
+      "fps": 30,
+      "codec": "Sorenson H.263 in SWF",
+      "derivedVideo": {
+        "localPath": "public/assets/maplestory/ataho-v2-additional-finishers/20261016/reference/snk-kim-combo02-decoded.flv",
+        "byteSize": 2365724,
+        "sha256": "37a5d581f5b1ed219b8e8712ca72c8d4ddb160e67fea2c9ef1c0506beb940a2a"
+      },
+      "purpose": "조사용 원본 보존이며 런타임에 사용하지 않는다.",
+      "observation": "Sorenson 스트림을 FLV로 재포장·디코드한 뒤2fps32개 순차 프레임을 확인했다. 원작 게임은 실행하지 않았다."
+    },
+    {
+      "id": "snk-galactica-description",
+      "url": "https://game.snk-corp.co.jp/official/kof-xiii/blog/archives/2010/06/post_15.html",
+      "evidence": "공식 개발자 설명의 강한 단발 펀치를 확인했다. 영상의 정확한 판정·입력 프레임 자료는 아니다."
+    },
+    {
+      "id": "snk-ralf-clark-trailer",
+      "url": "https://www.youtube.com/watch?v=gmlhLZOMwkE",
+      "sourcePage": "https://www.snk-corp.co.jp/us/press/2021/052001/",
+      "evidence": "공식 영상 재생 시작과22·28·34·40초의 디코드된 선택 프레임을 확인했다. 갤럭티카 팬텀의 정확한 기술 구간·타이밍을 확정하지 않았다."
+    },
+    {
+      "id": "bandai-seiya-trailer",
+      "url": "https://www.youtube.com/watch?v=dfkEoosvY4E",
+      "sourcePage": "https://en.bandainamcoent.eu/jump-force/news/knights-of-the-zodiac-seiya-and-shiryu-join-the-jump-force-roster",
+      "evidence": "공식 영상 재생 시작과선택 디코드 프레임의 주먹 전진·푸른 효과를 관찰했다. 일부 탐색 시점은 버퍼링으로 제외했으며 정확한 원작 타수·타이밍을 확정하지 않았다."
+    }
+  ],
+  "verification": {
+    "typeLintFormat": "npm run check",
+    "build": "npm run build",
+    "separateTestsAddedOrRun": false,
+    "mobileChecked": false,
+    "actualPcPlayback": "3종을1배속으로 녹화·재생하여 준비·타격·복귀와8·1·32명중을 확인했다.",
+    "comparison": "필살기7종 마지막 접촉에서 컨셉 해제/복원 그림 차이·복원 픽셀 일치·정지 시각 보존과이동/타격 표시 복원을 확인했다.",
+    "meteor": "실제 비행 탄은 최대8개, 최종 기공32명중·필살기32명중·잔여탄0·컨셉 종료를 확인했다.",
+    "diagnostics": "기존 구간/타격 탐색 명령에 stage.dataset elapsedMs/durationMs/waiting/projectiles 관찰값을 연결한다.",
+    "console": "정상 재생·비교에서 오류·경고0건.",
+    "experienceBoundary": "기술 검증과영상 재생 관찰의 결과다. 조작감·재미·최종 연출 채택을 자동 검증으로 확정하지 않는다.",
+    "cutinAndHitStop": "신규3종을 컷인·샌드백·히트스톱과함께1배로 끝까지 재생해 superFreeze/cutin/hitStop 발생, 원래3195/2410/3105ms 종결과8/1/32명중을 확인했다."
+  }
+}

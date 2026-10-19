@@ -67,6 +67,22 @@ export function finisherCameraStaging(snapshot, options) {
     const { startMs, endMs } = beatTiming(snapshot, beat);
     const progress = Math.max(0, Math.min(1, (snapshot.elapsedMs - startMs) / Math.max(1, endMs - startMs)));
     const eased = progress * progress * (3 - 2 * progress);
+    if (definition.theme === 'omnislash' &&
+        options.showFinisherConcept &&
+        options.showFinisher !== false) {
+        // 공격자를 쫓지 않고 여섯 접촉 동안 같은 표적 위치와 배율을 편집 기준으로 둔다.
+        const amount = beat.emphasis === 'intro'
+            ? eased
+            : beat.emphasis === 'finish'
+                ? 1 - eased
+                : 1;
+        return {
+            zoom: 1 - 0.09 * amount,
+            focusX: startX + finisherTargetX * options.scale,
+            focusY: groundY - 38 * options.scale,
+            active: amount > 0,
+        };
+    }
     const signature = sampleFinisherSignature(snapshot, [], {
         connectedOnly: false,
         scale: options.scale,
@@ -100,7 +116,12 @@ export function drawFinisherBackdrop(ctx, snapshot, state, options) {
 }
 /** 궤적은 실제 공격자의 지난 위치를 잇는다. 장식선에 별도 타격은 부여하지 않는다. */
 export function drawFinisherPaths(ctx, snapshot, state, frames, options) {
-    if (state.beat.emphasis === 'intro' || state.beat.emphasis === 'finish')
+    if (state.definition.theme === 'omnislash' ||
+        state.definition.theme === 'phoenix' ||
+        state.definition.theme === 'galactica' ||
+        state.definition.theme === 'drunken-tiger' ||
+        state.beat.emphasis === 'intro' ||
+        state.beat.emphasis === 'finish')
         return;
     for (const actor of visibleActors(snapshot.motion, snapshot.elapsedMs)) {
         const points = [];
@@ -124,8 +145,8 @@ export function drawFinisherPaths(ctx, snapshot, state, frames, options) {
         gradient.addColorStop(0, `${state.definition.accent}00`);
         gradient.addColorStop(1, state.definition.accent);
         ctx.strokeStyle = gradient;
-        ctx.globalAlpha = 0.38 * actor.opacity;
-        ctx.lineWidth = state.definition.theme === 'omnislash' ? 9 : 5;
+        ctx.globalAlpha *= 0.38 * actor.opacity;
+        ctx.lineWidth = 5;
         ctx.lineJoin = 'round';
         ctx.beginPath();
         points.forEach((point, index) => index === 0 ? ctx.moveTo(point.x, point.y) : ctx.lineTo(point.x, point.y));
@@ -158,7 +179,8 @@ export function drawFinisherActors(ctx, snapshot, frames, options) {
                 reveal = Math.max(0, Math.min(1, (age + 160) / 75, (160 - age) / 100));
             }
         }
-        ctx.globalAlpha *= actor.opacity * reveal;
+        ctx.globalAlpha *=
+            actor.opacity * reveal * (options.actorOpacity?.(actor.id) ?? 1);
         const position = posePosition(actor.pose, source, options);
         ctx.fillStyle = '#261b2522';
         ctx.beginPath();
@@ -170,7 +192,11 @@ export function drawFinisherActors(ctx, snapshot, frames, options) {
 }
 export function drawFinisherEchoes(ctx, snapshot, state, frames, options) {
     if ((state.beat.emphasis !== 'rush' && state.beat.emphasis !== 'climax') ||
-        state.definition.theme === 'demon')
+        state.definition.theme === 'demon' ||
+        state.definition.theme === 'omnislash' ||
+        state.definition.theme === 'phoenix' ||
+        state.definition.theme === 'galactica' ||
+        state.definition.theme === 'drunken-tiger')
         return;
     for (let index = 3; index >= 1; index--) {
         const timeMs = snapshot.elapsedMs - index * 38;
@@ -187,7 +213,14 @@ export function drawFinisherEchoes(ctx, snapshot, state, frames, options) {
     }
 }
 export function drawFinisherStrikes(ctx, snapshot, state, options) {
-    for (const [index, contact] of state.contacts.entries()) {
+    if (state.definition.theme === 'phoenix' ||
+        state.definition.theme === 'galactica' ||
+        state.definition.theme === 'drunken-tiger')
+        return;
+    const contacts = options.showContactTraces === false ? [] : state.contacts;
+    ctx.save();
+    ctx.globalAlpha *= options.contactOpacity ?? 1;
+    for (const [index, contact] of contacts.entries()) {
         if (options.showSandbag && !contact.connected)
             continue;
         const timeMs = options.showSandbag ? contact.timeMs : contact.plannedTimeMs;
@@ -221,10 +254,14 @@ export function drawFinisherStrikes(ctx, snapshot, state, options) {
         }
         ctx.restore();
     }
+    ctx.restore();
+    ctx.save();
+    ctx.globalAlpha *= options.releaseOpacity ?? 1;
     drawFinisherRelease(ctx, state, options);
+    ctx.restore();
 }
 /** 제목·단계·연타수는 월드 변환 바깥에 고정한다. */
-export function drawFinisherOverlay(ctx, snapshot, state) {
+export function drawFinisherOverlay(ctx, snapshot, state, options = {}) {
     ctx.save();
     ctx.globalAlpha = snapshot.opacity;
     ctx.fillStyle = '#141321';
@@ -252,6 +289,7 @@ export function drawFinisherOverlay(ctx, snapshot, state) {
         ctx.fillRect(28 + index * 29, 373, 22, 3);
     });
     if (state.beat.emphasis === 'finish' &&
+        !options.suppressEndGlyph &&
         state.definition.endGlyph &&
         state.signature.releaseAgeMs !== undefined) {
         ctx.textAlign = 'center';

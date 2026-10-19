@@ -1,0 +1,341 @@
+{
+  "assetId": "local/ataho-tiger-awakening-cutscene",
+  "displayName": "아타호 · 호왕일격",
+  "createdDate": "2026-10-17",
+  "authorization": "사용자가 눈 클로즈업→낮은 시점 준비→뒤 거대한 호랑이 형상→화면 가르기→전투 명중 흐름의 별도 컷씬 제작 요청. 기존 컷씬 분류·무음·PixelLab 규칙 유지.",
+  "status": "accepted-for-main",
+  "runtime": {
+    "portrait": {
+      "localPath": "public/assets/maplestory/ataho-cutscene/20261017/ataho-portrait.png",
+      "width": 256,
+      "height": 192,
+      "bounds": {
+        "left": 1,
+        "top": 0,
+        "right": 256,
+        "bottom": 192
+      },
+      "alphaExtrema": [0, 255],
+      "sha256": "cf9602f58aab2dbe33d055f48b85cbe8ed21ef7a9de8439f67d8fddd6eff5177",
+      "byteSize": 30837
+    },
+    "windup": {
+      "localPath": "public/assets/maplestory/ataho-cutscene/20261017/tiger-awakening/ataho-low-windup.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bounds": {
+        "left": 29,
+        "top": 14,
+        "right": 234,
+        "bottom": 255
+      },
+      "alphaExtrema": [0, 255],
+      "sha256": "612f73d485d3dfeec87516ba8d07ecdc1928d340f87c2413c168cf587aba1494",
+      "byteSize": 22492
+    },
+    "spirit": {
+      "localPath": "public/assets/maplestory/ataho-cutscene/20261017/tiger-awakening/tiger-spirit-body.png",
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "bounds": {
+        "left": 8,
+        "top": 18,
+        "right": 246,
+        "bottom": 249
+      },
+      "alphaExtrema": [0, 255],
+      "sha256": "b3670beca6795856671a5188f66c0554e1be832661acda09257f4f954b2498cb",
+      "byteSize": 34682
+    }
+  },
+  "reusedGenerationRecordPath": "resources/ataho-cutscene-generation.json",
+  "newPixelLabAssets": {
+    "assetId": "ai/ataho-cutscene/tiger-awakening",
+    "displayName": "아타호 호랑이 각성 컷씬 추가 애셋",
+    "createdDate": "2026-10-17",
+    "provider": "PixelLab MCP",
+    "status": "generated-awaiting-user-review",
+    "authorization": "사용자가 기존 암중호격과 별도로 눈 클로즈업 → 낮은 시점 준비 → 뒤 거대한 호랑이 형상 → 화면 가르는 공격 → 실제 전투 명중 컷씬 추가를 승인. 기존 무음 유지. 담당 에이전트는 신규 도트 전용 그림 최대2개 범위.",
+    "reuseInspection": {
+      "viewedLocalPaths": [
+        "public/assets/maplestory/ataho-cutscene/20261017/ataho-portrait.png",
+        "public/assets/maplestory/ataho-cutscene/20261017/ataho-strike.png",
+        "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/03.png",
+        "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/06.png",
+        "public/assets/maplestory/ataho-cutscene/20261017/strike-contact-sheet.png",
+        "public/assets/maplestory/ataho-cutscene/20261017/tiger-spirit.png"
+      ],
+      "fullStrikeFrameReview": "00..12 전체를 원본 순서 컨택트시트로 다시 열어 확인. 기존 모션의 실제 브라우저 재생 검증을 새로 수행한 것은 아님.",
+      "decision": "기존 portrait는 눈 클로즈업, strike/13장은 공격 컷에 재사용 가능.1..6은 주먹을 가슴으로 당기지만 하체가 잘려 발을 고정한 준비를 읽기 어려움. 기존 tiger-spirit는 머리만 있어 뒤의 거대한 몸 형상이 필요한 새 컷씬을 위해 전용 준비자세와 호랑이 상반신2종 생성."
+    },
+    "runtime": {
+      "windup": {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/tiger-awakening/ataho-low-windup.png",
+        "width": 256,
+        "height": 256,
+        "mode": "RGBA",
+        "bounds": {
+          "left": 29,
+          "top": 14,
+          "right": 234,
+          "bottom": 255
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "612f73d485d3dfeec87516ba8d07ecdc1928d340f87c2413c168cf587aba1494",
+        "byteSize": 22492
+      },
+      "spirit": {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/tiger-awakening/tiger-spirit-body.png",
+        "width": 256,
+        "height": 256,
+        "mode": "RGBA",
+        "bounds": {
+          "left": 8,
+          "top": 18,
+          "right": 246,
+          "bottom": 249
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "b3670beca6795856671a5188f66c0554e1be832661acda09257f4f954b2498cb",
+        "byteSize": 34682
+      }
+    },
+    "generations": [
+      {
+        "role": "windup",
+        "model": "pro",
+        "jobId": "d22afd4d-1253-44f4-b2db-af52b1e39bbb",
+        "assetId": "10639b8f-f836-5fe2-9e3e-8a094fb0c80c",
+        "request": {
+          "description": "ONE cinematic pixel-art FULL BODY key pose of Ataho, the SAME stocky older male anthropomorphic orange tiger martial artist in the reference images. LOW CAMERA ANGLE from a victim looking UP toward him, front three-quarter view. This is a still BEFORE striking: he has sunk his weight low into a wide deep stance with both knees bent, the nearer bare tiger foot firmly planted toward the viewer, entire foot and heel visible. His torso coils, his right CLOSED FIST is pulled tight BACK against his OWN WAIST/RIBS in preparation, his other closed fist stays close to the opposite hip. BOTH hands remain beside his torso, absolutely NO fist extended toward camera, no throwing punch yet, no hand in the foreground. His heavy cream-shirt-covered belly, low hips and wide grounded stance convey stored strength. Head angled slightly down to look at the victim with focused half-lidded golden eyes and a quiet knowing smirk. Orange fur, dark stripes, broad cream muzzle and cheek tufts, round ears, short mildly gray brows, seasoned older face. Preserve the SAME RED-BROWN long-sleeve open jacket, ivory wrap shirt, brown knotted sash, loose charcoal trousers, bare striped tiger hands and feet, and ONE orange striped tail curving to the side. Crisp detailed arcade fighting-game pixel art matching the reference cutscene style, visible angular square pixel clusters, dark outlines, restrained warm shading and subtle golden rim light. Full head, both feet, hands and tail must fit completely inside 256x256 with eight pixel transparent margin. Single character, no duplicates, no opponent, no scenery, no floor, no aura, no shadow disk, no text. Genuinely transparent surrounding canvas.",
+          "width": 256,
+          "height": 256,
+          "no_background": true,
+          "max_colors": 48,
+          "reference_images": [
+            {
+              "url": "https://api.pixellab.ai/mcp/images/64652ad1-12e8-457b-9e46-8406deb39b88/download",
+              "usage": "EXACT Ataho identity, face, stocky body, clothing and pixel art style. Change pose entirely to a deep grounded windup; do NOT copy extended foreground fist."
+            },
+            {
+              "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south.png?t=1791934584",
+              "usage": "Exact base character proportions, cream inner shirt, brown jacket, bare feet and stripe identity; make full body visible."
+            },
+            {
+              "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south-east.png?t=1791934584",
+              "usage": "Same Ataho profile, tail and clothes only."
+            }
+          ],
+          "seed": 17120
+        },
+        "chargedGenerations": 10,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/d22afd4d-1253-44f4-b2db-af52b1e39bbb/download",
+        "file": {
+          "localPath": "public/assets/maplestory/ataho-cutscene/20261017/tiger-awakening/ataho-low-windup.png",
+          "width": 256,
+          "height": 256,
+          "mode": "RGBA",
+          "bounds": {
+            "left": 29,
+            "top": 14,
+            "right": 234,
+            "bottom": 255
+          },
+          "alphaExtrema": [0, 255],
+          "sha256": "612f73d485d3dfeec87516ba8d07ecdc1928d340f87c2413c168cf587aba1494",
+          "byteSize": 22492
+        },
+        "review": "양발·발뒤꿈치가 보이는 전신과 넓은 무릎 굽힌 준비자세. 양주먹이 허리 옆에 모이며 전경으로 뻗지 않음. 갈색 재킷·크림 속옷·주황 털·꼬리1개 확인. 요청한 매우 낮은 피격자 시점은 약하게 표현되므로 런타임 프레이밍과 함께 사용자 리뷰 필요. 기존 portrait보다 회색 노년상 표현이 덜함."
+      },
+      {
+        "role": "spirit",
+        "model": "pixen",
+        "jobId": "1c30fd46-894f-46f6-b807-ecb6364aeb29",
+        "assetId": "7087a4ea-59b7-5384-bc61-ffec18e00df5",
+        "request": {
+          "description": "ONE huge roaring SPECTRAL TIGER apparition, a real four-legged tiger's HEAD, SHOULDERS, CHEST AND BOTH FRONT PAWS seen from the FRONT at a slightly low angle, not a human. The whole apparition is formed from bright amber-gold firelike INK and deep near-black tiger stripes, matching a classic arcade fighting-game golden tiger spirit. Broad fierce tiger face with rounded ears, long cheek tufts, open roaring mouth and white-gold fangs; heavy feline shoulders and both natural tiger forelegs extend down on either side of the chest, with clearly animal paws and claws. The lower chest and foreleg tips dissolve into flowing angular gold ink flames, so this is an upper-body spectral manifestation for a martial arts cinematic. Distinct readable silhouette with a towering head above the shoulders; do not reduce this to a floating head alone. Warm orange-gold and cream-gold highlights with deep black negative-space stripe shapes, orange ember edges. Fine dark pixel outlines, highly expressive detailed arcade pixel art, crisp visible square pixel clusters, angular stepped flame tips, no blur, restrained shading. Entire ears, head, shoulders and paws fit within the 256x256 square with clear transparent margin. Single creature, no person, no humanoid body, no clothing, no weapon, no scroll, no decorative circle, no background, no floor, no text, no writing, no symbols. Genuinely transparent background.",
+          "width": 256,
+          "height": 256,
+          "no_background": true,
+          "detail": "highly detailed",
+          "outline": "selective outline",
+          "seed": 17121
+        },
+        "chargedGenerations": 1,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/1c30fd46-894f-46f6-b807-ecb6364aeb29/download",
+        "file": {
+          "localPath": "public/assets/maplestory/ataho-cutscene/20261017/tiger-awakening/tiger-spirit-body.png",
+          "width": 256,
+          "height": 256,
+          "mode": "RGBA",
+          "bounds": {
+            "left": 8,
+            "top": 18,
+            "right": 246,
+            "bottom": 249
+          },
+          "alphaExtrema": [0, 255],
+          "sha256": "b3670beca6795856671a5188f66c0554e1be832661acda09257f4f954b2498cb",
+          "byteSize": 34682
+        },
+        "review": "정면 포효하는 호랑이 머리·넓은 어깨·가슴·양 앞발이 이어지는 금빛/먹빛 상반신 형상. 가슴 아래가 불꽃으로 사라지고 인물·문자·배경 없음. 아타호 뒤에서 별개 거대 형상으로 배치할 정적 그림이며 호랑이의 실제 포효 애니메이션을 생성한 것은 아님."
+      }
+    ],
+    "totalNewImages": 2,
+    "totalChargedGenerations": 11,
+    "retries": 0,
+    "preservation": {
+      "originalDownloadedPngBytesPreserved": true,
+      "noManualDrawingOrPixelEdits": true,
+      "onlyMainAssetDirectoryWritten": "public/assets/maplestory/ataho-cutscene/20261017/tiger-awakening",
+      "noCodeOrResourcesJsonChanges": true
+    },
+    "verification": {
+      "actualImagesViewed": true,
+      "dimensionsAlphaBoundsAndSha256Checked": true,
+      "runtimePlayback": "Codex 인앱 브라우저에서 5.3초 전체 재생 및 준비·형상 장면 탐색 확인. 실제 촬영 GIF와 전체 페이지 스크린샷 보관.",
+      "userQualityApproval": "미완료.2종 모두 사용자 리뷰용 시안."
+    }
+  },
+  "storyboard": [
+    {
+      "id": "eyes",
+      "startMs": 0,
+      "endMs": 950
+    },
+    {
+      "id": "stance",
+      "startMs": 950,
+      "endMs": 2050
+    },
+    {
+      "id": "spirit",
+      "startMs": 2050,
+      "endMs": 3450
+    },
+    {
+      "id": "slash",
+      "startMs": 3450,
+      "endMs": 3800
+    },
+    {
+      "id": "battle",
+      "startMs": 3800,
+      "endMs": 5300
+    }
+  ],
+  "battleConnection": {
+    "sourceMotionId": "ki-eruption",
+    "bodySource": "ground-punch-face-retry-south-east",
+    "groundContactFrame": 3,
+    "groundContactSourceMs": 660,
+    "groundImpactSceneMs": 3800,
+    "groundPoint": {
+      "x": 293,
+      "y": 334
+    },
+    "hitStopMs": 90,
+    "sourcePreparation": "230→620ms를310ms동안 재생",
+    "sourceDescentMs": 40,
+    "selectedContact": "원본 중거리 earth-burst-2만 컷씬용 복사의 기공 접촉으로 등록. 원본ki-eruption은 수정하지 않음.",
+    "contactPolicy": "collectSandbagContacts의 connected와 현재 원본시각을 사용. 실제기공도달960ms=장면4190ms에서샌드백반응과피해1회.",
+    "previewHealth": 100,
+    "previewDamage": 36,
+    "healthPolicy": "절대시각에서100→64를 계산. 지면강타·근거리·외곽은추가피해없음.",
+    "boundary": "독립 컷씬 전투 미리보기. 본게임 기술·피해·저장에는 연결하지 않음.",
+    "audio": "소리 없음. 추후사용자가ElevenLabs로제작·적용."
+  },
+  "verification": {
+    "browser": {
+      "surface": "Codex 인앱 브라우저, PC",
+      "fullPlayback": "최종 지면 강타·거리별 단발 분출 포함5.3초 전체 재생.75개 실제 브라우저 시점 촬영·5개컷·자동종료 확인.",
+      "progression": "3783ms내려찍기→3850ms지면강타정지→4000/4067/4117ms근거리작은분출→4200/4283/4333ms중거리분출→4466/4549/4616/4683ms외곽대분출→4933ms소멸 확인. 각원에서3단계전체반복하지않음.",
+      "contactBoundary": "3800·3880ms원본660ms정지·샌드백명중0.4180ms명중0→4190ms명중1/원본960ms.4190반복·4180↔4190탐색에도추가피해누적없음.",
+      "reducedMotion": "최종4080ms에서설정켬확인·동일시점탐색후해제. 지열방사버튼으로4630ms복원.",
+      "console": "독립 호왕일격 앱 경고·오류0.",
+      "sourceReference": "조합실 기공 지열파 직접선택·반복해제·1.77초실제재생에서작은/중간/큰3/3분출확인. optional시각선택API추가전확인이며, API추가뒤에는기존기본호출의코드호환성만검토.",
+      "playbackGif": "public/assets/maplestory/ataho-cutscene/20261017/review/impact-revision/tiger-geothermal-browser.gif",
+      "pageScreenshot": "public/assets/maplestory/ataho-cutscene/20261017/review/impact-revision/tiger-geothermal-page.jpg",
+      "captureBoundary": "실제 브라우저 화면의 저프레임 시점별촬영미리보기.60fps원본영상아님."
+    },
+    "technicalChecks": {
+      "check": "작업브랜치에서npm run check(타입·린트·포맷)통과",
+      "build": "작업브랜치에서npm run build통과",
+      "testSuite": "별도테스트코드추가·실행없음. 사용자요청에따라병합시추가테스트반복하지않음."
+    },
+    "userQualityApproval": "사용자가 맘에 든다 잘 되니까 테스트 없이 메인 머지 해줘로 실제 재생 품질 채택 및 main 병합 승인."
+  },
+  "previousVerification": {
+    "browser": {
+      "surface": "Codex 인앱 브라우저, PC",
+      "fullPlayback": "5.3초 전체 재생에서 eyes→stance→spirit→slash→battle 다섯 컷과 자동 종료 확인. 실제 브라우저 62개 시점 촬영.",
+      "contactBoundary": "4030ms 명중0회, 4060ms 명중1회. 같은 시점 반복 및 앞뒤 탐색에서도 피해 누적 없이 같은 결과 확인.",
+      "library": "컷씬 분류에 암중호격·호왕일격 두 항목 표시. 새 iframe 로드 후 호랑이 형상 버튼으로3050ms 탐색 확인.",
+      "existingCutsceneRegression": "암중호격10.7초 전체 재생에서7개 컷·6개 난타 동작·자동 종료 확인. 종결 버튼8430ms 탐색 유지.",
+      "standaloneConsole": "새 컷씬과 기존 암중호격의 앱 경고·오류 없음.",
+      "playbackGif": "public/assets/maplestory/ataho-cutscene/20261017/tiger-awakening/review/tiger-awakening-browser.gif",
+      "pageScreenshot": "public/assets/maplestory/ataho-cutscene/20261017/tiger-awakening/review/tiger-awakening-page.jpg",
+      "captureBoundary": "GIF는 실제 브라우저 화면의 시점별 촬영본으로 저프레임 미리보기.60fps 원본 영상 아님."
+    },
+    "technicalChecks": {
+      "typecheck": "passed",
+      "build": "passed",
+      "check": "passed: typecheck, lint, format",
+      "diffCheck": "passed",
+      "testSuite": "저장소 규칙에 따라 별도 테스트 코드 추가·실행 없음."
+    },
+    "userQualityApproval": "미완료. 그림·낮은 앵글·움직임의 최종 미감 평가는 사용자 리뷰 전."
+  },
+  "impactRevision": {
+    "authorization": "사용자가 망치주먹 궤적 일치와 강한 임팩트 연출안에 응 작업해줘로 승인. 암중호격은 별도 기존 순옥살21타 재사용.",
+    "changes": [
+      "기존 지열파 원본의 지면 주먹 준비·내려찍기·유지·회수·가드로 본체 교체",
+      "지면강타3800ms에서55ms 명암강조·90ms 정지 후 원본시각1배 진행",
+      "근거리작은분출3970~4150→중거리분출4190~4390→외곽큰분출4430~4930 한 번 방사",
+      "거리와원본radius·추가크기배율을함께증가. 각원에서3단계전체반복제거.",
+      "중거리의실제샌드백도달에만미리보기피해1회"
+    ],
+    "newPixelLabGenerations": 0,
+    "preservation": "기존 PixelLab 준비·호랑이형상·얼굴·지면강타 및 기공 원본을 재사용. 새그림0·무음·본게임분리 유지.",
+    "geothermalWaveAuthorization": "사용자가 동작조합실 기공 지열파를 명시했고, 본체도 같은 지열파 모션·근거리작은것부터거리별큰분출로 방사하도록 추가 요청.",
+    "geothermalReuse": {
+      "sourceMotionId": "ki-eruption",
+      "sourceCode": "src/resources/characters/ataho-v2-combos/ki-spatial-drawing.ts:drawEruption",
+      "sourceAtlas": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/eruption-atlas-original.png",
+      "frameKey": "ki-vfx:eruption",
+      "sampleStartMs": 660,
+      "rings": [
+        {
+          "hitIndex": 0,
+          "sourceStartMs": 740,
+          "sourceEndMs": 920,
+          "radius": 70,
+          "count": 6,
+          "scale": 0.65
+        },
+        {
+          "hitIndex": 1,
+          "sourceStartMs": 960,
+          "sourceEndMs": 1160,
+          "radius": 204,
+          "count": 8,
+          "scale": 0.8
+        },
+        {
+          "hitIndex": 2,
+          "sourceStartMs": 1200,
+          "sourceEndMs": 1700,
+          "radius": 350,
+          "count": 12,
+          "scale": 1.0
+        }
+      ],
+      "totalLifetimeMs": 1040,
+      "boundary": "원본각단계의성장·소멸을해당거리의원에서한번만재생. 옵션없는기존조합실지열파호출은그대로. 원본기공·동작변경없음.",
+      "eruptionLifetimeMs": 960,
+      "sceneEndMs": 4930
+    }
+  }
+}

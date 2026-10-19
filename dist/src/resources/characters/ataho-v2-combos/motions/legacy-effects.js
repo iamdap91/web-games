@@ -73,6 +73,16 @@ const effectsByMotion = {
     ],
     'slide-sweep': [
         {
+            id: 'slide-short-afterimage',
+            label: '슬라이딩 짧은 잔상',
+            summary: '빠르게 미끄러지는 두 자세만 옅게 남기고 감속하면 곧 거둡니다.',
+            kind: 'afterimage',
+            sources: [{ motion: 'running-slide-south-east', frames: [2, 3] }],
+            intervalMs: 40,
+            count: 2,
+            opacity: 0.12,
+        },
+        {
             id: 'slide-ground-line',
             label: '낮은 이동선',
             summary: '슬라이딩의 실제 이동을 바닥 가까이에 남깁니다.',

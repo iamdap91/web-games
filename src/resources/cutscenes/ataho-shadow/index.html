@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아타호 · 암중호격 — 컷씬</title>
+    <link rel="stylesheet" href="../shared/style.css" />
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">이계취호전 <span>/</span> 컷씬 01</p>
+          <h1>암중호격</h1>
+          <p class="intro">고요한 시선. 어둠 속 공방. 한 번의 결산.</p>
+        </div>
+        <a
+          class="library-link"
+          href="../../?category=cutscenes&amp;group=아타호&amp;asset=local%2Fataho-shadow-cutscene"
+          >컷씬 목록 ↗</a
+        >
+      </header>
+      <section class="theatre" aria-label="아타호 암중호격 컷씬">
+        <div class="viewport">
+          <canvas
+            id="scene"
+            width="960"
+            height="540"
+            aria-label="아타호의 필살기 컷씬. 아래 재생과 장면 탐색으로 감상할 수 있습니다."
+          ></canvas>
+          <div id="loading" role="status">컷씬 그림을 준비하고 있습니다.</div>
+          <button id="start" class="start" disabled>
+            <span aria-hidden="true">▶</span> 컷씬 재생
+          </button>
+        </div>
+        <div class="transport">
+          <div class="buttons">
+            <button id="play" class="primary" disabled>재생</button>
+            <button id="restart" disabled>처음부터</button>
+          </div>
+          <div class="options">
+            <label
+              >속도
+              <select id="speed" aria-label="재생 속도">
+                <option value="0.5">0.5배</option>
+                <option value="1" selected>1배</option>
+              </select></label
+            >
+            <label
+              ><input id="reduced-motion" type="checkbox" /> 섬광·흔들림
+              줄이기</label
+            >
+          </div>
+        </div>
+        <div class="timeline">
+          <output id="time">0.00 / 12.08초</output>
+          <input
+            id="scrub"
+            type="range"
+            min="0"
+            max="12080"
+            step="10"
+            value="0"
+            aria-label="컷씬 재생 시점"
+            disabled
+          />
+          <output id="cut-name" aria-live="polite">대치</output>
+        </div>
+        <nav id="cuts" class="cuts" aria-label="컷별로 멈춰 보기"></nav>
+      </section>
+      <footer>
+        <p id="status" role="status">그림을 불러오는 중</p>
+        <p class="keyboard">Space 재생·정지 <span>·</span> ← → 0.08초 탐색</p>
+      </footer>
+      <details class="notes">
+        <summary>이 컷씬에 관하여</summary>
+        <p>
+          저장한 순옥살 v1의 안무·먹선·필살기 컨셉으로 암중 공방을 재생합니다.
+          원본21타와 실제 공격 분신6기는 유지하고 추가 배경 분신은 제거했습니다.
+          뒤에는 먹빛7기의 지상 포위·교차 강습·동시 소멸·정적·등 뒤 본체 공개를
+          잇습니다. 저장 설정과 조합실 원본·본게임 전투는 변경하지 않으며
+          무음입니다.
+        </p>
+        <p>
+          그림과 기존 순옥살 안무를 실시간으로 합성하는 무음 시안입니다. 명중
+          수는 공유 샌드백 접촉 판정에서 계산합니다. 감상·제작용이며 본게임의
+          피해·전투 진행·저장 상태에는 연결하지 않았습니다.
+        </p>
+        <a
+          href="https://www.youtube.com/watch?v=rvPjsz7itF8&amp;t=161s"
+          target="_blank"
+          rel="noreferrer"
+          >Capcom 공식 고우키 영상 ↗</a
+        >
+        <a
+          href="../../../../resources/ataho-cutscene-generation.json"
+          target="_blank"
+          rel="noreferrer"
+          >그림·제작 기록 ↗</a
+        >
+      </details>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/cutscenes/ataho-shadow/index.js"
+    ></script>
+  </body>
+</html>

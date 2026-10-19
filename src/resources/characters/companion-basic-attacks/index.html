@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <title>비월과 연묵 · 공격 모션</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main>
+      <a href="../../">리소스 목록</a>
+      <h1>비월과 연묵 · 공격 모션</h1>
+      <p class="intro">
+        단검과 기동술, 부적과 먹획. 캐릭터마다 네 가지 공격을 두 방향으로
+        살펴봅니다.
+      </p>
+      <div class="settings">
+        <label
+          >몸 방향
+          <select id="facing">
+            <option value="south-east">남동향</option>
+            <option value="north-west">북서향</option>
+          </select></label
+        >
+        <label
+          >재생 속도
+          <select id="speed">
+            <option value="1">1배</option>
+            <option value="0.5">0.5배</option>
+            <option value="0.25">0.25배</option>
+          </select></label
+        >
+        <label
+          >바탕
+          <select id="background">
+            <option value="dark">어둡게</option>
+            <option value="light">밝게</option>
+          </select></label
+        >
+      </div>
+      <p id="status" role="status">공격 프레임을 불러오는 중…</p>
+      <section class="studies">
+        <article id="biwol">
+          <div class="title">
+            <h2>비월</h2>
+            <select data-role="motion" aria-label="비월 공격 모션"></select>
+          </div>
+          <canvas
+            aria-label="비월 공격 모션 재생"
+            width="640"
+            height="360"
+          ></canvas>
+          <output class="phase" aria-live="off"></output>
+          <input
+            class="timeline"
+            type="range"
+            min="0"
+            max="1450"
+            step="10"
+            value="0"
+            aria-label="비월 재생 위치"
+          />
+          <div class="controls">
+            <button data-action="toggle" disabled>일시정지</button
+            ><button data-action="restart" disabled>처음부터</button
+            ><button data-action="step" disabled>한 프레임</button
+            ><label
+              ><input type="checkbox" checked data-action="repeat" />
+              반복</label
+            >
+          </div>
+          <p data-role="description">
+            준비 → 흩어짐 → 적 뒤에서 재등장 → 가로베기 → 복귀
+          </p>
+          <button data-action="gif" disabled>이 방향 GIF 만들기</button>
+          <a class="download" hidden>GIF 저장</a>
+        </article>
+        <article id="yeonmuk">
+          <div class="title">
+            <h2>연묵</h2>
+            <select data-role="motion" aria-label="연묵 공격 모션"></select>
+          </div>
+          <canvas
+            aria-label="연묵 공격 모션 재생"
+            width="640"
+            height="360"
+          ></canvas>
+          <output class="phase" aria-live="off"></output>
+          <input
+            class="timeline"
+            type="range"
+            min="0"
+            max="1450"
+            step="10"
+            value="0"
+            aria-label="연묵 재생 위치"
+          />
+          <div class="controls">
+            <button data-action="toggle" disabled>일시정지</button
+            ><button data-action="restart" disabled>처음부터</button
+            ><button data-action="step" disabled>한 프레임</button
+            ><label
+              ><input type="checkbox" checked data-action="repeat" />
+              반복</label
+            >
+          </div>
+          <p data-role="description">
+            부적을 당김 → 사출 → 비행 → 부착 → 문양 발동 → 회수
+          </p>
+          <button data-action="gif" disabled>이 방향 GIF 만들기</button>
+          <a class="download" hidden>GIF 저장</a>
+        </article>
+      </section>
+      <p class="note">
+        대표 2방향 시안 · GIF는 1배 재생으로 저장합니다. GIF 확인 후 다른
+        방향으로 확장합니다.
+      </p>
+      <p class="sources">
+        몸 그림: <a href="https://www.pixellab.ai/">PixelLab</a> ·
+        <a href="../../../../resources/companion-basic-attacks/biwol.json"
+          >비월 기본공격 기록</a
+        >
+        ·
+        <a href="../../../../resources/companion-basic-attacks/yeonmuk.json"
+          >연묵 기본공격 기록</a
+        >
+        ·
+        <a
+          href="../../../../resources/companion-basic-attacks/biwol-additions.json"
+          >비월 추가 3동작</a
+        >
+        ·
+        <a
+          href="../../../../resources/companion-basic-attacks/yeonmuk-additions.json"
+          >연묵 추가 3동작</a
+        >
+      </p>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/characters/companion-basic-attacks/index.js"
+    ></script>
+  </body>
+</html>

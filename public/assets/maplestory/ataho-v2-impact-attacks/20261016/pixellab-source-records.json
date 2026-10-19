@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-16",
+  "status": "source-and-motion-candidates-pending-live-review",
+  "authorization": "사용자가 공중 양손 내려찍기·진각 새 키포즈와 PixelLab 대체 제작을 승인했고 담당 세션이 생성 범위를 위임했다.",
+  "characterId": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+  "characterState": "Idle",
+  "direction": "south-east",
+  "newCharacterState": false,
+  "newDirections": false,
+  "existingGroupsDeletedOrOverwritten": false,
+  "totalPaidJobs": 3,
+  "totalActualCostGenerations": 3,
+  "referenceFrameCountPerJob": 1,
+  "animatedFrameCountPerJob": 8,
+  "returnedFrameCountPerJob": 9,
+  "attemptLimits": {
+    "aerialSmash": {
+      "used": 1,
+      "maximum": 2
+    },
+    "martialStomp": {
+      "used": 2,
+      "maximum": 2
+    }
+  },
+  "validationOnlyRejections": [
+    "첫 aerial 요청 subject_description 300자 제한: job·청구 없이 축약 후 제출.",
+    "v3 요청의 subject_description/initial_pose는 pixminimax 전용이라는 검증 거절: job·청구 없이 제거 후 제출."
+  ],
+  "nativeCanvas": {
+    "width": 88,
+    "height": 88
+  },
+  "sourceBodySizeEvidence": {
+    "approvedRotationAlphaHeight": 62,
+    "existingFightGuardAlphaHeight": 60,
+    "existingOneTwoAlphaHeight": [
+      60,
+      61
+    ],
+    "existingJumpApexAlphaHeight": 52,
+    "aerialReferenceAlphaHeight": 62,
+    "aerialAirborneAlphaHeight": [
+      49,
+      51
+    ],
+    "aerialImpactAlphaHeight": 53,
+    "note": "알파24초과 경계 또는 실제 PNG 관찰. 원본을 변형하지 않고 padding만 적용할 계획이며 최종 정규화 JSON은 담당 세션 소유."
+  },
+  "attempts": [
+    {
+      "key": "aerial-smash",
+      "mode": "pixminimax",
+      "name": "ataho-aerial-two-hand-smash-south-east",
+      "jobId": "2c042d9b-9ae6-4b9e-b17f-1ba8240027e8",
+      "groupId": "5df0a5d1-db7a-4b70-82b4-000d23cb5081",
+      "request": {
+        "character_id": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+        "mode": "pixminimax",
+        "directions": [
+          "south-east"
+        ],
+        "frame_count": 8,
+        "animation_name": "ataho-aerial-two-hand-smash-south-east",
+        "subject_description": "Same short, stocky orange tiger; brown jacket, cream neck ruff, dark gray pants, bare paws, one tail. Preserve exact original head/body scale, face and pixel-art identity. Keep south-east three-quarter yaw and low top-down view.",
+        "initial_pose": "Compact fighting guard facing south-east. Both fists near chest/cheeks, both feet planted. Original character proportions and same yaw.",
+        "keep_first_frame": true,
+        "action_description": "ONE jumping TWO-HANDED DOWNWARD HAMMER smash. Start compact fighting guard. Bend knees and jump straight up slightly forward. At apex tuck both knees with feet airborne and clasp BOTH hands TOGETHER ABOVE/BEHIND head. Then hinge torso forward and drive the same joined fist mass DOWN and SCREEN RIGHT as body descends. Land deeply through bent knees while joined fists finish low in front of forward knee, outside body silhouette; briefly hold heavy downward contact, then recover to same guard. Distinct anticipation, fast downward swing, low impact, recovery. No forward punch, no two alternating punches, no elbow, no spin/turn, no weapon, no VFX/shadow/opponent. Keep exact head/body scale, clothes, face direction."
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: ccd70d82-72e4-4ec9-839a-7481e30bff2f\nanimation: pixminimax custom (ONE jumping TWO-HANDED DOWNWARD HAMMER smash. Start compact fighting guard. Bend knees and jump straight up slightly forward. At apex tuck both knees with feet airborne and clasp BOTH hands TOGETHER ABOVE/BEHIND head. Then hinge torso forward and drive the same joined fist mass DOWN and SCREEN RIGHT as body descends. Land deeply through bent knees while joined fists finish low in front of forward knee, outside body silhouette; briefly hold heavy downward contact, then recover to same guard. Distinct anticipation, fast downward swing, low impact, recovery. No forward punch, no two alternating punches, no elbow, no spin/turn, no weapon, no VFX/shadow/opponent. Keep exact head/body scale, clothes, face direction.)\ndirections: south-east (1 jobs)\njob_ids: south-east=2c042d9b-9ae6-4b9e-b17f-1ba8240027e8\ngroup: 5df0a5d1-db7a-4b70-82b4-000d23cb5081\nframes: 9 (1 reference + 8 animated)\ncost: 1 generation (1/dir x 1)\neta: ~1 min/direction\n\nhint: get_character(character_id=\"ccd70d82-72e4-4ec9-839a-7481e30bff2f\")\nadd more directions to this group: animate_character(character_id=\"ccd70d82-72e4-4ec9-839a-7481e30bff2f\", action_description=\"ONE jumping TWO-HANDED DOWNWARD HAMMER smash. Start compact fighting guard. Bend knees and jump straight up slightly forward. At apex tuck both knees with feet airborne and clasp BOTH hands TOGETHER ABOVE/BEHIND head. Then hinge torso forward and drive the same joined fist mass DOWN and SCREEN RIGHT as body descends. Land deeply through bent knees while joined fists finish low in front of forward knee, outside body silhouette; briefly hold heavy downward contact, then recover to same guard. Distinct anticipation, fast downward swing, low impact, recovery. No forward punch, no two alternating punches, no elbow, no spin/turn, no weapon, no VFX/shadow/opponent. Keep exact head/body scale, clothes, face direction.\", mode=\"pixminimax\", animation_group_id=\"5df0a5d1-db7a-4b70-82b4-000d23cb5081\", directions=[...])"
+          }
+        ],
+        "isError": false
+      },
+      "qualityStatus": "candidate-pending-user-review",
+      "observations": [
+        "2~3번은 무릎을 접은 공중 장전,4번은 하강,5~7번은 양손을 앞 무릎 아래에 둔 낮은 접촉이다.",
+        "마지막8번은 완전한 가드가 아니므로 같은 생성1번 가드를 회수에 재사용한다.",
+        "원본88px 실제 손 끝(64,69),중앙44·SourceFrame 발 경계77에서 reach20/height8; 지면0으로 허위 타점을 내리지 않는다."
+      ],
+      "localDirectory": "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/aerial-smash",
+      "metadataPath": "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/aerial-smash/metadata.json"
+    },
+    {
+      "key": "stomp",
+      "mode": "pixminimax",
+      "name": "ataho-martial-stomp-south-east",
+      "jobId": "0a9059bc-69d9-4943-92c8-01bb66c4d946",
+      "groupId": "36e61f9a-d580-42a1-9ead-f75983591168",
+      "request": {
+        "character_id": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+        "mode": "pixminimax",
+        "directions": [
+          "south-east"
+        ],
+        "frame_count": 8,
+        "animation_name": "ataho-martial-stomp-south-east",
+        "subject_description": "Same short, stocky orange tiger; brown jacket, cream neck ruff, dark gray pants, bare paws, one tail. Preserve exact original head/body scale, face and pixel-art identity. Keep south-east three-quarter yaw and low top-down view.",
+        "initial_pose": "Compact fighting guard facing south-east. Both fists near chest/cheeks, both feet planted. Original character proportions and same yaw.",
+        "keep_first_frame": true,
+        "action_description": "ONE short grounded martial STOMP (zhen jiao), then return guard. Keep upper body south-east and both fists near chest/cheeks. Raise ONE forward knee and foot clearly above ground while rear leg supports weight. Drive raised foot STRAIGHT DOWN, sole flat and broad, stamping slightly ahead of rear foot. At contact drop pelvis and bend supporting knee to transmit whole-body weight; torso stays upright/compact, hands stay guard. Brief weighted low contact then return same guard. No kick forward, no hop/two-foot landing, no fullturn,punch, VFX,dust,opponent."
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: ccd70d82-72e4-4ec9-839a-7481e30bff2f\nanimation: pixminimax custom (ONE short grounded martial STOMP (zhen jiao), then return guard. Keep upper body south-east and both fists near chest/cheeks. Raise ONE forward knee and foot clearly above ground while rear leg supports weight. Drive raised foot STRAIGHT DOWN, sole flat and broad, stamping slightly ahead of rear foot. At contact drop pelvis and bend supporting knee to transmit whole-body weight; torso stays upright/compact, hands stay guard. Brief weighted low contact then return same guard. No kick forward, no hop/two-foot landing, no fullturn,punch, VFX,dust,opponent.)\ndirections: south-east (1 jobs)\njob_ids: south-east=0a9059bc-69d9-4943-92c8-01bb66c4d946\ngroup: 36e61f9a-d580-42a1-9ead-f75983591168\nframes: 9 (1 reference + 8 animated)\ncost: 1 generation (1/dir x 1)\neta: ~1 min/direction\n\nhint: get_character(character_id=\"ccd70d82-72e4-4ec9-839a-7481e30bff2f\")\nadd more directions to this group: animate_character(character_id=\"ccd70d82-72e4-4ec9-839a-7481e30bff2f\", action_description=\"ONE short grounded martial STOMP (zhen jiao), then return guard. Keep upper body south-east and both fists near chest/cheeks. Raise ONE forward knee and foot clearly above ground while rear leg supports weight. Drive raised foot STRAIGHT DOWN, sole flat and broad, stamping slightly ahead of rear foot. At contact drop pelvis and bend supporting knee to transmit whole-body weight; torso stays upright/compact, hands stay guard. Brief weighted low contact then return same guard. No kick forward, no hop/two-foot landing, no fullturn,punch, VFX,dust,opponent.\", mode=\"pixminimax\", animation_group_id=\"36e61f9a-d580-42a1-9ead-f75983591168\", directions=[...])"
+          }
+        ],
+        "isError": false
+      },
+      "qualityStatus": "candidate-load-only-impact-rejected",
+      "observations": [
+        "2번 무릎 들기는 보이나3~4번이 전방 킥처럼 뻗는다.",
+        "5~8번에 금지한 흰 먼지·발밑 호가 내장되어 있다.",
+        "통합 모션에는 사용하지 않았다."
+      ],
+      "localDirectory": "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/stomp",
+      "metadataPath": "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/stomp/metadata.json"
+    },
+    {
+      "key": "stomp-v2",
+      "mode": "v3",
+      "name": "ataho-martial-stomp-south-east-v2",
+      "jobId": "9f0daa2c-4d35-44e7-b26c-1da970cf0f99",
+      "groupId": "b5bd01e4-b5b6-44fc-88f9-fa27d5d3f372",
+      "request": {
+        "character_id": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+        "mode": "v3",
+        "directions": [
+          "south-east"
+        ],
+        "frame_count": 8,
+        "animation_name": "ataho-martial-stomp-south-east-v2",
+        "keep_first_frame": true,
+        "action_description": "ONE short grounded MARTIAL STOMP in place, then return guard. NOT a forward kick. Lift ONE forward paw only a little by raising its knee; rear paw stays planted. Keep the lifted paw beside the supporting leg, NEVER extending the leg forward. Stamp that paw STRAIGHT VERTICALLY DOWN beside the supporting paw, flat horizontal sole, both paws on the same ground baseline. Sink hips and bend the supporting knee to press whole-body weight into the floor. Upper body remains compact and upright facing SOUTH-EAST throughout, fists always guard near chest/cheeks. Eight-pose flow: guard; small knee lift; raised hold; paw directly DOWN; weighted flat-sole impact; hips compress; settle; guard. NO foot thrust forward, NO kick, NO jumping, NO two-foot landing, NO turning, NO punches. NO white dust, dust clouds, ground rings, light, glowing feet, action lines, shadows, props, opponent or any VFX. Only the same tiger's body on transparency."
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: ccd70d82-72e4-4ec9-839a-7481e30bff2f\nanimation: v3 custom (ONE short grounded MARTIAL STOMP in place, then return guard. NOT a forward kick. Lift ONE forward paw only a little by raising its knee; rear paw stays planted. Keep the lifted paw beside the supporting leg, NEVER extending the leg forward. Stamp that paw STRAIGHT VERTICALLY DOWN beside the supporting paw, flat horizontal sole, both paws on the same ground baseline. Sink hips and bend the supporting knee to press whole-body weight into the floor. Upper body remains compact and upright facing SOUTH-EAST throughout, fists always guard near chest/cheeks. Eight-pose flow: guard; small knee lift; raised hold; paw directly DOWN; weighted flat-sole impact; hips compress; settle; guard. NO foot thrust forward, NO kick, NO jumping, NO two-foot landing, NO turning, NO punches. NO white dust, dust clouds, ground rings, light, glowing feet, action lines, shadows, props, opponent or any VFX. Only the same tiger's body on transparency.)\ndirections: south-east (1 jobs)\njob_ids: south-east=9f0daa2c-4d35-44e7-b26c-1da970cf0f99\ngroup: b5bd01e4-b5b6-44fc-88f9-fa27d5d3f372\nframes: 9 (1 reference + 8 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2-4 min/direction\n\nhint: get_character(character_id=\"ccd70d82-72e4-4ec9-839a-7481e30bff2f\")\nadd more directions to this group: animate_character(character_id=\"ccd70d82-72e4-4ec9-839a-7481e30bff2f\", action_description=\"ONE short grounded MARTIAL STOMP in place, then return guard. NOT a forward kick. Lift ONE forward paw only a little by raising its knee; rear paw stays planted. Keep the lifted paw beside the supporting leg, NEVER extending the leg forward. Stamp that paw STRAIGHT VERTICALLY DOWN beside the supporting paw, flat horizontal sole, both paws on the same ground baseline. Sink hips and bend the supporting knee to press whole-body weight into the floor. Upper body remains compact and upright facing SOUTH-EAST throughout, fists always guard near chest/cheeks. Eight-pose flow: guard; small knee lift; raised hold; paw directly DOWN; weighted flat-sole impact; hips compress; settle; guard. NO foot thrust forward, NO kick, NO jumping, NO two-foot landing, NO turning, NO punches. NO white dust, dust clouds, ground rings, light, glowing feet, action lines, shadows, props, opponent or any VFX. Only the same tiger's body on transparency.\", animation_group_id=\"b5bd01e4-b5b6-44fc-88f9-fa27d5d3f372\", directions=[...])"
+          }
+        ],
+        "isError": false
+      },
+      "qualityStatus": "candidate-impact-subset-pending-live-review",
+      "observations": [
+        "2~3번 작은 발들기,4번 직하 연결,5~6번 접촉으로 전방 킥은 줄었다.",
+        "7~8번은 금지한 흰 충격 띠가 있고 손은 가드보다 내려와 있으며 골반 하강이 작다.",
+        "7~8번 제외 가능성은 보고했지만 사용자 요청을 완전히 충족했다고 판정하지 않았다.",
+        "방향당 최대2시도 상한에 도달해 추가 유료 생성은 하지 않는다."
+      ],
+      "localDirectory": "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/stomp-v2",
+      "metadataPath": "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/stomp-v2/metadata.json"
+    }
+  ],
+  "motionDraft": {
+    "sourceFile": "src/resources/characters/ataho-v2-combos/motions/impact-attacks.ts",
+    "aerialSmash": {
+      "id": "aerial-smash",
+      "sourceMotion": "presentation-aerial-smash-south-east",
+      "durationMs": 880,
+      "plannedContactMs": 415,
+      "hitCount": 1,
+      "contact": {
+        "kind": "punch",
+        "reach": 20,
+        "height": 8,
+        "strength": 1
+      },
+      "apexHoldMs": 115,
+      "descentMs": 50,
+      "contactHoldMs": 80,
+      "anchor": "feet: SourceFrame 중앙과 실제 발 하단을 사용해 padding 후에도 같은 상대 타점을 유지",
+      "contactPixel": {
+        "x": 64,
+        "y": 69,
+        "anchorX": 44,
+        "feetY": 77,
+        "note": "feetY는 최하단 불투명 픽셀76의 다음 행"
+      }
+    },
+    "martialStomp": {
+      "id": "martial-stomp",
+      "status": "candidate-pending-live-review",
+      "durationMs": 540,
+      "plannedContactMs": 210,
+      "hitCount": 1,
+      "sourceMotions": [
+        "presentation-martial-stomp-load-south-east",
+        "presentation-martial-stomp-impact-south-east"
+      ],
+      "candidateSourceFrames": [
+        {
+          "original": "stomp",
+          "frame": 1,
+          "durationMs": 80
+        },
+        {
+          "original": "stomp",
+          "frame": 2,
+          "durationMs": 100
+        },
+        {
+          "original": "stomp-v2",
+          "frame": 4,
+          "durationMs": 30
+        },
+        {
+          "original": "stomp-v2",
+          "frame": 5,
+          "durationMs": 70
+        },
+        {
+          "original": "stomp-v2",
+          "frame": 6,
+          "durationMs": 60
+        },
+        {
+          "original": "stomp",
+          "frame": 1,
+          "durationMs": 90
+        },
+        {
+          "original": "stomp",
+          "frame": 0,
+          "durationMs": 110
+        }
+      ],
+      "contact": {
+        "kind": "kick",
+        "reach": 17,
+        "height": 2,
+        "strength": 1
+      },
+      "contactPixel": {
+        "x": 61,
+        "y": 73,
+        "anchorX": 44,
+        "feetY": 75,
+        "note": "앞발 밑면 실제 불투명 픽셀,feetY는 지지발 최하단74의 다음 행"
+      },
+      "excludedEmbeddedVfxFrames": {
+        "original": "stomp-v2",
+        "frames": [
+          7,
+          8
+        ]
+      },
+      "sameCharacterAndDirection": true,
+      "newPixelEdits": false,
+      "limitations": "발들기와 디딤 원본 사이 팔 가드 변화 및 작은 골반 하강은 실제1배 재생에서 판단. 최종 합격 선언 아님."
+    }
+  },
+  "verification": {
+    "pngFramesObserved": true,
+    "generatedAnimationPlayback": false,
+    "separateTestsAddedOrRun": false,
+    "sharedAppFilesModified": false,
+    "finalQualityDecision": "사용자의 실제 GIF 검토와 담당 세션 판단에 남긴다."
+  }
+}

@@ -1,0 +1,320 @@
+{
+  "assetId": "local/ataho-hisashi-punch-cutscene",
+  "displayName": "아타호 · 히사시 펀치",
+  "createdDate": "2026-10-18",
+  "status": "revised-awaiting-user-review",
+  "authorization": "사용자가 아타호 히사시 펀치 연출 1개 제작을 요청하고 원피스 극장판6기·천룡인 펀치 참고 장면을 제공했다.",
+  "reference": {
+    "url": "https://www.youtube.com/shorts/-d3qVNXAWEw",
+    "title": "Obari Punch vs. Hisashi Punch: What’s the Difference? | Otsu Animation",
+    "observed": "사용자 제공 설명 영상의 약72~82초 구간을 인앱 브라우저에서 음소거 재생·연속 화면으로 확인. 흑백 선화 접촉의 느린 유지·속도선·이후 방출을 참고했다. 원작 영상 전체나 원제작 프로젝트 실행을 확인한 것은 아니다. 작화가별 최초 사용·계보 주장은 검증하지 않았다."
+  },
+  "presentation": {
+    "durationMs": 2900,
+    "loadMs": 110,
+    "advanceMs": 730,
+    "contactMs": 820,
+    "inkStartMs": 110,
+    "inkEndMs": 1680,
+    "inkDurationMs": 1570,
+    "releaseMs": 1680,
+    "settleMs": 2110,
+    "hitCount": 1,
+    "approach": "제자리에서 원본 정권을 한 번 장전한다. guard0은0~110ms,coil1은110~220ms,load2는220~310ms,open3은310~410ms다. chamber4는410~750ms이며410~730ms의320ms를 제자리에서 유지한다.730~820ms의90ms 동안273px를 제곱가속으로 접근하고750ms에 strike5로 팔을 뻗는다.1890ms에 recover4,2240ms에 guard0으로 돌아온다. 달리기 그림은 사용하지 않는다.",
+    "ink": "장전 시작110ms부터 방출 직전1680ms까지1570ms를6단계 흑백으로 표시한다. 실제 접촉820~940ms의 첫120ms만 접촉 clock을0.35배로 진행하고 이후1배로 복귀한다.820~1040ms의 명중 강조220ms는 같은 흑백 구도를 유지하며1040ms부터 결정타를 연속 확대한다. 접촉 뒤 아타호·예티 밀림은 같은 clock을 사용하고 방출1680ms의782동작ms로 정규화해 최종66px·156px 이동과90px 분리를 유지한다. 원본 알파·픽셀 위치를 보존한다.",
+    "camera": "260~410ms에 중간 구도인 일반1.35배·저감1.2배로 접근하고410~1040ms에는 초점과 배율을 유지한다. 실제 접촉820~988ms에만8px에서 감쇠하는 방향성 반동을 한 번 더한다.1040ms 결정타 확대부터150ms 동안 배율 점프 없이 smoothstep으로 약2.15배에 접근한다. 저감 모드는1.2배를 유지하고 반동은0이며 원본 픽셀·형태는 변형하지 않는다.",
+    "targetReaction": "실제 주먹 타점이 도착하는820ms에 명중·예티 첫 튕김·먹선 효과를 즉시 함께 시작한다. 그전에는 예티 stand0의 그림·위치를 고정한다. die1의2→3→4번 원본 자세는 공유 접촉 clock의0/100/240동작ms에 전환하므로 실제 시각은820/998/1138ms다.1680ms부터 정상속도로 멀리 날아간다. hit1은 사용하지 않는다.",
+    "reducedMotion": "중간 구도에1.2배로 접근한 뒤 장전·접근·명중·결정타 확대 동안 배율을 유지하며 카메라 반동은0이다. 속도선 움직임·수를 줄이고 접촉 먹선·파편은 수를 줄여 위치와 기하를 고정한 채 알파만 감쇠한다. 같은120ms·0.35배 접촉 슬로와 이후1배 clock을 사용한다.",
+    "scope": "독립 컷씬. 본게임 전투·저장 연결 없음. 무음. 새 그림·유료 호출 없음.",
+    "contactCondition": "750ms에 주먹을 뻗지만 예티 반응은 실제5번 주먹점이 얼굴점에 도달하는820ms에만 시작한다. 명중 뒤220ms는 같은 흑백 구도로 강조하고1040ms부터 결정타를 확대한다.",
+    "firstFlightMs": 820,
+    "slowMotionStartMs": 820,
+    "slowMotionEndMs": 940,
+    "actorAdvancePx": 66,
+    "targetDisplacementPx": 156,
+    "targetSeparationPx": 90,
+    "openMs": 310,
+    "chamberMs": 410,
+    "recoverMs": 1890,
+    "guardReturnMs": 2240,
+    "phases": [
+      {
+        "id": "face-off",
+        "startMs": 0,
+        "endMs": 110,
+        "sourceFrameIndex": 0
+      },
+      {
+        "id": "coil",
+        "startMs": 110,
+        "endMs": 220,
+        "sourceFrameIndex": 1
+      },
+      {
+        "id": "load",
+        "startMs": 220,
+        "endMs": 310,
+        "sourceFrameIndex": 2
+      },
+      {
+        "id": "open",
+        "startMs": 310,
+        "endMs": 410,
+        "sourceFrameIndex": 3
+      },
+      {
+        "id": "standing-chamber",
+        "startMs": 410,
+        "endMs": 730,
+        "sourceFrameIndex": 4
+      },
+      {
+        "id": "chamber-approach",
+        "startMs": 730,
+        "endMs": 750,
+        "sourceFrameIndex": 4
+      },
+      {
+        "id": "strike-approach",
+        "startMs": 750,
+        "endMs": 820,
+        "sourceFrameIndex": 5
+      },
+      {
+        "id": "impact-hold",
+        "startMs": 820,
+        "endMs": 1040,
+        "sourceFrameIndex": 5
+      },
+      {
+        "id": "close-up",
+        "startMs": 1040,
+        "endMs": 1680
+      },
+      {
+        "id": "release",
+        "startMs": 1680,
+        "endMs": 2110
+      },
+      {
+        "id": "aftermath",
+        "startMs": 2110,
+        "endMs": 2900
+      }
+    ],
+    "strikeMs": 750,
+    "standingHoldStartMs": 410,
+    "standingHoldDurationMs": 320,
+    "approachDurationMs": 90,
+    "approachDistancePx": 273,
+    "closeUpMs": 1040,
+    "impactHoldDurationMs": 220,
+    "speedLines": "인물 뒤에만 표시한다. 장전 중에는 강도0.16→0.28과 timeMs×0.12의 느린 위상으로 희박하게 흐르고, 초고속 접근 중에는 강도0.85, 명중 뒤에는0.48+pressure×0.52를 사용한다. 명중 뒤의 속도선 위상도 공유 접촉 clock으로 진행한다.",
+    "impact": {
+      "triggerMs": 820,
+      "durationMs": 168,
+      "trigger": "실제 주먹 타점이 얼굴점에 도달한 경우에만 시작한다. 원본5번이 나오는750ms에는 발동하지 않는다.",
+      "inkStrokes": 7,
+      "marks": "인물 뒤에서 중심 타원을 비우고 가장 긴 끝을 기준으로 바깥10배 규모를 유지한다. 길이·굵기·휘어짐이 다른 먹줄기7개를 각각4개의 불균일한 구간으로 끊는다. 굵기 변동은 작게 두고 구간마다 드문 찢김을 남긴다. 타점 근처 먹뭉치15개와 비산조각18개는 불규칙한 둥근 실루엣이며 방향·거리·모양을 달리한다. 고정seed의 모양이90동작ms에 퍼지며 감쇠한다. 접촉 직후 첫120ms만0.35배이므로 실제 효과 구간은820~988ms의168ms다.",
+      "cameraRecoilPx": 8,
+      "cameraDecay": "(1-progress)^2",
+      "camera": "먹선 파열과 같은 실제820~988ms에 공유 접촉 clock의90동작ms를 따라 방향성 반동을 한 번 적용한다.",
+      "reducedMotion": "카메라 반동은0이며 먹줄기4개·먹뭉치8개·비산조각9개로 줄인다. 기하 확장과 이동은 멈추고 같은 공유 접촉 clock으로 알파만 감쇠한다.",
+      "scope": "인물 뒤의 타점 효과만 더한다. 캐릭터 포즈 변형·명암 반전·추가 히트스톱·음향·새 그림·유료 호출은 없다.",
+      "outerScale": 10,
+      "inkFragments": 18,
+      "coreBlots": 15,
+      "actionDurationMs": 90,
+      "endMs": 988
+    },
+    "impactSlowMotion": {
+      "startMs": 820,
+      "endMs": 940,
+      "realDurationMs": 120,
+      "timeScale": 0.35
+    },
+    "contactClock": "min(max(timeMs-820,0),120)×0.35+max(timeMs-940,0). 실제940ms에42동작ms,실제988ms에90동작ms이며 이후에는1배로 진행한다.",
+    "pressureClockDurationMs": 782
+  },
+  "runtime": {
+    "sourceCoordinates": {
+      "actorContact": {
+        "animation": "cross-punch-south-east",
+        "frameIndex": 5,
+        "fist": {
+          "x": 69,
+          "y": 50
+        },
+        "feet": {
+          "x": 48,
+          "y": 78
+        },
+        "scale": 3.8
+      },
+      "targetIdle": {
+        "animation": "stand",
+        "frameIndex": 0,
+        "face": {
+          "x": 33,
+          "y": 33
+        },
+        "anchor": {
+          "x": 51,
+          "y": 62
+        },
+        "scale": 1.85
+      },
+      "targetContact": {
+        "animation": "die1",
+        "frameIndex": 2,
+        "face": {
+          "x": 30,
+          "y": 33
+        },
+        "anchor": {
+          "x": 48,
+          "y": 62
+        },
+        "scale": 1.85
+      },
+      "alignment": "대기·접촉 원본의 파란 얼굴이 같은 세계좌표에 놓이도록 기준점을 맞춘다.",
+      "targetOrigin": {
+        "x": 590,
+        "y": 354
+      },
+      "contactWorld": {
+        "x": 556.7,
+        "y": 300.35
+      },
+      "actorFeet": {
+        "x": 476.9,
+        "y": 406.75
+      }
+    },
+    "reusedFrames": [
+      {
+        "key": "guard",
+        "assetId": "ai/ataho-v2",
+        "animation": "cross-punch-south-east",
+        "frameIndex": 0,
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Cross_Punch/south-east/frame_000.png",
+        "width": 96,
+        "height": 96,
+        "sha256": "1e45e9c2f4bf77d984bf0fd2c0562f11b08785361c4dc4082c758fe50649c103"
+      },
+      {
+        "key": "coil",
+        "assetId": "ai/ataho-v2",
+        "animation": "cross-punch-south-east",
+        "frameIndex": 1,
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Cross_Punch/south-east/frame_001.png",
+        "width": 96,
+        "height": 96,
+        "sha256": "b9e75d46261565363215af40c071fe64385b1269d7f805715ad3c3c25f95476b"
+      },
+      {
+        "key": "load",
+        "assetId": "ai/ataho-v2",
+        "animation": "cross-punch-south-east",
+        "frameIndex": 2,
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Cross_Punch/south-east/frame_002.png",
+        "width": 96,
+        "height": 96,
+        "sha256": "9a473fa1da0cfac2919a088f8c69024826789e0cda99b0a47c3cff3dcf8b216a"
+      },
+      {
+        "key": "open",
+        "assetId": "ai/ataho-v2",
+        "animation": "cross-punch-south-east",
+        "frameIndex": 3,
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Cross_Punch/south-east/frame_003.png",
+        "width": 96,
+        "height": 96,
+        "sha256": "637b8ac7c0bbb9d4b85d588e73a7290bf90f31f86456062895db647e060d0371"
+      },
+      {
+        "key": "chamber",
+        "assetId": "ai/ataho-v2",
+        "animation": "cross-punch-south-east",
+        "frameIndex": 4,
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Cross_Punch/south-east/frame_004.png",
+        "width": 96,
+        "height": 96,
+        "sha256": "18532fa626bfb7889b0fd3ffe0fe934714583390ee1854fd6e7d527914069d62"
+      },
+      {
+        "key": "strike",
+        "assetId": "ai/ataho-v2",
+        "animation": "cross-punch-south-east",
+        "frameIndex": 5,
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Cross_Punch/south-east/frame_005.png",
+        "width": 96,
+        "height": 96,
+        "sha256": "da580d4c6f2f5ef5caa568f3c09e0516eea21be90ae577c8eaad7bc2d15e6851"
+      },
+      {
+        "key": "recover",
+        "assetId": "ai/ataho-v2",
+        "animation": "cross-punch-south-east",
+        "frameIndex": 4,
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Cross_Punch/south-east/frame_004.png",
+        "width": 96,
+        "height": 96,
+        "sha256": "18532fa626bfb7889b0fd3ffe0fe934714583390ee1854fd6e7d527914069d62"
+      },
+      {
+        "key": "targetIdle",
+        "assetId": "ai/yeti",
+        "animation": "stand",
+        "frameIndex": 0,
+        "localPath": "public/assets/maplestory/yeti-ai/frames/stand/frame-00.png",
+        "width": 103,
+        "height": 115,
+        "sha256": "e81d79fe728708bccb9f8b018515ea453a2faf28870e5642291579bbcf7ad8ff"
+      },
+      {
+        "key": "targetHit",
+        "assetId": "ai/yeti",
+        "animation": "die1",
+        "frameIndex": 2,
+        "localPath": "public/assets/maplestory/yeti-ai/frames/die1/frame-02.png",
+        "width": 96,
+        "height": 108,
+        "sha256": "53f57c14f7f3503d3a9807ef388b883a9b02dfcc01b7b55bbef668fba289a48f"
+      },
+      {
+        "key": "targetFall1",
+        "assetId": "ai/yeti",
+        "animation": "die1",
+        "frameIndex": 3,
+        "localPath": "public/assets/maplestory/yeti-ai/frames/die1/frame-03.png",
+        "width": 97,
+        "height": 101,
+        "sha256": "85e1fc329f126ee6f8593e215f1336f91e13529a3acbf1e2fb3859b37ee9c6cc"
+      },
+      {
+        "key": "targetFall2",
+        "assetId": "ai/yeti",
+        "animation": "die1",
+        "frameIndex": 4,
+        "localPath": "public/assets/maplestory/yeti-ai/frames/die1/frame-04.png",
+        "width": 109,
+        "height": 69,
+        "sha256": "b6184fc999410717f7c6da63e761aaa4177c757eec32b842cf690857744798b7"
+      }
+    ]
+  },
+  "review": {
+    "status": "awaiting-user-playback-review",
+    "aestheticTargets": [
+      "장전 시작부터 흑백으로 바뀌는 흐름",
+      "제자리320ms 장전과90ms·273px 접근의 대비",
+      "첫120ms만0.35배인 접촉 슬로에서 명중·예티 반응·먹선이 즉시 함께 시작하는지",
+      "같은 구도의 흑백 명중220ms에서 결정타 확대로 잇는 리듬",
+      "짧은 접촉 슬로 뒤 밀림과 정상속도 장거리 방출의 대비",
+      "실제 접촉에만 나타나는 타점의 거칠고 불규칙한 먹선 파열과 방향성 카메라 반동의 타격감"
+    ],
+    "userFeedback": "중복 장전을 없애고 제자리에서 한 번 장전한 채 정권을 뻗으며 초고속으로 접근한다. 장전320ms와 명중 강조220ms를 유지하고, 장전 시작부터 흑백 효과를 적용한다. 실제 타점 도달 전에는 예티가 반응하지 않게 한다. 명중 직후 짧은 슬로를 적용한다.",
+    "impactFeedback": "먹선이 긴 직선처럼 보여 타점에서 거칠고 불규칙하게 터지도록 요청."
+  }
+}

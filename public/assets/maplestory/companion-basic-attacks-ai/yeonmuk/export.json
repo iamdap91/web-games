@@ -1,0 +1,180 @@
+{
+  "operation": "byte-preserving copy only; no crop, repaint, flip, scale or pose deformation",
+  "coordinates": "engine bottom pivot; pivot.x=32 and pivot.y=imageHeight-footY",
+  "south-east": {
+    "source": "reused-south-east/runtime/talisman-cast",
+    "sourceIndices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "footY": 62,
+    "pivot": {
+      "x": 32,
+      "y": 2
+    },
+    "idleSource": "reused-south-east/runtime/talisman-cast/00.png",
+    "originalSequence": "ready04, cast01, cast02, cast03, cast04, cast02, cast01, ready04",
+    "releaseSourceIndex": 3,
+    "holdSourceIndex": 4
+  },
+  "north-west": {
+    "sourceDirection": "approved north-west rotation for both start and end",
+    "frame0": "provider returns input with 20 visible RGB changes and identical alpha; original approved input preserved separately",
+    "runtimeSourceIndices": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      "approved rotation"
+    ],
+    "footY": 61,
+    "pivot": {
+      "x": 32,
+      "y": 3
+    },
+    "idleSource": "originals/rotations/north-west.png",
+    "selectedAttempt": "c52f6cb2-a2b0-4db5-94d6-352203370a15",
+    "lastFrame": "provider raw08 has 53 visible RGB changes and identical alpha compared to approved input. Playback runtime07 uses the approved original identical pose instead; raw08 preserved unchanged."
+  },
+  "verification": "static image and alpha/pixel metadata only; parent owns actual playback and GIF export; user owns quality judgment",
+  "scope": "only representative south-east and north-west, no direction expansion before user GIF review",
+  "selectedSources": [
+    {
+      "direction": "south-east",
+      "runtimeIndex": 0,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/reused-south-east/runtime/talisman-cast/00.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/south-east/00.png",
+      "sha256": "7e4a93797fecdf1eec698b581896b2b372bf67dd859cc9127baf70c2fadd93ae",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "south-east",
+      "runtimeIndex": 1,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/reused-south-east/runtime/talisman-cast/01.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/south-east/01.png",
+      "sha256": "9d20e1a296bc04c39032094de3d5229e75db4d0eb96069287261e0aeda467a72",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "south-east",
+      "runtimeIndex": 2,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/reused-south-east/runtime/talisman-cast/02.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/south-east/02.png",
+      "sha256": "1ff332fd6d6aad136628629c7460cb99ecb8ddf3219a7dd613679706df807cee",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "south-east",
+      "runtimeIndex": 3,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/reused-south-east/runtime/talisman-cast/03.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/south-east/03.png",
+      "sha256": "1ff752388617d98f69ebd023512784cc95d26e6a116b4fc2a200690ec2462bd0",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "south-east",
+      "runtimeIndex": 4,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/reused-south-east/runtime/talisman-cast/04.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/south-east/04.png",
+      "sha256": "8761fa204223265c3065722e03350599d09ab0f38aaa0013e9fc0d4c3fbd3909",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "south-east",
+      "runtimeIndex": 5,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/reused-south-east/runtime/talisman-cast/05.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/south-east/05.png",
+      "sha256": "1ff332fd6d6aad136628629c7460cb99ecb8ddf3219a7dd613679706df807cee",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "south-east",
+      "runtimeIndex": 6,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/reused-south-east/runtime/talisman-cast/06.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/south-east/06.png",
+      "sha256": "9d20e1a296bc04c39032094de3d5229e75db4d0eb96069287261e0aeda467a72",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "south-east",
+      "runtimeIndex": 7,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/reused-south-east/runtime/talisman-cast/07.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/south-east/07.png",
+      "sha256": "7e4a93797fecdf1eec698b581896b2b372bf67dd859cc9127baf70c2fadd93ae",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "north-west",
+      "runtimeIndex": 0,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/north-west/c52f6cb2-a2b0-4db5-94d6-352203370a15/01.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/north-west/00.png",
+      "sha256": "9d5d88421198bac135a5bf73ea0a9e15fef3508432cdafec68c3a14d57ed9643",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "north-west",
+      "runtimeIndex": 1,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/north-west/c52f6cb2-a2b0-4db5-94d6-352203370a15/02.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/north-west/01.png",
+      "sha256": "df8cbbffc61a971fe2e519f356b24ddd0dccee93e0d37d4bbd235cfd2a08a55e",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "north-west",
+      "runtimeIndex": 2,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/north-west/c52f6cb2-a2b0-4db5-94d6-352203370a15/03.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/north-west/02.png",
+      "sha256": "6d6fdf9e9c305106bcac84c8f0891c91b4027b11ae8f50d9ec9cb8a112146366",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "north-west",
+      "runtimeIndex": 3,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/north-west/c52f6cb2-a2b0-4db5-94d6-352203370a15/04.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/north-west/03.png",
+      "sha256": "697f54dca2f8a78cdbe689de3ad960e913591461114b85c476b2b4fa5f9b9722",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "north-west",
+      "runtimeIndex": 4,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/north-west/c52f6cb2-a2b0-4db5-94d6-352203370a15/05.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/north-west/04.png",
+      "sha256": "7a78c2d01f8effa065aa511812c2166ffeb33e2f5f6efdd696931257efd19b1b",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "north-west",
+      "runtimeIndex": 5,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/north-west/c52f6cb2-a2b0-4db5-94d6-352203370a15/06.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/north-west/05.png",
+      "sha256": "fa085afef55993e793c6da54e51bfb2c5879475fc52430f55497a1c2ebf4c908",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "north-west",
+      "runtimeIndex": 6,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/north-west/c52f6cb2-a2b0-4db5-94d6-352203370a15/07.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/north-west/06.png",
+      "sha256": "b59333585d921a6a41d0b5e042c0878cb93a4dd08a58302316400d0879c569b3",
+      "unchangedCopy": true
+    },
+    {
+      "direction": "north-west",
+      "runtimeIndex": 7,
+      "source": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/north-west.png",
+      "runtimePath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/runtime/north-west/07.png",
+      "sha256": "9a5b7789b003fa8a985e8f3e9f2db52da5185ee0921adc29f7097be64134e5c3",
+      "unchangedCopy": true
+    }
+  ]
+}

@@ -1,0 +1,755 @@
+{
+  "schemaVersion": 1,
+  "status": "awaiting-user-gif-review",
+  "createdAt": "2026-10-19",
+  "approvalPending": false,
+  "userGIFReviewPending": true,
+  "budget": {
+    "approvedGenerations": 70,
+    "availablePlanGenerationsAtCheck": 90.35,
+    "availableCreditsUsd": 0,
+    "generationsSpent": 70,
+    "uploadCount": 6,
+    "generationCalls": 7,
+    "maximumChargeHeadroomPerCall": 10,
+    "spendUsdCredits": false,
+    "purchaseSubscription": false,
+    "generationsReserved": 0,
+    "availablePlanGenerationsAtLatestCheck": 20.35,
+    "expectedTotalGenerations": 70,
+    "expectedUnusedApprovalGenerations": 0,
+    "fixedShapeChargeEvidence": "부모 세션이 PixelLab search_help 문서에서 edit_image 32–256 크기 tier 10 generations, 512 tier 25 generations를 확인했다. 이 작업은 모든 call을 2 frames, 64×64로 고정한다. 첫 완료의 실제 청구도 10 generations였다.",
+    "availableCreditsUsdAtLatestCheck": 0,
+    "unspentApprovalGenerations": 0,
+    "completedCalls": 7,
+    "additionalCallsPlanned": 0
+  },
+  "constraints": {
+    "endpointDirections": ["south-east", "north-west"],
+    "directionsPerEntry": 2,
+    "maxAttemptsPerDirectionAndMethod": 2,
+    "currentPlannedAttemptsPerEntry": 1,
+    "generateInbetweens": false,
+    "expandDirectionsBeforeUserGIFReview": false,
+    "mirrorDirections": false,
+    "editTool": "mcp__pixellab__edit_image",
+    "batchInputsPerCall": 2,
+    "outputWidth": 64,
+    "outputHeight": 64,
+    "noBackground": true
+  },
+  "evidence": {
+    "baseImagesViewed": true,
+    "baseImagesViewedCount": 6,
+    "baseImageInspection": "view_image로 아타호·연묵·비월의 south-east/north-west 원본 PNG 6장을 직접 확인했다. PNG 헤더로 크기를 확인하고 SHA-256과 byte 크기를 기록했다.",
+    "techniqueReferenceEvidence": "부모 세션이 Kotaku 포즈 정적 예시를 확인했다. 실제 영상 재생은 이번 자산 단계에서 확인하지 않았다.",
+    "qualityApproval": "생성 품질은 사용자 GIF 확인 대기이며 에이전트가 대신 채택하지 않는다.",
+    "allGeneratedImagesViewedWith": "view_image",
+    "allGeneratedImagesViewedCount": 14,
+    "originalBytesPreserved": true,
+    "alphaBoundsConvention": "PIL getbbox의 right/bottom은 마지막 픽셀 다음의 배타적 경계이다. 이미지 전체를 회전하거나 반전하지 않았다."
+  },
+  "blocker": null,
+  "entries": [
+    {
+      "id": "gainax",
+      "actor": "ataho",
+      "status": "awaiting-user-gif-review",
+      "plannedPrompt": "Edit both supplied 64x64 pixel-art character sprites into the SAME requested key pose, preserving each input's original south-east or north-west body-facing direction separately. Keep the exact character identity, animal species, face, ears, clothing, colours, accessories and asymmetric design from that input. Do not mirror or rotate an entire original sprite. Draw the pose anatomically as new pixel art. Keep one whole character per frame, crisp original pixel-art style, transparent background, no text, no effects and no other characters. Keep the entire pose inside the 64x64 canvas; grounded poses keep the soles near the original bottom foot baseline. This is a single held endpoint pose, not an animation or sheet. Confident planted hero stance. Both arms are visibly folded firmly across the chest, shoulders broad, chest proud, chin slightly raised, feet spread apart in a solid stable base. The arms must read clearly as crossed arms rather than fists guarding the face. Preserve Ataho's orange tiger stripes, brown and ivory sleeveless clothing with charcoal accents and tail. A calm veteran's imposing but relaxed pose.",
+      "plannedOutputRoot": "public/assets/maplestory/anime-signatures-ai/gainax",
+      "directions": {
+        "south-east": {
+          "idle": {
+            "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "9252454bece5169c263158813806999b45dfe70f6ff8bb08ab0e9669bdd7c65d",
+            "sizeBytes": 3780
+          },
+          "pose": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/gainax/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sizeBytes": 2429,
+            "sha256": "fb36b5fe1213007a8555a9c0fc7ec4df3d2240e989e27a9785194e1b1abd5a5c",
+            "alphaBounds": {
+              "left": 9,
+              "top": 1,
+              "right": 51,
+              "bottom": 63
+            },
+            "canvasEdgeContact": false,
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/62f492eb-559d-472b-8ba1-c3a6d66dba34/download?index=0",
+            "frameIndex": 0,
+            "generatedFromDirection": "south-east",
+            "mirrored": false
+          }
+        },
+        "north-west": {
+          "idle": {
+            "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "1b0938808b45571cefcbee34fb3b8dda29b842ff73a0038d3c5568122f2dcd68",
+            "sizeBytes": 2694
+          },
+          "pose": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/gainax/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sizeBytes": 1778,
+            "sha256": "e3b08ff9b822ad83b42a420a0a23c4e07fa15f33b8fccf2c1326f6626a819572",
+            "alphaBounds": {
+              "left": 19,
+              "top": 3,
+              "right": 59,
+              "bottom": 64
+            },
+            "canvasEdgeContact": true,
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/62f492eb-559d-472b-8ba1-c3a6d66dba34/download?index=1",
+            "frameIndex": 1,
+            "generatedFromDirection": "north-west",
+            "mirrored": false
+          }
+        }
+      },
+      "generation": {
+        "provider": "PixelLab",
+        "tool": "edit_image",
+        "attempt": 1,
+        "jobId": "62f492eb-559d-472b-8ba1-c3a6d66dba34",
+        "sourceUploads": [
+          {
+            "direction": "south-east",
+            "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south-east.png",
+            "ref": "upload:a4722d35-9cff-4164-9e3e-ca0ac50cb055",
+            "uploadId": "a4722d35-9cff-4164-9e3e-ca0ac50cb055"
+          },
+          {
+            "direction": "north-west",
+            "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/north-west.png",
+            "ref": "upload:6aa737dd-bdfb-4998-9796-7f5b275894c1",
+            "uploadId": "6aa737dd-bdfb-4998-9796-7f5b275894c1"
+          }
+        ],
+        "originalResponsePath": "public/assets/maplestory/anime-signatures-ai/gainax/generation-response.json",
+        "spentGenerations": 10,
+        "quotedGenerations": 10,
+        "status": "completed",
+        "assetId": "5dc05e3a-70cb-5084-89e4-ee3243e13589",
+        "completionResponsePath": "public/assets/maplestory/anime-signatures-ai/gainax/completion-response.json",
+        "downloadPreservedOriginalBytes": true
+      },
+      "observation": {
+        "viewedWith": "view_image",
+        "views": 2,
+        "sourceFacingCompared": true,
+        "footBaseline": "두 방향의 alphaBounds 최하단은 발이다. 꼬리·무기가 지면 기준보다 내려오지 않는다.",
+        "qualityAcceptance": "사용자 GIF 판정 대기",
+        "details": "아타호 SE 앞/옆과 NW 뒤/옆 방향을 각각 유지하며 팔짱 실루엣이 생겼다. NW 발이 캔버스 하단에 닿는다."
+      }
+    },
+    {
+      "id": "sunrise",
+      "actor": "biwol",
+      "status": "awaiting-user-gif-review",
+      "plannedPrompt": "Edit both supplied 64x64 pixel-art character sprites into the SAME requested key pose, preserving each input's original south-east or north-west body-facing direction separately. Keep the exact character identity, animal species, face, ears, clothing, colours, accessories and asymmetric design from that input. Do not mirror or rotate an entire original sprite. Draw the pose anatomically as new pixel art. Keep one whole character per frame, crisp original pixel-art style, transparent background, no text, no effects and no other characters. Keep the entire pose inside the 64x64 canvas; grounded poses keep the soles near the original bottom foot baseline. This is a single held endpoint pose, not an animation or sheet. Dramatic forced-perspective dagger declaration stance. The near arm extends the character's existing short dagger toward the viewer, making its blade and hand the largest foreground shapes; the body is visibly set farther back with the other arm behind. Use a short dagger, never a long sword. Show strong depth through new arm, hand and shoulder anatomy while preserving each input's body-facing direction. Preserve Biwol's rabbit ears, dark-plum ninja outfit and brick-coloured scarf and existing dagger design. Feet stay grounded.",
+      "plannedOutputRoot": "public/assets/maplestory/anime-signatures-ai/sunrise",
+      "directions": {
+        "south-east": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "f03340378d1f6e0eca9cf3acaba62efc43ac80962a06ead4a50d071f0626afd3",
+            "sizeBytes": 2544
+          },
+          "pose": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/sunrise/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sizeBytes": 1685,
+            "sha256": "9dec2244c181a5b11318e17e38a87736428365532b8e6cdfb6c9372c9ffa8b27",
+            "alphaBounds": {
+              "left": 2,
+              "top": 1,
+              "right": 49,
+              "bottom": 62
+            },
+            "canvasEdgeContact": false,
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/843a702a-5713-4120-9ff8-cb475b313625/download?index=0",
+            "frameIndex": 0,
+            "generatedFromDirection": "south-east",
+            "mirrored": false
+          }
+        },
+        "north-west": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "7b509b5591ebb2fb21b42edfc15d593e0b38f3f206e3345babd16f806486b298",
+            "sizeBytes": 1894
+          },
+          "pose": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/sunrise/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sizeBytes": 1274,
+            "sha256": "82378cb452a8fca5e5b48e31c3368e5fa5eddc17703c610ac2bf15d14a92e039",
+            "alphaBounds": {
+              "left": 16,
+              "top": 1,
+              "right": 62,
+              "bottom": 62
+            },
+            "canvasEdgeContact": false,
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/843a702a-5713-4120-9ff8-cb475b313625/download?index=1",
+            "frameIndex": 1,
+            "generatedFromDirection": "north-west",
+            "mirrored": false
+          }
+        }
+      },
+      "generation": {
+        "provider": "PixelLab",
+        "tool": "edit_image",
+        "attempt": 1,
+        "jobId": "843a702a-5713-4120-9ff8-cb475b313625",
+        "sourceUploads": [
+          {
+            "direction": "south-east",
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol/rotations/south-east.png",
+            "ref": "upload:241dfd3e-e6d0-4199-bbd8-77f7f54a62b0",
+            "uploadId": "241dfd3e-e6d0-4199-bbd8-77f7f54a62b0"
+          },
+          {
+            "direction": "north-west",
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol/rotations/north-west.png",
+            "ref": "upload:f1563012-4d2a-4164-8f32-a75c3082b676",
+            "uploadId": "f1563012-4d2a-4164-8f32-a75c3082b676"
+          }
+        ],
+        "originalResponsePath": "public/assets/maplestory/anime-signatures-ai/sunrise/generation-response.json",
+        "spentGenerations": 10,
+        "assetId": "a58d4e62-5881-51db-81fc-6fdbfaa09dbc",
+        "quotedGenerations": 10,
+        "status": "completed",
+        "completionResponsePath": "public/assets/maplestory/anime-signatures-ai/sunrise/completion-response.json",
+        "downloadPreservedOriginalBytes": true
+      },
+      "observation": {
+        "viewedWith": "view_image",
+        "views": 2,
+        "sourceFacingCompared": true,
+        "footBaseline": "두 방향의 alphaBounds 최하단은 발이다. 꼬리·무기가 지면 기준보다 내려오지 않는다.",
+        "qualityAcceptance": "사용자 GIF 판정 대기",
+        "details": "비월의 짧은 단검을 앞세운 새 팔 자세를 확인했다. SE는 손을 전경에 크게 배치했다. NW는 원근 강조가 의도보다 약할 수 있으므로 사용자 확인이 필요하다."
+      }
+    },
+    {
+      "id": "yamada-hands",
+      "actor": "yeonmuk",
+      "status": "awaiting-user-gif-review",
+      "plannedPrompt": "Edit both supplied 64x64 pixel-art character sprites into the SAME requested key pose, preserving each input's original south-east or north-west body-facing direction separately. Keep the exact character identity, animal species, face, ears, clothing, colours, accessories and asymmetric design from that input. Do not mirror or rotate an entire original sprite. Draw the pose anatomically as new pixel art. Keep one whole character per frame, crisp original pixel-art style, transparent background, no text, no effects and no other characters. Keep the entire pose inside the 64x64 canvas; grounded poses keep the soles near the original bottom foot baseline. This is a single held endpoint pose, not an animation or sheet. Surprised conversational reaction. Both open hands rise separately in front of the upper chest with fingers and palms clearly open, elbows bent and away from the body, shoulders slightly raised. Hands should express a flustered 'wait, what?' reaction, not a spell cast, prayer, clenched fists or an attack. Preserve Yeonmuk's silver fox ears, pale hair, long tail, blue outfit and accessories. Feet stay grounded.",
+      "plannedOutputRoot": "public/assets/maplestory/anime-signatures-ai/yamada-hands",
+      "directions": {
+        "south-east": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "034ea4aabfc3f5b88bf1ff64e51dcb5a4c0e9c6693d0c972dc890c073a11000c",
+            "sizeBytes": 2846
+          },
+          "pose": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/yamada-hands/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sizeBytes": 2013,
+            "sha256": "2d211615ce2acf6b230bc9730dc06a591de5977dd2a78b841a8e1c7632e6ff89",
+            "alphaBounds": {
+              "left": 10,
+              "top": 1,
+              "right": 53,
+              "bottom": 62
+            },
+            "canvasEdgeContact": false,
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/a9256702-d7fc-42f9-bfdd-97a0526e7977/download?index=0",
+            "frameIndex": 0,
+            "generatedFromDirection": "south-east",
+            "mirrored": false
+          }
+        },
+        "north-west": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "9a5b7789b003fa8a985e8f3e9f2db52da5185ee0921adc29f7097be64134e5c3",
+            "sizeBytes": 2207
+          },
+          "pose": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/yamada-hands/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sizeBytes": 1453,
+            "sha256": "336f94b7db329e811928f3409926c5972c4871419f57029dbc978dff0aa8f319",
+            "alphaBounds": {
+              "left": 24,
+              "top": 2,
+              "right": 58,
+              "bottom": 61
+            },
+            "canvasEdgeContact": false,
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/a9256702-d7fc-42f9-bfdd-97a0526e7977/download?index=1",
+            "frameIndex": 1,
+            "generatedFromDirection": "north-west",
+            "mirrored": false
+          }
+        }
+      },
+      "generation": {
+        "provider": "PixelLab",
+        "tool": "edit_image",
+        "attempt": 1,
+        "jobId": "a9256702-d7fc-42f9-bfdd-97a0526e7977",
+        "sourceUploads": [
+          {
+            "direction": "south-east",
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/south-east.png",
+            "ref": "upload:ca69b32e-4870-4eca-9b74-3ce8b740d02b",
+            "uploadId": "ca69b32e-4870-4eca-9b74-3ce8b740d02b"
+          },
+          {
+            "direction": "north-west",
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/north-west.png",
+            "ref": "upload:b957d162-fa7b-4cb2-9a7e-898b0a43b705",
+            "uploadId": "b957d162-fa7b-4cb2-9a7e-898b0a43b705"
+          }
+        ],
+        "originalResponsePath": "public/assets/maplestory/anime-signatures-ai/yamada-hands/generation-response.json",
+        "spentGenerations": 10,
+        "assetId": "a4c78792-058e-5ffc-b930-cc1464c8351a",
+        "quotedGenerations": 10,
+        "status": "completed",
+        "completionResponsePath": "public/assets/maplestory/anime-signatures-ai/yamada-hands/completion-response.json",
+        "downloadPreservedOriginalBytes": true
+      },
+      "observation": {
+        "viewedWith": "view_image",
+        "views": 2,
+        "sourceFacingCompared": true,
+        "footBaseline": "두 방향의 alphaBounds 최하단은 발이다. 꼬리·무기가 지면 기준보다 내려오지 않는다.",
+        "qualityAcceptance": "사용자 GIF 판정 대기",
+        "details": "연묵 SE/NW 양쪽에 따로 벌린 열린 손 실루엣이 보인다. 당황한 대화 반응으로 읽히는지는 사용자 GIF 판정 대기이다."
+      }
+    },
+    {
+      "id": "yamada-mask",
+      "actor": "yeonmuk",
+      "status": "awaiting-user-gif-review",
+      "plannedPrompt": "Edit both supplied 64x64 pixel-art character sprites into the SAME requested key pose, preserving each input's original south-east or north-west body-facing direction separately. Keep the exact character identity, animal species, face, ears, clothing, colours, accessories and asymmetric design from that input. Do not mirror or rotate an entire original sprite. Draw the pose anatomically as new pixel art. Keep one whole character per frame, crisp original pixel-art style, transparent background, no text, no effects and no other characters. Keep the entire pose inside the 64x64 canvas; grounded poses keep the soles near the original bottom foot baseline. This is a single held endpoint pose, not an animation or sheet. Shy, unsettled conversational reaction. Raise the near hand so its relaxed fingers clearly cover the mouth area, partly hiding the expression. The other arm rests across the lower torso, supporting the raised elbow. The hand must cover the mouth rather than the eyes or forehead. Preserve Yeonmuk's silver fox ears, pale hair, long tail, blue outfit and accessories. Feet stay grounded.",
+      "plannedOutputRoot": "public/assets/maplestory/anime-signatures-ai/yamada-mask",
+      "directions": {
+        "south-east": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "034ea4aabfc3f5b88bf1ff64e51dcb5a4c0e9c6693d0c972dc890c073a11000c",
+            "sizeBytes": 2846
+          },
+          "pose": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/yamada-mask/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sizeBytes": 1921,
+            "sha256": "668fda8bc5d3863330c3b79c5251b3b8d849836ffe756010e88b06b91ee2ad06",
+            "alphaBounds": {
+              "left": 22,
+              "top": 4,
+              "right": 55,
+              "bottom": 62
+            },
+            "canvasEdgeContact": false,
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/b0df7157-a68b-41bb-be65-e535b18f9ecf/download?index=0",
+            "frameIndex": 0,
+            "generatedFromDirection": "south-east",
+            "mirrored": false
+          }
+        },
+        "north-west": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "9a5b7789b003fa8a985e8f3e9f2db52da5185ee0921adc29f7097be64134e5c3",
+            "sizeBytes": 2207
+          },
+          "pose": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/yamada-mask/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sizeBytes": 1255,
+            "sha256": "05b03d3154566c1660f39ca415ce1dee1d07832408472bbfd6f7d169def89d00",
+            "alphaBounds": {
+              "left": 28,
+              "top": 2,
+              "right": 50,
+              "bottom": 60
+            },
+            "canvasEdgeContact": false,
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/b0df7157-a68b-41bb-be65-e535b18f9ecf/download?index=1",
+            "frameIndex": 1,
+            "generatedFromDirection": "north-west",
+            "mirrored": false
+          }
+        }
+      },
+      "generation": {
+        "provider": "PixelLab",
+        "tool": "edit_image",
+        "attempt": 1,
+        "jobId": "b0df7157-a68b-41bb-be65-e535b18f9ecf",
+        "sourceUploads": [
+          {
+            "direction": "south-east",
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/south-east.png",
+            "ref": "upload:ca69b32e-4870-4eca-9b74-3ce8b740d02b",
+            "uploadId": "ca69b32e-4870-4eca-9b74-3ce8b740d02b"
+          },
+          {
+            "direction": "north-west",
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/north-west.png",
+            "ref": "upload:b957d162-fa7b-4cb2-9a7e-898b0a43b705",
+            "uploadId": "b957d162-fa7b-4cb2-9a7e-898b0a43b705"
+          }
+        ],
+        "originalResponsePath": "public/assets/maplestory/anime-signatures-ai/yamada-mask/generation-response.json",
+        "spentGenerations": 10,
+        "assetId": "b7d0a21e-dd65-5bed-8826-c2b09ea4a6b9",
+        "quotedGenerations": 10,
+        "status": "completed",
+        "completionResponsePath": "public/assets/maplestory/anime-signatures-ai/yamada-mask/completion-response.json",
+        "downloadPreservedOriginalBytes": true
+      },
+      "observation": {
+        "viewedWith": "view_image",
+        "views": 2,
+        "sourceFacingCompared": true,
+        "footBaseline": "두 방향의 alphaBounds 최하단은 발이다. 꼬리·무기가 지면 기준보다 내려오지 않는다.",
+        "qualityAcceptance": "사용자 GIF 판정 대기",
+        "details": "연묵 SE에서 입 앞 손과 보조 팔의 새 자세를 확인했다. NW는 뒤쪽 시점이어서 입가림의 판독성을 사용자 GIF로 확인해야 한다."
+      }
+    },
+    {
+      "id": "shaft",
+      "actor": "yeonmuk",
+      "status": "awaiting-user-gif-review",
+      "plannedPrompt": "Edit both supplied 64x64 pixel-art character sprites into the SAME requested key pose, preserving each input's original south-east or north-west body-facing direction separately. Keep the exact character identity, animal species, face, ears, clothing, colours, accessories and asymmetric design from that input. Do not mirror or rotate an entire original sprite. Draw the pose anatomically as new pixel art. Keep one whole character per frame, crisp original pixel-art style, transparent background, no text, no effects and no other characters. Keep the entire pose inside the 64x64 canvas; grounded poses keep the soles near the original bottom foot baseline. This is a single held endpoint pose, not an animation or sheet. Anatomically drawn over-the-shoulder look. Keep the hips and torso facing the original input direction, twist the upper shoulder gently back, turn the head to look back over that shoulder, and tilt the neck conspicuously sideways. Redraw the head, neck and shoulders so the tilt is local to the neck, not an entire-sprite rotation. Preserve Yeonmuk's silver fox ears, pale hair, long tail, blue outfit and accessories. Keep balance and both feet grounded.",
+      "plannedOutputRoot": "public/assets/maplestory/anime-signatures-ai/shaft",
+      "directions": {
+        "south-east": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "034ea4aabfc3f5b88bf1ff64e51dcb5a4c0e9c6693d0c972dc890c073a11000c",
+            "sizeBytes": 2846
+          },
+          "pose": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/shaft/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sizeBytes": 2069,
+            "sha256": "b67415fd703dd4f0de9d9c33c234b417b9664aa5344c61416e0e8d18ac762229",
+            "alphaBounds": {
+              "left": 24,
+              "top": 2,
+              "right": 47,
+              "bottom": 64
+            },
+            "canvasEdgeContact": true,
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/e5f2defe-5840-4b9c-a29c-affbdbcde9bc/download?index=0",
+            "frameIndex": 0,
+            "generatedFromDirection": "south-east",
+            "mirrored": false
+          }
+        },
+        "north-west": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "9a5b7789b003fa8a985e8f3e9f2db52da5185ee0921adc29f7097be64134e5c3",
+            "sizeBytes": 2207
+          },
+          "pose": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/shaft/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sizeBytes": 1887,
+            "sha256": "7aa815d6620914c6b39381c8ce82280856b4a3e2a1216fce5d4a57e7d9b4e2ca",
+            "alphaBounds": {
+              "left": 19,
+              "top": 2,
+              "right": 43,
+              "bottom": 62
+            },
+            "canvasEdgeContact": false,
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/e5f2defe-5840-4b9c-a29c-affbdbcde9bc/download?index=1",
+            "frameIndex": 1,
+            "generatedFromDirection": "north-west",
+            "mirrored": false
+          }
+        }
+      },
+      "generation": {
+        "provider": "PixelLab",
+        "tool": "edit_image",
+        "attempt": 1,
+        "jobId": "e5f2defe-5840-4b9c-a29c-affbdbcde9bc",
+        "sourceUploads": [
+          {
+            "direction": "south-east",
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/south-east.png",
+            "ref": "upload:ca69b32e-4870-4eca-9b74-3ce8b740d02b",
+            "uploadId": "ca69b32e-4870-4eca-9b74-3ce8b740d02b"
+          },
+          {
+            "direction": "north-west",
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/north-west.png",
+            "ref": "upload:b957d162-fa7b-4cb2-9a7e-898b0a43b705",
+            "uploadId": "b957d162-fa7b-4cb2-9a7e-898b0a43b705"
+          }
+        ],
+        "originalResponsePath": "public/assets/maplestory/anime-signatures-ai/shaft/generation-response.json",
+        "spentGenerations": 10,
+        "assetId": "bd54cc28-329f-5789-a18f-931970ffd165",
+        "quotedGenerations": 10,
+        "status": "completed",
+        "completionResponsePath": "public/assets/maplestory/anime-signatures-ai/shaft/completion-response.json",
+        "downloadPreservedOriginalBytes": true
+      },
+      "observation": {
+        "viewedWith": "view_image",
+        "views": 2,
+        "sourceFacingCompared": true,
+        "footBaseline": "두 방향의 alphaBounds 최하단은 발이다. 꼬리·무기가 지면 기준보다 내려오지 않는다.",
+        "qualityAcceptance": "사용자 GIF 판정 대기",
+        "details": "통째 회전 없이 머리·목과 어깨를 다시 그린 결과이다. NW는 몸 뒤쪽을 유지하며 얼굴을 어깨 너머로 돌렸다. SE 목 기울임은 의도보다 약할 수 있고 발이 캔버스 하단에 닿아 사용자 확인이 필요하다."
+      }
+    },
+    {
+      "id": "seed",
+      "actor": "biwol",
+      "status": "awaiting-user-gif-review",
+      "plannedPrompt": "Redraw BOTH supplied original Biwol rabbit-ninja pixel sprites into a clearly airborne, dramatic anime declaration key pose. The first is the original SOUTH-EAST front three-quarter view and MUST stay south-east; the second is the original NORTH-WEST rear three-quarter view and MUST stay north-west with the back of the body visible. Preserve each input's character identity, asymmetric rabbit ears, dark-plum ninja clothing, brick-coloured scarf, colours and short dagger. Do not mirror either direction, do not rotate the whole original sprite, and do not copy a standing or running pose. In BOTH views, draw a strong whole-body C-shaped curve: the hips push forward while the spine visibly arches backward, the upper chest and head pull markedly back behind the hips, one leg stretches long diagonally downward and forward, and the other leg is sharply bent with the knee raised so the legs have clearly different shapes. BOTH feet must be visibly airborne with pointed foot tips and no standing support. This torso back-arch and large curved leg silhouette MUST be just as clear in the NORTH-WEST BACK view as in the front view. Put the short dagger in the forward extended hand, and let the brick-coloured scarf trail behind the arched torso. Keep the entire body, ears, scarf, dagger and BOTH complete foot tips within a 64x64 transparent canvas, leaving at least TWO fully transparent pixels of margin on ALL four sides. Maintain the same character scale in the two outputs while folding the airborne silhouette to fit; crisp original pixel-art style, no text, no background, no ground, no effects, no extra characters. One held endpoint pose per input, two independent directional views of the SAME airborne pose, not an animation or sprite sheet.",
+      "plannedOutputRoot": "public/assets/maplestory/anime-signatures-ai/seed",
+      "directions": {
+        "south-east": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "f03340378d1f6e0eca9cf3acaba62efc43ac80962a06ead4a50d071f0626afd3",
+            "sizeBytes": 2544
+          },
+          "pose": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/seed/attempt-2/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sizeBytes": 1716,
+            "sha256": "b8e06fb33def76e0c9ddf822fe5002bdb9ca7cd9ee1fb08a1e722cfea37c8cc1",
+            "alphaBounds": {
+              "left": 1,
+              "top": 1,
+              "right": 60,
+              "bottom": 62
+            },
+            "canvasEdgeContact": false,
+            "twoPixelMargin": false,
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/5a620810-5416-4f65-88a5-338dd1384025/download?index=0",
+            "frameIndex": 0,
+            "generatedFromDirection": "south-east",
+            "mirrored": false
+          }
+        },
+        "north-west": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "7b509b5591ebb2fb21b42edfc15d593e0b38f3f206e3345babd16f806486b298",
+            "sizeBytes": 1894
+          },
+          "pose": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/seed/attempt-2/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sizeBytes": 1585,
+            "sha256": "b8b71ae82638119824ef2ffa7a9d3ad33eeacdf67be4d2fad7bdd98495b1859e",
+            "alphaBounds": {
+              "left": 4,
+              "top": 1,
+              "right": 63,
+              "bottom": 62
+            },
+            "canvasEdgeContact": false,
+            "twoPixelMargin": false,
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/5a620810-5416-4f65-88a5-338dd1384025/download?index=1",
+            "frameIndex": 1,
+            "generatedFromDirection": "north-west",
+            "mirrored": false
+          }
+        }
+      },
+      "generation": {
+        "provider": "PixelLab",
+        "tool": "edit_image",
+        "attempt": 2,
+        "status": "completed",
+        "jobId": "5a620810-5416-4f65-88a5-338dd1384025",
+        "assetId": "bffc768e-113d-59ab-8844-9090ecc0cfa9",
+        "plannedPrompt": "Redraw BOTH supplied original Biwol rabbit-ninja pixel sprites into a clearly airborne, dramatic anime declaration key pose. The first is the original SOUTH-EAST front three-quarter view and MUST stay south-east; the second is the original NORTH-WEST rear three-quarter view and MUST stay north-west with the back of the body visible. Preserve each input's character identity, asymmetric rabbit ears, dark-plum ninja clothing, brick-coloured scarf, colours and short dagger. Do not mirror either direction, do not rotate the whole original sprite, and do not copy a standing or running pose. In BOTH views, draw a strong whole-body C-shaped curve: the hips push forward while the spine visibly arches backward, the upper chest and head pull markedly back behind the hips, one leg stretches long diagonally downward and forward, and the other leg is sharply bent with the knee raised so the legs have clearly different shapes. BOTH feet must be visibly airborne with pointed foot tips and no standing support. This torso back-arch and large curved leg silhouette MUST be just as clear in the NORTH-WEST BACK view as in the front view. Put the short dagger in the forward extended hand, and let the brick-coloured scarf trail behind the arched torso. Keep the entire body, ears, scarf, dagger and BOTH complete foot tips within a 64x64 transparent canvas, leaving at least TWO fully transparent pixels of margin on ALL four sides. Maintain the same character scale in the two outputs while folding the airborne silhouette to fit; crisp original pixel-art style, no text, no background, no ground, no effects, no extra characters. One held endpoint pose per input, two independent directional views of the SAME airborne pose, not an animation or sprite sheet.",
+        "sourceUploads": [
+          {
+            "direction": "south-east",
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol/rotations/south-east.png",
+            "ref": "upload:241dfd3e-e6d0-4199-bbd8-77f7f54a62b0",
+            "uploadId": "241dfd3e-e6d0-4199-bbd8-77f7f54a62b0"
+          },
+          {
+            "direction": "north-west",
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol/rotations/north-west.png",
+            "ref": "upload:f1563012-4d2a-4164-8f32-a75c3082b676",
+            "uploadId": "f1563012-4d2a-4164-8f32-a75c3082b676"
+          }
+        ],
+        "originalResponsePath": "public/assets/maplestory/anime-signatures-ai/seed/attempt-2/generation-response.json",
+        "quotedGenerations": 10,
+        "spentGenerations": 10,
+        "selectionStatus": "selected-for-user-gif-review",
+        "completionResponsePath": "public/assets/maplestory/anime-signatures-ai/seed/attempt-2/completion-response.json",
+        "downloadPreservedOriginalBytes": true,
+        "selectedBy": "parent-session-comparison",
+        "selectionReason": "NW의 벌어진 다리와 반대쪽 굽힘이 1차보다 공중 자세로 명확하고 두 방향 자세군이 맞는다.",
+        "qualityAccepted": false
+      },
+      "observation": {
+        "viewedWith": "view_image",
+        "views": 2,
+        "sourceFacingCompared": true,
+        "qualityAcceptance": "부모 세션이 2차 두 방향을 비교 선택했다. 최종 채택 품질은 사용자 GIF 판정 대기이다.",
+        "details": "2차 두 방향을 연결했다. NW의 벌어진 다리와 반대쪽 굽힘이 1차보다 공중 자세로 명확하고 SE/NW 자세군이 맞는다. 등 젖힘은 원작 의도보다 약하다. 두 방향 모두 2px 투명 여백 요청을 충족하지 못했다(top 1px, SE left 1px, NW right 1px). 실제 캔버스 경계 접촉은 없다. 1차 PNG와 생성 기록을 별도로 보존한다.",
+        "footBaseline": "공중 자세의 하단은 다리와 발끝이다. 지상 접촉으로 해석하지 않는다."
+      },
+      "previousAttempts": [
+        {
+          "attempt": 1,
+          "plannedPrompt": "Edit both supplied 64x64 pixel-art character sprites into the SAME requested key pose, preserving each input's original south-east or north-west body-facing direction separately. Keep the exact character identity, animal species, face, ears, clothing, colours, accessories and asymmetric design from that input. Do not mirror or rotate an entire original sprite. Draw the pose anatomically as new pixel art. Keep one whole character per frame, crisp original pixel-art style, transparent background, no text, no effects and no other characters. Keep the entire pose inside the 64x64 canvas; grounded poses keep the soles near the original bottom foot baseline. This is a single held endpoint pose, not an animation or sheet. Exaggerated anime aerial declaration pose, newly drawn with full-body anatomy. Arch the upper torso backward with the chest open, hold the near dagger arm confidently outward, bend the near knee high while the far leg sweeps into a large graceful diagonal curve. Spread the silhouette so the back arch and opposite leg curves are readable; both feet are off the ground. Preserve the original input's directional orientation, Biwol's rabbit ears, dark-plum ninja outfit and brick-coloured scarf and short dagger. Keep the whole silhouette within the 64x64 canvas.",
+          "directions": {
+            "south-east": {
+              "idle": {
+                "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol/rotations/south-east.png",
+                "width": 64,
+                "height": 64,
+                "sha256": "f03340378d1f6e0eca9cf3acaba62efc43ac80962a06ead4a50d071f0626afd3",
+                "sizeBytes": 2544
+              },
+              "pose": {
+                "localPath": "public/assets/maplestory/anime-signatures-ai/seed/south-east.png",
+                "width": 64,
+                "height": 64,
+                "sizeBytes": 1730,
+                "sha256": "52b11fb406cf46488125be2a01d9d3f2f624c45a0931f2ebfd052936721fa4a4",
+                "alphaBounds": {
+                  "left": 2,
+                  "top": 1,
+                  "right": 54,
+                  "bottom": 62
+                },
+                "canvasEdgeContact": false,
+                "sourceUrl": "https://api.pixellab.ai/mcp/images/ae13e1c7-6ecd-406a-b2ed-e02fc30ab225/download?index=0",
+                "frameIndex": 0,
+                "generatedFromDirection": "south-east",
+                "mirrored": false
+              }
+            },
+            "north-west": {
+              "idle": {
+                "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol/rotations/north-west.png",
+                "width": 64,
+                "height": 64,
+                "sha256": "7b509b5591ebb2fb21b42edfc15d593e0b38f3f206e3345babd16f806486b298",
+                "sizeBytes": 1894
+              },
+              "pose": {
+                "localPath": "public/assets/maplestory/anime-signatures-ai/seed/north-west.png",
+                "width": 64,
+                "height": 64,
+                "sizeBytes": 1551,
+                "sha256": "8feda71ebde7b8ebda46f357e68cbfd333a8e1abbf3375db003a83256a3bc1ab",
+                "alphaBounds": {
+                  "left": 8,
+                  "top": 1,
+                  "right": 61,
+                  "bottom": 62
+                },
+                "canvasEdgeContact": false,
+                "sourceUrl": "https://api.pixellab.ai/mcp/images/ae13e1c7-6ecd-406a-b2ed-e02fc30ab225/download?index=1",
+                "frameIndex": 1,
+                "generatedFromDirection": "north-west",
+                "mirrored": false
+              }
+            }
+          },
+          "generation": {
+            "provider": "PixelLab",
+            "tool": "edit_image",
+            "attempt": 1,
+            "jobId": "ae13e1c7-6ecd-406a-b2ed-e02fc30ab225",
+            "sourceUploads": [
+              {
+                "direction": "south-east",
+                "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol/rotations/south-east.png",
+                "ref": "upload:241dfd3e-e6d0-4199-bbd8-77f7f54a62b0",
+                "uploadId": "241dfd3e-e6d0-4199-bbd8-77f7f54a62b0"
+              },
+              {
+                "direction": "north-west",
+                "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol/rotations/north-west.png",
+                "ref": "upload:f1563012-4d2a-4164-8f32-a75c3082b676",
+                "uploadId": "f1563012-4d2a-4164-8f32-a75c3082b676"
+              }
+            ],
+            "originalResponsePath": "public/assets/maplestory/anime-signatures-ai/seed/generation-response.json",
+            "spentGenerations": 10,
+            "assetId": "67db5156-5aa5-5d4c-b40a-86599518c516",
+            "quotedGenerations": 10,
+            "status": "completed",
+            "completionResponsePath": "public/assets/maplestory/anime-signatures-ai/seed/completion-response.json",
+            "downloadPreservedOriginalBytes": true
+          },
+          "observation": {
+            "viewedWith": "view_image",
+            "views": 2,
+            "sourceFacingCompared": true,
+            "footBaseline": "공중 자세의 alphaBounds 하단은 벌린 다리와 발끝이다. 지상 접촉으로 해석하지 않는다.",
+            "qualityAcceptance": "사용자 GIF 판정 대기",
+            "details": "비월 SE/NW에 크게 벌린 다리와 공중 선언 실루엣이 생겼다. 중간 모션 없는 결정 자세 컷이며, 등 젖힘과 다리 곡선의 충분함은 사용자 GIF 판정 대기이다."
+          },
+          "selectionStatus": "superseded-after-parent-comparison",
+          "reason": "NW 상체·다리가 기본 서기처럼 읽혀 더 명확한 공중 실루엣을 비교했다."
+        }
+      ],
+      "selectedAttempt": 2
+    }
+  ],
+  "approval": {
+    "userStatement": "응 승인",
+    "scope": "기존 아타호·연묵·비월 남동/북서 기본 PNG 6장을 PixelLab에 업로드하여 6종 포즈 endpoint를 제작한다. 구독 잔여량 내 최대 70 generations, 추가 USD 결제 없음.",
+    "approvedAt": "2026-10-19"
+  }
+}

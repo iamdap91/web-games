@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>아타호 · 호왕일격 — 컷씬</title>
+    <link rel="stylesheet" href="../shared/style.css" />
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">이계취호전 <span>/</span> 컷씬 02</p>
+          <h1>호왕일격</h1>
+          <p class="intro">눈을 뜨고, 땅에 박고, 먼 곳까지 터뜨린다.</p>
+        </div>
+        <a
+          class="library-link"
+          href="../../?category=cutscenes&amp;group=아타호&amp;asset=local%2Fataho-tiger-awakening-cutscene"
+          >컷씬 목록 ↗</a
+        >
+      </header>
+      <section class="theatre" aria-label="아타호 호왕일격 컷씬">
+        <div class="viewport">
+          <canvas
+            id="scene"
+            width="960"
+            height="540"
+            aria-label="아타호의 필살기 컷씬. 아래 재생과 장면 탐색으로 감상할 수 있습니다."
+          ></canvas>
+          <div id="loading" role="status">컷씬 그림을 준비하고 있습니다.</div>
+          <button id="start" class="start" disabled>
+            <span aria-hidden="true">▶</span> 컷씬 재생
+          </button>
+        </div>
+        <div class="transport">
+          <div class="buttons">
+            <button id="play" class="primary" disabled>재생</button>
+            <button id="restart" disabled>처음부터</button>
+          </div>
+          <div class="options">
+            <label
+              >속도
+              <select id="speed" aria-label="재생 속도">
+                <option value="0.5">0.5배</option>
+                <option value="1" selected>1배</option>
+              </select></label
+            >
+            <label
+              ><input id="reduced-motion" type="checkbox" /> 섬광·흔들림
+              줄이기</label
+            >
+          </div>
+        </div>
+        <div class="timeline">
+          <output id="time">0.00 / 5.30초</output>
+          <input
+            id="scrub"
+            type="range"
+            min="0"
+            max="5300"
+            step="10"
+            value="0"
+            aria-label="컷씬 재생 시점"
+            disabled
+          />
+          <output id="cut-name" aria-live="polite">눈 클로즈업</output>
+        </div>
+        <nav id="cuts" class="cuts" aria-label="컷별로 멈춰 보기"></nav>
+      </section>
+      <footer>
+        <p id="status" role="status">그림을 불러오는 중</p>
+        <p class="keyboard">Space 재생·정지 <span>·</span> ← → 0.08초 탐색</p>
+      </footer>
+      <details class="notes">
+        <summary>이 컷씬에 관하여</summary>
+        <p>
+          눈 클로즈업 → 낮은 준비 → 거대한 호랑이 형상 → 지면 강타 → 가까운 작은
+          분출부터 큰 외곽 분출로 이어지는 독립 시안입니다.
+        </p>
+        <p>
+          준비 자세와 호랑이 상반신은 PixelLab으로 제작하고 기존 얼굴과 조합실
+          지열파의 지면 강타·분출을 재사용합니다. 현재는 무음입니다.
+        </p>
+        <p>
+          지면 강타 후 근거리의 작은 분출부터 외곽의 큰 분출까지 차례로
+          번집니다. 샌드백에 닿는 중거리 분출 한 번만 체력을 줄입니다. 독립 전투
+          미리보기이며 본게임의 기술·피해·저장에는 연결하지 않았습니다.
+        </p>
+        <a
+          href="../../../../resources/ataho-tiger-awakening-cutscene.json"
+          target="_blank"
+          rel="noreferrer"
+          >그림·제작 기록 ↗</a
+        >
+      </details>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/cutscenes/tiger-awakening/index.js"
+    ></script>
+  </body>
+</html>

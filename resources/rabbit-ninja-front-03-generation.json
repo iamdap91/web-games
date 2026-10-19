@@ -1,0 +1,146 @@
+{
+  "createdDate": "2026-10-17",
+  "provider": "PixelLab MCP · Edit Image Pixen",
+  "scope": "전면02의 각진 머리·볼·턱 윤곽을 둥글게 재생성.",
+  "status": "midpoint-head-revision-requested",
+  "gameIntegrated": false,
+  "previousAttempt": {
+    "generationRecord": "resources/rabbit-ninja-front-02-generation.json",
+    "status": "head-shape-revision-requested",
+    "userReview": "전체적으로 좋은데 머리가 너무 사각형으로 각져보이네. 다시 뽑아줘"
+  },
+  "approvedConcept": {
+    "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/concept/rabbit-ninja-concept-02-approved.png",
+    "width": 1098,
+    "height": 1433,
+    "byteSize": 854894,
+    "sha256": "5e7a240d31428597dce57e88c9255883955195d47781dcd64b9c64cd2725c842",
+    "source": "built-in image_gen",
+    "sourceFile": "/Users/3sam3/.codex/generated_images/01a1457c-aacc-7762-9835-bb2930bb7d2a/exec-3411b6dd-cef7-439b-87f6-20d752f3c424.png",
+    "approval": "사용자: 좋네. 이걸로 pixelLab 에 캐릭터 전면 이미지 하나 뽑아줘볼래?"
+  },
+  "styleReferences": [
+    {
+      "role": "Ataho pixel-art style and compact proportions",
+      "characterId": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south.png?t=1791934584",
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/inputs/ataho-south-style-reference.png",
+      "width": 64,
+      "height": 64,
+      "byteSize": 4259,
+      "sha256": "633b8eb4b653408d5a45d80308ba946246ae3d79a51ef361664ad5ad85e1e079"
+    },
+    {
+      "role": "Yeonmuk pixel-art style, face readability and compact proportions",
+      "characterId": "49230a20-dc7b-4357-9fd7-0854c384e657",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/49230a20-dc7b-4357-9fd7-0854c384e657/rotations/south.png?t=1791964697",
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/inputs/yeonmuk-south-style-reference.png",
+      "width": 64,
+      "height": 64,
+      "byteSize": 3663,
+      "sha256": "26f58bcc86a97c396541c34bfffaa59678ec3eda9fd2325957dd718835904a7a"
+    }
+  ],
+  "editSource": {
+    "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/runtime/rabbit-ninja-front-02.png",
+    "width": 64,
+    "height": 64,
+    "byteSize": 2811,
+    "sha256": "f67289d950fb0448283e8193bf0e0b6b385d78f6ad1817a0a6c9c77b638660aa",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=0",
+    "sourceOriginalPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-01.png",
+    "sourceSha256": "f67289d950fb0448283e8193bf0e0b6b385d78f6ad1817a0a6c9c77b638660aa",
+    "direction": "south",
+    "frameCount": 1,
+    "visibleBounds": [18, 2, 48, 63],
+    "pivot": {
+      "x": 32,
+      "y": 1
+    },
+    "galleryAssetId": "ce56965d-0898-444a-8f61-6902b5026d88",
+    "preview": {
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/review/rabbit-ninja-front-02-8x.png",
+      "width": 512,
+      "height": 512,
+      "byteSize": 6283,
+      "sha256": "faa33bcaa1289e227a1182441877ea26b4db1e21f5f885a99d10b4ecde4f934d"
+    },
+    "partyComparison": {
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/review/rabbit-ninja-front-02-party-comparison.png",
+      "width": 896,
+      "height": 360,
+      "byteSize": 17364,
+      "sha256": "cda03f00d65bc45d2cf13caf92d3438f2d53b1b183791b58fcc28388a9514ae9"
+    },
+    "candidateSheet": {
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/review/rabbit-ninja-front-02-candidates-4x.png",
+      "width": 1152,
+      "height": 1264,
+      "byteSize": 66763,
+      "sha256": "0bd4b6b9b8d0308a517102d3b4d5080abb8926ae64562d936215e9c8790e3ff9"
+    }
+  },
+  "generation": {
+    "tool": "edit_image_pixen",
+    "request": {
+      "image_url": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=0",
+      "description": "Round ONLY the rabbit's head silhouette: softly oval skull, rounded cheeks and gently curved chin; remove boxy temples, square jaw corners and sharp lateral cheek tufts. Keep head size and both amber eyes, muzzle, calm expression, long ears (one upright, one bent), neck position unchanged. Preserve the exact plum ninja outfit, body, pose, colors, gear and 64px RPG pixel-art style. Use crisp curved pixel steps, no blur. No baby face. Transparent background.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "seed": 104219
+    },
+    "jobId": "cf760f9f-6e34-408d-88b3-a708152948e7",
+    "galleryAssetId": "624841e5-1383-5017-b554-b9baec099e60",
+    "chargedGenerations": 1,
+    "original": {
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/rabbit-ninja-front-03-pixen.png",
+      "width": 64,
+      "height": 64,
+      "byteSize": 2322,
+      "sha256": "060933ea3831bd8a53736c6a0deea8c74b671e2ad8c8f469c8dd2566304466a7",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/cf760f9f-6e34-408d-88b3-a708152948e7/download"
+    }
+  },
+  "output": {
+    "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/runtime/rabbit-ninja-front-03.png",
+    "width": 64,
+    "height": 64,
+    "byteSize": 2322,
+    "sha256": "060933ea3831bd8a53736c6a0deea8c74b671e2ad8c8f469c8dd2566304466a7",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/cf760f9f-6e34-408d-88b3-a708152948e7/download",
+    "sourceOriginalPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/rabbit-ninja-front-03-pixen.png",
+    "sourceSha256": "060933ea3831bd8a53736c6a0deea8c74b671e2ad8c8f469c8dd2566304466a7",
+    "direction": "south",
+    "frameCount": 1,
+    "visibleBounds": [18, 2, 48, 63],
+    "pivot": {
+      "x": 32,
+      "y": 1
+    },
+    "galleryAssetId": "624841e5-1383-5017-b554-b9baec099e60",
+    "preview": {
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/review/rabbit-ninja-front-03-8x.png",
+      "width": 512,
+      "height": 512,
+      "byteSize": 5517,
+      "sha256": "072869c96aeeb000fc5ee5fca145b53057cedcc9e335858a90f625c5bf897024"
+    },
+    "beforeAfter": {
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/review/rabbit-ninja-front-03-before-after.png",
+      "width": 750,
+      "height": 450,
+      "byteSize": 10245,
+      "sha256": "222aed937d3002525c4d085462f63bb9496e6698c20b5c310686b0b8ee42d246"
+    }
+  },
+  "validation": {
+    "size": "64×64",
+    "alphaValues": [0, 255],
+    "visibleColors": 48,
+    "nativeBytesPreserved": true,
+    "visualReview": "볼·턱의 각진 윤곽이 둥글어짐. 귀·몸·복장의 큰 형태와 기본색은 유지. 눈이 세로로 커지고 더 크게 떠져 표정에 차이가 남음.",
+    "qualityDecision": "사용자 검토 대기. 이전과 픽셀이 동일하다고 주장하지 않음."
+  },
+  "userReview": "다시 저 둘의 중간정도면 좋겠다"
+}

@@ -1,6 +1,11 @@
 export const flyingKickMotion = {
     id: 'flying-kick',
     title: '도약 날아차기',
+    variant: {
+        groupId: 'flying-kick',
+        groupTitle: '도약 날아차기',
+        label: '기존 하이킥',
+    },
     summary: '몸을 낮춰 뛰고, 한 계열의 발차기로 차고 거둔 뒤 무릎을 굽혀 착지한다.',
     priority: 'recommended',
     review: '킥은 남동쪽 하이킥 0~6번으로 통일했다. 공중에서는 골반 아래의 같은 거리로 그림을 정렬해 다리를 올릴 때 몸 전체가 튀는 현상을 줄였다. 준비와 착지에는 이동을 멈추고 착지 뒤 낮은 자세를 유지해 무게를 받는다. 원본 하이킥의 발 뻗음과 일부 얼굴 변화는 남아 있다.',

@@ -1,6 +1,9 @@
-import { sampleKiShot } from './ki-sampling.js';
+import { sampleKiShot, sampleOrbitHeld } from './ki-sampling.js';
 import { clamp, ellipse, line } from './ki-shapes.js';
+import { sampleOrbitViscosity } from './orbit-viscosity.js';
 import { drawKiSprite, kiSpriteFrame, } from './ki-sprites.js';
+const orbitHeldDiameterScale = 2.6;
+const orbitActivationCompression = 0.23;
 export function drawCrescentCharge(ctx, definition, sample, frames) {
     if (sample.phase !== 'charge')
         return;
@@ -60,7 +63,6 @@ export function drawCrescent(ctx, shot, sample, frames) {
     });
     ctx.restore();
 }
-const groundOutlet = { x: 40, y: 0 };
 export function drawEruptionCharge(ctx, definition, sample, frames) {
     if (sample.phase !== 'charge')
         return;
@@ -71,7 +73,7 @@ export function drawEruptionCharge(ctx, definition, sample, frames) {
             count: 4,
             frameMs: (definition.releaseMs - definition.chargeStartMs) / 4,
         }),
-        point: groundOutlet,
+        point: definition.origin,
         width: 18 + sample.charge * 9,
         height: 6 + sample.charge * 9,
         anchorX: 0.5,
@@ -79,94 +81,57 @@ export function drawEruptionCharge(ctx, definition, sample, frames) {
         alpha: 0.4 + sample.charge * 0.45,
     });
 }
-function groundTransfer(ctx, definition, sample, firstHitMs) {
-    const age = sample.timeMs - definition.releaseMs;
-    if (age < 0 || sample.timeMs > firstHitMs + 150)
-        return;
-    const progress = clamp(age / Math.max(1, firstHitMs - definition.releaseMs));
-    const fade = 1 - clamp((sample.timeMs - firstHitMs) / 150);
-    const headX = groundOutlet.x + (definition.target.x - groundOutlet.x) * progress;
-    ctx.save();
-    // 손이 땅에 닿는 자세가 아니므로 방출과 지면을 짧은 기운으로 잇는다.
-    if (age < 150) {
-        ctx.globalAlpha = 1 - age / 150;
-        line(ctx, [definition.origin, { x: 34, y: -10 }, groundOutlet], '#e99848', 2.2);
-        line(ctx, [definition.origin, { x: 34, y: -10 }, groundOutlet], '#fff2be', 0.7);
-    }
-    ctx.globalAlpha = fade;
-    const count = Math.max(1, Math.ceil((headX - groundOutlet.x) / 7));
-    const points = Array.from({ length: count + 1 }, (_, index) => ({
-        x: groundOutlet.x + ((headX - groundOutlet.x) * index) / count,
-        y: index === 0 ? 0 : Math.sin(index * 2.8) * 1.3,
-    }));
-    line(ctx, points, '#b36a34', 3.2);
-    line(ctx, points, '#f8c46d', 1.5);
-    line(ctx, points, '#fff3c8', 0.6);
-    if (progress < 1) {
-        ellipse(ctx, { x: headX, y: 0 }, 4, 1.2, '#ffe7a7');
-        for (let index = 0; index < 3; index++) {
-            const cycle = (age / 85 + index * 0.33) % 1;
-            ctx.fillStyle = index % 2 ? '#f0c180' : '#916239';
-            ctx.fillRect(Math.round(headX - cycle * 10), Math.round(-2 - Math.sin(cycle * Math.PI) * 7), 2, 2);
-        }
-    }
-    ctx.restore();
-}
-export function drawEruption(ctx, definition, sample, frames) {
+export function drawEruption(ctx, definition, sample, frames, options) {
     const firstHit = definition.hits[0];
     const lastHit = definition.hits.at(-1);
     if (!firstHit || !lastHit)
         return;
-    groundTransfer(ctx, definition, sample, firstHit.atMs);
     const age = sample.timeMs - firstHit.atMs;
     const lastEnd = lastHit.atMs + lastHit.durationMs;
     const fadeAge = sample.timeMs - lastEnd;
     if (age < 0 || fadeAge >= 220)
         return;
-    const pressure = definition.hits.reduce((largest, hit) => {
-        const hitAge = sample.timeMs - hit.atMs;
-        if (hitAge < 0 || hitAge > hit.durationMs)
-            return largest;
-        return Math.max(largest, Math.sin((hitAge / hit.durationMs) * Math.PI));
-    }, 0);
-    const finish = clamp((sample.timeMs - lastHit.atMs) / 70);
     const x = definition.target.x;
-    let frame;
-    if (age < 100) {
-        frame = kiSpriteFrame(age, { start: 0, count: 4, frameMs: 25 });
-    }
-    else if (sample.timeMs < lastHit.atMs) {
-        frame = kiSpriteFrame(age - 100, {
-            start: 4,
-            count: 4,
-            frameMs: 45,
-            loop: true,
-        });
-    }
-    else if (fadeAge < 0) {
-        frame = kiSpriteFrame(sample.timeMs - lastHit.atMs, {
-            start: 8,
-            count: 4,
-            frameMs: lastHit.durationMs / 4,
-        });
-    }
-    else {
-        frame = kiSpriteFrame(fadeAge, { start: 12, count: 4, frameMs: 55 });
-    }
     ctx.save();
-    const groundFade = 1 - clamp(fadeAge / 220);
-    ctx.globalAlpha = groundFade * 0.65;
-    ellipse(ctx, { x, y: 0 }, 18 + pressure * 6 + finish * 6, 2, '#e89c48');
-    ctx.globalAlpha = 1;
-    drawKiSprite(ctx, frames, {
-        sheet: 'eruption',
-        frame,
-        point: { x, y: 0 },
-        width: 43 + pressure * 6 + finish * 10,
-        height: 76 + pressure * 6 + finish * 18,
-        anchorX: 0.5,
-        anchorY: 62 / 64,
-    });
+    // 매 분출이 바닥에서 다시 솟고 사라져야 세 차례의 성장이 분리되어 보인다.
+    for (const [index, hit] of definition.hits.entries()) {
+        if (options && index !== options.hitIndex)
+            continue;
+        const hitAge = sample.timeMs - hit.atMs;
+        const isLast = index === definition.hits.length - 1;
+        const fadeMs = isLast ? 220 : Math.min(55, hit.durationMs * 0.3);
+        const riseMs = isLast ? hit.durationMs : hit.durationMs - fadeMs;
+        if (hitAge < 0 || hitAge >= riseMs + fadeMs)
+            continue;
+        const dissolveAge = hitAge - riseMs;
+        const frame = dissolveAge < 0
+            ? kiSpriteFrame(hitAge, {
+                start: 0,
+                count: 12,
+                frameMs: riseMs / 12,
+            })
+            : kiSpriteFrame(dissolveAge, {
+                start: 12,
+                count: 4,
+                frameMs: fadeMs / 4,
+            });
+        ctx.globalAlpha = (1 - clamp(dissolveAge / fadeMs)) * 0.65;
+        ellipse(ctx, { x, y: 0 }, hit.radius * 0.9, 2, '#e89c48');
+        ctx.globalAlpha = 1;
+        drawKiSprite(ctx, frames, {
+            sheet: 'eruption',
+            frame,
+            point: { x, y: 0 },
+            width: hit.radius * 2.1,
+            height: hit.radius * 3.7,
+            anchorX: 0.5,
+            anchorY: 62 / 64,
+        });
+    }
+    if (options && options.hitIndex !== definition.hits.length - 1) {
+        ctx.restore();
+        return;
+    }
     // 마지막 분열에 맞춘 파편은 반복하지 않고 착지까지 같은 궤도를 유지한다.
     for (let index = 0; index < 8; index++) {
         const particleAge = sample.timeMs - lastHit.atMs - index * 11;
@@ -180,22 +145,16 @@ export function drawEruption(ctx, definition, sample, frames) {
     }
     ctx.restore();
 }
-export function drawOrbitHeld(ctx, definition, sample, frames) {
-    for (const [index, shot] of definition.shots.entries()) {
-        const formMs = definition.chargeStartMs + index * 90;
-        if (sample.timeMs < formMs || sample.timeMs >= shot.launchMs)
-            continue;
-        const formAge = sample.timeMs - formMs;
-        const growth = clamp(formAge / 180);
-        const spread = 1 - Math.pow(1 - growth, 3);
-        const destination = { x: shot.from.x - shot.radius, y: shot.from.y };
-        const point = {
-            x: definition.origin.x + (destination.x - definition.origin.x) * spread,
-            y: definition.origin.y + (destination.y - definition.origin.y) * spread,
-        };
-        const activation = clamp((sample.timeMs - shot.launchMs + 130) / 130);
+export function drawOrbitHeld(ctx, definition, sample, frames, options = {}) {
+    for (const { shot, index, formAge, growth, point, activation, } of sampleOrbitHeld(definition, sample)) {
         const pulse = 1 + Math.sin((sample.timeMs + index * 137) / 92) * 0.055;
-        const diameter = shot.radius * 2.6 * (0.35 + growth * 0.65) * (1 - activation * 0.23);
+        const diameter = shot.radius *
+            orbitHeldDiameterScale *
+            (0.35 + growth * 0.65) *
+            (1 - activation * orbitActivationCompression);
+        const compression = options.showViscousOrbit
+            ? sampleOrbitViscosity(shot, sample.timeMs, index).compression
+            : 0;
         drawKiSprite(ctx, frames, {
             sheet: 'orbit',
             frame: kiSpriteFrame(formAge + index * 137, {
@@ -205,8 +164,8 @@ export function drawOrbitHeld(ctx, definition, sample, frames) {
                 loop: true,
             }),
             point,
-            width: diameter * pulse,
-            height: diameter / pulse,
+            width: diameter * pulse * (1 - compression * 0.22),
+            height: (diameter / pulse) * (1 + compression * 0.22),
             alpha: 0.55 + growth * 0.45,
         });
         if (activation <= 0)
@@ -222,11 +181,17 @@ export function drawOrbitHeld(ctx, definition, sample, frames) {
         ctx.restore();
     }
 }
-export function drawOrbitShot(ctx, shot, sample, frames) {
+export function drawOrbitShot(ctx, shot, sample, frames, options = {}) {
     if (!shot.visible)
         return;
     const radius = shot.shot.radius;
     const launchStretch = Math.sin(clamp(shot.ageMs / 100) * Math.PI);
+    const emergence = clamp(shot.ageMs / 100);
+    const heldDiameter = radius * orbitHeldDiameterScale * (1 - orbitActivationCompression);
+    const roundDiameter = heldDiameter + emergence * (radius * 2.9 - heldDiameter);
+    const viscosity = options.showViscousOrbit
+        ? sampleOrbitViscosity(shot.shot, sample.timeMs, sample.shots.findIndex((item) => item.shot === shot.shot))
+        : undefined;
     ctx.save();
     ctx.beginPath();
     ctx.rect(-200, -160, shot.point.x + 200, 220);
@@ -235,25 +200,37 @@ export function drawOrbitShot(ctx, shot, sample, frames) {
         const past = sampleKiShot(shot.shot, Math.max(shot.shot.launchMs, sample.timeMs - age));
         return { x: past.point.x - radius, y: past.point.y };
     });
-    ctx.globalAlpha = 0.2;
+    // 분리 직후에는 연결부와 잔여 방울이 읽히도록 기존 꼬리를 잠깐 거둔다.
+    const trailAlpha = viscosity?.tether
+        ? 0
+        : viscosity?.droplet
+            ? 1 - viscosity.droplet.alpha
+            : 1;
+    ctx.globalAlpha = 0.2 * trailAlpha;
     line(ctx, trail, '#9b6ed6', radius * 1.3);
-    ctx.globalAlpha = 0.7;
+    ctx.globalAlpha = 0.7 * trailAlpha;
     line(ctx, trail.slice(1), '#dac2ff', 1.1);
     ctx.globalAlpha = 1;
     drawKiSprite(ctx, frames, {
         sheet: 'orbit',
         frame: kiSpriteFrame(shot.ageMs, {
-            start: 4,
+            start: options.showViscousOrbit ? 0 : 4,
             count: 4,
             frameMs: 50,
             loop: true,
         }),
-        point: shot.point,
-        width: radius * (4.4 + launchStretch * 1.2),
-        height: radius * (4.4 - launchStretch * 0.8),
+        point: options.showViscousOrbit
+            ? { x: shot.point.x - radius * (1 - emergence * 0.15), y: shot.point.y }
+            : shot.point,
+        width: options.showViscousOrbit
+            ? roundDiameter * (1 + launchStretch * 0.16)
+            : radius * (4.4 + launchStretch * 1.2),
+        height: options.showViscousOrbit
+            ? roundDiameter * (1 - launchStretch * 0.12)
+            : radius * (4.4 - launchStretch * 0.8),
         // 비행 셀의 핵과 꼬리는 중심이 다르므로 밝은 선두 끝에 고정한다.
-        anchorX: 0.93,
-        anchorY: 0.55,
+        anchorX: options.showViscousOrbit ? 0.5 : 0.93,
+        anchorY: options.showViscousOrbit ? 0.5 : 0.55,
     });
     ctx.restore();
 }

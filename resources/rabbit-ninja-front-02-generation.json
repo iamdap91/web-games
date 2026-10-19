@@ -1,0 +1,282 @@
+{
+  "createdDate": "2026-10-17",
+  "provider": "PixelLab MCP · Create Image Pro",
+  "scope": "아타호·연묵 실제64×64 도트 스타일을 참조한 토끼 닌자 전면 재생성.",
+  "status": "head-shape-revision-requested",
+  "gameIntegrated": false,
+  "previousAttempt": {
+    "generationRecord": "resources/rabbit-ninja-front-01-generation.json",
+    "status": "rejected-style-mismatch",
+    "chargedGenerations": 1
+  },
+  "approvedConcept": {
+    "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/concept/rabbit-ninja-concept-02-approved.png",
+    "width": 1098,
+    "height": 1433,
+    "byteSize": 854894,
+    "sha256": "5e7a240d31428597dce57e88c9255883955195d47781dcd64b9c64cd2725c842",
+    "source": "built-in image_gen",
+    "sourceFile": "/Users/3sam3/.codex/generated_images/01a1457c-aacc-7762-9835-bb2930bb7d2a/exec-3411b6dd-cef7-439b-87f6-20d752f3c424.png",
+    "approval": "사용자: 좋네. 이걸로 pixelLab 에 캐릭터 전면 이미지 하나 뽑아줘볼래?"
+  },
+  "designReference": {
+    "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/inputs/rabbit-ninja-concept-square.png",
+    "width": 1536,
+    "height": 1536,
+    "byteSize": 850381,
+    "sha256": "b1a32c07ef90ea00c78255b171d4e7abb56d7d7f732274c639f27c753e741ece",
+    "composition": "승인 원화 픽셀을 변경하거나 리사이즈하지 않고1536×1536 투명 캔버스에 좌219·상51 위치로 패딩.",
+    "uploadId": "4cfad52f-5658-4bb3-946b-41bb1d48b6fe"
+  },
+  "styleReferences": [
+    {
+      "role": "Ataho pixel-art style and compact proportions",
+      "characterId": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south.png?t=1791934584",
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/inputs/ataho-south-style-reference.png",
+      "width": 64,
+      "height": 64,
+      "byteSize": 4259,
+      "sha256": "633b8eb4b653408d5a45d80308ba946246ae3d79a51ef361664ad5ad85e1e079"
+    },
+    {
+      "role": "Yeonmuk pixel-art style, face readability and compact proportions",
+      "characterId": "49230a20-dc7b-4357-9fd7-0854c384e657",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/49230a20-dc7b-4357-9fd7-0854c384e657/rotations/south.png?t=1791964697",
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/inputs/yeonmuk-south-style-reference.png",
+      "width": 64,
+      "height": 64,
+      "byteSize": 3663,
+      "sha256": "26f58bcc86a97c396541c34bfffaa59678ec3eda9fd2325957dd718835904a7a"
+    }
+  ],
+  "referenceHandling": "PixelLab에 이미 보관된 캐릭터 URL과 이전에 업로드한 승인 원화를 재사용. 새 로컬 파일 업로드 없음.",
+  "generation": {
+    "tool": "create_image_pro",
+    "request": {
+      "description": "ONE full-body SOUTH / FRONT IDLE sprite of the approved cream-furred RABBIT NINJA, drawn as a new member of the SAME 64x64 RPG sprite cast as the supplied Ataho tiger and Yeonmuk fox sprites. The small Ataho/Yeonmuk references are the authority for GAME SPRITE STYLE, head/body proportions, pixel density, chunky readable features, dark stepped outlines, clustered cel shading and slightly top-down camera. The large rabbit artwork is ONLY the authority for species, face personality, fur colors, ears and costume. RE-DESIGN its proportions for this game: expressive LARGE head, compact young-adult torso and short legs, about 2.5-3 head lengths crown-to-feet excluding the ears, comparable to the fox sprite. Allocate enough pixels to clearly show BOTH calm amber eyes, a little rabbit nose and cream muzzle. Keep the two long pink-lined rabbit ears, one upright and one bent outward, with all ear tips inside the canvas. Cream fur, deep saturated aubergine/plum crossover ninja jacket, charcoal baggy trousers, plum wraps, short brick-red scarf worn low with face exposed, small brown belt pouch and rope coil, tiny sheathed belt dagger, rabbit feet and a small round tail. Preserve outfit color separation and an alert restrained smile. Match the sprite references' crisp hand-placed native pixel clusters and dark selective outline; broad light/shadow groups and readable single-pixel face accents, no smooth illustration, blur, muddy downsampling, dithering, realistic long limbs, fine cloth grain, or photorealistic shading. Both eyes and shoulders visible, body facing viewer, arms at sides, feet on same baseline near y=62, whole character centered, fully inside 64x64 with transparent margin. EXACTLY ONE character per image, no extra people, side view, action pose, text, scene, checkerboard or ground shadow. Genuine transparent background.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "max_colors": 40,
+      "seed": 104218,
+      "style_image_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/49230a20-dc7b-4357-9fd7-0854c384e657/rotations/south.png?t=1791964697",
+      "style_copy": ["outline", "detail", "shading"],
+      "reference_images": [
+        {
+          "url": "upload:4cfad52f-5658-4bb3-946b-41bb1d48b6fe",
+          "usage": "Approved rabbit character design ONLY: cream fur, amber eyes, one upright long ear and one bent long ear, deep plum ninja clothing, short brick-red scarf, brown pouch and small rope. Redesign illustration proportions into the same compact game-sprite proportions as the other references."
+        },
+        {
+          "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south.png?t=1791934584",
+          "usage": "EXISTING NATIVE 64x64 GAME SPRITE STYLE reference: Ataho. Copy pixel craftsmanship, compact RPG head/body proportions, dark crisp outlines, clustered cel-shading, native detail scale and front camera. Do not copy tiger species, orange stripes, brown jacket or stocky build."
+        },
+        {
+          "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/49230a20-dc7b-4357-9fd7-0854c384e657/rotations/south.png?t=1791964697",
+          "usage": "PRIMARY EXISTING NATIVE 64x64 STYLE AND PROPORTION reference: Yeonmuk. Match readable face size, compact limbs, stepped pixel contours, eye definition and native clustered shading so the rabbit belongs beside her. Keep rabbit's cream/plum/brick-red design rather than fox identity, tail or navy/teal costume."
+        }
+      ]
+    },
+    "jobId": "b42f7bda-739d-414e-b9e7-a61deea1babc",
+    "galleryAssetId": "ccdbc839-b067-56ef-8e48-f42b13ef89af",
+    "chargedGenerations": 10,
+    "candidates": [
+      {
+        "index": 0,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=0",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-01.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2811,
+        "sha256": "f67289d950fb0448283e8193bf0e0b6b385d78f6ad1817a0a6c9c77b638660aa"
+      },
+      {
+        "index": 1,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=1",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-02.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2834,
+        "sha256": "ef17ae9c718b9fb412d4f520caaa374fe98e124a50fc14609b47730cd5120c2a"
+      },
+      {
+        "index": 2,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=2",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-03.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2968,
+        "sha256": "04638c4ad4e3118bd16f0f83e14b28c4551aa356af184c2e087a1606de8c7698"
+      },
+      {
+        "index": 3,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=3",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-04.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2891,
+        "sha256": "9c64e79daeef286a469d438974ecc2bdddffdc173e5feeabf454ca8b358a448a"
+      },
+      {
+        "index": 4,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=4",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-05.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2900,
+        "sha256": "780dbfc41f795ee31414570eca376bf9ae4db58cf1358d57bb3d637d7645903e"
+      },
+      {
+        "index": 5,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=5",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-06.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2748,
+        "sha256": "e9f5fb2fa6ab71df515ee7dac6cd9b736e6b9f69054382d21c19c00b67f17406"
+      },
+      {
+        "index": 6,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=6",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-07.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2626,
+        "sha256": "84ef2c3a89ef1550fddc69f5881c9b86793a972a07a0e815d1346a9a5e703693"
+      },
+      {
+        "index": 7,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=7",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-08.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2891,
+        "sha256": "f8f77179238b7e6d9027fd785231d605a5e782f3b61d8071188bddbca778d6ec"
+      },
+      {
+        "index": 8,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=8",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-09.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2828,
+        "sha256": "c5f19735a5a0cdb3dbfe73babd24cf4f6fc6b39af515bd523a94bf62cdea7c4d"
+      },
+      {
+        "index": 9,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=9",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-10.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2610,
+        "sha256": "0bb92cea86f13b81a0c9683217461596cbd5c721be8cebe9f4bd7f68508c9b20"
+      },
+      {
+        "index": 10,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=10",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-11.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2844,
+        "sha256": "588f69b9972e5fd3a5b2bdde65518fac64d408e2a128ff406634003f74ec5c89"
+      },
+      {
+        "index": 11,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=11",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-12.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2800,
+        "sha256": "b8667fdb313b2e6c21296a7858b1ee20efa02e042776b77c3f5c88fb0afa2038"
+      },
+      {
+        "index": 12,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=12",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-13.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2844,
+        "sha256": "c1c45941b40699123a411a649f2d578b4b0f6b7d3775fda4b86a47920497f5f7"
+      },
+      {
+        "index": 13,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=13",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-14.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2828,
+        "sha256": "f60ddaef66edb668ad97126c06f27690d7063ab10b137eb259915c5ff69517ea"
+      },
+      {
+        "index": 14,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=14",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-15.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2896,
+        "sha256": "c2a6601b30a5dca3c54ceb6f9f04054225ebc44765af82515acd5af9cb87ae07"
+      },
+      {
+        "index": 15,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=15",
+        "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-16.png",
+        "width": 64,
+        "height": 64,
+        "byteSize": 2793,
+        "sha256": "9178d39b80749bca2f4f0f3dd8c94efe450018da2d82004f10550bef1d1cf3eb"
+      }
+    ]
+  },
+  "selection": {
+    "index": 0,
+    "reason": "양눈·어깨가 보이는 정면 중립 자세. 양손·양발 분리와 귀끝 여백을 유지한 기본 후보.",
+    "qualityDecision": "사용자 검토 대기. 이전보다 얼굴이 읽히고 비율이 가까워졌으나 두 참조보다 색면과 소품이 단순하게 표현됨."
+  },
+  "output": {
+    "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/runtime/rabbit-ninja-front-02.png",
+    "width": 64,
+    "height": 64,
+    "byteSize": 2811,
+    "sha256": "f67289d950fb0448283e8193bf0e0b6b385d78f6ad1817a0a6c9c77b638660aa",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/b42f7bda-739d-414e-b9e7-a61deea1babc/download?index=0",
+    "sourceOriginalPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/front-02-pro/candidate-01.png",
+    "sourceSha256": "f67289d950fb0448283e8193bf0e0b6b385d78f6ad1817a0a6c9c77b638660aa",
+    "direction": "south",
+    "frameCount": 1,
+    "visibleBounds": [18, 2, 48, 63],
+    "pivot": {
+      "x": 32,
+      "y": 1
+    },
+    "galleryAssetId": "ce56965d-0898-444a-8f61-6902b5026d88",
+    "preview": {
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/review/rabbit-ninja-front-02-8x.png",
+      "width": 512,
+      "height": 512,
+      "byteSize": 6283,
+      "sha256": "faa33bcaa1289e227a1182441877ea26b4db1e21f5f885a99d10b4ecde4f934d"
+    },
+    "partyComparison": {
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/review/rabbit-ninja-front-02-party-comparison.png",
+      "width": 896,
+      "height": 360,
+      "byteSize": 17364,
+      "sha256": "cda03f00d65bc45d2cf13caf92d3438f2d53b1b183791b58fcc28388a9514ae9"
+    },
+    "candidateSheet": {
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/review/rabbit-ninja-front-02-candidates-4x.png",
+      "width": 1152,
+      "height": 1264,
+      "byteSize": 66763,
+      "sha256": "0bd4b6b9b8d0308a517102d3b4d5080abb8926ae64562d936215e9c8790e3ff9"
+    }
+  },
+  "validation": {
+    "size": "64×64",
+    "visibleColorCount": 40,
+    "alphaValues": [0, 255],
+    "selectedBytesIdenticalToNativeCandidate": true,
+    "composition": "선택 원본 PNG bytes를 그대로 복사. 확대 비교본에만 nearest-neighbor 사용. 픽셀 수정·리사이즈·색변경 없음."
+  },
+  "userReview": "전체적으로 좋은데 머리가 너무 사각형으로 각져보이네. 다시 뽑아줘"
+}

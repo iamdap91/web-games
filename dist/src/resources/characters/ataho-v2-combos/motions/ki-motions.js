@@ -3,7 +3,10 @@ const punchMotion = 'ataho-one-two-punch-south-east-south-east';
 const origin = { x: 24, y: -34 };
 const beamOrigin = { x: 22, y: -28 };
 const target = { x: 150, y: -36 };
-/** 기공은 몸의 접촉을 발생시키지 않으며 모든 자세를 같은 발 위치에 둔다. */
+const tigerOrigin = { x: 49, y: -35 };
+const tigerTarget = { x: 84, y: -35 };
+const eruptionTarget = { x: 84, y: -35 };
+/** 기공은 몸의 접촉을 발생시키지 않으며 전진도 몸의 자세 데이터에서 맡는다. */
 function poses(endMs, sequence) {
     return sequence.map((pose, index) => ({
         motion: pose.motion,
@@ -11,9 +14,10 @@ function poses(endMs, sequence) {
         phase: pose.phase,
         emphasis: pose.emphasis,
         durationMs: (sequence[index + 1]?.atMs ?? endMs) - pose.atMs,
-        x: 0,
+        x: pose.x ?? 0,
+        movementCurve: pose.movementCurve,
         y: 0,
-        anchor: 'feet',
+        anchor: pose.anchor ?? 'feet',
     }));
 }
 function guard(atMs, phase = '기공 준비') {
@@ -21,6 +25,29 @@ function guard(atMs, phase = '기공 준비') {
 }
 function punch(atMs, frame, phase) {
     return { atMs, motion: punchMotion, frame, phase };
+}
+function tigerPunchPoses(endMs) {
+    const hook = (atMs, frame, x, phase) => ({
+        atMs,
+        motion: 'smear-hook-stable-south-east',
+        frame,
+        x,
+        phase,
+    });
+    return poses(endMs, [
+        guard(0),
+        hook(120, 1, -3, '허리를 틀어 주먹 장전'),
+        { ...hook(220, 2, -7, '뒤로 당긴 주먹에 권기 압축'), emphasis: 'charge' },
+        hook(430, 3, 2, '짧은 전진 · 가로 스미어'),
+        {
+            ...hook(470, 4, 18, '주먹을 박아 넣기 · 근거리 호랑이 권기'),
+            movementCurve: { x: 'hold' },
+        },
+        hook(620, 6, 18, '기공 압력을 남기고 주먹 회수'),
+        hook(740, 7, 12, '몸통 반동 회수'),
+        hook(850, 8, 6, '가드 정착'),
+        guard(1000, '호격권 뒤 가드 복귀'),
+    ]);
 }
 function shot(id, launchMs, arriveMs, radius, options = {}) {
     return {
@@ -53,24 +80,49 @@ const tigerManifest = definition({
     style: 'tiger-manifest',
     accent: '#ffcf63',
     chargeStartMs: 120,
-    releaseMs: 600,
-    endMs: 1580,
+    origin: tigerOrigin,
+    chargeOrigin: { x: -5, y: -37 },
+    target: tigerTarget,
+    releaseMs: 470,
+    endMs: 1300,
     shots: [],
     hits: [
-        hit('tiger-pulse-1', 760, { radius: 23, strength: 0.68 }),
-        hit('tiger-pulse-2', 920, { radius: 23, strength: 0.8 }),
-        hit('tiger-pulse-3', 1080, { radius: 25, strength: 1.15, durationMs: 240 }),
+        hit('tiger-pulse-1', 500, {
+            point: tigerTarget,
+            radius: 20,
+            strength: 0.68,
+        }),
+        hit('tiger-pulse-2', 660, {
+            point: tigerTarget,
+            radius: 21,
+            strength: 0.8,
+        }),
+        hit('tiger-pulse-3', 820, {
+            point: tigerTarget,
+            radius: 23,
+            strength: 1.15,
+            durationMs: 240,
+        }),
     ],
 });
 const tigerWave = definition({
     style: 'tiger-wave',
     accent: '#ffd66d',
     chargeStartMs: 120,
-    releaseMs: 780,
-    endMs: 1630,
-    shots: [shot('tiger-head', 780, 960, 22)],
+    origin: tigerOrigin,
+    chargeOrigin: { x: -5, y: -37 },
+    target: tigerTarget,
+    releaseMs: 470,
+    endMs: 1120,
+    shots: [
+        {
+            ...shot('tiger-head', 470, 545, 22, { from: tigerOrigin }),
+            to: tigerTarget,
+        },
+    ],
     hits: [
-        hit('tiger-bite', 960, {
+        hit('tiger-bite', 545, {
+            point: tigerTarget,
             shotId: 'tiger-head',
             radius: 25,
             strength: 1.4,
@@ -149,32 +201,33 @@ const crescent = definition({
 const eruption = definition({
     style: 'eruption',
     accent: '#ff9d54',
-    origin: { x: 25, y: -21 },
+    origin: { x: 16, y: 3 },
+    target: eruptionTarget,
     chargeStartMs: 120,
     releaseMs: 660,
     endMs: 1770,
     shots: [],
     hits: [
-        hit('earth-burst-1', 960, {
-            point: { x: 150, y: -22 },
-            radius: 22,
-            strength: 0.75,
+        hit('earth-burst-1', 740, {
+            point: { x: eruptionTarget.x, y: -22 },
+            radius: 14,
+            strength: 0.55,
             reaction: 'rising',
-            durationMs: 160,
+            durationMs: 180,
         }),
-        hit('earth-burst-2', 1100, {
-            point: { x: 150, y: -35 },
-            radius: 24,
+        hit('earth-burst-2', 960, {
+            point: { x: eruptionTarget.x, y: -35 },
+            radius: 21,
             strength: 0.9,
             reaction: 'rising',
-            durationMs: 160,
+            durationMs: 200,
         }),
-        hit('earth-burst-3', 1240, {
-            point: { x: 150, y: -42 },
-            radius: 26,
+        hit('earth-burst-3', 1200, {
+            point: { x: eruptionTarget.x, y: -42 },
+            radius: 29,
             strength: 1.45,
             reaction: 'rising',
-            durationMs: 260,
+            durationMs: 280,
         }),
     ],
 });
@@ -223,19 +276,11 @@ export const kiMotions = [
             groupTitle: '호격권',
             label: '대상에 호랑이 형상',
         },
-        summary: '대상 위치에 나타난 호랑이의 포효와 발톱 압력이 세 박자로 몰아친다.',
+        summary: '허리를 틀어 짧게 전진하는 강한 훅 뒤 주먹 가까이에서 호랑이의 압력이 세 박자로 몰아친다.',
         priority: 'review',
         ki: tigerManifest,
-        review: '원작 신기의 대상 현현과 던파 공식 영상의 기운 결집·호랑이 형상·파열을 참고한다. 전용 호랑이 그림이 첫 명중부터 선명해지고 두 번째 포효를 유지한 뒤 마지막 압력에서 조각으로 갈라진다. 세 압력 시점만 명중으로 세며 세 박자는 이 조합실의 해석이다.',
-        steps: poses(tigerManifest.endMs, [
-            guard(0),
-            { ...punch(120, 11, '권기 응축'), emphasis: 'charge' },
-            punch(555, 11, '권기 발동 직전'),
-            punch(600, 12, '호랑이 형상 방출'),
-            punch(810, 13, '주먹 회수 · 포효와 발톱 압력'),
-            punch(1010, 15, '호랑이 형상의 마지막 압력'),
-            guard(1330, '형상 소멸 · 가드 복귀'),
-        ]),
+        review: '기존 같은 방향의 훅 장전·스미어·닫힌 주먹을 빠른 전진과 연결한다. 주먹 앞35px의 중근거리 표적에 호랑이가 현현하며 첫 압력은 주먹을 뻗은30ms 뒤에 닿는다. 세 압력만 명중으로 세고 몸의 접촉은 추가하지 않는다.',
+        steps: tigerPunchPoses(tigerManifest.endMs),
     },
     {
         id: 'ki-tiger-wave',
@@ -245,19 +290,11 @@ export const kiMotions = [
             groupTitle: '호격권',
             label: '호랑이 선두 파동',
         },
-        summary: '주먹에 연결된 금빛 핵이 호랑이의 기세로 전방을 관통하고 붉은 잔류선이 남는다.',
+        summary: '강하게 뻗은 훅에 연결된 호랑이 기공이 짧은 거리를 단숨에 밀어붙인다.',
         priority: 'review',
         ki: tigerWave,
-        review: '플러스 신기 영상의 호랑이 선두·금빛 핵·붉은 잔류선을 참고한다. 분리된 얼굴 탄을 날리는 대신 주먹에 연결된 금빛 기운을 빠르게 관통시킨다. 선두가 대상에 도착한960ms에 한 번만 명중하며 유지되는 금빛 핵과 붉은 잔류선에는 추가 타격이 없다.',
-        steps: poses(tigerWave.endMs, [
-            guard(0),
-            { ...punch(120, 11, '금빛 권기 모으기'), emphasis: 'charge' },
-            punch(735, 11, '발사 직전'),
-            punch(780, 12, '호랑이 선두 파동 발사'),
-            punch(1200, 13, '금빛 핵 수축 · 주먹 회수'),
-            punch(1360, 15, '붉은 잔류선 소멸'),
-            guard(1480, '호격권 뒤 가드 복귀'),
-        ]),
+        review: '대상 현현과 같은 강한 훅에서 금빛 기운을 주먹 앞35px까지75ms에 밀어낸다. 선두가545ms에 도착할 때 한 번만 명중하며 유지되는 금빛 핵과 붉은 잔류선에는 추가 타격이 없다. 몸 접촉은 추가하지 않는다.',
+        steps: tigerPunchPoses(tigerWave.endMs),
     },
     {
         id: 'ki-orb',
@@ -353,50 +390,77 @@ export const kiMotions = [
     {
         id: 'ki-eruption',
         title: '지열파',
-        summary: '손에서 바닥으로 보낸 기운이 균열을 따라 전진하고 대상 아래 한 분출에서 세 압력이 솟는다.',
+        summary: '몸을 낮춰 주먹으로 땅을 내리찍고 가까운 대상 아래 작은·중간·큰 분출을 세 번 솟게 한다.',
         priority: 'recommended',
         ki: eruption,
-        review: '대각 망치주먹의 실측 손점(25,-21)에서 바닥으로 기운을 전달하며 짧은 팔꿈치를 사용하지 않는다. 주먹이 지면에 직접 닿는 것으로 표현하지 않는다. 전진하는 균열과 작은 분출은 장식이고 대상 아래 하나의 큰 분출에 속한 세 압력만 명중 판정한다.',
+        review: '사용자가 비교 GIF의 오른쪽으로 선택한 같은 남동 방향의2차 내려찍기9장을 사용한다. 발 기준99px을 고정하고 원본의 짧은 충격 그림 뒤 지면 주먹을 유지하며 회수한다. 가까운 대상 아래740·960·1200ms에 다시 솟는 세 분출만 명중 판정한다. 바닥을 기어가는 선과 손에서 바닥으로 잇는 선은 표시하지 않는다. 앞 두 분출은 소멸 뒤 다음 크기로 이어지며 마지막에 가장 크게 터진다.',
         steps: poses(eruption.endMs, [
             guard(0),
             {
                 atMs: 120,
-                motion: 'smear-hammerfist-clean-south-east',
+                motion: 'ground-punch-face-retry-south-east',
                 frame: 1,
+                anchor: { x: 68, y: 99 },
                 phase: '주먹을 들어 지면기 장전',
             },
             {
                 atMs: 230,
-                motion: 'smear-hammerfist-clean-south-east',
-                frame: 3,
-                phase: '손에서 바닥으로 기운을 보내기 전 응축',
+                motion: 'ground-punch-face-retry-south-east',
+                frame: 1,
+                anchor: { x: 68, y: 99 },
+                phase: '주먹을 높이 들고 무게 싣기',
                 emphasis: 'charge',
             },
             {
                 atMs: 620,
-                motion: 'smear-hammerfist-clean-south-east',
-                frame: 4,
-                phase: '대각 하강 · 짧은 변형',
+                motion: 'ground-punch-face-retry-south-east',
+                frame: 2,
+                anchor: { x: 68, y: 99 },
+                phase: '무릎과 허리를 낮추며 내려찍기',
             },
             {
                 atMs: 660,
-                motion: 'smear-hammerfist-clean-south-east',
+                motion: 'ground-punch-face-retry-south-east',
+                frame: 3,
+                anchor: { x: 68, y: 99 },
+                phase: '닫힌 주먹을 땅에 박기',
+            },
+            {
+                atMs: 710,
+                motion: 'ground-punch-face-retry-south-east',
+                frame: 4,
+                anchor: { x: 68, y: 99 },
+                phase: '내려찍기 충격 회수',
+            },
+            {
+                atMs: 780,
+                motion: 'ground-punch-face-retry-south-east',
                 frame: 5,
-                phase: '손에서 바닥으로 기운 전달',
+                anchor: { x: 68, y: 99 },
+                phase: '분출 발동 · 주먹 회수',
             },
             {
-                atMs: 880,
-                motion: 'smear-hammerfist-clean-south-east',
+                atMs: 1020,
+                motion: 'ground-punch-face-retry-south-east',
                 frame: 6,
-                phase: '균열 전진 · 주먹 회수',
+                anchor: { x: 68, y: 99 },
+                phase: '작은 분출 뒤 더 큰 두 분출',
             },
             {
-                atMs: 1100,
-                motion: 'smear-hammerfist-clean-south-east',
+                atMs: 1220,
+                motion: 'ground-punch-face-retry-south-east',
                 frame: 7,
-                phase: '한 분출의 연속 압력',
+                anchor: { x: 68, y: 99 },
+                phase: '주먹을 들고 무릎 펴기',
             },
-            guard(1480, '지열파 뒤 가드 복귀'),
+            {
+                atMs: 1440,
+                motion: 'ground-punch-face-retry-south-east',
+                frame: 8,
+                anchor: { x: 68, y: 99 },
+                phase: '지열파 뒤 가드 정착',
+            },
+            guard(1600, '지열파 뒤 가드 복귀'),
         ]),
     },
     {

@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-19",
+  "status": "awaiting-user-review",
+  "approvalPending": false,
+  "userGIFReviewPending": true,
+  "userQualityApproved": false,
+  "budget": {
+    "approvedGenerations": 4,
+    "availablePlanGenerationsAtCheck": 4.35,
+    "availableCreditsUsd": 0,
+    "generationCalls": 4,
+    "quotedGenerations": 4,
+    "generationsSpent": 4,
+    "generationsPending": 0,
+    "additionalCallsAllowed": 0,
+    "uploadCount": 0,
+    "spendUsdCredits": false,
+    "purchaseSubscription": false,
+    "availablePlanGenerationsAtLatestCheck": 0.35,
+    "availableCreditsUsdAtLatestCheck": 0,
+    "additionalCallsPlanned": 0
+  },
+  "constraints": {
+    "directions": ["south-east", "north-west"],
+    "keyPosesPerDirection": 2,
+    "newFrames": 4,
+    "reusedFrames": 4,
+    "outputWidth": 64,
+    "outputHeight": 64,
+    "generateInbetweens": false,
+    "expandDirectionsBeforeUserGIFReview": false,
+    "mirrorDirections": false,
+    "retryAllowed": false
+  },
+  "evidence": {
+    "localAssetReview": {
+      "viewedWith": "view_image",
+      "imagesViewed": 14,
+      "inspectionMagnification": "분석용 표는 원본 전체를 nearest 4배로 표시했으며 제품 원본 PNG는 수정하지 않았다.",
+      "reaction": "NW 기본·야마다 손·마스크는 뒤통수라 눈/입이 없다. NW shaft는 같은 NW 몸에서 고개를 돌아 한쪽 눈·주둥이·다문 입을 볼 수 있어 침착 B로 재사용한다.",
+      "balance": "기존 마시기 3번은 머리 젖힘과 소품 연기이며 골반이 고정돼 중심이탈 A를 대체하지 않는다. 두 방향 Idle의 안정 지지를 B로 재사용한다."
+    },
+    "reference": {
+      "title": "Drunk Fist Drill Training | Shaolin Kung Fu | Shifu yan xin",
+      "author": "KUNGFU.LIFE",
+      "url": "https://www.youtube.com/watch?v=E-V32zMMAik",
+      "publishedAt": "2024-08-13",
+      "officialCourseUrl": "https://courses.kungfu.life/courses/drunken-fist",
+      "sourceAuthorVerified": true,
+      "videoPlayback": false,
+      "audioPlayback": false,
+      "framesObserved": 75,
+      "frameSamplingIntervalMs": 5000,
+      "timeRangeMs": [0, 370000],
+      "observationMethod": "공개 YouTube player storyboard JPEG 3장(각25시점)을 HTTP로 받아 view_image로 관찰했다. IAB unavailable 및 Mac 잠김으로 브라우저 재생은 하지 못했다.",
+      "observations": "25초의 기울어 낮춘 몸과30초 직립,95–105초 무릎·골반 쏠림과110초 정리,130–155초 낮은 지지 전환의 정적 형태를 확인했다.",
+      "limits": "5초 간격 정적 프레임표이므로 연속 무게 이동·축발 회복 타이밍을 검증한 자료가 아니다. 해당 동작을 복제하거나 원작 영상을 재생했다고 주장하지 않는다."
+    },
+    "qualityAcceptance": "대표 두 방향 A/B의 사용자 GIF 검토 대기이며 생성 범위 승인과 시각 품질 승인을 구분한다.",
+    "generatedAssetReview": {
+      "imagesViewed": 4,
+      "viewedWith": "view_image",
+      "nativeWidth": 64,
+      "nativeHeight": 64,
+      "originalBytesPreserved": true,
+      "staticComparisonOnly": true,
+      "limits": "실제 재생과 사용자 GIF 판단은 담당 세션에서 수행한다. 얼굴 변경 지시에도 팔·꼬리 등 일부 외형 차이가 남는다."
+    }
+  },
+  "entries": [
+    {
+      "id": "reaction-acting",
+      "actor": "yeonmuk",
+      "status": "awaiting-user-review",
+      "directions": {
+        "south-east": {
+          "source": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "034ea4aabfc3f5b88bf1ff64e51dcb5a4c0e9c6693d0c972dc890c073a11000c",
+            "sizeBytes": 2846,
+            "alphaBounds": {
+              "left": 22,
+              "top": 2,
+              "right": 44,
+              "bottom": 63
+            },
+            "groundAnchor": {
+              "x": 32,
+              "y": 63
+            },
+            "inputRef": "upload:ca69b32e-4870-4eca-9b74-3ce8b740d02b"
+          },
+          "frames": [
+            {
+              "pose": "surprise-a",
+              "role": "A",
+              "sourceKind": "generated",
+              "status": "available",
+              "localPath": "public/assets/maplestory/acting-studies-ai/reaction/south-east/surprise-a.png",
+              "width": 64,
+              "height": 64,
+              "frameIndex": 0,
+              "sourceDirection": "south-east",
+              "mirrored": false,
+              "generation": {
+                "provider": "PixelLab",
+                "tool": "edit_image_pixen",
+                "jobId": "7437236c-6836-4a37-a46a-8e6257c8e783",
+                "attempt": 1,
+                "request": {
+                  "image_url": "upload:ca69b32e-4870-4eca-9b74-3ce8b740d02b",
+                  "description": "Native64px crisp pixel art, transparent. Preserve identity/outfit/colors, whole ears/tail/feet inside. No effects, text, mirror or rotated sprite. Silver-gray fox Yeonmuk, same SOUTH-EAST front/side view. Change ONLY visible facial expression to startled recognition: visibly widened amber eye(s), raised eyebrow, small open O mouth. Keep input head angle, neck, body, arms, hands, tail and feet unchanged. Not angry. ",
+                  "width": 64,
+                  "height": 64,
+                  "no_background": true,
+                  "seed": 861950
+                },
+                "quotedGenerations": 1,
+                "status": "completed",
+                "actualChargedGenerations": 1,
+                "assetId": "da2a667e-cb75-5aae-9887-ab398e4f0664",
+                "originalResponsePath": "public/assets/maplestory/acting-studies-ai/reaction/south-east/generation-responses.json"
+              },
+              "sizeBytes": 2434,
+              "sha256": "ebbe4dacf19b3badc80ae72255b148d3226c408598a12d925fe4494218ff8945",
+              "alphaBounds": {
+                "left": 12,
+                "top": 2,
+                "right": 44,
+                "bottom": 63
+              },
+              "selectedForPreview": true,
+              "originalBytesPreserved": true,
+              "sourceUrl": "https://api.pixellab.ai/mcp/images/7437236c-6836-4a37-a46a-8e6257c8e783/download",
+              "groundAnchor": {
+                "x": 32,
+                "y": 63
+              },
+              "perspectiveQuality": "awaiting-user-review",
+              "note": "넓어진 눈과 열린 입의 놀람 표정이다. 얼굴뿐 아니라 팔·꼬리·실루엣 일부도 원본과 달라 연결감은 사용자 검토가 필요하다.",
+              "approvedForMotion": false,
+              "userApproval": false,
+              "quality": "needs-review",
+              "preservationLimit": "표정 외에 꼬리·손 등도 원본과 달라 얼굴만 완벽히 보존된 결과가 아니다."
+            },
+            {
+              "pose": "calm-b",
+              "role": "B",
+              "sourceKind": "reused",
+              "status": "available",
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/south-east.png",
+              "width": 64,
+              "height": 64,
+              "sha256": "034ea4aabfc3f5b88bf1ff64e51dcb5a4c0e9c6693d0c972dc890c073a11000c",
+              "sizeBytes": 2846,
+              "alphaBounds": {
+                "left": 22,
+                "top": 2,
+                "right": 44,
+                "bottom": 63
+              },
+              "groundAnchor": {
+                "x": 32,
+                "y": 63
+              },
+              "sourceDirection": "south-east",
+              "mirrored": false,
+              "originalBytesPreserved": true,
+              "note": "눈과 다문 입이 보이는 기존 SE 기본 원본을 침착 endpoint로 재사용한다.",
+              "selectedForPreview": true,
+              "perspectiveQuality": "awaiting-user-review",
+              "approvedForMotion": false,
+              "userApproval": false,
+              "quality": "needs-review"
+            }
+          ],
+          "selectedForPreview": true,
+          "approvedForMotion": false,
+          "userApproval": false,
+          "quality": "needs-review"
+        },
+        "north-west": {
+          "source": {
+            "localPath": "public/assets/maplestory/anime-signatures-ai/shaft/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "7aa815d6620914c6b39381c8ce82280856b4a3e2a1216fce5d4a57e7d9b4e2ca",
+            "sizeBytes": 1887,
+            "alphaBounds": {
+              "left": 19,
+              "top": 2,
+              "right": 43,
+              "bottom": 62
+            },
+            "groundAnchor": {
+              "x": 32,
+              "y": 62
+            },
+            "inputRef": "https://api.pixellab.ai/mcp/images/e5f2defe-5840-4b9c-a29c-affbdbcde9bc/download?index=1"
+          },
+          "frames": [
+            {
+              "pose": "surprise-a",
+              "role": "A",
+              "sourceKind": "generated",
+              "status": "available",
+              "localPath": "public/assets/maplestory/acting-studies-ai/reaction/north-west/surprise-a.png",
+              "width": 64,
+              "height": 64,
+              "frameIndex": 0,
+              "sourceDirection": "north-west",
+              "mirrored": false,
+              "generation": {
+                "provider": "PixelLab",
+                "tool": "edit_image_pixen",
+                "jobId": "d6f59ba3-893e-4955-8f93-44522ba72c58",
+                "attempt": 1,
+                "request": {
+                  "image_url": "https://api.pixellab.ai/mcp/images/e5f2defe-5840-4b9c-a29c-affbdbcde9bc/download?index=1",
+                  "description": "Native64px crisp pixel art, transparent. Preserve identity/outfit/colors, whole ears/tail/feet inside. No effects, text, mirror or rotated sprite. Silver-gray fox Yeonmuk, NORTH-WEST back body, same head looking over shoulder. Change ONLY visible facial expression to startled recognition: visibly widened amber eye(s), raised eyebrow, small open O mouth. Keep input head angle, neck, body, arms, hands, tail and feet unchanged. Not angry. ",
+                  "width": 64,
+                  "height": 64,
+                  "no_background": true,
+                  "seed": 861951
+                },
+                "quotedGenerations": 1,
+                "status": "completed",
+                "actualChargedGenerations": 1,
+                "assetId": "9c254888-ef80-574c-81c4-e99d45b89554",
+                "originalResponsePath": "public/assets/maplestory/acting-studies-ai/reaction/north-west/generation-responses.json"
+              },
+              "sizeBytes": 1923,
+              "sha256": "7fb67d64c13a0c5da8f3d073e56a8a417abacbc940c854d344beae6d4671dfb8",
+              "alphaBounds": {
+                "left": 19,
+                "top": 2,
+                "right": 43,
+                "bottom": 62
+              },
+              "selectedForPreview": true,
+              "originalBytesPreserved": true,
+              "sourceUrl": "https://api.pixellab.ai/mcp/images/d6f59ba3-893e-4955-8f93-44522ba72c58/download",
+              "groundAnchor": {
+                "x": 32,
+                "y": 62
+              },
+              "perspectiveQuality": "awaiting-user-review",
+              "note": "돌아본 얼굴의 눈과 입이 열린 놀람 표정이다. 같은 NW 기본 몸을 바탕으로 한 기존 shaft B와 비교한다.",
+              "approvedForMotion": false,
+              "userApproval": false,
+              "quality": "needs-review",
+              "preservationLimit": "표정 외에 머리 각도가 조금 바뀌었다. 얼굴만 완벽히 보존된 결과가 아니다."
+            },
+            {
+              "pose": "calm-b",
+              "role": "B",
+              "sourceKind": "reused",
+              "status": "available",
+              "localPath": "public/assets/maplestory/anime-signatures-ai/shaft/north-west.png",
+              "width": 64,
+              "height": 64,
+              "sha256": "7aa815d6620914c6b39381c8ce82280856b4a3e2a1216fce5d4a57e7d9b4e2ca",
+              "sizeBytes": 1887,
+              "alphaBounds": {
+                "left": 19,
+                "top": 2,
+                "right": 43,
+                "bottom": 62
+              },
+              "groundAnchor": {
+                "x": 32,
+                "y": 62
+              },
+              "sourceDirection": "north-west",
+              "mirrored": false,
+              "originalBytesPreserved": true,
+              "note": "기존 NW 몸·돌아본 머리에서 한쪽 눈·다문 입이 보이는 shaft 원본을 침착 endpoint로 재사용한다.",
+              "selectedForPreview": true,
+              "perspectiveQuality": "awaiting-user-review",
+              "approvedForMotion": false,
+              "userApproval": false,
+              "quality": "needs-review"
+            }
+          ],
+          "selectedForPreview": true,
+          "approvedForMotion": false,
+          "userApproval": false,
+          "quality": "needs-review"
+        }
+      },
+      "approvedForMotion": false,
+      "userApproval": false,
+      "quality": "needs-review"
+    },
+    {
+      "id": "drunken-balance",
+      "actor": "ataho",
+      "status": "awaiting-user-review",
+      "directions": {
+        "south-east": {
+          "source": {
+            "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "9252454bece5169c263158813806999b45dfe70f6ff8bb08ab0e9669bdd7c65d",
+            "sizeBytes": 3780,
+            "alphaBounds": {
+              "left": 9,
+              "top": 1,
+              "right": 51,
+              "bottom": 63
+            },
+            "groundAnchor": {
+              "x": 29,
+              "y": 63
+            },
+            "inputRef": "upload:a4722d35-9cff-4164-9e3e-ca0ac50cb055"
+          },
+          "frames": [
+            {
+              "pose": "imbalance-a",
+              "role": "A",
+              "sourceKind": "generated",
+              "status": "available",
+              "localPath": "public/assets/maplestory/acting-studies-ai/balance/south-east/imbalance-a.png",
+              "width": 64,
+              "height": 64,
+              "frameIndex": 0,
+              "sourceDirection": "south-east",
+              "mirrored": false,
+              "generation": {
+                "provider": "PixelLab",
+                "tool": "edit_image_pixen",
+                "jobId": "f1a28de4-57f9-4124-8cd8-e58e7de0e110",
+                "attempt": 1,
+                "request": {
+                  "image_url": "upload:a4722d35-9cff-4164-9e3e-ca0ac50cb055",
+                  "description": "Native64px crisp pixel art, transparent. Preserve identity/outfit/colors, whole ears/tail/feet inside. No effects, text, mirror or rotated sprite. Ataho tiger, brown/ivory clothes, SOUTH-EAST view. Redraw controlled drunken off-balance: screen-left support sole fixed x29,y62, support knee bent; pelvis shifts right, chest/head lean farther right, free right heel lifted, arms loose opposing the lean. Change hip/knee/torso anatomy, not a tilted copy. Keep support sole grounded.",
+                  "width": 64,
+                  "height": 64,
+                  "no_background": true,
+                  "seed": 861952
+                },
+                "quotedGenerations": 1,
+                "status": "completed",
+                "actualChargedGenerations": 1,
+                "assetId": "f03e4ec8-a8bc-5db5-b98c-e562f24bd32c",
+                "originalResponsePath": "public/assets/maplestory/acting-studies-ai/balance/south-east/generation-responses.json"
+              },
+              "sizeBytes": 3002,
+              "sha256": "e5e6266987af7aefe054f85c3e887b67d7f0babbcf27ef8b21ccbd77a41d2173",
+              "alphaBounds": {
+                "left": 9,
+                "top": 2,
+                "right": 56,
+                "bottom": 63
+              },
+              "selectedForPreview": true,
+              "originalBytesPreserved": true,
+              "sourceUrl": "https://api.pixellab.ai/mcp/images/f1a28de4-57f9-4124-8cd8-e58e7de0e110/download",
+              "groundAnchor": {
+                "x": 28,
+                "y": 63
+              },
+              "anchorEvidence": "동일한 화면 왼쪽 지지발의 최하단 sole 픽셀을 대조했다. A y62의 x25~31, B y62의 x26~32를 각각 중심으로 삼는다. y는 배타적 하단63이다.",
+              "supportFoot": "screen-left",
+              "perspectiveQuality": "needs-review",
+              "note": "왼발 지지와 오른 무릎 들기는 생성됐으나 골반·몸통의 쏠림은 목표보다 약하다. 강한 중심이탈의 완성으로 분류하지 않는다.",
+              "approvedForMotion": false,
+              "userApproval": false,
+              "quality": "needs-review"
+            },
+            {
+              "pose": "recovery-b",
+              "role": "B",
+              "sourceKind": "reused",
+              "status": "available",
+              "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south-east.png",
+              "width": 64,
+              "height": 64,
+              "sha256": "9252454bece5169c263158813806999b45dfe70f6ff8bb08ab0e9669bdd7c65d",
+              "sizeBytes": 3780,
+              "alphaBounds": {
+                "left": 9,
+                "top": 1,
+                "right": 51,
+                "bottom": 63
+              },
+              "groundAnchor": {
+                "x": 29,
+                "y": 63
+              },
+              "sourceDirection": "south-east",
+              "mirrored": false,
+              "originalBytesPreserved": true,
+              "note": "같은 방향 기본 자세의 안정된 양발 지지를 회복 endpoint로 재사용한다.",
+              "selectedForPreview": true,
+              "anchorEvidence": "동일한 화면 왼쪽 지지발의 최하단 sole 픽셀을 대조했다. A y62의 x25~31, B y62의 x26~32를 각각 중심으로 삼는다. y는 배타적 하단63이다.",
+              "supportFoot": "screen-left",
+              "perspectiveQuality": "needs-review",
+              "approvedForMotion": false,
+              "userApproval": false,
+              "quality": "needs-review"
+            }
+          ],
+          "selectedForPreview": true,
+          "approvedForMotion": false,
+          "userApproval": false,
+          "quality": "needs-review"
+        },
+        "north-west": {
+          "source": {
+            "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "sha256": "1b0938808b45571cefcbee34fb3b8dda29b842ff73a0038d3c5568122f2dcd68",
+            "sizeBytes": 2694,
+            "alphaBounds": {
+              "left": 14,
+              "top": 2,
+              "right": 54,
+              "bottom": 63
+            },
+            "groundAnchor": {
+              "x": 24.5,
+              "y": 63
+            },
+            "inputRef": "upload:6aa737dd-bdfb-4998-9796-7f5b275894c1"
+          },
+          "frames": [
+            {
+              "pose": "imbalance-a",
+              "role": "A",
+              "sourceKind": "generated",
+              "status": "available",
+              "localPath": "public/assets/maplestory/acting-studies-ai/balance/north-west/imbalance-a.png",
+              "width": 64,
+              "height": 64,
+              "frameIndex": 0,
+              "sourceDirection": "north-west",
+              "mirrored": false,
+              "generation": {
+                "provider": "PixelLab",
+                "tool": "edit_image_pixen",
+                "jobId": "28e5363b-456e-4e72-977a-4d224cef916d",
+                "attempt": 1,
+                "request": {
+                  "image_url": "upload:6aa737dd-bdfb-4998-9796-7f5b275894c1",
+                  "description": "Native64px crisp pixel art, transparent. Preserve identity/outfit/colors, whole ears/tail/feet inside. No effects, text, mirror or rotated sprite. Ataho tiger, brown/ivory clothes, NORTH-WEST back view. Redraw controlled drunken off-balance: screen-left support sole fixed x25,y62, support knee bent; pelvis shifts right, chest/head lean farther right, free right heel lifted, arms loose opposing the lean. Change hip/knee/torso anatomy, not a tilted copy. Keep support sole grounded.",
+                  "width": 64,
+                  "height": 64,
+                  "no_background": true,
+                  "seed": 861953
+                },
+                "quotedGenerations": 1,
+                "status": "completed",
+                "actualChargedGenerations": 1,
+                "assetId": "3d07ba00-e723-5840-b75f-4bab42cc8d58",
+                "originalResponsePath": "public/assets/maplestory/acting-studies-ai/balance/north-west/generation-responses.json"
+              },
+              "sizeBytes": 2035,
+              "sha256": "3852f942678da20ff10b80af83db882095040d215c1b86560732246c5883ae76",
+              "alphaBounds": {
+                "left": 10,
+                "top": 2,
+                "right": 55,
+                "bottom": 61
+              },
+              "selectedForPreview": true,
+              "originalBytesPreserved": true,
+              "sourceUrl": "https://api.pixellab.ai/mcp/images/28e5363b-456e-4e72-977a-4d224cef916d/download",
+              "groundAnchor": {
+                "x": 36.5,
+                "y": 61
+              },
+              "anchorEvidence": "실제 그림의 화면 오른쪽 발바닥을 지지점 검토용으로 정렬한다. A y60의 x33~40과 B y60의 x31~38을 각각 중심으로 삼고 배타적 하단61을 사용한다. 원본과 같은 해부학적 축발·몸통 방향이라는 채택 판정은 아니다.",
+              "perspectiveQuality": "needs-review",
+              "note": "뒤쪽 몸을 바탕으로 오른발을 디디고 반대 다리를 들지만 머리가 오른쪽으로 돌아가며, 원본과 방향·지지발의 연결은 검토가 필요하다. 골반 쏠림도 목표보다 약하다.",
+              "approvedForMotion": false,
+              "userApproval": false,
+              "quality": "needs-review",
+              "supportFoot": "screen-right",
+              "sourceFacingPreserved": "unverified"
+            },
+            {
+              "pose": "recovery-b",
+              "role": "B",
+              "sourceKind": "reused",
+              "status": "available",
+              "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/north-west.png",
+              "width": 64,
+              "height": 64,
+              "sha256": "1b0938808b45571cefcbee34fb3b8dda29b842ff73a0038d3c5568122f2dcd68",
+              "sizeBytes": 2694,
+              "alphaBounds": {
+                "left": 14,
+                "top": 2,
+                "right": 54,
+                "bottom": 63
+              },
+              "groundAnchor": {
+                "x": 34.5,
+                "y": 61
+              },
+              "sourceDirection": "north-west",
+              "mirrored": false,
+              "originalBytesPreserved": true,
+              "note": "같은 방향 기본 자세의 안정된 양발 지지를 회복 endpoint로 재사용한다.",
+              "selectedForPreview": true,
+              "anchorEvidence": "실제 그림의 화면 오른쪽 발바닥을 지지점 검토용으로 정렬한다. A y60의 x33~40과 B y60의 x31~38을 각각 중심으로 삼고 배타적 하단61을 사용한다. 원본과 같은 해부학적 축발·몸통 방향이라는 채택 판정은 아니다.",
+              "perspectiveQuality": "needs-review",
+              "approvedForMotion": false,
+              "userApproval": false,
+              "quality": "needs-review",
+              "supportFoot": "screen-right",
+              "sourceFacingPreserved": "source-original"
+            }
+          ],
+          "selectedForPreview": true,
+          "approvedForMotion": false,
+          "userApproval": false,
+          "quality": "needs-review",
+          "sourceFacingPreserved": "unverified",
+          "note": "NW A는 고개가 반대쪽으로 돌아가며 몸통 방향 보존이 불확실하다. 실제 오른발 지지점으로 정렬한 A/B 원화 검토용 시안이다."
+        }
+      },
+      "approvedForMotion": false,
+      "userApproval": false,
+      "quality": "needs-review"
+    }
+  ],
+  "userApproval": false,
+  "approvedForMotion": false,
+  "selectionMeaning": "selectedForPreview는 사용자가 원본 후보를 열람하기 위한 선택이며 연출·중간동작 채택 승인이 아니다."
+}

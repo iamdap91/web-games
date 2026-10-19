@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-19",
+  "status": "awaiting-user-review",
+  "authorization": "사용자가 인서트·표정·취권·물막·열굴절 5종의 컷씬 비교 시안 제작을 모두 승인했다. 무음이며 본게임 전투·진행 규칙은 연결하지 않는다.",
+  "poseRecordPath": "resources/acting-study-poses.json",
+  "reusedMotionRecordPaths": [
+    "resources/companion-basic-attacks/yeonmuk.json",
+    "resources/companion-basic-attacks/biwol-additions.json"
+  ],
+  "previews": [
+    {
+      "scene": "talisman-insert",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/acting-studies-ai/previews/talisman-insert-south-east.gif"
+    },
+    {
+      "scene": "talisman-insert",
+      "facing": "north-west",
+      "localPath": "public/assets/maplestory/acting-studies-ai/previews/talisman-insert-north-west.gif"
+    },
+    {
+      "scene": "reaction-acting",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/acting-studies-ai/previews/reaction-acting-south-east.gif"
+    },
+    {
+      "scene": "reaction-acting",
+      "facing": "north-west",
+      "localPath": "public/assets/maplestory/acting-studies-ai/previews/reaction-acting-north-west.gif"
+    },
+    {
+      "scene": "drunken-balance",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/acting-studies-ai/previews/drunken-balance-south-east.gif"
+    },
+    {
+      "scene": "drunken-balance",
+      "facing": "north-west",
+      "localPath": "public/assets/maplestory/acting-studies-ai/previews/drunken-balance-north-west.gif"
+    },
+    {
+      "scene": "water-landing",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/acting-studies-ai/previews/water-landing-south-east.gif"
+    },
+    {
+      "scene": "heat-haze",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/acting-studies-ai/previews/heat-haze-south-east.gif"
+    }
+  ],
+  "entries": [
+    {
+      "id": "talisman-insert",
+      "mechanism": "기존 단발 부적과 질풍 찌르기를 순차 연결하고 같은 시각의 표적 문양을 인서트로 읽힌다. 기준판과 사건·몸·접촉 시각은 같다.",
+      "sources": ["https://www.clipstudio.net/how-to-draw/archives/172579"],
+      "referenceBoundary": "이전 정적 구성 자료와 현재 코드의 재사용이다. 자동 재생 컷 길이는 이번 프로젝트 설계이다."
+    },
+    {
+      "id": "reaction-acting",
+      "mechanism": "기존 침착 B를 입력으로 만든 놀람 A의 실제 눈·입을 두 방향에서 비교한다. 머리·손·꼬리 일부 변화도 사용자 검토 대상이다.",
+      "sources": ["https://naruto-official.com/en/news/01_1909"],
+      "referenceBoundary": "공식 제작 설명·정적 표정 비교의 기존 확인을 재사용한다. 중간 표정 동화·추가 방향은 사용자 GIF 확인 뒤 제작한다."
+    },
+    {
+      "id": "drunken-balance",
+      "mechanism": "새 A와 기존 안정 B를 남동의 왼발·북서의 오른발에 정렬한 원화 검토다. 남동의 몸통 쏠림이 약하고 북서는 고개·몸 방향 보존이 불확실해 동작 채택으로 취급하지 않는다. 몸 PNG 전체를 기울이지 않는다. 남동만 기존 마시기 모션으로 시작하며 북서는 안정 B에서 시작한다.",
+      "qualityLimit": "두 방향 모두 중심 쏠림이 목표보다 약한 후보이며 북서 방향 보존은 미확정이다. 새 연속 몸 동작으로 사용하지 않는다.",
+      "sources": ["https://www.youtube.com/watch?v=E-V32zMMAik"],
+      "referenceBoundary": "KUNGFU.LIFE 원작성 영상의 5초 간격 스토리보드 75시점과 담당 세션의 111~114초 부근 무음 재생·두 선택 화면에서 골반·무릎·발의 변화만 확인했다. 정확한 회복 타이밍의 복제나 연속 동화 제작으로 주장하지 않는다."
+    },
+    {
+      "id": "water-landing",
+      "mechanism": "기존 도약 날아차기 착지 사건의 실제 두 발에서 얇은 물막을 만들고 분열·포물선 낙수·종점의 작은 2차 파문을 계산한다.",
+      "sources": ["https://saint11.art/img/pixel-tutorials/Water.gif"],
+      "referenceBoundary": "원작성 Water GIF 32프레임의 시간순 12시점 관찰을 재사용했다. 물막 전체 안무는 이번 시안의 설계이다."
+    },
+    {
+      "id": "heat-haze",
+      "mechanism": "눈솔 온천 팔레트의 배경 표면을 캐시하고 좁은 열기 영역에서만 상향 변위한다. 인물·전경 홈통·UI는 뒤에 선명하게 표시하며 감소 모션에서는 변위를 제거한다.",
+      "sources": [
+        "https://tympanus.net/codrops/2016/05/03/animated-heat-distortion-effects-webgl/"
+      ],
+      "referenceBoundary": "원작성 GLSL 설명·코드를 열람하고 Wok Heat 온라인 데모의 서로 다른 다섯 화면을 관찰했다. 미디어 요소는 없었고 무음 상태를 유지했다. 원본 프로젝트를 내려받아 빌드하지 않았다. 이번 Canvas 배경 변위를 동일한 굴절 셰이더라고 부르지 않는다."
+    }
+  ]
+}

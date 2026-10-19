@@ -7,6 +7,11 @@ export const libraryCategories = [
         name: '캐릭터',
         description: '주인공 · 동료 · NPC · 외형 비교',
     },
+    {
+        id: 'cutscenes',
+        name: '컷씬',
+        description: '필살기 시네마틱 · 장면 전환 · 전용 연출',
+    },
     { id: 'monsters', name: '몬스터', description: '일반 · 중간보스 · 보스' },
     { id: 'maps', name: '맵·마을', description: '원정 지도 · 지역 마을 · 배경' },
     {
@@ -27,6 +32,11 @@ export const libraryCategories = [
     },
     { id: 'materials', name: '재질', description: '질감 · 외곽선 비교' },
     { id: 'audio', name: '사운드', description: '전투 · 행동 · 환경음' },
+    {
+        id: 'archive',
+        name: 'archive',
+        description: '이전 이동맵 · 지역 마을 시안',
+    },
 ];
 const existingMonsters = new Set([
     'ai/slime',
@@ -61,6 +71,8 @@ function assetGroup(asset, category) {
             return '아타호';
         if (asset.id.includes('yeonmuk') || asset.id.includes('fox-talismanist'))
             return '연묵';
+        if (asset.id.includes('biwol'))
+            return '비월';
         return 'NPC·기타 캐릭터';
     }
     if (category === 'monsters')
@@ -117,6 +129,7 @@ function fileEntry(asset) {
             asset.id,
             asset.name,
             group,
+            group === '비월' ? '토끼 닌자 rabbit ninja' : undefined,
             asset.sourceName,
             asset.collection,
             asset.theme,
@@ -132,8 +145,27 @@ const animationLabs = new Set([
     'local/sprite-stacking-lab',
     'local/prerendered-model-lab',
 ]);
+const archivedMapIds = new Set([
+    ...['boar', 'bear', 'armadillo', 'mantis'].flatMap((region) => [
+        `local/regional-trail-${region}`,
+        `local/regional-trail-${region}-alternate`,
+    ]),
+    'local/village-harbor',
+    'local/village-onsen',
+]);
 function proceduralCategory(id) {
+    if (archivedMapIds.has(id))
+        return 'archive';
+    if (id === 'local/biwol-basic-attack' || id === 'local/yeonmuk-basic-attack')
+        return 'characters';
+    if (id === 'local/ataho-shadow-cutscene' ||
+        id === 'local/ataho-tiger-awakening-cutscene' ||
+        id === 'local/ataho-hisashi-punch-cutscene' ||
+        id === 'local/anime-signatures')
+        return 'cutscenes';
     if (id === 'local/herbalist-camp')
+        return 'maps';
+    if (id.startsWith('local/regional-trail-'))
         return 'maps';
     if (id === 'local/village-hybrid-references')
         return 'materials';
@@ -154,16 +186,28 @@ function proceduralCategory(id) {
     return 'facilities';
 }
 function proceduralGroup(id, category) {
+    if (category === 'archive')
+        return id.startsWith('local/regional-trail-')
+            ? '이전 이동맵 A/B'
+            : '이전 지역 마을';
+    if (id === 'local/biwol-basic-attack')
+        return '비월';
+    if (id === 'local/yeonmuk-basic-attack')
+        return '연묵';
+    if (id === 'local/2-5d-expression-lab' || id === 'local/anime-signatures')
+        return '표현 비교';
+    if (category === 'cutscenes')
+        return '아타호';
     if (id === 'local/herbalist-camp')
         return 'PixelLab 맵 실험';
+    if (id.startsWith('local/regional-trail-'))
+        return '지역 이동맵';
     if (id.startsWith('local/village-style-'))
         return '마을 스타일 실험';
     if (id === 'local/village-hybrid-references')
         return '혼합 표현 연구';
     if (animationLabs.has(id))
         return '애니메이션 실험';
-    if (id === 'local/2-5d-expression-lab')
-        return '표현 비교';
     if (category === 'characters')
         return '아타호';
     if (category === 'maps')
@@ -210,7 +254,8 @@ const categoryOrder = new Map(libraryCategories.map((category, index) => [catego
 const characterOrder = {
     아타호: 0,
     연묵: 1,
-    'NPC·기타 캐릭터': 2,
+    비월: 2,
+    'NPC·기타 캐릭터': 3,
 };
 const atahoMembers = entries.filter((entry) => entry.previewPath?.startsWith('src/resources/characters/ataho-hybrid/index.html'));
 const atahoComparison = {
@@ -245,7 +290,7 @@ export const libraryEntries = [
     ...entries.filter((entry) => !atahoMembers.includes(entry)),
 ].sort((a, b) => categoryOrder.get(a.category) - categoryOrder.get(b.category) ||
     (a.category === 'characters'
-        ? (characterOrder[a.group] ?? 2) - (characterOrder[b.group] ?? 2)
+        ? (characterOrder[a.group] ?? 3) - (characterOrder[b.group] ?? 3)
         : 0));
 const atahoNavigation = [
     ['v2 동작', 'local/ataho-v2-combos', '동작 조합실'],

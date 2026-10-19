@@ -1,0 +1,2046 @@
+{
+  "assetId": "ai/ataho-cutscene/tiger-night",
+  "displayName": "아타호 컷씬 시안",
+  "createdDate": "2026-10-17",
+  "provider": "PixelLab MCP",
+  "status": "generated-awaiting-user-review",
+  "authorization": "2026-10-16 사용자가 기존 필살기와 별도 컷씬 분류에1개 제작을 요청하고 추가 도트 애셋은PixelLab 이용을 명시. 전용 컷씬 그림과 짧은 주먹 모션 신규 제작 범위.",
+  "sourceCharacterId": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+  "referenceInspection": {
+    "viewedLocalPaths": [
+      "public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-04.png",
+      "public/assets/maplestory/ataho-v2-effects/20261016/cutin/ataho-face-original.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/north.png",
+      "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south-east.png"
+    ],
+    "notes": "위 원본들을 실제 이미지로 열어 외형 확인. Pro 생성에는south/north/south-east64px 공개 PixelLab 원본 URL을 캐릭터 참조로 직접 전달. 고해상도 원화는 눈·나이·체형을 읽고 프롬프트를 작성하는 용도로만 사용."
+  },
+  "runtime": {
+    "portrait": {
+      "localPath": "public/assets/maplestory/ataho-cutscene/20261017/ataho-portrait.png",
+      "width": 256,
+      "height": 192,
+      "bounds": {
+        "left": 1,
+        "top": 0,
+        "right": 256,
+        "bottom": 192
+      },
+      "alphaExtrema": [0, 255],
+      "sha256": "cf9602f58aab2dbe33d055f48b85cbe8ed21ef7a9de8439f67d8fddd6eff5177",
+      "byteSize": 30837
+    },
+    "strike": {
+      "localPath": "public/assets/maplestory/ataho-cutscene/20261017/ataho-strike.png",
+      "width": 256,
+      "height": 256,
+      "bounds": {
+        "left": 21,
+        "top": 15,
+        "right": 246,
+        "bottom": 256
+      },
+      "alphaExtrema": [0, 255],
+      "sha256": "1255c3fe290df9acb050b3977064a6ea8684d0d37461915c7020f1e2491b362f",
+      "byteSize": 23214
+    },
+    "ending": {
+      "localPath": "public/assets/maplestory/ataho-cutscene/20261017/ataho-ending.png",
+      "width": 256,
+      "height": 256,
+      "bounds": {
+        "left": 76,
+        "top": 49,
+        "right": 194,
+        "bottom": 210
+      },
+      "alphaExtrema": [0, 255],
+      "sha256": "79c6dc881613f9c7a8a31a69492b8d6be87c9ad189d744156e78f283a9ed2397",
+      "byteSize": 13881
+    },
+    "tiger": {
+      "localPath": "public/assets/maplestory/ataho-cutscene/20261017/tiger-spirit.png",
+      "width": 256,
+      "height": 256,
+      "bounds": {
+        "left": 17,
+        "top": 14,
+        "right": 239,
+        "bottom": 239
+      },
+      "alphaExtrema": [0, 255],
+      "sha256": "70d0dec13f9f4b70c747a1f7569a34be396b11735472d4330b888cfba757d630",
+      "byteSize": 45491
+    },
+    "strikeFrames": [
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/00.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 246,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "3a3386434dc0da78c27cffb3ea486246f6028e8038ea17ac139c4b6b28b14a44",
+        "byteSize": 23280,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/01.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 16,
+          "top": 21,
+          "right": 246,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "66cfd763f4de8903e1e0c81fbb31710558d25ba2e6e84e83a7fbaaa8e3c9085d",
+        "byteSize": 22973,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/02.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 14,
+          "top": 20,
+          "right": 237,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "d0c3fe087d7ad4a18d4f304ae67dedbbf211699121816f4b7721d1e0ea0c803b",
+        "byteSize": 22107,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/03.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 12,
+          "top": 20,
+          "right": 223,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "fe4daed32f7cbcc74e328bcbddd98f26c717669931cc38dd3411439955db8c92",
+        "byteSize": 21112,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/04.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 12,
+          "top": 20,
+          "right": 215,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "6ed089356101027cc2e261ca3d2ec8617e9ddb198f713c219f0b1479f1438874",
+        "byteSize": 20804,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/05.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 12,
+          "top": 20,
+          "right": 209,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "3d76f56d06f2f8ed3c9dd9854dc136c09e6ed09041322ac27af1aeab01f55ab4",
+        "byteSize": 20495,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/06.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 12,
+          "top": 20,
+          "right": 206,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "37fe35016544a1e487549be8b1df725dc91cf0a691a1dfef1610aeb89f5eb72b",
+        "byteSize": 20631,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/07.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 14,
+          "right": 238,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "46d539e334718b19ecf44735ba23bf4ad61adb4ac2c71d2b1e21cdb9822867b1",
+        "byteSize": 25979,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/08.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 236,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "5f826656ef7fc4571bb7bc3500e9db4edbcd79d26e1e6cfdba5da8602bbd5824",
+        "byteSize": 24297,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/09.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 239,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "5ca3f0c74387392d8deab01ceb136a65a4ecb0e2627c71299f063132cec101cd",
+        "byteSize": 22531,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/10.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 244,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "8f8b9694efcf40709aff105e81a2b988b12b0a6cb0860f9ba2b427f62bc98c46",
+        "byteSize": 22110,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/11.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 246,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "2be70647d1086560bf95cdf69cbe6add38d04a4dff61f17cb86cae030a87c15b",
+        "byteSize": 21437,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/12.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 246,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "3e8ba5552db83e20844af771ad9402cc89db219be2bd2a0b13e9787e14050aaf",
+        "byteSize": 21425,
+        "alphaExtrema": [0, 255]
+      }
+    ],
+    "realm": {
+      "localPath": "public/assets/maplestory/ataho-cutscene/20261017/shadow-realm.png",
+      "width": 512,
+      "height": 288,
+      "mode": "RGBA",
+      "bounds": {
+        "left": 0,
+        "top": 0,
+        "right": 512,
+        "bottom": 288
+      },
+      "alphaExtrema": [255, 255],
+      "sha256": "f5a1bf410d7a619632220f34fa446921cdfc466c2f938aeacaa04d31921baf70",
+      "byteSize": 54037,
+      "centralLuminanceMean255": 17.13
+    }
+  },
+  "generations": [
+    {
+      "role": "portrait",
+      "model": "pro",
+      "jobId": "2dabb06b-3cea-4ffa-b1b0-fb24e16c89c9",
+      "assetId": "a8bde223-51c0-54fc-8964-2c37d556d363",
+      "request": {
+        "description": "Cinematic fighting game pixel art cutscene portrait of Ataho, the SAME middle-aged male anthropomorphic orange tiger in the reference sprite. Very tight front close-up of head, ears and upper shoulders, his calm half-lidded golden eyes suddenly focused with quiet menace, mouth closed and one slight confident smile. Keep warm orange fur, black tiger stripes, broad cream muzzle, fluffy cream cheek tufts, round tiger ears, short graying eyebrow fur and forehead tuft. Stocky soft old martial artist, not muscular, not young. Red-brown open martial arts jacket, cream crossed inner shirt visible only at bottom edge. Face and ears completely inside canvas with some margin. A thin warm gold rim light from below. Detailed crisp fighting-game pixel art, visible square pixel clusters, restrained cel shading, consistent character colors, no blur, no black background, no text, no frame, genuinely transparent surrounding area. Single centered character, no duplicates.",
+        "width": 256,
+        "height": 192,
+        "no_background": true,
+        "max_colors": 48,
+        "reference_images": [
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south.png?t=1791934584",
+            "usage": "Exact character identity, face proportions, stripes, clothing and palette; enlarge into a new dramatic close-up portrait."
+          },
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south-east.png?t=1791934584",
+            "usage": "Same Ataho face and cheek tufts from another angle, identity reference only."
+          }
+        ],
+        "seed": 16101
+      },
+      "chargedGenerations": 10,
+      "file": {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/ataho-portrait.png",
+        "width": 256,
+        "height": 192,
+        "bounds": {
+          "left": 1,
+          "top": 0,
+          "right": 256,
+          "bottom": 192
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "cf9602f58aab2dbe33d055f48b85cbe8ed21ef7a9de8439f67d8fddd6eff5177",
+        "byteSize": 30837
+      },
+      "review": "집중한 눈·갈색 옷·호랑이 얼굴 확인. 회색 눈썹/머리 표현이64px 기본 자세보다 강함. 어깨가 하단과 우측 경계에 닿아 컷인 용도로 사용. 사용자 최종 리뷰 전."
+    },
+    {
+      "role": "strike",
+      "model": "pro",
+      "jobId": "64652ad1-12e8-457b-9e46-8406deb39b88",
+      "assetId": "dc43df51-4011-5bcd-ae5d-bb6d81c97094",
+      "request": {
+        "description": "Dramatic cinematic pixel-art key pose of the SAME Ataho tiger martial artist in the references. Low-angle victim POV directly in front of him: half-body from thighs up, leaning forward and driving one closed tiger fist toward the lens. Strong perspective: one foreground clenched striped orange fist near lower center is enlarged, his seasoned orange tiger face remains clearly visible above it with calm focused golden half-lidded eyes and confident smirk. His other hand stays at his waist. Stocky older soft-bellied build, rounded ears, cream muzzle and cheek tufts, black tiger markings, short pepper-gray brows. Keep REDDISH BROWN OPEN LONG-SLEEVE JACKET, ivory crossed inner shirt covering round belly, brown waist sash, charcoal loose trousers, bare striped hands, ONE striped tail. Keep full head and fist inside image, 10 pixel transparent margin. Single character, no extra arms, no duplicated fists. Crisp chunky expressive fighting-game pixel art, angular pixel clusters, strong readable silhouette, warm gold underside rim light, no text, no background, no scenery, transparent canvas.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "max_colors": 48,
+        "reference_images": [
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south.png?t=1791934584",
+            "usage": "Exact Ataho character identity, age, stocky body shape and brown jacket with cream shirt; change pose to a cinematic punch toward viewer."
+          },
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south-east.png?t=1791934584",
+            "usage": "Same character head and clothing colors and proportions, preserve identity."
+          }
+        ],
+        "seed": 16102
+      },
+      "chargedGenerations": 10,
+      "file": {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/ataho-strike.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 246,
+          "bottom": 256
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "1255c3fe290df9acb050b3977064a6ea8684d0d37461915c7020f1e2491b362f",
+        "byteSize": 23214
+      },
+      "review": "한 손을 전경에 크게 내미는 투명 반신 포즈. 주먹·머리·한 꼬리·갈색 옷·크림 속옷 확인. 하체는 하단에서 잘린 반신 구도. 얼굴/체형은 기본 자세와 생성 차이가 있어 사용자 리뷰 필요."
+    },
+    {
+      "role": "ending",
+      "model": "pro",
+      "jobId": "95fee153-4ccc-4418-b4f1-00a8ee7d75a2",
+      "assetId": "6b992858-b0b8-51e3-9e4a-192a43e83178",
+      "request": {
+        "description": "Cinematic pixel-art ending key art of the SAME Ataho tiger martial artist in the references, seen completely from behind in a powerful quiet standing pose after a finishing strike. Full body fits inside image. Broad relaxed shoulders and soft stocky waist, orange tiger head with rounded ears and cream cheek tufts at sides, REDDISH BROWN plain open jacket seen from the BACK, long sleeves, brown waist sash, dark charcoal loose trousers, bare striped tiger feet, one orange-and-black striped tail curving to his right. Head slightly lowered, both fists relaxed down beside his hips. Absolutely no face visible, no glowing writing or emblem. Low angle from behind, solemn decisive calm. Backlit warm gold on edges, deep burgundy shadows. Crisp detailed fighting-game pixel art with square pixel clusters and clean dark outline, restrained cel shading. One character, no text, no scenery, no ground, no shadow disc, transparent surrounding area, at least 8-pixel margin around ears and feet.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "max_colors": 48,
+        "reference_images": [
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/north.png?t=1791934584",
+            "usage": "EXACT Ataho back view identity, round stocky body, plain brown jacket, sash, trouser silhouette, head markings, tail; enlarge into cinematic ending pose."
+          },
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south.png?t=1791934584",
+            "usage": "Color palette and age only; output MUST remain back view."
+          }
+        ],
+        "seed": 16103
+      },
+      "chargedGenerations": 10,
+      "file": {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/ataho-ending.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 76,
+          "top": 49,
+          "right": 194,
+          "bottom": 210
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "79c6dc881613f9c7a8a31a69492b8d6be87c9ad189d744156e78f283a9ed2397",
+        "byteSize": 13881
+      },
+      "review": "북쪽 기본 자세를 기준으로 뒤돌아선 전신 포즈. 얼굴 노출/문자/문양 없이 생성됨. 실제 인물 bbox가118×161으로 캔버스에 여백이 크므로 런타임은 bbox를 참고. 사용자 최종 리뷰 전."
+    },
+    {
+      "role": "tiger",
+      "model": "pixen",
+      "jobId": "a1866a1a-7463-4acb-b141-0ddb25fac923",
+      "assetId": "823e0202-0b1e-5a86-9199-b39ff96645bc",
+      "request": {
+        "description": "A single majestic ethereal TIGER HEAD formed entirely from curling amber-gold flames and dark orange energy, facing straight toward the viewer, mouth open in a roar with two white curved fangs, fierce glowing eyes, recognizable tiger stripes made of negative dark space. A guardian tiger spirit aura for a martial arts super move. Head only, no humanoid body, no arms, no clothing. Symmetrical readable strong silhouette, large ears and cheek tufts, bright cream-gold highlights, orange ember edges. Ornate expressive fighting-game pixel art, visible square pixel clusters, dark selective outlines, crisp angular shapes, not painted, not blurry. Single head centered and entirely inside the square with 12 pixel transparent margin, genuinely transparent background, no text, no frame, no scenery.",
+        "width": 256,
+        "height": 256,
+        "no_background": true,
+        "detail": "highly detailed",
+        "outline": "selective outline",
+        "seed": 16104
+      },
+      "chargedGenerations": 1,
+      "file": {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/tiger-spirit.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 17,
+          "top": 14,
+          "right": 239,
+          "bottom": 239
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "70d0dec13f9f4b70c747a1f7569a34be396b11735472d4330b888cfba757d630",
+        "byteSize": 45491
+      },
+      "review": "정면 포효 호랑이 머리 도트. 불꽃 형태 자체는 약해 금빛 오라/확대 연출용 형상으로 사용. 사용자 최종 리뷰 전."
+    }
+  ],
+  "animation": {
+    "model": "pixminimax",
+    "jobId": "40875488-646b-4ee7-9ba6-c50387f13996",
+    "assetId": "44c4ee48-e57c-57a1-96d8-583c091d4820",
+    "chargedGenerations": 2,
+    "status": "generated-awaiting-user-review",
+    "request": {
+      "first_frame_url": "https://api.pixellab.ai/mcp/images/64652ad1-12e8-457b-9e46-8406deb39b88/download",
+      "description": "A short decisive martial-arts punch toward the camera. The tiger quickly retracts his extended front fist to his chest and twists his shoulders back for a brief anticipation, then steps in and drives that SAME closed fist forward straight at the viewer. His broad body follows the weight, his jacket sleeves and tail swing once, ending with the enlarged foreground fist close to the lens and holding the contact pose. Keep the camera fixed. One single punch, no spinning, no jumping, no extra arms, no effects or background. Preserve his face, brown jacket, cream shirt, stocky belly and stripe design throughout.",
+      "frame_count": 12,
+      "no_background": true,
+      "direction": "south",
+      "initial_pose": "half-body low-angle front view, one clenched orange striped fist extended toward the viewer, other fist at waist",
+      "subject_description": "Ataho, a stocky older male anthropomorphic orange tiger martial artist with black tiger stripes, cream muzzle and cheek tufts, brown jacket, cream shirt, brown sash and dark trousers",
+      "view": "side",
+      "enhance_prompt": false,
+      "seed": 16105
+    },
+    "review": "13장을 컨택트시트로 전수 확인.1..6에서 주먹을 당기고7에서 큰 전경 주먹으로 바뀌며8..12에서 유지/정리로 이동.7의 신전이 크게 건너뛰어 부드러운 연속 보간은 약하나 암전에서 때리는 짧은 컷의 재료로 리뷰 가능. 머리·갈색 재킷·크림 속옷·단일 꼬리 유지가 읽힘. 눈과 옷선에 프레임 차이가 있음. 최종 품질은 사용자GIF/실행 리뷰 전.",
+    "framesReturned": 13,
+    "framesRequested": 12,
+    "inputFrameIndex": 0,
+    "generatedFrameIndices": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+    "files": [
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/00.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 246,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "3a3386434dc0da78c27cffb3ea486246f6028e8038ea17ac139c4b6b28b14a44",
+        "byteSize": 23280,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/01.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 16,
+          "top": 21,
+          "right": 246,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "66cfd763f4de8903e1e0c81fbb31710558d25ba2e6e84e83a7fbaaa8e3c9085d",
+        "byteSize": 22973,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/02.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 14,
+          "top": 20,
+          "right": 237,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "d0c3fe087d7ad4a18d4f304ae67dedbbf211699121816f4b7721d1e0ea0c803b",
+        "byteSize": 22107,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/03.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 12,
+          "top": 20,
+          "right": 223,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "fe4daed32f7cbcc74e328bcbddd98f26c717669931cc38dd3411439955db8c92",
+        "byteSize": 21112,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/04.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 12,
+          "top": 20,
+          "right": 215,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "6ed089356101027cc2e261ca3d2ec8617e9ddb198f713c219f0b1479f1438874",
+        "byteSize": 20804,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/05.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 12,
+          "top": 20,
+          "right": 209,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "3d76f56d06f2f8ed3c9dd9854dc136c09e6ed09041322ac27af1aeab01f55ab4",
+        "byteSize": 20495,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/06.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 12,
+          "top": 20,
+          "right": 206,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "37fe35016544a1e487549be8b1df725dc91cf0a691a1dfef1610aeb89f5eb72b",
+        "byteSize": 20631,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/07.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 14,
+          "right": 238,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "46d539e334718b19ecf44735ba23bf4ad61adb4ac2c71d2b1e21cdb9822867b1",
+        "byteSize": 25979,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/08.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 236,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "5f826656ef7fc4571bb7bc3500e9db4edbcd79d26e1e6cfdba5da8602bbd5824",
+        "byteSize": 24297,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/09.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 239,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "5ca3f0c74387392d8deab01ceb136a65a4ecb0e2627c71299f063132cec101cd",
+        "byteSize": 22531,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/10.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 244,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "8f8b9694efcf40709aff105e81a2b988b12b0a6cb0860f9ba2b427f62bc98c46",
+        "byteSize": 22110,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/11.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 246,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "2be70647d1086560bf95cdf69cbe6add38d04a4dff61f17cb86cae030a87c15b",
+        "byteSize": 21437,
+        "alphaExtrema": [0, 255]
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-frames/12.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 21,
+          "top": 15,
+          "right": 246,
+          "bottom": 256
+        },
+        "durationMs": 70,
+        "sha256": "3e8ba5552db83e20844af771ad9402cc89db219be2bd2a0b13e9787e14050aaf",
+        "byteSize": 21425,
+        "alphaExtrema": [0, 255]
+      }
+    ],
+    "previewGif": {
+      "localPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-preview.gif",
+      "frameDurationMs": 70,
+      "playbackMeaning": "입력0과 생성1..12를 같은70ms로 순서대로 둔 비교용 파생GIF. 게임 내 타이밍과 별도."
+    },
+    "contactSheetPath": "public/assets/maplestory/ataho-cutscene/20261017/strike-contact-sheet.png",
+    "inputFramePixelsUnchanged": true,
+    "animationFirstFrameBytesDifferButPixelsEqual": true
+  },
+  "preservation": {
+    "originalPngBytesPreserved": true,
+    "noManualDrawing": true,
+    "mainPhysicalRoot": "public/assets/maplestory/ataho-cutscene/20261017",
+    "worktreeUsesMainAssetSymlink": true
+  },
+  "verification": {
+    "staticImages": "4종 실제 이미지 확인, RGBA 크기·알파 경계·SHA256 검사",
+    "animation": "생성13장 RGBA256×256·alpha bbox·SHA256 확인, 전체 컨택트시트 확인. 비교GIF 저장. 이 서브에이전트는 브라우저의 움직이는GIF 재생을 보지 않았으며 담당 세션의 실제 실행 리뷰 예정.",
+    "inGamePlayback": "최신 main 반영 후 개선된 독립 컷씬 실제 재생·탐색·인라인 진입 확인. 상세는 refinement.verification.",
+    "userQualityApproval": "미완료. 에이전트 정적 검토는 사용자 모션·미감 승인을 대체하지 않음."
+  },
+  "totalChargedGenerations": 33,
+  "backgroundGeneration": {
+    "assetId": "ai/ataho-cutscene/shadow-realm",
+    "displayName": "아타호 컷씬 암중 공간 배경",
+    "createdDate": "2026-10-17",
+    "provider": "PixelLab MCP",
+    "status": "generated-awaiting-user-review",
+    "authorization": "사용자가 최신 main을 받은 뒤 대치 호랑이 얼굴 제거, 새 모션으로 암중난타 다양화, 암중난타 배경 개선을 승인. 이 기록은 승인된 전용 배경1종 제작이며 소리는 제외.",
+    "inspectedMain": {
+      "head": "ea4fb23",
+      "paths": [
+        "src/resources/characters/ataho-v2-combos/motions/cinematic-finishers.ts",
+        "resources/ataho-v2-attack-additions-generation.json",
+        "public/assets/maplestory/ataho-cutscene/20261017/"
+      ],
+      "notes": "main의 기존 순옥살 연계·신규 공격 기록·기존 전용 컷씬 이미지 목록 확인. 생성에 입력 이미지는 쓰지 않았고 순수 환경 프롬프트로 신규 배경 제작."
+    },
+    "runtime": {
+      "localPath": "public/assets/maplestory/ataho-cutscene/20261017/shadow-realm.png",
+      "width": 512,
+      "height": 288,
+      "mode": "RGBA",
+      "bounds": {
+        "left": 0,
+        "top": 0,
+        "right": 512,
+        "bottom": 288
+      },
+      "alphaExtrema": [255, 255],
+      "sha256": "f5a1bf410d7a619632220f34fa446921cdfc466c2f938aeacaa04d31921baf70",
+      "byteSize": 54037,
+      "centralLuminanceMean255": 17.13
+    },
+    "attempts": [
+      {
+        "attempt": 1,
+        "model": "pixen",
+        "jobId": "7d8dfe92-a2b2-4939-9ce4-996ce954486c",
+        "assetId": "52e71bc8-4cbe-51a0-90e4-db7c8cf5a1a7",
+        "request": {
+          "description": "A cinematic fighting-game pixel-art BACKGROUND PLATE, landscape 16:9, an original supernatural martial-arts shadow realm. A vast abyss of near-black sumi ink and deep blackened burgundy, with enormous layered ink-cloud masses receding into distance. Subtle rich CRIMSON and restrained antique GOLD currents curl through the cloudy darkness near the SIDE EDGES and upper corners, like torn silk and painterly ink in water, organic irregular shapes, not circles or geometric lines. Along only the lower quarter, a shattered old dark dojo stone-and-wood floor breaks into floating slabs that recede in dramatic low-angle perspective, cracks catching dim ember-red light; two or three dark fragments suspended near the outer sides give depth. The central 60 percent across the middle must remain open and DARK with a faint low horizon haze so small orange pixel characters and a pale enemy silhouette stay perfectly readable. A feeling of depth, silence, crushing pressure and a world torn open during a finishing technique. Carefully layered dark values and tangible broken surfaces, some gold highlights on outer broken slab edges, no bright spotlight. Crisp high-quality expressive arcade pixel art, readable square pixel clusters, stepped edges, restrained palette with black, wine red and muted gold. One continuous environment filling the canvas. Absolutely NO people, NO animals, NO tiger face, NO eyes, NO text, NO calligraphy, NO runes, NO emblem, NO concentric rings, NO repeating geometric grid, NO blast or bright flash, NO central object. No border, no UI.",
+          "width": 512,
+          "height": 288,
+          "no_background": false,
+          "detail": "highly detailed",
+          "outline": "selective outline",
+          "seed": 17110
+        },
+        "chargedGenerations": 1,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/7d8dfe92-a2b2-4939-9ce4-996ce954486c/download",
+        "status": "rejected",
+        "review": "먹구름과 깨진 바닥은 생성되었으나 중앙에 요청하지 않은 작은 사람 실루엣이 들어가 미채택. 로컬 게임 애셋으로 저장하지 않음."
+      },
+      {
+        "attempt": 2,
+        "model": "pixen",
+        "jobId": "0622d757-c3e5-4cbb-baad-359f8e69f6b9",
+        "assetId": "dae23e11-bbae-541e-a5e3-1424205729a3",
+        "request": {
+          "description": "An EMPTY environment-only cinematic pixel-art background. A totally deserted shattered stone platform at the bottom of a vast ink-black abyss. LANDSCAPE 16:9. The entire CENTRAL HALF of the canvas is EMPTY NEAR-BLACK NEGATIVE SPACE with only faint horizontal burgundy mist far in the distance. There is NOTHING in the center: no figure, no object, no silhouette, no statue, no shrine. Thick organic sumi ink cloud formations loom only around the far LEFT and RIGHT EDGES and the top corners, layered smoky black with rich dark wine-red undersides and sparse antique-gold seams. Only the bottom quarter contains a broken charcoal-gray dojo stone floor in deep receding perspective, separated slabs and a few floating broken fragments along the outer corners, dim red cracks, sparse muted gold edges. Low horizon, enormous silent dark depth. Most of this image is dark with subtle layered values. Environment concept art, strictly empty landscape, absolutely uninhabited. Crisp arcade pixel art with square pixel clusters, stepped contours, dark warm palette, artful organic ink shapes. No characters or creatures of any kind, no face, no eyes, no text, no symbols, no bright flash, no sun, no central focal object, no geometrical rings, no UI, no border.",
+          "width": 512,
+          "height": 288,
+          "no_background": false,
+          "detail": "highly detailed",
+          "outline": "selective outline",
+          "seed": 17111
+        },
+        "chargedGenerations": 1,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/0622d757-c3e5-4cbb-baad-359f8e69f6b9/download",
+        "status": "selected-for-review",
+        "review": "빈 중앙과 검은 먹빛 공간·양측 먹구름·짙은 붉은 안개·절제된 금색 윤곽·하단 깨진 바닥/외곽 파편 확인. 중앙 인물/동물/문자 없음. 불투명 원본 그대로 사용. 구름이 층을 이루되 프롬프트보다 스타일화되어 입체 깊이는 런타임 원근/미세 이동과 함께 검토 필요."
+      }
+    ],
+    "selectedAttempt": 2,
+    "totalChargedGenerations": 2,
+    "retries": 1,
+    "attemptLimitReached": true,
+    "preservation": {
+      "downloadedOriginalBytesPreserved": true,
+      "noManualDrawingOrPixelEdits": true,
+      "onlyMainAssetFileWritten": "public/assets/maplestory/ataho-cutscene/20261017/shadow-realm.png"
+    },
+    "verification": {
+      "staticImageViewed": true,
+      "alphaBoundsAndSha256Checked": true,
+      "centerMeanLuminance17Of255": "중앙 샘플 x128..384,y50..220의 평균 휘도17.13/255. 단순 정적 수치이며 실제 캐릭터 대비와 모션 가독성 검증을 대체하지 않음.",
+      "runtimePlayback": "실제 브라우저1배 재생에서 신규 배경과6개 공격의 전환·접지·캐릭터 대비를 확인. 최종 미감 승인은 사용자 리뷰 전.",
+      "userReview": "미완료. 정적 배경 시안이며 최종 미감 승인은 사용자에게 있음."
+    }
+  },
+  "refinement": {
+    "date": "2026-10-17",
+    "mainIntegrated": "ea4fb23fd251fb563703c5ab05919061c46570d6",
+    "request": [
+      "대치에서 갑자기 나타나는 호랑이 얼굴 제거",
+      "최신 main의 추가 모션으로 암중난타 다양화",
+      "암중난타 배경 개선",
+      "소리는 지금 추가하지 않고 추후 ElevenLabs로 제작·적용"
+    ],
+    "implemented": [
+      "대치 컷의 큰 호랑이 얼굴 제거",
+      "진각→훅→동쪽 어퍼→대각 망치주먹→서쪽 하이킥→공중 양손 내려찍기",
+      "암중 공간 배경과 전경 바닥·붉은 안개·잔상·접지 균열",
+      "임시 합성 소리와 소리 버튼 제거"
+    ],
+    "durationMs": 10700,
+    "rushDurationMs": 3200,
+    "sourceRecords": [
+      "resources/ataho-v2-impact-attacks.json",
+      "resources/ataho-v2-motion-catalog.json"
+    ],
+    "audioPolicy": "현재 소리는 추가하지 않으며 추후 사용자가 ElevenLabs 결제 후 제작·적용할 계획. 임시 합성 소리는 제거.",
+    "verification": {
+      "browser": "Codex in-app browser, PC",
+      "playback": "1배 전체10.7초 실제 재생.7개 컷과6개 난타 모션·종결·귀환 모두 진행 후 자동 종료 확인.",
+      "capture": {
+        "kind": "actual-browser-capture",
+        "rawFrames": 128,
+        "gifFrames": 65,
+        "path": "public/assets/maplestory/ataho-cutscene/20261017/review/cutscene-v2-browser.gif",
+        "note": "실제 브라우저 화면을 시간 간격으로 촬영한 저해상도 무음 미리보기. 원래60fps 전체 프레임 녹화는 아님."
+      },
+      "still": "public/assets/maplestory/ataho-cutscene/20261017/review/cutscene-v2-page.jpg",
+      "halfSpeed": "0.5배에서 실제1.2초 동안 컷씬 시각609ms 진행 확인.",
+      "controls": [
+        "일시정지·시점 슬라이더",
+        "방향키80ms 탐색",
+        "컷 버튼",
+        "모션 감소 선택",
+        "라이브러리 컷씬 분류→상세 인라인 재생→목록 복귀"
+      ],
+      "console": "독립 컷씬 경고·오류0. 라이브러리에서 브라우저 도구 주입 스크립트의 MutationObserver 오류1건 관찰. 스택이 URL없는script4→node:electron/js2c/sandbox_bundle로 확인됐고 저장소 스크립트가 아니며 재생·종료 동작은 정상.",
+      "audio": "현재 음원·합성 소리·소리 버튼 없음.",
+      "technicalChecks": "npm run check(타입·린트·포맷), npm run build, git diff --check 통과. 별도 테스트 코드는 추가하거나 실행하지 않음.",
+      "userQualityApproval": "미완료. 실제 재생 시안을 사용자에게 전달해 평가받는다."
+    }
+  },
+  "demonReuse": {
+    "date": "2026-10-17",
+    "request": "암중호격에 기존 순옥살 모션 사용",
+    "implementation": "finisher-demon 객체의 본체90자세·공격 분신6트랙·모든시간·접촉·방향을 그대로 재생. 별도6개공격 안무와 전경주먹 추가타 제거.",
+    "sourceFile": "src/resources/characters/ataho-v2-combos/motions/cinematic-finishers.ts",
+    "sourceMotionId": "finisher-demon",
+    "sourceDurationMs": 3500,
+    "durationMs": 10220,
+    "cuts": [
+      {
+        "id": "stage",
+        "startMs": 0,
+        "endMs": 900
+      },
+      {
+        "id": "eyes",
+        "startMs": 900,
+        "endMs": 2050
+      },
+      {
+        "id": "threat",
+        "startMs": 2050,
+        "endMs": 3300
+      },
+      {
+        "id": "prison",
+        "startMs": 3300,
+        "endMs": 5340
+      },
+      {
+        "id": "strike",
+        "startMs": 5340,
+        "endMs": 6380
+      },
+      {
+        "id": "still",
+        "startMs": 6380,
+        "endMs": 6800
+      },
+      {
+        "id": "ending",
+        "startMs": 6800,
+        "endMs": 9170
+      },
+      {
+        "id": "return",
+        "startMs": 9170,
+        "endMs": 10220
+      }
+    ],
+    "hitCounting": {
+      "source": "collectSandbagContacts(finisher-demon,{scale:3}) connected/timeMs",
+      "total": 21,
+      "body": 15,
+      "assists": 6,
+      "firstSceneContactMs": 3645,
+      "finalSceneContactMs": 6195,
+      "observation": "canvas.dataset.action에 구간·실제명중/21·본체phase. 순옥살 구간 화면에도 현재명중수 표시. 탐색·반복에 타수를 누적하지 않음."
+    },
+    "preserved": [
+      "기존 PixelLab 암중무대·먹구름·붉은안개·깨진바닥",
+      "대치의 갑작스러운호랑이얼굴 제거",
+      "기존 원본안무·actor startMs·접촉",
+      "무음: 추후ElevenLabs 제작·적용"
+    ],
+    "newPixelAssetsGenerated": false,
+    "boundary": "독립 제작용 컷씬. 기존필살기목록·본게임피해·저장상태를 변경하지 않음.",
+    "verification": {
+      "sourceInspection": "기존조합실구현과 원본순옥살 구간270/1325/2040/3080/3500ms 확인. source contact계산21명중(본체15+분신6), 첫345ms·마지막2895ms 확인. 브라우저 재생검증과 구분한다.",
+      "typecheck": "npm run typecheck 통과",
+      "browserPlayback": "Codex 인앱 PC 브라우저 실제10.22초 전체 재생,8개 컷과 순옥살 원본 intro/rush/climax/finish 진행·본체/분신·21/21종결 확인.88개 시점 촬영.",
+      "userQualityApproval": "사용자가 맘에 든다 잘 되니까 테스트 없이 메인 머지 해줘로 실제 재생 품질 채택 및 main 병합 승인.",
+      "contactBoundary": "3640ms0/21→3650ms1/21,6190ms20/21→6200ms21/21 확인. 같은6200ms 반복 및6190↔6200 탐색에서도 타수 누적 없음.",
+      "console": "독립 암중호격 앱 경고·오류0.",
+      "playbackGif": "public/assets/maplestory/ataho-cutscene/20261017/review/impact-revision/shadow-demon-browser.gif",
+      "captureBoundary": "GIF는 실제 브라우저 화면을 시점별로 촬영한 저프레임 미리보기이며60fps 원본 영상은 아님.",
+      "technicalChecks": "npm run check·npm run build·git diff --check 통과. 별도 테스트 코드 추가·실행 없음."
+    }
+  },
+  "cinematicFinale": {
+    "date": "2026-10-18",
+    "scope": "암중호격 컷씬만 보완",
+    "authorization": "사용자: 이미지 필요하면 pixelLab 이용해서 만들어도 돼. 컷씬만 보완.",
+    "reference": {
+      "url": "https://www.youtube.com/watch?v=rQ3Y8uXUh-Y&t=6s",
+      "observation": "인앱 브라우저 음소거, 3.48/5.72초 주변의 다층 검은 형상, 6.95초 공중 공간, 7.20~7.45초 웅크림/벌린 양손, 7.70~8.95초 강하/충돌, 10.44초 등 뒤 종결의 선택 프레임 확인. 원작 게임 실행/카메라곡선/공개코드 검증 아님."
+    },
+    "generations": [
+      {
+        "role": "pose-a",
+        "jobId": "62d46eef-87be-4e6a-beab-c4b43a22a486",
+        "assetId": "c9c6784e-fc0d-5a93-b391-4052866b0969",
+        "model": "pro",
+        "chargedGenerations": 10,
+        "request": {
+          "description": "ONE cinematic fighting-game pixel-art KEY POSE of ATAHO, the SAME older male orange anthropomorphic TIGER martial artist from the references. FULL BODY, three-quarter FRONT view from a LOW victim camera, looking slightly UP at him. He is HOVERING high above his opponent, strongly hunched forward, BOTH KNEES drawn toward his soft round belly, bare tiger feet tucked underneath. His head is lowered and his golden half-lidded eyes glare DOWN toward the viewer below. BOTH ARMS spread to the sides of his head, elbows bent outward and pulled back, BOTH OPEN tiger palms with curled fingers visible beside his ears, ready to drive both palms downward. The TWO HANDS are SEPARATE: NO joined fists, NO overhead hammer fist, NO crossed forearms. Spine rounded, shoulders forward, compact compressed aerial anticipation. Match his seasoned stocky soft-bellied body, broad cream muzzle, white cheek tufts, gray eyebrow tufts, round tiger ears, orange-black stripes, reddish-brown LONG-SLEEVE open jacket, ivory crossed undershirt, brown sash, charcoal loose trousers, ONE striped tail curving behind. Restrained stern confidence. Same hand-painted arcade pixel clusters and clean stepping edges as existing character. Full figure entirely visible inside square, 12 pixel margin, centered torso, no floor, no shadow disk, no opponent, no background, no effects, no text, no motion trails, no duplicated limbs. Genuine transparency.",
+          "width": 256,
+          "height": 256,
+          "no_background": true,
+          "max_colors": 48,
+          "reference_images": [
+            {
+              "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south.png?t=1791934584",
+              "usage": "EXACT character identity, age, tiger face, round stocky soft build, brown jacket and ivory shirt. Change only pose and camera angle."
+            },
+            {
+              "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south-east.png?t=1791934584",
+              "usage": "Same Ataho's clothing, tail, stripes and proportions from the three-quarter front angle. Enlarge into a cinematic airborne crouch with BOTH open hands pulled back beside head."
+            }
+          ],
+          "seed": 18101
+        },
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/pose-a.png",
+        "status": "generated-user-approved",
+        "userReview": "2026-10-18 사용자가 준비·타격 두 자세로 진행 승인"
+      },
+      {
+        "role": "pose-b",
+        "jobId": "0c00fe7b-f45c-4676-872f-936568995495",
+        "assetId": "b0672fe4-f7d6-5d26-8226-6a5ec61e05b7",
+        "model": "pro",
+        "chargedGenerations": 10,
+        "request": {
+          "description": "The EXACT SAME Ataho orange tiger martial artist, same outfit, same age, same stocky round belly, SAME PIXEL ART STYLE, canvas size, camera angle and scale as reference A. Draw KEY POSE B, the POWERFUL FINISHING ENDPOINT of a downward TWO-PALM AERIAL STRIKE. Full body, three-quarter FRONT view from a LOW camera below him. Continue directly from the airborne tucked-knee anticipation in reference A: shoulders and round torso now hinge FORWARD and DOWN; BOTH arms extend forcefully forward-and-DOWN past his belly toward the bottom foreground, with BOTH OPEN PALMS side by side striking DOWN, the heels of the palms closest to the unseen opponent below, splayed fingers curled slightly upward. Two separate orange tiger palms, readable as a simultaneous two-handed palm smash, NOT joined hammer fists, NOT a boxing punch, NOT grabbing, not pointing upward. His stern seasoned tiger face is above the arms, looking DOWN along the strike; elbows mostly extended but not locked. BOTH knees remain BENT under the falling body, bare striped feet visible under trousers, and ONE tail trails behind. Jacket and sleeves lift backward slightly from the falling momentum. Keep the head size, fur markings, round muzzle, cream cheek tufts, gray brow tufts, red-brown LONG-SLEEVE jacket, ivory crossed shirt, brown sash, charcoal trousers identical to reference A. Single coherent anatomy, exactly two arms and hands and two feet. Entire figure and fingers fit in canvas, 12 pixel transparent margin. Crisp controlled arcade pixel clusters, clean dark stepping edges, restrained shadows. NO floor, NO impact cloud, no opponent, no text, no background, no ghost copies, no blur. Genuine transparency.",
+          "width": 256,
+          "height": 256,
+          "no_background": true,
+          "max_colors": 48,
+          "reference_images": [
+            {
+              "url": "https://api.pixellab.ai/mcp/images/62d46eef-87be-4e6a-beab-c4b43a22a486/download",
+              "usage": "KEY POSE A. Preserve EXACT identity, outfit, pixel style, head size, stocky body and three-quarter front low-camera angle. Pose B must be its connected endpoint: unfold both arms downward from the aerial tucked crouch, driving two open palms down together."
+            },
+            {
+              "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south-east.png?t=1791934584",
+              "usage": "Approved original character identity and clothing, round older tiger anatomy only; preserve the camera and scale of pose A."
+            }
+          ],
+          "seed": 18102
+        },
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/pose-b.png",
+        "status": "generated-user-approved",
+        "userReview": "2026-10-18 사용자가 준비·타격 두 자세로 진행 승인"
+      },
+      {
+        "role": "palm-transition",
+        "jobId": "70f9dfbf-f083-4127-9955-1da820f1dd49",
+        "assetId": "9371b5a2-c3c2-54dc-9787-71ae297b9b79",
+        "model": "animate_image",
+        "chargedGenerations": 8,
+        "request": {
+          "first_frame_url": "https://api.pixellab.ai/mcp/images/62d46eef-87be-4e6a-beab-c4b43a22a486/download",
+          "last_frame_url": "https://api.pixellab.ai/mcp/images/0c00fe7b-f45c-4676-872f-936568995495/download",
+          "action": "ONE short TWO-PALM DOWNWARD AERIAL STRIKE connecting approved A and B. Preserve EXACT tiger identity, face, age, outfit, two arms, two feet, one tail and fixed front three-quarter camera. Start tucked in midair, knees bent, both open hands beside ears, elbows back. Briefly compress shoulders and lean chest forward, then drive BOTH OPEN PALMS forward and DOWN together in ONE explosive thrust into the supplied end pose. Keep hands SEPARATE, never clasped fists or boxing punches. Head follows slightly, eyes focused down and mouth closed. Legs stay tucked, jacket and tail subtly follow. Finish in the EXACT endpoint with both palms extended down. No landing, reset, turning, extra attack, zoom, camera movement, effects, trails or background. Same scale and central body position on transparency.",
+          "frame_count": 8,
+          "no_background": true,
+          "seed": 18103
+        },
+        "status": "generated-awaiting-full-cutscene-review"
+      }
+    ],
+    "boundary": "제작 이력으로만 보존. 사용자가 새 원화가 어울리지 않는다며 사용 중단 요청. A/B·전환9장 모두 현재 런타임에서 제외.",
+    "runtimeBoundary": "현재 미사용. 기존 내려찍기 원본을 쓰는 existingSpriteFinale로 교체.",
+    "sourceMotionDurationMs": 4130,
+    "presentedMotionDurationMs": 5360,
+    "durationMs": 12080,
+    "userCorrection": "피격처럼 읽히는 공중 장전/상승권 군집을 제외하고 정권·킥·팔꿈치의 같은 공격 클립만 시차 재생.",
+    "totalChargedGenerations": 28,
+    "approvedKeyPoses": [
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/pose-a.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 27,
+          "top": 42,
+          "right": 220,
+          "bottom": 225
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "d7006011c187e628cff6b22c82d02d47ad8c6ef21e13047153631e4d54a69913",
+        "byteSize": 17207
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/pose-b.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 33,
+          "top": 51,
+          "right": 220,
+          "bottom": 225
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "83da977ef847be7285e5bd67ed8d96b75530bfe11465644414073a92a5dac584",
+        "byteSize": 15237
+      }
+    ],
+    "motionFrames": [
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/motion/00.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 27,
+          "top": 42,
+          "right": 220,
+          "bottom": 225
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "bd933a999d5b485d6a955a081688b54f87ec78b3bb588af8fd2cdb2cf2da0dfb",
+        "byteSize": 22450
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/motion/01.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 39,
+          "top": 34,
+          "right": 213,
+          "bottom": 225
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "35c46fc5def7f811ae6c7093d5fbd8ede5d0e40f76ba591045f447902b601e32",
+        "byteSize": 27765
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/motion/02.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 49,
+          "top": 32,
+          "right": 213,
+          "bottom": 225
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "27c0d793e95fa757994bec5416531a9b18043e4bfc143da0ff1668f605168467",
+        "byteSize": 27230
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/motion/03.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 52,
+          "top": 32,
+          "right": 215,
+          "bottom": 225
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "2e98fe43395545ba06307aa67eead2d1dfa0e0ca18195d53dbff335641f8f6be",
+        "byteSize": 28346
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/motion/04.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 38,
+          "top": 32,
+          "right": 216,
+          "bottom": 225
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "4083c4013bda5f4f519aaafe1c758f7b0dadf68b19195b6b708ed1a4b3249082",
+        "byteSize": 27525
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/motion/05.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 24,
+          "top": 54,
+          "right": 230,
+          "bottom": 225
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "4f288e8ee3672bd674f1982157491e90fbd3095cd55dd7c55bbe8852a11fb8cd",
+        "byteSize": 27457
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/motion/06.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 34,
+          "top": 57,
+          "right": 237,
+          "bottom": 225
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "ec41dcfd9cd633e6838debfb3fac17df68fa5acba89c92a4f3c0a23c5a824fd9",
+        "byteSize": 25740
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/motion/07.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 33,
+          "top": 53,
+          "right": 231,
+          "bottom": 225
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "323b019ed273f9c890956205f5533eb59f32ecbcb2142efbd7a32670e8dce3e9",
+        "byteSize": 26283
+      },
+      {
+        "localPath": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/motion/08.png",
+        "width": 256,
+        "height": 256,
+        "bounds": {
+          "left": 33,
+          "top": 51,
+          "right": 220,
+          "bottom": 225
+        },
+        "alphaExtrema": [0, 255],
+        "sha256": "87c1b50f6ea810007dfdf4554a9be992dffff94e390dbc402cac0e3b12979e60",
+        "byteSize": 21257
+      }
+    ],
+    "previewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/shadow-cooperative-fall.gif",
+    "camera": "포위 와이드→본체·분신6기 공중 장전→같은 표적으로 합동 급강하→마지막1/3 근접→110ms 동시 접촉 정지→결과 와이드→등 뒤 종결",
+    "audio": "기존 무음 유지",
+    "cooperativeDive": {
+      "date": "2026-10-18",
+      "authorization": "사용자: 실제로는 분신들과 같이 낙하하면서 때리잖아? / 일단 추가 원화 없이 작업해봐",
+      "reusedFrames": "runtime.finaleFrames의 승인 원본9장. 원본 픽셀/알파 변경 없이 실루엣 RGB만 Canvas 캐시에 적용.",
+      "newImages": 0,
+      "additionalChargedGenerations": 0,
+      "formation": "본체1기와 분신6기가 같은 시계에서 장전·낙하·접촉. 손 앵커를 표적 상단/옆면에 맞추고110ms 함께 정지.",
+      "camera": "고정 표적/중심, 낙하 마지막1/3 배율0.85→1.35. 섬광·흔들림 줄이기에서는0.9 고정.",
+      "contactBoundary": "원본21접촉 유지. 공중분신6기는 마지막 한 접촉의 시각 연출이며 타수 추가 없음.",
+      "limitation": "같은 남동쪽9장을 재사용한2D 구도. 다른 방향 원화·3D 카메라·원작 실행 복제 아님.",
+      "previewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/shadow-cooperative-fall.gif"
+    },
+    "status": "inactive-user-rejected-style"
+  },
+  "existingSpriteFinale": {
+    "date": "2026-10-18",
+    "status": "superseded-by-stomp-finale",
+    "scope": "암중호격 컷씬만. 본체·분신6기 합동 낙하와 기존21접촉 유지.",
+    "authorization": "사용자: 새로만든 리소스 사용하지말고해봐. 저게 안어울려",
+    "sourceMotion": "presentation-aerial-smash-south-east",
+    "sourceRecord": "resources/ataho-v2-impact-attacks.json#sources.aerial",
+    "sourceFrames": [0, 1, 2, 3, 4, 5],
+    "poseTiming": "0~80ms준비0,80~185ms가드1,185~250ms상승2,250~1560ms장전3,1560~1640ms하강4,1640~1830ms접촉5. 이후 원본6→7→8→1→0 회수.",
+    "sourceDimensions": {
+      "width": 88,
+      "height": 88
+    },
+    "sourceFeetY": [75, 75, 62, 59, 61, 77],
+    "contactAnchor": {
+      "x": 64,
+      "y": 69,
+      "feetX": 44,
+      "feetY": 77
+    },
+    "formation": "기존0~5번을 본체와 검은 분신6기에 같은 시계로 적용. 접촉점을 표적 상단·옆면에 분산.",
+    "camera": "기존 합동 낙하 구도 유지. 고정 표적·중심에서 마지막1/3만0.85→1.35 확대.",
+    "inactiveAssets": "20261018/finale-review의 양장A/B와전환9장은 로딩·렌더링에서 제외. 파일과제작이력만보존.",
+    "newImages": 0,
+    "additionalChargedGenerations": 0,
+    "durationMs": 12080,
+    "contactHoldMs": 110,
+    "totalContacts": 21,
+    "previewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/existing-sprite-fall.gif",
+    "audio": "기존 무음 유지"
+  },
+  "stompFinale": {
+    "date": "2026-10-18",
+    "status": "superseded-by-anonymous-diagonal",
+    "authorization": "사용자: 진각 모션으로 하는건 어때? / 본체도 어둡게하고 내려찍을때 색이 돌아오도록 검토 / 응 작업해줘 / 공중으로 상승하기 전부터 어둡게 전환된 후 상승하도록. / 적을 관통해 바닥까지 내려꽂히며 선 궤적과 바닥 충격을 보이도록.",
+    "scope": "암중호격 컷씬만. 조합실 finisher-demon의 원본21접촉·안무는 유지하며 바닥 충돌은 추가 명중으로 세지 않는다.",
+    "sourceMotion": "martial-stomp",
+    "sourceRecord": "resources/ataho-v2-impact-attacks.json#sources.stompLoad, sources.stompImpact",
+    "sequence": [
+      "stompLoad:1",
+      "stompLoad:2",
+      "stompImpact:4",
+      "stompImpact:5",
+      "stompImpact:6",
+      "stompLoad:1",
+      "stompLoad:0"
+    ],
+    "contactAnchor": {
+      "x": 61,
+      "y": 73,
+      "feetX": 44,
+      "feetY": 75
+    },
+    "timingMs": {
+      "groundDarken": 90,
+      "rise": 310,
+      "apex": 170,
+      "dive": 330,
+      "contactLocal": 900,
+      "contactHold": 0,
+      "pierce": 150,
+      "groundLocal": 1050,
+      "groundHold": 90,
+      "landing": 240,
+      "settle": 180
+    },
+    "bodyColor": "지상암전완료→먹색상승/정점→하강후반에만원색복귀→명중전에완료",
+    "formation": "본체1기+검은분신6기. 개체배율고정·준비출발시차·피날레900ms 동시 적 관통. 각 발끝은 상공→적 접촉점→바닥 도착점의 한 직선을 같은 가속 곡선으로 지나며 적 접촉 뒤150ms에 바닥 도착.",
+    "landing": "바닥 도착90ms 정지→240ms 무게 받기→180ms 회수. 같은세계좌표/카메라에서정적까지연결하며옛지상군집을다시그리지않음.",
+    "newImages": 0,
+    "additionalChargedGenerations": 0,
+    "sourceMotionDurationMs": 4130,
+    "presentedMotionDurationMs": 4750,
+    "durationMs": 11470,
+    "finalContactSceneMs": 6925,
+    "totalContacts": 21,
+    "previewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/piercing-stomp-finale.gif",
+    "audio": "무음 유지",
+    "trailsAndGroundImpact": {
+      "renderer": "src/resources/cutscenes/ataho-shadow/finale-effects.ts",
+      "trails": "실제 발끝까지 직선. 뒤쪽 분신6기의 회백색 선과 표적 앞 본체의 가는 백금색 중심선. 바닥 정지90ms 뒤190ms 안에 소멸.",
+      "ground": "본체 바닥점의 낮은 수평 충격파·작은 파편과 분신 도착점의 미세 파편. 바닥 정지90ms 뒤200ms 안에 소멸.",
+      "reducedMotion": "짧고 얇은 발 궤적과 작은 바닥 수평선 유지. 진동·바닥 섬광·강한 파편 생략.",
+      "sampling": "절대시각 기반. 난수·새 타격·추가 그림·소리 없음."
+    },
+    "addedPresentationMs": 620,
+    "groundContactSceneMs": 7075,
+    "stillSceneMs": 7630,
+    "endingSceneMs": 8050,
+    "returnSceneMs": 10420,
+    "detailPreviewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/piercing-stomp-finale-detail.gif",
+    "previewStatus": "generated-awaiting-user-review",
+    "previousVersions": [
+      {
+        "date": "2026-10-18",
+        "status": "implemented-awaiting-user-review",
+        "authorization": "사용자: 진각 모션으로 하는건 어때? / 본체도 어둡게하고 내려찍을때 색이 돌아오도록 검토 / 응 작업해줘 / 공중으로 상승하기 전부터 어둡게 전환된 후 상승하도록.",
+        "scope": "암중호격 컷씬만. 조합실 finisher-demon의 원본21접촉·안무는 유지.",
+        "sourceMotion": "martial-stomp",
+        "sourceRecord": "resources/ataho-v2-impact-attacks.json#sources.stompLoad, sources.stompImpact",
+        "sequence": [
+          "stompLoad:1",
+          "stompLoad:2",
+          "stompImpact:4",
+          "stompImpact:5",
+          "stompImpact:6",
+          "stompLoad:1",
+          "stompLoad:0"
+        ],
+        "contactAnchor": {
+          "x": 61,
+          "y": 73,
+          "feetX": 44,
+          "feetY": 75
+        },
+        "timingMs": {
+          "groundDarken": 90,
+          "rise": 310,
+          "apex": 170,
+          "dive": 330,
+          "contactLocal": 900,
+          "contactHold": 90,
+          "landing": 240,
+          "settle": 180
+        },
+        "bodyColor": "지상암전완료→먹색상승/정점→하강후반에만원색복귀→명중전에완료",
+        "formation": "본체1기+검은분신6기. 개체배율고정·준비출발시차·동시접촉. 양옆상공의여섯진입선과높이를분산해정점의실루엣겹침을줄임.",
+        "landing": "같은세계좌표/카메라에서진각정착·회수·정적까지연결. 명중후옛지상군집을다시그리지않음.",
+        "newImages": 0,
+        "additionalChargedGenerations": 0,
+        "sourceMotionDurationMs": 4130,
+        "presentedMotionDurationMs": 4600,
+        "durationMs": 11320,
+        "finalContactSceneMs": 6925,
+        "totalContacts": 21,
+        "previewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/stomp-finale.gif",
+        "audio": "무음 유지"
+      }
+    ],
+    "validation": {
+      "source": "담당 세션의 PC 인앱 브라우저 실행 확인",
+      "playback": "일반1배·0.5배에서 적 관통·바닥 정착 확인. 섬광·흔들림 줄이기1배 재생 확인.",
+      "contacts": "UI 탐색6920ms20/21→6930ms21/21.7070/7080/6930ms 반복 탐색에서도21/21 유지.",
+      "console": {
+        "warnings": 0,
+        "errors": 0
+      },
+      "wholeGif": {
+        "frameCount": 144,
+        "sampleStepMs": 80,
+        "durationMs": 11470,
+        "width": 480,
+        "height": 270,
+        "frameDelayValuesMs": [30, 80],
+        "summedFrameDelayMs": 11470
+      },
+      "detailGif": {
+        "frameCount": 50,
+        "sampleStepMs": 40,
+        "startMs": 5840,
+        "endMs": 7840,
+        "durationMs": 2000,
+        "width": 480,
+        "height": 270,
+        "frameDelayValuesMs": [40],
+        "summedFrameDelayMs": 2000
+      },
+      "gifDelayMetadata": "담당 세션이 PIL로 두 GIF의 크기·프레임 수·실제 지연값·지연 합계를 확인함."
+    }
+  },
+  "anonymousFinale": {
+    "date": "2026-10-18",
+    "status": "superseded-by-ground-crossing",
+    "authorization": "사용자: 사선으로 큰 선을 그리면서 내려찍는 방향 검토 후, 상승부터 관통·바닥 충돌까지 본체를 식별할 수 없도록 모두 먹빛으로 유지하고 함께 소멸·정적 뒤 기존 등 뒤 원색 본체 컷에서 공개하는 방향 승인.",
+    "scope": "암중호격 컷씬만. 조합실 finisher-demon의 본체15타·공격 분신6타·21접촉·원본 안무를 유지한다. 바닥 충돌과 선 궤적은 추가 명중이 아니다.",
+    "sourceMotion": "martial-stomp",
+    "sourceRecord": "resources/ataho-v2-impact-attacks.json#sources.stompLoad, sources.stompImpact",
+    "sequence": [
+      "stompLoad:1",
+      "stompLoad:2",
+      "stompImpact:4",
+      "stompImpact:5",
+      "stompImpact:6"
+    ],
+    "unusedRecoveryFrames": ["stompLoad:1", "stompLoad:0"],
+    "sourceDimensions": {
+      "width": 88,
+      "height": 88
+    },
+    "contactAnchor": {
+      "x": 61,
+      "y": 73,
+      "feetX": 44,
+      "feetY": 75
+    },
+    "endingAsset": "public/assets/maplestory/ataho-cutscene/20261017/ataho-ending.png",
+    "timingMs": {
+      "groundDarken": 90,
+      "veil": 70,
+      "rise": 260,
+      "apex": 130,
+      "dive": 250,
+      "contactLocal": 800,
+      "pierce": 150,
+      "groundLocal": 950,
+      "groundHold": 90,
+      "vanish": 70,
+      "quiet": 230,
+      "endingLocal": 1340
+    },
+    "sceneTimingMs": {
+      "sourceStart": 6025,
+      "rise": 6185,
+      "apex": 6445,
+      "dive": 6575,
+      "finalContact": 6825,
+      "groundContact": 6975,
+      "vanish": 7065,
+      "quiet": 7135,
+      "ending": 7365,
+      "return": 9735,
+      "end": 10785
+    },
+    "formation": {
+      "actors": 7,
+      "fixedAirScale": 2.1,
+      "inkColor": "#060609",
+      "chargeAndDiveRotationRadians": 0.17,
+      "apexRegion": {
+        "xMin": 90,
+        "xMax": 435,
+        "feetYMin": 200,
+        "feetYMax": 370
+      },
+      "layout": "정점 x90~435·발 높이200~370의 두 줄에 불규칙한 높이로 분산한다. 모두 아래·오른쪽으로 진입하며 본체 위치를 중심으로 삼지 않는다.",
+      "diveDelayRangeMs": [0, 20],
+      "anonymity": "지상의 본체만90ms 동안 원래 색에서 먹색으로 바꾸고70ms의 먹빛 가림으로 위치 추적을 끊는다. 상승 이후 전원 동일한 먹색·고정 크기·기울기·불투명도를 사용하며 역할 표시와 하강 중 색 복귀는 없다.",
+      "descent": "각 앞발을 상공→표적 상단·옆면→바닥의 한 직선에 고정한다. 서로 다른 출발 시차에도800ms 표적 통과·950ms 바닥 도착을 맞추며 관통 뒤 같은 가속 곡선을 유지한다.",
+      "exit": "바닥에서 전원90ms 정지→70ms 동시 소멸→230ms 빈 공간의 정적→기존 등 뒤 원색 컷에서 본체 공개. 가드·서기 회수는 사용하지 않는다."
+    },
+    "collectiveSlash": {
+      "from": {
+        "x": 225,
+        "y": 175
+      },
+      "through": {
+        "x": 480,
+        "y": 320
+      },
+      "groundY": 470,
+      "ownership": "역할 없는 공동 사선. 특정 개체의 위치나 본체 id를 따라가지 않는다.",
+      "individualTrails": "모두 같은 굵기·명도의 짧고 약한 발 잔선만 뒤에 표시한다.",
+      "groundImpact": "공동 사선의 바닥 도착점에서 낮은 충격파·파편을 표시하고 바닥 정지 동안 효과 나이를 고정한다."
+    },
+    "camera": {
+      "focusX": 480,
+      "focusY": 320,
+      "zoomRange": [0.94, 1.02],
+      "reducedMotionZoom": 0.96,
+      "actorScaleDuringDescent": "fixed"
+    },
+    "newImages": 0,
+    "additionalChargedGenerations": 0,
+    "audio": "무음 유지",
+    "inactiveAssets": "20261018 양장 A/B·전환9장은 로딩·렌더링에서 제외하고 cinematicFinale 제작 기록만 보존한다.",
+    "sourceMotionDurationMs": 4130,
+    "presentedMotionDurationMs": 4065,
+    "durationMs": 10785,
+    "totalContacts": 21,
+    "bodyContacts": 15,
+    "assistContacts": 6,
+    "previewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/anonymous-diagonal-finale.gif",
+    "detailPreviewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/anonymous-diagonal-finale-detail.gif",
+    "previewStatus": "generated-awaiting-user-review",
+    "validationBoundary": "아래 validation은 담당 세션이 전달한 현재 버전의 최종 실행·GIF 확인 범위만 기록한다. 이전 stompFinale.validation는 과거 시안 기록으로 보존하며 현재 결과로 복사하지 않는다.",
+    "validation": {
+      "source": "담당 세션의 최종 PC 인앱 브라우저 실행·GIF 메타데이터 확인 결과",
+      "playback": {
+        "normal": "최종 배치에서1배로 상승→공동 사선 강하→동시 소멸→등 뒤 종결 실제 재생 확인.",
+        "reducedMotion": "섬광·흔들림 줄이기1배로 강하→귀환 완료 실제 실행 확인.",
+        "boundary": "0.5배 확인은 최종 배치 변경 전이므로 현재 버전의 최종 검증 범위에 포함하지 않는다."
+      },
+      "visualStates": [
+        {
+          "sceneMs": 6160,
+          "visibleActors": 0,
+          "originalColorActors": 0,
+          "phase": "먹빛 가림"
+        },
+        {
+          "sceneMs": 6500,
+          "visibleActors": 7,
+          "originalColorActors": 0,
+          "contacts": 20
+        },
+        {
+          "sceneMs": 6820,
+          "visibleActors": 7,
+          "originalColorActors": 0,
+          "contacts": 20
+        },
+        {
+          "sceneMs": 6830,
+          "visibleActors": 7,
+          "originalColorActors": 0,
+          "contacts": 21
+        },
+        {
+          "sceneMs": 6980,
+          "visibleActors": 7,
+          "originalColorActors": 0,
+          "phase": "바닥 충돌"
+        },
+        {
+          "sceneMs": 7140,
+          "visibleActors": 0,
+          "originalColorActors": 0
+        },
+        {
+          "sceneMs": 7330,
+          "visibleActors": 0,
+          "originalColorActors": 0
+        },
+        {
+          "sceneMs": 7440,
+          "phase": "등 뒤 종결 · 정적 뒤 본체 공개"
+        }
+      ],
+      "console": {
+        "warnings": 0,
+        "errors": 0
+      },
+      "wholeGif": {
+        "width": 480,
+        "height": 270,
+        "frames": 135,
+        "durationMs": 10790,
+        "actualFrameDelaysMs": [70, 80],
+        "rendererDurationMs": 10785,
+        "roundingDifferenceMs": 5,
+        "timingNote": "GIF의10ms 지연 단위 반올림으로 렌더러 길이보다5ms 길다."
+      },
+      "detailGif": {
+        "width": 640,
+        "height": 360,
+        "frames": 52,
+        "durationMs": 2080,
+        "actualFrameDelaysMs": [40],
+        "startSceneMs": 5840,
+        "endSceneMs": 7920
+      },
+      "gifDelayMetadata": "담당 세션이 PIL로 실제 GIF 프레임 수·크기·지연 합계를 확인했다. 두 GIF는 같은 렌더러의 시점별 무음 미리보기이며60fps 실시간 녹화가 아니다."
+    }
+  },
+  "groundCrossingFinale": {
+    "date": "2026-10-18",
+    "status": "implemented-awaiting-user-review",
+    "authorization": "사용자: 공중모션을 없애고 적을 둘러싼 아타호가 모두 적을 가로지르는 형태로 변경.",
+    "scope": "암중호격 컷씬만. 기존 finisher-demon 본체15타·공격 분신6타·21접촉·원본 안무와 본게임 전투·피해·저장은 변경하지 않는다.",
+    "sourceRecord": "resources/manifest.json#assets[ai/ataho-v2].animations",
+    "sourceMetrics": "src/resources/cutscenes/ataho-shadow/finale-attacks.ts",
+    "sourceDimensions": {
+      "width": 96,
+      "height": 96
+    },
+    "pivotX": 48,
+    "alphaFootThreshold": 24,
+    "profiles": [
+      {
+        "id": "punch-se",
+        "motion": "cross-punch-south-east",
+        "frames": [0, 1, 2, 3, 4, 5],
+        "contactIndex": 4,
+        "contact": {
+          "x": 73,
+          "y": 47
+        },
+        "feetY": [78, 78, 78, 78, 78, 78],
+        "referenceHeight": 56
+      },
+      {
+        "id": "punch-sw",
+        "motion": "cross-punch-south-west",
+        "frames": [0, 1, 2, 3, 4, 5],
+        "contactIndex": 4,
+        "contact": {
+          "x": 22,
+          "y": 47
+        },
+        "feetY": [78, 78, 78, 78, 78, 78],
+        "referenceHeight": 56
+      },
+      {
+        "id": "kick-e",
+        "motion": "high-kick-east",
+        "frames": [0, 1, 2, 3, 4, 5, 6],
+        "contactIndex": 4,
+        "contact": {
+          "x": 66,
+          "y": 45
+        },
+        "feetY": [74, 74, 77, 81, 81, 81, 76],
+        "referenceHeight": 53
+      },
+      {
+        "id": "kick-w",
+        "motion": "high-kick-west",
+        "frames": [0, 1, 2, 3, 4, 5, 6],
+        "contactIndex": 4,
+        "contact": {
+          "x": 29,
+          "y": 45
+        },
+        "feetY": [74, 74, 77, 81, 81, 81, 76],
+        "referenceHeight": 53
+      },
+      {
+        "id": "uppercut-e",
+        "motion": "surprise-uppercut-east",
+        "frames": [0, 1, 2, 3, 4, 5, 6],
+        "contactIndex": 3,
+        "contact": {
+          "x": 62,
+          "y": 28
+        },
+        "feetY": [79, 81, 81, 81, 81, 80, 79],
+        "referenceHeight": 60
+      },
+      {
+        "id": "uppercut-w",
+        "motion": "surprise-uppercut-west",
+        "frames": [0, 1, 2, 3, 4, 5, 6],
+        "contactIndex": 3,
+        "contact": {
+          "x": 31,
+          "y": 27
+        },
+        "feetY": [79, 79, 81, 80, 80, 80, 78],
+        "referenceHeight": 56
+      }
+    ],
+    "scaleRule": "각 프로필의 기준 높이로130px을 나눈 고정 배율. 동쪽 어퍼컷은 웅크린0번 대신 펴진 준비 자세의 기준 높이60을 사용한다. 이동 중 배율·회전 변경은 없다.",
+    "initialGuard": {
+      "motion": "presentation-martial-stomp-load-south-east",
+      "frame": 1,
+      "anchor": {
+        "x": 44,
+        "y": 75
+      },
+      "scale": 2.9
+    },
+    "formation": {
+      "actors": 7,
+      "profileCount": 6,
+      "families": ["정권", "높은 킥", "어퍼컷"],
+      "nativeDirections": ["south-east", "south-west", "east", "west"],
+      "inkColor": "#060609",
+      "rotationRadians": 0,
+      "members": [
+        {
+          "attack": "kick-e",
+          "groundOffset": {
+            "x": -300,
+            "y": 0
+          },
+          "delayMs": 20
+        },
+        {
+          "attack": "kick-w",
+          "groundOffset": {
+            "x": 300,
+            "y": 0
+          },
+          "delayMs": 80
+        },
+        {
+          "attack": "punch-se",
+          "groundOffset": {
+            "x": -190,
+            "y": -70
+          },
+          "delayMs": 60
+        },
+        {
+          "attack": "punch-sw",
+          "groundOffset": {
+            "x": 190,
+            "y": -70
+          },
+          "delayMs": 0
+        },
+        {
+          "attack": "punch-se",
+          "groundOffset": {
+            "x": -85,
+            "y": -95
+          },
+          "delayMs": 120
+        },
+        {
+          "attack": "uppercut-e",
+          "groundOffset": {
+            "x": -190,
+            "y": 65
+          },
+          "delayMs": 100
+        },
+        {
+          "attack": "uppercut-w",
+          "groundOffset": {
+            "x": 190,
+            "y": 65
+          },
+          "delayMs": 40
+        }
+      ],
+      "layout": "좌우 킥·뒤쪽 정권·앞쪽 어퍼컷이 전후 깊이를 가진 지상 타원을 이룬다. y는 지면 앞뒤 배치이며 공중 고도가 아니다.",
+      "crossing": "각 접촉 프레임의 실제 손발과 발 앵커를 역산해 출발점→적→반대편을400ms의 한 직선으로 통과한다. 출발 시차는20ms 간격0~120ms이다.",
+      "anonymity": "지상90ms 암전·70ms 가림 뒤 전원 같은 먹색으로 공개한다. 본체를 별도 색·전경·선·출발 순서로 강조하지 않으며 프로필별 배율만 고정한다.",
+      "poseTiming": "자기 통과 시각30ms 전부터45ms 후까지 접촉 자세를 유지한다. 이후55ms 간격으로 같은 원본의 뒤 프레임을 거둔다.",
+      "exit": "마지막 반대편 통과 뒤90ms 회수→전원70ms 동시 소멸→230ms 정적→기존 등 뒤 원색 컷에서 본체 공개."
+    },
+    "target": {
+      "x": 480,
+      "baseY": 470,
+      "height": 150
+    },
+    "timingMs": {
+      "groundDarken": 90,
+      "veil": 70,
+      "encircle": 180,
+      "ready": 200,
+      "crossLocal": 540,
+      "passPerActor": 400,
+      "staggerInterval": 20,
+      "lastDelay": 120,
+      "firstVisualContactLocal": 740,
+      "finalSourceContactLocal": 860,
+      "lastExitLocal": 1060,
+      "exitRecovery": 90,
+      "vanish": 70,
+      "vanishLocal": 1150,
+      "quiet": 230,
+      "quietLocal": 1220,
+      "endingLocal": 1450
+    },
+    "sceneTimingMs": {
+      "sourceStart": 6025,
+      "reveal": 6185,
+      "ready": 6365,
+      "crossing": 6565,
+      "firstVisualContact": 6765,
+      "finalSourceContact": 6885,
+      "lastExit": 7085,
+      "vanish": 7175,
+      "quiet": 7245,
+      "ending": 7475,
+      "return": 9845,
+      "end": 10895
+    },
+    "contactPolicy": {
+      "total": 21,
+      "body": 15,
+      "assists": 6,
+      "visualPasses": 7,
+      "finalSourceContactCountedOnce": true,
+      "description": "시각 공격7기를 새 판정으로 세지 않는다. 마지막 통과 시각에 원본21번째 접촉을 한 번만 지나며 지상 궤적·효과에 별도 타격 사건은 없다."
+    },
+    "camera": {
+      "focusX": 480,
+      "focusY": 350,
+      "zoomRange": [0.9, 0.96],
+      "reducedMotionZoom": 0.92
+    },
+    "endingAsset": "public/assets/maplestory/ataho-cutscene/20261017/ataho-ending.png",
+    "newImages": 0,
+    "additionalChargedGenerations": 0,
+    "audio": "무음 유지",
+    "inactiveAssets": "20261018 양장 A/B·전환9장과 공중 진각·양손 내려찍기 피날레는 비활성. 초기 가드만 기존 진각 발 들기1번을 재사용한다.",
+    "sourceMotionDurationMs": 4130,
+    "presentedMotionDurationMs": 4175,
+    "durationMs": 10895,
+    "validationBoundary": "현재 validation은 이펙트 보강본이다.7793019의 원래 지상 교차 구성 확인은 previousEffectPreview.validation에 보존한다.",
+    "previewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/crossing-effects.gif",
+    "detailPreviewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/crossing-effects-detail.gif",
+    "previewStatus": "generated-awaiting-user-review",
+    "validation": {
+      "source": "담당 세션의 PC 인앱 브라우저 실제 재생·GIF 확인",
+      "playback": {
+        "normal": "1배에서 방향성 접촉·반대편 회수·소멸·빈 정적·등 뒤 종결의 흐름 확인. 마지막 반동180ms 종료 보정 후 일반1배 교차→정적까지 재실행.",
+        "halfSpeed": "0.5배에서 출발 발밑 잔재·교차 방향의 섬광·통과 흐름 확인.",
+        "reducedMotion": "줄이기1배에서 짧고 얇은 효과·반대편 회수·소멸 흐름 확인.",
+        "unchanged": "안무·시간 매핑·원본21타는 변경하지 않았으며 기존 geometryDiagnostics는 이전 검증에 보존한다."
+      },
+      "quiet": "일반1배의7.28초와7.35초에서 인물·접촉 잔재 없는 빈 공간을 확인했다.",
+      "console": {
+        "warnings": 0,
+        "errors": 0
+      },
+      "wholeGif": {
+        "width": 480,
+        "height": 270,
+        "frames": 137,
+        "durationMs": 10900,
+        "actualFrameDelaysMs": [20, 80],
+        "sampleStepMs": 80,
+        "rendererDurationMs": 10895,
+        "roundingDifferenceMs": 5
+      },
+      "detailGif": {
+        "width": 640,
+        "height": 360,
+        "frames": 55,
+        "durationMs": 2200,
+        "actualFrameDelaysMs": [40],
+        "sampleStepMs": 40,
+        "startSceneMs": 5840,
+        "endSceneMs": 8040
+      },
+      "boundary": "PIL로 크기·프레임·실제 지연값을 확인했다. 같은 렌더러의 시점 샘플 GIF이며60fps 실시간 녹화가 아니다. 이펙트의 미감·타격감은 사용자 리뷰 대상이다."
+    },
+    "previousEffectPreview": {
+      "commit": "7793019",
+      "previewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/ground-crossing.gif",
+      "detailPreviewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/ground-crossing-detail.gif",
+      "validation": {
+        "source": "담당 세션의 PC 인앱 브라우저 실제 실행·시점 탐색·GIF 메타데이터 확인",
+        "playback": {
+          "normal": "1배로 지상 포위·교차 강습을 재생하고 귀환 완료 확인.0.5배 연속 재생으로 준비·공격·적 통과·반대편 회수 확인.",
+          "reducedMotion": "섬광·흔들림 줄이기1배에서 교차 구간 재생 시작·귀환 완료 확인.",
+          "boundary": "동일 렌더러의 시점별 GIF도 함께 확인했다. GIF는 실시간60fps 녹화가 아니며 미감·타격감은 사용자 리뷰 대상이다."
+        },
+        "visualStates": [
+          {
+            "sceneMs": 6380,
+            "visibleActors": 7,
+            "originalColorActors": 0,
+            "attackProfiles": 6,
+            "contacts": 20
+          },
+          {
+            "sceneMs": 6880,
+            "visibleActors": 7,
+            "originalColorActors": 0,
+            "contacts": 20
+          },
+          {
+            "sceneMs": 6890,
+            "visibleActors": 7,
+            "originalColorActors": 0,
+            "contacts": 21
+          },
+          {
+            "sceneMs": 7250,
+            "visibleActors": 0,
+            "originalColorActors": 0,
+            "contacts": 21
+          },
+          {
+            "sceneMs": 7520,
+            "phase": "등 뒤 종결·본체 공개"
+          }
+        ],
+        "geometryDiagnostics": "수정된 sample 값을 조회해7개 접촉 프레임의 손발점x480·y346.964~398.036이 표적 내부임을 확인했다. 전원 반대편으로 단조 이동하고 준비·접촉·회수 프레임을 순서대로 사용하며, 원본시각 매핑은 단조·끝4130ms·21타1회다. 별도 테스트 코드를 추가하거나 실행하지 않았다.",
+        "console": {
+          "warnings": 0,
+          "errors": 0
+        },
+        "wholeGif": {
+          "width": 480,
+          "height": 270,
+          "frames": 137,
+          "durationMs": 10900,
+          "actualFrameDelaysMs": [20, 80],
+          "rendererDurationMs": 10895,
+          "roundingDifferenceMs": 5,
+          "sampleStepMs": 80
+        },
+        "detailGif": {
+          "width": 640,
+          "height": 360,
+          "frames": 55,
+          "durationMs": 2200,
+          "actualFrameDelaysMs": [40],
+          "startSceneMs": 5840,
+          "endSceneMs": 8040,
+          "sampleStepMs": 40
+        },
+        "gifDelayMetadata": "PIL로 실제 크기·프레임 수·지연값·지연 합계를 확인했다. GIF 지연의10ms 단위 반올림으로 전체 미리보기만 렌더러보다5ms 길다."
+      }
+    },
+    "effects": {
+      "authorization": "사용자: 훨씬 멋지네 / 이펙트 좀 더 개선해볼래?",
+      "scope": "안무·공격 원본·이동 경로·21접촉·먹빛 익명성·전체 길이는 유지하고 Canvas 이펙트와 시각 표적 반응만 보강한다.",
+      "trails": {
+        "speedEnvelope": "4 * progress * (1 - progress)",
+        "maxLength": 116,
+        "reducedMotionMaxLength": 66,
+        "appearance": "먹빛 쐐기와 얇은 밝은 가장자리. 인물 뒤에 배치하고 빠른 통과 때만 노출."
+      },
+      "launchDust": {
+        "durationMs": 220,
+        "appearance": "각 실제 출발 발밑의 낮은 잔재3개, 줄이기2개. 인물 뒤에만 그림."
+      },
+      "contact": {
+        "durationMs": 55,
+        "reducedMotionDurationMs": 40,
+        "appearance": "같은 크기의 짧은 명암 쐐기를 각 공격의 진입 방향으로 회전. 전체 화면 섬광을 대체."
+      },
+      "residue": {
+        "delayMs": 24,
+        "endAgeMs": 160,
+        "appearance": "접촉 뒤 진행 방향의 작은 잔재4개, 줄이기2개."
+      },
+      "targetReaction": "135ms 반응 중 가장 강한 단일 pulse를 선택하고 반동/눌림을 제한한다. 접촉이나 피해 사건은 추가하지 않는다.",
+      "cameraKick": "기존 공통반동을180ms에 정확히0으로 끝내 정적의 잔여 이동을 제거한다.",
+      "quiet": "먼지·궤적·접촉·잔재·반동이 정적 local1220ms 전에 모두0이다."
+    }
+  },
+  "presetRush": {
+    "date": "2026-10-18",
+    "status": "implemented-awaiting-user-review",
+    "authorization": "사용자: 암중 공방을 동작조합실에 저장한 순옥살 v1으로 교체하고 뒤 배경분신을 제거. 기존 먹빛7기 포위·교차 피날레는 유지.",
+    "scope": "암중호격 컷씬의 암중 공방 표시만 저장한 그림 설정과 원래 drawCombo로 교체한다. 저장 프리셋·조합실 원본 안무·본게임 피해·전투·저장은 수정하지 않는다.",
+    "sourceRecord": "resources/ataho-v2-finisher-presets.json",
+    "sourceRevision": 4,
+    "presetId": "39a36b0f-b374-4058-8d10-3bcaaee16c55",
+    "presetName": "순옥살 v1",
+    "presetUpdatedAt": "2026-10-18T05:41:45.770Z",
+    "presetUpdatedAtKst": "2026-10-18T14:41:45.770+09:00",
+    "motionId": "finisher-demon",
+    "presentationId": "base",
+    "supplement": "original",
+    "drawing": {
+      "showInkEffects": true,
+      "directionalImpacts": false,
+      "showGroundEffects": true,
+      "showCameraRecoil": false,
+      "showSpeedLines": false,
+      "showFinisher": true,
+      "showFinisherConcept": true,
+      "showLocalCharge": false,
+      "showFocusLines": false,
+      "showDirectionalErosion": false,
+      "showBetaFlash": false,
+      "showFlowAccent": false,
+      "showReleaseGlint": false,
+      "showEffectHierarchy": true,
+      "showGroundPuffs": false,
+      "showFloorTrace": false,
+      "showDepthLayers": false,
+      "showReleaseKick": false,
+      "showImpactLettering": false,
+      "showEndSilhouette": false,
+      "showBrushGlyph": false,
+      "showActionFrame": false,
+      "showCutin": false,
+      "showErosion": true,
+      "showKiLighting": false,
+      "showErosionGlow": false,
+      "showShockwave": true,
+      "inkTrailScale": 7.2,
+      "inkImpactScale": 1,
+      "legacyTrails": "none",
+      "cameraMode": "finisher",
+      "emphasisMode": "none",
+      "finisherOpacity": {
+        "attackTrail": 0.15,
+        "movementTrail": 0.15,
+        "kiTrail": 0.15,
+        "legacySweep": 0.15,
+        "inkImpact": 0.15,
+        "backdrop": 0.15,
+        "paths": 0.15,
+        "hitTraces": 0.24,
+        "release": 0.24
+      },
+      "enabledEffects": []
+    },
+    "timing": {
+      "hitStop": true,
+      "hitStopShake": true,
+      "finalSlow": true
+    },
+    "sourcePreview": {
+      "scale": 3,
+      "showMovement": true,
+      "showContacts": true,
+      "showSandbag": true,
+      "speed": 1,
+      "repeat": true
+    },
+    "renderer": {
+      "source": "src/resources/characters/ataho-v2-combos/drawing.ts#drawCombo",
+      "composition": "cutscene",
+      "preserved": [
+        "기존 컷씬 암중 배경",
+        "기존 컷씬 명중 HUD",
+        "원본 실제 공격 분신6기"
+      ],
+      "frameSource": "기존 combatFrames와 공유 그리기 표면을 재사용한다."
+    },
+    "clock": {
+      "preludeSourceDurationMs": 2725,
+      "preludeContacts": 20,
+      "savedSpeed": 1,
+      "preludeHitStopMs": 0,
+      "preludeFinalSlow": false,
+      "boundary": "저장된 명중 정지·흔들림·최종 슬로는 원본 마지막 접촉에만 적용되어 앞20타2725ms 구간에는 없다. 그 뒤는 기존 지상 포위·교차 피날레로 교체한다.",
+      "sceneCutoverMs": 6025,
+      "finalSourceContactSceneMs": 6885,
+      "durationMs": 10895
+    },
+    "backgroundCrowd": {
+      "previousVisualActors": 16,
+      "currentVisualActors": 0,
+      "removed": [
+        "전경·후경 추가 shadow-crowd",
+        "전용 프레임 로드",
+        "전용 실루엣 캐시",
+        "shadow-crowd.ts 모듈"
+      ],
+      "retainedSourceAttackClones": 6
+    },
+    "contactPolicy": {
+      "body": 15,
+      "assists": 6,
+      "total": 21,
+      "extraContacts": 0,
+      "description": "기존 안무와 원본21접촉·마지막 타수1회 증가를 유지한다. 저장 컨셉과 먹선은 시각 표현이며 추가 판정이 아니다."
+    },
+    "finale": "groundCrossingFinale의 먹빛7기 지상 포위·400ms 교차·20ms 시차·동시 소멸·정적 뒤 등 뒤 원색 본체 공개를 유지한다.",
+    "inactiveAssets": "20261018 양장 A/B·전환9장은 계속 비활성. 새 원화·유료 생성·오디오를 추가하지 않는다.",
+    "newImages": 0,
+    "additionalChargedGenerations": 0,
+    "audio": "무음 유지",
+    "presetModified": false,
+    "validationStatus": "execution-and-gif-checked",
+    "validationBoundary": "현재 validation은 저장 순옥살 v1 적용·추가 배경 군집 제거 뒤의 확인 결과다. 이전 groundCrossingFinale의 검증과 GIF는 교체 전 이력으로 보존한다.",
+    "previewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/preset-v1-cutscene.gif",
+    "detailPreviewGif": "public/assets/maplestory/ataho-cutscene/20261018/finale-review/preset-v1-rush.gif",
+    "validation": {
+      "source": "담당 세션의 PC 인앱 브라우저 실행·시점별 GIF·코드 연결 검토",
+      "reference": "동작조합실에서 순옥살 v1 불러오기를 실행하고 실제 연타의 밝은 접촉 원화·어두운 접근/회수와 저장 수묵7.2배 설정을 확인했다. 설정 저장·갱신은 실행하지 않았다.",
+      "playback": {
+        "normal": "컷씬에서1배로 v1 전반·후반 연타와 추가 배경 군집 없는 구성을 재생했다.5.7초부터 암전·먹빛 포위로 이어지는 전환을 확인하고 교차·소멸·귀환 완료까지 실행했다.",
+        "halfSpeed": "0.5배로 v1 연타의 접촉 강조·접근/회수 흐름 확인.",
+        "reducedMotion": "섬광·흔들림 줄이기1배에서 v1 후반 연타 확인. 해당 모드에서는 카메라 구성·반동·배경 충격파를 생략하고 모션·컨셉은 유지한다."
+      },
+      "diagnostics": "canvas.action에서 순옥살 v1·배경 분신0·6/21명중을 확인했다. 수정된 dist 표본에서 원본21접촉·교체 이전20접촉·source/presentation2725ms·scene6025ms 전환·6885ms의20→21·전체10895ms를 확인했다. 별도 테스트 코드는 추가하거나 실행하지 않았다.",
+      "console": {
+        "warnings": 0,
+        "errors": 0
+      },
+      "preset": {
+        "matchesMain": true,
+        "sha256": "895d0be24f240a12651a4781d32ba411de97c2e928b3f9459eeadac248bb3c58",
+        "modified": false
+      },
+      "wholeGif": {
+        "width": 480,
+        "height": 270,
+        "frames": 137,
+        "durationMs": 10900,
+        "actualFrameDelaysMs": [20, 80],
+        "sampleStepMs": 80,
+        "rendererDurationMs": 10895,
+        "roundingDifferenceMs": 5
+      },
+      "detailGif": {
+        "width": 640,
+        "height": 360,
+        "frames": 121,
+        "durationMs": 4840,
+        "actualFrameDelaysMs": [40],
+        "sampleStepMs": 40,
+        "startSceneMs": 3200,
+        "endSceneMs": 8040
+      },
+      "gifBoundary": "PIL로 실제 크기·프레임·지연값·합계를 확인했다. 동일 렌더러의 시점별 샘플 GIF이며60fps 실시간 녹화가 아니다."
+    }
+  }
+}

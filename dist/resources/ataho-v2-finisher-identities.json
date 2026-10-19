@@ -1,0 +1,1093 @@
+{
+    "schemaVersion": 1,
+    "date": "2026-10-16",
+    "authorization": "2026-10-16 사용자 승인: 봉황은 백덤1회 공중 전환형으로 바꾸고 마지막에 반대편으로 이동해 돌아 차기. 팬텀은 공격에 이어 반동을 흘리는 회전으로 연결.",
+    "scope": "취호 한 몸의8타·용호 가속 압박·무신패참 균열·팬텀 장전과 관통 반동 회전·봉황 백덤1회와 반대편 돌아차기",
+    "sourceAssetId": "ai/ataho-v2",
+    "newBodyFrames": true,
+    "mirroredFrames": false,
+    "bodyShapeDeformation": false,
+    "paidGeneration": true,
+    "timingBasis": "동작 시각; 히트스톱·끝타 슬로·반복 대기 미포함",
+    "currentMotions": [
+        {
+            "id": "finisher-drunken-tiger",
+            "title": "초구취호패타 · 8타",
+            "durationMs": 3816,
+            "bodyHits": 8,
+            "actorCount": 0,
+            "identity": "한 몸의 앞뒤 공방과 빈 박자·기습",
+            "changes": [
+                "실제 공격 분신을 제거하고 본체8타로 재편",
+                "주먹 통과→반대편 등·어깨→회전각과 엇박→왼쪽 철산고 종결",
+                "실제 동·서 방향 원본을 사용하며 순간이동과 몸 중심 노란 선은 없음"
+            ],
+            "pauseMs": {
+                "afterJab": 165,
+                "afterOppositeHighKick": 95,
+                "afterHook": 180
+            },
+            "contacts": [
+                {
+                    "scale": 2,
+                    "planned": 8,
+                    "connected": 8,
+                    "timesMs": [445, 775, 1205, 1515, 2086, 2411, 2621, 3291],
+                    "directions": [1, -1, 1, 1, -1, -1, 1, -1],
+                    "reactions": [
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal"
+                    ]
+                },
+                {
+                    "scale": 3,
+                    "planned": 8,
+                    "connected": 8,
+                    "timesMs": [445, 775, 1205, 1515, 2086, 2411, 2621, 3291],
+                    "directions": [1, -1, 1, 1, -1, -1, 1, -1],
+                    "reactions": [
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal"
+                    ]
+                }
+            ],
+            "contactIntervalsMs": [330, 430, 310, 571, 325, 210, 670],
+            "limitations": "취권 전용 휘청임·크게 뻗는 회전각은 없으며 원본 간 팔·얼굴 전환은 실제 재생으로 판단한다.",
+            "sourceFrames": [
+                "fight-stance-idle-8-frames-south-east:0",
+                "walking-3-south-east:3",
+                "walking-3-south-east:2",
+                "walking-3-south-east:1",
+                "walking-3-south-east:0",
+                "running-4-frames-east:0",
+                "running-4-frames-east:1",
+                "cross-punch-east:4",
+                "cross-punch-east:5",
+                "cheolsango-short:0",
+                "cheolsango-short:1",
+                "cheolsango-short:2",
+                "cheolsango-short:3",
+                "running-4-frames-east:2",
+                "running-4-frames-east:3",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:0",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:1",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:2",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:3",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:4",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:5",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:6",
+                "ataho-one-two-punch-south-east-south-east:0",
+                "ataho-one-two-punch-south-east-south-east:1",
+                "ataho-one-two-punch-south-east-south-east:2",
+                "ataho-one-two-punch-south-east-south-east:3",
+                "running-4-frames-west:0",
+                "running-4-frames-west:1",
+                "running-4-frames-west:2",
+                "running-4-frames-west:3",
+                "high-kick-west:0",
+                "high-kick-west:1",
+                "high-kick-west:2",
+                "high-kick-west:3",
+                "high-kick-west:4",
+                "high-kick-west:5",
+                "high-kick-west:6",
+                "cross-punch-west:0",
+                "cross-punch-west:1",
+                "cross-punch-west:2",
+                "cross-punch-west:3",
+                "cross-punch-west:4",
+                "cross-punch-west:5",
+                "smear-hook-stable-south-east:2",
+                "smear-hook-stable-south-east:3",
+                "smear-hook-stable-south-east:4",
+                "smear-hook-stable-south-east:6",
+                "smear-hook-stable-south-east:7"
+            ]
+        },
+        {
+            "id": "finisher-ryuko-ranbu",
+            "title": "용호난무 · 17타",
+            "durationMs": 2849,
+            "bodyHits": 13,
+            "actorCount": 4,
+            "actorHits": 4,
+            "identity": "묵직한 초반에서 엇박이 겹치는 가속 압박",
+            "bodyContactTimesMs": [
+                435, 740, 965, 1176, 1328, 1464, 1555, 1654, 1771, 1861, 1932, 2017,
+                2329
+            ],
+            "actorContactTimesMs": [1408, 1795, 1853, 2377],
+            "actorStartTimesMs": [1168, 1615, 1708, 2212],
+            "actorContactOffsetsMs": [80, 24, -8, 48],
+            "actorStartIntervalsMs": [447, 93, 504],
+            "contactIntervalsMs": [
+                305, 225, 211, 152, 80, 56, 91, 99, 117, 24, 58, 8, 71, 85, 312, 48
+            ],
+            "contacts": [
+                {
+                    "scale": 2,
+                    "planned": 17,
+                    "connected": 17,
+                    "timesMs": [
+                        435, 740, 965, 1176, 1328, 1408, 1464, 1555, 1654, 1771, 1795, 1853,
+                        1861, 1932, 2017, 2329, 2377
+                    ],
+                    "directions": [1, 1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, -1],
+                    "reactions": [
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "falling",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "rising",
+                        "rising"
+                    ]
+                },
+                {
+                    "scale": 3,
+                    "planned": 17,
+                    "connected": 17,
+                    "timesMs": [
+                        435, 740, 965, 1176, 1328, 1408, 1464, 1555, 1654, 1771, 1795, 1853,
+                        1861, 1932, 2017, 2329, 2377
+                    ],
+                    "directions": [1, 1, 1, 1, 1, -1, 1, 1, 1, 1, -1, -1, 1, 1, 1, 1, -1],
+                    "reactions": [
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "falling",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "rising",
+                        "rising"
+                    ]
+                }
+            ],
+            "openingBodyOnlyHits": 3,
+            "initialStepMs": 75,
+            "lateConnectionMs": {
+                "minimum": 12,
+                "maximum": 24
+            },
+            "finalChargeHoldMs": 160,
+            "decorativeEchoes": {
+                "count": [2, 3],
+                "intervalMs": 40,
+                "lifetimeMs": [90, 130],
+                "extraHits": 0,
+                "position": "실제 본체의 과거 원래 위치"
+            },
+            "limitations": "후반 일부 연결이12~24ms로 짧아 원본 연결과 타격 판독은 실제 표시 크기·1배 재생으로 판단한다.",
+            "sourceFrames": [
+                "fight-stance-idle-8-frames-south-east:0",
+                "walking-3-south-east:0",
+                "walking-3-south-east:1",
+                "walking-3-south-east:2",
+                "ataho-one-two-punch-south-east-south-east:0",
+                "ataho-one-two-punch-south-east-south-east:1",
+                "ataho-one-two-punch-south-east-south-east:2",
+                "ataho-one-two-punch-south-east-south-east:3",
+                "ataho-one-two-punch-south-east-south-east:4",
+                "ataho-one-two-punch-south-east-south-east:11",
+                "ataho-one-two-punch-south-east-south-east:12",
+                "ataho-one-two-punch-south-east-south-east:13",
+                "ataho-one-two-punch-south-east-south-east:14",
+                "smear-hook-stable-south-east:2",
+                "smear-hook-stable-south-east:3",
+                "smear-hook-stable-south-east:4",
+                "smear-hook-stable-south-east:6",
+                "smear-hook-stable-south-east:7",
+                "high-kick-south-east:0",
+                "high-kick-south-east:1",
+                "high-kick-south-east:2",
+                "high-kick-south-east:3",
+                "high-kick-south-east:4",
+                "high-kick-south-east:5",
+                "high-kick-south-east:6",
+                "horizontal-elbow-south-east:2",
+                "horizontal-elbow-south-east:3",
+                "horizontal-elbow-south-east:4",
+                "horizontal-elbow-south-east:5",
+                "smear-hammerfist-clean-south-east:1",
+                "smear-hammerfist-clean-south-east:3",
+                "smear-hammerfist-clean-south-east:4",
+                "smear-hammerfist-clean-south-east:5",
+                "smear-hammerfist-clean-south-east:6",
+                "smear-hammerfist-clean-south-east:7",
+                "surprise-uppercut-south-east:0",
+                "surprise-uppercut-south-east:1",
+                "surprise-uppercut-south-east:2",
+                "surprise-uppercut-south-east:3",
+                "surprise-uppercut-south-east:4",
+                "surprise-uppercut-south-east:5",
+                "surprise-uppercut-south-east:6"
+            ]
+        },
+        {
+            "id": "finisher-omnislash-v5",
+            "title": "초구무신패참 ver.5 · 6타",
+            "durationMs": 3145,
+            "bodyHits": 6,
+            "actorCount": 0,
+            "identity": "화면에 쌓인 균열과 마지막 유리 파열",
+            "choreographyChanged": false,
+            "contacts": [
+                {
+                    "scale": 2,
+                    "planned": 6,
+                    "connected": 6,
+                    "timesMs": [345, 750, 1085, 1370, 1700, 2435],
+                    "directions": [1, -1, 1, -1, 1, 1],
+                    "reactions": [
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "rising",
+                        "rising"
+                    ]
+                },
+                {
+                    "scale": 3,
+                    "planned": 6,
+                    "connected": 6,
+                    "timesMs": [345, 750, 1085, 1370, 1700, 2435],
+                    "directions": [1, -1, 1, -1, 1, 1],
+                    "reactions": [
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "rising",
+                        "rising"
+                    ]
+                }
+            ],
+            "screenGlass": {
+                "space": "screen",
+                "persistentCrackHits": 5,
+                "finalFractureHit": 6,
+                "crackFadeAfterFinalMs": 85,
+                "shardLifetimeMs": 520,
+                "plannedShardsEndMs": 2955,
+                "arrivalSquare": false,
+                "extraHits": 0,
+                "connectedOnlyWhenTargetShown": true,
+                "hiddenWhenContactEffectsOff": true
+            },
+            "limitations": "화면 균열은 실제 유리 물체·적 판정을 추가하지 않는 장식이며 몸·표적 가림은 최종 재생에서 확인한다.",
+            "sourceFrames": [
+                "fight-stance-idle-8-frames-south-east:0",
+                "ataho-one-two-punch-south-east-south-east:4",
+                "ataho-one-two-punch-south-east-south-east:11",
+                "ataho-one-two-punch-south-east-south-east:12",
+                "ataho-one-two-punch-south-east-south-east:13",
+                "ataho-one-two-punch-south-east-south-east:14",
+                "cross-punch-west:0",
+                "cross-punch-west:1",
+                "cross-punch-west:2",
+                "cross-punch-west:3",
+                "cross-punch-west:4",
+                "cross-punch-west:5",
+                "cross-punch-east:0",
+                "cross-punch-east:1",
+                "cross-punch-east:2",
+                "cross-punch-east:3",
+                "cross-punch-east:4",
+                "cross-punch-east:5",
+                "high-kick-west:0",
+                "high-kick-west:1",
+                "high-kick-west:2",
+                "high-kick-west:3",
+                "high-kick-west:4",
+                "high-kick-west:5",
+                "high-kick-west:6",
+                "surprise-uppercut-south-east:0",
+                "surprise-uppercut-south-east:1",
+                "surprise-uppercut-south-east:2",
+                "surprise-uppercut-south-east:3",
+                "surprise-uppercut-south-east:4",
+                "surprise-uppercut-south-east:5",
+                "surprise-uppercut-south-east:6",
+                "surprise-uppercut-east:0",
+                "surprise-uppercut-east:1",
+                "surprise-uppercut-east:2",
+                "surprise-uppercut-east:3",
+                "surprise-uppercut-east:4",
+                "surprise-uppercut-east:5",
+                "surprise-uppercut-east:6"
+            ]
+        },
+        {
+            "id": "finisher-galactica-phantom",
+            "title": "갤럭티카 팬텀 · 1타",
+            "durationMs": 2485,
+            "bodyHits": 1,
+            "actorCount": 0,
+            "identity": "장전·한 주먹 관통·반동 회전·팔을 풀고 어깨를 편 종결",
+            "contacts": [
+                {
+                    "scale": 2,
+                    "planned": 1,
+                    "connected": 1,
+                    "timesMs": [1170],
+                    "directions": [1],
+                    "reactions": ["horizontal"]
+                },
+                {
+                    "scale": 3,
+                    "planned": 1,
+                    "connected": 1,
+                    "timesMs": [1170],
+                    "directions": [1],
+                    "reactions": ["horizontal"]
+                }
+            ],
+            "charge": {
+                "startMs": 320,
+                "endMs": 1020,
+                "poses": [
+                    {
+                        "source": "presentation-galactica-charge-east:4",
+                        "durationMs": 660
+                    },
+                    {
+                        "source": "presentation-galactica-charge-east:4",
+                        "durationMs": 40,
+                        "freezeChargeVfx": true
+                    }
+                ],
+                "vfx": "기존 주먹 주변 국소 스파크·전기·집중선으로 복구. 전신 가림 효과는 사용자 피드백으로 제거.",
+                "projectile": false,
+                "rejectedPose": "surprise-uppercut-east:0/1 낮은 장전은 사용자 실루엣 피드백으로 제거"
+            },
+            "approachMs": 150,
+            "contactMs": 1170,
+            "passThroughMs": 95,
+            "targetReaction": {
+                "target": "sandbag",
+                "contactStrength": 1,
+                "reactionHold": "motion-end",
+                "connectedOnly": true,
+                "holdUntilMs": 2485,
+                "diagnostic": "canvas.dataset.targetHitHeld",
+                "resetWhen": [
+                    "showMovement=false",
+                    "showSandbag=false",
+                    "elapsedMs>=durationMs"
+                ],
+                "newEnemyArt": false
+            },
+            "limitations": "전용 반동 제어 턴이 없어 기존 남동 회전각2~6을 접촉 없이 발 전환으로 사용한다. 들린 무릎과 방향·팔 전환은 사용자 실제 재생 판단 대상이다.",
+            "sourceFrames": [
+                "cross-punch-east:0",
+                "cross-punch-east:1",
+                "cross-punch-east:2",
+                "presentation-galactica-charge-east:4",
+                "running-4-frames-east:0",
+                "running-4-frames-east:1",
+                "running-4-frames-east:2",
+                "cross-punch-east:4",
+                "cross-punch-east:5",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:2",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:3",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:4",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:5",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:6",
+                "cross-punch-east:3",
+                "ataho-backward-lean-two-straight-arm-circles-south-east-south-east:9",
+                "ataho-backward-lean-two-straight-arm-circles-south-east-south-east:10",
+                "ataho-backward-lean-two-straight-arm-circles-south-east-south-east:11",
+                "ataho-backward-lean-two-straight-arm-circles-south-east-south-east:12",
+                "ataho-backward-lean-two-straight-arm-circles-south-east-south-east:13",
+                "ataho-backward-lean-two-straight-arm-circles-south-east-south-east:14"
+            ],
+            "endPose": {
+                "source": "ataho-backward-lean-two-straight-arm-circles-south-east-south-east:14",
+                "holdMs": 400,
+                "flow": "발 버팀→주먹 회수→팔의 긴장 풀기→어깨를 편 종결"
+            },
+            "recoilRecovery": {
+                "contactMs": 1170,
+                "passEndsMs": 1265,
+                "extendedPunchMs": 25,
+                "turnStartMs": 1290,
+                "plantStartMs": 1520,
+                "motionEndMs": 2485,
+                "source": "ataho-roundhouse-kick-skeleton-south-east-south-east:2..6",
+                "rootTravelAfterPassPx": [17, 9, 6, 3, -2, -3, -2],
+                "maxOvershootPx": 7,
+                "newContacts": 0,
+                "removed": "타격 뒤190ms 정지와 실제8방향 기립 한 바퀴"
+            },
+            "qualityStatus": "accepted-by-user",
+            "userReview": {
+                "date": "2026-10-17",
+                "result": "사용자가 현재 버전을 직접 확인하고 승인"
+            }
+        },
+        {
+            "id": "finisher-phoenix",
+            "title": "봉황천무각 · 6타",
+            "durationMs": 2665,
+            "sourceFrames": [
+                "fight-stance-idle-8-frames-south-east:0",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:0",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:1",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:2",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:3",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:4",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:5",
+                "ataho-roundhouse-kick-skeleton-south-east-south-east:6",
+                "high-kick-south-east:0",
+                "high-kick-south-east:1",
+                "high-kick-south-east:2",
+                "high-kick-south-east:3",
+                "high-kick-south-east:4",
+                "high-kick-south-east:5",
+                "high-kick-south-east:6",
+                "jumping-1-south-east:2",
+                "jumping-1-south-east:3",
+                "jumping-1-south-east:4",
+                "backflip-south-east:3",
+                "backflip-south-east:4",
+                "backflip-south-east:5",
+                "backflip-south-east:6",
+                "backflip-south-east:7",
+                "backflip-south-east:8",
+                "backflip-south-east:9",
+                "jumping-1-south-east:7",
+                "jumping-1-south-east:8",
+                "running-4-frames-east:0",
+                "running-4-frames-east:1",
+                "running-4-frames-east:2",
+                "running-4-frames-east:3",
+                "running-4-frames-north-east:0",
+                "running-4-frames-north:1",
+                "running-4-frames-north-west:2",
+                "running-4-frames-west:3",
+                "high-kick-west:0",
+                "high-kick-west:1",
+                "high-kick-west:2",
+                "high-kick-west:3",
+                "high-kick-west:4",
+                "high-kick-west:5",
+                "high-kick-west:6",
+                "fight-stance-idle-8-frames-north-west:0",
+                "fight-stance-idle-8-frames-north-west:1",
+                "fight-stance-idle-8-frames-north-west:2"
+            ],
+            "contacts": [
+                {
+                    "scale": 2,
+                    "planned": 6,
+                    "connected": 6,
+                    "timesMs": [260, 535, 865, 1035, 1230, 1910],
+                    "directions": [1, 1, 1, 1, 1, -1],
+                    "reactions": [
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "rising",
+                        "horizontal"
+                    ]
+                },
+                {
+                    "scale": 3,
+                    "planned": 6,
+                    "connected": 6,
+                    "timesMs": [260, 535, 865, 1035, 1230, 1910],
+                    "directions": [1, 1, 1, 1, 1, -1],
+                    "reactions": [
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "horizontal",
+                        "rising",
+                        "horizontal"
+                    ]
+                }
+            ],
+            "bodyHits": 6,
+            "actorCount": 0,
+            "identity": "지상2타·공중2타·백덤1회·반대편으로 통과해 돌아 차는 끝각",
+            "backflipContact": {
+                "source": "backflip-south-east:6",
+                "footPixel": {
+                    "x": 61,
+                    "y": 43
+                },
+                "anchor": {
+                    "x": 42,
+                    "y": 89
+                },
+                "reach": 19,
+                "height": 46,
+                "heightReference": "body",
+                "reaction": "rising"
+            },
+            "vfx": "각 공격 발의 최근105ms 경로와60ms 접촉호, 끝각80ms. 공격 사이 궤적을 연결하지 않는다.",
+            "limitations": "서쪽 돌아차기 전용 원본이 없어 실제 달리기 방향 전환과 서쪽 높은 킥을 연결한다. 좌우 교대다리·큰 회전 반경은 재현하지 않는다.",
+            "qualityStatus": "accepted-by-user",
+            "feedback": "백덤4회 반복을 줄인 B안 승인 후 끝각이 심심하다는 추가 피드백에 따라 관통 이동·방향 전환·서쪽 끝각으로 변경",
+            "proposals": [
+                {
+                    "id": "forward-kicks",
+                    "backflips": 0,
+                    "flow": "지상 회전각→전진2연각→디딤 바꾼2연각→단발 끝각"
+                },
+                {
+                    "id": "single-aerial-transition",
+                    "backflips": 1,
+                    "recommended": true,
+                    "flow": "지상2각→낮은도약2각→공격백덤블링1회→착지·디딤→단발끝각"
+                }
+            ],
+            "proposalImplemented": false,
+            "endPose": {
+                "source": "fight-stance-idle-8-frames-north-west:2",
+                "holdMs": 320,
+                "flow": "다리 회수→등을 보이는 북서 가드0→1→2의 잔심"
+            },
+            "backflips": 1,
+            "chosenProposal": "single-aerial-transition",
+            "finale": {
+                "source": "high-kick-west:4",
+                "footPixel": {
+                    "x": 30,
+                    "y": 45
+                },
+                "anchor": {
+                    "x": 48,
+                    "y": 81
+                },
+                "reach": -18,
+                "height": 36,
+                "direction": -1,
+                "newBodyFrames": false,
+                "contactMs": 1910,
+                "flow": "착지→동쪽 달리기로 표적 오른쪽 통과→실제 북동·북·북서·서 달리기 원본으로 방향 전환→서쪽 킥"
+            },
+            "userReview": {
+                "date": "2026-10-17",
+                "result": "사용자가 현재 버전을 직접 확인하고 승인"
+            }
+        }
+    ],
+    "previews": [
+        {
+            "id": "identities-finisher-drunken-tiger",
+            "motionId": "finisher-drunken-tiger",
+            "label": "초구취호패타 · 8타",
+            "status": "captured",
+            "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/previews/finisher-drunken-tiger.gif",
+            "byteSize": 2655802,
+            "sha256": "a4c97f66f17fe951992aa73f470ce09d9c2eaad5b9ee3bb863995a2f4581888d",
+            "method": "iab-live-screencast-canvas-crop",
+            "speed": 1,
+            "width": 640,
+            "height": 292,
+            "frames": 78,
+            "durationMs": 4100,
+            "motionDurationMs": 3816,
+            "sourceCapturedFrames": 236,
+            "sourceDpr": 2,
+            "sourceViewport": {
+                "width": 1280,
+                "height": 720
+            },
+            "sequentialFrames": {
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/previews/finisher-drunken-tiger-playback.jpg",
+                "byteSize": 332584,
+                "sha256": "ec80150b476a9ae069e6b734013376da1facf421f58779418bb860c24cb5fbd3"
+            }
+        },
+        {
+            "id": "identities-finisher-ryuko-ranbu",
+            "motionId": "finisher-ryuko-ranbu",
+            "label": "용호난무 · 17타",
+            "status": "captured",
+            "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/previews/finisher-ryuko-ranbu.gif",
+            "byteSize": 2059494,
+            "sha256": "cd1104c61275c59e40bac03c1ac9189f955f84e66e1e6de1322b01435b293bf8",
+            "method": "iab-live-screencast-canvas-crop",
+            "speed": 1,
+            "width": 640,
+            "height": 292,
+            "frames": 58,
+            "durationMs": 3150,
+            "motionDurationMs": 2849,
+            "sourceCapturedFrames": 185,
+            "sourceDpr": 2,
+            "sourceViewport": {
+                "width": 1280,
+                "height": 720
+            },
+            "sequentialFrames": {
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/previews/finisher-ryuko-ranbu-playback.jpg",
+                "byteSize": 349418,
+                "sha256": "c5eff9ffee7231afd34d69eb4d1f36255ce445804ce8d35ee8d7a9681cf7830e"
+            }
+        },
+        {
+            "id": "identities-finisher-omnislash-v5",
+            "motionId": "finisher-omnislash-v5",
+            "label": "초구무신패참 ver.5 · 6타",
+            "status": "captured",
+            "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/previews/finisher-omnislash-v5.gif",
+            "byteSize": 2520160,
+            "sha256": "03a44b69907acb5bebe949092e698c91ba799be5a85ca77d89df9418ff7db83a",
+            "method": "iab-live-screencast-canvas-crop",
+            "speed": 1,
+            "width": 640,
+            "height": 292,
+            "frames": 64,
+            "durationMs": 3450,
+            "motionDurationMs": 3145,
+            "sourceCapturedFrames": 203,
+            "sourceDpr": 2,
+            "sourceViewport": {
+                "width": 1280,
+                "height": 720
+            },
+            "sequentialFrames": {
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/previews/finisher-omnislash-v5-playback.jpg",
+                "byteSize": 365326,
+                "sha256": "2d96d1451a6e3af2dab0a336a5ee9f1d018bbdf8b90ba75a6ca35458a00a33c1"
+            }
+        },
+        {
+            "id": "identities-finisher-galactica-phantom",
+            "motionId": "finisher-galactica-phantom",
+            "label": "갤럭티카 팬텀 · 1타",
+            "status": "captured",
+            "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/previews/finisher-galactica-phantom.gif",
+            "byteSize": 2523811,
+            "sha256": "f0b1f8a07f76618c57489153d5ef25d5ad4d04affb512e3202446e06b471d9f7",
+            "method": "iab-live-screencast-canvas-crop",
+            "speed": 1,
+            "width": 640,
+            "height": 292,
+            "frames": 63,
+            "durationMs": 2720,
+            "motionDurationMs": 2485,
+            "sourceCapturedFrames": 162,
+            "sourceDpr": 2,
+            "sourceViewport": {
+                "width": 1084.5,
+                "height": 1314.0
+            },
+            "sequentialFrames": {
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/previews/finisher-galactica-phantom-playback.jpg",
+                "byteSize": 376989,
+                "sha256": "2a11e8e9a8a91c9f239d6c85b11b784b02cbc660c04a250c6613bdcca43689f7"
+            },
+            "cropMethod": "per-frame visible canvas border; handles focus scroll",
+            "reviewStatus": "accepted-by-user"
+        },
+        {
+            "id": "identities-finisher-phoenix",
+            "motionId": "finisher-phoenix",
+            "label": "봉황천무각 · 6타",
+            "status": "captured",
+            "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/previews/finisher-phoenix.gif",
+            "byteSize": 2156651,
+            "sha256": "4ac245b4ee054ec6d7c6af4eb6a398c17b1891c11b71c8d6761224a7cf04e8a9",
+            "method": "iab-live-screencast-canvas-crop",
+            "speed": 1,
+            "width": 640,
+            "height": 292,
+            "frames": 67,
+            "durationMs": 2920,
+            "motionDurationMs": 2665,
+            "sourceCapturedFrames": 157,
+            "sourceDpr": 2,
+            "sourceViewport": {
+                "width": 1084.5,
+                "height": 1314.0
+            },
+            "sequentialFrames": {
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/previews/finisher-phoenix-playback.jpg",
+                "byteSize": 338787,
+                "sha256": "13d167229f60fc0763b6555c8ca988a61003559d4a5578f9559ea48d6db0063b"
+            },
+            "cropMethod": "per-frame visible canvas border; handles focus scroll",
+            "reviewStatus": "accepted-by-user"
+        }
+    ],
+    "verification": {
+        "status": "complete",
+        "typecheckLintFormatBuild": "npm run check 및 npm run build 통과",
+        "compiledContacts": {
+            "status": "complete",
+            "scales": [2, 3],
+            "connectedCounts": {
+                "finisher-drunken-tiger": 8,
+                "finisher-ryuko-ranbu": 17,
+                "finisher-omnislash-v5": 6,
+                "finisher-galactica-phantom": 1,
+                "finisher-phoenix": 6
+            }
+        },
+        "iabPlayback": {
+            "status": "complete",
+            "speed": 1,
+            "scope": "변경5종 실제 재생·명중·회수·종결과 순차 캡처 검토"
+        },
+        "togglesAndCompletion": {
+            "status": "complete",
+            "scope": "마지막 접촉에서 컨셉·이동 해제/복원 시 같은 시각과 정지·타수 유지. 종결 시 균열·파편·응축·피격 유지 정리"
+        },
+        "galactica": "1170ms 한 접촉·95ms 관통·1290ms부터 감속 회전·1520ms 발 버팀. 2485ms 종결까지 피격 유지. 실제 재생과 표시 전환 확인.",
+        "previews": {
+            "status": "captured",
+            "scope": "IAB 실제 재생 캔버스 GIF와 순차 프레임5종"
+        },
+        "console": "경고·오류0건",
+        "experienceBoundary": "기술적 명중·진행 성공과 타격감·자연스러움·재미 및 사용자 채택은 구분한다.",
+        "separateTestsAddedOrRun": false,
+        "mobileChecked": false,
+        "mergedToMain": true,
+        "deployed": false,
+        "latestRevision": {
+            "motions": ["finisher-phoenix", "finisher-galactica-phantom"],
+            "speed": 1,
+            "contacts": {
+                "finisher-phoenix": [
+                    {
+                        "scale": 2,
+                        "planned": 6,
+                        "connected": 6,
+                        "timesMs": [260, 535, 865, 1035, 1230, 1910],
+                        "directions": [1, 1, 1, 1, 1, -1],
+                        "reactions": [
+                            "horizontal",
+                            "horizontal",
+                            "horizontal",
+                            "horizontal",
+                            "rising",
+                            "horizontal"
+                        ]
+                    },
+                    {
+                        "scale": 3,
+                        "planned": 6,
+                        "connected": 6,
+                        "timesMs": [260, 535, 865, 1035, 1230, 1910],
+                        "directions": [1, 1, 1, 1, 1, -1],
+                        "reactions": [
+                            "horizontal",
+                            "horizontal",
+                            "horizontal",
+                            "horizontal",
+                            "rising",
+                            "horizontal"
+                        ]
+                    }
+                ],
+                "finisher-galactica-phantom": [
+                    {
+                        "scale": 2,
+                        "planned": 1,
+                        "connected": 1,
+                        "timesMs": [1170],
+                        "directions": [1],
+                        "reactions": ["horizontal"]
+                    },
+                    {
+                        "scale": 3,
+                        "planned": 1,
+                        "connected": 1,
+                        "timesMs": [1170],
+                        "directions": [1],
+                        "reactions": ["horizontal"]
+                    }
+                ]
+            },
+            "scope": "실제 전체 재생·접촉·회수·종결, 컨셉 전환, 배율2/3, 팬텀 피격 유지와 종료 해제. GIF 갱신.",
+            "additionalChecks": "사용자 요청으로 추가 검사 생략",
+            "userReview": "현재 버전 직접 확인·승인"
+        },
+        "mergeAuthorization": "사용자가 main 머지와 추가 검사 생략을 명시"
+    },
+    "history": {
+        "status": "previous-iteration",
+        "documents": [
+            "docs/ataho-v2-finisher-refinement.md",
+            "resources/ataho-v2-finisher-refinement.json",
+            "docs/ataho-v2-additional-finishers.md"
+        ],
+        "note": "이전14타 취호·3070ms 용호·마지막 틀 파열·단일 장전 자세와 당시 검증을 보존하며 현행 검증으로 간주하지 않는다."
+    },
+    "newBodyFrameScope": "팬텀 동쪽 전용 장전은 PixelLab1회 생성 원본4번, 나머지 필살기4종은 기존 그림 재조합",
+    "chargeSource": {
+        "date": "2026-10-16",
+        "characterId": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+        "animationGroupId": "4b8aee3e-5f92-4a7a-96d3-264ee3bffafd",
+        "animationId": "45aa7f3b-6bed-4bbd-9504-2f851861e242",
+        "jobId": "ff7bcc85-550b-4221-bbfa-cbe5c32befa6",
+        "animationName": "ataho-galactica-punch-charge-east",
+        "direction": "east",
+        "mode": "pixminimax",
+        "costGenerations": 1,
+        "referenceFrames": 1,
+        "generatedFrames": 8,
+        "originalsPreserved": true,
+        "frames": [
+            {
+                "index": 0,
+                "kind": "reference",
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/galactica-charge-originals/frame_000.png",
+                "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/45aa7f3b-6bed-4bbd-9504-2f851861e242/east/0.png?t=1792160795025",
+                "sha256": "099a24a099c0dcf73acc25da1b0254cb35e300d43dd15af654bbc4c59b5cbd7e",
+                "byteSize": 3044,
+                "width": 88,
+                "height": 88,
+                "alphaBounds": {
+                    "left": 22,
+                    "top": 13,
+                    "right": 60,
+                    "bottom": 75
+                },
+                "feetY": 75,
+                "pivot": {
+                    "x": 44,
+                    "y": 13
+                }
+            },
+            {
+                "index": 1,
+                "kind": "generated",
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/galactica-charge-originals/frame_001.png",
+                "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/45aa7f3b-6bed-4bbd-9504-2f851861e242/east/1.png?t=1792160795025",
+                "sha256": "115d24f862f7e65ef69cf404441dbff6d34887446f64a0d3772bdb72c2b3b8e2",
+                "byteSize": 3078,
+                "width": 88,
+                "height": 88,
+                "alphaBounds": {
+                    "left": 19,
+                    "top": 21,
+                    "right": 70,
+                    "bottom": 75
+                },
+                "feetY": 75,
+                "pivot": {
+                    "x": 44,
+                    "y": 13
+                }
+            },
+            {
+                "index": 2,
+                "kind": "generated",
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/galactica-charge-originals/frame_002.png",
+                "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/45aa7f3b-6bed-4bbd-9504-2f851861e242/east/2.png?t=1792160795025",
+                "sha256": "19766865fb6adcbde0a1347d92eee26e49f5e5a29ba3978013228a908f2d572c",
+                "byteSize": 3059,
+                "width": 88,
+                "height": 88,
+                "alphaBounds": {
+                    "left": 19,
+                    "top": 21,
+                    "right": 69,
+                    "bottom": 75
+                },
+                "feetY": 75,
+                "pivot": {
+                    "x": 44,
+                    "y": 13
+                }
+            },
+            {
+                "index": 3,
+                "kind": "generated",
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/galactica-charge-originals/frame_003.png",
+                "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/45aa7f3b-6bed-4bbd-9504-2f851861e242/east/3.png?t=1792160795025",
+                "sha256": "d222564494f803db1c63b40b2bd2b105ee255ee0a9637dbbd9c6a986d58016c3",
+                "byteSize": 3132,
+                "width": 88,
+                "height": 88,
+                "alphaBounds": {
+                    "left": 18,
+                    "top": 21,
+                    "right": 69,
+                    "bottom": 75
+                },
+                "feetY": 75,
+                "pivot": {
+                    "x": 44,
+                    "y": 13
+                }
+            },
+            {
+                "index": 4,
+                "kind": "generated",
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/galactica-charge-originals/frame_004.png",
+                "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/45aa7f3b-6bed-4bbd-9504-2f851861e242/east/4.png?t=1792160795025",
+                "sha256": "0264b22f5f9bb3a3e6e1656907ffe1f7050d3c714ae5781a664e49d07ff0fb91",
+                "byteSize": 3131,
+                "width": 88,
+                "height": 88,
+                "alphaBounds": {
+                    "left": 17,
+                    "top": 21,
+                    "right": 68,
+                    "bottom": 75
+                },
+                "feetY": 75,
+                "pivot": {
+                    "x": 44,
+                    "y": 13
+                }
+            },
+            {
+                "index": 5,
+                "kind": "generated",
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/galactica-charge-originals/frame_005.png",
+                "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/45aa7f3b-6bed-4bbd-9504-2f851861e242/east/5.png?t=1792160795025",
+                "sha256": "a1e5d731a6f6afea19d21f5b142903a84f8ad15982267e012b87f152f6a543a3",
+                "byteSize": 3131,
+                "width": 88,
+                "height": 88,
+                "alphaBounds": {
+                    "left": 17,
+                    "top": 21,
+                    "right": 68,
+                    "bottom": 75
+                },
+                "feetY": 75,
+                "pivot": {
+                    "x": 44,
+                    "y": 13
+                }
+            },
+            {
+                "index": 6,
+                "kind": "generated",
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/galactica-charge-originals/frame_006.png",
+                "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/45aa7f3b-6bed-4bbd-9504-2f851861e242/east/6.png?t=1792160795025",
+                "sha256": "93d219bbb077e0bf2199e340af19a36070613db8cdcbe43155fe28a6b49035f8",
+                "byteSize": 3115,
+                "width": 88,
+                "height": 88,
+                "alphaBounds": {
+                    "left": 18,
+                    "top": 21,
+                    "right": 69,
+                    "bottom": 75
+                },
+                "feetY": 75,
+                "pivot": {
+                    "x": 44,
+                    "y": 13
+                }
+            },
+            {
+                "index": 7,
+                "kind": "generated",
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/galactica-charge-originals/frame_007.png",
+                "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/45aa7f3b-6bed-4bbd-9504-2f851861e242/east/7.png?t=1792160795025",
+                "sha256": "c10a6c989b329289c691177d8bc46fa8bfac3656e8b514a10f4dbfe75ccacc2b",
+                "byteSize": 3084,
+                "width": 88,
+                "height": 88,
+                "alphaBounds": {
+                    "left": 19,
+                    "top": 21,
+                    "right": 70,
+                    "bottom": 75
+                },
+                "feetY": 75,
+                "pivot": {
+                    "x": 44,
+                    "y": 13
+                }
+            },
+            {
+                "index": 8,
+                "kind": "generated",
+                "localPath": "public/assets/maplestory/ataho-v2-finisher-identities/20261016/galactica-charge-originals/frame_008.png",
+                "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/45aa7f3b-6bed-4bbd-9504-2f851861e242/east/8.png?t=1792160795025",
+                "sha256": "adcc8964faf0559366cc7d71a65dccaa7a5178e567077e314047e1ba64fda192",
+                "byteSize": 3107,
+                "width": 88,
+                "height": 88,
+                "alphaBounds": {
+                    "left": 18,
+                    "top": 21,
+                    "right": 69,
+                    "bottom": 75
+                },
+                "feetY": 75,
+                "pivot": {
+                    "x": 44,
+                    "y": 13
+                }
+            }
+        ],
+        "candidate": {
+            "index": 4,
+            "equivalentCandidateIndex": 5,
+            "rearFistPixel": {
+                "x": 22,
+                "y": 45
+            },
+            "rearFistRgba": [231, 130, 41, 255],
+            "frontFistPixel": {
+                "x": 65,
+                "y": 49
+            },
+            "frontFistRgba": [231, 130, 41, 255],
+            "feetY": 75,
+            "suggestedAnchor": {
+                "x": 44,
+                "y": 75
+            },
+            "anchorBasis": "x is the 88px canvas center, y is measured alpha feetY; this is an explicit alignment proposal, not a server-provided pivot",
+            "observations": "동쪽을 향하며 뒷주먹을 몸 뒤 낮은 갈비뼈 높이로 당긴 준비 자세. 얼굴을 복부에 묻지 않고 무릎을 굽힌다. 4~5번은 같은 자세로 정착한다.",
+            "limitations": "요청한 아주 넓은 발 간격과 깊은 허리 비틀림은 강하지 않다. 실제 채택과 자연스러움은 사용자 재생 판단을 따른다.",
+            "inspection": "9 PNG 직접 확인 및 선택4 원본 픽셀 확대 확인. 생성 후 원본 픽셀 수정 없음.",
+            "status": "candidate-for-user-review"
+        },
+        "selectedFrame": 4,
+        "fistPixel": {
+            "x": 22,
+            "y": 45
+        }
+    },
+    "paidGenerationScope": "팬텀 장전 동쪽1회·1generation",
+    "qualityBoundary": "2026-10-17 사용자가 현재 봉황과 팬텀의 연출 및 종결을 직접 확인하고 승인했다. 일반 공격 그림의 별도 평가를 대신하지 않는다.",
+    "updated": "2026-10-17"
+}

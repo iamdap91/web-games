@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-16",
+  "provider": "OpenAI built-in image_gen",
+  "tool": "image_gen.imagegen",
+  "operation": "generate",
+  "status": "generated and source image reviewed",
+  "scope": "동작 조합실의 기존 필살기 네 가지 도입 전용 얼굴 컷인. 새 몸동작과 타격 사건은 추가하지 않음.",
+  "userAuthorization": "추천한 여섯 효과 전부 작업 요청: 필살기 도입 슈퍼 프리즈와 전용 얼굴 컷인 포함.",
+  "generationCalls": 1,
+  "cliApiCalls": 0,
+  "finalPrompt": "Use case: stylized-concept\nAsset type: ONE transparent portrait illustration for the opening cut-in of Ataho's martial-arts finishing moves. This is a face portrait, not a new motion frame.\nInput images: Image 1 is the current Ataho v2 FRONT pixel sprite and the identity authority. Image 2 is the current SOUTH-EAST pixel sprite, secondary confirmation of stripe pattern and outfit. Image 3 is the existing Ataho concept04, supporting clean cel-shaded illustration style and mature facial age; do not redesign him.\nPrimary request: Draw the same seasoned, friendly MALE TIGER MARTIAL ARTIST as one front-facing head and upper-shoulders close-up. Broad rounded orange tiger face, cream-white broad muzzle and cheek tufts, rounded ears, black tiger stripes and small dark nose. Keep mature late-50s to early-60s age, heavy lowered upper eyelids, golden half-open eyes, subtle crow's-feet and forehead age lines, sparse gray clusters mixed into SHORT eyebrows and temples. A quietly focused knowing small smile as he begins a finishing technique; experienced and composed, not angry or cute. Both eyes face forward and stay clearly readable.\nStyle/medium: polished hand-drawn game portrait with crisp dark outlines, angular stepped edges and restrained broad 3-4-tone cel shading, matching reference 3 while preserving reference 1 identity. Warm orange, cream, muted reddish-brown jacket and ivory inner shirt collar. No airbrush, glossy 3D or photoreal fur.\nComposition/framing: horizontal close-up composition, face centered, full ears and broad cheeks visible, head fills about 75 percent of image height, only upper shoulders and brown jacket collar below. Leave transparent margins around ears and shoulders. The portrait will be placed inside a narrow horizontal graphic strip with the eyes as focus, so keep eyes horizontal and central. Transparent RGBA background, no scenery, frame, effects, brush streaks, typography or watermark.\nConstraints: ONE portrait only. Preserve the character's broad face, mature age, stripe placements, short fur tuft, relaxed heavy eyelids, cream muzzle, and brown/ivory costume. No new body pose, hands, weapon, armor, accessories, youthful cub proportions, huge round baby eyes, long white eyebrows, beard, exaggerated drunkenness, open screaming mouth, scowling or villain expression.",
+  "inputs": [
+    {
+      "role": "identity authority: current v2 front sprite",
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south.png"
+    },
+    {
+      "role": "identity and costume confirmation",
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south-east.png"
+    },
+    {
+      "role": "supporting cel-shaded style and mature facial age; existing concept was awaiting user review",
+      "localPath": "public/assets/maplestory/fox-talismanist-ai/concept/ataho-concept-04.png"
+    }
+  ],
+  "file": {
+    "localPath": "public/assets/maplestory/ataho-v2-effects/20261016/cutin/ataho-face-original.png",
+    "originalGeneratedPath": "/Users/3sam3/.codex/generated_images/01a1430a-e0cb-7972-8654-ea1d072f83fb/exec-5d170c76-f3ac-416d-afcd-d7c872ede643.png",
+    "sha256": "564306f0b0538cbfa459e75d9fe3ed53de6d604d9c60da72a7e826274b51e1ee",
+    "byteSize": 1592310,
+    "width": 1536,
+    "height": 1024,
+    "format": "PNG RGBA",
+    "originalGeneratedBytesPreserved": true
+  },
+  "review": {
+    "visual": "생성 원본 확인: 넓은 주황 호랑이 얼굴, 검은 줄무늬, 반쯤 감긴 금빛 눈, 이마·눈가 주름, 짧은 회색 눈썹·관자 털, 갈색 겉옷과 아이보리 속옷. 얼굴을 어린 인상으로 바꾸지 않고 차분한 미소를 유지.",
+    "alpha": "sips 확인: PNG에 알파 채널 있음. 원본 알파를 보존해 별도 배경 제거·픽셀 보정 없이 사용.",
+    "limitation": "실제 표시 띠는 원본을 눈·코 중심으로 크롭하므로 상단 귀와 하단 어깨 전체는 화면에 나오지 않음. 초상화는 새 생성 그림이며 원본 픽셀을 확대 복제한 것이 아님."
+  },
+  "presentation": {
+    "frameKey": "cutin:ataho",
+    "motionIds": [
+      "finisher-demon",
+      "finisher-omnislash-v5",
+      "finisher-drunken-tiger",
+      "finisher-ryuko-ranbu"
+    ],
+    "durationMs": 220,
+    "slideInUntilMs": 50,
+    "slideOutFromMs": 130,
+    "superFreeze": {
+      "timeMs": 70,
+      "durationMs": 90,
+      "basis": "기존 도입 고정 자세 안에서 실제 재생 시각만 정지. 동작 타임라인과 접촉 수 유지."
+    },
+    "screenBand": {
+      "top": 22,
+      "bottom": 130,
+      "stageWidth": 900,
+      "stageHeight": 410
+    },
+    "deterministicSampling": true
+  }
+}

@@ -1,0 +1,1557 @@
+{
+  "actor": "biwol",
+  "motions": {
+    "lunge": {
+      "id": "ai/biwol-lunge-study",
+      "label": "질풍 찌르기",
+      "sourceName": "PixelLab",
+      "sourceUrl": "https://www.pixellab.ai/",
+      "directions": {
+        "south-east": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "pivot": {
+              "x": 32,
+              "y": 1
+            },
+            "sha256": "f03340378d1f6e0eca9cf3acaba62efc43ac80962a06ead4a50d071f0626afd3",
+            "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300"
+          },
+          "frames": [
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/1.png",
+              "width": 72,
+              "height": 88,
+              "pivot": {
+                "x": 36,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 1,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/ff835bb2-268a-46dd-ae19-94430c7dc567/south-east/1.png?t=1792173285388",
+              "sha256": "5d84c792fed37864b80571516ef50aa6b06542403af50e460f09e7ca883801a0"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/2.png",
+              "width": 72,
+              "height": 88,
+              "pivot": {
+                "x": 36,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 2,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/ff835bb2-268a-46dd-ae19-94430c7dc567/south-east/2.png?t=1792173285388",
+              "sha256": "cd9313c0f14cf6424e05f668b7b779ad1ea9177aaa15e83f39687ebd34c22a84"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/3.png",
+              "width": 72,
+              "height": 88,
+              "pivot": {
+                "x": 36,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 3,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/ff835bb2-268a-46dd-ae19-94430c7dc567/south-east/3.png?t=1792173285388",
+              "sha256": "a6c04755d4c93e5985b1ca3d374fd1e294094721395fe0187000f974a2630c70"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/4.png",
+              "width": 72,
+              "height": 88,
+              "pivot": {
+                "x": 36,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 4,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/ff835bb2-268a-46dd-ae19-94430c7dc567/south-east/4.png?t=1792173285388",
+              "sha256": "fd5fb5e1d9fa86b00ab3d3c0bbb1d226572e114cddfe22a827e1002173428e8d"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/5.png",
+              "width": 72,
+              "height": 88,
+              "pivot": {
+                "x": 36,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 5,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/ff835bb2-268a-46dd-ae19-94430c7dc567/south-east/5.png?t=1792173285388",
+              "sha256": "f9c604740b1f9e9c3acd16d772f8fee5b69028d605541a630baa31c778fa6fc5"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/6.png",
+              "width": 72,
+              "height": 88,
+              "pivot": {
+                "x": 36,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 6,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/ff835bb2-268a-46dd-ae19-94430c7dc567/south-east/6.png?t=1792173285388",
+              "sha256": "1ceff0ff852cae6442a5c2cd0892e36cd8f7051bc1a6e3f2c752b7ca7fc726a0"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/7.png",
+              "width": 72,
+              "height": 88,
+              "pivot": {
+                "x": 36,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 7,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/ff835bb2-268a-46dd-ae19-94430c7dc567/south-east/7.png?t=1792173285388",
+              "sha256": "336fc58691548b5e853cc4a3705ad4fb96d17aa5ef5f83099404b2aaf33b7441"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/8.png",
+              "width": 72,
+              "height": 88,
+              "pivot": {
+                "x": 36,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 8,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/ff835bb2-268a-46dd-ae19-94430c7dc567/south-east/8.png?t=1792173285388",
+              "sha256": "2a83711a0a6bf69e15fa773a2727790c46098eba76558fb692efb8da03b6bb6c"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/9.png",
+              "width": 72,
+              "height": 88,
+              "pivot": {
+                "x": 36,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 9,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/ff835bb2-268a-46dd-ae19-94430c7dc567/south-east/9.png?t=1792173285388",
+              "sha256": "d41325b06b26928b6f6ca1c6960c3d9c02fbd24ff7349f0218522f4b8199d35e"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/10.png",
+              "width": 72,
+              "height": 88,
+              "pivot": {
+                "x": 36,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 10,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/ff835bb2-268a-46dd-ae19-94430c7dc567/south-east/10.png?t=1792173285388",
+              "sha256": "ba58055071f609f8bae9796331a0f80519f592e57210761eef08b1be6e48fd87"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/11.png",
+              "width": 72,
+              "height": 88,
+              "pivot": {
+                "x": 36,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 11,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/ff835bb2-268a-46dd-ae19-94430c7dc567/south-east/11.png?t=1792173285388",
+              "sha256": "26e294836a60dab235c881e51e6708fbd323da76c3e81529f081f272d13cea91"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/12.png",
+              "width": 72,
+              "height": 88,
+              "pivot": {
+                "x": 36,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 12,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/ff835bb2-268a-46dd-ae19-94430c7dc567/south-east/12.png?t=1792173285388",
+              "sha256": "66f0bb7d9e22d98cf9a69915030ac42c384d52a56302326a97cc7cf58e469c20"
+            }
+          ],
+          "bakedEffects": false,
+          "observations": {
+            "bakedEffectSourceFrameIndices": [],
+            "bakedEffectBodyFrameIndices": [],
+            "bakedEffectColors": [],
+            "motion": [
+              "원본 1~3번에서 준비하고 4~8번에서 단검이 화면 우하측으로 뻗은 뒤 9~12번에서 회수한다."
+            ],
+            "limitations": [
+              "직선 찌르기의 체감·발 위치·축 방향은 합성 재생에서 사용자가 판정해야 한다."
+            ],
+            "inspectionScope": "정적 프레임 시트·원본 PNG·원래 방향 기준 그림 대조. 합성 동작의 실제 재생 및 품질 판정은 부모와 사용자가 진행한다."
+          },
+          "pivotEvidence": {
+            "originalSize": {
+              "width": 64,
+              "height": 64
+            },
+            "animationSize": {
+              "width": 72,
+              "height": 88
+            },
+            "referencePadding": {
+              "x": 4,
+              "y": 12
+            },
+            "visiblePixelsAndAlphaMatchOriginal": true,
+            "sourceFootY": 63,
+            "paddedFootY": 75,
+            "pivot": {
+              "x": 36,
+              "y": 13
+            },
+            "method": "reference0 중앙 원본 영역을 검정/흰 불투명 배경 합성 및 alpha로 대조; 발바닥 아래 alpha 경계를 같은 padding으로 이동한다."
+          },
+          "rawDirectory": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east",
+          "sheetPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/sheet.png"
+        },
+        "north-west": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "pivot": {
+              "x": 32,
+              "y": 1
+            },
+            "sha256": "7b509b5591ebb2fb21b42edfc15d593e0b38f3f206e3345babd16f806486b298",
+            "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300"
+          },
+          "frames": [
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/1.png",
+              "width": 76,
+              "height": 92,
+              "pivot": {
+                "x": 38,
+                "y": 15
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 1,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/6f019399-127a-4df9-b521-93b82056ff56/north-west/1.png?t=1792173468954",
+              "sha256": "36b08d198a465c3d74de18c4300be0ed0739adc8b4147218f2c327b408023b14"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/2.png",
+              "width": 76,
+              "height": 92,
+              "pivot": {
+                "x": 38,
+                "y": 15
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 2,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/6f019399-127a-4df9-b521-93b82056ff56/north-west/2.png?t=1792173468954",
+              "sha256": "f448482cdaf8a13b03861628514857e2be474ed4b0dccf9e9ac368f7c56fd176"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/3.png",
+              "width": 76,
+              "height": 92,
+              "pivot": {
+                "x": 38,
+                "y": 15
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 3,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/6f019399-127a-4df9-b521-93b82056ff56/north-west/3.png?t=1792173468954",
+              "sha256": "46f91c86c4980a024efc4407d84b0544a439f4cb8578b341ca9c3a54b05aba02"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/4.png",
+              "width": 76,
+              "height": 92,
+              "pivot": {
+                "x": 38,
+                "y": 15
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 4,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/6f019399-127a-4df9-b521-93b82056ff56/north-west/4.png?t=1792173468954",
+              "sha256": "3b52dce4364ff358223be286757ff731873673b65b7554944de59ca59c5848a1"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/5.png",
+              "width": 76,
+              "height": 92,
+              "pivot": {
+                "x": 38,
+                "y": 15
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 5,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/6f019399-127a-4df9-b521-93b82056ff56/north-west/5.png?t=1792173468954",
+              "sha256": "fa4dd251f9e431bb0226ed0fbee2eec0eb10b306628e18a704ddd010caaa2a5c"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/6.png",
+              "width": 76,
+              "height": 92,
+              "pivot": {
+                "x": 38,
+                "y": 15
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 6,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/6f019399-127a-4df9-b521-93b82056ff56/north-west/6.png?t=1792173468954",
+              "sha256": "48637618ce283d0d81072ba99c1b7c5cb60b93d6308ce6d5d84a89ab84160cd8"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/7.png",
+              "width": 76,
+              "height": 92,
+              "pivot": {
+                "x": 38,
+                "y": 15
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 7,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/6f019399-127a-4df9-b521-93b82056ff56/north-west/7.png?t=1792173468954",
+              "sha256": "847edd0583da268b2a21d677198588fe1a08413fa1a73f60eba59caf86f6d5d8"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/8.png",
+              "width": 76,
+              "height": 92,
+              "pivot": {
+                "x": 38,
+                "y": 15
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 8,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/6f019399-127a-4df9-b521-93b82056ff56/north-west/8.png?t=1792173468954",
+              "sha256": "a0402a98a6845572d7509bf003ecbeb655882c761c4cb1ea1e4d7bce3d09b215"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/9.png",
+              "width": 76,
+              "height": 92,
+              "pivot": {
+                "x": 38,
+                "y": 15
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 9,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/6f019399-127a-4df9-b521-93b82056ff56/north-west/9.png?t=1792173468954",
+              "sha256": "836e1e5d85f473a253a022ab6a204804237d64b13528003784b2aa5b3c00bbe5"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/10.png",
+              "width": 76,
+              "height": 92,
+              "pivot": {
+                "x": 38,
+                "y": 15
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 10,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/6f019399-127a-4df9-b521-93b82056ff56/north-west/10.png?t=1792173468954",
+              "sha256": "afb9d00845d8fd8850826d0ae14fdba72ebe9326d73fad180a1d73fc34ca0981"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/11.png",
+              "width": 76,
+              "height": 92,
+              "pivot": {
+                "x": 38,
+                "y": 15
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 11,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/6f019399-127a-4df9-b521-93b82056ff56/north-west/11.png?t=1792173468954",
+              "sha256": "d9ee188f5a08cd40f0eb3f2fb30b0c470f78bcb88554f1cbe70ea7b897d1d50b"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/12.png",
+              "width": 76,
+              "height": 92,
+              "pivot": {
+                "x": 38,
+                "y": 15
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 12,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/6f019399-127a-4df9-b521-93b82056ff56/north-west/12.png?t=1792173468954",
+              "sha256": "c357cbc6247382812d8ac07345ba427e1b075f1bece9f61925acb7569833f5c9"
+            }
+          ],
+          "bakedEffects": false,
+          "observations": {
+            "bakedEffectSourceFrameIndices": [],
+            "bakedEffectBodyFrameIndices": [],
+            "bakedEffectColors": [],
+            "motion": [
+              "원본 1~3번은 준비, 4~8번은 단검이 화면 왼쪽 공간으로 뻗고 9~12번은 회수한다."
+            ],
+            "limitations": [
+              "찌르기 4~8번에서 원래 북서 기본 자세보다 서측 옆모습에 가까워진다."
+            ],
+            "inspectionScope": "정적 프레임 시트·원본 PNG·원래 방향 기준 그림 대조. 합성 동작의 실제 재생 및 품질 판정은 부모와 사용자가 진행한다."
+          },
+          "pivotEvidence": {
+            "originalSize": {
+              "width": 64,
+              "height": 64
+            },
+            "animationSize": {
+              "width": 76,
+              "height": 92
+            },
+            "referencePadding": {
+              "x": 6,
+              "y": 14
+            },
+            "visiblePixelsAndAlphaMatchOriginal": true,
+            "sourceFootY": 63,
+            "paddedFootY": 77,
+            "pivot": {
+              "x": 38,
+              "y": 15
+            },
+            "method": "reference0 중앙 원본 영역을 검정/흰 불투명 배경 합성 및 alpha로 대조; 발바닥 아래 alpha 경계를 같은 padding으로 이동한다."
+          },
+          "rawDirectory": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west",
+          "sheetPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/sheet.png"
+        }
+      },
+      "generation": {
+        "characterId": "01b130e4-d972-4d28-8904-7a15ab691e10",
+        "mode": "pixminimax",
+        "frameCountRequested": 12,
+        "costGenerations": 2,
+        "qualityGate": "사용자 GIF 판정 대기",
+        "attempts": [
+          {
+            "direction": "south-east",
+            "attempt": 1,
+            "mode": "pixminimax",
+            "animationGroupId": "ae2b1144-f868-4be7-81d4-2649c266072a",
+            "jobId": "a69bd4d9-6db1-4eca-928f-390c1687a38b",
+            "costGenerations": 1,
+            "sourceAnimationName": "biwol-add-lunge-se-pixminimax-20261017",
+            "request": {
+              "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+              "animation_name": "biwol-add-lunge-se-pixminimax-20261017",
+              "mode": "pixminimax",
+              "directions": ["south-east"],
+              "frame_count": 12,
+              "keep_first_frame": true,
+              "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+              "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+              "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+              "initial_pose": "Exact original south-east standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+              "action_description": "ONE quick straight DAGGER THRUST and recovery. Target is LOWER RIGHT / RIGHT of the image. Keep the fixed THREE-QUARTER SOUTH-EAST body axis in every frame; no body turn or spin. Begin from source idle. Lower chest and bend knees slightly, draw the short dagger close to the waist. Then sharply extend the dagger hand in ONE STRAIGHT LINE across the front toward the target: the blade must visibly project into the LOWER RIGHT / RIGHT of the image space outside the body silhouette, not stay on the opposite side. Brief full-extension pose, then retract arm to belt and recover to the exact source idle. It is a stab, not a sweeping slash. Feet remain planted and root stays fixed; forward travel is added by the game. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+            },
+            "receiptPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/south-east/submission-success.json",
+            "rawFrameCountIncludingReference": 13,
+            "selectedSourceFrameOrder": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+            "allOriginalsPreserved": true
+          },
+          {
+            "direction": "north-west",
+            "attempt": 1,
+            "mode": "pixminimax",
+            "animationGroupId": "10f0260e-b8bf-41b2-b97a-58f7cbc813f9",
+            "jobId": "6467b9b8-f2d0-4116-95d1-143efdec91b0",
+            "costGenerations": 1,
+            "sourceAnimationName": "biwol-add-lunge-nw-pixminimax-20261017",
+            "request": {
+              "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+              "animation_name": "biwol-add-lunge-nw-pixminimax-20261017",
+              "mode": "pixminimax",
+              "directions": ["north-west"],
+              "frame_count": 12,
+              "keep_first_frame": true,
+              "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+              "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+              "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+              "initial_pose": "Exact original north-west standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+              "action_description": "ONE quick straight DAGGER THRUST and recovery. Target is UPPER LEFT / LEFT of the image. Keep the fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera body axis in every frame; no body turn or spin. Begin from source idle. Lower chest and bend knees slightly, draw the short dagger close to the waist. Then sharply extend the dagger hand in ONE STRAIGHT LINE across the front toward the target: the blade must visibly project into the UPPER LEFT / LEFT of the image space outside the body silhouette, not stay on the opposite side. Brief full-extension pose, then retract arm to belt and recover to the exact source idle. It is a stab, not a sweeping slash. Feet remain planted and root stays fixed; forward travel is added by the game. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+            },
+            "receiptPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/lunge/north-west/submission-success.json",
+            "rawFrameCountIncludingReference": 13,
+            "selectedSourceFrameOrder": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+            "allOriginalsPreserved": true
+          }
+        ]
+      }
+    },
+    "spin": {
+      "id": "ai/biwol-spin-study",
+      "label": "월륜 베기",
+      "sourceName": "PixelLab",
+      "sourceUrl": "https://www.pixellab.ai/",
+      "directions": {
+        "south-east": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "pivot": {
+              "x": 32,
+              "y": 1
+            },
+            "sha256": "f03340378d1f6e0eca9cf3acaba62efc43ac80962a06ead4a50d071f0626afd3",
+            "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300"
+          },
+          "frames": [
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/1.png",
+              "width": 68,
+              "height": 88,
+              "pivot": {
+                "x": 34,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 1,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c59a5f66-f62d-4267-9cbf-3fd604470211/south-east/1.png?t=1792173185289",
+              "sha256": "9a67bb5483852d996c6e82697eaabde460c374841155e93245f79f6c8552894d"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/2.png",
+              "width": 68,
+              "height": 88,
+              "pivot": {
+                "x": 34,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 2,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c59a5f66-f62d-4267-9cbf-3fd604470211/south-east/2.png?t=1792173185289",
+              "sha256": "225afad590eb34e1c103ab64584c0757a2727c7bff6684b4244b11ff465ca97f"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/3.png",
+              "width": 68,
+              "height": 88,
+              "pivot": {
+                "x": 34,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 3,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c59a5f66-f62d-4267-9cbf-3fd604470211/south-east/3.png?t=1792173185289",
+              "sha256": "227a2697472468bae3da923082f463231df63a92d535930f9bbef5946126f8fe"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/4.png",
+              "width": 68,
+              "height": 88,
+              "pivot": {
+                "x": 34,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 4,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c59a5f66-f62d-4267-9cbf-3fd604470211/south-east/4.png?t=1792173185289",
+              "sha256": "0f5105e9a9d986e9c68a7a9d6759ca78e3c57d0fe43a6aff06907df1988b6c07"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/5.png",
+              "width": 68,
+              "height": 88,
+              "pivot": {
+                "x": 34,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 5,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c59a5f66-f62d-4267-9cbf-3fd604470211/south-east/5.png?t=1792173185289",
+              "sha256": "41f651869d48937b2d812531f418caaac2aab5afdc97fe618191707265462059"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/6.png",
+              "width": 68,
+              "height": 88,
+              "pivot": {
+                "x": 34,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 6,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c59a5f66-f62d-4267-9cbf-3fd604470211/south-east/6.png?t=1792173185289",
+              "sha256": "d7a446cc3f7c386c9d3be3c87f6fc51690fdb26beeac8823ff3ab6e6b744a77b"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/7.png",
+              "width": 68,
+              "height": 88,
+              "pivot": {
+                "x": 34,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 7,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c59a5f66-f62d-4267-9cbf-3fd604470211/south-east/7.png?t=1792173185289",
+              "sha256": "ba54eaad063cd058930330e876b7caef706950dec7cbc34f47e9914f73be1f7c"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/8.png",
+              "width": 68,
+              "height": 88,
+              "pivot": {
+                "x": 34,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 8,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c59a5f66-f62d-4267-9cbf-3fd604470211/south-east/8.png?t=1792173185289",
+              "sha256": "4a25bc74f3969c42cae3e3ee6d4cae621a6f8cf1313dff30ac1f28b1b46e5769"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/9.png",
+              "width": 68,
+              "height": 88,
+              "pivot": {
+                "x": 34,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 9,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c59a5f66-f62d-4267-9cbf-3fd604470211/south-east/9.png?t=1792173185289",
+              "sha256": "4f518ea15ba9b20ebcf5d39430f966dd793fe0fa7eef7f940e7dd9e4788cfc41"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/10.png",
+              "width": 68,
+              "height": 88,
+              "pivot": {
+                "x": 34,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 10,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c59a5f66-f62d-4267-9cbf-3fd604470211/south-east/10.png?t=1792173185289",
+              "sha256": "43103c4f6d3455d9864a987ba21920458449fdf41b5d7a2037ab10fbdfa3a105"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/11.png",
+              "width": 68,
+              "height": 88,
+              "pivot": {
+                "x": 34,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 11,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c59a5f66-f62d-4267-9cbf-3fd604470211/south-east/11.png?t=1792173185289",
+              "sha256": "e489023a40db0f30a82b604d9193bb087b93c8b760e13672f10ff1a37d0db74c"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/12.png",
+              "width": 68,
+              "height": 88,
+              "pivot": {
+                "x": 34,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 12,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c59a5f66-f62d-4267-9cbf-3fd604470211/south-east/12.png?t=1792173185289",
+              "sha256": "438e470d2f83782418d7078e23069e0399f461f74049462613eb8177583b7f1b"
+            }
+          ],
+          "bakedEffects": true,
+          "observations": {
+            "bakedEffectSourceFrameIndices": [2, 3, 5, 9, 10, 11],
+            "bakedEffectBodyFrameIndices": [1, 2, 4, 8, 9, 10],
+            "bakedEffectColors": ["백색", "살구색"],
+            "motion": [
+              "회전 중 앞·옆·뒤 자세가 존재하고 12번은 원래 남동 대기 자세로 돌아온다."
+            ],
+            "limitations": [
+              "중간 5~8번의 몸 방향 변화와 회전 박자는 실제 재생에서 한 번의 연속 360도 회전으로 읽히는지 확인해야 한다.",
+              "밝은 면형 베기 궤적이 그림 자체에 포함되어 별도 달 궤적을 겹치지 않는 것이 필요하다."
+            ],
+            "inspectionScope": "정적 프레임 시트·원본 PNG·원래 방향 기준 그림 대조. 합성 동작의 실제 재생 및 품질 판정은 부모와 사용자가 진행한다."
+          },
+          "pivotEvidence": {
+            "originalSize": {
+              "width": 64,
+              "height": 64
+            },
+            "animationSize": {
+              "width": 68,
+              "height": 88
+            },
+            "referencePadding": {
+              "x": 2,
+              "y": 12
+            },
+            "visiblePixelsAndAlphaMatchOriginal": true,
+            "sourceFootY": 63,
+            "paddedFootY": 75,
+            "pivot": {
+              "x": 34,
+              "y": 13
+            },
+            "method": "reference0 중앙 원본 영역을 검정/흰 불투명 배경 합성 및 alpha로 대조; 발바닥 아래 alpha 경계를 같은 padding으로 이동한다."
+          },
+          "rawDirectory": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east",
+          "sheetPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/sheet.png"
+        },
+        "north-west": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "pivot": {
+              "x": 32,
+              "y": 1
+            },
+            "sha256": "7b509b5591ebb2fb21b42edfc15d593e0b38f3f206e3345babd16f806486b298",
+            "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300"
+          },
+          "frames": [
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/1.png",
+              "width": 64,
+              "height": 88,
+              "pivot": {
+                "x": 32,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 1,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/296e4c4a-88c3-4378-bad5-7b402e76e596/north-west/1.png?t=1792173309112",
+              "sha256": "6774a7286f0512c6af26a9631aafc7b33e0f414639762d743b50fdebbb534d48"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/2.png",
+              "width": 64,
+              "height": 88,
+              "pivot": {
+                "x": 32,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 2,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/296e4c4a-88c3-4378-bad5-7b402e76e596/north-west/2.png?t=1792173309112",
+              "sha256": "09da352eb4f14dcfd68ad2bed3588998d4103524d68211f077a79665fe04e8f9"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/3.png",
+              "width": 64,
+              "height": 88,
+              "pivot": {
+                "x": 32,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 3,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/296e4c4a-88c3-4378-bad5-7b402e76e596/north-west/3.png?t=1792173309112",
+              "sha256": "d4a46824069555b5cb521cf6687d2f895d1f3386d63369b132c85dd95384a00b"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/4.png",
+              "width": 64,
+              "height": 88,
+              "pivot": {
+                "x": 32,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 4,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/296e4c4a-88c3-4378-bad5-7b402e76e596/north-west/4.png?t=1792173309112",
+              "sha256": "63c42c77c74ecc0fb96210e2e94878e4d615f0cca66b21cd7aeff007893b2477"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/5.png",
+              "width": 64,
+              "height": 88,
+              "pivot": {
+                "x": 32,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 5,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/296e4c4a-88c3-4378-bad5-7b402e76e596/north-west/5.png?t=1792173309112",
+              "sha256": "8e14af1ff077d52505ac8912679195bac2f9f404e4ee7d0ba761119a13485fbe"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/6.png",
+              "width": 64,
+              "height": 88,
+              "pivot": {
+                "x": 32,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 6,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/296e4c4a-88c3-4378-bad5-7b402e76e596/north-west/6.png?t=1792173309112",
+              "sha256": "76f53e44d83d64a64c3fc916d935a45e89a404f55502445dc3374452dbd03a00"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/7.png",
+              "width": 64,
+              "height": 88,
+              "pivot": {
+                "x": 32,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 7,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/296e4c4a-88c3-4378-bad5-7b402e76e596/north-west/7.png?t=1792173309112",
+              "sha256": "c072d9bd1e195a80705256ab023d57a928fc30f1cf3519d50e209648eacf7473"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/8.png",
+              "width": 64,
+              "height": 88,
+              "pivot": {
+                "x": 32,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 8,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/296e4c4a-88c3-4378-bad5-7b402e76e596/north-west/8.png?t=1792173309112",
+              "sha256": "f8addd99602519a448616b32b2da8b81ddb52e48011339ac16bed3ab1412820f"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/9.png",
+              "width": 64,
+              "height": 88,
+              "pivot": {
+                "x": 32,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 9,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/296e4c4a-88c3-4378-bad5-7b402e76e596/north-west/9.png?t=1792173309112",
+              "sha256": "30b1ab39eef0b91bdfbd24b1987219c63821cb7b6cbdb4dbf859f2468ec924a9"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/10.png",
+              "width": 64,
+              "height": 88,
+              "pivot": {
+                "x": 32,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 10,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/296e4c4a-88c3-4378-bad5-7b402e76e596/north-west/10.png?t=1792173309112",
+              "sha256": "baf3d4b80cd6f8d9baa1094a7ab72cb3495bc9673cefa4b6af4c0db7c0918765"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/11.png",
+              "width": 64,
+              "height": 88,
+              "pivot": {
+                "x": 32,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 11,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/296e4c4a-88c3-4378-bad5-7b402e76e596/north-west/11.png?t=1792173309112",
+              "sha256": "ff05b6347413f98187e7803113c78d94ad6dc767d4302b8d77191d7488633685"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/12.png",
+              "width": 64,
+              "height": 88,
+              "pivot": {
+                "x": 32,
+                "y": 13
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 12,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/296e4c4a-88c3-4378-bad5-7b402e76e596/north-west/12.png?t=1792173309112",
+              "sha256": "6486380cee20e8a4d6e9884de1bbae2f5f21581d14e610cac78a05a680a012fb"
+            }
+          ],
+          "bakedEffects": true,
+          "observations": {
+            "bakedEffectSourceFrameIndices": [4, 5],
+            "bakedEffectBodyFrameIndices": [3, 4],
+            "bakedEffectColors": ["백색", "살구색"],
+            "motion": [
+              "회전 중 앞·옆·뒤 자세가 존재하고 12번은 원래 북서 대기 자세로 돌아온다."
+            ],
+            "limitations": [
+              "중간 4~5번 등에서 접힌 귀가 펴진다.",
+              "한 번의 연속 360도 회전으로 읽히는지 실제 재생에서 확인해야 한다.",
+              "원본 4~5번의 면형 베기 효과와 코드 달 궤적이 중복되지 않게 한다."
+            ],
+            "inspectionScope": "정적 프레임 시트·원본 PNG·원래 방향 기준 그림 대조. 합성 동작의 실제 재생 및 품질 판정은 부모와 사용자가 진행한다."
+          },
+          "pivotEvidence": {
+            "originalSize": {
+              "width": 64,
+              "height": 64
+            },
+            "animationSize": {
+              "width": 64,
+              "height": 88
+            },
+            "referencePadding": {
+              "x": 0,
+              "y": 12
+            },
+            "visiblePixelsAndAlphaMatchOriginal": true,
+            "sourceFootY": 63,
+            "paddedFootY": 75,
+            "pivot": {
+              "x": 32,
+              "y": 13
+            },
+            "method": "reference0 중앙 원본 영역을 검정/흰 불투명 배경 합성 및 alpha로 대조; 발바닥 아래 alpha 경계를 같은 padding으로 이동한다."
+          },
+          "rawDirectory": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west",
+          "sheetPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/sheet.png"
+        }
+      },
+      "generation": {
+        "characterId": "01b130e4-d972-4d28-8904-7a15ab691e10",
+        "mode": "pixminimax",
+        "frameCountRequested": 12,
+        "costGenerations": 2,
+        "qualityGate": "사용자 GIF 판정 대기",
+        "attempts": [
+          {
+            "direction": "south-east",
+            "attempt": 1,
+            "mode": "pixminimax",
+            "animationGroupId": "db077620-0e59-4322-b2e4-21dffb31131e",
+            "jobId": "f1b26921-a734-4a9e-9bba-ac69b86664ac",
+            "costGenerations": 1,
+            "sourceAnimationName": "biwol-add-spin-se-pixminimax-20261017",
+            "request": {
+              "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+              "animation_name": "biwol-add-spin-se-pixminimax-20261017",
+              "mode": "pixminimax",
+              "directions": ["south-east"],
+              "frame_count": 12,
+              "keep_first_frame": true,
+              "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+              "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+              "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+              "initial_pose": "Exact original south-east standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+              "action_description": "ONE complete 360-degree IN-PLACE BODY SPIN with a compact horizontal dagger slash, ending at the exact original south-east pose. Begin source idle, lower knees and draw dagger hand close. Rotate the whole torso and body through exactly ONE continuous full revolution around a fixed root: quarter turn, back/side turn, remaining quarter turn, then source-facing finish. This motion intentionally changes body facing during the spin. Keep knees low, arms compact and dagger near waist/chest height; slash once while turning. Do not lift dagger overhead or make a second spin. Finish in source south-east orientation and recover to source idle. No world-position translation; foot pivot may turn but body root stays fixed. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+            },
+            "receiptPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/south-east/submission-success.json",
+            "rawFrameCountIncludingReference": 13,
+            "selectedSourceFrameOrder": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+            "allOriginalsPreserved": true
+          },
+          {
+            "direction": "north-west",
+            "attempt": 1,
+            "mode": "pixminimax",
+            "animationGroupId": "04997c07-3f1e-4d25-9ca4-23972b414c13",
+            "jobId": "2a046f95-6159-4160-b295-7b4b420796a0",
+            "costGenerations": 1,
+            "sourceAnimationName": "biwol-add-spin-nw-pixminimax-20261017",
+            "request": {
+              "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+              "animation_name": "biwol-add-spin-nw-pixminimax-20261017",
+              "mode": "pixminimax",
+              "directions": ["north-west"],
+              "frame_count": 12,
+              "keep_first_frame": true,
+              "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+              "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+              "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+              "initial_pose": "Exact original north-west standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+              "action_description": "ONE complete 360-degree IN-PLACE BODY SPIN with a compact horizontal dagger slash, ending at the exact original north-west pose. Begin source idle, lower knees and draw dagger hand close. Rotate the whole torso and body through exactly ONE continuous full revolution around a fixed root: quarter turn, back/side turn, remaining quarter turn, then source-facing finish. This motion intentionally changes body facing during the spin. Keep knees low, arms compact and dagger near waist/chest height; slash once while turning. Do not lift dagger overhead or make a second spin. Finish in source north-west orientation and recover to source idle. No world-position translation; foot pivot may turn but body root stays fixed. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+            },
+            "receiptPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/spin/north-west/submission-success.json",
+            "rawFrameCountIncludingReference": 13,
+            "selectedSourceFrameOrder": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+            "allOriginalsPreserved": true
+          }
+        ]
+      }
+    },
+    "plunge": {
+      "id": "ai/biwol-plunge-study",
+      "label": "낙영 베기",
+      "sourceName": "PixelLab",
+      "sourceUrl": "https://www.pixellab.ai/",
+      "directions": {
+        "south-east": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "pivot": {
+              "x": 32,
+              "y": 1
+            },
+            "sha256": "f03340378d1f6e0eca9cf3acaba62efc43ac80962a06ead4a50d071f0626afd3",
+            "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300"
+          },
+          "frames": [
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/1.png",
+              "width": 76,
+              "height": 96,
+              "pivot": {
+                "x": 38,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 1,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c3173d79-5a54-4d49-93ea-93825af654cf/south-east/1.png?t=1792173481923",
+              "sha256": "e993601b5a28344bfc9814571ab3afe3f0d9beb2ecb2defd8a20f07262fc4904"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/2.png",
+              "width": 76,
+              "height": 96,
+              "pivot": {
+                "x": 38,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 2,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c3173d79-5a54-4d49-93ea-93825af654cf/south-east/2.png?t=1792173481923",
+              "sha256": "cedb326f16280cddb1bc7ad9161c8be4393f4c6e238ea2e211ac86a02710b12a"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/3.png",
+              "width": 76,
+              "height": 96,
+              "pivot": {
+                "x": 38,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 3,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c3173d79-5a54-4d49-93ea-93825af654cf/south-east/3.png?t=1792173481923",
+              "sha256": "88a45252e88ba39b8d7a9e83139d441767c6619efc2e5dd154a1ddf6a0267ab7"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/4.png",
+              "width": 76,
+              "height": 96,
+              "pivot": {
+                "x": 38,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 4,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c3173d79-5a54-4d49-93ea-93825af654cf/south-east/4.png?t=1792173481923",
+              "sha256": "0404f5c2e98f74116b659a89a656c6b519260b1cd610f21aae970be5ea43395a"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/5.png",
+              "width": 76,
+              "height": 96,
+              "pivot": {
+                "x": 38,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 5,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c3173d79-5a54-4d49-93ea-93825af654cf/south-east/5.png?t=1792173481923",
+              "sha256": "b49f7c8e4be2ec73b352c587b45d6f451baca67a7e5dfe373b824801766695ee"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/6.png",
+              "width": 76,
+              "height": 96,
+              "pivot": {
+                "x": 38,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 6,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c3173d79-5a54-4d49-93ea-93825af654cf/south-east/6.png?t=1792173481923",
+              "sha256": "3f5a5ec63946fafce34a44f1ef9603d4b6729d8879d49a87d3f5d4ffaa7abd2f"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/7.png",
+              "width": 76,
+              "height": 96,
+              "pivot": {
+                "x": 38,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 7,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c3173d79-5a54-4d49-93ea-93825af654cf/south-east/7.png?t=1792173481923",
+              "sha256": "5a60d7e6c15fe8e6b23800e8e0361a9fd030cb96f5b30f5c9bf4000fde735f98"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/8.png",
+              "width": 76,
+              "height": 96,
+              "pivot": {
+                "x": 38,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 8,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c3173d79-5a54-4d49-93ea-93825af654cf/south-east/8.png?t=1792173481923",
+              "sha256": "2a45ac972a6ff76ebb8e0e656360b9ea85c387d7f621e8f4ed22154e6d186d86"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/9.png",
+              "width": 76,
+              "height": 96,
+              "pivot": {
+                "x": 38,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 9,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c3173d79-5a54-4d49-93ea-93825af654cf/south-east/9.png?t=1792173481923",
+              "sha256": "c8bfeda95ca650b6ba0bdcf33ad5969ec15ab0d51ac1b9da681f913294e8cb52"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/10.png",
+              "width": 76,
+              "height": 96,
+              "pivot": {
+                "x": 38,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 10,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c3173d79-5a54-4d49-93ea-93825af654cf/south-east/10.png?t=1792173481923",
+              "sha256": "c5c57d55c030e1b390e5c8244017b6e213796c9a70961a6577cb3bd14cc3f524"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/11.png",
+              "width": 76,
+              "height": 96,
+              "pivot": {
+                "x": 38,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 11,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c3173d79-5a54-4d49-93ea-93825af654cf/south-east/11.png?t=1792173481923",
+              "sha256": "a8ef79ec2cbd98b37603b911867b8dadd4ceb222111184af626c41527a3081b5"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/12.png",
+              "width": 76,
+              "height": 96,
+              "pivot": {
+                "x": 38,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 12,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/c3173d79-5a54-4d49-93ea-93825af654cf/south-east/12.png?t=1792173481923",
+              "sha256": "9de4d47fc6232f6087d182c5ea69157f5cb0820e5ff798d391d9d369423cebe5"
+            }
+          ],
+          "bakedEffects": true,
+          "observations": {
+            "bakedEffectSourceFrameIndices": [7],
+            "bakedEffectBodyFrameIndices": [6],
+            "bakedEffectColors": ["회백색"],
+            "motion": [
+              "1~2번 준비, 3~6번 다리 접기와 머리 옆 칼을 든 공중 자세, 7번 수직 내려베기, 8~10번 낮은 착지, 11~12번 회수가 보인다."
+            ],
+            "limitations": [
+              "일부 1·7·8번에서 접힌 귀가 펴진다.",
+              "공중 4~6번의 발 아래 alpha 경계가 기준 발선보다 18~19px 위여서 코드 도약 곡선과 합성한 최종 높이를 확인해야 한다.",
+              "7번에 큰 수직 선 궤적이 그림 자체에 포함된다."
+            ],
+            "inspectionScope": "정적 프레임 시트·원본 PNG·원래 방향 기준 그림 대조. 합성 동작의 실제 재생 및 품질 판정은 부모와 사용자가 진행한다."
+          },
+          "pivotEvidence": {
+            "originalSize": {
+              "width": 64,
+              "height": 64
+            },
+            "animationSize": {
+              "width": 76,
+              "height": 96
+            },
+            "referencePadding": {
+              "x": 6,
+              "y": 16
+            },
+            "visiblePixelsAndAlphaMatchOriginal": true,
+            "sourceFootY": 63,
+            "paddedFootY": 79,
+            "pivot": {
+              "x": 38,
+              "y": 17
+            },
+            "method": "reference0 중앙 원본 영역을 검정/흰 불투명 배경 합성 및 alpha로 대조; 발바닥 아래 alpha 경계를 같은 padding으로 이동한다."
+          },
+          "rawDirectory": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east",
+          "sheetPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/sheet.png"
+        },
+        "north-west": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "pivot": {
+              "x": 32,
+              "y": 1
+            },
+            "sha256": "7b509b5591ebb2fb21b42edfc15d593e0b38f3f206e3345babd16f806486b298",
+            "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300"
+          },
+          "frames": [
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/1.png",
+              "width": 64,
+              "height": 96,
+              "pivot": {
+                "x": 32,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 1,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/78c46533-37fb-435c-9b56-1a068ea8ddb5/north-west/1.png?t=1792173808872",
+              "sha256": "56b71bb7e6ec17aaaecc697cba9a121c5fa7d1e61f586f1f5326439cb12efed2"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/2.png",
+              "width": 64,
+              "height": 96,
+              "pivot": {
+                "x": 32,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 2,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/78c46533-37fb-435c-9b56-1a068ea8ddb5/north-west/2.png?t=1792173808872",
+              "sha256": "bf950c14280ec91a4bc894a4e871da3b3659133211bfeaf6c4473fa705dd02c7"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/3.png",
+              "width": 64,
+              "height": 96,
+              "pivot": {
+                "x": 32,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 3,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/78c46533-37fb-435c-9b56-1a068ea8ddb5/north-west/3.png?t=1792173808872",
+              "sha256": "8716113718210dc732b80d84723bf99bf5ffaa2088bb832053c3401d01431b65"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/4.png",
+              "width": 64,
+              "height": 96,
+              "pivot": {
+                "x": 32,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 4,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/78c46533-37fb-435c-9b56-1a068ea8ddb5/north-west/4.png?t=1792173808872",
+              "sha256": "adfe22f75f5c3873b3ef9885d5d208d2a714e002d4ce53bbb12dbcb29a71aad9"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/5.png",
+              "width": 64,
+              "height": 96,
+              "pivot": {
+                "x": 32,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 5,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/78c46533-37fb-435c-9b56-1a068ea8ddb5/north-west/5.png?t=1792173808872",
+              "sha256": "a05e0c4406d2cd4865631496aafc9076a42492c2a13a91e34ddbb977d5fcec72"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/6.png",
+              "width": 64,
+              "height": 96,
+              "pivot": {
+                "x": 32,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 6,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/78c46533-37fb-435c-9b56-1a068ea8ddb5/north-west/6.png?t=1792173808872",
+              "sha256": "f0c882d3dc0b815b3918bd766436b71e15aa32b848ce1d21f59b852ae8b71e52"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/7.png",
+              "width": 64,
+              "height": 96,
+              "pivot": {
+                "x": 32,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 7,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/78c46533-37fb-435c-9b56-1a068ea8ddb5/north-west/7.png?t=1792173808872",
+              "sha256": "70674930180c07f4bdcae770afc11887e742f2d47194782401c4ca41857f05f6"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/8.png",
+              "width": 64,
+              "height": 96,
+              "pivot": {
+                "x": 32,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 8,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/78c46533-37fb-435c-9b56-1a068ea8ddb5/north-west/8.png?t=1792173808872",
+              "sha256": "6960e0d047f82ece7302e512a9d849c028971da24e5ea9723490d31ecb04b683"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/9.png",
+              "width": 64,
+              "height": 96,
+              "pivot": {
+                "x": 32,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 9,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/78c46533-37fb-435c-9b56-1a068ea8ddb5/north-west/9.png?t=1792173808872",
+              "sha256": "3ca82afbba32b643da7f9373e8a8a07685529aee82dd25f740e065d7afbd361e"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/10.png",
+              "width": 64,
+              "height": 96,
+              "pivot": {
+                "x": 32,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 10,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/78c46533-37fb-435c-9b56-1a068ea8ddb5/north-west/10.png?t=1792173808872",
+              "sha256": "d30754fff3d140f593253f2584bd4bd31497b9192719e405d9ea27f135c548f8"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/11.png",
+              "width": 64,
+              "height": 96,
+              "pivot": {
+                "x": 32,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 11,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/78c46533-37fb-435c-9b56-1a068ea8ddb5/north-west/11.png?t=1792173808872",
+              "sha256": "694dcf9223752e7acf3014c302e62ce308935c0afcc68cebc60a10c3c49cfd0f"
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/12.png",
+              "width": 64,
+              "height": 96,
+              "pivot": {
+                "x": 32,
+                "y": 17
+              },
+              "durationSeconds": 0.06,
+              "sourceFrameIndex": 12,
+              "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/animations/78c46533-37fb-435c-9b56-1a068ea8ddb5/north-west/12.png?t=1792173808872",
+              "sha256": "dd6d9c0510177ed9ae68a36e9d0eae5b07e4a5b9c1539948b9ee5569b2a1e732"
+            }
+          ],
+          "bakedEffects": true,
+          "observations": {
+            "bakedEffectSourceFrameIndices": [8, 9],
+            "bakedEffectBodyFrameIndices": [7, 8],
+            "bakedEffectColors": ["회청색", "백색"],
+            "motion": [
+              "1~3번 준비, 4~7번 단검을 머리 옆으로 든 공중 자세, 8번 내려베기, 9~10번 낮은 착지, 11~12번 회수가 보인다."
+            ],
+            "improvements": [
+              "첫 후보 3~6번에서 반복되던 긴 칼날이 새 후보의 2~7번에서는 머리 높이보다 짧은 칼로 줄어들었다."
+            ],
+            "limitations": [
+              "8번에는 머리보다 훨씬 긴 회청색 면이 손에서 이어져 칼 확대인지 내장 베기 궤적인지 정적 시트만으로 모호하다. 사용자 GIF에서 단검으로 읽히는지 확인해야 한다.",
+              "9번에는 작은 흰 잔여 형태가 있다.",
+              "접힌 귀가 일부 2~3번과 8~10번 등에서 펴진다."
+            ],
+            "inspectionScope": "첫 후보와 보정 후보의 정적 프레임 시트·원본 PNG·방향 기준 그림을 대조했다. 실제 합성 재생 및 최종 품질은 부모와 사용자가 판정한다."
+          },
+          "pivotEvidence": {
+            "originalSize": {
+              "width": 64,
+              "height": 64
+            },
+            "animationSize": {
+              "width": 64,
+              "height": 96
+            },
+            "referencePadding": {
+              "x": 0,
+              "y": 16
+            },
+            "visiblePixelsAndAlphaMatchOriginal": true,
+            "sourceFootY": 63,
+            "paddedFootY": 79,
+            "pivot": {
+              "x": 32,
+              "y": 17
+            },
+            "method": "reference0 중앙 원본 영역을 검정/흰 불투명 배경 합성 및 alpha로 대조; 발 아래 경계를 같은 padding으로 이동한다."
+          },
+          "rawDirectory": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2",
+          "sheetPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/sheet.png",
+          "contactFrame": {
+            "sourceFrameIndex": 8,
+            "bodyFrameIndex": 7,
+            "description": "원본 참조 0번을 제외한 선택 index 7이 실제 수직 내려베기 접점이다."
+          }
+        }
+      },
+      "generation": {
+        "characterId": "01b130e4-d972-4d28-8904-7a15ab691e10",
+        "mode": "pixminimax",
+        "frameCountRequested": 12,
+        "costGenerations": 3,
+        "qualityGate": "사용자 GIF 판정 대기",
+        "attempts": [
+          {
+            "direction": "south-east",
+            "attempt": 1,
+            "mode": "pixminimax",
+            "animationGroupId": "7e8f6970-db35-4c28-99be-7302848b04af",
+            "jobId": "8b2baf02-9130-44b7-8250-515f07ff68eb",
+            "costGenerations": 1,
+            "sourceAnimationName": "biwol-add-plunge-se-pixminimax-20261017",
+            "request": {
+              "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+              "animation_name": "biwol-add-plunge-se-pixminimax-20261017",
+              "mode": "pixminimax",
+              "directions": ["south-east"],
+              "frame_count": 12,
+              "keep_first_frame": true,
+              "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+              "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+              "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+              "initial_pose": "Exact original south-east standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+              "action_description": "ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed THREE-QUARTER SOUTH-EAST orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the LOWER RIGHT / RIGHT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+            },
+            "receiptPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/south-east/submission-success.json",
+            "rawFrameCountIncludingReference": 13,
+            "selectedSourceFrameOrder": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+            "allOriginalsPreserved": true,
+            "selectedForContract": true
+          },
+          {
+            "direction": "north-west",
+            "attempt": 1,
+            "mode": "pixminimax",
+            "animationGroupId": "1fae220b-c044-4912-b611-6bc8a30d2311",
+            "jobId": "1b545c7b-0632-4d92-99d5-0d226191c26d",
+            "costGenerations": 1,
+            "sourceAnimationName": "biwol-add-plunge-nw-pixminimax-20261017",
+            "request": {
+              "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+              "animation_name": "biwol-add-plunge-nw-pixminimax-20261017",
+              "mode": "pixminimax",
+              "directions": ["north-west"],
+              "frame_count": 12,
+              "keep_first_frame": true,
+              "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+              "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+              "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+              "initial_pose": "Exact original north-west standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+              "action_description": "ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the UPPER LEFT / LEFT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+            },
+            "receiptPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west/submission-success.json",
+            "rawFrameCountIncludingReference": 13,
+            "selectedSourceFrameOrder": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+            "allOriginalsPreserved": true,
+            "selectedForContract": false
+          },
+          {
+            "direction": "north-west",
+            "attempt": 2,
+            "mode": "pixminimax",
+            "animationGroupId": "6efca564-7161-41b1-bb9f-94be14edb727",
+            "jobId": "55a062ce-d372-4141-ad99-bd92cc60e9bc",
+            "costGenerations": 1,
+            "sourceAnimationName": "biwol-add-plunge-nw-pixminimax-v2-20261017",
+            "request": {
+              "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+              "animation_name": "biwol-add-plunge-nw-pixminimax-v2-20261017",
+              "mode": "pixminimax",
+              "directions": ["north-west"],
+              "frame_count": 12,
+              "keep_first_frame": true,
+              "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+              "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+              "subject_description": "Exact source rabbit ninja, back-three-quarter NORTH-WEST. Cream fur, one upright and one bent ear, plum ninja jacket, dark pants, short red scarf, round tail. ONE original TINY waist dagger: its short metal blade is about HALF the rabbit head height, never a sword.",
+              "initial_pose": "Exact original north-west standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+              "action_description": "ONE downward attack with the ORIGINAL TINY BELT DAGGER, never a sword. Most important: the dagger's METAL BLADE stays approximately HALF the rabbit head height and ALWAYS SHORTER THAN THE HEAD HEIGHT in every frame, including when raised beside the head. Keep the original small hilt and one short blade, do not extend the weapon during the attack. Begin from the exact NORTH-WEST idle. Keep the back-three-quarter NORTH-WEST body axis; back of the head and jacket stay visible, do not show face or chest toward camera. Crouch briefly, make an airborne tucked-leg pose while raising the tiny dagger beside the head with elbow bent, make ONE compact vertical DOWNWARD knife chop toward the UPPER LEFT / LEFT target side, then low bent-knee landing and return to the exact source idle. Show clear preparation, tucked-leg blade lift, downward cut and landing/recovery. Preserve one permanently bent ear and one upright ear, source clothes and asymmetry. The game adds all jump height, falling arc and translation: draw body poses around a fixed root only, do not translate the whole sprite. Transparent background. No long sword, katana, spear or second weapon. No blade trails, particles, flashes, added effects or duplicate bodies."
+            },
+            "receiptPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/plunge/north-west-v2/submission.json",
+            "rawFrameCountIncludingReference": 13,
+            "selectedSourceFrameOrder": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+            "allOriginalsPreserved": true,
+            "selectedForContract": true,
+            "selectionReason": "반복되는 공중 칼날이 머리보다 짧게 줄고 준비·공중·내려베기·착지 흐름이 유지되어 선택한다. 8번 큰 형태의 단검/궤적 모호함은 사용자 GIF 판정 지점으로 남긴다."
+          }
+        ],
+        "selectedAttemptsByDirection": {
+          "south-east": 1,
+          "north-west": 2
+        },
+        "northWestCorrectionLimitReached": true
+      }
+    }
+  },
+  "generationSummary": {
+    "date": "2026-10-17",
+    "characterId": "01b130e4-d972-4d28-8904-7a15ab691e10",
+    "motionCount": 3,
+    "directionCountPerMotion": 2,
+    "clipCount": 6,
+    "mode": "pixminimax",
+    "costGenerations": 7,
+    "submissionSlotErrorsWithoutGeneration": 2,
+    "retryGenerations": 1,
+    "customStartAndEnd": "각 클립이 자신의 원래 방향 rotation을 시작과 끝 기준으로 사용한다. 고정 keyframe은 단일 방향에서 지원하므로 6회 독립 호출했다.",
+    "referenceRule": "기존 승인 비월 방향 rotation 및 이전 모션 원본을 외형 기준으로, 부모가 확인한 실제 픽셀 Jump/AttackSheet GIF를 시간 배분 참고로 사용한 새 기술 시안이다.",
+    "runtimeFrameSelection": "각 원본 reference 0은 보존하고 재생용은 원본 1~12번 순서다. 같은 방향이나 다른 방향 사이의 프레임 합성·직접 새 그림 수정은 하지 않았다.",
+    "bodyScope": "부모가 위치 이동·도약 곡선·타격을 연결한다. 일부 원본에는 명시적 요청과 달리 내장 궤적이 있어 방향별 bakedEffects와 observations에 기록했다.",
+    "verificationScope": "6개 클립의 프레임 시트 확인, 원래 방향과 reference0의 실제 표시 픽셀·alpha 일치 및 padding 기반 발 기준점 검증, 원본 파일·출처·해시 보존. 실제 합성 재생 및 최종 품질 판정은 별도다.",
+    "qualityGate": "사용자 GIF 판정 대기",
+    "sourceArchive": {
+      "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/source-with-all-first-pass-additions.zip",
+      "sourceUrl": "https://api.pixellab.ai/mcp/characters/01b130e4-d972-4d28-8904-7a15ab691e10/download",
+      "sha256": "05fed45254a8b2e02ff0b73960dec05870d3d0a08db40acad757b2cb106a0615",
+      "contains": "기존 비월 방향·모션과 추가 최초 6클립 원본 PNG 및 서비스 metadata.json"
+    },
+    "submissionLogPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/generation-submissions.json",
+    "actualGenerationsByClip": {
+      "lunge": {
+        "south-east": 1,
+        "north-west": 1
+      },
+      "spin": {
+        "south-east": 1,
+        "north-west": 1
+      },
+      "plunge": {
+        "south-east": 1,
+        "north-west": 2
+      }
+    },
+    "additionalSourceArchives": [
+      {
+        "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/source-with-plunge-nw-v2.zip",
+        "sourceUrl": "https://api.pixellab.ai/mcp/characters/01b130e4-d972-4d28-8904-7a15ab691e10/download",
+        "sha256": "79d3e61f141a84b74f2607653298dc6d1551a4bab5112a3ef6d4d53c67044358",
+        "contains": "기존 비월 모든 원본 및 추가 최초 6클립과 낙영 베기 북서 보정 두 번째 원본"
+      }
+    ],
+    "selectionUpdate": "낙영 베기 북서만 두 번째 후보로 교체했다. 첫 후보 13장·ZIP·메타데이터는 그대로 보존하고 다른 5클립은 변경하지 않았다."
+  }
+}

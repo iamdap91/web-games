@@ -1,0 +1,317 @@
+{
+  "actor": "biwol",
+  "characterId": "01b130e4-d972-4d28-8904-7a15ab691e10",
+  "date": "2026-10-17",
+  "mode": "pixminimax",
+  "frameCountRequested": 12,
+  "firstPass": true,
+  "rotations": [
+    {
+      "direction": "south-east",
+      "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/rotations/south-east.png",
+      "sha256": "f03340378d1f6e0eca9cf3acaba62efc43ac80962a06ead4a50d071f0626afd3",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300"
+    },
+    {
+      "direction": "north-west",
+      "localPath": "public/assets/maplestory/companion-basic-attacks-ai/biwol-additions/rotations/north-west.png",
+      "sha256": "7b509b5591ebb2fb21b42edfc15d593e0b38f3f206e3345babd16f806486b298",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300"
+    }
+  ],
+  "submissionRecords": [
+    {
+      "key": "lunge",
+      "direction": "south-east",
+      "attempt": 1,
+      "mode": "pixminimax",
+      "request": {
+        "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+        "animation_name": "biwol-add-lunge-se-pixminimax-20261017",
+        "mode": "pixminimax",
+        "directions": [
+          "south-east"
+        ],
+        "frame_count": 12,
+        "keep_first_frame": true,
+        "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+        "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+        "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+        "initial_pose": "Exact original south-east standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+        "action_description": "ONE quick straight DAGGER THRUST and recovery. Target is LOWER RIGHT / RIGHT of the image. Keep the fixed THREE-QUARTER SOUTH-EAST body axis in every frame; no body turn or spin. Begin from source idle. Lower chest and bend knees slightly, draw the short dagger close to the waist. Then sharply extend the dagger hand in ONE STRAIGHT LINE across the front toward the target: the blade must visibly project into the LOWER RIGHT / RIGHT of the image space outside the body silhouette, not stay on the opposite side. Brief full-extension pose, then retract arm to belt and recover to the exact source idle. It is a stab, not a sweeping slash. Feet remain planted and root stays fixed; forward travel is added by the game. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+      },
+      "receipt": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE quick straight DAGGER THRUST and recovery. Target is LOWER RIGHT / RIGHT of the image. Keep the fixed THREE-QUARTER SOUTH-EAST body axis in every frame; no body turn or spin. Begin from source idle. Lower chest and bend knees slightly, draw the short dagger close to the waist. Then sharply extend the dagger hand in ONE STRAIGHT LINE across the front toward the target: the blade must visibly project into the LOWER RIGHT / RIGHT of the image space outside the body silhouette, not stay on the opposite side. Brief full-extension pose, then retract arm to belt and recover to the exact source idle. It is a stab, not a sweeping slash. Feet remain planted and root stays fixed; forward travel is added by the game. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.)\ndirections: south-east (1 jobs)\njob_ids: south-east=a69bd4d9-6db1-4eca-928f-390c1687a38b\ngroup: ae2b1144-f868-4be7-81d4-2649c266072a\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE quick straight DAGGER THRUST and recovery. Target is LOWER RIGHT / RIGHT of the image. Keep the fixed THREE-QUARTER SOUTH-EAST body axis in every frame; no body turn or spin. Begin from source idle. Lower chest and bend knees slightly, draw the short dagger close to the waist. Then sharply extend the dagger hand in ONE STRAIGHT LINE across the front toward the target: the blade must visibly project into the LOWER RIGHT / RIGHT of the image space outside the body silhouette, not stay on the opposite side. Brief full-extension pose, then retract arm to belt and recover to the exact source idle. It is a stab, not a sweeping slash. Feet remain planted and root stays fixed; forward travel is added by the game. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.\", mode=\"pixminimax\", animation_group_id=\"ae2b1144-f868-4be7-81d4-2649c266072a\", directions=[...])",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE quick straight DAGGER THRUST and recovery. Target is LOWER RIGHT / RIGHT of the image. Keep the fixed THREE-QUARTER SOUTH-EAST body axis in every frame; no body turn or spin. Begin from source idle. Lower chest and bend knees slightly, draw the short dagger close to the waist. Then sharply extend the dagger hand in ONE STRAIGHT LINE across the front toward the target: the blade must visibly project into the LOWER RIGHT / RIGHT of the image space outside the body silhouette, not stay on the opposite side. Brief full-extension pose, then retract arm to belt and recover to the exact source idle. It is a stab, not a sweeping slash. Feet remain planted and root stays fixed; forward travel is added by the game. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.)\ndirections: south-east (1 jobs)\njob_ids: south-east=a69bd4d9-6db1-4eca-928f-390c1687a38b\ngroup: ae2b1144-f868-4be7-81d4-2649c266072a\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE quick straight DAGGER THRUST and recovery. Target is LOWER RIGHT / RIGHT of the image. Keep the fixed THREE-QUARTER SOUTH-EAST body axis in every frame; no body turn or spin. Begin from source idle. Lower chest and bend knees slightly, draw the short dagger close to the waist. Then sharply extend the dagger hand in ONE STRAIGHT LINE across the front toward the target: the blade must visibly project into the LOWER RIGHT / RIGHT of the image space outside the body silhouette, not stay on the opposite side. Brief full-extension pose, then retract arm to belt and recover to the exact source idle. It is a stab, not a sweeping slash. Feet remain planted and root stays fixed; forward travel is added by the game. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.\", mode=\"pixminimax\", animation_group_id=\"ae2b1144-f868-4be7-81d4-2649c266072a\", directions=[...])"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "lunge",
+      "direction": "north-west",
+      "attempt": 1,
+      "mode": "pixminimax",
+      "request": {
+        "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+        "animation_name": "biwol-add-lunge-nw-pixminimax-20261017",
+        "mode": "pixminimax",
+        "directions": [
+          "north-west"
+        ],
+        "frame_count": 12,
+        "keep_first_frame": true,
+        "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+        "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+        "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+        "initial_pose": "Exact original north-west standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+        "action_description": "ONE quick straight DAGGER THRUST and recovery. Target is UPPER LEFT / LEFT of the image. Keep the fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera body axis in every frame; no body turn or spin. Begin from source idle. Lower chest and bend knees slightly, draw the short dagger close to the waist. Then sharply extend the dagger hand in ONE STRAIGHT LINE across the front toward the target: the blade must visibly project into the UPPER LEFT / LEFT of the image space outside the body silhouette, not stay on the opposite side. Brief full-extension pose, then retract arm to belt and recover to the exact source idle. It is a stab, not a sweeping slash. Feet remain planted and root stays fixed; forward travel is added by the game. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+      },
+      "receipt": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE quick straight DAGGER THRUST and recovery. Target is UPPER LEFT / LEFT of the image. Keep the fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera body axis in every frame; no body turn or spin. Begin from source idle. Lower chest and bend knees slightly, draw the short dagger close to the waist. Then sharply extend the dagger hand in ONE STRAIGHT LINE across the front toward the target: the blade must visibly project into the UPPER LEFT / LEFT of the image space outside the body silhouette, not stay on the opposite side. Brief full-extension pose, then retract arm to belt and recover to the exact source idle. It is a stab, not a sweeping slash. Feet remain planted and root stays fixed; forward travel is added by the game. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.)\ndirections: north-west (1 jobs)\njob_ids: north-west=6467b9b8-f2d0-4116-95d1-143efdec91b0\ngroup: 10f0260e-b8bf-41b2-b97a-58f7cbc813f9\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE quick straight DAGGER THRUST and recovery. Target is UPPER LEFT / LEFT of the image. Keep the fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera body axis in every frame; no body turn or spin. Begin from source idle. Lower chest and bend knees slightly, draw the short dagger close to the waist. Then sharply extend the dagger hand in ONE STRAIGHT LINE across the front toward the target: the blade must visibly project into the UPPER LEFT / LEFT of the image space outside the body silhouette, not stay on the opposite side. Brief full-extension pose, then retract arm to belt and recover to the exact source idle. It is a stab, not a sweeping slash. Feet remain planted and root stays fixed; forward travel is added by the game. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.\", mode=\"pixminimax\", animation_group_id=\"10f0260e-b8bf-41b2-b97a-58f7cbc813f9\", directions=[...])",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE quick straight DAGGER THRUST and recovery. Target is UPPER LEFT / LEFT of the image. Keep the fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera body axis in every frame; no body turn or spin. Begin from source idle. Lower chest and bend knees slightly, draw the short dagger close to the waist. Then sharply extend the dagger hand in ONE STRAIGHT LINE across the front toward the target: the blade must visibly project into the UPPER LEFT / LEFT of the image space outside the body silhouette, not stay on the opposite side. Brief full-extension pose, then retract arm to belt and recover to the exact source idle. It is a stab, not a sweeping slash. Feet remain planted and root stays fixed; forward travel is added by the game. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.)\ndirections: north-west (1 jobs)\njob_ids: north-west=6467b9b8-f2d0-4116-95d1-143efdec91b0\ngroup: 10f0260e-b8bf-41b2-b97a-58f7cbc813f9\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE quick straight DAGGER THRUST and recovery. Target is UPPER LEFT / LEFT of the image. Keep the fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera body axis in every frame; no body turn or spin. Begin from source idle. Lower chest and bend knees slightly, draw the short dagger close to the waist. Then sharply extend the dagger hand in ONE STRAIGHT LINE across the front toward the target: the blade must visibly project into the UPPER LEFT / LEFT of the image space outside the body silhouette, not stay on the opposite side. Brief full-extension pose, then retract arm to belt and recover to the exact source idle. It is a stab, not a sweeping slash. Feet remain planted and root stays fixed; forward travel is added by the game. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.\", mode=\"pixminimax\", animation_group_id=\"10f0260e-b8bf-41b2-b97a-58f7cbc813f9\", directions=[...])"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "spin",
+      "direction": "south-east",
+      "attempt": 1,
+      "mode": "pixminimax",
+      "request": {
+        "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+        "animation_name": "biwol-add-spin-se-pixminimax-20261017",
+        "mode": "pixminimax",
+        "directions": [
+          "south-east"
+        ],
+        "frame_count": 12,
+        "keep_first_frame": true,
+        "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+        "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+        "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+        "initial_pose": "Exact original south-east standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+        "action_description": "ONE complete 360-degree IN-PLACE BODY SPIN with a compact horizontal dagger slash, ending at the exact original south-east pose. Begin source idle, lower knees and draw dagger hand close. Rotate the whole torso and body through exactly ONE continuous full revolution around a fixed root: quarter turn, back/side turn, remaining quarter turn, then source-facing finish. This motion intentionally changes body facing during the spin. Keep knees low, arms compact and dagger near waist/chest height; slash once while turning. Do not lift dagger overhead or make a second spin. Finish in source south-east orientation and recover to source idle. No world-position translation; foot pivot may turn but body root stays fixed. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+      },
+      "receipt": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE complete 360-degree IN-PLACE BODY SPIN with a compact horizontal dagger slash, ending at the exact original south-east pose. Begin source idle, lower knees and draw dagger hand close. Rotate the whole torso and body through exactly ONE continuous full revolution around a fixed root: quarter turn, back/side turn, remaining quarter turn, then source-facing finish. This motion intentionally changes body facing during the spin. Keep knees low, arms compact and dagger near waist/chest height; slash once while turning. Do not lift dagger overhead or make a second spin. Finish in source south-east orientation and recover to source idle. No world-position translation; foot pivot may turn but body root stays fixed. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.)\ndirections: south-east (1 jobs)\njob_ids: south-east=f1b26921-a734-4a9e-9bba-ac69b86664ac\ngroup: db077620-0e59-4322-b2e4-21dffb31131e\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE complete 360-degree IN-PLACE BODY SPIN with a compact horizontal dagger slash, ending at the exact original south-east pose. Begin source idle, lower knees and draw dagger hand close. Rotate the whole torso and body through exactly ONE continuous full revolution around a fixed root: quarter turn, back/side turn, remaining quarter turn, then source-facing finish. This motion intentionally changes body facing during the spin. Keep knees low, arms compact and dagger near waist/chest height; slash once while turning. Do not lift dagger overhead or make a second spin. Finish in source south-east orientation and recover to source idle. No world-position translation; foot pivot may turn but body root stays fixed. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.\", mode=\"pixminimax\", animation_group_id=\"db077620-0e59-4322-b2e4-21dffb31131e\", directions=[...])",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE complete 360-degree IN-PLACE BODY SPIN with a compact horizontal dagger slash, ending at the exact original south-east pose. Begin source idle, lower knees and draw dagger hand close. Rotate the whole torso and body through exactly ONE continuous full revolution around a fixed root: quarter turn, back/side turn, remaining quarter turn, then source-facing finish. This motion intentionally changes body facing during the spin. Keep knees low, arms compact and dagger near waist/chest height; slash once while turning. Do not lift dagger overhead or make a second spin. Finish in source south-east orientation and recover to source idle. No world-position translation; foot pivot may turn but body root stays fixed. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.)\ndirections: south-east (1 jobs)\njob_ids: south-east=f1b26921-a734-4a9e-9bba-ac69b86664ac\ngroup: db077620-0e59-4322-b2e4-21dffb31131e\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE complete 360-degree IN-PLACE BODY SPIN with a compact horizontal dagger slash, ending at the exact original south-east pose. Begin source idle, lower knees and draw dagger hand close. Rotate the whole torso and body through exactly ONE continuous full revolution around a fixed root: quarter turn, back/side turn, remaining quarter turn, then source-facing finish. This motion intentionally changes body facing during the spin. Keep knees low, arms compact and dagger near waist/chest height; slash once while turning. Do not lift dagger overhead or make a second spin. Finish in source south-east orientation and recover to source idle. No world-position translation; foot pivot may turn but body root stays fixed. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.\", mode=\"pixminimax\", animation_group_id=\"db077620-0e59-4322-b2e4-21dffb31131e\", directions=[...])"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "spin",
+      "direction": "north-west",
+      "attempt": 1,
+      "mode": "pixminimax",
+      "request": {
+        "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+        "animation_name": "biwol-add-spin-nw-pixminimax-20261017",
+        "mode": "pixminimax",
+        "directions": [
+          "north-west"
+        ],
+        "frame_count": 12,
+        "keep_first_frame": true,
+        "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+        "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+        "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+        "initial_pose": "Exact original north-west standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+        "action_description": "ONE complete 360-degree IN-PLACE BODY SPIN with a compact horizontal dagger slash, ending at the exact original north-west pose. Begin source idle, lower knees and draw dagger hand close. Rotate the whole torso and body through exactly ONE continuous full revolution around a fixed root: quarter turn, back/side turn, remaining quarter turn, then source-facing finish. This motion intentionally changes body facing during the spin. Keep knees low, arms compact and dagger near waist/chest height; slash once while turning. Do not lift dagger overhead or make a second spin. Finish in source north-west orientation and recover to source idle. No world-position translation; foot pivot may turn but body root stays fixed. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+      },
+      "receipt": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE complete 360-degree IN-PLACE BODY SPIN with a compact horizontal dagger slash, ending at the exact original north-west pose. Begin source idle, lower knees and draw dagger hand close. Rotate the whole torso and body through exactly ONE continuous full revolution around a fixed root: quarter turn, back/side turn, remaining quarter turn, then source-facing finish. This motion intentionally changes body facing during the spin. Keep knees low, arms compact and dagger near waist/chest height; slash once while turning. Do not lift dagger overhead or make a second spin. Finish in source north-west orientation and recover to source idle. No world-position translation; foot pivot may turn but body root stays fixed. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.)\ndirections: north-west (1 jobs)\njob_ids: north-west=2a046f95-6159-4160-b295-7b4b420796a0\ngroup: 04997c07-3f1e-4d25-9ca4-23972b414c13\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE complete 360-degree IN-PLACE BODY SPIN with a compact horizontal dagger slash, ending at the exact original north-west pose. Begin source idle, lower knees and draw dagger hand close. Rotate the whole torso and body through exactly ONE continuous full revolution around a fixed root: quarter turn, back/side turn, remaining quarter turn, then source-facing finish. This motion intentionally changes body facing during the spin. Keep knees low, arms compact and dagger near waist/chest height; slash once while turning. Do not lift dagger overhead or make a second spin. Finish in source north-west orientation and recover to source idle. No world-position translation; foot pivot may turn but body root stays fixed. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.\", mode=\"pixminimax\", animation_group_id=\"04997c07-3f1e-4d25-9ca4-23972b414c13\", directions=[...])",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE complete 360-degree IN-PLACE BODY SPIN with a compact horizontal dagger slash, ending at the exact original north-west pose. Begin source idle, lower knees and draw dagger hand close. Rotate the whole torso and body through exactly ONE continuous full revolution around a fixed root: quarter turn, back/side turn, remaining quarter turn, then source-facing finish. This motion intentionally changes body facing during the spin. Keep knees low, arms compact and dagger near waist/chest height; slash once while turning. Do not lift dagger overhead or make a second spin. Finish in source north-west orientation and recover to source idle. No world-position translation; foot pivot may turn but body root stays fixed. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.)\ndirections: north-west (1 jobs)\njob_ids: north-west=2a046f95-6159-4160-b295-7b4b420796a0\ngroup: 04997c07-3f1e-4d25-9ca4-23972b414c13\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE complete 360-degree IN-PLACE BODY SPIN with a compact horizontal dagger slash, ending at the exact original north-west pose. Begin source idle, lower knees and draw dagger hand close. Rotate the whole torso and body through exactly ONE continuous full revolution around a fixed root: quarter turn, back/side turn, remaining quarter turn, then source-facing finish. This motion intentionally changes body facing during the spin. Keep knees low, arms compact and dagger near waist/chest height; slash once while turning. Do not lift dagger overhead or make a second spin. Finish in source north-west orientation and recover to source idle. No world-position translation; foot pivot may turn but body root stays fixed. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.\", mode=\"pixminimax\", animation_group_id=\"04997c07-3f1e-4d25-9ca4-23972b414c13\", directions=[...])"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "plunge",
+      "direction": "south-east",
+      "attempt": 1,
+      "mode": "pixminimax",
+      "request": {
+        "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+        "animation_name": "biwol-add-plunge-se-pixminimax-20261017",
+        "mode": "pixminimax",
+        "directions": [
+          "south-east"
+        ],
+        "frame_count": 12,
+        "keep_first_frame": true,
+        "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+        "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+        "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+        "initial_pose": "Exact original south-east standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+        "action_description": "ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed THREE-QUARTER SOUTH-EAST orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the LOWER RIGHT / RIGHT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+      },
+      "receipt": "error: need 1 job slots but only 0 available (8/8 used)\n\nhint: wait for jobs to finish (~2-4 min each), then retry",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "error: need 1 job slots but only 0 available (8/8 used)\n\nhint: wait for jobs to finish (~2-4 min each), then retry"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "key": "plunge",
+      "direction": "north-west",
+      "attempt": 1,
+      "mode": "pixminimax",
+      "request": {
+        "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+        "animation_name": "biwol-add-plunge-nw-pixminimax-20261017",
+        "mode": "pixminimax",
+        "directions": [
+          "north-west"
+        ],
+        "frame_count": 12,
+        "keep_first_frame": true,
+        "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+        "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+        "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+        "initial_pose": "Exact original north-west standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+        "action_description": "ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the UPPER LEFT / LEFT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+      },
+      "receipt": "error: need 1 job slots but only 0 available (8/8 used)\n\nhint: wait for jobs to finish (~2-4 min each), then retry",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "error: need 1 job slots but only 0 available (8/8 used)\n\nhint: wait for jobs to finish (~2-4 min each), then retry"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "key": "plunge",
+      "direction": "south-east",
+      "attempt": 1,
+      "mode": "pixminimax",
+      "request": {
+        "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+        "animation_name": "biwol-add-plunge-se-pixminimax-20261017",
+        "mode": "pixminimax",
+        "directions": [
+          "south-east"
+        ],
+        "frame_count": 12,
+        "keep_first_frame": true,
+        "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+        "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/south-east.png?t=1792170300",
+        "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+        "initial_pose": "Exact original south-east standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+        "action_description": "ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed THREE-QUARTER SOUTH-EAST orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the LOWER RIGHT / RIGHT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+      },
+      "receipt": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed THREE-QUARTER SOUTH-EAST orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the LOWER RIGHT / RIGHT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.)\ndirections: south-east (1 jobs)\njob_ids: south-east=8b2baf02-9130-44b7-8250-515f07ff68eb\ngroup: 7e8f6970-db35-4c28-99be-7302848b04af\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed THREE-QUARTER SOUTH-EAST orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the LOWER RIGHT / RIGHT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.\", mode=\"pixminimax\", animation_group_id=\"7e8f6970-db35-4c28-99be-7302848b04af\", directions=[...])",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed THREE-QUARTER SOUTH-EAST orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the LOWER RIGHT / RIGHT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.)\ndirections: south-east (1 jobs)\njob_ids: south-east=8b2baf02-9130-44b7-8250-515f07ff68eb\ngroup: 7e8f6970-db35-4c28-99be-7302848b04af\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed THREE-QUARTER SOUTH-EAST orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the LOWER RIGHT / RIGHT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.\", mode=\"pixminimax\", animation_group_id=\"7e8f6970-db35-4c28-99be-7302848b04af\", directions=[...])"
+          }
+        ],
+        "isError": false
+      },
+      "submissionRetryReason": "Original submission had no account job slots; no generation was started."
+    },
+    {
+      "key": "plunge",
+      "direction": "north-west",
+      "attempt": 1,
+      "mode": "pixminimax",
+      "request": {
+        "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+        "animation_name": "biwol-add-plunge-nw-pixminimax-20261017",
+        "mode": "pixminimax",
+        "directions": [
+          "north-west"
+        ],
+        "frame_count": 12,
+        "keep_first_frame": true,
+        "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+        "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+        "subject_description": "Exact source rabbit ninja: cream fur, ONE upright and ONE bent/folded ear, plum ninja jacket, dark pants, short red scarf, round tail, original waist gear and SHORT belt dagger. Preserve pixel identity, proportions, costume asymmetry and weapon hand.",
+        "initial_pose": "Exact original north-west standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+        "action_description": "ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the UPPER LEFT / LEFT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions."
+      },
+      "receipt": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the UPPER LEFT / LEFT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.)\ndirections: north-west (1 jobs)\njob_ids: north-west=1b545c7b-0632-4d92-99d5-0d226191c26d\ngroup: 1fae220b-c044-4912-b611-6bc8a30d2311\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the UPPER LEFT / LEFT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.\", mode=\"pixminimax\", animation_group_id=\"1fae220b-c044-4912-b611-6bc8a30d2311\", directions=[...])",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the UPPER LEFT / LEFT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.)\ndirections: north-west (1 jobs)\njob_ids: north-west=1b545c7b-0632-4d92-99d5-0d226191c26d\ngroup: 1fae220b-c044-4912-b611-6bc8a30d2311\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE aerial downward DAGGER CHOP body-pose sequence. Keep fixed BACK THREE-QUARTER NORTH-WEST: the back of head and jacket stay toward camera orientation throughout; no spin or face turn. Begin source idle, crouch for takeoff. Then make an airborne tucked-leg pose while lifting the short dagger BESIDE THE HEAD with elbow bent. Cut the dagger arm VERTICALLY DOWNWARD once in front of the body toward the UPPER LEFT / LEFT of the image target side. Follow with a clear low bent-knee landing/recovery pose and return to exact source idle. The game adds the jump height, falling arc and landing translation: draw only the body's crouch/tuck/blade-lift/downstroke/landing poses around one fixed root on the sprite canvas. Do not translate the whole character up/down or across the canvas. Preserve one permanently bent ear and one upright ear at every angle, the same short dagger and hand, and source outfit. Blade length stays shorter than torso width; never a sword. BODY ONLY: transparent background, no slash trails, no particles, no flashes, no shockwaves, no duplicate bodies, no new equipment. Keep source pixel-art rendering and proportions.\", mode=\"pixminimax\", animation_group_id=\"1fae220b-c044-4912-b611-6bc8a30d2311\", directions=[...])"
+          }
+        ],
+        "isError": false
+      },
+      "submissionRetryReason": "Original submission had no account job slots; no generation was started."
+    }
+  ],
+  "qualityGate": "사용자 GIF 판정 대기",
+  "originalPreservation": "기존 모든 비월 리소스·모션을 유지하고 새 경로에만 저장한다.",
+  "documentationDecision": "12frames·다방향은 지원하지만 custom_start/end는 단일 방향에서만 지원하므로 방향별6호출로 제출한다.",
+  "successfulFirstPassClips": 6,
+  "costGenerations": 7,
+  "additionalSubmissionRecords": [
+    {
+      "key": "plunge",
+      "direction": "north-west",
+      "attempt": 2,
+      "mode": "pixminimax",
+      "request": {
+        "character_id": "01b130e4-d972-4d28-8904-7a15ab691e10",
+        "animation_name": "biwol-add-plunge-nw-pixminimax-v2-20261017",
+        "mode": "pixminimax",
+        "directions": [
+          "north-west"
+        ],
+        "frame_count": 12,
+        "keep_first_frame": true,
+        "custom_start_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+        "end_frame_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/01b130e4-d972-4d28-8904-7a15ab691e10/rotations/north-west.png?t=1792170300",
+        "subject_description": "Exact source rabbit ninja, back-three-quarter NORTH-WEST. Cream fur, one upright and one bent ear, plum ninja jacket, dark pants, short red scarf, round tail. ONE original TINY waist dagger: its short metal blade is about HALF the rabbit head height, never a sword.",
+        "initial_pose": "Exact original north-west standing idle reference. Preserve one upright and one bent ear, the same short belt dagger and all original equipment.",
+        "action_description": "ONE downward attack with the ORIGINAL TINY BELT DAGGER, never a sword. Most important: the dagger's METAL BLADE stays approximately HALF the rabbit head height and ALWAYS SHORTER THAN THE HEAD HEIGHT in every frame, including when raised beside the head. Keep the original small hilt and one short blade, do not extend the weapon during the attack. Begin from the exact NORTH-WEST idle. Keep the back-three-quarter NORTH-WEST body axis; back of the head and jacket stay visible, do not show face or chest toward camera. Crouch briefly, make an airborne tucked-leg pose while raising the tiny dagger beside the head with elbow bent, make ONE compact vertical DOWNWARD knife chop toward the UPPER LEFT / LEFT target side, then low bent-knee landing and return to the exact source idle. Show clear preparation, tucked-leg blade lift, downward cut and landing/recovery. Preserve one permanently bent ear and one upright ear, source clothes and asymmetry. The game adds all jump height, falling arc and translation: draw body poses around a fixed root only, do not translate the whole sprite. Transparent background. No long sword, katana, spear or second weapon. No blade trails, particles, flashes, added effects or duplicate bodies."
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "character: 01b130e4-d972-4d28-8904-7a15ab691e10\nanimation: pixminimax custom (ONE downward attack with the ORIGINAL TINY BELT DAGGER, never a sword. Most important: the dagger's METAL BLADE stays approximately HALF the rabbit head height and ALWAYS SHORTER THAN THE HEAD HEIGHT in every frame, including when raised beside the head. Keep the original small hilt and one short blade, do not extend the weapon during the attack. Begin from the exact NORTH-WEST idle. Keep the back-three-quarter NORTH-WEST body axis; back of the head and jacket stay visible, do not show face or chest toward camera. Crouch briefly, make an airborne tucked-leg pose while raising the tiny dagger beside the head with elbow bent, make ONE compact vertical DOWNWARD knife chop toward the UPPER LEFT / LEFT target side, then low bent-knee landing and return to the exact source idle. Show clear preparation, tucked-leg blade lift, downward cut and landing/recovery. Preserve one permanently bent ear and one upright ear, source clothes and asymmetry. The game adds all jump height, falling arc and translation: draw body poses around a fixed root only, do not translate the whole sprite. Transparent background. No long sword, katana, spear or second weapon. No blade trails, particles, flashes, added effects or duplicate bodies.)\ndirections: north-west (1 jobs)\njob_ids: north-west=55a062ce-d372-4141-ad99-bd92cc60e9bc\ngroup: 6efca564-7161-41b1-bb9f-94be14edb727\nframes: 13 (1 reference + 12 animated)\ncost: 1 generation (1/dir x 1)\neta: ~2 min/direction\n\nhint: get_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\")\nadd more directions to this group: animate_character(character_id=\"01b130e4-d972-4d28-8904-7a15ab691e10\", action_description=\"ONE downward attack with the ORIGINAL TINY BELT DAGGER, never a sword. Most important: the dagger's METAL BLADE stays approximately HALF the rabbit head height and ALWAYS SHORTER THAN THE HEAD HEIGHT in every frame, including when raised beside the head. Keep the original small hilt and one short blade, do not extend the weapon during the attack. Begin from the exact NORTH-WEST idle. Keep the back-three-quarter NORTH-WEST body axis; back of the head and jacket stay visible, do not show face or chest toward camera. Crouch briefly, make an airborne tucked-leg pose while raising the tiny dagger beside the head with elbow bent, make ONE compact vertical DOWNWARD knife chop toward the UPPER LEFT / LEFT target side, then low bent-knee landing and return to the exact source idle. Show clear preparation, tucked-leg blade lift, downward cut and landing/recovery. Preserve one permanently bent ear and one upright ear, source clothes and asymmetry. The game adds all jump height, falling arc and translation: draw body poses around a fixed root only, do not translate the whole sprite. Transparent background. No long sword, katana, spear or second weapon. No blade trails, particles, flashes, added effects or duplicate bodies.\", mode=\"pixminimax\", animation_group_id=\"6efca564-7161-41b1-bb9f-94be14edb727\", directions=[...])"
+          }
+        ],
+        "isError": false
+      },
+      "jobId": "55a062ce-d372-4141-ad99-bd92cc60e9bc",
+      "animationGroupId": "6efca564-7161-41b1-bb9f-94be14edb727",
+      "costGenerations": 1,
+      "reason": "Parent directly inspected first-pass NW plunge and requested one final correction for sword-length drift.",
+      "selectionCriterion": "Replace NW contract only if original short dagger scale improves and preparation/airborne/downstroke/landing poses remain; otherwise keep first candidate.",
+      "noFurtherGenerations": true
+    }
+  ]
+}

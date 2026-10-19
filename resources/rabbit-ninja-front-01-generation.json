@@ -1,0 +1,115 @@
+{
+  "createdDate": "2026-10-17",
+  "provider": "PixelLab MCP",
+  "scope": "승인한 토끼 닌자 컨셉 기반 전면 도트 이미지 한 장. 후보 검토 대기.",
+  "status": "rejected-style-mismatch",
+  "gameIntegrated": false,
+  "approvedConcept": {
+    "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/concept/rabbit-ninja-concept-02-approved.png",
+    "width": 1098,
+    "height": 1433,
+    "byteSize": 854894,
+    "sha256": "5e7a240d31428597dce57e88c9255883955195d47781dcd64b9c64cd2725c842",
+    "source": "built-in image_gen",
+    "sourceFile": "/Users/3sam3/.codex/generated_images/01a1457c-aacc-7762-9835-bb2930bb7d2a/exec-3411b6dd-cef7-439b-87f6-20d752f3c424.png",
+    "approval": "사용자: 좋네. 이걸로 pixelLab 에 캐릭터 전면 이미지 하나 뽑아줘볼래?"
+  },
+  "input": {
+    "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/inputs/rabbit-ninja-concept-square.png",
+    "width": 1536,
+    "height": 1536,
+    "byteSize": 850381,
+    "sha256": "b1a32c07ef90ea00c78255b171d4e7abb56d7d7f732274c639f27c753e741ece",
+    "composition": "승인 원화 픽셀을 변경하거나 리사이즈하지 않고1536×1536 투명 캔버스에 좌219·상51 위치로 패딩.",
+    "uploadId": "4cfad52f-5658-4bb3-946b-41bb1d48b6fe"
+  },
+  "generation": {
+    "tool": "image_to_pixelart",
+    "request": {
+      "image_url": "upload:4cfad52f-5658-4bb3-946b-41bb1d48b6fe",
+      "faithful": true,
+      "init_image_strength": 200,
+      "output_width": 64,
+      "output_height": 64,
+      "seed": 104217,
+      "text_guidance_scale": 7.5
+    },
+    "jobId": "d1090ccd-f53b-4ea5-933c-020c471640b7",
+    "galleryAssetId": "b5046544-5711-57fc-bc64-ed3e3bb828ed",
+    "chargedGenerations": 1,
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/d1090ccd-f53b-4ea5-933c-020c471640b7/download",
+    "original": {
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/rabbit-ninja-front-01-pixellab.png",
+      "width": 64,
+      "height": 64,
+      "byteSize": 3479,
+      "sha256": "a87bcd5c09c174f464f552ab47be1f186908e717780e752f71f3365aa378796e"
+    },
+    "resultNotes": "생성 원본은 전체 픽셀이 불투명한 회색 배경으로 반환됨."
+  },
+  "backgroundCleanup": {
+    "tool": "pixelart_workbench",
+    "sourceImageId": "3f18d7ec-3b65-4977-9d02-50c0bff345cd",
+    "resultImageId": "a5b213af-787b-4ea1-98a3-16dfb02eecf3",
+    "operations": [
+      {
+        "operation": "select_mask",
+        "layer": "image",
+        "frames": [1],
+        "name": "background",
+        "selector": {
+          "kind": "color",
+          "colors": ["#838384ff", "#828283ff"]
+        },
+        "reason": "확인한 회색 배경 두 색만 선택."
+      },
+      {
+        "operation": "brush",
+        "layer": "image",
+        "frames": [1],
+        "mask": "background",
+        "points": [[31, 31]],
+        "size": 64,
+        "shape": "square",
+        "mode": "erase",
+        "region": [0, 0, 63, 63],
+        "reason": "캐릭터 픽셀은 보존하고 배경만 투명 처리."
+      }
+    ],
+    "removedPixels": 3238,
+    "unchangedCharacterPixels": 858,
+    "chargedGenerations": 0,
+    "sourceUrl": "https://api.pixellab.ai/mcp/pixel-tools/a5b213af-787b-4ea1-98a3-16dfb02eecf3/image.png"
+  },
+  "output": {
+    "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/originals/rabbit-ninja-front-01-transparent.png",
+    "width": 64,
+    "height": 64,
+    "byteSize": 2676,
+    "sha256": "d996292c3812415e73c15de3950ce626ca0b16f0861ad6a7f9f4ba697d6b27ee",
+    "direction": "south",
+    "frameCount": 1,
+    "visibleBounds": [19, 2, 47, 62],
+    "pivot": {
+      "x": 32,
+      "y": 2
+    },
+    "galleryAssetId": "196b6019-45bf-4f4a-bc7a-14bda29ab245",
+    "preview": {
+      "localPath": "public/assets/maplestory/rabbit-ninja-ai/20261017/review/rabbit-ninja-front-01-8x.png",
+      "width": 512,
+      "height": 512,
+      "byteSize": 5997,
+      "sha256": "e6c96e941bef61e6f2fc0d20bb6602a698b6905e19add9263f8b1a8b6a365bf2",
+      "scale": 8,
+      "resampling": "nearest-neighbor"
+    }
+  },
+  "validation": {
+    "size": "64×64",
+    "alpha": "0/255",
+    "characterPixelsExactlyPreserved": true,
+    "qualityDecision": "사용자 검토 대기. 귀 포함 전체 키를 유지해 얼굴의 픽셀 수가 적다."
+  },
+  "userReview": "스타일이 너무 다른데? 연묵과 아타호같은 느낌으로 뽑아줘."
+}

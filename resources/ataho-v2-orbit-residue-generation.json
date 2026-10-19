@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-18",
+  "scope": "부유기탄 출발점과 끊긴 잔여의 반원형 절단면을 PixelLab 원화로 교체. 가는 연결부·기존 주탄·발사·명중 시각과 옵션은 유지.",
+  "reference": {
+    "sourcePath": "public/assets/maplestory/ataho-v2-ki/20261016/sprites/orbit-atlas-original.png",
+    "paletteImagePath": "public/assets/maplestory/ataho-v2-ki/20261018/kozuma-orbit/pixellab-residue/orbit-color-reference.png",
+    "usage": "기존 부유기탄 0번 셀을64x64로 읽은 색 참고. 새 원본의 강제 팔레트에만 사용."
+  },
+  "base": {
+    "tool": "PixelLab create_image_pixflux",
+    "jobId": "c8e2dc8e-f1fc-41fb-9a72-9e9eb836983c",
+    "assetId": "c04254ef-de32-5666-99bf-dab8131098d8",
+    "sourceUrl": "https://api.pixellab.ai/mcp/images/c8e2dc8e-f1fc-41fb-9a72-9e9eb836983c/download",
+    "localPath": "public/assets/maplestory/ataho-v2-ki/20261018/kozuma-orbit/pixellab-residue/base-original.png",
+    "request": {
+      "description": "A single small irregular viscous violet magical plasma remnant for a pixel-art martial arts game. Side view, elongated toward the right. A lumpy asymmetric knot of luminous purple energy pulled into two very thin tapering wavy filaments trailing to the left, with small holes and wispy torn tips. Organic flowing silhouette with unequal lobes and ragged pixel clusters, not a manufactured object. Dark violet edges, medium purple interior, sparse bright lavender-white highlights in short broken streaks matching the supplied palette. The knot occupies the middle half of the 64x64 canvas with empty transparent margin all around. ONLY the isolated energy remnant, no character or scenery. Clearly rendered native pixel art, crisp opaque pixels. Avoid circular rings, crescent moons, semicircles, umbrella shapes, flat straight cuts, smooth geometric borders, uniform outlines, and smooth gradients.",
+      "width": 64,
+      "height": 64,
+      "no_background": true,
+      "outline": "selective outline",
+      "shading": "medium shading",
+      "detail": "medium detail",
+      "direction": "east",
+      "view": "side",
+      "seed": 514482
+    },
+    "chargedGenerations": 1
+  },
+  "animation": {
+    "tool": "PixelLab animate_image",
+    "jobId": "d8d6d938-6463-4f21-9a2d-17dd2de4b2ad",
+    "assetId": "a13c780b-5642-5072-81f2-bc1a961e5786",
+    "request": {
+      "action": "One-shot magical residue dissolving. An amorphous violet plasma knot gets tugged horizontally RIGHT, stretching into a thin uneven sticky thread while its left end lags and curls back. The knot has an asymmetric lumpy contour. It tears into two or three tiny ragged wisps, then they shrink completely away into the final transparent empty frame. Keep the effect centred in the same canvas and keep its purple/white pixel texture. Animate the internal shape, not a rigid object flying across the image. No circle, no ring or crescent, no hard straight cut, no umbrella or dome. No camera movement or looping. The visible plasma must get smaller and disappear by the end.",
+      "firstFramePath": "public/assets/maplestory/ataho-v2-ki/20261018/kozuma-orbit/pixellab-residue/base-original.png",
+      "lastFramePath": "public/assets/maplestory/ataho-v2-ki/20261018/kozuma-orbit/pixellab-residue/end-transparent.png",
+      "frame_count": 8,
+      "no_background": true,
+      "seed": 514483
+    },
+    "returnedFrameCount": 9,
+    "frameSize": {
+      "width": 64,
+      "height": 64
+    },
+    "metadataPath": "public/assets/maplestory/ataho-v2-ki/20261018/kozuma-orbit/pixellab-residue/frames.json",
+    "chargedGenerations": 1
+  },
+  "runtime": {
+    "atlasPath": "public/assets/maplestory/ataho-v2-ki/20261018/kozuma-orbit/pixellab-residue/residue-atlas.png",
+    "width": 256,
+    "height": 256,
+    "columns": 4,
+    "rows": 4,
+    "frameCount": 9,
+    "anchor": {
+      "x": 32,
+      "y": 32
+    },
+    "packing": "원본64x64 PNG의RGBA를 크기·색·알파 변경 없이4x4시트에 복사. 입력0+생성1~8의 순서를 유지.",
+    "timing": "끊김부터 잔여 종료까지0~8번을 정규화해 되감기와 이동 잔여에서 이어 재생. 마지막8번은 투명.",
+    "previewPath": "public/assets/maplestory/ataho-v2-ki/20261018/kozuma-orbit/kozuma-orbit-pixellab-residue-1x.gif"
+  },
+  "review": {
+    "status": "awaiting-user-gif-review",
+    "scope": "단일 부유기탄 효과의 대표 시안. 코드 반원 윤곽과 도형 조각을 제거. 원본 프레임·이전 시안 GIF를 모두 보존."
+  },
+  "totalChargedGenerations": 2
+}

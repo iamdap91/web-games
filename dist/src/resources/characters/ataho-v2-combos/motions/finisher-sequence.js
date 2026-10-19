@@ -146,10 +146,14 @@ export function finisherAttack(kind, options = {}) {
 }
 /** 각 기술의 준비·접촉·회수를 모으고 박자 범위와 타격 번호를 한 곳에서 정한다. */
 export class FinisherSequence {
+    options;
     steps = [];
     beats = [];
     hit = 0;
     actors = [];
+    constructor(options = {}) {
+        this.options = options;
+    }
     get lastHitMs() {
         let timeMs = 0;
         let last = 0;
@@ -178,6 +182,10 @@ export class FinisherSequence {
             ...options,
             firstTargetX: this.hit === 0 ? 132 : (options.targetX ?? finisherAuthoringTargetX),
         });
+        if (this.options.relocation === 'teleport') {
+            this.teleport(steps[0], options.approachMs ?? 100);
+            return this.append(steps);
+        }
         const destination = steps[0].x;
         // 작은 리치 차이는 회수 자세의 보간으로 잇고 큰 위치 전환만 발동작을 넣는다.
         if (Math.abs(destination - this.x) > 12) {
@@ -188,6 +196,24 @@ export class FinisherSequence {
                 this.move(destination, '다음 타격으로 발 디딤', durationMs);
         }
         return this.append(steps);
+    }
+    /** 공격 준비 위치로 바로 옮겨 중간 경로와 이중 재진입을 만들지 않는다. */
+    teleport(destination, durationMs) {
+        const departure = this.steps.at(-1) ?? finisherGuard(this.x, 1, '');
+        const transition = (pose, teleport, portion, phase) => ({
+            ...pose,
+            durationMs: durationMs * portion,
+            contact: undefined,
+            emphasis: undefined,
+            teleport,
+            movementCurve: { x: 'hold', y: 'hold' },
+            phase: `${this.hit + 1}타 앞 · 순간이동 · ${phase}`,
+        });
+        this.append([
+            transition(departure, 'vanish', 0.25, '기척 소실'),
+            transition(destination, 'hidden', 0.5, '몸이 사라진 공백'),
+            transition(destination, 'appear', 0.25, '타격 위치에 재등장'),
+        ]);
     }
     move(toX, phase, durationMs = 150) {
         const fromX = this.x;

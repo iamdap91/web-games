@@ -59,79 +59,76 @@ export function originalFrame(step) {
             : 'original',
     };
 }
-export async function loadComboFrames(motions) {
-    const unique = new Map(motions.flatMap((motion) => [
+export function comboFrameSteps(motion) {
+    return [
         ...motion.steps,
         ...(motion.finisher?.actors?.flatMap((actor) => actor.steps) ?? []),
         ...(motion.effects ?? []).flatMap((effect) => effect.kind === 'pose'
             ? effect.replacements.map((item) => item.replacement)
             : []),
         ...(motion.supplementedSteps ?? []),
-        ...(motion.presentations?.flatMap((presentation) => presentation.steps) ?? []),
-    ].map((step) => [frameKey(step), step])));
-    const loaded = await Promise.all([...unique].map(async ([key, step]) => {
-        const { frame, label, kind } = originalFrame(step);
-        const image = new Image();
-        image.src = resourceUrl(frame.localPath).href;
+        ...(motion.presentations?.flatMap((presentation) => presentation.steps) ??
+            []),
+    ];
+}
+export async function loadSourceFrame(step) {
+    const { frame, label, kind } = originalFrame(step);
+    const image = new Image();
+    image.src = resourceUrl(frame.localPath).href;
+    await image.decode();
+    const canvas = document.createElement('canvas');
+    canvas.width = frame.width;
+    canvas.height = frame.height;
+    const context = canvas.getContext('2d', { willReadFrequently: true });
+    if (!context)
+        throw new Error('원본 발 기준을 읽을 수 없습니다.');
+    // 큰 생성 원본도 선언한 논리 픽셀 크기로만 재생하며 파일의 원본은 보존한다.
+    context.imageSmoothingEnabled = false;
+    const view = supplementFrameView(step);
+    if (view) {
+        const source = view.sourceRect;
+        const destination = view.destinationRect;
+        context.drawImage(image, source.x, source.y, source.width, source.height, destination.x, destination.y, destination.width, destination.height);
+    }
+    else {
+        context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    }
+    if (view ||
+        image.naturalWidth !== frame.width ||
+        image.naturalHeight !== frame.height) {
+        image.src = canvas.toDataURL('image/png');
         await image.decode();
-        const canvas = document.createElement('canvas');
-        canvas.width = frame.width;
-        canvas.height = frame.height;
-        const context = canvas.getContext('2d', { willReadFrequently: true });
-        if (!context)
-            throw new Error('원본 발 기준을 읽을 수 없습니다.');
-        // 큰 생성 원본도 선언한 논리 픽셀 크기로만 재생하며 파일의 원본은 보존한다.
-        context.imageSmoothingEnabled = false;
-        const view = supplementFrameView(step);
-        if (view) {
-            const source = view.sourceRect;
-            const destination = view.destinationRect;
-            context.drawImage(image, source.x, source.y, source.width, source.height, destination.x, destination.y, destination.width, destination.height);
+    }
+    const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
+    const pixels = imageData.data;
+    const emphasisImage = await createEmphasisImage(imageData);
+    let feetY = 0;
+    let left = canvas.width;
+    let top = canvas.height;
+    let right = 0;
+    let bottom = 0;
+    for (let y = 0; y < canvas.height; y++) {
+        for (let x = 0; x < canvas.width; x++) {
+            if ((pixels[(y * canvas.width + x) * 4 + 3] ?? 0) <= 24)
+                continue;
+            feetY = y + 1;
+            left = Math.min(left, x);
+            top = Math.min(top, y);
+            right = Math.max(right, x + 1);
+            bottom = Math.max(bottom, y + 1);
         }
-        else {
-            context.drawImage(image, 0, 0, canvas.width, canvas.height);
-        }
-        if (view ||
-            image.naturalWidth !== frame.width ||
-            image.naturalHeight !== frame.height) {
-            image.src = canvas.toDataURL('image/png');
-            await image.decode();
-        }
-        const imageData = context.getImageData(0, 0, canvas.width, canvas.height);
-        const pixels = imageData.data;
-        const emphasisImage = await createEmphasisImage(imageData);
-        let feetY = 0;
-        let left = canvas.width;
-        let top = canvas.height;
-        let right = 0;
-        let bottom = 0;
-        for (let y = 0; y < canvas.height; y++) {
-            for (let x = 0; x < canvas.width; x++) {
-                if ((pixels[(y * canvas.width + x) * 4 + 3] ?? 0) <= 24)
-                    continue;
-                feetY = y + 1;
-                left = Math.min(left, x);
-                top = Math.min(top, y);
-                right = Math.max(right, x + 1);
-                bottom = Math.max(bottom, y + 1);
-            }
-        }
-        return [
-            key,
-            {
-                image,
-                emphasisImage,
-                localPath: frame.localPath,
-                label,
-                anchorX: frame.pivot.x,
-                anchorY: frame.height - frame.pivot.y,
-                feetY,
-                bounds: right > left && bottom > top
-                    ? { left, top, right, bottom }
-                    : { left: 0, top: 0, right: canvas.width, bottom: canvas.height },
-                kind,
-            },
-        ];
-    }));
-    return new Map(loaded);
+    }
+    return {
+        image,
+        emphasisImage,
+        localPath: frame.localPath,
+        label,
+        anchorX: frame.pivot.x,
+        anchorY: frame.height - frame.pivot.y,
+        feetY,
+        bounds: right > left && bottom > top
+            ? { left, top, right, bottom }
+            : { left: 0, top: 0, right: canvas.width, bottom: canvas.height },
+        kind,
+    };
 }

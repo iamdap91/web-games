@@ -1,4 +1,4 @@
-import { sampleComboMotion } from './player.js';
+import { drawTeleportTraces } from './teleport-presentation.js';
 import { finisherTargetX } from './finisher-actors.js';
 import { groundY, startX } from './pose-drawing.js';
 function chargeAmount(snapshot) {
@@ -108,12 +108,13 @@ function drawThreads(ctx, snapshot, state, options) {
         return age >= 0 && age < 900;
     })
         .slice(-8);
+    const incomingAlpha = ctx.globalAlpha;
     for (const [index, contact] of recent.entries()) {
         const age = snapshot.elapsedMs - contactTime(contact, state);
         const squeeze = 1 - state.signature.charge * 0.65;
         const length = (32 + index * 6) * options.scale * squeeze;
         const angle = (index % 2 ? -0.22 : 0.2) + contact.directionY * 0.3;
-        ctx.globalAlpha = (1 - age / 900) * 0.42;
+        ctx.globalAlpha = incomingAlpha * (1 - age / 900) * 0.42;
         stroke(ctx, [
             {
                 x: contact.x - contact.directionX * length,
@@ -132,35 +133,12 @@ function drawThreads(ctx, snapshot, state, options) {
         ctx.restore();
     }
 }
-function drawSpaceTraces(ctx, snapshot, state, options) {
-    const points = [];
-    for (let timeMs = Math.max(0, snapshot.elapsedMs - 2200); timeMs <= snapshot.elapsedMs; timeMs += 35) {
-        const pose = sampleComboMotion(snapshot.motion, timeMs);
-        const next = sampleComboMotion(snapshot.motion, timeMs + 35);
-        if (Math.abs(next.x - pose.x) < 4)
-            continue;
-        points.push({
-            x: startX + pose.x * options.scale,
-            y: groundY + (pose.y - 30) * options.scale,
-            timeMs,
-        });
-    }
-    ctx.globalAlpha = 0.16 + state.signature.charge * 0.18;
-    for (let index = 1; index < points.length; index++) {
-        const from = points[index - 1];
-        const to = points[index];
-        // 정지 자세를 사이에 둔 서로 다른 이동 구간은 이어 그리지 않는다.
-        if (to.timeMs - from.timeMs > 80 ||
-            Math.hypot(to.x - from.x, to.y - from.y) > 95 * options.scale)
-            continue;
-        stroke(ctx, [from, to]);
-    }
-}
 function drawPressure(ctx, state, options) {
+    ctx.save();
     const progress = state.hitCount / Math.max(1, state.totalHits);
     const radius = (37 - progress * 15) * options.scale;
     const center = state.signature.center;
-    ctx.globalAlpha = 0.12 + progress * 0.18;
+    ctx.globalAlpha *= 0.12 + progress * 0.18;
     ctx.lineWidth = 2;
     for (const sign of [-1, 1]) {
         ctx.beginPath();
@@ -168,8 +146,10 @@ function drawPressure(ctx, state, options) {
         ctx.bezierCurveTo(center.x + sign * radius * 1.5, center.y - 18 * options.scale, center.x + sign * radius * 1.5, center.y + 18 * options.scale, center.x + sign * radius, center.y + 32 * options.scale);
         ctx.stroke();
     }
+    ctx.restore();
 }
 function drawRisingWake(ctx, snapshot, state, options) {
+    const incomingAlpha = ctx.globalAlpha;
     for (const contact of visibleContacts(state).slice(-2)) {
         if (contact.reaction !== 'rising')
             continue;
@@ -178,7 +158,7 @@ function drawRisingWake(ctx, snapshot, state, options) {
             continue;
         const progress = age / 320;
         const height = (24 + progress * 45) * options.scale;
-        ctx.globalAlpha = (1 - progress) * 0.48;
+        ctx.globalAlpha = incomingAlpha * (1 - progress) * 0.48;
         ctx.lineWidth = (1 - progress) * 5 + 1;
         ctx.beginPath();
         ctx.moveTo(contact.x - contact.directionX * 14 * options.scale, contact.y + 22 * options.scale);
@@ -191,13 +171,17 @@ export function drawFinisherField(ctx, snapshot, state, options) {
     ctx.save();
     ctx.strokeStyle = state.definition.accent;
     ctx.lineWidth = 1.5;
-    drawCharge(ctx, snapshot, state, options);
+    if (state.definition.theme !== 'drunken-tiger')
+        drawCharge(ctx, snapshot, state, options);
     const rushing = state.beat.emphasis === 'rush' || state.beat.emphasis === 'climax';
     if (options.showContacts !== false && rushing) {
         if (state.definition.theme === 'demon')
             drawThreads(ctx, snapshot, state, options);
         if (state.definition.theme === 'omnislash')
-            drawSpaceTraces(ctx, snapshot, state, options);
+            drawTeleportTraces(ctx, snapshot, {
+                scale: options.scale,
+                accent: state.definition.accent,
+            });
         if (state.definition.theme === 'dragon')
             drawPressure(ctx, state, options);
     }
@@ -221,10 +205,10 @@ export function drawFinisherRelease(ctx, state, options) {
     ctx.globalAlpha *= strength * 0.85;
     const theme = state.definition.theme;
     if (theme === 'omnislash') {
-        // 마지막 하강 방향을 길게 남기고 이전 교차선은 짧게 흩어진다.
+        // 지상에서 모은 마지막 상승권의 방향을 따른다.
         stroke(ctx, [
-            { x: -radius * 0.24, y: -radius * 1.8 },
-            { x: radius * 0.12, y: radius * 0.85 },
+            { x: -radius * 0.24, y: radius * 0.5 },
+            { x: radius * 0.12, y: -radius * 1.4 },
         ]);
         for (const angle of [-0.7, 0.55])
             stroke(ctx, [

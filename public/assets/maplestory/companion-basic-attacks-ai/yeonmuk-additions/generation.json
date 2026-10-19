@@ -1,0 +1,4471 @@
+{
+  "actor": "yeonmuk",
+  "taskDate": "2026-10-17",
+  "provider": "PixelLab animate_image",
+  "authorizedScope": "추가 공격모션 삼연부·폭진부·묵선참 각각 south-east/north-west 2방향. 새 캐릭터 등록·새 포즈 직접 그리기·기존 모션 변경 없음.",
+  "beforeSubmission": {
+    "creditsUSD": 0,
+    "generationsRemaining": 234.35,
+    "generationsUsed": 1765.65,
+    "sharedAccount": true
+  },
+  "sourceInputs": {
+    "southEast": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/south-east.png",
+    "northWest": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk/originals/rotations/north-west.png"
+  },
+  "methodLimit": "한 방법·동작·방향당 최대2회; 6클립 각1회 후 객관적 결함이 있을 때만2회차",
+  "userQualityGate": "사용자 GIF 판정 대기. 정적 프레임 확보와 객관적 관찰은 품질 통과가 아님.",
+  "requests": [
+    {
+      "key": "volley",
+      "direction": "south-east",
+      "label": "삼연부",
+      "frames": 12,
+      "seed": 101771,
+      "action": "ONE triple-paper fan cast, facing SOUTH-EAST throughout. Spread THREE small ochre paper seals in one hand into a readable fan near the chest. Pull that arm across to SCREEN LEFT for a wide backswing, then sweep it in one broad horizontal arc across the body to SCREEN RIGHT, finishing fully extended toward the LOWER-RIGHT enemy. The free hand then makes one brief two-finger sign near the sternum. Retract the arm. The sweeping arm and torso twist must be visibly broader than a short straight thrust; no turn to face the camera. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 50e8fbb0-aa42-4e13-8d99-9deba879decf\njob_id: 50e8fbb0-aa42-4e13-8d99-9deba879decf\naction: ONE triple-paper fan cast, facing SOUTH-EAST throughout. Spread THREE small ochre paper seals in one hand into a readable fan near the chest. Pull that arm across to SCREEN LEFT for a wide backswing, then sweep it in one broad horizontal arc across the body to SCREEN RIGHT, finishing fully extended toward the LOWER-RIGHT enemy. The free hand then makes one brief two-finger sign near the sternum. Retract the arm. The sweeping arm and torso twist must be visibly broader than a short straight thrust; no turn to face the camera. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.\nframes: 12\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 101771\nasset_id: 8907c92c-7a8d-5a0d-a766-c1b3061e42cc\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"50e8fbb0-aa42-4e13-8d99-9deba879decf\")"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "volley",
+      "direction": "north-west",
+      "label": "삼연부",
+      "frames": 12,
+      "seed": 101772,
+      "action": "ONE triple-paper fan cast, facing NORTH-WEST in the same back view throughout. Spread THREE small ochre seals in one hand into a fan beside the chest. Pull the casting arm toward SCREEN RIGHT for a wide backswing, then sweep it broadly across the torso to SCREEN LEFT, finishing beyond the LEFT shoulder toward UPPER-LEFT. At release the paper fan MUST be LEFT of the head, never extended right. The free hand follows with one brief two-finger sign close to the chest. Retract. Broad horizontal arm sweep and slight torso twist, not a straight thrust. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: fe5a1bc5-b782-4dce-8a3a-9a523cc9a744\njob_id: fe5a1bc5-b782-4dce-8a3a-9a523cc9a744\naction: ONE triple-paper fan cast, facing NORTH-WEST in the same back view throughout. Spread THREE small ochre seals in one hand into a fan beside the chest. Pull the casting arm toward SCREEN RIGHT for a wide backswing, then sweep it broadly across the torso to SCREEN LEFT, finishing beyond the LEFT shoulder toward UPPER-LEFT. At release the paper fan MUST be LEFT of the head, never extended right. The free hand follows with one brief two-finger sign close to the chest. Retract. Broad horizontal arm sweep and slight torso twist, not a straight thrust. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.\nframes: 12\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 101772\nasset_id: 7c0937bb-f4f6-545c-b5de-1503073583ce\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"fe5a1bc5-b782-4dce-8a3a-9a523cc9a744\")"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "eruption",
+      "direction": "south-east",
+      "label": "폭진부",
+      "frames": 8,
+      "seed": 101773,
+      "action": "ONE forceful downward talisman press, facing SOUTH-EAST throughout. Raise the hand holding one ochre paper seal beside the forehead for a high preparation pose, elbow clearly lifted. Then sharply bend BOTH knees into a low grounded stance while driving that SAME palm DOWN toward the floor in front of the LOWER-RIGHT side of the body. End the press with the hand near knee height and torso lowered. Hold this low pose briefly, then straighten knees and draw the hand back. This is a high-to-low pressing gesture, not a forward projectile cast. No kneeling or stepping. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 793355b4-9e18-4a13-b77e-cac68bb210ed\njob_id: 793355b4-9e18-4a13-b77e-cac68bb210ed\naction: ONE forceful downward talisman press, facing SOUTH-EAST throughout. Raise the hand holding one ochre paper seal beside the forehead for a high preparation pose, elbow clearly lifted. Then sharply bend BOTH knees into a low grounded stance while driving that SAME palm DOWN toward the floor in front of the LOWER-RIGHT side of the body. End the press with the hand near knee height and torso lowered. Hold this low pose briefly, then straighten knees and draw the hand back. This is a high-to-low pressing gesture, not a forward projectile cast. No kneeling or stepping. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 101773\nasset_id: efe24764-6fdd-5c93-9164-040b766c25fd\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"793355b4-9e18-4a13-b77e-cac68bb210ed\")"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "eruption",
+      "direction": "north-west",
+      "label": "폭진부",
+      "frames": 8,
+      "seed": 101774,
+      "action": "ONE forceful downward talisman press, facing NORTH-WEST in the same back view. Lift the hand holding one ochre paper seal high beside the LEFT side of the head, elbow clearly raised and visible LEFT of the head. Then bend BOTH knees into a low grounded stance while decisively pressing that SAME palm DOWN in front of the UPPER-LEFT side, hand ending near knee height LEFT of the torso. Briefly hold the crouched finishing pose, then straighten and recover. A clear high-to-low press and lowered silhouette, not a forward cast. No kneeling, step, turn or arm extended right. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: c48f8025-2db0-4330-a1db-14e32c69e3fb\njob_id: c48f8025-2db0-4330-a1db-14e32c69e3fb\naction: ONE forceful downward talisman press, facing NORTH-WEST in the same back view. Lift the hand holding one ochre paper seal high beside the LEFT side of the head, elbow clearly raised and visible LEFT of the head. Then bend BOTH knees into a low grounded stance while decisively pressing that SAME palm DOWN in front of the UPPER-LEFT side, hand ending near knee height LEFT of the torso. Briefly hold the crouched finishing pose, then straighten and recover. A clear high-to-low press and lowered silhouette, not a forward cast. No kneeling, step, turn or arm extended right. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 101774\nasset_id: 0ef42c47-fa8d-52c9-baac-8794aee0f4da\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"c48f8025-2db0-4330-a1db-14e32c69e3fb\")"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "ink",
+      "direction": "south-east",
+      "label": "묵선참",
+      "frames": 12,
+      "seed": 101775,
+      "action": "ONE wide brush stroke attack, facing SOUTH-EAST throughout. Take the SMALL brush already tucked at the waist into the casting hand; the other hand holds the paper close to the chest. Pull the brush hand back beside the shoulder on SCREEN LEFT, elbow raised in a clearly readable backswing. Draw ONE broad level horizontal stroke through the air across the chest from SCREEN LEFT to SCREEN RIGHT, with a strong torso twist and full arm extension toward LOWER-RIGHT. Hold the brush follow-through beyond the right shoulder briefly, then recover and tuck the SAME small brush at the waist. Use a tiny calligraphy brush, never a sword or long staff. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "error: rate limit exceeded (8/8 jobs)\n\nhint: wait for a job to finish, then retry"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "key": "ink",
+      "direction": "north-west",
+      "label": "묵선참",
+      "frames": 12,
+      "seed": 101776,
+      "action": "ONE wide brush stroke attack, facing NORTH-WEST in this back view throughout. Take the SMALL brush already at the waist into one hand. Pull brush hand beside the shoulder on SCREEN RIGHT for a high elbow backswing. Draw ONE broad horizontal stroke across the torso from SCREEN RIGHT to SCREEN LEFT, finishing with brush and hand visibly beyond the LEFT shoulder toward UPPER-LEFT. Torso twists slightly with the sweeping arm; do not turn around. Hold the LEFT-side brush follow-through briefly, then recover and tuck the SAME small brush at the waist. The other hand keeps paper close to the chest. Tiny calligraphy brush, not a sword or long staff. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "error: rate limit exceeded (8/8 jobs)\n\nhint: wait for a job to finish, then retry"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "key": "ink",
+      "direction": "south-east",
+      "label": "묵선참",
+      "frames": 12,
+      "seed": 101775,
+      "action": "ONE wide brush stroke attack, facing SOUTH-EAST throughout. Take the SMALL brush already tucked at the waist into the casting hand; the other hand holds the paper close to the chest. Pull the brush hand back beside the shoulder on SCREEN LEFT, elbow raised in a clearly readable backswing. Draw ONE broad level horizontal stroke through the air across the chest from SCREEN LEFT to SCREEN RIGHT, with a strong torso twist and full arm extension toward LOWER-RIGHT. Hold the brush follow-through beyond the right shoulder briefly, then recover and tuck the SAME small brush at the waist. Use a tiny calligraphy brush, never a sword or long staff. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "error: rate limit exceeded (8/8 jobs)\n\nhint: wait for a job to finish, then retry"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "key": "ink",
+      "direction": "north-west",
+      "label": "묵선참",
+      "frames": 12,
+      "seed": 101776,
+      "action": "ONE wide brush stroke attack, facing NORTH-WEST in this back view throughout. Take the SMALL brush already at the waist into one hand. Pull brush hand beside the shoulder on SCREEN RIGHT for a high elbow backswing. Draw ONE broad horizontal stroke across the torso from SCREEN RIGHT to SCREEN LEFT, finishing with brush and hand visibly beyond the LEFT shoulder toward UPPER-LEFT. Torso twists slightly with the sweeping arm; do not turn around. Hold the LEFT-side brush follow-through briefly, then recover and tuck the SAME small brush at the waist. The other hand keeps paper close to the chest. Tiny calligraphy brush, not a sword or long staff. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "error: rate limit exceeded (8/8 jobs)\n\nhint: wait for a job to finish, then retry"
+          }
+        ],
+        "isError": true
+      }
+    },
+    {
+      "key": "ink",
+      "direction": "south-east",
+      "label": "묵선참",
+      "frames": 12,
+      "seed": 101775,
+      "action": "ONE wide brush stroke attack, facing SOUTH-EAST throughout. Take the SMALL brush already tucked at the waist into the casting hand; the other hand holds the paper close to the chest. Pull the brush hand back beside the shoulder on SCREEN LEFT, elbow raised in a clearly readable backswing. Draw ONE broad level horizontal stroke through the air across the chest from SCREEN LEFT to SCREEN RIGHT, with a strong torso twist and full arm extension toward LOWER-RIGHT. Hold the brush follow-through beyond the right shoulder briefly, then recover and tuck the SAME small brush at the waist. Use a tiny calligraphy brush, never a sword or long staff. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 3fa1891b-a877-402c-8d99-3233d4610660\njob_id: 3fa1891b-a877-402c-8d99-3233d4610660\naction: ONE wide brush stroke attack, facing SOUTH-EAST throughout. Take the SMALL brush already tucked at the waist into the casting hand; the other hand holds the paper close to the chest. Pull the brush hand back beside the shoulder on SCREEN LEFT, elbow raised in a clearly readable backswing. Draw ONE broad level horizontal stroke through the air across the chest from SCREEN LEFT to SCREEN RIGHT, with a strong torso twist and full arm extension toward LOWER-RIGHT. Hold the brush follow-through beyond the right shoulder briefly, then recover and tuck the SAME small brush at the waist. Use a tiny calligraphy brush, never a sword or long staff. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.\nframes: 12\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 101775\nasset_id: 95b2d93f-e988-5dbf-98b3-38deb69632db\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"3fa1891b-a877-402c-8d99-3233d4610660\")"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "ink",
+      "direction": "north-west",
+      "label": "묵선참",
+      "frames": 12,
+      "seed": 101776,
+      "action": "ONE wide brush stroke attack, facing NORTH-WEST in this back view throughout. Take the SMALL brush already at the waist into one hand. Pull brush hand beside the shoulder on SCREEN RIGHT for a high elbow backswing. Draw ONE broad horizontal stroke across the torso from SCREEN RIGHT to SCREEN LEFT, finishing with brush and hand visibly beyond the LEFT shoulder toward UPPER-LEFT. Torso twists slightly with the sweeping arm; do not turn around. Hold the LEFT-side brush follow-through briefly, then recover and tuck the SAME small brush at the waist. The other hand keeps paper close to the chest. Tiny calligraphy brush, not a sword or long staff. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: fef73459-16fc-4b28-98ea-dc7f3c45fde0\njob_id: fef73459-16fc-4b28-98ea-dc7f3c45fde0\naction: ONE wide brush stroke attack, facing NORTH-WEST in this back view throughout. Take the SMALL brush already at the waist into one hand. Pull brush hand beside the shoulder on SCREEN RIGHT for a high elbow backswing. Draw ONE broad horizontal stroke across the torso from SCREEN RIGHT to SCREEN LEFT, finishing with brush and hand visibly beyond the LEFT shoulder toward UPPER-LEFT. Torso twists slightly with the sweeping arm; do not turn around. Hold the LEFT-side brush follow-through briefly, then recover and tuck the SAME small brush at the waist. The other hand keeps paper close to the chest. Tiny calligraphy brush, not a sword or long staff. Preserve this exact white-gray fox, ONE tail, navy coat, teal sash and compact 64px proportions. Both feet stay planted. Return to the supplied idle pose. Fixed camera, transparent background. Body only: no particles, light, ink trail, projectile, ground effect or background; no extra limbs or staff.\nframes: 12\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 101776\nasset_id: d9de7c1d-fb9c-5f80-99ab-7c3c4fc6dea3\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"fef73459-16fc-4b28-98ea-dc7f3c45fde0\")"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "volley",
+      "direction": "south-east",
+      "label": "삼연부",
+      "frames": 12,
+      "seed": 101781,
+      "attempt": 2,
+      "action": "ONE broad three-paper sweep facing SOUTH-EAST. Hold EXACTLY THREE separate rectangular ochre paper strips with visible gaps, never joined, no folding fan. Three individual long narrow paper rectangles, like three cards spread apart. First raise the paper hand far out to SCREEN LEFT beside the shoulder so all THREE strips are visible outside the left body silhouette. Then make a BIG side-to-front arm sweep across the chest ending far to SCREEN RIGHT; shoulder and torso follow the arc. This is a wide sweeping arm, NOT a short straight thrust. Next bring BOTH hands close to the chest for one quick two-finger spell sign, then recover. Preserve the same fox, ONE tail, navy coat, teal sash and 64px scale. Feet planted. Return to this exact idle pose. Fixed camera, transparency. Body only, no projectile, glow, ink, ground effect, background, extra limbs, sword or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 67adbc17-8cd1-4857-a002-f9f0fef4bdcf\njob_id: 67adbc17-8cd1-4857-a002-f9f0fef4bdcf\naction: ONE broad three-paper sweep facing SOUTH-EAST. Hold EXACTLY THREE separate rectangular ochre paper strips with visible gaps, never joined, no folding fan. Three individual long narrow paper rectangles, like three cards spread apart. First raise the paper hand far out to SCREEN LEFT beside the shoulder so all THREE strips are visible outside the left body silhouette. Then make a BIG side-to-front arm sweep across the chest ending far to SCREEN RIGHT; shoulder and torso follow the arc. This is a wide sweeping arm, NOT a short straight thrust. Next bring BOTH hands close to the chest for one quick two-finger spell sign, then recover. Preserve the same fox, ONE tail, navy coat, teal sash and 64px scale. Feet planted. Return to this exact idle pose. Fixed camera, transparency. Body only, no projectile, glow, ink, ground effect, background, extra limbs, sword or staff.\nframes: 12\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 101781\nasset_id: b4e856dc-9a77-58c7-9460-34ab5763a97b\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"67adbc17-8cd1-4857-a002-f9f0fef4bdcf\")"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "volley",
+      "direction": "north-west",
+      "label": "삼연부",
+      "frames": 12,
+      "seed": 101782,
+      "attempt": 2,
+      "action": "ONE broad three-paper sweep facing NORTH-WEST in this back view. Hold EXACTLY THREE separate rectangular ochre paper strips with visible gaps, never joined, no folding fan. Three individual long narrow paper rectangles like three spread cards. First open the casting arm far to SCREEN RIGHT with the THREE strips outside the right shoulder. Then sweep the WHOLE arm broadly across the torso from RIGHT to LEFT, ending beyond the LEFT shoulder. The paper hand must finish LEFT of the head. A large shoulder-led sweep, NOT a short straight thrust. Next bring BOTH hands near the chest for one quick two-finger spell sign and recover. Preserve the same fox, ONE tail, navy coat, teal sash and 64px scale. Feet planted. Return to this exact idle pose. Fixed camera, transparency. Body only, no projectile, glow, ink, ground effect, background, extra limbs, sword or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: e82bda0a-b8c2-45a0-8a75-cb712fe05566\njob_id: e82bda0a-b8c2-45a0-8a75-cb712fe05566\naction: ONE broad three-paper sweep facing NORTH-WEST in this back view. Hold EXACTLY THREE separate rectangular ochre paper strips with visible gaps, never joined, no folding fan. Three individual long narrow paper rectangles like three spread cards. First open the casting arm far to SCREEN RIGHT with the THREE strips outside the right shoulder. Then sweep the WHOLE arm broadly across the torso from RIGHT to LEFT, ending beyond the LEFT shoulder. The paper hand must finish LEFT of the head. A large shoulder-led sweep, NOT a short straight thrust. Next bring BOTH hands near the chest for one quick two-finger spell sign and recover. Preserve the same fox, ONE tail, navy coat, teal sash and 64px scale. Feet planted. Return to this exact idle pose. Fixed camera, transparency. Body only, no projectile, glow, ink, ground effect, background, extra limbs, sword or staff.\nframes: 12\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 101782\nasset_id: ed6a7c16-8713-5f61-b56f-ebb150ed4ae2\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"e82bda0a-b8c2-45a0-8a75-cb712fe05566\")"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "eruption",
+      "direction": "north-west",
+      "label": "폭진부",
+      "frames": 8,
+      "seed": 101784,
+      "attempt": 2,
+      "action": "ONE strong high-to-low PALM PRESS, staying in this NORTH-WEST back view. Three distinct poses: FIRST lift the single paper-holding hand HIGH ABOVE the LEFT EAR, with bent elbow and forearm clearly outside the LEFT shoulder silhouette. Hold the high hand for a visible preparation beat. THEN bend BOTH knees deeply while driving that SAME open palm straight DOWN from above the head to KNEE HEIGHT, along the LEFT edge of the body. The palm faces DOWN and presses firmly toward the floor. Show the downward arm travel outside the silhouette, not hidden behind the back. Hold the LOW crouching press briefly, then rise and return. No forward casting gesture and no stepping. Preserve the same fox, ONE tail, navy coat, teal sash and 64px scale. Feet planted. Return to this exact idle pose. Fixed camera, transparency. Body only, no projectile, glow, ink, ground effect, background, extra limbs, sword or staff.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 26e69c28-7001-4662-9c99-516604f74ca3\njob_id: 26e69c28-7001-4662-9c99-516604f74ca3\naction: ONE strong high-to-low PALM PRESS, staying in this NORTH-WEST back view. Three distinct poses: FIRST lift the single paper-holding hand HIGH ABOVE the LEFT EAR, with bent elbow and forearm clearly outside the LEFT shoulder silhouette. Hold the high hand for a visible preparation beat. THEN bend BOTH knees deeply while driving that SAME open palm straight DOWN from above the head to KNEE HEIGHT, along the LEFT edge of the body. The palm faces DOWN and presses firmly toward the floor. Show the downward arm travel outside the silhouette, not hidden behind the back. Hold the LOW crouching press briefly, then rise and return. No forward casting gesture and no stepping. Preserve the same fox, ONE tail, navy coat, teal sash and 64px scale. Feet planted. Return to this exact idle pose. Fixed camera, transparency. Body only, no projectile, glow, ink, ground effect, background, extra limbs, sword or staff.\nframes: 8\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 101784\nasset_id: 8e614e5c-7395-5546-baa0-a59ec07ccf10\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"26e69c28-7001-4662-9c99-516604f74ca3\")"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "ink",
+      "direction": "south-east",
+      "label": "묵선참",
+      "frames": 12,
+      "seed": 101785,
+      "attempt": 2,
+      "action": "ONE calligraphy-brush arm sweep facing SOUTH-EAST. FIRST put the ochre paper into the waist pouch or hold it fixed in the OTHER hand near the waist. The MOVING hand holds NO PAPER. Take the existing SMALL BRUSH from the waist: a short thin BROWN WOODEN HANDLE with a BLACK POINTED BRISTLE TIP, about half a forearm long. Make this brown-and-black brush clearly visible in the hand. Pull the brush hand high beside SCREEN LEFT shoulder with bent elbow, then sweep that arm in ONE wide horizontal arc across the chest to SCREEN RIGHT. Slight torso twist follows; hold the small brush at the far-right finish, then retract and tuck it at the waist. Only the arm and tiny brush move through empty air; nothing is drawn in the air. Preserve this fox's ONE tail, navy coat, teal sash, 64px scale and planted feet. Return to the supplied idle. Fixed camera, transparency. NO white blade, white stroke, ink trail, beam, glow, particles, staff, sword, background or extra limbs.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 96a9cbf9-1ef4-4a81-92ee-6c5c721a209d\njob_id: 96a9cbf9-1ef4-4a81-92ee-6c5c721a209d\naction: ONE calligraphy-brush arm sweep facing SOUTH-EAST. FIRST put the ochre paper into the waist pouch or hold it fixed in the OTHER hand near the waist. The MOVING hand holds NO PAPER. Take the existing SMALL BRUSH from the waist: a short thin BROWN WOODEN HANDLE with a BLACK POINTED BRISTLE TIP, about half a forearm long. Make this brown-and-black brush clearly visible in the hand. Pull the brush hand high beside SCREEN LEFT shoulder with bent elbow, then sweep that arm in ONE wide horizontal arc across the chest to SCREEN RIGHT. Slight torso twist follows; hold the small brush at the far-right finish, then retract and tuck it at the waist. Only the arm and tiny brush move through empty air; nothing is drawn in the air. Preserve this fox's ONE tail, navy coat, teal sash, 64px scale and planted feet. Return to the supplied idle. Fixed camera, transparency. NO white blade, white stroke, ink trail, beam, glow, particles, staff, sword, background or extra limbs.\nframes: 12\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 101785\nasset_id: da295bc3-e477-55d7-a10d-0e8fd7983115\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"96a9cbf9-1ef4-4a81-92ee-6c5c721a209d\")"
+          }
+        ],
+        "isError": false
+      }
+    },
+    {
+      "key": "ink",
+      "direction": "north-west",
+      "label": "묵선참",
+      "frames": 12,
+      "seed": 101786,
+      "attempt": 2,
+      "action": "ONE calligraphy-brush arm sweep facing NORTH-WEST in this back view. FIRST put the ochre paper into the waist pouch or hold it fixed in the OTHER hand by the waist. The MOVING hand holds NO PAPER. Take the existing SMALL BRUSH: short thin BROWN WOODEN HANDLE with a BLACK POINTED BRISTLE TIP, half a forearm long. Keep the brown-and-black brush clearly visible. Pull the brush hand high beside SCREEN RIGHT shoulder, elbow bent. Then sweep the whole arm across the torso from RIGHT to LEFT in ONE wide horizontal arc; finish with the small brush beyond the LEFT shoulder toward upper-left. Slight torso twist but no turn around. Brief brush follow-through, then retract and tuck it at the waist. The air stays empty. Preserve this fox's ONE tail, navy coat, teal sash, 64px scale and planted feet. Return to the supplied idle. Fixed camera, transparency. NO white blade, white stroke, ink trail, beam, glow, particles, staff, sword, background or extra limbs.",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: d0793226-7441-475a-9858-6748163fb4fd\njob_id: d0793226-7441-475a-9858-6748163fb4fd\naction: ONE calligraphy-brush arm sweep facing NORTH-WEST in this back view. FIRST put the ochre paper into the waist pouch or hold it fixed in the OTHER hand by the waist. The MOVING hand holds NO PAPER. Take the existing SMALL BRUSH: short thin BROWN WOODEN HANDLE with a BLACK POINTED BRISTLE TIP, half a forearm long. Keep the brown-and-black brush clearly visible. Pull the brush hand high beside SCREEN RIGHT shoulder, elbow bent. Then sweep the whole arm across the torso from RIGHT to LEFT in ONE wide horizontal arc; finish with the small brush beyond the LEFT shoulder toward upper-left. Slight torso twist but no turn around. Brief brush follow-through, then retract and tuck it at the waist. The air stays empty. Preserve this fox's ONE tail, navy coat, teal sash, 64px scale and planted feet. Return to the supplied idle. Fixed camera, transparency. NO white blade, white stroke, ink trail, beam, glow, particles, staff, sword, background or extra limbs.\nframes: 12\nsize: 64x64px\ntransparent: True\nlast_frame: yes (interpolating to it)\nseed: 101786\nasset_id: 26e233de-bd8f-5015-bfea-f3eb64f4a805\nasset_status: pending (saved when generation completes)\ncost: 1 generation\nstatus: processing (~30-180s)\n\nhint: get_image(job_id=\"d0793226-7441-475a-9858-6748163fb4fd\")"
+          }
+        ],
+        "isError": false
+      }
+    }
+  ],
+  "sourceInputHashes": {
+    "south-east": "034ea4aabfc3f5b88bf1ff64e51dcb5a4c0e9c6693d0c972dc890c073a11000c",
+    "north-west": "9a5b7789b003fa8a985e8f3e9f2db52da5185ee0921adc29f7097be64134e5c3"
+  },
+  "completedFirstAttempts": [
+    {
+      "key": "volley",
+      "direction": "south-east",
+      "jobId": "50e8fbb0-aa42-4e13-8d99-9deba879decf",
+      "completion": "status: completed\nid: 50e8fbb0-aa42-4e13-8d99-9deba879decf\njob_id: 50e8fbb0-aa42-4e13-8d99-9deba879decf\nframes: 13\ntransparent: yes\nasset_id: 8907c92c-7a8d-5a0d-a766-c1b3061e42cc\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=0 ... ?index=12\n(9 more frames not shown — fetch them from the download URLs above)",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/00.png",
+          "sha256": "0bf0003cb4a8e4558144a949e42f867689d09129cfa05b881315c3b09214c052",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/01.png",
+          "sha256": "504f7eee16431d1d6ff9bfb5e462e4e13f45cc8cd7fb216099a7bc4bff25566d",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/02.png",
+          "sha256": "9f489c8e8099965276c16c4d2f6068e768d2d373194a5d01bed9394dae621820",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/03.png",
+          "sha256": "50463ccfa858d6901ac99d3022384ef556ab59f064744c60d2532af22cd200ca",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            3,
+            47,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/04.png",
+          "sha256": "070750589cdfb320f08dfa9170549e8fd25d8892f74656f28f9dc906a6c8fecf",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            3,
+            47,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/05.png",
+          "sha256": "0ddc25a518f1630325761fec6ccc9eb1689bd95eb1cd7be444f7f66679cb751e",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            14,
+            3,
+            54,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/06.png",
+          "sha256": "973ee121a6a7589053510ad94c6b3d46bd1461b0a388b30b9af00fed00b95618",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            9,
+            2,
+            58,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/07.png",
+          "sha256": "ebda90bf5c0d29beddc9294a82f60d076603179494b6558488bdf05d57e8f4d1",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            9,
+            2,
+            55,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/08.png",
+          "sha256": "2a58fd2dbc89dd239172cac9855f412d84a75546cf7a843caa22c98ec1a36dbd",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            10,
+            3,
+            52,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 9,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=9",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/09.png",
+          "sha256": "2326a691a11c50a6938544fc02164f3798f5ba644247e6c21792023a6a2fce22",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            13,
+            3,
+            53,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 10,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=10",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/10.png",
+          "sha256": "b328cddc7ab4d005e675ad1f26dafa459ce13bef5d7c8ab5efd869f41a076c34",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            3,
+            49,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 11,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=11",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/11.png",
+          "sha256": "e9a0a118a1b3e7ac133c543b095f0234645198a9133bf1bed9aac0336bfebb32",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 12,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=12",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/12.png",
+          "sha256": "34a60ff53f04463671857d947d91f12cb0724cabdc030e58a9fa7de5415c18c1",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "archivalZip": "original-pngs-and-metadata.zip (locally packaged exact PNG originals)"
+    },
+    {
+      "key": "volley",
+      "direction": "north-west",
+      "jobId": "fe5a1bc5-b782-4dce-8a3a-9a523cc9a744",
+      "completion": "status: completed\nid: fe5a1bc5-b782-4dce-8a3a-9a523cc9a744\njob_id: fe5a1bc5-b782-4dce-8a3a-9a523cc9a744\nframes: 13\ntransparent: yes\nasset_id: 7c0937bb-f4f6-545c-b5de-1503073583ce\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=0 ... ?index=12\n(9 more frames not shown — fetch them from the download URLs above)",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/00.png",
+          "sha256": "deebf187a7dbd9e6b948cfb2aabe24c667ba045d2733763af4e0f000ee9c8c87",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/01.png",
+          "sha256": "3130d157e73c0082774a3d4c56990a8f8f8f6c8c360c6751b6c6971589b5f066",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            53,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/02.png",
+          "sha256": "d38ea20aa3923dd93a04a68009c461292dafb8333e156a49669eb81012bbe13f",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            57,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/03.png",
+          "sha256": "8985cb730bd8568e541f7543e23e02c8eefbb2f5819c366eb9a53b7fda6262a5",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            58,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/04.png",
+          "sha256": "6fca5c7ee56dc1b3e8d4798407994ca44573e04d9b73091694c65b9ab519027c",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            57,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/05.png",
+          "sha256": "2520664b87e0104d8b198903656b54d0ce9340c22c3c3b04a014485d40547830",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            2,
+            46,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/06.png",
+          "sha256": "8a5619f41082bdee82ac355c62f727e47c9c49f3b885626fbe636bcf977f16c7",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            5,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/07.png",
+          "sha256": "610f0e9688b8fd478cdd32bd6c5ccb6520ea5c1978e12c50ff54198fcfa10460",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            5,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/08.png",
+          "sha256": "f285202f66b658f59b469143a685e49244dd603644ffa69416a930f8d842d19f",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            4,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 9,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=9",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/09.png",
+          "sha256": "19d3825992a667c3ff2a9db6abbe9739e0b7c7e54b3dc81a04f55b151e879dbd",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            5,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 10,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=10",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/10.png",
+          "sha256": "3af0126004678ca8e58c74ac60d44e86a3d072ab46bd10f87d2f034afbfbb367",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            2,
+            42,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 11,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=11",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/11.png",
+          "sha256": "67e139f156a0ca4ea6085f110d20f767fcfe7a01bec205c9fd20a99b4a3a8c74",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            2,
+            42,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 12,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=12",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/12.png",
+          "sha256": "98100a8ff1b8a4e04b988a9e779ccaed6224305ddfb840ac7fb45d9583a2a263",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "archivalZip": "original-pngs-and-metadata.zip (locally packaged exact PNG originals)"
+    },
+    {
+      "key": "eruption",
+      "direction": "south-east",
+      "jobId": "793355b4-9e18-4a13-b77e-cac68bb210ed",
+      "completion": "status: completed\nid: 793355b4-9e18-4a13-b77e-cac68bb210ed\njob_id: 793355b4-9e18-4a13-b77e-cac68bb210ed\nframes: 9\ntransparent: yes\nasset_id: efe24764-6fdd-5c93-9164-040b766c25fd\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/00.png",
+          "sha256": "6e3add55a622e4812b3baa4491fe0b7ae3eee6d1ef044f4e2451925eae0540b6",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/01.png",
+          "sha256": "a91f7cc99cd95f44e33848293a2db25a648999df1a6cd6643783ac36b89de780",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            3,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/02.png",
+          "sha256": "1089e4b4dd0bc63a62e8feda824bae1aacec1abab32014b1cbd3325d7b9d9340",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            14,
+            6,
+            47,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/03.png",
+          "sha256": "467bf1ad98e36a8c221a78af46866227f331c5a834f9fded0453dd09eb499667",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            11,
+            7,
+            50,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/04.png",
+          "sha256": "0d246ca7535caa0115cec5b96be2ed5fae79a07f5f5ea25c630ae470c8ea0fd6",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            12,
+            8,
+            48,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/05.png",
+          "sha256": "03abc0b2cbe01994098aa8f5cad29ca86025d61d21c8ce145f5ab432404a093c",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            12,
+            7,
+            49,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/06.png",
+          "sha256": "d44606c649fb17cac24bc7a8546dc698f27348aeeed3c4e9ddec2243205facbb",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            14,
+            4,
+            47,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/07.png",
+          "sha256": "6b7d852f3726d4a4e372bec3ce23f34906fce1e1ef773f25f95424d70f1d8591",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            21,
+            3,
+            45,
+            62
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/08.png",
+          "sha256": "91e10aabab30a5074e85a7ff30858d0d16071085573f54b26aa72adf9bfd950a",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "archivalZip": "original-pngs-and-metadata.zip (locally packaged exact PNG originals)"
+    },
+    {
+      "key": "eruption",
+      "direction": "north-west",
+      "jobId": "c48f8025-2db0-4330-a1db-14e32c69e3fb",
+      "completion": "status: completed\nid: c48f8025-2db0-4330-a1db-14e32c69e3fb\njob_id: c48f8025-2db0-4330-a1db-14e32c69e3fb\nframes: 9\ntransparent: yes\nasset_id: 0ef42c47-fa8d-52c9-baac-8794aee0f4da\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/00.png",
+          "sha256": "3035d0cf34a3c53b23c7782a275763c0e003aee54b095500207afd71ca40cea3",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/01.png",
+          "sha256": "78b4f8967f6911337748983ecf9ac3e7590f01b5fe64a73cf87a29e13c5c7ae7",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/02.png",
+          "sha256": "34de86a99386bd8cdb3143d1b66302d2fd7c0fcb2d5e5662b8ad6e156f4aebab",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            3,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/03.png",
+          "sha256": "9953b9f8a9a043cc5497c730d3298b400003b636760f1d107884ce6ebc200993",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            6,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/04.png",
+          "sha256": "7ac6e95dd72f9127cf0ad3aac2ae73ba3d9ed6d982c2731db820e55d3b216784",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            8,
+            45,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/05.png",
+          "sha256": "2a36f70353268e2234a16bda13f90e7af2dd259e0e62233598a83430b4a5781a",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            8,
+            45,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/06.png",
+          "sha256": "09cabefcca808e97f2650014dfed0b30243897a5f13ed081b71d5e9810114060",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            6,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/07.png",
+          "sha256": "f7ebf19a0182d9e97db31d5be696bbf6762a09aaea8a37b9306ad2931256a61c",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            4,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/08.png",
+          "sha256": "39cead02815ec89b13811758800fc691445895a4ba104959844afccae9ad4ca2",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "archivalZip": "original-pngs-and-metadata.zip (locally packaged exact PNG originals)"
+    }
+  ],
+  "completedClips": {
+    "3fa1891b-a877-402c-8d99-3233d4610660": {
+      "key": "ink",
+      "direction": "south-east",
+      "jobId": "3fa1891b-a877-402c-8d99-3233d4610660",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/00.png",
+          "sha256": "204efef826777ee7e65cdd56fa3c36646c2b08f0ec27afa5739fbdf98195a1fa",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/01.png",
+          "sha256": "1231f920b00ee8921fd0d3eab0d62b3428c20e1fea0b61fdbbe23a88a73db78e",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/02.png",
+          "sha256": "d0391cfe1de1d99f4a6a8075be1767b9a18930bdfde520874a1de842bb741144",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            12,
+            2,
+            46,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/03.png",
+          "sha256": "3df0eec8c087627c2b994721937dd88bee520e49a6c65f04d89f50a9ddbac6b0",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            8,
+            2,
+            47,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/04.png",
+          "sha256": "24a50d185991785488d226abaffdffd7f876f7984c2703b3d3fbc3f0ea4bfc44",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            6,
+            2,
+            47,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/05.png",
+          "sha256": "819349ed5d97794800d87ccfdbce49810b0f00020977034247509e9f4d8b374c",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            10,
+            2,
+            46,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/06.png",
+          "sha256": "5223065fa02ae6113bf0d73ee3efc6954f633a960916dc8ee4c5c92c165593c5",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/07.png",
+          "sha256": "914749436b0a2c9865d051d3088c81779fdf24841ab20dd7d85a5384b845419e",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            16,
+            2,
+            51,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/08.png",
+          "sha256": "c923e2c4fdb5fc4129372d8e898d2463f1644e741894337320f164c82c9d4d4a",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            14,
+            2,
+            56,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 9,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=9",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/09.png",
+          "sha256": "22a2c5c3549ac25c757dca4f29ba559a1aa60a1d19fb9aa364a3b5ad7467f5bf",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            15,
+            2,
+            56,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 10,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=10",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/10.png",
+          "sha256": "197e9333fb6f4e5922ecea4b8cab04cbee06a49114aabe6e40cc61d374694f6f",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            2,
+            52,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 11,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=11",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/11.png",
+          "sha256": "c84bb8a7dc671f6c8dbd9388bb382e5a7ba3d54e02122a0eca23b70946273c03",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            21,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 12,
+          "url": "https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=12",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/12.png",
+          "sha256": "d81adda94bfffcb199e42284abd09ce440a61b6295e12aab1adc06a78c78c62f",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "attempt": 1,
+      "completion": "status: completed\nid: 3fa1891b-a877-402c-8d99-3233d4610660\njob_id: 3fa1891b-a877-402c-8d99-3233d4610660\nframes: 13\ntransparent: yes\nasset_id: 95b2d93f-e988-5dbf-98b3-38deb69632db\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/3fa1891b-a877-402c-8d99-3233d4610660/download?index=0 ... ?index=12\n(9 more frames not shown — fetch them from the download URLs above)",
+      "archivalZip": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/3fa1891b-a877-402c-8d99-3233d4610660/original-pngs-and-metadata.zip",
+      "zipNote": "locally packaged exact PNG originals and metadata, not a service ZIP"
+    },
+    "fef73459-16fc-4b28-98ea-dc7f3c45fde0": {
+      "key": "ink",
+      "direction": "north-west",
+      "jobId": "fef73459-16fc-4b28-98ea-dc7f3c45fde0",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/00.png",
+          "sha256": "f66788529dbab605ed1cbe83f27d7c414488cbfc938216ce7469f9fa0fe385a1",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/01.png",
+          "sha256": "9d4de2ef6436f2eddca68f348e10948e5ebf8c7c4ee7ba080f11ef685224003d",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            46,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/02.png",
+          "sha256": "cdccf0fa1d35ecd28d392a489e9e435395467cd6431d5cd8a32ee83029ec0cb9",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            50,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/03.png",
+          "sha256": "ce620326a95a805ce8e66a15761d212a3521eec93b4428061a28bf47e33711e8",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            54,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/04.png",
+          "sha256": "c0e65a9bf0d083f896dd1546057e39983857773e7c689c156bc7d57cbc8bf782",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            56,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/05.png",
+          "sha256": "cefb5d9f7034b8f7666e7a6b8cab9182b5a595c58f9d135b7c27ab05946dd36b",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            60,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/06.png",
+          "sha256": "27aec688a9db0d343d7a76fe9223c13ad7ab765c4e97b5e6c5cc264eda33e363",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            15,
+            2,
+            53,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/07.png",
+          "sha256": "0480c010356f64cb2ba495784f2b0dd9ada381edfd4404c4253ab0d763441191",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            10,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/08.png",
+          "sha256": "d32c6e4dfe95ab45f99928210afa156e6af04a232af313e5ae8b7dca85ce3512",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            7,
+            2,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 9,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=9",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/09.png",
+          "sha256": "6a7eb7c4ed60be6be8fec03ca4c8eae7b680e5a96a2f76265704d680f7c63eb1",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            5,
+            2,
+            45,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 10,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=10",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/10.png",
+          "sha256": "a2c4a60a6533fc4e405167feafb25fa09b4579dfaf709a5265bdfe0662505cbe",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            42,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 11,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=11",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/11.png",
+          "sha256": "9b63b26abcebd40204713653d321f271a4e4e8ee88e443575102336bb62804c7",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            42,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 12,
+          "url": "https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=12",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/12.png",
+          "sha256": "75ee27154507dd081a03f2b2bc45127da4e35b708ca340efaffde26f2ded04ea",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "attempt": 1,
+      "completion": "status: completed\nid: fef73459-16fc-4b28-98ea-dc7f3c45fde0\njob_id: fef73459-16fc-4b28-98ea-dc7f3c45fde0\nframes: 13\ntransparent: yes\nasset_id: d9de7c1d-fb9c-5f80-99ab-7c3c4fc6dea3\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/fef73459-16fc-4b28-98ea-dc7f3c45fde0/download?index=0 ... ?index=12\n(9 more frames not shown — fetch them from the download URLs above)",
+      "archivalZip": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/fef73459-16fc-4b28-98ea-dc7f3c45fde0/original-pngs-and-metadata.zip",
+      "zipNote": "locally packaged exact PNG originals and metadata, not a service ZIP"
+    },
+    "50e8fbb0-aa42-4e13-8d99-9deba879decf": {
+      "key": "volley",
+      "direction": "south-east",
+      "jobId": "50e8fbb0-aa42-4e13-8d99-9deba879decf",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/00.png",
+          "sha256": "0bf0003cb4a8e4558144a949e42f867689d09129cfa05b881315c3b09214c052",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/01.png",
+          "sha256": "504f7eee16431d1d6ff9bfb5e462e4e13f45cc8cd7fb216099a7bc4bff25566d",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/02.png",
+          "sha256": "9f489c8e8099965276c16c4d2f6068e768d2d373194a5d01bed9394dae621820",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/03.png",
+          "sha256": "50463ccfa858d6901ac99d3022384ef556ab59f064744c60d2532af22cd200ca",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            3,
+            47,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/04.png",
+          "sha256": "070750589cdfb320f08dfa9170549e8fd25d8892f74656f28f9dc906a6c8fecf",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            3,
+            47,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/05.png",
+          "sha256": "0ddc25a518f1630325761fec6ccc9eb1689bd95eb1cd7be444f7f66679cb751e",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            14,
+            3,
+            54,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/06.png",
+          "sha256": "973ee121a6a7589053510ad94c6b3d46bd1461b0a388b30b9af00fed00b95618",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            9,
+            2,
+            58,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/07.png",
+          "sha256": "ebda90bf5c0d29beddc9294a82f60d076603179494b6558488bdf05d57e8f4d1",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            9,
+            2,
+            55,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/08.png",
+          "sha256": "2a58fd2dbc89dd239172cac9855f412d84a75546cf7a843caa22c98ec1a36dbd",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            10,
+            3,
+            52,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 9,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=9",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/09.png",
+          "sha256": "2326a691a11c50a6938544fc02164f3798f5ba644247e6c21792023a6a2fce22",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            13,
+            3,
+            53,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 10,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=10",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/10.png",
+          "sha256": "b328cddc7ab4d005e675ad1f26dafa459ce13bef5d7c8ab5efd869f41a076c34",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            3,
+            49,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 11,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=11",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/11.png",
+          "sha256": "e9a0a118a1b3e7ac133c543b095f0234645198a9133bf1bed9aac0336bfebb32",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 12,
+          "url": "https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=12",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/12.png",
+          "sha256": "34a60ff53f04463671857d947d91f12cb0724cabdc030e58a9fa7de5415c18c1",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "completion": "status: completed\nid: 50e8fbb0-aa42-4e13-8d99-9deba879decf\njob_id: 50e8fbb0-aa42-4e13-8d99-9deba879decf\nframes: 13\ntransparent: yes\nasset_id: 8907c92c-7a8d-5a0d-a766-c1b3061e42cc\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/50e8fbb0-aa42-4e13-8d99-9deba879decf/download?index=0 ... ?index=12\n(9 more frames not shown — fetch them from the download URLs above)",
+      "attempt": 1,
+      "archivalZip": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/50e8fbb0-aa42-4e13-8d99-9deba879decf/original-pngs-and-metadata.zip",
+      "zipNote": "locally packaged exact PNG originals and metadata, not a service ZIP"
+    },
+    "fe5a1bc5-b782-4dce-8a3a-9a523cc9a744": {
+      "key": "volley",
+      "direction": "north-west",
+      "jobId": "fe5a1bc5-b782-4dce-8a3a-9a523cc9a744",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/00.png",
+          "sha256": "deebf187a7dbd9e6b948cfb2aabe24c667ba045d2733763af4e0f000ee9c8c87",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/01.png",
+          "sha256": "3130d157e73c0082774a3d4c56990a8f8f8f6c8c360c6751b6c6971589b5f066",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            53,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/02.png",
+          "sha256": "d38ea20aa3923dd93a04a68009c461292dafb8333e156a49669eb81012bbe13f",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            57,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/03.png",
+          "sha256": "8985cb730bd8568e541f7543e23e02c8eefbb2f5819c366eb9a53b7fda6262a5",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            58,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/04.png",
+          "sha256": "6fca5c7ee56dc1b3e8d4798407994ca44573e04d9b73091694c65b9ab519027c",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            57,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/05.png",
+          "sha256": "2520664b87e0104d8b198903656b54d0ce9340c22c3c3b04a014485d40547830",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            2,
+            46,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/06.png",
+          "sha256": "8a5619f41082bdee82ac355c62f727e47c9c49f3b885626fbe636bcf977f16c7",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            5,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/07.png",
+          "sha256": "610f0e9688b8fd478cdd32bd6c5ccb6520ea5c1978e12c50ff54198fcfa10460",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            5,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/08.png",
+          "sha256": "f285202f66b658f59b469143a685e49244dd603644ffa69416a930f8d842d19f",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            4,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 9,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=9",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/09.png",
+          "sha256": "19d3825992a667c3ff2a9db6abbe9739e0b7c7e54b3dc81a04f55b151e879dbd",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            5,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 10,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=10",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/10.png",
+          "sha256": "3af0126004678ca8e58c74ac60d44e86a3d072ab46bd10f87d2f034afbfbb367",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            2,
+            42,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 11,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=11",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/11.png",
+          "sha256": "67e139f156a0ca4ea6085f110d20f767fcfe7a01bec205c9fd20a99b4a3a8c74",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            2,
+            42,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 12,
+          "url": "https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=12",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/12.png",
+          "sha256": "98100a8ff1b8a4e04b988a9e779ccaed6224305ddfb840ac7fb45d9583a2a263",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "completion": "status: completed\nid: fe5a1bc5-b782-4dce-8a3a-9a523cc9a744\njob_id: fe5a1bc5-b782-4dce-8a3a-9a523cc9a744\nframes: 13\ntransparent: yes\nasset_id: 7c0937bb-f4f6-545c-b5de-1503073583ce\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/download?index=0 ... ?index=12\n(9 more frames not shown — fetch them from the download URLs above)",
+      "attempt": 1,
+      "archivalZip": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/fe5a1bc5-b782-4dce-8a3a-9a523cc9a744/original-pngs-and-metadata.zip",
+      "zipNote": "locally packaged exact PNG originals and metadata, not a service ZIP"
+    },
+    "793355b4-9e18-4a13-b77e-cac68bb210ed": {
+      "key": "eruption",
+      "direction": "south-east",
+      "jobId": "793355b4-9e18-4a13-b77e-cac68bb210ed",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/00.png",
+          "sha256": "6e3add55a622e4812b3baa4491fe0b7ae3eee6d1ef044f4e2451925eae0540b6",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/01.png",
+          "sha256": "a91f7cc99cd95f44e33848293a2db25a648999df1a6cd6643783ac36b89de780",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            3,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/02.png",
+          "sha256": "1089e4b4dd0bc63a62e8feda824bae1aacec1abab32014b1cbd3325d7b9d9340",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            14,
+            6,
+            47,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/03.png",
+          "sha256": "467bf1ad98e36a8c221a78af46866227f331c5a834f9fded0453dd09eb499667",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            11,
+            7,
+            50,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/04.png",
+          "sha256": "0d246ca7535caa0115cec5b96be2ed5fae79a07f5f5ea25c630ae470c8ea0fd6",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            12,
+            8,
+            48,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/05.png",
+          "sha256": "03abc0b2cbe01994098aa8f5cad29ca86025d61d21c8ce145f5ab432404a093c",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            12,
+            7,
+            49,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/06.png",
+          "sha256": "d44606c649fb17cac24bc7a8546dc698f27348aeeed3c4e9ddec2243205facbb",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            14,
+            4,
+            47,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/07.png",
+          "sha256": "6b7d852f3726d4a4e372bec3ce23f34906fce1e1ef773f25f95424d70f1d8591",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            21,
+            3,
+            45,
+            62
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/08.png",
+          "sha256": "91e10aabab30a5074e85a7ff30858d0d16071085573f54b26aa72adf9bfd950a",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "completion": "status: completed\nid: 793355b4-9e18-4a13-b77e-cac68bb210ed\njob_id: 793355b4-9e18-4a13-b77e-cac68bb210ed\nframes: 9\ntransparent: yes\nasset_id: efe24764-6fdd-5c93-9164-040b766c25fd\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/793355b4-9e18-4a13-b77e-cac68bb210ed/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "attempt": 1,
+      "archivalZip": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/south-east/793355b4-9e18-4a13-b77e-cac68bb210ed/original-pngs-and-metadata.zip",
+      "zipNote": "locally packaged exact PNG originals and metadata, not a service ZIP"
+    },
+    "c48f8025-2db0-4330-a1db-14e32c69e3fb": {
+      "key": "eruption",
+      "direction": "north-west",
+      "jobId": "c48f8025-2db0-4330-a1db-14e32c69e3fb",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/00.png",
+          "sha256": "3035d0cf34a3c53b23c7782a275763c0e003aee54b095500207afd71ca40cea3",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/01.png",
+          "sha256": "78b4f8967f6911337748983ecf9ac3e7590f01b5fe64a73cf87a29e13c5c7ae7",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/02.png",
+          "sha256": "34de86a99386bd8cdb3143d1b66302d2fd7c0fcb2d5e5662b8ad6e156f4aebab",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            3,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/03.png",
+          "sha256": "9953b9f8a9a043cc5497c730d3298b400003b636760f1d107884ce6ebc200993",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            6,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/04.png",
+          "sha256": "7ac6e95dd72f9127cf0ad3aac2ae73ba3d9ed6d982c2731db820e55d3b216784",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            8,
+            45,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/05.png",
+          "sha256": "2a36f70353268e2234a16bda13f90e7af2dd259e0e62233598a83430b4a5781a",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            8,
+            45,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/06.png",
+          "sha256": "09cabefcca808e97f2650014dfed0b30243897a5f13ed081b71d5e9810114060",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            6,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/07.png",
+          "sha256": "f7ebf19a0182d9e97db31d5be696bbf6762a09aaea8a37b9306ad2931256a61c",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            4,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/08.png",
+          "sha256": "39cead02815ec89b13811758800fc691445895a4ba104959844afccae9ad4ca2",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "completion": "status: completed\nid: c48f8025-2db0-4330-a1db-14e32c69e3fb\njob_id: c48f8025-2db0-4330-a1db-14e32c69e3fb\nframes: 9\ntransparent: yes\nasset_id: 0ef42c47-fa8d-52c9-baac-8794aee0f4da\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/c48f8025-2db0-4330-a1db-14e32c69e3fb/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "attempt": 1,
+      "archivalZip": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/c48f8025-2db0-4330-a1db-14e32c69e3fb/original-pngs-and-metadata.zip",
+      "zipNote": "locally packaged exact PNG originals and metadata, not a service ZIP"
+    },
+    "67adbc17-8cd1-4857-a002-f9f0fef4bdcf": {
+      "key": "volley",
+      "direction": "south-east",
+      "jobId": "67adbc17-8cd1-4857-a002-f9f0fef4bdcf",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/00.png",
+          "sha256": "2240f697ddc4ef8096d1c46fcaa33f2cd670dc4dd378b958b41a7fc2e41833b4",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/01.png",
+          "sha256": "5c4bc5f4419b110d3b5ccd821a9e1a4ca65a24403babd04c4c0a226ed632d43f",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/02.png",
+          "sha256": "3b31f58bff87f842b4afbf687b6d77242d105e6f8b5c4f2a65a1d4efb5774f03",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            15,
+            2,
+            46,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/03.png",
+          "sha256": "d4a4abe881ca0412791697ff11b670cec7abf17938dca2406b423720c12894dc",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            12,
+            2,
+            46,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/04.png",
+          "sha256": "39d41c447de4d380250d9e510f88f37910b5f9af4e0b12ed1c468616f1e9e896",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            10,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/05.png",
+          "sha256": "cd2c320aa4aed576100779952c940c49b9d768d9dfe65feca2f5270082a5191c",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/06.png",
+          "sha256": "8afc27b7d0cd3efc9eab0059ce93b5ee2d2db3f28cc570dc288b9b36aa49046d",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            16,
+            3,
+            51,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/07.png",
+          "sha256": "850a81063c53f765a598635f70ef56ab162f86a259113c17ced2ff0c8c4167c9",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            16,
+            3,
+            55,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/08.png",
+          "sha256": "fbbb68bc304ab02593dc3df2de4a472d6ed0066dd09ea01f1475857356869cd2",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            3,
+            53,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 9,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=9",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/09.png",
+          "sha256": "97989d718029d06607fcf343b7d0bd41a5bed72e347b8e66a3a48dec75dd163f",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            3,
+            52,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 10,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=10",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/10.png",
+          "sha256": "917444f7aa7cc11454ce5b6d73502042890e422fdb4ee7825edae1c6e33307a6",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            2,
+            47,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 11,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=11",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/11.png",
+          "sha256": "a3f15503da49c1317a02dabacbe8701e036480e01a947d4739a4c291115cf86b",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            21,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 12,
+          "url": "https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=12",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/12.png",
+          "sha256": "293ccd1e1c81d4c7abe615e20032e014f24d07af1aa8c4f29d6494842ee6e477",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "attempt": 2,
+      "completion": "status: completed\nid: 67adbc17-8cd1-4857-a002-f9f0fef4bdcf\njob_id: 67adbc17-8cd1-4857-a002-f9f0fef4bdcf\nframes: 13\ntransparent: yes\nasset_id: b4e856dc-9a77-58c7-9460-34ab5763a97b\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/download?index=0 ... ?index=12\n(9 more frames not shown — fetch them from the download URLs above)",
+      "archivalZip": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/south-east/67adbc17-8cd1-4857-a002-f9f0fef4bdcf/original-pngs-and-metadata.zip",
+      "zipNote": "locally packaged exact PNG originals and metadata, not a service ZIP"
+    },
+    "e82bda0a-b8c2-45a0-8a75-cb712fe05566": {
+      "key": "volley",
+      "direction": "north-west",
+      "jobId": "e82bda0a-b8c2-45a0-8a75-cb712fe05566",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/00.png",
+          "sha256": "18448ad2c5a59b88aeaf705e2fdb677e1a6c811ba80e37dba53ad786ceeeb94e",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/01.png",
+          "sha256": "8ace361fd69aeef88c171a97afe23bef066be0561b6e4e952849eebd6583e829",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            47,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/02.png",
+          "sha256": "1b95034fd17d236b5d62d58196dd55f09eeb1675bd2515f66e13ddf4bd2577ff",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            52,
+            60
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/03.png",
+          "sha256": "5d3efd1f7a46ce273118a9067434eae1dec322a25f1c75c24a04e813346514f2",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            3,
+            57,
+            60
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/04.png",
+          "sha256": "e8efba329bc7bad1c718d9e490554a359c5bf41f369117666317354bb027f835",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            2,
+            58,
+            60
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/05.png",
+          "sha256": "bd10d29c9095fbedbd872609ba25fc91b12d0a78d17dbfb08f05b29505fd6e71",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            52,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/06.png",
+          "sha256": "c5e00b6ae7703af7e810c3bf5d58843ef6a56a2dcd964500249ee97831177fa3",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            14,
+            2,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/07.png",
+          "sha256": "c9c9a7e0714c49be0edf531510d5a61605698a0244bdacf32770cb7dde6cb9c3",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            10,
+            2,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/08.png",
+          "sha256": "f7d45051d2570b324371bb377739e3118bb047de799638210e78411280b9c709",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            5,
+            3,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 9,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=9",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/09.png",
+          "sha256": "3759595d312000ea73cffc70e805d70f5d43be1b1b88c4e050a091626850ce11",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            10,
+            2,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 10,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=10",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/10.png",
+          "sha256": "fc46570eef1e4f3097402189419fa63f0f9a9958cd82d334df6b54857ee856ad",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            16,
+            2,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 11,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=11",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/11.png",
+          "sha256": "05eb8e4eeff29a0a846ec767991e36e610c4febc83477738757bc7511cbadf04",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 12,
+          "url": "https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=12",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/12.png",
+          "sha256": "60f5eb4033b3d90a0eec13f751627f3f79b1b852db816201a48dc0f559c8325a",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "attempt": 2,
+      "completion": "status: completed\nid: e82bda0a-b8c2-45a0-8a75-cb712fe05566\njob_id: e82bda0a-b8c2-45a0-8a75-cb712fe05566\nframes: 13\ntransparent: yes\nasset_id: ed6a7c16-8713-5f61-b56f-ebb150ed4ae2\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/e82bda0a-b8c2-45a0-8a75-cb712fe05566/download?index=0 ... ?index=12\n(9 more frames not shown — fetch them from the download URLs above)",
+      "archivalZip": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/volley/north-west/e82bda0a-b8c2-45a0-8a75-cb712fe05566/original-pngs-and-metadata.zip",
+      "zipNote": "locally packaged exact PNG originals and metadata, not a service ZIP"
+    },
+    "26e69c28-7001-4662-9c99-516604f74ca3": {
+      "key": "eruption",
+      "direction": "north-west",
+      "jobId": "26e69c28-7001-4662-9c99-516604f74ca3",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/26e69c28-7001-4662-9c99-516604f74ca3/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/26e69c28-7001-4662-9c99-516604f74ca3/00.png",
+          "sha256": "6bdc207cb1e43e7d01025d8c25cbc72dc5d5439e53fcf4576f001ce750edbc9c",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/26e69c28-7001-4662-9c99-516604f74ca3/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/26e69c28-7001-4662-9c99-516604f74ca3/01.png",
+          "sha256": "9fb26c1854b50605dd77ad69c6f8a20199c1a5d33041c6f631bfab0044e111bf",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/26e69c28-7001-4662-9c99-516604f74ca3/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/26e69c28-7001-4662-9c99-516604f74ca3/02.png",
+          "sha256": "38bf9a1efbf3a8c02d27f576a25b54d4a5d4b962bd4e8744ba4a40e3085b185d",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            3,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/26e69c28-7001-4662-9c99-516604f74ca3/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/26e69c28-7001-4662-9c99-516604f74ca3/03.png",
+          "sha256": "f6d093aa72493f61528c321dfa143c04d046f9051ce16d837cc98ee176478d79",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            5,
+            46,
+            60
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/26e69c28-7001-4662-9c99-516604f74ca3/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/26e69c28-7001-4662-9c99-516604f74ca3/04.png",
+          "sha256": "c8b655886e67cf857ad3acc4a4ab31a1d51b5b8fc8d4bed4825190d9fc6f00b8",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            9,
+            46,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/26e69c28-7001-4662-9c99-516604f74ca3/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/26e69c28-7001-4662-9c99-516604f74ca3/05.png",
+          "sha256": "21ced65785d19ef2271c3fb1bd6db7d952ea5e7f9a15e337173af1a09e2c68b1",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            7,
+            46,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/26e69c28-7001-4662-9c99-516604f74ca3/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/26e69c28-7001-4662-9c99-516604f74ca3/06.png",
+          "sha256": "927daa7a34290aee7da9e7d195546540c396aaecc0a645bfbf9f18b3904d78e2",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            6,
+            45,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/26e69c28-7001-4662-9c99-516604f74ca3/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/26e69c28-7001-4662-9c99-516604f74ca3/07.png",
+          "sha256": "df4b74558b0fdcab7476e15ac0fcb690f8d2b7d3c5c2adde69a1af8cadfb9eae",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            4,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/26e69c28-7001-4662-9c99-516604f74ca3/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/26e69c28-7001-4662-9c99-516604f74ca3/08.png",
+          "sha256": "663cd8086c28d3458842e519e66da9174a44ea952453392bdf17731ac6934066",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "attempt": 2,
+      "completion": "status: completed\nid: 26e69c28-7001-4662-9c99-516604f74ca3\njob_id: 26e69c28-7001-4662-9c99-516604f74ca3\nframes: 9\ntransparent: yes\nasset_id: 8e614e5c-7395-5546-baa0-a59ec07ccf10\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/26e69c28-7001-4662-9c99-516604f74ca3/download?index=0 ... ?index=8\n(5 more frames not shown — fetch them from the download URLs above)",
+      "archivalZip": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/eruption/north-west/26e69c28-7001-4662-9c99-516604f74ca3/original-pngs-and-metadata.zip",
+      "zipNote": "locally packaged exact PNG originals and metadata, not a service ZIP"
+    },
+    "96a9cbf9-1ef4-4a81-92ee-6c5c721a209d": {
+      "key": "ink",
+      "direction": "south-east",
+      "jobId": "96a9cbf9-1ef4-4a81-92ee-6c5c721a209d",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/00.png",
+          "sha256": "1da10f747444565fdbac6ab46f5eb925776c2aad79f9ee972a6076e38f48f04a",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/01.png",
+          "sha256": "1ab52819efdeae0d86724ba6c34c0c558a8b27ec91b2195d71740eb04ba6b922",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/02.png",
+          "sha256": "fc0e9bcb207efbb30842e68a58f1037fc3d9684938b5006afd590e9357408efc",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            15,
+            2,
+            46,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/03.png",
+          "sha256": "cab1daf355d23610257f878e84d9c2eb8ce32823470347f0177c51f976df3161",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            11,
+            2,
+            46,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/04.png",
+          "sha256": "8ae80a0d8625f9aef64fd96792198b82d8082d9159d559d21f593372b9b3f54d",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            8,
+            2,
+            46,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/05.png",
+          "sha256": "bda6d930480fed043002e827904c8f5125130a5271b667ab643f9fdd1e80fce1",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            4,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/06.png",
+          "sha256": "ddc6620b6696c5c1fa392e2b52789a98f821b5f0c92b15b525ef55a592d52e81",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            4,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/07.png",
+          "sha256": "0babcc64fd730f2faea31f1637b6c5bc78ebb9a7ae41bbf3db8f5271af458195",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            8,
+            2,
+            52,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/08.png",
+          "sha256": "7923e7fcd01fa4dca3bfb23cf802076e50b659ba0a38f7c8fa516ea6b3bab22b",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            14,
+            3,
+            57,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 9,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=9",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/09.png",
+          "sha256": "246d81f8ce60d80f61421e06bbf6899cdbddf49a892b0d67256a29769e374283",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            14,
+            3,
+            56,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 10,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=10",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/10.png",
+          "sha256": "3d7f3375c68a0a9c69aa8c9b519d27888a8ba119d479fb635fd0b24bd8a19cf7",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            14,
+            3,
+            52,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 11,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=11",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/11.png",
+          "sha256": "ddd1df57705631a69b53390c3ce5c636dfed035261e56ee8278f7bef5a902814",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            2,
+            45,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 12,
+          "url": "https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=12",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/12.png",
+          "sha256": "b3347482ec30e5e3e8abc89c729ec1364567fe01b51667e2b51a4f21e6c40378",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            22,
+            2,
+            44,
+            63
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "attempt": 2,
+      "completion": "status: completed\nid: 96a9cbf9-1ef4-4a81-92ee-6c5c721a209d\njob_id: 96a9cbf9-1ef4-4a81-92ee-6c5c721a209d\nframes: 13\ntransparent: yes\nasset_id: da295bc3-e477-55d7-a10d-0e8fd7983115\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/download?index=0 ... ?index=12\n(9 more frames not shown — fetch them from the download URLs above)",
+      "archivalZip": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/south-east/96a9cbf9-1ef4-4a81-92ee-6c5c721a209d/original-pngs-and-metadata.zip",
+      "zipNote": "locally packaged exact PNG originals and metadata, not a service ZIP"
+    },
+    "d0793226-7441-475a-9858-6748163fb4fd": {
+      "key": "ink",
+      "direction": "north-west",
+      "jobId": "d0793226-7441-475a-9858-6748163fb4fd",
+      "frames": [
+        {
+          "index": 0,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=0",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/00.png",
+          "sha256": "3212edd4a2312881bb053ae232d55495ce2580891ab1374ef6330491a85cf747",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 1,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=1",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/01.png",
+          "sha256": "d24348bbd5ff8321bfcb875469e931ec1004f3ca01a3cee942056a8c00b0c78f",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 2,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=2",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/02.png",
+          "sha256": "0ac96400c9f41777d0c8fe09d6d110eec70d27791acf538f43b41f7662218da6",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            20,
+            2,
+            45,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 3,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=3",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/03.png",
+          "sha256": "bfd363ef1588cde738fa33dd4611b9cd39676c7e40767c4ab540ca151872403b",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            49,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 4,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=4",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/04.png",
+          "sha256": "b9660930e2faaf63264cce8c26ba782435e8cb210bbc78571bc62e36821bceca",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            49,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 5,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=5",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/05.png",
+          "sha256": "8bb7ac74b08b30d87cb2e43dc0aa13026dccad208ecddbb04a42f0674eddd3ea",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            55,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 6,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=6",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/06.png",
+          "sha256": "2c50b2c93b8eb8c6203dbbd4b2f15516e10032d6c63bb7a50daa529e056fe94d",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            17,
+            2,
+            62,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 7,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=7",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/07.png",
+          "sha256": "d2f58f09b480ea712cd85cdeaee8896ade4ee9da54de39d5102d99009024ad31",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            60,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=8",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/08.png",
+          "sha256": "86187dc91af9d364745afd00a45e2d8cdc78e8a6c50eb172fd21490d445528dc",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            8,
+            2,
+            54,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 9,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=9",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/09.png",
+          "sha256": "a1126d2ccddc19157440312de0e1667180bbe7301df691778b73fb0654dd8f12",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            3,
+            2,
+            45,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 10,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=10",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/10.png",
+          "sha256": "61039de93a1810716eac0d38eab6f7de3687886a0f264d3160bb7bc20dda268c",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            3,
+            4,
+            44,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 11,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=11",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/11.png",
+          "sha256": "49a0a9050851f0b31b6428a03b01568b216d2b12c4e9c353061ba8e8b504f243",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            18,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        },
+        {
+          "index": 12,
+          "url": "https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=12",
+          "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/12.png",
+          "sha256": "82305ba1da7b4463f0cf72fa096d74780d7876ee8f96de185e03c14b1b33add2",
+          "width": 64,
+          "height": 64,
+          "bbox": [
+            19,
+            2,
+            43,
+            61
+          ],
+          "alphaValues": [
+            0,
+            255
+          ]
+        }
+      ],
+      "attempt": 2,
+      "completion": "status: completed\nid: d0793226-7441-475a-9858-6748163fb4fd\njob_id: d0793226-7441-475a-9858-6748163fb4fd\nframes: 13\ntransparent: yes\nasset_id: 26e233de-bd8f-5015-bfea-f3eb64f4a805\nasset_type: image\nasset_status: saved\ngallery: saved to your PixelLab gallery (pixellab.ai/create)\ncharged: 1 generation\ndownload: https://api.pixellab.ai/mcp/images/d0793226-7441-475a-9858-6748163fb4fd/download?index=0 ... ?index=12\n(9 more frames not shown — fetch them from the download URLs above)",
+      "archivalZip": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/ink/north-west/d0793226-7441-475a-9858-6748163fb4fd/original-pngs-and-metadata.zip",
+      "zipNote": "locally packaged exact PNG originals and metadata, not a service ZIP"
+    }
+  },
+  "correctionAuthorization": "부모 담당 세션에서 volley양방향·eruptionNW·ink양방향 2회차 보정 승인. 각클립 같은방법2회상한, 추가반복없음.",
+  "afterBalanceSnapshot": {
+    "content": [
+      {
+        "type": "text",
+        "text": "credits: $0.00\ngenerations_remaining: 216.35\ngenerations_used: 1783.65\ngenerations_total: 2000\nnote: fractions come from small steps billed per use — prompt enhancement 0.05, skeleton estimation and colour reduction 0.1, sprite import 0.25, /chat builder model calls — most are not jobs, so list_jobs does not show them\nsubscription: active (Tier 1: Pixel Apprentice)\ngenerations_reset: 2026-11-10\nnote: generations_total is this cycle's allowance (prorated on a mid-cycle upgrade); it refills on generations_reset"
+      }
+    ],
+    "isError": false
+  },
+  "chargedGenerations": 11,
+  "costBasis": "11 accepted job receipts x1 generation; shared-account balance also includes concurrent agents",
+  "finalSelection": {
+    "volley": {
+      "id": "ai/yeonmuk-volley-study",
+      "label": "연묵 삼연부 시안",
+      "sourceName": "PixelLab",
+      "sourceUrl": "https://www.pixellab.ai/",
+      "directions": {
+        "south-east": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "pivot": {
+              "x": 32,
+              "y": 1
+            }
+          },
+          "frames": [
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/south-east/00.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/south-east/01.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/south-east/02.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/south-east/03.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/south-east/04.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/south-east/05.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/south-east/06.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/south-east/07.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/south-east/08.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/south-east/09.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/south-east/10.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/south-east/11.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            }
+          ]
+        },
+        "north-west": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "pivot": {
+              "x": 32,
+              "y": 3
+            }
+          },
+          "frames": [
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/north-west/00.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/north-west/01.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 4
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/north-west/02.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 4
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/north-west/03.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 4
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/north-west/04.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/north-west/05.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/north-west/06.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/north-west/07.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/north-west/08.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/north-west/09.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/north-west/10.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/volley/north-west/11.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            }
+          ]
+        }
+      },
+      "generation": {
+        "recordPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/generation.json",
+        "method": "animate_image",
+        "selectedJobByDirection": {
+          "south-east": "67adbc17-8cd1-4857-a002-f9f0fef4bdcf",
+          "north-west": "e82bda0a-b8c2-45a0-8a75-cb712fe05566"
+        },
+        "observedMarkersByDirection": {
+          "south-east": {
+            "preparationFrame": 3,
+            "releaseFrame": 5,
+            "finishFrame": 6,
+            "sealFrame": 9
+          },
+          "north-west": {
+            "preparationFrame": 2,
+            "releaseFrame": 6,
+            "finishFrame": 7
+          }
+        },
+        "observedIssuesByDirection": {
+          "south-east": "2회차: 넓은 좌우 팔쓸기와 두손 가슴앞 회수는 보이나 종이3장이 아닌 한 장. 필요한 키포즈를 별도 기록.",
+          "north-west": "2회차: 분리된 직사각 종이3개가 보이며 우측 준비→좌측 쓸기가 확인됨. 사용자 품질판정 아님."
+        },
+        "markerBasis": "정적 원본 프레임 관찰; index는 실제 frames배열 기준",
+        "qualityGate": "대표2방향 사용자 GIF 검토 전",
+        "selectedAttemptByDirection": {
+          "south-east": 2,
+          "north-west": 2
+        },
+        "sameMethodAttemptsByDirection": {
+          "south-east": 2,
+          "north-west": 2
+        },
+        "newDrawingPerformed": false,
+        "playbackVerification": "담당 세션에서 실제 재생/GIF 검증 필요. 이 담당자는 정적 프레임만 확인."
+      }
+    },
+    "eruption": {
+      "id": "ai/yeonmuk-eruption-study",
+      "label": "연묵 폭진부 시안",
+      "sourceName": "PixelLab",
+      "sourceUrl": "https://www.pixellab.ai/",
+      "directions": {
+        "south-east": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "pivot": {
+              "x": 32,
+              "y": 1
+            }
+          },
+          "frames": [
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/south-east/00.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/south-east/01.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/south-east/02.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/south-east/03.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/south-east/04.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/south-east/05.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/south-east/06.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 2
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/south-east/07.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            }
+          ]
+        },
+        "north-west": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "pivot": {
+              "x": 32,
+              "y": 3
+            }
+          },
+          "frames": [
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/north-west/00.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/north-west/01.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/north-west/02.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 4
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/north-west/03.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/north-west/04.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/north-west/05.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/north-west/06.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/eruption/north-west/07.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            }
+          ]
+        }
+      },
+      "generation": {
+        "recordPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/generation.json",
+        "method": "animate_image",
+        "selectedJobByDirection": {
+          "south-east": "793355b4-9e18-4a13-b77e-cac68bb210ed",
+          "north-west": "26e69c28-7001-4662-9c99-516604f74ca3"
+        },
+        "observedMarkersByDirection": {
+          "south-east": {
+            "preparationFrame": 0,
+            "impactFrame": 3,
+            "finishFrame": 4
+          },
+          "north-west": {
+            "impactFrame": 3,
+            "finishFrame": 4,
+            "preparationFrame": 1
+          }
+        },
+        "observedIssuesByDirection": {
+          "south-east": "1회차: 손을 가슴옆으로 모은 뒤 무릎을 굽혀 낮게 누르고 일어서는 몸동작. 높은 손 준비는 최종 컨셉에서 요구하지 않음.",
+          "north-west": "2회차: 가슴옆으로 모음→하체를 깊게 낮춤→손을 무릎높이까지 내림→회복이 구분됨. 높은 손 준비는 최종 컨셉에서 요구하지 않음."
+        },
+        "markerBasis": "정적 원본 프레임 관찰; index는 실제 frames배열 기준",
+        "qualityGate": "대표2방향 사용자 GIF 검토 전",
+        "selectedAttemptByDirection": {
+          "south-east": 1,
+          "north-west": 2
+        },
+        "sameMethodAttemptsByDirection": {
+          "south-east": 1,
+          "north-west": 2
+        },
+        "newDrawingPerformed": false,
+        "playbackVerification": "담당 세션에서 실제 재생/GIF 검증 필요. 이 담당자는 정적 프레임만 확인.",
+        "conceptRevision": "담당 세션에서 높은 손 들어올리기 요구 대신 모으기→낮게 누르기로 최종 문구를 정리함."
+      }
+    },
+    "ink": {
+      "id": "ai/yeonmuk-ink-study",
+      "label": "연묵 묵선부 시안",
+      "sourceName": "PixelLab",
+      "sourceUrl": "https://www.pixellab.ai/",
+      "directions": {
+        "south-east": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/rotations/south-east.png",
+            "width": 64,
+            "height": 64,
+            "pivot": {
+              "x": 32,
+              "y": 1
+            }
+          },
+          "frames": [
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/south-east/00.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/south-east/01.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/south-east/02.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/south-east/03.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/south-east/04.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/south-east/05.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/south-east/06.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/south-east/07.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/south-east/08.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/south-east/09.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/south-east/10.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/south-east/11.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 1
+              },
+              "durationSeconds": 0.08
+            }
+          ]
+        },
+        "north-west": {
+          "idle": {
+            "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/originals/rotations/north-west.png",
+            "width": 64,
+            "height": 64,
+            "pivot": {
+              "x": 32,
+              "y": 3
+            }
+          },
+          "frames": [
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/north-west/00.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/north-west/01.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/north-west/02.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/north-west/03.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/north-west/04.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/north-west/05.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/north-west/06.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/north-west/07.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/north-west/08.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/north-west/09.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/north-west/10.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            },
+            {
+              "localPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/runtime/ink/north-west/11.png",
+              "width": 64,
+              "height": 64,
+              "pivot": {
+                "x": 32,
+                "y": 3
+              },
+              "durationSeconds": 0.08
+            }
+          ]
+        }
+      },
+      "generation": {
+        "recordPath": "public/assets/maplestory/companion-basic-attacks-ai/yeonmuk-additions/generation.json",
+        "method": "animate_image",
+        "selectedJobByDirection": {
+          "south-east": "3fa1891b-a877-402c-8d99-3233d4610660",
+          "north-west": "fef73459-16fc-4b28-98ea-dc7f3c45fde0"
+        },
+        "observedMarkersByDirection": {
+          "south-east": {
+            "preparationFrame": 3,
+            "releaseFrame": 7,
+            "finishFrame": 8
+          },
+          "north-west": {
+            "preparationFrame": 3,
+            "releaseFrame": 6,
+            "finishFrame": 8
+          }
+        },
+        "observedIssuesByDirection": {
+          "south-east": "1회차: 부적을 쥐고 몸을 틀어 가로로 긋는 동작. 흰 곡선 없는 후보를 최종 묵선부 컨셉으로 연결. 사용자 품질판정 아님.",
+          "north-west": "1회차: 부적 형태가 유지되며 팔이 우측에서 좌측으로 쓸림. raw06..08에 넓은 흰 형태가 남아 있음. 2회차의 붓 형태+흰곡선 raw07..10보다 최종 부적 컨셉에 가까운 후보로 연결. 효과 없는 몸의 완전 확보를 뜻하지 않음."
+        },
+        "markerBasis": "정적 원본 프레임 관찰; index는 실제 frames배열 기준",
+        "qualityGate": "대표2방향 사용자 GIF 검토 전",
+        "selectedAttemptByDirection": {
+          "south-east": 1,
+          "north-west": 1
+        },
+        "sameMethodAttemptsByDirection": {
+          "south-east": 2,
+          "north-west": 2
+        },
+        "newDrawingPerformed": false,
+        "playbackVerification": "담당 세션에서 실제 재생/GIF 검증 필요. 이 담당자는 정적 프레임만 확인.",
+        "conceptRevision": "담당 세션에서 사용자에게 알린 최종안: 작은 부적으로 가로획을 그어 먹획을 발사하는 묵선부. 붓 요구 폐기. 추가생성·수동수정 없음."
+      }
+    }
+  },
+  "qualityStatus": "사용자 GIF 판정 대기; 에이전트 품질통과 선언 없음",
+  "finalConceptRevisions": [
+    "ink: 묵선참/붓 요구 폐기→묵선부/작은 부적으로 가로획",
+    "eruption: 높은 손 준비 폐기→모으기 후 낮게 누르기"
+  ],
+  "knownVisualLimits": [
+    "volley south-east: 손에 서로 분리된 부적3장이 생성되지 않고 한 장이 유지됨",
+    "ink north-west: 선택 원본 raw06..08의 넓은 흰 형태 잔존"
+  ]
+}

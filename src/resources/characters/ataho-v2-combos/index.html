@@ -6,6 +6,13 @@
     <link rel="icon" href="data:," />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "gifenc": "../../../../node_modules/gifenc/dist/gifenc.esm.js"
+        }
+      }
+    </script>
     <title>아타호 v2 · 동작 조합실</title>
   </head>
   <body>
@@ -24,6 +31,12 @@
           >연출·제작 자료 ↗</a
         >
       </header>
+      <p class="field-hint">
+        <a href="../../effects/anime-signatures/"
+          >애니 포즈와 기법 · 연출 비교실 →</a
+        >
+      </p>
+      <p id="load-status" class="field-hint" role="status" hidden></p>
       <fieldset id="controls" disabled>
         <legend class="sr-only">동작과 연출 설정</legend>
         <div class="workspace">
@@ -44,224 +57,765 @@
               aria-label="동작 재생"
               data-motion-playback
             >
-              <div class="stage-heading">
-                <h2 id="motion-title">동작을 준비하고 있어요</h2>
-                <span id="priority"></span>
+              <div class="playback-content">
+                <div class="stage-heading">
+                  <h2 id="motion-title">동작을 준비하고 있어요</h2>
+                  <span id="priority"></span>
+                </div>
+                <fieldset class="direction-picker">
+                  <legend class="control-heading">방향</legend>
+                  <div id="direction-options" class="direction-options"></div>
+                  <p
+                    id="direction-description"
+                    class="field-hint"
+                    aria-live="polite"
+                    hidden
+                  ></p>
+                </fieldset>
+                <p id="summary"></p>
+                <fieldset id="variant-controls" class="direction-picker" hidden>
+                  <legend class="control-heading">기술 변형</legend>
+                  <div id="variant-options" class="direction-options"></div>
+                </fieldset>
+                <div
+                  id="finisher-phases"
+                  class="finisher-phases"
+                  role="group"
+                  aria-label="필살기 구간 · 눌러서 자세 보기"
+                  hidden
+                ></div>
+                <div class="attack-timeline">
+                  <span id="duration"></span>
+                  <details id="hit-details" open>
+                    <summary id="hit-details-label" hidden>
+                      개별 타격 자세
+                    </summary>
+                    <div
+                      id="hits"
+                      aria-label="타격 시점 · 눌러서 자세 보기"
+                    ></div>
+                  </details>
+                </div>
+                <canvas
+                  id="stage"
+                  width="900"
+                  height="410"
+                  aria-label="아타호 동작 미리보기"
+                ></canvas>
+                <div class="timeline">
+                  <button
+                    id="previous"
+                    type="button"
+                    aria-label="이전 자세"
+                    disabled
+                  >
+                    ◀
+                  </button>
+                  <input
+                    id="timeline"
+                    aria-label="동작 시간 탐색"
+                    type="range"
+                    min="0"
+                    max="1000"
+                    step="1"
+                    value="0"
+                    disabled
+                  />
+                  <button
+                    id="next"
+                    type="button"
+                    aria-label="다음 자세"
+                    disabled
+                  >
+                    ▶
+                  </button>
+                  <output id="status">원본 그림을 불러오는 중이에요.</output>
+                </div>
+                <div class="toolbar" role="group" aria-label="재생 조작">
+                  <button id="pause" type="button">일시정지</button>
+                  <button id="restart" type="button">처음부터</button>
+                  <label
+                    >속도
+                    <select id="speed">
+                      <option value="1">1배</option>
+                      <option value="1.5">1.5배</option>
+                      <option value="2">2배</option>
+                      <option value="0.5">0.5배</option>
+                      <option value="0.25">0.25배</option>
+                    </select>
+                  </label>
+                  <label
+                    ><input id="repeat" type="checkbox" checked /> 반복</label
+                  >
+                  <details class="display-options">
+                    <summary>화면 설정</summary>
+                    <div>
+                      <label
+                        >크기
+                        <select id="scale">
+                          <option value="3">자세히</option>
+                          <option value="2">작게</option>
+                        </select>
+                      </label>
+                      <label id="supplement-label" hidden
+                        >그림
+                        <select id="supplement">
+                          <option value="original">기존 그림</option>
+                          <option value="supplemented">생성 보강</option>
+                        </select>
+                      </label>
+                    </div>
+                  </details>
+                </div>
               </div>
-              <fieldset class="direction-picker">
-                <legend class="control-heading">방향</legend>
-                <div id="direction-options" class="direction-options"></div>
+              <div class="gif-export-feedback">
+                <div class="gif-export-toolbar">
+                  <button
+                    id="gif-export"
+                    type="button"
+                    aria-describedby="gif-export-description"
+                    disabled
+                  >
+                    GIF 저장
+                  </button>
+                  <a id="gif-download" hidden>다시 다운로드</a>
+                </div>
+                <p id="gif-export-description" class="field-hint">
+                  현재 설정으로 전체 동작을 저장해요. 배경 포함 · 900×410 ·
+                  50fps. GIF 특성상 색감이 조금 달라질 수 있어요.
+                </p>
+                <progress
+                  id="gif-export-progress"
+                  max="1"
+                  value="0"
+                  aria-label="GIF 저장 진행률"
+                  hidden
+                ></progress>
                 <p
-                  id="direction-description"
+                  id="gif-export-status"
                   class="field-hint"
-                  aria-live="polite"
+                  role="status"
                   hidden
                 ></p>
-              </fieldset>
-              <p id="summary"></p>
-              <fieldset id="variant-controls" class="direction-picker" hidden>
-                <legend class="control-heading">기공 연출</legend>
-                <div id="variant-options" class="direction-options"></div>
-              </fieldset>
-              <div
-                id="finisher-phases"
-                class="finisher-phases"
-                role="group"
-                aria-label="필살기 구간 · 눌러서 자세 보기"
-                hidden
-              ></div>
-              <div class="attack-timeline">
-                <span id="duration"></span>
-                <details id="hit-details" open>
-                  <summary id="hit-details-label" hidden>
-                    개별 타격 자세
-                  </summary>
-                  <div
-                    id="hits"
-                    aria-label="타격 시점 · 눌러서 자세 보기"
-                  ></div>
-                </details>
-              </div>
-              <canvas
-                id="stage"
-                width="900"
-                height="410"
-                aria-label="아타호 동작 미리보기"
-              ></canvas>
-              <div class="timeline">
-                <button
-                  id="previous"
-                  type="button"
-                  aria-label="이전 자세"
-                  disabled
-                >
-                  ◀
-                </button>
-                <input
-                  id="timeline"
-                  aria-label="동작 시간 탐색"
-                  type="range"
-                  min="0"
-                  max="1000"
-                  step="1"
-                  value="0"
-                  disabled
-                />
-                <button id="next" type="button" aria-label="다음 자세" disabled>
-                  ▶
-                </button>
-                <output id="status">원본 그림을 불러오는 중이에요.</output>
-              </div>
-              <div class="toolbar" role="group" aria-label="재생 조작">
-                <button id="pause" type="button">일시정지</button>
-                <button id="restart" type="button">처음부터</button>
-                <label
-                  >속도
-                  <select id="speed">
-                    <option value="1">1배</option>
-                    <option value="1.5">1.5배</option>
-                    <option value="2">2배</option>
-                    <option value="0.5">0.5배</option>
-                    <option value="0.25">0.25배</option>
-                  </select>
-                </label>
-                <label
-                  ><input id="repeat" type="checkbox" checked /> 반복</label
-                >
-                <details class="display-options">
-                  <summary>화면 설정</summary>
-                  <div>
-                    <label
-                      >크기
-                      <select id="scale">
-                        <option value="3">자세히</option>
-                        <option value="2">작게</option>
-                      </select>
-                    </label>
-                    <label id="supplement-label" hidden
-                      >그림
-                      <select id="supplement">
-                        <option value="original">기존 그림</option>
-                        <option value="supplemented">생성 보강</option>
-                      </select>
-                    </label>
-                  </div>
+                <details id="gif-result" hidden>
+                  <summary>저장한 GIF 보기</summary>
+                  <img id="gif-preview" alt="저장한 동작 GIF" />
                 </details>
               </div>
             </section>
+            <details id="finisher-presets" class="finisher-presets">
+              <summary>
+                <span>저장한 필살기 설정</span>
+                <span id="finisher-preset-count" class="preset-count">…</span>
+              </summary>
+              <div class="preset-content">
+                <p id="finisher-preset-storage" class="field-hint">
+                  공유 저장 목록을 불러오는 중이에요.
+                </p>
+                <div class="preset-save-form">
+                  <label for="finisher-preset-name">설정 이름</label>
+                  <input
+                    id="finisher-preset-name"
+                    type="text"
+                    maxlength="80"
+                    placeholder="예: 용호난무 · 먹빛 결정타"
+                    autocomplete="off"
+                    aria-describedby="finisher-preset-selection"
+                  />
+                  <button
+                    id="finisher-preset-save"
+                    type="button"
+                    data-preset-action="save"
+                    data-preset-write
+                    disabled
+                  >
+                    새로 저장
+                  </button>
+                  <button
+                    id="finisher-preset-update"
+                    type="button"
+                    data-preset-action="update"
+                    data-preset-write
+                    disabled
+                  >
+                    선택한 설정 갱신
+                  </button>
+                </div>
+                <p id="finisher-preset-selection" class="field-hint">
+                  필살기를 선택한 뒤 현재 연출을 이름 붙여 저장하세요.
+                </p>
+                <div
+                  class="preset-toolbar"
+                  role="group"
+                  aria-label="저장 목록 관리"
+                >
+                  <button
+                    id="finisher-preset-refresh"
+                    type="button"
+                    data-preset-action="refresh"
+                  >
+                    목록 새로고침
+                  </button>
+                  <button
+                    id="finisher-preset-export"
+                    type="button"
+                    data-preset-action="export"
+                    disabled
+                  >
+                    목록 JSON 내보내기
+                  </button>
+                  <button
+                    id="finisher-preset-import"
+                    type="button"
+                    data-preset-action="import"
+                  >
+                    JSON 가져오기
+                  </button>
+                  <input
+                    id="finisher-preset-file"
+                    type="file"
+                    accept=".json,application/json"
+                    hidden
+                  />
+                </div>
+                <p
+                  id="finisher-preset-status"
+                  class="field-hint preset-status"
+                  role="status"
+                  hidden
+                ></p>
+                <p id="finisher-preset-empty" class="preset-empty" hidden></p>
+                <ul
+                  id="finisher-preset-list"
+                  class="preset-list"
+                  aria-label="저장한 필살기 설정 목록"
+                ></ul>
+                <details
+                  id="finisher-preset-imported"
+                  class="preset-imported"
+                  hidden
+                  open
+                >
+                  <summary id="finisher-preset-imported-title">
+                    가져온 설정
+                  </summary>
+                  <p class="field-hint">
+                    파일을 가져오는 것만으로 공유 목록은 바뀌지 않아요. 먼저
+                    불러본 뒤 아래 버튼으로 저장할 수 있어요.
+                  </p>
+                  <ul
+                    id="finisher-preset-imported-list"
+                    class="preset-list"
+                    aria-label="가져온 필살기 설정 목록"
+                  ></ul>
+                  <div class="preset-toolbar">
+                    <button
+                      id="finisher-preset-import-save"
+                      type="button"
+                      data-preset-action="import-save"
+                      data-preset-write
+                      disabled
+                    >
+                      가져온 설정 저장
+                    </button>
+                    <button type="button" data-preset-action="import-dismiss">
+                      가져온 목록 닫기
+                    </button>
+                  </div>
+                </details>
+              </div>
+            </details>
             <fieldset class="presentation-controls">
               <legend class="control-heading">연출</legend>
+              <p id="presentation-summary" class="presentation-summary"></p>
               <div class="presentation-toggles">
                 <label
                   ><input id="movement" type="checkbox" checked /> 이동
                   포함</label
                 >
                 <label
-                  ><input id="contacts" type="checkbox" checked /> 타격
-                  효과</label
-                >
-                <label id="ink-controls" hidden
-                  ><input
-                    id="ink-effects"
-                    type="checkbox"
-                    aria-describedby="ink-description"
-                    checked
-                  />
-                  수묵 공격 효과</label
-                >
-                <label
-                  ><input id="directional-impacts" type="checkbox" /> 공격별
-                  충격 모양</label
-                >
-                <label
-                  ><input id="ground-effects" type="checkbox" /> 접지·착지
-                  반응</label
-                >
-                <label
-                  ><input id="speed-lines" type="checkbox" /> 배경 속도선</label
-                >
-                <label
                   ><input id="sandbag" type="checkbox" /> 샌드백 반응</label
                 >
-                <label
-                  ><input id="hit-stop" type="checkbox" disabled /> 강타
-                  히트스톱</label
-                >
-                <label
-                  ><input id="camera-recoil" type="checkbox" disabled /> 강타
-                  카메라 반동</label
-                >
               </div>
-              <p id="ink-description" class="field-hint" hidden>
-                공격 방향을 따라 먹획이 흐르고 명중 시 먹이 튑니다. 끄면 기존
-                궤적과 타격 효과를 비교할 수 있습니다.
-              </p>
               <p id="target-description" class="field-hint">
-                샌드백은 첫 타격 위치에 고정됩니다. 닿은 공격만 반응합니다.
+                샌드백을 켜면 실제로 닿은 공격만 반응합니다.
               </p>
-              <p class="field-hint">
-                접지·착지 반응은 발밑에 작게 표시합니다. 카메라 반동은 샌드백에
-                명중한 강한 마무리 타격에서만 짧게 작동합니다.
-              </p>
-              <div id="finisher-controls" class="presentation-subgroup" hidden>
-                <label
-                  ><input id="finisher-effects" type="checkbox" checked />
-                  필살기 무대·연타 궤적</label
+              <details
+                class="presentation-group"
+                data-presentation-group="common"
+                open
+              >
+                <summary>
+                  <span data-group-title>공통 연출</span>
+                  <span data-group-summary></span>
+                </summary>
+                <div class="presentation-group-content">
+                  <details
+                    class="presentation-section"
+                    data-presentation-section="trail"
+                    open
+                  >
+                    <summary>궤적·잔상</summary>
+                    <div class="presentation-section-content">
+                      <div
+                        id="ink-trail-scale-controls"
+                        class="ink-trail-scale"
+                        hidden
+                      >
+                        <label for="ink-trail-scale">수묵 궤적 크기</label>
+                        <input
+                          id="ink-trail-scale"
+                          type="range"
+                          aria-describedby="ink-trail-description"
+                          disabled
+                        />
+                        <output
+                          id="ink-trail-scale-value"
+                          for="ink-trail-scale"
+                        ></output>
+                        <p id="ink-trail-description" class="field-hint">
+                          0 끔 · 1 기본 · 20 최대
+                        </p>
+                      </div>
+                      <fieldset
+                        id="effect-controls"
+                        class="presentation-subgroup"
+                        hidden
+                      >
+                        <legend>잔상·그림 보강</legend>
+                        <div
+                          id="effect-options"
+                          class="presentation-options"
+                        ></div>
+                        <p
+                          id="effect-description"
+                          class="field-hint"
+                          hidden
+                        ></p>
+                      </fieldset>
+                      <details
+                        id="legacy-comparison"
+                        class="presentation-auxiliary"
+                      >
+                        <summary>이전 궤적과 비교</summary>
+                        <fieldset
+                          id="legacy-trail-controls"
+                          class="presentation-subgroup"
+                          hidden
+                        >
+                          <legend>이전 궤적</legend>
+                          <div
+                            id="legacy-trail-options"
+                            class="presentation-mode-options"
+                            aria-describedby="legacy-trail-description"
+                          ></div>
+                          <p
+                            id="legacy-trail-description"
+                            class="field-hint"
+                          ></p>
+                        </fieldset>
+                        <div
+                          id="legacy-effect-options"
+                          class="presentation-options"
+                        ></div>
+                      </details>
+                    </div>
+                  </details>
+                  <details
+                    class="presentation-section"
+                    data-presentation-section="impact"
+                    open
+                  >
+                    <summary>명중 효과</summary>
+                    <div class="presentation-section-content">
+                      <fieldset
+                        id="impact-style-controls"
+                        class="presentation-subgroup"
+                        hidden
+                      >
+                        <legend class="sr-only">명중 효과 종류</legend>
+                        <div
+                          id="impact-style-options"
+                          class="presentation-mode-options"
+                          aria-describedby="impact-style-description"
+                        ></div>
+                        <p id="impact-style-description" class="field-hint"></p>
+                      </fieldset>
+                      <div
+                        id="ink-impact-scale-controls"
+                        class="ink-trail-scale"
+                        hidden
+                      >
+                        <label for="ink-impact-scale">명중 먹튀김 크기</label>
+                        <input
+                          id="ink-impact-scale"
+                          type="range"
+                          min="0"
+                          max="5"
+                          step="0.1"
+                          value="1"
+                          aria-describedby="ink-impact-scale-description"
+                          disabled
+                        />
+                        <output
+                          id="ink-impact-scale-value"
+                          for="ink-impact-scale"
+                          >1배</output
+                        >
+                        <p id="ink-impact-scale-description" class="field-hint">
+                          0 숨김 · 1 기본 · 5 최대. 명중 지점을 유지한 채
+                          먹튀김의 크기를 조절해요.
+                        </p>
+                      </div>
+                    </div>
+                  </details>
+                  <details
+                    class="presentation-section"
+                    data-presentation-section="timing"
+                  >
+                    <summary>타격·시간</summary>
+                    <div class="presentation-section-content">
+                      <fieldset
+                        id="hit-stop-controls"
+                        class="presentation-subgroup"
+                        hidden
+                      >
+                        <legend>강타 정지</legend>
+                        <div
+                          id="hit-stop-options"
+                          class="presentation-mode-options"
+                          aria-describedby="hit-stop-description"
+                        ></div>
+                        <p id="hit-stop-description" class="field-hint"></p>
+                      </fieldset>
+                      <div class="presentation-toggles presentation-option-row">
+                        <label hidden
+                          ><input id="finisher-slow" type="checkbox" /> 결정타
+                          짧은 슬로</label
+                        >
+                      </div>
+                      <fieldset
+                        id="timing-controls"
+                        class="presentation-subgroup"
+                        hidden
+                      >
+                        <legend>박자</legend>
+                        <div
+                          id="presentation-options"
+                          class="presentation-options"
+                          aria-describedby="presentation-description"
+                        ></div>
+                        <p id="presentation-description" class="field-hint"></p>
+                      </fieldset>
+                    </div>
+                  </details>
+                  <details
+                    class="presentation-section"
+                    data-presentation-section="preparation"
+                  >
+                    <summary>준비·지면</summary>
+                    <div class="presentation-section-content">
+                      <div class="presentation-toggles presentation-option-row">
+                        <label id="charge-controls" hidden
+                          ><input id="local-charge" type="checkbox" /> 작은
+                          응축·방출</label
+                        >
+                        <label
+                          ><input id="ground-effects" type="checkbox" />
+                          접지·착지 반응</label
+                        >
+                        <label hidden
+                          ><input id="ground-puffs" type="checkbox" /> 낮은
+                          퍼프</label
+                        >
+                        <label hidden
+                          ><input id="floor-trace" type="checkbox" /> 분출 뒤
+                          바닥 흔적</label
+                        >
+                      </div>
+                      <fieldset
+                        id="ground-puff-style-controls"
+                        class="presentation-subgroup"
+                        hidden
+                      >
+                        <legend>철산고 먼지 형태</legend>
+                        <div
+                          id="ground-puff-style-options"
+                          class="presentation-mode-options"
+                          aria-describedby="ground-puff-style-description"
+                        ></div>
+                        <p
+                          id="ground-puff-style-description"
+                          class="field-hint"
+                        ></p>
+                      </fieldset>
+                    </div>
+                  </details>
+                  <details
+                    class="presentation-section"
+                    data-presentation-section="erosion"
+                  >
+                    <summary>효과 소멸</summary>
+                    <div class="presentation-section-content">
+                      <fieldset
+                        id="erosion-controls"
+                        class="presentation-subgroup"
+                        hidden
+                      >
+                        <legend>잔여 효과 소멸</legend>
+                        <div
+                          id="erosion-mode-options"
+                          class="presentation-mode-options"
+                          aria-describedby="erosion-description"
+                        ></div>
+                        <p id="erosion-description" class="field-hint"></p>
+                      </fieldset>
+                      <div class="presentation-toggles presentation-option-row">
+                        <label hidden
+                          ><input id="erosion-glow" type="checkbox" /> 소멸 경계
+                          발광</label
+                        >
+                        <label hidden
+                          ><input id="effect-hierarchy" type="checkbox" /> 효과
+                          밀도·수명 정리</label
+                        >
+                      </div>
+                    </div>
+                  </details>
+                </div>
+              </details>
+              <details
+                class="presentation-group"
+                data-presentation-group="technique"
+              >
+                <summary>
+                  <span data-group-title>기술별 연출</span>
+                  <span data-group-summary></span>
+                </summary>
+                <div class="presentation-group-content">
+                  <details
+                    class="presentation-section"
+                    data-presentation-section="ki"
+                  >
+                    <summary>기공</summary>
+                    <div class="presentation-section-content">
+                      <div class="presentation-toggles presentation-option-row">
+                        <label hidden
+                          ><input id="viscous-orbit" type="checkbox" checked />
+                          코즈마 · 점성 분리</label
+                        >
+                        <label hidden
+                          ><input id="ki-flow" type="checkbox" /> 경로를 흐르는
+                          기운</label
+                        >
+                        <label hidden
+                          ><input id="release-glint" type="checkbox" /> 방출
+                          순간 십자광</label
+                        >
+                        <label hidden
+                          ><input id="ki-lighting" type="checkbox" /> 기공
+                          조명·림라이트</label
+                        >
+                      </div>
+                    </div>
+                  </details>
+                  <details
+                    class="presentation-section"
+                    data-presentation-section="finisher"
+                  >
+                    <summary>필살기</summary>
+                    <div class="presentation-section-content">
+                      <fieldset
+                        id="finisher-controls"
+                        class="presentation-subgroup"
+                        hidden
+                      >
+                        <legend>필살기 연출</legend>
+                        <div
+                          id="finisher-mode-options"
+                          class="presentation-mode-options"
+                          aria-describedby="finisher-concept-description"
+                        ></div>
+                        <p
+                          id="finisher-concept-description"
+                          class="field-hint"
+                        ></p>
+                      </fieldset>
+                      <details
+                        id="finisher-opacity-controls"
+                        class="presentation-auxiliary"
+                        hidden
+                      >
+                        <summary>필살기 컨셉 농도</summary>
+                        <div>
+                          <p class="field-hint">
+                            필살기의 ‘기술별 컨셉’에서 적용합니다. 여러 기술에서
+                            함께 쓰는 수묵·선·공간 장식의 진하기를 각각
+                            조절합니다.
+                          </p>
+                          <p class="field-hint">
+                            0%는 숨김, 100%는 효과 본래의 진하기입니다.
+                            공격·발밑·기공탄 수묵의 길이·굵기는 공통 연출의
+                            ‘수묵 궤적 크기’에서 조절합니다.
+                          </p>
+                          <div id="finisher-opacity-rows"></div>
+                          <p id="finisher-opacity-note" class="field-hint"></p>
+                          <p class="field-hint">
+                            캐릭터·공격 분신과 기술별 전용 효과는 별도입니다.
+                            조절값은 기술 간에 공유하며, 새로고침하면
+                            초기화됩니다.
+                          </p>
+                          <button id="finisher-opacity-reset-all" type="button">
+                            농도 전체 초기화
+                          </button>
+                          <p class="field-hint">
+                            초기화하면 기존의 옅은 농도인 15%로 돌아갑니다. 명중
+                            선무늬와 끝타 퍼짐선은 24%입니다.
+                          </p>
+                        </div>
+                      </details>
+                      <div class="presentation-toggles presentation-option-row">
+                        <label id="cutin-controls" hidden
+                          ><input id="cutin" type="checkbox" /> 필살기
+                          프리즈·컷인</label
+                        >
+                      </div>
+                    </div>
+                  </details>
+                </div>
+              </details>
+              <details
+                class="presentation-group"
+                data-presentation-group="camera"
+              >
+                <summary>
+                  <span data-group-title>카메라·화면</span>
+                  <span data-group-summary></span>
+                </summary>
+                <div class="presentation-group-content">
+                  <details
+                    class="presentation-section"
+                    data-presentation-section="framing"
+                  >
+                    <summary>구도·반동</summary>
+                    <div class="presentation-section-content">
+                      <fieldset
+                        id="camera-controls"
+                        class="presentation-subgroup"
+                        hidden
+                      >
+                        <legend>카메라 구도</legend>
+                        <div
+                          id="camera-options"
+                          class="camera-options"
+                          aria-describedby="camera-description"
+                        ></div>
+                        <p id="camera-description" class="field-hint"></p>
+                      </fieldset>
+                      <div class="presentation-toggles presentation-option-row">
+                        <label
+                          ><input id="camera-recoil" type="checkbox" disabled />
+                          강타 카메라 반동</label
+                        >
+                        <label hidden
+                          ><input id="release-kick" type="checkbox" /> 첫 방출
+                          방향 반동</label
+                        >
+                      </div>
+                    </div>
+                  </details>
+                  <details
+                    class="presentation-section"
+                    data-presentation-section="screen"
+                  >
+                    <summary>화면 강조</summary>
+                    <div class="presentation-section-content">
+                      <div class="presentation-toggles presentation-option-row">
+                        <label
+                          ><input id="speed-lines" type="checkbox" /> 배경
+                          속도선</label
+                        >
+                        <label hidden
+                          ><input id="depth-layers" type="checkbox" /> 도장
+                          깊이층</label
+                        >
+                      </div>
+                      <fieldset
+                        id="focus-mode-controls"
+                        class="presentation-subgroup"
+                        hidden
+                      >
+                        <legend>준비 집중</legend>
+                        <div
+                          id="focus-mode-options"
+                          class="presentation-mode-options"
+                          aria-describedby="focus-mode-description"
+                        ></div>
+                        <p id="focus-mode-description" class="field-hint"></p>
+                      </fieldset>
+                      <fieldset
+                        id="scene-impact-controls"
+                        class="presentation-subgroup"
+                        hidden
+                      >
+                        <legend>결정타 화면 효과</legend>
+                        <div
+                          id="scene-impact-options"
+                          class="presentation-mode-options"
+                          aria-describedby="scene-impact-description"
+                        ></div>
+                        <p id="scene-impact-description" class="field-hint"></p>
+                      </fieldset>
+                      <fieldset
+                        id="emphasis-controls"
+                        class="presentation-subgroup"
+                        hidden
+                      >
+                        <legend>명암 강조</legend>
+                        <div
+                          id="emphasis-options"
+                          class="emphasis-options"
+                          aria-describedby="emphasis-description"
+                        ></div>
+                        <p id="emphasis-description" class="field-hint"></p>
+                      </fieldset>
+                      <div class="presentation-toggles presentation-option-row">
+                        <label hidden
+                          ><input id="impact-lettering" type="checkbox" />
+                          마지막 명중 효과글자</label
+                        >
+                        <label hidden
+                          ><input id="brush-glyph" type="checkbox" /> 효과글자
+                          붓 질감</label
+                        >
+                        <label hidden
+                          ><input id="end-silhouette" type="checkbox" /> 종결의
+                          검은 실루엣</label
+                        >
+                      </div>
+                    </div>
+                  </details>
+                </div>
+              </details>
+              <details class="presentation-auxiliary">
+                <summary>추천 조합</summary>
+                <div
+                  class="effect-presets"
+                  role="group"
+                  aria-label="추천 효과 조합"
                 >
-                <p class="field-hint">
-                  기술별 응축·공간 궤적·나선 시동·상승 잔광과 타격수를
-                  표시합니다. 끄더라도 공격 분신과 공간 안무는 유지하며 샌드백은
-                  실제 명중만 셉니다.
-                </p>
-              </div>
-              <fieldset
-                id="camera-controls"
-                class="presentation-subgroup"
-                hidden
-              >
-                <legend>카메라 구도 · 하나 선택</legend>
-                <div
-                  id="camera-options"
-                  class="camera-options"
-                  aria-describedby="camera-description"
-                ></div>
-                <p id="camera-description" class="field-hint"></p>
-              </fieldset>
-              <fieldset
-                id="emphasis-controls"
-                class="presentation-subgroup"
-                hidden
-              >
-                <legend>명암 강조 · 하나 선택</legend>
-                <div
-                  id="emphasis-options"
-                  class="emphasis-options"
-                  aria-describedby="emphasis-description"
-                ></div>
-                <p id="emphasis-description" class="field-hint"></p>
-              </fieldset>
-              <fieldset
-                id="effect-controls"
-                class="presentation-subgroup"
-                hidden
-              >
-                <legend>동작 효과 · 함께 선택</legend>
-                <div id="effect-options" class="presentation-options"></div>
-                <p id="effect-description" class="field-hint" hidden></p>
-              </fieldset>
-              <fieldset
-                id="timing-controls"
-                class="presentation-subgroup"
-                hidden
-              >
-                <legend>박자</legend>
-                <div
-                  id="presentation-options"
-                  class="presentation-options"
-                  aria-describedby="presentation-description"
-                ></div>
-                <p id="presentation-description" class="field-hint"></p>
-              </fieldset>
+                  <button id="new-effects-preset" type="button">
+                    추가 효과 조합 켜기
+                  </button>
+                  <button id="strong-preset" type="button">
+                    강타 충격 조합 켜기
+                  </button>
+                  <button id="movement-preset" type="button">
+                    짧은 잔상·접지 조합 켜기
+                  </button>
+                </div>
+                <p id="preset-notice" class="field-hint" aria-live="polite"></p>
+              </details>
             </fieldset>
           </div>
         </div>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <link rel="stylesheet" href="../../catalog/embedded-scene.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "gifenc": "../../../../node_modules/gifenc/dist/gifenc.esm.js"
+        }
+      }
+    </script>
+    <title>애니 포즈와 기법 · 연출 비교실</title>
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <p class="eyebrow">이계취호전 / 연출 비교실</p>
+        <h1>애니 포즈와 기법</h1>
+        <p class="intro">
+          같은 순간을 기본 장면과 연출 장면으로 비교해 보세요.
+        </p>
+      </header>
+
+      <section class="scene-controls" aria-label="장면 선택">
+        <label class="scene-choice"
+          >기법
+          <select id="scene" disabled></select
+        ></label>
+        <label
+          >방향
+          <select id="facing" disabled>
+            <option value="south-east">오른쪽 앞 · SE</option>
+            <option value="north-west">왼쪽 뒤 · NW</option>
+          </select>
+        </label>
+        <label class="checkbox"
+          ><input id="reduced-motion" type="checkbox" disabled />움직임
+          줄이기</label
+        >
+      </section>
+      <p id="availability" class="availability" role="status"></p>
+
+      <section class="scene-copy" aria-labelledby="scene-title">
+        <div>
+          <h2 id="scene-title">그림을 불러오는 중</h2>
+          <p id="description"></p>
+        </div>
+        <p class="application">
+          <span>게임 속 장면</span><strong id="application"></strong>
+        </p>
+      </section>
+
+      <div id="loading" class="loading" role="status">
+        장면에 필요한 그림을 불러오는 중입니다.
+      </div>
+
+      <div class="comparison">
+        <figure>
+          <figcaption>
+            <strong>기본 장면</strong><span>같은 인물과 상황</span>
+          </figcaption>
+          <canvas
+            id="original"
+            width="960"
+            height="540"
+            aria-label="기본 장면"
+          ></canvas>
+        </figure>
+        <figure class="enhanced">
+          <figcaption>
+            <strong>연출 장면</strong
+            ><span id="enhanced-label">선택한 기법 적용</span>
+          </figcaption>
+          <canvas
+            id="enhanced"
+            width="960"
+            height="540"
+            aria-label="기법을 적용한 장면"
+          ></canvas>
+        </figure>
+      </div>
+
+      <section class="playback" aria-label="장면 재생">
+        <div class="transport">
+          <button id="play" type="button" disabled>재생</button>
+          <button id="restart" type="button" disabled>처음부터</button>
+          <button id="key-pose" type="button" disabled>핵심 자세 보기</button>
+          <label class="checkbox"
+            ><input id="loop" type="checkbox" checked disabled />반복</label
+          >
+          <label
+            >속도
+            <select id="speed" disabled>
+              <option value="0.25">0.25배</option>
+              <option value="0.5">0.5배</option>
+              <option value="1" selected>1배</option>
+              <option value="1.5">1.5배</option>
+            </select>
+          </label>
+        </div>
+        <div class="timeline">
+          <input
+            id="seek"
+            type="range"
+            min="0"
+            max="3600"
+            value="0"
+            step="10"
+            disabled
+            aria-label="장면 시간"
+          />
+          <output id="time">0.00 / 3.60초</output>
+        </div>
+        <div class="moment">
+          <output id="phase">준비 중</output>
+          <p id="detail"></p>
+        </div>
+        <p id="playback-status" class="status" role="status">
+          그림이 준비되면 재생할 수 있습니다.
+        </p>
+      </section>
+
+      <footer>
+        <div class="export">
+          <button id="export" type="button" disabled>연출 GIF 저장</button>
+          <button id="cancel-export" type="button" hidden>저장 취소</button>
+          <span id="export-status" role="status"></span>
+          <span class="keyboard">한 주기를 1배속 반복 GIF로 저장</span>
+        </div>
+        <p class="keyboard">Space 재생·정지 · ← → 0.1초 이동</p>
+        <a id="reference" target="_blank" rel="noopener noreferrer"
+          >기법 참고 자료 ↗</a
+        >
+      </footer>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/effects/anime-signatures/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

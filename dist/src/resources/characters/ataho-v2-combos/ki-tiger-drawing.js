@@ -1,5 +1,7 @@
+import { tigerChargePoint } from './ki-sampling.js';
 import { clamp, ellipse, line, polygon } from './ki-shapes.js';
 import { drawKiSprite, kiSpriteFrame, } from './ki-sprites.js';
+export const tigerManifestFinalWidth = 74;
 /** 호랑이의 실체는 그림이 맡고 흐르는 권기와 발톱 압력만 좌표로 연결한다. */
 function drawTigerForm(ctx, frames, options) {
     drawKiSprite(ctx, frames, {
@@ -14,7 +16,7 @@ export function drawTigerCharge(ctx, definition, sample, frames) {
     if (sample.phase !== 'charge')
         return;
     const amount = sample.charge;
-    const origin = definition.origin;
+    const origin = tigerChargePoint(definition, sample);
     ctx.save();
     // 대상에는 예고 명중을 만들지 않고 주먹에 빨려 드는 기세만 보인다.
     for (let index = 0; index < 5; index++) {
@@ -82,7 +84,7 @@ function manifestFrame(ageMs, pulseIndex) {
         frameMs: 40,
     });
 }
-export function drawTigerManifest(ctx, definition, sample, frames) {
+export function drawTigerManifest(ctx, definition, sample, frames, options = {}) {
     const pulse = sample.hits.filter((hit) => hit.occurred).at(-1);
     if (!pulse)
         return;
@@ -92,10 +94,13 @@ export function drawTigerManifest(ctx, definition, sample, frames) {
         return;
     const final = index === definition.hits.length - 1;
     const push = age < 50 ? 0 : Math.sin(clamp((age - 50) / 110) * Math.PI);
-    const width = (final ? 116 : 96 + index * 6) + push * (final ? 9 : 3);
-    const height = (final ? 94 : 80 + index * 4) - push * 2;
+    const width = (final ? tigerManifestFinalWidth : 64 + index * 4) + push * (final ? 5 : 3);
+    const height = (final ? 66 : 54 + index * 4) - push * 2;
     ctx.save();
+    const haloAlpha = ctx.globalAlpha;
+    ctx.globalAlpha *= options.showEffectHierarchy ? 0.55 : 1;
     ellipse(ctx, pulse.point, width * 0.25, height * 0.3, '#ffc96814');
+    ctx.globalAlpha = haloAlpha;
     drawTigerForm(ctx, frames, {
         point: pulse.point,
         frame: manifestFrame(age, index),
@@ -144,7 +149,7 @@ function drawTigerFlow(ctx, from, head, timeMs, width) {
         ctx.fillRect(x - size, y, size, index % 2 ? 1 : 2);
     }
 }
-export function drawTigerWave(ctx, definition, sample, frames) {
+export function drawTigerWave(ctx, definition, sample, frames, options = {}) {
     const shot = sample.shots[0];
     if (!shot || shot.ageMs < 0)
         return;
@@ -175,12 +180,14 @@ export function drawTigerWave(ctx, definition, sample, frames) {
                     frameMs: 45,
                     loop: true,
                 }),
-            width: 30 + growth * 64,
-            height: 24 + growth * 52,
+            width: 30 + growth * 48,
+            height: 24 + growth * 36,
         });
     }
     if (shot.progress > 0.65) {
         ctx.globalAlpha = sample.timeMs < coreEnd ? 0.25 : 1 - residue;
+        if (options.showEffectHierarchy && contactAge >= 0)
+            ctx.globalAlpha *= 0.45;
         const points = Array.from({ length: 30 }, (_, index) => {
             const progress = index / 29;
             return {
@@ -199,16 +206,18 @@ export function drawTigerWave(ctx, definition, sample, frames) {
     drawTigerForm(ctx, frames, {
         point: head,
         frame: manifestFrame(contactAge, definition.hits.length + 1),
-        width: 112,
-        height: 90,
+        width: 78,
+        height: 64,
     });
 }
-export function drawTigerImpact(ctx, point, ageMs, strength, frames) {
-    if (ageMs < 0 || ageMs > 170)
+export function drawTigerImpact(ctx, point, ageMs, strength, frames, options = {}) {
+    const hierarchy = !!options.showEffectHierarchy;
+    const lifetimeMs = hierarchy ? (strength > 1 ? 155 : 125) : 170;
+    if (ageMs < 0 || ageMs > lifetimeMs)
         return;
-    const life = ageMs / 170;
+    const life = ageMs / lifetimeMs;
     ctx.save();
-    if (strength > 1)
+    if (strength > 1 && (!hierarchy || ageMs < 95))
         drawKiSprite(ctx, frames, {
             sheet: 'tiger',
             frame: kiSpriteFrame(ageMs, {
@@ -219,10 +228,12 @@ export function drawTigerImpact(ctx, point, ageMs, strength, frames) {
             point,
             width: 48 + life * 16,
             height: 40 + life * 16,
-            alpha: 0.55,
+            alpha: hierarchy ? 0.32 * (1 - clamp((ageMs - 35) / 60)) : 0.55,
         });
-    ctx.globalAlpha = (1 - life) * 0.9;
+    ctx.globalAlpha = (1 - life) * (hierarchy ? 0.52 : 0.9);
     for (let index = 0; index < 3; index++) {
+        if (hierarchy && (index === 1 || ageMs < 20))
+            continue;
         const offset = (index - 1) * 8;
         const travel = Math.max(0, ageMs - 35) / 135;
         line(ctx, [

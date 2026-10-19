@@ -50,7 +50,7 @@ function drawBagMaterial(ctx, state) {
     ctx.stroke();
 }
 /** 도장 좌표에서 지지점은 고정하고 줄·몸통만 충격 방향으로 흔든다. */
-export function drawSandbag(ctx, state) {
+export function drawSandbag(ctx, state, jitter = { x: 0, y: 0 }) {
     ctx.save();
     ctx.globalAlpha *= state.opacity;
     const transform = sandbagBodyTransform(state);
@@ -58,6 +58,11 @@ export function drawSandbag(ctx, state) {
     ctx.beginPath();
     ctx.ellipse(transform.c * state.height + transform.e, groundY + 7, state.width * 0.65, 5, 0, 0, Math.PI * 2);
     ctx.fill();
+    const bodyTransform = {
+        ...transform,
+        e: transform.e + jitter.x,
+        f: transform.f + jitter.y,
+    };
     ctx.strokeStyle = '#513f34';
     ctx.lineWidth = 3;
     ctx.beginPath();
@@ -69,10 +74,10 @@ export function drawSandbag(ctx, state) {
     for (const direction of [-1, 1]) {
         ctx.beginPath();
         ctx.moveTo(state.anchorX, state.anchorY);
-        ctx.lineTo(transform.a * state.width * 0.23 * direction + transform.e, transform.b * state.width * 0.23 * direction + transform.f);
+        ctx.lineTo(bodyTransform.a * state.width * 0.23 * direction + bodyTransform.e, bodyTransform.b * state.width * 0.23 * direction + bodyTransform.f);
         ctx.stroke();
     }
-    ctx.transform(transform.a, transform.b, transform.c, transform.d, transform.e, transform.f);
+    ctx.transform(transform.a, transform.b, transform.c, transform.d, bodyTransform.e, bodyTransform.f);
     drawBagMaterial(ctx, state);
     ctx.restore();
 }
