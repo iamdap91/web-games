@@ -4,6 +4,7 @@ import { MotionFrameLoader } from '../../characters/ataho-v2-combos/frame-loader
 import { meteorFinishers } from '../../characters/ataho-v2-combos/motions/meteor-finisher.js';
 import { loadAdvancedAssets } from './advanced-assets.js';
 import { loadActingAssets } from './acting-assets.js';
+import { DramaticShatterSurface } from './dramatic-surface.js';
 import { signatureScenes, } from './contracts.js';
 const facings = ['south-east', 'north-west'];
 const basePaths = {
@@ -94,7 +95,14 @@ export async function loadSignatureAssets() {
         unavailable.add('reaction-acting');
     if (acting.balance.size !== 2)
         unavailable.add('drunken-balance');
+    if (!poses.has('gainax'))
+        unavailable.add('dramatic-rays');
+    if (!poses.has('sunrise'))
+        unavailable.add('dramatic-flare');
+    if (!acting.reaction.get('south-east')?.length)
+        unavailable.add('dramatic-shatter');
     return {
+        shatter: new DramaticShatterSurface(),
         acting,
         advanced,
         portrait,

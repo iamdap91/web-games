@@ -161,7 +161,8 @@ function proceduralCategory(id) {
     if (id === 'local/ataho-shadow-cutscene' ||
         id === 'local/ataho-tiger-awakening-cutscene' ||
         id === 'local/ataho-hisashi-punch-cutscene' ||
-        id === 'local/anime-signatures')
+        id === 'local/anime-signatures' ||
+        id === 'local/anime-showcase')
         return 'cutscenes';
     if (id === 'local/herbalist-camp')
         return 'maps';
@@ -194,7 +195,9 @@ function proceduralGroup(id, category) {
         return '비월';
     if (id === 'local/yeonmuk-basic-attack')
         return '연묵';
-    if (id === 'local/2-5d-expression-lab' || id === 'local/anime-signatures')
+    if (id === 'local/2-5d-expression-lab' ||
+        id === 'local/anime-signatures' ||
+        id === 'local/anime-showcase')
         return '표현 비교';
     if (category === 'cutscenes')
         return '아타호';

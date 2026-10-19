@@ -1,0 +1,798 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-19",
+  "status": "presentation-studies",
+  "title": "애니 연출 견본집 · 90종",
+  "sourceArtifact": "https://claude.ai/artifact/59raaYDpH7yFHta6687KXh",
+  "scope": "사용자가 지정한 6개 분류·90개 연출을 각각 독립된 4.2초 Canvas 견본으로 구성한다. 도형 배우·절차 작화로 형태·박자·구도에 집중한다.",
+  "authoring": {
+    "actors": "직접 그린 중립 도형 배우·얼굴",
+    "effects": "절대 시각에 따른 Canvas 작화·촬영·편집",
+    "externalAssets": [],
+    "paidGenerationCalls": 0,
+    "audio": false,
+    "durationMs": 4200,
+    "gif": {
+      "width": 640,
+      "height": 360,
+      "fps": 20
+    }
+  },
+  "referenceBoundary": "이번 구현은 사용자 90개 목록과 기존 용어집 검토·동작/카메라 관찰 기록을 재사용했다. 90개 원작 영상의 신규 전수 재생이나 특정 작가의 원화 복제가 아니다. 인명 기법은 설명된 형태·타이밍을 도형으로 해석한 견본이다. 무라키 서커스 등 계보가 불확실한 항목은 원작 재현으로 확정하지 않는다.",
+  "records": [
+    "docs/ataho-v2-glossary-review/README.md",
+    "resources/dramatic-anime-studies.json"
+  ],
+  "references": [
+    {
+      "url": "https://claude.ai/artifact/59raaYDpH7yFHta6687KXh",
+      "use": "사용자 목록의 용어와 분류 기준. 기존 직접 열람 결과를 재사용."
+    },
+    {
+      "url": "https://saint11.art/img/pixel-tutorials/LightMagic.gif",
+      "use": "기존 움직이는 원작성 자료 관찰의 광 형상 전개 참고."
+    },
+    {
+      "url": "https://saint11.art/img/pixel-tutorials/Stars.gif",
+      "use": "기존 움직이는 원작성 자료 관찰의 별·십자광 형상 참고."
+    },
+    {
+      "url": "https://w.atwiki.jp/sakuga/pages/28.html",
+      "use": "기존 용어집의 작화·촬영 설명 출처. 이번 원작 영상 전수 확인은 하지 않음."
+    }
+  ],
+  "categories": [
+    {
+      "id": "impact",
+      "name": "충격 순간을 한 장으로",
+      "count": 10
+    },
+    {
+      "id": "motion",
+      "name": "속도를 그림으로",
+      "count": 14
+    },
+    {
+      "id": "effects",
+      "name": "손그림 폭발 · 연기 · 파편 · 빛",
+      "count": 21
+    },
+    {
+      "id": "camera",
+      "name": "촬영 처리 — 빛 · 렌즈 · 카메라",
+      "count": 22
+    },
+    {
+      "id": "emotion",
+      "name": "감정 기호",
+      "count": 11
+    },
+    {
+      "id": "editing",
+      "name": "화면 짜기 · 전환",
+      "count": 12
+    }
+  ],
+  "entries": [
+    {
+      "id": "impact-frame",
+      "name": "임팩트 프레임",
+      "category": "impact",
+      "previewMs": 1840,
+      "description": "접촉 순간을 날카로운 흑백 추상화 한 장으로 바꿉니다.",
+      "distinction": "밝기를 더하는 대신 원래 구도를 잠깐 다른 그림으로 대체합니다."
+    },
+    {
+      "id": "beta-flash",
+      "name": "베타 플래시",
+      "category": "impact",
+      "previewMs": 1810,
+      "description": "검게 채운 주변부와 비워 둔 흰 초점 공간으로 충격을 모읍니다.",
+      "distinction": "화면 전체를 반전하지 않고 검정과 흰 여백의 면적을 설계합니다."
+    },
+    {
+      "id": "monochrome-invert",
+      "name": "흑백 반전",
+      "category": "impact",
+      "previewMs": 1840,
+      "description": "같은 타격 구도의 명암 관계를 접촉 순간 뒤집습니다.",
+      "distinction": "형태를 새 추상화로 교체하는 임팩트 프레임과 달리 구도를 보존합니다."
+    },
+    {
+      "id": "screen-shatter",
+      "name": "화면 갈라짐",
+      "category": "impact",
+      "previewMs": 2170,
+      "description": "충격 컷의 실제 내용을 조각에 남긴 채 화면을 벌립니다.",
+      "distinction": "배우나 지형의 파괴가 아니라 한 장의 합성 화면이 갈라집니다."
+    },
+    {
+      "id": "hisashi-punch",
+      "name": "히사시 펀치",
+      "category": "impact",
+      "previewMs": 2260,
+      "description": "주먹이 닿은 자세와 상대의 눌리는 반응을 길게 붙잡습니다.",
+      "distinction": "접촉 직전과 회수는 정상 속도이고 접촉 구간만 길어집니다. 작가 계보의 재현은 아닙니다."
+    },
+    {
+      "id": "action-cutin",
+      "name": "컷인",
+      "category": "impact",
+      "previewMs": 1250,
+      "description": "진행 중인 공격 위에 결의에 찬 얼굴의 별도 패널을 끼웁니다.",
+      "distinction": "본래 행동과 얼굴을 동시에 남기며 전체 화면을 근접 컷으로 바꾸지 않습니다."
+    },
+    {
+      "id": "pon-yori",
+      "name": "퐁요리",
+      "category": "impact",
+      "previewMs": 1900,
+      "description": "와이드에서 근접 구도로 중간 줌 이동 없이 순간 전환합니다.",
+      "distinction": "카메라가 다가가는 과정 대신 처음과 끝 크기를 컷으로 바로 잇습니다."
+    },
+    {
+      "id": "obari-punch",
+      "name": "오바리 펀치",
+      "category": "impact",
+      "previewMs": 1870,
+      "description": "뒤로 접힌 몸에서 거대한 전경 주먹을 앞으로 꽂습니다.",
+      "distinction": "배우 전체 확대가 아니라 주먹·팔·머리의 원근 비율을 직접 다르게 그립니다."
+    },
+    {
+      "id": "inazuma-kick",
+      "name": "이나즈마 킥",
+      "category": "impact",
+      "previewMs": 1900,
+      "description": "높이 솟은 몸에서 큰 발을 선두로 사선 낙하합니다.",
+      "distinction": "번개 선만 붙이지 않고 공중 장전과 발이 앞서는 낙하 자세를 따로 그립니다."
+    },
+    {
+      "id": "kurumada-fall",
+      "name": "쿠루마다 낙하",
+      "category": "impact",
+      "previewMs": 2410,
+      "description": "맞고 날아간 몸이 뒤집힌 뒤 머리부터 지면에 꽂히듯 떨어집니다.",
+      "distinction": "중립 도형 배우의 만화적인 낙하·접지 압축이며 피나 상처는 없습니다."
+    },
+    {
+      "id": "smear-frame",
+      "name": "스미어 프레임",
+      "category": "motion",
+      "previewMs": 1530,
+      "description": "빠른 통과 구간의 몸을 한 장의 길게 이어진 쓸림 그림으로 바꿉니다.",
+      "distinction": "과거 자세 여러 장을 겹치는 잔상과 달리 하나의 새 연결 형태입니다."
+    },
+    {
+      "id": "obake",
+      "name": "오바케",
+      "category": "motion",
+      "previewMs": 1540,
+      "description": "튀어 오르는 중간 몸의 외곽을 물결지고 늘어진 형태로 직접 그립니다.",
+      "distinction": "일정한 비율로 늘리는 변형 대신 머리·몸·팔다리가 다른 방향으로 일그러집니다."
+    },
+    {
+      "id": "background-animation",
+      "name": "배경 동화",
+      "category": "motion",
+      "previewMs": 2050,
+      "description": "배우 뒤의 회랑을 깊이와 방향에 맞춰 매 시점 다시 그립니다.",
+      "distinction": "완성된 배경 한 장을 옮기는 대신 벽·바닥의 원근 형태가 함께 변합니다."
+    },
+    {
+      "id": "nakanuki",
+      "name": "나카누키",
+      "category": "motion",
+      "previewMs": 1650,
+      "description": "장전과 도착 자세를 남기고 사이의 연결 자세를 과감히 생략합니다.",
+      "distinction": "재생 시간을 빠르게 하는 대신 움직임의 연결 그림 수를 줄입니다."
+    },
+    {
+      "id": "midareuchi",
+      "name": "미다레우치",
+      "category": "motion",
+      "previewMs": 1230,
+      "description": "같은 다섯 타를 짧은 두 타와 긴 쉼이 섞인 불규칙한 박자로 칩니다.",
+      "distinction": "매번 같은 고정 박자 배열을 쓰며 실행 중 무작위로 바뀌지 않습니다."
+    },
+    {
+      "id": "strobe",
+      "name": "스트로보",
+      "category": "motion",
+      "previewMs": 1840,
+      "description": "달려온 실제 과거 자세를 일정 시간 간격으로 남깁니다.",
+      "distinction": "중간 몸을 늘리는 스미어와 달리 서로 떨어진 여러 시각의 온전한 자세입니다."
+    },
+    {
+      "id": "motion-metamorphosis",
+      "name": "메타모르포제",
+      "category": "motion",
+      "previewMs": 1750,
+      "description": "둥근 먹덩어리의 같은 외곽에서 날개·부리·꼬리가 연속해서 갈라집니다.",
+      "distinction": "두 그림의 투명도 교대 대신 윤곽 꼭짓점 자체가 이동합니다."
+    },
+    {
+      "id": "wave-propagation",
+      "name": "물결 보내기",
+      "category": "motion",
+      "previewMs": 1900,
+      "description": "손목에서 한 번 만든 물결을 천의 끝까지 순서대로 보냅니다.",
+      "distinction": "천 전체가 동시에 흔들리지 않고 구간마다 반응이 늦게 도착합니다."
+    },
+    {
+      "id": "araki-flutter",
+      "name": "아라키 휘날림",
+      "category": "motion",
+      "previewMs": 1250,
+      "description": "돌아서는 몸 뒤 망토가 큰 뾰족한 면으로 펼쳐졌다 반대쪽으로 접힙니다.",
+      "distinction": "작은 반복 흔들림 대신 한 번의 큰 펼침·엇갈린 주름·반동을 그립니다. 작가 원전의 복제는 아닙니다."
+    },
+    {
+      "id": "squash-stretch",
+      "name": "스쿼시 앤 스트레치",
+      "category": "motion",
+      "previewMs": 2330,
+      "description": "낙하 중 길어지고 접지에서 눌린 몸이 탄력 있게 복원됩니다.",
+      "distinction": "위치 이동만 바꾸지 않고 몸의 폭과 높이를 반대 방향으로 바꿉니다."
+    },
+    {
+      "id": "kanada-motion",
+      "name": "카나다계 동작",
+      "category": "motion",
+      "previewMs": 1720,
+      "description": "비대칭 장전·날카로운 통과·넓게 벌린 도착을 서로 다른 실루엣으로 잇습니다.",
+      "distinction": "효과선 추가 대신 관절 각도와 자세 대비를 직접 그린 원리 시안입니다."
+    },
+    {
+      "id": "kanada-perspective",
+      "name": "카나다 파스",
+      "category": "motion",
+      "previewMs": 1930,
+      "description": "멀어지는 머리와 몸 뒤에서 커다란 발이 전경으로 튀어나옵니다.",
+      "distinction": "배우 전체를 확대하지 않고 가까운 발과 먼 머리의 비율·겹침을 바꿉니다."
+    },
+    {
+      "id": "focus-lines",
+      "name": "집중선",
+      "category": "motion",
+      "previewMs": 1900,
+      "description": "배경의 선들이 하나의 초점 공간으로 모여 시선을 붙잡습니다.",
+      "distinction": "검게 채우는 베타 플래시와 달리 원래 배경 위에 가는 수렴선을 남깁니다."
+    },
+    {
+      "id": "speed-streamlines",
+      "name": "속도선·유선",
+      "category": "motion",
+      "previewMs": 1800,
+      "description": "이동 반대 방향의 긴 선과 몸 둘레를 흐르는 곡선으로 속도를 보입니다.",
+      "distinction": "한 점으로 모이는 집중선과 달리 흐름의 방향과 물체 둘레의 경로를 그립니다."
+    },
+    {
+      "id": "fx-kanada-light",
+      "name": "카나다 빛",
+      "category": "effects",
+      "previewMs": 1280,
+      "description": "점광이 긴 십자와 비스듬한 링으로 바뀌는 짧은 섬광 견본입니다.",
+      "distinction": "광점 → 십자 → 링의 서로 다른 노출 길이를 비교합니다."
+    },
+    {
+      "id": "fx-kanada-beam",
+      "name": "카나다 빔",
+      "category": "effects",
+      "previewMs": 1750,
+      "description": "직선 광선의 외피가 각진 덩어리와 가는 목으로 급변하는 견본입니다.",
+      "distinction": "색이나 두께의 진동 대신 광선 외곽의 꺾임과 빈틈이 바뀝니다."
+    },
+    {
+      "id": "fx-kanada-explosion",
+      "name": "카나다 폭발",
+      "category": "effects",
+      "previewMs": 1350,
+      "description": "압축된 핵이 뾰족한 불꽃 면과 방사 쐐기로 열리는 견본입니다.",
+      "distinction": "둥근 팽창에 비해 각진 외곽과 짧은 정점이 두드러집니다."
+    },
+    {
+      "id": "fx-kanada-dragon",
+      "name": "카나다 드래곤",
+      "category": "effects",
+      "previewMs": 1900,
+      "description": "팬 통칭을 용의 뿔·주둥이와 굽는 화염 몸통으로 해석한 견본입니다. 고정된 원전 정의는 아닙니다.",
+      "distinction": "같은 이동 경로의 에너지 덩어리를 동물 실루엣으로 연결합니다."
+    },
+    {
+      "id": "fx-itano",
+      "name": "이타노 서커스",
+      "category": "effects",
+      "previewMs": 1850,
+      "description": "서로 다른 고도에서 표적을 감아 돌아 합류하는 유도탄 궤도 견본입니다.",
+      "distinction": "각 탄의 긴 곡선·시간차·표적 회피가 공간을 만듭니다."
+    },
+    {
+      "id": "fx-muraki",
+      "name": "무라키 서커스",
+      "category": "effects",
+      "previewMs": 1850,
+      "description": "명칭을 추진 화염과 급격한 경로 압축 박자에 초점을 맞춰 해석한 견본입니다. 영향 계보를 판정하지 않습니다.",
+      "distinction": "이타노 견본의 긴 유도곡선과 달리 정체 → 추진 → 짧은 고속 교차를 보여줍니다."
+    },
+    {
+      "id": "fx-anno",
+      "name": "안노 폭발",
+      "category": "effects",
+      "previewMs": 2000,
+      "description": "지면의 섬광에서 치솟는 큰 분진 기둥과 작은 잔해 층을 나눈 견본입니다.",
+      "distinction": "정점 뒤 오래 남는 무거운 분진과 세밀한 비산을 비교합니다."
+    },
+    {
+      "id": "fx-iso-explosion",
+      "name": "이소 폭발",
+      "category": "effects",
+      "previewMs": 2100,
+      "description": "팽창하는 외곽과 안쪽으로 말리는 그림자 면을 분리한 부피 견본입니다.",
+      "distinction": "외곽만 커지는 연기와 달리 내부 암부가 서로 다른 시각에 흐릅니다."
+    },
+    {
+      "id": "fx-iso-debris",
+      "name": "이소 파편",
+      "category": "effects",
+      "previewMs": 1750,
+      "description": "잔해가 큰 무리로 날아가다 작은 비대칭 덩어리로 풀리는 견본입니다.",
+      "distinction": "균일한 점 분산 대신 군집의 공통 운동과 내부 분열을 보여줍니다."
+    },
+    {
+      "id": "fx-nakamura",
+      "name": "나카무라 큐브",
+      "category": "effects",
+      "previewMs": 1720,
+      "description": "석재 덩어리에서 면색을 가진 입방 조각과 작은 잔해가 이어지는 견본입니다.",
+      "distinction": "평면 사각형이 아닌 회전하는 입방 면과 크기 위계를 비교합니다."
+    },
+    {
+      "id": "fx-hashimoto",
+      "name": "하시모토 스팀·폭발",
+      "category": "effects",
+      "previewMs": 1750,
+      "description": "눌린 둥근 김 덩어리가 부풀고 검은 파편이 먼저 튀는 견본입니다.",
+      "distinction": "각진 불꽃이나 말리는 회색 암부와 달리 깨끗한 원형 외곽의 압축·팽창을 강조합니다."
+    },
+    {
+      "id": "fx-norio",
+      "name": "노리오 연기",
+      "category": "effects",
+      "previewMs": 1850,
+      "description": "내부 음영을 비운 큰 연기 실루엣이 덩어리로 밀려가는 견본입니다.",
+      "distinction": "색면 하나의 외곽 분열과 긴 끌림으로 읽히게 합니다."
+    },
+    {
+      "id": "fx-mori",
+      "name": "모리 이펙트·파편",
+      "category": "effects",
+      "previewMs": 1500,
+      "description": "굵은 파열 획에서 길쭉하고 거친 파편이 같은 방향으로 쏟아지는 견본입니다.",
+      "distinction": "입방 블록·둥근 입자와 다른 비정형 조각의 방향성을 비교합니다."
+    },
+    {
+      "id": "fx-araki",
+      "name": "아라키 이펙트",
+      "category": "effects",
+      "previewMs": 1320,
+      "description": "날을 스치는 두 교차 광선과 작은 빛 거품이 이어지는 견본입니다.",
+      "distinction": "칼날을 따라 모였다가 교차하고, 둥근 빛 잔여만 늦게 남습니다."
+    },
+    {
+      "id": "fx-yoshinari",
+      "name": "요시나리 폭발",
+      "category": "effects",
+      "previewMs": 1650,
+      "description": "ゝ 모양의 굽은 터치를 여러 층에 배치한 데포르메 폭발의 해석 견본입니다. 특정 장면 복제는 아닙니다.",
+      "distinction": "큰 불덩어리 안팎의 짧고 굽은 터치가 팽창 방향을 만듭니다."
+    },
+    {
+      "id": "fx-oki",
+      "name": "오키 폭발",
+      "category": "effects",
+      "previewMs": 1900,
+      "description": "거품 같은 덩어리가 부글거리며 계속 부푸는 폭발의 해석 견본입니다.",
+      "distinction": "큰 원의 일회 팽창 대신 크기가 다른 거품이 비동기로 솟고 꺼집니다."
+    },
+    {
+      "id": "fx-kozuma",
+      "name": "코즈마 이펙트",
+      "category": "effects",
+      "previewMs": 2050,
+      "description": "점성 있는 에너지의 목이 길어졌다 끊어지고 비대칭 방울이 남는 견본입니다.",
+      "distinction": "탄 복제 잔상이 아닌 연결 → 가는 목 → 분리라는 형태 변화입니다."
+    },
+    {
+      "id": "fx-tatsuzo",
+      "name": "타츠조 이펙트",
+      "category": "effects",
+      "previewMs": 1800,
+      "description": "곡선형 구체의 검은 실루엣이 매끄럽게 늘고 합쳐지는 평면 효과 견본입니다. 원작 재현을 뜻하지 않습니다.",
+      "distinction": "내부 음영을 비우고 곡률과 연결 형태의 연속 변화에 집중합니다."
+    },
+    {
+      "id": "fx-shigeta",
+      "name": "시게타 불꽃",
+      "category": "effects",
+      "previewMs": 1450,
+      "description": "기계 전투의 금속 접촉점에서 파열하고 갈라져 날아가는 스파크의 해석 견본입니다.",
+      "distinction": "접촉점의 짧은 가지형 파열 뒤 발광 금속편이 포물선으로 날며 작게 갈라지고 식어 사라집니다."
+    },
+    {
+      "id": "fx-anime-r",
+      "name": "아니메R의 사라지는 파편",
+      "category": "effects",
+      "previewMs": 1750,
+      "description": "날아가는 조각이 가늘어지고 작은 잔편을 남기며 차례로 사라지는 해석 견본입니다.",
+      "distinction": "모든 조각을 같은 알파로 지우지 않고 크기와 속도에 따라 외곽부터 거둡니다."
+    },
+    {
+      "id": "fx-kutsuna",
+      "name": "쿠츠나 번개",
+      "category": "effects",
+      "previewMs": 1700,
+      "description": "스파게티처럼 엉킨 가는 선 덩어리가 짧은 노출 박자로 바뀌는 번개의 해석 견본입니다.",
+      "distinction": "한 줄의 꺾인 번개와 달리 매듭처럼 얽힌 여러 곡선이 함께 압축·확장됩니다."
+    },
+    {
+      "id": "camera-transmitted-light",
+      "name": "투과광",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "문양 안의 선택한 선을 밝은 핵과 좁은 번짐으로 발광시킵니다.",
+      "distinction": "그림 내부의 빛 처리이며 공간을 가로지르는 입사광과 다릅니다."
+    },
+    {
+      "id": "camera-para",
+      "name": "파라",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "화면 양쪽에 농도가 다른 보라·금빛 색 시트를 겹칩니다.",
+      "distinction": "색 시트의 합성이며 인물·배경을 움직이거나 흐리지 않습니다."
+    },
+    {
+      "id": "camera-wavy-glass",
+      "name": "파도 유리",
+      "category": "camera",
+      "previewMs": 2000,
+      "description": "같은 장면의 수평 띠들을 파형에 따라 좌우로 어긋나게 합니다.",
+      "distinction": "윤곽 자체의 굴절을 재해석하며 초점 블러와 구별합니다."
+    },
+    {
+      "id": "camera-diffusion",
+      "name": "디퓨전",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "선명한 장면 위에 흐리고 밝은 노출을 낮은 농도로 겹칩니다.",
+      "distinction": "원본의 선을 남기는 확산 합성입니다. 장면 자체를 흐리는 블러와 다릅니다."
+    },
+    {
+      "id": "camera-blur",
+      "name": "블러",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "배경·인물·대비 무늬의 윤곽을 함께 흐립니다.",
+      "distinction": "선명한 원본을 중첩하지 않는 초점 흐림이며 화면 안내는 선명합니다."
+    },
+    {
+      "id": "camera-lens-flare",
+      "name": "렌즈 플레어·고스트",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "광원과 화면 중심의 반대편을 잇는 축에 원형 고스트를 배치합니다.",
+      "distinction": "화면의 렌즈 축에 붙는 빛상이며 실제 공간에 존재하는 입자가 아닙니다."
+    },
+    {
+      "id": "camera-anamorphic",
+      "name": "아나모픽 플레어",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "강한 광점에서 수평으로 긴 가는 빛띠가 뻗습니다.",
+      "distinction": "원형 고스트보다 가로 방향의 광학적 번짐을 강조합니다."
+    },
+    {
+      "id": "camera-cross-light",
+      "name": "십자광",
+      "category": "camera",
+      "previewMs": 1850,
+      "description": "한 광점에 짧게 네 방향의 뾰족한 광선을 드러냅니다.",
+      "distinction": "국소 광점의 강조이며 화면 전체 수평 플레어나 반복 명멸이 아닙니다."
+    },
+    {
+      "id": "camera-screen-shake",
+      "name": "화면 흔들림",
+      "category": "camera",
+      "previewMs": 1840,
+      "description": "한 번의 접촉 뒤 화면이 크게 흔들렸다가 750ms 안에 감쇠합니다.",
+      "distinction": "충격 사건에 붙는 감쇠 진동이며 지속적인 손떨림과 다릅니다."
+    },
+    {
+      "id": "camera-contact-multi",
+      "name": "밀착 멀티",
+      "category": "camera",
+      "previewMs": 3000,
+      "description": "가까운 나무·인물·산 셀을 다른 속도로 수평 이송합니다.",
+      "distinction": "평면 셀의 크기는 고정합니다. z 투영으로 크기까지 변하는 멀티플레인과 구별합니다."
+    },
+    {
+      "id": "camera-flicker",
+      "name": "플리커",
+      "category": "camera",
+      "previewMs": 2120,
+      "description": "같은 장면의 밝은 노출 농도를 천천히 주기적으로 변화시킵니다.",
+      "distinction": "한 번의 섬광과 다릅니다. 움직임 줄이기에서는 명멸 없이 일정한 노출로 바꿉니다."
+    },
+    {
+      "id": "camera-rack-focus",
+      "name": "초점 넘기기",
+      "category": "camera",
+      "previewMs": 2900,
+      "description": "전경 부적에서 뒤쪽 인물로 초점을 넘깁니다.",
+      "distinction": "구도와 위치를 고정하고 앞뒤 레이어의 선명도만 교대합니다."
+    },
+    {
+      "id": "camera-follow-pan",
+      "name": "따라가는 PAN",
+      "category": "camera",
+      "previewMs": 2200,
+      "description": "오른쪽으로 이동하는 인물을 일정한 화면 위치에 두며 배경을 이송합니다.",
+      "distinction": "애니메이션 그림의 2D 수평 이송입니다. 3D 카메라의 제자리 회전은 아닙니다."
+    },
+    {
+      "id": "camera-slow-quick-pan",
+      "name": "지와 PAN·퀵 PAN",
+      "category": "camera",
+      "previewMs": 2400,
+      "description": "주변을 천천히 훑다가 화면 밖 상대 쪽으로 빠르게 전환합니다.",
+      "distinction": "배율을 고정한 수평 이송의 속도 대비이며 급확대가 아닙니다."
+    },
+    {
+      "id": "camera-track-up-back",
+      "name": "T.U·T.B",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "같은 초점 중심으로 확대해 접근한 뒤 다시 축소해 물러납니다.",
+      "distinction": "2D 그림을 확대·축소하는 촬영 표현입니다. 원근이 변하는 3D 돌리와 구별합니다."
+    },
+    {
+      "id": "camera-handheld",
+      "name": "손떨림",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "위치와 작은 롤이 끊임없이 조금씩 흔들립니다.",
+      "distinction": "특정 충격에 반응하거나 감쇠하지 않는 지속적인 촬영 흔들림입니다."
+    },
+    {
+      "id": "camera-multi-bokeh",
+      "name": "멀티 보케",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "중경 인물은 선명하게 두고 전경과 원경의 흐림 크기를 다르게 합니다.",
+      "distinction": "초점은 고정하고 깊이층마다 다른 흐림을 줍니다. 정밀한 렌즈 조리개 시뮬레이션은 아닙니다."
+    },
+    {
+      "id": "camera-foggy",
+      "name": "포기",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "젖빛 막과 광원 주변 확산으로 화면 대비를 부드럽게 낮춥니다.",
+      "distinction": "정적인 포그 필터의 재해석이며 실제 연기·안개 입자를 추가하지 않습니다."
+    },
+    {
+      "id": "camera-double-shadow",
+      "name": "이중노출 그림자",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "실제 몸 뒤에 위치가 다른 두 개의 어두운 노출을 겹칩니다.",
+      "distinction": "별도 배우가 아닌 그림자 합성이며 바닥 투영 물리를 계산하지 않습니다."
+    },
+    {
+      "id": "camera-glow",
+      "name": "글로우",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "구체의 선명한 핵을 유지하며 광원 바깥으로만 빛을 넓게 퍼뜨립니다.",
+      "distinction": "장면 전체의 대비를 바꾸는 디퓨전·포기와 달리 한 광원의 주변만 처리합니다."
+    },
+    {
+      "id": "camera-incident-light",
+      "name": "입사광",
+      "category": "camera",
+      "previewMs": 2100,
+      "description": "창 밖에서 들어오는 사선 빛이 먼지와 바닥의 밝은 자리를 드러냅니다.",
+      "distinction": "공간 안의 빛줄기이며 화면 렌즈의 고스트나 그림 내부의 투과광과 다릅니다."
+    },
+    {
+      "id": "camera-multiplane",
+      "name": "멀티플레인 카메라",
+      "category": "camera",
+      "previewMs": 3000,
+      "description": "z 깊이에 놓인 평면들을 카메라 전진·옆 이동에 맞춰 원근 투영합니다.",
+      "distinction": "가까운 층이 더 빨리 이동하고 커집니다. 고정 크기 셀 이송이나 단순 전체 줌과 다릅니다."
+    },
+    {
+      "id": "emotion-sweat",
+      "name": "땀방울",
+      "category": "emotion",
+      "previewMs": 1750,
+      "description": "머리 옆에 맺힌 큰 방울이 무게를 얻어 아래로 미끄러집니다.",
+      "distinction": "비나 실제 물보다 큰 한 방울로 당황을 읽힙니다."
+    },
+    {
+      "id": "emotion-vein",
+      "name": "핏대 (분노 마크)",
+      "category": "emotion",
+      "previewMs": 1700,
+      "description": "관자놀이의 굽은 십자 획이 튀어나오며 분노가 치솟습니다.",
+      "distinction": "흩어지는 불꽃이 아니라 끊어진 네 모서리의 혈관 기호입니다."
+    },
+    {
+      "id": "emotion-gloom",
+      "name": "세로줄 그늘",
+      "category": "emotion",
+      "previewMs": 1850,
+      "description": "이마 위에서 내려오는 선과 청보라 그늘이 얼굴의 온도를 낮춥니다.",
+      "distinction": "인물 주변의 위압 배경과 달리 얼굴 윗부분에 감정을 모읍니다."
+    },
+    {
+      "id": "emotion-soul",
+      "name": "혼 빠짐·한숨",
+      "category": "emotion",
+      "previewMs": 2300,
+      "description": "입에서 흰 숨이 길게 빠져나와 혼 모양으로 느리게 떠오릅니다.",
+      "distinction": "폭발 연기보다 가늘고 느린 호흡과 빈 표정이 중심입니다."
+    },
+    {
+      "id": "emotion-face-fault",
+      "name": "즈코 넘어짐",
+      "category": "emotion",
+      "previewMs": 1800,
+      "description": "잠깐의 정적 뒤 전신이 옆으로 무너지는 큰 리액션입니다.",
+      "distinction": "맞고 날아가는 낙하와 달리 어이없는 순간의 갑작스러운 균형 상실입니다."
+    },
+    {
+      "id": "emotion-tears",
+      "name": "폭포 눈물",
+      "category": "emotion",
+      "previewMs": 2100,
+      "description": "두 눈에서 쏟아진 눈물이 넓은 띠가 되어 흘러내립니다.",
+      "distinction": "글썽임이나 땀방울과 달리 끊기지 않는 두 줄기 과장입니다."
+    },
+    {
+      "id": "emotion-white-eyes",
+      "name": "흰자 눈",
+      "category": "emotion",
+      "previewMs": 1750,
+      "description": "놀란 한순간에 눈동자가 사라지고 큰 흰 눈과 벌어진 입만 남습니다.",
+      "distinction": "화면 반전 효과가 아니라 눈 안의 그림 자체가 바뀝니다."
+    },
+    {
+      "id": "emotion-empty-eyes",
+      "name": "빛 없는 눈",
+      "category": "emotion",
+      "previewMs": 1900,
+      "description": "눈의 흰 빛이 사라지고 낮은 명도의 눈동자로 감정이 가라앉습니다.",
+      "distinction": "흰자 눈의 과장된 충격과 반대로 표정의 생기를 덜어 냅니다."
+    },
+    {
+      "id": "emotion-eye-sparks",
+      "name": "시선 불꽃",
+      "category": "emotion",
+      "previewMs": 2000,
+      "description": "마주 본 두 인물 사이의 시선이 팽팽해지고 짧은 번개가 잇습니다.",
+      "distinction": "공격 투사체가 아니라 두 시선 사이의 긴장을 나타냅니다."
+    },
+    {
+      "id": "emotion-flowers",
+      "name": "꽃 배경",
+      "category": "emotion",
+      "previewMs": 1900,
+      "description": "공간이 따뜻한 색으로 풀리며 큰 꽃이 순서대로 피어납니다.",
+      "distinction": "실제 들판의 꽃 대신 인물의 감정이 화면 전체의 배경을 바꿉니다."
+    },
+    {
+      "id": "emotion-sparkles",
+      "name": "반짝임",
+      "category": "emotion",
+      "previewMs": 1900,
+      "description": "인물 둘레의 작은 별이 서로 다른 박자로 커졌다 사라집니다.",
+      "distinction": "광원의 긴 렌즈 플레어보다 작고 가벼운 감정의 반짝임입니다."
+    },
+    {
+      "id": "editing-harmony",
+      "name": "하모니",
+      "category": "editing",
+      "previewMs": 2500,
+      "description": "셀처럼 움직이던 장면이 종이·붓결을 가진 한 장의 종결화로 정착합니다.",
+      "distinction": "멈춤만 주는 정지화와 달리 배경·인물의 질감과 색면을 함께 설계합니다."
+    },
+    {
+      "id": "editing-still",
+      "name": "멈춘 그림",
+      "category": "editing",
+      "previewMs": 2150,
+      "description": "공중의 결정 자세를 멈춰 보여준 뒤 움직임을 이어갑니다.",
+      "distinction": "회화 질감이나 새로운 그림 없이 한 자세의 유지 시간만 바꿉니다."
+    },
+    {
+      "id": "editing-triple",
+      "name": "반복 쇼트",
+      "category": "editing",
+      "previewMs": 2940,
+      "description": "같은 접촉을 와이드·근접·타점의 세 컷으로 다시 보여줍니다.",
+      "distinction": "세 번 때리는 동작이 아니라 같은 사건을 반복하는 편집입니다."
+    },
+    {
+      "id": "editing-split",
+      "name": "화면 분할",
+      "category": "editing",
+      "previewMs": 2250,
+      "description": "떨어진 두 인물의 준비를 동시에 보여준 뒤 하나의 장면으로 합칩니다.",
+      "distinction": "인서트 한 장보다 두 시간선의 동시 진행에 초점을 둡니다."
+    },
+    {
+      "id": "editing-orbit",
+      "name": "마와리코미",
+      "category": "editing",
+      "previewMs": 2200,
+      "description": "카메라가 인물 주위를 돌며 앞뒤 기둥과 관절의 시점이 함께 바뀝니다.",
+      "distinction": "평면 그림 회전 대신 공간 좌표를 투영해 시점과 가림 순서가 바뀝니다."
+    },
+    {
+      "id": "editing-text-cuts",
+      "name": "신보 문자 컷",
+      "category": "editing",
+      "previewMs": 2100,
+      "description": "장면 사이에 검정·빨강 바탕의 짧은 문자 컷을 끼웁니다.",
+      "distinction": "대사를 계속 띄우는 자막보다 화면 자체를 글자의 박자로 바꿉니다."
+    },
+    {
+      "id": "editing-extreme",
+      "name": "신보 눈·입 클로즈업",
+      "category": "editing",
+      "previewMs": 2500,
+      "description": "눈과 입의 극단적인 근접 컷이 서로 다른 유지 시간으로 교차합니다.",
+      "distinction": "얼굴 전체를 확대하는 컷인과 달리 얼굴의 일부만 보여줍니다."
+    },
+    {
+      "id": "editing-imaishi",
+      "name": "이마이시 연출",
+      "category": "editing",
+      "previewMs": 2200,
+      "description": "과장된 전경 주먹·뚝 끊기는 자세·거대 글자를 강한 박자로 연결합니다.",
+      "distinction": "원근·타이밍·문자 구성을 한 장면의 정점에 모으는 견본입니다."
+    },
+    {
+      "id": "editing-shadow-play",
+      "name": "그림자극 소녀",
+      "category": "editing",
+      "previewMs": 2300,
+      "description": "밝은 무대 안의 검은 인물과 상징 소품이 막간극처럼 움직입니다.",
+      "distinction": "충격용 실루엣과 달리 단순한 행위와 상징으로 작은 이야기를 만듭니다."
+    },
+    {
+      "id": "editing-overlap",
+      "name": "오버랩",
+      "category": "editing",
+      "previewMs": 1850,
+      "description": "앞 장소가 남아 있는 동안 다음 장소와 인물이 겹쳐 들어옵니다.",
+      "distinction": "인물 소실 효과가 아니라 두 장면 전체의 겹침 전환입니다."
+    },
+    {
+      "id": "editing-wipe-iris",
+      "name": "와이프·아이리스",
+      "category": "editing",
+      "previewMs": 2300,
+      "description": "새 장면이 옆으로 쓸고 들어온 뒤 원형 창이 인물을 남기며 닫힙니다.",
+      "distinction": "밝기만 바꾸지 않고 다음 화면을 드러내는 경계의 형태를 바꿉니다."
+    },
+    {
+      "id": "editing-white-out",
+      "name": "화이트 아웃",
+      "category": "editing",
+      "previewMs": 2200,
+      "description": "장면이 흰 빛에 잠겼다가 다음 장소가 천천히 돌아옵니다.",
+      "distinction": "짧은 타격 섬광보다 긴 노출 변화로 장면 사이의 시간을 만듭니다."
+    }
+  ]
+}

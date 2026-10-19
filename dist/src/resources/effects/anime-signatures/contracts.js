@@ -1,6 +1,8 @@
+import { dramaticScenes } from './dramatic-contracts.js';
 export const signatureWidth = 960;
 export const signatureHeight = 540;
 export const signatureScenes = [
+    ...dramaticScenes,
     {
         id: 'talisman-insert',
         title: '부적 인서트 · 행동의 연결',

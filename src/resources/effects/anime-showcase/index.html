@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <link rel="stylesheet" href="../../catalog/embedded-scene.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "gifenc": "../../../../node_modules/gifenc/dist/gifenc.esm.js"
+        }
+      }
+    </script>
+    <title>90개의 순간 · 애니 연출 견본집</title>
+  </head>
+  <body>
+    <main>
+      <header class="masthead">
+        <div>
+          <p class="eyebrow">ANIMATION / PRESENTATION ATLAS</p>
+          <h1>90개의 순간<span>애니 연출 견본집</span></h1>
+        </div>
+        <div class="edition">
+          <b>06</b>개의 분류 <i>·</i> <b>90</b>개의 견본
+        </div>
+      </header>
+      <div class="workspace">
+        <aside aria-label="견본 탐색">
+          <label class="search-label" for="search">보고 싶은 연출 찾기</label
+          ><input
+            id="search"
+            type="search"
+            placeholder="이름·특징 검색"
+            autocomplete="off"
+          />
+          <nav id="categories" aria-label="연출 분류"></nav>
+          <div class="list-heading">
+            <span id="list-title">전체 견본</span><span id="count">90</span>
+          </div>
+          <div
+            id="sample-list"
+            role="navigation"
+            aria-label="연출 견본 목록"
+          ></div>
+          <p class="empty" id="empty" hidden>맞는 견본이 없습니다.</p>
+        </aside>
+        <section class="viewer" aria-label="연출 재생">
+          <div class="sample-heading">
+            <div>
+              <p id="category-label" class="eyebrow"></p>
+              <h2 id="sample-title"></h2>
+            </div>
+            <output id="ordinal"></output>
+          </div>
+          <div id="stages" class="stages">
+            <figure class="baseline" hidden>
+              <figcaption>기본 장면</figcaption>
+              <canvas
+                id="baseline"
+                width="960"
+                height="540"
+                aria-label="기본 장면"
+              ></canvas>
+            </figure>
+            <figure>
+              <figcaption>
+                <span>연출 견본</span><output id="stage-time">0.00s</output>
+              </figcaption>
+              <canvas
+                id="stage"
+                width="960"
+                height="540"
+                aria-label="선택한 연출 견본"
+              ></canvas>
+            </figure>
+          </div>
+          <div class="transport">
+            <button id="previous" type="button" aria-label="이전 견본">←</button
+            ><button id="play" class="primary" type="button">일시정지</button
+            ><button id="restart" type="button">처음부터</button
+            ><button id="next" type="button" aria-label="다음 견본">→</button
+            ><label
+              >속도<select id="speed">
+                <option value="0.25">0.25×</option>
+                <option value="0.5">0.5×</option>
+                <option value="1" selected>1×</option>
+                <option value="1.5">1.5×</option>
+              </select></label
+            ><label><input id="sequence" type="checkbox" />차례로 보기</label>
+          </div>
+          <div class="timeline">
+            <input
+              id="seek"
+              type="range"
+              min="0"
+              max="4200"
+              step="10"
+              value="0"
+              aria-label="장면 시간"
+            /><output id="time">0.00 / 4.20초</output>
+          </div>
+          <div class="options">
+            <label><input id="compare" type="checkbox" />기본 장면과 비교</label
+            ><label><input id="reduced" type="checkbox" />움직임 줄이기</label
+            ><label><input id="loop" type="checkbox" checked />반복</label
+            ><button id="key" type="button">핵심 순간</button>
+          </div>
+          <div class="explanation">
+            <p id="description"></p>
+            <p id="distinction"></p>
+          </div>
+          <footer>
+            <div>
+              <button id="export" type="button">이 견본 GIF 저장</button
+              ><button id="cancel" type="button" hidden>취소</button
+              ><output id="export-status" role="status"></output>
+            </div>
+            <p>
+              Space 재생·정지 <span>·</span> ← → 견본 이동 <span>·</span> Shift
+              + ← → 0.1초 탐색
+            </p>
+          </footer>
+          <p class="provenance">
+            도형 배우와 절차 작화로 각 기법의 형태·박자·구도를 보여주는 연출
+            견본입니다.
+            <a
+              href="https://claude.ai/artifact/59raaYDpH7yFHta6687KXh"
+              target="_blank"
+              rel="noopener"
+              >용어집 ↗</a
+            ><a
+              href="../../../../resources/anime-showcase.json"
+              target="_blank"
+              rel="noopener"
+              >구성·출처 기록 ↗</a
+            >
+          </p>
+          <p id="error" role="alert" hidden></p>
+        </section>
+      </div>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/effects/anime-showcase/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

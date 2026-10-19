@@ -5,6 +5,7 @@ import { drawSignature } from './drawing.js';
 import { exportSignatureGif } from './gif-export.js';
 import { advancedIds } from './advanced-contracts.js';
 import { actingIds } from './acting-contracts.js';
+import { dramaticIds } from './dramatic-contracts.js';
 function element(id, type) {
     const value = document.getElementById(id);
     if (!(value instanceof type))
@@ -109,6 +110,8 @@ class SignatureScreen {
     pixelRatio = 1;
     disposed = false;
     constructor() {
+        const dramatic = document.createElement('optgroup');
+        dramatic.label = '극적 애니 연출 · 6종';
         const acting = document.createElement('optgroup');
         acting.label = '인물과 재질 · 5종';
         const studies = document.createElement('optgroup');
@@ -119,13 +122,15 @@ class SignatureScreen {
             const option = document.createElement('option');
             option.value = scene.id;
             option.textContent = scene.title;
-            (actingIds.some((id) => id === scene.id)
-                ? acting
-                : advancedIds.some((id) => id === scene.id)
-                    ? studies
-                    : signatures).append(option);
+            (dramaticIds.some((id) => id === scene.id)
+                ? dramatic
+                : actingIds.some((id) => id === scene.id)
+                    ? acting
+                    : advancedIds.some((id) => id === scene.id)
+                        ? studies
+                        : signatures).append(option);
         }
-        this.selection.append(acting, studies, signatures);
+        this.selection.append(dramatic, acting, studies, signatures);
         this.reducedMotion.checked = matchMedia('(prefers-reduced-motion: reduce)').matches;
         const signal = this.events.signal;
         this.selection.addEventListener('change', () => {
@@ -189,6 +194,7 @@ class SignatureScreen {
             const assets = await loadSignatureAssets();
             if (this.disposed) {
                 assets.acting.heat.dispose();
+                assets.shatter.dispose();
                 return;
             }
             this.assets = assets;
@@ -252,6 +258,7 @@ class SignatureScreen {
             'cube-debris',
             'water-landing',
             'heat-haze',
+            ...dramaticIds,
         ].includes(scene.id);
         this.facing.disabled = !this.assets || fixedFacing;
         if (fixedFacing)
@@ -463,6 +470,7 @@ class SignatureScreen {
         }
         this.objectUrls.clear();
         this.assets?.acting.heat.dispose();
+        this.assets?.shatter.dispose();
         this.assets = null;
     }
 }

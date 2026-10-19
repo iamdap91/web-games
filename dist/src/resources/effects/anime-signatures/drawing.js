@@ -4,6 +4,9 @@ import { drawAdvancedEffects } from './advanced-effects-drawing.js';
 import { drawActingCharacters } from './acting-character-drawing.js';
 import { drawTalismanInsert } from './acting-insert-drawing.js';
 import { drawActingEffects } from './acting-effects-drawing.js';
+import { drawDramaticAtmosphere } from './dramatic-atmosphere-drawing.js';
+import { drawDramaticEditing } from './dramatic-editing-drawing.js';
+import { drawDramaticShatter } from './dramatic-shatter-drawing.js';
 import { sampleComboMotion } from '../../characters/ataho-v2-combos/player.js';
 import { drawMeteorCircus } from '../../characters/ataho-v2-combos/meteor-circus-drawing.js';
 import { sampleCircusShot, sampleCircusTarget, } from '../../characters/ataho-v2-combos/meteor-circus-flight.js';
@@ -156,6 +159,11 @@ export function drawSignature(ctx, assets, frame) {
     ctx.rect(0, 0, signatureWidth, signatureHeight);
     ctx.clip();
     try {
+        const dramatic = drawDramaticAtmosphere(ctx, assets, frame) ??
+            drawDramaticEditing(ctx, assets, frame) ??
+            drawDramaticShatter(ctx, assets, frame);
+        if (dramatic)
+            return dramatic;
         if (frame.scene.id === 'talisman-insert')
             return drawTalismanInsert(ctx, assets, frame);
         if (frame.scene.id === 'reaction-acting' ||

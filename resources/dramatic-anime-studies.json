@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "createdDate": "2026-10-19",
+  "status": "comparison-samples",
+  "sourceArtifact": "https://claude.ai/artifact/59raaYDpH7yFHta6687KXh",
+  "scope": "극적인 애니메이션 연출을 비교하는 6종 샘플. 기존 그림·모션을 재사용하고 신규 캐릭터 원화·소리·유료 생성·본게임 규칙은 추가하지 않는다.",
+  "artifactObservation": "현재 아티팩트의 선택 항목 설명·출처 링크·불확실 배지를 인앱 브라우저에서 직접 읽었다. 전체 출처나 영상 검색 결과를 전수 재생한 것은 아니다.",
+  "previewDirectory": "public/assets/maplestory/dramatic-anime-previews/",
+  "reusedPoseRecordPaths": [
+    "resources/anime-signature-poses.json",
+    "resources/acting-study-poses.json",
+    "resources/companion-basic-attacks/biwol-additions.json"
+  ],
+  "entries": [
+    {
+      "id": "dramatic-rays",
+      "artifactTerms": ["입사광", "BL 그림자"],
+      "sourceSections": ["anime-6", "anime-1"],
+      "mechanism": "기존 팔짱 자세를 같은 시간에 공유하고, 연출판에서 사선 뒷광과 검은 인물 윤곽을 거쳐 정체를 공개한다.",
+      "sources": [
+        "https://soulofjoe.jp/story/yougo.html",
+        "https://saint11.art/img/pixel-tutorials/LightMagic.gif"
+      ],
+      "referenceBoundary": "Saint11 원작성 GIF의 서로 다른 선택 화면에서 위쪽 빛과 광 형상 전개를 관찰했다. 공식 죠 용어 페이지는 이번 HTTP 접근이 403으로 막혀 새 열람 성공으로 기록하지 않는다. 카메라·광선·공개 시간은 우리 샘플 설계다."
+    },
+    {
+      "id": "dramatic-pressure",
+      "artifactTerms": ["오도로선", "파라"],
+      "sourceSections": ["manga-1", "anime-7"],
+      "mechanism": "인물 주변의 굽은 선과 주변부 암부가 긴장을 쌓고 정착한다. 인물의 몸 원화와 실제 상태는 바꾸지 않는다.",
+      "sources": [
+        "https://www.japanesewithanime.com/2020/04/background-effects.html"
+      ],
+      "referenceBoundary": "용어집의 감정 배경 설명과 이전 정적 구성 검토를 재사용했다. 구불선의 시간 변화는 우리 설계이며 특정 애니 장면을 재현했다는 주장이 아니다."
+    },
+    {
+      "id": "dramatic-flare",
+      "artifactTerms": ["카나다 빛", "십자광"],
+      "sourceSections": ["anime-2", "anime-7"],
+      "mechanism": "기존 비월 결정 자세 주위에 십자광과 불완전한 링을 한 번 전개한 뒤 인물로 시선을 돌린다.",
+      "sources": ["https://saint11.art/img/pixel-tutorials/Stars.gif"],
+      "referenceBoundary": "원작성 Stars GIF의 서로 다른 선택 화면에서 광점 형태·십자광 변화를 직접 관찰했다. 명명된 작가의 손작화나 광학 렌즈를 복제하지 않는 Canvas 도형 합성이다."
+    },
+    {
+      "id": "dramatic-triple",
+      "artifactTerms": ["반복 쇼트"],
+      "sourceSections": ["anime-6"],
+      "artifactBadge": "불확실",
+      "mechanism": "기존 비월 질풍 찌르기 한 번의 접촉 구간을 와이드·근접·타점 크롭으로 다시 편집한다. 명중은 하나의 같은 사건이며 세 번의 실제 공격이 아니다.",
+      "sources": ["https://soulofjoe.jp/story/yougo.html"],
+      "referenceBoundary": "현재 용어집의 반복 쇼트 설명과 불확실 배지를 보존한다. 3回PAN의 정식 명칭·계보를 확정하지 않으며, 새 원작 반복 영상의 직접 관찰은 하지 않았다. 기존 자체 찌르기 재생을 재편집하는 샘플이다."
+    },
+    {
+      "id": "dramatic-shatter",
+      "artifactTerms": ["화면 갈라짐"],
+      "sourceSections": ["manga-14"],
+      "mechanism": "기존 놀람 A의 화면 내용을 다각형 조각에 유지한 채 벌려 침착 B의 뒤 화면을 공개한다. 실제 유리나 지형 파괴 사건은 없다.",
+      "sources": [
+        "https://claude.ai/artifact/59raaYDpH7yFHta6687KXh",
+        "https://codepen.io/anderson1564/pen/mRQyVP"
+      ],
+      "referenceBoundary": "용어집의 정신적 충격 표현을 바탕으로 자체 화면 합성 안무를 설계한다. CodePen 공개 코드의 삼각 클리핑과 원본 이미지 복사를 읽었으며 해당 데모 재생이나 원작 프로젝트 실행은 하지 않았다. 물리 파괴 시뮬레이션이 아니다."
+    },
+    {
+      "id": "dramatic-focus",
+      "artifactTerms": ["초점 넘기기", "멀티 보케"],
+      "sourceSections": ["anime-7"],
+      "mechanism": "고정된 부적·비월·표적 배치에서 전경과 뒤쪽 레이어의 선명도만 교대한다. 원근 카메라나 3D 렌즈 시뮬레이션은 없다.",
+      "sources": ["https://w.atwiki.jp/sakuga/pages/28.html"],
+      "referenceBoundary": "현재 아티팩트의 초점 전환 정의를 읽고 2D 레이어 흐림으로 해석했다. 렌즈 수치·원작 촬영 데이터·새 원작 초점 영상은 검증하지 않았다."
+    }
+  ],
+  "previews": [
+    {
+      "scene": "dramatic-rays",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/dramatic-anime-previews/dramatic-rays-south-east.gif"
+    },
+    {
+      "scene": "dramatic-pressure",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/dramatic-anime-previews/dramatic-pressure-south-east.gif"
+    },
+    {
+      "scene": "dramatic-flare",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/dramatic-anime-previews/dramatic-flare-south-east.gif"
+    },
+    {
+      "scene": "dramatic-triple",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/dramatic-anime-previews/dramatic-triple-south-east.gif"
+    },
+    {
+      "scene": "dramatic-shatter",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/dramatic-anime-previews/dramatic-shatter-south-east.gif"
+    },
+    {
+      "scene": "dramatic-focus",
+      "facing": "south-east",
+      "localPath": "public/assets/maplestory/dramatic-anime-previews/dramatic-focus-south-east.gif"
+    }
+  ]
+}
