@@ -46,8 +46,8 @@ function shotLaunch(index, kind) {
 /** 절대 시각부터 고정 간격으로 적분해 스크럽과 GIF의 추격 경로를 같게 한다. */
 function samplePursuit(index, kind, frame) {
     const launch = shotLaunch(index, kind);
-    const now = Math.min(frame.timeMs, launch + 1160);
-    if (now <= launch || frame.timeMs >= 1770)
+    const now = Math.min(frame.timeMs, launch + 1160, 1770);
+    if (now <= launch)
         return [];
     const actor = atahoPosition(frame, { timeMs: launch });
     let position = {
@@ -90,9 +90,9 @@ function samplePursuit(index, kind, frame) {
         const speed = delayed
             ? elapsed < 140
                 ? 160
-                : elapsed < 285
+                : elapsed < 340
                     ? 34
-                    : 540 + smooth((elapsed - 285) / 210) * 360
+                    : 540 + smooth((elapsed - 340) / 170) * 460
             : 390 + smooth(elapsed / 250) * 360;
         if (timeMs < guideUntil) {
             // 회피 전 위치를 놓친 탄은 더 꺾지 않고 통과하므로 전부 한 점에 모이지 않는다.
@@ -103,7 +103,7 @@ function samplePursuit(index, kind, frame) {
                 depth: mix(velocity.depth, (dz / distance) * speed, steer),
             };
         }
-        if (delayed && elapsed >= 140 && elapsed < 285) {
+        if (delayed && elapsed >= 140 && elapsed < 340) {
             velocity = {
                 x: velocity.x * 0.78,
                 height: velocity.height * 0.78,
@@ -119,12 +119,17 @@ function samplePursuit(index, kind, frame) {
     }
     return samples;
 }
-function drawEnergyHead(ctx, point, prior, thrust) {
+function drawEnergyHead(ctx, point, prior, thrust, emphasis) {
     ctx.save();
     ctx.translate(point.x, point.y);
     ctx.rotate(Math.atan2(point.y - prior.y, point.x - prior.x));
-    ctx.scale(point.scale, point.scale);
-    ellipse(ctx, 0, 0, 7, 4, palette.paper);
+    ctx.scale(point.scale * emphasis, point.scale * emphasis);
+    polygon(ctx, [
+        { x: 9, y: 0 },
+        { x: -4, y: -4 },
+        { x: -8, y: 0 },
+        { x: -4, y: 4 },
+    ], palette.paper);
     polygon(ctx, [
         { x: -5, y: -3 },
         { x: -5 - thrust, y: 0 },
@@ -139,13 +144,22 @@ function circusLayers(kind, frame) {
         { kind: 'ataho', depth: 0.01 },
     ];
     const count = kind === 'itano' ? 9 : 7;
-    const fade = 1 - smooth((frame.timeMs - 1630) / 140);
     for (let index = 0; index < count; index++) {
         const samples = samplePursuit(index, kind, frame);
         const head = samples[samples.length - 1];
         if (!head)
             continue;
-        const trailMs = kind === 'itano' ? 440 : index < 2 ? 330 : 230;
+        const trailMs = frame.enhanced
+            ? kind === 'itano'
+                ? 580
+                : index < 2
+                    ? 400
+                    : 310
+            : kind === 'itano'
+                ? 440
+                : index < 2
+                    ? 330
+                    : 230;
         for (let step = 1; step < samples.length; step++) {
             const from = samples[step - 1];
             const to = samples[step];
@@ -157,7 +171,7 @@ function circusLayers(kind, frame) {
                 depth: (from.depth + to.depth) / 2,
                 from,
                 to,
-                alpha: (1 - age / trailMs) * fade,
+                alpha: 1 - age / trailMs,
             });
         }
         if (frame.timeMs - head.timeMs > 40)
@@ -168,10 +182,17 @@ function circusLayers(kind, frame) {
             depth: head.depth,
             point: head,
             prior: samples[Math.max(0, samples.length - 2)],
-            thrust: frame.enhanced && kind === 'muraki' && index >= 2 && elapsed > 285
-                ? 31
-                : 12,
-            alpha: fade,
+            thrust: frame.enhanced && kind === 'muraki' && index >= 2
+                ? elapsed >= 140 && elapsed < 340
+                    ? 2
+                    : elapsed >= 340
+                        ? 44
+                        : 12
+                : frame.enhanced
+                    ? 18
+                    : 12,
+            // 탄두는 접촉 전에 떠나고 이미 생긴 연기만 각자의 수명을 마친다.
+            alpha: 1 - smooth((frame.timeMs - 1630) / 140),
         });
     }
     return layers.sort((a, b) => a.depth - b.depth);
@@ -223,13 +244,22 @@ export function drawCircusScene(ctx, id, frame) {
                 const to = projectFlight(layer.to, frame);
                 ctx.save();
                 ctx.globalAlpha *= layer.alpha * (frame.reducedMotion ? 0.45 : 0.72);
-                line(ctx, [from, to], frame.enhanced ? '#e4e4c9' : '#a4b7c6', (frame.enhanced ? 3.1 : 1.8) * to.scale);
+                const old = frame.timeMs - layer.to.timeMs;
+                if (frame.enhanced) {
+                    const smokeWidth = (3.5 + clamp(old / 320) * 11) * to.scale;
+                    line(ctx, [from, to], '#b6c4c1', smokeWidth);
+                    if (Math.floor(layer.to.timeMs / 20) % 3 === 0)
+                        ellipse(ctx, to.x, to.y, smokeWidth * 0.62, smokeWidth * 0.48, '#cbd4c9');
+                    line(ctx, [from, to], '#ecedcf', Math.max(1, 3.4 - old / 180) * to.scale);
+                }
+                else
+                    line(ctx, [from, to], '#a4b7c6', 1.8 * to.scale);
                 ctx.restore();
             }
             else {
                 ctx.save();
                 ctx.globalAlpha *= layer.alpha * (frame.reducedMotion ? 0.65 : 1);
-                drawEnergyHead(ctx, projectFlight(layer.point, frame), projectFlight(layer.prior, frame), layer.thrust);
+                drawEnergyHead(ctx, projectFlight(layer.point, frame), projectFlight(layer.prior, frame), layer.thrust, frame.enhanced && !frame.reducedMotion ? 1.35 : 1);
                 ctx.restore();
             }
         }
@@ -258,144 +288,220 @@ function drawIsoDebris(ctx, frame) {
     const seconds = age / 1000;
     const motion = frame.reducedMotion ? 0.55 : 1;
     ctx.save();
-    ctx.globalAlpha *= 1 - smooth((age - 1570) / 530);
-    for (let cluster = 0; cluster < 3; cluster++)
-        for (let i = 0; i < 7; i++) {
-            const index = cluster * 7 + i;
-            const fan = clamp((age - 360) / 800);
-            const direction = -2.55 + cluster * 0.98;
-            const vx = Math.cos(direction) * (144 + cluster * 23);
-            const vy = Math.sin(direction) * (180 + cluster * 17);
-            const spread = frame.enhanced ? 8 + fan * 48 : 70;
-            const x = 550 + vx * seconds * motion + (noise(index) - 0.5) * spread * seconds;
-            const y = 390 +
-                vy * seconds * motion +
-                seconds * seconds * 122 +
-                (noise(index + 12) - 0.5) * spread * seconds;
-            if (y > 625)
-                continue;
-            if (frame.enhanced) {
+    ctx.globalAlpha *= 1 - smooth((age - 1650) / 450);
+    for (let cluster = 0; cluster < 4; cluster++) {
+        const direction = -2.65 + cluster * 0.73;
+        const speed = 155 + cluster * 19;
+        const center = {
+            x: 550 + Math.cos(direction) * speed * seconds * motion,
+            y: 390 +
+                Math.sin(direction) * speed * seconds * motion +
+                seconds * seconds * 142,
+        };
+        const release = smooth((age - 210 - cluster * 42) / 620);
+        if (frame.enhanced) {
+            // 작은 파편을 붙은 검정 외곽으로 읽힌 뒤 바깥부터 떨어뜨린다.
+            const joined = [];
+            for (let edge = 0; edge < 24; edge++) {
+                const angle = (edge / 24) * Math.PI * 2;
+                const radius = (edge % 3 === 0 ? 41 : 27) * (1 - release * 0.68);
+                joined.push({
+                    x: center.x + Math.cos(angle) * radius,
+                    y: center.y + Math.sin(angle) * radius * 0.65,
+                });
+            }
+            polygon(ctx, joined, '#243b48');
+            for (let piece = 0; piece < 7; piece++) {
+                const angle = piece * 2.399 + cluster;
+                const distance = (6 + piece * 3) * (1 + release * 4.2);
+                const point = {
+                    x: center.x + Math.cos(angle) * distance,
+                    y: center.y + Math.sin(angle) * distance * 0.6,
+                };
                 ctx.save();
-                ctx.translate(x, y);
-                ctx.rotate(((index % 3) - 1) * seconds);
-                shardShape(ctx, { x: 0, y: 0 }, (8 + (6 - i) * 2.1) * (1 - fan * 0.24), index, cluster % 2 ? '#9caaa4' : '#657981');
+                ctx.translate(point.x, point.y);
+                ctx.rotate(direction + seconds * ((piece % 3) - 1));
+                shardShape(ctx, { x: 0, y: 0 }, (12 + noise(piece + cluster * 7) * 9) * (1 - release * 0.32), piece + cluster * 7, '#243b48');
                 ctx.restore();
             }
-            else
-                ellipse(ctx, x, y, 5, 5, '#9caaa4');
         }
+        else {
+            for (let piece = 0; piece < 7; piece++)
+                ellipse(ctx, center.x + Math.sin(piece * 4) * seconds * 43, center.y + Math.cos(piece) * seconds * 31, 5, 5, '#9caaa4');
+        }
+    }
     ctx.restore();
 }
 function cube(ctx, x, y, size, rotation) {
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(rotation);
-    const a = { x: -size, y: -size * 0.55 };
-    const b = { x: 0, y: -size };
-    const c = { x: size, y: -size * 0.55 };
-    const d = { x: 0, y: 0 };
-    const e = { x: -size, y: size * 0.6 };
-    const f = { x: 0, y: size * 1.05 };
-    const g = { x: size, y: size * 0.6 };
-    polygon(ctx, [a, b, c, d], '#c9c9ad');
-    polygon(ctx, [a, d, f, e], '#778b89');
-    polygon(ctx, [d, c, g, f], '#425f70');
-    ctx.restore();
+    const yaw = rotation;
+    const pitch = rotation * 0.73 + 0.46;
+    const roll = rotation * 0.41;
+    const vertices = Array.from({ length: 8 }, (_, index) => {
+        const px = index & 1 ? size : -size;
+        const py = index & 2 ? size : -size;
+        const pz = index & 4 ? size : -size;
+        const rx = px * Math.cos(yaw) + pz * Math.sin(yaw);
+        const rz = -px * Math.sin(yaw) + pz * Math.cos(yaw);
+        const ry = py * Math.cos(pitch) - rz * Math.sin(pitch);
+        const z = py * Math.sin(pitch) + rz * Math.cos(pitch);
+        const perspective = 240 / (240 - z);
+        return {
+            x: x + (rx * Math.cos(roll) - ry * Math.sin(roll)) * perspective,
+            y: y + (rx * Math.sin(roll) + ry * Math.cos(roll)) * perspective,
+            z,
+        };
+    });
+    const faces = [
+        [0, 1, 3, 2],
+        [4, 6, 7, 5],
+        [0, 4, 5, 1],
+        [2, 3, 7, 6],
+        [0, 2, 6, 4],
+        [1, 5, 7, 3],
+    ]
+        .map((indices, index) => ({
+        indices,
+        index,
+        depth: indices.reduce((sum, i) => sum + vertices[i].z, 0) / 4,
+    }))
+        .sort((a, b) => a.depth - b.depth);
+    for (const face of faces) {
+        const shade = (Math.cos(rotation * 0.7 + face.index * 1.2) + 1) / 2;
+        polygon(ctx, face.indices.map((index) => vertices[index]), shade < 0.32 ? '#183e55' : shade < 0.68 ? '#79a6b4' : '#e1f3e8');
+        ctx.strokeStyle = '#24475c';
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+    }
 }
 function drawNakamura(ctx, frame) {
     const age = frame.timeMs - battleLayout.contactMs;
-    if (age < 0)
-        return;
-    if (age > 2350)
+    if (age < -170 || age > 2350)
         return;
     const motion = frame.reducedMotion ? 0.5 : 1;
-    for (let i = 0; i < 16; i++) {
-        const s = age / 1000;
-        const x = 551 + (noise(i) - 0.5) * s * 330 * motion;
-        const y = 389 - (118 + noise(i + 17) * 125) * s * motion + s * s * 151;
-        if (y > 625)
+    if (frame.enhanced && age < 60) {
+        // 맞는 곳의 얼음 판이 먼저 갈라져야 조각의 재질과 발생 지점이 이어진다.
+        cube(ctx, 551, 389, 42 * (1 - clamp(age / 90)), 0.27);
+        if (age < 0)
+            return;
+    }
+    if (age < 0)
+        return;
+    ctx.save();
+    ctx.globalAlpha *= 1 - smooth((age - 1770) / 550);
+    for (let i = 0; i < 28; i++) {
+        const delay = i < 12 ? 0 : 90 + (i % 4) * 22;
+        const s = (age - delay) / 1000;
+        if (s < 0)
             continue;
-        const size = 7 + (i % 4) * 5;
+        const angle = -Math.PI + noise(i + 3) * Math.PI;
+        const speed = (110 + noise(i + 17) * 190) * motion;
+        const x = 551 + Math.cos(angle) * speed * s;
+        const y = 389 + Math.sin(angle) * speed * s + s * s * 151;
+        const size = i < 12 ? 12 + (i % 4) * 7 : 2 + (i % 3) * 2;
         if (frame.enhanced)
-            cube(ctx, x, y, size, (noise(i + 9) - 0.5) * s * 3.8);
+            cube(ctx, x, y, size * (1 - smooth((age - 1450) / 1000) * 0.6), i * 0.43 + (noise(i + 9) - 0.5) * s * 5.8);
         else {
             ctx.fillStyle = '#879b93';
             ctx.fillRect(x - 6, y - 6, 12, 12);
         }
     }
-    if (frame.enhanced && age > 370)
-        for (let i = 0; i < 22; i++) {
-            const s = (age - 370) / 1000;
-            const x = 551 + (noise(i + 54) - 0.5) * s * 440 * motion;
-            const y = 394 - (80 + noise(i + 32) * 125) * s * motion + s * s * 125;
-            if (y > 625)
-                continue;
-            cube(ctx, x, y, 2 + (i % 3) * 1.5, s * (i % 2 ? 3 : -3));
-        }
+    ctx.restore();
 }
 function drawMori(ctx, frame) {
     const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 1800)
         return;
-    const s = age / 1000;
+    const cell = Math.floor(age / (frame.reducedMotion ? 170 : 1000 / 12));
     const motion = frame.reducedMotion ? 0.6 : 1;
     ctx.save();
     ctx.globalAlpha *= 1 - smooth((age - 1200) / 600);
-    for (let i = 0; i < 19; i++) {
-        const angle = -0.75 + noise(i) * 1.5;
-        const dist = s * (100 + noise(i + 8) * 160) * motion;
-        const x = 410 + Math.cos(angle) * dist;
-        const y = 310 + Math.sin(angle) * dist + s * s * 28;
-        if (!frame.enhanced)
+    for (let i = 0; i < 16; i++) {
+        const delay = frame.enhanced ? (i % 3) * 60 : 0;
+        if (age < delay)
+            continue;
+        const seconds = (age - delay) / 1000;
+        const angle = -0.94 + noise(i) * 1.7;
+        const speed = 95 + noise(i + 8) * 190;
+        const x = 410 + Math.cos(angle) * seconds * speed * motion;
+        const y = 310 + Math.sin(angle) * seconds * speed * motion + seconds * seconds * 54;
+        if (!frame.enhanced) {
             ellipse(ctx, x, y, 5, 5, '#c1b388');
-        else {
-            ctx.save();
-            ctx.translate(x, y);
-            ctx.rotate(angle + Math.sin(i) * s * 0.3);
-            const length = (18 + (i % 5) * 7) * (1 - clamp(s / 2) * 0.5);
-            polygon(ctx, [
-                { x: -length, y: -2 },
-                { x: -length * 0.2, y: -6 - (i % 3) * 3 },
-                { x: length * 0.7, y: -2 },
-                { x: length, y: 1 },
-                { x: length * 0.25, y: 5 },
-                { x: -length * 0.5, y: 7 },
-                { x: -length * 0.3, y: 2 },
-            ], i % 3 ? '#e4c388' : '#121b2a');
-            ctx.restore();
+            continue;
         }
+        ctx.save();
+        ctx.translate(x, y);
+        ctx.rotate(angle + Math.sin(i) * seconds * 0.4);
+        const length = (i % 4 === 0 ? 64 : 24 + (i % 5) * 5) * (1 - clamp(seconds / 2) * 0.5);
+        const kink = (noise(i * 11 + cell) - 0.5) * length * 0.55;
+        polygon(ctx, [
+            { x: -length, y: -2 },
+            { x: -length * 0.4, y: -7 - kink },
+            { x: length * 0.23, y: -3 },
+            { x: length, y: 1 },
+            { x: length * 0.2, y: 4 + kink },
+            { x: -length * 0.65, y: 9 },
+            { x: -length * 0.3, y: 1 },
+        ], i % 3 ? '#d9bb7e' : '#15222c');
+        line(ctx, [
+            { x: -length * 0.85, y: -1 },
+            { x: -length * 0.18, y: -2 + kink * 0.25 },
+            { x: length * 0.8, y: 1 },
+        ], '#17232b', 3.6);
+        ctx.restore();
     }
     ctx.restore();
 }
 function drawAnimeR(ctx, frame) {
     const age = frame.timeMs - battleLayout.contactMs;
-    if (age < 0 || age > 2800)
+    if (age < 0 || age > 2400)
         return;
     const motion = frame.reducedMotion ? 0.55 : 1;
-    for (let i = 0; i < 18; i++) {
-        const s = age / 1000;
-        const a = -Math.PI + noise(i) * Math.PI;
-        const speed = 80 + noise(i + 8) * 160;
-        const x = 548 + Math.cos(a) * speed * s * motion;
-        const y = 371 + Math.sin(a) * speed * s * motion + s * s * 76;
-        if (y > 625)
-            continue;
-        const dissolveAt = 570 + (i % 5) * 165;
-        const split = clamp((age - dissolveAt) / 900);
-        if (!frame.enhanced) {
+    for (let i = 0; i < 16; i++) {
+        const angle = -Math.PI + noise(i) * Math.PI;
+        const speed = (100 + noise(i + 8) * 150) * motion;
+        const velocity = { x: Math.cos(angle) * speed, y: Math.sin(angle) * speed };
+        const breakMs = 420 + (i % 5) * 115;
+        const size = frame.enhanced ? 18 + (i % 3) * 6 : 12 + (i % 3) * 4;
+        const position = (timeMs) => ({
+            x: 548 + (velocity.x * timeMs) / 1000,
+            y: 371 + (velocity.y * timeMs) / 1000 + (timeMs / 1000) ** 2 * 88,
+        });
+        if (!frame.enhanced || age < breakMs) {
+            const point = position(age);
             ctx.save();
-            ctx.globalAlpha *= 1 - clamp(age / 2400);
-            shardShape(ctx, { x, y }, 13, i, '#d4c7a6');
+            if (!frame.enhanced)
+                ctx.globalAlpha *= 1 - clamp(age / 2100);
+            ctx.translate(point.x, point.y);
+            ctx.rotate(i + age / 900);
+            shardShape(ctx, { x: 0, y: 0 }, size, i, '#d4c7a6');
             ctx.restore();
+            continue;
         }
-        else {
-            if (split < 1)
-                shardShape(ctx, { x, y }, 16 * (1 - split), i, '#d4c7a6');
-            if (split > 0 && split < 1)
-                for (let piece = 0; piece < 3; piece++) {
-                    const dx = (piece - 1) * split * 25;
-                    const dy = Math.sin(piece + i) * split * 27;
-                    shardShape(ctx, { x: x + dx, y: y + dy }, 5 * Math.sin(split * Math.PI), i + piece, '#a8b3b1');
+        const parent = position(breakMs);
+        for (let child = 0; child < 3; child++) {
+            const childAge = (age - breakMs) / 1000;
+            const life = 0.38 + child * 0.12 + (i % 3) * 0.07;
+            if (childAge > life)
+                continue;
+            const vx = velocity.x + (child - 1) * 51;
+            const vy = velocity.y + (breakMs / 1000) * 176 + (child - 1) * 23;
+            const point = {
+                x: parent.x + vx * childAge,
+                y: parent.y + vy * childAge + childAge * childAge * 88,
+            };
+            const radius = size * 0.5 * (1 - clamp(childAge / life));
+            ctx.save();
+            ctx.translate(point.x, point.y);
+            ctx.rotate(i + breakMs / 900 + childAge * (child - 1) * 4);
+            shardShape(ctx, { x: 0, y: 0 }, radius, i + child, '#d4c7a6');
+            ctx.restore();
+            if (childAge > life * 0.48)
+                for (let speck = 0; speck < 2; speck++) {
+                    const since = childAge - life * 0.48;
+                    shardShape(ctx, {
+                        x: point.x + (speck ? 1 : -1) * since * 37,
+                        y: point.y - since * 22,
+                    }, 2.4 * (1 - clamp(since / (life * 0.52))), i + speck, '#a8b3b1');
                 }
         }
     }

@@ -1,9 +1,10 @@
 import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
+import { connectStudioScene, redirectToStudio, studioMode, } from '../../cutscenes/studio/bridge.js';
 import { samples, drawSample, disposeSampleSurfaces } from './catalog.js';
 import { exportGif } from './export.js';
 import { ShowcasePlayer } from './player.js';
 import { loadBattleAssets } from './battle-assets.js';
-import { categories, height, width, } from './types.js';
+import { categories, durationMs, height, width, } from './types.js';
 function element(id, kind) {
     const value = document.getElementById(id);
     if (!(value instanceof kind))
@@ -40,12 +41,20 @@ class ShowcaseScreen {
     lastTime = 0;
     disposed = false;
     exporting = null;
+    studio;
     constructor(assets) {
         this.assets = assets;
         if (!this.context || !this.baseContext)
             throw new Error('Canvas를 준비할 수 없습니다.');
-        if (samples.length !== 90 || new Set(samples.map((s) => s.id)).size !== 90)
-            throw new Error('견본 목록은 서로 다른 90개여야 합니다.');
+        const expectedCount = categories.reduce((total, category) => total + category.count, 0);
+        if (samples.length === 0 ||
+            samples.length !== expectedCount ||
+            new Set(samples.map((sample) => sample.id)).size !== samples.length)
+            throw new Error('견본 목록의 수량 또는 ID가 맞지 않습니다.');
+        document.title = `${samples.length}개의 순간 · 애니 연출 견본집`;
+        for (const id of ['sample-total', 'edition-total'])
+            element(id, HTMLElement).textContent = String(samples.length);
+        element('category-total', HTMLElement).textContent = String(categories.length).padStart(2, '0');
         for (const category of categories)
             if (samples.filter((s) => s.category === category.id).length !==
                 category.count)
@@ -53,7 +62,7 @@ class ShowcaseScreen {
         this.reduced.checked = matchMedia('(prefers-reduced-motion: reduce)').matches;
         const signal = this.events.signal;
         for (const category of [
-            { id: 'all', name: '전체 견본', count: 90 },
+            { id: 'all', name: '전체 견본', count: samples.length },
             ...categories,
         ]) {
             const button = document.createElement('button');
@@ -106,13 +115,7 @@ class ShowcaseScreen {
             this.player.seek(this.current.previewMs ?? 1900);
             this.render();
         }, { signal });
-        this.compare.addEventListener('change', () => {
-            const figure = this.baseline.closest('figure');
-            if (figure instanceof HTMLElement)
-                figure.hidden = !this.compare.checked;
-            element('stages', HTMLElement).classList.toggle('comparing', this.compare.checked);
-            this.resize();
-        }, { signal });
+        this.compare.addEventListener('change', () => this.setComparing(this.compare.checked), { signal });
         this.reduced.addEventListener('change', () => {
             this.exporting?.abort();
             this.render();
@@ -165,7 +168,72 @@ class ShowcaseScreen {
         this.filter();
         this.describe();
         this.resize();
+        if (studioMode)
+            this.player.pause();
+        this.studio = connectStudioScene('showcase', {
+            snapshot: () => {
+                const state = this.player.snapshot;
+                return {
+                    itemId: this.current.id,
+                    title: this.current.name,
+                    description: `${this.current.description}\n${this.current.distinction}`,
+                    timeMs: state.timeMs,
+                    durationMs,
+                    playing: state.playing,
+                    beats: this.current.beats ?? [
+                        { timeMs: this.current.previewMs ?? 1900, label: '핵심 순간' },
+                    ],
+                    loop: this.loop.checked,
+                    compare: this.compare.checked,
+                    reducedMotion: this.reduced.checked,
+                    exporting: this.exporting !== null,
+                    exportStatus: this.exportStatus.textContent ?? '',
+                };
+            },
+            select: (id) => {
+                const sample = samples.find((entry) => entry.id === id);
+                if (sample)
+                    this.select(sample);
+            },
+            toggle: () => {
+                this.player.toggle();
+                this.render();
+            },
+            restart: () => {
+                this.player.restart();
+                this.render();
+            },
+            seek: (timeMs) => {
+                this.player.seek(timeMs);
+                this.render();
+            },
+            speed: (rate) => {
+                element('speed', HTMLSelectElement).value = String(rate);
+                this.player.speed(rate);
+            },
+            loop: (enabled) => {
+                this.loop.checked = enabled;
+            },
+            compare: (enabled) => this.setComparing(enabled),
+            reduced: (enabled) => {
+                this.reduced.checked = enabled;
+                this.exporting?.abort();
+                this.render();
+            },
+            gif: () => void this.saveGif(),
+            cancelExport: () => this.exporting?.abort(),
+        });
+        if (studioMode)
+            this.sequence.checked = false;
         this.frameId = requestAnimationFrame((time) => this.tick(time));
+    }
+    setComparing(enabled) {
+        this.compare.checked = enabled;
+        const figure = this.baseline.closest('figure');
+        if (figure instanceof HTMLElement)
+            figure.hidden = !enabled;
+        element('stages', HTMLElement).classList.toggle('comparing', enabled);
+        this.resize();
     }
     filter() {
         const query = this.search.value.trim().toLocaleLowerCase();
@@ -215,7 +283,7 @@ class ShowcaseScreen {
         element('sample-title', HTMLElement).textContent = sample.name;
         element('category-label', HTMLElement).textContent = category.name;
         element('ordinal', HTMLOutputElement).textContent =
-            `${String(samples.indexOf(sample) + 1).padStart(2, '0')} / 90`;
+            `${String(samples.indexOf(sample) + 1).padStart(2, '0')} / ${samples.length}`;
         element('description', HTMLElement).textContent = sample.description;
         element('distinction', HTMLElement).textContent = sample.distinction;
     }
@@ -277,7 +345,7 @@ class ShowcaseScreen {
         const ended = this.player.advance(this.lastTime ? Math.min(100, now - this.lastTime) : 0);
         this.lastTime = now;
         if (ended) {
-            if (this.sequence.checked) {
+            if (!studioMode && this.sequence.checked) {
                 this.step(1);
                 this.player.restart();
             }
@@ -351,6 +419,7 @@ class ShowcaseScreen {
             return;
         this.disposed = true;
         this.events.abort();
+        this.studio?.dispose();
         this.exporting?.abort();
         this.observer.disconnect();
         cancelAnimationFrame(this.frameId);
@@ -364,6 +433,8 @@ class ShowcaseScreen {
     }
 }
 async function start() {
+    if (redirectToStudio('showcase'))
+        return;
     const loading = document.getElementById('loading');
     const lifecycle = new AbortController();
     let disposed = false;

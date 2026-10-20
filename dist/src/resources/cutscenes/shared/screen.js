@@ -1,4 +1,5 @@
 import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
+import { connectStudioScene, studioMode } from '../studio/bridge.js';
 import { CutscenePlayer, sceneWidth, sceneHeight, } from './playback.js';
 function element(id, type) {
     const value = document.getElementById(id);
@@ -10,6 +11,7 @@ function element(id, type) {
 export class CutsceneScreen {
     definition;
     player;
+    studioConnection;
     events = new AbortController();
     canvas = element('scene', HTMLCanvasElement);
     ctx = this.canvas.getContext('2d');
@@ -37,11 +39,9 @@ export class CutsceneScreen {
         const signal = this.events.signal;
         for (const button of [this.play, this.start])
             button.addEventListener('click', () => this.toggle(), { signal });
-        this.restart.addEventListener('click', () => {
-            this.player.restart();
-            this.lastFrameMs = 0;
-            this.render();
-        }, { signal });
+        this.restart.addEventListener('click', () => this.restartPlayback(), {
+            signal,
+        });
         this.scrub.addEventListener('input', () => this.seek(Number(this.scrub.value)), { signal });
         this.speed.addEventListener('change', () => {
             this.player.setSpeed(Number(this.speed.value));
@@ -79,6 +79,8 @@ export class CutsceneScreen {
             }
         }, { signal });
         window.addEventListener('blur', () => {
+            if (studioMode)
+                return;
             this.player.pause();
             this.render();
         }, { signal });
@@ -88,6 +90,21 @@ export class CutsceneScreen {
         });
         this.observer.observe(this.canvas);
         this.resize();
+        this.studioConnection = connectStudioScene(definition.studio.source, {
+            snapshot: () => this.studioSnapshot(),
+            select: (id) => {
+                if (id === 'full-cutscene')
+                    this.seek(0);
+            },
+            toggle: () => this.toggle(),
+            restart: () => this.restartPlayback(),
+            seek: (timeMs) => this.seek(timeMs),
+            speed: (rate) => this.player.setSpeed(rate),
+            reduced: (enabled) => {
+                this.reducedMotion.checked = enabled;
+                this.render();
+            },
+        });
         void this.load();
     }
     async load() {
@@ -121,6 +138,30 @@ export class CutsceneScreen {
         this.canvas.width = Math.round(sceneWidth * ratio);
         this.canvas.height = Math.round(sceneHeight * ratio);
         this.ctx?.setTransform(ratio, 0, 0, ratio, 0, 0);
+        this.render();
+    }
+    studioSnapshot() {
+        const snapshot = this.player.snapshot();
+        return {
+            itemId: 'full-cutscene',
+            title: this.definition.studio.title,
+            description: this.definition.studio.description,
+            timeMs: snapshot.elapsedMs,
+            durationMs: this.player.durationMs,
+            playing: snapshot.playing,
+            loading: this.assets === null,
+            beats: this.definition.cuts.map((cut) => ({
+                timeMs: cut.startMs + (cut.previewMs ?? 150),
+                label: cut.label,
+            })),
+            reducedMotion: this.reducedMotion.checked,
+        };
+    }
+    restartPlayback() {
+        if (!this.assets)
+            return;
+        this.player.restart();
+        this.lastFrameMs = 0;
         this.render();
     }
     toggle() {
@@ -197,6 +238,7 @@ export class CutsceneScreen {
             return;
         this.disposed = true;
         cancelAnimationFrame(this.frameId);
+        this.studioConnection.dispose();
         this.events.abort();
         this.observer.disconnect();
         this.assets = null;

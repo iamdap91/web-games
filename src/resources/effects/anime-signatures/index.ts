@@ -1,4 +1,10 @@
 import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
+import {
+  connectStudioScene,
+  redirectToStudio,
+  studioMode,
+} from '../../cutscenes/studio/bridge.js';
+import type { StudioConnection } from '../../cutscenes/studio/contracts.js';
 import { loadSignatureAssets } from './assets.js';
 import {
   signatureHeight,
@@ -123,6 +129,8 @@ class SignatureScreen {
   private lastFrameMs = 0;
   private pixelRatio = 1;
   private disposed = false;
+  private comparing = true;
+  private studio?: StudioConnection;
 
   constructor() {
     const dramatic = document.createElement('optgroup');
@@ -229,7 +237,13 @@ class SignatureScreen {
       },
       { signal },
     );
-    window.addEventListener('blur', () => this.pause(), { signal });
+    window.addEventListener(
+      'blur',
+      () => {
+        if (!studioMode) this.pause();
+      },
+      { signal },
+    );
     window.addEventListener('pagehide', () => this.dispose(), {
       signal,
       once: true,
@@ -238,7 +252,79 @@ class SignatureScreen {
     this.observer.observe(this.enhanced);
     this.resize();
     this.select(this.scene);
+    this.studio = connectStudioScene('signatures', {
+      snapshot: () => ({
+        itemId: this.scene.id,
+        title: this.scene.title,
+        description: `${this.scene.description}\n${this.scene.application}`,
+        timeMs: this.player.snapshot.timeMs,
+        durationMs: this.scene.durationMs,
+        playing: this.player.snapshot.playing,
+        loading: this.assets === null,
+        beats: [{ timeMs: this.scene.previewMs, label: '핵심 자세' }],
+        loop: this.loop.checked,
+        compare: this.comparing,
+        facing: this.direction,
+        facingOptions: [...this.facing.options]
+          .filter((option) => !option.disabled)
+          .map((option) => ({
+            value: option.value,
+            label: option.textContent ?? option.value,
+          })),
+        reducedMotion: this.reducedMotion.checked,
+        exporting: this.exportAbort !== null,
+        exportStatus: this.exportStatus.textContent ?? '',
+      }),
+      select: (id) => {
+        const scene = signatureScenes.find((entry) => entry.id === id);
+        if (scene) this.select(scene);
+      },
+      toggle: () => this.toggle(),
+      restart: () => {
+        if (!this.assets) return;
+        this.player.restart();
+        this.lastFrameMs = 0;
+        this.render();
+      },
+      seek: (timeMs) => this.scrub(timeMs),
+      speed: (rate) => {
+        this.speed.value = String(rate);
+        this.player.setSpeed(rate);
+      },
+      loop: (enabled) => {
+        this.loop.checked = enabled;
+        this.player.setRepeating(enabled);
+      },
+      compare: (enabled) => this.setComparing(enabled),
+      facing: (value) => {
+        const option = [...this.facing.options].find(
+          (entry) => entry.value === value && !entry.disabled,
+        );
+        if (!option || this.facing.disabled) return;
+        this.facing.value = option.value;
+        this.exportAbort?.abort();
+        this.render();
+      },
+      reduced: (enabled) => {
+        this.reducedMotion.checked = enabled;
+        this.exportAbort?.abort();
+        if (enabled) this.player.pause();
+        this.render();
+      },
+      gif: () => void this.exportGif(),
+      cancelExport: () => this.exportAbort?.abort(),
+    });
+    this.setComparing(this.comparing);
     void this.load();
+  }
+
+  private setComparing(enabled: boolean): void {
+    this.comparing = enabled;
+    const figure = this.original.closest('figure');
+    if (figure instanceof HTMLElement) figure.hidden = !enabled;
+    const comparison = this.original.closest('.comparison');
+    comparison?.classList.toggle('comparing', enabled);
+    this.resize();
   }
 
   private get direction(): SignatureFacing {
@@ -340,7 +426,7 @@ class SignatureScreen {
     }
     if (this.assets) {
       if (this.reducedMotion.checked) this.player.seek(scene.previewMs);
-      else this.player.play();
+      else if (!studioMode) this.player.play();
     }
     this.render();
   }
@@ -514,6 +600,7 @@ class SignatureScreen {
     if (this.disposed) return;
     this.disposed = true;
     this.events.abort();
+    this.studio?.dispose();
     this.exportAbort?.abort();
     this.observer.disconnect();
     cancelAnimationFrame(this.frameId);
@@ -528,5 +615,7 @@ class SignatureScreen {
   }
 }
 
-const screen = new SignatureScreen();
-registerEmbeddedScene(() => screen.dispose());
+if (!redirectToStudio('signatures')) {
+  const screen = new SignatureScreen();
+  registerEmbeddedScene(() => screen.dispose());
+}

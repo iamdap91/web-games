@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <link rel="stylesheet" href="../../catalog/embedded-scene.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "gifenc": "../../../../node_modules/gifenc/dist/gifenc.esm.js"
+        }
+      }
+    </script>
+    <title>애니 연출 · 고른 컷 10개</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../../cutscenes/studio/embed.css" />
+  </head>
+  <body data-studio-source="selected">
+    <main>
+      <header>
+        <div>
+          <p class="eyebrow">ATAHO / ANIMATION STUDIES</p>
+          <h1>고른 컷 <em>10</em></h1>
+          <p>속도를 쌓고, 한 장으로 터뜨리고, 멈춘다.</p>
+        </div>
+      </header>
+      <div class="layout">
+        <nav id="cuts" aria-label="완성 컷 선택"></nav>
+        <section class="viewer" aria-label="연출 미리보기">
+          <div class="caption">
+            <span id="cut-kind">3D</span>
+            <h2 id="cut-title">그림 준비 중</h2>
+            <output id="counter">01 / 10</output>
+          </div>
+          <canvas
+            id="stage"
+            width="1280"
+            height="720"
+            aria-label="아타호와 서리갈기 곰왕 연출"
+            tabindex="0"
+          ></canvas>
+          <div class="transport">
+            <button id="previous" aria-label="이전 컷">←</button
+            ><button id="play" disabled>재생</button
+            ><button id="restart" disabled>처음부터</button
+            ><button id="next" aria-label="다음 컷">→</button
+            ><label
+              >배속
+              <select id="speed">
+                <option value="0.25">0.25×</option>
+                <option value="0.5">0.5×</option>
+                <option value="1" selected>1×</option>
+                <option value="1.5">1.5×</option>
+              </select></label
+            ><label><input id="loop" type="checkbox" />반복</label
+            ><label><input id="sequence" type="checkbox" />10컷 연속</label>
+          </div>
+          <div class="timeline">
+            <button id="frame-back" aria-label="이전 코마">−1f</button
+            ><input
+              id="seek"
+              aria-label="재생 시각"
+              type="range"
+              min="0"
+              max="3.3"
+              step="0.001"
+              value="0"
+            /><button id="frame-next" aria-label="다음 코마">+1f</button
+            ><output id="time">0.000 / 3.300 s</output>
+          </div>
+          <div id="beats" class="beats" aria-label="주요 장면으로 이동"></div>
+          <p id="description"></p>
+          <div class="exports">
+            <button id="png" disabled>현재 코마 PNG</button
+            ><button id="gif" disabled>전체 컷 GIF</button
+            ><button id="cancel" hidden>저장 취소</button
+            ><output id="status" role="status">기존 원본 불러오는 중…</output
+            ><a id="download" hidden>다시 다운로드</a>
+          </div>
+          <p class="help">
+            Space 재생·정지 · ← → 1코마(1/24초) · ↑ ↓ 컷 이동 · Shift + ← →
+            5코마
+          </p>
+          <p class="note">
+            기존 아타호·곰왕 원본을 합성한 무음 연출 견본. 3D 무대 속 인물은 2D
+            판이며, 원안의 베기는 권격으로 응용했습니다.
+          </p>
+          <p id="error" role="alert" hidden></p>
+        </section>
+      </div>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/effects/anime-selected-cuts/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

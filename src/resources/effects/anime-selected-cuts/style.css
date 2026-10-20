@@ -1,0 +1,274 @@
+:root {
+  font-family:
+    Inter,
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Noto Sans KR',
+    sans-serif;
+  color: #e9efed;
+  background: #0c1218;
+  color-scheme: dark;
+  font-synthesis: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1660px;
+  margin: auto;
+  padding: 32px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #2c3941;
+  padding-bottom: 22px;
+  margin-bottom: 24px;
+}
+header p {
+  margin: 8px 0;
+  color: #99aab2;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: #d7b978;
+}
+h1 {
+  font-size: 32px;
+  letter-spacing: -0.045em;
+  margin: 0;
+}
+em {
+  color: #d7b978;
+  font-style: normal;
+  font-weight: 400;
+}
+a {
+  color: #d7c38b;
+  text-decoration: none;
+  font-size: 13px;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 28px;
+}
+#cuts {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+#cuts button {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 8px;
+  text-align: left;
+  padding: 13px 11px;
+  background: none;
+  border: 1px solid transparent;
+}
+#cuts button strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+#cuts button small {
+  grid-column: 2;
+  color: #81949e;
+  font-size: 10px;
+}
+#cuts button span {
+  font-size: 11px;
+  color: #81949e;
+}
+#cuts button[aria-pressed='true'] {
+  border-color: #847750;
+  background: #1c252b;
+}
+#cuts button[aria-pressed='true'] strong {
+  color: #eddaac;
+}
+button,
+select {
+  font: inherit;
+  color: inherit;
+  border: 1px solid #35444d;
+  border-radius: 4px;
+  background: #19242c;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+button:hover {
+  background: #2b3b43;
+}
+button:disabled {
+  opacity: 0.45;
+  cursor: wait;
+}
+button:focus-visible,
+a:focus-visible,
+canvas:focus-visible {
+  outline: 2px solid #edca81;
+  outline-offset: 3px;
+}
+.caption {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.caption span {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #d3bc80;
+  border: 1px solid #5b563f;
+  padding: 4px 6px;
+}
+.caption h2 {
+  font-size: 19px;
+  font-weight: 500;
+  margin: 0;
+}
+.caption output {
+  margin-left: auto;
+  color: #82959d;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+canvas {
+  display: block;
+  width: 100%;
+  max-width: 1280px;
+  aspect-ratio: 16/9;
+  background: #10222b;
+  border: 1px solid #35414a;
+}
+.transport,
+.timeline,
+.exports {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 14px;
+  font-size: 12px;
+}
+.transport label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #adbcc3;
+  margin-left: 4px;
+}
+.transport #play {
+  background: #ceb77b;
+  color: #131c22;
+  border-color: #ceb77b;
+  min-width: 68px;
+}
+.timeline input {
+  flex: 1;
+  min-width: 180px;
+  accent-color: #d2b777;
+}
+.timeline output {
+  width: 145px;
+  text-align: right;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  color: #b9c8cd;
+}
+.timeline button {
+  padding: 5px 8px;
+  font-size: 11px;
+}
+.beats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 12px;
+}
+.beats button {
+  background: transparent;
+  font-size: 11px;
+  border-color: #31404b;
+  color: #9db0ba;
+  padding: 6px 9px;
+}
+#description {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #bdc9cc;
+  min-height: 45px;
+  margin: 18px 0 12px;
+}
+.help,
+.note {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #7d919c;
+}
+.note {
+  color: #687d88;
+}
+.exports output {
+  color: #a1b5b7;
+  margin-left: 5px;
+}
+#error {
+  color: #ffb4a7;
+  font-size: 13px;
+}
+html.embedded-scene main {
+  padding: 16px;
+}
+html.embedded-scene header {
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+html.embedded-scene header > a {
+  display: none;
+}
+html.embedded-scene .layout {
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 14px;
+}
+html.embedded-scene header h1 {
+  font-size: 24px;
+}
+@media (max-width: 1000px) {
+  main {
+    padding: 20px;
+  }
+  .layout {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 16px;
+  }
+  .transport {
+    gap: 5px;
+  }
+  .transport button {
+    padding: 7px 9px;
+  }
+}
+@media (max-width: 700px) {
+  .layout,
+  html.embedded-scene .layout {
+    grid-template-columns: 1fr;
+  }
+  #cuts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  #cuts button {
+    padding: 8px;
+  }
+  header > a {
+    display: none;
+  }
+}

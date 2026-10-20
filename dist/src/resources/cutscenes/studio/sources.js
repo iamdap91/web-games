@@ -1,0 +1,55 @@
+/** 원본 주소·리소스 ID·기본 선택의 대응은 여기서만 정의한다. */
+export const studioSourceDefinitions = [
+    {
+        source: 'selected',
+        assetId: 'local/anime-selected-cuts',
+        group: 'finished',
+        origin: '고른 컷',
+        defaultSampleId: 'background-run',
+        path: 'src/resources/effects/anime-selected-cuts/',
+    },
+    {
+        source: 'tiger-awakening',
+        assetId: 'local/ataho-tiger-awakening-cutscene',
+        group: 'finished',
+        origin: '아타호 단독 컷씬',
+        single: true,
+        defaultSampleId: 'full-cutscene',
+        path: 'src/resources/cutscenes/tiger-awakening/index.html',
+    },
+    {
+        source: 'ataho-shadow',
+        assetId: 'local/ataho-shadow-cutscene',
+        group: 'finished',
+        origin: '아타호 단독 컷씬',
+        single: true,
+        defaultSampleId: 'full-cutscene',
+        path: 'src/resources/cutscenes/ataho-shadow/index.html',
+    },
+    {
+        source: 'hisashi-punch',
+        assetId: 'local/ataho-hisashi-punch-cutscene',
+        group: 'finished',
+        origin: '아타호 단독 컷씬',
+        single: true,
+        defaultSampleId: 'full-cutscene',
+        path: 'src/resources/cutscenes/hisashi-punch/index.html',
+    },
+    {
+        source: 'showcase',
+        assetId: 'local/anime-showcase',
+        group: 'techniques',
+        origin: '기법 견본',
+        defaultSampleId: 'impact-frame',
+        path: 'src/resources/effects/anime-showcase/',
+    },
+    {
+        source: 'signatures',
+        assetId: 'local/anime-signatures',
+        group: 'poses',
+        origin: '포즈·연기 비교',
+        defaultSampleId: 'dramatic-rays',
+        path: 'src/resources/effects/anime-signatures/',
+    },
+];
+export const studioSources = studioSourceDefinitions.map((definition) => definition.source);

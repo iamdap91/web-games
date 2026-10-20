@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="data:," />
+    <title>연출실 · 이계취호전</title>
+    <link rel="stylesheet" href="../../catalog/detail-navigation.css" />
+    <link rel="stylesheet" href="../../catalog/embedded-scene.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header class="studio-header">
+        <div>
+          <p class="eyebrow">이계취호전 / PRESENTATION STUDIO</p>
+          <h1>연출실 <span id="studio-total">130개의 장면과 기법</span></h1>
+        </div>
+        <p class="header-note">완성 컷부터 표현의 원리까지, 한곳에서.</p>
+      </header>
+      <div class="studio-layout">
+        <aside class="studio-sidebar">
+          <label class="search-label" for="search">장면 찾기</label
+          ><input
+            id="search"
+            type="search"
+            placeholder="이름·기법 검색"
+            autocomplete="off"
+          />
+          <nav id="groups" aria-label="연출 분류"></nav>
+          <div class="list-heading">
+            <strong id="list-title">완성 컷씬</strong
+            ><output id="list-count"></output>
+          </div>
+          <div id="items" class="item-list" aria-label="연출 목록"></div>
+          <p id="empty" hidden>조건에 맞는 연출이 없습니다.</p>
+        </aside>
+        <section class="studio-viewer" aria-label="연출 감상과 비교">
+          <div class="item-heading">
+            <div>
+              <p id="origin" class="eyebrow"></p>
+              <h2 id="title">연출 선택</h2>
+            </div>
+            <div class="item-nav">
+              <button id="previous" aria-label="이전 연출">←</button
+              ><button id="next" aria-label="다음 연출">→</button>
+            </div>
+          </div>
+          <div id="comparison-labels" class="comparison-labels" hidden>
+            <span>기본 장면</span><span>연출 장면</span>
+          </div>
+          <div id="viewport" class="studio-viewport" aria-busy="true"></div>
+          <div class="playback">
+            <div class="transport">
+              <button id="play" class="primary" disabled>재생</button
+              ><button id="restart" disabled>처음부터</button
+              ><label
+                >배속
+                <select id="speed" disabled>
+                  <option value="0.25">0.25×</option>
+                  <option value="0.5">0.5×</option>
+                  <option value="1" selected>1×</option>
+                  <option value="1.5">1.5×</option>
+                </select></label
+              ><label id="loop-option" hidden
+                ><input id="loop" type="checkbox" />반복</label
+              ><output id="status" role="status">그림 준비 중…</output>
+            </div>
+            <div class="timeline">
+              <button id="frame-back" disabled aria-label="이전 코마">
+                −1f</button
+              ><input
+                id="seek"
+                type="range"
+                min="0"
+                max="1"
+                step="0.001"
+                value="0"
+                disabled
+                aria-label="연출 재생 시각"
+              /><button id="frame-next" disabled aria-label="다음 코마">
+                +1f</button
+              ><output id="time">0.000 / 0.000 s</output>
+            </div>
+            <div class="view-options">
+              <label id="compare-option" hidden
+                ><input id="compare" type="checkbox" />기본 장면과 비교</label
+              ><label id="facing-option" hidden
+                >방향
+                <select id="facing"></select></label
+              ><label id="reduced-option" hidden
+                ><input id="reduced" type="checkbox" />움직임 줄이기</label
+              >
+              <div class="save-options">
+                <button id="png" hidden>현재 코마 PNG</button
+                ><button id="gif" hidden>연출 GIF 저장</button
+                ><button id="cancel-export" hidden>저장 취소</button>
+              </div>
+            </div>
+          </div>
+          <div
+            id="beats"
+            class="beat-list"
+            aria-label="주요 순간으로 이동"
+          ></div>
+          <p id="description" class="description"></p>
+          <output
+            id="export-status"
+            class="export-status"
+            role="status"
+          ></output>
+          <p class="keyboard">
+            Space 재생·정지 · ← → 1코마(1/24초) · Shift + ← → 5코마 · ↑ ↓ 연출
+            이동
+          </p>
+          <details class="information">
+            <summary>원본·제작 기록</summary>
+            <p>
+              같은 이름의 완성 컷씬·기법 견본·표정 연출·포즈 비교는 각각의
+              표현을 유지합니다. 방향·비교·저장은 지원하는 장면에서 표시됩니다.
+            </p>
+            <a
+              id="record"
+              href="../../../../resources/cutscene-studio.json"
+              target="_blank"
+              rel="noopener"
+              >현재 연출의 제작 기록 ↗</a
+            >
+          </details>
+          <p id="error" role="alert" hidden></p>
+        </section>
+      </div>
+    </main>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/cutscenes/studio/index.js"
+    ></script>
+    <script
+      type="module"
+      src="../../../../dist/src/resources/catalog/detail-navigation.js"
+    ></script>
+  </body>
+</html>

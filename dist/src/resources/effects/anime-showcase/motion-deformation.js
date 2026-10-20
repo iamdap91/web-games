@@ -33,14 +33,14 @@ export function drawAtahoBreakdown(ctx, frame, options) {
         const phase = ((y - 24) / 48) * Math.PI * 2;
         const smear = options.kind === 'smear';
         const widthFactor = smear
-            ? 1 + upper * strength * 0.13
-            : 1 + Math.sin(phase) * upper * strength * 0.14;
+            ? 1 + upper * strength * 0.2
+            : 1 + Math.sin(phase) * upper * strength * 0.23;
         const offsetX = smear
-            ? upper * strength * 5 * pixelX
-            : Math.sin(phase + 0.4) * upper * strength * 12 * pixelX;
+            ? upper * strength * 8 * pixelX
+            : Math.sin(phase + 0.4) * upper * strength * 16 * pixelX;
         const offsetY = smear
-            ? -upper * strength * 19 * pixelY
-            : -(y - 60) * upper * strength * 0.2 * pixelY;
+            ? -upper * strength * 27 * pixelY
+            : -(y - 60) * upper * strength * 0.26 * pixelY;
         return {
             x: sprite.left + offsetX - (sprite.width * (widthFactor - 1)) / 2,
             y: sprite.top + y * pixelY + offsetY,
@@ -56,7 +56,7 @@ const flutterPatches = [
         width: 8,
         height: 7,
         root: 'bottom',
-        amplitude: 4.8,
+        amplitude: 5.4,
         delay: 0,
     },
     {
@@ -65,7 +65,7 @@ const flutterPatches = [
         width: 7,
         height: 12,
         root: 'bottom',
-        amplitude: 5.8,
+        amplitude: 6.6,
         delay: 0.7,
     },
     {
@@ -74,7 +74,7 @@ const flutterPatches = [
         width: 7,
         height: 8,
         root: 'left',
-        amplitude: 3.4,
+        amplitude: 3.9,
         delay: 1.3,
     },
 ];
@@ -127,7 +127,7 @@ export function drawAtahoFlutter(ctx, frame, options) {
     ctx.restore();
     ctx.save();
     ctx.imageSmoothingEnabled = false;
-    const phase = ((frame.timeMs - 650) / 420) * Math.PI * 2;
+    const phase = ((frame.timeMs - 650) / (frame.reducedMotion ? 680 : 360)) * Math.PI * 2;
     for (const patch of flutterPatches)
         drawFlutterPatch(ctx, sprite, patch, phase, strength);
     ctx.restore();
@@ -147,7 +147,7 @@ export function drawAtahoPerspective(ctx, frame) {
     const sw = sprite.image.naturalWidth;
     const sh = sprite.image.naturalHeight;
     const focus = battleLayout.impact;
-    const depth = (x) => (1 + strength * 1.1) / (1 + strength * 2.2 * (1 - x / sw));
+    const depth = (x) => (1 + strength * 1.3) / (1 + strength * 2.6 * (1 - x / sw));
     const projectedX = (x) => focus.x + (sprite.left + (x / sw) * sprite.width - focus.x) * depth(x);
     ctx.save();
     ctx.imageSmoothingEnabled = false;

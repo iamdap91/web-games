@@ -1,0 +1,388 @@
+{
+  "version": 1,
+  "date": "2026-10-20",
+  "scope": "사용자가 제공한 10개 완성 컷 구성의 아타호·서리갈기 곰왕 응용",
+  "actors": {
+    "hero": "ai/ataho-v2",
+    "target": "ai/monster-hoarfrost-bear",
+    "actions": [
+      "8방향 기립",
+      "8방향 질주",
+      "5방향 어퍼컷",
+      "남동 점프",
+      "남동 공중 내려찍기 검토 시안",
+      "남동 원투",
+      "곰왕 attack1 원본16장"
+    ]
+  },
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "renderer": "CanvasRenderingContext2D",
+    "poseFps": 24,
+    "vertexHoldFrames": 2,
+    "audio": false,
+    "endingHoldSeconds": 0.3
+  },
+  "cuts": [
+    {
+      "id": "background-run",
+      "name": "배경 동화",
+      "durationSeconds": 3.3,
+      "stage": "3D world + 2D actor cards"
+    },
+    {
+      "id": "already-cut",
+      "name": "이미 때렸다",
+      "durationSeconds": 3.9,
+      "stage": "3D world + 2D actor cards"
+    },
+    {
+      "id": "falling-background",
+      "name": "낙하 배경 동화",
+      "durationSeconds": 3.7,
+      "stage": "3D world + 2D actor cards"
+    },
+    {
+      "id": "aerial-pursuit",
+      "name": "공중 추격 연타",
+      "durationSeconds": 4.2,
+      "stage": "3D world + 2D actor cards"
+    },
+    {
+      "id": "spiral-stairs",
+      "name": "나선 계단 질주",
+      "durationSeconds": 3.05,
+      "stage": "3D world + 2D actor cards"
+    },
+    {
+      "id": "bullet-counter",
+      "name": "불릿 타임 반격",
+      "durationSeconds": 3.5,
+      "stage": "3D world + 2D actor cards"
+    },
+    {
+      "id": "orbit-2d",
+      "name": "마와리코미 · 2D 시차",
+      "durationSeconds": 3.5,
+      "stage": "2D depth-sorted layers + original directional poses"
+    },
+    {
+      "id": "time-stop",
+      "name": "시간 정지 · 다섯 타",
+      "durationSeconds": 3.7,
+      "stage": "2D fixed stage"
+    },
+    {
+      "id": "ink-one-stroke",
+      "name": "수묵 일필 · 한 획",
+      "durationSeconds": 3.5,
+      "stage": "2D fixed stage"
+    },
+    {
+      "id": "comic-panels",
+      "name": "만화 칸 · 일격.",
+      "durationSeconds": 3.3,
+      "stage": "2D fixed stage"
+    }
+  ],
+  "backgroundRunRevision": {
+    "date": "2026-10-20",
+    "request": "기법 견본 배경 동화의 사선 동행 카메라와 속도감을 완성 컷씬에 응용",
+    "basedOn": "resources/anime-showcase.json#backgroundAnimationSpeedRevision",
+    "run": {
+      "previousTotalDistanceMeters": 23.625,
+      "runDistanceMeters": 56,
+      "leapDistanceMeters": 6.7,
+      "totalDistanceMeters": 62.7,
+      "previousPeakMetersPerSecond": 11.5,
+      "peakMetersPerSecond": 34.356,
+      "sourceFps": 16,
+      "startSeconds": 0.16,
+      "leapStartSeconds": 1.85,
+      "landSeconds": 2.24,
+      "leapHeightMeters": 1.1
+    },
+    "camera": {
+      "chaseOffset": { "x": -9.5, "y": 1.25, "z": 5.5 },
+      "chaseFocal": 1380,
+      "rollRadians": -0.035,
+      "settleStartSeconds": 1.97,
+      "settledSeconds": 2.25,
+      "contactSeconds": 2.46,
+      "framing": "곰왕 방향 앞쪽에서 질주와 같은 속도로 후퇴한다. 아타호를 크게 유지하며 원근과 근경 시차를 보이고 접촉210ms 전에 두 배우 구도로 정착한다."
+    },
+    "stage": "질주 동선에 맞춰 열주와 바닥을 확장하고 무대 전체에5m 간격 돌 격자를 놓았다. 배우의 발밑 그림자도 같은 바닥에 투영한다. 가까운 기둥은 흐림 판에 포함하지 않고 배우와 함께 깊이 정렬하며 장전 앞의 두 기둥은 비운다.",
+    "contact": {
+      "targetGapMeters": 1.05,
+      "sourceMotion": "surprise-uppercut-south-east",
+      "sourceFrame": 2,
+      "fistPixel": { "x": 62, "y": 34 },
+      "effectProjection": "접촉 원화의 실제 주먹 픽셀을 발 앵커·원본 배율·카메라 투영으로 계산한다.",
+      "reason": "전수 재검수에서 종전3번 원화의(56,28)이 얼굴임을 확인해 실제 주먹이 뻗은2번으로 교정했다. 기존 사선 동행 경로·간격은 유지하며 접촉 뒤3~6번 회수와 곰왕 쓰러짐을 잇는다."
+    },
+    "newActorFrames": 0,
+    "paidGenerationCalls": 0,
+    "audio": false
+  },
+  "selectedCutsRevision": {
+    "date": "2026-10-20",
+    "scope": "고른 컷10개의 원본 자세·접촉·카메라·회수·종결 재검수",
+    "shared": [
+      "얼굴이 포함됐던 어퍼컷3번 패치를 실제 바깥주먹이 보이는2번으로 교정",
+      "배경의 임의 띠 변위를 제거하고 같은 방향의 배경 노출만 겹침",
+      "주요 접촉은 원본의 손끝·발 앵커·실루엣 배율로 계산하고 마지막0.3초 정지 전에 동작을 마침"
+    ],
+    "cuts": [
+      {
+        "id": "background-run",
+        "change": "사선 동행 질주를 유지하고2.46초의 실제 주먹 접촉→위로 뻗음→회수→곰왕 쓰러짐을 연결"
+      },
+      {
+        "id": "already-cut",
+        "change": "회수 원화 대신 신전 원화로 질주하고 종결 카메라를 기둥 안쪽에 배치. 지연광을 몸 안에 맞추고3.54초 쓰러짐까지 보여주도록3.9초로 확대"
+      },
+      {
+        "id": "falling-background",
+        "change": "머리부터 낙하하는 장은 회전 중 중심을 유지하고 착지 전 장전 자세로 회복. 지면 대신 곰왕 윗몸에2.58초 공중 접촉 후 착지·쓰러짐"
+      },
+      {
+        "id": "aerial-pursuit",
+        "change": "네 카메라에서 손이 상대를 향하는 재접근 위치로 교정하고 실제 주먹에 짧은 광을 배치. 마지막 내려찍기는 윗몸 접촉 뒤 착지·쓰러짐을 연결"
+      },
+      {
+        "id": "spiral-stairs",
+        "change": "꼭대기 도약을 공중 접촉까지 잇고2.4초 실제 내려찍기→2.6초 착지→쓰러짐·구도 정착으로 종결"
+      },
+      {
+        "id": "bullet-counter",
+        "change": "반격 원화 신전·피격·광을2.46초로 통일하고 회수와 착지를 분리. 마지막 두 배우가 겹치지 않게 배치"
+      },
+      {
+        "id": "orbit-2d",
+        "change": "두 배우 사이를 회전축으로 잡아 양쪽 모두 좌우·앞뒤를 교환. 서쪽 접촉 원화2번→회수→3.2초 정착"
+      },
+      {
+        "id": "time-stop",
+        "change": "곰왕과 아타호의 실제 알파 크기 비율을 맞추고 다섯 주먹 좌표를 원본에 정렬. 재개 시 위치 점프 제거·3.33초 착지·3.37초 잔광 종료"
+      },
+      {
+        "id": "ink-one-stroke",
+        "change": "배우 픽셀 배율을 고정하고 주먹·획 도달·피격을1.60초로 통일. 회수를 추가하고 색 귀환의 중복 타격을 제거하며 낙관 보존"
+      },
+      {
+        "id": "comic-panels",
+        "change": "실제 주먹·피격·인쇄 어긋남·의성어를2.01초로 통일. 얼굴을 쓰던 주먹 칸과 발 접지를 교정하고2.48초 최종 그림 정착"
+      }
+    ],
+    "evidence": "기존 동작·카메라 레퍼런스 기록을 재사용하고 로컬 원본 프레임을 확대해 확인했다. 원작 영상의 새 전수 시청이나 새로운 원화 제작을 뜻하지 않는다.",
+    "newActorFrames": 0,
+    "paidGenerationCalls": 0,
+    "audio": false
+  },
+  "adaptation": [
+    "외부 CDN·관우·벨로나·아란 효과 대신 승인된 기존 로컬 아타호·곰왕 그림과 절차 효과 사용",
+    "날을 새로 그리지 않고 기존 팔·주먹의 국소 변형과 권격 궤적으로 응용",
+    "진짜 3D 세계·카메라 투영이며 인물은 기존 2D 판. 곰왕은 한 시점, 점프·내려찍기는 한 방향 원본. 3D 인체 재구성은 아님",
+    "2D 마와리코미는 동→북→서 기존 방향 원화와 깊이에 따른 평면 레이어의 연속 시차로 반주를 잇는다. 몸 비율·발 앵커를 유지하고 전체 화면 반전·배우 가로 축소·중간 소실은 사용하지 않는다. 곰왕은 한 시점 원본 판이며 얼굴 방향 전환은 아타호에게 가려지는 교차점에서 수행한다.",
+    "aerial-smash 기존 시안의 본게임 채택이나 신규 원화 생성을 포함하지 않음"
+  ],
+  "references": [
+    {
+      "name": "사용자 제공 10컷 구성·시간·구현 설명",
+      "checked": "본문 제공됨. 원본 anifx.html 실행 코드·영상은 제공되지 않아 확인하지 않음"
+    },
+    {
+      "name": "Sony Imageworks Spider-Verse 공식 제작 설명",
+      "url": "https://www.imageworks.com/our-craft/feature-animation/movies/spider-man-spider-verse",
+      "checked": "제작 설명·공식 정지 프레임 확인. 새 영상은 Vimeo403으로 재생 미확인"
+    },
+    {
+      "name": "기존 동작·실제 카메라 조사 기록",
+      "path": "docs/ataho-v2-glossary-review/README.md",
+      "checked": "저장된 동작·카메라 GIF·데모 관찰 범위 재사용. 어른 제국·오오카미·죠죠 원작 움직임을 이번에 새로 재생한 것은 아님"
+    },
+    {
+      "name": "아티팩트 연결 촬영 처리·시차 회전 GIF",
+      "url": "https://usapen3.hatenablog.com/entry/2016/12/18/234110",
+      "checked": "밀착 멀티(회전 흉내) 설명과 연결된 크롬크로 OP2 GIF 82프레임의 8개 시점을 직접 확인. 인물 비율을 유지한 채 전경·원경이 반대로 흐르고 뒤→옆의 원화 방향이 이어지는 점을 참고. 분석 글 작성자는 원작 제작자가 아니며 원작 OP 전체나 제작 프로젝트를 실행한 것은 아니다.",
+      "mediaUrl": "https://cdn-ak.f.st-hatena.com/images/fotolife/u/usapen3/20160813/20160813083517.gif"
+    }
+  ],
+  "paidGenerationCalls": 0,
+  "newActorFrames": 0,
+  "localSmear": {
+    "sourceMotion": "surprise-uppercut-south-east",
+    "sourceFrame": 2,
+    "crop": {
+      "x": 57,
+      "y": 29,
+      "width": 10,
+      "height": 12
+    },
+    "wrist": {
+      "x": 58,
+      "y": 40
+    },
+    "scope": "확대한 원본에서 바깥 주먹·전완을 확인한2번 패치를 손목 축으로 돌려 늘임. 얼굴이 포함됐던 종전3번 패치를 교체했다. 몸·얼굴 비율 유지"
+  },
+  "reusedFiles": [
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/south/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/south/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/south/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/south/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south-east.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/south-east/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/south-east/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/south-east/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/south-east/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/east.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/east/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/east/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/east/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/east/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/north-east.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/north-east/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/north-east/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/north-east/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/north-east/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/north.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/north/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/north/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/north/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/north/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/north-west.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/north-west/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/north-west/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/north-west/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/north-west/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/west.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/west/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/west/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/west/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/west/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/rotations/south-west.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/south-west/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/south-west/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/south-west/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Running/south-west/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_004.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_005.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-east/frame_006.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/east/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/east/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/east/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/east/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/east/frame_004.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/east/frame_005.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/east/frame_006.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/north-east/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/north-east/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/north-east/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/north-east/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/north-east/frame_004.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/north-east/frame_005.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/north-east/frame_006.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/west/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/west/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/west/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/west/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/west/frame_004.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/west/frame_005.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/west/frame_006.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-west/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-west/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-west/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-west/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-west/frame_004.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-west/frame_005.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Surprise_Uppercut/south-west/frame_006.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_004.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_005.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_006.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_007.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Jumping/south-east/frame_008.png",
+    "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/aerial-smash/frame_000.png",
+    "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/aerial-smash/frame_001.png",
+    "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/aerial-smash/frame_002.png",
+    "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/aerial-smash/frame_003.png",
+    "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/aerial-smash/frame_004.png",
+    "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/aerial-smash/frame_005.png",
+    "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/aerial-smash/frame_006.png",
+    "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/aerial-smash/frame_007.png",
+    "public/assets/maplestory/ataho-v2-impact-attacks/20261016/pixellab-originals/aerial-smash/frame_008.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_000.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_001.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_002.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_003.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_004.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_005.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_006.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_007.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_008.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_009.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_010.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_011.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_012.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_013.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_014.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_015.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_016.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/stand/0ecf517b-d19d-4abd-8a20-9915187b0836/00.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/stand/0ecf517b-d19d-4abd-8a20-9915187b0836/01.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/stand/0ecf517b-d19d-4abd-8a20-9915187b0836/02.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/stand/0ecf517b-d19d-4abd-8a20-9915187b0836/03.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/00.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/01.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/02.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/03.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/04.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/05.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/06.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/07.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/08.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/09.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/10.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/11.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/12.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/13.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/14.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/attack1/0bcd2d1e-8f44-4566-b335-feb17eca3ca9/15.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/hit1/e5f87465-60db-45a0-b0a8-39ac9faa629a/00.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/hit1/e5f87465-60db-45a0-b0a8-39ac9faa629a/01.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/hit1/e5f87465-60db-45a0-b0a8-39ac9faa629a/02.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/hit1/e5f87465-60db-45a0-b0a8-39ac9faa629a/03.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/00.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/01.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/02.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/03.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/04.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/05.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/06.png",
+    "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/07.png",
+    "public/assets/maplestory/ataho-v2-effects/20261016/cutin/ataho-face-original.png"
+  ],
+  "previews": [
+    {
+      "id": "overview",
+      "localPath": "public/assets/maplestory/anime-selected-cuts/selected-cuts.png"
+    },
+    {
+      "id": "background-run",
+      "localPath": "public/assets/maplestory/anime-selected-cuts/background-run.gif"
+    },
+    {
+      "id": "ink-one-stroke",
+      "localPath": "public/assets/maplestory/anime-selected-cuts/ink-one-stroke.gif"
+    }
+  ]
+}

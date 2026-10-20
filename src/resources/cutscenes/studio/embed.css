@@ -1,0 +1,99 @@
+/* 기존 화면의 입력·재생 상태는 유지하고 통합실 안에서는 그림만 표시한다. */
+html.studio-scene,
+html.studio-scene body {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  background: #0b141c;
+  min-height: 0 !important;
+}
+html.studio-scene main {
+  padding: 0 !important;
+  margin: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+}
+html.studio-scene canvas {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  max-width: none !important;
+}
+html.studio-scene .resource-navigation,
+html.studio-scene header,
+html.studio-scene footer,
+html.studio-scene .scene-controls,
+html.studio-scene .scene-copy,
+html.studio-scene .playback,
+html.studio-scene .transport,
+html.studio-scene .timeline,
+html.studio-scene .options,
+html.studio-scene .explanation,
+html.studio-scene .provenance,
+html.studio-scene .notes,
+html.studio-scene .caption,
+html.studio-scene .beats,
+html.studio-scene .exports,
+html.studio-scene .help,
+html.studio-scene .note,
+html.studio-scene #description,
+html.studio-scene #availability,
+html.studio-scene #loading,
+html.studio-scene #start,
+html.studio-scene #cuts,
+html.studio-scene figcaption,
+html.studio-scene .sample-heading {
+  display: none !important;
+}
+html.studio-scene[data-studio-source='selected'] .layout,
+html.studio-scene[data-studio-source='showcase'] .workspace {
+  display: block !important;
+}
+html.studio-scene[data-studio-source='selected'] .viewer,
+html.studio-scene[data-studio-source='showcase'] .viewer {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-width: 0;
+}
+html.studio-scene[data-studio-source='showcase'] aside {
+  display: none !important;
+}
+html.studio-scene .stages,
+html.studio-scene .comparison {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+html.studio-scene .stages.comparing,
+html.studio-scene .comparison.comparing {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+html.studio-scene figure {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+}
+html.studio-scene figure[hidden] {
+  display: none !important;
+}
+html.studio-scene .theatre,
+html.studio-scene .viewport {
+  display: block !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+}
+html.studio-scene #error:not([hidden]) {
+  display: block !important;
+  padding: 20px;
+  color: #ffb3a4;
+}

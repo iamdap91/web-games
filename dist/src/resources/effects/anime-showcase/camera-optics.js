@@ -1,4 +1,4 @@
-import { clamp, ellipse, label, line, mix, noise, palette, polygon, ring, smooth, stage, star, windowed, } from './drawing.js';
+import { clamp, ellipse, label, line, mix, noise, polygon, ring, smooth, stage, star, windowed, } from './drawing.js';
 import { atahoPosition, battleLayout, drawAtaho, drawBear, drawBattleActors, } from './battle.js';
 import { opticalScene } from './camera-scene.js';
 import { height, width } from './types.js';
@@ -14,20 +14,21 @@ function transmitted(ctx, frame) {
     if (!frame.enhanced)
         return;
     const { impact, contactMs } = battleLayout;
-    const power = windowed(frame.timeMs, contactMs, contactMs + 480, 100);
+    const power = windowed(frame.timeMs, contactMs, contactMs + 480, 55);
     ctx.save();
-    ctx.globalAlpha *= (frame.reducedMotion ? 0.45 : 0.8) * power;
-    for (const pass of [0, 1]) {
-        ctx.filter = pass === 0 ? 'blur(4px)' : 'none';
-        const thickness = pass === 0 ? 14 : 4;
-        const color = pass === 0 ? '#b0eafa' : '#fffbd9';
+    ctx.globalAlpha *= (frame.reducedMotion ? 0.45 : 1) * power;
+    ctx.globalCompositeOperation = 'lighter';
+    for (const pass of [0, 1, 2]) {
+        ctx.filter = pass === 0 ? 'blur(11px)' : pass === 1 ? 'blur(3px)' : 'none';
+        const thickness = pass === 0 ? 24 : pass === 1 ? 10 : 3;
+        const color = pass === 0 ? '#6bbde870' : pass === 1 ? '#b0eafa' : '#fffbd9';
         line(ctx, [
-            { x: impact.x - 12, y: impact.y + 28 },
-            { x: impact.x + 4, y: impact.y - 22 },
+            { x: impact.x - 17, y: impact.y + 42 },
+            { x: impact.x + 8, y: impact.y - 36 },
         ], color, thickness);
         line(ctx, [
-            { x: impact.x - 19, y: impact.y + 5 },
-            { x: impact.x + 17, y: impact.y - 2 },
+            { x: impact.x - 33, y: impact.y + 7 },
+            { x: impact.x + 28, y: impact.y - 4 },
         ], color, thickness);
     }
     ctx.restore();
@@ -36,20 +37,64 @@ function transmitted(ctx, frame) {
 function para(ctx, frame) {
     opticalScene(ctx, frame);
     if (frame.enhanced) {
-        const sheet = ctx.createLinearGradient(0, 0, width, 0);
-        sheet.addColorStop(0, '#604d9f94');
-        sheet.addColorStop(0.48, '#88618800');
-        sheet.addColorStop(1, '#f2ac5e80');
-        ctx.fillStyle = sheet;
+        ctx.save();
+        // 그림자 파라는 원화를 어둡게 물들이고 빛 파라는 밝기를 더한다. 색막으로 검은 선을 덮지 않는다.
+        ctx.globalCompositeOperation = 'multiply';
+        const shade = ctx.createLinearGradient(0, 0, width * 0.72, 0);
+        shade.addColorStop(0, '#423166ee');
+        shade.addColorStop(0.45, '#69509a88');
+        shade.addColorStop(1, '#ffffff00');
+        ctx.fillStyle = shade;
         ctx.fillRect(0, 0, width, height);
+        ctx.globalCompositeOperation = 'screen';
+        const light = ctx.createLinearGradient(width * 0.35, 0, width, 0);
+        light.addColorStop(0, '#f2ac5e00');
+        light.addColorStop(1, '#f2ac5eaa');
+        ctx.fillStyle = light;
+        ctx.fillRect(0, 0, width, height);
+        ctx.restore();
     }
-    label(ctx, '색 시트의 농담 · 위치와 원화의 윤곽은 유지');
+    label(ctx, '왼쪽 그림자 파라 multiply / 오른쪽 빛 파라 screen · 원화 윤곽 유지');
 }
-const wavePadding = 16;
+/** 광학 처리는 완성한 장면을 한 번 캡처한 뒤 적용한다. 원화별 필터의 중복 노출을 피한다. */
+class CameraSceneSurface {
+    canvas;
+    context;
+    constructor(owner) {
+        this.canvas = owner.canvas.ownerDocument.createElement('canvas');
+        this.canvas.width = width;
+        this.canvas.height = height;
+        const context = this.canvas.getContext('2d');
+        if (!context)
+            throw new Error('촬영 처리용 Canvas를 만들 수 없습니다.');
+        this.context = context;
+    }
+    capture(frame) {
+        this.context.clearRect(0, 0, width, height);
+        opticalScene(this.context, frame);
+        return this.canvas;
+    }
+    dispose() {
+        this.canvas.width = 0;
+        this.canvas.height = 0;
+    }
+}
+const sceneSurfaces = new WeakMap();
+function captureScene(ctx, frame) {
+    let surface = sceneSurfaces.get(ctx);
+    if (!surface) {
+        surface = new CameraSceneSurface(ctx);
+        sceneSurfaces.set(ctx, surface);
+    }
+    return surface.capture(frame);
+}
+const wavePadding = 36;
 /** 한 렌더러의 굴절 입력 표면만 소유하며, 장면은 프레임마다 한 번 그린다. */
 class WavyGlassSurface {
     canvas;
     context;
+    output;
+    outputContext;
     constructor(owner) {
         this.canvas = owner.canvas.ownerDocument.createElement('canvas');
         this.canvas.width = width + wavePadding * 2;
@@ -58,6 +103,13 @@ class WavyGlassSurface {
         if (!context)
             throw new Error('파도 유리용 Canvas를 만들 수 없습니다.');
         this.context = context;
+        this.output = owner.canvas.ownerDocument.createElement('canvas');
+        this.output.width = width;
+        this.output.height = height;
+        const outputContext = this.output.getContext('2d');
+        if (!outputContext)
+            throw new Error('파도 유리 출력 Canvas를 만들 수 없습니다.');
+        this.outputContext = outputContext;
     }
     draw(ctx, frame) {
         const source = this.context;
@@ -72,18 +124,25 @@ class WavyGlassSurface {
         source.drawImage(this.canvas, wavePadding, 0, 1, height, 0, 0, wavePadding, height);
         source.drawImage(this.canvas, width + wavePadding - 1, 0, 1, height, width + wavePadding, 0, wavePadding, height);
         source.restore();
-        ctx.save();
-        ctx.imageSmoothingEnabled = true;
-        const amplitude = frame.reducedMotion ? 2 : 13;
+        const output = this.outputContext;
+        output.clearRect(0, 0, width, height);
+        output.save();
+        output.imageSmoothingEnabled = true;
+        const amplitude = frame.reducedMotion ? 2 : 23;
         for (let y = 0; y < height; y++) {
-            const offset = Math.sin(y * 0.034 - frame.timeMs / 570) * amplitude;
-            ctx.drawImage(this.canvas, wavePadding - offset, y, width, 1, 0, y, width, 1);
+            const offset = Math.sin(y * 0.034 - frame.timeMs / 570) * amplitude +
+                Math.sin(y * 0.081 + frame.timeMs / 920) * amplitude * 0.3;
+            output.drawImage(this.canvas, wavePadding - offset, y, width, 1, 0, y, width, 1);
         }
-        ctx.restore();
+        output.restore();
+        // 축소한 표시 Canvas에 1px 행을 따로 그리면 반화소 이음매가 생긴다.
+        ctx.drawImage(this.output, 0, 0);
     }
     dispose() {
         this.canvas.width = 0;
         this.canvas.height = 0;
+        this.output.width = 0;
+        this.output.height = 0;
     }
 }
 const waveSurfaces = new WeakMap();
@@ -91,6 +150,8 @@ const waveSurfaces = new WeakMap();
 export function disposeCameraOptics(ctx) {
     waveSurfaces.get(ctx)?.dispose();
     waveSurfaces.delete(ctx);
+    sceneSurfaces.get(ctx)?.dispose();
+    sceneSurfaces.delete(ctx);
 }
 function wavyGlass(ctx, frame) {
     if (!frame.enhanced)
@@ -106,59 +167,86 @@ function wavyGlass(ctx, frame) {
     label(ctx, '연속적인 수평 굴절 · 가장자리까지 같은 장면을 유지');
 }
 function diffusion(ctx, frame) {
-    opticalScene(ctx, frame);
+    const scene = captureScene(ctx, frame);
+    ctx.drawImage(scene, 0, 0);
     if (frame.enhanced) {
         ctx.save();
-        ctx.globalAlpha = frame.reducedMotion ? 0.22 : 0.38;
-        ctx.filter = 'blur(7px) brightness(1.4)';
-        opticalScene(ctx, frame);
+        ctx.globalAlpha *= frame.reducedMotion ? 0.22 : 0.64;
+        ctx.globalCompositeOperation = 'screen';
+        // 어두운 윤곽은 검정으로 떨어뜨려 빛이 번질 부분만 합성한다.
+        ctx.filter = 'brightness(0.6) contrast(12) blur(18px)';
+        ctx.drawImage(scene, 0, 0);
         ctx.restore();
     }
-    label(ctx, '선명한 원본 + 흐린 밝은 노출 · 어두운 윤곽은 남음');
+    label(ctx, '밝은 부분에서만 부드러운 확산 · 어두운 선과 얼굴은 유지');
 }
 function blur(ctx, frame) {
-    ctx.save();
-    ctx.filter = frame.enhanced
-        ? `blur(${frame.reducedMotion ? 2 : 5}px)`
-        : 'none';
-    opticalScene(ctx, frame);
-    ctx.restore();
-    label(ctx, '장면 자체를 흐림 · 선명한 원본을 위에 남기지 않음');
+    const amount = frame.enhanced
+        ? windowed(frame.timeMs, 1250, 2550, 360) *
+            (frame.reducedMotion ? 0.025 : 0.24)
+        : 0;
+    const scene = captureScene(ctx, frame);
+    const exposures = amount > 0 ? 19 : 1;
+    for (let i = 0; i < exposures; i++) {
+        const zoom = 1 + (i / Math.max(1, exposures - 1)) * amount;
+        ctx.save();
+        // 1, 1/2, 1/3...으로 누적하면 모든 노출이 같은 비율로 섞인다.
+        ctx.globalAlpha *= 1 / (i + 1);
+        ctx.translate(battleLayout.impact.x, battleLayout.impact.y);
+        ctx.scale(zoom, zoom);
+        ctx.translate(-battleLayout.impact.x, -battleLayout.impact.y);
+        ctx.drawImage(scene, 0, 0);
+        ctx.restore();
+    }
+    label(ctx, '타점을 중심으로 방향이 있는 방사형 번짐 · 초점 흐림과 구별');
 }
 function flare(ctx, frame, anamorphic) {
     opticalScene(ctx, frame);
+    contactLightCore(ctx, frame);
     const source = battleLayout.impact;
     const power = windowed(frame.timeMs, battleLayout.contactMs, battleLayout.contactMs + 650, 120);
     if (frame.enhanced) {
         ctx.save();
-        ctx.globalAlpha *= power * (frame.reducedMotion ? 0.45 : 0.7);
-        star(ctx, source.x, source.y, 15, palette.paper);
+        ctx.globalAlpha *= power * (frame.reducedMotion ? 0.45 : 0.95);
+        // 렌즈 내부 반사광은 장면을 가리는 색 고리가 아니라 기존 빛에 더해지는 빛상이다.
+        ctx.globalCompositeOperation = 'screen';
         if (anamorphic) {
-            halo(ctx, source.x, source.y, 58, '#7dcfe160');
-            for (let i = 0; i < 5; i++) {
-                const length = 160 + i * 55;
-                const y = source.y + (i - 2) * 3;
-                line(ctx, [
-                    { x: source.x - length, y },
-                    { x: source.x + length, y },
-                ], i === 2 ? '#f1f9ed' : '#8bceec35', i === 2 ? 2 : 5);
+            halo(ctx, source.x, source.y, 80, '#7dcfe180');
+            for (const thickness of [15, 5, 1.5]) {
+                const streak = ctx.createLinearGradient(source.x - 560, 0, source.x + 560, 0);
+                streak.addColorStop(0, '#80d9ff00');
+                streak.addColorStop(0.35, '#80d9ff35');
+                streak.addColorStop(0.5, thickness < 2 ? '#fffef6' : '#80d9ff99');
+                streak.addColorStop(0.65, '#80d9ff35');
+                streak.addColorStop(1, '#80d9ff00');
+                ctx.beginPath();
+                ctx.moveTo(source.x - 560, source.y);
+                ctx.lineTo(source.x + 560, source.y);
+                ctx.strokeStyle = streak;
+                ctx.lineWidth = thickness;
+                ctx.stroke();
             }
         }
         else {
             const center = { x: width / 2, y: height / 2 };
-            for (let i = 0; i < 7; i++) {
-                const p = i / 5;
+            for (let i = 0; i < 6; i++) {
+                const p = 0.18 + i * 0.47;
                 const x = mix(source.x, center.x * 2 - source.x, p);
                 const y = mix(source.y, center.y * 2 - source.y, p);
-                const radius = 12 + noise(i) * 35;
-                ring(ctx, x, y, radius, radius, ['#e5a88b60', '#81d1cc45', '#a79ee650'][i % 3], 6);
+                const radius = 20 + noise(i) * 48;
+                const color = ['#e5a88b80', '#81d1cc65', '#a79ee675'][i % 3];
+                ctx.save();
+                ctx.globalAlpha *= 0.24;
+                ellipse(ctx, x, y, radius, radius, color);
+                ctx.restore();
+                ring(ctx, x, y, radius, radius, color, 3);
             }
         }
         ctx.restore();
     }
     label(ctx, anamorphic
-        ? '광원에서 가로로 뻗는 긴 빛띠'
-        : '광원과 화면 중심을 잇는 축 위의 고스트');
+        ? '같은 접촉광에서 가로로 뻗는 긴 빛띠'
+        : '같은 접촉광과 화면 중심을 잇는 축 위의 고스트');
 }
 function crossLight(ctx, frame) {
     opticalScene(ctx, frame);
@@ -175,9 +263,14 @@ function crossLight(ctx, frame) {
     label(ctx, '한 광점의 짧은 네 방향 강조 · 긴 수평 플레어와 구별');
 }
 function rackFocus(ctx, frame) {
-    const focus = smooth((frame.timeMs - 1200) / 1500);
-    const blur = frame.reducedMotion ? 1 : 5;
+    const focus = smooth((frame.timeMs - 1900) / 500);
+    const blur = frame.reducedMotion ? 1 : 14;
+    ctx.save();
+    ctx.filter = frame.enhanced
+        ? `blur(${frame.reducedMotion ? 1 : 5}px)`
+        : 'none';
     stage(ctx);
+    ctx.restore();
     ctx.save();
     ctx.filter = frame.enhanced ? `blur(${blur * (1 - focus)}px)` : 'none';
     drawBear(ctx, frame);
@@ -193,18 +286,31 @@ function rackFocus(ctx, frame) {
 function multiBokeh(ctx, frame) {
     ctx.save();
     ctx.filter = frame.enhanced
-        ? `blur(${frame.reducedMotion ? 2 : 5}px)`
+        ? `blur(${frame.reducedMotion ? 2 : 9}px)`
         : 'none';
-    // 산·설원과 빛망울을 같은 배경 판으로 취급한다. A/B에서 광원의 크기는 같다.
+    // 산·설원은 같은 배경 판이다. 점광원의 위치는 같고 초점에 따른 번짐 면적만 달라진다.
     stage(ctx);
-    for (let i = 0; i < 11; i++) {
-        ellipse(ctx, 80 + i * 81, 205 + Math.sin(i * 1.8) * 42, 7, 7, '#e4be7790');
-    }
     ctx.restore();
+    // 같은 점광원의 초점이 벗어나면 조리개 모양의 넓은 빛망울로 퍼진다.
+    for (let i = 0; i < 11; i++) {
+        const x = 80 + i * 81;
+        const y = 205 + Math.sin(i * 1.8) * 42;
+        const radius = frame.enhanced
+            ? frame.reducedMotion
+                ? 10
+                : 22 + noise(i) * 9
+            : 7;
+        ctx.save();
+        ctx.filter = frame.enhanced ? 'blur(2px)' : 'none';
+        ellipse(ctx, x, y, radius, radius, frame.enhanced ? '#e4be773b' : '#e4be7790');
+        if (frame.enhanced)
+            ring(ctx, x, y, radius, radius, '#f4dc9b48', 1.5);
+        ctx.restore();
+    }
     drawBattleActors(ctx, frame);
     ctx.save();
     ctx.filter = frame.enhanced
-        ? `blur(${frame.reducedMotion ? 3 : 13}px)`
+        ? `blur(${frame.reducedMotion ? 3 : 24}px)`
         : 'none';
     for (const x of [90, 850]) {
         ctx.fillStyle = '#111c28';
@@ -212,7 +318,7 @@ function multiBokeh(ctx, frame) {
         ellipse(ctx, x + 20, 170, 76, 120, '#2b4750');
     }
     ctx.restore();
-    label(ctx, '같은 크기·배치 · 전경 큰 흐림 / 전투 선명 / 배경 작은 흐림');
+    label(ctx, '전경 큰 흐림 / 전투 선명 / 배경 작은 흐림 · 점광원은 큰 빛망울로');
 }
 function contactLightPower(frame) {
     return windowed(frame.timeMs, battleLayout.contactMs, battleLayout.contactMs + 650, 120);
@@ -233,17 +339,17 @@ function foggy(ctx, frame) {
     if (frame.enhanced) {
         ctx.save();
         ctx.globalAlpha *= frame.reducedMotion ? 0.65 : 1;
-        ctx.fillStyle = '#dce4d72d';
+        ctx.fillStyle = '#dce4d74f';
         ctx.fillRect(0, 0, width, height);
         // stage의 달과 접촉 순간의 광원에만 확산을 붙인다.
-        halo(ctx, 765, 95, 160, '#e5edf040');
+        halo(ctx, 765, 95, 210, '#e5edf06b');
         ctx.save();
         ctx.globalAlpha *= contactLightPower(frame);
-        halo(ctx, battleLayout.impact.x, battleLayout.impact.y, 155, '#ede6c370');
+        halo(ctx, battleLayout.impact.x, battleLayout.impact.y, 220, '#ede6c390');
         ctx.restore();
         const veil = ctx.createLinearGradient(0, 0, 0, height);
-        veil.addColorStop(0, '#dfe4df24');
-        veil.addColorStop(1, '#dfe4df05');
+        veil.addColorStop(0, '#dfe4df33');
+        veil.addColorStop(1, '#dfe4df12');
         ctx.fillStyle = veil;
         ctx.fillRect(0, 0, width, height);
         ctx.restore();
@@ -256,10 +362,11 @@ function doubleShadow(ctx, frame) {
         const position = atahoPosition(frame);
         const air = clamp((battleLayout.attacker.ground - position.ground) / 180);
         ctx.save();
-        ctx.translate(position.x + 18, battleLayout.attacker.ground + 12);
-        ctx.scale(1 - air * 0.35, 1 - air * 0.25);
-        // 별도 지면 마스크 하나에만 반노출한다. 겹침으로 농도가 진해지지 않게 한 경로로 채운다.
         ctx.beginPath();
+        ctx.save();
+        ctx.translate(position.x + 18, battleLayout.attacker.ground + 12);
+        ctx.scale(1.25 * (1 - air * 0.35), 1.45 * (1 - air * 0.25));
+        // 별도 지면 마스크 하나에만 반노출한다. 겹침으로 농도가 진해지지 않게 한 경로로 채운다.
         ctx.moveTo(-45, 3);
         ctx.bezierCurveTo(-52, -5, -21, -13, 7, -8);
         ctx.bezierCurveTo(24, -16, 53, -20, 64, -10);
@@ -267,8 +374,11 @@ function doubleShadow(ctx, frame) {
         ctx.bezierCurveTo(130, 12, 88, 23, 55, 14);
         ctx.bezierCurveTo(27, 24, -18, 16, -45, 3);
         ctx.closePath();
+        ctx.restore();
+        ctx.moveTo(battleLayout.target.x + 175, battleLayout.target.ground + 12);
+        ctx.ellipse(battleLayout.target.x + 35, battleLayout.target.ground + 12, 140, 25, 0, 0, Math.PI * 2);
         ctx.fillStyle = '#102031';
-        ctx.globalAlpha *= 0.48;
+        ctx.globalAlpha *= 0.56;
         ctx.fill();
         ctx.restore();
     }
@@ -286,9 +396,10 @@ function glow(ctx, frame) {
         ctx.save();
         ctx.globalAlpha *=
             contactLightPower(frame) * (frame.reducedMotion ? 0.6 : 1);
-        halo(ctx, impact.x, impact.y, frame.reducedMotion ? 75 : 115, '#75cfea88');
-        ctx.filter = `blur(${frame.reducedMotion ? 7 : 14}px)`;
-        ellipse(ctx, impact.x, impact.y, 26, 26, '#78c8e388');
+        ctx.globalCompositeOperation = 'screen';
+        halo(ctx, impact.x, impact.y, frame.reducedMotion ? 75 : 175, '#75cfeab0');
+        ctx.filter = `blur(${frame.reducedMotion ? 7 : 18}px)`;
+        ellipse(ctx, impact.x, impact.y, 32, 32, '#78c8e3a0');
         ctx.restore();
     }
     contactLightCore(ctx, frame);
@@ -298,22 +409,35 @@ function incidentLight(ctx, frame) {
     stage(ctx);
     if (frame.enhanced) {
         ctx.save();
-        ctx.globalAlpha = frame.reducedMotion ? 0.32 : 0.55;
+        ctx.globalAlpha *= frame.reducedMotion ? 0.32 : 0.85;
+        ctx.globalCompositeOperation = 'screen';
+        ctx.beginPath();
         for (let i = 0; i < 4; i++) {
             const x = 90 + i * 58;
-            polygon(ctx, [
-                { x, y: -20 },
-                { x: x + 20, y: -20 },
-                { x: x + 350, y: 445 },
-                { x: x + 260, y: 445 },
-            ], '#efdb9e50');
+            ctx.moveTo(x, -20);
+            ctx.lineTo(x + 20, -20);
+            ctx.lineTo(x + 350, 445);
+            ctx.lineTo(x + 260, 445);
+            ctx.closePath();
         }
-        ellipse(ctx, 535, 429, 210, 21, '#ecd7a340');
-        for (let i = 0; i < 25; i++) {
-            const y = 100 + ((noise(i) * 330 + frame.timeMs * 0.018) % 330);
-            const x = 210 + i * 9 + y * 0.48;
-            ellipse(ctx, x, y, 1.5, 1.5, '#f7eccba0');
+        const sunlight = ctx.createLinearGradient(0, -20, 0, 445);
+        sunlight.addColorStop(0, '#fff0b899');
+        sunlight.addColorStop(0.35, '#efcd8080');
+        sunlight.addColorStop(1, '#efcd8018');
+        ctx.fillStyle = sunlight;
+        ctx.fill();
+        ctx.save();
+        // 빛 밖까지 고르게 빛나는 입자를 뿌리지 않고 각 광주 안의 먼지만 드러낸다.
+        ctx.clip();
+        for (let i = 0; i < 48; i++) {
+            const y = 60 + ((noise(i) * 370 + frame.timeMs * 0.018) % 370);
+            const origin = 90 + (i % 4) * 58;
+            const progress = (y + 20) / 465;
+            const x = mix(origin + 260 * progress, origin + 20 + 330 * progress, noise(i + 200));
+            ellipse(ctx, x, y, 1.2 + noise(i + 50), 1.2 + noise(i + 50), '#fff2cbd0');
         }
+        ctx.restore();
+        ellipse(ctx, 535, 429, 210, 21, '#ecd7a360');
         ctx.restore();
     }
     drawBattleActors(ctx, frame);

@@ -137,6 +137,18 @@ class LibraryPage {
             summary.append(link);
             branch.append(summary);
             for (const group of [...new Set(items.map((entry) => entry.group))]) {
+                const groupEntries = items.filter((item) => item.group === group);
+                const onlyEntry = groupEntries[0];
+                if (category.id === 'cutscenes' &&
+                    group === '연출실' &&
+                    groupEntries.length === 1 &&
+                    onlyEntry?.id === 'local/cutscene-studio') {
+                    const item = this.treeEntry(onlyEntry);
+                    item.dataset.category = category.id;
+                    item.dataset.group = group;
+                    branch.append(item);
+                    continue;
+                }
                 const groupNode = document.createElement('details');
                 groupNode.className = 'tree-group';
                 groupNode.dataset.category = category.id;
@@ -149,7 +161,6 @@ class LibraryPage {
                     group,
                 }));
                 groupNode.append(heading);
-                const groupEntries = items.filter((item) => item.group === group);
                 if (category.id === 'characters' && group === '아타호') {
                     let currentSection = '';
                     for (const { section, label, entry } of atahoNavigationEntries(groupEntries)) {
@@ -193,7 +204,9 @@ class LibraryPage {
             const assetId = link.dataset.asset;
             const category = libraryCategories.find((item) => item.id === link.dataset.category)?.id;
             const group = link.dataset.group || undefined;
-            link.href = libraryLocation(assetId ? this.filter : { ...this.filter, category, group }, assetId);
+            link.href = libraryLocation(assetId && !category
+                ? this.filter
+                : { ...this.filter, category, group }, assetId);
             const selected = assetId
                 ? assetId === selectedId
                 : !this.assetId &&

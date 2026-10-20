@@ -1,4 +1,5 @@
 import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
+import { connectStudioScene, redirectToStudio, studioMode, } from '../../cutscenes/studio/bridge.js';
 import { loadSignatureAssets } from './assets.js';
 import { signatureHeight, signatureScenes, signatureWidth, } from './contracts.js';
 import { drawSignature } from './drawing.js';
@@ -109,6 +110,8 @@ class SignatureScreen {
     lastFrameMs = 0;
     pixelRatio = 1;
     disposed = false;
+    comparing = true;
+    studio;
     constructor() {
         const dramatic = document.createElement('optgroup');
         dramatic.label = '극적 애니 연출 · 6종';
@@ -172,7 +175,10 @@ class SignatureScreen {
             if (document.hidden)
                 this.pause();
         }, { signal });
-        window.addEventListener('blur', () => this.pause(), { signal });
+        window.addEventListener('blur', () => {
+            if (!studioMode)
+                this.pause();
+        }, { signal });
         window.addEventListener('pagehide', () => this.dispose(), {
             signal,
             once: true,
@@ -181,7 +187,81 @@ class SignatureScreen {
         this.observer.observe(this.enhanced);
         this.resize();
         this.select(this.scene);
+        this.studio = connectStudioScene('signatures', {
+            snapshot: () => ({
+                itemId: this.scene.id,
+                title: this.scene.title,
+                description: `${this.scene.description}\n${this.scene.application}`,
+                timeMs: this.player.snapshot.timeMs,
+                durationMs: this.scene.durationMs,
+                playing: this.player.snapshot.playing,
+                loading: this.assets === null,
+                beats: [{ timeMs: this.scene.previewMs, label: '핵심 자세' }],
+                loop: this.loop.checked,
+                compare: this.comparing,
+                facing: this.direction,
+                facingOptions: [...this.facing.options]
+                    .filter((option) => !option.disabled)
+                    .map((option) => ({
+                    value: option.value,
+                    label: option.textContent ?? option.value,
+                })),
+                reducedMotion: this.reducedMotion.checked,
+                exporting: this.exportAbort !== null,
+                exportStatus: this.exportStatus.textContent ?? '',
+            }),
+            select: (id) => {
+                const scene = signatureScenes.find((entry) => entry.id === id);
+                if (scene)
+                    this.select(scene);
+            },
+            toggle: () => this.toggle(),
+            restart: () => {
+                if (!this.assets)
+                    return;
+                this.player.restart();
+                this.lastFrameMs = 0;
+                this.render();
+            },
+            seek: (timeMs) => this.scrub(timeMs),
+            speed: (rate) => {
+                this.speed.value = String(rate);
+                this.player.setSpeed(rate);
+            },
+            loop: (enabled) => {
+                this.loop.checked = enabled;
+                this.player.setRepeating(enabled);
+            },
+            compare: (enabled) => this.setComparing(enabled),
+            facing: (value) => {
+                const option = [...this.facing.options].find((entry) => entry.value === value && !entry.disabled);
+                if (!option || this.facing.disabled)
+                    return;
+                this.facing.value = option.value;
+                this.exportAbort?.abort();
+                this.render();
+            },
+            reduced: (enabled) => {
+                this.reducedMotion.checked = enabled;
+                this.exportAbort?.abort();
+                if (enabled)
+                    this.player.pause();
+                this.render();
+            },
+            gif: () => void this.exportGif(),
+            cancelExport: () => this.exportAbort?.abort(),
+        });
+        this.setComparing(this.comparing);
         void this.load();
+    }
+    setComparing(enabled) {
+        this.comparing = enabled;
+        const figure = this.original.closest('figure');
+        if (figure instanceof HTMLElement)
+            figure.hidden = !enabled;
+        const comparison = this.original.closest('.comparison');
+        comparison?.classList.toggle('comparing', enabled);
+        this.resize();
     }
     get direction() {
         return this.facing.value === 'north-west' ? 'north-west' : 'south-east';
@@ -282,7 +362,7 @@ class SignatureScreen {
         if (this.assets) {
             if (this.reducedMotion.checked)
                 this.player.seek(scene.previewMs);
-            else
+            else if (!studioMode)
                 this.player.play();
         }
         this.render();
@@ -461,6 +541,7 @@ class SignatureScreen {
             return;
         this.disposed = true;
         this.events.abort();
+        this.studio?.dispose();
         this.exportAbort?.abort();
         this.observer.disconnect();
         cancelAnimationFrame(this.frameId);
@@ -474,5 +555,7 @@ class SignatureScreen {
         this.assets = null;
     }
 }
-const screen = new SignatureScreen();
-registerEmbeddedScene(() => screen.dispose());
+if (!redirectToStudio('signatures')) {
+    const screen = new SignatureScreen();
+    registerEmbeddedScene(() => screen.dispose());
+}

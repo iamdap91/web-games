@@ -1,31 +1,44 @@
-import { clamp, ellipse, label, line, mix, polygon, smooth, stage, } from './drawing.js';
+import { clamp, ellipse, label, line, mix, noise, polygon, smooth, } from './drawing.js';
 import { opticalScene, overlayFrame, panorama } from './camera-scene.js';
 import { atahoPosition, battleLayout, drawBattleActors } from './battle.js';
 import { height, width } from './types.js';
+/** 시각을 같은 연속 난수 곡선에 매핑해 역탐색에서도 불규칙한 진동을 재현한다. */
+function cameraDrift(time, seed) {
+    const index = Math.floor(time);
+    return (mix(noise(index + seed), noise(index + seed + 1), smooth(time - index)) *
+        2 -
+        1);
+}
 function screenShake(ctx, frame) {
     const hitTime = frame.timeMs - battleLayout.contactMs;
     const envelope = hitTime < 0 ? 0 : Math.pow(1 - clamp(hitTime / 750), 2);
     const amplitude = frame.enhanced
-        ? (frame.reducedMotion ? 2 : 19) * envelope
+        ? (frame.reducedMotion ? 2 : 32) * envelope
         : 0;
-    const x = Math.sin(hitTime * 0.052) * amplitude;
-    const y = Math.sin(hitTime * 0.073 + 0.8) * amplitude * 0.56;
+    const x = cameraDrift(hitTime * 0.037, 7) * amplitude;
+    const y = cameraDrift(hitTime * 0.041, 101) * amplitude * 0.56;
     ctx.save();
-    ctx.translate(x, y);
+    ctx.translate(width / 2 + x, height / 2 + y);
+    ctx.rotate(cameraDrift(hitTime * 0.029, 211) *
+        envelope *
+        (frame.enhanced ? (frame.reducedMotion ? 0.001 : 0.018) : 0));
+    ctx.scale(1.12, 1.12);
+    ctx.translate(-width / 2, -height / 2);
     opticalScene(ctx, frame);
     ctx.restore();
     overlayFrame(ctx);
     label(ctx, '1800ms의 한 충격 → 빠르게 감쇠 → 정지 · 화면 안내는 고정');
 }
 function handheld(ctx, frame) {
-    const amplitude = frame.enhanced ? (frame.reducedMotion ? 0.65 : 4.4) : 0;
+    const amplitude = frame.enhanced ? (frame.reducedMotion ? 0.65 : 7.5) : 0;
     const t = frame.timeMs / 1000;
-    const x = (Math.sin(t * 2.7) + Math.sin(t * 6.1) * 0.25) * amplitude;
-    const y = (Math.sin(t * 3.8 + 0.7) + Math.sin(t * 7.3) * 0.2) * amplitude;
-    const roll = Math.sin(t * 2.1 + 0.3) * amplitude * 0.0014;
+    const x = cameraDrift(t * 2.7, 19) * amplitude;
+    const y = cameraDrift(t * 3.8, 83) * amplitude;
+    const roll = cameraDrift(t * 2.1, 163) * amplitude * 0.0014;
     ctx.save();
     ctx.translate(width / 2 + x, height / 2 + y);
     ctx.rotate(roll);
+    ctx.scale(1.07, 1.07);
     ctx.translate(-width / 2, -height / 2);
     opticalScene(ctx, frame);
     ctx.restore();
@@ -34,44 +47,63 @@ function handheld(ctx, frame) {
 }
 function contactMulti(ctx, frame) {
     const amount = frame.enhanced
-        ? smooth(frame.timeMs / 3200) * (frame.reducedMotion ? 60 : 170)
+        ? smooth((frame.timeMs - 250) / 2850) * (frame.reducedMotion ? 60 : 480)
         : 0;
-    stage(ctx);
+    const sky = ctx.createLinearGradient(0, 0, 0, height);
+    sky.addColorStop(0, '#182738');
+    sky.addColorStop(1, '#738d9b');
+    ctx.fillStyle = sky;
+    ctx.fillRect(0, 0, width, height);
+    ellipse(ctx, 765 - amount * 0.05, 95, 43, 43, '#d6e5e8');
     for (let i = -1; i < 6; i++) {
         const x = i * 240 - amount * 0.2;
         polygon(ctx, [
-            { x, y: 360 },
+            { x, y: 440 },
             { x: x + 100, y: 170 },
-            { x: x + 260, y: 360 },
+            { x: x + 260, y: 440 },
         ], '#91a8ba');
     }
     ctx.fillStyle = '#c0d1dc';
-    ctx.fillRect(0, 440, width, 100);
+    ctx.fillRect(0, 410, width, 130);
     ctx.save();
     ctx.translate(-amount * 0.48, 0);
+    // 중경 지면도 배우와 같은 판으로 움직인다. 고정된 기본 무대의 나무를 중복해서 남기지 않는다.
+    for (let i = -2; i < 14; i++) {
+        const x = i * 90;
+        line(ctx, [
+            { x, y: 457 },
+            { x: x + 32, y: 461 },
+        ], '#91a8b8', 2);
+        line(ctx, [
+            { x: x + 39, y: 507 },
+            { x: x + 81, y: 511 },
+        ], '#a4bac7', 2);
+    }
     drawBattleActors(ctx, frame);
     ctx.restore();
-    for (const origin of [110, 900]) {
+    for (const origin of [-340, 100, 580, 1080, 1520]) {
         const x = origin - amount;
         ctx.fillStyle = '#29495e';
-        ctx.fillRect(x, 40, 45, 500);
-        ellipse(ctx, x + 20, 95, 105, 85, '#3c6177');
+        ctx.fillRect(x, 40, 28, 500);
+        ellipse(ctx, x + 14, 95, 76, 85, '#3c6177');
     }
     label(ctx, '평면 셀의 서로 다른 수평 이송 · 각 층의 그림 크기는 일정');
 }
 function flicker(ctx, frame) {
     opticalScene(ctx, frame);
     if (frame.enhanced) {
-        // 감소 모션에서는 주기적인 전면 명멸 대신 낮은 농도의 일정한 노출만 둔다.
-        const opacity = frame.reducedMotion
-            ? 0.06
-            : (Math.sin(frame.timeMs / 270) * 0.5 + 0.5) * 0.25;
-        ctx.fillStyle = `rgba(244, 226, 177, ${opacity})`;
+        // 노출의 색 차이를 키우되 짧은 섬광을 연사하지 않고 한 색을 충분히 유지한다.
+        const warm = frame.reducedMotion || Math.floor(frame.timeMs / 400) % 2 === 0;
+        ctx.fillStyle = frame.reducedMotion
+            ? '#edc77d24'
+            : warm
+                ? '#edbb6460'
+                : '#638fc652';
         ctx.fillRect(0, 0, width, height);
     }
     label(ctx, frame.reducedMotion
-        ? '움직임 줄이기 · 명멸 없이 낮은 노출 유지'
-        : '같은 그림의 주기적 노출 변화 · 단발 섬광과 다름');
+        ? '움직임 줄이기 · 색 교대 없이 낮은 노출 유지'
+        : '금빛·푸른 노출을400ms씩 유지하고 교대 · 단발 섬광과 다름');
 }
 function followPan(ctx, frame) {
     const initial = atahoPosition(frame, { timeMs: 0 });
@@ -90,10 +122,10 @@ function followPan(ctx, frame) {
 }
 function slowQuickPan(ctx, frame) {
     const slow = smooth(frame.timeMs / 1450);
-    const quickDuration = frame.reducedMotion ? 1300 : 360;
+    const quickDuration = frame.reducedMotion ? 1300 : 180;
     const quick = smooth((frame.timeMs - 1850) / quickDuration);
-    const slowFocus = mix(300, battleLayout.attacker.x - 40, slow);
-    const focus = mix(slowFocus, battleLayout.target.x + 110, quick);
+    const slowFocus = mix(240, battleLayout.attacker.x - 130, slow);
+    const focus = mix(slowFocus, battleLayout.target.x + 20, quick);
     const offset = frame.enhanced ? focus - width / 2 : 0;
     ctx.save();
     ctx.translate(-offset, 0);
@@ -105,9 +137,9 @@ function slowQuickPan(ctx, frame) {
         : '퀵 PAN · 곰왕 쪽으로 빠르게 구도 전환');
 }
 function trackUpBack(ctx, frame) {
-    const up = smooth((frame.timeMs - 400) / 1300);
-    const back = smooth((frame.timeMs - 2400) / 1300);
-    const max = frame.reducedMotion ? 1.22 : 1.72;
+    const up = smooth((frame.timeMs - 500) / 900);
+    const back = smooth((frame.timeMs - 2400) / 1050);
+    const max = frame.reducedMotion ? 1.22 : 2.15;
     const zoom = frame.enhanced ? 1 + (max - 1) * up * (1 - back) : 1;
     ctx.save();
     ctx.translate(battleLayout.impact.x, battleLayout.impact.y);
@@ -123,8 +155,8 @@ function multiplane(ctx, frame) {
     const progress = frame.enhanced
         ? smooth(frame.timeMs / 3500) * (frame.reducedMotion ? 0.4 : 1)
         : 0;
-    const cameraX = progress * 0.9;
-    const cameraZ = progress * 1.25;
+    const cameraX = progress * 0.6;
+    const cameraZ = progress * 1.65;
     const project = (point) => {
         const scale = 700 / (point.z - cameraZ);
         return {
@@ -135,7 +167,8 @@ function multiplane(ctx, frame) {
     };
     ctx.fillStyle = '#57748c';
     ctx.fillRect(0, 0, width, height);
-    ellipse(ctx, 760 - cameraX * 10, 95, 43, 43, '#eaf1f5');
+    const moon = project({ x: 14, y: 10.85, z: 35 });
+    ellipse(ctx, moon.x, moon.y, moon.scale * 2.15, moon.scale * 2.15, '#eaf1f5');
     const mountain = [
         { x: -9, y: -1, z: 17 },
         { x: -4, y: 3.8, z: 17 },
@@ -149,7 +182,7 @@ function multiplane(ctx, frame) {
         { x: -100, y: height },
     ], '#94aebf');
     ctx.fillStyle = '#c1d1dd';
-    ctx.fillRect(0, 440, width, 100);
+    ctx.fillRect(0, 280, width, height - 280);
     for (const z of [5, 7, 10, 14]) {
         const left = project({ x: -12, y: 0, z });
         const right = project({ x: 12, y: 0, z });
@@ -165,7 +198,7 @@ function multiplane(ctx, frame) {
     ctx.translate(-width / 2, -battleLayout.attacker.ground);
     drawBattleActors(ctx, frame);
     ctx.restore();
-    for (const x of [-1.8, 2.2]) {
+    for (const x of [-1.25, 1.9]) {
         const base = project({ x, y: 0, z: 3.5 });
         const top = project({ x, y: 3.2, z: 3.5 });
         ctx.fillStyle = '#29495e';

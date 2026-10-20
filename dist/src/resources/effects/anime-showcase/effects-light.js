@@ -10,7 +10,7 @@ function drawKanadaLight(ctx, frame) {
         return;
     }
     ctx.save();
-    const spike = (1 - clamp(age / 470)) * size;
+    const spike = (1 - smooth((age - 55) / 235)) * size;
     ctx.globalAlpha *= frame.reducedMotion ? 0.66 : 1;
     if (spike > 0) {
         star(ctx, 549, 266, 186 * spike, palette.gold, 4, -0.13);
@@ -22,8 +22,19 @@ function drawKanadaLight(ctx, frame) {
         ctx.globalAlpha *= 1 - orbit;
         ctx.translate(549, 266);
         ctx.rotate(-0.47);
-        ring(ctx, 0, 0, (26 + orbit * 151) * size, (8 + orbit * 37) * size, palette.paper, 4 - orbit * 2);
-        ring(ctx, 0, 0, (17 + orbit * 103) * size, (5 + orbit * 27) * size, palette.gold, 2);
+        const rx = (26 + orbit * 151) * size;
+        const ry = (8 + orbit * 37) * size;
+        // 십자는 셀의 단단한 면으로, 링은 여러 겹의 부드러운 농도로 분리한다.
+        for (let brush = 7; brush >= 0; brush--) {
+            ctx.save();
+            ctx.globalAlpha *= brush === 0 ? 0.54 : 0.055;
+            ctx.shadowColor = '#f8e6b4';
+            ctx.shadowBlur = brush * 1.6;
+            ring(ctx, 0, 0, rx, ry, brush % 2 ? '#f4d497' : '#fff7df', 2 + brush * 1.6);
+            ctx.restore();
+        }
+        ctx.globalAlpha *= 0.6;
+        ring(ctx, 0, 0, rx * 0.72, ry * 0.7, '#e5c483', 2.5);
     }
     ctx.restore();
 }
@@ -41,7 +52,7 @@ function drawKanadaBeam(ctx, frame) {
     const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 2100)
         return;
-    const progress = clamp(age / 620);
+    const progress = clamp(age / (frame.enhanced && !frame.reducedMotion ? 440 : 620));
     const fade = 1 - clamp((age - 1500) / 600);
     const length = 548 * smooth(progress);
     const amount = frame.reducedMotion ? 0.45 : 1;
@@ -89,7 +100,7 @@ function drawKanadaBeam(ctx, frame) {
     polygon(ctx, [...top, ...bottom], palette.blue);
     line(ctx, top, '#d7f3ed', 3);
     line(ctx, bottom, '#386d9b', 4);
-    line(ctx, axis, '#fff5cd', 7);
+    line(ctx, axis, '#fff5cd', 10);
     for (let index = 0; index < 5; index++) {
         const u = (index + 0.6) / 6;
         const point = beamAxis(u, length, bend, tipHeight);
@@ -109,11 +120,10 @@ function drawKanadaBeam(ctx, frame) {
     ctx.restore();
 }
 function dragonPoint(progress, trail) {
+    const emitted = Math.max(0, progress - trail * 0.6);
     return {
-        x: 292 + progress * 493 - trail * 297,
-        y: 269 +
-            Math.sin((progress * 2.3 - trail * 1.2) * Math.PI) * 58 +
-            trail * trail * 35,
+        x: 292 + emitted * 493,
+        y: 269 + Math.sin(emitted * 2.3 * Math.PI) * 58,
     };
 }
 function drawDragon(ctx, frame) {
@@ -130,26 +140,49 @@ function drawDragon(ctx, frame) {
         ctx.restore();
         return;
     }
+    const cell = Math.floor(age / (frame.reducedMotion ? 240 : 1000 / 12));
+    const birth = smooth(age / 170);
+    ctx.save();
+    ctx.translate(head.x, head.y);
+    ctx.scale(birth, birth);
+    ctx.translate(-head.x, -head.y);
     const count = 38;
+    // 머리가 실제로 지난 구간만 사용해 발사 직후의 꼬리가 발생점 뒤로 생기지 않게 한다.
+    const emittedTrail = Math.min(1, p / 0.6);
     const top = [];
     const bottom = [];
     for (let index = 0; index <= count; index++) {
         const u = index / count;
-        const point = dragonPoint(p, u);
-        const thick = (1 - u) * 35 + 2;
+        const trail = u * emittedTrail;
+        const point = dragonPoint(p, trail);
+        const tangentY = Math.cos(Math.max(0, p - trail * 0.6) * 2.3 * Math.PI) *
+            58 *
+            2.3 *
+            Math.PI;
+        const distance = Math.hypot(493, tangentY);
+        const normal = { x: -tangentY / distance, y: 493 / distance };
+        const thick = ((1 - u) * 35 + 2) * (0.88 + noise(index + cell * 3) * 0.24);
+        const flame = index % 4 === 0 ? (1 - u) * 17 : 0;
         top.push({
-            x: point.x,
-            y: point.y - thick - (index % 4 === 0 ? (1 - u) * 17 : 0),
+            x: point.x - normal.x * (thick + flame),
+            y: point.y - normal.y * (thick + flame),
         });
-        bottom.unshift({ x: point.x, y: point.y + thick * 0.65 });
+        bottom.unshift({
+            x: point.x + normal.x * thick * 0.65,
+            y: point.y + normal.y * thick * 0.65,
+        });
     }
     polygon(ctx, [...top, ...bottom], '#dc7947');
     line(ctx, top, '#f5d374', 3);
     const center = dragonPoint(p, 0);
-    const spine = Array.from({ length: count }, (_, index) => dragonPoint(p, index / count));
+    const spine = Array.from({ length: count }, (_, index) => dragonPoint(p, (index / count) * emittedTrail));
     line(ctx, spine, '#f8d98f', 11);
     const x = center.x;
     const y = center.y;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(Math.atan2(Math.cos(p * 2.3 * Math.PI) * 58 * 2.3 * Math.PI, 493));
+    ctx.translate(-x, -y);
     polygon(ctx, [
         { x: x - 29, y: y - 23 },
         { x: x - 38, y: y - 69 },
@@ -171,6 +204,19 @@ function drawDragon(ctx, frame) {
         { x: x + 17, y: y - 16 },
     ], palette.ink, 5);
     ctx.restore();
+    for (let flame = 0; flame < 10; flame++) {
+        const u = (flame + 1) / 11;
+        const point = dragonPoint(p, u * emittedTrail);
+        const tongue = 8 + noise(flame + cell * 5) * 19;
+        const side = flame % 2 ? 1 : -1;
+        polygon(ctx, [
+            { x: point.x - 13, y: point.y },
+            { x: point.x - tongue, y: point.y + side * (18 + u * 12) },
+            { x: point.x + 10, y: point.y + side * 7 },
+        ], '#efb66c');
+    }
+    ctx.restore();
+    ctx.restore();
 }
 function drawAraki(ctx, frame) {
     const age = frame.timeMs - battleLayout.contactMs;
@@ -180,26 +226,28 @@ function drawAraki(ctx, frame) {
     if (!frame.enhanced)
         return ellipse(ctx, 503, 277, 12 * (1 - p), 12 * (1 - p), palette.paper);
     ctx.save();
+    const opacity = ctx.globalAlpha;
     ctx.globalAlpha *= frame.reducedMotion ? 0.55 : 1;
     const reach = (1 - clamp(age / 430)) * (frame.reducedMotion ? 102 : 224);
     if (reach > 0) {
         line(ctx, [
             { x: 503 - reach, y: 277 + reach * 0.4 },
             { x: 503 + reach, y: 277 - reach * 0.4 },
-        ], palette.blue, 8);
+        ], palette.blue, 12);
         line(ctx, [
             { x: 503 - reach * 0.35, y: 277 - reach },
             { x: 503 + reach * 0.35, y: 277 + reach },
-        ], palette.paper, 5);
+        ], palette.paper, 7);
     }
     for (let index = 0; index < 11; index++) {
         const local = clamp((age - index * 31) / 950);
         if (age < index * 31)
             continue;
-        ctx.globalAlpha = (1 - local) * (frame.reducedMotion ? 0.42 : 0.8);
+        ctx.globalAlpha =
+            opacity * (1 - local) * (frame.reducedMotion ? 0.42 : 0.8);
         const x = 503 + (noise(index) - 0.4) * 215 * local;
         const y = 277 - local * (45 + noise(index + 5) * 105);
-        ring(ctx, x, y, 3 + local * (4 + (index % 4)), 3 + local * (4 + (index % 4)), index % 2 ? palette.paper : palette.blue, 2);
+        ring(ctx, x, y, 4 + local * (8 + (index % 4) * 2), 4 + local * (8 + (index % 4) * 2), index % 2 ? palette.paper : palette.blue, 2);
     }
     ctx.restore();
 }
@@ -228,17 +276,29 @@ function drawKozuma(ctx, frame) {
     const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 2400)
         return;
-    const p = clamp(age / 1900);
+    const ordinary = age < 930
+        ? smooth(age / 930) * 0.38
+        : 0.38 + smooth((age - 930) / 970) * 0.62;
+    // 붙어서 버티는 구간과 끊긴 뒤의 급가속을 충분히 벌려 점성의 박자를 읽힌다.
+    const p = frame.enhanced && !frame.reducedMotion
+        ? age < 980
+            ? smooth(age / 980) * 0.18
+            : 0.18 + smooth((age - 980) / 620) * 0.82
+        : ordinary;
     const head = { x: 285 + p * 430, y: 300 - Math.sin(p * Math.PI) * 48 };
     ctx.save();
     ctx.globalAlpha *= 1 - clamp((age - 2000) / 400);
+    ctx.translate(285, 300);
+    const birth = smooth(age / 180);
+    ctx.scale(birth, birth);
+    ctx.translate(-285, -300);
     if (!frame.enhanced)
         ellipse(ctx, head.x, head.y, 39, 39, '#a9d8b6');
     else {
-        const split = age > 1270;
-        viscousBody(ctx, head, Math.max(1.2, 25 * (1 - clamp(age / 1400))), !split);
+        const split = age > 1200;
+        viscousBody(ctx, head, Math.max(1.2, 25 * (1 - smooth((age - 760) / 440))), !split);
         if (split) {
-            const since = (age - 1270) / 1000;
+            const since = (age - 1200) / 1000;
             ellipse(ctx, 285 + since * 19, 300 + since * 7, 23 - clamp(since) * 13, 31, '#a9d8b6');
             for (let index = 0; index < 5; index++) {
                 const x = 380 + index * 34 + since * (24 + index * 18);
@@ -249,29 +309,59 @@ function drawKozuma(ctx, frame) {
     }
     ctx.restore();
 }
+function blackBridge(ctx, a, b, radius, neck) {
+    const dx = b.x - a.x;
+    const dy = b.y - a.y;
+    const distance = Math.max(1, Math.hypot(dx, dy));
+    const nx = -dy / distance;
+    const ny = dx / distance;
+    const middle = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+    ctx.beginPath();
+    ctx.moveTo(a.x + nx * radius, a.y + ny * radius);
+    ctx.bezierCurveTo(middle.x + nx * neck, middle.y + ny * neck, middle.x + nx * neck, middle.y + ny * neck, b.x + nx * radius, b.y + ny * radius);
+    ctx.lineTo(b.x - nx * radius, b.y - ny * radius);
+    ctx.bezierCurveTo(middle.x - nx * neck, middle.y - ny * neck, middle.x - nx * neck, middle.y - ny * neck, a.x - nx * radius, a.y - ny * radius);
+    ctx.closePath();
+    ctx.fillStyle = '#070a12';
+    ctx.fill();
+}
 function drawTatsuzo(ctx, frame) {
     const age = frame.timeMs - battleLayout.contactMs;
-    if (age < 0 || age > 2400)
+    if (age < 0 || age > 2200)
         return;
-    const p = clamp(age / 2400);
-    const sway = frame.reducedMotion ? 0.35 : 1;
-    const a = Math.sin(p * Math.PI * 2) * sway;
-    ctx.save();
-    ctx.globalAlpha *= smooth(p * 9) * (1 - smooth((p - 0.82) / 0.18));
-    if (!frame.enhanced)
-        ellipse(ctx, 551, 284, 90, 90, '#070a12');
-    else {
-        ctx.beginPath();
-        ctx.moveTo(361, 311);
-        ctx.bezierCurveTo(327, 203 - a * 49, 441, 152 + a * 40, 494, 234);
-        ctx.bezierCurveTo(534, 274, 525 + a * 50, 143, 623, 174);
-        ctx.bezierCurveTo(742, 208, 733, 341 + a * 25, 639, 342);
-        ctx.bezierCurveTo(576, 332, 587 - a * 61, 427, 508, 365);
-        ctx.bezierCurveTo(444, 321, 408, 414, 361, 311);
-        ctx.closePath();
-        ctx.fillStyle = '#070a12';
-        ctx.fill();
+    const p = age / 2200;
+    const motion = frame.reducedMotion ? 0.45 : 1;
+    const birth = smooth(age / 160);
+    const end = 1 - smooth((age - 1560) / 640);
+    if (!frame.enhanced) {
+        ellipse(ctx, 551, 284, 90 * birth * end, 90 * birth * end, '#070a12');
+        return;
     }
+    const spread = Math.sin(clamp((age - 80) / 1650) * Math.PI) * motion;
+    const root = { x: 551, y: 284 };
+    const points = Array.from({ length: 3 }, (_, index) => {
+        const angle = -2.6 + index * 2.12 + p * 2.8;
+        return {
+            x: 551 + Math.cos(angle) * (48 + index * 23) * spread,
+            y: 284 + Math.sin(angle) * (59 + index * 12) * spread,
+        };
+    });
+    ctx.save();
+    for (let index = 0; index < points.length; index++) {
+        const point = points[index];
+        const split = smooth((age - 640 - index * 125) / 480) *
+            (1 - smooth((age - 1430) / 360));
+        const radius = (32 + index * 7) * birth * end;
+        if (split < 0.96)
+            blackBridge(ctx, root, point, radius * 0.6, radius * (1 - split) * 0.9);
+        ctx.save();
+        ctx.translate(point.x, point.y);
+        ctx.rotate(p * 3.5 - index);
+        const stretch = 1 + Math.sin(p * 9 + index) * (frame.reducedMotion ? 0.12 : 0.3);
+        ellipse(ctx, 0, 0, radius * stretch, radius / stretch, '#070a12');
+        ctx.restore();
+    }
+    ellipse(ctx, root.x, root.y, 38 * birth * end, 30 * birth * end, '#070a12');
     ctx.restore();
 }
 function drawShigeta(ctx, frame) {
@@ -297,7 +387,7 @@ function drawShigeta(ctx, frame) {
     ctx.save();
     ctx.globalAlpha *= frame.reducedMotion ? 0.65 : 1;
     if (age < 230) {
-        const spread = (17 + age * 0.23) * motion;
+        const spread = (22 + age * 0.45) * motion;
         const opacity = ctx.globalAlpha;
         ctx.globalAlpha *= 1 - age / 230;
         for (let i = 0; i < 11; i++) {
@@ -385,39 +475,84 @@ function drawKutsuna(ctx, frame) {
     const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 1700)
         return;
-    const p = age / 1700;
     ctx.save();
-    ctx.globalAlpha *=
-        (1 - smooth((p - 0.73) / 0.27)) * (frame.reducedMotion ? 0.62 : 1);
-    if (!frame.enhanced)
+    ctx.globalAlpha *= frame.reducedMotion ? 0.6 : 1;
+    if (!frame.enhanced) {
+        ctx.globalAlpha *= 1 - smooth((age - 700) / 450);
         line(ctx, [
-            { x: 306, y: 303 },
+            { x: 296, y: 288 },
             { x: 421, y: 250 },
             { x: 478, y: 314 },
             { x: 595, y: 258 },
-            { x: 779, y: 292 },
+            { x: 782, y: 288 },
         ], palette.blue, 5);
-    else {
-        const step = Math.floor(age / (frame.reducedMotion ? 270 : 135));
-        const spread = frame.reducedMotion ? 0.6 : 1;
-        for (let strand = 0; strand < 11; strand++) {
-            const points = Array.from({ length: 100 }, (_, i) => {
-                const u = i / 99;
-                const amp = Math.sin(u * Math.PI) * spread;
-                return {
-                    x: 296 +
-                        u * 486 +
-                        Math.sin(u * (34 + strand) + strand * 1.7 + step) * 58 * amp,
-                    y: 288 +
-                        Math.cos(u * (23 + strand * 2) + strand + step * 0.8) *
-                            (28 + noise(strand) * 65) *
-                            amp,
-                };
+        ctx.restore();
+        return;
+    }
+    const motion = frame.reducedMotion ? 0.56 : 1;
+    const cell = age / (frame.reducedMotion ? 230 : 1000 / 12);
+    const first = Math.floor(cell);
+    const blend = smooth(cell - first);
+    const flow = (seed) => noise(seed + first * 31) * (1 - blend) +
+        noise(seed + (first + 1) * 31) * blend;
+    for (let strand = 0; strand < 6; strand++) {
+        const local = age - strand * 67;
+        const life = 920 + strand * 71;
+        if (local < 0 || local > life)
+            continue;
+        const head = clamp(local / 180);
+        const tail = clamp((local - 490) / (life - 490));
+        const points = [];
+        const curl = (flow(strand * 7) - 0.5) * Math.PI * 2;
+        for (let index = 0; index <= 64; index++) {
+            const u = tail + ((head - tail) * index) / 64;
+            const body = Math.sin(u * Math.PI);
+            const swirl = u * (7 + strand * 1.3) + local / 240 + curl;
+            const loop = (24 + flow(strand * 11 + 5) * 69) * body * motion;
+            const kink = Math.sin(u * 21 + strand * 3 + local / 370) * body * 17 * motion;
+            points.push({
+                x: 296 + u * 486 + Math.sin(swirl) * loop,
+                y: 288 +
+                    Math.cos(swirl * 1.6 + curl) * loop +
+                    Math.sin(u * 5 + strand) * body * 43 * motion +
+                    kink,
             });
-            line(ctx, points, strand % 3 ? '#8bc6db' : '#e9f2da', strand % 3 ? 1.5 : 3);
         }
-        ellipse(ctx, 296, 288, 9, 9, palette.paper);
-        ellipse(ctx, 782, 288, 11, 11, palette.paper);
+        ctx.save();
+        ctx.globalAlpha *=
+            smooth(local / 45) * (1 - smooth((local - life + 190) / 190));
+        // 각 줄의 머리와 꼬리가 따로 이동하여 평행 사인파의 고정 다발을 피한다.
+        const edge = [];
+        const reverse = [];
+        for (let index = 0; index < points.length; index++) {
+            const point = points[index];
+            const before = points[Math.max(0, index - 1)];
+            const after = points[Math.min(points.length - 1, index + 1)];
+            const distance = Math.max(1, Math.hypot(after.x - before.x, after.y - before.y));
+            const nx = -(after.y - before.y) / distance;
+            const ny = (after.x - before.x) / distance;
+            const along = index / (points.length - 1);
+            const width = (2 + Math.sin(along * Math.PI) * (4 + flow(index + strand * 37) * 9)) *
+                motion;
+            edge.push({ x: point.x + nx * width, y: point.y + ny * width });
+            reverse.unshift({ x: point.x - nx * width, y: point.y - ny * width });
+        }
+        polygon(ctx, [...edge, ...reverse], strand % 2 ? '#8dcfdd' : '#d3e7d9');
+        ctx.strokeStyle = '#24536a';
+        ctx.lineWidth = 1.6;
+        ctx.stroke();
+        line(ctx, points, '#fff4d9', strand % 2 ? 3.7 : 2.8);
+        if (strand % 2 === 0) {
+            const root = points[Math.floor(points.length * 0.58)];
+            const branch = points
+                .slice(Math.floor(points.length * 0.58))
+                .map((point, index) => ({
+                x: point.x - index * 0.8,
+                y: point.y - index * 1.6 * motion,
+            }));
+            line(ctx, [root, ...branch], '#c1e6e2', 1.4);
+        }
+        ctx.restore();
     }
     ctx.restore();
 }

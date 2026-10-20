@@ -1,6 +1,8 @@
 import { burst, ellipse, label, line, noise, palette, polygon, ring, smooth, stage, star, windowed, } from './drawing.js';
-import { battleLayout, drawAtaho, drawBattle, drawBattleActors, drawBear, drawPortrait, } from './battle.js';
+import { battleLayout, battleImpact, drawAtaho, drawBattle, drawBear, drawPortrait, } from './battle.js';
 import { height, width, } from './types.js';
+import { drawShockKoma } from './shock-koma.js';
+import { drawShockKomaV2 } from './shock-koma-v2.js';
 export const impactSamples = [
     {
         id: 'impact-frame',
@@ -9,6 +11,36 @@ export const impactSamples = [
         previewMs: 1840,
         description: '어퍼컷이 곰왕에게 닿는 순간을 실제 두 원본의 검은 윤곽과 추상 충격선으로 바꿉니다.',
         distinction: '새 몸을 그리지 않고 접촉 컷의 화면 표현만 잠깐 교체합니다.',
+    },
+    {
+        id: 'shock-koma',
+        name: '쇼크코마 · 극단색과 먹선',
+        category: 'impact',
+        previewMs: 1905,
+        beats: [
+            { timeMs: 1818, label: '극단색 1코마' },
+            { timeMs: 1860, label: '명암 반전 1코마' },
+            { timeMs: 1905, label: '먹선 2코마' },
+            { timeMs: 1980, label: '원색 복귀' },
+        ],
+        description: '아타호의 어퍼컷 접촉을 극단색 1코마 → 흑백 반전 1코마 → 거친 먹선 2코마로 교체하고 원색 장면으로 돌아옵니다.',
+        distinction: '24fps 기준 약 0.167초 동안 실제 두 배우의 명암·윤곽을 다시 그립니다. 원작의 새 동작 원화를 복제한 것은 아니며, 모션 감소에서는 낮은 대비의 먹선 한 장을 유지합니다.',
+    },
+    {
+        id: 'shock-koma-v2',
+        name: '쇼크코마 v2 · 섬광과 잔염',
+        category: 'impact',
+        previewMs: 2200,
+        beats: [
+            { timeMs: 1816, label: '발광 윤곽' },
+            { timeMs: 1850, label: '적색 실루엣' },
+            { timeMs: 1916, label: '백열핵' },
+            { timeMs: 2200, label: '붉은 잔염' },
+            { timeMs: 2566, label: '흑백 방사선' },
+            { timeMs: 2666, label: '원색 복귀' },
+        ],
+        description: '수평 정권의 접촉을 발광 윤곽 → 적색 실루엣 → 백열핵 → 붉은 잔염 → 흑백 방사선으로 바꾼 뒤 원색 장면으로 돌아옵니다.',
+        distinction: '사용자 영상 2~3초의 섬광과 긴 잔염을 기존 정권 윤곽과 절차 에너지로 재구성합니다. 원작의 새 동작을 복제한 것은 아니며, 모션 감소에서는 낮은 대비의 한 장을 유지합니다.',
     },
     {
         id: 'beta-flash',
@@ -39,7 +71,7 @@ export const impactSamples = [
         name: '히사시 펀치',
         category: 'impact',
         previewMs: 2260,
-        description: '실제 어퍼컷의 접촉 프레임과 곰왕 피격 반응을 오래 붙잡습니다.',
+        description: '수평 정권의 접촉 프레임과 곰왕 피격 반응을 오래 붙잡습니다.',
         distinction: '접촉 구간의 재생 시간만 늘리고 몸과 상대 반응은 기존 프레임을 사용합니다.',
     },
     {
@@ -89,7 +121,7 @@ function sceneTime(frame) {
     return Math.max(0, frame.timeMs);
 }
 function drawCombat(ctx, frame, timeMs = frame.timeMs) {
-    drawBattle(ctx, frame, { timeMs, action: 'uppercut' });
+    drawBattle(ctx, frame, { timeMs });
 }
 function frameCamera(ctx, scale, focus, destination) {
     const x = Math.max(width * (1 - scale), Math.min(0, destination.x - focus.x * scale));
@@ -114,24 +146,24 @@ function drawAbstractImpact(ctx, frame) {
             },
             { x: impact.x + Math.cos(a) * 1100, y: impact.y + Math.sin(a) * 1100 },
             {
-                x: impact.x + Math.cos(a + 0.12) * 1100,
-                y: impact.y + Math.sin(a + 0.12) * 1100,
+                x: impact.x + Math.cos(a + 0.17) * 1100,
+                y: impact.y + Math.sin(a + 0.17) * 1100,
             },
         ], palette.ink);
     }
     drawSilhouettes(ctx, frame);
-    star(ctx, impact.x, impact.y, frame.reducedMotion ? 57 : 92, frame.reducedMotion ? '#aeabbc' : palette.paper, 7, 0.13);
+    star(ctx, impact.x, impact.y, frame.reducedMotion ? 57 : 78, frame.reducedMotion ? '#aeabbc' : palette.paper, 7, 0.13);
 }
 function drawBeta(ctx, frame) {
-    const amount = windowed(sceneTime(frame), 1500, 2130, 130);
+    const amount = windowed(sceneTime(frame), 1680, 2160, 65);
     ctx.save();
     ctx.globalAlpha *= amount * (frame.reducedMotion ? 0.6 : 1);
     ctx.fillStyle = '#080c17';
     ctx.fillRect(0, 0, width, height);
-    ellipse(ctx, impact.x, impact.y, 146, 122, palette.paper);
+    ellipse(ctx, impact.x, impact.y, 184, 154, palette.paper);
     for (let i = 0; i < 38; i++) {
         const a = (i * Math.PI * 2) / 38;
-        const inner = 140 + noise(i + 24) * 45;
+        const inner = 180 + noise(i + 24) * 45;
         polygon(ctx, [
             {
                 x: impact.x + Math.cos(a) * inner,
@@ -151,25 +183,14 @@ function drawBeta(ctx, frame) {
     ctx.restore();
 }
 function drawInverted(ctx, frame) {
-    const negative = sceneTime(frame) >= 1800 && sceneTime(frame) < 1940;
-    ctx.fillStyle = frame.reducedMotion
-        ? negative
-            ? '#343d4b'
-            : '#929494'
-        : negative
-            ? '#0e1421'
-            : '#e4dfd1';
-    ctx.fillRect(0, 0, width, height);
     ctx.save();
-    ctx.filter = negative ? 'brightness(0) invert(1)' : 'brightness(0)';
-    ctx.globalAlpha *= frame.reducedMotion ? 0.72 : 1;
-    drawBattleActors(ctx, frame, { action: 'uppercut' });
+    // 인물만 검게 칠하지 않고 같은 접촉 화면 전체의 명암을 뒤집는다.
+    ctx.filter = frame.reducedMotion
+        ? 'grayscale(1) invert(1)'
+        : 'grayscale(1) contrast(1.9) invert(1)';
+    ctx.globalAlpha *= frame.reducedMotion ? 0.35 : 1;
+    drawCombat(ctx, frame, contactMs);
     ctx.restore();
-    const color = negative ? '#d5d5cf' : '#303645';
-    line(ctx, [
-        { x: 0, y: 440 },
-        { x: width, y: 440 },
-    ], color, 3);
 }
 function drawShatter(ctx, frame) {
     const t = sceneTime(frame);
@@ -212,8 +233,8 @@ function drawShatter(ctx, frame) {
             x: (a.x + b.x + impact.x) / 3,
             y: (a.y + b.y + impact.y) / 3,
         };
-        const p = Math.max(0, age - noise(i) * 0.13);
-        const fly = p * p * 0.85 + p * 0.3;
+        const p = Math.max(0, age - noise(i) * 0.06);
+        const fly = p * p * 1.05 + p * 0.45;
         ctx.save();
         ctx.globalAlpha *= 1 - smooth((age - 0.65) / 0.45);
         ctx.translate(center.x + (center.x - impact.x) * fly, center.y + (center.y - impact.y) * fly + 130 * p * p);
@@ -227,7 +248,7 @@ function drawShatter(ctx, frame) {
         ctx.clip();
         // 배우의 자세를 회전시키지 않고 접촉 화면 전체가 담긴 합성 조각만 돌린다.
         drawCombat(ctx, frame, contactMs);
-        line(ctx, [impact, a, b, impact], palette.paper, 3);
+        line(ctx, [impact, a, b, impact], palette.paper, 4.5);
         ctx.restore();
     }
 }
@@ -235,11 +256,12 @@ function hisashiTime(t) {
     if (t < contactMs)
         return t;
     if (t < 2800)
-        return contactMs + (t - contactMs) * 0.12;
-    return 1920 + (t - 2800) * 1.2;
+        return contactMs + (t - contactMs) * 0.04;
+    return contactMs + (2800 - contactMs) * 0.04 + (t - 2800) * 1.35;
 }
 function drawHisashi(ctx, frame) {
     const t = sceneTime(frame);
+    const impact = battleImpact(frame);
     drawCombat(ctx, frame, frame.enhanced ? hisashiTime(t) : t);
     if (!frame.enhanced || t < contactMs || t >= 3000)
         return;
@@ -247,12 +269,12 @@ function drawHisashi(ctx, frame) {
     ctx.globalAlpha *=
         windowed(t, contactMs, 2800, 160) * (frame.reducedMotion ? 0.35 : 0.7);
     const p = smooth((t - contactMs) / 1000);
-    ring(ctx, impact.x, impact.y, 21 + p * 12, 31 - p * 9, palette.paper, 2);
+    ring(ctx, impact.x, impact.y, 29 + p * 18, 39 - p * 12, palette.paper, 3);
     for (let i = 0; i < 4; i++)
         line(ctx, [
             { x: impact.x + 30, y: impact.y - 15 + i * 10 },
             { x: impact.x + 39 + p * 12, y: impact.y - 11 + i * 10 },
-        ], palette.ink, 2);
+        ], palette.ink, 3);
     ctx.restore();
 }
 function drawCutIn(ctx, frame) {
@@ -260,11 +282,13 @@ function drawCutIn(ctx, frame) {
     drawCombat(ctx, frame);
     if (!frame.enhanced)
         return;
-    const amount = windowed(t, 780, 1670, 180);
+    const amount = windowed(t, 780, 1670, 90);
     if (amount <= 0)
         return;
     ctx.save();
     ctx.globalAlpha *= amount;
+    if (!frame.reducedMotion)
+        ctx.translate((1 - smooth((t - 780) / 100)) * 140, 0);
     polygon(ctx, [
         { x: 430, y: 40 },
         { x: 936, y: 40 },
@@ -278,13 +302,13 @@ function drawCutIn(ctx, frame) {
     ctx.lineTo(363, 219);
     ctx.closePath();
     ctx.clip();
-    ctx.fillStyle = '#361d3d';
+    ctx.fillStyle = '#201326';
     ctx.fillRect(340, 40, 600, 190);
     for (let i = 0; i < 12; i++)
         line(ctx, [
             { x: 345, y: 60 + i * 16 },
             { x: 940, y: 5 + i * 16 },
-        ], '#8b4d65', 4);
+        ], '#ad5676', 6);
     drawPortrait(ctx, frame, {
         x: 472,
         y: 48,
@@ -301,7 +325,7 @@ function drawPonYori(ctx, frame) {
         return;
     }
     ctx.save();
-    const scale = frame.reducedMotion ? 1.3 : 2.2;
+    const scale = frame.reducedMotion ? 1.3 : 2.45;
     frameCamera(ctx, scale, impact, { x: 480, y: 285 });
     drawCombat(ctx, frame);
     ctx.restore();
@@ -326,7 +350,7 @@ function drawInazuma(ctx, frame) {
         return;
     const amount = windowed(t, 1430, 1980, 160);
     ctx.save();
-    ctx.globalAlpha *= amount * (frame.reducedMotion ? 0.28 : 0.68);
+    ctx.globalAlpha *= amount * (frame.reducedMotion ? 0.28 : 0.88);
     polygon(ctx, [
         { x: impact.x - 204, y: impact.y - 253 },
         { x: impact.x - 38, y: impact.y - 45 },
@@ -335,9 +359,20 @@ function drawInazuma(ctx, frame) {
         { x: impact.x - 154, y: impact.y - 94 },
         { x: impact.x - 97, y: impact.y - 92 },
     ], palette.blue);
+    if (!frame.reducedMotion)
+        line(ctx, [
+            { x: impact.x - 204, y: impact.y - 253 },
+            { x: impact.x - 38, y: impact.y - 45 },
+            { x: impact.x - 79, y: impact.y - 54 },
+            { x: impact.x + 26, y: impact.y + 38 },
+        ], palette.paper, 4);
     ctx.restore();
-    if (t >= contactMs && t < 2180)
+    if (t >= contactMs && t < 2180) {
+        ctx.save();
+        ctx.globalAlpha *= frame.reducedMotion ? 0.25 : 1;
         burst(ctx, impact.x, impact.y, (t - contactMs) / 380, palette.paper, 11);
+        ctx.restore();
+    }
 }
 function drawKurumada(ctx, frame) {
     const t = sceneTime(frame);
@@ -374,11 +409,17 @@ export function drawImpact(ctx, id, frame) {
         switch (id) {
             case 'impact-frame':
                 drawCombat(ctx, frame);
-                if (frame.enhanced && t >= 1780 && t < 1920)
+                if (frame.enhanced && t >= contactMs && t < contactMs + 1000 / 12)
                     drawAbstractImpact(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '실제 원본 윤곽 + 접촉의 140ms 추상 충격 컷'
+                    ? '실제 원본 윤곽 + 접촉의 2코마 추상 충격 컷'
                     : '실제 어퍼컷과 곰왕 피격');
+                break;
+            case 'shock-koma':
+                drawShockKoma(ctx, frame);
+                break;
+            case 'shock-koma-v2':
+                drawShockKomaV2(ctx, frame);
                 break;
             case 'beta-flash':
                 drawCombat(ctx, frame);
@@ -389,12 +430,11 @@ export function drawImpact(ctx, id, frame) {
                     : '같은 실제 공격과 피격');
                 break;
             case 'monochrome-invert':
-                if (frame.enhanced && t >= 1450 && t < 2250)
+                drawCombat(ctx, frame);
+                if (frame.enhanced && t >= contactMs && t < contactMs + 1000 / 12)
                     drawInverted(ctx, frame);
-                else
-                    drawCombat(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '같은 PNG의 명암 관계만 반전'
+                    ? '같은 접촉 화면 전체의 명암을 2코마 반전'
                     : '같은 실제 공격과 피격');
                 break;
             case 'screen-shatter':

@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "date": "2026-10-20",
+  "name": "연출실",
+  "scope": "기존 여섯 연출 화면을 130개 항목의 공통 탐색·재생 화면으로 통합",
+  "sourcePath": "src/resources/cutscenes/studio/index.ts",
+  "previewPath": "src/resources/cutscenes/studio/",
+  "defaultItem": "selected:background-run",
+  "groups": [
+    {
+      "id": "finished",
+      "name": "완성 컷씬",
+      "count": 13
+    },
+    {
+      "id": "techniques",
+      "name": "기법 견본",
+      "count": 81
+    },
+    {
+      "id": "expressions",
+      "name": "표정 연출",
+      "count": 11
+    },
+    {
+      "id": "poses",
+      "name": "포즈·연기 비교",
+      "count": 25
+    }
+  ],
+  "sources": [
+    {
+      "id": "selected",
+      "assetId": "local/anime-selected-cuts",
+      "group": "finished",
+      "count": 10,
+      "defaultItem": "selected:background-run",
+      "recordPath": "resources/anime-selected-cuts.json"
+    },
+    {
+      "id": "ataho-shadow",
+      "assetId": "local/ataho-shadow-cutscene",
+      "group": "finished",
+      "count": 1,
+      "defaultItem": "ataho-shadow:full-cutscene",
+      "recordPath": "resources/ataho-cutscene-generation.json"
+    },
+    {
+      "id": "tiger-awakening",
+      "assetId": "local/ataho-tiger-awakening-cutscene",
+      "group": "finished",
+      "count": 1,
+      "defaultItem": "tiger-awakening:full-cutscene",
+      "recordPath": "resources/ataho-tiger-awakening-cutscene.json"
+    },
+    {
+      "id": "hisashi-punch",
+      "assetId": "local/ataho-hisashi-punch-cutscene",
+      "group": "finished",
+      "count": 1,
+      "defaultItem": "hisashi-punch:full-cutscene",
+      "recordPath": "resources/ataho-hisashi-punch.json"
+    },
+    {
+      "id": "showcase",
+      "assetId": "local/anime-showcase",
+      "groups": {
+        "techniques": 81,
+        "expressions": 11
+      },
+      "count": 92,
+      "defaultItem": "showcase:impact-frame",
+      "recordPath": "resources/anime-showcase.json"
+    },
+    {
+      "id": "signatures",
+      "assetId": "local/anime-signatures",
+      "group": "poses",
+      "count": 25,
+      "defaultItem": "signatures:dramatic-rays",
+      "recordPath": "resources/anime-signature-harmony.json"
+    }
+  ],
+  "preservation": [
+    "기존 여섯 항목의 manifest 정보·소스·제작 기록을 유지한다.",
+    "기존 개별 리소스 ID와 아타호·표현 비교 묶음 주소를 계속 찾을 수 있다.",
+    "새 원화·유료 생성·소리·본게임 규칙은 추가하지 않는다."
+  ]
+}

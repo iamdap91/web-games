@@ -1,7 +1,9 @@
 import { resourceUrl } from './resource-url.js';
 const scenePaths = new Set([
+    'src/resources/cutscenes/studio/',
     'src/resources/effects/anime-signatures/',
     'src/resources/effects/anime-showcase/',
+    'src/resources/effects/anime-selected-cuts/',
     'src/resources/characters/companion-basic-attacks/',
     'src/resources/maps/herbalist-camp/',
     'src/resources/characters/ataho-hybrid/index.html',

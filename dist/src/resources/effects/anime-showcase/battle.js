@@ -8,7 +8,35 @@ export const battleLayout = {
     target: { x: 650, ground: 440, scale: 2.7 },
 };
 function actionFor(frame, action) {
-    return action ?? (frame.sampleId === 'inazuma-kick' ? 'kick' : 'uppercut');
+    if (action)
+        return action;
+    switch (frame.sampleId) {
+        case 'inazuma-kick':
+            return 'kick';
+        case 'hisashi-punch':
+        case 'editing-triple':
+        case 'strobe':
+        case 'speed-streamlines':
+        case 'fx-kanada-beam':
+        case 'fx-kanada-dragon':
+        case 'fx-kozuma':
+        case 'fx-kutsuna':
+        case 'shock-koma-v2':
+            return 'straight';
+        default:
+            return 'uppercut';
+    }
+}
+/** 지상 정권은 발을 띄우지 않고 같은 접지점에서 손끝 높이를 구한다. */
+export function battleImpact(frame) {
+    if (actionFor(frame) !== 'straight')
+        return battleLayout.impact;
+    const contact = frame.assets.straight.steps.find((step) => step.contact).contact;
+    return {
+        x: battleLayout.impact.x,
+        y: battleLayout.attacker.ground -
+            contact.height * battleLayout.attacker.scale,
+    };
 }
 /** 원본 준비·접촉·회수를 공유하고 접촉 한 번을 1800ms에 배치한다. */
 function motionTime(motion, timeMs) {
@@ -32,13 +60,17 @@ export function atahoPosition(frame, options = {}) {
     const t = options.timeMs ?? frame.timeMs, action = actionFor(frame, options.action), motion = frame.assets[action];
     const pose = sampleComboMotion(motion, motionTime(motion, t)), contact = motion.steps.find((s) => s.contact);
     const scale = options.scale ?? battleLayout.attacker.scale;
-    const approach = action === 'uppercut'
+    const grounded = action !== 'kick';
+    const approach = grounded
         ? smooth((t - 650) / 650) * 208 * (1 - smooth((t - 2850) / 650))
         : 0;
-    const root = action === 'uppercut'
-        ? battleLayout.attacker.x - 208 + approach
+    const groundedRoot = action === 'straight'
+        ? battleLayout.impact.x - (contact.contact?.reach ?? 0) * scale
+        : battleLayout.attacker.x;
+    const root = grounded
+        ? groundedRoot - 208 + approach
         : battleLayout.impact.x - (contact.contact?.reach ?? 0) * scale;
-    const ground = action === 'uppercut'
+    const ground = grounded
         ? battleLayout.attacker.ground
         : battleLayout.impact.y +
             ((contact.contact?.height ?? 0) - (contact.y ?? 0)) * scale;
@@ -83,6 +115,15 @@ export function drawAtaho(ctx, frame, options = {}) {
     if (options.silhouette)
         ctx.filter = 'brightness(0)';
     ctx.drawImage(sprite.image, Math.round(sprite.left), Math.round(sprite.top), sprite.width, sprite.height);
+    ctx.restore();
+}
+/** 승인된 달리기 네 장의 공통 발 앵커를 유지해 원본의 뜀 높이를 남긴다. */
+export function drawAtahoRun(ctx, frame, options) {
+    const source = frame.assets.run[options.frameIndex % frame.assets.run.length];
+    const scale = options.scale ?? battleLayout.attacker.scale;
+    ctx.save();
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(source.image, Math.round(options.x - source.anchorX * scale), Math.round(options.ground - source.anchorY * scale), source.image.naturalWidth * scale, source.image.naturalHeight * scale);
     ctx.restore();
 }
 function bearFrame(frames, timeMs, loop = false) {

@@ -1,3 +1,4 @@
+import { studioSourceDefinitions } from '../cutscenes/studio/sources.js';
 import { resourceUrl } from './resource-url.js';
 import manifest from '../../../resources/manifest.json' with { type: 'json' };
 import { representativeFrame } from './asset-frame.js';
@@ -153,16 +154,23 @@ const archivedMapIds = new Set([
     'local/village-harbor',
     'local/village-onsen',
 ]);
+const studioPreviewPath = 'src/resources/cutscenes/studio/';
+const studioItems = Object.fromEntries(studioSourceDefinitions.map((definition) => [
+    definition.assetId,
+    `${definition.source}:${definition.defaultSampleId}`,
+]));
 function proceduralCategory(id) {
     if (archivedMapIds.has(id))
         return 'archive';
     if (id === 'local/biwol-basic-attack' || id === 'local/yeonmuk-basic-attack')
         return 'characters';
-    if (id === 'local/ataho-shadow-cutscene' ||
+    if (id === 'local/cutscene-studio' ||
+        id === 'local/ataho-shadow-cutscene' ||
         id === 'local/ataho-tiger-awakening-cutscene' ||
         id === 'local/ataho-hisashi-punch-cutscene' ||
         id === 'local/anime-signatures' ||
-        id === 'local/anime-showcase')
+        id === 'local/anime-showcase' ||
+        id === 'local/anime-selected-cuts')
         return 'cutscenes';
     if (id === 'local/herbalist-camp')
         return 'maps';
@@ -187,6 +195,8 @@ function proceduralCategory(id) {
     return 'facilities';
 }
 function proceduralGroup(id, category) {
+    if (id === 'local/cutscene-studio')
+        return '연출실';
     if (category === 'archive')
         return id.startsWith('local/regional-trail-')
             ? '이전 이동맵 A/B'
@@ -197,7 +207,8 @@ function proceduralGroup(id, category) {
         return '연묵';
     if (id === 'local/2-5d-expression-lab' ||
         id === 'local/anime-signatures' ||
-        id === 'local/anime-showcase')
+        id === 'local/anime-showcase' ||
+        id === 'local/anime-selected-cuts')
         return '표현 비교';
     if (category === 'cutscenes')
         return '아타호';
@@ -230,6 +241,7 @@ const entries = [
         const category = proceduralCategory(asset.id);
         const group = proceduralGroup(asset.id, category);
         const states = asset.states.map((state) => state.label);
+        const studioItem = studioItems[asset.id];
         return {
             id: asset.id,
             name: asset.name,
@@ -239,7 +251,9 @@ const entries = [
             notes: asset.notes,
             sourceName: asset.sourceName,
             sourcePath: asset.sourcePath,
-            previewPath: asset.previewPath,
+            previewPath: studioItem
+                ? `${studioPreviewPath}?item=${encodeURIComponent(studioItem)}`
+                : asset.previewPath,
             thumbnailPath: 'imagePath' in asset ? asset.imagePath : undefined,
             states,
             kind: 'procedural',
@@ -288,9 +302,22 @@ const atahoComparison = {
     ].join(' '),
     members: atahoMembers,
 };
+const studioMembers = entries.filter((entry) => entry.id in studioItems);
+const studioSource = entries.find((entry) => entry.id === 'local/cutscene-studio');
+const cutsceneStudio = {
+    ...studioSource,
+    keywords: [
+        studioSource.keywords,
+        ...studioMembers.map((entry) => entry.keywords),
+    ].join(' '),
+    members: studioMembers,
+};
 export const libraryEntries = [
     atahoComparison,
-    ...entries.filter((entry) => !atahoMembers.includes(entry)),
+    cutsceneStudio,
+    ...entries.filter((entry) => !atahoMembers.includes(entry) &&
+        !studioMembers.includes(entry) &&
+        entry !== studioSource),
 ].sort((a, b) => categoryOrder.get(a.category) - categoryOrder.get(b.category) ||
     (a.category === 'characters'
         ? (characterOrder[a.group] ?? 3) - (characterOrder[b.group] ?? 3)
@@ -343,7 +370,10 @@ export function filterLibrary(filter) {
     const words = filter.query?.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean) ?? [];
     return libraryEntries.filter((entry) => (filter.project === 'all' || entry.project === filter.project) &&
         (!filter.category || entry.category === filter.category) &&
-        (!filter.group || entry.group === filter.group) &&
+        // 통합 전 아타호·표현 비교 묶음 주소에서도 연출실을 찾는다.
+        (!filter.group ||
+            entry.group === filter.group ||
+            entry.members?.some((member) => member.group === filter.group)) &&
         words.every((word) => entry.keywords.toLocaleLowerCase().includes(word)));
 }
 /** 목록과 상세의 선택 상태를 같은 라이브러리 주소에 보존한다. */
