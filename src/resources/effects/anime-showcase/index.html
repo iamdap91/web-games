@@ -17,7 +17,7 @@
         }
       }
     </script>
-    <title>92개의 순간 · 애니 연출 견본집</title>
+    <title>100개의 순간 · 애니 연출 견본집</title>
   </head>
   <body data-studio-source="showcase">
     <main>
@@ -25,14 +25,14 @@
         <div>
           <p class="eyebrow">ANIMATION / PRESENTATION ATLAS</p>
           <h1>
-            <strong id="sample-total">92</strong>개의 순간<span
+            <strong id="sample-total">100</strong>개의 순간<span
               >아타호 × 서리갈기 곰왕</span
             >
           </h1>
         </div>
         <div class="edition">
-          <b id="category-total">06</b>개의 분류 <i>·</i>
-          <b id="edition-total">92</b>개의 견본
+          <b id="category-total">07</b>개의 분류 <i>·</i>
+          <b id="edition-total">100</b>개의 견본
         </div>
       </header>
       <div class="workspace">
@@ -46,7 +46,7 @@
           />
           <nav id="categories" aria-label="연출 분류"></nav>
           <div class="list-heading">
-            <span id="list-title">전체 견본</span><span id="count">92</span>
+            <span id="list-title">전체 견본</span><span id="count">100</span>
           </div>
           <div
             id="sample-list"
@@ -68,7 +68,7 @@
           </div>
           <div id="stages" class="stages">
             <figure class="baseline" hidden>
-              <figcaption>기본 장면</figcaption>
+              <figcaption id="baseline-label">기본 장면</figcaption>
               <canvas
                 id="baseline"
                 width="960"
@@ -78,7 +78,8 @@
             </figure>
             <figure>
               <figcaption>
-                <span>연출 견본</span><output id="stage-time">0.00s</output>
+                <span id="enhanced-label">연출 견본</span
+                ><output id="stage-time">0.00s</output>
               </figcaption>
               <canvas
                 id="stage"
@@ -114,7 +115,10 @@
             /><output id="time">0.00 / 4.20초</output>
           </div>
           <div class="options">
-            <label><input id="compare" type="checkbox" />기본 장면과 비교</label
+            <label
+              ><input id="compare" type="checkbox" /><span id="compare-label"
+                >기본 장면과 비교</span
+              ></label
             ><label><input id="reduced" type="checkbox" />움직임 줄이기</label
             ><label><input id="loop" type="checkbox" checked />반복</label
             ><button id="key" type="button">핵심 순간</button>

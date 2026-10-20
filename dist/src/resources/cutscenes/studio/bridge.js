@@ -73,6 +73,11 @@ function validSnapshot(value) {
     for (const key of ['facing', 'exportStatus'])
         if (value[key] !== undefined && typeof value[key] !== 'string')
             return false;
+    if (value.comparisonLabels !== undefined &&
+        (!isRecord(value.comparisonLabels) ||
+            typeof value.comparisonLabels.baseline !== 'string' ||
+            typeof value.comparisonLabels.enhanced !== 'string'))
+        return false;
     if (value.facingOptions !== undefined &&
         (!Array.isArray(value.facingOptions) ||
             !value.facingOptions.every((option) => isRecord(option) &&

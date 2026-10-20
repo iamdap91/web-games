@@ -4,6 +4,7 @@ import { effectSamples, drawEffects } from './effects.js';
 import { cameraSamples, drawCamera } from './camera.js';
 import { emotionSamples, drawEmotion } from './emotion.js';
 import { editingSamples, drawEditing } from './editing.js';
+import { compositeSamples, drawComposite } from './composites.js';
 import { disposeCameraOptics } from './camera-optics.js';
 import { disposeHarmonyPlate } from './harmony-plate.js';
 import { disposeEmotionPortrait } from './emotion-face.js';
@@ -17,6 +18,7 @@ export const samples = [
     ...cameraSamples,
     ...emotionSamples,
     ...editingSamples,
+    ...compositeSamples,
 ];
 const renderers = {
     impact: drawImpact,
@@ -25,6 +27,7 @@ const renderers = {
     camera: drawCamera,
     emotion: drawEmotion,
     editing: drawEditing,
+    composite: drawComposite,
 };
 export function disposeSampleSurfaces(ctx) {
     disposeCameraOptics(ctx);

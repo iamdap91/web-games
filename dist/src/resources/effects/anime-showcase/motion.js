@@ -418,7 +418,7 @@ function drawFocusLines(ctx, frame) {
     }
     drawBattleActors(ctx, frame, { action: 'uppercut' });
 }
-function drawSpeed(ctx, frame) {
+export function drawSpeedApproach(ctx, frame) {
     const t = time(frame);
     const x = dashPosition(t, frame);
     stage(ctx, frame, frame.reducedMotion ? 0 : t);
@@ -514,7 +514,7 @@ export function drawMotion(ctx, id, frame) {
                     : '같은 어퍼컷과 곰왕 피격');
                 break;
             case 'speed-streamlines':
-                drawSpeed(ctx, frame);
+                drawSpeedApproach(ctx, frame);
                 label(ctx, frame.enhanced
                     ? '진입 속도에 따른 역방향 흐름 · 몸 바깥의 짧은 후류'
                     : '같은 실제 원화의 진입과 접촉');

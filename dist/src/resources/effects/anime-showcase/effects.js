@@ -1,9 +1,7 @@
 import { label, stage } from './drawing.js';
-import { battleImpact, battleLayout, drawBattleActors } from './battle.js';
-import { width } from './types.js';
-import { drawLightEffects } from './effects-light.js';
-import { drawCircusScene, drawFlightEffects } from './effects-flight.js';
-import { drawExplosionEffects, } from './effects-explosions.js';
+import { drawBattleActors } from './battle.js';
+import { drawCircusScene } from './effects-flight.js';
+import { drawEffectLayer } from './effect-layer.js';
 export const effectSamples = [
     {
         id: 'fx-kanada-light',
@@ -204,99 +202,30 @@ export const effectSamples = [
         id: 'fx-kutsuna',
         name: '쿠츠나 번개',
         category: 'effects',
-        previewMs: 2420,
-        description: '정권에서 수평으로 방출한 여섯 전류의 머리와 꼬리가 따로 진행하고, 고리·꺾임·잔가지가 굽고 풀리는 곡선 번개 견본입니다.',
-        distinction: '평행한 사인파 다발 대신 각 줄의 경로·발생·수명과 흐름이 독립적으로 변합니다.',
+        previewMs: 2130,
+        description: '굵기와 고리 모양이 코마마다 바뀌는 주 전류가 빠르게 뻗고, 짧은 가지가 갈라진 뒤 꼬리부터 끊어집니다.',
+        distinction: '원작 클립의 선택 프레임을 참고해 여섯 곡선 다발을 새로 구성했습니다. 흰 핵·가는 연결·국소 팽창과 세 번의 방출을 나눕니다.',
+        beats: [
+            { timeMs: 1850, label: '선두 전진' },
+            { timeMs: 1960, label: '고리와 굵기 교체' },
+            { timeMs: 2130, label: '짧은 가지 분기' },
+            { timeMs: 2390, label: '후속 방출' },
+            { timeMs: 2820, label: '꼬리 이탈' },
+            { timeMs: 3050, label: '소멸' },
+        ],
     },
 ];
-const placements = {
-    'fx-kanada-light': { x: 549, y: 266, scale: 0.72, emphasis: 1.2 },
-    'fx-kanada-beam': {
-        x: 267,
-        y: 300,
-        scale: 0.34,
-        emphasis: 1.34,
-        rotation: 0,
-    },
-    'fx-kanada-explosion': { x: 550, y: 334, scale: 0.63, emphasis: 1.18 },
-    'fx-kanada-dragon': {
-        x: 292,
-        y: 269,
-        scale: 0.38,
-        emphasis: 1.28,
-        rotation: 0,
-    },
-    'fx-anno': {
-        x: 546,
-        y: 407,
-        scale: 0.68,
-        emphasis: 1.06,
-        anchor: 'ground',
-    },
-    'fx-iso-explosion': { x: 548, y: 352, scale: 0.66, emphasis: 1.22 },
-    'fx-iso-debris': { x: 550, y: 390, scale: 0.8, emphasis: 1.13 },
-    'fx-nakamura': { x: 551, y: 389, scale: 0.8, emphasis: 1.08 },
-    'fx-hashimoto': {
-        x: 548,
-        y: 387,
-        scale: 0.64,
-        emphasis: 1.2,
-        anchor: 'ground',
-    },
-    'fx-norio': { x: 548, y: 372, scale: 0.64, emphasis: 1.23 },
-    'fx-mori': { x: 410, y: 310, scale: 0.65, emphasis: 1.12, rotation: -0.8 },
-    'fx-araki': { x: 503, y: 277, scale: 0.58, emphasis: 1.27 },
-    'fx-yoshinari': { x: 548, y: 325, scale: 0.68, emphasis: 1.15 },
-    'fx-oki': { x: 550, y: 330, scale: 0.65, emphasis: 1.2 },
-    'fx-kozuma': { x: 285, y: 300, scale: 0.36, emphasis: 1.38, rotation: 0 },
-    'fx-tatsuzo': { x: 551, y: 284, scale: 0.58, emphasis: 1.4 },
-    'fx-shigeta': { x: 548, y: 300, scale: 0.75, emphasis: 1.1 },
-    'fx-anime-r': { x: 548, y: 371, scale: 0.8, emphasis: 1.15 },
-    'fx-kutsuna': { x: 296, y: 288, scale: 0.37, emphasis: 1.32, rotation: 0 },
-};
 export function drawEffects(ctx, id, frame) {
     ctx.save();
     try {
         if (drawCircusScene(ctx, id, frame))
             return;
         stage(ctx, frame, 0);
-        const back = drawPlacedEffect(ctx, id, frame, 'back');
+        const back = drawEffectLayer(ctx, id, frame, { layer: 'back' });
         drawBattleActors(ctx, frame);
-        const front = drawPlacedEffect(ctx, id, frame, 'front');
+        const front = drawEffectLayer(ctx, id, frame, { layer: 'front' });
         if (!back && !front)
             label(ctx, '이 효과의 견본을 찾을 수 없습니다.');
-    }
-    finally {
-        ctx.restore();
-    }
-}
-/** 무대 좌표를 먼저 정해 앞뒤 층과 비교판이 같은 발생점을 공유한다. */
-function drawPlacedEffect(ctx, id, frame, layer) {
-    const placement = placements[id];
-    if (!placement)
-        return false;
-    ctx.save();
-    try {
-        const impact = battleImpact(frame);
-        const ground = battleLayout.target.ground;
-        if (placement.anchor === 'ground') {
-            // 지면에서 솟는 김과 분진이 바닥 아래로 부풀지 않게 무대에서 자른다.
-            ctx.beginPath();
-            ctx.rect(0, 0, width, ground);
-            ctx.clip();
-        }
-        ctx.translate(impact.x, placement.anchor === 'ground' ? ground : impact.y);
-        ctx.rotate(placement.rotation ?? 0);
-        const motionScale = frame.reducedMotion ? 0.75 : 1;
-        const emphasis = frame.enhanced && !frame.reducedMotion ? placement.emphasis : 1;
-        const scale = placement.scale * 1.3 * motionScale * emphasis;
-        ctx.scale(scale, scale);
-        ctx.translate(-placement.x, -placement.y);
-        if (layer === 'back')
-            return drawExplosionEffects(ctx, id, frame, layer);
-        return (drawLightEffects(ctx, id, frame) ||
-            drawFlightEffects(ctx, id, frame) ||
-            drawExplosionEffects(ctx, id, frame, layer));
     }
     finally {
         ctx.restore();

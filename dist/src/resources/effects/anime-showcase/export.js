@@ -4,6 +4,7 @@ import { drawSample, disposeSampleSurfaces } from './catalog.js';
 import { durationMs } from './types.js';
 import { shockKomaCuts } from './shock-koma.js';
 import { shockKomaV2Cuts } from './shock-koma-v2.js';
+import { fastContactCuts } from './composite-fast.js';
 export async function exportGif(options) {
     const canvas = document.createElement('canvas');
     canvas.width = 640;
@@ -18,7 +19,9 @@ export async function exportGif(options) {
         ? shockKomaCuts
         : options.sample.id === 'shock-koma-v2'
             ? shockKomaV2Cuts
-            : null;
+            : options.sample.id === 'composite-fast'
+                ? fastContactCuts
+                : null;
     if (shockCuts) {
         // 20fps 표본 사이에 1코마 작화가 빠지지 않도록 해당 컷의 경계로 구간을 나눈다.
         const begin = shockCuts[0];

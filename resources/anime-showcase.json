@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "createdDate": "2026-10-19",
   "status": "presentation-studies",
-  "title": "애니 연출 견본집 · 92종",
+  "title": "애니 연출 견본집 · 100종",
   "sourceArtifact": "https://claude.ai/artifact/59raaYDpH7yFHta6687KXh",
-  "scope": "기법81종·표정11종을 포함한 아타호·서리갈기 곰왕 연출 견본92종. 게임 숲·도장 자재와 보유 로컬 원본을 기법에 맞게 재사용한다. 오바리는 기존 전경 정권3장, 스쿼시는 기존 관절 폄·착지 눌림, 쿠루마다는 새 곰왕2장으로 비교한다. 공통 타격은1800ms이며 스쿼시는 같은 시각에 착지하는 독립 도약 비교다.",
+  "scope": "합성8종을 포함한 기법89종·표정11종의 아타호·서리갈기 곰왕 연출 견본100종. 게임 숲·도장 자재와 보유 로컬 원본을 기법에 맞게 재사용한다. 오바리는 기존 전경 정권3장, 스쿼시는 기존 관절 폄·착지 눌림, 쿠루마다는 새 곰왕2장으로 비교한다. 공통 타격은1800ms이며 스쿼시는 같은 시각에 착지하는 독립 도약 비교다. 합성 지면 분쇄는 기존 곰왕 낙하의3020ms 지면 접촉을 사용한다. 뇌광포·점성 흑구·유도탄 포위·중량 정권·먹빛 종결5종을 추가하며, 중량 정권은2200ms 접촉을 사용한다.",
   "authoring": {
     "actors": "기존 아타호 기립8방향·어퍼컷5방향·동쪽 정권·남동 달리기4장·날아차기·얼굴, 보유 남동 전경 정권3장·도약 폄·착지 눌림, 곰왕 대기·피격·쓰러짐 및 새 머리부터 낙하·머리 착지2장",
     "effects": "공통 무대·기공·현무암은 보유 로컬 원본을 재사용한다. 카나다 빛과 폭발·연기7종은 새 빛무리·폭발 형상·연기·암부·거품·갈고리 불꽃을 기법별 형상·발생·수명으로 조합한다. 드래곤·서커스·다른 광학 효과는 기존 표현을 유지한다.",
@@ -244,6 +244,11 @@
       "id": "editing",
       "name": "화면 짜기 · 전환",
       "count": 12
+    },
+    {
+      "id": "composite",
+      "name": "기법을 엮은 합성 연출",
+      "count": 8
     }
   ],
   "entries": [
@@ -851,9 +856,35 @@
       "id": "fx-kutsuna",
       "name": "쿠츠나 번개",
       "category": "effects",
-      "previewMs": 2420,
-      "description": "정권에서 수평으로 방출한 여섯 전류의 머리와 꼬리가 따로 진행하고, 고리·꺾임·잔가지가 굽고 풀리는 곡선 번개 견본입니다.",
-      "distinction": "평행한 사인파 다발 대신 각 줄의 경로·발생·수명과 흐름이 독립적으로 변합니다."
+      "previewMs": 2130,
+      "description": "굵기와 고리 모양이 코마마다 바뀌는 주 전류가 빠르게 뻗고, 짧은 가지가 갈라진 뒤 꼬리부터 끊어집니다.",
+      "distinction": "원작 클립의 선택 프레임을 참고해 여섯 곡선 다발을 새로 구성했습니다. 흰 핵·가는 연결·국소 팽창과 세 번의 방출을 나눕니다.",
+      "beats": [
+        {
+          "timeMs": 1850,
+          "label": "선두 전진"
+        },
+        {
+          "timeMs": 1960,
+          "label": "고리와 굵기 교체"
+        },
+        {
+          "timeMs": 2130,
+          "label": "짧은 가지 분기"
+        },
+        {
+          "timeMs": 2390,
+          "label": "후속 방출"
+        },
+        {
+          "timeMs": 2820,
+          "label": "꼬리 이탈"
+        },
+        {
+          "timeMs": 3050,
+          "label": "소멸"
+        }
+      ]
     },
     {
       "id": "camera-transmitted-light",
@@ -1606,6 +1637,274 @@
       ],
       "description": "장면이 흰 빛에 잠겼다가 다음 장소가 천천히 돌아옵니다.",
       "distinction": "짧은 타격 섬광보다 긴 노출 변화로 장면 사이의 시간을 만듭니다."
+    },
+    {
+      "id": "composite-fast",
+      "name": "합성 · 섬광 정권",
+      "category": "composite",
+      "previewMs": 1940,
+      "description": "속도선의 진입 뒤 두 코마 접촉 컷과 수평 빛무리, 작은 파편이 차례로 이어집니다.",
+      "distinction": "비교판은 같은 정권과 타점의 카나다 빛 한 종이며, 합성판은 속도·접촉·잔여에 다른 역할을 줍니다.",
+      "beats": [
+        {
+          "timeMs": 1430,
+          "label": "속도선 · 진입"
+        },
+        {
+          "timeMs": 1816,
+          "label": "두 코마 접촉 컷"
+        },
+        {
+          "timeMs": 1940,
+          "label": "수평 빛무리 파열"
+        },
+        {
+          "timeMs": 2200,
+          "label": "작은 파편"
+        },
+        {
+          "timeMs": 2600,
+          "label": "소멸"
+        }
+      ]
+    },
+    {
+      "id": "composite-fire",
+      "name": "합성 · 화염 파열",
+      "category": "composite",
+      "previewMs": 2660,
+      "description": "작은 백열핵에서 카나다 파열과 외곽 거품이 번지고, 뒤늦은 공중 연기가 남습니다.",
+      "distinction": "비교판은 카나다 폭발 한 종이며, 합성판은 핵·파열·외곽·잔연기의 정점을 시차로 나눕니다.",
+      "beats": [
+        {
+          "timeMs": 1820,
+          "label": "백열핵"
+        },
+        {
+          "timeMs": 1940,
+          "label": "카나다 파열"
+        },
+        {
+          "timeMs": 2660,
+          "label": "외곽 거품"
+        },
+        {
+          "timeMs": 3100,
+          "label": "공중 잔연기"
+        },
+        {
+          "timeMs": 3980,
+          "label": "소멸"
+        }
+      ]
+    },
+    {
+      "id": "composite-ground",
+      "name": "합성 · 지면 분쇄",
+      "category": "composite",
+      "previewMs": 3340,
+      "description": "곰왕의 머리 착지점에서 낮은 충격과 현무암 파편이 퍼지고 분진 기둥과 바닥 먼지가 뒤따릅니다.",
+      "distinction": "비교판은 같은 낙하와 착지점의 안노 분진 한 종이며, 합성판은 지면 충격·파편·먼지를 차례로 더합니다.",
+      "beats": [
+        {
+          "timeMs": 2380,
+          "label": "머리부터 낙하"
+        },
+        {
+          "timeMs": 2950,
+          "label": "가속 하강"
+        },
+        {
+          "timeMs": 3040,
+          "label": "지면 접촉"
+        },
+        {
+          "timeMs": 3340,
+          "label": "현무암 파편"
+        },
+        {
+          "timeMs": 3500,
+          "label": "뒤늦은 분진"
+        },
+        {
+          "timeMs": 4180,
+          "label": "소멸"
+        }
+      ]
+    },
+    {
+      "id": "composite-beam",
+      "name": "합성 · 뇌광포",
+      "category": "composite",
+      "previewMs": 2350,
+      "description": "굵은 수평 광선이 지난 자리에서 가는 전류가 분기하고, 광선의 후단과 잔전류가 뒤늦게 끊어져 사라집니다.",
+      "distinction": "비교판은 같은 배우와 방출의 카나다 빔 한 종이며, 합성판은 빛핵·광선·전류 분기·후단 이탈의 박자를 나눕니다.",
+      "beats": [
+        {
+          "timeMs": 1660,
+          "label": "장전"
+        },
+        {
+          "timeMs": 1900,
+          "label": "빛핵"
+        },
+        {
+          "timeMs": 2120,
+          "label": "광선 전진"
+        },
+        {
+          "timeMs": 2350,
+          "label": "전류 분기"
+        },
+        {
+          "timeMs": 2920,
+          "label": "후단 이탈"
+        },
+        {
+          "timeMs": 3100,
+          "label": "잔전류"
+        },
+        {
+          "timeMs": 3500,
+          "label": "소멸"
+        }
+      ]
+    },
+    {
+      "id": "composite-orb",
+      "name": "합성 · 점성 흑구",
+      "category": "composite",
+      "previewMs": 2620,
+      "description": "세 검은 덩어리가 합쳐지고 끈끈한 목으로 늘어나다 끊어져 날아갑니다.",
+      "distinction": "비교판은 타츠조식 합체 흑구 한 종이며, 합성판은 붙어서 늘어나는 목·절단·사출과 분리 위치의 잔여를 이어 갑니다.",
+      "beats": [
+        {
+          "timeMs": 1150,
+          "label": "세 덩어리 발생"
+        },
+        {
+          "timeMs": 1650,
+          "label": "합체"
+        },
+        {
+          "timeMs": 2360,
+          "label": "붙어서 늘어남"
+        },
+        {
+          "timeMs": 2760,
+          "label": "목 절단"
+        },
+        {
+          "timeMs": 3100,
+          "label": "사출 · 목의 잔여"
+        },
+        {
+          "timeMs": 3720,
+          "label": "소멸"
+        }
+      ]
+    },
+    {
+      "id": "composite-siege",
+      "name": "합성 · 유도탄 포위",
+      "category": "composite",
+      "previewMs": 2260,
+      "description": "네 유도탄이 서로 다른 앞뒤 곡선으로 돌아 같은 표적에 차례로 닿고, 휘어진 연기 궤적과 도착 연기가 남습니다.",
+      "distinction": "비교판과 유도탄의 궤적·도착 핵·피격 시각은 같으며, 합성판은 각 탄의 연기 꼬리와 도착 뒤 잔연기를 더합니다.",
+      "beats": [
+        {
+          "timeMs": 760,
+          "label": "사출"
+        },
+        {
+          "timeMs": 1740,
+          "label": "앞뒤 곡선"
+        },
+        {
+          "timeMs": 2000,
+          "label": "첫 도착"
+        },
+        {
+          "timeMs": 2260,
+          "label": "연속 명중"
+        },
+        {
+          "timeMs": 2800,
+          "label": "마지막 도착"
+        },
+        {
+          "timeMs": 3520,
+          "label": "소멸"
+        }
+      ]
+    },
+    {
+      "id": "composite-heavy",
+      "name": "합성 · 중량 정권",
+      "category": "composite",
+      "previewMs": 2460,
+      "description": "긴 장전 뒤 짧게 신전하고 접촉을 유지한 뒤 곰왕이 무겁게 밀려나며, 소수의 큰 파편이 뒤늦게 떨어집니다.",
+      "distinction": "비교판과 준비·2200ms 접촉·120ms 유지·반동·접촉 효과는 같으며, 합성판은 소수의 무거운 파편을 앞뒤로 나눠 더합니다.",
+      "beats": [
+        {
+          "timeMs": 1380,
+          "label": "장전"
+        },
+        {
+          "timeMs": 2100,
+          "label": "신전"
+        },
+        {
+          "timeMs": 2220,
+          "label": "접촉 유지"
+        },
+        {
+          "timeMs": 2380,
+          "label": "밀림"
+        },
+        {
+          "timeMs": 2660,
+          "label": "최대 반동"
+        },
+        {
+          "timeMs": 3180,
+          "label": "파편 착지"
+        },
+        {
+          "timeMs": 3460,
+          "label": "정착"
+        }
+      ]
+    },
+    {
+      "id": "composite-ink",
+      "name": "합성 · 먹빛 종결",
+      "category": "composite",
+      "previewMs": 3000,
+      "description": "장전의 정적 뒤 짧은 흑백 접촉과 거친 먹획 파편을 지나 하모니 정지판으로 끝납니다.",
+      "distinction": "비교판은 같은 어퍼컷과 접촉 정지의 모리 파편 한 종이며, 합성판은 흑백 접촉과 회화 정지판으로 타격 뒤 여운을 남깁니다.",
+      "beats": [
+        {
+          "timeMs": 1650,
+          "label": "장전 정적"
+        },
+        {
+          "timeMs": 1835,
+          "label": "흑백 접촉"
+        },
+        {
+          "timeMs": 2070,
+          "label": "먹획 파편"
+        },
+        {
+          "timeMs": 2600,
+          "label": "파편 감쇠"
+        },
+        {
+          "timeMs": 2700,
+          "label": "하모니 정지판"
+        }
+      ]
     }
   ],
   "actorPair": {
@@ -2850,7 +3149,7 @@
     "paidGenerationCalls": 0,
     "audio": false
   },
-  "currentStateBoundary": "speedImpactRevision과 entries의 설명·비트가 현재 동작의 우선 기준이다. scope·authoring·adaptationBoundary·gameResourceRevision의 자재·출처·누적 생성량과 품질 검토 경계는 유지한다. 이전 referenceReview·followupReferenceReview·effectMaximization·gameResourceRevision 등 날짜별 기록은 당시의 관찰·구현 이력으로 보존하며 이후 바뀐 속도·반동·접촉 시각은 마지막 speedImpactRevision을 우선한다.",
+  "currentStateBoundary": "현재 견본 수·분류·합성 범위는 compositionExpansion과 entries를 따른다. compositionAddition은 처음 추가한 합성3종의 당시 기록으로 보존한다. 단일 기법의 속도·반동·접촉 시각은 speedImpactRevision, 속도선은 speedStreamlineRefinement, 빛·폭발·연기 자재와 후속 배치는 spriteEffectRevision을 우선한다. scope·authoring·adaptationBoundary·gameResourceRevision의 자재·출처·누적 생성량과 품질 검토 경계는 유지한다. 이전 referenceReview·followupReferenceReview·effectMaximization 등 날짜별 기록은 당시의 관찰·구현 이력으로 보존한다.",
   "gameResourceRevision": {
     "date": "2026-10-20",
     "scope": "기법81종의 게임 자재 연결과 원화 필요 항목 보완. 표정11종의 기존 표현은 유지하고 공유 배경 사용 장면만 함께 바뀐다.",
@@ -3089,5 +3388,163 @@
       "큰 폭발·연기 몸체는 배우 뒤에, 카나다의 초기 핵·창과 일부 작은 후기 불꽃, 안노 섬광·잔해, 하시모토의 작은 밑동2개·파편, 요시나리·오키의 작은 일부는 배우 앞에 나눠 중복 없이 그린다.",
       "카나다 빛은 핵96ms·주방향 큰 빛5개·작은 반동2개·잔광6개로 위계를 만들고 강화판은 접촉 후520ms 안에 걷힌다. 움직임 줄이기는3개·1개·3개로 줄이며 기본 비교판의 수명은 보존한다."
     ]
+  },
+  "compositionAddition": {
+    "date": "2026-10-20",
+    "scope": "기존 단일 기법을 유지하고 합성 견본3종을 별도 분류에 추가한다.",
+    "catalog": {
+      "categoryCount": 7,
+      "sampleCount": 95,
+      "techniqueCount": 84,
+      "expressionCount": 11,
+      "studioItemCount": 133
+    },
+    "comparison": "기존 비교 체크박스에서 기본판은 같은 배우·시간의 단일 효과, 연출판은 역할과 박자를 나눈 합성이다. 기존 단일 기법 견본의 기본 비교판은 유지한다.",
+    "samples": [
+      {
+        "id": "composite-fast",
+        "title": "합성 · 섬광 정권",
+        "baselineEffect": "fx-kanada-light",
+        "contactMs": 1800,
+        "sequence": ["속도선", "짧은 쇼크코마·수평 카나다 빛", "작은 파편"]
+      },
+      {
+        "id": "composite-fire",
+        "title": "합성 · 화염 파열",
+        "baselineEffect": "fx-kanada-explosion",
+        "contactMs": 1800,
+        "sequence": ["짧은 백열핵", "카나다 파열", "오키 외곽 거품", "잔연기"]
+      },
+      {
+        "id": "composite-ground",
+        "title": "합성 · 지면 분쇄",
+        "baselineEffect": "fx-anno",
+        "contactMs": 3020,
+        "sequence": [
+          "기존 곰왕 낙하·머리 접촉",
+          "낮은 충격파·현무암 파편",
+          "안노 분진·지면 먼지"
+        ]
+      }
+    ],
+    "resources": "이미 보유한 배우 원본·PixelLab 효과 자재·현무암·지면 먼지만 재사용한다. 새 원화·스프라이트·방향·다운로드 자재를 추가하지 않는다.",
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "generationCalls": 0,
+    "additionalCreditUsd": 0,
+    "audio": false,
+    "referenceBoundary": "기존 움직이는 자료의 관찰 기록과 구현을 재사용한 합성 시안이다. 이번 신규 원작 관찰·특정 원전 컷 재현·작가 필체 인증을 주장하지 않는다.",
+    "qualityBoundary": "합성 견본과 보유 자재의 시각 품질은 사용자 재생·GIF 검토 대상이며 본게임 필살기·판정·전투 규칙으로 채택한 것은 아니다."
+  },
+  "compositionExpansion": {
+    "date": "2026-10-20",
+    "scope": "기존 합성3종을 유지하고 뇌광포·점성 흑구·유도탄 포위·중량 정권·먹빛 종결5종을 추가한다.",
+    "catalog": {
+      "categoryCount": 7,
+      "sampleCount": 100,
+      "techniqueCount": 89,
+      "expressionCount": 11,
+      "compositeCount": 8,
+      "studioItemCount": 138
+    },
+    "samples": [
+      {
+        "id": "composite-beam",
+        "title": "합성 · 뇌광포",
+        "baselineEffect": "fx-kanada-beam",
+        "sequence": [
+          "빛핵 응축",
+          "굵은 수평 광선",
+          "가는 전류 분기",
+          "후단 이탈·잔전류 소멸"
+        ]
+      },
+      {
+        "id": "composite-orb",
+        "title": "합성 · 점성 흑구",
+        "baselineEffect": "fx-tatsuzo",
+        "sequence": [
+          "세 흑구의 합체",
+          "점성 목 늘어남",
+          "목 절단·사출",
+          "분리 위치 잔여"
+        ]
+      },
+      {
+        "id": "composite-siege",
+        "title": "합성 · 유도탄 포위",
+        "baselineDescription": "같은 네 유도탄의 곡선 궤적·도착 핵·피격 시각",
+        "arrivalMs": [1960, 2220, 2470, 2760],
+        "sequence": [
+          "서로 다른 앞뒤 곡선의 네 탄",
+          "시차 도착·같은 표적 피격",
+          "독립 수명의 궤적 연기·도착 연기"
+        ]
+      },
+      {
+        "id": "composite-heavy",
+        "title": "합성 · 중량 정권",
+        "baselineDescription": "같은 장전·신전·접촉 유지·반동과 접촉 효과",
+        "contactMs": 2200,
+        "contactHoldMs": 120,
+        "sequence": [
+          "긴 장전",
+          "짧은 신전·접촉 유지",
+          "최대84px 밀림 뒤72px 정착",
+          "소수의 큰 파편 낙하·착지"
+        ]
+      },
+      {
+        "id": "composite-ink",
+        "title": "합성 · 먹빛 종결",
+        "baselineEffect": "fx-mori",
+        "sequence": [
+          "장전 정적",
+          "짧은 흑백 접촉",
+          "거친 먹획 파편",
+          "하모니 정지 종결판"
+        ]
+      }
+    ],
+    "comparison": "두 비교판에 같은 배우·동작 시계·발생점·피격을 사용한다. 각 항목에 적힌 기본 효과와 추가 합성의 차이만 비교하며 기존 단일 기법 견본의 비교 규칙은 바꾸지 않는다.",
+    "resources": "기존 정권·어퍼컷·곰왕 원본, 기공·orbit·현무암·효과 스프라이트를 재사용한다. 새 몸 원화·스프라이트·방향·게임용 외부 영상 자재는 추가하지 않는다.",
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "generationCalls": 0,
+    "additionalCreditUsd": 0,
+    "audio": false,
+    "referenceBoundary": "합성5종은 기존 기법과 보유 자재를 조합한 연출실 시안이다. 쿠츠나 번개 재구성의 신규 원전 관찰은 별도 kutsunaRebuild 기록으로 구분하며, 관찰용 클립은 게임 제작 리소스에 포함하지 않는다.",
+    "qualityBoundary": "기존 자재와 새 합성의 시각 품질은 사용자 재생·GIF 검토 대상이다. 본게임 필살기·판정·전투 규칙으로 채택한 것은 아니다."
+  },
+  "kutsunaRebuild": {
+    "date": "2026-10-20",
+    "scope": "fx-kutsuna 전면 재구성과 뇌광포 합성의 새 전류 연결",
+    "files": [
+      "src/resources/effects/anime-showcase/kutsuna-lightning.ts",
+      "src/resources/effects/anime-showcase/composite-beam.ts"
+    ],
+    "replaced": "부드럽게 보간한6개의 긴 곡선 다발과 어두운 외곽선",
+    "method": "독자적인6윤곽의24fps 교체, 국소 굵기·압축 차이, 주 전류3회(0/260/540ms), 각135ms 선두 진행과 뒤따르는 꼬리 이탈, 부모의 실제 위치에서 나오는 짧은 가지2개. 움직임 감소는1전류·180ms 노출과 낮은 대비.",
+    "reference": {
+      "sourceUrl": "https://www.sakugabooru.com/data/46d4dbb22ffef1ce36d8cca6c52873b4.mp4",
+      "attributionUrl": "https://fullfrontal.moe/sakuga-espresso-one-piece-1074/",
+      "localPath": "public/assets/maplestory/anime-lightning-reference/milos.mp4",
+      "sha256": "f4f266e4dbc097e4490e4f3cd3f789e29eb60d474b8013175a853415a5698c30",
+      "width": 852,
+      "height": 480,
+      "durationSeconds": 55.221833,
+      "use": "reference-only; not loaded by game",
+      "observed": "IAB muted playback around12–14s and selected12.833333/12.875/14.000000/14.041667/14.125000s frames. Full55s continuous viewing and exact source frame rate are not claimed.",
+      "attributionBoundary": "원작 클립 자체를 관찰했으나 쿠츠나 본인 귀속은 연결 기사의 캡션에 근거한다. 제작자 직접 게시 자료나 본인 절차 코드를 확보한 것은 아니다."
+    },
+    "codeReference": {
+      "url": "https://codepen.io/lemmin/pen/zYoOwzy",
+      "observed": "공개 JavaScript의 선두 진행·현재 위치에서 자식 가지 생성·종료 후 감쇠를 열람. 데모 실행은 하지 않았다. 쿠츠나 원전 구현코드가 아니라 분기 수명 분리의 보조 참고이며 코드를 복사하지 않았다."
+    },
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "generationCalls": 0,
+    "audio": false,
+    "boundary": "이전 followupReferenceReview의 본인 동작 미관찰 기록은 그 당시의 범위다. 이번은 위 선택 원전 클립 관찰을 반영한 독자적인 Canvas 응용이며 작가 필체의 정밀 복제나 본게임 채택은 아니다."
   }
 }

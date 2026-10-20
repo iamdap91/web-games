@@ -26,6 +26,13 @@ export const headFirstFallTiming = {
   settledMs: 3860,
 } as const;
 
+type HeadFirstFallOptions = {
+  readonly impactEffects?: (
+    context: Context,
+    info: { readonly point: Point; readonly layer: 'back' | 'front' },
+  ) => void;
+};
+
 function pose(frame: Frame, key: string): SourceFrame {
   const source = frame.assets.motionResources.get(key);
   if (!source) throw new Error(`기법의 원화가 없습니다: ${key}`);
@@ -140,7 +147,11 @@ function frameFall(context: Context, frame: Frame): void {
 }
 
 /** 두 원화의 머리 기준·비율을 지키고 큰 낙차와 마지막 하강을 같은 구도 안에 넣는다. */
-export function drawHeadFirstFall(context: Context, frame: Frame): void {
+export function drawHeadFirstFall(
+  context: Context,
+  frame: Frame,
+  options: HeadFirstFallOptions = {},
+): void {
   const time = frame.timeMs;
   if (!frame.enhanced || time < battleLayout.contactMs) {
     drawBattle(context, frame);
@@ -153,9 +164,15 @@ export function drawHeadFirstFall(context: Context, frame: Frame): void {
   );
   const bodyX = target.x + travel * (frame.reducedMotion ? 15 : 42);
   const fallHeight = frame.reducedMotion ? 40 : 240;
+  // 지면 효과는 낙하 중인 몸이나 높이를 따라가지 않고 최종 머리 접촉점에 고정한다.
+  const impactPoint = {
+    x: target.x + (frame.reducedMotion ? 15 : 42) - 22.5 * target.scale,
+    y: target.ground,
+  };
   context.save();
   try {
     frameFall(context, frame);
+    options.impactEffects?.(context, { point: impactPoint, layer: 'back' });
     drawAtaho(context, frame, { action: 'uppercut' });
     const rising = time < turnMs;
     const descent = clamp((time - turnMs) / (contactMs - turnMs));
@@ -179,6 +196,7 @@ export function drawHeadFirstFall(context: Context, frame: Frame): void {
         state: 'hit',
         recoil: { displacementX: 0, lift: 0 },
       });
+      options.impactEffects?.(context, { point: impactPoint, layer: 'front' });
       return;
     }
     // 두 원화의 알파 중심은 머리 앵커보다 오른쪽 22.5px라 기립 자세의 몸 중심과 맞춘다.
@@ -192,6 +210,10 @@ export function drawHeadFirstFall(context: Context, frame: Frame): void {
       { x: headX, y: target.ground - lift },
       target.scale,
     );
+    if (options.impactEffects) {
+      options.impactEffects(context, { point: impactPoint, layer: 'front' });
+      return;
+    }
     gameDust(context, frame.assets.effects, {
       x: headX + 25,
       y: target.ground,

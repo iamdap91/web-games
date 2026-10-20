@@ -8,4 +8,5 @@ export const categories = [
     { id: 'camera', name: '촬영 처리 — 빛 · 렌즈 · 카메라', count: 22 },
     { id: 'emotion', name: '감정 기호', count: 11 },
     { id: 'editing', name: '화면 짜기 · 전환', count: 12 },
+    { id: 'composite', name: '기법을 엮은 합성 연출', count: 8 },
 ];

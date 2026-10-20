@@ -106,7 +106,7 @@ function frameFall(context, frame) {
     context.translate(-width / 2, -height / 2);
 }
 /** 두 원화의 머리 기준·비율을 지키고 큰 낙차와 마지막 하강을 같은 구도 안에 넣는다. */
-export function drawHeadFirstFall(context, frame) {
+export function drawHeadFirstFall(context, frame, options = {}) {
     const time = frame.timeMs;
     if (!frame.enhanced || time < battleLayout.contactMs) {
         drawBattle(context, frame);
@@ -117,9 +117,15 @@ export function drawHeadFirstFall(context, frame) {
     const travel = smooth((time - battleLayout.contactMs) / (contactMs - battleLayout.contactMs));
     const bodyX = target.x + travel * (frame.reducedMotion ? 15 : 42);
     const fallHeight = frame.reducedMotion ? 40 : 240;
+    // 지면 효과는 낙하 중인 몸이나 높이를 따라가지 않고 최종 머리 접촉점에 고정한다.
+    const impactPoint = {
+        x: target.x + (frame.reducedMotion ? 15 : 42) - 22.5 * target.scale,
+        y: target.ground,
+    };
     context.save();
     try {
         frameFall(context, frame);
+        options.impactEffects?.(context, { point: impactPoint, layer: 'back' });
         drawAtaho(context, frame, { action: 'uppercut' });
         const rising = time < turnMs;
         const descent = clamp((time - turnMs) / (contactMs - turnMs));
@@ -134,11 +140,16 @@ export function drawHeadFirstFall(context, frame) {
                 state: 'hit',
                 recoil: { displacementX: 0, lift: 0 },
             });
+            options.impactEffects?.(context, { point: impactPoint, layer: 'front' });
             return;
         }
         // 두 원화의 알파 중심은 머리 앵커보다 오른쪽 22.5px라 기립 자세의 몸 중심과 맞춘다.
         const headX = bodyX - 22.5 * target.scale;
         drawPose(context, pose(frame, time >= contactMs ? 'bear-fall:head-impact' : 'bear-fall:head-first'), { x: headX, y: target.ground - lift }, target.scale);
+        if (options.impactEffects) {
+            options.impactEffects(context, { point: impactPoint, layer: 'front' });
+            return;
+        }
         gameDust(context, frame.assets.effects, {
             x: headX + 25,
             y: target.ground,

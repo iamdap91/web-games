@@ -1,3 +1,4 @@
+import { drawKutsunaLightning } from './kutsuna-lightning.js';
 import { drawKanadaLight } from './kanada-light.js';
 import { clamp, ellipse, line, noise, palette, polygon, ring, smooth, } from './drawing.js';
 import { battleLayout } from './battle.js';
@@ -581,91 +582,6 @@ function drawShigeta(ctx, frame) {
     }
     ctx.restore();
 }
-function drawKutsuna(ctx, frame) {
-    const age = frame.timeMs - battleLayout.contactMs;
-    if (age < 0 || age > 1700)
-        return;
-    ctx.save();
-    ctx.globalAlpha *= frame.reducedMotion ? 0.6 : 1;
-    if (!frame.enhanced) {
-        ctx.globalAlpha *= 1 - smooth((age - 700) / 450);
-        line(ctx, [
-            { x: 296, y: 288 },
-            { x: 421, y: 250 },
-            { x: 478, y: 314 },
-            { x: 595, y: 258 },
-            { x: 782, y: 288 },
-        ], palette.blue, 5);
-        ctx.restore();
-        return;
-    }
-    const motion = frame.reducedMotion ? 0.56 : 1;
-    const cell = age / (frame.reducedMotion ? 230 : 1000 / 12);
-    const first = Math.floor(cell);
-    const blend = smooth(cell - first);
-    const flow = (seed) => noise(seed + first * 31) * (1 - blend) +
-        noise(seed + (first + 1) * 31) * blend;
-    for (let strand = 0; strand < 6; strand++) {
-        const local = age - strand * 67;
-        const life = 920 + strand * 71;
-        if (local < 0 || local > life)
-            continue;
-        const head = clamp(local / 180);
-        const tail = clamp((local - 490) / (life - 490));
-        const points = [];
-        const curl = (flow(strand * 7) - 0.5) * Math.PI * 2;
-        for (let index = 0; index <= 64; index++) {
-            const u = tail + ((head - tail) * index) / 64;
-            const body = Math.sin(u * Math.PI);
-            const swirl = u * (7 + strand * 1.3) + local / 240 + curl;
-            const loop = (24 + flow(strand * 11 + 5) * 69) * body * motion;
-            const kink = Math.sin(u * 21 + strand * 3 + local / 370) * body * 17 * motion;
-            points.push({
-                x: 296 + u * 486 + Math.sin(swirl) * loop,
-                y: 288 +
-                    Math.cos(swirl * 1.6 + curl) * loop +
-                    Math.sin(u * 5 + strand) * body * 43 * motion +
-                    kink,
-            });
-        }
-        ctx.save();
-        ctx.globalAlpha *=
-            smooth(local / 45) * (1 - smooth((local - life + 190) / 190));
-        // 각 줄의 머리와 꼬리가 따로 이동하여 평행 사인파의 고정 다발을 피한다.
-        const edge = [];
-        const reverse = [];
-        for (let index = 0; index < points.length; index++) {
-            const point = points[index];
-            const before = points[Math.max(0, index - 1)];
-            const after = points[Math.min(points.length - 1, index + 1)];
-            const distance = Math.max(1, Math.hypot(after.x - before.x, after.y - before.y));
-            const nx = -(after.y - before.y) / distance;
-            const ny = (after.x - before.x) / distance;
-            const along = index / (points.length - 1);
-            const width = (2 + Math.sin(along * Math.PI) * (4 + flow(index + strand * 37) * 9)) *
-                motion;
-            edge.push({ x: point.x + nx * width, y: point.y + ny * width });
-            reverse.unshift({ x: point.x - nx * width, y: point.y - ny * width });
-        }
-        polygon(ctx, [...edge, ...reverse], strand % 2 ? '#8dcfdd' : '#d3e7d9');
-        ctx.strokeStyle = '#24536a';
-        ctx.lineWidth = 1.6;
-        ctx.stroke();
-        line(ctx, points, '#fff4d9', strand % 2 ? 3.7 : 2.8);
-        if (strand % 2 === 0) {
-            const root = points[Math.floor(points.length * 0.58)];
-            const branch = points
-                .slice(Math.floor(points.length * 0.58))
-                .map((point, index) => ({
-                x: point.x - index * 0.8,
-                y: point.y - index * 1.6 * motion,
-            }));
-            line(ctx, [root, ...branch], '#c1e6e2', 1.4);
-        }
-        ctx.restore();
-    }
-    ctx.restore();
-}
 export function drawLightEffects(ctx, id, frame) {
     if (id === 'fx-kanada-light')
         drawKanadaLight(ctx, frame);
@@ -682,7 +598,7 @@ export function drawLightEffects(ctx, id, frame) {
     else if (id === 'fx-shigeta')
         drawShigeta(ctx, frame);
     else if (id === 'fx-kutsuna')
-        drawKutsuna(ctx, frame);
+        drawKutsunaLightning(ctx, frame);
     else
         return false;
     return true;

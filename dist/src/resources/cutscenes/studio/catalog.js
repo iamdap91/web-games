@@ -10,7 +10,7 @@ export const studioGroups = [
     {
         id: 'techniques',
         name: '기법 견본',
-        description: '충격·속도·FX·촬영·편집',
+        description: '충격·속도·FX·촬영·편집·합성',
     },
     {
         id: 'expressions',
@@ -67,8 +67,11 @@ export function filterStudioItems(group, query) {
         .trim()
         .split(/\s+/)
         .filter(Boolean);
-    return studioItems.filter((item) => item.group === group &&
-        terms.every((term) => `${item.title} ${item.origin} ${item.tags.join(' ')}`
-            .toLocaleLowerCase('ko')
-            .includes(term)));
+    const inGroup = studioItems.filter((item) => item.group === group);
+    const matches = (text) => terms.every((term) => text.toLocaleLowerCase('ko').includes(term));
+    // 이름에 맞는 견본이 있으면 묶음의 공통 태그가 다른 항목까지 끌고 오지 않게 한다.
+    const named = inGroup.filter((item) => matches(`${item.title} ${item.origin}`));
+    if (named.length)
+        return named;
+    return inGroup.filter((item) => matches(`${item.title} ${item.origin} ${item.tags.join(' ')}`));
 }

@@ -253,6 +253,15 @@ class StudioScreen {
         element('reduced', HTMLInputElement).checked = state.reducedMotion ?? false;
         element('viewport', HTMLElement).classList.toggle('comparing', state.compare ?? false);
         element('comparison-labels', HTMLElement).hidden = !state.compare;
+        const comparisonLabels = element('comparison-labels', HTMLElement);
+        const captions = comparisonLabels.querySelectorAll('span');
+        if (captions[0])
+            captions[0].textContent = state.comparisonLabels?.baseline ?? '기본 장면';
+        if (captions[1])
+            captions[1].textContent = state.comparisonLabels?.enhanced ?? '연출 장면';
+        element('compare-label', HTMLElement).textContent = state.comparisonLabels
+            ? '단일 효과와 비교'
+            : '기본 장면과 비교';
         element('export-status', HTMLOutputElement).textContent =
             state.exportStatus ?? '';
         const key = `${this.current.id}:${JSON.stringify(state.facingOptions)}:${JSON.stringify(state.beats)}`;

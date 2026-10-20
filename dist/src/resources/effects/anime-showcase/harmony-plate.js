@@ -85,14 +85,20 @@ class HarmonyPlate {
 }
 const plates = new WeakMap();
 export function drawHarmonyPlate(ctx, frame) {
-    let plate = plates.get(ctx);
+    let variants = plates.get(ctx);
+    if (!variants) {
+        variants = new Map();
+        plates.set(ctx, variants);
+    }
+    let plate = variants.get(frame.reducedMotion);
     if (!plate) {
         plate = new HarmonyPlate(frame);
-        plates.set(ctx, plate);
+        // 감소 모드의 피격 위치가 다르므로 먼저 연 판을 다른 모드에 재사용하지 않는다.
+        variants.set(frame.reducedMotion, plate);
     }
     plate.draw(ctx);
 }
 export function disposeHarmonyPlate(ctx) {
-    plates.get(ctx)?.dispose();
+    plates.get(ctx)?.forEach((plate) => plate.dispose());
     plates.delete(ctx);
 }

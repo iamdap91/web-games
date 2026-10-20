@@ -204,7 +204,7 @@ function flame(ctx: Context, drawing: number, progress: number): void {
 
 const surfaces = new WeakMap<Context, ShockKomaV2Plates>();
 
-export function drawShockKomaV2(ctx: Context, frame: Frame): void {
+export function drawShockKomaV2Scene(ctx: Context, frame: Frame): void {
   let plates = surfaces.get(ctx);
   if (frame.enhanced && !plates) {
     plates = new ShockKomaV2Plates(frame);
@@ -251,6 +251,10 @@ export function drawShockKomaV2(ctx: Context, frame: Frame): void {
       plates.draw(ctx, 'ink');
     }
   }
+}
+
+export function drawShockKomaV2(ctx: Context, frame: Frame): void {
+  drawShockKomaV2Scene(ctx, frame);
   ctx.fillStyle = '#10131ddd';
   ctx.fillRect(28, 468, frame.enhanced && !frame.reducedMotion ? 720 : 380, 36);
   label(

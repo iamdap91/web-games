@@ -271,6 +271,10 @@ class ShowcaseScreen {
           ],
           loop: this.loop.checked,
           compare: this.compare.checked,
+          comparisonLabels:
+            this.current.category === 'composite'
+              ? { baseline: '단일 효과', enhanced: '합성 효과' }
+              : undefined,
           reducedMotion: this.reduced.checked,
           exporting: this.exporting !== null,
           exportStatus: this.exportStatus.textContent ?? '',
@@ -381,6 +385,16 @@ class ShowcaseScreen {
   }
   private describe(): void {
     const sample = this.current;
+    const composite = sample.category === 'composite';
+    element('baseline-label', HTMLElement).textContent = composite
+      ? '단일 효과'
+      : '기본 장면';
+    element('enhanced-label', HTMLElement).textContent = composite
+      ? '합성 효과'
+      : '연출 견본';
+    element('compare-label', HTMLElement).textContent = composite
+      ? '단일 효과와 비교'
+      : '기본 장면과 비교';
     const category = categories.find((c) => c.id === sample.category)!;
     element('sample-title', HTMLElement).textContent = sample.name;
     element('category-label', HTMLElement).textContent = category.name;
