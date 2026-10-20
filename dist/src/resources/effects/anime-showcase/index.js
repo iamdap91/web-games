@@ -2,6 +2,7 @@ import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
 import { connectStudioScene, redirectToStudio, studioMode, } from '../../cutscenes/studio/bridge.js';
 import { samples, drawSample, disposeSampleSurfaces } from './catalog.js';
 import { exportGif } from './export.js';
+import { GameStages } from '../../cutscenes/game-stage.js';
 import { ShowcasePlayer } from './player.js';
 import { loadBattleAssets } from './battle-assets.js';
 import { categories, durationMs, height, width, } from './types.js';
@@ -14,6 +15,7 @@ function element(id, kind) {
 /** 선택·입력·Canvas·실행 루프·내보내기의 수명을 소유한다. */
 class ShowcaseScreen {
     assets;
+    stage;
     events = new AbortController();
     player = new ShowcasePlayer();
     canvas = element('stage', HTMLCanvasElement);
@@ -42,8 +44,9 @@ class ShowcaseScreen {
     disposed = false;
     exporting = null;
     studio;
-    constructor(assets) {
+    constructor(assets, stage) {
         this.assets = assets;
+        this.stage = stage;
         if (!this.context || !this.baseContext)
             throw new Error('Canvas를 준비할 수 없습니다.');
         const expectedCount = categories.reduce((total, category) => total + category.count, 0);
@@ -322,6 +325,7 @@ class ShowcaseScreen {
             ctx.setTransform(canvas.width / width, 0, 0, canvas.height / height, 0, 0);
             drawSample(ctx, this.current, {
                 assets: this.assets,
+                stage: this.stage,
                 timeMs: snapshot.timeMs,
                 enhanced,
                 reducedMotion: this.reduced.checked,
@@ -430,6 +434,7 @@ class ShowcaseScreen {
             disposeSampleSurfaces(this.context);
         if (this.baseContext)
             disposeSampleSurfaces(this.baseContext);
+        this.stage.dispose();
     }
 }
 async function start() {
@@ -439,9 +444,11 @@ async function start() {
     const lifecycle = new AbortController();
     let disposed = false;
     let screen;
+    let stage;
     const dispose = () => {
         disposed = true;
         screen?.dispose();
+        stage?.dispose();
         lifecycle.abort();
     };
     registerEmbeddedScene(dispose);
@@ -450,14 +457,16 @@ async function start() {
         signal: lifecycle.signal,
     });
     try {
-        const assets = await loadBattleAssets();
+        stage = new GameStages();
+        const [assets] = await Promise.all([loadBattleAssets(), stage.load()]);
         if (disposed)
             return;
-        screen = new ShowcaseScreen(assets);
+        screen = new ShowcaseScreen(assets, stage);
         if (loading)
             loading.hidden = true;
     }
     catch (error) {
+        stage?.dispose();
         if (disposed)
             return;
         lifecycle.abort();

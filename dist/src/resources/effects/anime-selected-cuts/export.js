@@ -16,6 +16,8 @@ export async function exportCutGif(cut, assets, signal, progress) {
         throw new Error('GIF 판을 만들 수 없습니다.');
     const surfaces = new CutSurfaces(), gif = GIFEncoder(), count = Math.ceil(cut.duration * 24);
     try {
+        await surfaces.prepare();
+        signal.throwIfAborted();
         for (let i = 0; i < count; i++) {
             await new Promise((resolve) => window.setTimeout(resolve, 0));
             signal.throwIfAborted();

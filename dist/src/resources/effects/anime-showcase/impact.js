@@ -1,6 +1,7 @@
-import { burst, ellipse, label, line, noise, palette, polygon, ring, smooth, stage, star, windowed, } from './drawing.js';
+import { burst, ellipse, label, line, noise, palette, polygon, ring, smooth, star, windowed, } from './drawing.js';
 import { battleLayout, battleImpact, drawAtaho, drawBattle, drawBear, drawPortrait, } from './battle.js';
 import { height, width, } from './types.js';
+import { drawPerspectivePunch, drawHeadFirstFall, perspectivePunchTiming, headFirstFallTiming, } from './impact-resource.js';
 import { drawShockKoma } from './shock-koma.js';
 import { drawShockKomaV2 } from './shock-koma-v2.js';
 export const impactSamples = [
@@ -92,11 +93,19 @@ export const impactSamples = [
     },
     {
         id: 'obari-punch',
-        name: '오바리 펀치 (원화 필요·미재현)',
+        name: '오바리 펀치 · 전경 정권 원화',
         category: 'impact',
         previewMs: 1870,
-        description: '가슴을 열어 화면 앞으로 뻗는 전용 정권 원화가 없어 오바리 펀치는 미재현 상태입니다.',
-        distinction: '현재 두 판은 기존 어퍼컷의 일반 구도와 근접 구도만 비교합니다. 화면 확대를 오바리 펀치 완성으로 취급하지 않습니다.',
+        beats: [
+            { timeMs: perspectivePunchTiming.loadMs, label: '전용 장전 원화' },
+            { timeMs: battleLayout.contactMs, label: '큰 전경 주먹 · 실제 타점' },
+            { timeMs: perspectivePunchTiming.recoverMs, label: '공격자 회수 원화' },
+            { timeMs: perspectivePunchTiming.recoilPeakMs, label: '곰왕 왼쪽 반동' },
+            { timeMs: perspectivePunchTiming.idleMs, label: '공격자 기립' },
+            { timeMs: perspectivePunchTiming.settledMs, label: '밀린 자리에서 정착' },
+        ],
+        description: '보유한 남동 장전·큰 전경 주먹·회수 원화를 직접 연결하고 실제 타점에서 곰왕을 왼쪽으로 밀어 늦게 정착시킵니다.',
+        distinction: '몸 전체 확대 대신 전용 큰 주먹 원화를 씁니다. 기존 정권과 새 원화 시안을 비교하며 사용자 GIF 품질 검토는 대기 상태입니다.',
     },
     {
         id: 'inazuma-kick',
@@ -108,11 +117,19 @@ export const impactSamples = [
     },
     {
         id: 'kurumada-fall',
-        name: '쿠루마다 낙하 (원화 필요·미재현)',
+        name: '쿠루마다 낙하 · 머리 착지 원화',
         category: 'impact',
-        previewMs: 2820,
-        description: '머리부터 떨어지는 곰왕 전용 낙하 원화가 없어 쿠루마다 낙하는 미재현 상태입니다.',
-        distinction: '현재는 정자세 피격 그림의 일반 포물선·착지 비교입니다. PNG 회전으로 새 낙하 자세를 만들지 않습니다.',
+        previewMs: headFirstFallTiming.contactMs,
+        beats: [
+            { timeMs: battleLayout.contactMs, label: '어퍼컷 · 넓어지는 구도' },
+            { timeMs: headFirstFallTiming.turnMs, label: '머리부터 낙하 원화' },
+            { timeMs: headFirstFallTiming.terminalMs, label: '막판 하강 가속' },
+            { timeMs: headFirstFallTiming.contactMs, label: '머리 접촉 · 압축 원화' },
+            { timeMs: headFirstFallTiming.dustEndMs, label: '먼지 소거 · 구도 복귀' },
+            { timeMs: headFirstFallTiming.settledMs, label: '착지 종결 구도' },
+        ],
+        description: '어퍼컷 뒤 구도를 넓혀 240px 낙차를 담고 마지막에 빠르게 하강합니다. 머리·어깨가 눌리는 착지 뒤 먼지와 구도 복귀로 끝냅니다.',
+        distinction: 'PixelLab에서 기존 곰왕을 기준으로 낙하·머리 착지 두 핵심 자세를 새로 제작했습니다. PNG 회전은 사용하지 않으며 작화 품질은 사용자 GIF 검토 대기입니다.',
     },
 ];
 const contactMs = battleLayout.contactMs;
@@ -331,17 +348,7 @@ function drawPonYori(ctx, frame) {
     ctx.restore();
 }
 function drawObari(ctx, frame) {
-    const t = sceneTime(frame);
-    const active = frame.enhanced && t >= 1420 && t < 2800;
-    ctx.save();
-    if (active) {
-        const scale = frame.reducedMotion ? 1.08 : 1.28;
-        frameCamera(ctx, scale, { x: battleLayout.attacker.x, y: 347 }, { x: 470, y: 353 });
-    }
-    drawCombat(ctx, frame);
-    if (active && t >= contactMs && t < 2070)
-        burst(ctx, impact.x, impact.y, (t - contactMs) / 270, palette.paper, 9);
-    ctx.restore();
+    drawPerspectivePunch(ctx, frame);
 }
 function drawInazuma(ctx, frame) {
     const t = sceneTime(frame);
@@ -375,32 +382,7 @@ function drawInazuma(ctx, frame) {
     }
 }
 function drawKurumada(ctx, frame) {
-    const t = sceneTime(frame);
-    if (!frame.enhanced || t < contactMs) {
-        drawCombat(ctx, frame);
-        return;
-    }
-    stage(ctx, 0);
-    drawAtaho(ctx, frame, { action: 'uppercut' });
-    const progress = smooth((t - contactMs) / 1000);
-    const airborne = t < 2800 ? Math.sin(progress * Math.PI) : 0;
-    const target = battleLayout.target;
-    const displacement = frame.reducedMotion ? 14 : 42;
-    drawBear(ctx, frame, {
-        x: target.x + progress * displacement,
-        ground: target.ground - airborne * (frame.reducedMotion ? 45 : 105),
-        state: 'hit',
-    });
-    if (t >= 2800 && t < 3350) {
-        const age = (t - 2800) / 550;
-        const x = target.x + displacement;
-        burst(ctx, x, target.ground, age, palette.paper, 13);
-        ctx.save();
-        ctx.globalAlpha *= (1 - age) * 0.38;
-        ellipse(ctx, x - 54, target.ground + 3, 56 + age * 25, 14, '#ac9d94');
-        ellipse(ctx, x + 50, target.ground + 3, 54 + age * 25, 14, '#ac9d94');
-        ctx.restore();
-    }
+    drawHeadFirstFall(ctx, frame);
 }
 export function drawImpact(ctx, id, frame) {
     const t = sceneTime(frame);
@@ -462,8 +444,8 @@ export function drawImpact(ctx, id, frame) {
             case 'obari-punch':
                 drawObari(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '오바리 펀치 미재현 · 현재는 일반 어퍼컷 근접 구도'
-                    : '실제 어퍼컷 기본 구도');
+                    ? '전경 정권 원화 시안 · 왼쪽 반동과 늦은 정착'
+                    : '보유 정권 기본 동작');
                 break;
             case 'inazuma-kick':
                 drawInazuma(ctx, frame);
@@ -474,7 +456,7 @@ export function drawImpact(ctx, id, frame) {
             case 'kurumada-fall':
                 drawKurumada(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '쿠루마다 낙하 미재현 · 현재는 정자세 피격·포물선'
+                    ? '낙하 원화 시안 · 큰 낙차 → 막판 가속 → 착지'
                     : '같은 어퍼컷의 기본 피격');
                 break;
             default:

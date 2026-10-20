@@ -1,4 +1,4 @@
-import { clamp, ellipse, label, line, mix, noise, polygon, ring, smooth, stage, star, windowed, } from './drawing.js';
+import { clamp, ellipse, label, line, mix, noise, polygon, ring, smooth, stage, gameStage, star, windowed, } from './drawing.js';
 import { atahoPosition, battleLayout, drawAtaho, drawBear, drawBattleActors, } from './battle.js';
 import { opticalScene } from './camera-scene.js';
 import { height, width } from './types.js';
@@ -269,7 +269,7 @@ function rackFocus(ctx, frame) {
     ctx.filter = frame.enhanced
         ? `blur(${frame.reducedMotion ? 1 : 5}px)`
         : 'none';
-    stage(ctx);
+    stage(ctx, frame);
     ctx.restore();
     ctx.save();
     ctx.filter = frame.enhanced ? `blur(${blur * (1 - focus)}px)` : 'none';
@@ -288,8 +288,8 @@ function multiBokeh(ctx, frame) {
     ctx.filter = frame.enhanced
         ? `blur(${frame.reducedMotion ? 2 : 9}px)`
         : 'none';
-    // 산·설원은 같은 배경 판이다. 점광원의 위치는 같고 초점에 따른 번짐 면적만 달라진다.
-    stage(ctx);
+    // 게임 공터의 배경 판은 유지하고 초점에 따른 번짐 면적만 바꾼다.
+    gameStage(ctx, frame, { focus: { x: 0, y: 0, z: 0 } });
     ctx.restore();
     // 같은 점광원의 초점이 벗어나면 조리개 모양의 넓은 빛망울로 퍼진다.
     for (let i = 0; i < 11; i++) {
@@ -312,11 +312,7 @@ function multiBokeh(ctx, frame) {
     ctx.filter = frame.enhanced
         ? `blur(${frame.reducedMotion ? 3 : 24}px)`
         : 'none';
-    for (const x of [90, 850]) {
-        ctx.fillStyle = '#111c28';
-        ctx.fillRect(x, 100, 48, 440);
-        ellipse(ctx, x + 20, 170, 76, 120, '#2b4750');
-    }
+    gameStage(ctx, frame, { layer: 'foreground', focus: { x: 0, y: 0, z: 0 } });
     ctx.restore();
     label(ctx, '전경 큰 흐림 / 전투 선명 / 배경 작은 흐림 · 점광원은 큰 빛망울로');
 }
@@ -357,7 +353,7 @@ function foggy(ctx, frame) {
     label(ctx, '젖빛 대비 감소 + 실제 달·접촉광의 확산 · 공중 안개 입자 없음');
 }
 function doubleShadow(ctx, frame) {
-    stage(ctx);
+    stage(ctx, frame);
     if (frame.enhanced) {
         const position = atahoPosition(frame);
         const air = clamp((battleLayout.attacker.ground - position.ground) / 180);
@@ -406,7 +402,7 @@ function glow(ctx, frame) {
     label(ctx, '같은 선명한 접촉광의 핵 + 주변 번짐 · 몸과 설원 윤곽은 유지');
 }
 function incidentLight(ctx, frame) {
-    stage(ctx);
+    stage(ctx, frame);
     if (frame.enhanced) {
         ctx.save();
         ctx.globalAlpha *= frame.reducedMotion ? 0.32 : 0.85;

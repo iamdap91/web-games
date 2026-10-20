@@ -14,9 +14,9 @@ function element(id, kind) {
 /** 입력·실행 루프·보조 판·다운로드의 수명을 이 화면이 함께 정리한다. */
 class CutScreen {
     assets;
+    surfaces;
     events = new AbortController();
     player = new CutPlayer();
-    surfaces = new CutSurfaces();
     canvas = element('stage', HTMLCanvasElement);
     context = this.canvas.getContext('2d');
     list = element('cuts', HTMLElement);
@@ -31,8 +31,9 @@ class CutScreen {
     exporting = null;
     downloadUrl = null;
     studio;
-    constructor(assets) {
+    constructor(assets, surfaces) {
         this.assets = assets;
+        this.surfaces = surfaces;
         if (!this.context)
             throw new Error('Canvas를 준비할 수 없습니다.');
         if (cuts.length !== 10 || new Set(cuts.map((c) => c.id)).size !== 10)
@@ -304,9 +305,12 @@ async function start() {
     const lifecycle = new AbortController();
     let disposed = false;
     let screen;
+    let surfaces;
     const dispose = () => {
         disposed = true;
         screen?.dispose();
+        if (!screen)
+            surfaces?.dispose();
         lifecycle.abort();
     };
     registerEmbeddedScene(dispose);
@@ -315,11 +319,13 @@ async function start() {
         signal: lifecycle.signal,
     });
     try {
-        const assets = await loadCutAssets();
+        surfaces = new CutSurfaces();
+        const [assets] = await Promise.all([loadCutAssets(), surfaces.prepare()]);
         if (!disposed)
-            screen = new CutScreen(assets);
+            screen = new CutScreen(assets, surfaces);
     }
     catch (error) {
+        surfaces?.dispose();
         if (disposed)
             return;
         lifecycle.abort();

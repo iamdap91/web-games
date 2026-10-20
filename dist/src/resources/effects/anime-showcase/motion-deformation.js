@@ -64,8 +64,9 @@ const flutterPatches = [
         y: 44,
         width: 7,
         height: 12,
-        root: 'bottom',
-        amplitude: 6.6,
+        // 꼬리는 몸에 붙는 왼쪽을 고정하고 바깥 끝만 위아래로 나부끼게 한다.
+        root: 'left',
+        amplitude: 3.2,
         delay: 0.7,
     },
     {

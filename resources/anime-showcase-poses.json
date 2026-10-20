@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "date": "2026-10-20",
+  "scope": "기법 견본의 곰왕 머리부터 낙하·압축 착지 원화",
+  "provider": "PixelLab",
+  "qualityStatus": "awaiting-user-gif-review",
+  "source": {
+    "localPath": "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/stand/0ecf517b-d19d-4abd-8a20-9915187b0836/00.png",
+    "uploadRef": "upload:88c0a013-481d-46d8-97e4-1a56f8987d65",
+    "nativeFacing": "left / south-west",
+    "evidence": "기존160x160한시점게임원본의외형·팔레트를기준으로두새핵심자세를각각제작했다. PNG전체회전이나새방향확장은없다."
+  },
+  "generation": {
+    "tool": "edit_image_pro_flash",
+    "calls": 2,
+    "generationsCharged": 12,
+    "creditUsd": 0,
+    "newInbetweens": 0,
+    "userQualityApproval": false,
+    "requests": [
+      {
+        "image_url": "upload:88c0a013-481d-46d8-97e4-1a56f8987d65",
+        "method": "text",
+        "no_background": true,
+        "use_color_palette_correction": true,
+        "seed": 862001,
+        "description": "Redraw this SAME muscular cream-white polar bear boss into ONE new head-first airborne falling KEY POSE for a pixel game. Preserve the exact character identity, broad cream-white fur chest, dark blue-gray shaded fur, small ears, muzzle and black nose, heavy powerful body and paws. Full body, all limbs and ears within the original transparent 160x160 canvas, crisp same native pixel grid and original body scale. Face remains visible in LEFT three-quarter profile. The head is the LOWEST part of the silhouette: crown and muzzle low near the bottom, heavy hips above the shoulders, BOTH thick legs bent upward over the body with the paw soles pointing toward the top; arms splayed/bent backward near the chest from the violent fall. Draw anatomically connected foreshortened hips, shoulders and bent limbs in a new upside-down pose; do not just rotate or mirror the standing reference and do not leave the torso standing upright. Off-balance comic heavy head-first tumble, back arched slightly and legs separated for a clear silhouette. This is a character drawing only: no floor, no opponent, no impact lines, no motion blur, no dust, no effects, no text, no colored background."
+      },
+      {
+        "image_url": "upload:88c0a013-481d-46d8-97e4-1a56f8987d65",
+        "method": "text",
+        "no_background": true,
+        "use_color_palette_correction": true,
+        "seed": 862002,
+        "description": "Redraw this SAME muscular cream-white polar bear boss into ONE new compressed HEAD-FIRST LANDING KEY POSE for a pixel game, matching the original LEFT three-quarter view. Preserve the exact bear's cream-white fur, dark blue-gray shading, small ears, muzzle/black nose, broad powerful torso and heavy paws. Full body inside the original transparent 160x160 canvas, same crisp native pixels and character body scale. The bear has just crashed onto the crown/upper shoulder, with his head at the BOTTOM of the silhouette at the invisible ground line; weight compresses the neck/shoulder area safely in an exaggerated comic squash. Hips are above the shoulders; BOTH knees curl up over the belly and big feet point UP and slightly apart; bent arms stay to either side of the head, not supporting a handstand. Face still readable leftward, eyes squeezed. This is the next impact pose after an upside-down head-first fall, never a normal standing/crouching pose, never a bear lying flat on its back and never merely rotating the reference PNG. Draw a compact bent silhouette with hips/legs folding over head/shoulders, anatomically connected. Character ONLY: no actual floor drawn, no shadow, no debris, no stars, no speed lines, no effects, no opponent, no text, no background."
+      }
+    ]
+  },
+  "poses": [
+    {
+      "key": "bear-fall:head-first",
+      "localPath": "public/assets/maplestory/anime-showcase-ingame/20261020/bear-head-first.png",
+      "anchorX": 52,
+      "feetY": 140,
+      "width": 160,
+      "height": 160,
+      "alphaBounds": {
+        "left": 23,
+        "top": 11,
+        "right": 126,
+        "bottom": 140
+      },
+      "jobId": "c3281c0e-1e04-4369-be62-2512915969d4",
+      "assetId": "77ab618f-5030-5359-b32b-ccb8f9c17958",
+      "sha256": "20ed19c419f42a7bc2fd07a7f1dd1d46edcb795566b7a105629836fd70141987",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/c3281c0e-1e04-4369-be62-2512915969d4/download",
+      "attempt": 1,
+      "anchorPurpose": "새낙하원화의머리하단을접촉기준으로사용"
+    },
+    {
+      "key": "bear-fall:head-impact",
+      "localPath": "public/assets/maplestory/anime-showcase-ingame/20261020/bear-head-impact.png",
+      "anchorX": 56,
+      "feetY": 133,
+      "width": 160,
+      "height": 160,
+      "alphaBounds": {
+        "left": 31,
+        "top": 28,
+        "right": 126,
+        "bottom": 133
+      },
+      "jobId": "f9da670b-90ae-4d23-a3e1-67ead0cfddd8",
+      "assetId": "861886c2-9d27-520e-8f82-1c34cca0e9ed",
+      "sha256": "8358db3060b484cf200bf237b4881a3a455770da55faaa0917a04b296f1c8b17",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/f9da670b-90ae-4d23-a3e1-67ead0cfddd8/download",
+      "attempt": 1,
+      "anchorPurpose": "원화아래접촉선을무대바닥에맞춤"
+    }
+  ]
+}

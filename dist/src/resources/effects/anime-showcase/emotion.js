@@ -214,7 +214,7 @@ export function drawEmotion(ctx, id, frame) {
                     ctx.scale(1.17, 1.17);
                     ctx.translate(-650, -300);
                 }
-                stage(ctx, 0);
+                stage(ctx, frame, 0);
                 drawAtaho(ctx, frame, { timeMs: 2800 });
                 if (t < 2750) {
                     drawBear(ctx, frame, { state: 'stand', timeMs: 0 });

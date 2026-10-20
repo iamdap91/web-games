@@ -1,4 +1,4 @@
-import { clamp, ellipse, label, line, mix, noise, polygon, smooth, } from './drawing.js';
+import { clamp, label, mix, noise, gameStage, smooth } from './drawing.js';
 import { opticalScene, overlayFrame, panorama } from './camera-scene.js';
 import { atahoPosition, battleLayout, drawBattleActors } from './battle.js';
 import { height, width } from './types.js';
@@ -49,45 +49,20 @@ function contactMulti(ctx, frame) {
     const amount = frame.enhanced
         ? smooth((frame.timeMs - 250) / 2850) * (frame.reducedMotion ? 60 : 480)
         : 0;
-    const sky = ctx.createLinearGradient(0, 0, 0, height);
-    sky.addColorStop(0, '#182738');
-    sky.addColorStop(1, '#738d9b');
-    ctx.fillStyle = sky;
-    ctx.fillRect(0, 0, width, height);
-    ellipse(ctx, 765 - amount * 0.05, 95, 43, 43, '#d6e5e8');
-    for (let i = -1; i < 6; i++) {
-        const x = i * 240 - amount * 0.2;
-        polygon(ctx, [
-            { x, y: 440 },
-            { x: x + 100, y: 170 },
-            { x: x + 260, y: 440 },
-        ], '#91a8ba');
-    }
-    ctx.fillStyle = '#c0d1dc';
-    ctx.fillRect(0, 410, width, 130);
+    // 렌더한 게임 자재의 판은 배율을 유지한 채 서로 다른 거리만큼 이송한다.
+    ctx.save();
+    ctx.translate(-amount * 0.2, 0);
+    panorama(ctx, frame);
+    ctx.restore();
     ctx.save();
     ctx.translate(-amount * 0.48, 0);
-    // 중경 지면도 배우와 같은 판으로 움직인다. 고정된 기본 무대의 나무를 중복해서 남기지 않는다.
-    for (let i = -2; i < 14; i++) {
-        const x = i * 90;
-        line(ctx, [
-            { x, y: 457 },
-            { x: x + 32, y: 461 },
-        ], '#91a8b8', 2);
-        line(ctx, [
-            { x: x + 39, y: 507 },
-            { x: x + 81, y: 511 },
-        ], '#a4bac7', 2);
-    }
     drawBattleActors(ctx, frame);
     ctx.restore();
-    for (const origin of [-340, 100, 580, 1080, 1520]) {
-        const x = origin - amount;
-        ctx.fillStyle = '#29495e';
-        ctx.fillRect(x, 40, 28, 500);
-        ellipse(ctx, x + 14, 95, 76, 85, '#3c6177');
-    }
-    label(ctx, '평면 셀의 서로 다른 수평 이송 · 각 층의 그림 크기는 일정');
+    ctx.save();
+    ctx.translate(-amount, 0);
+    gameStage(ctx, frame, { layer: 'foreground', focus: { x: 0, y: 0, z: 0 } });
+    ctx.restore();
+    label(ctx, '게임 배경·배우·근경 판의 서로 다른 수평 이송 · 각 판의 크기는 일정');
 }
 function flicker(ctx, frame) {
     opticalScene(ctx, frame);
@@ -112,7 +87,7 @@ function followPan(ctx, frame) {
     const cameraY = frame.enhanced ? current.ground - initial.ground : 0;
     ctx.save();
     ctx.translate(-cameraX, -cameraY);
-    panorama(ctx);
+    panorama(ctx, frame);
     drawBattleActors(ctx, frame);
     ctx.restore();
     overlayFrame(ctx);
@@ -129,7 +104,7 @@ function slowQuickPan(ctx, frame) {
     const offset = frame.enhanced ? focus - width / 2 : 0;
     ctx.save();
     ctx.translate(-offset, 0);
-    panorama(ctx);
+    panorama(ctx, frame);
     drawBattleActors(ctx, frame);
     ctx.restore();
     label(ctx, frame.timeMs < 1850
@@ -165,31 +140,13 @@ function multiplane(ctx, frame) {
             scale,
         };
     };
-    ctx.fillStyle = '#57748c';
-    ctx.fillRect(0, 0, width, height);
-    const moon = project({ x: 14, y: 10.85, z: 35 });
-    ellipse(ctx, moon.x, moon.y, moon.scale * 2.15, moon.scale * 2.15, '#eaf1f5');
-    const mountain = [
-        { x: -9, y: -1, z: 17 },
-        { x: -4, y: 3.8, z: 17 },
-        { x: 0, y: -0.5, z: 17 },
-        { x: 5, y: 3, z: 17 },
-        { x: 12, y: -1, z: 17 },
-    ];
-    polygon(ctx, [
-        ...mountain.map(project),
-        { x: width + 100, y: height },
-        { x: -100, y: height },
-    ], '#94aebf');
-    ctx.fillStyle = '#c1d1dd';
-    ctx.fillRect(0, 280, width, height - 280);
-    for (const z of [5, 7, 10, 14]) {
-        const left = project({ x: -12, y: 0, z });
-        const right = project({ x: 12, y: 0, z });
-        line(ctx, [left, right], '#a4a07f45', 1);
-    }
-    for (const x of [-6, -2, 2, 6])
-        line(ctx, [project({ x, y: 0, z: 20 }), project({ x, y: 0, z: 3 })], '#a4a07f45', 1);
+    const camera = {
+        position: { x: cameraX, y: 1.6, z: -cameraZ },
+        target: { x: cameraX, y: 1.6, z: -cameraZ - 10 },
+        focal: 700,
+    };
+    const options = { camera, principalY: 280, focus: { x: 0, y: 0, z: -7 } };
+    gameStage(ctx, frame, options);
     // 배우 두 원본은 같은 수직 판에 둔다. PNG를 돌리지 않고 판의 위치와 균등 배율만 투영한다.
     const middle = project({ x: 0, y: 0, z: 7 });
     ctx.save();
@@ -198,13 +155,7 @@ function multiplane(ctx, frame) {
     ctx.translate(-width / 2, -battleLayout.attacker.ground);
     drawBattleActors(ctx, frame);
     ctx.restore();
-    for (const x of [-1.25, 1.9]) {
-        const base = project({ x, y: 0, z: 3.5 });
-        const top = project({ x, y: 3.2, z: 3.5 });
-        ctx.fillStyle = '#29495e';
-        ctx.fillRect(base.x - base.scale * 0.08, top.y, base.scale * 0.16, base.y - top.y);
-        ellipse(ctx, top.x, top.y + 20, base.scale * 0.55, base.scale * 0.35, '#3c6177');
-    }
+    gameStage(ctx, frame, { ...options, layer: 'foreground' });
     label(ctx, '원본 전투는 수직 판으로 유지 · 앞뒤 깊이에 따라 크기와 시차만 변화');
 }
 export function drawCameraMovement(ctx, id, frame) {

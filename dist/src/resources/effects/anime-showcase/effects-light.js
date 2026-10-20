@@ -1,5 +1,7 @@
 import { clamp, ellipse, line, noise, palette, polygon, ring, smooth, star, } from './drawing.js';
 import { battleLayout } from './battle.js';
+import { drawKiSprite, kiSpriteFrame, } from '../../characters/ataho-v2-combos/ki-sprites.js';
+import { drawOrbitViscosity } from '../../characters/ataho-v2-combos/orbit-viscosity-drawing.js';
 function drawKanadaLight(ctx, frame) {
     const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 1150)
@@ -48,13 +50,21 @@ function beamAxis(u, length, bend, tipHeight) {
             u ** 3 * tipHeight,
     };
 }
+const beamRelease = { startMs: 1420, fadeMs: 1950, endMs: 2080 };
 function drawKanadaBeam(ctx, frame) {
     const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 2100)
         return;
     const progress = clamp(age / (frame.enhanced && !frame.reducedMotion ? 440 : 620));
-    const fade = 1 - clamp((age - 1500) / 600);
+    const fade = 1 -
+        clamp((age - (frame.enhanced ? beamRelease.fadeMs : 1500)) /
+            (frame.enhanced ? beamRelease.endMs - beamRelease.fadeMs : 600));
     const length = 548 * smooth(progress);
+    const tail = frame.enhanced
+        ? smooth((age - beamRelease.startMs) / (beamRelease.endMs - beamRelease.startMs))
+        : 0;
+    if (tail >= 1)
+        return;
     const amount = frame.reducedMotion ? 0.45 : 1;
     const cellTime = frame.reducedMotion ? Math.floor(age / 250) * 250 : age;
     const beats = [80, 160, 245, 380, 540, 760, 1020, 1280, 1560, 1800];
@@ -64,45 +74,105 @@ function drawKanadaBeam(ctx, frame) {
     const bend = bends[phase] * amount * Math.min(1, progress * 1.5);
     const tipHeight = tips[phase] * amount;
     const head = beamAxis(1, length, bend, tipHeight);
+    const flow = cellTime / (frame.reducedMotion ? 2400 : 1250);
     ctx.save();
     ctx.globalAlpha *= fade * (frame.reducedMotion ? 0.72 : 1);
     if (!frame.enhanced) {
-        line(ctx, [
-            { x: 267, y: 300 },
-            { x: 267 + length, y: 300 },
-        ], palette.blue, 25);
+        for (let x = 0; x < length; x += 72)
+            drawKiSprite(ctx, frame.assets.effects, {
+                sheet: 'beam',
+                frame: 4,
+                point: { x: 267 + x, y: 300 },
+                width: Math.min(78, length - x),
+                height: 70,
+                anchorX: 0,
+            });
         ctx.restore();
         return;
     }
     const top = [];
     const bottom = [];
-    const axis = [];
     for (let index = 0; index <= 26; index++) {
-        const u = index / 26;
+        const u = tail + ((1 - tail) * index) / 26;
         const point = beamAxis(u, length, bend, tipHeight);
         const prior = beamAxis(Math.max(0, u - 0.012), length, bend, tipHeight);
         const next = beamAxis(Math.min(1, u + 0.012), length, bend, tipHeight);
         const distance = Math.max(1, Math.hypot(next.x - prior.x, next.y - prior.y));
         const nx = -(next.y - prior.y) / distance;
         const ny = (next.x - prior.x) / distance;
+        const tailWidth = tail > 0 ? smooth((u - tail) / 0.055) : 1;
         const ridge = (7 +
             u * 18 +
             noise(index + phase * 7) * 21 +
             (index % 5 === phase % 5 ? 20 : 0)) *
-            (frame.reducedMotion ? 0.7 : 1);
-        axis.push(point);
+            (frame.reducedMotion ? 0.7 : 1) *
+            tailWidth;
         top.push({ x: point.x + nx * ridge, y: point.y + ny * ridge });
         bottom.unshift({
             x: point.x - nx * ridge * 0.73,
             y: point.y - ny * ridge * 0.73,
         });
     }
-    polygon(ctx, [...top, ...bottom], palette.blue);
-    line(ctx, top, '#d7f3ed', 3);
-    line(ctx, bottom, '#386d9b', 4);
-    line(ctx, axis, '#fff5cd', 10);
+    ctx.save();
+    ctx.beginPath();
+    [...top, ...bottom].forEach((point, index) => index ? ctx.lineTo(point.x, point.y) : ctx.moveTo(point.x, point.y));
+    ctx.closePath();
+    ctx.clip();
+    // 원본 타일과 빈틈이 같은 축을 따라 전진하고 후단은 손을 떠난 자리부터 비워진다.
+    const tileLength = 0.15;
+    const tileFlow = flow % tileLength;
+    for (let u = -tileLength + tileFlow; u < 1; u += tileLength) {
+        if (u + tileLength < tail)
+            continue;
+        const from = beamAxis(u, length, bend, tipHeight);
+        const to = beamAxis(u + tileLength, length, bend, tipHeight);
+        const distance = Math.hypot(to.x - from.x, to.y - from.y);
+        ctx.save();
+        ctx.translate(from.x, from.y);
+        ctx.rotate(Math.atan2(to.y - from.y, to.x - from.x));
+        drawKiSprite(ctx, frame.assets.effects, {
+            sheet: 'beam',
+            frame: kiSpriteFrame(cellTime, {
+                start: 4,
+                count: 4,
+                frameMs: 80,
+                loop: true,
+            }),
+            point: { x: -3, y: 0 },
+            width: distance + 6,
+            height: 160,
+            anchorX: 0,
+        });
+        ctx.restore();
+    }
+    if (tail > 0) {
+        const tailPoint = beamAxis(tail, length, bend, tipHeight);
+        const next = beamAxis(Math.min(1, tail + 0.02), length, bend, tipHeight);
+        ctx.save();
+        ctx.translate(tailPoint.x, tailPoint.y);
+        ctx.rotate(Math.atan2(next.y - tailPoint.y, next.x - tailPoint.x));
+        drawKiSprite(ctx, frame.assets.effects, {
+            sheet: 'beam',
+            frame: kiSpriteFrame(age - beamRelease.startMs, {
+                start: 12,
+                count: 2,
+                frameMs: frame.reducedMotion ? 250 : 85,
+                loop: true,
+            }),
+            point: { x: 0, y: 0 },
+            width: 94,
+            height: 142,
+            anchorX: 0.15,
+        });
+        ctx.restore();
+    }
+    ctx.restore();
+    line(ctx, top, '#c2f2ef', 2);
+    line(ctx, bottom, '#237bb7', 3);
     for (let index = 0; index < 5; index++) {
-        const u = (index + 0.6) / 6;
+        const u = ((index + 0.6) / 6 + flow) % 1;
+        if (u < tail + 0.025)
+            continue;
         const point = beamAxis(u, length, bend, tipHeight);
         const prior = beamAxis(u - 0.015, length, bend, tipHeight);
         ctx.save();
@@ -116,7 +186,24 @@ function drawKanadaBeam(ctx, frame) {
         ], '#29475b');
         ctx.restore();
     }
-    star(ctx, head.x, head.y, 28 + (phase % 3) * 5, palette.paper, 5, 0.3 + phase * 0.21);
+    const prior = beamAxis(0.98, length, bend, tipHeight);
+    ctx.save();
+    ctx.translate(head.x, head.y);
+    ctx.rotate(Math.atan2(head.y - prior.y, head.x - prior.x));
+    drawKiSprite(ctx, frame.assets.effects, {
+        sheet: 'beam',
+        frame: kiSpriteFrame(cellTime, {
+            start: 10,
+            count: 2,
+            frameMs: 85,
+            loop: true,
+        }),
+        point: { x: 0, y: 0 },
+        width: 82,
+        height: 94,
+        anchorX: 0.9,
+    });
+    ctx.restore();
     ctx.restore();
 }
 function dragonPoint(progress, trail) {
@@ -251,59 +338,119 @@ function drawAraki(ctx, frame) {
     }
     ctx.restore();
 }
-function viscousBody(ctx, head, neck, connected) {
-    ctx.beginPath();
-    ctx.moveTo(285, 278);
-    if (connected) {
-        ctx.bezierCurveTo(345, 268, head.x - 77, head.y - neck, head.x - 28, head.y - 38);
-        ctx.bezierCurveTo(head.x + 50, head.y - 79, head.x + 82, head.y + 50, head.x + 8, head.y + 46);
-        ctx.bezierCurveTo(head.x - 60, head.y + 52, head.x - 84, head.y + neck, 285, 318);
-        ctx.bezierCurveTo(237, 330, 246, 263, 285, 278);
-    }
-    else {
-        ctx.moveTo(head.x - 49, head.y - 18);
-        ctx.bezierCurveTo(head.x - 17, head.y - 64, head.x + 60, head.y - 38, head.x + 49, head.y + 18);
-        ctx.bezierCurveTo(head.x + 31, head.y + 62, head.x - 71, head.y + 55, head.x - 49, head.y - 18);
-    }
-    ctx.closePath();
-    ctx.fillStyle = '#a9d8b6';
-    ctx.fill();
-    ctx.strokeStyle = '#e8f1bc';
-    ctx.lineWidth = 3;
-    ctx.stroke();
+function kozumaProgress(age, frame) {
+    const ordinary = age < 930
+        ? smooth(age / 930) * 0.38
+        : 0.38 + smooth((age - 930) / 970) * 0.62;
+    // 붙어서 버티는 구간과 끊긴 뒤의 급가속을 충분히 벌려 점성의 박자를 읽힌다.
+    return frame.enhanced && !frame.reducedMotion
+        ? age < 980
+            ? smooth(age / 980) * 0.18
+            : 0.18 + smooth((age - 980) / 620) * 0.82
+        : ordinary;
+}
+function kozumaHead(age, frame) {
+    const p = kozumaProgress(age, frame);
+    return { x: 285 + p * 430, y: 300 - Math.sin(p * Math.PI) * 48 };
 }
 function drawKozuma(ctx, frame) {
     const age = frame.timeMs - battleLayout.contactMs;
     if (age < 0 || age > 2400)
         return;
-    const ordinary = age < 930
-        ? smooth(age / 930) * 0.38
-        : 0.38 + smooth((age - 930) / 970) * 0.62;
-    // 붙어서 버티는 구간과 끊긴 뒤의 급가속을 충분히 벌려 점성의 박자를 읽힌다.
-    const p = frame.enhanced && !frame.reducedMotion
-        ? age < 980
-            ? smooth(age / 980) * 0.18
-            : 0.18 + smooth((age - 980) / 620) * 0.82
-        : ordinary;
-    const head = { x: 285 + p * 430, y: 300 - Math.sin(p * Math.PI) * 48 };
+    const p = kozumaProgress(age, frame);
+    const head = kozumaHead(age, frame);
     ctx.save();
     ctx.globalAlpha *= 1 - clamp((age - 2000) / 400);
     ctx.translate(285, 300);
     const birth = smooth(age / 180);
     ctx.scale(birth, birth);
     ctx.translate(-285, -300);
-    if (!frame.enhanced)
-        ellipse(ctx, head.x, head.y, 39, 39, '#a9d8b6');
-    else {
+    const release = smooth((age - 920) / 120);
+    drawKiSprite(ctx, frame.assets.effects, {
+        sheet: 'orbit',
+        frame: kiSpriteFrame(age, {
+            start: 0,
+            count: 4,
+            frameMs: frame.reducedMotion ? 240 : 110,
+            loop: true,
+        }),
+        point: head,
+        width: 165,
+        height: 152,
+        anchorX: 0.5,
+        alpha: 1 - release,
+    });
+    // 모으는 셀과 날아가는 셀의 핵을 같은 위치에 맞춘 뒤 짧게 교차해 앵커 교체를 숨긴다.
+    drawKiSprite(ctx, frame.assets.effects, {
+        sheet: 'orbit',
+        frame: kiSpriteFrame(Math.max(0, age - 980), {
+            start: 4,
+            count: 4,
+            frameMs: frame.reducedMotion ? 240 : 110,
+            loop: true,
+        }),
+        point: head,
+        width: 165,
+        height: 152,
+        anchorX: 0.65,
+        alpha: release,
+    });
+    if (frame.enhanced) {
         const split = age > 1200;
-        viscousBody(ctx, head, Math.max(1.2, 25 * (1 - smooth((age - 760) / 440))), !split);
+        if (!split)
+            drawOrbitViscosity(ctx, {
+                compression: 0,
+                tether: {
+                    from: { x: 285, y: 300 },
+                    to: { x: head.x - 16, y: head.y },
+                    rootRadius: 26 - smooth(age / 1200) * 12,
+                    tipRadius: 17,
+                    neckRadius: Math.max(0.6, 24 * (1 - smooth((age - 760) / 440))),
+                    bend: -12 * Math.sin(p * Math.PI),
+                    frame: 0,
+                },
+            }, frame.assets.effects);
         if (split) {
             const since = (age - 1200) / 1000;
-            ellipse(ctx, 285 + since * 19, 300 + since * 7, 23 - clamp(since) * 13, 31, '#a9d8b6');
+            drawOrbitViscosity(ctx, {
+                compression: 0,
+                droplet: {
+                    point: { x: 285 + since * 19, y: 300 + since * 7 },
+                    radius: 14 - clamp(since) * 8,
+                    angle: 0,
+                    frame: Math.min(8, Math.floor(since * 9)),
+                    alpha: 1,
+                },
+            }, frame.assets.effects);
+            const separation = kozumaHead(1200, frame);
+            const dx = separation.x - 16 - 285;
+            const dy = separation.y - 300;
+            const distance = Math.max(1, Math.hypot(dx, dy));
+            const bend = -12 * Math.sin(kozumaProgress(1200, frame) * Math.PI);
             for (let index = 0; index < 5; index++) {
-                const x = 380 + index * 34 + since * (24 + index * 18);
-                const y = 286 + Math.sin(index * 1.8) * 24 + since * since * 57;
-                ellipse(ctx, x, y, (5 + (index % 3) * 3) * (frame.reducedMotion ? 0.7 : 1), 8 + (index % 2) * 8, '#b5dcb7');
+                const residueAge = age - 1200 - index * 20;
+                if (residueAge < 0)
+                    continue;
+                const seconds = residueAge / 1000;
+                const u = (index + 1) / 6;
+                const curl = Math.sin(u * Math.PI) * bend;
+                // 고정된 화면 좌표 대신 분리 직전 연결부의 실제 위치에서 조각이 태어난다.
+                const x = 285 + dx * u - (dy / distance) * curl + seconds * (45 + index * 21);
+                const y = 300 +
+                    dy * u +
+                    (dx / distance) * curl +
+                    seconds * (index - 2) * 9 +
+                    seconds * seconds * 57;
+                drawOrbitViscosity(ctx, {
+                    compression: 0,
+                    droplet: {
+                        point: { x, y },
+                        radius: (4 + index * 1.5) * (frame.reducedMotion ? 0.7 : 1),
+                        angle: Math.sin(index * 1.8) * 0.4,
+                        frame: Math.min(8, Math.floor((residueAge / (900 + index * 40)) * 9)),
+                        alpha: smooth(residueAge / (frame.reducedMotion ? 140 : 70)),
+                    },
+                }, frame.assets.effects);
             }
         }
     }

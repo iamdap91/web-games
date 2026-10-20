@@ -1,5 +1,6 @@
+import { gameDust } from '../../cutscenes/game-effects.js';
 import { atahoPosition, battleLayout, drawAtaho, drawAtahoRun, drawBear, } from './battle.js';
-import { clamp, ellipse, line, mix, noise, polygon, smooth, } from './drawing.js';
+import { clamp, ellipse, mix, gameStage, smooth } from './drawing.js';
 import { height, width, } from './types.js';
 const drawingMs = 1000 / 12;
 const movementFrameMs = 1000 / 24;
@@ -100,102 +101,28 @@ function project(point, camera) {
         scale,
     };
 }
-function drawFace(ctx, camera, points, color, seed) {
-    const projected = points.map((p, i) => {
-        const point = project(p, camera);
-        const rough = noise(seed + i * 13 + camera.drawing * 101) - 0.5;
-        return { x: point.x + rough * 1.1, y: point.y + rough * 0.8 };
+/** 기존 픽셀 월드의 투영축을 게임 질주 길의 m 좌표로 대응한다. */
+function drawWorld(ctx, camera, frame, layer = 'background') {
+    const unit = 100;
+    const x = (camera.z - 780) / unit;
+    const z = camera.x / unit;
+    const beat = sampleBeat(frame);
+    gameStage(ctx, frame, {
+        kind: 'run',
+        camera: {
+            position: { x, y: camera.eyeHeight / unit, z },
+            target: {
+                x: x + Math.cos(camera.yaw) * 10,
+                y: camera.eyeHeight / unit,
+                z: z + Math.sin(camera.yaw) * 10,
+            },
+            focal: 780,
+        },
+        principalY: camera.horizonY,
+        focus: { x: 0, y: 0, z: (beat.attackerX - width / 2) / unit },
+        layer,
+        timeMs: beat.timeMs,
     });
-    polygon(ctx, projected, color);
-    line(ctx, [...projected, projected[0]], '#1c2938', 2);
-}
-/** 벽·바닥·기둥을 같은 좌표에서 다시 그린다. 화면 속 소실점만 따로 움직이지 않는다. */
-function drawWorld(ctx, camera) {
-    ctx.fillStyle = '#334957';
-    ctx.fillRect(-width, -height, width * 3, height * 3);
-    const right = backgroundRun.distance + 2400;
-    const endColumn = Math.ceil(backgroundRun.distance / 350);
-    // 고정 와이드에서도 바닥 끝이 드러나지 않도록 카메라 근면까지 같은 돌바닥을 잇는다.
-    const floorNear = camera.z - 560;
-    const face = (points, color, seed) => drawFace(ctx, camera, points, color, seed);
-    face([
-        { x: -2200, y: 0, z: 2400 },
-        { x: right, y: 0, z: 2400 },
-        { x: right, y: 0, z: floorNear },
-        { x: -2200, y: 0, z: floorNear },
-    ], '#b6b7a3', 1);
-    const rowCount = Math.ceil((2400 - floorNear) / 350);
-    for (let row = 0; row < rowCount; row++) {
-        const far = 2400 - row * 350;
-        const near = Math.max(far - 350, floorNear);
-        for (let column = -6; column <= endColumn + 6; column++) {
-            const left = column * 350;
-            face([
-                { x: left, y: 0, z: far },
-                { x: left + 350, y: 0, z: far },
-                { x: left + 350, y: 0, z: near },
-                { x: left, y: 0, z: near },
-            ], (row + column) % 2 ? '#8f9b92' : '#cbd0b7', 20 + row * 29 + column);
-        }
-    }
-    face([
-        { x: -2400, y: 0, z: 850 },
-        { x: right, y: 0, z: 850 },
-        { x: right, y: 780, z: 850 },
-        { x: -2400, y: 780, z: 850 },
-    ], '#647d80', 50);
-    for (let i = -5; i <= endColumn + 5; i++) {
-        const x = i * 350;
-        face([
-            { x: x - 70, y: 90, z: 845 },
-            { x: x + 70, y: 90, z: 845 },
-            { x: x + 70, y: 540, z: 845 },
-            { x: x - 70, y: 540, z: 845 },
-        ], '#304954', 60 + i);
-    }
-    // 기둥의 옆면까지 같은 투영으로 그려 이동 중 폭과 가려짐이 함께 바뀐다.
-    for (let i = -5; i <= endColumn + 5; i++) {
-        const x = i * 350;
-        const z = 520;
-        face([
-            { x: x - 42, y: 0, z },
-            { x: x + 42, y: 0, z },
-            { x: x + 42, y: 760, z },
-            { x: x - 42, y: 760, z },
-        ], '#d0cbb0', 90 + i * 3);
-        face([
-            { x: x + 42, y: 0, z },
-            { x: x + 70, y: 0, z: z + 48 },
-            { x: x + 70, y: 760, z: z + 48 },
-            { x: x + 42, y: 760, z },
-        ], '#4c666a', 91 + i * 3);
-        face([
-            { x: x - 67, y: 0, z: z - 18 },
-            { x: x + 68, y: 0, z: z - 18 },
-            { x: x + 60, y: 40, z: z - 18 },
-            { x: x - 60, y: 40, z: z - 18 },
-        ], '#dfd8b9', 92 + i * 3);
-    }
-}
-/** 배우 앞의 넓은 기둥은 실제 시차로 빠르게 스치고, 마지막 타점은 가리지 않는다. */
-function drawForeground(ctx, camera) {
-    // 시작 준비와 마지막 타격은 추적·고정 구도 양쪽에서 비워 둔다.
-    const columns = [-320, 950, 1510, 2250];
-    for (const [i, x] of columns.entries()) {
-        const z = -240;
-        drawFace(ctx, camera, [
-            { x: x - 45, y: 0, z },
-            { x: x + 45, y: 0, z },
-            { x: x + 45, y: 680, z },
-            { x: x - 45, y: 680, z },
-        ], '#263e48', 140 + i * 2);
-        drawFace(ctx, camera, [
-            { x: x + 45, y: 0, z },
-            { x: x + 65, y: 0, z: z + 45 },
-            { x: x + 65, y: 680, z: z + 45 },
-            { x: x + 45, y: 680, z },
-        ], '#59736e', 141 + i * 2);
-    }
 }
 function drawProjectedActor(ctx, camera, anchor, draw) {
     const projected = project({ x: anchor.x - width / 2, y: 440 - anchor.y, z: 0 }, camera);
@@ -209,11 +136,14 @@ function drawProjectedActor(ctx, camera, anchor, draw) {
 export function drawBackgroundAnimation(ctx, frame) {
     const beat = sampleBeat(frame);
     const camera = cameraAt(frame, beat);
+    // 기울인 판 바깥의 얇은 모서리도 같은 게임 배경으로 채운다.
+    if (camera.roll !== 0)
+        drawWorld(ctx, camera, frame);
     ctx.save();
     ctx.translate(width / 2, height / 2);
     ctx.rotate(camera.roll);
     ctx.translate(-width / 2, -height / 2);
-    drawWorld(ctx, camera);
+    drawWorld(ctx, camera, frame);
     const actorOptions = {
         action: 'uppercut',
         timeMs: beat.attackTimeMs,
@@ -251,19 +181,17 @@ export function drawBackgroundAnimation(ctx, frame) {
     if (dust > 0) {
         ctx.save();
         ctx.globalAlpha = dust * (frame.reducedMotion ? 0.12 : 0.42);
-        for (let i = 0; i < 5; i++) {
-            const p = project({
-                x: position.x - width / 2 - 35 - i * 24,
-                y: 1,
-                z: mix(-15, 15, noise(i)),
-            }, camera);
-            line(ctx, [
-                { x: p.x - 25 * p.scale, y: p.y },
-                { x: p.x + 4 * p.scale, y: p.y - 3 },
-            ], '#ede5c6', 3);
-        }
+        const p = project({ x: position.x - width / 2 - 24, y: 1, z: 0 }, camera);
+        const elapsed = Math.max(0, beat.timeMs - backgroundRun.startMs);
+        const footfall = Math.floor(Math.min(elapsed, backgroundRun.endMs - backgroundRun.startMs) / 250) * 250;
+        gameDust(ctx, frame.assets.effects, {
+            x: p.x,
+            y: p.y,
+            progress: (elapsed - footfall) / 350,
+            size: 100 * p.scale,
+        });
         ctx.restore();
     }
-    drawForeground(ctx, camera);
+    drawWorld(ctx, camera, frame, 'foreground');
     ctx.restore();
 }

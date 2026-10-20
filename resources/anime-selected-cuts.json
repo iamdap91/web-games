@@ -12,15 +12,15 @@
       "남동 점프",
       "남동 공중 내려찍기 검토 시안",
       "남동 원투",
-      "곰왕 attack1 원본16장"
+      "곰왕 attack1 원본16장",
+      "남동 팔 돌리기9~14번 팔 풀기"
     ]
   },
   "canvas": {
     "width": 1280,
     "height": 720,
-    "renderer": "CanvasRenderingContext2D",
+    "renderer": "Three.js game stages + CanvasRenderingContext2D actor/editing composite",
     "poseFps": 24,
-    "vertexHoldFrames": 2,
     "audio": false,
     "endingHoldSeconds": 0.3
   },
@@ -29,7 +29,38 @@
       "id": "background-run",
       "name": "배경 동화",
       "durationSeconds": 3.3,
-      "stage": "3D world + 2D actor cards"
+      "stage": "3D world + 2D actor cards",
+      "description": "게임 숲길의 낮은 사선 카메라가 아타호와 함께 후퇴한다. 질주 끝0.30초에33→50m/s로 치고 나가 같은 속도로 도약한다. 배경 스미어를1~2코마씩 섞고, 착지 뒤 구도를 정착시켜 어퍼컷 한 번으로 끝낸다.",
+      "beats": [
+        {
+          "timeSeconds": 0.16,
+          "label": "사선 동행 · 급가속"
+        },
+        {
+          "timeSeconds": 0.9583333333333334,
+          "label": "질주 · 배경 스미어 2코마"
+        },
+        {
+          "timeSeconds": 1.55,
+          "label": "끝 스퍼트 · 33→50m/s"
+        },
+        {
+          "timeSeconds": 1.85,
+          "label": "짧은 도약 · 배경 스미어"
+        },
+        {
+          "timeSeconds": 2.25,
+          "label": "타격 구도 정착"
+        },
+        {
+          "timeSeconds": 2.46,
+          "label": "주먹 접촉 · 짧은 정지"
+        },
+        {
+          "timeSeconds": 3,
+          "label": "회수 · 곰왕 쓰러짐"
+        }
+      ]
     },
     {
       "id": "already-cut",
@@ -41,13 +72,91 @@
       "id": "falling-background",
       "name": "낙하 배경 동화",
       "durationSeconds": 3.7,
-      "stage": "3D world + 2D actor cards"
+      "stage": "3D world + 2D actor cards",
+      "description": "게임 바위·식생으로 재구성한 협곡을 나선 추적 낙하한 뒤 마지막0.42초에31→51m/s로 가속한다. 카메라가25ms 늦게 따라와 몸도 아래로 파고들며 접촉 전에 구도를 회수한다. 머리부터 떨어지는 장은 기존 점프 원본의 카드 회전이며 새 낙하 자세를 그린 재현은 아니다.",
+      "beats": [
+        {
+          "timeSeconds": 0,
+          "label": "머리부터 낙하 · 나선 추적"
+        },
+        {
+          "timeSeconds": 1,
+          "label": "낙하 가속 · 배경만 세로 스미어"
+        },
+        {
+          "timeSeconds": 1.88,
+          "label": "낙하 중 자세 회복"
+        },
+        {
+          "timeSeconds": 2.16,
+          "label": "마지막 하강 가속 · 31→51m/s"
+        },
+        {
+          "timeSeconds": 2.22,
+          "label": "양손 내려찍기 장전"
+        },
+        {
+          "timeSeconds": 2.28,
+          "label": "카메라 지연 · 본체 하강"
+        },
+        {
+          "timeSeconds": 2.46,
+          "label": "접촉 구도 회수"
+        },
+        {
+          "timeSeconds": 2.58,
+          "label": "공중 접촉 · 앙각 정착"
+        },
+        {
+          "timeSeconds": 3.3,
+          "label": "착지 · 곰왕 쓰러짐"
+        }
+      ]
     },
     {
       "id": "aerial-pursuit",
       "name": "공중 추격 연타",
       "durationSeconds": 4.2,
-      "stage": "3D world + 2D actor cards"
+      "stage": "3D world + 2D actor cards",
+      "description": "어퍼컷으로 띄운 뒤 잽과 정권을 번갈아 네 번 추격한다. 0.50→0.42→0.36→0.32초로 박자를 좁히고, 마지막 추격 위치에서 장전한 뒤0.40초 급강하로 내려찍는다. 네 구도에서 두 배우를 계속 보여준다.",
+      "beats": [
+        {
+          "timeSeconds": 0.28,
+          "label": "어퍼컷 접촉"
+        },
+        {
+          "timeSeconds": 0.85,
+          "label": "공중 1타 · 잽"
+        },
+        {
+          "timeSeconds": 1.32,
+          "label": "공중 2타 · 정권"
+        },
+        {
+          "timeSeconds": 1.71,
+          "label": "공중 3타 · 잽"
+        },
+        {
+          "timeSeconds": 2.05,
+          "label": "공중 4타 · 정권"
+        },
+        {
+          "timeSeconds": 2.25,
+          "label": "마지막 추격 · 내려찍기 장전"
+        },
+        {
+          "timeSeconds": 2.5,
+          "label": "0.40초 급강하 시작"
+        },
+        {
+          "timeSeconds": 2.9,
+          "label": "원본 5번 · 지면 접촉"
+        },
+        {
+          "timeSeconds": 3.45,
+          "label": "앙각 정지"
+        }
+      ]
     },
     {
       "id": "spiral-stairs",
@@ -104,7 +213,11 @@
       "leapHeightMeters": 1.1
     },
     "camera": {
-      "chaseOffset": { "x": -9.5, "y": 1.25, "z": 5.5 },
+      "chaseOffset": {
+        "x": -9.5,
+        "y": 1.25,
+        "z": 5.5
+      },
       "chaseFocal": 1380,
       "rollRadians": -0.035,
       "settleStartSeconds": 1.97,
@@ -113,11 +226,53 @@
       "framing": "곰왕 방향 앞쪽에서 질주와 같은 속도로 후퇴한다. 아타호를 크게 유지하며 원근과 근경 시차를 보이고 접촉210ms 전에 두 배우 구도로 정착한다."
     },
     "stage": "질주 동선에 맞춰 열주와 바닥을 확장하고 무대 전체에5m 간격 돌 격자를 놓았다. 배우의 발밑 그림자도 같은 바닥에 투영한다. 가까운 기둥은 흐림 판에 포함하지 않고 배우와 함께 깊이 정렬하며 장전 앞의 두 기둥은 비운다.",
+    "backgroundSmear": {
+      "fps": 24,
+      "exposures": [
+        {
+          "frame": 9,
+          "holds": 1,
+          "strength": 0.7
+        },
+        {
+          "frame": 16,
+          "holds": 1,
+          "strength": 0.85
+        },
+        {
+          "frame": 23,
+          "holds": 2,
+          "strength": 1
+        },
+        {
+          "frame": 30,
+          "holds": 1,
+          "strength": 0.85
+        },
+        {
+          "frame": 37,
+          "holds": 2,
+          "strength": 1
+        },
+        {
+          "frame": 44,
+          "holds": 2,
+          "strength": 1.1
+        }
+      ],
+      "travelMultiplier": 1.6,
+      "method": "원경 기둥과 바닥 면을 실제 질주 방향의 이동 전후 투영 외곽으로 이어 형태를 늘인다. 도약의 축소·노출 누적 흐림과 구별한다.",
+      "readability": "배우·그림자·근경 기둥은 변형하지 않는다. 마지막 스미어는46/24초 전에 끝나고 구도 정착·접촉·종결은 기존 시각을 유지한다.",
+      "references": "기존 동작 연출 조사에서 확인한 짧은 변형 중간그림과 정상 코마의 교대 원리를 배경 면에 응용했다. 원작 자료를 이번에 새로 재생한 것은 아니다."
+    },
     "contact": {
       "targetGapMeters": 1.05,
       "sourceMotion": "surprise-uppercut-south-east",
       "sourceFrame": 2,
-      "fistPixel": { "x": 62, "y": 34 },
+      "fistPixel": {
+        "x": 62,
+        "y": 34
+      },
       "effectProjection": "접촉 원화의 실제 주먹 픽셀을 발 앵커·원본 배율·카메라 투영으로 계산한다.",
       "reason": "전수 재검수에서 종전3번 원화의(56,28)이 얼굴임을 확인해 실제 주먹이 뻗은2번으로 교정했다. 기존 사선 동행 경로·간격은 유지하며 접촉 뒤3~6번 회수와 곰왕 쓰러짐을 잇는다."
     },
@@ -140,15 +295,53 @@
       },
       {
         "id": "already-cut",
-        "change": "회수 원화 대신 신전 원화로 질주하고 종결 카메라를 기둥 안쪽에 배치. 지연광을 몸 안에 맞추고3.54초 쓰러짐까지 보여주도록3.9초로 확대"
+        "change": "회수 원화 대신 신전 원화로 질주하고 종결 카메라를 기둥 안쪽에 배치. 지연광을 몸 안에 맞추고3.54초 쓰러짐까지 보여주도록3.9초로 확대. 이후 원투3~6번 회수→팔 돌리기9번 정적→2.7초 지연 타격과10~14번 팔 풀기→3.1초 어깨를 편 잔심으로 기립 복귀를 교체",
+        "followThrough": {
+          "recoverySource": "ataho-one-two-punch-south-east-south-east:3~6",
+          "releaseSource": "ataho-backward-lean-two-straight-arm-circles-south-east-south-east:9~14",
+          "recoverySeconds": [1.475, 1.76],
+          "releaseSeconds": [2.7, 3.1],
+          "endingSourceFrame": 14,
+          "continuity": "같은 남동 방향을 유지해 원투 신전에서 서쪽 기립으로 즉시 바뀌던 전환을 없앤다. 원투 접촉 원본2번과 같은 픽셀 배율·발 앵커를 쓰고 팔 풀기에는 추가 타격을 넣지 않는다.",
+          "newActorFrames": 0,
+          "paidGenerationCalls": 0
+        }
       },
       {
         "id": "falling-background",
-        "change": "머리부터 낙하하는 장은 회전 중 중심을 유지하고 착지 전 장전 자세로 회복. 지면 대신 곰왕 윗몸에2.58초 공중 접촉 후 착지·쓰러짐"
+        "change": "머리부터 낙하하는 장은 회전 중 중심을 유지하고 착지 전 장전 자세로 회복. 마지막0.42초에 추가 가속해 약0.11초의 접촉 전 멈춤을 없애고 곰왕 윗몸에2.58초 공중 접촉 후 착지·쓰러짐",
+        "finalDescent": {
+          "boostSeconds": [2.16, 2.58],
+          "speedMetersPerSecond": [31.28, 51.1],
+          "contactHeightMeters": 1.95,
+          "trajectory": "초기14m/s와8m/s²의 기본 낙하에 마지막 구간의3차 추가 이동을 합한다. 높이·속도·가속이 연결되고 접촉 시각에 기존 타점에 도달한다.",
+          "background": "실제 하강속도로 스미어·붓자국·속도선 강도를 계산하고 접촉 직전0.04초에 걷어낸다.",
+          "framing": "남은 접촉 높이만큼 앙각 카메라의 위치와 목표를 함께 들어 배우를 추적한다. 접촉부터 기존 카메라와 착지 경로를 유지한다."
+        }
       },
       {
         "id": "aerial-pursuit",
-        "change": "네 카메라에서 손이 상대를 향하는 재접근 위치로 교정하고 실제 주먹에 짧은 광을 배치. 마지막 내려찍기는 윗몸 접촉 뒤 착지·쓰러짐을 연결"
+        "change": "공중4타를 잽·정권 교대와 가속 박자로 재구성하고80ms 배우 공백을 제거. 실제 손끝 리치로 접근·접촉을 맞추고 피격 밀림과 늦은 추격을 누적. 마지막 추격 좌표에서 내려찍기→착지·쓰러짐을 연결",
+        "aerialCombo": {
+          "sourceMotion": "ataho-one-two-punch-south-east-south-east",
+          "contactFrames": [2, 12, 2, 12],
+          "handPixels": [
+            {
+              "x": 80,
+              "y": 46
+            },
+            {
+              "x": 72,
+              "y": 48
+            }
+          ],
+          "shotDurationsSeconds": [0.5, 0.42, 0.36, 0.32],
+          "contactsSeconds": [0.85, 1.32, 1.71, 2.05],
+          "contactHoldSeconds": 0.045,
+          "pursuitDelaySeconds": 0.065,
+          "staging": "두 배우를 계속 노출하고 타격 뒤 피격 밀림·상승을 누적한다. 각 구도는 두 배우의 중간을 잡으며 마지막 배우·카메라 좌표를 내려찍기 시작점과 공유한다.",
+          "evidence": "로컬 원투 전체 프레임과2·12번 손끝을 확대 확인했다. 기존 동작·카메라 관찰 기록을 재사용했으며 원작 영상이나 프로젝트를 새로 실행한 것은 아니다."
+        }
       },
       {
         "id": "spiral-stairs",
@@ -181,7 +374,7 @@
     "audio": false
   },
   "adaptation": [
-    "외부 CDN·관우·벨로나·아란 효과 대신 승인된 기존 로컬 아타호·곰왕 그림과 절차 효과 사용",
+    "외부 CDN·관우·벨로나·아란 효과 대신 승인된 기존 로컬 아타호·곰왕·게임 배경 자재·조합실 픽셀 효과 사용",
     "날을 새로 그리지 않고 기존 팔·주먹의 국소 변형과 권격 궤적으로 응용",
     "진짜 3D 세계·카메라 투영이며 인물은 기존 2D 판. 곰왕은 한 시점, 점프·내려찍기는 한 방향 원본. 3D 인체 재구성은 아님",
     "2D 마와리코미는 동→북→서 기존 방향 원화와 깊이에 따른 평면 레이어의 연속 시차로 반주를 잇는다. 몸 비율·발 앵커를 유지하고 전체 화면 반전·배우 가로 축소·중간 소실은 사용하지 않는다. 곰왕은 한 시점 원본 판이며 얼굴 방향 전환은 아타호에게 가려지는 교차점에서 수행한다.",
@@ -369,7 +562,58 @@
     "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/05.png",
     "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/06.png",
     "public/assets/maplestory/map-bosses/hoarfrost-bear/frames/die1/71ca1dae-b6a3-4007-84ab-cd5a1742d918/07.png",
-    "public/assets/maplestory/ataho-v2-effects/20261016/cutin/ataho-face-original.png"
+    "public/assets/maplestory/ataho-v2-effects/20261016/cutin/ataho-face-original.png",
+    "public/assets/maplestory/forest-quiet-ai/frames/vine.png",
+    "public/assets/maplestory/forest-quiet-ai/frames/grass.png",
+    "public/assets/maplestory/forest-quiet-ai/frames/mushrooms.png",
+    "public/assets/maplestory/forest-quiet-ai/frames/fern.png",
+    "public/assets/maplestory/forest-quiet-ai/frames/dry-leaves.png",
+    "public/assets/maplestory/quiet-map-details/frames/wood-chips.png",
+    "public/assets/maplestory/quiet-map-details/frames/sawdust.png",
+    "public/assets/maplestory/quiet-map-details/frames/ash.png",
+    "public/assets/maplestory/quiet-map-details/frames/moss.png",
+    "public/assets/maplestory/quiet-map-details/frames/root-grass.png",
+    "public/assets/maplestory/quiet-map-details/frames/herb.png",
+    "public/assets/maplestory/quiet-map-details/frames/flowers.png",
+    "public/assets/maplestory/quiet-map-details/frames/dry-herbs.png",
+    "public/assets/maplestory/quiet-map-details/frames/sack.png",
+    "public/assets/maplestory/quiet-map-details/frames/vegetables.png",
+    "public/assets/maplestory/quiet-map-details/frames/cloth.png",
+    "public/assets/maplestory/quiet-map-details/frames/grain.png",
+    "public/assets/maplestory/quiet-facility-details/frames/hammer.png",
+    "public/assets/maplestory/quiet-facility-details/frames/tongs.png",
+    "public/assets/maplestory/quiet-facility-details/frames/metal-offcuts.png",
+    "public/assets/maplestory/quiet-facility-details/frames/village-map.png",
+    "public/assets/maplestory/quiet-facility-details/frames/notices.png",
+    "public/assets/maplestory/quiet-facility-details/frames/seal.png",
+    "public/assets/maplestory/quiet-facility-details/frames/bedroll.png",
+    "public/assets/maplestory/quiet-facility-details/frames/travel-flask.png",
+    "public/assets/maplestory/quiet-facility-details/frames/rope.png",
+    "public/assets/maplestory/quiet-facility-details/frames/basket.png",
+    "public/assets/maplestory/quiet-facility-details/frames/bowl.png",
+    "public/assets/maplestory/quiet-facility-details/frames/jar-lid.png",
+    "public/assets/maplestory/expedition-details/frames/fishing-net.png",
+    "public/assets/maplestory/expedition-details/frames/quarry-wedges.png",
+    "public/assets/maplestory/expedition-details/frames/stone-plaque.png",
+    "public/assets/maplestory/expedition-details/frames/snowshoes.png",
+    "public/assets/maplestory/expedition-details/frames/shore-shells.png",
+    "public/assets/maplestory/expedition-details/frames/bamboo-tubes.png",
+    "public/assets/maplestory/expedition-details/frames/windsock.png",
+    "public/assets/maplestory/expedition-details/frames/grain-trays.png",
+    "public/assets/maplestory/expedition-details/frames/maple-leaves.png",
+    "public/assets/maplestory/expedition-details/frames/incense-pot.png",
+    "public/assets/maplestory/expedition-details/frames/basalt-shards.png",
+    "public/assets/maplestory/expedition-details/frames/survey-chart.png",
+    "public/assets/maplestory/ataho-v2-combat-vfx/20261017/shoulder-crush/refined/ataho-shoulder-crush.png",
+    "public/assets/maplestory/ataho-v2-combat-vfx/20261017/ground-impact/refined/ataho-low-ground-impact.png",
+    "public/assets/maplestory/ataho-v2-ink/20261016/sprites/stroke-atlas-original.png",
+    "public/assets/maplestory/ataho-v2-ink/20261016/sprites/impact-atlas-original.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-backward-lean-two-straight-arm-circles-south/south-east/frame_009.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-backward-lean-two-straight-arm-circles-south/south-east/frame_010.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-backward-lean-two-straight-arm-circles-south/south-east/frame_011.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-backward-lean-two-straight-arm-circles-south/south-east/frame_012.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-backward-lean-two-straight-arm-circles-south/south-east/frame_013.png",
+    "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-backward-lean-two-straight-arm-circles-south/south-east/frame_014.png"
   ],
   "previews": [
     {
@@ -384,5 +628,107 @@
       "id": "ink-one-stroke",
       "localPath": "public/assets/maplestory/anime-selected-cuts/ink-one-stroke.gif"
     }
-  ]
+  ],
+  "gameResourceRevision": {
+    "date": "2026-10-20",
+    "scope": "고른 완성 컷10개를 실제 게임 배경 자재와 보유 로컬 효과로 재구성",
+    "modules": [
+      "src/prototypes/overdrive-battle/battle-arena.ts",
+      "src/resources/environment/environment-resources.ts",
+      "src/resources/facilities/dojo/dojo-resources.ts",
+      "src/resources/props/map-sprite-resources.ts",
+      "src/rendering/map-art-direction.ts",
+      "src/rendering/pixel-material.ts"
+    ],
+    "stages": {
+      "arena": [
+        "already-cut",
+        "aerial-pursuit",
+        "bullet-counter",
+        "orbit-2d",
+        "time-stop",
+        "ink-one-stroke",
+        "comic-panels"
+      ],
+      "forestDojoPath": ["background-run"],
+      "rockCanyon": ["falling-background"],
+      "stoneSpiral": ["spiral-stairs"]
+    },
+    "sourceAssetIds": [
+      "ai/forest-quiet-scenery",
+      "ai/quiet-map-details",
+      "ai/quiet-facility-details",
+      "ai/expedition-details"
+    ],
+    "effectReuse": "기존 조합실 shoulder-crush6셀·ground-impact6셀·stroke/impact먹16셀. 보유 로컬 리소스이며 본게임 연결 여부와 구분한다.",
+    "render": "640x360 WebGL 픽셀 확대, 동일 카메라 투영의2D배우, 보수적 근경 분리. 게임 모델의 배경 스미어는 이동방향 정점 신장, 도약 흐림은 별도 노출 합성.",
+    "layoutBoundary": "숲길·67m 협곡·60칸 계단은 기존 게임 자재로 새로 배치한 연출용 무대다. 기존에 해당 맵 완제품이 있었던 것은 아니다.",
+    "preserved": [
+      "10컷 구성과 길이",
+      "기존 배우와 접촉 시각",
+      "팔 풀기와 잔심",
+      "마지막 하강가속",
+      "공중 양손교대4타와 추격",
+      "시간정지·한지46비백·만화칸 스타일"
+    ],
+    "newActorFrames": 0,
+    "paidGenerationCalls": 0,
+    "audio": false
+  },
+  "currentStateBoundary": "speedImpactRevision과 cuts의 설명·비트가 현재 동작의 우선 기준이다. backgroundRunRevision·selectedCutsRevision·gameResourceRevision은 각 개정 당시의 구현·자재 이력으로 보존하며 속도·카메라 지연·공중 종결 시각은 마지막 speedImpactRevision을 우선한다.",
+  "speedImpactRevision": {
+    "date": "2026-10-20",
+    "scope": "기존 게임 자재·원화·타수를 유지하고 배경 질주 스퍼트·낙하 카메라 지연·공중 종결의 속도 대비를 강화",
+    "sourcePaths": [
+      "src/resources/effects/anime-selected-cuts/journey-cuts.ts",
+      "src/resources/effects/anime-selected-cuts/arena-cuts.ts"
+    ],
+    "backgroundRun": {
+      "runDistanceMeters": 56,
+      "baseSpeedMetersPerSecond": 33.333333333333336,
+      "spurtSeconds": [1.55, 1.85],
+      "spurtEndSpeedMetersPerSecond": 50,
+      "trajectory": "마지막0.30초의 이차 속도 증가를 적분한 이동량까지 포함해 기본 속도를 도출한다. 총56m와 도약1.85초를 유지한다.",
+      "leap": {
+        "seconds": [1.85, 2.24],
+        "distanceMeters": 6.7,
+        "heightMeters": 1.1,
+        "startSpeedMetersPerSecond": 50,
+        "endSpeedMetersPerSecond": 0,
+        "trajectory": "시작·끝 위치와 전진속도를 맞춘 cubic Hermite. 전진 방향을 되돌리지 않고 기존 착지 지점에 정지한다."
+      },
+      "contactSeconds": 2.46,
+      "background": "기존24fps 스미어 노출표가 실제 새 이동량으로 배경 모델을 늘인다. 새 잔상·스미어 층이나 원화를 추가하지 않는다."
+    },
+    "fallingBackground": {
+      "retainedBoostSeconds": [2.16, 2.58],
+      "retainedSpeedMetersPerSecond": [31.28, 51.1],
+      "cameraLagSeconds": 0.025,
+      "cameraLagHeightCapMeters": 0.72,
+      "cameraLagBlendInSeconds": [2.16, 2.28],
+      "cameraLagRecoverySeconds": [2.46, 2.58],
+      "camera": "25ms 전의 실제 높이와 차이를 최대0.72m로 제한해 카메라 위치·목표에만 같은 높이를 더한다. 배우의 실제 낙하·타점은 유지하고2.58초부터 기존 접촉·착지 구도로 돌아온다.",
+      "contactSeconds": 2.58,
+      "durationSeconds": 3.7
+    },
+    "aerialPursuit": {
+      "retainedComboContactsSeconds": [0.85, 1.32, 1.71, 2.05],
+      "chamberSeconds": [2.25, 2.5],
+      "dropSeconds": [2.5, 2.9],
+      "dropDurationSeconds": 0.4,
+      "trajectory": "장전 동안 마지막 추격 고도를 유지한 뒤 이차 하강한다. x·z 이동은 기존2.25~2.90초의 staging을 유지하고 카메라 높이는 실제 새 하강 고도를 따른다.",
+      "contactPoseStartSeconds": 2.86,
+      "contactSourceFrame": 5,
+      "contactSeconds": 2.9,
+      "verticalBlurPeak": 0.75,
+      "verticalSpeedLinesPeak": 0.85,
+      "background": "하강 실행 중 실제 속도에 비례하는 slam 진행률로 세로 배경 흐림과 세로 속도선 강도를0부터 올린다. 장전과 접촉 뒤에는 이 층을 끈다.",
+      "durationSeconds": 4.2
+    },
+    "boundary": "이번 개정은 보유 원화의 시간·좌표·카메라만 조정했다. 기존 내려찍기 검토 시안의 품질 승인이나 새 원전 영상 확인을 뜻하지 않는다.",
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "paidGenerationCalls": 0,
+    "audio": false
+  }
 }

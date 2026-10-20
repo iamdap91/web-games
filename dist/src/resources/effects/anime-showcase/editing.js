@@ -1,5 +1,5 @@
 import { battleImpact, drawBattle, drawBattleActors, drawAtaho, drawBear, drawPortrait, sampleAtahoSprite, } from './battle.js';
-import { ellipse, label, line, palette, smooth, stage } from './drawing.js';
+import { ellipse, label, line, palette, smooth, stage, gameStage, } from './drawing.js';
 import { height, width, } from './types.js';
 import { drawHarmonyPlate } from './harmony-plate.js';
 import { drawEditingOrbit } from './editing-orbit.js';
@@ -59,16 +59,17 @@ export const editingSamples = [
     },
     {
         id: 'editing-orbit',
-        name: '마와리코미 · 공간 회전 (인물 다각도 미재현)',
+        name: '마와리코미 · 게임 공간 회전',
         category: 'editing',
         previewMs: 3400,
         beats: [
-            { timeMs: 400, label: '왼쪽 아타호' },
-            { timeMs: 2100, label: '중간 시점' },
-            { timeMs: 3600, label: '반대편 공간 구도' },
+            { timeMs: 400, label: '동쪽 기립 · 회전 전' },
+            { timeMs: 1800, label: '방향별 어퍼컷 접촉' },
+            { timeMs: 2100, label: '중간 시점 · 팔 회수' },
+            { timeMs: 3600, label: '반대편 기립 · 구도 정착' },
         ],
-        description: '같은 공간의 바닥·기둥·배경을 투영하며 아타호가 왼쪽에서 오른쪽으로 넘어가는 구도까지 회전합니다.',
-        distinction: '공간 회전 견본입니다. 인물은 방향 고정 원본이므로 옆·뒷면이 드러나는 완전한 마와리코미는 미재현입니다.',
+        description: '게임 숲 공터에서 두 배우 사이를 돌아 아타호의 방향별 원본과 나무·바위의 깊이별 시차를 보여줍니다.',
+        distinction: '아타호는 기립 8방향과 어퍼컷 5방향 중 가까운 실제 원본을 사용합니다. 곰왕은 남서(SW) 한 시점의 판으로 유지하며 실제 후면을 보여주는 다각도 동작은 아닙니다.',
     },
     {
         id: 'editing-text-cuts',
@@ -170,26 +171,16 @@ function actionScene(ctx, timeMs, frame) {
     drawBattle(ctx, frame, { timeMs });
 }
 function newScene(ctx, frame) {
-    // 이전 설원과 구별되는 석주 안뜰을 만들어 두 장면 전체의 전환을 읽히게 한다.
-    const sky = ctx.createLinearGradient(0, 0, 0, 430);
-    sky.addColorStop(0, '#29344b');
-    sky.addColorStop(1, '#c58f8b');
-    ctx.fillStyle = sky;
-    ctx.fillRect(0, 0, width, height);
-    ellipse(ctx, 790, 145, 63, 63, '#edcfaa');
-    ctx.fillStyle = '#3d3b52';
-    ctx.fillRect(0, 310, width, 125);
-    ctx.fillStyle = '#978e8a';
-    ctx.fillRect(0, 395, width, 145);
-    for (const x of [90, 240, 720, 870]) {
-        ctx.fillStyle = '#b6aaa1';
-        ctx.fillRect(x - 17, 100, 34, 308);
-        ctx.fillStyle = '#6c6977';
-        ctx.fillRect(x + 7, 100, 10, 308);
-        ctx.fillStyle = '#dac7b5';
-        ctx.fillRect(x - 25, 90, 50, 15);
-        ctx.fillRect(x - 25, 401, 50, 14);
-    }
+    // 전환 뒤에는 같은 본게임 도장 자재를 입구의 별도 구도로 보여 준다.
+    gameStage(ctx, frame, {
+        kind: 'run',
+        camera: {
+            position: { x: 1, y: 4.5, z: 56 },
+            target: { x: 12, y: 2, z: 49 },
+            focal: 720,
+        },
+        timeMs: 2850,
+    });
     ctx.save();
     ctx.translate(-90, -38);
     ctx.scale(1.15, 1.15);
@@ -310,7 +301,7 @@ export function drawEditing(ctx, id, frame) {
                 drawBattle(ctx, frame);
                 return;
             }
-            stage(ctx);
+            stage(ctx, frame);
             for (const who of ['ataho', 'bear']) {
                 ctx.save();
                 ctx.beginPath();

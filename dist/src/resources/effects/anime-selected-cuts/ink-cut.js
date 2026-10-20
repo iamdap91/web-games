@@ -1,5 +1,6 @@
 import { drawBear, drawHero } from './cast.js';
-import { background2D, burst, clamp, ease, rand } from './drawing.js';
+import { clamp, ease, gameBackground, rand } from './drawing.js';
+import { gameInk } from '../../cutscenes/game-effects.js';
 const inkStroke = { start: 1.46, duration: 0.2, contact: 0.7 };
 const inkHitTime = inkStroke.start + inkStroke.duration * inkStroke.contact;
 const inkHit = { x: 865, y: 365 };
@@ -19,49 +20,16 @@ function paper(context) {
     }
     context.restore();
 }
-function inkLandscape(context) {
+function inkLandscape(context, frame) {
     paper(context);
+    const backdrop = frame.surfaces.get('ink-game-backdrop');
+    gameBackground(backdrop, frame, 0.2);
     context.save();
-    context.fillStyle = '#b1afa0';
-    context.beginPath();
-    context.moveTo(-40, 510);
-    context.lineTo(220, 260);
-    context.lineTo(290, 335);
-    context.lineTo(460, 125);
-    context.lineTo(620, 365);
-    context.lineTo(735, 280);
-    context.lineTo(1050, 520);
-    context.closePath();
-    context.fill();
-    context.fillStyle = '#747c73';
-    context.beginPath();
-    context.moveTo(610, 530);
-    context.lineTo(945, 220);
-    context.lineTo(1045, 340);
-    context.lineTo(1185, 195);
-    context.lineTo(1350, 470);
-    context.lineTo(1350, 620);
-    context.closePath();
-    context.fill();
-    context.strokeStyle = '#2d352f';
-    context.lineWidth = 5;
-    for (let index = 0; index < 30; index++) {
-        const x = rand(index + 70) * 1280;
-        const y = 660 + rand(index + 43) * 55;
-        context.beginPath();
-        context.moveTo(x, y);
-        context.quadraticCurveTo(x - 5, y - 32, x + 11, y - 76 - rand(index + 9) * 60);
-        context.stroke();
-    }
-    context.lineWidth = 2;
-    for (let index = 0; index < 24; index++) {
-        const y = 603 + index * 4;
-        context.globalAlpha = 0.1 + rand(index + 19) * 0.2;
-        context.beginPath();
-        context.moveTo(50 + rand(index + 4) * 90, y);
-        context.lineTo(1160 - rand(index + 8) * 100, y - 13);
-        context.stroke();
-    }
+    // 같은 게임 배경을 한지에 먹으로 인쇄해 색 귀환 전후의 공간을 연결한다.
+    context.filter = 'grayscale(1) sepia(.55) contrast(1.5) brightness(1.2)';
+    context.globalCompositeOperation = 'multiply';
+    context.globalAlpha = 0.62;
+    context.drawImage(backdrop.canvas, 0, 0);
     context.restore();
 }
 function inkActors(context, frame, ink) {
@@ -227,12 +195,12 @@ function drawInk(context, frame) {
     const time = Math.min(frame.time, 3.2);
     const heldFrame = { ...frame, time };
     const color = frame.surfaces.get('ink-color-world');
-    background2D(color, 0.2 + clamp((time - 2.48) / 0.65) * 0.15);
+    gameBackground(color, frame, 0.2 + clamp((time - 2.48) / 0.65) * 0.15);
     inkActors(color, heldFrame, false);
     context.drawImage(color.canvas, 0, 0);
     if (time > 0.17) {
         const ink = frame.surfaces.get('ink-world');
-        inkLandscape(ink);
+        inkLandscape(ink, heldFrame);
         inkActors(ink, heldFrame, true);
         if (time < 0.85) {
             const mask = frame.surfaces.get('ink-spread-mask');
@@ -247,9 +215,25 @@ function drawInk(context, frame) {
     if (time > inkStroke.start) {
         const brush = clamp((time - inkStroke.start) / inkStroke.duration);
         brushStroke(context, frame, brush);
+        const tip = brushPoint(brush);
+        gameInk(context, frame.assets.effects, {
+            sheet: 'stroke',
+            x: tip.x,
+            y: tip.y,
+            progress: (time - inkStroke.start) / 0.32,
+            size: 380,
+            angle: Math.atan2(-378, 1040),
+        });
     }
     if (time >= inkHitTime && time < inkHitTime + 0.18)
-        burst(context, inkHit.x, inkHit.y, (time - inkHitTime) / 0.18, 95, '#efe5cc');
+        gameInk(context, frame.assets.effects, {
+            sheet: 'impact',
+            x: inkHit.x,
+            y: inkHit.y,
+            progress: (time - inkHitTime) / 0.18,
+            size: 230,
+            angle: Math.atan2(-378, 1040),
+        });
     if (time > 2.48) {
         const returnPlate = frame.surfaces.get('ink-color-return');
         returnPlate.drawImage(color.canvas, 0, 0);
@@ -280,7 +264,7 @@ export const inkCut = {
     title: '수묵 일필 · 한 획',
     kind: '2D',
     duration: 3.5,
-    description: '한지·먹 산수와 원본 인물 실루엣이 화면을 삼킨다. 정적 뒤 0.2초의 권격을 굵기 곡선·번짐·46가닥 비백·먹 튐으로 그리고, 주먹과 획이 닿는 한순간에 곰왕이 반응한다. 낙관 뒤에는 같은 획에서 색과 타격의 여운을 되돌린다. 기존 어퍼컷 원본의 배율과 발 앵커를 유지한다.',
+    description: '기존 게임 배경을 한지에 먹빛으로 인쇄하고 원본 인물 실루엣을 겹친다. 정적 뒤 0.2초의 권격을 기존 먹 획·충격 원본과 46가닥 비백으로 잇고, 주먹과 획이 닿는 한순간에 곰왕이 반응한다. 낙관 뒤에는 같은 공간의 색과 타격 여운을 되돌린다.',
     beats: [
         { time: 0.17, label: '먹이 번져 한지 세계로' },
         { time: 0.85, label: '먹 실루엣의 정적' },

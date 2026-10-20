@@ -1,7 +1,8 @@
 import { drawBackgroundAnimation } from './motion-background.js';
-import { burst, clamp, ellipse, label, line, mix, noise, palette, polygon, ring, smooth, stage, windowed, } from './drawing.js';
+import { burst, clamp, ellipse, label, line, mix, noise, palette, polygon, smooth, stage, windowed, } from './drawing.js';
 import { atahoPosition, battleLayout, drawAtaho, drawBattle, drawBattleActors, drawBear, } from './battle.js';
 import { drawAtahoBreakdown, drawAtahoFlutter, drawAtahoPerspective, } from './motion-deformation.js';
+import { drawAnatomicalSquash } from './motion-resource.js';
 export const motionSamples = [
     {
         id: 'smear-frame',
@@ -80,8 +81,13 @@ export const motionSamples = [
         name: '스쿼시 앤 스트레치',
         category: 'motion',
         previewMs: 1980,
-        description: '접촉의 기공 덩어리가 길어졌다 눌린 뒤 탄성 있게 복원됩니다.',
-        distinction: '전용 변형 몸 원화가 없어 캐릭터 PNG는 보존합니다. 폭과 높이의 반대 변화는 독립 효과에만 적용합니다.',
+        description: '도약에서 관절을 펴고 착지에서 무릎과 골반을 접는 실제 몸 원화를 같은 발 기준으로 비교합니다.',
+        distinction: '기존 조합실의 도약 폄·착지 눌림 그림을 재사용합니다. 전체 PNG를 늘이거나 머리를 납작하게 만들지 않는 원화 시안이며 사용자 GIF 품질 확인은 대기 중입니다.',
+        beats: [
+            { timeMs: 1080, label: '도약 · 실제 관절 폄 원화' },
+            { timeMs: 1860, label: '착지 · 실제 무릎·골반 압축 원화' },
+            { timeMs: 2140, label: '같은 발 위치에서 복귀' },
+        ],
     },
     {
         id: 'kanada-motion',
@@ -134,7 +140,7 @@ function drawRetimedPreparation(ctx, frame, sourceTime) {
         drawFight(ctx, frame);
         return;
     }
-    stage(ctx, 0);
+    stage(ctx, frame, 0);
     const position = atahoPosition(frame, { action: 'uppercut' });
     ellipse(ctx, position.x, 448, 58, 10, '#14293b32');
     ellipse(ctx, 657, 448, 115, 15, '#14293b32');
@@ -160,7 +166,7 @@ function drawBreakdownScene(ctx, frame, options) {
         drawFight(ctx, frame);
         return;
     }
-    stage(ctx, 0);
+    stage(ctx, frame, 0);
     ellipse(ctx, battleLayout.attacker.x, 448, 58, 10, '#14293b32');
     ellipse(ctx, 657, 448, 115, 15, '#14293b32');
     drawBear(ctx, frame);
@@ -220,7 +226,7 @@ function drawMidare(ctx, frame) {
 }
 function drawStrobe(ctx, frame) {
     const t = time(frame);
-    stage(ctx, frame.reducedMotion ? 0 : t);
+    stage(ctx, frame, frame.reducedMotion ? 0 : t);
     if (frame.enhanced) {
         const intervalMs = frame.reducedMotion ? 240 : 120;
         const lifetimeMs = frame.reducedMotion ? 360 : 850;
@@ -282,7 +288,7 @@ function drawMetamorphosis(ctx, frame) {
 }
 function drawWave(ctx, frame) {
     const t = time(frame);
-    stage(ctx, frame.reducedMotion ? 0 : t);
+    stage(ctx, frame, frame.reducedMotion ? 0 : t);
     const gesture = windowed(t, 650, 1000, 220);
     const travel = (t - 950) / 1750;
     line(ctx, [
@@ -318,30 +324,14 @@ function drawAraki(ctx, frame) {
     const sourceTime = t >= 650 && t < 1650 ? 1600 : t;
     const strength = frame.enhanced ? windowed(t, 650, 1650, 150) : 0;
     const position = atahoPosition(frame, { action: 'uppercut' });
-    stage(ctx, 0);
+    stage(ctx, frame, 0);
     ellipse(ctx, position.x, 448, 58, 10, '#14293b32');
     ellipse(ctx, 657, 448, 115, 15, '#14293b32');
     drawBear(ctx, frame);
     drawAtahoFlutter(ctx, frame, { timeMs: sourceTime, x: position.x, strength });
 }
 function drawSquash(ctx, frame) {
-    const t = time(frame);
-    drawFight(ctx, frame);
-    let stretch = 1;
-    if (frame.enhanced) {
-        stretch =
-            1 +
-                windowed(t, 1450, 1740, 140) * 0.7 -
-                windowed(t, 1800, 2140, 100) * 0.6 +
-                windowed(t, 2130, 2420, 110) * 0.28;
-        if (frame.reducedMotion)
-            stretch = mix(1, stretch, 0.45);
-    }
-    ctx.save();
-    ctx.globalAlpha *= windowed(t, 1400, 2700, 180) * 0.6;
-    ellipse(ctx, impact.x, impact.y, 50 / stretch, 50 * stretch, palette.paper);
-    ring(ctx, impact.x, impact.y, 59 / stretch, 59 * stretch, palette.gold, 3);
-    ctx.restore();
+    drawAnatomicalSquash(ctx, frame);
 }
 function drawKanada(ctx, frame) {
     const t = time(frame);
@@ -384,7 +374,7 @@ function drawPerspective(ctx, frame) {
     }
     const position = atahoPosition(frame, { action: 'kick' });
     const air = clamp((battleLayout.attacker.ground - position.ground) / 180);
-    stage(ctx, 0);
+    stage(ctx, frame, 0);
     ellipse(ctx, position.x, 448, 58 * (1 - air * 0.45), 10 * (1 - air * 0.4), '#14293b32');
     ellipse(ctx, 657, 448, 115, 15, '#14293b32');
     drawBear(ctx, frame);
@@ -392,7 +382,7 @@ function drawPerspective(ctx, frame) {
 }
 function drawFocusLines(ctx, frame) {
     const t = time(frame);
-    stage(ctx, frame.reducedMotion ? 0 : t);
+    stage(ctx, frame, frame.reducedMotion ? 0 : t);
     const alpha = windowed(t, 900, 2900, 450);
     if (frame.enhanced && alpha > 0) {
         ctx.save();
@@ -423,7 +413,7 @@ function drawFocusLines(ctx, frame) {
 }
 function drawSpeed(ctx, frame) {
     const t = time(frame), speed = windowed(t, 900, 2450, 230), x = dashPosition(t, frame);
-    stage(ctx, frame.reducedMotion ? 0 : t);
+    stage(ctx, frame, frame.reducedMotion ? 0 : t);
     if (frame.enhanced && speed > 0) {
         ctx.save();
         ctx.globalAlpha *= speed * (frame.reducedMotion ? 0.25 : 0.86);
@@ -510,8 +500,8 @@ export function drawMotion(ctx, id, frame) {
             case 'squash-stretch':
                 drawSquash(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '기공 덩어리만 연신·압축·복원 / 몸 원본 유지'
-                    : '같은 접촉의 둥근 기공 덩어리');
+                    ? '기존 전용 원화 · 도약 관절 폄 → 착지 무릎·골반 압축 · 품질 검토 시안'
+                    : '같은 도약·착지 궤도 · 기존 점프 원본');
                 break;
             case 'kanada-motion':
                 drawKanada(ctx, frame);

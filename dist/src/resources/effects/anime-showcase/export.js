@@ -1,3 +1,4 @@
+import { GameStages } from '../../cutscenes/game-stage.js';
 import { GIFEncoder, applyPalette, quantize } from 'gifenc';
 import { drawSample, disposeSampleSurfaces } from './catalog.js';
 import { durationMs } from './types.js';
@@ -10,6 +11,7 @@ export async function exportGif(options) {
     const ctx = canvas.getContext('2d', { willReadFrequently: true });
     if (!ctx)
         throw new Error('GIF를 그릴 수 없습니다.');
+    const stage = new GameStages();
     const gif = GIFEncoder();
     const boundaries = Array.from({ length: durationMs / 50 + 1 }, (_, i) => i * 50);
     const shockCuts = options.sample.id === 'shock-koma'
@@ -36,6 +38,8 @@ export async function exportGif(options) {
             boundaries.push(cut);
     boundaries.sort((a, b) => a - b);
     try {
+        await stage.load();
+        options.signal.throwIfAborted();
         for (let index = 0; index < boundaries.length - 1; index++) {
             const timeMs = boundaries[index];
             const endMs = boundaries[index + 1];
@@ -44,6 +48,7 @@ export async function exportGif(options) {
             ctx.setTransform(2 / 3, 0, 0, 2 / 3, 0, 0);
             drawSample(ctx, options.sample, {
                 assets: options.assets,
+                stage,
                 // 짧은 연결 그림도 프레임의 가운데 노출 시각에서 표본화한다.
                 timeMs: (timeMs + endMs) / 2,
                 enhanced: true,
@@ -64,6 +69,7 @@ export async function exportGif(options) {
     }
     finally {
         disposeSampleSurfaces(ctx);
+        stage.dispose();
         canvas.width = canvas.height = 1;
     }
 }

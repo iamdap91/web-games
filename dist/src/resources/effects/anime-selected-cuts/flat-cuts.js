@@ -1,10 +1,13 @@
 import { drawBear, drawHero } from './cast.js';
-import { background2D, burst, clamp, ease, fistSmear, rand, } from './drawing.js';
+import { clamp, ease, gameBackground, rand } from './drawing.js';
+import { gameImpact, gameInk } from '../../cutscenes/game-effects.js';
 import { comicCut } from './comic-cut.js';
 import { inkCut } from './ink-cut.js';
 import { orbitCut } from './orbit-cut.js';
-function frozenDebris(context, time) {
+function frozenDebris(context, frame, time) {
+    const image = frame.assets.props.basaltShards.image;
     context.save();
+    context.imageSmoothingEnabled = false;
     for (let index = 0; index < 23; index++) {
         const phase = time * (0.3 + rand(index + 45) * 0.5);
         const x = 170 + rand(index * 13 + 7) * 1000 + Math.sin(phase) * 25;
@@ -12,16 +15,16 @@ function frozenDebris(context, time) {
         const size = 4 + rand(index + 66) * 10;
         context.translate(x, y);
         context.rotate(index + phase);
-        context.fillStyle = index % 3 === 0 ? '#d8aa6c' : '#596b75';
-        context.fillRect(-size / 2, -size / 2, size, size * 1.5);
+        const height = (size * image.naturalHeight) / image.naturalWidth;
+        context.drawImage(image, -size / 2, -height / 2, size, height);
         context.rotate(-index - phase);
         context.translate(-x, -y);
     }
     context.restore();
 }
 function drawWorld(context, frame, time) {
-    background2D(context, time);
-    frozenDebris(context, time);
+    gameBackground(context, frame, time);
+    frozenDebris(context, frame, time);
     const resumed = frame.time >= 2.95;
     const recoil = clamp((frame.time - 2.95) / 0.38);
     drawBear(context, frame.assets, {
@@ -130,7 +133,14 @@ function drawTimeStop(context, frame) {
             flip: stop.flip,
             rotation: stop.rotation,
         });
-        fistSmear(context, stop.x, stop.y, ((time - 1.16) % 0.06) / 0.06, stop.angle, 90);
+        gameInk(context, frame.assets.effects, {
+            sheet: 'stroke',
+            x: stop.x,
+            y: stop.y,
+            progress: ((time - 1.16) % 0.06) / 0.06,
+            angle: stop.angle,
+            size: 180,
+        });
     }
     else {
         drawHero(context, frame.assets, {
@@ -146,7 +156,13 @@ function drawTimeStop(context, frame) {
         for (let index = 0; index < 5; index++) {
             const progress = (time - 2.95 - index * 0.03) / 0.3;
             if (progress >= 0)
-                burst(context, stops[index].x, stops[index].y, progress, 100 + index * 13, index % 2 === 0 ? '#fff4bc' : '#baf5ff');
+                gameImpact(context, frame.assets.effects, {
+                    x: stops[index].x,
+                    y: stops[index].y,
+                    progress,
+                    size: 190 + index * 20,
+                    angle: stops[index].angle,
+                });
         }
     }
     context.save();

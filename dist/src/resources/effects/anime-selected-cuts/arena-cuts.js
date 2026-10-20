@@ -1,5 +1,5 @@
-import { arenaSky, arenaStage } from './combat-stage.js';
-import { burst, clamp, ease, fistSmear, lerp, line, smearBackground, speedLines, } from './drawing.js';
+import { clamp, ease, fistSmear, lerp, line, smearBackground, speedLines, } from './drawing.js';
+import { gameDust, gameImpact } from '../../cutscenes/game-effects.js';
 import { WorldScene } from './world.js';
 const turn = Math.PI * 2;
 const groundHero = { x: -2.8, y: 0, z: 0.4 };
@@ -45,12 +45,6 @@ function strikeFacing(camera, position) {
     return (Math.atan2(camera.position.x - position.x, camera.position.z - position.z) +
         Math.PI / 4);
 }
-function cameraRight(camera) {
-    const x = camera.target.x - camera.position.x;
-    const z = camera.target.z - camera.position.z;
-    const length = Math.hypot(x, z) || 1;
-    return { x: -z / length, y: 0, z: x / length };
-}
 function orbit(angle, distance, y, target, roll = 0, focal = 920) {
     return {
         position: {
@@ -63,17 +57,19 @@ function orbit(angle, distance, y, target, roll = 0, focal = 920) {
         focal,
     };
 }
-function sceneFor(context, camera, time, aerial = false) {
-    arenaSky(context, time);
-    const scene = new WorldScene(context, camera, time);
-    arenaStage(scene, time, aerial);
-    return scene;
+function sceneFor(context, frame, camera, time) {
+    frame.surfaces.stage.background(context, 'arena', camera, time, {
+        focus: camera.target,
+    });
+    return new WorldScene(context, camera);
 }
-function blurredArena(context, frame, camera, amount, aerial = false) {
+function blurredArena(context, frame, camera, amount, direction = 'horizontal') {
     smearBackground(context, frame.surfaces, (background) => {
-        sceneFor(background, camera, frame.time, aerial).render();
-    }, amount);
-    return new WorldScene(context, camera, frame.time);
+        frame.surfaces.stage.background(background, 'arena', camera, frame.time, {
+            focus: camera.target,
+        });
+    }, amount, direction === 'vertical');
+    return new WorldScene(context, camera);
 }
 /** 주먹이 접촉하는 한 코마에만 쓰고 몸통 실루엣에는 손대지 않는다. */
 function contactFist(context, point, phase, angle, size = 180, source) {
@@ -81,16 +77,39 @@ function contactFist(context, point, phase, angle, size = 180, source) {
         return;
     fistSmear(context, point.x, point.y, phase, angle, size, source);
 }
-function delayedHit(context, position, time, index, start) {
+function delayedHit(context, frame, position, time, index, start) {
     const p = (time - start - index * 0.038) / 0.24;
     if (p < 0 || p > 1)
         return;
     if (!position)
         return;
-    context.save();
-    context.globalCompositeOperation = 'lighter';
-    burst(context, position.x, position.y, p, 85 + index * 11, index % 2 ? '#92ddff' : '#fff0ba');
-    context.restore();
+    gameImpact(context, frame.assets.effects, {
+        x: position.x,
+        y: position.y,
+        progress: p,
+        size: 170 + index * 22,
+        angle: -0.3 + index * 0.08,
+    });
+}
+function alreadyCutFinishPose(assets, time) {
+    const recovering = time < 1.76;
+    const action = recovering ? 'punch' : 'release';
+    const sequence = assets.hero[action]['south-east'];
+    const index = recovering
+        ? 3 + Math.min(3, Math.floor(progress(time, 1.475, 0.285) * 4 + 1e-8))
+        : time < 2.7
+            ? 0
+            : Math.min(5, 1 + Math.floor((time - 2.7) / 0.1 + 1e-8));
+    const sprite = sequence[index];
+    const reference = assets.hero.punch['south-east'][2];
+    const height = (source) => (source.bounds?.bottom ?? source.image.naturalHeight) -
+        (source.bounds?.top ?? 0);
+    return {
+        action,
+        phase: (index + 0.5) / sequence.length,
+        // 팔을 들어 실루엣 높이가 달라져도 원본 픽셀 배율과 발 위치를 유지한다.
+        height: (2.65 * height(sprite)) / height(reference),
+    };
 }
 function drawAlreadyCut(context, frame) {
     const time = frame.time;
@@ -115,7 +134,7 @@ function drawAlreadyCut(context, frame) {
     const stageTime = time < 2.1 ? time : time < 2.7 ? 2.1 : Math.min(time, 3.2);
     const scene = shutter
         ? blurredArena(context, frame, camera, 0.9)
-        : sceneFor(context, camera, stageTime);
+        : sceneFor(context, frame, camera, stageTime);
     const exposedRush = Math.min(2, Math.floor(rush * 3)) / 2;
     const position = time < 1.35
         ? groundHero
@@ -139,15 +158,23 @@ function drawAlreadyCut(context, frame) {
     const bearState = time >= 3.22 ? 'defeat' : time >= 2.7 ? 'hit' : 'stand';
     const bearPhase = time >= 3.22 ? progress(time, 3.22, 0.32) : progress(time, 2.7, 0.4);
     scene.bear(frame.assets, groundBear, bearState, bearPhase, { height: 4.2 });
-    scene.hero(frame.assets, position, time < 1.35 ? 'idle' : shutter ? 'punch' : 'idle', shutter ? 2.5 / 17 : time * 0.7, {
-        height: 2.65,
-        facing: shutter
-            ? strikeFacing(camera, position)
-            : time < 1.475
-                ? Math.PI / 2
-                : -Math.PI / 2,
-    });
+    if (time < 1.475) {
+        scene.hero(frame.assets, position, shutter ? 'punch' : 'idle', shutter ? 2.5 / 17 : time * 0.7, {
+            height: 2.65,
+            facing: shutter ? strikeFacing(camera, position) : Math.PI / 2,
+        });
+    }
+    else {
+        const pose = alreadyCutFinishPose(frame.assets, time);
+        scene.hero(frame.assets, position, pose.action, pose.phase, {
+            height: pose.height,
+            facing: strikeFacing(camera, position),
+        });
+    }
     scene.render();
+    frame.surfaces.stage.foreground(context, 'arena', camera, time, {
+        focus: camera.target,
+    });
     if (shutter) {
         const point = scene.project({ x: 0.5, y: 2, z: 0.1 });
         if (point) {
@@ -168,7 +195,7 @@ function drawAlreadyCut(context, frame) {
                 height: 4.2,
                 pixel: { x: 74 + (i % 2) * 8, y: 105 - i * 10 },
             });
-            delayedHit(context, hitPoint, time, i, 2.7);
+            delayedHit(context, frame, hitPoint, time, i, 2.7);
         }
     }
     if (time >= 2.1 && time < 2.7) {
@@ -180,111 +207,215 @@ function drawAlreadyCut(context, frame) {
             ], '#fcf0ba', 2);
     }
 }
-const aerialAngles = [
-    { angle: -1.35, cameraY: 9.8, roll: -0.12 },
-    { angle: 0.1, cameraY: 20, roll: 0.16 },
-    { angle: 0.5, cameraY: 2.1, roll: -0.16 },
-    { angle: 1.4, cameraY: 10.8, roll: 0.09 },
+const aerialComboEnd = 2.25;
+const aerialFinish = {
+    dropStart: 2.5,
+    contact: 2.9,
+    contactPose: 2.86,
+    recoverStart: 3.02,
+};
+const aerialPunches = {
+    jab: {
+        frame: 2,
+        hand: { x: 80, y: 46 },
+        prepare: [0, 1],
+        recover: [3, 4, 5, 6],
+    },
+    straight: {
+        frame: 12,
+        hand: { x: 72, y: 48 },
+        prepare: [9, 10, 11],
+        recover: [13, 14, 15, 16],
+    },
+};
+const aerialBeats = [
+    {
+        start: 0.65,
+        contact: 0.85,
+        end: 1.15,
+        kind: 'jab',
+        push: 0.5,
+        lift: 0.65,
+        camera: { angle: -1.05, height: 1.2, distance: 9.4, roll: -0.045 },
+    },
+    {
+        start: 1.15,
+        contact: 1.32,
+        end: 1.57,
+        kind: 'straight',
+        push: 0.6,
+        lift: 0.75,
+        camera: { angle: -0.25, height: 3.6, distance: 9.6, roll: 0.06 },
+    },
+    {
+        start: 1.57,
+        contact: 1.71,
+        end: 1.93,
+        kind: 'jab',
+        push: 0.65,
+        lift: 0.9,
+        camera: { angle: 0.5, height: -2.1, distance: 9, roll: -0.06 },
+    },
+    {
+        start: 1.93,
+        contact: 2.05,
+        end: aerialComboEnd,
+        kind: 'straight',
+        push: 0.75,
+        lift: 1,
+        camera: { angle: 1.2, height: 0.7, distance: 8.6, roll: 0.04 },
+    },
 ];
-function aerialCamera(time, altitude) {
+function aerialPush(time) {
+    return aerialBeats.reduce((distance, beat) => distance + beat.push * ease(progress(time, beat.contact + 0.045, 0.14)), 0);
+}
+function sampleAerialCombo(assets, time) {
+    const index = aerialBeats.findIndex((beat) => time < beat.end - 1e-8);
+    const cutIndex = index < 0 ? aerialBeats.length - 1 : index;
+    const beat = aerialBeats[cutIndex];
+    const punch = aerialPunches[beat.kind];
+    const holdStart = beat.contact - 0.02;
+    const holdEnd = beat.contact + 0.045;
+    const sequence = time < holdStart ? punch.prepare : punch.recover;
+    const poseProgress = time < holdStart
+        ? progress(time, beat.start, holdStart - beat.start)
+        : progress(time, holdEnd, beat.end - holdEnd);
+    const poseFrame = time >= holdStart && time < holdEnd
+        ? punch.frame
+        : sequence[Math.min(sequence.length - 1, Math.floor(poseProgress * sequence.length + 1e-8))];
+    const source = assets.hero.punch['south-east'][punch.frame];
+    const reference = assets.hero.punch['south-east'][2];
+    const bodyHeight = (sprite) => (sprite.bounds?.bottom ?? sprite.image.naturalHeight) -
+        (sprite.bounds?.top ?? 0);
+    const pixelScale = 2.7 / bodyHeight(reference);
+    const right = {
+        x: Math.cos(beat.camera.angle),
+        z: -Math.sin(beat.camera.angle),
+    };
+    const contactDistance = (punch.hand.x - source.anchorX) * pixelScale + 0.85;
+    const distance = contactDistance +
+        0.9 * (1 - ease(progress(time, beat.start, holdStart - beat.start)));
+    const push = aerialPush(time);
+    // 피격자가 밀린 곳을 늦게 따라잡아, 매 타격 뒤 원위치로 돌아가지 않는다.
+    const pursuit = aerialPush(time - 0.065);
+    return {
+        index: cutIndex,
+        beat,
+        punch,
+        source,
+        phase: (poseFrame + 0.5) / 17,
+        height: bodyHeight(assets.hero.punch['south-east'][poseFrame]) * pixelScale,
+        contactHeight: bodyHeight(source) * pixelScale,
+        hero: {
+            x: 0.7 + pursuit - right.x * distance,
+            y: 8.3 + beat.lift + pursuit * 0.15,
+            z: -0.2 - right.z * distance,
+        },
+        bear: { x: 0.7 + push, y: 8.7 + push * 0.15, z: -0.2 },
+        contactPosition: {
+            x: 0.7 + push - right.x * contactDistance,
+            y: 8.3 + beat.lift + push * 0.15,
+            z: -0.2 - right.z * contactDistance,
+        },
+        reaction: time < beat.contact ? 0.99 : progress(time, beat.contact + 0.045, 0.14),
+    };
+}
+function aerialComboCamera(combo) {
+    const target = {
+        x: (combo.hero.x + combo.bear.x) / 2,
+        y: (combo.hero.y + combo.bear.y) / 2 + 1.9,
+        z: (combo.hero.z + combo.bear.z) / 2,
+    };
+    return orbit(combo.beat.camera.angle, combo.beat.camera.distance, target.y + combo.beat.camera.height, target, combo.beat.camera.roll, 900 + combo.index * 20);
+}
+function aerialCamera(time, altitude, combo, last) {
     if (time < 0.65)
         return orbit(-0.65, 13.7, 4.1 + altitude * 0.6, {
             x: 0,
             y: 2 + altitude * 0.82,
             z: 0,
         });
-    if (time < 2.25) {
-        const index = Math.min(3, Math.floor((time - 0.65) / 0.4));
-        const cut = aerialAngles[index];
-        return orbit(cut.angle, index === 1 ? 6 : 9, cut.cameraY, { x: 0, y: 9.3, z: 0 }, cut.roll, 910);
-    }
-    const slam = progress(time, 2.25, 0.55);
-    return orbit(0.62, lerp(11, 8.2, ease(slam)), lerp(12.5, 1.25, ease(slam)), { x: 0.7, y: lerp(8.8, 2.2, ease(slam)), z: 0 }, -0.04 * (1 - slam), 900);
-}
-/** 원투 원본 중 첫 잽의 신전 2번만 한 번 보여 네 컷의 타수를 보존한다. */
-function aerialPunchPhase(time) {
-    if (time < 0.18)
-        return lerp(0, 1.99 / 17, progress(time, 0.08, 0.1));
-    if (time < 0.23)
-        return 2.5 / 17;
-    return lerp(3.1 / 17, 6.8 / 17, progress(time, 0.23, 0.17));
+    if (time < aerialComboEnd)
+        return aerialComboCamera(combo);
+    const start = aerialComboCamera(last);
+    const end = orbit(0.62, 8.2, 1.25, { x: 0.7, y: 2.2, z: 0 }, 0, 900);
+    const settle = ease(progress(time, aerialComboEnd, 0.55));
+    // 높이는 배우의 실제 하강을 따라가 마지막 접근 중 화면 밖으로 먼저 내려가지 않는다.
+    const descent = clamp((last.hero.y - altitude) / (last.hero.y - 1.85));
+    return {
+        position: {
+            ...mixPoint(start.position, end.position, settle),
+            y: lerp(start.position.y, end.position.y, descent),
+        },
+        target: {
+            ...mixPoint(start.target, end.target, settle),
+            y: lerp(start.target.y, end.target.y, descent),
+        },
+        roll: lerp(start.roll ?? 0, 0, settle),
+        focal: lerp(start.focal ?? 960, 900, settle),
+    };
 }
 /** 내려찍기 원본 5번의 망치 접촉을 2.9초 지면 충돌에 맞춘다. */
 function aerialSlamPhase(time) {
-    if (time < 2.45)
-        return lerp(2.1 / 9, 3.5 / 9, progress(time, 2.25, 0.2));
-    if (time < 2.86)
-        return lerp(3.5 / 9, 4.8 / 9, progress(time, 2.45, 0.41));
-    if (time < 3.02)
+    if (time < aerialFinish.dropStart)
+        return lerp(2.1 / 9, 3.5 / 9, progress(time, aerialComboEnd, aerialFinish.dropStart - aerialComboEnd));
+    if (time < aerialFinish.contactPose)
+        return lerp(3.5 / 9, 4.8 / 9, progress(time, aerialFinish.dropStart, aerialFinish.contactPose - aerialFinish.dropStart));
+    if (time < aerialFinish.recoverStart)
         return 5.5 / 9;
-    return lerp(6.1 / 9, 8.8 / 9, progress(time, 3.02, 0.28));
+    return lerp(6.1 / 9, 8.8 / 9, progress(time, aerialFinish.recoverStart, 0.28));
 }
 function drawAerialPursuit(context, frame) {
     const time = frame.time;
     const launch = progress(time, 0.28, 0.37);
-    const inCombo = time >= 0.65 && time < 2.25;
-    const comboTime = inCombo ? (time - 0.65) % 0.4 : 0;
-    const hidden = inCombo && comboTime < 0.08;
-    const slam = progress(time, 2.25, 0.65);
+    const inCombo = time >= aerialBeats[0].start && time < aerialComboEnd;
+    const combo = sampleAerialCombo(frame.assets, Math.min(time, aerialComboEnd));
+    const lastCombo = sampleAerialCombo(frame.assets, aerialComboEnd);
+    const staging = progress(time, aerialComboEnd, aerialFinish.contact - aerialComboEnd);
+    // 마지막 추격 위치에서 팔을 장전한 뒤 같은 접촉 시각까지의0.40초에 낙차를 모은다.
+    const slam = progress(time, aerialFinish.dropStart, aerialFinish.contact - aerialFinish.dropStart);
     const altitude = time < 0.65
         ? ease(launch) * 8.3
-        : time < 2.25
+        : time < aerialComboEnd
             ? 8.3
-            : time < 2.9
-                ? lerp(8.3, 1.85, slam * slam)
+            : time < aerialFinish.contact
+                ? lerp(lastCombo.hero.y, 1.85, slam * slam)
                 : time < 3
                     ? 1.85
                     : lerp(1.85, 0, ease(progress(time, 3, 0.28)));
-    const camera = aerialCamera(time, altitude);
-    const smear = hidden || (time >= 2.4 && time < 2.9);
-    const scene = smear
-        ? blurredArena(context, frame, camera, hidden ? 1 : 0.75, true)
-        : sceneFor(context, camera, Math.min(time, 2.9), true);
-    if (hidden) {
-        scene.render();
-        return;
-    }
-    const cutIndex = inCombo ? Math.min(3, Math.floor((time - 0.65) / 0.4)) : 0;
-    const punch = inCombo ? progress(comboTime, 0.08, 0.2) : 0;
-    const right = cameraRight(camera);
-    const reaction = Math.sin(progress(comboTime, 0.18, 0.2) * Math.PI) * 0.18;
+    const camera = aerialCamera(time, altitude, combo, lastCombo);
+    const smear = time >= aerialFinish.dropStart && time < aerialFinish.contact
+        ? slam * 0.75
+        : 0;
+    const scene = smear > 0.001
+        ? blurredArena(context, frame, camera, smear, 'vertical')
+        : sceneFor(context, frame, camera, Math.min(time, aerialFinish.contact));
     const bearAltitude = time < 0.65
         ? ease(progress(time, 0.29, 0.36)) * 8.7
-        : time < 2.25
-            ? altitude + 0.4
-            : 8.7 * (1 - slam * slam);
-    const bearPosition = {
-        x: time < 0.65
-            ? lerp(0.65, 0.7, launch)
-            : inCombo
-                ? 0.7 + right.x * reaction
-                : lerp(0.7, 1.25, ease(slam)),
-        y: bearAltitude,
-        z: inCombo ? -0.2 + right.z * reaction : -0.2,
-    };
-    const lastAngle = aerialAngles[3].angle;
-    const lastHero = {
-        x: 0.7 - Math.cos(lastAngle) * 2.65,
-        z: -0.2 + Math.sin(lastAngle) * 2.65,
-    };
-    const distance = 2.65 - Math.sin(punch * Math.PI) * 0.45;
+        : time < aerialComboEnd
+            ? combo.bear.y
+            : lastCombo.bear.y * (1 - slam * slam);
+    const bearPosition = inCombo
+        ? combo.bear
+        : {
+            x: time < 0.65
+                ? lerp(0.65, 0.7, launch)
+                : lerp(lastCombo.bear.x, 1.25, ease(staging)),
+            y: bearAltitude,
+            z: -0.2,
+        };
     const heroPosition = time < 0.65
         ? {
             x: lerp(-2.2, -0.9, ease(progress(time, 0, 0.28))),
             y: altitude,
             z: 0.4,
         }
-        : time < 2.25
-            ? {
-                // 가려진 전환 뒤 상대의 다른 쪽으로 재접근하되 네 컷 모두 손은 상대를 향한다.
-                x: 0.7 - right.x * distance,
-                y: altitude + 0.1,
-                z: -0.2 - right.z * distance,
-            }
+        : time < aerialComboEnd
+            ? combo.hero
             : {
-                x: lerp(lastHero.x, -0.25, ease(slam)),
+                x: lerp(lastCombo.hero.x, -0.25, ease(staging)),
                 y: altitude,
-                z: lerp(lastHero.z, 0.5, ease(slam)),
+                z: lerp(lastCombo.hero.z, 0.5, ease(staging)),
             };
     const uppercutPhase = time < 0.28
         ? lerp(0, 1.99 / 7, progress(time, 0.05, 0.23))
@@ -295,55 +426,86 @@ function drawAerialPursuit(context, frame) {
                 : lerp(4.1 / 7, 5.8 / 7, progress(time, 0.45, 0.2));
     const heroAction = time < 0.65
         ? 'uppercut'
-        : time < 2.25
+        : time < aerialComboEnd
             ? 'punch'
             : time < 3.3
                 ? 'slam'
                 : 'idle';
     const heroPhase = time < 0.65
         ? uppercutPhase
-        : time < 2.25
-            ? aerialPunchPhase(comboTime)
+        : time < aerialComboEnd
+            ? combo.phase
             : aerialSlamPhase(time);
     scene.bear(frame.assets, bearPosition, time < 0.28 ? 'stand' : time < 3.06 ? 'hit' : 'defeat', time >= 3.06
         ? progress(time, 3.06, 0.62)
         : inCombo
-            ? progress(comboTime, 0.18, 0.22)
-            : time >= 2.9
-                ? progress(time, 2.9, 0.16)
+            ? combo.reaction
+            : time >= aerialFinish.contact
+                ? progress(time, aerialFinish.contact, 0.16)
                 : progress(time, 0.28, 0.37), { height: 4.2, rotation: camera.roll });
     scene.hero(frame.assets, heroPosition, heroAction, heroPhase, {
-        height: 2.7,
+        height: inCombo ? combo.height : 2.7,
         facing: strikeFacing(camera, heroPosition),
         rotation: camera.roll,
     });
     scene.render();
+    frame.surfaces.stage.foreground(context, 'arena', camera, time, {
+        focus: camera.target,
+    });
     if (inCombo) {
-        contactFist(context, spritePoint(scene, heroPosition, frame.assets.hero.punch['south-east'][2], {
-            height: 2.7,
-            pixel: { x: 80, y: 46 },
+        contactFist(context, spritePoint(scene, heroPosition, combo.source, {
+            height: combo.contactHeight,
+            pixel: combo.punch.hand,
             rotation: camera.roll,
-        }), progress(comboTime, 0.14, 0.065), -Math.PI / 7 + cutIndex * 0.26, 48, frame.assets.fistPatch);
-        const hit = spritePoint(scene, heroPosition, frame.assets.hero.punch['south-east'][2], { height: 2.7, pixel: { x: 80, y: 46 }, rotation: camera.roll });
-        if (hit && comboTime >= 0.18)
-            burst(context, hit.x, hit.y, progress(comboTime, 0.18, 0.22), 82, '#ffeab2');
+        }), progress(time, combo.beat.contact - 0.04, 0.07), camera.roll ?? 0, 44);
+        const hit = spritePoint(scene, combo.contactPosition, combo.source, {
+            height: combo.contactHeight,
+            pixel: combo.punch.hand,
+            rotation: camera.roll,
+        });
+        if (hit && time >= combo.beat.contact)
+            gameImpact(context, frame.assets.effects, {
+                ...hit,
+                progress: (time - combo.beat.contact) / 0.18,
+                size: 156 + combo.index * 16,
+                angle: camera.roll,
+            });
     }
     else if (time >= 0.28 && time < 0.47) {
         const hit = spritePoint(scene, heroPosition, frame.assets.hero.uppercut['south-east'][2], { height: 2.7, pixel: { x: 62, y: 34 }, rotation: camera.roll });
         if (hit)
-            burst(context, hit.x, hit.y, progress(time, 0.28, 0.19), 135, '#fff0b0');
+            gameImpact(context, frame.assets.effects, {
+                ...hit,
+                progress: progress(time, 0.28, 0.19),
+                size: 270,
+                angle: -1.15,
+            });
     }
-    else if (time >= 2.9 && time < 3.45) {
+    else if (time >= aerialFinish.contact && time < 3.45) {
         const hit = spritePoint(scene, { x: -0.25, y: 1.85, z: 0.5 }, frame.assets.hero.slam['south-east'][5], {
             height: 2.7,
             pixel: { x: 64, y: 69 },
             rotation: camera.roll,
         });
         if (hit)
-            burst(context, hit.x, hit.y, progress(time, 2.9, 0.55), 290, '#ffe4a0');
+            gameImpact(context, frame.assets.effects, {
+                ...hit,
+                progress: progress(time, aerialFinish.contact, 0.32),
+                size: 460,
+                angle: 1.2,
+            });
     }
-    if (time > 2.3 && time < 2.9)
-        speedLines(context, time, 0.85, true);
+    if (time >= 3.28) {
+        const ground = scene.project({ x: -0.25, y: 0, z: 0.5 });
+        if (ground)
+            gameDust(context, frame.assets.effects, {
+                ...ground,
+                progress: (time - 3.28) / 0.5,
+                size: 330,
+            });
+    }
+    if (smear > 0.001)
+        speedLines(context, time, slam * 0.85, true);
 }
 function counterCamera(time) {
     const p = progress(time, 1.15, 1.12);
@@ -424,9 +586,12 @@ function drawBulletCounter(context, frame) {
             : 1.26 + Math.min(time, 2.78) - 2.27;
     const scene = smear
         ? blurredArena(context, frame, camera, 0.88)
-        : sceneFor(context, camera, worldTime);
+        : sceneFor(context, frame, camera, worldTime);
     const { hero, counter } = counterActors(scene, frame.assets, time, camera);
     scene.render();
+    frame.surfaces.stage.foreground(context, 'arena', camera, time, {
+        focus: camera.target,
+    });
     if (time > 1.15 && time < 2.27) {
         const center = scene.project({ x: -0.45, y: 4.9, z: 0.5 });
         if (center) {
@@ -454,7 +619,12 @@ function drawBulletCounter(context, frame) {
             rotation: camera.roll,
         });
         if (hit)
-            burst(context, hit.x, hit.y, progress(time, counterCut.contact, 0.44), 215, '#e3f5ff');
+            gameImpact(context, frame.assets.effects, {
+                ...hit,
+                progress: progress(time, counterCut.contact, 0.3),
+                size: 380,
+                angle: camera.roll,
+            });
     }
 }
 export const arenaCuts = [
@@ -463,12 +633,13 @@ export const arenaCuts = [
         title: '이미 때렸다',
         kind: '3D',
         duration: 3.9,
-        description: '원형 투기장을 가속해 한 바퀴 돌고, 신전 원본 세 코마와 여섯 잔상 뒤 0.6초 정적. 여덟 타가 몸 안에서 늦게 터진 뒤 쓰러진다.',
+        description: '게임의 숲 전투 공터를 가속해 한 바퀴 돌고, 세 코마와 여섯 잔상으로 관통한다. 주먹을 거둔 정적 뒤 지연 타격과 함께 팔을 풀고, 어깨를 편 잔심을 남긴다.',
         beats: [
             { time: 0, label: '가속 360°' },
             { time: 1.35, label: '1코마 × 3 · 잔상' },
             { time: 2.1, label: '등 뒤 정적' },
-            { time: 2.7, label: '8겹 지연 타격' },
+            { time: 2.7, label: '팔 풀기 · 8겹 지연 타격' },
+            { time: 3.1, label: '어깨를 편 잔심' },
             { time: 3.54, label: '쓰러짐 완료 · 정지' },
         ],
         draw: drawAlreadyCut,
@@ -478,14 +649,16 @@ export const arenaCuts = [
         title: '공중 추격 연타',
         kind: '3D',
         duration: 4.2,
-        description: '어퍼컷으로 솟아 왼쪽·위·아래·오른쪽 네 구도를 끊어 친다. 컷 사이 0.08초는 인물을 지우고 배경만 흘린다.',
+        description: '어퍼컷으로 띄운 뒤 잽과 정권을 번갈아 네 번 추격한다. 0.50→0.42→0.36→0.32초로 박자를 좁히고, 마지막 추격 위치에서 장전한 뒤0.40초 급강하로 내려찍는다. 네 구도에서 두 배우를 계속 보여준다.',
         beats: [
             { time: 0.28, label: '어퍼컷 접촉' },
-            { time: 0.83, label: '공중 1타 · 왼쪽' },
-            { time: 1.23, label: '공중 2타 · 위' },
-            { time: 1.63, label: '공중 3타 · 아래' },
-            { time: 2.03, label: '공중 4타 · 오른쪽' },
-            { time: 2.9, label: '원본 5번 · 지면 접촉' },
+            ...aerialBeats.map((beat, index) => ({
+                time: beat.contact,
+                label: `공중 ${index + 1}타 · ${beat.kind === 'jab' ? '잽' : '정권'}`,
+            })),
+            { time: aerialComboEnd, label: '마지막 추격 · 내려찍기 장전' },
+            { time: aerialFinish.dropStart, label: '0.40초 급강하 시작' },
+            { time: aerialFinish.contact, label: '원본 5번 · 지면 접촉' },
             { time: 3.45, label: '앙각 정지' },
         ],
         draw: drawAerialPursuit,

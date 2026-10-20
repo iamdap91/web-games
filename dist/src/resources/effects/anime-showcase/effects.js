@@ -17,7 +17,12 @@ export const effectSamples = [
         name: '카나다 빔',
         category: 'effects',
         previewMs: 2570,
-        description: '정권에서 수평으로 방출한 광선의 중심축이 S자로 굽고, 각진 외피와 빈틈이 셀마다 바뀌는 견본입니다. 원작 동작 재현은 미검증입니다.',
+        beats: [
+            { timeMs: 2570, label: 'S축과 전진 외피' },
+            { timeMs: 3220, label: '후단 이탈' },
+            { timeMs: 3740, label: '앞으로 빠지는 빔' },
+        ],
+        description: '정권에서 방출한 광선의 S축을 따라 각진 외피와 빈틈이 전진하고, 종료 때 후단이 손을 떠나 앞쪽으로 빠지는 견본입니다. 원작 동작 재현은 미검증입니다.',
         distinction: '직선 위 두께 변화와 달리 중심선·선두 방향·실루엣이 함께 바뀝니다.',
     },
     {
@@ -41,16 +46,26 @@ export const effectSamples = [
         name: '이타노 서커스',
         category: 'effects',
         previewMs: 1260,
+        beats: [
+            { timeMs: 1260, label: '깊이가 다른 추격' },
+            { timeMs: 1770, label: '빗나간 탄의 관성' },
+            { timeMs: 2220, label: '탄별 이탈' },
+        ],
         description: '곰왕의 두 번 회피를 다른 시각·깊이에서 쫓는 탄과 굽은 연기 꼬리, 지연 추적 카메라의 견본입니다.',
-        distinction: '회피 전 위치를 놓친 탄이 앞뒤로 지나가며 연기 꼬리는 늦게 부풀어 흩어집니다.',
+        distinction: '회피 전 위치를 놓친 탄이 앞뒤로 지나가 각자 화면을 벗어나며 연기 꼬리는 늦게 부풀어 흩어집니다.',
     },
     {
         id: 'fx-muraki',
         name: '무라키 서커스',
         category: 'effects',
         previewMs: 1450,
+        beats: [
+            { timeMs: 1040, label: '후속탄 재추진' },
+            { timeMs: 1880, label: '빗나간 탄의 관성' },
+            { timeMs: 2480, label: '탄별 이탈' },
+        ],
         description: '선행탄과 잠깐 정체한 뒤 추진하는 후속탄을 나눠, 회피와 연기 꼬리의 박자를 비교하는 견본입니다.',
-        distinction: '선행·정체·재추진을 비동기로 배치하고, 서로 다른 깊이의 탄이 곰왕을 빗나갑니다.',
+        distinction: '선행·정체·재추진을 비동기로 배치하고, 빗나간 탄이 각자의 진행 방향과 수명으로 떠납니다.',
     },
     {
         id: 'fx-anno',
@@ -81,7 +96,7 @@ export const effectSamples = [
         name: '나카무라 큐브',
         category: 'effects',
         previewMs: 2420,
-        description: '접촉점의 얼음 판이 큰 입방 조각과 작은 잔여로 깨지고, 세 축으로 돌며 면이 바뀌는 견본입니다.',
+        description: '접촉점의 석재 판이 큰 입방 조각과 작은 잔여로 깨지고, 게임의 현무암 면을 유지한 채 세 축으로 도는 견본입니다.',
         distinction: '고정 면색의 평면 회전 대신 실제 꼭짓점 회전과 원근, 큰 파편·작은 파편의 시차를 비교합니다.',
     },
     {
@@ -137,8 +152,13 @@ export const effectSamples = [
         name: '코즈마 이펙트',
         category: 'effects',
         previewMs: 3110,
+        beats: [
+            { timeMs: 2730, label: '점성 목의 압축' },
+            { timeMs: 3000, label: '연결부 분리' },
+            { timeMs: 3150, label: '연결부에서 태어난 잔여' },
+        ],
         description: '정권의 접촉점에서 수평으로 짧고 끈적하게 늘다가 목이 가늘어지고, 큰 덩어리가 갑자기 빠져나가는 점성 견본입니다.',
-        distinction: '균일 이동 대신 붙어 버티는 시간과 떨어져 나가는 속도의 차이를 비교합니다.',
+        distinction: '붙어 버티는 시간과 떨어져 나가는 속도를 대비하고, 잔여 조각은 분리 직전 연결부의 위치를 이어받습니다.',
     },
     {
         id: 'fx-tatsuzo',
@@ -212,7 +232,7 @@ export function drawEffects(ctx, id, frame) {
         if (drawCircusScene(ctx, id, frame))
             return;
         // 일반 FX는 공유 접촉을, 서커스는 위 전용 합성에서 회피와 깊이를 소유한다.
-        stage(ctx, 0);
+        stage(ctx, frame, 0);
         drawBattleActors(ctx, frame);
         const placement = placements[id];
         if (!placement)

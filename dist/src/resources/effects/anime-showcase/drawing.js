@@ -1,4 +1,4 @@
-import { height, width } from './types.js';
+import { height } from './types.js';
 export const palette = {
     ink: '#121727',
     paper: '#f5e8cb',
@@ -62,51 +62,32 @@ export function ring(ctx, x, y, rx, ry, color = palette.gold, thickness = 3) {
     ctx.lineWidth = thickness;
     ctx.stroke();
 }
-/** 서리갈기 곰왕과 맞서는 설원 무대. 두 배우와 효과의 대비를 위한 낮은 채도다. */
-export function stage(ctx, timeMs = 0) {
-    const sky = ctx.createLinearGradient(0, 0, 0, height);
-    sky.addColorStop(0, '#182738');
-    sky.addColorStop(1, '#738d9b');
-    ctx.fillStyle = sky;
-    ctx.fillRect(0, 0, width, height);
-    ellipse(ctx, 765, 95, 43, 43, '#d6e5e8');
-    for (let layer = 0; layer < 3; layer++) {
-        const offset = Math.sin(timeMs / 6000) * layer * 3;
-        polygon(ctx, [
-            { x: -50, y: 430 },
-            { x: 110 + offset, y: 110 + layer * 66 },
-            { x: 280 + offset, y: 290 + layer * 28 },
-            { x: 480 + offset, y: 170 + layer * 52 },
-            { x: 730 + offset, y: 300 + layer * 20 },
-            { x: 1010, y: 180 + layer * 56 },
-            { x: 1010, y: 540 },
-            { x: -50, y: 540 },
-        ], ['#7495a3', '#547888', '#355a70'][layer]);
-    }
-    for (const x of [70, 185, 810, 910]) {
-        line(ctx, [
-            { x, y: 185 },
-            { x, y: 440 },
-        ], '#264a5b', 9);
-        for (let i = 0; i < 5; i++)
-            polygon(ctx, [
-                { x, y: 160 + i * 38 },
-                { x: x - 38 - i * 7, y: 230 + i * 38 },
-                { x: x + 38 + i * 7, y: 230 + i * 38 },
-            ], i % 2 ? '#adc9ce' : '#6c969f');
-    }
-    const snow = ctx.createLinearGradient(0, 405, 0, 540);
-    snow.addColorStop(0, '#adc8cf');
-    snow.addColorStop(1, '#688b9d');
-    ctx.fillStyle = snow;
-    ctx.fillRect(0, 410, width, 130);
-    for (let i = 0; i < 23; i++) {
-        const x = noise(i + 20) * 960, y = 421 + noise(i + 70) * 110;
-        line(ctx, [
-            { x, y },
-            { x: x + 20 + noise(i) * 35, y: y + 2 },
-        ], '#d6e6e84d', 2);
-    }
+const gameCamera = {
+    position: { x: 0, y: 5, z: 13 },
+    target: { x: 0, y: 3.15, z: 0 },
+    focal: 750,
+};
+/** 기법의 960×540 좌표를 공통 무대의 1280×720 투영에 맞춘다. */
+export function gameStage(ctx, frame, options = {}) {
+    const camera = options.camera ?? gameCamera;
+    const pose = { ...camera, focal: (camera.focal ?? 750) * (4 / 3) };
+    const stageOptions = {
+        principalY: (options.principalY ?? height / 2) * (4 / 3),
+        viewOffsetX: (options.viewOffsetX ?? 0) * (4 / 3),
+        focus: options.focus,
+    };
+    ctx.save();
+    ctx.scale(0.75, 0.75);
+    const time = (options.timeMs ?? frame.timeMs) / 1000;
+    if (options.layer === 'foreground')
+        frame.stage.foreground(ctx, options.kind ?? 'arena', pose, time, stageOptions);
+    else
+        frame.stage.background(ctx, options.kind ?? 'arena', pose, time, stageOptions);
+    ctx.restore();
+}
+/** 배우와 효과의 기본 무대도 실제 본게임 숲 공터를 사용한다. */
+export function stage(ctx, frame, timeMs = 0) {
+    gameStage(ctx, frame, { timeMs });
 }
 export function burst(ctx, x, y, progress, color = palette.gold, count = 14) {
     const p = clamp(progress);

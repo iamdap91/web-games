@@ -4,13 +4,17 @@ import { MotionFrameLoader } from '../../characters/ataho-v2-combos/frame-loader
 import { groundAdditions } from '../../characters/ataho-v2-combos/motions/ground-additions.js';
 import { enhancedFlyingKickMotion } from '../../characters/ataho-v2-combos/motions/inazuma-flying-kick.js';
 import { loadSourceFrame, } from '../../characters/ataho-v2-combos/source-frames.js';
+import { directions } from '../anime-selected-cuts/assets.js';
+import { loadCombatEffectSpriteFrame } from '../../characters/ataho-v2-combos/combat-effect-sprites.js';
+import { loadMotionResources } from './motion-resource.js';
+import { loadTechniqueEffects } from './technique-effect-resources.js';
 async function imageAt(path) {
     const image = new Image();
     image.src = resourceUrl(path).href;
     await image.decode();
     return image;
 }
-/** 기존 승인 원본을 읽기만 하며 생성·파일 수정·전투 상태를 만들지 않는다. */
+/** 기존 로컬 원본과 요청된 새 자세를 읽고 생성·전투 상태는 이 로더에서 만들지 않는다. */
 export async function loadBattleAssets() {
     const uppercut = groundAdditions.find((m) => m.id === 'charged-uppercut');
     if (!uppercut)
@@ -56,6 +60,31 @@ export async function loadBattleAssets() {
         loader.load(enhancedFlyingKickMotion),
         loader.load(straight),
     ]);
+    const idle = {};
+    const directionalUppercut = {};
+    const effects = new Map();
+    const [motionResources, techniqueEffects] = await Promise.all([
+        loadMotionResources(),
+        loadTechniqueEffects(),
+        ...directions.map(async (direction) => {
+            idle[direction] = await loadSourceFrame({
+                motion: direction === 'south' ? 'stand' : `stand-${direction}`,
+                frame: 0,
+            });
+        }),
+        ...['south-east', 'east', 'north-east', 'west', 'south-west'].map(async (direction) => {
+            directionalUppercut[direction] = await Promise.all(Array.from({ length: 7 }, (_, frame) => {
+                const motion = `surprise-uppercut-${direction}`;
+                return (loader.frames.get(`${motion}:${frame}`) ??
+                    loadSourceFrame({ motion, frame }));
+            }));
+        }),
+        ...['shoulder-crush', 'ground-impact'].map(async (sheet) => {
+            effects.set(`combat-vfx:${sheet}`, await loadCombatEffectSpriteFrame(sheet));
+        }),
+    ]);
+    for (const [key, source] of techniqueEffects)
+        effects.set(key, source);
     return {
         frames: loader.frames,
         uppercut,
@@ -64,5 +93,8 @@ export async function loadBattleAssets() {
         run,
         bear: { stand, hit, defeat },
         portrait,
+        directional: { idle, uppercut: directionalUppercut },
+        motionResources,
+        effects,
     };
 }

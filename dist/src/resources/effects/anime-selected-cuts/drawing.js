@@ -9,6 +9,16 @@ export const rand = (seed) => {
     const n = Math.sin(seed * 127.1 + 311.7) * 43758.5453;
     return n - Math.floor(n);
 };
+const flatCamera = {
+    position: { x: 0, y: 4.5, z: 12 },
+    target: { x: 0, y: 1.5, z: 0 },
+    focal: 900,
+};
+/** 평면 연출도 실제 전투 공터를 같은 원근으로 깔고 배우는 별도 판에 그린다. */
+export function gameBackground(context, frame, time = frame.time) {
+    const stage = frame.surfaces.stage;
+    stage.background(context, 'arena', flatCamera, time);
+}
 export function line(c, points, color, width = 2) {
     if (!points.length)
         return;
@@ -19,52 +29,6 @@ export function line(c, points, color, width = 2) {
     c.strokeStyle = color;
     c.lineWidth = width;
     c.stroke();
-}
-export function sky(c, time = 0) {
-    const g = c.createLinearGradient(0, 0, 0, 720);
-    g.addColorStop(0, '#193548');
-    g.addColorStop(0.6, '#a3bcbd');
-    g.addColorStop(1, '#dfd6b7');
-    c.fillStyle = g;
-    c.fillRect(0, 0, 1280, 720);
-    for (let i = 0; i < 11; i++) {
-        const x = ((i * 227 + time * 13) % 1600) - 160, y = 70 + rand(i + 18) * 180;
-        c.fillStyle = i % 2 ? '#e5e9d0' : '#c1d1ca';
-        c.beginPath();
-        c.moveTo(x, y);
-        c.lineTo(x + 150, y - 18);
-        c.lineTo(x + 270, y + 12);
-        c.lineTo(x + 245, y + 31);
-        c.lineTo(x + 35, y + 37);
-        c.closePath();
-        c.fill();
-    }
-}
-export function background2D(c, time) {
-    sky(c, time);
-    c.fillStyle = '#536c70';
-    for (let i = 0; i < 13; i++) {
-        const x = i * 120 - 100 + Math.sin(time * 0.3) * 25;
-        c.beginPath();
-        c.moveTo(x, 470);
-        c.lineTo(x + 70, 230 + rand(i) * 90);
-        c.lineTo(x + 145, 470);
-        c.fill();
-    }
-    c.fillStyle = '#293e45';
-    c.fillRect(0, 490, 1280, 230);
-    for (let i = 0; i < 18; i++) {
-        c.fillStyle = i % 2 ? '#5b7774' : '#75918a';
-        c.fillRect(i * 85 - 50, 490 + rand(i + 2) * 150, 100, 3);
-    }
-    c.fillStyle = '#142e35';
-    for (let i = 0; i < 9; i++) {
-        c.beginPath();
-        c.moveTo(i * 170 - 90, 720);
-        c.lineTo(i * 170 + 40, 570 + rand(i) * 60);
-        c.lineTo(i * 170 + 170, 720);
-        c.fill();
-    }
 }
 /** 배경만 한 방향으로 노출을 겹쳐 흐린다. 임의의 띠 변위로 공간을 찢지 않는다. */
 export function smearBackground(c, surfaces, draw, amount, vertical = false) {
@@ -106,32 +70,6 @@ export function speedLines(c, time, amount = 1, vertical = false) {
                 [a + 50 + p * 300, q * 720],
             ], i % 3 ? '#e8f4d9' : '#142738', 1 + q * 4);
     }
-    c.restore();
-}
-export function burst(c, x, y, progress, size = 180, color = '#ffdc83') {
-    if (progress < 0 || progress > 1)
-        return;
-    const p = clamp(progress);
-    c.save();
-    c.translate(x, y);
-    c.globalAlpha = 1 - p;
-    c.fillStyle = color;
-    c.beginPath();
-    for (let i = 0; i < 24; i++) {
-        const a = (i * Math.PI) / 12, r = size * (i % 2 ? 0.18 : 0.65 + rand(i) * 0.4) * (1 + p);
-        const px = Math.cos(a) * r, py = Math.sin(a) * r * 0.7;
-        if (i === 0)
-            c.moveTo(px, py);
-        else
-            c.lineTo(px, py);
-    }
-    c.closePath();
-    c.fill();
-    c.strokeStyle = '#fffdeb';
-    c.lineWidth = 8 * (1 - p);
-    c.beginPath();
-    c.ellipse(0, 0, size * p * 1.5, size * p * 0.8, 0, 0, Math.PI * 2);
-    c.stroke();
     c.restore();
 }
 /** 원본 몸은 유지하고 접촉점의 짧은 권격 궤적만 늘인다. */

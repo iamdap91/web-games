@@ -7,6 +7,7 @@ import {
 import type { StudioConnection } from '../../cutscenes/studio/contracts.js';
 import { samples, drawSample, disposeSampleSurfaces } from './catalog.js';
 import { exportGif } from './export.js';
+import { GameStages } from '../../cutscenes/game-stage.js';
 import { ShowcasePlayer } from './player.js';
 import { loadBattleAssets, type BattleAssets } from './battle-assets.js';
 import {
@@ -56,7 +57,10 @@ class ShowcaseScreen {
   private exporting: AbortController | null = null;
   private studio?: StudioConnection;
 
-  constructor(private readonly assets: BattleAssets) {
+  constructor(
+    private readonly assets: BattleAssets,
+    private readonly stage: GameStages,
+  ) {
     if (!this.context || !this.baseContext)
       throw new Error('Canvas를 준비할 수 없습니다.');
     const expectedCount = categories.reduce(
@@ -427,6 +431,7 @@ class ShowcaseScreen {
       );
       drawSample(ctx, this.current, {
         assets: this.assets,
+        stage: this.stage,
         timeMs: snapshot.timeMs,
         enhanced,
         reducedMotion: this.reduced.checked,
@@ -522,6 +527,7 @@ class ShowcaseScreen {
     this.urls.clear();
     if (this.context) disposeSampleSurfaces(this.context);
     if (this.baseContext) disposeSampleSurfaces(this.baseContext);
+    this.stage.dispose();
   }
 }
 async function start(): Promise<void> {
@@ -530,9 +536,11 @@ async function start(): Promise<void> {
   const lifecycle = new AbortController();
   let disposed = false;
   let screen: ShowcaseScreen | undefined;
+  let stage: GameStages | undefined;
   const dispose = () => {
     disposed = true;
     screen?.dispose();
+    stage?.dispose();
     lifecycle.abort();
   };
   registerEmbeddedScene(dispose);
@@ -541,11 +549,13 @@ async function start(): Promise<void> {
     signal: lifecycle.signal,
   });
   try {
-    const assets = await loadBattleAssets();
+    stage = new GameStages();
+    const [assets] = await Promise.all([loadBattleAssets(), stage.load()]);
     if (disposed) return;
-    screen = new ShowcaseScreen(assets);
+    screen = new ShowcaseScreen(assets, stage);
     if (loading) loading.hidden = true;
   } catch (error) {
+    stage?.dispose();
     if (disposed) return;
     lifecycle.abort();
     if (loading) loading.hidden = true;

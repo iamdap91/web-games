@@ -1,4 +1,6 @@
-import { burst, clamp, ease, fistSmear, lerp, line, rand, sky, smearBackground, smooth, speedLines, } from './drawing.js';
+import { clamp, ease, fistSmear, lerp, line, smearBackground, smooth, speedLines, } from './drawing.js';
+import { gameDust, gameImpact } from '../../cutscenes/game-effects.js';
+import { stairAngle, stairPoint, } from '../../cutscenes/game-stage.js';
 import { WorldScene } from './world.js';
 const runCut = {
     start: 0.16,
@@ -7,13 +9,45 @@ const runCut = {
     contact: 2.46,
     runDistance: 56,
     ramp: 0.12,
+    spurtDuration: 0.3,
+    spurtSpeed: 50,
     leapDistance: 6.7,
     leapHeight: 1.1,
     settleStart: 1.97,
     settleEnd: 2.25,
     targetGap: 1.05,
 };
+// 마지막 이차 가속의 이동량까지 빼고 기본 속도를 정해 총 56m를 맞춘다.
+const runBaseSpeed = (runCut.runDistance - (runCut.spurtSpeed * runCut.spurtDuration) / 3) /
+    (runCut.jump - runCut.start - runCut.ramp / 2 - runCut.spurtDuration / 3);
 const runLandingZ = runCut.runDistance + runCut.leapDistance;
+const fallCut = {
+    startHeight: 67,
+    initialSpeed: 14,
+    gravity: 8,
+    boostStart: 2.16,
+    contact: 2.58,
+    contactHeight: 1.95,
+    cameraLag: 0.025,
+    cameraLagHeight: 0.72,
+    cameraLagBlend: 0.12,
+};
+const fallBoostDuration = fallCut.contact - fallCut.boostStart;
+const fallBoostDistance = fallCut.startHeight -
+    fallCut.initialSpeed * fallCut.contact -
+    (fallCut.gravity * fallCut.contact ** 2) / 2 -
+    fallCut.contactHeight;
+const fallPeakSpeed = fallCut.initialSpeed +
+    fallCut.gravity * fallCut.contact +
+    (3 * fallBoostDistance) / fallBoostDuration;
+const runSmearExposures = [
+    { frame: 9, holds: 1, strength: 0.7 },
+    { frame: 16, holds: 1, strength: 0.85 },
+    { frame: 23, holds: 2, strength: 1 },
+    { frame: 30, holds: 1, strength: 0.85 },
+    { frame: 37, holds: 2, strength: 1 },
+    { frame: 44, holds: 2, strength: 1.1 },
+];
 // 세계 이동과 카메라는 연속적으로, 그림 교체만 24fps의 1·2·3코마로 나눈다.
 function poseTime(time, holds = 2) {
     return Math.floor(time * (24 / holds)) / (24 / holds);
@@ -33,129 +67,33 @@ function mixCamera(from, to, progress) {
         roll: lerp(from.roll ?? 0, to.roll ?? 0, progress),
     };
 }
-function colonnadeColumns(scene, layer) {
-    const near = layer === 'near';
-    for (let z = -30; z <= runLandingZ + 30; z += 10) {
-        // 착지와 장전 앞의 가까운 기둥은 비워 공격이 또렷하게 보이게 한다.
-        if (near && z > runCut.runDistance - 2 && z < runLandingZ + 8)
-            continue;
-        const x = near ? -7 : 7;
-        scene.column({ x, y: 0, z }, 9, near ? 0.28 : 0.62);
-        scene.box({ x, y: near ? 0.125 : 0.25, z }, { x: near ? 0.9 : 1.8, y: near ? 0.25 : 0.5, z: near ? 0.9 : 1.8 }, '#bba172');
-        scene.box({ x, y: 8.7, z }, { x: near ? 1.05 : 2, y: 0.6, z: near ? 1.05 : 2 }, '#dfcc9f');
-        scene.box({ x, y: 9.15, z: z + 5 }, { x: near ? 0.8 : 1.65, y: 0.5, z: 10.5 }, '#b29d73');
-    }
-}
-function colonnade(scene) {
-    const start = -36;
-    const end = runLandingZ + 40;
-    // 겹치는 큰 바닥 면을 두지 않아 평균 깊이 정렬이 돌 격자를 다시 덮지 않는다.
-    for (let z = start, row = 0; z < end; z += 5, row++) {
-        for (let column = -8; column < 8; column++) {
-            const x = column * 3;
-            scene.floorQuad([
-                { x, y: 0.025, z },
-                { x: x + 3, y: 0.025, z },
-                { x: x + 3, y: 0.025, z: Math.min(z + 5, end) },
-                { x, y: 0.025, z: Math.min(z + 5, end) },
-            ], (row + column) % 2 ? '#b7a382' : '#e4d4ad');
-        }
-    }
-    colonnadeColumns(scene, 'far');
-}
-function fallingTower(scene) {
-    scene.floorBox({ x: 0, y: -0.45, z: 0 }, { x: 30, y: 0.9, z: 30 }, '#887d72');
-    scene.floorBox({ x: 0, y: 0.025, z: 0 }, { x: 6, y: 0.05, z: 6 }, '#c8b998');
-    for (let layer = 0; layer < 12; layer++) {
-        const y = layer * 7;
-        for (let index = 0; index < 8; index++) {
-            const angle = (index / 8) * Math.PI * 2;
-            const x = Math.cos(angle) * 8;
-            const z = Math.sin(angle) * 8;
-            const broken = (index + layer) % 5 === 1;
-            scene.column({ x, y, z }, broken ? 3.3 : 6.8, 0.6);
-            if (!broken)
-                scene.box({ x, y: y + 6.6, z }, { x: 2, y: 0.6, z: 2 }, '#a89d8a');
-        }
-        for (let index = 0; index < 4; index++) {
-            const seed = layer * 7 + index;
-            const angle = seed * 2.399;
-            const radius = 4.8 + rand(seed + 8) * 2.5;
-            scene.box({
-                x: Math.cos(angle) * radius,
-                y: y + 2.3,
-                z: Math.sin(angle) * radius,
-            }, { x: 0.55 + rand(seed + 12), y: 0.3 + rand(seed + 23), z: 0.7 }, '#9a8a73');
-        }
-    }
-}
-function stairAngle(progress) {
-    return progress * Math.PI * 4.8 - 0.6;
-}
-function stairPoint(progress) {
-    const angle = stairAngle(progress);
-    return {
-        x: Math.sin(angle) * 5.5,
-        y: progress * 15,
-        z: Math.cos(angle) * 5.5,
-    };
-}
-function spiralTower(scene) {
-    // 난간을 두지 않아 계단의 좁은 디딤면과 열린 중앙이 보인다.
-    for (let index = 0; index < 60; index++) {
-        const a = stairPoint(index / 60);
-        const b = stairPoint((index + 1) / 60);
-        const angle = stairAngle(index / 60);
-        const outward = { x: Math.sin(angle) * 1.35, z: Math.cos(angle) * 1.35 };
-        const inward = { x: -outward.x, z: -outward.z };
-        scene.quad([
-            { x: a.x + inward.x, y: a.y, z: a.z + inward.z },
-            { x: a.x + outward.x, y: a.y, z: a.z + outward.z },
-            { x: b.x + outward.x, y: a.y, z: b.z + outward.z },
-            { x: b.x + inward.x, y: a.y, z: b.z + inward.z },
-        ], index % 2 ? '#bd9d70' : '#d9bd8a');
-        scene.quad([
-            { x: b.x + inward.x, y: a.y, z: b.z + inward.z },
-            { x: b.x + outward.x, y: a.y, z: b.z + outward.z },
-            { x: b.x + outward.x, y: b.y, z: b.z + outward.z },
-            { x: b.x + inward.x, y: b.y, z: b.z + inward.z },
-        ], '#776b5b');
-    }
-    for (let index = 0; index < 12; index++) {
-        const angle = (index / 12) * Math.PI * 2;
-        const x = Math.sin(angle) * 9.3;
-        const z = Math.cos(angle) * 9.3;
-        scene.column({ x, y: -1, z }, 18.5, 0.75);
-        scene.box({ x, y: 17.7, z }, { x: 2.5, y: 0.55, z: 2.5 }, '#d9c89b');
-    }
-    const top = stairPoint(1);
-    scene.floorBox({ x: top.x, y: 14.7, z: top.z }, { x: 8.5, y: 0.6, z: 8.5 }, '#d6bd8e');
-}
-function sceneBackground(ctx, frame, camera, build, smear, vertical = false) {
+function sceneBackground(ctx, frame, camera, kind, smear, focus, vertical = false, smearDisplacement) {
     const draw = (background) => {
-        sky(background, frame.time);
-        const scene = new WorldScene(background, camera, frame.time);
-        build(scene);
-        scene.render();
+        frame.surfaces.stage.background(background, kind, camera, frame.time, {
+            focus,
+            smear: smearDisplacement,
+        });
     };
-    if (smear > 0.005) {
+    if (smear > 0.005)
         smearBackground(ctx, frame.surfaces, draw, smear, vertical);
-        return new WorldScene(ctx, camera, frame.time);
-    }
-    // 흐림 없는 장은 배우와 앞 기둥도 같은 깊이 순서로 정렬한다.
-    sky(ctx, frame.time);
-    const scene = new WorldScene(ctx, camera, frame.time);
-    build(scene);
-    return scene;
+    else
+        draw(ctx);
+    return new WorldScene(ctx, camera);
 }
-function contact(ctx, projected, time, contactTime, angle, patch) {
+function contact(ctx, frame, projected, time, contactTime, angle, patch) {
     if (!projected)
         return;
     const swing = (time - (contactTime - 0.12)) / 0.15;
     if (swing > 0 && swing < 1)
         fistSmear(ctx, projected.x, projected.y, swing, angle, Math.min(160, projected.scale * 1.4), patch);
     if (time >= contactTime && time < contactTime + 0.33)
-        burst(ctx, projected.x, projected.y, (time - contactTime) / 0.33, Math.min(150, projected.scale * 1.8), '#fff0b4');
+        gameImpact(ctx, frame.assets.effects, {
+            x: projected.x,
+            y: projected.y,
+            progress: (time - contactTime) / 0.33,
+            size: Math.min(320, projected.scale * 3.6),
+            angle,
+        });
 }
 function spriteHeight(sprite) {
     return ((sprite.bounds?.bottom ?? sprite.image.naturalHeight) -
@@ -196,19 +134,35 @@ function runPoint(time) {
         const travel = elapsed < runCut.ramp
             ? (elapsed * elapsed) / (2 * runCut.ramp)
             : elapsed - runCut.ramp / 2;
+        const spurt = clamp((time - (runCut.jump - runCut.spurtDuration)) / runCut.spurtDuration);
         return {
             x: 0,
             y: 0,
-            z: (runCut.runDistance * travel) / (duration - runCut.ramp / 2),
+            z: runBaseSpeed * travel +
+                ((runCut.spurtSpeed - runBaseSpeed) *
+                    runCut.spurtDuration *
+                    spurt ** 3) /
+                    3,
         };
     }
     const jump = clamp((time - runCut.jump) / (runCut.land - runCut.jump));
     return {
         x: 0,
         y: Math.sin(jump * Math.PI) * runCut.leapHeight,
-        // 질주 속도를 도약으로 이어받고 착지에서 전진을 멈춰 주먹을 읽힌다.
-        z: runCut.runDistance + (2 * jump - jump * jump) * runCut.leapDistance,
+        // 스퍼트의 진입 속도와 6.7m 착지 지점을 함께 맞추고 착지에서 멈춘다.
+        z: runCut.runDistance +
+            runCut.leapDistance * (3 * jump ** 2 - 2 * jump ** 3) +
+            runCut.spurtSpeed * (runCut.land - runCut.jump) * jump * (1 - jump) ** 2,
     };
+}
+function runSmearDisplacement(time) {
+    const frame = Math.floor(time * 24 + 1e-8);
+    const exposure = runSmearExposures.find((entry) => frame >= entry.frame && frame < entry.frame + entry.holds);
+    if (!exposure)
+        return undefined;
+    // 현재 이동량으로 배경 면만 늘인다. 카메라·배우·그림자의 좌표는 바꾸지 않는다.
+    const travel = runPoint(time).z - runPoint(Math.max(0, time - 1 / 24)).z;
+    return { x: 0, y: 0, z: -travel * 1.6 * exposure.strength };
 }
 function runShadow(ctx, scene, position, radius) {
     const points = Array.from({ length: 16 }, (_, index) => {
@@ -267,13 +221,11 @@ function drawBackgroundRun(ctx, frame) {
         ? Math.sin(clamp((time - runCut.jump) / (runCut.settleEnd - runCut.jump)) *
             Math.PI) * 0.48
         : 0;
-    const scene = sceneBackground(ctx, frame, camera, colonnade, smear);
+    const scene = sceneBackground(ctx, frame, camera, 'run', smear, point, false, runSmearDisplacement(time));
     scene.render();
     // 그림자도 같은 바닥에 투영하고, 가까운 기둥과 배우보다 먼저 합성한다.
     runShadow(ctx, scene, point, { x: 0.72, z: 0.42 });
     runShadow(ctx, scene, bearPoint, { x: 1.1, z: 0.65 });
-    // 근경은 흐린 배경 판에 굽지 않고 배우와 같은 깊이 순서로 합성한다.
-    colonnadeColumns(scene, 'near');
     if (time < runCut.land) {
         const running = time >= runCut.start && time < runCut.jump;
         scene.hero(frame.assets, point, time < runCut.start ? 'idle' : running ? 'run' : 'jump', running
@@ -299,16 +251,32 @@ function drawBackgroundRun(ctx, frame) {
             ? clamp(hitAge / 0.28)
             : poseTime(time, 3) * 2, { rotation: camera.roll });
     scene.render();
-    contact(ctx, strikePoint(scene, frame.assets.hero.uppercut['south-east'][2], { x: 0, y: 0, z: runLandingZ }, [62, 34]), time, runCut.contact, -1.15, frame.assets.fistPatch);
+    frame.surfaces.stage.foreground(ctx, 'run', camera, time, { focus: point });
+    contact(ctx, frame, strikePoint(scene, frame.assets.hero.uppercut['south-east'][2], { x: 0, y: 0, z: runLandingZ }, [62, 34]), time, runCut.contact, -1.15, frame.assets.fistPatch);
     finishShade(ctx, (time - 2.8) / 0.2);
 }
+function fallDescent(time) {
+    const falling = Math.max(0, Math.min(time, fallCut.contact));
+    const boost = clamp((falling - fallCut.boostStart) / fallBoostDuration);
+    return {
+        height: fallCut.startHeight -
+            fallCut.initialSpeed * falling -
+            (fallCut.gravity * falling ** 2) / 2 -
+            fallBoostDistance * boost ** 3,
+        speed: time < fallCut.contact
+            ? fallCut.initialSpeed +
+                fallCut.gravity * falling +
+                (3 * fallBoostDistance * boost ** 2) / fallBoostDuration
+            : 0,
+    };
+}
 function fallPoint(time) {
-    const falling = Math.min(time, 2.58);
+    const falling = Math.min(time, fallCut.contact);
     return {
         x: Math.sin(falling * 1.3) * 0.5 * (1 - smooth((time - 2.16) / 0.3)),
-        y: time < 2.58
-            ? Math.max(1.95, 67 - 14 * falling - 5 * falling * falling)
-            : 1.95 * (1 - smooth((time - 2.65) / 0.33)),
+        y: time < fallCut.contact
+            ? fallDescent(time).height
+            : fallCut.contactHeight * (1 - smooth((time - 2.65) / 0.33)),
         z: 0,
     };
 }
@@ -335,28 +303,42 @@ function fallingBrush(ctx, scene, time, amount) {
 function drawFalling(ctx, frame) {
     const time = Math.max(0, Math.min(3.7, frame.time));
     const fall = fallPoint(time);
+    const descent = fallDescent(time);
     const orbit = time * 1.8 + 0.3;
     const rotation = Math.PI * (1 - smooth((time - 1.88) / 0.34));
+    const lagEnvelope = smooth((time - fallCut.boostStart) / fallCut.cameraLagBlend) *
+        (1 -
+            smooth((time - (fallCut.contact - fallCut.cameraLagBlend)) /
+                fallCut.cameraLagBlend));
+    // 카메라만 짧게 뒤처져 배우가 내려가게 하되 접촉 전에는 원래 구도로 회수한다.
+    const lagHeight = time < fallCut.contact
+        ? Math.min(fallCut.cameraLagHeight, Math.max(0, fallDescent(time - fallCut.cameraLag).height - fall.y)) * lagEnvelope
+        : 0;
+    const cameraHeight = fall.y + lagHeight;
     const chase = {
         position: {
             x: Math.sin(orbit) * 5.7,
-            y: fall.y + 4.1,
+            y: cameraHeight + 4.1,
             z: Math.cos(orbit) * 5.7,
         },
-        target: { x: fall.x, y: fall.y + 1.25, z: 0 },
+        target: { x: fall.x, y: cameraHeight + 1.25, z: 0 },
         focal: 780,
         roll: -0.14 + Math.sin(time * 1.7) * 0.15,
     };
+    const finishLift = Math.max(0, cameraHeight - fallCut.contactHeight);
     const finish = {
-        position: { x: -6.2, y: 1.4, z: 7.6 },
-        target: { x: 0, y: 2.6, z: 0.5 },
+        // 마지막 가속까지 배우 높이를 따라가고 접촉에서 기존 앙각 구도로 돌아온다.
+        position: { x: -6.2, y: 1.4 + finishLift, z: 7.6 },
+        target: { x: 0, y: 2.6 + finishLift, z: 0.5 },
         focal: 920,
         roll: 0,
     };
     const camera = mixCamera(chase, finish, smooth((time - 2.24) / 0.28));
-    const velocity = 14 + Math.min(time, 2.5) * 10;
-    const smear = time < 2.42 ? clamp((velocity - 14) / 25) * 0.92 : 0;
-    const scene = sceneBackground(ctx, frame, camera, fallingTower, smear, true);
+    const smear = clamp((descent.speed - fallCut.initialSpeed) /
+        (fallPeakSpeed - fallCut.initialSpeed)) *
+        0.92 *
+        (1 - smooth((time - (fallCut.contact - 0.04)) / 0.04));
+    const scene = sceneBackground(ctx, frame, camera, 'cliff', smear, fall, true);
     if (time < 2.22) {
         scene.hero(frame.assets, { ...fall, y: fall.y + 1.25 * (1 - Math.cos(rotation)) }, 'jump', 0.46, {
             facing: 0,
@@ -364,7 +346,7 @@ function drawFalling(ctx, frame) {
         });
     }
     else {
-        const phase = time < 2.58
+        const phase = time < fallCut.contact
             ? lerp(3 / 9, 4.5 / 9, clamp((poseTime(time, 1) - 2.22) / 0.36))
             : time < 2.69
                 ? 5.5 / 9
@@ -374,22 +356,34 @@ function drawFalling(ctx, frame) {
             height: strikeHeight(frame.assets.hero.slam['south-east'], phase, 5),
         });
     }
-    const hit = time >= 2.58;
+    const hit = time >= fallCut.contact;
     scene.bear(frame.assets, {
-        x: 0.8 + (hit ? smooth((time - 2.58) / 0.35) * 0.7 : 0),
+        x: 0.8 + (hit ? smooth((time - fallCut.contact) / 0.35) * 0.7 : 0),
         y: 0,
-        z: 0.9 + (hit ? smooth(clamp((time - 2.58) / 0.35)) * 0.5 : 0),
+        z: 0.9 + (hit ? smooth(clamp((time - fallCut.contact) / 0.35)) * 0.5 : 0),
     }, time >= 2.86 ? 'defeat' : hit ? 'hit' : 'stand', time >= 2.86
         ? clamp((time - 2.86) / 0.44)
         : hit
-            ? clamp((time - 2.58) / 0.28)
+            ? clamp((time - fallCut.contact) / 0.28)
             : poseTime(time, 3) * 2);
     scene.render();
-    if (time < 2.42) {
+    frame.surfaces.stage.foreground(ctx, 'cliff', camera, time, { focus: fall });
+    if (time >= 2.98) {
+        const ground = scene.project({ x: 0, y: 0, z: 0 });
+        if (ground)
+            gameDust(ctx, frame.assets.effects, {
+                ...ground,
+                progress: (time - 2.98) / 0.5,
+                size: 300,
+            });
+    }
+    if (smear > 0.005) {
         fallingBrush(ctx, scene, time, smear);
         speedLines(ctx, time, smear * 0.55, true);
     }
-    contact(ctx, strikePoint(scene, frame.assets.hero.slam['south-east'][5], { x: 0, y: 1.95, z: 0 }, [64, 69]), time, 2.58, 1.3);
+    contact(ctx, frame, strikePoint(scene, frame.assets.hero.slam['south-east'][5], 
+    // 접촉 전 권격도 가속 중인 배우를 따라가고 접촉광은 기존 타점에 남긴다.
+    hit ? { x: 0, y: fallCut.contactHeight, z: 0 } : fall, [64, 69]), time, fallCut.contact, 1.3);
     finishShade(ctx, (time - 3.05) / 0.28);
 }
 function stairProgress(time) {
@@ -448,7 +442,7 @@ function drawStairs(ctx, frame) {
     const smear = time > 1.68 && time < 2.18
         ? Math.sin(clamp((time - 1.68) / 0.5) * Math.PI) * 0.8
         : 0;
-    const scene = sceneBackground(ctx, frame, camera, spiralTower, smear);
+    const scene = sceneBackground(ctx, frame, camera, 'stairs', smear, point);
     if (time < 1.7)
         scene.hero(frame.assets, point, 'run', poseTime(time, 2) * 3, {
             facing: angle + Math.PI / 2,
@@ -479,9 +473,12 @@ function drawStairs(ctx, frame) {
             ? clamp((time - 2.4) / 0.13)
             : poseTime(time, 3) * 2);
     scene.render();
+    frame.surfaces.stage.foreground(ctx, 'stairs', camera, time, {
+        focus: point,
+    });
     if (smear > 0)
         speedLines(ctx, time, smear * 0.28);
-    contact(ctx, strikePoint(scene, frame.assets.hero.slam['south-east'][5], {
+    contact(ctx, frame, strikePoint(scene, frame.assets.hero.slam['south-east'][5], {
         x: landing.x,
         y: landing.y + Math.sin((0.7 / 0.9) * Math.PI) * 3,
         z: landing.z,
@@ -491,13 +488,17 @@ function drawStairs(ctx, frame) {
 export const journeyCuts = [
     {
         id: 'background-run',
-        title: '背景動画 · 열주 질주',
+        title: '背景動画 · 숲길 질주',
         kind: '3D',
         duration: 3.3,
-        description: '곰왕 방향 앞쪽의 낮은 사선 카메라가 아타호와 함께 후퇴한다. 빠른 열주 질주와 짧은 도약 뒤 구도를 정착시키고 어퍼컷 한 번으로 끝낸다.',
+        description: '게임 숲길의 낮은 사선 카메라가 아타호와 함께 후퇴한다. 질주 끝0.30초에33→50m/s로 치고 나가 같은 속도로 도약한다. 배경 스미어를1~2코마씩 섞고, 착지 뒤 구도를 정착시켜 어퍼컷 한 번으로 끝낸다.',
         beats: [
             { time: runCut.start, label: '사선 동행 · 급가속' },
-            { time: 0.75, label: '긴 질주 · 근경 시차' },
+            { time: 23 / 24, label: '질주 · 배경 스미어 2코마' },
+            {
+                time: runCut.jump - runCut.spurtDuration,
+                label: '끝 스퍼트 · 33→50m/s',
+            },
             { time: runCut.jump, label: '짧은 도약 · 배경 스미어' },
             { time: runCut.settleEnd, label: '타격 구도 정착' },
             { time: runCut.contact, label: '주먹 접촉 · 짧은 정지' },
@@ -507,16 +508,25 @@ export const journeyCuts = [
     },
     {
         id: 'falling-background',
-        title: '落下 · 무너진 석주 탑',
+        title: '落下 · 바위 협곡',
         kind: '3D',
         duration: 3.7,
-        description: '14→39m/s 낙하와 나선 추적 카메라, 세로 배경 붓자국 뒤 공중 양손 내려찍기로 종결한다. 머리부터 떨어지는 장은 기존 점프 원본의 카드 회전이며 새 낙하 자세를 그린 재현은 아니다.',
+        description: '게임 바위·식생으로 재구성한 협곡을 나선 추적 낙하한 뒤 마지막0.42초에31→51m/s로 가속한다. 카메라가25ms 늦게 따라와 몸도 아래로 파고들며 접촉 전에 구도를 회수한다. 머리부터 떨어지는 장은 기존 점프 원본의 카드 회전이며 새 낙하 자세를 그린 재현은 아니다.',
         beats: [
             { time: 0, label: '머리부터 낙하 · 나선 추적' },
             { time: 1, label: '낙하 가속 · 배경만 세로 스미어' },
             { time: 1.88, label: '낙하 중 자세 회복' },
+            { time: fallCut.boostStart, label: '마지막 하강 가속 · 31→51m/s' },
             { time: 2.22, label: '양손 내려찍기 장전' },
-            { time: 2.58, label: '공중 접촉 · 앙각 정착' },
+            {
+                time: fallCut.boostStart + fallCut.cameraLagBlend,
+                label: '카메라 지연 · 본체 하강',
+            },
+            {
+                time: fallCut.contact - fallCut.cameraLagBlend,
+                label: '접촉 구도 회수',
+            },
+            { time: fallCut.contact, label: '공중 접촉 · 앙각 정착' },
             { time: 3.3, label: '착지 · 곰왕 쓰러짐' },
         ],
         draw: drawFalling,
@@ -526,7 +536,7 @@ export const journeyCuts = [
         title: '螺旋 · 열린 계단 60칸',
         kind: '3D',
         duration: 3.05,
-        description: '난간 없는 60칸 나선 계단을 실제 3D로 오르며 하이→근접→로우 앵글을 잇고, 낮은 구간을 압축한 뒤 하늘 열린 꼭대기에 내려찍는다. 계단·카메라는 입체이고 인물은 방향별 평면 원본이다. 특정 작품 장면의 정확한 자세 재현은 아니다.',
+        description: '게임의 석재 재질로 재구성한 난간 없는 60칸 나선 계단을 실제 3D로 오르며 하이→근접→로우 앵글을 잇고, 낮은 구간을 압축한 뒤 하늘 열린 꼭대기에 내려찍는다. 계단·카메라는 입체이고 인물은 방향별 평면 원본이다. 특정 작품 장면의 정확한 자세 재현은 아니다.',
         beats: [
             { time: 0, label: '60칸 · 높은 시점에서 진입' },
             { time: 0.75, label: '허공에서 파고드는 카메라' },

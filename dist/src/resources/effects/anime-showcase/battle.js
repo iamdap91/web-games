@@ -148,8 +148,10 @@ export function drawBear(ctx, frame, options = {}) {
     const recoil = state === 'stand'
         ? 0
         : Math.sin(clamp(age / 900) * Math.PI) * (frame.reducedMotion ? 5 : 22);
-    const x = (options.x ?? battleLayout.target.x) + recoil;
-    const ground = (options.ground ?? battleLayout.target.ground) - recoil * 0.45;
+    const x = (options.x ?? battleLayout.target.x) +
+        (options.recoil?.displacementX ?? recoil);
+    const ground = (options.ground ?? battleLayout.target.ground) -
+        (options.recoil?.lift ?? recoil * 0.45);
     const scale = options.scale ?? battleLayout.target.scale;
     ctx.save();
     ctx.globalAlpha *= options.opacity ?? 1;
@@ -170,7 +172,7 @@ export function drawBattleActors(ctx, frame, options = {}) {
 }
 export function drawBattle(ctx, frame, options = {}) {
     if (options.background !== false)
-        stage(ctx, 0);
+        stage(ctx, frame, 0);
     drawBattleActors(ctx, frame, options);
 }
 /** 원본 얼굴에서 같은 비율로 잘라 쓰는 컷이며 눈·입의 새 원화를 생성하지 않는다. */

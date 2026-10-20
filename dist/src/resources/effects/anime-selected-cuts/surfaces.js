@@ -1,6 +1,11 @@
+import { GameStages } from '../../cutscenes/game-stage.js';
 /** 보조 판은 화면이 소유하고 종료 시 모두 해제한다. */
 export class CutSurfaces {
+    stage = new GameStages();
     canvases = new Map();
+    prepare() {
+        return this.stage.load();
+    }
     get(key, width = 1280, height = 720) {
         let canvas = this.canvases.get(key);
         if (!canvas) {
@@ -22,6 +27,7 @@ export class CutSurfaces {
         return context;
     }
     dispose() {
+        this.stage.dispose();
         for (const canvas of this.canvases.values())
             canvas.width = canvas.height = 1;
         this.canvases.clear();

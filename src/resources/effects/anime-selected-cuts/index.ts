@@ -20,7 +20,6 @@ function element<T extends HTMLElement>(id: string, kind: { new (): T }): T {
 class CutScreen {
   private readonly events = new AbortController();
   private readonly player = new CutPlayer();
-  private readonly surfaces = new CutSurfaces();
   private readonly canvas = element('stage', HTMLCanvasElement);
   private readonly context = this.canvas.getContext('2d');
   private readonly list = element('cuts', HTMLElement);
@@ -36,7 +35,10 @@ class CutScreen {
   private exporting: AbortController | null = null;
   private downloadUrl: string | null = null;
   private studio?: StudioConnection;
-  constructor(private readonly assets: CutAssets) {
+  constructor(
+    private readonly assets: CutAssets,
+    private readonly surfaces: CutSurfaces,
+  ) {
     if (!this.context) throw new Error('Canvas를 준비할 수 없습니다.');
     if (cuts.length !== 10 || new Set(cuts.map((c) => c.id)).size !== 10)
       throw new Error('서로 다른 10개 컷이 필요합니다.');
@@ -363,9 +365,11 @@ async function start(): Promise<void> {
   const lifecycle = new AbortController();
   let disposed = false;
   let screen: CutScreen | undefined;
+  let surfaces: CutSurfaces | undefined;
   const dispose = () => {
     disposed = true;
     screen?.dispose();
+    if (!screen) surfaces?.dispose();
     lifecycle.abort();
   };
   registerEmbeddedScene(dispose);
@@ -374,9 +378,11 @@ async function start(): Promise<void> {
     signal: lifecycle.signal,
   });
   try {
-    const assets = await loadCutAssets();
-    if (!disposed) screen = new CutScreen(assets);
+    surfaces = new CutSurfaces();
+    const [assets] = await Promise.all([loadCutAssets(), surfaces.prepare()]);
+    if (!disposed) screen = new CutScreen(assets, surfaces);
   } catch (error: unknown) {
+    surfaces?.dispose();
     if (disposed) return;
     lifecycle.abort();
     const output = element('error', HTMLElement);

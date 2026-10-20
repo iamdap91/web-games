@@ -1,5 +1,6 @@
 import { drawBear, drawHero } from './cast.js';
-import { background2D, burst, clamp, ease, fistSmear, rand, } from './drawing.js';
+import { clamp, ease, gameBackground, rand } from './drawing.js';
+import { gameImpact, gameInk } from '../../cutscenes/game-effects.js';
 const comicStrike = { start: 1.87, contact: 2.01, settle: 2.48 };
 const comicHit = { x: 850, y: 330 };
 const panels = [
@@ -247,11 +248,17 @@ function registerLayer(context, frame, color, offsetX, offsetY) {
 }
 function actionPanel(context, frame) {
     const time = Math.min(frame.time, comicStrike.settle);
+    const strike = clamp((time - comicStrike.start) / (comicStrike.contact - comicStrike.start));
     context.save();
     context.beginPath();
     context.rect(32, 32, 1216, 656);
     context.clip();
-    background2D(context, 0.2);
+    const backdrop = frame.surfaces.get('comic-game-backdrop');
+    gameBackground(backdrop, frame, 0.2);
+    context.save();
+    context.filter = 'sepia(.35) saturate(.75) contrast(1.12)';
+    context.drawImage(backdrop.canvas, 0, 0);
+    context.restore();
     context.fillStyle = 'rgba(247,232,176,.35)';
     context.fillRect(0, 0, 1280, 720);
     halftone(context, 32, 32, 1216, 656);
@@ -261,10 +268,23 @@ function actionPanel(context, frame) {
     registerLayer(context, frame, '#00c4de', -displacement, 2);
     registerLayer(context, frame, '#f1338d', displacement, -3);
     if (time >= comicStrike.contact)
-        burst(context, comicHit.x, comicHit.y, Math.min((time - comicStrike.contact) / 0.7, 0.65), 118, '#fff4ba');
+        gameImpact(context, frame.assets.effects, {
+            x: comicHit.x,
+            y: comicHit.y,
+            progress: (time - comicStrike.contact) / 0.22,
+            size: 300,
+            angle: -0.58,
+        });
     actionActors(context, frame);
     if (time > comicStrike.start && time < comicStrike.contact)
-        fistSmear(context, comicHit.x, comicHit.y, (time - comicStrike.start) / (comicStrike.contact - comicStrike.start), -0.58, 220, frame.assets.fistPatch);
+        gameInk(context, frame.assets.effects, {
+            sheet: 'stroke',
+            x: comicHit.x - (1 - ease(strike)) * 160,
+            y: comicHit.y,
+            progress: strike,
+            angle: -0.58,
+            size: 330,
+        });
     if (time >= comicStrike.contact) {
         lettering(context, '쾅!!', 965, 177, 153, -0.16);
     }

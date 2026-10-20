@@ -12,6 +12,15 @@ import {
 } from './drawing.js';
 import type { Context, Frame, Point } from './types.js';
 import { atahoPosition, battleLayout, drawAtaho, drawBear } from './battle.js';
+import {
+  drawKiSprite,
+  kiSpriteFrame,
+} from '../../characters/ataho-v2-combos/ki-sprites.js';
+import { mapStyles } from '../../../rendering/map-art-direction.js';
+import {
+  drawGameShard,
+  drawGameStoneFace,
+} from './technique-effect-resources.js';
 
 type FlightPoint = {
   readonly x: number;
@@ -64,11 +73,14 @@ function bearEvasion(timeMs: number, reducedMotion: boolean): FlightPoint {
   return { x: battleLayout.target.x, height: 0, depth: 0 };
 }
 
-function projectFlight(point: FlightPoint, frame: Frame): ProjectedPoint {
+function projectFlight(
+  point: FlightPoint,
+  frame: Frame,
+  timeMs = frame.timeMs,
+): ProjectedPoint {
   const camera = frame.reducedMotion
     ? 0
-    : smooth((frame.timeMs - 350) / 260) *
-      (1 - smooth((frame.timeMs - 1500) / 300));
+    : smooth((timeMs - 350) / 260) * (1 - smooth((timeMs - 1500) / 300));
   const lens = 700 - camera * 160;
   const depth = point.depth * (frame.reducedMotion ? 0.55 : 1);
   const scale = frame.enhanced ? lens / (lens - depth) : 1;
@@ -85,6 +97,21 @@ function shotLaunch(index: number, kind: CircusKind): number {
     : 380 + index * 95;
 }
 
+function shotLifetime(index: number, kind: CircusKind): number {
+  return (kind === 'muraki' && index >= 2 ? 1960 : 1760) + (index % 4) * 90;
+}
+
+function leftFlightArea(point: FlightSample, frame: Frame): boolean {
+  const projected = projectFlight(point, frame, point.timeMs);
+  // 추적 카메라의 확대·기울기로 화면 가장자리에 다시 보이지 않게 머리와 연기 폭까지 밖으로 보낸다.
+  return (
+    projected.x < -160 ||
+    projected.x > 1120 ||
+    projected.y < -140 ||
+    projected.y > 680
+  );
+}
+
 /** 절대 시각부터 고정 간격으로 적분해 스크럽과 GIF의 추격 경로를 같게 한다. */
 function samplePursuit(
   index: number,
@@ -92,7 +119,7 @@ function samplePursuit(
   frame: Frame,
 ): readonly FlightSample[] {
   const launch = shotLaunch(index, kind);
-  const now = Math.min(frame.timeMs, launch + 1160, 1770);
+  const now = Math.min(frame.timeMs, launch + shotLifetime(index, kind));
   if (now <= launch) return [];
   const actor = atahoPosition(frame, { timeMs: launch });
   let position: FlightPoint = {
@@ -164,13 +191,16 @@ function samplePursuit(
         Math.min(190, position.depth + velocity.depth * dt),
       ),
     };
-    samples.push({ ...position, timeMs: nextTime });
+    const sample = { ...position, timeMs: nextTime };
+    samples.push(sample);
+    if (leftFlightArea(sample, frame)) break;
   }
   return samples;
 }
 
 function drawEnergyHead(
   ctx: Context,
+  frame: Frame,
   point: ProjectedPoint,
   prior: ProjectedPoint,
   thrust: number,
@@ -180,25 +210,20 @@ function drawEnergyHead(
   ctx.translate(point.x, point.y);
   ctx.rotate(Math.atan2(point.y - prior.y, point.x - prior.x));
   ctx.scale(point.scale * emphasis, point.scale * emphasis);
-  polygon(
-    ctx,
-    [
-      { x: 9, y: 0 },
-      { x: -4, y: -4 },
-      { x: -8, y: 0 },
-      { x: -4, y: 4 },
-    ],
-    palette.paper,
-  );
-  polygon(
-    ctx,
-    [
-      { x: -5, y: -3 },
-      { x: -5 - thrust, y: 0 },
-      { x: -5, y: 3 },
-    ],
-    '#edbb62',
-  );
+  // 실제 기탄의 짧은 꼬리만 추진량에 따라 늘리고 추적 경로와 탄의 깊이는 보존한다.
+  drawKiSprite(ctx, frame.assets.effects, {
+    sheet: 'orb',
+    frame: kiSpriteFrame(frame.timeMs, {
+      start: 4,
+      count: 4,
+      frameMs: frame.reducedMotion ? 240 : 65,
+      loop: true,
+    }),
+    point: { x: 9, y: 0 },
+    width: 27 + thrust * 0.35,
+    height: 24,
+    anchorX: 0.86,
+  });
   ctx.restore();
 }
 
@@ -237,7 +262,7 @@ function circusLayers(kind: CircusKind, frame: Frame): readonly CircusLayer[] {
         alpha: 1 - age / trailMs,
       });
     }
-    if (frame.timeMs - head.timeMs > 40) continue;
+    if (head.timeMs < frame.timeMs) continue;
     const elapsed = frame.timeMs - shotLaunch(index, kind);
     layers.push({
       kind: 'head',
@@ -254,8 +279,8 @@ function circusLayers(kind: CircusKind, frame: Frame): readonly CircusLayer[] {
           : frame.enhanced
             ? 18
             : 12,
-      // 탄두는 접촉 전에 떠나고 이미 생긴 연기만 각자의 수명을 마친다.
-      alpha: 1 - smooth((frame.timeMs - 1630) / 140),
+      // 빗나간 탄은 관성대로 화면 밖까지 가고 오래 남은 탄만 자기 수명의 끝에서 식는다.
+      alpha: 1 - smooth((elapsed - shotLifetime(index, kind) + 180) / 180),
     });
   }
   return layers.sort((a, b) => a.depth - b.depth);
@@ -304,7 +329,7 @@ export function drawCircusScene(
       -480 - (lag.x - battleLayout.target.x) * camera * 0.28,
       -270 - lag.depth * camera * 0.12,
     );
-    stage(ctx, 0);
+    stage(ctx, frame, 0);
     ellipse(ctx, actor.x, 448, 58, 10, '#14293b32');
     ellipse(
       ctx,
@@ -354,6 +379,7 @@ export function drawCircusScene(
         ctx.globalAlpha *= layer.alpha * (frame.reducedMotion ? 0.65 : 1);
         drawEnergyHead(
           ctx,
+          frame,
           projectFlight(layer.point, frame),
           projectFlight(layer.prior, frame),
           layer.thrust,
@@ -367,24 +393,6 @@ export function drawCircusScene(
     ctx.restore();
   }
   return true;
-}
-
-function shardShape(
-  ctx: Context,
-  point: Point,
-  radius: number,
-  index: number,
-  color: string,
-): void {
-  const points = Array.from({ length: 7 }, (_, k) => {
-    const a = (k / 7) * Math.PI * 2;
-    const r = radius * (0.55 + noise(index * 11 + k) * 0.65);
-    return {
-      x: point.x + Math.cos(a) * r,
-      y: point.y + Math.sin(a) * r * 0.73,
-    };
-  });
-  polygon(ctx, points, color);
 }
 
 function drawIsoDebris(ctx: Context, frame: Frame): void {
@@ -406,17 +414,14 @@ function drawIsoDebris(ctx: Context, frame: Frame): void {
     };
     const release = smooth((age - 210 - cluster * 42) / 620);
     if (frame.enhanced) {
-      // 작은 파편을 붙은 검정 외곽으로 읽힌 뒤 바깥부터 떨어뜨린다.
-      const joined: Point[] = [];
-      for (let edge = 0; edge < 24; edge++) {
-        const angle = (edge / 24) * Math.PI * 2;
-        const radius = (edge % 3 === 0 ? 41 : 27) * (1 - release * 0.68);
-        joined.push({
-          x: center.x + Math.cos(angle) * radius,
-          y: center.y + Math.sin(angle) * radius * 0.65,
+      // 실제 돌의 알파 윤곽을 검정 군집으로 겹친 뒤 바깥 조각부터 떨어뜨린다.
+      if (release < 0.9)
+        drawGameShard(ctx, frame, {
+          point: center,
+          size: 34 * (1 - release * 0.68),
+          index: cluster,
+          silhouette: true,
         });
-      }
-      polygon(ctx, joined, '#243b48');
       for (let piece = 0; piece < 7; piece++) {
         const angle = piece * 2.399 + cluster;
         const distance = (6 + piece * 3) * (1 + release * 4.2);
@@ -427,13 +432,12 @@ function drawIsoDebris(ctx: Context, frame: Frame): void {
         ctx.save();
         ctx.translate(point.x, point.y);
         ctx.rotate(direction + seconds * ((piece % 3) - 1));
-        shardShape(
-          ctx,
-          { x: 0, y: 0 },
-          (12 + noise(piece + cluster * 7) * 9) * (1 - release * 0.32),
-          piece + cluster * 7,
-          '#243b48',
-        );
+        drawGameShard(ctx, frame, {
+          point: { x: 0, y: 0 },
+          size: (12 + noise(piece + cluster * 7) * 9) * (1 - release * 0.32),
+          index: piece + cluster * 7,
+          silhouette: true,
+        });
         ctx.restore();
       }
     } else {
@@ -453,6 +457,7 @@ function drawIsoDebris(ctx: Context, frame: Frame): void {
 
 function cube(
   ctx: Context,
+  frame: Frame,
   x: number,
   y: number,
   size: number,
@@ -495,9 +500,18 @@ function cube(
     polygon(
       ctx,
       face.indices.map((index) => vertices[index]!),
-      shade < 0.32 ? '#183e55' : shade < 0.68 ? '#79a6b4' : '#e1f3e8',
+      shade < 0.32
+        ? '#58615e'
+        : shade < 0.68
+          ? `#${mapStyles.ridge.ground.stone.toString(16)}`
+          : '#d0d4c9',
     );
-    ctx.strokeStyle = '#24475c';
+    drawGameStoneFace(
+      ctx,
+      frame,
+      face.indices.map((index) => vertices[index]!),
+    );
+    ctx.strokeStyle = '#58615e';
     ctx.lineWidth = 1.4;
     ctx.stroke();
   }
@@ -508,8 +522,8 @@ function drawNakamura(ctx: Context, frame: Frame): void {
   if (age < -170 || age > 2350) return;
   const motion = frame.reducedMotion ? 0.5 : 1;
   if (frame.enhanced && age < 60) {
-    // 맞는 곳의 얼음 판이 먼저 갈라져야 조각의 재질과 발생 지점이 이어진다.
-    cube(ctx, 551, 389, 42 * (1 - clamp(age / 90)), 0.27);
+    // 맞는 곳의 석재 판이 먼저 갈라져야 조각의 재질과 발생 지점이 이어진다.
+    cube(ctx, frame, 551, 389, 42 * (1 - clamp(age / 90)), 0.27);
     if (age < 0) return;
   }
   if (age < 0) return;
@@ -527,13 +541,14 @@ function drawNakamura(ctx: Context, frame: Frame): void {
     if (frame.enhanced)
       cube(
         ctx,
+        frame,
         x,
         y,
         size * (1 - smooth((age - 1450) / 1000) * 0.6),
         i * 0.43 + (noise(i + 9) - 0.5) * s * 5.8,
       );
     else {
-      ctx.fillStyle = '#879b93';
+      ctx.fillStyle = `#${mapStyles.ridge.ground.stone.toString(16)}`;
       ctx.fillRect(x - 6, y - 6, 12, 12);
     }
   }
@@ -614,7 +629,7 @@ function drawAnimeR(ctx: Context, frame: Frame): void {
       if (!frame.enhanced) ctx.globalAlpha *= 1 - clamp(age / 2100);
       ctx.translate(point.x, point.y);
       ctx.rotate(i + age / 900);
-      shardShape(ctx, { x: 0, y: 0 }, size, i, '#d4c7a6');
+      drawGameShard(ctx, frame, { point: { x: 0, y: 0 }, size, index: i });
       ctx.restore();
       continue;
     }
@@ -633,21 +648,23 @@ function drawAnimeR(ctx: Context, frame: Frame): void {
       ctx.save();
       ctx.translate(point.x, point.y);
       ctx.rotate(i + breakMs / 900 + childAge * (child - 1) * 4);
-      shardShape(ctx, { x: 0, y: 0 }, radius, i + child, '#d4c7a6');
+      drawGameShard(ctx, frame, {
+        point: { x: 0, y: 0 },
+        size: radius,
+        index: i + child,
+      });
       ctx.restore();
       if (childAge > life * 0.48)
         for (let speck = 0; speck < 2; speck++) {
           const since = childAge - life * 0.48;
-          shardShape(
-            ctx,
-            {
+          drawGameShard(ctx, frame, {
+            point: {
               x: point.x + (speck ? 1 : -1) * since * 37,
               y: point.y - since * 22,
             },
-            2.4 * (1 - clamp(since / (life * 0.52))),
-            i + speck,
-            '#a8b3b1',
-          );
+            size: 2.4 * (1 - clamp(since / (life * 0.52))),
+            index: i + speck,
+          });
         }
     }
   }
