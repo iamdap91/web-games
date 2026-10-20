@@ -1,45 +1,8 @@
-import { clamp, ellipse, line, noise, palette, polygon, ring, smooth, star, } from './drawing.js';
+import { drawKanadaLight } from './kanada-light.js';
+import { clamp, ellipse, line, noise, palette, polygon, ring, smooth, } from './drawing.js';
 import { battleLayout } from './battle.js';
 import { drawKiSprite, kiSpriteFrame, } from '../../characters/ataho-v2-combos/ki-sprites.js';
 import { drawOrbitViscosity } from '../../characters/ataho-v2-combos/orbit-viscosity-drawing.js';
-function drawKanadaLight(ctx, frame) {
-    const age = frame.timeMs - battleLayout.contactMs;
-    if (age < 0 || age > 1150)
-        return;
-    const size = frame.reducedMotion ? 0.62 : 1;
-    if (!frame.enhanced) {
-        ellipse(ctx, 549, 266, (18 + age / 22) * (1 - age / 1150), (18 + age / 22) * (1 - age / 1150), palette.paper);
-        return;
-    }
-    ctx.save();
-    const spike = (1 - smooth((age - 55) / 235)) * size;
-    ctx.globalAlpha *= frame.reducedMotion ? 0.66 : 1;
-    if (spike > 0) {
-        star(ctx, 549, 266, 186 * spike, palette.gold, 4, -0.13);
-        star(ctx, 549, 266, 142 * spike, palette.paper, 4, -0.13);
-        ellipse(ctx, 549, 266, 16 * spike, 16 * spike, '#fff9e2');
-    }
-    const orbit = clamp((age - 70) / 850);
-    if (age >= 70) {
-        ctx.globalAlpha *= 1 - orbit;
-        ctx.translate(549, 266);
-        ctx.rotate(-0.47);
-        const rx = (26 + orbit * 151) * size;
-        const ry = (8 + orbit * 37) * size;
-        // 십자는 셀의 단단한 면으로, 링은 여러 겹의 부드러운 농도로 분리한다.
-        for (let brush = 7; brush >= 0; brush--) {
-            ctx.save();
-            ctx.globalAlpha *= brush === 0 ? 0.54 : 0.055;
-            ctx.shadowColor = '#f8e6b4';
-            ctx.shadowBlur = brush * 1.6;
-            ring(ctx, 0, 0, rx, ry, brush % 2 ? '#f4d497' : '#fff7df', 2 + brush * 1.6);
-            ctx.restore();
-        }
-        ctx.globalAlpha *= 0.6;
-        ring(ctx, 0, 0, rx * 0.72, ry * 0.7, '#e5c483', 2.5);
-    }
-    ctx.restore();
-}
 function beamAxis(u, length, bend, tipHeight) {
     const v = 1 - u;
     return {

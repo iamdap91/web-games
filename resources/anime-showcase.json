@@ -7,9 +7,9 @@
   "scope": "기법81종·표정11종을 포함한 아타호·서리갈기 곰왕 연출 견본92종. 게임 숲·도장 자재와 보유 로컬 원본을 기법에 맞게 재사용한다. 오바리는 기존 전경 정권3장, 스쿼시는 기존 관절 폄·착지 눌림, 쿠루마다는 새 곰왕2장으로 비교한다. 공통 타격은1800ms이며 스쿼시는 같은 시각에 착지하는 독립 도약 비교다.",
   "authoring": {
     "actors": "기존 아타호 기립8방향·어퍼컷5방향·동쪽 정권·남동 달리기4장·날아차기·얼굴, 보유 남동 전경 정권3장·도약 폄·착지 눌림, 곰왕 대기·피격·쓰러짐 및 새 머리부터 낙하·머리 착지2장",
-    "effects": "기법81종의 공통 배경·질주·촬영·전환은 공유 GameStages의 게임 숲 공터·도장 길을 사용한다. 압축핵·착지 먼지·빔·기탄·코즈마 잔여·현무암은 보유 로컬 원본을 기법별 형상·시간 규칙에 연결한다. 맞는 그림이 없는 폭발·연기·드래곤과 광학·편집은 고유 절차 그리기를 유지한다.",
+    "effects": "공통 무대·기공·현무암은 보유 로컬 원본을 재사용한다. 카나다 빛과 폭발·연기7종은 새 빛무리·폭발 형상·연기·암부·거품·갈고리 불꽃을 기법별 형상·발생·수명으로 조합한다. 드래곤·서커스·다른 광학 효과는 기존 표현을 유지한다.",
     "externalAssets": [],
-    "paidGenerationCalls": 2,
+    "paidGenerationCalls": 9,
     "audio": false,
     "durationMs": 4200,
     "gif": {
@@ -122,14 +122,43 @@
       "public/assets/maplestory/ataho-v2-ki/20261018/kozuma-orbit/pixellab-residue/residue-atlas.png"
     ],
     "newActorFrames": 2,
-    "subscriptionGenerationsCharged": 12,
+    "subscriptionGenerationsCharged": 50,
     "additionalCreditUsd": 0,
     "userQualityApproval": false,
     "generatedFiles": [
       "public/assets/maplestory/anime-showcase-ingame/20261020/bear-head-first.png",
-      "public/assets/maplestory/anime-showcase-ingame/20261020/bear-head-impact.png"
+      "public/assets/maplestory/anime-showcase-ingame/20261020/bear-head-impact.png",
+      "public/assets/maplestory/kanada-light-particles/20261020/light-clump.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/burst-atlas.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/smoke-atlas.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/bubble-atlas.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/shade-atlas.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/flame-atlas.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/bubble-full.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/burst-spike.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/burst-radial.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/burst-hook.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/burst-split.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/smoke-0.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/smoke-1.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/smoke-2.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/smoke-3.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/bubble-0.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/bubble-2.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/bubble-3.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/shade-0.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/shade-1.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/shade-2.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/shade-3.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/flame-0.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/flame-1.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/flame-2.png",
+      "public/assets/maplestory/anime-fx-sprites/20261020/frames/bubble-1.png"
     ],
-    "qualityBoundary": "보유 전경 정권·도약/착지와 새 곰왕2장은 사용자 GIF 품질 검토 대기다. 기법81종 전체에 새 원화를 만들거나 본게임 채택을 승인한 것은 아니다."
+    "qualityBoundary": "보유 전경 정권·도약/착지와 새 곰왕2장은 사용자 GIF 품질 검토 대기다. 기법81종 전체에 새 원화를 만들거나 본게임 채택을 승인한 것은 아니다.",
+    "newEffectSourceImages": 7,
+    "newEffectFrames": 20,
+    "effectGenerationRecord": "resources/anime-effect-sprites.json"
   },
   "referenceBoundary": "2026-10-19 재대조에서 현재 아티팩트 536개 중 기법 견본90종에 해당하는 본문·연결 출처와 코드를 대조했다. 원작성자 공개 배경동화·오바케·나부낌의 순차 프레임, 촬영 처리 GIF의 순차 프레임·퐁요리 재생, 출판사 감정 기호 정적 그림, 전류 공개 클립의 일부 무음 재생을 새로 확인했다. 작가별 원작 영상 전수 재생·원작 필체 복제 인증이나 강의/프로젝트 전체 실행을 뜻하지 않는다. 접근 실패와 직접 관찰 범위는 referenceReview에 구분한다.",
   "records": [
@@ -532,17 +561,53 @@
       "id": "speed-streamlines",
       "name": "속도선·유선",
       "category": "motion",
-      "previewMs": 1800,
-      "description": "수평 정권 진입 뒤 긴 평행선과 몸 둘레를 흐르는 곡선을 그립니다.",
-      "distinction": "집중선처럼 한 점에 모이지 않고 이동 반대 방향과 둘레의 흐름을 보입니다."
+      "previewMs": 1430,
+      "description": "정권 진입 속도에 맞춰 길고 짧은 선이 뒤로 스치고, 몸 바깥의 유선이 짧은 후류로 빠져나갑니다.",
+      "distinction": "빠른 진입에서 선이 길어지고 접촉 직후 걷힙니다. 얼굴·주먹·피격 표정은 비워 실제 타격을 읽게 합니다.",
+      "beats": [
+        {
+          "timeMs": 1120,
+          "label": "진입 · 흐름 발생"
+        },
+        {
+          "timeMs": 1430,
+          "label": "가속 · 속도선과 후류"
+        },
+        {
+          "timeMs": 1740,
+          "label": "접촉 직전 · 선 회수"
+        },
+        {
+          "timeMs": 1920,
+          "label": "접촉 뒤 · 정착"
+        }
+      ]
     },
     {
       "id": "fx-kanada-light",
       "name": "카나다 빛",
       "category": "effects",
       "previewMs": 1930,
-      "description": "단단한 십자와 부드러운 브러시 링을 나눠, 접촉 순간의 빛이 여운으로 번지는 견본입니다.",
-      "distinction": "십자의 짧은 노출과 링의 넓은 농도 차이를 비교합니다."
+      "description": "굵은 접촉 핵이 짧게 터지고, 큰 빛무리가 어퍼컷 방향으로 뻗은 뒤 작은 잔광이 빠르게 걷힙니다.",
+      "distinction": "큰 전진 빛과 작은 반동·잔광의 크기와 수명을 달리해 힘의 방향을 읽힙니다.",
+      "beats": [
+        {
+          "timeMs": 1835,
+          "label": "접촉 · 빛무리 핵"
+        },
+        {
+          "timeMs": 1930,
+          "label": "파열 · 어퍼컷 방향"
+        },
+        {
+          "timeMs": 2110,
+          "label": "짧은 잔광"
+        },
+        {
+          "timeMs": 2320,
+          "label": "소멸"
+        }
+      ]
     },
     {
       "id": "fx-kanada-beam",
@@ -570,9 +635,39 @@
       "id": "fx-kanada-explosion",
       "name": "카나다 폭발",
       "category": "effects",
-      "previewMs": 2110,
+      "previewMs": 1920,
       "description": "압축 핵·창·방사형·갈고리·갈라진 불꽃을 서로 다른 길이의 셀로 바꾸는 해석 견본입니다. 원작 동작 재현은 미검증입니다.",
-      "distinction": "같은 별모양 확대 대신 짧은 돌출과 긴 유지, 수축과 재확대, 형태 교체를 비교합니다."
+      "distinction": "같은 별모양 확대 대신 짧은 돌출과 긴 유지, 수축과 재확대, 형태 교체를 비교합니다.",
+      "beats": [
+        {
+          "timeMs": 1810,
+          "label": "압축 핵"
+        },
+        {
+          "timeMs": 1860,
+          "label": "창"
+        },
+        {
+          "timeMs": 1920,
+          "label": "방사형"
+        },
+        {
+          "timeMs": 1980,
+          "label": "갈고리"
+        },
+        {
+          "timeMs": 2040,
+          "label": "세 갈래"
+        },
+        {
+          "timeMs": 2480,
+          "label": "분열 불꽃"
+        },
+        {
+          "timeMs": 3160,
+          "label": "소멸"
+        }
+      ]
     },
     {
       "id": "fx-kanada-dragon",
@@ -2911,5 +3006,88 @@
     "newEffectSprites": 0,
     "paidGenerationCalls": 0,
     "audio": false
+  },
+  "speedStreamlineRefinement": {
+    "date": "2026-10-20",
+    "scope": "연출실 기법 견본 speed-streamlines만 개선. 기존 정권 원화·950~1800ms 이동·1800ms 접촉·440 지면·4.2초 길이·기본 비교판의 동작을 유지한다.",
+    "changes": [
+      "화면 밖 시작점만 움직이던 고정 줄무늬를 유한 길이의 왼쪽 진행 선 조각으로 교체. 실제 진입 속도로 길이와 농도를 조절하고 깊이별 길이·굵기·속도와 비등간격 높이를 부여한다.",
+      "고정 곡선6개를 몸 바깥에서 뒤쪽으로 빠져나가는 짧은 유선4개로 교체. 얼굴·주먹·피격 표정을 비우며 접촉 뒤120ms 안에 걷힌다.",
+      "기본·연출판에 같은 접지 그림자를 사용한다. 움직임 줄이기는 같은 화면 높이에서18개 선과2개 유선의 위상을 고정하고 농도를 낮춘다.",
+      "누적 파티클 상태 없이 절대 시각과 기존 이동량으로 계산해 탐색·반복·GIF의 같은 시각을 일치시킨다."
+    ],
+    "reference": {
+      "url": "https://codepen.io/jetrotau/pen/wvLdKJp",
+      "author": "jetrotal (jetrotau)",
+      "title": "lines / Anime Speedlines Demo",
+      "observed": "이번 공개 Canvas 코드 열람 및 인앱 브라우저의 Linear·180도 직접 조작. 연속 두 시점에서 위치가 달라지는 평행선과 선 끝·중간 굵기 차이를 확인했다. 오디오 없는 Canvas 데모이며 별도 프로젝트 실행·코드 복사는 하지 않았다.",
+      "application": "유한 길이 선의 실제 이동과 끝이 가늘어지는 형상 원리만 참고. 원작의 무작위 누적 갱신 대신 현재 견본의 결정적 시각 표본화를 유지한다."
+    },
+    "assets": "기존 로컬 그림만 사용. 신규 원화·다운로드 자재·유료 생성·음향 없음."
+  },
+  "spriteEffectRevision": {
+    "date": "2026-10-20",
+    "recordPath": "resources/anime-effect-sprites.json",
+    "composition": [
+      {
+        "id": "fx-kanada-light",
+        "method": "작은 빛무리 조합",
+        "reason": "짧은 접촉 핵에서 큰 빛을 어퍼컷 방향으로 방출하고, 작은 반동과 짧은 잔광을 독립 수명으로 조합한다."
+      },
+      {
+        "id": "fx-kanada-explosion",
+        "method": "전체 형상 교체와 작은 조각 혼합",
+        "reason": "핵·창·방사·갈고리·세 갈래의 고유한 형상 교체는 통째 그림으로, 후반 분열은 작은 조각으로 유지한다."
+      },
+      {
+        "id": "fx-anno",
+        "method": "작은 분진 모듈 조합",
+        "reason": "12개 기둥·10개 밑동과 거친 점묘·잔해의 다른 발생 박자를 보존한다."
+      },
+      {
+        "id": "fx-iso-explosion",
+        "method": "몸체와 암부 레이어 조합",
+        "reason": "6개 몸체의 팽창과 Y자·삼각 암부의 회전을 분리한다."
+      },
+      {
+        "id": "fx-hashimoto",
+        "method": "작은 김 모듈 조합",
+        "reason": "3층×5개 김의 눌림·상승·말림과 별도 파편을 보존한다."
+      },
+      {
+        "id": "fx-norio",
+        "method": "단색 알파 모듈 조합",
+        "reason": "13개 연기 덩어리의 외곽·분리만 사용하고 내부 음영은 제거한다."
+      },
+      {
+        "id": "fx-yoshinari",
+        "method": "큰 불덩이와 작은 터치 혼합",
+        "reason": "불덩이 본체와30개 갈고리 불꽃의 개별 발생·회전·축소를 보존한다."
+      },
+      {
+        "id": "fx-oki",
+        "method": "작은 거품 모듈 조합",
+        "reason": "32개 거품의 개별 발생·팽창·이동·수축과 드문 큰 거품을 보존한다."
+      }
+    ],
+    "preserved": "공유1800ms 접촉·기존 배우·4.2초 길이·기본 비교판. 폭발7종은기존age1.25와발생수·시차·이동·종료를유지한다.",
+    "qualityStatus": "awaiting-user-gif-review",
+    "boundary": "기존 원작 관찰 기록을 재사용한 기법 해석이며 특정 작가의 원전 필체·해당 컷 재현을 인증한 것이 아니다. 신규 원화는 효과 자재에 한하며 캐릭터·방향·본게임 규칙·음향은 추가하지 않는다.",
+    "referenceReview": {
+      "sources": [
+        "https://saint11.art/img/pixel-tutorials/LightMagic.gif",
+        "https://saint11.art/img/pixel-tutorials/Explosion.gif",
+        "https://saint11.art/img/pixel-tutorials/SmokeSheet.gif"
+      ],
+      "observation": "이번 인앱 브라우저에서 오디오 없는 LightMagic·Explosion·SmokeSheet GIF의 서로 다른 연속 시점을 직접 관찰. 핵→파열→작은 잔여 및 김의 발생·팽창·분리와 서로 다른 수명을 확인했다. 기존 선택 프레임 전수 수와 이번 연속 시점 관찰은 구분하며 원작 프로젝트 코드 실행이나 작가별 해당 컷 검증은 하지 않았다."
+    },
+    "refinements": [
+      "카나다 후반 분열은 큰방사·갈고리원본의반복대신작은갈고리불꽃셀을쓴다.",
+      "이소는밝은단색몸체와별도암부로중복음영을줄인다. 안노의어두운판은원본명암을유지한다.",
+      "하시모토의3층×5개발생과시차는유지하며배치·크기·방향을조금씩달리해줄맞춤을완화한다.",
+      "안노·하시모토의 밑동을 타격점 대신 공유 지면y440에 고정하고, 지면 아래로 그려지는 부분은 자른다. 공중 폭발은 기존 접촉점을 유지한다.",
+      "큰 폭발·연기 몸체는 배우 뒤에, 카나다의 초기 핵·창과 일부 작은 후기 불꽃, 안노 섬광·잔해, 하시모토의 작은 밑동2개·파편, 요시나리·오키의 작은 일부는 배우 앞에 나눠 중복 없이 그린다.",
+      "카나다 빛은 핵96ms·주방향 큰 빛5개·작은 반동2개·잔광6개로 위계를 만들고 강화판은 접촉 후520ms 안에 걷힌다. 움직임 줄이기는3개·1개·3개로 줄이며 기본 비교판의 수명은 보존한다."
+    ]
   }
 }

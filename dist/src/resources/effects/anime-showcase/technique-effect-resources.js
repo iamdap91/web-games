@@ -1,11 +1,17 @@
 import { resourceUrl } from '../../catalog/resource-url.js';
 import { loadKiSpriteFrame } from '../../characters/ataho-v2-combos/ki-sprites.js';
+import { loadEffectSpriteResources } from './effect-sprite-resources.js';
 /** 기법의 형태·시간 규칙과 별개로, 조합실과 게임에서 쓰는 원본만 읽는다. */
 export async function loadTechniqueEffects() {
     const frames = new Map();
-    await Promise.all(['beam', 'orb', 'orbit', 'orbit-residue'].map(async (sheet) => {
-        frames.set(`ki-vfx:${sheet}`, await loadKiSpriteFrame(sheet));
-    }));
+    const [spriteFrames] = await Promise.all([
+        loadEffectSpriteResources(),
+        Promise.all(['beam', 'orb', 'orbit', 'orbit-residue'].map(async (sheet) => {
+            frames.set(`ki-vfx:${sheet}`, await loadKiSpriteFrame(sheet));
+        })),
+    ]);
+    for (const [key, source] of spriteFrames)
+        frames.set(key, source);
     const localPath = 'public/assets/maplestory/expedition-details/frames/basalt-shards.png';
     const image = new Image();
     image.src = resourceUrl(localPath).href;

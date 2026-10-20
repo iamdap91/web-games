@@ -1,16 +1,23 @@
 import { label, stage } from './drawing.js';
-import { battleImpact, drawBattleActors } from './battle.js';
+import { battleImpact, battleLayout, drawBattleActors } from './battle.js';
+import { width } from './types.js';
 import { drawLightEffects } from './effects-light.js';
 import { drawCircusScene, drawFlightEffects } from './effects-flight.js';
-import { drawExplosionEffects } from './effects-explosions.js';
+import { drawExplosionEffects, } from './effects-explosions.js';
 export const effectSamples = [
     {
         id: 'fx-kanada-light',
         name: '카나다 빛',
         category: 'effects',
         previewMs: 1930,
-        description: '단단한 십자와 부드러운 브러시 링을 나눠, 접촉 순간의 빛이 여운으로 번지는 견본입니다.',
-        distinction: '십자의 짧은 노출과 링의 넓은 농도 차이를 비교합니다.',
+        description: '굵은 접촉 핵이 짧게 터지고, 큰 빛무리가 어퍼컷 방향으로 뻗은 뒤 작은 잔광이 빠르게 걷힙니다.',
+        distinction: '큰 전진 빛과 작은 반동·잔광의 크기와 수명을 달리해 힘의 방향을 읽힙니다.',
+        beats: [
+            { timeMs: 1835, label: '접촉 · 빛무리 핵' },
+            { timeMs: 1930, label: '파열 · 어퍼컷 방향' },
+            { timeMs: 2110, label: '짧은 잔광' },
+            { timeMs: 2320, label: '소멸' },
+        ],
     },
     {
         id: 'fx-kanada-beam',
@@ -29,9 +36,18 @@ export const effectSamples = [
         id: 'fx-kanada-explosion',
         name: '카나다 폭발',
         category: 'effects',
-        previewMs: 2110,
+        previewMs: 1920,
         description: '압축 핵·창·방사형·갈고리·갈라진 불꽃을 서로 다른 길이의 셀로 바꾸는 해석 견본입니다. 원작 동작 재현은 미검증입니다.',
         distinction: '같은 별모양 확대 대신 짧은 돌출과 긴 유지, 수축과 재확대, 형태 교체를 비교합니다.',
+        beats: [
+            { timeMs: 1810, label: '압축 핵' },
+            { timeMs: 1860, label: '창' },
+            { timeMs: 1920, label: '방사형' },
+            { timeMs: 1980, label: '갈고리' },
+            { timeMs: 2040, label: '세 갈래' },
+            { timeMs: 2480, label: '분열 불꽃' },
+            { timeMs: 3160, label: '소멸' },
+        ],
     },
     {
         id: 'fx-kanada-dragon',
@@ -210,11 +226,23 @@ const placements = {
         emphasis: 1.28,
         rotation: 0,
     },
-    'fx-anno': { x: 546, y: 407, scale: 0.68, emphasis: 1.06 },
+    'fx-anno': {
+        x: 546,
+        y: 407,
+        scale: 0.68,
+        emphasis: 1.06,
+        anchor: 'ground',
+    },
     'fx-iso-explosion': { x: 548, y: 352, scale: 0.66, emphasis: 1.22 },
     'fx-iso-debris': { x: 550, y: 390, scale: 0.8, emphasis: 1.13 },
     'fx-nakamura': { x: 551, y: 389, scale: 0.8, emphasis: 1.08 },
-    'fx-hashimoto': { x: 548, y: 387, scale: 0.64, emphasis: 1.2 },
+    'fx-hashimoto': {
+        x: 548,
+        y: 387,
+        scale: 0.64,
+        emphasis: 1.2,
+        anchor: 'ground',
+    },
     'fx-norio': { x: 548, y: 372, scale: 0.64, emphasis: 1.23 },
     'fx-mori': { x: 410, y: 310, scale: 0.65, emphasis: 1.12, rotation: -0.8 },
     'fx-araki': { x: 503, y: 277, scale: 0.58, emphasis: 1.27 },
@@ -231,34 +259,44 @@ export function drawEffects(ctx, id, frame) {
     try {
         if (drawCircusScene(ctx, id, frame))
             return;
-        // 일반 FX는 공유 접촉을, 서커스는 위 전용 합성에서 회피와 깊이를 소유한다.
         stage(ctx, frame, 0);
+        const back = drawPlacedEffect(ctx, id, frame, 'back');
         drawBattleActors(ctx, frame);
-        const placement = placements[id];
-        if (!placement)
-            return;
-        let drawn = false;
-        ctx.save();
-        try {
-            const impact = battleImpact(frame);
-            ctx.translate(impact.x, impact.y);
-            ctx.rotate(placement.rotation ?? 0);
-            const motionScale = frame.reducedMotion ? 0.75 : 1;
-            // 기법별 점유 공간만 넓히고 기본 비교판과 움직임 줄이기의 크기는 보존한다.
-            const emphasis = frame.enhanced && !frame.reducedMotion ? placement.emphasis : 1;
-            const scale = placement.scale * 1.3 * motionScale * emphasis;
-            ctx.scale(scale, scale);
-            ctx.translate(-placement.x, -placement.y);
-            drawn =
-                drawLightEffects(ctx, id, frame) ||
-                    drawFlightEffects(ctx, id, frame) ||
-                    drawExplosionEffects(ctx, id, frame);
-        }
-        finally {
-            ctx.restore();
-        }
-        if (!drawn)
+        const front = drawPlacedEffect(ctx, id, frame, 'front');
+        if (!back && !front)
             label(ctx, '이 효과의 견본을 찾을 수 없습니다.');
+    }
+    finally {
+        ctx.restore();
+    }
+}
+/** 무대 좌표를 먼저 정해 앞뒤 층과 비교판이 같은 발생점을 공유한다. */
+function drawPlacedEffect(ctx, id, frame, layer) {
+    const placement = placements[id];
+    if (!placement)
+        return false;
+    ctx.save();
+    try {
+        const impact = battleImpact(frame);
+        const ground = battleLayout.target.ground;
+        if (placement.anchor === 'ground') {
+            // 지면에서 솟는 김과 분진이 바닥 아래로 부풀지 않게 무대에서 자른다.
+            ctx.beginPath();
+            ctx.rect(0, 0, width, ground);
+            ctx.clip();
+        }
+        ctx.translate(impact.x, placement.anchor === 'ground' ? ground : impact.y);
+        ctx.rotate(placement.rotation ?? 0);
+        const motionScale = frame.reducedMotion ? 0.75 : 1;
+        const emphasis = frame.enhanced && !frame.reducedMotion ? placement.emphasis : 1;
+        const scale = placement.scale * 1.3 * motionScale * emphasis;
+        ctx.scale(scale, scale);
+        ctx.translate(-placement.x, -placement.y);
+        if (layer === 'back')
+            return drawExplosionEffects(ctx, id, frame, layer);
+        return (drawLightEffects(ctx, id, frame) ||
+            drawFlightEffects(ctx, id, frame) ||
+            drawExplosionEffects(ctx, id, frame, layer));
     }
     finally {
         ctx.restore();

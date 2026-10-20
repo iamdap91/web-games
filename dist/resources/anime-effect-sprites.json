@@ -1,0 +1,550 @@
+{
+    "version": 1,
+    "date": "2026-10-20",
+    "provider": "PixelLab Pro Flash",
+    "qualityStatus": "awaiting-user-gif-review",
+    "scope": "카나다 빛과 폭발·연기7종의 빛무리·폭발형상·연기몸체·암부·거품·갈고리 불꽃. 원본 픽셀과 알파를 보존한 연결 영역 또는 셀의 무손실 분리.",
+    "generation": {
+        "calls": 7,
+        "subscriptionGenerationsCharged": 38,
+        "additionalCreditUsd": 0
+    },
+    "sprites": [
+        {
+            "id": "light-clump",
+            "localPath": "public/assets/maplestory/kanada-light-particles/20261020/light-clump.png",
+            "width": 32,
+            "height": 32,
+            "jobId": "87f860fb-91ea-4461-95a9-743440ff1041",
+            "assetId": "3d3c1a12-c5f8-52ef-8f9e-5b237b4eb5ac",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/87f860fb-91ea-4461-95a9-743440ff1041/download",
+            "subscriptionGenerationsCharged": 5,
+            "request": {
+                "description": "ONE tiny reusable light-clump PARTICLE SPRITE for a 2D pixel-art anime impact effect. A single isolated compact irregular luminous cluster, with an extremely bright ivory-white core and 3 or 4 rounded teardrop lobes, one sharp uneven short ray pointing upper-right. Hard cel-painted bright inner silhouette, layered warm pale gold and light amber around the edge, a very small sparse soft-looking pixel halo; transparent outside. The shape should read as an irregular little clump of LIGHT, not a flame, flower, sun icon, coin, crystal, four-point sparkle icon, lens-flare ring, or character. Bright core occupies about 8x10 pixels and whole particle about 23x22 pixels, centered inside 32x32 with generous transparent padding on all sides. Crisp carefully placed individual native pixels, restrained 7-color light-only palette, no black outline, no gray or black shadow, no checkerboard, no background, no ground shadow, no text, no other particles or decorations. We will compose many copies at different sizes into a hand-drawn-looking gold-white burst and scattered afterglow; this image must contain only ONE small reusable light clump.",
+                "width": 32,
+                "height": 32,
+                "no_background": true,
+                "max_colors": 8,
+                "palette": [
+                    "#ffffff",
+                    "#fffde8",
+                    "#fff6c9",
+                    "#ffe9a0",
+                    "#ffd577",
+                    "#edb551",
+                    "#cb923b",
+                    "#a3712d"
+                ],
+                "palette_name": "ivory-white and warm golden cel light",
+                "seed": 862021
+            },
+            "frames": [
+                {
+                    "key": "light-clump",
+                    "x": 0,
+                    "y": 0,
+                    "width": 32,
+                    "height": 32,
+                    "anchorX": 16,
+                    "anchorY": 17,
+                    "localPath": "public/assets/maplestory/kanada-light-particles/20261020/light-clump.png"
+                }
+            ],
+            "sha256": "690e7c81cf8427c22b2dd03c06fd5626dadba047b28e408bcca3fb084be4297d",
+            "byteSize": 504
+        },
+        {
+            "id": "burst",
+            "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/burst-atlas.png",
+            "width": 128,
+            "height": 128,
+            "jobId": "679f34fd-21fc-4063-9ae4-4c8b579df04c",
+            "assetId": "73c31934-c921-501b-a558-59cad1e3f200",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/679f34fd-21fc-4063-9ae4-4c8b579df04c/download",
+            "subscriptionGenerationsCharged": 6,
+            "request": {
+                "description": "Clean hand-drawn cel-animation pixel-art VFX sprites, carefully placed native 1px grid, restrained flat palette, transparent background. EXACT sprite-sheet grid with NO text, labels, borders, grid lines, checkerboard, floor, characters or props. Each shape stays INSIDE its own cell, fully separated from neighboring cells by generous transparent margins. Bright upper-left illumination, simple strong silhouettes, NOT realistic fire photos, NOT vector icons. EXACT 128x128 sheet, 2 columns by 2 rows of 64x64 cells. FOUR DIFFERENT dramatic golden-orange anime explosion key shapes, each centered at its cell center, 44-50 pixels wide and tall, transparent padding at least 6 pixels. Top-left: a narrow violently pointed asymmetric vertical flame lance with two short side spikes, bright ivory core and orange-red outer edge. Top-right: wide angular radial explosion with 7 uneven sharp rays and torn gaps, ivory-white core, golden yellow middle, burnt orange outline. Bottom-left: a very clearly CURLED HOOK-shaped burst with a large transparent opening inside the hook, sharp tapered tip and thick glowing orange root, NOT a round puff. Bottom-right: one central base splitting into THREE separate jagged upward flame branches, wide forked silhouette, cream center and red-orange edge. Hard color cells, 5 to 7 warm colors total, no smoke and no soft blur. These four shapes are distinct animation keys, not four copies of a star.",
+                "width": 128,
+                "height": 128,
+                "no_background": true,
+                "max_colors": 9,
+                "palette": [
+                    "#fff8d8",
+                    "#ffe8a4",
+                    "#f6c767",
+                    "#e99746",
+                    "#c86238",
+                    "#963f34",
+                    "#5b3138"
+                ],
+                "palette_name": "warm cel explosion",
+                "seed": 862022
+            },
+            "frames": [
+                {
+                    "key": "burst-spike",
+                    "x": 0,
+                    "y": 0,
+                    "width": 38,
+                    "height": 61,
+                    "anchorX": 19,
+                    "anchorY": 36,
+                    "sourceBounds": {
+                        "left": 13,
+                        "top": 5,
+                        "right": 47,
+                        "bottom": 62
+                    },
+                    "componentPixelCount": 705,
+                    "separation": "원본의 단일 연결 알파 영역만 RGBA 그대로 분리. 투명 여백2px 추가, 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/burst-spike.png",
+                    "sha256": "05d83b18e1ba33a5816d97a7877075590139e19a50a8b016615b3c31946d401f"
+                },
+                {
+                    "key": "burst-radial",
+                    "x": 64,
+                    "y": 0,
+                    "width": 63,
+                    "height": 55,
+                    "anchorX": 32,
+                    "anchorY": 27,
+                    "sourceBounds": {
+                        "left": 63,
+                        "top": 10,
+                        "right": 122,
+                        "bottom": 61
+                    },
+                    "componentPixelCount": 1139,
+                    "separation": "원본의 단일 연결 알파 영역만 RGBA 그대로 분리. 투명 여백2px 추가, 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/burst-radial.png",
+                    "sha256": "57c2a7c1ec98c149a57737e88194394b76bcb65c4f9f48d3f168ac5cba7117bb"
+                },
+                {
+                    "key": "burst-hook",
+                    "x": 0,
+                    "y": 64,
+                    "width": 51,
+                    "height": 55,
+                    "anchorX": 21,
+                    "anchorY": 30,
+                    "sourceBounds": {
+                        "left": 10,
+                        "top": 70,
+                        "right": 57,
+                        "bottom": 121
+                    },
+                    "componentPixelCount": 1083,
+                    "separation": "원본의 단일 연결 알파 영역만 RGBA 그대로 분리. 투명 여백2px 추가, 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/burst-hook.png",
+                    "sha256": "b0cdd32d2080e2440932d781e0ad122b631ecf9ee9ec8753089961dd470b21f1"
+                },
+                {
+                    "key": "burst-split",
+                    "x": 64,
+                    "y": 64,
+                    "width": 50,
+                    "height": 60,
+                    "anchorX": 25,
+                    "anchorY": 43,
+                    "sourceBounds": {
+                        "left": 71,
+                        "top": 66,
+                        "right": 117,
+                        "bottom": 122
+                    },
+                    "componentPixelCount": 1075,
+                    "separation": "원본의 단일 연결 알파 영역만 RGBA 그대로 분리. 투명 여백2px 추가, 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/burst-split.png",
+                    "sha256": "5732a5f480e5d08a3d476e3cd0c86397604a1308e8d44826f554b4df632e0013"
+                }
+            ],
+            "sha256": "9e582273ef7422fbeea948235bc818c9e48db1e8279efbece9ef2a10216430e1",
+            "byteSize": 5626
+        },
+        {
+            "id": "smoke",
+            "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/smoke-atlas.png",
+            "width": 128,
+            "height": 128,
+            "jobId": "9e947d7b-58ec-433f-bc41-44ed7b4918aa",
+            "assetId": "af09b943-a5df-5234-9535-6e7bc574b07b",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/9e947d7b-58ec-433f-bc41-44ed7b4918aa/download",
+            "subscriptionGenerationsCharged": 6,
+            "request": {
+                "description": "Clean hand-drawn cel-animation pixel-art VFX sprites, carefully placed native 1px grid, restrained flat palette, transparent background. EXACT sprite-sheet grid with NO text, labels, borders, grid lines, checkerboard, floor, characters or props. Each shape stays INSIDE its own cell, fully separated from neighboring cells by generous transparent margins. Bright upper-left illumination, simple strong silhouettes, NOT realistic fire photos, NOT vector icons. EXACT 128x128 sheet, 2 columns by 2 rows of 64x64 cells. Four sequential key poses of ONE reusable small rolling pale gray smoke puff, centered in every cell, same upward direction and color identity. Top-left: low compressed puff with 3 broad rounded overlapping lobes, about 42x24 pixels. Top-right: fully inflated rounded voluminous puff about 48x43 pixels with 4 large lobes. Bottom-left: puff rolling inward with one curled lobe and a small curled opening along the edge, about 47x45 pixels. Bottom-right: older dissipating puff breaking into 3 still fairly large lobes separated by transparent gaps, about 46x43 pixels. Pale warm gray upper plane, muted cool gray-green midtone, one simple dark slate lower plane. 5 flat broad colors only, no dense tiny dots, no stippled noise, no dark outline, no fire, no light, no round bubble rim, no cast shadow. Smoke with weight and rolling volume, not cotton balls or clouds with faces. Keep all effects centered and at least 7 transparent pixels from each cell edge.",
+                "width": 128,
+                "height": 128,
+                "no_background": true,
+                "max_colors": 6,
+                "palette": [
+                    "#e2e2cf",
+                    "#c2c9ba",
+                    "#a1b2a9",
+                    "#7d9794",
+                    "#516c74",
+                    "#334b5a"
+                ],
+                "palette_name": "smoke cel gray-green",
+                "seed": 862023
+            },
+            "frames": [
+                {
+                    "key": "smoke-0",
+                    "x": 0,
+                    "y": 0,
+                    "width": 34,
+                    "height": 29,
+                    "anchorX": 17.0,
+                    "anchorY": 14.5,
+                    "sourceBounds": {
+                        "left": 64,
+                        "top": 72,
+                        "right": 94,
+                        "bottom": 97
+                    },
+                    "componentPixelCount": 513,
+                    "separation": "원본의 단일 연결 알파 영역만 RGBA 그대로 분리. 투명 여백2px 추가, 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/smoke-0.png",
+                    "sha256": "3be568d4107127f39c9afb00dd037576c788bbf775ee312c361302a4117f306d"
+                },
+                {
+                    "key": "smoke-1",
+                    "x": 64,
+                    "y": 0,
+                    "width": 68,
+                    "height": 62,
+                    "anchorX": 34.0,
+                    "anchorY": 31.0,
+                    "sourceBounds": {
+                        "left": 29,
+                        "top": 10,
+                        "right": 93,
+                        "bottom": 68
+                    },
+                    "componentPixelCount": 2530,
+                    "separation": "원본의 단일 연결 알파 영역만 RGBA 그대로 분리. 투명 여백2px 추가, 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/smoke-1.png",
+                    "sha256": "e317713c200fda8160ccdd8e4994287196f194dd90a154bd5bad3b25c3ae6aed"
+                },
+                {
+                    "key": "smoke-2",
+                    "x": 0,
+                    "y": 64,
+                    "width": 39,
+                    "height": 36,
+                    "anchorX": 19.5,
+                    "anchorY": 18.0,
+                    "sourceBounds": {
+                        "left": 29,
+                        "top": 83,
+                        "right": 64,
+                        "bottom": 115
+                    },
+                    "componentPixelCount": 698,
+                    "separation": "원본의 단일 연결 알파 영역만 RGBA 그대로 분리. 투명 여백2px 추가, 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/smoke-2.png",
+                    "sha256": "42f486e298de511108a4aaa1aeb40df16824909852b2da0d6fec38df79ab5a7b"
+                },
+                {
+                    "key": "smoke-3",
+                    "x": 64,
+                    "y": 64,
+                    "width": 39,
+                    "height": 27,
+                    "anchorX": 19.5,
+                    "anchorY": 13.5,
+                    "sourceBounds": {
+                        "left": 58,
+                        "top": 101,
+                        "right": 93,
+                        "bottom": 124
+                    },
+                    "componentPixelCount": 503,
+                    "separation": "원본의 단일 연결 알파 영역만 RGBA 그대로 분리. 투명 여백2px 추가, 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/smoke-3.png",
+                    "sha256": "5c6199bededdcd8c837fa7d4a063a742911eef6f248ac7bbe01345c85e6814d9"
+                }
+            ],
+            "sha256": "946057e875c7cbb61182d8b9448189eff735e670ecef4459b548db98b7f0ed14",
+            "byteSize": 2776
+        },
+        {
+            "id": "bubble",
+            "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/bubble-atlas.png",
+            "width": 128,
+            "height": 128,
+            "jobId": "0b59c582-bc09-45b1-84ed-94f2c0c545f0",
+            "assetId": "d70d30c7-bbfb-5af3-9b59-eeafeb2c2fa1",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/0b59c582-bc09-45b1-84ed-94f2c0c545f0/download",
+            "subscriptionGenerationsCharged": 6,
+            "request": {
+                "description": "Clean hand-drawn cel-animation pixel-art VFX sprites, carefully placed native 1px grid, restrained flat palette, transparent background. EXACT sprite-sheet grid with NO text, labels, borders, grid lines, checkerboard, floor, characters or props. Each shape stays INSIDE its own cell, fully separated from neighboring cells by generous transparent margins. Bright upper-left illumination, simple strong silhouettes, NOT realistic fire photos, NOT vector icons. EXACT 128x128 sheet, 2 columns by 2 rows of 64x64 cells. Four sequential animation keys of ONE reusable HOT expanding explosion bubble with a rounded uneven 3-lobed outline, every key centered. Top-left: small hot swelling lobe 28x30 pixels. Top-right: maximally inflated thick rounded fire bubble about 49x47 pixels. Bottom-left: mature curling fire bubble with an irregular crescent highlight, about 47x45 pixels. Bottom-right: collapsed cooler bubble splitting into 3 rounded orange ember chunks with a transparent center, about 44x42 pixels. Broad flat warm maroon shadow at bottom-right, burnt orange middle, peach-gold upper-left highlight, very small warm cream inner hot area. 6 colors. Thick puffy VOLUME, no rays or spikes, no black outline, no gray smoke, no outlined hollow sphere, no glass or soap, no scattered little sparkles. Transparent padding 7px minimum in every cell.",
+                "width": 128,
+                "height": 128,
+                "no_background": true,
+                "max_colors": 7,
+                "palette": [
+                    "#fff0bc",
+                    "#f7cf85",
+                    "#eeb36a",
+                    "#d58450",
+                    "#a95842",
+                    "#713d3e",
+                    "#4c303a"
+                ],
+                "palette_name": "warm puffy fire",
+                "seed": 862024
+            },
+            "frames": [
+                {
+                    "key": "bubble-0",
+                    "x": 0,
+                    "y": 0,
+                    "width": 24,
+                    "height": 28,
+                    "anchorX": 12.0,
+                    "anchorY": 14.0,
+                    "sourceBounds": {
+                        "left": 71,
+                        "top": 89,
+                        "right": 91,
+                        "bottom": 113
+                    },
+                    "componentPixelCount": 349,
+                    "separation": "원본의 단일 연결 알파 영역만 RGBA 그대로 분리. 투명 여백2px 추가, 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/bubble-0.png",
+                    "sha256": "8986e65b4f88f9963f088dfc23485e3a6c82e77148a7069e6fc68e1affa4c49c"
+                },
+                {
+                    "key": "bubble-2",
+                    "x": 0,
+                    "y": 64,
+                    "width": 38,
+                    "height": 34,
+                    "anchorX": 19.0,
+                    "anchorY": 17.0,
+                    "sourceBounds": {
+                        "left": 37,
+                        "top": 76,
+                        "right": 71,
+                        "bottom": 106
+                    },
+                    "componentPixelCount": 658,
+                    "separation": "원본의 단일 연결 알파 영역만 RGBA 그대로 분리. 투명 여백2px 추가, 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/bubble-2.png",
+                    "sha256": "59c9c3d9ec14de26fe81bfe8bdaf9ace6c0b7deec8d350a6624656de91804ef1"
+                },
+                {
+                    "key": "bubble-3",
+                    "x": 64,
+                    "y": 64,
+                    "width": 24,
+                    "height": 28,
+                    "anchorX": 12.0,
+                    "anchorY": 14.0,
+                    "sourceBounds": {
+                        "left": 71,
+                        "top": 89,
+                        "right": 91,
+                        "bottom": 113
+                    },
+                    "componentPixelCount": 349,
+                    "separation": "원본의 단일 연결 알파 영역만 RGBA 그대로 분리. 투명 여백2px 추가, 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/bubble-3.png",
+                    "sha256": "8986e65b4f88f9963f088dfc23485e3a6c82e77148a7069e6fc68e1affa4c49c"
+                }
+            ],
+            "sha256": "f243580b9f29a3c4c8cc90a9d5eded737d723a8116eaae1cbc2f9656715ab955",
+            "byteSize": 2390
+        },
+        {
+            "id": "shade",
+            "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/shade-atlas.png",
+            "width": 64,
+            "height": 64,
+            "jobId": "e799d79d-fe3a-4219-ade0-511342e3bb77",
+            "assetId": "7eb29c8f-222f-5802-a9ab-b6cf9b8ab66f",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/e799d79d-fe3a-4219-ade0-511342e3bb77/download",
+            "subscriptionGenerationsCharged": 5,
+            "request": {
+                "description": "Clean hand-drawn cel-animation pixel-art VFX sprites, carefully placed native 1px grid, restrained flat palette, transparent background. EXACT sprite-sheet grid with NO text, labels, borders, grid lines, checkerboard, floor, characters or props. Each shape stays INSIDE its own cell, fully separated from neighboring cells by generous transparent margins. Bright upper-left illumination, simple strong silhouettes, NOT realistic fire photos, NOT vector icons. EXACT 64x64 sheet, 2 columns by 2 rows of 32x32 cells. FOUR small isolated flat dark slate-blue SHADOW PATCHES for overlaying inside pale rolling anime smoke puffs. No smoke body around them, only the solid shadow shapes on transparency. Top-left: asymmetric thick Y-shaped shadow with 3 broad bent tapered arms. Top-right: curved Y-shaped 3-armed shadow, rolled slightly clockwise, transparent triangular gaps between arms. Bottom-left: broad curved triangular comma shadow with one hooked taper. Bottom-right: two separated bent triangular shadow chunks. Use ONLY one opaque dark gray-blue color #334b5a, with crisp native pixels and slightly irregular carved edges. Each patch occupies about 22x21px at cell center and must remain at least 4px from the cell edges. No outlines, no shading gradients, no symbols or letters, NOT literal text Y. These are organic shadow areas from an animation drawing.",
+                "width": 64,
+                "height": 64,
+                "no_background": true,
+                "max_colors": 2,
+                "palette": ["#334b5a", "#516c74"],
+                "palette_name": "smoke interior shadows",
+                "seed": 862025
+            },
+            "frames": [
+                {
+                    "key": "shade-0",
+                    "x": 0,
+                    "y": 0,
+                    "width": 32,
+                    "height": 32,
+                    "anchorX": 16.0,
+                    "anchorY": 16.0,
+                    "separation": "기록된 격자 셀을 RGBA 그대로 무손실 분리. 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/shade-0.png",
+                    "sha256": "cd98d62a86e7ec774aa590fae9af430c8b66b4a44c287b58f294e0e5f27d5100"
+                },
+                {
+                    "key": "shade-1",
+                    "x": 32,
+                    "y": 0,
+                    "width": 32,
+                    "height": 32,
+                    "anchorX": 16.0,
+                    "anchorY": 16.0,
+                    "separation": "기록된 격자 셀을 RGBA 그대로 무손실 분리. 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/shade-1.png",
+                    "sha256": "e700b0088fc7908f724e8f40eb3581c3d09678ac37a89a3ba344da82ccf93a31"
+                },
+                {
+                    "key": "shade-2",
+                    "x": 0,
+                    "y": 32,
+                    "width": 32,
+                    "height": 32,
+                    "anchorX": 16.0,
+                    "anchorY": 16.0,
+                    "separation": "기록된 격자 셀을 RGBA 그대로 무손실 분리. 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/shade-2.png",
+                    "sha256": "5788e5f66fecae1dfa9f277b86438be0215b1c908e9ef942d01237f813fc44f3"
+                },
+                {
+                    "key": "shade-3",
+                    "x": 32,
+                    "y": 32,
+                    "width": 32,
+                    "height": 32,
+                    "anchorX": 16.0,
+                    "anchorY": 16.0,
+                    "separation": "기록된 격자 셀을 RGBA 그대로 무손실 분리. 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/shade-3.png",
+                    "sha256": "4df52950d59c7ed805701f1400b46531096578be50bc8afb1f6ae6e3b4cf02e7"
+                }
+            ],
+            "sha256": "b9a46c5d20a47d8482be761232336756c673d945a995cebe7bc22235f08b8baf",
+            "byteSize": 799
+        },
+        {
+            "id": "flame",
+            "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/flame-atlas.png",
+            "width": 96,
+            "height": 32,
+            "jobId": "6fb3a3bd-4581-4dac-a8e8-a23d33913eb9",
+            "assetId": "a969b2b7-1edc-510a-b56c-e962c390c254",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/6fb3a3bd-4581-4dac-a8e8-a23d33913eb9/download",
+            "subscriptionGenerationsCharged": 5,
+            "request": {
+                "description": "Clean hand-drawn cel-animation pixel-art VFX sprites, carefully placed native 1px grid, restrained flat palette, transparent background. EXACT sprite-sheet grid with NO text, labels, borders, grid lines, checkerboard, floor, characters or props. Each shape stays INSIDE its own cell, fully separated from neighboring cells by generous transparent margins. Bright upper-left illumination, simple strong silhouettes, NOT realistic fire photos, NOT vector icons. EXACT 96x32 horizontal strip, THREE 32x32 cells, all separated by transparent padding. Three sequential key poses of ONE little curled flame touch, shaped like an irregular bent COMMA or Japanese animation ゝ flourish, NOT text. First cell: short thick bent teardrop flame with a hooked point; second: a longer curled crescent, thicker rounded root and thin sharp tip; third: cooling thin broken curved ember with two separated pieces. Every shape centered in its 32x32 cell, about 20x22 pixels, at least 4px clear padding. Flat dark warm maroon underside, orange-gold outer rim, warm pale cream bright middle, 4 colors only. Sharp turning silhouette, not a complete ring, NOT big fireball, NOT full explosion, no little sparkle noise.",
+                "width": 96,
+                "height": 32,
+                "no_background": true,
+                "max_colors": 5,
+                "palette": ["#fff0bc", "#f7cf85", "#dc9655", "#a95842", "#713d3e"],
+                "palette_name": "curled gold flame",
+                "seed": 862026
+            },
+            "frames": [
+                {
+                    "key": "flame-0",
+                    "x": 0,
+                    "y": 0,
+                    "width": 32,
+                    "height": 32,
+                    "anchorX": 16.0,
+                    "anchorY": 16.0,
+                    "separation": "기록된 격자 셀을 RGBA 그대로 무손실 분리. 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/flame-0.png",
+                    "sha256": "31ea3486019485a1d2f0afe17e96c4f79daaf3b4902fd953dd776378a66586ba"
+                },
+                {
+                    "key": "flame-1",
+                    "x": 32,
+                    "y": 0,
+                    "width": 32,
+                    "height": 32,
+                    "anchorX": 16.0,
+                    "anchorY": 16.0,
+                    "separation": "기록된 격자 셀을 RGBA 그대로 무손실 분리. 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/flame-1.png",
+                    "sha256": "674a410ab0402c713bbc4c88b35ccb614ca522115230551d9baf5ca6c3d29882"
+                },
+                {
+                    "key": "flame-2",
+                    "x": 64,
+                    "y": 0,
+                    "width": 32,
+                    "height": 32,
+                    "anchorX": 16.0,
+                    "anchorY": 16.0,
+                    "separation": "기록된 격자 셀을 RGBA 그대로 무손실 분리. 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/flame-2.png",
+                    "sha256": "572a9a424fa9d731de8bb88e17a74196bf4ada4efadfd69614593f88be830fdd"
+                }
+            ],
+            "sha256": "da55794c11b510c828e29e5feab9063e91f129c033364fcaba51165b46059e24",
+            "byteSize": 635
+        },
+        {
+            "id": "bubble-full",
+            "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/bubble-full.png",
+            "width": 64,
+            "height": 64,
+            "jobId": "03b19b2b-b036-4e2e-aa12-1a02f0e3413d",
+            "assetId": "d28606c6-6526-56f1-97c4-f031d053a0f6",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/03b19b2b-b036-4e2e-aa12-1a02f0e3413d/download",
+            "subscriptionGenerationsCharged": 5,
+            "request": {
+                "description": "ONE isolated reusable puffy hot fire-bubble sprite, NOT a sheet. A solid rounded irregular three-lobed swelling explosion clump with strong volume: broad muted warm maroon underside, burnt orange midtone, peach-gold broad upper-left highlight and a small pale cream hot core. Crisp cel-animation pixel art using 6 flat colors, no black outline, no gradients, no rays or spikes, no thin flame tips, not a glass ball, not a ring, not soap. Exactly ONE fully visible small clump centered in a transparent 64x64 canvas, shape at most 44x44 pixels, with at least TEN fully transparent pixels on ALL four sides. Do not place any pixel at a canvas edge. Full rounded silhouette without cropping, no tiny floating sparks, no ground, no cast shadow, no background, no text, no grid. The single sprite will be repeated as different sized bubbling lobes of an anime explosion.",
+                "width": 64,
+                "height": 64,
+                "no_background": true,
+                "max_colors": 7,
+                "palette": [
+                    "#fff0bc",
+                    "#f7cf85",
+                    "#eeb36a",
+                    "#d58450",
+                    "#a95842",
+                    "#713d3e",
+                    "#4c303a"
+                ],
+                "palette_name": "warm puffy fire",
+                "seed": 862027
+            },
+            "frames": [
+                {
+                    "key": "bubble-1",
+                    "x": 0,
+                    "y": 0,
+                    "width": 35,
+                    "height": 34,
+                    "anchorX": 17.5,
+                    "anchorY": 17.0,
+                    "sourceBounds": {
+                        "left": 16,
+                        "top": 16,
+                        "right": 47,
+                        "bottom": 46
+                    },
+                    "componentPixelCount": 631,
+                    "separation": "원본의 단일 연결 알파 영역만 RGBA 그대로 분리. 투명 여백2px 추가, 리사이즈와 새 픽셀 작화 없음.",
+                    "localPath": "public/assets/maplestory/anime-fx-sprites/20261020/frames/bubble-1.png",
+                    "sha256": "9c2a0bc8bdb927781675dea1779b6f1fd4d4c78e79c0733d3853ee1402680a13"
+                }
+            ],
+            "sha256": "452c32c5fe64759de583a47fd6f9f0801a6b3b40e53f1eacd501df9a49720694",
+            "byteSize": 803
+        }
+    ],
+    "extractionNotes": [
+        "smoke와bubble 원본은 요청한 균등 격자를 따르지 않았다. 실제 분리된 연결 영역을 무손실 추출해 각 그림의 배치를 기록했다.",
+        "bubble 원본의 큰 덩어리와 맨 아래 덩어리는 캔버스 가장자리에 닿아 미사용. 큰 덩어리는 별도64px 원본으로 다시 제작했다. bubble-0과bubble-3은 같은 온전한 작은 덩어리를 발생/잔여 크기로 재사용한다.",
+        "프레임의 밝기·단색 표시 사본은 로더가 별도 표면에서 생성한다. 노리오는 원본 알파에 단색을 입혀 음영을 제거하고, 안노는 명암을 유지한 어두운 사본을 사용한다.",
+        "실제 재생 후 이소는 원본 명암이 회전 암부와 겹쳐 단단하게 읽혀 밝은 단색 몸체판을 별도로 준비한다. 하시모토는3층×5개 발생 박자를 유지하면서 배치·크기·방향에 작고 결정적인 차이를 주어 줄맞춤을 완화했다."
+    ]
+}

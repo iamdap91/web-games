@@ -1,4 +1,5 @@
 import { drawBackgroundAnimation } from './motion-background.js';
+import { drawSpeedStreamlines } from './motion-speed.js';
 import { burst, clamp, ellipse, label, line, mix, noise, palette, polygon, smooth, stage, windowed, } from './drawing.js';
 import { atahoPosition, battleLayout, drawAtaho, drawBattle, drawBattleActors, drawBear, } from './battle.js';
 import { drawAtahoBreakdown, drawAtahoFlutter, drawAtahoPerspective, } from './motion-deformation.js';
@@ -117,9 +118,15 @@ export const motionSamples = [
         id: 'speed-streamlines',
         name: '속도선·유선',
         category: 'motion',
-        previewMs: 1800,
-        description: '수평 정권 진입 뒤 긴 평행선과 몸 둘레를 흐르는 곡선을 그립니다.',
-        distinction: '집중선처럼 한 점에 모이지 않고 이동 반대 방향과 둘레의 흐름을 보입니다.',
+        previewMs: 1430,
+        description: '정권 진입 속도에 맞춰 길고 짧은 선이 뒤로 스치고, 몸 바깥의 유선이 짧은 후류로 빠져나갑니다.',
+        distinction: '빠른 진입에서 선이 길어지고 접촉 직후 걷힙니다. 얼굴·주먹·피격 표정은 비워 실제 타격을 읽게 합니다.',
+        beats: [
+            { timeMs: 1120, label: '진입 · 흐름 발생' },
+            { timeMs: 1430, label: '가속 · 속도선과 후류' },
+            { timeMs: 1740, label: '접촉 직전 · 선 회수' },
+            { timeMs: 1920, label: '접촉 뒤 · 정착' },
+        ],
     },
 ];
 const impact = battleLayout.impact;
@@ -412,31 +419,16 @@ function drawFocusLines(ctx, frame) {
     drawBattleActors(ctx, frame, { action: 'uppercut' });
 }
 function drawSpeed(ctx, frame) {
-    const t = time(frame), speed = windowed(t, 900, 2450, 230), x = dashPosition(t, frame);
+    const t = time(frame);
+    const x = dashPosition(t, frame);
     stage(ctx, frame, frame.reducedMotion ? 0 : t);
-    if (frame.enhanced && speed > 0) {
-        ctx.save();
-        ctx.globalAlpha *= speed * (frame.reducedMotion ? 0.25 : 0.86);
-        for (let i = 0; i < (frame.reducedMotion ? 8 : 24); i++) {
-            const y = 83 + i * (frame.reducedMotion ? 22 : 17), end = x - 110 - noise(i + 12) * 70;
-            const offset = frame.reducedMotion ? 0 : (t * 0.35 + i * 53) % 145;
-            line(ctx, [
-                { x: -180 + offset, y },
-                { x: end, y },
-            ], i % 3 ? '#bbbdcc' : palette.blue, frame.reducedMotion ? (i % 3 ? 2 : 4) : i % 3 ? 3.5 : 7);
-        }
-        for (const side of [-1, 1])
-            for (let i = 0; i < 3; i++) {
-                const y = 300 + side * (93 + i * 20);
-                ctx.beginPath();
-                ctx.moveTo(x - 270, y);
-                ctx.bezierCurveTo(x - 50, y + side * 13, x + 35, y - side * 55, x + 150, y - side * 19);
-                ctx.strokeStyle = palette.blue;
-                ctx.lineWidth = frame.reducedMotion ? 2 : 3.5;
-                ctx.stroke();
-            }
-        ctx.restore();
-    }
+    drawSpeedStreamlines(ctx, frame, {
+        x,
+        travel: x - dashPosition(950, frame),
+        velocity: (dashPosition(t + 8, frame) - dashPosition(t - 8, frame)) / 16,
+    });
+    ellipse(ctx, x, 448, 58, 10, '#14293b32');
+    ellipse(ctx, 657, 448, 115, 15, '#14293b32');
     drawDash(ctx, frame);
 }
 export function drawMotion(ctx, id, frame) {
@@ -524,7 +516,7 @@ export function drawMotion(ctx, id, frame) {
             case 'speed-streamlines':
                 drawSpeed(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '수평 정권 진입 뒤 속도선·유선'
+                    ? '진입 속도에 따른 역방향 흐름 · 몸 바깥의 짧은 후류'
                     : '같은 실제 원화의 진입과 접촉');
                 break;
             default:
