@@ -174,6 +174,8 @@ a {
   color: #8193a2;
   font-size: 10px;
   margin-top: 4px;
+  line-height: 1.65;
+  word-break: keep-all;
 }
 .item-list button[aria-current='true'] {
   border-color: #baa16d66;
@@ -189,6 +191,10 @@ a {
 }
 .studio-viewer {
   min-width: 0;
+}
+#origin {
+  letter-spacing: 0;
+  line-height: 1.65;
 }
 .item-heading {
   display: flex;
@@ -311,6 +317,33 @@ input[type='range'] {
 .save-options button {
   font-size: 11px;
   padding: 6px 9px;
+}
+.save-options a {
+  align-self: center;
+  font-size: 11px;
+  padding: 6px 0;
+}
+.gif-range {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+  color: #a7b8c5;
+}
+.gif-range label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.gif-range input {
+  width: 82px;
+  padding: 6px 8px;
+  border: 1px solid #ffffff24;
+  border-radius: 5px;
+  background: #111e28;
+  color: #eee;
+  font-variant-numeric: tabular-nums;
 }
 .beat-list {
   display: flex;

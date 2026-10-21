@@ -1,4 +1,4 @@
-import { clamp, ellipse, label, line, mix, noise, polygon, ring, smooth, stage, gameStage, star, windowed, } from './drawing.js';
+import { clamp, ellipse, label, line, mix, noise, polygon, ring, smooth, stage, gameStage, star, } from './drawing.js';
 import { atahoPosition, battleLayout, drawAtaho, drawBear, drawBattleActors, } from './battle.js';
 import { opticalScene } from './camera-scene.js';
 import { height, width } from './types.js';
@@ -13,8 +13,8 @@ function transmitted(ctx, frame) {
     opticalScene(ctx, frame);
     if (!frame.enhanced)
         return;
-    const { impact, contactMs } = battleLayout;
-    const power = windowed(frame.timeMs, contactMs, contactMs + 480, 55);
+    const { impact } = battleLayout;
+    const power = contactLightPower(frame);
     ctx.save();
     ctx.globalAlpha *= (frame.reducedMotion ? 0.45 : 1) * power;
     ctx.globalCompositeOperation = 'lighter';
@@ -181,30 +181,35 @@ function diffusion(ctx, frame) {
     label(ctx, '밝은 부분에서만 부드러운 확산 · 어두운 선과 얼굴은 유지');
 }
 function blur(ctx, frame) {
+    // 노출은 접근 때 모으고 접촉 뒤 곧 걷는다. 타점과 회수까지 긴 흐림에 묻지 않는다.
+    const rush = smooth((frame.timeMs - 1450) / 350);
+    const release = 1 - smooth((frame.timeMs - 1800) / (frame.reducedMotion ? 550 : 180));
     const amount = frame.enhanced
-        ? windowed(frame.timeMs, 1250, 2550, 360) *
-            (frame.reducedMotion ? 0.025 : 0.24)
+        ? rush * release * (frame.reducedMotion ? 0.025 : 0.34)
         : 0;
     const scene = captureScene(ctx, frame);
-    const exposures = amount > 0 ? 19 : 1;
+    const exposures = amount > 0 ? 25 : 1;
+    let totalWeight = 0;
     for (let i = 0; i < exposures; i++) {
         const zoom = 1 + (i / Math.max(1, exposures - 1)) * amount;
+        const weight = 1 - i / exposures;
+        totalWeight += weight;
         ctx.save();
-        // 1, 1/2, 1/3...으로 누적하면 모든 노출이 같은 비율로 섞인다.
-        ctx.globalAlpha *= 1 / (i + 1);
+        // 원노출 쪽의 비중을 높여 주변은 흐르되 타점 가까이의 윤곽은 남긴다.
+        ctx.globalAlpha *= weight / totalWeight;
         ctx.translate(battleLayout.impact.x, battleLayout.impact.y);
         ctx.scale(zoom, zoom);
         ctx.translate(-battleLayout.impact.x, -battleLayout.impact.y);
         ctx.drawImage(scene, 0, 0);
         ctx.restore();
     }
-    label(ctx, '타점을 중심으로 방향이 있는 방사형 번짐 · 초점 흐림과 구별');
+    label(ctx, '접근 때 방사형 노출 증가 → 접촉 뒤 빠르게 걷힘 · 중심 타점 유지');
 }
 function flare(ctx, frame, anamorphic) {
     opticalScene(ctx, frame);
     contactLightCore(ctx, frame);
     const source = battleLayout.impact;
-    const power = windowed(frame.timeMs, battleLayout.contactMs, battleLayout.contactMs + 650, 120);
+    const power = contactLightPower(frame);
     if (frame.enhanced) {
         ctx.save();
         ctx.globalAlpha *= power * (frame.reducedMotion ? 0.45 : 0.95);
@@ -251,7 +256,10 @@ function flare(ctx, frame, anamorphic) {
 function crossLight(ctx, frame) {
     opticalScene(ctx, frame);
     const source = battleLayout.impact;
-    const amount = windowed(frame.timeMs, battleLayout.contactMs, battleLayout.contactMs + 550, 80);
+    const age = frame.timeMs - battleLayout.contactMs;
+    const amount = age < 0
+        ? 0
+        : Math.pow(1 - clamp(age / (frame.reducedMotion ? 600 : 260)), 2);
     if (frame.enhanced) {
         const size = 24 + amount * (frame.reducedMotion ? 30 : 85);
         ctx.save();
@@ -317,7 +325,11 @@ function multiBokeh(ctx, frame) {
     label(ctx, '전경 큰 흐림 / 전투 선명 / 배경 작은 흐림 · 점광원은 큰 빛망울로');
 }
 function contactLightPower(frame) {
-    return windowed(frame.timeMs, battleLayout.contactMs, battleLayout.contactMs + 650, 120);
+    const age = frame.timeMs - battleLayout.contactMs;
+    if (age < 0)
+        return 0;
+    // 같은 광원을 쓰는 비교 양쪽과 광학 처리에 같은 수명을 적용한다.
+    return Math.pow(1 - clamp(age / (frame.reducedMotion ? 700 : 420)), 2);
 }
 /** 비교 양쪽에 같은 선명한 광원을 두어 광원과 필터의 차이를 분리한다. */
 function contactLightCore(ctx, frame) {

@@ -117,12 +117,13 @@ function blurredArena(
   camera: Camera,
   amount: number,
   direction: 'horizontal' | 'vertical' = 'horizontal',
+  worldTime = frame.time,
 ): WorldScene {
   smearBackground(
     context,
     frame.surfaces,
     (background) => {
-      frame.surfaces.stage.background(background, 'arena', camera, frame.time, {
+      frame.surfaces.stage.background(background, 'arena', camera, worldTime, {
         focus: camera.target,
       });
     },
@@ -153,14 +154,14 @@ function delayedHit(
   index: number,
   start: number,
 ): void {
-  const p = (time - start - index * 0.038) / 0.24;
+  const p = (time - start - index * 0.032) / 0.16;
   if (p < 0 || p > 1) return;
   if (!position) return;
   gameImpact(context, frame.assets.effects, {
     x: position.x,
     y: position.y,
     progress: p,
-    size: 170 + index * 22,
+    size: 160 + index * 14,
     angle: -0.3 + index * 0.08,
   });
 }
@@ -192,7 +193,7 @@ function drawAlreadyCut(context: Context, frame: CutFrame): void {
   const rush = progress(time, 1.35, 0.125);
   const orbitProgress = progress(time, 0, 1.35);
   const orbitAngle = -0.35 + turn * orbitProgress * orbitProgress;
-  const finish = progress(time, 1.475, 0.625);
+  const finish = progress(time, 1.475, 0.425);
   const firstCamera = orbit(
     orbitAngle,
     14.5 - orbitProgress * 1.3,
@@ -221,7 +222,8 @@ function drawAlreadyCut(context: Context, frame: CutFrame): void {
           focal: lerp(920, 780, ease(finish)),
         };
   const shutter = time >= 1.35 && time < 1.475;
-  const stageTime = time < 2.1 ? time : time < 2.7 ? 2.1 : Math.min(time, 3.2);
+  const stageTime =
+    time < 1.9 ? time : time < 2.7 ? 1.9 : 1.9 + Math.min(time, 3.2) - 2.7;
   const scene = shutter
     ? blurredArena(context, frame, camera, 0.9)
     : sceneFor(context, frame, camera, stageTime);
@@ -232,8 +234,9 @@ function drawAlreadyCut(context: Context, frame: CutFrame): void {
       : time < 1.475
         ? { x: lerp(-3.4, 4.4, exposedRush), y: 0.15, z: 0.1 }
         : { x: 4.4, y: 0, z: 0.1 };
-  if (time >= 1.35 && time < 2.1) {
-    const fade = time < 1.475 ? 1 : 1 - progress(time, 1.475, 0.625);
+  if (time >= 1.35 && time < 1.695) {
+    // 관통 뒤 잔상을 짧게 걷어 지연 타격 앞의 정적을 비운다.
+    const fade = time < 1.475 ? 1 : 1 - ease(progress(time, 1.475, 0.22));
     for (let i = 0; i < 6; i++) {
       const x = -3.4 + (i / 5) * 7.4;
       if (time < 1.475 && x > position.x) continue;
@@ -245,10 +248,14 @@ function drawAlreadyCut(context: Context, frame: CutFrame): void {
       });
     }
   }
+  const delayedRecoil =
+    0.44 * ease(progress(time, 2.75, 0.12)) -
+    0.08 * ease(progress(time, 3.06, 0.16));
+  const bearPosition = { ...groundBear, x: groundBear.x + delayedRecoil };
   const bearState = time >= 3.22 ? 'defeat' : time >= 2.7 ? 'hit' : 'stand';
   const bearPhase =
-    time >= 3.22 ? progress(time, 3.22, 0.32) : progress(time, 2.7, 0.4);
-  scene.bear(frame.assets, groundBear, bearState, bearPhase, { height: 4.2 });
+    time >= 3.22 ? progress(time, 3.22, 0.32) : progress(time, 2.75, 0.35);
+  scene.bear(frame.assets, bearPosition, bearState, bearPhase, { height: 4.2 });
   if (time < 1.475) {
     scene.hero(
       frame.assets,
@@ -268,7 +275,7 @@ function drawAlreadyCut(context: Context, frame: CutFrame): void {
     });
   }
   scene.render();
-  frame.surfaces.stage.foreground(context, 'arena', camera, time, {
+  frame.surfaces.stage.foreground(context, 'arena', camera, stageTime, {
     focus: camera.target,
   });
   if (shutter) {
@@ -304,14 +311,14 @@ function drawAlreadyCut(context: Context, frame: CutFrame): void {
   if (time >= 2.7) {
     const source = bearSprite(frame.assets, bearState, bearPhase);
     for (let i = 0; i < 8; i++) {
-      const hitPoint = spritePoint(scene, groundBear, source, {
+      const hitPoint = spritePoint(scene, bearPosition, source, {
         height: 4.2,
         pixel: { x: 74 + (i % 2) * 8, y: 105 - i * 10 },
       });
       delayedHit(context, frame, hitPoint, time, i, 2.7);
     }
   }
-  if (time >= 2.1 && time < 2.7) {
+  if (time >= 1.9 && time < 2.7) {
     const point = scene.project({ x: 1.7, y: 2.1, z: 0 });
     if (point)
       line(
@@ -389,7 +396,7 @@ const aerialBeats = [
 function aerialPush(time: number): number {
   return aerialBeats.reduce(
     (distance, beat) =>
-      distance + beat.push * ease(progress(time, beat.contact + 0.045, 0.14)),
+      distance + beat.push * ease(progress(time, beat.contact + 0.045, 0.105)),
     0,
   );
 }
@@ -402,9 +409,15 @@ function sampleAerialCombo(assets: CutAssets, time: number) {
   const holdStart = beat.contact - 0.02;
   const holdEnd = beat.contact + 0.045;
   const sequence = time < holdStart ? punch.prepare : punch.recover;
+  const prepareDuration = holdStart - beat.start;
+  const thrust = progress(time, beat.contact - 0.09, 0.07);
   const poseProgress =
     time < holdStart
-      ? progress(time, beat.start, holdStart - beat.start)
+      ? progress(
+          time,
+          beat.start + prepareDuration * 0.45,
+          prepareDuration * 0.55,
+        )
       : progress(time, holdEnd, beat.end - holdEnd);
   const poseFrame =
     time >= holdStart && time < holdEnd
@@ -426,9 +439,7 @@ function sampleAerialCombo(assets: CutAssets, time: number) {
     z: -Math.sin(beat.camera.angle),
   };
   const contactDistance = (punch.hand.x - source.anchorX) * pixelScale + 0.85;
-  const distance =
-    contactDistance +
-    0.9 * (1 - ease(progress(time, beat.start, holdStart - beat.start)));
+  const distance = contactDistance + 0.9 * (1 - thrust * thrust);
   const push = aerialPush(time);
   // 피격자가 밀린 곳을 늦게 따라잡아, 매 타격 뒤 원위치로 돌아가지 않는다.
   const pursuit = aerialPush(time - 0.065);
@@ -453,7 +464,7 @@ function sampleAerialCombo(assets: CutAssets, time: number) {
       z: -0.2 - right.z * contactDistance,
     },
     reaction:
-      time < beat.contact ? 0.99 : progress(time, beat.contact + 0.045, 0.14),
+      time < beat.contact ? 0.99 : progress(time, beat.contact + 0.045, 0.105),
   };
 }
 type AerialCombo = ReturnType<typeof sampleAerialCombo>;
@@ -560,9 +571,12 @@ function drawAerialPursuit(context: Context, frame: CutFrame): void {
             ? 1.85
             : lerp(1.85, 0, ease(progress(time, 3, 0.28)));
   const camera = aerialCamera(time, altitude, combo, lastCombo);
+  // 접촉 자세가 보이는 마지막 코마에는 배경 흐림과 속도선을 먼저 걷는다.
+  const clearContact =
+    1 - ease(progress(time, aerialFinish.contact - 0.075, 0.04));
   const smear =
     time >= aerialFinish.dropStart && time < aerialFinish.contact
-      ? slam * 0.75
+      ? slam * 0.75 * clearContact
       : 0;
   const scene =
     smear > 0.001
@@ -708,7 +722,18 @@ function drawAerialPursuit(context: Context, frame: CutFrame): void {
         size: 330,
       });
   }
-  if (smear > 0.001) speedLines(context, time, slam * 0.85, true);
+  if (smear > 0.001)
+    speedLines(context, time, slam * 0.85 * clearContact, true);
+}
+
+/** 느린 장면을 푼 뒤 준비40%를 남기고 신전60%에 이동과 시점을 함께 모은다. */
+function counterThrust(time: number): number {
+  const phase = progress(
+    time,
+    counterCut.start,
+    counterCut.contact - counterCut.start,
+  );
+  return progress(phase, 0.4, 0.6);
 }
 
 function counterCamera(time: number): Camera {
@@ -723,7 +748,7 @@ function counterCamera(time: number): Camera {
       lerp(0, 0.1, p),
       lerp(920, 740, ease(progress(p, 0, 0.38))),
     );
-  const q = ease(progress(time, 2.27, 0.35));
+  const q = counterThrust(time) ** 2;
   const start = orbit(
     -0.63 + (103 / 180) * Math.PI,
     10,
@@ -746,7 +771,7 @@ function counterActors(
   assets: CutAssets,
   time: number,
   camera: Camera,
-): { readonly hero: Vec3; readonly counter: number } {
+): { readonly hero: Vec3; readonly thrust: number } {
   // 장면은 0.11초만 진행하고 카메라는 1.12초 동안 계속 움직인다.
   const sceneTime =
     time < 1.15
@@ -755,11 +780,7 @@ function counterActors(
         ? 1.15 + ((time - 1.15) / 1.12) * 0.11
         : 1.26 + time - 2.27;
   const jump = progress(sceneTime, 0.75, 0.55);
-  const counter = progress(
-    time,
-    counterCut.start,
-    counterCut.contact - counterCut.start,
-  );
+  const thrust = counterThrust(time);
   const landing = progress(
     time,
     counterCut.recovery,
@@ -774,14 +795,14 @@ function counterActors(
     time < counterCut.start
       ? highPosition
       : time < counterCut.contact
-        ? mixPoint(highPosition, counterStrike, ease(counter))
+        ? mixPoint(highPosition, counterStrike, thrust * thrust)
         : time < counterCut.recovery
           ? counterStrike
-          : mixPoint(counterStrike, counterLanding, ease(landing));
-  const recoil = ease(progress(time, counterCut.contact, 0.32));
+          : mixPoint(counterStrike, counterLanding, landing * landing);
+  const recoil = ease(progress(time, counterCut.recovery, 0.2));
   scene.bear(
     assets,
-    { x: 1.7 + recoil * 0.5, y: 0, z: 0 },
+    { x: 1.7 + recoil * 0.65, y: 0, z: 0 },
     time < counterCut.contact
       ? 'attack'
       : time < counterCut.defeat
@@ -792,8 +813,8 @@ function counterActors(
       : time < counterCut.defeat
         ? progress(
             time,
-            counterCut.contact,
-            counterCut.defeat - counterCut.contact,
+            counterCut.recovery,
+            counterCut.defeat - counterCut.recovery,
           )
         : progress(time, counterCut.defeat, 0.3),
     { height: 4.2, rotation: camera.roll },
@@ -811,7 +832,7 @@ function counterActors(
     time < counterCut.start
       ? jump
       : time < counterCut.contact
-        ? lerp(0, 1.99 / 17, counter)
+        ? lerp(0, 1.99 / 17, thrust)
         : time < counterCut.recovery
           ? 2.5 / 17
           : lerp(3.1 / 17, 6.8 / 17, landing),
@@ -822,13 +843,14 @@ function counterActors(
       rotation: camera.roll,
     },
   );
-  return { hero, counter };
+  return { hero, thrust };
 }
 
 function drawBulletCounter(context: Context, frame: CutFrame): void {
   const time = frame.time;
   const camera = counterCamera(time);
-  const smear = time > counterCut.start && time < counterCut.contact;
+  const smear =
+    time > counterCut.start + 0.07 && time < counterCut.contact - 0.02;
   // 궤도 구간은 배경도 같은 장면 시간으로 천천히 진행한다.
   const worldTime =
     time < 1.15
@@ -837,11 +859,11 @@ function drawBulletCounter(context: Context, frame: CutFrame): void {
         ? 1.15 + ((time - 1.15) / 1.12) * 0.11
         : 1.26 + Math.min(time, 2.78) - 2.27;
   const scene = smear
-    ? blurredArena(context, frame, camera, 0.88)
+    ? blurredArena(context, frame, camera, 0.88, 'horizontal', worldTime)
     : sceneFor(context, frame, camera, worldTime);
-  const { hero, counter } = counterActors(scene, frame.assets, time, camera);
+  const { hero, thrust } = counterActors(scene, frame.assets, time, camera);
   scene.render();
-  frame.surfaces.stage.foreground(context, 'arena', camera, time, {
+  frame.surfaces.stage.foreground(context, 'arena', camera, worldTime, {
     focus: camera.target,
   });
   if (time > 1.15 && time < 2.27) {
@@ -874,7 +896,7 @@ function drawBulletCounter(context: Context, frame: CutFrame): void {
         pixel: { x: 80, y: 46 },
         rotation: camera.roll,
       }),
-      counter,
+      thrust,
       0.4,
       230,
       frame.assets.fistPatch,
@@ -893,9 +915,18 @@ function drawBulletCounter(context: Context, frame: CutFrame): void {
     if (hit)
       gameImpact(context, frame.assets.effects, {
         ...hit,
-        progress: progress(time, counterCut.contact, 0.3),
+        progress: progress(time, counterCut.contact, 0.22),
         size: 380,
         angle: camera.roll,
+      });
+  }
+  if (time >= counterCut.land && time < counterCut.land + 0.36) {
+    const ground = scene.project(counterLanding);
+    if (ground)
+      gameDust(context, frame.assets.effects, {
+        ...ground,
+        progress: (time - counterCut.land) / 0.36,
+        size: 190,
       });
   }
 }
@@ -903,15 +934,15 @@ function drawBulletCounter(context: Context, frame: CutFrame): void {
 export const arenaCuts: readonly Cut[] = [
   {
     id: 'already-cut',
-    title: '이미 때렸다',
+    title: '잔영 일격',
     kind: '3D',
     duration: 3.9,
     description:
-      '게임의 숲 전투 공터를 가속해 한 바퀴 돌고, 세 코마와 여섯 잔상으로 관통한다. 주먹을 거둔 정적 뒤 지연 타격과 함께 팔을 풀고, 어깨를 편 잔심을 남긴다.',
+      '게임의 숲 전투 공터를 가속해 한 바퀴 돌고, 세 코마와 여섯 잔상으로 관통한다. 잔상을 짧게 걷은 정적 뒤 여덟 지연 타격이 몸을 밀고, 주먹의 긴장을 풀어 잔심을 남긴다.',
     beats: [
       { time: 0, label: '가속 360°' },
       { time: 1.35, label: '1코마 × 3 · 잔상' },
-      { time: 2.1, label: '등 뒤 정적' },
+      { time: 1.9, label: '잔상을 걷은 뒤 정적' },
       { time: 2.7, label: '팔 풀기 · 8겹 지연 타격' },
       { time: 3.1, label: '어깨를 편 잔심' },
       { time: 3.54, label: '쓰러짐 완료 · 정지' },
@@ -920,11 +951,11 @@ export const arenaCuts: readonly Cut[] = [
   },
   {
     id: 'aerial-pursuit',
-    title: '공중 추격 연타',
+    title: '승천 연격',
     kind: '3D',
     duration: 4.2,
     description:
-      '어퍼컷으로 띄운 뒤 잽과 정권을 번갈아 네 번 추격한다. 0.50→0.42→0.36→0.32초로 박자를 좁히고, 마지막 추격 위치에서 장전한 뒤0.40초 급강하로 내려찍는다. 네 구도에서 두 배우를 계속 보여준다.',
+      '어퍼컷으로 띄운 뒤 준비와 급신전을 대비한 잽·정권 네 번을 추격한다. 타격 박자를 좁히고 짧게 접촉을 유지한 뒤 밀어낸다. 마지막0.40초 급강하에서는 접촉 직전 흐림을 걷어 내려찍기를 선명하게 보여준다.',
     beats: [
       { time: 0.28, label: '어퍼컷 접촉' },
       ...aerialBeats.map((beat, index) => ({
@@ -933,6 +964,7 @@ export const arenaCuts: readonly Cut[] = [
       })),
       { time: aerialComboEnd, label: '마지막 추격 · 내려찍기 장전' },
       { time: aerialFinish.dropStart, label: '0.40초 급강하 시작' },
+      { time: aerialFinish.contact - 0.035, label: '타점 선명화 · 흐림 이탈' },
       { time: aerialFinish.contact, label: '원본 5번 · 지면 접촉' },
       { time: 3.45, label: '앙각 정지' },
     ],
@@ -940,17 +972,18 @@ export const arenaCuts: readonly Cut[] = [
   },
   {
     id: 'bullet-counter',
-    title: '불릿 타임 반격',
+    title: '찰나 반격',
     kind: '3D',
     duration: 3.5,
     description:
-      '곰왕의 실제 공격을 뛰어넘고 장면의 0.11초를 1.12초로 펼친다. 카메라는 103° 궤도와 빠른 접근을 따로 진행한다.',
+      '곰왕의 실제 공격을 뛰어넘고 장면의0.11초를1.12초로 펼친다.103° 궤도 뒤 짧게 힘을 모았다가 주먹과 시점이 함께 파고들어 명중에서 멈춘다. 반동과 가속 착지를 이어 정착한다.',
     beats: [
       { time: 0, label: '곰왕 원본 공격' },
       { time: 0.75, label: '뛰어넘기' },
       { time: 1.15, label: '0.11초 → 1.12초 · 103°' },
       { time: 2.27, label: '반격 · 앙각' },
       { time: 2.46, label: '첫 잽 신전 · 실제 접촉' },
+      { time: counterCut.land, label: '착지 · 가속 복귀와 작은 먼지' },
       { time: 3.2, label: '쓰러짐 완료 · 착지 정지' },
     ],
     draw: drawBulletCounter,

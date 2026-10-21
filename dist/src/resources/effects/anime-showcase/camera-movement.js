@@ -11,23 +11,24 @@ function cameraDrift(time, seed) {
 }
 function screenShake(ctx, frame) {
     const hitTime = frame.timeMs - battleLayout.contactMs;
-    const envelope = hitTime < 0 ? 0 : Math.pow(1 - clamp(hitTime / 750), 2);
+    // 첫 진동을 강하게 읽힌 뒤 곧 가라앉혀 접촉 뒤의 원화가 오래 가려지지 않게 한다.
+    const envelope = hitTime < 0 ? 0 : Math.pow(1 - clamp(hitTime / 560), 2.4);
     const amplitude = frame.enhanced
-        ? (frame.reducedMotion ? 2 : 32) * envelope
+        ? (frame.reducedMotion ? 2 : 38) * envelope
         : 0;
-    const x = cameraDrift(hitTime * 0.037, 7) * amplitude;
-    const y = cameraDrift(hitTime * 0.041, 101) * amplitude * 0.56;
+    const x = cameraDrift(hitTime * 0.046, 7) * amplitude;
+    const y = cameraDrift(hitTime * 0.051, 101) * amplitude * 0.44;
     ctx.save();
     ctx.translate(width / 2 + x, height / 2 + y);
-    ctx.rotate(cameraDrift(hitTime * 0.029, 211) *
+    ctx.rotate(cameraDrift(hitTime * 0.035, 211) *
         envelope *
-        (frame.enhanced ? (frame.reducedMotion ? 0.001 : 0.018) : 0));
-    ctx.scale(1.12, 1.12);
+        (frame.enhanced ? (frame.reducedMotion ? 0.001 : 0.014) : 0));
+    ctx.scale(1.14, 1.14);
     ctx.translate(-width / 2, -height / 2);
     opticalScene(ctx, frame);
     ctx.restore();
     overlayFrame(ctx);
-    label(ctx, '1800ms의 한 충격 → 빠르게 감쇠 → 정지 · 화면 안내는 고정');
+    label(ctx, '접촉의 짧고 큰 진동 → 빠르게 정착 · 화면 안내 고정');
 }
 function handheld(ctx, frame) {
     const amplitude = frame.enhanced ? (frame.reducedMotion ? 0.65 : 7.5) : 0;
@@ -68,7 +69,8 @@ function flicker(ctx, frame) {
     opticalScene(ctx, frame);
     if (frame.enhanced) {
         // 노출의 색 차이를 키우되 짧은 섬광을 연사하지 않고 한 색을 충분히 유지한다.
-        const warm = frame.reducedMotion || Math.floor(frame.timeMs / 400) % 2 === 0;
+        const warm = frame.reducedMotion ||
+            Math.floor((frame.exposureTimeMs ?? frame.timeMs) / 400) % 2 === 0;
         ctx.fillStyle = frame.reducedMotion
             ? '#edc77d24'
             : warm
@@ -97,8 +99,9 @@ function followPan(ctx, frame) {
 }
 function slowQuickPan(ctx, frame) {
     const slow = smooth(frame.timeMs / 1450);
-    const quickDuration = frame.reducedMotion ? 1300 : 180;
-    const quick = smooth((frame.timeMs - 1850) / quickDuration);
+    const quickDuration = frame.reducedMotion ? 900 : 140;
+    const quickStart = battleLayout.contactMs - quickDuration;
+    const quick = smooth((frame.timeMs - quickStart) / quickDuration);
     const slowFocus = mix(240, battleLayout.attacker.x - 130, slow);
     const focus = mix(slowFocus, battleLayout.target.x + 20, quick);
     const offset = frame.enhanced ? focus - width / 2 : 0;
@@ -107,13 +110,15 @@ function slowQuickPan(ctx, frame) {
     panorama(ctx, frame);
     drawBattleActors(ctx, frame);
     ctx.restore();
-    label(ctx, frame.timeMs < 1850
+    label(ctx, frame.timeMs < quickStart
         ? '지와 PAN · 천천히 주변을 읽힘'
-        : '퀵 PAN · 곰왕 쪽으로 빠르게 구도 전환');
+        : frame.timeMs < battleLayout.contactMs
+            ? '퀵 PAN · 접촉 직전 곰왕 쪽으로 전환'
+            : '접촉에 구도 정착 · 같은 타격을 선명하게 읽힘');
 }
 function trackUpBack(ctx, frame) {
-    const up = smooth((frame.timeMs - 500) / 900);
-    const back = smooth((frame.timeMs - 2400) / 1050);
+    const up = smooth((frame.timeMs - 900) / 900);
+    const back = smooth((frame.timeMs - 2180) / 820);
     const max = frame.reducedMotion ? 1.22 : 2.15;
     const zoom = frame.enhanced ? 1 + (max - 1) * up * (1 - back) : 1;
     ctx.save();
@@ -122,8 +127,8 @@ function trackUpBack(ctx, frame) {
     ctx.translate(-battleLayout.impact.x, -battleLayout.impact.y);
     opticalScene(ctx, frame);
     ctx.restore();
-    label(ctx, frame.timeMs < 2400
-        ? 'T.U · 같은 중심으로 그림을 확대'
+    label(ctx, frame.timeMs < 2180
+        ? 'T.U · 접촉에 근접 구도 도착 · 타점을 유지'
         : 'T.B · 다시 넓은 구도로 축소');
 }
 function multiplane(ctx, frame) {

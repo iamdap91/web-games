@@ -2,10 +2,13 @@ import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
 import { connectStudioScene, redirectToStudio, studioMode, } from '../../cutscenes/studio/bridge.js';
 import { samples, drawSample, disposeSampleSurfaces } from './catalog.js';
 import { exportGif } from './export.js';
+import { retimeSample } from './timing.js';
+import { shockKomaOptions, shockKomaSample } from './shock-koma-selection.js';
+import { getShockKomaVariant, } from './shock-koma-variant-data.js';
 import { GameStages } from '../../cutscenes/game-stage.js';
 import { ShowcasePlayer } from './player.js';
 import { loadBattleAssets } from './battle-assets.js';
-import { categories, durationMs, height, width, } from './types.js';
+import { categories, height, width, } from './types.js';
 function element(id, kind) {
     const value = document.getElementById(id);
     if (!(value instanceof kind))
@@ -37,7 +40,11 @@ class ShowcaseScreen {
     observer = new ResizeObserver(() => this.resize());
     urls = new Set();
     category = 'all';
-    current = samples.find((s) => `#${s.id}` === location.hash) ?? samples[0];
+    shockVariant = getShockKomaVariant(new URLSearchParams(location.search).get('variant') ??
+        (location.hash === '#shock-koma-v2' ? 'embers' : 'ink')).id;
+    current = samples.find((s) => `#${s.id}` === location.hash) ??
+        samples.find((s) => location.hash === '#shock-koma-v2' && s.id === 'shock-koma') ??
+        samples[0];
     filtered = samples;
     frameId = 0;
     lastTime = 0;
@@ -47,6 +54,8 @@ class ShowcaseScreen {
     constructor(assets, stage) {
         this.assets = assets;
         this.stage = stage;
+        if (this.current.id === 'shock-koma')
+            this.current = retimeSample(shockKomaSample(this.shockVariant));
         if (!this.context || !this.baseContext)
             throw new Error('Canvas를 준비할 수 없습니다.');
         const expectedCount = categories.reduce((total, category) => total + category.count, 0);
@@ -171,6 +180,8 @@ class ShowcaseScreen {
         this.filter();
         this.describe();
         this.resize();
+        this.player.select(this.current.durationMs);
+        this.seek.max = String(this.current.durationMs);
         if (studioMode)
             this.player.pause();
         this.studio = connectStudioScene('showcase', {
@@ -181,11 +192,13 @@ class ShowcaseScreen {
                     title: this.current.name,
                     description: `${this.current.description}\n${this.current.distinction}`,
                     timeMs: state.timeMs,
-                    durationMs,
+                    durationMs: state.durationMs,
                     playing: state.playing,
                     beats: this.current.beats ?? [
                         { timeMs: this.current.previewMs ?? 1900, label: '핵심 순간' },
                     ],
+                    variant: this.current.id === 'shock-koma' ? this.shockVariant : undefined,
+                    variantOptions: this.current.id === 'shock-koma' ? shockKomaOptions : undefined,
                     loop: this.loop.checked,
                     compare: this.compare.checked,
                     comparisonLabels: this.current.category === 'composite'
@@ -197,10 +210,14 @@ class ShowcaseScreen {
                 };
             },
             select: (id) => {
-                const sample = samples.find((entry) => entry.id === id);
-                if (sample)
+                const sample = samples.find((entry) => entry.id === (id === 'shock-koma-v2' ? 'shock-koma' : id));
+                if (sample) {
+                    if (sample.id === 'shock-koma')
+                        this.shockVariant = id === 'shock-koma-v2' ? 'embers' : 'ink';
                     this.select(sample);
+                }
             },
+            variant: (value) => this.selectVariant(value),
             toggle: () => {
                 this.player.toggle();
                 this.render();
@@ -255,7 +272,7 @@ class ShowcaseScreen {
             button.dataset.sample = sample.id;
             button.setAttribute('aria-current', String(sample.id === this.current.id));
             const number = document.createElement('small');
-            number.textContent = String(samples.indexOf(sample) + 1).padStart(2, '0');
+            number.textContent = String(samples.findIndex((entry) => entry.id === sample.id) + 1).padStart(2, '0');
             const name = document.createElement('span');
             name.textContent = sample.name;
             button.append(number, name);
@@ -269,19 +286,36 @@ class ShowcaseScreen {
         element('empty', HTMLElement).hidden = this.filtered.length !== 0;
         for (const id of ['previous', 'next'])
             element(id, HTMLButtonElement).disabled = this.filtered.length < 2;
-        if (this.filtered.length && !this.filtered.includes(this.current))
+        if (this.filtered.length &&
+            !this.filtered.some((sample) => sample.id === this.current.id))
             this.select(this.filtered[0]);
     }
     select(sample) {
         this.exporting?.abort();
-        this.current = sample;
-        this.player.select();
+        this.current =
+            sample.id === 'shock-koma'
+                ? retimeSample(shockKomaSample(this.shockVariant))
+                : sample;
+        this.player.select(this.current.durationMs);
+        this.seek.max = String(this.current.durationMs);
         if (location.hash !== `#${sample.id}`)
             history.replaceState(null, '', `#${sample.id}`);
         for (const button of this.list.querySelectorAll('button'))
             button.setAttribute('aria-current', String(button.dataset.sample === sample.id));
         this.describe();
         this.render();
+    }
+    selectVariant(value) {
+        if (this.current.id !== 'shock-koma')
+            return;
+        const variant = getShockKomaVariant(value);
+        if (variant.id !== value || variant.id === this.shockVariant)
+            return;
+        this.shockVariant = variant.id;
+        this.select(this.current);
+        const url = new URL(location.href);
+        url.searchParams.set('variant', variant.id);
+        history.replaceState(null, '', url);
     }
     describe() {
         const sample = this.current;
@@ -299,14 +333,14 @@ class ShowcaseScreen {
         element('sample-title', HTMLElement).textContent = sample.name;
         element('category-label', HTMLElement).textContent = category.name;
         element('ordinal', HTMLOutputElement).textContent =
-            `${String(samples.indexOf(sample) + 1).padStart(2, '0')} / ${samples.length}`;
+            `${String(samples.findIndex((entry) => entry.id === sample.id) + 1).padStart(2, '0')} / ${samples.length}`;
         element('description', HTMLElement).textContent = sample.description;
         element('distinction', HTMLElement).textContent = sample.distinction;
     }
     step(direction) {
         if (!this.filtered.length)
             return;
-        const index = Math.max(0, this.filtered.indexOf(this.current));
+        const index = Math.max(0, this.filtered.findIndex((sample) => sample.id === this.current.id));
         this.select(this.filtered[(index + direction + this.filtered.length) % this.filtered.length]);
     }
     resize() {
@@ -345,13 +379,15 @@ class ShowcaseScreen {
             });
             canvas.dataset.sample = this.current.id;
             canvas.dataset.category = this.current.category;
+            canvas.dataset.variant = this.current.shockVariant ?? '';
             canvas.dataset.timeMs = String(Math.round(snapshot.timeMs));
+            canvas.dataset.sourceTimeMs = String(this.current.timing.toSource(snapshot.timeMs));
             canvas.dataset.playing = String(snapshot.playing);
             canvas.dataset.reducedMotion = String(this.reduced.checked);
         }
         this.seek.value = String(snapshot.timeMs);
         element('time', HTMLOutputElement).textContent =
-            `${(snapshot.timeMs / 1000).toFixed(2)} / 4.20초`;
+            `${(snapshot.timeMs / 1000).toFixed(2)} / ${(snapshot.durationMs / 1000).toFixed(2)}초`;
         element('stage-time', HTMLOutputElement).textContent =
             `${(snapshot.timeMs / 1000).toFixed(2)}s`;
         this.play.textContent = snapshot.playing ? '일시정지' : '재생';
@@ -410,7 +446,7 @@ class ShowcaseScreen {
             this.urls.add(url);
             const link = document.createElement('a');
             link.href = url;
-            link.download = `anime-${this.current.id}.gif`;
+            link.download = `anime-${this.current.id}${this.current.shockVariant ? `-${this.current.shockVariant}` : ''}.gif`;
             link.click();
             this.exportStatus.textContent = 'GIF 저장 완료 · 640×360 · 20fps';
         }

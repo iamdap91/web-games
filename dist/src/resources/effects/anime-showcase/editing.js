@@ -11,10 +11,10 @@ export const editingSamples = [
         previewMs: 2500,
         beats: [
             { timeMs: 1750, label: '접촉 직전' },
-            { timeMs: 2200, label: '회화 판 전환' },
+            { timeMs: 1830, label: '회화 판 즉시 전환' },
             { timeMs: 3000, label: '종결 판 유지' },
         ],
-        description: '어퍼컷 접촉의 인물과 배경을 같은 안료와 붓자국으로 다시 칠한 정지 종결 판으로 전환합니다.',
+        description: '어퍼컷 접촉에 인물과 배경을 같은 안료와 붓자국으로 다시 칠한 정지 종결 판을 즉시 드러냅니다.',
         distinction: '원본 위 세피아 필터가 아니라 색면과 경계선을 재구성한 디지털 원리 견본입니다. 전용 수작업 하모니 원화는 아닙니다.',
     },
     {
@@ -24,10 +24,10 @@ export const editingSamples = [
         previewMs: 2150,
         beats: [
             { timeMs: 1750, label: '접촉 직전' },
-            { timeMs: 2350, label: '접촉 그림 정지' },
-            { timeMs: 3300, label: '동작 재개' },
+            { timeMs: 2150, label: '접촉 그림 정지' },
+            { timeMs: 2650, label: '동작 재개' },
         ],
-        description: '어퍼컷의 접촉 자세를 멈춰 보여준 뒤 같은 동작을 이어갑니다.',
+        description: '어퍼컷 접촉의 장면 전체를660ms 멈춰 보여준 뒤 같은 동작을 이어갑니다.',
         distinction: '회화 질감이나 새로운 그림 없이 한 자세의 유지 시간만 바꿉니다.',
     },
     {
@@ -102,16 +102,16 @@ export const editingSamples = [
     },
     {
         id: 'editing-imaishi',
-        name: '이마이시 연출',
+        name: '이마이시 연출 · 노출 리듬',
         category: 'editing',
-        previewMs: 2200,
+        previewMs: 1900,
         beats: [
             { timeMs: 1350, label: '끊어지는 장전' },
-            { timeMs: 1830, label: '돌파' },
-            { timeMs: 2200, label: '타격 유지' },
+            { timeMs: 1760, label: '짧은 돌파' },
+            { timeMs: 1900, label: '접촉 원화 유지' },
         ],
-        description: '아타호 어퍼컷의 장전·접촉 컷과 거대 글자를 강한 박자로 연결합니다.',
-        distinction: '원근·타이밍·문자 구성을 한 장면의 정점에 모으는 견본입니다.',
+        description: '장전 원화를 끊어 읽히고 짧은 돌파 뒤 접촉 원화를 오래 노출해 강한 박자를 만듭니다.',
+        distinction: '원화의 노출 배분만 재해석합니다. 작가 고유 필체의 복제 인증은 아니며 문자·집중선·급확대를 얹지 않습니다.',
     },
     {
         id: 'editing-shadow-play',
@@ -258,17 +258,14 @@ export function drawEditing(ctx, id, frame) {
             return;
         }
         if (id === 'editing-harmony') {
-            actionScene(ctx, e ? Math.min(t, 1830) : t, frame);
-            if (e && t > 2050) {
-                ctx.save();
-                ctx.globalAlpha = smooth((t - 2050) / 500);
+            if (e && t >= 1830)
                 painting(ctx, frame);
-                ctx.restore();
-            }
+            else
+                actionScene(ctx, t, frame);
             return;
         }
         if (id === 'editing-still') {
-            const clock = e && t > 1800 ? (t < 3050 ? 1800 : t - 1250) : t;
+            const clock = e && t > 1800 ? (t < 2460 ? 1800 : t - 660) : t;
             actionScene(ctx, clock, frame);
             return;
         }
@@ -362,50 +359,21 @@ export function drawEditing(ctx, id, frame) {
                 drawBattle(ctx, frame);
                 return;
             }
-            // 긴 장전·2코마의 빠른 이동·접촉 유지를 나눈 뒤 회수로 잇는다.
-            const pose = t < 1050
+            // 장전의 불연속 노출과 짧은 돌파·접촉 노출의 대비만으로 박자를 만든다.
+            const pose = t < 1000
                 ? t
                 : t < 1520
-                    ? 1100 + Math.floor((t - 1050) / 125) * 80
-                    : t < 1700
+                    ? 1100 + Math.floor((t - 1000) / 130) * 80
+                    : t < 1716
                         ? 1480
-                        : t < 1783
-                            ? 1640
-                            : t < 2140
-                                ? 1830
-                                : 1830 + (t - 2140) * 1.1;
-            const impactHold = t >= 1783 && t < 2450;
-            ctx.save();
-            const zoom = impactHold ? (frame.reducedMotion ? 1.1 : 1.7) : 1;
-            ctx.translate(584, 246);
-            ctx.scale(zoom, zoom);
-            ctx.translate(-584, -246);
+                        : t < 1758
+                            ? 1580
+                            : t < 1800
+                                ? 1710
+                                : t < 2040
+                                    ? 1830
+                                    : 1830 + (t - 2040) * 1.24;
             actionScene(ctx, pose, frame);
-            ctx.restore();
-            if (impactHold) {
-                ctx.save();
-                ctx.globalAlpha *= 0.82;
-                for (let i = 0; i < 20; i++) {
-                    const a = (i * Math.PI) / 10;
-                    line(ctx, [
-                        { x: 584 + Math.cos(a) * 260, y: 246 + Math.sin(a) * 230 },
-                        { x: 584 + Math.cos(a) * 900, y: 246 + Math.sin(a) * 900 },
-                    ], i % 2 ? palette.gold : palette.paper, 6);
-                }
-                ctx.restore();
-                ctx.save();
-                const settle = smooth((t - 1783) / 125);
-                ctx.translate(35, 170);
-                ctx.scale(1 + (1 - settle) * 0.18, 1 + (1 - settle) * 0.18);
-                ctx.fillStyle = palette.red;
-                ctx.strokeStyle = palette.ink;
-                ctx.lineWidth = 9;
-                ctx.lineJoin = 'round';
-                ctx.font = '900 175px sans-serif';
-                ctx.strokeText('돌파', 0, 0);
-                ctx.fillText('돌파', 0, 0);
-                ctx.restore();
-            }
             return;
         }
         if (id === 'editing-overlap' ||

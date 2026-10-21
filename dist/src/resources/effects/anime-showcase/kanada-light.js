@@ -12,7 +12,13 @@ const forwardMotes = [
 ];
 /** 짧은 접촉 핵에서 어퍼컷 방향의 큰 빛과 작은 반동·잔광을 나눈다. */
 export function drawKanadaLight(ctx, frame) {
-    const age = frame.timeMs - battleLayout.contactMs;
+    // 단일 견본의 발생·이탈만 압축하고, 기존 기법 조합의 노출은 보존한다.
+    const tempo = frame.enhanced &&
+        frame.sampleId === 'fx-kanada-light' &&
+        !frame.reducedMotion
+        ? 1.35
+        : 1;
+    const age = (frame.timeMs - battleLayout.contactMs) * tempo;
     if (age < 0 || age >= 1150)
         return;
     if (!frame.enhanced) {

@@ -1,8 +1,14 @@
 import { drawBear, drawHero } from './cast.js';
 import { clamp, ease, gameBackground, rand } from './drawing.js';
 import { gameImpact, gameInk } from '../../cutscenes/game-effects.js';
-const comicStrike = { start: 1.87, contact: 2.01, settle: 2.48 };
+const comicStrike = { start: 1.78, contact: 1.88, settle: 2.36 };
 const comicHit = { x: 850, y: 330 };
+const panelTiming = {
+    entries: [0.12, 0.38, 0.58, 0.72],
+    entryDuration: 0.12,
+    leave: 1.28,
+    leaveDuration: 0.18,
+};
 const panels = [
     {
         points: [
@@ -166,10 +172,10 @@ function closeup(context, frame, panel) {
     }
 }
 function drawPanel(context, frame, panel, index) {
-    const entry = ease(clamp((frame.time - 0.12 - index * 0.24) / 0.16));
+    const entry = ease((frame.time - panelTiming.entries[index]) / panelTiming.entryDuration);
     if (entry <= 0)
         return;
-    const leave = ease(clamp((frame.time - 1.45) / 0.25));
+    const leave = ease((frame.time - panelTiming.leave) / panelTiming.leaveDuration);
     const sign = index % 2 === 0 ? -1 : 1;
     context.save();
     context.translate(sign * (1 - entry) * 880 + sign * leave * 1400, (1 - entry) * 35);
@@ -207,7 +213,9 @@ function drawPanel(context, frame, panel, index) {
 function actionActors(context, frame) {
     const time = Math.min(frame.time, comicStrike.settle);
     const strike = clamp((time - comicStrike.start) / (comicStrike.contact - comicStrike.start));
-    const recoil = ease(clamp((time - comicStrike.contact - 0.1) / 0.37));
+    const age = time - comicStrike.contact;
+    const recoil = ease((age - 0.055) / 0.31);
+    const displacement = ease((age - 0.055) / 0.14) * 84 - ease((age - 0.195) / 0.17) * 22;
     const sequence = frame.assets.hero.uppercut['south-east'];
     const contact = sequence[2];
     const index = time >= comicStrike.contact ? 2 : Math.min(1, Math.floor(strike * 2));
@@ -219,14 +227,14 @@ function actionActors(context, frame) {
     const heroX = comicHit.x - (62 - contact.anchorX) * scale;
     const heroY = comicHit.y - (34 - contact.feetY) * scale;
     drawBear(context, frame.assets, {
-        x: 925 + recoil * 62,
+        x: 925 + displacement,
         y: 625 - Math.sin(recoil * Math.PI) * 36,
         height: 560,
         state: time >= comicStrike.contact ? 'hit' : 'attack',
         phase: time >= comicStrike.contact ? recoil * 0.85 : 0.75,
     });
     drawHero(context, frame.assets, {
-        x: heroX - (1 - ease(strike)) * 160,
+        x: heroX - (1 - strike * strike) * 195,
         y: heroY,
         height: bodyHeight * scale,
         action: 'uppercut',
@@ -264,7 +272,7 @@ function actionPanel(context, frame) {
     halftone(context, 32, 32, 1216, 656);
     const displacement = time < comicStrike.contact
         ? 2
-        : 3 + (1 - clamp((time - comicStrike.contact) / 0.26)) * 19;
+        : 3 + (1 - clamp((time - comicStrike.contact) / 0.18)) * 19;
     registerLayer(context, frame, '#00c4de', -displacement, 2);
     registerLayer(context, frame, '#f1338d', displacement, -3);
     if (time >= comicStrike.contact)
@@ -279,7 +287,7 @@ function actionPanel(context, frame) {
     if (time > comicStrike.start && time < comicStrike.contact)
         gameInk(context, frame.assets.effects, {
             sheet: 'stroke',
-            x: comicHit.x - (1 - ease(strike)) * 160,
+            x: comicHit.x - (1 - strike * strike) * 195,
             y: comicHit.y,
             progress: strike,
             angle: -0.58,
@@ -288,7 +296,7 @@ function actionPanel(context, frame) {
     if (time >= comicStrike.contact) {
         lettering(context, '쾅!!', 965, 177, 153, -0.16);
     }
-    if (time > 2.18) {
+    if (time > comicStrike.contact + 0.17) {
         context.fillStyle = '#f4e7c6';
         context.strokeStyle = '#191622';
         context.lineWidth = 6;
@@ -306,9 +314,9 @@ function actionPanel(context, frame) {
 function drawComic(context, frame) {
     context.fillStyle = '#f3e9ce';
     context.fillRect(0, 0, 1280, 720);
-    if (frame.time >= 1.45)
+    if (frame.time >= panelTiming.leave)
         actionPanel(context, frame);
-    if (frame.time < 1.72) {
+    if (frame.time < panelTiming.leave + panelTiming.leaveDuration) {
         panels.forEach((panel, index) => drawPanel(context, frame, panel, index));
     }
     if (frame.time >= comicStrike.contact &&
@@ -322,16 +330,17 @@ function drawComic(context, frame) {
 }
 export const comicCut = {
     id: 'comic-panels',
-    title: '만화 칸 · 일격.',
+    title: '만화 일격',
     kind: '2D',
     duration: 3.3,
-    description: '기존 초상과 공격 프레임의 눈·곰왕·디딤발·주먹 칸이 0.24초 간격으로 한 타의 준비를 보여준다. 같은 원화의 주먹으로 큰 칸의 접촉·곰왕의 피격·판 어긋남·의성어를 맞춘 뒤 한 장의 만화로 멈춘다. 주먹 패치의 비율과 몸 원본의 배율·발 앵커를 유지한다.',
+    description: '눈·곰왕·디딤발·주먹 칸의 간격을260→200→140ms로 좁히며 한 타를 준비한다. 큰 칸을 먼저 읽힌 뒤100ms의 가속 신전으로 주먹·피격·판 어긋남·의성어가 함께 터지고, 빠른 초기 밀림 뒤 한 장의 만화로 멈춘다. 원본 몸의 비율·배율·발 앵커와 한 번의 타격을 유지한다.',
     beats: [
         { time: 0.12, label: '눈 · 번뜩' },
-        { time: 0.36, label: '곰왕 · 스윽' },
-        { time: 0.6, label: '디딤발 · 꽉!' },
-        { time: 0.84, label: '주먹 · 쨍!' },
-        { time: 1.45, label: '큰 칸으로 전환' },
+        { time: 0.38, label: '곰왕 · 스윽' },
+        { time: 0.58, label: '디딤발 · 꽉!' },
+        { time: 0.72, label: '주먹 · 쨍!' },
+        { time: panelTiming.leave, label: '큰 칸으로 전환' },
+        { time: comicStrike.start, label: '100ms 가속 신전' },
         { time: comicStrike.contact, label: '주먹 접촉 · 판 어긋남 · 쾅!!' },
         { time: comicStrike.settle, label: '한 컷 만화 정지' },
     ],

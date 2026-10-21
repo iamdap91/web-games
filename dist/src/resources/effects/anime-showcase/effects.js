@@ -2,6 +2,7 @@ import { label, stage } from './drawing.js';
 import { drawBattleActors } from './battle.js';
 import { drawCircusScene } from './effects-flight.js';
 import { drawEffectLayer } from './effect-layer.js';
+import { drawKutsunaChargeScene } from './kutsuna-charge-scene.js';
 export const effectSamples = [
     {
         id: 'fx-kanada-light',
@@ -11,10 +12,10 @@ export const effectSamples = [
         description: '굵은 접촉 핵이 짧게 터지고, 큰 빛무리가 어퍼컷 방향으로 뻗은 뒤 작은 잔광이 빠르게 걷힙니다.',
         distinction: '큰 전진 빛과 작은 반동·잔광의 크기와 수명을 달리해 힘의 방향을 읽힙니다.',
         beats: [
-            { timeMs: 1835, label: '접촉 · 빛무리 핵' },
-            { timeMs: 1930, label: '파열 · 어퍼컷 방향' },
-            { timeMs: 2110, label: '짧은 잔광' },
-            { timeMs: 2320, label: '소멸' },
+            { timeMs: 1825, label: '접촉 · 빛무리 핵' },
+            { timeMs: 1880, label: '파열 · 어퍼컷 방향' },
+            { timeMs: 2030, label: '짧은 잔광' },
+            { timeMs: 2190, label: '소멸' },
         ],
     },
     {
@@ -27,7 +28,7 @@ export const effectSamples = [
             { timeMs: 3220, label: '후단 이탈' },
             { timeMs: 3740, label: '앞으로 빠지는 빔' },
         ],
-        description: '정권에서 방출한 광선의 S축을 따라 각진 외피와 빈틈이 전진하고, 종료 때 후단이 손을 떠나 앞쪽으로 빠지는 견본입니다. 원작 동작 재현은 미검증입니다.',
+        description: '전용 외피·선두·후단 자재가 정권에서 방출한 S축을 따라 전진하고, 뒤의 넓은 면이 앞을 추월한 뒤 후단이 손을 떠나는 견본입니다. 원작 동작 재현은 미검증입니다.',
         distinction: '직선 위 두께 변화와 달리 중심선·선두 방향·실루엣이 함께 바뀝니다.',
     },
     {
@@ -39,12 +40,12 @@ export const effectSamples = [
         distinction: '같은 별모양 확대 대신 짧은 돌출과 긴 유지, 수축과 재확대, 형태 교체를 비교합니다.',
         beats: [
             { timeMs: 1810, label: '압축 핵' },
-            { timeMs: 1860, label: '창' },
-            { timeMs: 1920, label: '방사형' },
-            { timeMs: 1980, label: '갈고리' },
-            { timeMs: 2040, label: '세 갈래' },
-            { timeMs: 2480, label: '분열 불꽃' },
-            { timeMs: 3160, label: '소멸' },
+            { timeMs: 1830, label: '창' },
+            { timeMs: 1880, label: '방사형' },
+            { timeMs: 1930, label: '갈고리' },
+            { timeMs: 2000, label: '세 갈래' },
+            { timeMs: 2250, label: '분열 불꽃' },
+            { timeMs: 2900, label: '소멸' },
         ],
     },
     {
@@ -52,7 +53,7 @@ export const effectSamples = [
         name: '카나다 드래곤',
         category: 'effects',
         previewMs: 2870,
-        description: '정권에서 수평으로 출발한 용의 머리가 경로의 접선으로 기울고, 리본 몸통의 두께와 불꽃 혀가 셀마다 바뀌는 화염 견본입니다.',
+        description: '전용 두부2장과 몸통·꼬리 자재를 이어, 수평 방출한 용의 입과 화염 윤곽이 바뀌며 이미 지나간 경로에 연속 몸통을 남기는 견본입니다.',
         distinction: '고정된 용 그림 이동 대신 머리 방향·몸통 외곽·작은 화염이 함께 변합니다.',
     },
     {
@@ -134,7 +135,7 @@ export const effectSamples = [
         name: '모리 이펙트·파편',
         category: 'effects',
         previewMs: 2150,
-        description: '길쭉하고 거친 파편의 외형과 굵은 내부 획을 셀마다 바꾸며 쏟아내는 견본입니다.',
+        description: '굵고 끊긴 내부 획을 지닌 전용 파편4장의 실루엣을 코마마다 교체하며 같은 탄도로 쏟아내는 견본입니다.',
         distinction: '고정 도형의 회전 대신 돌출부·굽은 획·짧은 유지가 함께 바뀝니다.',
     },
     {
@@ -142,7 +143,7 @@ export const effectSamples = [
         name: '아라키 이펙트',
         category: 'effects',
         previewMs: 1920,
-        description: '교차 광선과 작은 빛 거품을 권격 접촉에 옮긴 해석입니다. 검 연출이나 작가 고유 동작의 재현은 미검증입니다.',
+        description: '전용 교차광2장과 빛 거품2장을 접촉·잔여 순서로 합성한 해석입니다. 검 연출이나 작가 고유 동작의 재현은 미검증입니다.',
         distinction: '같은 어퍼컷 접촉점에서 광선이 교차하고 둥근 빛 잔여가 늦게 남습니다.',
     },
     {
@@ -171,7 +172,7 @@ export const effectSamples = [
             { timeMs: 3000, label: '연결부 분리' },
             { timeMs: 3150, label: '연결부에서 태어난 잔여' },
         ],
-        description: '정권의 접촉점에서 수평으로 짧고 끈적하게 늘다가 목이 가늘어지고, 큰 덩어리가 갑자기 빠져나가는 점성 견본입니다.',
+        description: '전용 덩어리·가는 목·끊긴 꼬리·잔여 자재가 정권의 접촉점에서 붙어 버티다가, 목이 가늘어지고 갑자기 빠져나가는 점성 견본입니다.',
         distinction: '붙어 버티는 시간과 떨어져 나가는 속도를 대비하고, 잔여 조각은 분리 직전 연결부의 위치를 이어받습니다.',
     },
     {
@@ -179,7 +180,7 @@ export const effectSamples = [
         name: '타츠조 이펙트',
         category: 'effects',
         previewMs: 2670,
-        description: '검정 단색의 둥근 덩어리가 부드러운 목으로 합쳐졌다가 떨어지고, 다시 모이며 사라지는 견본입니다.',
+        description: '검정 단색의 전용 원화8장을 순서대로 바꿔 둥근 덩어리가 목으로 합쳐지고, 분리된 뒤 다시 모여 수축하는 견본입니다.',
         distinction: '외곽을 한 번 흔드는 대신 연결부 굵기·구체의 눌림·합체와 분리를 함께 바꿉니다.',
     },
     {
@@ -187,7 +188,7 @@ export const effectSamples = [
         name: '시게타 불꽃',
         category: 'effects',
         previewMs: 2000,
-        description: '기계 전투 스파크의 모티프를 권격 접촉에 옮긴 해석입니다. 실제 금속 파괴와 작가 고유 동작 재현은 포함하지 않습니다.',
+        description: '전용 가지 파열·백열 금속편·식은 조각으로 기계 전투 스파크를 권격 접촉에 옮긴 해석입니다. 실제 금속 파괴와 작가 고유 동작 재현은 포함하지 않습니다.',
         distinction: '짧은 가지형 파열 뒤 발광 조각이 갈라져 날며 식어 사라집니다.',
     },
     {
@@ -202,22 +203,27 @@ export const effectSamples = [
         id: 'fx-kutsuna',
         name: '쿠츠나 번개',
         category: 'effects',
-        previewMs: 2130,
-        description: '굵기와 고리 모양이 코마마다 바뀌는 주 전류가 빠르게 뻗고, 짧은 가지가 갈라진 뒤 꼬리부터 끊어집니다.',
-        distinction: '원작 클립의 선택 프레임을 참고해 여섯 곡선 다발을 새로 구성했습니다. 흰 핵·가는 연결·국소 팽창과 세 번의 방출을 나눕니다.',
+        previewMs: 2000,
+        description: '밝기를 유지한 무대에서 몸 주변 전류를 모으고, 명중 때 같은 번개 본체의 굵은 고리·접힘·끊긴 잔전류를 빠르게 방출합니다.',
+        distinction: '큰 고리의 빈 공간과 가는 연결부·국소 굵은 전류를 대비하고, 윤곽 교체와 선두·꼬리의 이탈로 힘을 전달합니다.',
         beats: [
-            { timeMs: 1850, label: '선두 전진' },
-            { timeMs: 1960, label: '고리와 굵기 교체' },
-            { timeMs: 2130, label: '짧은 가지 분기' },
-            { timeMs: 2390, label: '후속 방출' },
-            { timeMs: 2820, label: '꼬리 이탈' },
-            { timeMs: 3050, label: '소멸' },
+            { timeMs: 1100, label: '충전 · 몸 주변 방사' },
+            { timeMs: 2000, label: '힘 모으기 · 고리와 끊긴 전류' },
+            { timeMs: 2240, label: '빠른 신전' },
+            { timeMs: 2400, label: '명중 · 굵은 접힘 전류' },
+            { timeMs: 2500, label: '전류의 선두 진행 · 상대 밀림' },
+            { timeMs: 2820, label: '끊긴 잔전류의 이탈' },
+            { timeMs: 3500, label: '정착' },
         ],
     },
 ];
 export function drawEffects(ctx, id, frame) {
     ctx.save();
     try {
+        if (id === 'fx-kutsuna') {
+            drawKutsunaChargeScene(ctx, frame);
+            return;
+        }
         if (drawCircusScene(ctx, id, frame))
             return;
         stage(ctx, frame, 0);

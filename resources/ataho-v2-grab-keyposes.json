@@ -1,0 +1,813 @@
+{
+  "createdDate": "2026-10-21",
+  "status": "archived-keyposes-integrated-into-base-motions",
+  "userApproval": "지상 메치기 누워 넘기기 두 가지 pixellab 이용해서 만들어줘",
+  "scope": "두 기술의 남동/북동 A/B 핵심 자세를 PixelLab으로 제작하고 GIF 품질 검토 후 중간 동화 및 방향을 확장한다.",
+  "characterId": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+  "service": "PixelLab",
+  "tool": "edit_image_pro_flash",
+  "userReviewed": false,
+  "canvas": {
+    "width": 96,
+    "height": 96,
+    "noBackground": true
+  },
+  "balanceBefore": {
+    "generationsRemaining": 2055.35,
+    "generationsUsed": 2073.65
+  },
+  "references": [
+    {
+      "url": "https://judo.ijf.org/techniques/Uki-goshi/animation",
+      "checked": "이전 검토 턴에서 음소거 재생과 주요 자세를 확인했다. 이번 생성에서 영상 이미지는 전송하지 않고 자세 설명만 사용했다."
+    },
+    {
+      "url": "https://judo.ijf.org/techniques/Tomoe-nage/animation",
+      "checked": "이전 검토 턴에서 음소거 재생과 주요 자세를 확인했다. 이번 생성에서 영상 이미지는 전송하지 않고 자세 설명만 사용했다."
+    }
+  ],
+  "jobs": [
+    {
+      "id": "ground-throw-south-east-a",
+      "technique": "ground-throw",
+      "direction": "south-east",
+      "pose": "A",
+      "attempt": 1,
+      "tool": "edit_image_pro_flash",
+      "request": {
+        "image_url": "upload:b3bbd902-9682-47cb-ad9c-f210307aa833",
+        "method": "text",
+        "description": "Edit ONLY the pose of this existing Ataho tiger sprite. Preserve EXACT original identity: very broad round tiger head, wide ivory muzzle and cheeks, short stocky heavy body, short thick limbs, reddish brown jacket over ivory undershirt, brown knotted sash, charcoal trousers, wrist wraps, bare orange tiger paws and ONE striped tail. Keep the same coarse low-resolution pixel clusters, black outlines and simple palette. Keep character scale around 60 pixels tall when standing, not a tall lean human. Native 96x96 transparent canvas, full body and tail inside it, no crop. No new clothes, objects, opponent, floor, shadow, text, effects, motion lines or extra limbs. Same fixed low top-down FRONT three-quarter view, original face pointing SCREEN RIGHT. Keep this camera angle. KEY POSE A, GRIP AND LOAD for a compact JUDO HIP THROW. Both bare feet remain planted near the original ground baseline y=79, knees bend deeply and hips lower. Turn the torso slightly across the opponent's path at screen right. BOTH arms are bent and pull firmly inward at upper-belly/chest height, elbows tucked, wrists separated and curled paws visibly HOOKING/CLOSING around an imaginary opponent's sleeve and waist. One hand in front of chest, the other reaches around the right side. The weight is braced over a planted support leg; back and hips are ready to turn as a fulcrum. Read as grappling and pulling a heavy body close, not a punch, open-palm push, shrug or guard. No opponent is drawn.",
+        "no_background": true,
+        "use_color_palette_correction": true,
+        "seed": 1792513000
+      },
+      "receipt": {
+        "jobId": "1e6fea51-c55f-4dc6-8957-e888b09c0d6e",
+        "sourceImageId": "ca070333-620f-51ae-86c1-6f8493b5d775",
+        "seed": 1792513000,
+        "estimatedGenerations": 5
+      },
+      "completion": {
+        "job_id": "1e6fea51-c55f-4dc6-8957-e888b09c0d6e",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/1e6fea51-c55f-4dc6-8957-e888b09c0d6e/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/1e6fea51-c55f-4dc6-8957-e888b09c0d6e/download"
+        ],
+        "asset": {
+          "id": "ca070333-620f-51ae-86c1-6f8493b5d775",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      }
+    },
+    {
+      "id": "ground-throw-north-east-a",
+      "technique": "ground-throw",
+      "direction": "north-east",
+      "pose": "A",
+      "attempt": 1,
+      "tool": "edit_image_pro_flash",
+      "request": {
+        "image_url": "upload:7bb21035-f4c9-47de-864d-506c746d2f38",
+        "method": "text",
+        "description": "Edit ONLY the pose of this existing Ataho tiger sprite. Preserve EXACT original identity: very broad round tiger head, wide ivory muzzle and cheeks, short stocky heavy body, short thick limbs, reddish brown jacket over ivory undershirt, brown knotted sash, charcoal trousers, wrist wraps, bare orange tiger paws and ONE striped tail. Keep the same coarse low-resolution pixel clusters, black outlines and simple palette. Keep character scale around 60 pixels tall when standing, not a tall lean human. Native 96x96 transparent canvas, full body and tail inside it, no crop. No new clothes, objects, opponent, floor, shadow, text, effects, motion lines or extra limbs. Same fixed low top-down REAR three-quarter view, body facing SCREEN UPPER RIGHT. Preserve the back of the jacket and tail attachment; do not turn to a front view. KEY POSE A, GRIP AND LOAD for a compact JUDO HIP THROW. Both bare feet remain planted near the original ground baseline y=79, knees bend deeply and hips lower. Turn the torso slightly across the opponent's path at screen right. BOTH arms are bent and pull firmly inward at upper-belly/chest height, elbows tucked, wrists separated and curled paws visibly HOOKING/CLOSING around an imaginary opponent's sleeve and waist. One hand in front of chest, the other reaches around the right side. The weight is braced over a planted support leg; back and hips are ready to turn as a fulcrum. Read as grappling and pulling a heavy body close, not a punch, open-palm push, shrug or guard. No opponent is drawn.",
+        "no_background": true,
+        "use_color_palette_correction": true,
+        "seed": 1792513001
+      },
+      "receipt": {
+        "jobId": "558c5bed-60c3-4b1b-9f88-f01d2b0ebb81",
+        "sourceImageId": "3a3808fd-b7c1-5b6c-bb70-4a0d72f75ce7",
+        "seed": 1792513001,
+        "estimatedGenerations": 5
+      },
+      "completion": {
+        "job_id": "558c5bed-60c3-4b1b-9f88-f01d2b0ebb81",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/558c5bed-60c3-4b1b-9f88-f01d2b0ebb81/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/558c5bed-60c3-4b1b-9f88-f01d2b0ebb81/download"
+        ],
+        "asset": {
+          "id": "3a3808fd-b7c1-5b6c-bb70-4a0d72f75ce7",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      }
+    },
+    {
+      "id": "sacrifice-throw-south-east-a",
+      "technique": "sacrifice-throw",
+      "direction": "south-east",
+      "pose": "A",
+      "attempt": 1,
+      "tool": "edit_image_pro_flash",
+      "request": {
+        "image_url": "upload:b3bbd902-9682-47cb-ad9c-f210307aa833",
+        "method": "text",
+        "description": "Edit ONLY the pose of this existing Ataho tiger sprite. Preserve EXACT original identity: very broad round tiger head, wide ivory muzzle and cheeks, short stocky heavy body, short thick limbs, reddish brown jacket over ivory undershirt, brown knotted sash, charcoal trousers, wrist wraps, bare orange tiger paws and ONE striped tail. Keep the same coarse low-resolution pixel clusters, black outlines and simple palette. Keep character scale around 60 pixels tall when standing, not a tall lean human. Native 96x96 transparent canvas, full body and tail inside it, no crop. No new clothes, objects, opponent, floor, shadow, text, effects, motion lines or extra limbs. Same fixed low top-down FRONT three-quarter view, original face pointing SCREEN RIGHT. Keep this camera angle. KEY POSE A, FALLING-BACK LOAD for a TOMOE-NAGE SACRIFICE THROW. The tiger is deliberately SITTING LOW and reclining BACK toward screen left, with hips near y=72 and shoulders behind the hips. The head remains above ground, clearly still the same broad tiger. ONE knee is tightly bent toward the chest, and that bare foot is RAISED FORWARD toward screen right, SOLE angled right as if planted against an imaginary opponent's lower abdomen. The OTHER leg is folded low near the floor as support. BOTH paws reach forward at chest height and curl into gripping hands as if holding an opponent's sleeves, pulling toward his chest. Stable seated/reclining silhouette, no airborne body. This is the instant before the back rolls to the floor. Not a standing kick, sit-up exercise, squat, dead pose or floating fighter. No opponent is drawn.",
+        "no_background": true,
+        "use_color_palette_correction": true,
+        "seed": 1792513002
+      },
+      "receipt": {
+        "jobId": "6a6acac4-36d2-49a1-b3de-f3923a2c6b65",
+        "sourceImageId": "c1c14d75-431e-563f-a5ed-b8f67b11b9c5",
+        "seed": 1792513002,
+        "estimatedGenerations": 5
+      },
+      "completion": {
+        "job_id": "6a6acac4-36d2-49a1-b3de-f3923a2c6b65",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/6a6acac4-36d2-49a1-b3de-f3923a2c6b65/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/6a6acac4-36d2-49a1-b3de-f3923a2c6b65/download"
+        ],
+        "asset": {
+          "id": "c1c14d75-431e-563f-a5ed-b8f67b11b9c5",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      }
+    },
+    {
+      "id": "sacrifice-throw-north-east-a",
+      "technique": "sacrifice-throw",
+      "direction": "north-east",
+      "pose": "A",
+      "attempt": 1,
+      "tool": "edit_image_pro_flash",
+      "request": {
+        "image_url": "upload:7bb21035-f4c9-47de-864d-506c746d2f38",
+        "method": "text",
+        "description": "Edit ONLY the pose of this existing Ataho tiger sprite. Preserve EXACT original identity: very broad round tiger head, wide ivory muzzle and cheeks, short stocky heavy body, short thick limbs, reddish brown jacket over ivory undershirt, brown knotted sash, charcoal trousers, wrist wraps, bare orange tiger paws and ONE striped tail. Keep the same coarse low-resolution pixel clusters, black outlines and simple palette. Keep character scale around 60 pixels tall when standing, not a tall lean human. Native 96x96 transparent canvas, full body and tail inside it, no crop. No new clothes, objects, opponent, floor, shadow, text, effects, motion lines or extra limbs. Same fixed low top-down REAR three-quarter view, body facing SCREEN UPPER RIGHT. Preserve the back of the jacket and tail attachment; do not turn to a front view. KEY POSE A, FALLING-BACK LOAD for a TOMOE-NAGE SACRIFICE THROW. The tiger is deliberately SITTING LOW and reclining BACK toward screen left, with hips near y=72 and shoulders behind the hips. The head remains above ground, clearly still the same broad tiger. ONE knee is tightly bent toward the chest, and that bare foot is RAISED FORWARD toward screen right, SOLE angled right as if planted against an imaginary opponent's lower abdomen. The OTHER leg is folded low near the floor as support. BOTH paws reach forward at chest height and curl into gripping hands as if holding an opponent's sleeves, pulling toward his chest. Stable seated/reclining silhouette, no airborne body. This is the instant before the back rolls to the floor. Not a standing kick, sit-up exercise, squat, dead pose or floating fighter. No opponent is drawn.",
+        "no_background": true,
+        "use_color_palette_correction": true,
+        "seed": 1792513003
+      },
+      "receipt": {
+        "jobId": "1f35311f-cb90-49b3-8088-e2e857ee196f",
+        "sourceImageId": "99587c12-cf5b-54e0-b38f-ceac6f58ff4d",
+        "seed": 1792513003,
+        "estimatedGenerations": 5
+      },
+      "completion": {
+        "job_id": "1f35311f-cb90-49b3-8088-e2e857ee196f",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/1f35311f-cb90-49b3-8088-e2e857ee196f/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/1f35311f-cb90-49b3-8088-e2e857ee196f/download"
+        ],
+        "asset": {
+          "id": "99587c12-cf5b-54e0-b38f-ceac6f58ff4d",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      }
+    },
+    {
+      "id": "sacrifice-throw-south-east-b",
+      "technique": "sacrifice-throw",
+      "direction": "south-east",
+      "pose": "B",
+      "attempt": 1,
+      "tool": "edit_image_pro_flash",
+      "basedOn": "sacrifice-throw-south-east-a",
+      "request": {
+        "image_url": "https://api.pixellab.ai/mcp/images/6a6acac4-36d2-49a1-b3de-f3923a2c6b65/download",
+        "method": "text",
+        "description": "Make the immediately following KEY POSE B of this SAME Ataho tiger's TOMOE-NAGE BACKWARD SACRIFICE THROW. Preserve the exact broad tiger head/muzzle, compact thick body, outfit, pixels, palette, scale and the same front three-quarter camera; this is the SAME figure from A, not another character. Keep 96x96 transparency. Roll his shoulders and upper back DOWN to the ground on the LEFT; head near the lower-left, hips slightly raised at lower center. The SAME forward kicking leg from A now EXTENDS UPWARD AND BACK OVER HIS HEAD toward the upper-left, as if pushing an opponent's belly past his head. Show a clear connected short thick thigh and calf, bare paw, not a second arm. The OTHER leg remains BENT and tucked near the hip, distinctly separate. BOTH gripping paws sweep upward/backward above his face, elbows slightly bent, as if guiding two opponent sleeves over his head; not a boxer guard. Read as a forceful supine throw with shoulders bearing weight and an opponent rolling overhead, not a bicycle kick, standing kick, flying kick or unconscious corpse. Preserve ONE striped tail below the hip and all four original limbs. Keep full silhouette inside canvas with a margin. NO opponent, floor, shadow, new objects, effects, lines, lettering or extra feet. No rescale of the character.",
+        "no_background": true,
+        "use_color_palette_correction": true,
+        "seed": 1792513012
+      },
+      "receipt": {
+        "jobId": "268330b8-131c-4892-8f0f-1fa890b15c63",
+        "sourceImageId": "8ffbba57-fe48-5411-9f26-e8f24038714e",
+        "seed": 1792513012,
+        "estimatedGenerations": 5
+      },
+      "completion": {
+        "job_id": "268330b8-131c-4892-8f0f-1fa890b15c63",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/268330b8-131c-4892-8f0f-1fa890b15c63/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/268330b8-131c-4892-8f0f-1fa890b15c63/download"
+        ],
+        "asset": {
+          "id": "8ffbba57-fe48-5411-9f26-e8f24038714e",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      }
+    },
+    {
+      "id": "ground-throw-south-east-b",
+      "technique": "ground-throw",
+      "direction": "south-east",
+      "pose": "B",
+      "attempt": 1,
+      "tool": "edit_image_pro_flash",
+      "basedOn": "ground-throw-south-east-a",
+      "request": {
+        "image_url": "https://api.pixellab.ai/mcp/images/1e6fea51-c55f-4dc6-8957-e888b09c0d6e/download",
+        "method": "text",
+        "description": "Repose this SAME existing Ataho tiger into the next key pose. Preserve exact character identity, broad head and ivory muzzle, short heavy stocky proportions, original clothes, ONE tail, four limbs, coarse pixel clusters, scale and palette. 96x96 transparent full-body sprite, never crop or enlarge him. Preserve the SAME fixed low top-down FRONT three-quarter camera, face and jacket chest stay readable; do not switch to a back view. KEY POSE B, HIP-THROW RELEASE immediately AFTER the loaded grip pose A. Keep both bare feet planted at the SAME A foot locations and same y=79 ground baseline. Maintain bent knees. Turn the hips forcefully and BEND the thick torso FORWARD toward screen right, about 45 degrees from upright, with the head carried down/right by the torso. BOTH original arms pull and sweep DOWN diagonally to screen right: show TWO separated curled gripping paws lower and farther forward than in A, one near the forward knee, the other slightly above it. The arms guide an imaginary opponent OVER THE HIP and DOWN past the right side. The back/hip is a firm fulcrum, not a shoulder strike. Clear change from A's upright close pull to a low forward bent finishing throw. Keep the original short thick limbs and wrist wraps. Not a punch, overhead hammer strike, open-palm press, bow, idle or squat. Opponent is NOT drawn. No floor, shadow, opponent, objects, text, motion lines, trails, flashes or other effects.",
+        "no_background": true,
+        "use_color_palette_correction": true,
+        "seed": 1792513025
+      },
+      "receipt": {
+        "jobId": "ea1c27fc-cf47-413f-b0b5-1386b152bd9d",
+        "sourceImageId": "7546e466-e66a-5ce2-910b-9bceef56c34c",
+        "seed": 1792513025,
+        "estimatedGenerations": 5
+      },
+      "completion": {
+        "job_id": "ea1c27fc-cf47-413f-b0b5-1386b152bd9d",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/ea1c27fc-cf47-413f-b0b5-1386b152bd9d/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/ea1c27fc-cf47-413f-b0b5-1386b152bd9d/download"
+        ],
+        "asset": {
+          "id": "7546e466-e66a-5ce2-910b-9bceef56c34c",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      }
+    },
+    {
+      "id": "ground-throw-north-east-b",
+      "technique": "ground-throw",
+      "direction": "north-east",
+      "pose": "B",
+      "attempt": 1,
+      "tool": "edit_image_pro_flash",
+      "basedOn": "ground-throw-north-east-a",
+      "request": {
+        "image_url": "https://api.pixellab.ai/mcp/images/558c5bed-60c3-4b1b-9f88-f01d2b0ebb81/download",
+        "method": "text",
+        "description": "Repose this SAME existing Ataho tiger into the next key pose. Preserve exact character identity, broad head and ivory muzzle, short heavy stocky proportions, original clothes, ONE tail, four limbs, coarse pixel clusters, scale and palette. 96x96 transparent full-body sprite, never crop or enlarge him. Preserve the SAME fixed low top-down REAR three-quarter camera; we still see the jacket's back and tail root. Do not invent a front face or turn to a front view. KEY POSE B, HIP-THROW RELEASE immediately AFTER the loaded grip pose A. Keep both bare feet planted at the SAME A foot locations and same y=79 ground baseline. Maintain bent knees. Turn the hips forcefully and BEND the thick torso FORWARD toward screen right, about 45 degrees from upright, with the head carried down/right by the torso. BOTH original arms pull and sweep DOWN diagonally to screen right: show TWO separated curled gripping paws lower and farther forward than in A, one near the forward knee, the other slightly above it. The arms guide an imaginary opponent OVER THE HIP and DOWN past the right side. The back/hip is a firm fulcrum, not a shoulder strike. Clear change from A's upright close pull to a low forward bent finishing throw. Keep the original short thick limbs and wrist wraps. Not a punch, overhead hammer strike, open-palm press, bow, idle or squat. Opponent is NOT drawn. No floor, shadow, opponent, objects, text, motion lines, trails, flashes or other effects.",
+        "no_background": true,
+        "use_color_palette_correction": true,
+        "seed": 1792513026
+      },
+      "receipt": {
+        "jobId": "f70559e9-9480-41d4-958b-27c6106c83a8",
+        "sourceImageId": "16bdabc4-8283-52b6-882b-9e727f1de3e2",
+        "seed": 1792513026,
+        "estimatedGenerations": 5
+      },
+      "completion": {
+        "job_id": "f70559e9-9480-41d4-958b-27c6106c83a8",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/f70559e9-9480-41d4-958b-27c6106c83a8/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/f70559e9-9480-41d4-958b-27c6106c83a8/download"
+        ],
+        "asset": {
+          "id": "16bdabc4-8283-52b6-882b-9e727f1de3e2",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      }
+    },
+    {
+      "id": "sacrifice-throw-north-east-b",
+      "technique": "sacrifice-throw",
+      "direction": "north-east",
+      "pose": "B",
+      "attempt": 1,
+      "tool": "edit_image_pro_flash",
+      "basedOn": "sacrifice-throw-north-east-a",
+      "request": {
+        "image_url": "https://api.pixellab.ai/mcp/images/1f35311f-cb90-49b3-8088-e2e857ee196f/download",
+        "method": "text",
+        "description": "Repose this SAME existing Ataho tiger into the next key pose. Preserve exact character identity, broad head and ivory muzzle, short heavy stocky proportions, original clothes, ONE tail, four limbs, coarse pixel clusters, scale and palette. 96x96 transparent full-body sprite, never crop or enlarge him. Preserve the SAME fixed low top-down REAR three-quarter camera; we still see the jacket's back and tail root. Do not invent a front face or turn to a front view. KEY POSE B, OVERHEAD RELEASE of the SAME TOMOE-NAGE BACKWARD SACRIFICE THROW. Roll the shoulders and upper back onto the ground toward screen left; head at lower-left, compact hips slightly raised at lower center. Extend the SAME raised forward leg from A UP AND BACK OVER THE HEAD toward upper-left, connected thick thigh and calf visibly straightening to a bare tiger paw. The OTHER leg stays folded next to the hips. BOTH original gripping paws sweep upward/backward above the head with slightly bent elbows, guiding an imaginary opponent over the face. Shoulders bear body weight; this is a supine rolling throw, not a bicycle kick, standing/flying kick, upside-down handstand or death pose. Keep the back-view jacket and tail attachment consistent. Opponent is NOT drawn. No floor, shadow, opponent, objects, text, motion lines, trails, flashes or other effects.",
+        "no_background": true,
+        "use_color_palette_correction": true,
+        "seed": 1792513027
+      },
+      "receipt": {
+        "jobId": "3b58993a-4f19-488b-92a1-10c2d50f8d4b",
+        "sourceImageId": "1ac3d3ca-b2a2-503b-918e-8f7c592a677c",
+        "seed": 1792513027,
+        "estimatedGenerations": 5
+      },
+      "completion": {
+        "job_id": "3b58993a-4f19-488b-92a1-10c2d50f8d4b",
+        "status": "completed",
+        "frames": 1,
+        "download_url": "https://api.pixellab.ai/mcp/images/3b58993a-4f19-488b-92a1-10c2d50f8d4b/download",
+        "download_urls": [
+          "https://api.pixellab.ai/mcp/images/3b58993a-4f19-488b-92a1-10c2d50f8d4b/download"
+        ],
+        "asset": {
+          "id": "1ac3d3ca-b2a2-503b-918e-8f7c592a677c",
+          "type": "image",
+          "status": "saved"
+        },
+        "charged_generations": 5
+      }
+    }
+  ],
+  "pairs": [
+    {
+      "id": "ground-throw-south-east",
+      "technique": "ground-throw",
+      "direction": "south-east",
+      "basePath": "public/assets/maplestory/ataho-v2-grabs/20261021/references/guard-south-east.png",
+      "poseAPath": "public/assets/maplestory/ataho-v2-grabs/20261021/ground-throw/south-east/originals/pose-a.png",
+      "poseBPath": "public/assets/maplestory/ataho-v2-grabs/20261021/ground-throw/south-east/originals/pose-b.png",
+      "opponentA": {
+        "path": "public/assets/maplestory/ataho-v2-grabs/20261021/references/clay-hit.png",
+        "angleDeg": 0,
+        "pivot": [34, 40],
+        "position": [86, 67],
+        "layer": "behind"
+      },
+      "opponentB": {
+        "path": "public/assets/maplestory/ataho-v2-grabs/20261021/references/clay-hit.png",
+        "angleDeg": -92,
+        "pivot": [34, 40],
+        "position": [88, 69],
+        "layer": "behind"
+      }
+    },
+    {
+      "id": "ground-throw-north-east",
+      "technique": "ground-throw",
+      "direction": "north-east",
+      "basePath": "public/assets/maplestory/ataho-v2-grabs/20261021/references/guard-north-east.png",
+      "poseAPath": "public/assets/maplestory/ataho-v2-grabs/20261021/ground-throw/north-east/originals/pose-a.png",
+      "poseBPath": "public/assets/maplestory/ataho-v2-grabs/20261021/ground-throw/north-east/originals/pose-b.png",
+      "opponentA": {
+        "path": "public/assets/maplestory/ataho-v2-grabs/20261021/references/clay-hit.png",
+        "angleDeg": 0,
+        "pivot": [34, 40],
+        "position": [86, 67],
+        "layer": "behind"
+      },
+      "opponentB": {
+        "path": "public/assets/maplestory/ataho-v2-grabs/20261021/references/clay-hit.png",
+        "angleDeg": -92,
+        "pivot": [34, 40],
+        "position": [88, 69],
+        "layer": "behind"
+      }
+    },
+    {
+      "id": "sacrifice-throw-south-east",
+      "technique": "sacrifice-throw",
+      "direction": "south-east",
+      "basePath": "public/assets/maplestory/ataho-v2-grabs/20261021/references/guard-south-east.png",
+      "poseAPath": "public/assets/maplestory/ataho-v2-grabs/20261021/sacrifice-throw/south-east/originals/pose-a.png",
+      "poseBPath": "public/assets/maplestory/ataho-v2-grabs/20261021/sacrifice-throw/south-east/originals/pose-b.png",
+      "opponentA": {
+        "path": "public/assets/maplestory/ataho-v2-grabs/20261021/references/clay-hit.png",
+        "angleDeg": -8,
+        "pivot": [34, 43],
+        "position": [94, 68],
+        "layer": "behind"
+      },
+      "opponentB": {
+        "path": "public/assets/maplestory/ataho-v2-grabs/20261021/references/clay-hit.png",
+        "angleDeg": 125,
+        "pivot": [34, 43],
+        "position": [43, 34],
+        "layer": "behind"
+      }
+    },
+    {
+      "id": "sacrifice-throw-north-east",
+      "technique": "sacrifice-throw",
+      "direction": "north-east",
+      "basePath": "public/assets/maplestory/ataho-v2-grabs/20261021/references/guard-north-east.png",
+      "poseAPath": "public/assets/maplestory/ataho-v2-grabs/20261021/sacrifice-throw/north-east/originals/pose-a.png",
+      "poseBPath": "public/assets/maplestory/ataho-v2-grabs/20261021/sacrifice-throw/north-east/originals/pose-b.png",
+      "opponentA": {
+        "path": "public/assets/maplestory/ataho-v2-grabs/20261021/references/clay-hit.png",
+        "angleDeg": -8,
+        "pivot": [34, 43],
+        "position": [94, 68],
+        "layer": "behind"
+      },
+      "opponentB": {
+        "path": "public/assets/maplestory/ataho-v2-grabs/20261021/references/clay-hit.png",
+        "angleDeg": 125,
+        "pivot": [34, 43],
+        "position": [43, 34],
+        "layer": "behind"
+      }
+    }
+  ],
+  "results": [
+    {
+      "id": "ground-throw-south-east-a",
+      "technique": "ground-throw",
+      "direction": "south-east",
+      "pose": "A",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/1e6fea51-c55f-4dc6-8957-e888b09c0d6e/download",
+      "chargedGenerations": 5,
+      "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/ground-throw/south-east/originals/pose-a.png",
+      "sha256": "4613a26d8854aece9587488bb7123cc965c43c19984ddd35109723332d4f2dd6",
+      "byteSize": 2548,
+      "width": 96,
+      "height": 96,
+      "frameCount": 1,
+      "alphaBounds": [19, 23, 70, 79]
+    },
+    {
+      "id": "ground-throw-north-east-a",
+      "technique": "ground-throw",
+      "direction": "north-east",
+      "pose": "A",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/558c5bed-60c3-4b1b-9f88-f01d2b0ebb81/download",
+      "chargedGenerations": 5,
+      "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/ground-throw/north-east/originals/pose-a.png",
+      "sha256": "50ab0582f5aba63699711f2bfdd3bb2c04720878653ae4424218f15105c35703",
+      "byteSize": 1695,
+      "width": 96,
+      "height": 96,
+      "frameCount": 1,
+      "alphaBounds": [19, 21, 68, 78]
+    },
+    {
+      "id": "sacrifice-throw-south-east-a",
+      "technique": "sacrifice-throw",
+      "direction": "south-east",
+      "pose": "A",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/6a6acac4-36d2-49a1-b3de-f3923a2c6b65/download",
+      "chargedGenerations": 5,
+      "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/sacrifice-throw/south-east/originals/pose-a.png",
+      "sha256": "714086c0a46ee8e7a7fad3319653d2aeb0d295ed4bcd58a18edb808548e4bba6",
+      "byteSize": 3129,
+      "width": 96,
+      "height": 96,
+      "frameCount": 1,
+      "alphaBounds": [12, 27, 74, 78]
+    },
+    {
+      "id": "sacrifice-throw-north-east-a",
+      "technique": "sacrifice-throw",
+      "direction": "north-east",
+      "pose": "A",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/1f35311f-cb90-49b3-8088-e2e857ee196f/download",
+      "chargedGenerations": 5,
+      "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/sacrifice-throw/north-east/originals/pose-a.png",
+      "sha256": "43f41fee9c42da937e695e1065c941fb74b15f21bf6397eb0185d7f98d7b7063",
+      "byteSize": 1867,
+      "width": 96,
+      "height": 96,
+      "frameCount": 1,
+      "alphaBounds": [14, 28, 74, 75]
+    },
+    {
+      "id": "sacrifice-throw-south-east-b",
+      "technique": "sacrifice-throw",
+      "direction": "south-east",
+      "pose": "B",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/268330b8-131c-4892-8f0f-1fa890b15c63/download",
+      "chargedGenerations": 5,
+      "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/sacrifice-throw/south-east/originals/pose-b.png",
+      "sha256": "32062e94528120e8f98ca123f668a36ab52e62fe74a99647b430f1e9e6b1df63",
+      "byteSize": 2033,
+      "width": 96,
+      "height": 96,
+      "frameCount": 1,
+      "alphaBounds": [7, 14, 72, 78]
+    },
+    {
+      "id": "ground-throw-south-east-b",
+      "technique": "ground-throw",
+      "direction": "south-east",
+      "pose": "B",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/ea1c27fc-cf47-413f-b0b5-1386b152bd9d/download",
+      "chargedGenerations": 5,
+      "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/ground-throw/south-east/originals/pose-b.png",
+      "sha256": "6e8061a7462cc0f36f6755327ed9e5f5e82b5204905ec7a95cd32f12e626543e",
+      "byteSize": 2073,
+      "width": 96,
+      "height": 96,
+      "frameCount": 1,
+      "alphaBounds": [9, 27, 77, 79]
+    },
+    {
+      "id": "ground-throw-north-east-b",
+      "technique": "ground-throw",
+      "direction": "north-east",
+      "pose": "B",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/f70559e9-9480-41d4-958b-27c6106c83a8/download",
+      "chargedGenerations": 5,
+      "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/ground-throw/north-east/originals/pose-b.png",
+      "sha256": "9f6819c1cef77a114f2c3b61c05a2edacbee033843b7331a3c64ffcf35b6f205",
+      "byteSize": 1687,
+      "width": 96,
+      "height": 96,
+      "frameCount": 1,
+      "alphaBounds": [14, 24, 75, 78]
+    },
+    {
+      "id": "sacrifice-throw-north-east-b",
+      "technique": "sacrifice-throw",
+      "direction": "north-east",
+      "pose": "B",
+      "sourceUrl": "https://api.pixellab.ai/mcp/images/3b58993a-4f19-488b-92a1-10c2d50f8d4b/download",
+      "chargedGenerations": 5,
+      "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/sacrifice-throw/north-east/originals/pose-b.png",
+      "sha256": "3866560911a55e60c403ce5fb65feb469130116997d92b940bdf264d8210051c",
+      "byteSize": 2049,
+      "width": 96,
+      "height": 96,
+      "frameCount": 1,
+      "alphaBounds": [16, 17, 70, 75]
+    }
+  ],
+  "usage": {
+    "chargedGenerations": 40,
+    "generationCalls": 8,
+    "paidRetries": 0
+  },
+  "preview": {
+    "frameDurationsMs": [700, 1000],
+    "logicalCanvas": [160, 120],
+    "scale": 4,
+    "intermediateAnimationFramesGenerated": false,
+    "opponentTreatment": "기존 토우병의 위치·회전만 바꾼 2자세 접촉 경로 시연. 상대 전용 잡힘 그림과 동화는 아직 없다.",
+    "qualityGate": "사용자가 A/B GIF를 확인한 뒤 중간 동화·추가 방향을 제작한다.",
+    "actorPosition": [24, 16]
+  },
+  "deliverables": {
+    "record": "/Users/3sam3/.codex/worktrees/ataho-grab-motions/web-games/resources/ataho-v2-grab-keyposes.json",
+    "root": "/Users/3sam3/.codex/worktrees/ataho-grab-motions/web-games",
+    "canvas": [160, 120],
+    "atahoPosition": [24, 16],
+    "scale": 4,
+    "frameDurationMs": [700, 1000],
+    "sourceFilesModified": false,
+    "palette": "exact per-frame palette; no color quantization",
+    "pairs": [
+      {
+        "id": "ground-throw-south-east",
+        "technique": "ground-throw",
+        "direction": "south-east",
+        "originals": [
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/references/guard-south-east.png",
+            "byteSize": 3820,
+            "sha256": "e5cb58c7951dd6bf844df1e2649aeb0fd564cbda44291236e00dac9aaf550f8e",
+            "width": 96,
+            "height": 96,
+            "frameCount": 1
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/ground-throw/south-east/originals/pose-a.png",
+            "byteSize": 2548,
+            "sha256": "4613a26d8854aece9587488bb7123cc965c43c19984ddd35109723332d4f2dd6",
+            "width": 96,
+            "height": 96,
+            "frameCount": 1
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/ground-throw/south-east/originals/pose-b.png",
+            "byteSize": 2073,
+            "sha256": "6e8061a7462cc0f36f6755327ed9e5f5e82b5204905ec7a95cd32f12e626543e",
+            "width": 96,
+            "height": 96,
+            "frameCount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/ground-throw-south-east-solo.gif",
+            "byteSize": 32976,
+            "sha256": "c77618fb8cfc21d72e5c072bf95cc26ecaa22542fcb1336ae7a79e9f72f4428a",
+            "width": 640,
+            "height": 480,
+            "frameCount": 2
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/ground-throw-south-east-poses.png",
+            "byteSize": 17576,
+            "sha256": "eda7bd601cebdcf944d84134438e9ba60523311c5559fbed3c8903f493806c99",
+            "width": 1920,
+            "height": 480,
+            "frameCount": 1
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/ground-throw-south-east-contact.gif",
+            "byteSize": 44012,
+            "sha256": "23571f10bb941d311682d83157d41ee9b66798e7d16dba45c16fa4d98dfe875a",
+            "width": 640,
+            "height": 480,
+            "frameCount": 2
+          }
+        ]
+      },
+      {
+        "id": "ground-throw-north-east",
+        "technique": "ground-throw",
+        "direction": "north-east",
+        "originals": [
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/references/guard-north-east.png",
+            "byteSize": 2673,
+            "sha256": "02dd629ebb6e928a0bedb67444846b8cc4e424d56ca50c4722d30d1d82be34de",
+            "width": 96,
+            "height": 96,
+            "frameCount": 1
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/ground-throw/north-east/originals/pose-a.png",
+            "byteSize": 1695,
+            "sha256": "50ab0582f5aba63699711f2bfdd3bb2c04720878653ae4424218f15105c35703",
+            "width": 96,
+            "height": 96,
+            "frameCount": 1
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/ground-throw/north-east/originals/pose-b.png",
+            "byteSize": 1687,
+            "sha256": "9f6819c1cef77a114f2c3b61c05a2edacbee033843b7331a3c64ffcf35b6f205",
+            "width": 96,
+            "height": 96,
+            "frameCount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/ground-throw-north-east-solo.gif",
+            "byteSize": 31568,
+            "sha256": "14f7d916e962a7650ee30053075a2adda864e7f4f5368a268ff297cf5b05f1ca",
+            "width": 640,
+            "height": 480,
+            "frameCount": 2
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/ground-throw-north-east-poses.png",
+            "byteSize": 14324,
+            "sha256": "d0bd2e775a33fa36b16cfe723bd7c8a1114e392f2ba201ca848e0f2431152084",
+            "width": 1920,
+            "height": 480,
+            "frameCount": 1
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/ground-throw-north-east-contact.gif",
+            "byteSize": 41668,
+            "sha256": "79f52f57dc4460647209f9d9c7f9e8b67fc275321a299682c2719df03508afaf",
+            "width": 640,
+            "height": 480,
+            "frameCount": 2
+          }
+        ]
+      },
+      {
+        "id": "sacrifice-throw-south-east",
+        "technique": "sacrifice-throw",
+        "direction": "south-east",
+        "originals": [
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/references/guard-south-east.png",
+            "byteSize": 3820,
+            "sha256": "e5cb58c7951dd6bf844df1e2649aeb0fd564cbda44291236e00dac9aaf550f8e",
+            "width": 96,
+            "height": 96,
+            "frameCount": 1
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/sacrifice-throw/south-east/originals/pose-a.png",
+            "byteSize": 3129,
+            "sha256": "714086c0a46ee8e7a7fad3319653d2aeb0d295ed4bcd58a18edb808548e4bba6",
+            "width": 96,
+            "height": 96,
+            "frameCount": 1
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/sacrifice-throw/south-east/originals/pose-b.png",
+            "byteSize": 2033,
+            "sha256": "32062e94528120e8f98ca123f668a36ab52e62fe74a99647b430f1e9e6b1df63",
+            "width": 96,
+            "height": 96,
+            "frameCount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/sacrifice-throw-south-east-solo.gif",
+            "byteSize": 34686,
+            "sha256": "4e116f5df6b6a64a62287f24ab7bd5c31186e0de0d23b03da59611070600ed91",
+            "width": 640,
+            "height": 480,
+            "frameCount": 2
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/sacrifice-throw-south-east-poses.png",
+            "byteSize": 18227,
+            "sha256": "6b60d3d740a8bb26287e12a547babbfc5e03b61cca90dcd3053480a9fb844d4c",
+            "width": 1920,
+            "height": 480,
+            "frameCount": 1
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/sacrifice-throw-south-east-contact.gif",
+            "byteSize": 50197,
+            "sha256": "c4afc2bc436a3174be482fb651d6e9c10c60c0d49e235d00851c45c984025e04",
+            "width": 640,
+            "height": 480,
+            "frameCount": 2
+          }
+        ]
+      },
+      {
+        "id": "sacrifice-throw-north-east",
+        "technique": "sacrifice-throw",
+        "direction": "north-east",
+        "originals": [
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/references/guard-north-east.png",
+            "byteSize": 2673,
+            "sha256": "02dd629ebb6e928a0bedb67444846b8cc4e424d56ca50c4722d30d1d82be34de",
+            "width": 96,
+            "height": 96,
+            "frameCount": 1
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/sacrifice-throw/north-east/originals/pose-a.png",
+            "byteSize": 1867,
+            "sha256": "43f41fee9c42da937e695e1065c941fb74b15f21bf6397eb0185d7f98d7b7063",
+            "width": 96,
+            "height": 96,
+            "frameCount": 1
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/sacrifice-throw/north-east/originals/pose-b.png",
+            "byteSize": 2049,
+            "sha256": "3866560911a55e60c403ce5fb65feb469130116997d92b940bdf264d8210051c",
+            "width": 96,
+            "height": 96,
+            "frameCount": 1
+          }
+        ],
+        "outputs": [
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/sacrifice-throw-north-east-solo.gif",
+            "byteSize": 32214,
+            "sha256": "7203eaee378c1051ceca36bfb53e7a166ef954c38fb712e3dd13822a0b57ab19",
+            "width": 640,
+            "height": 480,
+            "frameCount": 2
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/sacrifice-throw-north-east-poses.png",
+            "byteSize": 15237,
+            "sha256": "677b7aeca0b324ec1b0c98829c81e8425322e2fa5816eeefa930a6dbd3778484",
+            "width": 1920,
+            "height": 480,
+            "frameCount": 1
+          },
+          {
+            "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/sacrifice-throw-north-east-contact.gif",
+            "byteSize": 48576,
+            "sha256": "814d619fea6df399a0389cf077ae347f53814b53902a6283013f68a5e2422df5",
+            "width": 640,
+            "height": 480,
+            "frameCount": 2
+          }
+        ]
+      }
+    ],
+    "index": {
+      "localPath": "public/assets/maplestory/ataho-v2-grabs/20261021/previews/index.html",
+      "byteSize": 4935,
+      "sha256": "bb0698fa9b57854722ddc82296e4508695028419b30c4c75cb9cc50311b6196d"
+    }
+  },
+  "selection": {
+    "status": "사용자 GIF 검토 전",
+    "limitations": [
+      "A/B 핵심 자세 두 장의 전환이며 중간 동화·접근·복귀는 아직 제작하지 않았다.",
+      "아타호 단독 생성이라 붙잡는 손은 상대와 함께 그린 원화가 아니다.",
+      "접촉 시연의 상대는 기존 토우병의 위치·회전만 바꾸며 전용 잡힘·메치기 자세는 아직 없다.",
+      "지상 메치기의 상체 전환과 양손 당김이 충분한지, 누워 넘기기의 같은 다리·접지·회전이 이어지는지는 사용자 GIF 검토가 필요하다."
+    ]
+  },
+  "activeAssetId": "ai/ataho-v2",
+  "motionRefinementRecord": "resources/ataho-v2-grab-motion-refinement.json"
+}

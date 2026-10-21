@@ -12,16 +12,28 @@ export function redirectToStudio(source) {
     const sampleId = definition.single
         ? definition.defaultSampleId
         : old.hash.slice(1) || definition.defaultSampleId;
-    target.searchParams.set('item', `${source}:${sampleId}`);
-    for (const key of ['embed', 'project', 'category', 'group', 'q']) {
+    const legacyShockKoma = source === 'showcase' && sampleId === 'shock-koma-v2';
+    target.searchParams.set('item', `${source}:${legacyShockKoma ? 'shock-koma' : sampleId}`);
+    for (const key of ['embed', 'project', 'category', 'group', 'q', 'variant']) {
         const value = old.searchParams.get(key);
         if (value)
             target.searchParams.set(key, value);
     }
+    if (legacyShockKoma)
+        target.searchParams.set('variant', 'embers');
     location.replace(target.href);
     return true;
 }
 export const isRecord = (value) => typeof value === 'object' && value !== null;
+function validGifRange(value) {
+    return (isRecord(value) &&
+        typeof value.startMs === 'number' &&
+        Number.isFinite(value.startMs) &&
+        typeof value.endMs === 'number' &&
+        Number.isFinite(value.endMs) &&
+        value.startMs >= 0 &&
+        value.endMs > value.startMs);
+}
 export function readCommand(data) {
     if (!isRecord(data) || typeof data.action !== 'string')
         return undefined;
@@ -32,7 +44,10 @@ export function readCommand(data) {
         action === 'png' ||
         action === 'cancel-export')
         return { action };
-    if ((action === 'select' || action === 'facing') && typeof value === 'string')
+    if ((action === 'select' || action === 'facing' || action === 'variant') &&
+        typeof value === 'string')
+        return { action, value };
+    if (action === 'gif-range' && validGifRange(value))
         return { action, value };
     if ((action === 'seek' || action === 'speed') &&
         typeof value === 'number' &&
@@ -70,28 +85,41 @@ function validSnapshot(value) {
     ])
         if (value[key] !== undefined && typeof value[key] !== 'boolean')
             return false;
-    for (const key of ['facing', 'exportStatus'])
+    for (const key of ['facing', 'variant', 'exportStatus'])
         if (value[key] !== undefined && typeof value[key] !== 'string')
             return false;
+    if (value.gifRange !== undefined && !validGifRange(value.gifRange))
+        return false;
+    if (value.exportDownload !== undefined &&
+        (!isRecord(value.exportDownload) ||
+            typeof value.exportDownload.url !== 'string' ||
+            !value.exportDownload.url.startsWith(`blob:${location.origin}/`) ||
+            typeof value.exportDownload.fileName !== 'string'))
+        return false;
     if (value.comparisonLabels !== undefined &&
         (!isRecord(value.comparisonLabels) ||
             typeof value.comparisonLabels.baseline !== 'string' ||
             typeof value.comparisonLabels.enhanced !== 'string'))
         return false;
-    if (value.facingOptions !== undefined &&
-        (!Array.isArray(value.facingOptions) ||
-            !value.facingOptions.every((option) => isRecord(option) &&
-                typeof option.value === 'string' &&
-                typeof option.label === 'string')))
-        return false;
+    for (const key of ['facingOptions', 'variantOptions']) {
+        const options = value[key];
+        if (options !== undefined &&
+            (!Array.isArray(options) ||
+                !options.every((option) => isRecord(option) &&
+                    typeof option.value === 'string' &&
+                    typeof option.label === 'string')))
+            return false;
+    }
     return true;
 }
 const capabilityNames = [
     'loop',
     'compare',
     'facing',
+    'variant',
     'reduced',
     'gif',
+    'gifRange',
     'png',
     'cancelExport',
 ];
@@ -152,11 +180,17 @@ export function connectStudioScene(source, controller) {
             case 'facing':
                 controller.facing?.(command.value);
                 break;
+            case 'variant':
+                controller.variant?.(command.value);
+                break;
             case 'reduced':
                 controller.reduced?.(command.value);
                 break;
             case 'gif':
                 controller.gif?.();
+                break;
+            case 'gif-range':
+                controller.gifRange?.(command.value);
                 break;
             case 'png':
                 controller.png?.();

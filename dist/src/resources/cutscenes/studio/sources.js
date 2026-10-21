@@ -1,14 +1,6 @@
 /** 원본 주소·리소스 ID·기본 선택의 대응은 여기서만 정의한다. */
 export const studioSourceDefinitions = [
     {
-        source: 'selected',
-        assetId: 'local/anime-selected-cuts',
-        group: 'finished',
-        origin: '고른 컷',
-        defaultSampleId: 'background-run',
-        path: 'src/resources/effects/anime-selected-cuts/',
-    },
-    {
         source: 'tiger-awakening',
         assetId: 'local/ataho-tiger-awakening-cutscene',
         group: 'finished',
@@ -34,6 +26,14 @@ export const studioSourceDefinitions = [
         single: true,
         defaultSampleId: 'full-cutscene',
         path: 'src/resources/cutscenes/hisashi-punch/index.html',
+    },
+    {
+        source: 'selected',
+        assetId: 'local/anime-selected-cuts',
+        group: 'combinations',
+        origin: '조합',
+        defaultSampleId: 'background-run',
+        path: 'src/resources/effects/anime-selected-cuts/',
     },
     {
         source: 'showcase',

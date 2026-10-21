@@ -1,6 +1,7 @@
 import { drawPhoenixConceptBackdrop, drawPhoenixConceptOverlay, } from './finisher-phoenix-concept.js';
 import { drawGalacticaConceptBackdrop, drawGalacticaConceptOverlay, } from './finisher-galactica-concept.js';
 import { drawInkConceptBackdrop, drawInkConceptOverlay, } from './finisher-ink-concept.js';
+import { drawDemonDescentBackdrop, drawDemonDescentOverlay, } from './demon-descent-drawing.js';
 import { drawDragonConceptEchoes } from './finisher-echo-concept.js';
 import { drawDrunkenConceptBackdrop, drawDrunkenConceptOverlay, } from './finisher-drunken-concept.js';
 import { drawSpaceConceptBackdrop, drawSpaceConceptScreenOverlay, } from './finisher-space-concept.js';
@@ -8,8 +9,8 @@ export function finisherConcept(motion) {
     switch (motion.finisher?.theme) {
         case 'demon':
             return {
-                label: '접촉 원화를 드러내는 암중 난타',
-                summary: '접근과 회수는 어둡게 누르고 실제 명중 순간의 전신 원화를 선명하게 드러냅니다. 각 공격자는 자기 접촉 자세에서만 밝아집니다.',
+                label: '암중 난타와 먹빛 급강하',
+                summary: '암중 난타의 실제 접촉 원화를 드러낸 뒤 높은 도약과 급강하를 잇습니다. 양손 뒤의 굵은 먹획과 수직 유선이 하강을 따르고 마지막 접촉에서 백열핵과 거친 파열이 터집니다.',
             };
         case 'dragon':
             return {
@@ -49,6 +50,7 @@ export function drawConceptBackdrop(ctx, frame) {
     switch (frame.finisher.definition.theme) {
         case 'demon':
             drawInkConceptBackdrop(ctx, frame);
+            drawDemonDescentBackdrop(ctx, frame);
             break;
         case 'omnislash':
             drawSpaceConceptBackdrop(ctx, frame);
@@ -69,8 +71,10 @@ export function drawConceptEchoes(ctx, frame) {
         drawDragonConceptEchoes(ctx, frame);
 }
 export function drawConceptOverlay(ctx, frame) {
-    if (frame.finisher.definition.theme === 'demon')
+    if (frame.finisher.definition.theme === 'demon') {
         drawInkConceptOverlay(ctx, frame);
+        drawDemonDescentOverlay(ctx, frame);
+    }
     if (frame.finisher.definition.theme === 'phoenix')
         drawPhoenixConceptOverlay(ctx, frame);
     if (frame.finisher.definition.theme === 'galactica')

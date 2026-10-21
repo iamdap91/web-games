@@ -173,8 +173,12 @@ export function composeCameraView(snapshot, frames, options) {
     const offsetX = staging.offsetX ?? 0;
     const offsetY = staging.offsetY ?? 0;
     const unitZoom = Math.abs(staging.zoom - 1) < 0.000001;
-    if (!staging.active ||
-        (unitZoom && Math.abs(offsetX) + Math.abs(offsetY) < 0.000001))
+    const protectDescent = snapshot.motion.id === 'finisher-demon' &&
+        options.showMovement !== false &&
+        options.composition !== 'cutscene';
+    if (!protectDescent &&
+        (!staging.active ||
+            (unitZoom && Math.abs(offsetX) + Math.abs(offsetY) < 0.000001)))
         return view(1, recoil.x, recoil.y);
     let bounds = motionBounds(snapshot, frames, options);
     const bag = sandbagMotionBounds(snapshot, options);
@@ -182,12 +186,13 @@ export function composeCameraView(snapshot, frames, options) {
         bounds = union(bounds, bag);
     if (!bounds)
         return view(1, recoil.x, recoil.y);
-    if (unitZoom)
+    if (unitZoom && !protectDescent)
         return view(1, fitTrackingOffset(offsetX, { start: bounds.left, end: bounds.right }, stageWidth) + recoil.x, fitTrackingOffset(offsetY, { start: bounds.top, end: bounds.bottom }, stageHeight) + recoil.y);
     const maximumFit = Math.min(maximumZoom, (stageWidth - safeMargin * 2) / Math.max(1, bounds.right - bounds.left), (stageHeight - safeMargin * 2) / Math.max(1, bounds.bottom - bounds.top));
     // 경계 정보가 없는 예전 렌더 자료에서도 확대 요청을 축소로 뒤집지 않는다.
-    if (staging.zoom > 1 && maximumFit <= 1)
+    if (staging.zoom > 1 && maximumFit <= 1 && !protectDescent)
         return view(1, recoil.x, recoil.y);
+    // 높은 도약은 카메라 효과를 꺼도 동작 전체를 같은 범위에 담아 정점이 잘리지 않게 한다.
     const zoom = Math.min(staging.zoom, maximumFit);
     const translateX = fitTranslation(staging.focusX * (1 - zoom) + offsetX, { start: bounds.left, end: bounds.right }, stageWidth, zoom);
     const translateY = fitTranslation(staging.focusY * (1 - zoom) + offsetY, { start: bounds.top, end: bounds.bottom }, stageHeight, zoom);

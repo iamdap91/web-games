@@ -29,11 +29,17 @@ export class CutsceneScreen {
     frameId = 0;
     lastFrameMs = 0;
     disposed = false;
+    gifRange;
+    exporting = null;
+    exportStatus = '';
+    gifUrl = null;
+    gifFileName = null;
     constructor(definition) {
         this.definition = definition;
         this.player = new CutscenePlayer(definition.cuts);
         const cuts = definition.cuts;
         const durationMs = this.player.durationMs;
+        this.gifRange = { startMs: 0, endMs: durationMs };
         this.scrub.max = String(durationMs);
         this.reducedMotion.checked = matchMedia('(prefers-reduced-motion: reduce)').matches;
         const signal = this.events.signal;
@@ -99,11 +105,23 @@ export class CutsceneScreen {
             toggle: () => this.toggle(),
             restart: () => this.restartPlayback(),
             seek: (timeMs) => this.seek(timeMs),
-            speed: (rate) => this.player.setSpeed(rate),
+            speed: (rate) => {
+                if (!this.exporting)
+                    this.player.setSpeed(rate);
+            },
             reduced: (enabled) => {
+                if (this.exporting)
+                    return;
                 this.reducedMotion.checked = enabled;
                 this.render();
             },
+            ...(definition.gif
+                ? {
+                    gif: () => void this.saveGif(),
+                    gifRange: (range) => this.setGifRange(range),
+                    cancelExport: () => this.exporting?.abort(),
+                }
+                : {}),
         });
         void this.load();
     }
@@ -155,17 +173,32 @@ export class CutsceneScreen {
                 label: cut.label,
             })),
             reducedMotion: this.reducedMotion.checked,
+            ...(this.definition.gif
+                ? {
+                    gifRange: this.gifRange,
+                    exporting: this.exporting !== null,
+                    exportStatus: this.exportStatus,
+                    ...(this.gifUrl && this.gifFileName
+                        ? {
+                            exportDownload: {
+                                url: this.gifUrl,
+                                fileName: this.gifFileName,
+                            },
+                        }
+                        : {}),
+                }
+                : {}),
         };
     }
     restartPlayback() {
-        if (!this.assets)
+        if (!this.assets || this.exporting)
             return;
         this.player.restart();
         this.lastFrameMs = 0;
         this.render();
     }
     toggle() {
-        if (!this.assets)
+        if (!this.assets || this.exporting)
             return;
         if (this.player.snapshot().playing) {
             this.player.pause();
@@ -177,7 +210,7 @@ export class CutsceneScreen {
         this.render();
     }
     seek(timeMs) {
-        if (!this.assets)
+        if (!this.assets || this.exporting)
             return;
         this.player.pause();
         this.player.seek(timeMs);
@@ -195,9 +228,95 @@ export class CutsceneScreen {
             this.render();
         this.frameId = requestAnimationFrame(this.tick);
     };
+    setGifRange(range) {
+        if (this.exporting)
+            return;
+        const duration = this.player.durationMs;
+        const startMs = Math.max(0, Math.min(duration, Math.round(range.startMs)));
+        const endMs = Math.max(0, Math.min(duration, Math.round(range.endMs)));
+        if (endMs <= startMs) {
+            this.exportStatus = 'GIF 끝 시각은 시작 시각보다 뒤여야 합니다.';
+            return;
+        }
+        this.gifRange = { startMs, endMs };
+        this.exportStatus = '';
+        this.clearGifDownload();
+    }
+    clearGifDownload() {
+        if (this.gifUrl)
+            URL.revokeObjectURL(this.gifUrl);
+        this.gifUrl = null;
+        this.gifFileName = null;
+    }
+    async saveGif() {
+        const assets = this.assets;
+        const settings = this.definition.gif;
+        if (!assets || !settings || this.exporting || this.disposed)
+            return;
+        const previous = this.player.snapshot();
+        const controller = new AbortController();
+        const range = this.gifRange;
+        this.clearGifDownload();
+        this.exporting = controller;
+        this.exportStatus = 'GIF를 준비하고 있습니다.';
+        this.player.pause();
+        this.lastFrameMs = 0;
+        this.render();
+        try {
+            // GIF를 지원하지 않는 다른 컷씬은 인코더를 불러오지 않는다.
+            const { exportCutsceneGif } = await import('./gif-export.js');
+            controller.signal.throwIfAborted();
+            const blob = await exportCutsceneGif({
+                definition: this.definition,
+                assets,
+                range,
+                reducedMotion: this.reducedMotion.checked,
+                signal: controller.signal,
+                progress: (frame, total) => {
+                    this.exportStatus = `GIF 저장 중 · ${frame} / ${total}프레임`;
+                    this.status.textContent = this.exportStatus;
+                },
+            });
+            if (this.disposed)
+                return;
+            this.gifUrl = URL.createObjectURL(blob);
+            const full = range.startMs === 0 && range.endMs === this.player.durationMs;
+            this.gifFileName = `${settings.fileName}${full ? '' : `-${range.startMs}-${range.endMs}`}.gif`;
+            this.exportStatus = `GIF 준비 완료 · 640×360 · ${(range.startMs / 1000).toFixed(3)}–${(range.endMs / 1000).toFixed(3)}초 · ${full ? '12.5' : '25'}fps`;
+        }
+        catch (error) {
+            if (this.disposed)
+                return;
+            this.exportStatus = controller.signal.aborted
+                ? 'GIF 저장을 취소했습니다.'
+                : error instanceof Error
+                    ? error.message
+                    : 'GIF를 저장하지 못했습니다.';
+        }
+        finally {
+            if (this.exporting === controller)
+                this.exporting = null;
+            if (!this.disposed) {
+                if (previous.playing && !document.hidden)
+                    this.player.play();
+                this.lastFrameMs = 0;
+                this.render();
+            }
+        }
+    }
     render() {
         if (!this.ctx || !this.assets)
             return;
+        for (const control of [
+            this.play,
+            this.restart,
+            this.start,
+            this.scrub,
+            this.speed,
+            this.reducedMotion,
+            ...this.cutButtons,
+        ])
+            control.disabled = this.exporting !== null;
         const snapshot = this.player.snapshot();
         const durationMs = this.player.durationMs;
         const cuts = this.definition.cuts;
@@ -230,13 +349,16 @@ export class CutsceneScreen {
                 : snapshot.elapsedMs === 0
                     ? '준비 완료 · 재생을 눌러 감상하세요.'
                     : '일시정지 · 컷을 선택하거나 시간을 옮겨볼 수 있습니다.';
-        if (this.status.textContent !== status)
-            this.status.textContent = status;
+        const currentStatus = this.exportStatus || status;
+        if (this.status.textContent !== currentStatus)
+            this.status.textContent = currentStatus;
     }
     dispose() {
         if (this.disposed)
             return;
         this.disposed = true;
+        this.exporting?.abort();
+        this.clearGifDownload();
         cancelAnimationFrame(this.frameId);
         this.studioConnection.dispose();
         this.events.abort();

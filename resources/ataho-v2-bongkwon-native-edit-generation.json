@@ -1,0 +1,832 @@
+{
+  "createdDate": "2026-10-21",
+  "approval": "사용자: 응 다시 작업해줘. 원본 v2 공격 프레임을 직접 편집하는 방식 승인. 기존 후보 모두 보존.",
+  "characterId": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+  "attemptLimitPerDirection": 2,
+  "preservedSnapshotCommit": "f29bf94",
+  "rejectedMotionKeys": [
+    "bongkwon-photo-contact-south-east",
+    "bongkwon-photo-contact-north-west"
+  ],
+  "rejectionReason": "사용자: 팔 뻗었을때 도트가 뻗기 전과 너무 다름. 아타호v2와 다름.",
+  "sourceInputs": {
+    "south-east": [
+      {
+        "phase": "charge",
+        "fromMotionKey": "ataho-one-two-punch-south-east-south-east",
+        "fromFrameIndex": 8,
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_008.png",
+        "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/8.png?t=1791914728037",
+        "width": 96,
+        "height": 96,
+        "pivot": {
+          "x": 48,
+          "y": 16
+        },
+        "localSha256": "de4f6eaf65b5f3b87ac78504940e82f70cc642dd748dd14a23fc058f300ed153",
+        "byteSize": 3595,
+        "alphaBounds": [23, 19, 68, 79]
+      },
+      {
+        "phase": "impact",
+        "fromMotionKey": "ataho-one-two-punch-south-east-south-east",
+        "fromFrameIndex": 12,
+        "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_012.png",
+        "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/12.png?t=1791914728037",
+        "width": 96,
+        "height": 96,
+        "pivot": {
+          "x": 48,
+          "y": 16
+        },
+        "localSha256": "944fcdcfde4b7c3f9b4b0cb8d655233a40c26a9063cbaf7419637ec034b1d286",
+        "byteSize": 2834,
+        "alphaBounds": [27, 19, 73, 80]
+      }
+    ]
+  },
+  "method": "전체 텍스트 편집 후 원본 얼굴을 고정한 몸통 마스크 Flash inpaint",
+  "reference": {
+    "photoReferenceMode": "전체 텍스트 편집 단계에서는 사진을 텍스트 자세 기준으로 설명. 남동 부분 inpaint는 원본96px와 사람 참조를 결합한 context 입력을 사용. A는 기존 영상A 캡처82×91, B는 추가 사용자 타격 사진82×93이며 캐릭터 리사이즈·미러링은 하지 않음.",
+    "imageInputs": "부분 inpaint의 실제 source는 각 방향·단계의 원본 PNG. context는 동일 원본과 사용자 자세 사진을 결합한 별도 참조이며 원본 얼굴·마스크 밖 RGBA 일치를 결과와 비교.",
+    "identityAndPoseStatus": "사용자 정체성·자세 검토 전"
+  },
+  "guardReferences": {
+    "south-east": {
+      "fromMotionKey": "fight-stance-idle-8-frames-south-east",
+      "fromFrameIndex": 0,
+      "index": 0,
+      "width": 96,
+      "height": 96,
+      "pivot": {
+        "x": 48,
+        "y": 17
+      },
+      "durationSeconds": 0.1,
+      "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png",
+      "sourceOriginalPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/Fight_Stance_Idle/south-east/frame_000.png",
+      "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/20373254-a8b7-4cfc-b867-722499b66e46/south-east/0.png?t=1791910950902",
+      "sourceSha256": "e5cb58c7951dd6bf844df1e2649aeb0fd564cbda44291236e00dac9aaf550f8e",
+      "sourceRect": {
+        "x": 0,
+        "y": 0,
+        "width": 96,
+        "height": 96
+      },
+      "localSha256": "e5cb58c7951dd6bf844df1e2649aeb0fd564cbda44291236e00dac9aaf550f8e",
+      "byteSize": 3820,
+      "alphaBounds": [23, 19, 73, 79]
+    }
+  },
+  "attempts": [
+    {
+      "direction": "south-east",
+      "attempt": 1,
+      "jobId": "98f0abd0-1d1e-4fa7-88ee-1f1adbc2feeb",
+      "method": "edit_image / full-frame text edit",
+      "request": {
+        "image_urls": [
+          "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/8.png?t=1791914728037",
+          "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/12.png?t=1791914728037"
+        ],
+        "description": "Edit these TWO EXISTING frames of the same Ataho v2 tiger; do not redesign or upscale the character. Keep the native 96x96 canvas, roughly60px full-body height, original LARGE head size, muzzle/ears/face stripes, small closed tiger paw, short thick arm, original jacket folds and small shaded pixel clusters. Retain the original palette and single-pixel detail, bare paws, dark loose pants, brown cropped jacket and striped tail. Keep identical character proportions between the two edited frames. Pose edits only, feet baseline y80, full sprite and tail inside canvas. BOTH target screen RIGHT / SOUTH-EAST. FRAME1 (first image, chamber A): lower pelvis and bend BOTH knees into a moderately wider staggered stance, both soles planted. Fold torso slightly toward target. Pull right fist back LOW beside waist, elbow back, left fist in front; compact coiled body. FRAME2 (second image, impact B): extend existing right punch horizontally at shoulder height, below eyes. Rotate hips and shoulders away enough to expose jacket BACK, head still looking RIGHT. Keep head as large as source, never shrink it to expose more back. Low pelvis, both knees bent and feet widely planted. Left counterfist LOW beside rear hip, not raised behind ribs. Same compact body volume as FRAME1, not a broad human torso. Body rotation drives the strike, no tall upright karate pose. Preserve the original tiger hand design; no long human forearm or oversized fist. Empty transparent background, no effects, text or ground. Return TWO edited frames in their original order, not a comparison layout.",
+        "width": 96,
+        "height": 96,
+        "no_background": true,
+        "seed": 1792623001
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 98f0abd0-1d1e-4fa7-88ee-1f1adbc2feeb\njob_id: 98f0abd0-1d1e-4fa7-88ee-1f1adbc2feeb\nmode: text\nframes: 2\nsize: 96x96px\ntransparent: True\nedit: Edit these TWO EXISTING frames of the same Ataho v2 tiger; do not redesign or upscale the character. Keep the native 96x96 canvas, roughly60px full-body height, original LARGE head size, muzzle/ears/face stripes, small closed tiger paw, short thick arm, original jacket folds and small shaded pixel clusters. Retain the original palette and single-pixel detail, bare paws, dark loose pants, brown cropped jacket and striped tail. Keep identical character proportions between the two edited frames. Pose edits only, feet baseline y80, full sprite and tail inside canvas. BOTH target screen RIGHT / SOUTH-EAST. FRAME1 (first image, chamber A): lower pelvis and bend BOTH knees into a moderately wider staggered stance, both soles planted. Fold torso slightly toward target. Pull right fist back LOW beside waist, elbow back, left fist in front; compact coiled body. FRAME2 (second image, impact B): extend existing right punch horizontally at shoulder height, below eyes. Rotate hips and shoulders away enough to expose jacket BACK, head still looking RIGHT. Keep head as large as source, never shrink it to expose more back. Low pelvis, both knees bent and feet widely planted. Left counterfist LOW beside rear hip, not raised behind ribs. Same compact body volume as FRAME1, not a broad human torso. Body rotation drives the strike, no tall upright karate pose. Preserve the original tiger hand design; no long human forearm or oversized fist. Empty transparent background, no effects, text or ground. Return TWO edited frames in their original order, not a comparison layout.\nseed: 1792623001\nasset_id: 0ab2c276-a73b-5c7b-8a47-ed1cc2f97ec0\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"98f0abd0-1d1e-4fa7-88ee-1f1adbc2feeb\")"
+          }
+        ],
+        "isError": false
+      },
+      "sourceInputs": [
+        {
+          "phase": "charge",
+          "fromMotionKey": "ataho-one-two-punch-south-east-south-east",
+          "fromFrameIndex": 8,
+          "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_008.png",
+          "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/8.png?t=1791914728037",
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 16
+          },
+          "localSha256": "de4f6eaf65b5f3b87ac78504940e82f70cc642dd748dd14a23fc058f300ed153",
+          "byteSize": 3595,
+          "alphaBounds": [23, 19, 68, 79]
+        },
+        {
+          "phase": "impact",
+          "fromMotionKey": "ataho-one-two-punch-south-east-south-east",
+          "fromFrameIndex": 12,
+          "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_012.png",
+          "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/12.png?t=1791914728037",
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 16
+          },
+          "localSha256": "944fcdcfde4b7c3f9b4b0cb8d655233a40c26a9063cbaf7419637ec034b1d286",
+          "byteSize": 2834,
+          "alphaBounds": [27, 19, 73, 80]
+        }
+      ],
+      "cost": {
+        "chargedGenerations": 10,
+        "status": "root-confirmed"
+      },
+      "selectedForPlayback": false,
+      "selectionStatus": "archived-not-selected",
+      "frames": [
+        {
+          "index": 0,
+          "phase": "charge",
+          "jobId": "98f0abd0-1d1e-4fa7-88ee-1f1adbc2feeb",
+          "returnedIndex": 0,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 17
+          },
+          "anchor": {
+            "x": 48,
+            "y": 79
+          },
+          "alphaBounds": [23, 19, 72, 79],
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/attempt-01/frame_000.png",
+          "localSha256": "0b9402048545291097f3013e525ed739ca16cc436a37a3fe5ef379b107988836",
+          "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/attempt-01/frame_000.png",
+          "sourceSha256": "0b9402048545291097f3013e525ed739ca16cc436a37a3fe5ef379b107988836",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/98f0abd0-1d1e-4fa7-88ee-1f1adbc2feeb/download?index=0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          },
+          "byteSize": 4041,
+          "sourceTransport": "get_image inline PNG"
+        },
+        {
+          "index": 1,
+          "phase": "impact",
+          "jobId": "98f0abd0-1d1e-4fa7-88ee-1f1adbc2feeb",
+          "returnedIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 16
+          },
+          "anchor": {
+            "x": 48,
+            "y": 80
+          },
+          "alphaBounds": [33, 19, 87, 80],
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/attempt-01/frame_001.png",
+          "localSha256": "0bed6eedc1c13ecd63c9f12167f5fd23e29b7a7299757940a92b50b6c9147ce8",
+          "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/attempt-01/frame_001.png",
+          "sourceSha256": "0bed6eedc1c13ecd63c9f12167f5fd23e29b7a7299757940a92b50b6c9147ce8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/98f0abd0-1d1e-4fa7-88ee-1f1adbc2feeb/download?index=1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          },
+          "byteSize": 3219,
+          "sourceTransport": "get_image inline PNG"
+        }
+      ]
+    },
+    {
+      "direction": "south-east",
+      "attempt": 2,
+      "jobId": "eadd5fb9-c2e6-4185-b539-6bfd39aea15a",
+      "method": "edit_image / full-frame text edit",
+      "request": {
+        "image_urls": [
+          "https://api.pixellab.ai/mcp/images/98f0abd0-1d1e-4fa7-88ee-1f1adbc2feeb/download?index=0",
+          "https://api.pixellab.ai/mcp/images/98f0abd0-1d1e-4fa7-88ee-1f1adbc2feeb/download?index=1"
+        ],
+        "description": "Correct POSES in these TWO existing tiger frames. Preserve their original head size, face, ears, muzzle/stripes and pixel shading; no redesign, enlargement or added detail. Keep96x96canvas, same native pixel scale and palette. BOTH must have a LOW WIDE planted stance, not the current narrow upright legs. Move feet APART: rear foot around x25, front foot around x77, BOTH entire soles on y81 ground. Bend BOTH knees deeply outward. Lower hips between the feet, pelvis about y64. Allow upper body/head to move down a few pixels as one unit without shrinking or changing the head. Keep short tiger limbs/compact original torso, do not stretch body into human proportions. FRAME1=A COIL: waist and shoulders tipped forward, right fist low pulled behind waist on screen LEFT of torso, left fist in front, elbow tightly bent. Make torso compact and bent forward over low hips. FRAME2=B CONTACT: keep right fist horizontally extended SCREEN RIGHT as in source, at shoulder height below eyes. Drive rotated shoulder/hips forward above front bent thigh, broad jacket BACK toward viewer but original torso volume. Make the other fist visible LOW on screen LEFT beside rear hip/upper thigh, with elbow bent backward/downward. Rear knee ALSO bent, BOTH heels down. No straight running leg. This is a grounded rotational deathfist, source arm pose plus low stable body support. Feet span50native pixels, torso stays compact, head remains the same large source head. Original brown jacket with small shaded folds, dark loose trousers, small striped tiger paws and tail. No effects, text or floor, transparent background. Return the TWO original frames separately in original order.",
+        "width": 96,
+        "height": 96,
+        "no_background": true,
+        "seed": 1792623002
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: eadd5fb9-c2e6-4185-b539-6bfd39aea15a\njob_id: eadd5fb9-c2e6-4185-b539-6bfd39aea15a\nmode: text\nframes: 2\nsize: 96x96px\ntransparent: True\nedit: Correct POSES in these TWO existing tiger frames. Preserve their original head size, face, ears, muzzle/stripes and pixel shading; no redesign, enlargement or added detail. Keep96x96canvas, same native pixel scale and palette. BOTH must have a LOW WIDE planted stance, not the current narrow upright legs. Move feet APART: rear foot around x25, front foot around x77, BOTH entire soles on y81 ground. Bend BOTH knees deeply outward. Lower hips between the feet, pelvis about y64. Allow upper body/head to move down a few pixels as one unit without shrinking or changing the head. Keep short tiger limbs/compact original torso, do not stretch body into human proportions. FRAME1=A COIL: waist and shoulders tipped forward, right fist low pulled behind waist on screen LEFT of torso, left fist in front, elbow tightly bent. Make torso compact and bent forward over low hips. FRAME2=B CONTACT: keep right fist horizontally extended SCREEN RIGHT as in source, at shoulder height below eyes. Drive rotated shoulder/hips forward above front bent thigh, broad jacket BACK toward viewer but original torso volume. Make the other fist visible LOW on screen LEFT beside rear hip/upper thigh, with elbow bent backward/downward. Rear knee ALSO bent, BOTH heels down. No straight running leg. This is a grounded rotational deathfist, source arm pose plus low stable body support. Feet span50native pixels, torso stays compact, head remains the same large source head. Original brown jacket with small shaded folds, dark loose trousers, small striped tiger paws and tail. No effects, text or floor, transparent background. Return the TWO original frames separately in original order.\nseed: 1792623002\nasset_id: c41c5fcc-888d-5788-aec1-dbbbb3fe1a4e\nasset_status: pending (saved when generation completes)\ncost: ~10 generations\nstatus: processing (~30-90s)\n\nhint: get_image(job_id=\"eadd5fb9-c2e6-4185-b539-6bfd39aea15a\")"
+          }
+        ],
+        "isError": false
+      },
+      "sourceInputs": [
+        {
+          "phase": "charge",
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/attempt-01/frame_000.png",
+          "localSha256": "0b9402048545291097f3013e525ed739ca16cc436a37a3fe5ef379b107988836",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/98f0abd0-1d1e-4fa7-88ee-1f1adbc2feeb/download?index=0",
+          "byteSize": 4041,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 17
+          }
+        },
+        {
+          "phase": "impact",
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/attempt-01/frame_001.png",
+          "localSha256": "0bed6eedc1c13ecd63c9f12167f5fd23e29b7a7299757940a92b50b6c9147ce8",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/98f0abd0-1d1e-4fa7-88ee-1f1adbc2feeb/download?index=1",
+          "byteSize": 3219,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 16
+          }
+        }
+      ],
+      "cost": {
+        "chargedGenerations": 10,
+        "status": "root-confirmed"
+      },
+      "selectedForPlayback": false,
+      "selectionStatus": "archived-not-selected",
+      "frames": [
+        {
+          "index": 0,
+          "phase": "charge",
+          "jobId": "eadd5fb9-c2e6-4185-b539-6bfd39aea15a",
+          "returnedIndex": 0,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 17
+          },
+          "anchor": {
+            "x": 48,
+            "y": 79
+          },
+          "alphaBounds": [23, 19, 72, 79],
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/attempt-02/frame_000.png",
+          "localSha256": "ff26e0a5541975f6757b147f28c3de9d8e57a633222dc610e99fbbad3647fae2",
+          "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/attempt-02/frame_000.png",
+          "sourceSha256": "ff26e0a5541975f6757b147f28c3de9d8e57a633222dc610e99fbbad3647fae2",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/eadd5fb9-c2e6-4185-b539-6bfd39aea15a/download?index=0",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          },
+          "byteSize": 4210,
+          "sourceTransport": "get_image inline PNG"
+        },
+        {
+          "index": 1,
+          "phase": "impact",
+          "jobId": "eadd5fb9-c2e6-4185-b539-6bfd39aea15a",
+          "returnedIndex": 1,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 18
+          },
+          "anchor": {
+            "x": 48,
+            "y": 78
+          },
+          "alphaBounds": [26, 17, 80, 78],
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/attempt-02/frame_001.png",
+          "localSha256": "2caf9e72381ceda1e72305c189c0706ec33113ba2859e036549ccb52f7c2939b",
+          "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/attempt-02/frame_001.png",
+          "sourceSha256": "2caf9e72381ceda1e72305c189c0706ec33113ba2859e036549ccb52f7c2939b",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/eadd5fb9-c2e6-4185-b539-6bfd39aea15a/download?index=1",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          },
+          "byteSize": 3446,
+          "sourceTransport": "get_image inline PNG"
+        }
+      ]
+    },
+    {
+      "direction": "south-east",
+      "phase": "charge",
+      "attempt": 1,
+      "method": "Flash inpaint / original body mask",
+      "jobId": "368f2254-f27a-4b6b-a7ee-540e1a15d3e5",
+      "request": {
+        "image_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/8.png?t=1791914728037",
+        "mask_x": 8,
+        "mask_y": 45,
+        "mask_width": 84,
+        "mask_height": 40,
+        "description": "Repose ONLY the tiger body below the frozen source head to match the red human BODY POSE at RIGHT of context. LEFT96x96 is the exact tiger source; right human supplies pose only. CHAMBER A toward SCREEN RIGHT: copy human A's broad low bent-knee stance, hips sunk between feet, torso coiled slightly FORWARD. Right striking fist tucked LOW behind waist on screen LEFT of body, elbow back; left counterfist kept forward toward RIGHT. Both full soles planted, rear foot around x20-33 and front around x72-85 on same y82 ground, both knees flexed outward. Compress the torso over low hips; no raised guard hand by face, no straight running leg. Keep tiger head/face frozen. Preserve original LARGE tiger head, small closed tiger paws, short limbs, chibi body, brown cropped jacket, dark loose trousers, orange bare paws, striped tail, original palette and small shaded pixel clusters. Torso never wider than the head, no human proportions. Jacket back plain brown with subtle original shading/folds, no stripes/logo. Do not alter pixels outside the mask. Character-only transparency, no human costume, effects, text, opponent or ground.",
+        "context_image": {
+          "usage_description": "LEFT96x96 is the exact native tiger at bounding_box; RIGHT human supplies CHARGE BODY POSE ONLY. Never copy human proportions, outfit or background. Keep exact tiger head and pixel style.",
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/references/inpaint/south-east-charge-context.png",
+          "base64Omitted": true
+        },
+        "bounding_box": {
+          "x": 0,
+          "y": 0,
+          "width": 96,
+          "height": 96
+        },
+        "crop_to_mask": true,
+        "no_background": true,
+        "output_method": "Modify current layer",
+        "seed": 1792623022
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"368f2254-f27a-4b6b-a7ee-540e1a15d3e5\",\n  \"image_id\": \"5367aca4-92d8-5cb1-9c3a-8ab09f1cb472\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"5367aca4-92d8-5cb1-9c3a-8ab09f1cb472\",\n  \"job_id\": \"368f2254-f27a-4b6b-a7ee-540e1a15d3e5\",\n  \"description\": \"Repose ONLY the tiger body below the frozen source head to match the red human BODY POSE at RIGHT of context. LEFT96x96 is the exact tiger source; right human supplies pose only. CHAMBER A toward SCREEN RIGHT: copy human A's broad low bent-knee stance, hips sunk between feet, torso coiled slightly FORWARD. Right striking fist tucked LOW behind waist on screen LEFT of body, elbow back; left counterfist kept forward toward RIGHT. Both full soles planted, rear foot around x20-33 and front around x72-85 on same y82 ground, both knees flexed outward. Compress the torso over low hips; no raised guard hand by face, no straight running leg. Keep tiger head/face frozen. Preserve original LARGE tiger head, small closed tiger paws, short limbs, chibi body, brown cropped jacket, dark loose trousers, orange bare paws, striped tail, original palette and small shaded pixel clusters. Torso never wider than the head, no human proportions. Jacket back plain brown with subtle original shading/folds, no stripes/logo. Do not alter pixels outside the mask. Character-only transparency, no human costume, effects, text, opponent or ground.\",\n  \"seed\": 1792623022,\n  \"image_size\": {\n    \"width\": 96,\n    \"height\": 96\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/368f2254-f27a-4b6b-a7ee-540e1a15d3e5/download\"\n}\nPoll get_image(job_id=\"368f2254-f27a-4b6b-a7ee-540e1a15d3e5\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "368f2254-f27a-4b6b-a7ee-540e1a15d3e5",
+          "image_id": "5367aca4-92d8-5cb1-9c3a-8ab09f1cb472",
+          "status": "processing",
+          "source_image_id": "5367aca4-92d8-5cb1-9c3a-8ab09f1cb472",
+          "job_id": "368f2254-f27a-4b6b-a7ee-540e1a15d3e5",
+          "description": "Repose ONLY the tiger body below the frozen source head to match the red human BODY POSE at RIGHT of context. LEFT96x96 is the exact tiger source; right human supplies pose only. CHAMBER A toward SCREEN RIGHT: copy human A's broad low bent-knee stance, hips sunk between feet, torso coiled slightly FORWARD. Right striking fist tucked LOW behind waist on screen LEFT of body, elbow back; left counterfist kept forward toward RIGHT. Both full soles planted, rear foot around x20-33 and front around x72-85 on same y82 ground, both knees flexed outward. Compress the torso over low hips; no raised guard hand by face, no straight running leg. Keep tiger head/face frozen. Preserve original LARGE tiger head, small closed tiger paws, short limbs, chibi body, brown cropped jacket, dark loose trousers, orange bare paws, striped tail, original palette and small shaded pixel clusters. Torso never wider than the head, no human proportions. Jacket back plain brown with subtle original shading/folds, no stripes/logo. Do not alter pixels outside the mask. Character-only transparency, no human costume, effects, text, opponent or ground.",
+          "seed": 1792623022,
+          "image_size": {
+            "width": 96,
+            "height": 96
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/368f2254-f27a-4b6b-a7ee-540e1a15d3e5/download"
+        },
+        "isError": false
+      },
+      "sourceInputs": [
+        {
+          "phase": "charge",
+          "fromMotionKey": "ataho-one-two-punch-south-east-south-east",
+          "fromFrameIndex": 8,
+          "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_008.png",
+          "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/8.png?t=1791914728037",
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 16
+          },
+          "localSha256": "de4f6eaf65b5f3b87ac78504940e82f70cc642dd748dd14a23fc058f300ed153",
+          "byteSize": 3595,
+          "alphaBounds": [23, 19, 68, 79]
+        }
+      ],
+      "context": {
+        "sourcePath": "/tmp/ataho-native-body-inpaint-context-south-east-charge.png",
+        "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/references/inpaint/south-east-charge-context.png",
+        "sha256": "d4363c85c22e9da784c5624d7e02d38ad0f09530ca56c969cc0baaa8cb2635cf",
+        "byteSize": 17842,
+        "width": 192,
+        "height": 96,
+        "usage": "원본96px와 사람 자세 참조를 결합한 문맥 이미지",
+        "humanPoseInputSize": {
+          "width": 82,
+          "height": 91
+        },
+        "humanPoseSource": "기존 영상A 캡처",
+        "humanReferenceMirrored": false,
+        "humanPoseSourcePath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/references/charge-a-crop.png",
+        "humanPoseSourceSha256": "789f8c137f7f5c2a2f0efb8276283c226388d3e7b2adbbc4a6c7f32624514adf",
+        "humanPoseSourceByteSize": 56578
+      },
+      "maskComparison": {
+        "maskRect": {
+          "x": 8,
+          "y": 45,
+          "width": 84,
+          "height": 40
+        },
+        "outsideMaskIdentical": true,
+        "comparedPixels": 5856,
+        "changedPixelsOutsideMask": 0,
+        "changedPixelsInsideMask": 1101,
+        "sourceOutsideRgbaSha256": "fc81f4856984b10fca35916e6e5464b441072e16abbd0c65762d1b862d8d7c00",
+        "resultOutsideRgbaSha256": "fc81f4856984b10fca35916e6e5464b441072e16abbd0c65762d1b862d8d7c00",
+        "faceRegion": {
+          "x": 0,
+          "y": 0,
+          "width": 96,
+          "height": 45
+        },
+        "sourceFaceRgbaSha256": "b86d87c8f5b08b65f8e6d93f691b3437800441e04bfd14154d8964ed00abba05",
+        "resultFaceRgbaSha256": "b86d87c8f5b08b65f8e6d93f691b3437800441e04bfd14154d8964ed00abba05"
+      },
+      "cost": {
+        "chargedGenerations": 5,
+        "status": "root-confirmed"
+      },
+      "selectedForPlayback": true,
+      "selectionStatus": "pending-user-identity-and-pose-review",
+      "rawInpaintSelectedForPlayback": true,
+      "frames": [
+        {
+          "index": 0,
+          "phase": "charge",
+          "jobId": "368f2254-f27a-4b6b-a7ee-540e1a15d3e5",
+          "returnedIndex": 0,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 17
+          },
+          "anchor": {
+            "x": 48,
+            "y": 79
+          },
+          "alphaBounds": [14, 19, 70, 79],
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/body-inpaint/charge/frame_000.png",
+          "localSha256": "61c8eb6fdaa7b6633a5700d396eec0b1cd4a5e1b4aa67176cd1312d0a05ffe1a",
+          "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/body-inpaint/charge/frame_000.png",
+          "sourceSha256": "61c8eb6fdaa7b6633a5700d396eec0b1cd4a5e1b4aa67176cd1312d0a05ffe1a",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/368f2254-f27a-4b6b-a7ee-540e1a15d3e5/download",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          },
+          "byteSize": 3617,
+          "sourceTransport": "get_image inline PNG"
+        }
+      ]
+    },
+    {
+      "direction": "south-east",
+      "phase": "impact",
+      "attempt": 1,
+      "method": "Flash inpaint / original body mask",
+      "jobId": "cdea9c0b-b94f-4796-9e7a-247cd67f0da8",
+      "request": {
+        "image_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/12.png?t=1791914728037",
+        "mask_x": 8,
+        "mask_y": 45,
+        "mask_width": 84,
+        "mask_height": 40,
+        "description": "Repose ONLY the tiger body below the frozen source head into the red fighter CONTACT POSE at RIGHT of context. Context LEFT96x96 is the tiger source, RIGHT is a HUMAN POSE REFERENCE ONLY. Keep tiger head/face outside mask EXACT. Preserve compact chibi proportions, original small shaded pixel clusters, brown jacket, dark pants, small tiger fists and paws, palette and native pixels. Copy pose: VERY WIDE low planted stance, both knees bent, both entire soles on same y82 ground. Rear foot at x20-33, front foot at x72-85, pelvis low BETWEEN them. Rear knee also bent, no straight running leg or lifted heel. Broad jacket BACK faces viewer after strong hip/shoulder rotation, original compact torso no wider than source head. Head still looks RIGHT. RIGHT arm extends horizontally toward SCREEN RIGHT at shoulder height, fist below eyes. Opposite fist visibly LOW beside rear hip on screen LEFT, elbow pulled backward/downward. Punch, torso twist and wide low grounded stance as in photo. Brown jacket back plain with original pixel shading/folds, no red outfit, human hands, effects, text, ground or opponent. Character-only transparency; do not add anything outside mask.",
+        "context_image": {
+          "usage_description": "The LEFT96x96 native tiger is the exact source at bounding_box. The red human fighter on RIGHT supplies CONTACT BODY POSE ONLY: wide bent knees, both soles planted, low pelvis, jacket back rotation, horizontal punch and opposite fist beside hip. Preserve tiger appearance from left.",
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/references/inpaint/south-east-impact-context.png",
+          "base64Omitted": true
+        },
+        "bounding_box": {
+          "x": 0,
+          "y": 0,
+          "width": 96,
+          "height": 96
+        },
+        "crop_to_mask": true,
+        "no_background": true,
+        "output_method": "Modify current layer",
+        "seed": 1792623021
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"background_job_id\": \"cdea9c0b-b94f-4796-9e7a-247cd67f0da8\",\n  \"image_id\": \"ec6339f4-cae8-5082-8312-67f23b87314d\",\n  \"status\": \"processing\",\n  \"source_image_id\": \"ec6339f4-cae8-5082-8312-67f23b87314d\",\n  \"job_id\": \"cdea9c0b-b94f-4796-9e7a-247cd67f0da8\",\n  \"description\": \"Repose ONLY the tiger body below the frozen source head into the red fighter CONTACT POSE at RIGHT of context. Context LEFT96x96 is the tiger source, RIGHT is a HUMAN POSE REFERENCE ONLY. Keep tiger head/face outside mask EXACT. Preserve compact chibi proportions, original small shaded pixel clusters, brown jacket, dark pants, small tiger fists and paws, palette and native pixels. Copy pose: VERY WIDE low planted stance, both knees bent, both entire soles on same y82 ground. Rear foot at x20-33, front foot at x72-85, pelvis low BETWEEN them. Rear knee also bent, no straight running leg or lifted heel. Broad jacket BACK faces viewer after strong hip/shoulder rotation, original compact torso no wider than source head. Head still looks RIGHT. RIGHT arm extends horizontally toward SCREEN RIGHT at shoulder height, fist below eyes. Opposite fist visibly LOW beside rear hip on screen LEFT, elbow pulled backward/downward. Punch, torso twist and wide low grounded stance as in photo. Brown jacket back plain with original pixel shading/folds, no red outfit, human hands, effects, text, ground or opponent. Character-only transparency; do not add anything outside mask.\",\n  \"seed\": 1792623021,\n  \"image_size\": {\n    \"width\": 96,\n    \"height\": 96\n  },\n  \"output_count\": 1,\n  \"estimated_generations\": 5,\n  \"pricing_provisional\": true,\n  \"poll_tool\": \"get_image\",\n  \"download_path\": \"/mcp/images/cdea9c0b-b94f-4796-9e7a-247cd67f0da8/download\"\n}\nPoll get_image(job_id=\"cdea9c0b-b94f-4796-9e7a-247cd67f0da8\"). The source_image_id is usable after completion; it is an image ID, not a character/object ID. Actual usage is reported on completion. cancel_job(job_id=...) cancels unfinished work."
+          }
+        ],
+        "structuredContent": {
+          "background_job_id": "cdea9c0b-b94f-4796-9e7a-247cd67f0da8",
+          "image_id": "ec6339f4-cae8-5082-8312-67f23b87314d",
+          "status": "processing",
+          "source_image_id": "ec6339f4-cae8-5082-8312-67f23b87314d",
+          "job_id": "cdea9c0b-b94f-4796-9e7a-247cd67f0da8",
+          "description": "Repose ONLY the tiger body below the frozen source head into the red fighter CONTACT POSE at RIGHT of context. Context LEFT96x96 is the tiger source, RIGHT is a HUMAN POSE REFERENCE ONLY. Keep tiger head/face outside mask EXACT. Preserve compact chibi proportions, original small shaded pixel clusters, brown jacket, dark pants, small tiger fists and paws, palette and native pixels. Copy pose: VERY WIDE low planted stance, both knees bent, both entire soles on same y82 ground. Rear foot at x20-33, front foot at x72-85, pelvis low BETWEEN them. Rear knee also bent, no straight running leg or lifted heel. Broad jacket BACK faces viewer after strong hip/shoulder rotation, original compact torso no wider than source head. Head still looks RIGHT. RIGHT arm extends horizontally toward SCREEN RIGHT at shoulder height, fist below eyes. Opposite fist visibly LOW beside rear hip on screen LEFT, elbow pulled backward/downward. Punch, torso twist and wide low grounded stance as in photo. Brown jacket back plain with original pixel shading/folds, no red outfit, human hands, effects, text, ground or opponent. Character-only transparency; do not add anything outside mask.",
+          "seed": 1792623021,
+          "image_size": {
+            "width": 96,
+            "height": 96
+          },
+          "output_count": 1,
+          "estimated_generations": 5,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/cdea9c0b-b94f-4796-9e7a-247cd67f0da8/download"
+        },
+        "isError": false
+      },
+      "sourceInputs": [
+        {
+          "phase": "impact",
+          "fromMotionKey": "ataho-one-two-punch-south-east-south-east",
+          "fromFrameIndex": 12,
+          "localPath": "public/assets/maplestory/ataho-v2-ai/20261014/originals/character/Idle/animations/ataho-one-two-punch-south-east/south-east/frame_012.png",
+          "sourceUrl": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/c52d7319-a831-48c0-8c13-5162d0939ed3/south-east/12.png?t=1791914728037",
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 16
+          },
+          "localSha256": "944fcdcfde4b7c3f9b4b0cb8d655233a40c26a9063cbaf7419637ec034b1d286",
+          "byteSize": 2834,
+          "alphaBounds": [27, 19, 73, 80]
+        }
+      ],
+      "context": {
+        "sourcePath": "/tmp/ataho-native-body-inpaint-context-se.png",
+        "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/references/inpaint/south-east-impact-context.png",
+        "sha256": "70d4bee3c03504500875aa0fe4f4a945a06b57c0879f02f65be7bce3fb3e8b3c",
+        "byteSize": 22016,
+        "width": 192,
+        "height": 96,
+        "usage": "원본96px와 사람 자세 참조를 결합한 문맥 이미지",
+        "humanPoseInputSize": {
+          "width": 82,
+          "height": 93
+        },
+        "humanPoseSource": "추가 사용자 타격 사진B",
+        "humanReferenceMirrored": false,
+        "humanPoseSourcePath": "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/references/user-contact.jpg",
+        "humanPoseSourceSha256": "8b9aaee35588e86ebb6cf083af8ecf2e13ea0baf12c057bc8fb35e7c53730289",
+        "humanPoseSourceByteSize": 123505
+      },
+      "maskComparison": {
+        "maskRect": {
+          "x": 8,
+          "y": 45,
+          "width": 84,
+          "height": 40
+        },
+        "outsideMaskIdentical": true,
+        "comparedPixels": 5856,
+        "changedPixelsOutsideMask": 0,
+        "changedPixelsInsideMask": 1253,
+        "sourceOutsideRgbaSha256": "fbd43acabc6b78bc1dc154c618844a07f610c0b02a57a1925ae9418aeaccf05f",
+        "resultOutsideRgbaSha256": "fbd43acabc6b78bc1dc154c618844a07f610c0b02a57a1925ae9418aeaccf05f",
+        "faceRegion": {
+          "x": 0,
+          "y": 0,
+          "width": 96,
+          "height": 45
+        },
+        "sourceFaceRgbaSha256": "711ce31868bdb8d2fa145b70dc8662e7be2dea9e146d6709179054611aa00632",
+        "resultFaceRgbaSha256": "711ce31868bdb8d2fa145b70dc8662e7be2dea9e146d6709179054611aa00632"
+      },
+      "cost": {
+        "chargedGenerations": 5,
+        "status": "root-confirmed"
+      },
+      "selectedForPlayback": true,
+      "selectionStatus": "pending-user-identity-and-pose-review",
+      "rawInpaintSelectedForPlayback": true,
+      "frames": [
+        {
+          "index": 1,
+          "phase": "impact",
+          "jobId": "cdea9c0b-b94f-4796-9e7a-247cd67f0da8",
+          "returnedIndex": 0,
+          "width": 96,
+          "height": 96,
+          "pivot": {
+            "x": 48,
+            "y": 17
+          },
+          "anchor": {
+            "x": 48,
+            "y": 79
+          },
+          "alphaBounds": [20, 19, 76, 79],
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/body-inpaint/impact/frame_000.png",
+          "localSha256": "b2f51e6ccd0f2d438f83c10f507c33084b1c55ad8c6b38709e5328e379fb49b7",
+          "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/body-inpaint/impact/frame_000.png",
+          "sourceSha256": "b2f51e6ccd0f2d438f83c10f507c33084b1c55ad8c6b38709e5328e379fb49b7",
+          "sourceUrl": "https://api.pixellab.ai/mcp/images/cdea9c0b-b94f-4796-9e7a-247cd67f0da8/download",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          },
+          "byteSize": 3523,
+          "sourceTransport": "get_image inline PNG"
+        }
+      ]
+    }
+  ],
+  "controlInputs": [
+    {
+      "path": "/tmp/ataho-bongkwon-native-edit-base.json",
+      "sha256": "60f25cba2c8dd7905cab0b546ad87bf230c14d0ad0b7a26734f65ada7e87b424",
+      "byteSize": 3537
+    },
+    {
+      "path": "/tmp/ataho-bongkwon-native-edit-receipts.json",
+      "sha256": "4eed7fbd0c413c44570e1bf9a846cf6e84f8d4c36efefc1a4c62e1758f27e981",
+      "byteSize": 13566
+    },
+    {
+      "path": "/tmp/ataho-bongkwon-native-edit-south-east-result.json",
+      "sha256": "63903bcb86d10654c12da4c12effb038c8b302ba2185748d3efecd49cb348c6c",
+      "byteSize": 10064
+    },
+    {
+      "path": "/tmp/ataho-bongkwon-native-edit-south-east-correction-result.json",
+      "sha256": "cf585fd62bd027afc261dbedc52b2224eb24f558c806f362f43f8b1c7a48a6f8",
+      "byteSize": 10596
+    },
+    {
+      "path": "/tmp/ataho-bongkwon-native-inpaint-result.json",
+      "sha256": "80bd3fd4e35137942a0cc30695d31d8db22c0d82dcac92d6179d2c80b4456431",
+      "byteSize": 24399
+    }
+  ],
+  "methodHistory": [
+    {
+      "method": "edit_image / full-frame text edit",
+      "status": "모든 원본 결과 보관, 재생 선택 제외"
+    },
+    {
+      "method": "Flash inpaint / original body mask",
+      "status": "남동 A/B 두 결과를 사용자 검토 후보로 선택"
+    }
+  ],
+  "scopeChange": {
+    "userInstruction": "북서쪽은 만들지마",
+    "selectedDirections": ["south-east"],
+    "newNorthWestEntriesAdded": 0,
+    "unusedCompletedNorthWestJobs": [
+      "d711cf34-161d-4f5b-bcd6-ba4c77906bf1",
+      "520a0d3b-1700-41e7-ace0-4a40f6c98c23",
+      "9541c135-44d1-4921-9a9b-3858ad4bd476"
+    ],
+    "unusedExactEditImageIds": [
+      "0830f6c3-0255-4354-91fe-07bc67cc3b30",
+      "728bc1de-3ce7-4586-bb28-07dfdb503190"
+    ],
+    "chargedGenerationsBeforeScopeChange": 20,
+    "filesKeptOnlyInTemporaryWorkspace": true,
+    "note": "방향축소요청전에완료됐던북서결과는/tmp에만유지하고새목록/프로젝트리소스에는등록하지않는다. 요청뒤북서생성·수정은없음.",
+    "user": "북서쪽은 만들지마"
+  },
+  "costBreakdown": {
+    "fullFrameTextEditChargedGenerations": 20,
+    "maskedInpaintChargedGenerations": 10,
+    "selectedSouthEast": 30,
+    "unusedNorthWest": 20
+  },
+  "totalChargedGenerations": 50,
+  "costStatus": "root-confirmed",
+  "receiptEstimatedGenerations": 30,
+  "selection": {
+    "status": "pending-user-identity-and-pose-review",
+    "directions": [
+      {
+        "direction": "south-east",
+        "motionKey": "bongkwon-native-edit-south-east",
+        "method": "Flash inpaint / original body mask",
+        "jobIds": {
+          "charge": "368f2254-f27a-4b6b-a7ee-540e1a15d3e5",
+          "impact": "cdea9c0b-b94f-4796-9e7a-247cd67f0da8"
+        },
+        "frames": [
+          {
+            "index": 0,
+            "phase": "charge",
+            "jobId": "368f2254-f27a-4b6b-a7ee-540e1a15d3e5",
+            "returnedIndex": 0,
+            "width": 96,
+            "height": 96,
+            "pivot": {
+              "x": 48,
+              "y": 17
+            },
+            "anchor": {
+              "x": 48,
+              "y": 79
+            },
+            "alphaBounds": [14, 19, 70, 79],
+            "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/selected/south-east/charge.png",
+            "localSha256": "61c8eb6fdaa7b6633a5700d396eec0b1cd4a5e1b4aa67176cd1312d0a05ffe1a",
+            "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/body-inpaint/charge/frame_000.png",
+            "sourceSha256": "61c8eb6fdaa7b6633a5700d396eec0b1cd4a5e1b4aa67176cd1312d0a05ffe1a",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/368f2254-f27a-4b6b-a7ee-540e1a15d3e5/download",
+            "sourceRect": {
+              "x": 0,
+              "y": 0,
+              "width": 96,
+              "height": 96
+            },
+            "byteSize": 3617,
+            "sourceTransport": "get_image inline PNG"
+          },
+          {
+            "index": 1,
+            "phase": "impact",
+            "jobId": "cdea9c0b-b94f-4796-9e7a-247cd67f0da8",
+            "returnedIndex": 0,
+            "width": 96,
+            "height": 96,
+            "pivot": {
+              "x": 48,
+              "y": 17
+            },
+            "anchor": {
+              "x": 48,
+              "y": 79
+            },
+            "alphaBounds": [20, 19, 76, 79],
+            "localPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/selected/south-east/impact.png",
+            "localSha256": "b2f51e6ccd0f2d438f83c10f507c33084b1c55ad8c6b38709e5328e379fb49b7",
+            "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/originals/south-east/body-inpaint/impact/frame_000.png",
+            "sourceSha256": "b2f51e6ccd0f2d438f83c10f507c33084b1c55ad8c6b38709e5328e379fb49b7",
+            "sourceUrl": "https://api.pixellab.ai/mcp/images/cdea9c0b-b94f-4796-9e7a-247cd67f0da8/download",
+            "sourceRect": {
+              "x": 0,
+              "y": 0,
+              "width": 96,
+              "height": 96
+            },
+            "byteSize": 3523,
+            "sourceTransport": "get_image inline PNG"
+          }
+        ]
+      }
+    ],
+    "motionKeys": ["bongkwon-native-edit-south-east"],
+    "postProcessingPixelsModified": false,
+    "characterMirrored": false,
+    "intermediateFramesGenerated": false,
+    "rawInpaintOutsideMaskIdentical": true,
+    "finalOutsideCombinedEditRegionIdentical": true,
+    "sourceFacePixelsPreserved": true
+  },
+  "playback": {
+    "durationSecondsPerPose": 0.8,
+    "type": "A/B pose comparison",
+    "intermediateFramesGenerated": false,
+    "alignment": "각 원본96px결과의 실제 알파 발밑을 프레임별 피벗으로 사용. 그림 픽셀 위치는 변경하지 않음."
+  },
+  "previews": {
+    "gif": {
+      "path": "/Users/3sam3/.codex/worktrees/ataho-deathfist-motion/web-games/public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/previews/native-edit-ab.gif",
+      "sha256": "257dfae695a3738b06399663cdb9f227a7a8f622f4d4eabfdf97702f1c46d24d",
+      "byteSize": 36223
+    },
+    "png": {
+      "path": "/Users/3sam3/.codex/worktrees/ataho-deathfist-motion/web-games/public/assets/maplestory/ataho-v2-bongkwon-native-edit/20261021/previews/native-edit-ab.png",
+      "sha256": "7b0449128f01caf095acb145898740ce981ed551919d0408a9a38b96bd2ffd72",
+      "byteSize": 15758
+    },
+    "width": 768,
+    "height": 436,
+    "scale": 4,
+    "resampling": "nearest-neighbor",
+    "rows": ["south-east"],
+    "columns": ["원본 같은 방향 가드 고정", "편집 A/B"],
+    "pngPhase": "impact",
+    "gifColorEncoding": "공통256색 팔레트, 무디더링. 원본PNG는 변경하지 않음."
+  },
+  "counts": {
+    "directions": 1,
+    "sourceFrames": 2,
+    "newEditedFrames": 6,
+    "rawFrames": 6,
+    "generatedRawFrames": 6,
+    "exactEditedFrames": 0,
+    "exactEditCalls": 0,
+    "exactEditChargedGenerations": 0,
+    "selectedFrames": 2,
+    "archivedFrames": 4,
+    "editCalls": 4,
+    "fullFrameEditFrames": 4,
+    "maskedInpaintFrames": 2,
+    "libraryEntriesAdded": 1,
+    "previousLibraryEntries": 102,
+    "totalLibraryEntries": 103
+  }
+}

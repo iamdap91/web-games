@@ -2,6 +2,7 @@ import { circusScenePhases } from './meteor-circus-flight.js';
 import { isMeteorCircus } from './meteor-circus-drawing.js';
 import { exportComboGif } from './gif-export.js';
 import { finisherConcept } from './finisher-concepts.js';
+import { sampleDemonDescent } from './demon-descent.js';
 import { FinisherOpacityControls } from './finisher-opacity-controls.js';
 import { FinisherPresetControls } from './finisher-preset-controls.js';
 import {
@@ -16,6 +17,7 @@ import {
   isFinisherOpacityKey,
 } from './finisher-opacity.js';
 import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
+import { ReferenceLibraryPanel } from './review.js';
 import { activeMotions, motionSections } from './motion-catalog.js';
 import { ComboPlayer, comboDuration } from './player.js';
 import { KiLighting } from './ki-lighting.js';
@@ -240,6 +242,9 @@ function updateModeChoices(settings: {
 }
 
 class ComboScreen {
+  private readonly referenceLibrary = new ReferenceLibraryPanel(
+    element<HTMLDetailsElement>('#reference-library'),
+  );
   private readonly canvas = element<HTMLCanvasElement>('#stage');
   private readonly context = this.canvas.getContext('2d')!;
   private readonly status = element<HTMLOutputElement>('#status');
@@ -951,6 +956,7 @@ class ComboScreen {
   dispose = (): void => {
     this.disposed = true;
     this.events.abort();
+    this.referenceLibrary.dispose();
     this.opacityControls.dispose();
     this.presetControls.dispose();
     this.gifExport?.abort();
@@ -2031,6 +2037,7 @@ class ComboScreen {
       'keydown',
       (event) => {
         if (
+          this.referenceLibrary.open ||
           this.loading ||
           !this.presentationReady ||
           event.defaultPrevented ||
@@ -2344,6 +2351,23 @@ class ComboScreen {
       : '';
     this.canvas.dataset.elapsedMs = snapshot.elapsedMs.toFixed(3);
     this.canvas.dataset.durationMs = snapshot.durationMs.toFixed(3);
+    const descent =
+      this.options.showMovement &&
+      this.options.showFinisher &&
+      this.options.showFinisherConcept
+        ? sampleDemonDescent(snapshot)
+        : undefined;
+    this.canvas.dataset.demonDescent = descent
+      ? JSON.stringify({
+          phase: descent.phase,
+          fallProgress: descent.fallProgress,
+          impactAgeMs: descent.impactAgeMs,
+          bodyOpacity: descent.bodyOpacity,
+          contactMs: descent.contactMs,
+          x: snapshot.x,
+          y: snapshot.y,
+        })
+      : '';
     this.canvas.dataset.waiting = String(snapshot.waiting);
     this.canvas.dataset.projectiles = String(
       this.options.showMovement
@@ -2444,7 +2468,11 @@ class ComboScreen {
       ? Math.min(80, time - this.previousTime)
       : 0;
     this.previousTime = time;
-    if (!this.loading && this.presentationReady) {
+    if (
+      !this.referenceLibrary.open &&
+      !this.loading &&
+      this.presentationReady
+    ) {
       this.player.update(delta);
       this.render();
     }

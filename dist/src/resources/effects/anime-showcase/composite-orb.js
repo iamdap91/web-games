@@ -1,14 +1,43 @@
 import { drawOrbitViscosity } from '../../characters/ataho-v2-combos/orbit-viscosity-drawing.js';
-import { atahoPosition, battleImpact, battleLayout, drawBattleActors, } from './battle.js';
+import { battleImpact, battleLayout, drawAtaho, drawBear } from './battle.js';
 import { clamp, ellipse, smooth, stage } from './drawing.js';
-const timing = {
+export const compositeOrbTiming = {
     birthMs: 950,
     mergedMs: 1650,
     stretchMs: battleLayout.contactMs,
     splitMs: 2760,
-    flightMs: 600,
-    endMs: 3720,
+    arrivalMs: 3040,
+    impactHoldMs: 90,
+    recoverMs: 900,
+    endMs: 4100,
 };
+const timing = compositeOrbTiming;
+const casterDistance = 240;
+const mergedRadius = 34;
+function headRadii(frame, radius, flight) {
+    const elongation = 1 + flight * (frame.reducedMotion ? 0.25 : 0.8);
+    return { x: radius * elongation, y: radius / elongation };
+}
+function casterTime(timeMs) {
+    if (timeMs < 450)
+        return 0;
+    if (timeMs < timing.birthMs)
+        return 1000 + smooth((timeMs - 450) / (timing.birthMs - 450)) * 800;
+    if (timeMs < timing.splitMs + 80)
+        return battleLayout.contactMs + 16;
+    return 1960 + smooth((timeMs - timing.splitMs - 80) / 580) * 840;
+}
+function targetReaction(timeMs, reducedMotion) {
+    const age = timeMs - timing.arrivalMs;
+    const release = clamp((age - timing.impactHoldMs) / 340);
+    const push = 1 - (1 - release) ** 3;
+    const settle = smooth((age - 500) / 500);
+    const motion = reducedMotion ? 0.32 : 1;
+    return {
+        displacementX: (56 * push - 12 * settle) * motion,
+        lift: Math.sin(release * Math.PI) * 9 * motion,
+    };
+}
 function heldHead(root, timeMs, motion) {
     const p = clamp((timeMs - timing.stretchMs) / (timing.splitMs - timing.stretchMs));
     return {
@@ -16,33 +45,39 @@ function heldHead(root, timeMs, motion) {
         y: root.y - Math.sin(p * Math.PI) * 16 * motion,
     };
 }
-/** 합체한 같은 덩어리가 목을 당기고, 끊긴 위치에서 가속해 떠난다. */
+/** 같은 경로의 흑구가 실제로 닿을 때만 표적을 멈추고 밀어낸다. */
 export function drawCompositeOrb(ctx, frame) {
     const scene = { ...frame, sampleId: 'fx-kozuma' };
     const impact = battleImpact(scene);
-    const chargedPosition = atahoPosition(scene, {
-        action: 'straight',
-        timeMs: Math.min(frame.timeMs, timing.stretchMs),
-    });
-    const contactPosition = atahoPosition(scene, {
-        action: 'straight',
-        timeMs: timing.stretchMs,
-    });
-    // 준비 중에는 배우를 따르고, 명중 뒤에는 같은 세계 좌표에 목과 잔여를 남긴다.
-    const root = {
-        x: impact.x + chargedPosition.x - contactPosition.x,
-        y: impact.y + chargedPosition.ground - contactPosition.ground,
-    };
+    const root = { x: impact.x - casterDistance, y: impact.y };
     const timeMs = frame.timeMs;
+    const contact = scene.assets.straight.steps.find((step) => step.contact).contact;
+    const casterX = root.x - (contact.reach ?? 0) * battleLayout.attacker.scale;
+    const reaction = targetReaction(timeMs, frame.reducedMotion);
+    const hitAge = timeMs - timing.arrivalMs;
+    const reacting = hitAge >= 0 && hitAge < timing.recoverMs;
     stage(ctx, scene, 0);
-    drawBattleActors(ctx, scene, { action: 'straight' });
+    ellipse(ctx, casterX, 448, 58, 10, '#14293b32');
+    ellipse(ctx, 657 + reaction.displacementX, 448, 115, 15, '#14293b32');
+    drawBear(ctx, scene, {
+        timeMs: reacting
+            ? battleLayout.contactMs + Math.max(0, hitAge - timing.impactHoldMs)
+            : timeMs,
+        state: reacting ? 'hit' : 'stand',
+        recoil: reaction,
+    });
+    drawAtaho(ctx, scene, {
+        action: 'straight',
+        x: casterX,
+        timeMs: casterTime(timeMs),
+    });
     if (timeMs < timing.birthMs || timeMs >= timing.endMs)
         return;
     const motion = frame.reducedMotion ? 0.56 : 1;
     const birth = smooth((timeMs - timing.birthMs) / 180);
     const gather = smooth((timeMs - timing.birthMs) / (timing.mergedMs - timing.birthMs));
-    const radius = (18 + gather * 16) * birth;
-    const opacity = 1 - smooth((timeMs - 3300) / (timing.endMs - 3300));
+    const radius = (18 + gather * (mergedRadius - 18)) * birth;
+    const opacity = 1 - smooth((timeMs - 3800) / (timing.endMs - 3800));
     ctx.save();
     try {
         // 기존 점성 원화의 알파만 검은 실루엣으로 써서 구체와 목의 재질을 잇는다.
@@ -50,13 +85,11 @@ export function drawCompositeOrb(ctx, frame) {
         ctx.globalAlpha *= opacity * (frame.reducedMotion ? 0.72 : 1);
         if (gather < 1)
             drawGathering(ctx, scene, root, birth, gather, motion);
-        if (!frame.enhanced) {
-            ellipse(ctx, root.x, root.y, radius, radius, '#070a12');
-            return;
-        }
         const held = heldHead(root, Math.min(timeMs, timing.splitMs), motion);
         const stretch = smooth((timeMs - timing.stretchMs) / (timing.splitMs - timing.stretchMs));
-        if (timeMs >= timing.stretchMs && timeMs < timing.splitMs) {
+        if (frame.enhanced &&
+            timeMs >= timing.stretchMs &&
+            timeMs < timing.splitMs) {
             drawOrbitViscosity(ctx, {
                 compression: 0,
                 tether: {
@@ -69,23 +102,67 @@ export function drawCompositeOrb(ctx, frame) {
                     frame: 0,
                 },
             }, frame.assets.effects);
-            ellipse(ctx, root.x, root.y, (34 - stretch * 20) * birth, (34 - stretch * 20) * birth, '#070a12');
+            ellipse(ctx, root.x, root.y, (mergedRadius - stretch * 20) * birth, (mergedRadius - stretch * 20) * birth, '#070a12');
         }
-        else if (timeMs >= timing.splitMs) {
+        else if (frame.enhanced && timeMs >= timing.splitMs) {
             drawSeparation(ctx, scene, root, held, timeMs - timing.splitMs);
         }
-        const flight = clamp((timeMs - timing.splitMs) / timing.flightMs);
+        if (timeMs >= timing.arrivalMs) {
+            drawOrbImpact(ctx, scene, impact, hitAge);
+            return;
+        }
+        // 사출 전의 같은 머리에서 출발하고, 두 비교판 모두 같은 타점에 도착한다.
+        const flight = clamp((timeMs - timing.splitMs) / (timing.arrivalMs - timing.splitMs));
+        const arrivalCenterX = impact.x - headRadii(frame, radius, 1).x;
         const head = {
-            x: held.x + flight * flight * 480 * motion,
-            y: held.y + flight * 8 * motion,
+            x: held.x + flight * flight * (arrivalCenterX - held.x),
+            y: held.y +
+                (impact.y - held.y) * flight -
+                Math.sin(flight * Math.PI) * 8 * motion,
         };
-        const fade = 1 - smooth((timeMs - 3200) / 360);
-        const elongation = 1 + flight * (frame.reducedMotion ? 0.25 : 0.8);
-        ctx.globalAlpha *= fade;
-        ellipse(ctx, head.x, head.y, radius * elongation, radius / elongation, '#070a12');
+        const radii = headRadii(frame, radius, flight);
+        ellipse(ctx, head.x, head.y, radii.x, radii.y, '#070a12');
     }
     finally {
         ctx.restore();
+    }
+}
+/** 사출체의 끝 자세를 눌러 받아, 관통해 사라지는 대신 짧게 퍼져 소멸시킨다. */
+function drawOrbImpact(ctx, frame, point, age) {
+    if (age < 0 || age >= 420)
+        return;
+    const motion = frame.reducedMotion ? 0.56 : 1;
+    const compression = smooth(age / 80);
+    const fade = 1 - smooth((age - 75) / 260);
+    const arrivalRadii = headRadii(frame, mergedRadius, 1);
+    const radiusX = arrivalRadii.x * (1 - compression * 0.72) * fade;
+    const radiusY = (arrivalRadii.y + compression * 25 * motion) * fade;
+    ellipse(ctx, 
+    // 사출 때의 선단이 타점에 닿는 순간부터, 같은 외곽을 그 면에 눌러 이어 간다.
+    point.x - radiusX, point.y, radiusX, radiusY, '#070a12');
+    if (!frame.enhanced)
+        return;
+    const count = frame.reducedMotion ? 3 : 5;
+    for (let index = 0; index < count; index++) {
+        const local = age - 32 - index * 13;
+        if (local < 0 || local >= 320)
+            continue;
+        const p = local / 320;
+        const angle = -1.15 + (index / (count - 1)) * 2.2;
+        const distance = (18 + (44 + index * 6) * p) * motion;
+        drawOrbitViscosity(ctx, {
+            compression: 0,
+            droplet: {
+                point: {
+                    x: point.x + Math.cos(angle) * distance,
+                    y: point.y + Math.sin(angle) * distance + p * p * 24 * motion,
+                },
+                radius: (7 + (index % 2) * 3) * (1 - p * 0.82) * motion,
+                angle,
+                frame: Math.min(8, Math.floor(local / 38)),
+                alpha: smooth(local / 22) * (1 - smooth((p - 0.25) / 0.75)),
+            },
+        }, frame.assets.effects);
     }
 }
 function drawGathering(ctx, frame, root, birth, gather, motion) {

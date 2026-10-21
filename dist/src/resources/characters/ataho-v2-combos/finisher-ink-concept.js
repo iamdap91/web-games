@@ -1,4 +1,5 @@
 import { sampleActorPose } from './finisher-actors.js';
+import { sampleDemonDescent } from './demon-descent.js';
 const ink = '#120e15';
 const contactLight = '#fff0d2';
 function clamp(value) {
@@ -58,12 +59,16 @@ export function drawInkConceptOverlay(ctx, frame) {
     if (!moment)
         return;
     const finalTimeMs = Math.max(...frame.finisher.contacts.map((contact) => contact.plannedTimeMs));
+    const descent = sampleDemonDescent(frame.snapshot);
     for (const contact of moment.contacts) {
         const timeMs = frame.finisher.connectedOnly
             ? contact.timeMs
             : contact.plannedTimeMs;
         const ageMs = frame.snapshot.elapsedMs - timeMs;
         const final = contact.plannedTimeMs === finalTimeMs;
+        // 끝타의 백열핵은 급강하의 파열과 같은 시계로 한 번만 그린다.
+        if (final && descent)
+            continue;
         const strength = decay(ageMs, 10, final ? 70 : 46);
         if (!strength)
             continue;
@@ -91,9 +96,14 @@ export function inkConceptActorOpacity(frame, actorId) {
     const moment = sampleInkMoment(frame);
     if (!moment)
         return 1;
-    return moment.contacts.some((contact) => contact.actorId === actorId)
+    // 마지막 높은 도약은 하강 주체와 양손을 읽힌 뒤 암중 난타의 명암으로 돌아간다.
+    const descent = actorId === 'body' ? sampleDemonDescent(frame.snapshot) : undefined;
+    const contactOpacity = moment.contacts.some((contact) => contact.actorId === actorId)
         ? 1
         : moment.baseOpacity;
+    return descent
+        ? Math.max(contactOpacity, descent.bodyOpacity)
+        : contactOpacity;
 }
 export function inkConceptBodyOpacity(frame) {
     return inkConceptActorOpacity(frame, 'body');

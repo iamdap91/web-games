@@ -1,9 +1,10 @@
-import { gameImpact } from '../../cutscenes/game-effects.js';
+import { gameDust, gameImpact } from '../../cutscenes/game-effects.js';
 import { battleLayout } from './battle.js';
 import { clamp, ring, smooth } from './drawing.js';
 import { drawEffectLayer } from './effect-layer.js';
 import { drawEffectSprite } from './effect-sprite.js';
 import { drawHeadFirstFall, headFirstFallTiming } from './impact-resource.js';
+import { drawGameShard } from './technique-effect-resources.js';
 import { durationMs, height, width, } from './types.js';
 const timing = {
     shockEndMs: 150,
@@ -13,6 +14,61 @@ const timing = {
     lowDustDurationMs: 500,
     fadeStartMs: 3800,
     endMs: durationMs - 40,
+};
+const debrisGravity = 900;
+const debrisBounceRatio = 0.3;
+const debrisFriction = 0.56;
+const landingShards = [
+    {
+        delayMs: 0,
+        direction: -1,
+        offset: 54,
+        speedX: 144,
+        speedY: 166,
+        size: 6,
+        spin: -3.2,
+        layer: 'back',
+    },
+    {
+        delayMs: 28,
+        direction: 1,
+        offset: 58,
+        speedX: 173,
+        speedY: 188,
+        size: 6.8,
+        spin: 2.8,
+        layer: 'back',
+    },
+    {
+        delayMs: 62,
+        direction: -1,
+        offset: 72,
+        speedX: 158,
+        speedY: 203,
+        size: 4.8,
+        spin: -4.1,
+        layer: 'front',
+    },
+    {
+        delayMs: 90,
+        direction: 1,
+        offset: 76,
+        speedX: 196,
+        speedY: 176,
+        size: 5.5,
+        spin: 3.6,
+        layer: 'front',
+    },
+];
+export const compositeGroundDebrisTiming = {
+    firstLandMs: landingShards.map((shard) => headFirstFallTiming.contactMs +
+        timing.debrisDelayMs +
+        shard.delayMs +
+        ((2 * shard.speedY) / debrisGravity) * 1000),
+    secondLandMs: landingShards.map((shard) => headFirstFallTiming.contactMs +
+        timing.debrisDelayMs +
+        shard.delayMs +
+        ((2 * shard.speedY) / debrisGravity) * (1 + debrisBounceRatio) * 1000),
 };
 /** 보유 압축 파열을 얇게 눌러 지면 양옆으로 짧게 전달한다. */
 function drawLowShock(context, frame, point, age) {
@@ -75,6 +131,90 @@ function drawLowDust(context, frame, point, age, layer) {
         context.restore();
     }
 }
+/** 일부 돌은 짧은 비행을 끝낸 같은 위치에서 한 번 되튀고, 먼지와 함께 멎는다. */
+function drawLandingShards(context, frame, point, age, layer) {
+    const motion = frame.reducedMotion ? 0.55 : 1;
+    context.save();
+    clearContactFace(context, point);
+    context.beginPath();
+    context.rect(0, 0, width, point.y);
+    context.clip();
+    for (let index = 0; index < landingShards.length; index++) {
+        const shard = landingShards[index];
+        if (shard.layer !== layer || (frame.reducedMotion && index < 2))
+            continue;
+        const local = age - timing.debrisDelayMs - shard.delayMs;
+        if (local < 0)
+            continue;
+        const speedX = shard.direction * shard.speedX * motion;
+        const speedY = shard.speedY * motion;
+        const gravity = debrisGravity * motion;
+        const flightSeconds = (2 * speedY) / gravity;
+        const bounceSeconds = flightSeconds * debrisBounceRatio;
+        const elapsedSeconds = local / 1000;
+        const firstFlight = Math.min(elapsedSeconds, flightSeconds);
+        const afterLand = Math.max(0, elapsedSeconds - flightSeconds);
+        const bounce = Math.min(afterLand, bounceSeconds);
+        const restingMs = (afterLand - bounceSeconds) * 1000;
+        const fade = 1 - smooth((restingMs - 100) / 240);
+        if (fade <= 0)
+            continue;
+        const slide = clamp((afterLand - bounceSeconds) / 0.1);
+        const x = point.x +
+            shard.direction * shard.offset +
+            speedX * firstFlight +
+            speedX * debrisFriction * bounce +
+            speedX * debrisFriction * 0.1 * (slide - (slide * slide) / 2);
+        const size = shard.size * (frame.reducedMotion ? 0.8 : 1);
+        const floorY = point.y - size * 1.5;
+        const y = elapsedSeconds <= flightSeconds
+            ? floorY -
+                speedY * firstFlight +
+                (gravity * firstFlight * firstFlight) / 2
+            : floorY -
+                speedY * debrisBounceRatio * bounce +
+                (gravity * bounce * bounce) / 2;
+        context.save();
+        context.globalAlpha *= fade * smooth(local / 28);
+        context.translate(x, y);
+        context.rotate(index * 0.73 + shard.spin * (firstFlight + bounce * debrisFriction));
+        drawGameShard(context, frame, { point: { x: 0, y: 0 }, size, index });
+        context.restore();
+        // 착지 표시는 현재 돌을 쫓지 않고, 각 지면 접촉 때의 좌표에 고정한다.
+        const firstX = point.x + shard.direction * shard.offset + speedX * flightSeconds;
+        const firstDustMs = local - flightSeconds * 1000;
+        const secondDustMs = firstDustMs - bounceSeconds * 1000;
+        for (const landing of [
+            {
+                age: firstDustMs,
+                x: firstX,
+                durationMs: 320,
+                size: 58 + shard.size * 3,
+                alpha: 0.5,
+            },
+            {
+                age: secondDustMs,
+                x: firstX + speedX * debrisFriction * bounceSeconds,
+                durationMs: 180,
+                size: 38,
+                alpha: 0.24,
+            },
+        ]) {
+            if (landing.age < 0 || landing.age >= landing.durationMs)
+                continue;
+            context.save();
+            context.globalAlpha *= landing.alpha * (frame.reducedMotion ? 0.65 : 1);
+            gameDust(context, frame.assets.effects, {
+                x: landing.x,
+                y: point.y,
+                progress: landing.age / landing.durationMs,
+                size: landing.size * (frame.reducedMotion ? 0.72 : 1),
+            });
+            context.restore();
+        }
+    }
+    context.restore();
+}
 /** 배우·낙차·구도는 공유하고, 한 번의 착지에 지면 재질 반응을 덧붙인다. */
 export function drawCompositeGround(context, frame) {
     const scene = { ...frame, enhanced: true };
@@ -98,10 +238,11 @@ export function drawCompositeGround(context, frame) {
                 if (!frame.enhanced)
                     return;
                 drawLowDust(effectContext, scene, point, age, layer);
+                drawLandingShards(effectContext, scene, point, age, layer);
                 if (layer !== 'front')
                     return;
                 drawLowShock(effectContext, scene, point, age);
-                // 큰 돌의 밀집 대신 낮고 작은 파편만 남기고, 바닥 아래 궤도는 자른다.
+                // 초기의 군집 파열은 짧게 넘기고, 일부 돌의 실제 착지로 후반을 이어 간다.
                 effectContext.save();
                 clearContactFace(effectContext, point);
                 drawEffectLayer(effectContext, 'fx-iso-debris', { ...impact, timeMs: impact.timeMs - timing.debrisDelayMs }, {
@@ -109,7 +250,7 @@ export function drawCompositeGround(context, frame) {
                     point,
                     anchor: 'ground',
                     scale: 0.46,
-                    opacity: 0.72 * (1 - smooth((age - 690) / 360)),
+                    opacity: 0.55 * (1 - smooth((age - 220) / 180)),
                 });
                 effectContext.restore();
             }

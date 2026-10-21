@@ -1,0 +1,359 @@
+{
+  "createdDate": "2026-10-21",
+  "approval": "사용자: 응 저거 유지하도 새로 하나 만들어줘. 앞서 제안한 낮은 장전A와 전진 체중을 실은 수평 타격B를 먼저 맞추는 방식 승인.",
+  "characterId": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+  "previousCandidate": {
+    "commit": "0500c8a",
+    "record": "resources/ataho-v2-bongkwon-generation.json",
+    "motionKeys": ["bongkwon-south-east", "bongkwon-north-west"],
+    "preserve": true
+  },
+  "reference": {
+    "url": "https://www.youtube.com/shorts/YurjeycO3Vo",
+    "title": "철권 시리즈별 폴 붕권모음 #철권",
+    "uploader": "@2portz_man",
+    "captureDate": "2026-10-21",
+    "muted": true,
+    "browser": "Chrome DevTools · iab 연결 불가로 대안 사용",
+    "sourceVideoDownloaded": false,
+    "poses": [
+      {
+        "id": "A",
+        "phase": "낮은 장전",
+        "timeSeconds": 12.91,
+        "screenshotPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/references/charge-a-page.png",
+        "cropPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/references/charge-a-crop.png",
+        "cropRect": {
+          "x": 250,
+          "y": 730,
+          "width": 215,
+          "height": 238
+        },
+        "observation": "두 발을 넓게 벌리고 양 무릎·골반을 낮춘다. 상체가 전방으로 접히고 공격손이 허리 쪽으로 깊게 장전됨."
+      },
+      {
+        "id": "B",
+        "phase": "회전·전진 타격",
+        "timeSeconds": 13.21,
+        "screenshotPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/references/impact-b-page.png",
+        "cropPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/references/impact-b-crop.png",
+        "cropRect": {
+          "x": 400,
+          "y": 710,
+          "width": 265,
+          "height": 248
+        },
+        "observation": "등이 크게 보일 만큼 골반·몸통이 회전하고 공격팔은 어깨선에서 수평으로 뻗음. 양발이 넓게 지지하고 앞무릎이 굽혀짐."
+      }
+    ],
+    "limit": "B 주먹 끝은 원본 불꽃에 가려져 손 모양은 확정할 수 없음. 손·체형·의상은 승인된 아타호 같은 방향 원본을 기준으로 요청.",
+    "styleAndIdentity": "승인된 같은 방향 rotation과 격투 가드.96px는 캔버스이며 실제 캐릭터 높이 약60px를 유지하도록 요청.",
+    "codeViewed": false,
+    "sourceCodeExecuted": false,
+    "northWestRetryReferenceTransform": "인간A/B참조만 수평반전해 목표를 화면 왼쪽에 정렬. 아타호 기본 자세·키포즈 자체를 미러링하지 않음. 아타호 외형·방향은 원본 북서 rotation/guard를 그대로 입력."
+  },
+  "attemptLimitPerDirection": 2,
+  "attempts": [
+    {
+      "direction": "south-east",
+      "attempt": 1,
+      "method": "pro-reference-keypose-sheet",
+      "request": {
+        "width": 192,
+        "height": 96,
+        "no_background": true,
+        "style_image_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south-east.png?t=1791934584",
+        "style_copy": ["color_palette", "outline", "detail", "shading"],
+        "reference_images": [
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south-east.png?t=1791934584",
+            "usage": "APPROVED TIGER IDENTITY AND NATIVE PIXEL SCALE. Keep this exact character design, head size, body build, palette, clothing and target direction. Replace the standing body pose."
+          },
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/20373254-a8b7-4cfc-b867-722499b66e46/south-east/0.png?t=1791910950902",
+            "usage": "SAME TIGER DESIGN AND PIXEL SCALE ONLY. A96pxcanvas but actual sprite about60px tall. Do not copy the upright guard pose."
+          },
+          {
+            "usage": "POSE A ONLY: human attacker full body, deep bent knees, low hips, forward-folded torso, rear fist beside waist. Ignore human appearance, flames and surroundings. Repose the tiger in this body configuration.",
+            "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/references/charge-a-crop.png",
+            "encodingAtSubmission": "base64",
+            "base64Omitted": true
+          },
+          {
+            "usage": "POSE B ONLY: human attacker on LEFT, wide planted bent-knee stance, body rotated to expose back, shoulder-line right arm fully extended. Ignore opponent at right, flames, human appearance and surroundings. Repose the tiger in this body configuration.",
+            "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/references/impact-b-crop.png",
+            "encodingAtSubmission": "base64",
+            "base64Omitted": true
+          }
+        ],
+        "description": "192x96 transparent pixel SPRITE SHEET with exactly two96x96 cells. LEFT=A loaded chamber; RIGHT=B impact. Same approved tiger in both, same head size, outfit, native pixel scale and foot baseline near y82. The96px guard is a CANVAS: actual tiger is about60px tall. Keep full sprites/tails within their cells. Match the supplied low-top-down RPG pixel style. Human references supply POSES ONLY; preserve the tiger design completely. A: copy photographed A's deep bent-knee squat, wide grounded staggered feet, sunken hips and forward-folded coiled torso. Right closed fist tightly chambered at/behind the WAIST, elbow back, not beside cheek. Both feet planted, no knee lift. B: copy photographed B's wide low planted stance and huge pelvis/chest rotation. Front knee deeply bent, rear leg pushing back. Pelvis, head and shoulder drive forward over the front thigh. Torso uncoils enough to reveal much more jacket BACK, like reference B. The head still looks at the target. RIGHT arm fully extended horizontally along shoulder line, fist beyond the body silhouette BELOW the eyes, connected shoulder behind it. LEFT fist pulled back to waist. Whole-body weight behind one straight FIST strike, not shoulder contact. A and B need clearly different compressed/released silhouettes. Plain crisp character pixels, empty transparent surroundings, no text or painted effects. Target SCREEN RIGHT / south-east. A shows crouched tiger front/side. B rotates torso away from camera to show jacket back while head looks RIGHT along punch. Keep target direction, not frozen torso facing.",
+        "seed": 1792541001
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 81cb5bea-25b4-41e9-9462-6e8b00b87130\njob_id: 81cb5bea-25b4-41e9-9462-6e8b00b87130\nmodel: pro\ndescription: 192x96 transparent pixel SPRITE SHEET with exactly two96x96 cells. LEFT=A loaded chamber; RIGHT=B impact. Same approved tiger in both, same head size, outfit, native pixel scale and foot baseline near y82. The96px guard is a CANVAS: actual tiger is about60px tall. Keep full sprites/tails within their cells. Match the supplied low-top-down RPG pixel style. Human references supply POSES ONLY; preserve the tiger design completely. A: copy photographed A's deep bent-knee squat, wide grounded staggered feet, sunken hips and forward-folded coiled torso. Right closed fist tightly chambered at/behind the WAIST, elbow back, not beside cheek. Both feet planted, no knee lift. B: copy photographed B's wide low planted stance and huge pelvis/chest rotation. Front knee deeply bent, rear leg pushing back. Pelvis, head and shoulder drive forward over the front thigh. Torso uncoils enough to reveal much more jacket BACK, like reference B. The head still looks at the target. RIGHT arm fully extended horizontally along shoulder line, fist beyond the body silhouette BELOW the eyes, connected shoulder behind it. LEFT fist pulled back to waist. Whole-body weight behind one straight FIST strike, not shoulder contact. A and B need clearly different compressed/released silhouettes. Plain crisp character pixels, empty transparent surroundings, no text or painted effects. Target SCREEN RIGHT / south-east. A shows crouched tiger front/side. B rotates torso away from camera to show jacket back while head looks RIGHT along punch. Keep target direction, not frozen torso facing.\nsize: 192x96px\ntransparent: True\ncandidates: 1\nreferences: 4\nstyle_image: yes (color_palette, outline, detail, shading)\nseed: 1792541001\nasset_id: 93edb5b3-5bf6-51e7-b085-82f612d97e3d\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"81cb5bea-25b4-41e9-9462-6e8b00b87130\")"
+          }
+        ],
+        "isError": false
+      },
+      "jobId": "81cb5bea-25b4-41e9-9462-6e8b00b87130",
+      "chargedGenerations": 10,
+      "observation": "A는 낮은 무릎·허리 옆 장전, B는 앞무릎을 굽힌 전진 타격·등 쪽 회전. 사용자 포즈 검토 전.",
+      "sheet": {
+        "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/originals/south-east/sheet.png",
+        "width": 192,
+        "height": 96,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/81cb5bea-25b4-41e9-9462-6e8b00b87130/download",
+        "sha256": "3287057eb8bc0e3b59938fb148363fbd7e84225538095fd3d8f652fd0570ce23",
+        "byteSize": 6780,
+        "sourceTransport": "PixelLab get_image inline PNG"
+      },
+      "cells": [
+        {
+          "index": 0,
+          "phase": "charge",
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/selected/south-east/charge.png",
+          "localSha256": "61e8620348189fa746ca52faf081e3487f3d0c027d833490ee256f4fdcdb3c52",
+          "alphaBounds": [15, 22, 72, 86],
+          "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/originals/south-east/sheet.png",
+          "sourceSha256": "3287057eb8bc0e3b59938fb148363fbd7e84225538095fd3d8f652fd0570ce23",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "phase": "impact",
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/selected/south-east/impact.png",
+          "localSha256": "69a3d342b71b11e54d04647468ede4872d096f05bb0ec2e740ddf0ffd53d31cd",
+          "alphaBounds": [10, 18, 80, 85],
+          "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/originals/south-east/sheet.png",
+          "sourceSha256": "3287057eb8bc0e3b59938fb148363fbd7e84225538095fd3d8f652fd0570ce23",
+          "sourceRect": {
+            "x": 96,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "anchor": {
+        "x": 48,
+        "y": 86
+      },
+      "selectionStatus": "pending-user-keypose-review",
+      "motionKey": "bongkwon-keyposes-south-east"
+    },
+    {
+      "direction": "north-west",
+      "attempt": 1,
+      "method": "pro-reference-keypose-sheet",
+      "request": {
+        "width": 192,
+        "height": 96,
+        "no_background": true,
+        "style_image_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/north-west.png?t=1791934584",
+        "style_copy": ["color_palette", "outline", "detail", "shading"],
+        "reference_images": [
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/north-west.png?t=1791934584",
+            "usage": "APPROVED TIGER IDENTITY AND NATIVE PIXEL SCALE. Keep this exact character design, head size, body build, palette, clothing and target direction. Replace the standing body pose."
+          },
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/99953af3-a218-4462-ac92-63130a1547f6/north-west/0.png?t=1791912824544",
+            "usage": "SAME TIGER DESIGN AND PIXEL SCALE ONLY. A96pxcanvas but actual sprite about60px tall. Do not copy the upright guard pose."
+          },
+          {
+            "usage": "POSE A ONLY: human attacker full body, deep bent knees, low hips, forward-folded torso, rear fist beside waist. Ignore human appearance, flames and surroundings. Repose the tiger in this body configuration.",
+            "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/references/charge-a-crop.png",
+            "encodingAtSubmission": "base64",
+            "base64Omitted": true
+          },
+          {
+            "usage": "POSE B ONLY: human attacker on LEFT, wide planted bent-knee stance, body rotated to expose back, shoulder-line right arm fully extended. Ignore opponent at right, flames, human appearance and surroundings. Repose the tiger in this body configuration.",
+            "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/references/impact-b-crop.png",
+            "encodingAtSubmission": "base64",
+            "base64Omitted": true
+          }
+        ],
+        "description": "192x96 transparent pixel SPRITE SHEET with exactly two96x96 cells. LEFT=A loaded chamber; RIGHT=B impact. Same approved tiger in both, same head size, outfit, native pixel scale and foot baseline near y82. The96px guard is a CANVAS: actual tiger is about60px tall. Keep full sprites/tails within their cells. Match the supplied low-top-down RPG pixel style. Human references supply POSES ONLY; preserve the tiger design completely. A: copy photographed A's deep bent-knee squat, wide grounded staggered feet, sunken hips and forward-folded coiled torso. Right closed fist tightly chambered at/behind the WAIST, elbow back, not beside cheek. Both feet planted, no knee lift. B: copy photographed B's wide low planted stance and huge pelvis/chest rotation. Front knee deeply bent, rear leg pushing back. Pelvis, head and shoulder drive forward over the front thigh. Torso uncoils enough to reveal much more jacket BACK, like reference B. The head still looks at the target. RIGHT arm fully extended horizontally along shoulder line, fist beyond the body silhouette BELOW the eyes, connected shoulder behind it. LEFT fist pulled back to waist. Whole-body weight behind one straight FIST strike, not shoulder contact. A and B need clearly different compressed/released silhouettes. Plain crisp character pixels, empty transparent surroundings, no text or painted effects. Target SCREEN LEFT AND AWAY / north-west. Use rear-view tiger base. Reproject photographed action to this opposite target direction. Allow strong torso rotation but keep head aimed LEFT. Arm horizontal at shoulder line below eyes, never overhead.",
+        "seed": 1792541002
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 8f105072-4306-4e57-86e4-a8a1f89500b8\njob_id: 8f105072-4306-4e57-86e4-a8a1f89500b8\nmodel: pro\ndescription: 192x96 transparent pixel SPRITE SHEET with exactly two96x96 cells. LEFT=A loaded chamber; RIGHT=B impact. Same approved tiger in both, same head size, outfit, native pixel scale and foot baseline near y82. The96px guard is a CANVAS: actual tiger is about60px tall. Keep full sprites/tails within their cells. Match the supplied low-top-down RPG pixel style. Human references supply POSES ONLY; preserve the tiger design completely. A: copy photographed A's deep bent-knee squat, wide grounded staggered feet, sunken hips and forward-folded coiled torso. Right closed fist tightly chambered at/behind the WAIST, elbow back, not beside cheek. Both feet planted, no knee lift. B: copy photographed B's wide low planted stance and huge pelvis/chest rotation. Front knee deeply bent, rear leg pushing back. Pelvis, head and shoulder drive forward over the front thigh. Torso uncoils enough to reveal much more jacket BACK, like reference B. The head still looks at the target. RIGHT arm fully extended horizontally along shoulder line, fist beyond the body silhouette BELOW the eyes, connected shoulder behind it. LEFT fist pulled back to waist. Whole-body weight behind one straight FIST strike, not shoulder contact. A and B need clearly different compressed/released silhouettes. Plain crisp character pixels, empty transparent surroundings, no text or painted effects. Target SCREEN LEFT AND AWAY / north-west. Use rear-view tiger base. Reproject photographed action to this opposite target direction. Allow strong torso rotation but keep head aimed LEFT. Arm horizontal at shoulder line below eyes, never overhead.\nsize: 192x96px\ntransparent: True\ncandidates: 1\nreferences: 4\nstyle_image: yes (color_palette, outline, detail, shading)\nseed: 1792541002\nasset_id: 5dc913e6-1e44-56c4-a829-6e82ec985bd2\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"8f105072-4306-4e57-86e4-a8a1f89500b8\")"
+          }
+        ],
+        "isError": false
+      },
+      "jobId": "8f105072-4306-4e57-86e4-a8a1f89500b8",
+      "chargedGenerations": 10,
+      "observation": "A는 왼쪽을 향하지만 B는 오른쪽을 향함. A 재킷 등에 기본 원본에 없는 줄무늬가 생김. 원본 보관 후 방향·옷 무늬 보정을 요청.",
+      "selectionStatus": "rejected-facing-and-jacket-pattern",
+      "registeredForPlayback": false,
+      "sheet": {
+        "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/originals/north-west/sheet.png",
+        "width": 192,
+        "height": 96,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/8f105072-4306-4e57-86e4-a8a1f89500b8/download",
+        "sha256": "1d29c8666beb496aeb35406065db1e40a26e2e45d6a9be6316fb37db69d32979",
+        "byteSize": 5993,
+        "sourceTransport": "PixelLab get_image inline PNG"
+      }
+    },
+    {
+      "direction": "north-west",
+      "attempt": 2,
+      "method": "pro-reference-keypose-sheet",
+      "request": {
+        "width": 192,
+        "height": 96,
+        "no_background": true,
+        "style_image_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/north-west.png?t=1791934584",
+        "style_copy": ["color_palette", "outline", "detail", "shading"],
+        "reference_images": [
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/north-west.png?t=1791934584",
+            "usage": "APPROVED TIGER IDENTITY AND NATIVE PIXEL SCALE. Keep this exact character design, head size, body build, palette, clothing and target direction. Replace the standing body pose."
+          },
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/animations/99953af3-a218-4462-ac92-63130a1547f6/north-west/0.png?t=1791912824544",
+            "usage": "SAME TIGER DESIGN AND PIXEL SCALE ONLY. A96pxcanvas but actual sprite about60px tall. Do not copy the upright guard pose."
+          },
+          {
+            "usage": "POSE A, horizontally mirrored human photo for LEFT-facing target. Joint arrangement/weight only. Approved tiger bases supply appearance and rear camera.",
+            "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/references/charge-a-crop-left.png",
+            "encodingAtSubmission": "base64",
+            "base64Omitted": true
+          },
+          {
+            "usage": "POSE B, horizontally mirrored human photo for LEFT-facing target. Extended fist LEFT of torso. Joint arrangement/weight only, ignore opponent and flame.",
+            "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/references/impact-b-crop-left.png",
+            "encodingAtSubmission": "base64",
+            "base64Omitted": true
+          }
+        ],
+        "description": "Exactly TWO pixel-art poses, BOTH facing LEFT AND AWAY toward the SAME TARGET. 192x96 transparent sheet, two96x96 cells. Left cell=A low loaded crouch, right cell=B low forceful extended punch. Match the approved NORTH-WEST tiger base and guard: show the BACK of the reddish-brown jacket and rear/left of tiger head. The target remains SCREEN LEFT in BOTH cells. The mirrored human references now also attack LEFT; use their stance and arm geometry. B's closed fist must extend beyond the LEFT edge of its torso, never toward the sheet's right edge. Same tiger head size, clothing, palette and native60px body scale in both. A: both knees bent deeply, hips sunken, wide planted staggered feet; body folded/coiled, RIGHT fist tightly behind WAIST and elbow back, opposite hand near front ribs. B: push from rear leg and step LEFT, front knee bent deeply, pelvis and shoulders rotate and drive LEFT behind the horizontally extended RIGHT arm. Lower torso and head into the strike. Right fist below eyes along shoulder line, left fist pulled back to waist. Both feet stay grounded far apart. Use actual mirrored photograph A/B body weight, but keep the tiger proportions/design and rear-three-quarter camera. Plain unmarked reddish-brown jacket back, EXACTLY like approved rotation: no tiger stripes, logos, embroidery or new patterns on the jacket. Fur stripes belong ONLY to orange fur, not fabric. Both poses facing LEFT, with connected closed fist LEFT of head at impact. Wide low compact stance, forward-loaded body. Clean transparent character pixels only, empty surroundings, no captions, no painted effects.",
+        "seed": 1792541003
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: f40cc334-05ce-43f5-b9f9-5ee26a0c8f6a\njob_id: f40cc334-05ce-43f5-b9f9-5ee26a0c8f6a\nmodel: pro\ndescription: Exactly TWO pixel-art poses, BOTH facing LEFT AND AWAY toward the SAME TARGET. 192x96 transparent sheet, two96x96 cells. Left cell=A low loaded crouch, right cell=B low forceful extended punch. Match the approved NORTH-WEST tiger base and guard: show the BACK of the reddish-brown jacket and rear/left of tiger head. The target remains SCREEN LEFT in BOTH cells. The mirrored human references now also attack LEFT; use their stance and arm geometry. B's closed fist must extend beyond the LEFT edge of its torso, never toward the sheet's right edge. Same tiger head size, clothing, palette and native60px body scale in both. A: both knees bent deeply, hips sunken, wide planted staggered feet; body folded/coiled, RIGHT fist tightly behind WAIST and elbow back, opposite hand near front ribs. B: push from rear leg and step LEFT, front knee bent deeply, pelvis and shoulders rotate and drive LEFT behind the horizontally extended RIGHT arm. Lower torso and head into the strike. Right fist below eyes along shoulder line, left fist pulled back to waist. Both feet stay grounded far apart. Use actual mirrored photograph A/B body weight, but keep the tiger proportions/design and rear-three-quarter camera. Plain unmarked reddish-brown jacket back, EXACTLY like approved rotation: no tiger stripes, logos, embroidery or new patterns on the jacket. Fur stripes belong ONLY to orange fur, not fabric. Both poses facing LEFT, with connected closed fist LEFT of head at impact. Wide low compact stance, forward-loaded body. Clean transparent character pixels only, empty surroundings, no captions, no painted effects.\nsize: 192x96px\ntransparent: True\ncandidates: 1\nreferences: 4\nstyle_image: yes (color_palette, outline, detail, shading)\nseed: 1792541003\nasset_id: 590405aa-0c00-5412-84ea-2ad4c4c3dce4\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"f40cc334-05ce-43f5-b9f9-5ee26a0c8f6a\")"
+          }
+        ],
+        "isError": false
+      },
+      "jobId": "f40cc334-05ce-43f5-b9f9-5ee26a0c8f6a",
+      "chargedGenerations": 10,
+      "sheet": {
+        "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/refinement-direction/north-west/sheet.png",
+        "width": 192,
+        "height": 96,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/f40cc334-05ce-43f5-b9f9-5ee26a0c8f6a/download",
+        "sha256": "797673e72020328b8f7a5d31a3f07e086f6c675adbd596b664ed51b5cd86632b",
+        "byteSize": 5216,
+        "sourceTransport": "PixelLab get_image inline PNG"
+      },
+      "cells": [
+        {
+          "index": 0,
+          "phase": "charge",
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/selected/north-west/charge.png",
+          "localSha256": "952419ef887e92ae3797c5882ba8e6bc09f69a29ca8e9e2e374983804feabd4c",
+          "alphaBounds": [24, 17, 82, 81],
+          "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/refinement-direction/north-west/sheet.png",
+          "sourceSha256": "797673e72020328b8f7a5d31a3f07e086f6c675adbd596b664ed51b5cd86632b",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        },
+        {
+          "index": 1,
+          "phase": "impact",
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/selected/north-west/impact.png",
+          "localSha256": "86c72cb7a358f5fc48609c9696dcae60f3be4de463c5a013d246187f31364f45",
+          "alphaBounds": [6, 17, 88, 81],
+          "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/refinement-direction/north-west/sheet.png",
+          "sourceSha256": "797673e72020328b8f7a5d31a3f07e086f6c675adbd596b664ed51b5cd86632b",
+          "sourceRect": {
+            "x": 96,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          }
+        }
+      ],
+      "anchor": {
+        "x": 48,
+        "y": 81
+      },
+      "selectionStatus": "pending-user-keypose-review",
+      "motionKey": "bongkwon-keyposes-north-west"
+    }
+  ],
+  "totalChargedGenerations": 30,
+  "submissionFailures": {
+    "validation": "최초 description2000자 초과 요청은 검증 단계에서 거절. 생성 접수 없음.",
+    "transientService": "한 번의 DB 연결 오류 후 활성 작업 없음과 잔량1902.35 유지 확인 후 재접수. 오류 접수 비용0 확인."
+  },
+  "selection": {
+    "status": "pending-keypose-review",
+    "directions": ["south-east", "north-west"],
+    "expandedDirections": false,
+    "intermediateFramesGenerated": false,
+    "sourcePixelsModified": false,
+    "selectedAttempts": [
+      {
+        "direction": "south-east",
+        "attempt": 1,
+        "jobId": "81cb5bea-25b4-41e9-9462-6e8b00b87130",
+        "motionKey": "bongkwon-keyposes-south-east"
+      },
+      {
+        "direction": "north-west",
+        "attempt": 2,
+        "jobId": "f40cc334-05ce-43f5-b9f9-5ee26a0c8f6a",
+        "motionKey": "bongkwon-keyposes-north-west"
+      }
+    ],
+    "motionKeys": [
+      "bongkwon-keyposes-south-east",
+      "bongkwon-keyposes-north-west"
+    ]
+  },
+  "intendedCells": {
+    "sheetWidth": 192,
+    "sheetHeight": 96,
+    "columns": 2,
+    "cellWidth": 96,
+    "cellHeight": 96,
+    "left": "A-charge",
+    "right": "B-impact"
+  },
+  "cellExtraction": "고정96×96두 칸을 손실 없이 분리. 원본 시트·픽셀 보존, 리사이즈·가필·캐릭터 미러링 없음.",
+  "playback": {
+    "durationSecondsPerPose": 0.8,
+    "purpose": "A/B 핵심 자세 번갈아 비교",
+    "intermediateFramesGenerated": false
+  },
+  "counts": {
+    "directions": 2,
+    "selectedKeyPoses": 4,
+    "archivedKeyPoses": 2,
+    "generatedSheets": 3,
+    "libraryEntriesAdded": 2,
+    "totalLibraryEntries": 100
+  }
+}

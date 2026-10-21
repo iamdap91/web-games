@@ -1,6 +1,6 @@
 import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
 import { resourceUrl } from '../../catalog/resource-url.js';
-import { findStudioItem, filterStudioItems, studioGroups, studioItems, } from './catalog.js';
+import { findStudioItem, filterStudioItems, readStudioSelection, studioGroups, studioItems, } from './catalog.js';
 import { StudioViewport } from './viewport.js';
 function element(id, kind) {
     const value = document.getElementById(id);
@@ -15,8 +15,9 @@ class StudioScreen {
     search = element('search', HTMLInputElement);
     seek = element('seek', HTMLInputElement);
     viewport;
-    current = findStudioItem(new URL(location.href).searchParams.get('item')) ??
-        studioItems[0];
+    initialSelection = readStudioSelection(new URL(location.href));
+    current = this.initialSelection.item ?? studioItems[0];
+    variant = this.initialSelection.variant;
     group = this.current.group;
     state;
     metadataKey = '';
@@ -90,6 +91,16 @@ class StudioScreen {
                 if (event.currentTarget instanceof HTMLInputElement)
                     this.viewport.send({ action, value: event.currentTarget.checked });
             }, { signal });
+        element('variant', HTMLSelectElement).addEventListener('change', (event) => {
+            const select = event.currentTarget;
+            if (!(select instanceof HTMLSelectElement) ||
+                this.state?.exporting ||
+                !this.state?.variantOptions?.some((option) => option.value === select.value))
+                return;
+            this.variant = select.value;
+            this.writeLocation('push');
+            this.viewport.send({ action: 'variant', value: this.variant });
+        }, { signal });
         element('facing', HTMLSelectElement).addEventListener('change', (event) => {
             if (event.currentTarget instanceof HTMLSelectElement)
                 this.viewport.send({
@@ -98,7 +109,16 @@ class StudioScreen {
                 });
         }, { signal });
         for (const action of ['gif', 'png', 'cancel-export'])
-            element(action, HTMLButtonElement).addEventListener('click', () => this.viewport.send({ action }), { signal });
+            element(action, HTMLButtonElement).addEventListener('click', () => {
+                if (action === 'gif' && this.state?.gifRange && !this.sendGifRange())
+                    return;
+                this.viewport.send({ action });
+            }, { signal });
+        for (const id of ['gif-start', 'gif-end']) {
+            const input = element(id, HTMLInputElement);
+            input.addEventListener('input', () => this.sendGifRange({ reportInvalid: false }), { signal });
+            input.addEventListener('change', () => this.sendGifRange(), { signal });
+        }
         window.addEventListener('keydown', (event) => {
             if (event.target instanceof Element &&
                 event.target.closest('input,select,textarea,button,a,summary'))
@@ -119,7 +139,8 @@ class StudioScreen {
         window.addEventListener('popstate', () => {
             const url = new URL(location.href);
             this.search.value = url.searchParams.get('search') ?? '';
-            this.select(findStudioItem(url.searchParams.get('item')) ?? studioItems[0], 'none');
+            const selection = readStudioSelection(url);
+            this.select(selection.item ?? studioItems[0], 'none', selection.variant);
         }, { signal });
         window.addEventListener('pagehide', () => this.dispose(), {
             once: true,
@@ -127,7 +148,7 @@ class StudioScreen {
         });
         registerEmbeddedScene(() => this.dispose());
         element('record', HTMLAnchorElement).href = resourceUrl('resources/cutscene-studio.json').href;
-        this.select(this.current, 'replace');
+        this.select(this.current, 'replace', this.variant);
     }
     filtered() {
         return filterStudioItems(this.group, this.search.value);
@@ -154,8 +175,9 @@ class StudioScreen {
             `${items.length} / ${studioItems.filter((item) => item.group === this.group).length}`;
         element('empty', HTMLElement).hidden = items.length > 0;
     }
-    select(item, historyMode = 'push') {
+    select(item, historyMode = 'push', variant) {
         this.current = item;
+        this.variant = variant;
         this.group = item.group;
         this.state = undefined;
         this.metadataKey = '';
@@ -172,9 +194,12 @@ class StudioScreen {
             'loop-option',
             'compare-option',
             'facing-option',
+            'variant-option',
             'reduced-option',
             'png',
             'gif',
+            'gif-range',
+            'gif-download',
             'cancel-export',
             'comparison-labels',
         ])
@@ -183,11 +208,15 @@ class StudioScreen {
         this.renderList();
         if (historyMode !== 'none')
             this.writeLocation(historyMode);
-        this.viewport.show(item);
+        this.viewport.show(item, this.variant);
     }
     writeLocation(mode) {
         const url = new URL(location.href);
         url.searchParams.set('item', this.current.id);
+        if (this.variant)
+            url.searchParams.set('variant', this.variant);
+        else
+            url.searchParams.delete('variant');
         if (this.search.value)
             url.searchParams.set('search', this.search.value);
         else
@@ -210,18 +239,24 @@ class StudioScreen {
         const { state, capabilities } = message;
         const initial = !this.state;
         this.state = state;
+        if (this.variant !== state.variant) {
+            this.variant = state.variant;
+            this.writeLocation('replace');
+        }
         if (initial)
             this.viewport.send({
                 action: 'speed',
                 value: Number(element('speed', HTMLSelectElement).value),
             });
         const ready = !state.loading;
-        this.setReady(ready);
+        this.setReady(ready && !(state.exporting && state.gifRange));
         element('viewport', HTMLElement).setAttribute('aria-busy', String(!ready));
         element('viewport', HTMLElement).dataset.item = this.current.id;
         element('viewport', HTMLElement).dataset.timeMs = String(state.timeMs);
         element('viewport', HTMLElement).dataset.playing = String(state.playing);
         element('title', HTMLElement).textContent = state.title;
+        element('origin', HTMLElement).textContent =
+            this.current.variantOrigins[state.variant ?? ''] ?? this.current.origin;
         element('description', HTMLElement).textContent = state.description;
         this.seek.max = String(state.durationMs);
         this.seek.value = String(state.timeMs);
@@ -237,20 +272,59 @@ class StudioScreen {
                 : state.timeMs >= state.durationMs
                     ? '감상 완료'
                     : '일시정지 · 무음';
-        for (const action of ['loop', 'compare', 'facing', 'reduced'])
+        for (const action of [
+            'loop',
+            'compare',
+            'facing',
+            'variant',
+            'reduced',
+        ])
             element(`${action}-option`, HTMLElement).hidden =
                 !capabilities.includes(action) ||
-                    (action === 'facing' && (state.facingOptions?.length ?? 0) < 2);
+                    (action === 'facing' && (state.facingOptions?.length ?? 0) < 2) ||
+                    (action === 'variant' && !state.variantOptions?.length);
+        element('variant', HTMLSelectElement).disabled =
+            !ready || !!state.exporting;
         for (const action of ['gif', 'png']) {
             const button = element(action, HTMLButtonElement);
             button.hidden = !capabilities.includes(action);
             button.disabled = !ready || !!state.exporting;
+        }
+        const range = state.gifRange;
+        element('gif-range', HTMLElement).hidden =
+            !capabilities.includes('gifRange') || !range;
+        for (const [id, value] of [
+            ['gif-start', range?.startMs],
+            ['gif-end', range?.endMs],
+        ]) {
+            const input = element(id, HTMLInputElement);
+            input.disabled = !ready || !!state.exporting;
+            input.max = String(state.durationMs / 1000);
+            if (value !== undefined && document.activeElement !== input)
+                input.value = String(value / 1000);
+        }
+        element('gif', HTMLButtonElement).textContent = range
+            ? range.startMs === 0 && range.endMs === state.durationMs
+                ? '전체 GIF 만들기'
+                : '구간 GIF 만들기'
+            : '연출 GIF 저장';
+        const download = element('gif-download', HTMLAnchorElement);
+        download.hidden = !ready || !!state.exporting || !state.exportDownload;
+        if (state.exportDownload) {
+            download.href = state.exportDownload.url;
+            download.download = state.exportDownload.fileName;
+        }
+        else {
+            download.removeAttribute('href');
+            download.removeAttribute('download');
         }
         element('cancel-export', HTMLButtonElement).hidden =
             !state.exporting || !capabilities.includes('cancelExport');
         element('loop', HTMLInputElement).checked = state.loop ?? false;
         element('compare', HTMLInputElement).checked = state.compare ?? false;
         element('reduced', HTMLInputElement).checked = state.reducedMotion ?? false;
+        element('reduced', HTMLInputElement).disabled =
+            !ready || !!(state.exporting && state.gifRange);
         element('viewport', HTMLElement).classList.toggle('comparing', state.compare ?? false);
         element('comparison-labels', HTMLElement).hidden = !state.compare;
         const comparisonLabels = element('comparison-labels', HTMLElement);
@@ -264,7 +338,12 @@ class StudioScreen {
             : '기본 장면과 비교';
         element('export-status', HTMLOutputElement).textContent =
             state.exportStatus ?? '';
-        const key = `${this.current.id}:${JSON.stringify(state.facingOptions)}:${JSON.stringify(state.beats)}`;
+        const key = JSON.stringify({
+            itemId: this.current.id,
+            facingOptions: state.facingOptions,
+            variantOptions: state.variantOptions,
+            beats: state.beats,
+        });
         if (key !== this.metadataKey) {
             this.metadataKey = key;
             const beats = element('beats', HTMLElement);
@@ -277,17 +356,24 @@ class StudioScreen {
                 button.addEventListener('click', () => this.viewport.send({ action: 'seek', value: beat.timeMs }), { signal: this.events.signal });
                 beats.append(button);
             }
-            const facing = element('facing', HTMLSelectElement);
-            facing.replaceChildren();
-            for (const choice of state.facingOptions ?? []) {
-                const option = document.createElement('option');
-                option.value = choice.value;
-                option.textContent = choice.label;
-                facing.append(option);
+            for (const [id, options] of [
+                ['facing', state.facingOptions],
+                ['variant', state.variantOptions],
+            ]) {
+                const select = element(id, HTMLSelectElement);
+                select.replaceChildren();
+                for (const choice of options ?? []) {
+                    const option = document.createElement('option');
+                    option.value = choice.value;
+                    option.textContent = choice.label;
+                    select.append(option);
+                }
             }
         }
         if (state.facing)
             element('facing', HTMLSelectElement).value = state.facing;
+        if (state.variant)
+            element('variant', HTMLSelectElement).value = state.variant;
     }
     stepFrame(direction) {
         if (this.state)
@@ -295,6 +381,30 @@ class StudioScreen {
                 action: 'seek',
                 value: this.state.timeMs + (direction * 1000) / 24,
             });
+    }
+    sendGifRange(options = {}) {
+        const start = element('gif-start', HTMLInputElement);
+        const end = element('gif-end', HTMLInputElement);
+        start.setCustomValidity('');
+        end.setCustomValidity('');
+        const invalid = [start, end].find((input) => !input.checkValidity());
+        if (invalid) {
+            if (options.reportInvalid !== false)
+                invalid.reportValidity();
+            return false;
+        }
+        const startMs = Math.round(start.valueAsNumber * 1000);
+        const endMs = Math.round(end.valueAsNumber * 1000);
+        if (!Number.isFinite(startMs) || !Number.isFinite(endMs))
+            return false;
+        if (endMs <= startMs) {
+            end.setCustomValidity('끝 시각은 시작 시각보다 뒤여야 합니다.');
+            if (options.reportInvalid !== false)
+                end.reportValidity();
+            return false;
+        }
+        this.viewport.send({ action: 'gif-range', value: { startMs, endMs } });
+        return true;
     }
     step(direction) {
         const items = this.filtered();

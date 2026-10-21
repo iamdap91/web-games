@@ -1,7 +1,7 @@
 {
   "version": 1,
   "date": "2026-10-20",
-  "scope": "사용자가 제공한 10개 완성 컷 구성의 아타호·서리갈기 곰왕 응용",
+  "scope": "기존 아타호·곰왕 원화 및 로컬 효과로 구성한 기법 조합14유형20버전. 연출실에서 유형을 고른 뒤 하단에서 바리에이션을 선택한다. 실제 렌더러20개의 제작 기록과 날짜별 변경 이력을 보존한다.",
   "actors": {
     "hero": "ai/ataho-v2",
     "target": "ai/monster-hoarfrost-bear",
@@ -27,172 +27,821 @@
   "cuts": [
     {
       "id": "background-run",
-      "name": "배경 동화",
-      "durationSeconds": 3.3,
+      "name": "질풍 돌격",
+      "durationSeconds": 2.1316666666666664,
       "stage": "3D world + 2D actor cards",
-      "description": "게임 숲길의 낮은 사선 카메라가 아타호와 함께 후퇴한다. 질주 끝0.30초에33→50m/s로 치고 나가 같은 속도로 도약한다. 배경 스미어를1~2코마씩 섞고, 착지 뒤 구도를 정착시켜 어퍼컷 한 번으로 끝낸다.",
+      "description": "낮은 사선 카메라와 배경 스미어를 같은 질주에 묶고 끝 스퍼트에서 빠르게 도약한다. 착지 뒤 짧게 접촉을 받아 곰왕을 방출하고 어퍼컷 회수를 드러낸다.",
       "beats": [
         {
-          "timeSeconds": 0.16,
+          "timeSeconds": 0.05333333333333334,
           "label": "사선 동행 · 급가속"
         },
         {
-          "timeSeconds": 0.9583333333333334,
+          "timeSeconds": 0.5855555555555556,
           "label": "질주 · 배경 스미어 2코마"
         },
         {
-          "timeSeconds": 1.55,
-          "label": "끝 스퍼트 · 33→50m/s"
+          "timeSeconds": 1.0333333333333334,
+          "label": "끝 스퍼트"
         },
         {
-          "timeSeconds": 1.85,
+          "timeSeconds": 1.18,
           "label": "짧은 도약 · 배경 스미어"
         },
         {
-          "timeSeconds": 2.25,
+          "timeSeconds": 1.4466666666666665,
           "label": "타격 구도 정착"
         },
         {
-          "timeSeconds": 2.46,
-          "label": "주먹 접촉 · 짧은 정지"
+          "timeSeconds": 1.6566666666666665,
+          "label": "주먹 접촉 · 45ms 힘 받기"
         },
         {
-          "timeSeconds": 3,
+          "timeSeconds": 1.8183333333333334,
+          "label": "접촉광 회수 · 피격 방출"
+        },
+        {
+          "timeSeconds": 2.0316666666666667,
           "label": "회수 · 곰왕 쓰러짐"
+        }
+      ],
+      "techniques": ["배경 동화", "스미어 프레임", "블러"]
+    },
+    {
+      "id": "already-cut",
+      "name": "잔영 일격",
+      "durationSeconds": 2.7216666666666667,
+      "stage": "3D world + 2D actor cards",
+      "techniques": ["마와리코미", "스트로보", "스미어 프레임", "지연 타격"],
+      "description": "가속 반주 뒤 세 코마와 여섯 잔상으로 관통한다. 잔상을 걷은 정적 뒤 여덟 지연 타격이 몸을 밀고, 팔의 긴장을 풀어 잔심을 남긴다.",
+      "beats": [
+        {
+          "timeSeconds": 0,
+          "label": "가속 360°"
+        },
+        {
+          "timeSeconds": 0.9,
+          "label": "1코마 × 3 · 잔상"
+        },
+        {
+          "timeSeconds": 1.3083333333333333,
+          "label": "잔상을 걷은 뒤 정적"
+        },
+        {
+          "timeSeconds": 1.875,
+          "label": "팔 풀기 · 8겹 지연 타격"
+        },
+        {
+          "timeSeconds": 2.275,
+          "label": "어깨를 편 잔심"
+        },
+        {
+          "timeSeconds": 2.6016666666666666,
+          "label": "쓰러짐 완료 · 정지"
         }
       ]
     },
     {
-      "id": "already-cut",
-      "name": "이미 때렸다",
-      "durationSeconds": 3.9,
-      "stage": "3D world + 2D actor cards"
-    },
-    {
       "id": "falling-background",
-      "name": "낙하 배경 동화",
-      "durationSeconds": 3.7,
+      "name": "낙성 강타",
+      "durationSeconds": 2.673333333333333,
       "stage": "3D world + 2D actor cards",
-      "description": "게임 바위·식생으로 재구성한 협곡을 나선 추적 낙하한 뒤 마지막0.42초에31→51m/s로 가속한다. 카메라가25ms 늦게 따라와 몸도 아래로 파고들며 접촉 전에 구도를 회수한다. 머리부터 떨어지는 장은 기존 점프 원본의 카드 회전이며 새 낙하 자세를 그린 재현은 아니다.",
+      "description": "협곡의 나선 추적 낙하를 빠르게 쌓고 마지막 가속에서 내려찍기를 뽑는다. 접촉 뒤 곧바로 착지하며, 기존 점프 원본을 회전한 낙하와 보유 내려찍기 원화를 사용한다.",
       "beats": [
         {
           "timeSeconds": 0,
           "label": "머리부터 낙하 · 나선 추적"
         },
         {
-          "timeSeconds": 1,
+          "timeSeconds": 0.6666666666666666,
           "label": "낙하 가속 · 배경만 세로 스미어"
         },
         {
-          "timeSeconds": 1.88,
+          "timeSeconds": 1.2533333333333332,
           "label": "낙하 중 자세 회복"
         },
         {
-          "timeSeconds": 2.16,
-          "label": "마지막 하강 가속 · 31→51m/s"
-        },
-        {
-          "timeSeconds": 2.22,
+          "timeSeconds": 1.5933333333333333,
           "label": "양손 내려찍기 장전"
         },
         {
-          "timeSeconds": 2.28,
+          "timeSeconds": 1.6533333333333333,
+          "label": "마지막 하강 가속"
+        },
+        {
+          "timeSeconds": 1.7733333333333332,
           "label": "카메라 지연 · 본체 하강"
         },
         {
-          "timeSeconds": 2.46,
+          "timeSeconds": 1.8333333333333333,
           "label": "접촉 구도 회수"
         },
         {
-          "timeSeconds": 2.58,
+          "timeSeconds": 1.9533333333333334,
           "label": "공중 접촉 · 앙각 정착"
         },
         {
-          "timeSeconds": 3.3,
-          "label": "착지 · 곰왕 쓰러짐"
+          "timeSeconds": 2.293333333333333,
+          "label": "빠른 착지 · 먼지 발생"
+        },
+        {
+          "timeSeconds": 2.533333333333333,
+          "label": "먼지 회수 · 곰왕 쓰러짐"
         }
-      ]
+      ],
+      "techniques": ["배경 동화", "마와리코미", "블러", "속도선·유선"]
     },
     {
       "id": "aerial-pursuit",
-      "name": "공중 추격 연타",
-      "durationSeconds": 4.2,
+      "name": "승천 연격",
+      "durationSeconds": 3.131666666666667,
       "stage": "3D world + 2D actor cards",
-      "description": "어퍼컷으로 띄운 뒤 잽과 정권을 번갈아 네 번 추격한다. 0.50→0.42→0.36→0.32초로 박자를 좁히고, 마지막 추격 위치에서 장전한 뒤0.40초 급강하로 내려찍는다. 네 구도에서 두 배우를 계속 보여준다.",
+      "description": "어퍼컷으로 띄운 뒤 잽·정권 네 타의 준비와 급신전·추격을 대비한다. 마지막 급강하의 타점 앞에서 흐림을 걷고, 접촉·착지로 힘을 마무리한다.",
       "beats": [
         {
-          "timeSeconds": 0.28,
+          "timeSeconds": 0.185,
           "label": "어퍼컷 접촉"
         },
         {
-          "timeSeconds": 0.85,
+          "timeSeconds": 0.6583333333333333,
           "label": "공중 1타 · 잽"
         },
         {
-          "timeSeconds": 1.32,
+          "timeSeconds": 1.0516666666666667,
           "label": "공중 2타 · 정권"
         },
         {
-          "timeSeconds": 1.71,
+          "timeSeconds": 1.3916666666666668,
           "label": "공중 3타 · 잽"
         },
         {
-          "timeSeconds": 2.05,
+          "timeSeconds": 1.6983333333333335,
           "label": "공중 4타 · 정권"
         },
         {
-          "timeSeconds": 2.25,
+          "timeSeconds": 1.8733333333333335,
           "label": "마지막 추격 · 내려찍기 장전"
         },
         {
-          "timeSeconds": 2.5,
+          "timeSeconds": 1.9983333333333335,
           "label": "0.40초 급강하 시작"
         },
         {
-          "timeSeconds": 2.9,
+          "timeSeconds": 2.363333333333333,
+          "label": "타점 선명화 · 흐림 이탈"
+        },
+        {
+          "timeSeconds": 2.3983333333333334,
           "label": "원본 5번 · 지면 접촉"
         },
         {
-          "timeSeconds": 3.45,
+          "timeSeconds": 2.805,
           "label": "앙각 정지"
+        }
+      ],
+      "techniques": ["연속 앵글 전환", "속도선·유선", "블러"]
+    },
+    {
+      "id": "spiral-stairs",
+      "name": "나선 비격",
+      "durationSeconds": 2.19,
+      "stage": "3D world + 2D actor cards",
+      "techniques": ["배경 동화", "마와리코미", "블러", "속도선·유선"],
+      "description": "난간 없는60칸의 하이·근접·로우 구도를 빠르게 잇는다. 도약의 흐림과 속도선을 접촉 전에 걷어 공중 내려찍기와 빠른 꼭대기 착지를 선명하게 남긴다.",
+      "beats": [
+        {
+          "timeSeconds": 0,
+          "label": "60칸 · 높은 시점에서 진입"
+        },
+        {
+          "timeSeconds": 0.5,
+          "label": "허공에서 파고드는 카메라"
+        },
+        {
+          "timeSeconds": 0.8933333333333334,
+          "label": "로우 앵글 구간 압축"
+        },
+        {
+          "timeSeconds": 1.0933333333333333,
+          "label": "나선 가속 · 흐림·속도선"
+        },
+        {
+          "timeSeconds": 1.1333333333333333,
+          "label": "꼭대기 도약 · 배경 스미어"
+        },
+        {
+          "timeSeconds": 1.7833333333333332,
+          "label": "배경·타점 선명하게 회수"
+        },
+        {
+          "timeSeconds": 1.8333333333333333,
+          "label": "공중 내려찍기 접촉"
+        },
+        {
+          "timeSeconds": 1.9633333333333332,
+          "label": "빠른 꼭대기 착지"
+        },
+        {
+          "timeSeconds": 2.09,
+          "label": "꼭대기 착지 · 종결"
         }
       ]
     },
     {
-      "id": "spiral-stairs",
-      "name": "나선 계단 질주",
-      "durationSeconds": 3.05,
-      "stage": "3D world + 2D actor cards"
-    },
-    {
       "id": "bullet-counter",
-      "name": "불릿 타임 반격",
-      "durationSeconds": 3.5,
-      "stage": "3D world + 2D actor cards"
+      "name": "찰나 반격",
+      "durationSeconds": 2.5833333333333335,
+      "stage": "3D world + 2D actor cards",
+      "techniques": ["불릿 타임", "마와리코미", "스미어 프레임", "블러"],
+      "description": "곰왕 공격을 뛰어넘고 세계가 느려지는 동안103° 궤도를 돈다. 반격의 주먹과 카메라가 함께 급신전해 명중에서 멈춘 뒤 반동과 가속 착지로 정착한다.",
+      "beats": [
+        {
+          "timeSeconds": 0,
+          "label": "곰왕 원본 공격"
+        },
+        {
+          "timeSeconds": 0.3866666666666666,
+          "label": "뛰어넘기"
+        },
+        {
+          "timeSeconds": 0.6533333333333333,
+          "label": "0.11초 → 1.12초 · 103°"
+        },
+        {
+          "timeSeconds": 1.7733333333333334,
+          "label": "반격 · 앙각"
+        },
+        {
+          "timeSeconds": 1.9633333333333334,
+          "label": "첫 잽 신전 · 실제 접촉"
+        },
+        {
+          "timeSeconds": 2.2033333333333336,
+          "label": "착지 · 가속 복귀와 작은 먼지"
+        },
+        {
+          "timeSeconds": 2.4833333333333334,
+          "label": "쓰러짐 완료 · 착지 정지"
+        }
+      ]
     },
     {
       "id": "orbit-2d",
-      "name": "마와리코미 · 2D 시차",
-      "durationSeconds": 3.5,
-      "stage": "2D depth-sorted layers + original directional poses"
+      "name": "반월 회격",
+      "durationSeconds": 2.136666666666667,
+      "stage": "2D depth-sorted layers + original directional poses",
+      "techniques": ["마와리코미", "멀티플레인 카메라"],
+      "description": "초반 시차를 읽힌 뒤 반주 중간을 빠르게 지나 반대편 구도로 정착한다. 장전 뒤 서쪽 어퍼컷을 짧게 뽑고 곰왕이 빠르게 밀렸다 돌아온다. 방향별 원화와 깊이 정렬을 유지한다.",
+      "beats": [
+        {
+          "timeSeconds": 0,
+          "label": "동쪽 구도 · 반주 시작"
+        },
+        {
+          "timeSeconds": 0.6733333333333333,
+          "label": "빠른 반주 · 등 뒤 시차"
+        },
+        {
+          "timeSeconds": 1.39,
+          "label": "서쪽 구도 정착 · 장전"
+        },
+        {
+          "timeSeconds": 1.57,
+          "label": "80ms 신전"
+        },
+        {
+          "timeSeconds": 1.65,
+          "label": "서쪽 어퍼컷 접촉"
+        },
+        {
+          "timeSeconds": 1.81,
+          "label": "초기 밀림 · 회수"
+        },
+        {
+          "timeSeconds": 2.0366666666666666,
+          "label": "회수 · 착지 · 반대편 정착"
+        }
+      ]
     },
     {
       "id": "time-stop",
-      "name": "시간 정지 · 다섯 타",
-      "durationSeconds": 3.7,
-      "stage": "2D fixed stage"
+      "name": "시공 연격",
+      "durationSeconds": 2.2916666666666665,
+      "stage": "2D fixed stage",
+      "techniques": ["시간 정지", "흑백 반전", "나카누키", "지연 타격"],
+      "description": "반전 파문 뒤 세계를 고정하고 다섯 자리로 이동한다. 등을 돌린 정적과 색 귀환 뒤 지연 타격을 좁은 간격으로 터뜨리고 착지·잔광을 정리한다.",
+      "beats": [
+        {
+          "timeSeconds": 0,
+          "label": "곰왕 위협"
+        },
+        {
+          "timeSeconds": 0.325,
+          "label": "반전 파문 · 세계 정지"
+        },
+        {
+          "timeSeconds": 0.775,
+          "label": "0.06초씩 다섯 자리"
+        },
+        {
+          "timeSeconds": 1.105,
+          "label": "등 돌린 정적"
+        },
+        {
+          "timeSeconds": 1.4183333333333332,
+          "label": "색 귀환"
+        },
+        {
+          "timeSeconds": 1.6383333333333332,
+          "label": "0.03초씩 지연 타격"
+        },
+        {
+          "timeSeconds": 2.1916666666666664,
+          "label": "착지 · 잔광 소거 · 정적"
+        }
+      ]
     },
     {
       "id": "ink-one-stroke",
-      "name": "수묵 일필 · 한 획",
-      "durationSeconds": 3.5,
-      "stage": "2D fixed stage"
+      "name": "수묵 일섬",
+      "durationSeconds": 2.587,
+      "stage": "2D fixed stage",
+      "techniques": ["수묵 실루엣", "붓 궤적", "와이프·아이리스"],
+      "description": "먹 번짐과 실루엣의 정적 뒤 붓 한 획을 가속해 뽑는다. 주먹과 획이 같은 진행량에서 닿고, 빠른 밀림·46가닥 비백·낙관 뒤 같은 획에서 색이 돌아온다.",
+      "beats": [
+        {
+          "timeSeconds": 0.056666666666666664,
+          "label": "먹이 번져 한지 세계로"
+        },
+        {
+          "timeSeconds": 0.5066666666666667,
+          "label": "먹 실루엣의 정적"
+        },
+        {
+          "timeSeconds": 0.8666666666666667,
+          "label": "150ms의 가속하는 붓 한 획"
+        },
+        {
+          "timeSeconds": 0.9875068243493926,
+          "label": "주먹·획의 접촉 · 피격"
+        },
+        {
+          "timeSeconds": 1.287,
+          "label": "낙관 斬"
+        },
+        {
+          "timeSeconds": 1.727,
+          "label": "획에서 색 귀환 · 여운"
+        }
+      ]
     },
     {
       "id": "comic-panels",
-      "name": "만화 칸 · 일격.",
-      "durationSeconds": 3.3,
-      "stage": "2D fixed stage"
+      "name": "만화 일격",
+      "durationSeconds": 2.3791666666666664,
+      "stage": "2D fixed stage",
+      "techniques": ["화면 분할", "컷인", "집중선", "흑백 반전", "멈춘 그림"],
+      "description": "눈·곰왕·디딤발·주먹 칸의 간격을 좁히며 한 타를 준비한다. 큰 칸 뒤 짧은 가속 신전으로 주먹·피격·판 어긋남·의성어가 함께 터지고 한 장의 만화로 멈춘다.",
+      "beats": [
+        {
+          "timeSeconds": 0.04,
+          "label": "눈 · 번뜩"
+        },
+        {
+          "timeSeconds": 0.3,
+          "label": "곰왕 · 스윽"
+        },
+        {
+          "timeSeconds": 0.5,
+          "label": "디딤발 · 꽉!"
+        },
+        {
+          "timeSeconds": 0.64,
+          "label": "주먹 · 쨍!"
+        },
+        {
+          "timeSeconds": 0.9066666666666666,
+          "label": "큰 칸으로 전환"
+        },
+        {
+          "timeSeconds": 1.2466666666666666,
+          "label": "100ms 가속 신전"
+        },
+        {
+          "timeSeconds": 1.3466666666666665,
+          "label": "주먹 접촉 · 판 어긋남 · 쾅!!"
+        },
+        {
+          "timeSeconds": 1.7691666666666666,
+          "label": "한 컷 만화 정지"
+        }
+      ]
+    },
+    {
+      "id": "rhythm-rush",
+      "name": "박자 연격",
+      "durationSeconds": 1.75,
+      "stage": "2D actors on game arena",
+      "techniques": [
+        "키포즈 급전환",
+        "연타 박자 대비",
+        "히트스톱",
+        "방향성 반동",
+        "접촉 스냅 줌",
+        "피격 자세 강조",
+        "실루엣 충격 코마",
+        "지연 충격파"
+      ],
+      "description": "0.24·0.40·0.76초 세 접촉에서 피격 자세를 꺾고 끝타에 접촉 스냅 줌과1/24초 실루엣 충격 코마를 맞춘다.45·50·105ms 히트스톱의 대비 뒤0.865초 끝타 방출에 백열핵·방향성 파열·130ms 지연 충격파를 모으고 실제 착지 반동·먼지로 짧게 끝낸다. 끝타 장전 자리 이동은60ms에 멈추고 방출 뒤120ms에 팔·카메라를 회수해 자세를 고정한다.",
+      "beats": [
+        {
+          "timeSeconds": 0.24,
+          "label": "첫 접촉 · 즉시 피격 · 45ms 유지"
+        },
+        {
+          "timeSeconds": 0.4,
+          "label": "둘째 접촉 · 50ms 유지"
+        },
+        {
+          "timeSeconds": 0.76,
+          "label": "끝타 접촉 · 105ms 힘 받기"
+        },
+        {
+          "timeSeconds": 0.865,
+          "label": "끝타 큰 방출 · 방향성 반동"
+        },
+        {
+          "timeSeconds": 0.985,
+          "label": "120ms 팔·카메라 회수 · 끝 자세 고정"
+        },
+        {
+          "timeSeconds": 1.45,
+          "label": "착지 반동·먼지 뒤 끝 자세"
+        }
+      ]
+    },
+    {
+      "id": "piercing-dash",
+      "name": "관통 돌파",
+      "durationSeconds": 1.45,
+      "stage": "2D actors on game arena",
+      "techniques": [
+        "스미어 프레임",
+        "잔상",
+        "배경 흐림",
+        "접촉 강조",
+        "접촉 스냅 줌",
+        "피격 자세 강조",
+        "실루엣 충격 코마",
+        "지연 충격파"
+      ],
+      "description": "스미어·성긴 잔상·배경 흐림으로 급가속하고0.49초 접촉에서 강한 피격 자세·접촉 스냅 줌·1/24초 실루엣 충격 코마를 맞춘다.75ms 유지 뒤0.565초 힘과130ms 지연 충격파를 방출하며0.12초 만인0.685초 반대편에 도착하고 착지 반동·먼지로 종결한다. 도착 뒤0.71~0.83초 팔을 회수해 자세를 고정하고 카메라는 방출 뒤120ms에 복귀한다.",
+      "beats": [
+        {
+          "timeSeconds": 0.49,
+          "label": "실제 접촉 · 즉시 피격 · 75ms 유지"
+        },
+        {
+          "timeSeconds": 0.565,
+          "label": "힘 방출 · 0.12초 관통 시작"
+        },
+        {
+          "timeSeconds": 0.685,
+          "label": "반대편 도착 · 또렷한 자세"
+        },
+        {
+          "timeSeconds": 0.83,
+          "label": "120ms 팔 회수 · 끝 자세 고정"
+        },
+        {
+          "timeSeconds": 1.15,
+          "label": "착지 반동·먼지 뒤 끝 자세"
+        }
+      ]
+    },
+    {
+      "id": "short-power",
+      "name": "촌경 강타",
+      "durationSeconds": 1.6,
+      "stage": "2D actors on game arena",
+      "techniques": [
+        "짧은 예비동작",
+        "키포즈 급전환",
+        "히트스톱",
+        "지연 방출",
+        "접촉 스냅 줌",
+        "피격 자세 강조",
+        "실루엣 충격 코마",
+        "지연 충격파"
+      ],
+      "description": "짧은 정권의0.50초 접촉에서 강한 피격 자세·접촉 스냅 줌·1/24초 실루엣 충격 코마를 맞추고120ms 동안 힘을 받는다.0.62초 백열핵·방향성 파열·130ms 지연 충격파와 큰 밀림을 방출한 뒤 실제 착지 반동·먼지로 짧게 끝낸다. 방출 뒤120ms에 팔·카메라를 회수해 자세를 고정한다.",
+      "beats": [
+        {
+          "timeSeconds": 0.5,
+          "label": "짧은 정권 접촉 · 즉시 피격 · 120ms 유지"
+        },
+        {
+          "timeSeconds": 0.62,
+          "label": "백열핵·방향성 파열 · 큰 방출"
+        },
+        {
+          "timeSeconds": 0.74,
+          "label": "120ms 팔·카메라 회수 · 끝 자세 고정"
+        },
+        {
+          "timeSeconds": 1.3,
+          "label": "착지 반동·먼지 뒤 끝 자세"
+        }
+      ]
+    },
+    {
+      "id": "synergy-heavy-strike",
+      "name": "절도 강타",
+      "durationSeconds": 1.85,
+      "stage": "game arena + 2D actor composite",
+      "description": "낮게 장전한 정권을 중간 자세를 생략한 55ms 신전과 짧은 스미어로 뻗는다. 한 코마 임팩트와 140ms 히트스톱 뒤 수평 반동·큰 밀림·착지로 한 타의 마디를 남긴다.",
+      "techniques": [
+        "나카누키",
+        "스미어 프레임",
+        "히트스톱",
+        "임팩트 프레임",
+        "방향성 반동"
+      ],
+      "beats": [
+        {
+          "timeSeconds": 0.24,
+          "label": "준비 · 낮고 긴 장전"
+        },
+        {
+          "timeSeconds": 0.42,
+          "label": "가속 · 나카누키와 짧은 스미어"
+        },
+        {
+          "timeSeconds": 0.455,
+          "label": "접촉 · 임팩트 프레임과 140ms 히트스톱"
+        },
+        {
+          "timeSeconds": 0.64,
+          "label": "방출 · 한 방향 반동과 큰 밀림"
+        },
+        {
+          "timeSeconds": 0.955,
+          "label": "착지 · 힘의 끝"
+        },
+        {
+          "timeSeconds": 1.55,
+          "label": "잔심 · 선명한 회수 자세"
+        }
+      ]
+    },
+    {
+      "id": "synergy-explosive-rush",
+      "name": "폭발 돌진",
+      "durationSeconds": 2.2,
+      "stage": "3D world + 2D actor cards",
+      "description": "실제 무대의 횡이동과 속도선으로 거리를 만들고 짧은 주먹 스미어를 거쳐 명중만 선명하게 읽힌다.",
+      "techniques": [
+        "배경 동화",
+        "속도선·유선",
+        "스미어 프레임",
+        "배경 블러",
+        "접촉 강조"
+      ],
+      "beats": [
+        {
+          "timeSeconds": 0,
+          "label": "낮은 출발 자세"
+        },
+        {
+          "timeSeconds": 0.16,
+          "label": "배경 동화＋속도선"
+        },
+        {
+          "timeSeconds": 0.74,
+          "label": "주먹 스미어로 전환"
+        },
+        {
+          "timeSeconds": 0.88,
+          "label": "선명한 접촉"
+        },
+        {
+          "timeSeconds": 1.58,
+          "label": "반동과 착지 회수"
+        }
+      ]
+    },
+    {
+      "id": "synergy-accelerating-flurry",
+      "name": "가속 연타",
+      "durationSeconds": 2.35,
+      "stage": "game arena + 2D actor composite",
+      "description": "앞의 네 타 간격을 280→210→160ms로 좁히고 짧은 스트로보로 가속을 읽힌다. 끝타 전 장전을 길게 대비한 다섯 번째 정권을 115ms 히트스톱·두 코마 쇼크코마와 방출로 맺는다.",
+      "techniques": ["연타 박자 대비", "스트로보", "히트스톱", "쇼크코마"],
+      "beats": [
+        {
+          "timeSeconds": 0.16,
+          "label": "준비 · 잽의 기점"
+        },
+        {
+          "timeSeconds": 0.3,
+          "label": "첫 접촉 · 5연타 시작"
+        },
+        {
+          "timeSeconds": 0.58,
+          "label": "가속 · 280ms 간격"
+        },
+        {
+          "timeSeconds": 0.79,
+          "label": "가속 · 210ms 간격과 스트로보"
+        },
+        {
+          "timeSeconds": 0.95,
+          "label": "가속 · 160ms 간격"
+        },
+        {
+          "timeSeconds": 1.18,
+          "label": "준비 대비 · 끝타 앞의 숨"
+        },
+        {
+          "timeSeconds": 1.32,
+          "label": "끝 접촉 · 115ms 히트스톱과 쇼크코마"
+        },
+        {
+          "timeSeconds": 1.48,
+          "label": "방출 · 끝타의 큰 밀림"
+        },
+        {
+          "timeSeconds": 1.775,
+          "label": "착지 · 연타 종결"
+        },
+        {
+          "timeSeconds": 2.05,
+          "label": "잔심 · 다섯 타의 끝"
+        }
+      ]
+    },
+    {
+      "id": "synergy-delayed-pierce",
+      "name": "잔영 관통",
+      "durationSeconds": 2.3,
+      "stage": "game arena + 2D actor composite",
+      "description": "나카누키로 단숨에 통과한 뒤 다른 시점의 스트로보를 지우고 정적을 만든다. 상대만 뒤늦게 타격을 받고 무너진다.",
+      "techniques": ["나카누키", "스트로보", "정적 대비", "지연 타격"],
+      "beats": [
+        {
+          "timeSeconds": 0,
+          "label": "짧은 축적"
+        },
+        {
+          "timeSeconds": 0.38,
+          "label": "나카누키＋스트로보"
+        },
+        {
+          "timeSeconds": 0.55,
+          "label": "주먹의 몸통 통과"
+        },
+        {
+          "timeSeconds": 0.86,
+          "label": "짧은 정적"
+        },
+        {
+          "timeSeconds": 1.04,
+          "label": "지연 타격"
+        },
+        {
+          "timeSeconds": 1.71,
+          "label": "결착"
+        }
+      ]
+    },
+    {
+      "id": "synergy-reversal-counter",
+      "name": "역전 반격",
+      "durationSeconds": 2.8,
+      "stage": "3D world + 2D actor cards",
+      "description": "곰왕의 실제 공격을 뛰어넘은 뒤 0.70초의 불릿 타임과 103° 반주로 위협을 읽힌다. 180ms 급가속·짧은 타점 스미어를 거쳐 60ms 접촉 정지와 한 번의 방향성 반동으로 시점을 정착시키고, 착지와 쓰러짐까지 끝낸다.",
+      "techniques": [
+        "불릿 타임",
+        "마와리코미",
+        "스미어 프레임",
+        "접촉 구도 정착"
+      ],
+      "beats": [
+        {
+          "timeSeconds": 0,
+          "label": "곰왕 공격 · 위협"
+        },
+        {
+          "timeSeconds": 0.57,
+          "label": "실제 점프 회피"
+        },
+        {
+          "timeSeconds": 0.82,
+          "label": "불릿 타임 + 103° 마와리코미"
+        },
+        {
+          "timeSeconds": 1.52,
+          "label": "급가속 · 주먹과 카메라 동시 진입"
+        },
+        {
+          "timeSeconds": 1.7,
+          "label": "실제 타점 · 60ms 접촉 정지"
+        },
+        {
+          "timeSeconds": 1.86,
+          "label": "방향성 반동 종료 · 카메라 정착"
+        },
+        {
+          "timeSeconds": 2.1,
+          "label": "착지 · 먼지"
+        },
+        {
+          "timeSeconds": 2.5,
+          "label": "쓰러짐 완료 · 최종 정지"
+        }
+      ]
+    },
+    {
+      "id": "synergy-ground-break",
+      "name": "대지 분쇄",
+      "durationSeconds": 2.5,
+      "stage": "game arena + 2D actor composite",
+      "description": "짧게 솟은 뒤 급강하해 발이 땅에 닿는 순간을 압축한다. 한 코마 충격 뒤 45ms 늦은 나카무라 큐브와 135ms 늦은 안노 분진이 힘을 이어받고, 전진 충격파가 닿은 곰왕이 뒤늦게 밀려 착지한다.",
+      "techniques": [
+        "스쿼시 앤 스트레치",
+        "임팩트 프레임",
+        "나카무라 큐브",
+        "안노 폭발",
+        "화면 흔들림"
+      ],
+      "beats": [
+        {
+          "timeSeconds": 0.12,
+          "label": "짧은 도약"
+        },
+        {
+          "timeSeconds": 0.58,
+          "label": "급강하 · 세로 유선"
+        },
+        {
+          "timeSeconds": 0.86,
+          "label": "발 착지 · 압축·충격 코마"
+        },
+        {
+          "timeSeconds": 0.92,
+          "label": "45ms 지연 · 큐브 파열"
+        },
+        {
+          "timeSeconds": 1.05,
+          "label": "135ms 지연 · 분진·파동 도달"
+        },
+        {
+          "timeSeconds": 1.46,
+          "label": "곰왕 착지"
+        },
+        {
+          "timeSeconds": 2.1,
+          "label": "잔여 소멸 · 종결 자세"
+        }
+      ]
+    },
+    {
+      "id": "synergy-final-blow",
+      "name": "결전 일격",
+      "durationSeconds": 2.6,
+      "stage": "game arena + 2D actor composite",
+      "description": "눈 컷인으로 결의를 먼저 읽히고 집중선으로 실제 주먹 타점에 시선을 모은다. 160ms 급신전 뒤 두 코마의 쇼크코마를 터뜨리며, 팔 회수와 곰왕의 쓰러짐을 끝내고 한 장의 액자로 멈춘다.",
+      "techniques": ["컷인", "집중선", "쇼크코마", "멈춘 그림"],
+      "beats": [
+        {
+          "timeSeconds": 0.1,
+          "label": "눈 컷인 · 결의"
+        },
+        {
+          "timeSeconds": 0.62,
+          "label": "집중선 · 정권 준비"
+        },
+        {
+          "timeSeconds": 1,
+          "label": "160ms 급신전 · 타점 스미어"
+        },
+        {
+          "timeSeconds": 1.16,
+          "label": "실제 주먹 접촉 · 2코마 쇼크"
+        },
+        {
+          "timeSeconds": 1.32,
+          "label": "팔 회수 · 빠른 밀림"
+        },
+        {
+          "timeSeconds": 2.1,
+          "label": "팔 풀기와 쓰러짐 완료"
+        },
+        {
+          "timeSeconds": 2.3,
+          "label": "최종 액자 · 멈춘 그림"
+        }
+      ]
     }
   ],
   "backgroundRunRevision": {
@@ -675,7 +1324,7 @@
     "paidGenerationCalls": 0,
     "audio": false
   },
-  "currentStateBoundary": "speedImpactRevision과 cuts의 설명·비트가 현재 동작의 우선 기준이다. backgroundRunRevision·selectedCutsRevision·gameResourceRevision은 각 개정 당시의 구현·자재 이력으로 보존하며 속도·카메라 지연·공중 종결 시각은 마지막 speedImpactRevision을 우선한다.",
+  "currentStateBoundary": "현재 유형·버전 구분과 주소 대응은variationRevision을 따른다. 실제20개 버전의1배속 길이·설명·기법·주요 시각은cuts를 우선한다. 기존10종의 시간표는baseTempoRevision, 추가3종의 최신 접촉·방출은speedImpactStrengthRevision, 액션 시너지7버전의 구성·재사용 경계는actionSynergyCombinationAddition을 따른다. 과거 날짜별revision은 당시 제작 이력으로 보존한다.",
   "speedImpactRevision": {
     "date": "2026-10-20",
     "scope": "기존 게임 자재·원화·타수를 유지하고 배경 질주 스퍼트·낙하 카메라 지연·공중 종결의 속도 대비를 강화",
@@ -730,5 +1379,797 @@
     "newEffectSprites": 0,
     "paidGenerationCalls": 0,
     "audio": false
+  },
+  "studioGroupingRevision": {
+    "date": "2026-10-20",
+    "displayName": "애니 연출 · 조합 10개",
+    "formerDisplayName": "애니 연출 · 고른 컷 10개",
+    "source": "selected",
+    "origin": "조합",
+    "studioGroup": "combinations",
+    "count": 10,
+    "scope": "기존 고른 컷10종의 현재 표시명을 조합으로 바꾸고, 완성 컷씬에서 기법 조합으로 이동한다. 합성8종과 함께18종을 이룬다.",
+    "boundary": "컷 ID·source·경로·10종 구성·시간·연출·제작 기록은 보존한다. 과거 고른 컷·완성 컷 명칭은 개정 당시의 작업 이력으로 유지한다."
+  },
+  "combinationLabelsRevision": {
+    "date": "2026-10-20",
+    "scope": "기법 조합11종의 제목을 기술명으로 맞추고 조합·합성 출처 표기를 실제 사용 기법을 더하기로 연결한 목록으로 바꾼다.",
+    "metadata": "manifest 각 state의 label과 techniques를 연출실 제목·사용 기법·검색에 사용한다. 원본 컷과 견본의 재생 제목도 같은 이름을 사용한다.",
+    "techniqueBasis": "현재 렌더러의 실제 배경·원화·촬영·편집·효과 합성을 대조했다. 연속 앵글 전환·불릿 타임·지연 타격·수묵 실루엣·붓 궤적은 구현된 표현의 일반 명칭이며 별도 단일 견본이 있다는 뜻은 아니다. 시간 정지의 나카누키는 이동 중간을 생략한 응용이다.",
+    "preserved": "source·sampleId·주소·재생 시간·동작·효과·저장 기능과 날짜별 제작 이력을 유지한다."
+  },
+  "combinationSpeedImpactRevision": {
+    "date": "2026-10-21",
+    "scope": "기법 조합10종의 구성 기법을 보존하고 준비·가속·접촉·잔여의 연결과 속도·타격 대비를 개선한다. 섬광 정권은anime-showcase.json의 같은 개정에 기록한다.",
+    "changedIds": [
+      "background-run",
+      "falling-background",
+      "spiral-stairs",
+      "already-cut",
+      "aerial-pursuit",
+      "bullet-counter",
+      "orbit-2d",
+      "time-stop",
+      "ink-one-stroke",
+      "comic-panels"
+    ],
+    "reviews": [
+      {
+        "id": "background-run",
+        "status": "changed",
+        "changes": [
+          "끝 스퍼트50m/s와 총56m·1.85초 도약을 유지하고 스퍼트 구간을0.30→0.22초로 집중했다. 기본 속도는 적분 이동량에서 다시 계산되어 약33.62m/s다.",
+          "2.46초의 피격 원화를45ms 같은 위치에 남긴 뒤0.22초 반동·0.23초 쓰러짐으로 방출한다. 반동·쓰러짐 완료는2.955초로 마지막3.00초 정지 전에 끝난다.",
+          "짧아진 권격·접촉광 뒤 어퍼컷 회수를 읽히게 했다."
+        ],
+        "retained": [
+          "56m 질주·6.7m 도약, 도약1.85·착지2.24·카메라정착2.25·명중2.46초와3.30초 길이",
+          "사선 동행 카메라·배경 면 스미어의1~2코마 노출표·16fps 달리기·배우/그림자/근경의 같은 공간 투영",
+          "한 번의 어퍼컷·보유 원화·보유 타격광과 사용자 GIF 품질 검토 경계"
+        ],
+        "reason": "이미 빠른 질주의 절대 속도를 무작정 올리면 같은 도약 거리에서 전진이 역행할 수 있다. 기존50m/s와 공간을 보존하면서 마지막 가속 시간과 피격 반응의 대비를 강화했다.",
+        "sources": [
+          {
+            "url": "https://coloso.jp/products/2danimator-proro-jp",
+            "mediaUrl": "https://cdn.day1company.io/prod/uploads/202406/135437-569/kr-2danimation-proro-example-04.webp",
+            "mode": "same-session earlier selected-frame observation reused",
+            "observed": "이전 단일견본 단계의 IAB에서 원작성자 背景の動画 공개 예제 문맥·URL을 확인했고46프레임 중0,6,13,19,26,32,39,45를 직접 보았다. 캐릭터 질주와 배경의 상대 이동을 참고하며 먼지 등의 모든 표현을 복제하지 않는다."
+          },
+          {
+            "url": "https://saint11.art/img/pixel-tutorials/AttackSheet.gif",
+            "mode": "same-session earlier selected-frame observation reused",
+            "observed": "36프레임 중8개에서 준비·신전·도착의 노출 대비를 직접 본 결과를 재사용했다."
+          }
+        ],
+        "beatChanges": [
+          {
+            "timeSeconds": 1.63,
+            "label": "끝 스퍼트 · 34→50m/s"
+          },
+          {
+            "timeSeconds": 2.46,
+            "label": "주먹 접촉 · 45ms 힘 받기"
+          },
+          {
+            "timeSeconds": 2.68,
+            "label": "접촉광 회수 · 피격 방출"
+          }
+        ],
+        "reviewTimesSeconds": [
+          0.16, 0.9583333333333334, 1.63, 1.85, 2.24, 2.25, 2.46, 2.505, 2.68,
+          2.955, 3
+        ],
+        "exportChangeRequired": false
+      },
+      {
+        "id": "falling-background",
+        "status": "changed",
+        "changes": [
+          "67m 시작 높이·2.58초의1.95m 접촉점은 유지하고 추가 가속을2.28~2.58초 마지막0.30초에 집중했다. 속도는32.24→57.68m/s이며 이동량에서 파생한다.",
+          "내려찍기의 장전3번을 읽힌 뒤 접촉 직전90ms에4번 신전, 접촉5번은75ms 노출한다.",
+          "접촉 뒤50ms 고도를 받은 다음 이차 하강으로2.92초에 착지한다. 같은 착지 시각에서 먼지가 시작해0.36초 동안 정리되고3.28초에 끝난다.",
+          "권격·접촉광을 짧게 정리해 공중 명중과 지면 착지의 두 단계를 구분한다."
+        ],
+        "retained": [
+          "67m 협곡·나선 추적·기존25ms 카메라 지연 및 최대0.72m 제한·2.58초 단일 공중 명중·3.70초 길이",
+          "같은 카메라로 배우·전경·타점 투영, 접촉 전에 배경 흐림·세로 붓자국·속도선 회수",
+          "머리부터 낙하는 기존 점프 카드 회전이라는 한계, 남동 내려찍기 기존 검토 시안·보유 원화·효과"
+        ],
+        "reason": "가속의 최댓값만 키우기보다 마지막 남은 거리에서 속도와 형상 노출을 동시에 집중하고, 명중 이후 착지가 늦게 늘어지는 구간을 짧게 받아낸다.",
+        "sources": [
+          {
+            "url": "https://saint11.art/img/pixel-tutorials/Easings.gif",
+            "mode": "same-session earlier selected-frame observation reused",
+            "observed": "이전 단일견본 단계에서23프레임 중0,3,6,9,13,16,19,22를 직접 보았다. 가속 거리·준비/신전/도착의 시간 배분 대비를 재사용했다."
+          },
+          {
+            "url": "https://www.youtube.com/watch?v=UXqq0ZvbOnk&t=89s",
+            "mode": "existing memory observation reused, no new playback",
+            "observed": "Blender Studio Charge의 충격을 따라가는 이동·롤과 착지 뒤 안정에 관한 기존16프레임 관찰 기록을 참고했다. 이번 직접 영상 재생이나 Blender 프로젝트 실행은 하지 않았다."
+          },
+          {
+            "url": "https://github.com/yomotsu/camera-controls/blob/dev/examples/await-transitions.html",
+            "mode": "current public-code reading",
+            "observed": "transitionSequenceA의 회전→이동→시선→fitToBox 순서와 각 전환 완료를 기다리는 공개 코드를 직접 읽었다. 새 IAB 조작은 불가했고, 라이브러리나 코드를 이식하지 않았다."
+          }
+        ],
+        "beatChanges": [
+          {
+            "timeSeconds": 2.22,
+            "label": "양손 내려찍기 장전"
+          },
+          {
+            "timeSeconds": 2.28,
+            "label": "마지막 하강 가속 · 32→58m/s"
+          },
+          {
+            "timeSeconds": 2.4,
+            "label": "카메라 지연 · 본체 하강"
+          },
+          {
+            "timeSeconds": 2.92,
+            "label": "빠른 착지 · 먼지 발생"
+          },
+          {
+            "timeSeconds": 3.28,
+            "label": "먼지 회수 · 곰왕 쓰러짐"
+          }
+        ],
+        "reviewTimesSeconds": [
+          1.88, 2.22, 2.28, 2.4, 2.46, 2.49, 2.58, 2.63, 2.655, 2.8, 2.92, 2.98,
+          3.28, 3.4
+        ],
+        "exportChangeRequired": false
+      },
+      {
+        "id": "spiral-stairs",
+        "status": "changed",
+        "changes": [
+          "배경 흐림·속도선을1.40초 가속부터 도약까지 이어서 쓰고1.64초에 최대치,2.25~2.35초에 걷어 접촉 직전 공간을 선명하게 드러낸다.",
+          "실제 배우의 수평 도약도2.40초 명중 시점에 landing 좌표에 도착시켜 접촉광 계산과 원본 주먹의 위치를 일치시킨다.",
+          "내려찍기 장전 뒤 마지막80ms에 신전 그림을 노출한다. 접촉 높이와 하강속도를 그대로 이어 남은 낙차를2.56초에 빠르게 착지하며 회수는2.65초에 끝난다.",
+          "공중 명중의 짧은 권격·접촉광을 회수해 착지·곰왕 쓰러짐·종결 구도를 남긴다."
+        ],
+        "retained": [
+          "난간 없는60칸·하이→근접→로우 시점·기존1.5m 내부 카메라 반경·1.70초 도약·2.40초 명중·3.05초 길이",
+          "기존 계단 끝·착지 x/z·접촉 y·단일 타수·방향별 평면 배우와 남동 내려찍기 원본",
+          "최종 카메라·2.75초 종결 정지·새 작화나 원작 장면 복제 인증을 하지 않는 경계"
+        ],
+        "reason": "가속을 보여주는 배경층이 명중220ms 전에 끊기던 구간을 연결하고, 타격 전에만 걷어낸다. 명중 타점은 보존하고 접촉 뒤 부드럽게 떠 내려오던 착지를 짧은 하강으로 받아낸다.",
+        "sources": [
+          {
+            "url": "https://github.com/yomotsu/camera-controls/blob/dev/examples/await-transitions.html",
+            "mode": "current public-code reading plus existing memory demo observation reused",
+            "observed": "공개 코드에서 순서별 카메라 전환과 마지막 피사체 프레이밍을 직접 확인했다. 이전 메모리에는 Sequence A 직접 조작 기록이 있으나 이번에는 IAB가 없어 조작하지 못했다. 기존 카메라의 공간 연결을 보존하는 기준으로 참고했다."
+          },
+          {
+            "url": "https://coloso.jp/products/2danimator-proro-jp",
+            "mediaUrl": "https://cdn.day1company.io/prod/uploads/202406/152506-569/kr-2danimation-proro-example-part02-1.gif",
+            "mode": "same-session earlier selected-frame observation reused",
+            "observed": "이전 단일견본 단계에서18프레임 중0,2,5,7,10,12,15,17의 준비·급접근·원근·주변 효과선 대비를 직접 확인했다. 기존 원본 배우 비율과 장면의 입체 공간은 유지했다."
+          },
+          {
+            "url": "https://saint11.art/img/pixel-tutorials/AttackSheet.gif",
+            "mode": "same-session earlier selected-frame observation reused",
+            "observed": "준비·짧은 신전·도착 노출 대비의 기존 직접 관찰을 재사용했다."
+          }
+        ],
+        "beatChanges": [
+          {
+            "timeSeconds": 1.64,
+            "label": "나선 가속 · 흐림·속도선"
+          },
+          {
+            "timeSeconds": 2.35,
+            "label": "배경·타점 선명하게 회수"
+          },
+          {
+            "timeSeconds": 2.4,
+            "label": "공중 내려찍기 접촉"
+          },
+          {
+            "timeSeconds": 2.56,
+            "label": "빠른 꼭대기 착지"
+          }
+        ],
+        "reviewTimesSeconds": [
+          0.75, 1.34, 1.4, 1.64, 1.7, 2.19, 2.32, 2.35, 2.4, 2.47, 2.56, 2.62,
+          2.65, 2.75
+        ],
+        "exportChangeRequired": false
+      },
+      {
+        "id": "already-cut",
+        "status": "changed",
+        "reason": "기존1.35~1.475초3코마 관통과6잔상·2.7초 지연8타·3.22~3.54초 쓰러짐·팔풀기 원화는 유지. 잔상을1.695초에 걷고 종결 카메라를1.9초에 정착시켜 정적 확보. 지연 파열은32ms 간격/160ms 수명으로 줄여8타를 분리하고50ms 접촉 뒤0.44m 밀림→0.36m 정착. 피격광도 이동한 실제 몸에서 계산. 정적 구간 전경/배경의 시계를 맞추고 재개 시 시간을 연속 연결.",
+        "sources": [
+          "https://www.imageworks.com/our-craft/feature-animation/movies/spider-man-spider-verse",
+          "https://media.gdcvault.com/GDC2014/Presentations/Cartwright_Muriel_Animation_Bootcamp_Fluid.pdf",
+          "memory:motion-presentation-real-references",
+          "memory:dramatic-camera-work-references"
+        ],
+        "preserved": [
+          "duration3.9",
+          "rush1.35..1.475",
+          "strobe3cells/6afterimages",
+          "delayedContact2.7",
+          "defeat3.22..3.54",
+          "releaseSource9..14"
+        ],
+        "beatsAddedOrChanged": [
+          {
+            "time": 1.9,
+            "label": "잔상을 걷은 뒤 정적"
+          }
+        ]
+      },
+      {
+        "id": "aerial-pursuit",
+        "status": "changed",
+        "reason": "상승 어퍼컷0.28초·공중4타0.85/1.32/1.71/2.05초·접촉후45ms유지·65ms지연추격·2.9초마무리·3.28초착지먼지보존. 원화장전은앞45%를유지하고뒤55%에모으고, 실제접근은접촉90ms전부터70ms동안제곱가속. 접촉후밀림105ms로압축하며반응시계도일치.0.40초하강의마지막75~35ms에는기존흐림/속도선을걷어접촉원화를읽힌다.",
+        "sources": [
+          "https://media.gdcvault.com/GDC2014/Presentations/Cartwright_Muriel_Animation_Bootcamp_Fluid.pdf",
+          "https://www.imageworks.com/our-craft/feature-animation/movies/spider-man-spider-verse",
+          "memory:camera-presentation-real-references"
+        ],
+        "preserved": [
+          "duration4.2",
+          "uppercutContact0.28",
+          "aerialContacts0.85/1.32/1.71/2.05",
+          "contactHold45ms",
+          "pursuitDelay65ms",
+          "slamDrop2.5..2.9",
+          "slamContact2.9",
+          "landing3.28",
+          "existingSources"
+        ],
+        "beatsAddedOrChanged": [
+          {
+            "time": 2.865,
+            "label": "타점 선명화 · 흐림 이탈"
+          }
+        ]
+      },
+      {
+        "id": "bullet-counter",
+        "status": "changed",
+        "reason": "장면0.11초를1.12초에펼치는불릿타임·103도궤도·2.46초명중·2.78초착지·2.9초쓰러짐시작보존.2.27~2.46초의앞40%는준비,뒤60%는제곱가속급신전으로재배분하고배우와카메라가같은위상으로명중에함께정착.80ms접촉유지뒤200ms밀림0.65m. 복귀는가속낙하로발을같은시각에붙이고실제발위치에기존gameDust190px/360ms추가. 명중효과수명300→220ms. 흐린배경/선명배경/전경은같은느린worldTime을공유.",
+        "sources": [
+          "https://media.gdcvault.com/GDC2014/Presentations/Cartwright_Muriel_Animation_Bootcamp_Fluid.pdf",
+          "https://www.imageworks.com/our-craft/feature-animation/movies/spider-man-spider-verse",
+          "resources/anime-selected-cuts.json#references",
+          "memory:dramatic-camera-work-references"
+        ],
+        "preserved": [
+          "duration3.5",
+          "slowScene1.15..2.27 world0.11s",
+          "orbit103degrees",
+          "counterStart2.27",
+          "contact2.46",
+          "contactHold80ms",
+          "landing2.78",
+          "defeat2.9",
+          "settled3.2",
+          "originalAttack/PunchSources"
+        ],
+        "beatsAddedOrChanged": [
+          {
+            "time": 2.78,
+            "label": "착지 · 가속 복귀와 작은 먼지"
+          }
+        ]
+      },
+      {
+        "id": "orbit-2d",
+        "name": "반월 회격",
+        "status": "changed",
+        "file": "src/resources/effects/anime-selected-cuts/orbit-cut.ts",
+        "reason": "반주의 초반 시차 읽힘 뒤 중간을 빠르게 지나 반대편에 감속 정착. 장전 원화를 충분히 보인 뒤 마지막80ms에 신전한다. 접촉2.7초와 실제 서쪽 원화 타점은 유지. 곰왕의 초기160ms 밀림을 빠르게 하고 작은 후퇴 뒤 착지. 카메라/배우/전경의 같은 투영과 깊이 순서, 한시점 곰왕의 가림 중 flip 유지.",
+        "sources": [
+          "resources/anime-selected-cuts.json#references",
+          "https://usapen3.hatenablog.com/entry/2016/12/18/234110",
+          "https://yomotsu.github.io/camera-controls/examples/await-transitions.html",
+          "https://roystan.net/articles/camera-shake/"
+        ],
+        "observations": [
+          "기존82프레임 회전흉내 GIF의8시점 관찰 기록과 현재 방향/깊이 투영 코드 대조를 재사용. 이번 새 GIF 다운로드나 원작 재생은 아님.",
+          "새 Chrome 배경탭 camera-controls의 Transition Sequence A 버튼과 disabled 진행 상태·격자 일부 화면은 확인. 큐브 전체와 완료 경로를 관찰했다고 주장하지 않음.",
+          "같은 세션 앞선 촬영 작업의 Roystan GIF 감쇠 직접 관찰을 힘이 짧게 풀린 뒤 안정되는 대비 참고로만 재사용. 이번 반월 회격에 화면흔들림 추가 없음."
+        ],
+        "beats": [
+          {
+            "time": 0,
+            "label": "동쪽 구도 · 반주 시작"
+          },
+          {
+            "time": 1.18,
+            "label": "빠른 반주 · 등 뒤 시차"
+          },
+          {
+            "time": 2.26,
+            "label": "서쪽 구도 정착 · 장전"
+          },
+          {
+            "time": 2.62,
+            "label": "80ms 신전"
+          },
+          {
+            "time": 2.7,
+            "label": "서쪽 어퍼컷 접촉"
+          },
+          {
+            "time": 2.86,
+            "label": "초기 밀림 · 회수"
+          },
+          {
+            "time": 3.2,
+            "label": "회수 · 착지 · 반대편 정착"
+          }
+        ],
+        "exportBoundaryRequest": [
+          0.34, 2.24, 2.26, 2.62, 2.7, 2.8, 2.86, 3.1, 3.16, 3.2
+        ]
+      },
+      {
+        "id": "time-stop",
+        "name": "시공 연격",
+        "status": "changed",
+        "file": "src/resources/effects/anime-selected-cuts/flat-cuts.ts",
+        "reason": "세계정지0.75초, 다섯 이동의1.16~1.49초/0.06초 간격/모든 접촉 좌표와 타수 유지. 등 돌린 정적 뒤 색귀환2.43~2.65초, 다섯 지연타 재개2.65초로300ms 앞당긴다. 재개한 worldTime은 정확히 정지했던0.75초에서 이어져 파편/배경의 점프를 막는다. 곰왕은150ms에128px 밀린 뒤18px 돌아와 기존110px 최종 변위를 유지.",
+        "sources": [
+          "resources/anime-selected-cuts.json",
+          "https://www.youtube.com/watch?v=ccy9AhOvxCg",
+          "https://www.youtube.com/watch?v=PHj791hJbRk"
+        ],
+        "observations": [
+          "이번 세션 앞선 편집 작업에서 Adobe Care 공식 프레임홀드 영상의 무음 시연과 개 정지 프레임을 직접 관찰한 범위를 재사용. 세계만 멈추는 죠죠 원작 재생 인증은 아님.",
+          "BandaiNamco Jump Force 공식 영상은 음소거 설정·readyState 확인 시도가 도구 대기 상태가 되어 부분 재생 완료로 기록하지 않음. 사용자 제공 시간정지/지연타 서사와 현재 코드의 연결을 우선한다."
+        ],
+        "beats": [
+          {
+            "time": 0,
+            "label": "곰왕 위협"
+          },
+          {
+            "time": 0.65,
+            "label": "반전 파문 · 세계 정지"
+          },
+          {
+            "time": 1.16,
+            "label": "0.06초씩 다섯 자리"
+          },
+          {
+            "time": 1.49,
+            "label": "등 돌린 정적"
+          },
+          {
+            "time": 2.43,
+            "label": "색 귀환"
+          },
+          {
+            "time": 2.65,
+            "label": "0.03초씩 지연 타격"
+          },
+          {
+            "time": 3.4,
+            "label": "착지 · 잔광 소거 · 정적"
+          }
+        ],
+        "exportBoundaryRequest": [
+          0.65, 0.75, 1.16, 1.22, 1.28, 1.34, 1.4, 1.49, 2.43, 2.65, 2.68, 2.71,
+          2.74, 2.77, 3.07, 3.4
+        ]
+      },
+      {
+        "id": "ink-one-stroke",
+        "name": "수묵 일섬",
+        "status": "changed",
+        "file": "src/resources/effects/anime-selected-cuts/ink-cut.ts",
+        "reason": "초기 먹 번짐0.68→0.45초, 정적 뒤 획200→150ms. 하나의 가속 곡선q^1.65를 붓 진행과 주먹 진입에 공유하고 진행량0.7의 실제 타점에서만 곰왕 피격을 시작한다. 접촉은 식으로 역산해 약1.46084초. 원본 배율/접촉 좌표/46가닥 비백/낙관을 보존. 곰왕이96px 빠르게 밀렸다가 기존78px 지점으로 정착하고, 같은 color-world 표면을 색귀환에 재사용해 중복 타격 없이 잇는다.",
+        "sources": [
+          "resources/anime-selected-cuts.json",
+          "https://news.capcomusa.com/2008/06/04/captivate-08-blow-out/",
+          "https://www.youtube.com/watch?v=2w6xtBVc6NM"
+        ],
+        "observations": [
+          "사용자 기존 수묵 실루엣/붓 궤적/와이프 구성과 코드 대조. Capcom 공식 글의 SFIV Ink Trailer 게시와 원작 시각형식의 맥락은 문헌 확인. 움직이는 획의 정확한 속도 곡선을 그 문헌에서 얻은 것으로 주장하지 않음.",
+          "Capcom USA 오오카미 영상은 muted=true/paused=true 상태를 확인했으나42초 seek 후 play 완료가 반환되지 않아 움직이는 장면 관찰 근거로 사용하지 않음. 새 재생 성공을 주장하지 않음."
+        ],
+        "timing": {
+          "spreadStart": 0.17,
+          "spreadEnd": 0.62,
+          "strokeStart": 1.34,
+          "strokeDuration": 0.15,
+          "strokeAcceleration": 1.65,
+          "contactProgress": 0.7,
+          "contact": 1.460840157682726,
+          "seal": 1.8,
+          "colorReturn": 2.24,
+          "colorReturnEnd": 2.8,
+          "settled": 3.2
+        },
+        "beats": [
+          {
+            "time": 0.17,
+            "label": "먹이 번져 한지 세계로"
+          },
+          {
+            "time": 0.62,
+            "label": "먹 실루엣의 정적"
+          },
+          {
+            "time": 1.34,
+            "label": "150ms의 가속하는 붓 한 획"
+          },
+          {
+            "time": 1.460840157682726,
+            "label": "주먹·획의 접촉 · 피격"
+          },
+          {
+            "time": 1.8,
+            "label": "낙관 斬"
+          },
+          {
+            "time": 2.24,
+            "label": "획에서 색 귀환 · 여운"
+          }
+        ],
+        "exportBoundaryRequest": [
+          0.17, 0.62, 1.34, 1.460840157682726, 1.49, 1.560840157682726,
+          1.9208401576827259, 1.8, 2.24, 2.8, 3.2
+        ]
+      },
+      {
+        "id": "comic-panels",
+        "name": "만화 일격",
+        "status": "changed",
+        "file": "src/resources/effects/anime-selected-cuts/comic-cut.ts",
+        "reason": "네 준비칸 간격을260→200→140ms로 좁히고 진입120ms/이탈180ms로 대비. 큰 칸을 먼저 확보한 뒤195px 진입을100ms의 제곱 가속으로 신전해1.88초에 주먹/피격/인쇄판 어긋남/의성어가 함께 맞는다. 인쇄판 정착260→180ms, 곰왕은84px 빠르게 밀렸다가22px 돌아와 기존62px 최종 변위. 최종 만화 정지와 단발 타수/원본 비율/전체 몸 원화 유지.",
+        "sources": [
+          "https://www.imageworks.com/our-craft/feature-animation/movies/spider-man-spider-verse",
+          "https://www.youtube.com/watch?v=g4Hbz2jLxvQ",
+          "resources/anime-selected-cuts.json"
+        ],
+        "observations": [
+          "Sony Imageworks 공식 제작 글 재열람: stepped animation/on twos, 단일 만화 패널의 프레임 홀드 삽입, half-toning/line hatching, offset printing의 색판 어긋남, crisp pop/aggressive clarity 설명 확인. 새 소프트블러/불필요한 레이어는 추가하지 않고 기존 만화 구성의 박자와 정착만 조정.",
+          "Sony 공식 예고편은 muted=true/paused=true 상태를 확인했으나70초 seek 후 play 완료가 반환되지 않아 새 부분 재생/프레임 관찰 성공으로 기록하지 않음. 제작 문헌 확인과 영상 실행 한계를 분리한다."
+        ],
+        "beats": [
+          {
+            "time": 0.12,
+            "label": "눈 · 번뜩"
+          },
+          {
+            "time": 0.38,
+            "label": "곰왕 · 스윽"
+          },
+          {
+            "time": 0.58,
+            "label": "디딤발 · 꽉!"
+          },
+          {
+            "time": 0.72,
+            "label": "주먹 · 쨍!"
+          },
+          {
+            "time": 1.28,
+            "label": "큰 칸으로 전환"
+          },
+          {
+            "time": 1.78,
+            "label": "100ms 가속 신전"
+          },
+          {
+            "time": 1.88,
+            "label": "주먹 접촉 · 판 어긋남 · 쾅!!"
+          },
+          {
+            "time": 2.36,
+            "label": "한 컷 만화 정지"
+          }
+        ],
+        "exportBoundaryRequest": [
+          0.12, 0.24, 0.38, 0.5, 0.58, 0.7, 0.72, 0.84, 1.28, 1.46, 1.78, 1.88,
+          1.915, 2.05, 2.06, 2.245, 2.36
+        ]
+      }
+    ],
+    "referenceObservations": {
+      "journey": "새 IAB 탭 생성을 시도했으나 Browser is not available 응답, cua.getState의 browsers=[]로 새 브라우저 재생을 확인하지 못했다. 이전 단일견본 단계에서 이 에이전트가 직접 본 원작성자 GIF/WebP 선택프레임과 기존 카메라 메모리의 관찰 범위를 구분하여 재사용했다. 이번에는 GIF 다운로드·프레임 추출·내보내기 테스트를 하지 않았다. camera-controls 공개 코드는 이번 직접 열람했다. Blender Studio Charge 프리비즈 글은402로 접근 제한되어 새 관찰로 취급하지 않는다.",
+      "arena": [
+        {
+          "source": "https://www.imageworks.com/our-craft/feature-animation/movies/spider-man-spider-verse",
+          "type": "원제작사 공식 설명/정지 이미지",
+          "observed": "이번web본문재열람.노출을균등하게하지않고선명한키포즈와짧은연결프레임·스미어/속도선으로큰이동을잇는설명확인.연결YouTube새재생은확인못함."
+        },
+        {
+          "source": "https://media.gdcvault.com/GDC2014/Presentations/Cartwright_Muriel_Animation_Bootcamp_Fluid.pdf",
+          "type": "제작자GDC발표PDF본문",
+          "observed": "이번PDF텍스트재열람:p7예비동작대비,p21~22키포즈노출시간비교,p23hitstop,p27준비/연결/공격키/회수분할,p30~33불필요한중간노출제거.추가원본영상/프로젝트실행아님."
+        },
+        {
+          "source": "/Users/3sam3/.codex/memories/extensions/ad_hoc/notes/2026-10-15T12-59-44-camera-presentation-real-references.md",
+          "type": "기존직접관찰기록재사용",
+          "observed": "복수대상프레이밍·전방시야·방향반동과진동분리기준읽음.이번직접데모조작을주장하지않음."
+        },
+        {
+          "source": "/Users/3sam3/.codex/memories/extensions/ad_hoc/notes/2026-10-15T13-16-12-dramatic-camera-work-references.md",
+          "type": "기존직접관찰기록재사용",
+          "observed": "급이동뒤마지막구도/자세유지와충격뒤안정되는카메라관찰기록참고.특정원작컷/렌즈수치정밀재현아님."
+        },
+        {
+          "source": "browser availability",
+          "type": "현재접근한계",
+          "observed": "IAB createBrowserTab은Browser is not available:iab,getState browsers=[];대체Chrome MCP list_pages도기존프로필실행충돌로접근불가.관련원작성움직이는새자료재생은확인못했고기존직접관찰기록과이번일차문헌/실제코드대조만재사용."
+        }
+      ],
+      "flat": "이번 담당의 CUA IAB는 Browser is not available: iab 및 browsers=[]로 실패. Chrome DevTools 배경 isolatedContext로 시도했으나 video.play 대기 때문에 새 동영상 부분 재생은 미확인으로 기록. 시퀀스 데모와 공식 제작 문헌 확인을 구분."
+    },
+    "boundary": "원작성 움직임의 이번 직접 관찰·같은 세션 앞선 관찰 재사용·기존 조사 기록·정적 문헌·공개 코드 열람을 구분한다. 모든 원작을 새로 재생한 검증은 아니며 컷별 원화·방향의 기존 품질 검토 경계를 유지한다.",
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "paidGenerationCalls": 0,
+    "audio": false
+  },
+  "baseTempoRevision": {
+    "date": "2026-10-21",
+    "scope": "조합10종의긴준비·정적·잔여·끝여백을접어새1배속을구성한다. 섬광정권은anime-showcase.json에함께기록한다.",
+    "profilePath": "src/resources/effects/anime-selected-cuts/timing.ts",
+    "actualDurationMs": {
+      "min": 2131.6666666666665,
+      "max": 3131.666666666667
+    },
+    "clockBoundary": "cuts의durationSeconds·beats는현재1배속실제시간이다. 기존별도renderer의contact/속도·이전revision수치는제작시각이다.",
+    "preserved": "다섯시간정지이동·지연타·반격슬로모션·150ms수묵획·만화준비칸·짧은신전/접촉은그대로읽히고연속카메라/질주는자주감속시키지않는다.",
+    "referenceBoundary": "같은 세션 앞선 움직이는 자료의 직접 관찰과 제작 문헌·코드 열람을 재사용했다. 이번 추가조정에서 원작 영상을 새로 전수 재생한 것으로 기록하지 않는다.",
+    "references": [
+      {
+        "url": "https://saint11.art/img/pixel-tutorials/AttackSheet.gif",
+        "use": "같은 세션 앞선8개 프레임 직접 관찰 재사용. 준비·짧은 신전·도착 노출의 시간 대비."
+      },
+      {
+        "url": "https://saint11.art/img/pixel-tutorials/Easings.gif",
+        "use": "같은 세션 앞선8개 프레임 관찰 재사용. 빠른 돌출과 도착 뒤 작은 회수의 대비."
+      },
+      {
+        "url": "https://coloso.jp/products/2danimator-proro-jp",
+        "use": "같은 세션의 배경동화·짧은접근 선택프레임 관찰 재사용. 연속 질주를 코마마다 감속시키지 않는 기준."
+      },
+      {
+        "url": "https://www.youtube.com/shorts/ctLfv9wBSMw",
+        "use": "앞서 본 사용자 쇼크코마 영상의 짧은 명암 교체와 긴 잔염 노출 재사용."
+      },
+      {
+        "url": "https://roystan.net/articles/camera-shake/",
+        "use": "앞선 원작성 GIF 관찰·코드 열람 재사용. 충격 뒤 빠른 감쇠·정착의 기준."
+      },
+      {
+        "url": "https://www.imageworks.com/our-craft/feature-animation/movies/spider-man-spider-verse",
+        "use": "앞선 공식 제작 문헌 열람 재사용. 키포즈 유지와 짧은 연결의 대비. 이번 새 영상 관찰은 아님."
+      }
+    ],
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "paidGenerationCalls": 0,
+    "audio": false
+  },
+  "speedImpactCombinationAddition": {
+    "date": "2026-10-21",
+    "scope": "기존10종과 섬광 정권을 유지하고 박자 연격·관통 돌파·촌경 강타3종을 기법 조합에 추가한다. selected13종·기법 조합14종·통합 연출실134항목이다.",
+    "sourcePath": "src/resources/effects/anime-selected-cuts/speed-impact-cuts.ts",
+    "cutIds": ["rhythm-rush", "piercing-dash", "short-power"],
+    "clock": "새3종은 처음부터1배속 실시간으로 설계한다. 기존 SceneTiming에 rate1 프로필을 연결하고 마지막0.3초의 동일 시각 고정을 유지한다.",
+    "contacts": {
+      "rhythm-rush": {
+        "seconds": [0.3, 0.49, 0.94],
+        "finalContactHoldMs": 65
+      },
+      "piercing-dash": {
+        "seconds": [0.66],
+        "contactHoldMs": 45
+      },
+      "short-power": {
+        "seconds": [0.7],
+        "contactHoldMs": 90,
+        "largeReleaseSeconds": 0.79
+      }
+    },
+    "reuse": "기존 남동 원투17장·기립·달리기, 곰왕 대기·피격·쓰러짐과 접촉 압축핵·먼지 등 보유 로컬 자재를 재사용한다. 새 공격 방향·몸 자세를 생성하지 않는다.",
+    "designBoundary": "직전 추천을 채택한 자체 조합 설계다. 원작 게임의 안무·판정·조작감을 그대로 재현하거나 본게임 필살기로 채택한 것이 아니다.",
+    "references": [
+      {
+        "title": "Dead Cells art design deep dive — Thomas Vasseur",
+        "url": "https://www.gamedeveloper.com/production/art-design-deep-dive-using-a-3d-pipeline-for-2d-animation-in-i-dead-cells-i-",
+        "observation": "직전 리서치에서 제작자 글과 공격 GIF의 움직임을 직접 확인한 범위를 재사용한다. 핵심 자세 급전환과 자세 사이를 연결하는 공격 궤적을 참고한다."
+      },
+      {
+        "title": "GDQuest — Juicy attack",
+        "url": "https://www.gdquest.com/library/juicy_attack/",
+        "observation": "직전 리서치에서 글과 비교 영상의 선택 구간을 음소거 상태로 직접 확인한 범위를 재사용한다. 짧은 예비동작·궤적·피격 반동·순간 감속의 결합을 참고한다."
+      },
+      {
+        "title": "Tenjutsu — Official Reveal Trailer",
+        "url": "https://www.youtube.com/watch?v=FEtUvSA5v9I&t=35s",
+        "observation": "직전 리서치에서 공식 영상35초대 선택 구간을 재생 전부터 끝까지 음소거하여 확인한 범위를 재사용한다. 빠른 연타·위치 전환·큰 상대 반응의 연결을 참고한다."
+      },
+      {
+        "title": "Deepnight — Tenjutsu announcement",
+        "url": "https://deepnight.net/blog/tenjutsu-announcement/",
+        "observation": "직전 리서치의 개발자 글 열람을 재사용한다. 연타·후방 반격·벽 충돌의 연결 설명이며 이 시안에서 후방 반격·벽 충돌을 구현했다는 뜻은 아니다."
+      }
+    ],
+    "observationBoundary": "위 출처 관찰은 직전 리서치에서 직접 확인한 선택 구간을 재사용한다. 이번 추가 작업에서 새 원작 재생·원본 게임 플레이·공개 구현 코드 실행을 추가로 수행하지 않았다.",
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "paidGenerationCalls": 0,
+    "audio": false,
+    "gifDownloadTest": false
+  },
+  "speedImpactStrengthRevision": {
+    "date": "2026-10-21",
+    "scope": "추가3종의 첫 접촉·강한 피격 자세·힘 받기·방출·착지·종결을 강화한다. 기존10종과 섬광 정권은 유지한다.",
+    "sourcePath": "src/resources/effects/anime-selected-cuts/speed-impact-cuts.ts",
+    "cutIds": ["rhythm-rush", "piercing-dash", "short-power"],
+    "previousRecord": "resources/anime-selected-cuts.json#speedImpactCombinationAddition",
+    "clock": "기존1배속 실시간 시계를 사용하고 준비·회수·끝 여백을 줄여1.75·1.45·1.60초로 끝낸다. 마지막0.3초의 동일 시각 고정은 유지한다.",
+    "cuts": {
+      "rhythm-rush": {
+        "durationSeconds": 1.75,
+        "contactSeconds": [0.24, 0.4, 0.76],
+        "contactHoldMs": [45, 50, 105],
+        "largeReleaseSeconds": 0.865
+      },
+      "piercing-dash": {
+        "durationSeconds": 1.45,
+        "contactSeconds": [0.49],
+        "contactHoldMs": 75,
+        "largeReleaseSeconds": 0.565,
+        "piercingDurationSeconds": 0.12,
+        "oppositeArrivalSeconds": 0.685
+      },
+      "short-power": {
+        "durationSeconds": 1.6,
+        "contactSeconds": [0.5],
+        "contactHoldMs": 120,
+        "largeReleaseSeconds": 0.62
+      }
+    },
+    "sharedImpact": {
+      "reaction": "첫 접촉 즉시 곰왕의 기존 강한 피격·쓰러짐 자세를 사용한다. 접촉 유지와 실제 밀림을 연결하고 착지 높이 변화·반동·먼지를 같은 지점에 맞춘다.",
+      "contactSnapZoomIncreasePercent": [10, 14],
+      "composition": "연격 끝타와 돌파·촌경의 접촉에서 구도를 즉시 좁히고 배경 암부·백열핵·방향성 파열로 주먹과 상대 반응을 강조한 뒤 빠르게 회수한다.",
+      "silhouetteImpactFrame": {
+        "contactSeconds": {
+          "rhythm-rush": 0.76,
+          "piercing-dash": 0.49,
+          "short-power": 0.5
+        },
+        "durationFramesAt24Fps": 1,
+        "durationMs": 41.666666666666664,
+        "appearance": "강타 접촉 첫1/24초에 검은 배경과 흰 배우 실루엣만으로 충격 코마를 만든다. 박자 연격의 앞 두 타에는 적용하지 않는다."
+      },
+      "delayedShockwave": {
+        "startSeconds": {
+          "rhythm-rush": 0.865,
+          "piercing-dash": 0.565,
+          "short-power": 0.62
+        },
+        "durationMs": 130,
+        "appearance": "접촉 유지가 풀리는 방출 시점부터 타원 충격파가130ms 동안 팽창한다."
+      },
+      "precisionAndRecovery": {
+        "recoveryDurationMs": 120,
+        "strongPunchRecoveryFrames": 4,
+        "armRecoverySeconds": {
+          "rhythm-rush": [0.865, 0.985],
+          "piercing-dash": [0.71, 0.83],
+          "short-power": [0.62, 0.74]
+        },
+        "cameraRecoverySeconds": {
+          "rhythm-rush": [0.865, 0.985],
+          "piercing-dash": [0.565, 0.685],
+          "short-power": [0.62, 0.74]
+        },
+        "rhythmFinalPreparation": {
+          "positionMoveSeconds": [0.51, 0.57],
+          "thrustSeconds": 0.705,
+          "rule": "장전 자리 이동은 첫60ms에 끝내고 준비 원화를 거치는 동안0.705초 급신전 전까지 위치를 고정한다."
+        },
+        "retainedFirstTwoRecoveryMs": [65, 60],
+        "rule": "강타의 기존 회수4원화를 최대120ms 안에 끝내고 끝 자세를 고정한다. 카메라 스냅·반동도 방출 뒤120ms에 복귀해 동작의 시작과 끝을 분명히 한다."
+      },
+      "techniqueLabelsAdded": [
+        "접촉 스냅 줌",
+        "피격 자세 강조",
+        "실루엣 충격 코마",
+        "지연 충격파"
+      ]
+    },
+    "reuse": "기존 남동 원투·기립·달리기와 곰왕 피격·쓰러짐, 보유 접촉·먼지 효과를 재사용한다. 새 원화·새 방향·효과 스프라이트는 만들지 않는다.",
+    "observationBoundary": "직전 리서치에서 직접 확인한 선택 구간·제작자 글과 speedImpactCombinationAddition의 출처를 재사용한다. 이번 개정의 근거는 해당 관찰과 현재 코드·보유 로컬 원화이며 새 원작 전체 재생·원본 게임 플레이·공개 구현 코드 실행을 추가로 수행한 것은 아니다.",
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "paidGenerationCalls": 0,
+    "audio": false,
+    "gifDownloadTest": false
+  },
+  "actionSynergyCombinationAddition": {
+    "date": "2026-10-21",
+    "scope": "추천한 액션 시너지7종을 사용자 승인으로 모두 구현. selected20종·기법 조합21종·통합 연출실140항목.",
+    "sourcePath": "src/resources/effects/anime-selected-cuts/action-synergy-cuts.ts",
+    "cutIds": [
+      "synergy-heavy-strike",
+      "synergy-explosive-rush",
+      "synergy-accelerating-flurry",
+      "synergy-delayed-pierce",
+      "synergy-reversal-counter",
+      "synergy-ground-break",
+      "synergy-final-blow"
+    ],
+    "clock": "새7종의 duration/beat는1배속 실제시간이다. rate1 프로필과 같은 절대시각을 재생·코마 탐색·정지에 사용하고 마지막0.3초를 고정한다.",
+    "reuse": "기존 남동 원투·달리기·점프·내려찍기·팔 풀기와 곰왕 공격·피격·쓰러짐, 기존 압축핵·먼지·현무암·효과 자재를 재사용. 역전 반격은 기존 찰나 반격의 3D 구도·실제 공격과 타점을 보존한 새 시간 배분 버전이다.",
+    "groundBoundary": "대지 분쇄는 발 착지에서 지면 파동을 내보내고, 떨어진 곰왕은 파동 도달 후 반응한다. 착지120ms에 발 앵커를 고정한 가로4.5%·세로-8%의 순간 스쿼시를 사용하며 새 자세 원화로 소개하지 않는다.",
+    "referenceBoundary": "기존 동작·카메라·기법 견본의 관찰 기록과 구현을 재사용했다. 이번에 원작 영상 전체나 작가별 필체를 새로 검증한 것은 아니다.",
+    "references": [
+      {
+        "url": "https://saint11.art/img/pixel-tutorials/AttackSheet.gif",
+        "use": "기존 직접 관찰 기록의 준비·짧은 연결·도착 대비 재사용"
+      },
+      {
+        "url": "https://saint11.art/img/pixel-tutorials/Easings.gif",
+        "use": "기존 직접 관찰 기록의 돌출·포즈 유지·회수 대비 재사용"
+      },
+      {
+        "url": "https://saint11.art/img/pixel-tutorials/Squash.gif",
+        "use": "기존 관찰 기록의 접지점 유지와 짧은 착지 압축 재사용"
+      },
+      {
+        "url": "https://roystan.net/articles/camera-shake/",
+        "use": "기존 감쇠 GIF 관찰·코드 열람의 충격 후 정착 원리 재사용"
+      }
+    ],
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "paidGenerationCalls": 0,
+    "audio": false
+  },
+  "variationRevision": {
+    "date": "2026-10-21",
+    "scope": "겹치는 액션 시너지6종을 기존 유형 안의 바리에이션으로 묶고 대지 분쇄만 독립 유형으로 유지한다. selected14유형20버전·기법 조합15유형21버전·통합 연출실134항목이다.",
+    "selectedTypeCount": 14,
+    "selectedVersionCount": 20,
+    "combinationTypeCount": 15,
+    "combinationVersionCount": 21,
+    "studioItemCount": 134,
+    "selection": "유형을 먼저 고른 뒤 하단 버전 선택에서 기존 버전과 변형을 고른다. 선택한 실제 컷 ID의 기법·길이·주요 순간·저장을 함께 적용한다.",
+    "groups": [
+      {
+        "parentId": "short-power",
+        "variantIds": ["short-power", "synergy-heavy-strike"]
+      },
+      {
+        "parentId": "background-run",
+        "variantIds": ["background-run", "synergy-explosive-rush"]
+      },
+      {
+        "parentId": "rhythm-rush",
+        "variantIds": ["rhythm-rush", "synergy-accelerating-flurry"]
+      },
+      {
+        "parentId": "already-cut",
+        "variantIds": ["already-cut", "synergy-delayed-pierce"]
+      },
+      {
+        "parentId": "bullet-counter",
+        "variantIds": ["bullet-counter", "synergy-reversal-counter"]
+      },
+      {
+        "parentId": "comic-panels",
+        "variantIds": ["comic-panels", "synergy-final-blow"]
+      }
+    ],
+    "standaloneId": "synergy-ground-break",
+    "legacyLinks": "기존 변형 컷 ID는 부모 유형 ID와 variant=실제 컷 ID 주소로 연결하며 새로고침·브라우저 기록 이동에서 복원한다. 기존 버전의 variant 값도 해당 실제 컷 ID다.",
+    "preserved": "cuts의20개 실제 렌더러·컷 ID·동작·원화·시간·기법·주요 순간·저장과 날짜별 제작 이력을 보존한다. 과거 actionSynergyCombinationAddition의20항목·21종·140항목은 통합 전 수량이다."
   }
 }

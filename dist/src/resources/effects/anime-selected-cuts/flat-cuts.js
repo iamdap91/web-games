@@ -4,6 +4,15 @@ import { gameImpact, gameInk } from '../../cutscenes/game-effects.js';
 import { comicCut } from './comic-cut.js';
 import { inkCut } from './ink-cut.js';
 import { orbitCut } from './orbit-cut.js';
+const stopTiming = {
+    frozenWorld: 0.75,
+    strikeStart: 1.16,
+    strikeInterval: 0.06,
+    strikeEnd: 1.49,
+    colorReturn: 2.43,
+    resume: 2.65,
+    settled: 3.4,
+};
 function frozenDebris(context, frame, time) {
     const image = frame.assets.props.basaltShards.image;
     context.save();
@@ -25,10 +34,13 @@ function frozenDebris(context, frame, time) {
 function drawWorld(context, frame, time) {
     gameBackground(context, frame, time);
     frozenDebris(context, frame, time);
-    const resumed = frame.time >= 2.95;
-    const recoil = clamp((frame.time - 2.95) / 0.38);
+    const resumed = frame.time >= stopTiming.resume;
+    const age = Math.max(0, frame.time - stopTiming.resume);
+    const recoil = clamp(age / 0.34);
+    const launch = ease(age / 0.15);
+    const settle = ease((age - 0.15) / 0.19);
     drawBear(context, frame.assets, {
-        x: 920 + ease(recoil) * 110,
+        x: 920 + launch * 128 - settle * 18,
         y: 610 - Math.sin(recoil * Math.PI) * 60,
         height: 640,
         state: resumed ? 'hit' : 'attack',
@@ -63,16 +75,21 @@ const stops = [
 ];
 function drawTimeStop(context, frame) {
     // 재생기의 마지막 0.3초 정지 전에 착지와 다섯 잔광까지 모두 끝낸다.
-    const time = Math.min(frame.time, 3.4);
+    const time = Math.min(frame.time, stopTiming.settled);
     const heldFrame = { ...frame, time };
-    const worldTime = time < 0.75 ? time : time < 2.95 ? 0.75 : time - 2.2;
+    const worldTime = time < stopTiming.frozenWorld
+        ? time
+        : time < stopTiming.resume
+            ? stopTiming.frozenWorld
+            : stopTiming.frozenWorld + time - stopTiming.resume;
     const world = frame.surfaces.get('stopped-world');
     drawWorld(world, heldFrame, worldTime);
     context.drawImage(world.canvas, 0, 0);
     const expanded = ease(clamp((time - 0.65) / 0.43));
-    const contracted = ease(clamp((time - 2.69) / 0.26));
+    const contracted = ease((time - stopTiming.colorReturn) /
+        (stopTiming.resume - stopTiming.colorReturn));
     const radius = expanded * (1 - contracted) * 1600;
-    if (time >= 0.65 && time < 2.95) {
+    if (time >= 0.65 && time < stopTiming.resume) {
         context.save();
         context.beginPath();
         context.arc(350, 400, radius, 0, Math.PI * 2);
@@ -84,14 +101,16 @@ function drawTimeStop(context, frame) {
         context.restore();
         drawRipple(context, world.canvas, radius);
     }
-    const completed = Math.max(0, Math.min(5, Math.floor((time - 1.16) / 0.06) + 1));
+    const completed = Math.max(0, Math.min(5, Math.floor((time - stopTiming.strikeStart) / stopTiming.strikeInterval) +
+        1));
     context.save();
     context.strokeStyle = '#ffdfa0';
     context.lineCap = 'round';
-    context.globalAlpha = 1 - clamp((time - 2.95) / 0.22);
+    context.globalAlpha = 1 - clamp((time - stopTiming.resume) / 0.16);
     for (let index = 0; index < completed; index++) {
         const stop = stops[index];
-        const stroke = clamp((time - 1.16 - index * 0.06) / 0.055);
+        const stroke = clamp((time - stopTiming.strikeStart - index * stopTiming.strikeInterval) /
+            0.055);
         const distance = 160 * stroke;
         context.shadowColor = '#fff4c9';
         context.shadowBlur = 12;
@@ -102,7 +121,7 @@ function drawTimeStop(context, frame) {
         context.stroke();
     }
     context.restore();
-    if (time < 1.16) {
+    if (time < stopTiming.strikeStart) {
         drawHero(context, frame.assets, {
             x: 345,
             y: 650,
@@ -111,8 +130,8 @@ function drawTimeStop(context, frame) {
             phase: Math.min(time, 0.75),
         });
     }
-    else if (time < 1.49) {
-        const index = Math.min(4, Math.floor((time - 1.16) / 0.06));
+    else if (time < stopTiming.strikeEnd) {
+        const index = Math.min(4, Math.floor((time - stopTiming.strikeStart) / stopTiming.strikeInterval));
         const stop = stops[index];
         // 원본 5번의 바깥주먹과 발 앵커를 같은 배율로 옮겨 접촉 위치를 고정한다.
         const sprite = frame.assets.hero.uppercut['south-east'][5];
@@ -137,7 +156,8 @@ function drawTimeStop(context, frame) {
             sheet: 'stroke',
             x: stop.x,
             y: stop.y,
-            progress: ((time - 1.16) % 0.06) / 0.06,
+            progress: ((time - stopTiming.strikeStart) % stopTiming.strikeInterval) /
+                stopTiming.strikeInterval,
             angle: stop.angle,
             size: 180,
         });
@@ -152,9 +172,9 @@ function drawTimeStop(context, frame) {
             facing: (-Math.PI * 3) / 4,
         });
     }
-    if (time >= 2.95) {
+    if (time >= stopTiming.resume) {
         for (let index = 0; index < 5; index++) {
-            const progress = (time - 2.95 - index * 0.03) / 0.3;
+            const progress = (time - stopTiming.resume - index * 0.03) / 0.3;
             if (progress >= 0)
                 gameImpact(context, frame.assets.effects, {
                     x: stops[index].x,
@@ -183,18 +203,18 @@ export const flatCuts = [
     orbitCut,
     {
         id: 'time-stop',
-        title: '시간 정지 · 다섯 타',
+        title: '시공 연격',
         kind: '2D',
         duration: 3.7,
-        description: '곰왕 원본 위협에서 반전 파문이 세계만 멈춘다. 제 색의 아타호가 0.06초마다 다섯 자리를 옮기고, 등 돌린 정적 후 0.03초 간격으로 다섯 타가 터진다. 곰왕 착지와 잔광이 끝난 마지막 구도를 고정한다.',
+        description: '곰왕 위협에서 반전 파문이 세계만 멈춘다. 제 색의 아타호가0.06초마다 다섯 자리를 옮긴 뒤 등 돌린 정적을 짧게 읽힌다.2.43초부터 색이 돌아오고2.65초에 다섯 타가0.03초 간격으로 터지며 곰왕이 빠르게 밀린다. 정지했던 세계는 같은 시각에서 이어지고 착지와 잔광 뒤 마지막 구도를 고정한다.',
         beats: [
             { time: 0, label: '곰왕 위협' },
             { time: 0.65, label: '반전 파문 · 세계 정지' },
-            { time: 1.16, label: '0.06초씩 다섯 자리' },
-            { time: 1.49, label: '등 돌린 정적' },
-            { time: 2.69, label: '색 귀환' },
-            { time: 2.95, label: '0.03초씩 지연 타격' },
-            { time: 3.4, label: '착지 · 잔광 소거 · 정적' },
+            { time: stopTiming.strikeStart, label: '0.06초씩 다섯 자리' },
+            { time: stopTiming.strikeEnd, label: '등 돌린 정적' },
+            { time: stopTiming.colorReturn, label: '색 귀환' },
+            { time: stopTiming.resume, label: '0.03초씩 지연 타격' },
+            { time: stopTiming.settled, label: '착지 · 잔광 소거 · 정적' },
         ],
         draw: drawTimeStop,
     },

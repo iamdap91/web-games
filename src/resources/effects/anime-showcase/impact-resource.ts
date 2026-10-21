@@ -1,4 +1,3 @@
-import { gameDust, gameImpact } from '../../cutscenes/game-effects.js';
 import type { SourceFrame } from '../../characters/ataho-v2-combos/source-frames.js';
 import { battleLayout, drawAtaho, drawBattle, drawBear } from './battle.js';
 import { clamp, ellipse, gameStage, smooth, stage } from './drawing.js';
@@ -22,7 +21,6 @@ export const headFirstFallTiming = {
   turnMs: 2380,
   terminalMs: 2780,
   contactMs: 3020,
-  dustEndMs: 3780,
   settledMs: 3860,
 } as const;
 
@@ -113,12 +111,6 @@ export function drawPerspectivePunch(context: Context, frame: Frame): void {
           ? strike
           : pose(frame, 'perspective-punch:recover');
   drawPose(context, source, feet, scale);
-  gameImpact(context, frame.assets.effects, {
-    ...contact,
-    progress: (time - battleLayout.contactMs) / 220,
-    size: frame.reducedMotion ? 120 : 200,
-    angle: Math.PI,
-  });
 }
 
 /** 배경의 투영과 원화에 같은 넓은 구도를 주며 화면 밖을 빈 캔버스로 드러내지 않는다. */
@@ -157,7 +149,7 @@ export function drawHeadFirstFall(
     drawBattle(context, frame);
     return;
   }
-  const { turnMs, contactMs, dustEndMs } = headFirstFallTiming;
+  const { turnMs, contactMs } = headFirstFallTiming;
   const target = battleLayout.target;
   const travel = smooth(
     (time - battleLayout.contactMs) / (contactMs - battleLayout.contactMs),
@@ -214,19 +206,6 @@ export function drawHeadFirstFall(
       options.impactEffects(context, { point: impactPoint, layer: 'front' });
       return;
     }
-    gameDust(context, frame.assets.effects, {
-      x: headX + 25,
-      y: target.ground,
-      progress: (time - contactMs) / (dustEndMs - contactMs),
-      size: frame.reducedMotion ? 220 : 340,
-    });
-    gameImpact(context, frame.assets.effects, {
-      x: headX,
-      y: target.ground - 8,
-      progress: (time - contactMs) / 200,
-      size: frame.reducedMotion ? 100 : 180,
-      angle: -Math.PI / 2,
-    });
   } finally {
     context.restore();
   }

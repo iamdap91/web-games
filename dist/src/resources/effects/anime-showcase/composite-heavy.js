@@ -11,6 +11,11 @@ const timing = {
     recoverEndMs: 3040,
     settledMs: 3400,
 };
+export const heavyContactCuts = [
+    timing.releaseMs,
+    timing.contactMs,
+    timing.holdEndMs,
+];
 /** 준비는 길게, 마지막 두 원화는 빠르게, 접촉 원화는 짧게 고정한다. */
 function poseTime(timeMs) {
     if (timeMs < 600)

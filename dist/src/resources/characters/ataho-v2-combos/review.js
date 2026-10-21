@@ -6,6 +6,7 @@ class ReviewLibrary {
     images;
     navigation;
     status;
+    active = false;
     constructor(root) {
         this.categories = [
             ...root.querySelectorAll('[data-review-category]'),
@@ -33,8 +34,11 @@ class ReviewLibrary {
             signal,
         });
         window.addEventListener('hashchange', this.revealHash, { signal });
-        window.addEventListener('pagehide', this.handlePageHide, { signal });
         this.revealHash();
+    }
+    setActive(active) {
+        this.active = active;
+        this.syncImages();
     }
     activate(category) {
         if (!category)
@@ -52,6 +56,8 @@ class ReviewLibrary {
         this.syncImages();
     }
     isVisible(image) {
+        if (!this.active)
+            return false;
         const category = image.closest('[data-review-category]');
         if (!category || category.hidden)
             return false;
@@ -113,6 +119,11 @@ class ReviewLibrary {
     }
     revealHash = () => {
         const fragment = window.location.hash.slice(1);
+        if (fragment === 'reference-library') {
+            this.activate(this.categories.find((category) => !category.hidden) ??
+                this.categories[0]);
+            return;
+        }
         if (!fragment) {
             this.activate(this.categories[0]);
             return;
@@ -141,8 +152,10 @@ class ReviewLibrary {
             return;
         const link = event.target.closest('a[href^="#"]');
         const target = link && document.getElementById(link.hash.slice(1));
-        if (target)
+        if (target?.closest('[data-review-category]')) {
+            event.preventDefault();
             this.reveal(target);
+        }
     };
     handleToggle = (event) => {
         const group = event.target;
@@ -176,17 +189,108 @@ class ReviewLibrary {
         if (placeholder)
             placeholder.hidden = false;
     };
-    handlePageHide = (event) => {
-        if (!event.persisted)
-            this.destroy();
-    };
-    destroy() {
+    dispose() {
         this.controller.abort();
         for (const image of this.images)
             image.removeAttribute('src');
     }
 }
-const library = document.querySelector('#review-library');
-if (library)
-    new ReviewLibrary(library);
-export {};
+/** 같은 조합 화면 안의 자료 패널과 지연 로딩·GIF의 수명을 소유한다. */
+export class ReferenceLibraryPanel {
+    panel;
+    events = new AbortController();
+    content;
+    library;
+    loading;
+    disposed = false;
+    constructor(panel) {
+        this.panel = panel;
+        const content = panel.querySelector('[data-reference-content]');
+        if (!content)
+            throw new Error('제작 자료를 표시할 영역이 없습니다.');
+        this.content = content;
+        const signal = this.events.signal;
+        panel.addEventListener('toggle', (event) => {
+            if (event.target === panel)
+                void this.sync();
+        }, { signal });
+        panel.addEventListener('click', (event) => {
+            if (!(event.target instanceof Element) ||
+                !event.target.closest('[data-close-reference]'))
+                return;
+            this.panel.open = false;
+            document.getElementById('controls')?.scrollIntoView({ block: 'start' });
+            document.getElementById('pause')?.focus({ preventScroll: true });
+        }, { signal });
+        window.addEventListener('hashchange', this.openHash, { signal });
+        this.openHash();
+    }
+    get open() {
+        return this.panel.open;
+    }
+    openHash = () => {
+        this.panel.open = location.hash === '#reference-library';
+        void this.sync().then(() => {
+            // 지연 본문이 붙은 뒤 이동해야 접힌 패널의 옛 문서 높이에 막히지 않는다.
+            if (!this.disposed && this.panel.open)
+                this.panel.scrollIntoView({ block: 'start' });
+        });
+    };
+    async sync() {
+        if (this.disposed)
+            return;
+        this.library?.setActive(this.panel.open);
+        const url = new URL(location.href);
+        if (!this.panel.open) {
+            if (url.hash === '#reference-library') {
+                url.hash = '';
+                history.replaceState(history.state, '', url);
+            }
+            return;
+        }
+        url.hash = 'reference-library';
+        history.replaceState(history.state, '', url);
+        if (!this.library) {
+            this.loading ??= this.load();
+            await this.loading;
+        }
+        if (!this.disposed)
+            this.library?.setActive(this.panel.open);
+    }
+    async load() {
+        try {
+            const { reviewContent } = await import('./review-content.js');
+            if (this.disposed)
+                return;
+            this.content.innerHTML = reviewContent;
+            const root = this.content.querySelector('#review-library');
+            if (!root)
+                throw new Error('제작 자료의 본문을 찾지 못했습니다.');
+            // 원본 파일과 외부 문서를 열어도 조합실의 선택·설정·재생 상태는 남긴다.
+            for (const link of root.querySelectorAll('a[href]')) {
+                if (link.getAttribute('href')?.startsWith('#'))
+                    continue;
+                link.target = '_blank';
+                link.rel = 'noopener';
+            }
+            this.library = new ReviewLibrary(root);
+        }
+        catch (error) {
+            if (!this.disposed)
+                this.content.textContent =
+                    error instanceof Error
+                        ? error.message
+                        : '제작 자료를 불러오지 못했습니다.';
+        }
+        finally {
+            this.loading = undefined;
+        }
+    }
+    dispose() {
+        if (this.disposed)
+            return;
+        this.disposed = true;
+        this.events.abort();
+        this.library?.dispose();
+    }
+}

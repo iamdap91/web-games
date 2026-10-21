@@ -24,7 +24,8 @@ function shadow(ctx, p, width) {
 }
 function drawOrbit(ctx, frame) {
     const time = Math.min(frame.time, 3.2);
-    const progress = smooth((time - 0.18) / 2.05);
+    // 천천히 시차를 읽힌 뒤 반주 중간을 빠르게 통과하고, 장전 전에 같은 반대편 구도로 정착한다.
+    const progress = 1 - (1 - clamp((time - 0.34) / 1.9) ** 1.9) ** 3;
     const view = {
         angle: Math.PI * progress,
     };
@@ -39,14 +40,22 @@ function drawOrbit(ctx, frame) {
     };
     const stageOptions = { principalY: 200, focus: { x: 0, y: 0, z: 0 } };
     frame.surfaces.stage.background(ctx, 'arena', camera, time, stageOptions);
-    const reaction = smooth((time - contactTime) / 0.42);
+    const age = Math.max(0, time - contactTime);
+    const launch = 1 - (1 - clamp(age / 0.16)) ** 3;
+    const settle = smooth((age - 0.16) / 0.24);
+    const displacement = launch * 0.82 - settle * 0.14;
+    const reaction = clamp(age / 0.36);
     // 두 배우 사이를 회전축으로 삼아 양쪽 모두 화면의 좌우와 앞뒤를 교환한다.
     const hero = groundPoint(-1.1, 0, view);
-    const bear = groundPoint(1.1 + reaction * 0.6, 0, view);
-    const attacking = time >= 2.35 && time < 3.16;
+    const bear = groundPoint(1.1 + displacement, 0, view);
+    const attacking = time >= 2.26 && time < 3.16;
     const attackIndex = time < contactTime
-        ? Math.min(1, Math.floor(clamp((time - 2.35) / 0.35) * 2))
-        : Math.min(6, 2 + Math.floor(clamp((time - contactTime) / 0.46) * 5));
+        ? time < contactTime - 0.08
+            ? 0
+            : 1
+        : age < 0.1
+            ? 2
+            : Math.min(6, 3 + Math.floor(clamp((age - 0.1) / 0.34) * 4));
     const attackSprite = frame.assets.hero.uppercut.west[attackIndex];
     // 2번 원화에 포함된 타격 섬광 때문에 몸까지 작아지지 않도록 발 기준 배율을 유지한다.
     const attackHeight = attackSprite.bounds
@@ -105,15 +114,17 @@ function drawOrbit(ctx, frame) {
 }
 export const orbitCut = {
     id: 'orbit-2d',
-    title: '마와리코미 · 2D 시차',
+    title: '반월 회격',
     kind: '2D',
     duration: 3.5,
-    description: '게임 숲 전투 공터에서 두 배우 사이를 반주하며 동쪽→북쪽→서쪽 원화와 깊이별 시차로 양쪽의 좌우·앞뒤를 교환한다. 서쪽 어퍼컷의 접촉 원화에서 타격한 뒤 팔 회수와 곰왕 착지를 끝내고 정착한다. 곰왕은 한 시점 원본의 판이다.',
+    description: '반주 초반의 시차를 읽힌 뒤 중간 회전을 빠르게 통과하고 반대편에 정착한다. 장전 뒤80ms의 짧은 신전으로 서쪽 어퍼컷이 닿고, 곰왕은160ms 안에 밀려난 뒤 조금 되돌아와 착지한다. 동쪽→북쪽→서쪽 실제 원화와 깊이 정렬을 유지하며 곰왕은 한 시점 원본의 판이다.',
     beats: [
         { time: 0, label: '동쪽 구도 · 반주 시작' },
-        { time: 1.2, label: '등 뒤 구도 · 연속 시차' },
-        { time: 2.23, label: '서쪽 구도 · 반주 정착' },
+        { time: 1.18, label: '빠른 반주 · 등 뒤 시차' },
+        { time: 2.26, label: '서쪽 구도 정착 · 장전' },
+        { time: 2.62, label: '80ms 신전' },
         { time: contactTime, label: '서쪽 어퍼컷 접촉' },
+        { time: 2.86, label: '초기 밀림 · 회수' },
         { time: 3.2, label: '회수 · 착지 · 반대편 정착' },
     ],
     draw: drawOrbit,

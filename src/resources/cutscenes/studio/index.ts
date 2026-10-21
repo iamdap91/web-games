@@ -3,6 +3,7 @@ import { resourceUrl } from '../../catalog/resource-url.js';
 import {
   findStudioItem,
   filterStudioItems,
+  readStudioSelection,
   studioGroups,
   studioItems,
   type StudioItem,
@@ -23,9 +24,11 @@ class StudioScreen {
   private readonly search = element('search', HTMLInputElement);
   private readonly seek = element('seek', HTMLInputElement);
   private readonly viewport: StudioViewport;
-  private current =
-    findStudioItem(new URL(location.href).searchParams.get('item')) ??
-    studioItems[0]!;
+  private readonly initialSelection = readStudioSelection(
+    new URL(location.href),
+  );
+  private current = this.initialSelection.item ?? studioItems[0]!;
+  private variant = this.initialSelection.variant;
   private group: StudioGroup = this.current.group;
   private state?: StudioSnapshot;
   private metadataKey = '';
@@ -148,6 +151,24 @@ class StudioScreen {
         },
         { signal },
       );
+    element('variant', HTMLSelectElement).addEventListener(
+      'change',
+      (event) => {
+        const select = event.currentTarget;
+        if (
+          !(select instanceof HTMLSelectElement) ||
+          this.state?.exporting ||
+          !this.state?.variantOptions?.some(
+            (option) => option.value === select.value,
+          )
+        )
+          return;
+        this.variant = select.value;
+        this.writeLocation('push');
+        this.viewport.send({ action: 'variant', value: this.variant });
+      },
+      { signal },
+    );
     element('facing', HTMLSelectElement).addEventListener(
       'change',
       (event) => {
@@ -162,9 +183,22 @@ class StudioScreen {
     for (const action of ['gif', 'png', 'cancel-export'] as const)
       element(action, HTMLButtonElement).addEventListener(
         'click',
-        () => this.viewport.send({ action }),
+        () => {
+          if (action === 'gif' && this.state?.gifRange && !this.sendGifRange())
+            return;
+          this.viewport.send({ action });
+        },
         { signal },
       );
+    for (const id of ['gif-start', 'gif-end']) {
+      const input = element(id, HTMLInputElement);
+      input.addEventListener(
+        'input',
+        () => this.sendGifRange({ reportInvalid: false }),
+        { signal },
+      );
+      input.addEventListener('change', () => this.sendGifRange(), { signal });
+    }
     window.addEventListener(
       'keydown',
       (event) => {
@@ -195,9 +229,11 @@ class StudioScreen {
       () => {
         const url = new URL(location.href);
         this.search.value = url.searchParams.get('search') ?? '';
+        const selection = readStudioSelection(url);
         this.select(
-          findStudioItem(url.searchParams.get('item')) ?? studioItems[0]!,
+          selection.item ?? studioItems[0]!,
           'none',
+          selection.variant,
         );
       },
       { signal },
@@ -210,7 +246,7 @@ class StudioScreen {
     element('record', HTMLAnchorElement).href = resourceUrl(
       'resources/cutscene-studio.json',
     ).href;
-    this.select(this.current, 'replace');
+    this.select(this.current, 'replace', this.variant);
   }
   private filtered(): readonly StudioItem[] {
     return filterStudioItems(this.group, this.search.value);
@@ -247,8 +283,10 @@ class StudioScreen {
   private select(
     item: StudioItem,
     historyMode: 'push' | 'replace' | 'none' = 'push',
+    variant?: string,
   ): void {
     this.current = item;
+    this.variant = variant;
     this.group = item.group;
     this.state = undefined;
     this.metadataKey = '';
@@ -267,9 +305,12 @@ class StudioScreen {
       'loop-option',
       'compare-option',
       'facing-option',
+      'variant-option',
       'reduced-option',
       'png',
       'gif',
+      'gif-range',
+      'gif-download',
       'cancel-export',
       'comparison-labels',
     ])
@@ -277,11 +318,13 @@ class StudioScreen {
     element('viewport', HTMLElement).classList.remove('comparing');
     this.renderList();
     if (historyMode !== 'none') this.writeLocation(historyMode);
-    this.viewport.show(item);
+    this.viewport.show(item, this.variant);
   }
   private writeLocation(mode: 'push' | 'replace'): void {
     const url = new URL(location.href);
     url.searchParams.set('item', this.current.id);
+    if (this.variant) url.searchParams.set('variant', this.variant);
+    else url.searchParams.delete('variant');
     if (this.search.value) url.searchParams.set('search', this.search.value);
     else url.searchParams.delete('search');
     url.hash = '';
@@ -299,18 +342,24 @@ class StudioScreen {
     const { state, capabilities } = message;
     const initial = !this.state;
     this.state = state;
+    if (this.variant !== state.variant) {
+      this.variant = state.variant;
+      this.writeLocation('replace');
+    }
     if (initial)
       this.viewport.send({
         action: 'speed',
         value: Number(element('speed', HTMLSelectElement).value),
       });
     const ready = !state.loading;
-    this.setReady(ready);
+    this.setReady(ready && !(state.exporting && state.gifRange));
     element('viewport', HTMLElement).setAttribute('aria-busy', String(!ready));
     element('viewport', HTMLElement).dataset.item = this.current.id;
     element('viewport', HTMLElement).dataset.timeMs = String(state.timeMs);
     element('viewport', HTMLElement).dataset.playing = String(state.playing);
     element('title', HTMLElement).textContent = state.title;
+    element('origin', HTMLElement).textContent =
+      this.current.variantOrigins[state.variant ?? ''] ?? this.current.origin;
     element('description', HTMLElement).textContent = state.description;
     this.seek.max = String(state.durationMs);
     this.seek.value = String(state.timeMs);
@@ -326,20 +375,58 @@ class StudioScreen {
         : state.timeMs >= state.durationMs
           ? '감상 완료'
           : '일시정지 · 무음';
-    for (const action of ['loop', 'compare', 'facing', 'reduced'] as const)
+    for (const action of [
+      'loop',
+      'compare',
+      'facing',
+      'variant',
+      'reduced',
+    ] as const)
       element(`${action}-option`, HTMLElement).hidden =
         !capabilities.includes(action) ||
-        (action === 'facing' && (state.facingOptions?.length ?? 0) < 2);
+        (action === 'facing' && (state.facingOptions?.length ?? 0) < 2) ||
+        (action === 'variant' && !state.variantOptions?.length);
+    element('variant', HTMLSelectElement).disabled =
+      !ready || !!state.exporting;
     for (const action of ['gif', 'png'] as const) {
       const button = element(action, HTMLButtonElement);
       button.hidden = !capabilities.includes(action);
       button.disabled = !ready || !!state.exporting;
+    }
+    const range = state.gifRange;
+    element('gif-range', HTMLElement).hidden =
+      !capabilities.includes('gifRange') || !range;
+    for (const [id, value] of [
+      ['gif-start', range?.startMs],
+      ['gif-end', range?.endMs],
+    ] as const) {
+      const input = element(id, HTMLInputElement);
+      input.disabled = !ready || !!state.exporting;
+      input.max = String(state.durationMs / 1000);
+      if (value !== undefined && document.activeElement !== input)
+        input.value = String(value / 1000);
+    }
+    element('gif', HTMLButtonElement).textContent = range
+      ? range.startMs === 0 && range.endMs === state.durationMs
+        ? '전체 GIF 만들기'
+        : '구간 GIF 만들기'
+      : '연출 GIF 저장';
+    const download = element('gif-download', HTMLAnchorElement);
+    download.hidden = !ready || !!state.exporting || !state.exportDownload;
+    if (state.exportDownload) {
+      download.href = state.exportDownload.url;
+      download.download = state.exportDownload.fileName;
+    } else {
+      download.removeAttribute('href');
+      download.removeAttribute('download');
     }
     element('cancel-export', HTMLButtonElement).hidden =
       !state.exporting || !capabilities.includes('cancelExport');
     element('loop', HTMLInputElement).checked = state.loop ?? false;
     element('compare', HTMLInputElement).checked = state.compare ?? false;
     element('reduced', HTMLInputElement).checked = state.reducedMotion ?? false;
+    element('reduced', HTMLInputElement).disabled =
+      !ready || !!(state.exporting && state.gifRange);
     element('viewport', HTMLElement).classList.toggle(
       'comparing',
       state.compare ?? false,
@@ -356,7 +443,12 @@ class StudioScreen {
       : '기본 장면과 비교';
     element('export-status', HTMLOutputElement).textContent =
       state.exportStatus ?? '';
-    const key = `${this.current.id}:${JSON.stringify(state.facingOptions)}:${JSON.stringify(state.beats)}`;
+    const key = JSON.stringify({
+      itemId: this.current.id,
+      facingOptions: state.facingOptions,
+      variantOptions: state.variantOptions,
+      beats: state.beats,
+    });
     if (key !== this.metadataKey) {
       this.metadataKey = key;
       const beats = element('beats', HTMLElement);
@@ -373,16 +465,23 @@ class StudioScreen {
         );
         beats.append(button);
       }
-      const facing = element('facing', HTMLSelectElement);
-      facing.replaceChildren();
-      for (const choice of state.facingOptions ?? []) {
-        const option = document.createElement('option');
-        option.value = choice.value;
-        option.textContent = choice.label;
-        facing.append(option);
+      for (const [id, options] of [
+        ['facing', state.facingOptions],
+        ['variant', state.variantOptions],
+      ] as const) {
+        const select = element(id, HTMLSelectElement);
+        select.replaceChildren();
+        for (const choice of options ?? []) {
+          const option = document.createElement('option');
+          option.value = choice.value;
+          option.textContent = choice.label;
+          select.append(option);
+        }
       }
     }
     if (state.facing) element('facing', HTMLSelectElement).value = state.facing;
+    if (state.variant)
+      element('variant', HTMLSelectElement).value = state.variant;
   }
   private stepFrame(direction: number): void {
     if (this.state)
@@ -390,6 +489,29 @@ class StudioScreen {
         action: 'seek',
         value: this.state.timeMs + (direction * 1000) / 24,
       });
+  }
+  private sendGifRange(
+    options: { readonly reportInvalid?: boolean } = {},
+  ): boolean {
+    const start = element('gif-start', HTMLInputElement);
+    const end = element('gif-end', HTMLInputElement);
+    start.setCustomValidity('');
+    end.setCustomValidity('');
+    const invalid = [start, end].find((input) => !input.checkValidity());
+    if (invalid) {
+      if (options.reportInvalid !== false) invalid.reportValidity();
+      return false;
+    }
+    const startMs = Math.round(start.valueAsNumber * 1000);
+    const endMs = Math.round(end.valueAsNumber * 1000);
+    if (!Number.isFinite(startMs) || !Number.isFinite(endMs)) return false;
+    if (endMs <= startMs) {
+      end.setCustomValidity('끝 시각은 시작 시각보다 뒤여야 합니다.');
+      if (options.reportInvalid !== false) end.reportValidity();
+      return false;
+    }
+    this.viewport.send({ action: 'gif-range', value: { startMs, endMs } });
+    return true;
   }
   private step(direction: number): void {
     const items = this.filtered();

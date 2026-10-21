@@ -3,6 +3,7 @@ import { resourceUrl } from '../../catalog/resource-url.js';
 import { loadSourceFrame, } from '../../characters/ataho-v2-combos/source-frames.js';
 import { loadCombatEffectSpriteFrame, } from '../../characters/ataho-v2-combos/combat-effect-sprites.js';
 import { loadInkSpriteFrame } from '../../characters/ataho-v2-combos/ink-sprites.js';
+import { loadEffectSpriteResources } from '../anime-showcase/effect-sprite-resources.js';
 export const directions = [
     'south',
     'south-east',
@@ -79,6 +80,12 @@ export async function loadCutAssets() {
     sourcePaths.add(portraitPath);
     const effects = new Map();
     await Promise.all([
+        loadEffectSpriteResources().then((frames) => {
+            for (const [key, source] of frames) {
+                effects.set(key, source);
+                sourcePaths.add(source.localPath);
+            }
+        }),
         ...['shoulder-crush', 'ground-impact'].map(async (sheet) => {
             const source = await loadCombatEffectSpriteFrame(sheet);
             effects.set(`combat-vfx:${sheet}`, source);
@@ -104,6 +111,15 @@ export async function loadCutAssets() {
         debrisImage.naturalHeight !== debrisFrame.height)
         throw new Error('현무암 파편 원본 크기가 다릅니다.');
     sourcePaths.add(debrisFrame.localPath);
+    effects.set('technique:basalt-shards', {
+        image: debrisImage,
+        localPath: debrisFrame.localPath,
+        label: '기존 현무암 파편',
+        anchorX: debrisFrame.pivot.x,
+        anchorY: debrisFrame.height - debrisFrame.pivot.y,
+        feetY: debrisFrame.height - debrisFrame.pivot.y,
+        kind: 'generated',
+    });
     const basaltShards = {
         image: debrisImage,
         anchorX: debrisFrame.pivot.x,

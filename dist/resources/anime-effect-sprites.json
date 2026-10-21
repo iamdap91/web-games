@@ -1,12 +1,12 @@
 {
     "version": 1,
-    "date": "2026-10-20",
-    "provider": "PixelLab Pro Flash",
+    "date": "2026-10-21",
+    "provider": "PixelLab Pro Flash / Pro",
     "qualityStatus": "awaiting-user-gif-review",
-    "scope": "카나다 빛과 폭발·연기7종의 빛무리·폭발형상·연기몸체·암부·거품·갈고리 불꽃. 원본 픽셀과 알파를 보존한 연결 영역 또는 셀의 무손실 분리.",
+    "scope": "카나다 빛과 폭발·연기7종의 빛무리·폭발형상·연기몸체·암부·거품·갈고리 불꽃. 원본 픽셀과 알파를 보존한 연결 영역 또는 셀의 무손실 분리. 쇼크코마 v2의 백열 섬광3장·잔염9장 전용 아틀라스를 추가했다. 카나다 빔·드래곤과 모리·아라키·코즈마·타츠조·시게타7종의 전용자재32장을 추가했다.",
     "generation": {
-        "calls": 7,
-        "subscriptionGenerationsCharged": 38,
+        "calls": 19,
+        "subscriptionGenerationsCharged": 97,
         "additionalCreditUsd": 0
     },
     "sprites": [
@@ -539,6 +539,680 @@
             ],
             "sha256": "452c32c5fe64759de583a47fd6f9f0801a6b3b40e53f1eacd501df9a49720694",
             "byteSize": 803
+        },
+        {
+            "id": "shock-koma-v2",
+            "localPath": "public/assets/maplestory/shock-koma-v2/20261021/impact-atlas.png",
+            "width": 252,
+            "height": 256,
+            "recordPath": "resources/shock-koma-v2-sprites.json",
+            "frames": [
+                {
+                    "key": "shock-koma-v2-atlas",
+                    "x": 0,
+                    "y": 0,
+                    "width": 252,
+                    "height": 256,
+                    "anchorX": 0,
+                    "anchorY": 0,
+                    "localPath": "public/assets/maplestory/shock-koma-v2/20261021/impact-atlas.png"
+                }
+            ],
+            "qualityStatus": "awaiting-user-playback-review"
+        },
+        {
+            "id": "seven:kanada-dragon",
+            "localPath": "public/assets/maplestory/anime-fx-seven/20261021/kanada-dragon-atlas.png",
+            "width": 128,
+            "height": 128,
+            "recordPath": "resources/anime-fx-seven-sprites.json",
+            "qualityStatus": "awaiting-user-playback-review",
+            "frames": [
+                {
+                    "key": "dragon-head-0",
+                    "x": 0,
+                    "y": 0,
+                    "width": 66,
+                    "height": 70,
+                    "anchorX": 20,
+                    "anchorY": 36,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/dragon-head-0.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 0,
+                        "right": 66,
+                        "bottom": 70
+                    },
+                    "sha256": "4f96ce344ef94fafc44a209c1db0bd0e05c988a1f6ac1e37a861298761fce7c4"
+                },
+                {
+                    "key": "dragon-head-1",
+                    "x": 0,
+                    "y": 0,
+                    "width": 62,
+                    "height": 70,
+                    "anchorX": 18,
+                    "anchorY": 36,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/dragon-head-1.png",
+                    "sourceBounds": {
+                        "left": 66,
+                        "top": 0,
+                        "right": 128,
+                        "bottom": 70
+                    },
+                    "sha256": "fed27e09d405787ce4132046713174063d0549d2125f57e7618b46c95e84cc4c"
+                },
+                {
+                    "key": "dragon-body",
+                    "x": 0,
+                    "y": 0,
+                    "width": 77,
+                    "height": 58,
+                    "anchorX": 32,
+                    "anchorY": 26,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/dragon-body.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 70,
+                        "right": 77,
+                        "bottom": 128
+                    },
+                    "sha256": "dedb64446e29646ec498ba1ca90b2de73ac470b3fff9aefcad670fc0bca34f3e"
+                },
+                {
+                    "key": "dragon-tail",
+                    "x": 0,
+                    "y": 0,
+                    "width": 51,
+                    "height": 58,
+                    "anchorX": 2,
+                    "anchorY": 26,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/dragon-tail.png",
+                    "sourceBounds": {
+                        "left": 77,
+                        "top": 70,
+                        "right": 128,
+                        "bottom": 128
+                    },
+                    "sha256": "6604e8bfc859f8125743af0227026335f4e07c4c1a3fd8868d9e261924c8db83"
+                }
+            ]
+        },
+        {
+            "id": "seven:mori",
+            "localPath": "public/assets/maplestory/anime-fx-seven/20261021/mori-atlas.png",
+            "width": 128,
+            "height": 128,
+            "recordPath": "resources/anime-fx-seven-sprites.json",
+            "qualityStatus": "awaiting-user-playback-review",
+            "frames": [
+                {
+                    "key": "mori-shard-0",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 35,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/mori-shard-0.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 0,
+                        "right": 64,
+                        "bottom": 64
+                    },
+                    "sha256": "eb773b6996e01b3a9b94523fa7f5c10c928c8047d4db5749766f23d650a304b3"
+                },
+                {
+                    "key": "mori-shard-1",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 36,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/mori-shard-1.png",
+                    "sourceBounds": {
+                        "left": 64,
+                        "top": 0,
+                        "right": 128,
+                        "bottom": 64
+                    },
+                    "sha256": "404ca11d1069f92a019a2f3ff7e59b7232cf4fdb449b6e2c51842ba1f7a2c6f6"
+                },
+                {
+                    "key": "mori-shard-2",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 24,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/mori-shard-2.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 64,
+                        "right": 64,
+                        "bottom": 128
+                    },
+                    "sha256": "7b88454028e9084d59c94f6db97dd8717de667b0705330cc7caf34f0222ed189"
+                },
+                {
+                    "key": "mori-shard-3",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 23,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/mori-shard-3.png",
+                    "sourceBounds": {
+                        "left": 64,
+                        "top": 64,
+                        "right": 128,
+                        "bottom": 128
+                    },
+                    "sha256": "3112ce76e2fedd1e487a40972f9ca5bfcb83db24e91b5d562d4eb4dc12be5556"
+                }
+            ]
+        },
+        {
+            "id": "seven:araki",
+            "localPath": "public/assets/maplestory/anime-fx-seven/20261021/araki-atlas.png",
+            "width": 128,
+            "height": 128,
+            "recordPath": "resources/anime-fx-seven-sprites.json",
+            "qualityStatus": "awaiting-user-playback-review",
+            "frames": [
+                {
+                    "key": "araki-cross-0",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 69,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/araki-cross-0.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 0,
+                        "right": 64,
+                        "bottom": 69
+                    },
+                    "sha256": "709e2d72425d124c01660aecefb9d79118b51951fdfa83316721dc0a861101ed"
+                },
+                {
+                    "key": "araki-cross-1",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 69,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/araki-cross-1.png",
+                    "sourceBounds": {
+                        "left": 64,
+                        "top": 0,
+                        "right": 128,
+                        "bottom": 69
+                    },
+                    "sha256": "6fb8ef99ee0650bedf248d92e5d3a5cd325d4205e01bbb1a4d49b784acb9d823"
+                },
+                {
+                    "key": "araki-bubble-0",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 59,
+                    "anchorX": 32,
+                    "anchorY": 27,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/araki-bubble-0.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 69,
+                        "right": 64,
+                        "bottom": 128
+                    },
+                    "sha256": "35008a03270bf38a6d82a8c4c95fb35baa13968f4d97e4817b0071d68570e281"
+                },
+                {
+                    "key": "araki-bubble-1",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 59,
+                    "anchorX": 32,
+                    "anchorY": 27,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/araki-bubble-1.png",
+                    "sourceBounds": {
+                        "left": 64,
+                        "top": 69,
+                        "right": 128,
+                        "bottom": 128
+                    },
+                    "sha256": "68218191895c7587f0389c5c3c13f18da62c81aec68027f65fe6949eb7ec66e0"
+                }
+            ]
+        },
+        {
+            "id": "seven:kozuma",
+            "localPath": "public/assets/maplestory/anime-fx-seven/20261021/kozuma-atlas.png",
+            "width": 128,
+            "height": 128,
+            "recordPath": "resources/anime-fx-seven-sprites.json",
+            "qualityStatus": "awaiting-user-playback-review",
+            "frames": [
+                {
+                    "key": "kozuma-head-0",
+                    "x": 0,
+                    "y": 0,
+                    "width": 54,
+                    "height": 64,
+                    "anchorX": 35,
+                    "anchorY": 37,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/kozuma-head-0.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 0,
+                        "right": 54,
+                        "bottom": 64
+                    },
+                    "sha256": "cd5b9647c20a4feee1003e5ded08a8f92a766850726f90876c6fd9e0bf1f3da8"
+                },
+                {
+                    "key": "kozuma-neck",
+                    "x": 0,
+                    "y": 0,
+                    "width": 74,
+                    "height": 64,
+                    "anchorX": 56,
+                    "anchorY": 36,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/kozuma-neck.png",
+                    "sourceBounds": {
+                        "left": 54,
+                        "top": 0,
+                        "right": 128,
+                        "bottom": 64
+                    },
+                    "sha256": "4636264423e640a20b0173f9b62279fff1d928f7b4b72919d49844e422b1190a"
+                },
+                {
+                    "key": "kozuma-head-1",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 40,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/kozuma-head-1.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 64,
+                        "right": 64,
+                        "bottom": 128
+                    },
+                    "sha256": "27a4c4c0e907421acb2b3cca5f169fcaa56e14d45940dc9ee4e5fe4957f61e55"
+                },
+                {
+                    "key": "kozuma-residue",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/kozuma-residue.png",
+                    "sourceBounds": {
+                        "left": 64,
+                        "top": 64,
+                        "right": 128,
+                        "bottom": 128
+                    },
+                    "sha256": "5a61b4b411f383a694aa1d98f3e737ce908cc77864e7d0f9822eac28b09e3e05"
+                }
+            ]
+        },
+        {
+            "id": "seven:tatsuzo",
+            "localPath": "public/assets/maplestory/anime-fx-seven/20261021/tatsuzo-atlas.png",
+            "width": 256,
+            "height": 128,
+            "recordPath": "resources/anime-fx-seven-sprites.json",
+            "qualityStatus": "awaiting-user-playback-review",
+            "frames": [
+                {
+                    "key": "tatsuzo-morph-0",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/tatsuzo-morph-0.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 0,
+                        "right": 64,
+                        "bottom": 64
+                    },
+                    "sha256": "f2b1efcef22ea2d71ea4c116a9db071aa23f3c3e68f7b4b75a7709bfe7517132"
+                },
+                {
+                    "key": "tatsuzo-morph-1",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/tatsuzo-morph-1.png",
+                    "sourceBounds": {
+                        "left": 64,
+                        "top": 0,
+                        "right": 128,
+                        "bottom": 64
+                    },
+                    "sha256": "6f72c60b707863a2044305b8e247dc8936f737c1f6595c3e602ad800d7b6d140"
+                },
+                {
+                    "key": "tatsuzo-morph-2",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/tatsuzo-morph-2.png",
+                    "sourceBounds": {
+                        "left": 128,
+                        "top": 0,
+                        "right": 192,
+                        "bottom": 64
+                    },
+                    "sha256": "c69e7b4fb5f6d9d8f837459dccdb66e06d8dfb3f7d2877427bc9784bef9a2eca"
+                },
+                {
+                    "key": "tatsuzo-morph-3",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/tatsuzo-morph-3.png",
+                    "sourceBounds": {
+                        "left": 192,
+                        "top": 0,
+                        "right": 256,
+                        "bottom": 64
+                    },
+                    "sha256": "720c180fffb90879e6b100ee2e4368884c64fafdbde9a28a3a270afff210ece7"
+                },
+                {
+                    "key": "tatsuzo-morph-4",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/tatsuzo-morph-4.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 64,
+                        "right": 64,
+                        "bottom": 128
+                    },
+                    "sha256": "c90a64a3fb7792ea977859ef5c646b873694f664f0e9226e9cfc3080e66ef8f1"
+                },
+                {
+                    "key": "tatsuzo-morph-5",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/tatsuzo-morph-5.png",
+                    "sourceBounds": {
+                        "left": 64,
+                        "top": 64,
+                        "right": 128,
+                        "bottom": 128
+                    },
+                    "sha256": "16205bada9c3c3bc374b321721af6e4205338577fdbb649b862e0d0d5d5e0666"
+                },
+                {
+                    "key": "tatsuzo-morph-6",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/tatsuzo-morph-6.png",
+                    "sourceBounds": {
+                        "left": 128,
+                        "top": 64,
+                        "right": 192,
+                        "bottom": 128
+                    },
+                    "sha256": "55bd39c2ba3740208515ba6087a4c27f19766fc5b254f414f5fde23723ac2e8b"
+                },
+                {
+                    "key": "tatsuzo-morph-7",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/tatsuzo-morph-7.png",
+                    "sourceBounds": {
+                        "left": 192,
+                        "top": 64,
+                        "right": 256,
+                        "bottom": 128
+                    },
+                    "sha256": "9000630a6513f920637422dfa9a0987d00a7b8b9b72522453bee095b653fc5a2"
+                }
+            ]
+        },
+        {
+            "id": "seven:shigeta",
+            "localPath": "public/assets/maplestory/anime-fx-seven/20261021/shigeta-atlas.png",
+            "width": 128,
+            "height": 128,
+            "recordPath": "resources/anime-fx-seven-sprites.json",
+            "qualityStatus": "awaiting-user-playback-review",
+            "frames": [
+                {
+                    "key": "shigeta-burst-0",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/shigeta-burst-0.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 0,
+                        "right": 64,
+                        "bottom": 64
+                    },
+                    "sha256": "db5eeac3d0866beab5b555d70d1169a0e3546884e9096292203ea4f45717d167"
+                },
+                {
+                    "key": "shigeta-burst-1",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/shigeta-burst-1.png",
+                    "sourceBounds": {
+                        "left": 64,
+                        "top": 0,
+                        "right": 128,
+                        "bottom": 64
+                    },
+                    "sha256": "3a85d705d890859ad0c69a590c0113bba6db2553d36191bd23ecf6260061db1d"
+                },
+                {
+                    "key": "shigeta-hot",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/shigeta-hot.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 64,
+                        "right": 64,
+                        "bottom": 128
+                    },
+                    "sha256": "f05dd2024687d4baefa5e31dbe4c4ce0395b4e9dfa3c1a25001a0f22c1bcc1ec"
+                },
+                {
+                    "key": "shigeta-cool",
+                    "x": 0,
+                    "y": 0,
+                    "width": 64,
+                    "height": 64,
+                    "anchorX": 32,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/shigeta-cool.png",
+                    "sourceBounds": {
+                        "left": 64,
+                        "top": 64,
+                        "right": 128,
+                        "bottom": 128
+                    },
+                    "sha256": "539ca78f862806b8a9b1fa66e256693ea8874d711df25c23848ec8d0d856bf15"
+                }
+            ]
+        },
+        {
+            "id": "seven:kanada-beam",
+            "localPath": "public/assets/maplestory/anime-fx-seven/20261021/kanada-beam-atlas.png",
+            "width": 192,
+            "height": 128,
+            "recordPath": "resources/anime-fx-seven-sprites.json",
+            "qualityStatus": "awaiting-user-playback-review",
+            "frames": [
+                {
+                    "key": "beam-shell-0",
+                    "x": 0,
+                    "y": 0,
+                    "width": 86,
+                    "height": 64,
+                    "anchorX": 0,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/beam-shell-0.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 0,
+                        "right": 86,
+                        "bottom": 64
+                    },
+                    "sha256": "8ff872fd6eaa669851bca3e2a4afb4b501707fff192c127a33b16109cf2196b0"
+                },
+                {
+                    "key": "beam-shell-1",
+                    "x": 0,
+                    "y": 0,
+                    "width": 86,
+                    "height": 64,
+                    "anchorX": 0,
+                    "anchorY": 32,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/beam-shell-1.png",
+                    "sourceBounds": {
+                        "left": 106,
+                        "top": 0,
+                        "right": 192,
+                        "bottom": 64
+                    },
+                    "sha256": "3e16e89e904940a52eb45779ae81a2bd16dc8aa5fc044790ca03c5cece88cbf3"
+                },
+                {
+                    "key": "beam-head",
+                    "x": 0,
+                    "y": 0,
+                    "width": 96,
+                    "height": 64,
+                    "anchorX": 85,
+                    "anchorY": 35,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/beam-head.png",
+                    "sourceBounds": {
+                        "left": 0,
+                        "top": 64,
+                        "right": 96,
+                        "bottom": 128
+                    },
+                    "sha256": "f861382481afc9458bc4c314f2bcc4c6323b3727ccfb5d0f162f8c3f6f6957b1"
+                },
+                {
+                    "key": "beam-tail",
+                    "x": 0,
+                    "y": 0,
+                    "width": 96,
+                    "height": 64,
+                    "anchorX": 10,
+                    "anchorY": 34,
+                    "localPath": "public/assets/maplestory/anime-fx-seven/20261021/frames/beam-tail.png",
+                    "sourceBounds": {
+                        "left": 96,
+                        "top": 64,
+                        "right": 192,
+                        "bottom": 128
+                    },
+                    "sha256": "19034581ddbb71827f24773e8c92892e8c8ee7756f2915a7d00e2f4b079436b5"
+                }
+            ]
+        },
+        {
+            "id": "shock-koma-compression-atlas",
+            "localPath": "public/assets/maplestory/shock-koma-variants/20261021/compression-atlas.png",
+            "width": 256,
+            "height": 128,
+            "recordPath": "resources/shock-koma-variant-sprites.json",
+            "frames": [
+                {
+                    "key": "shock-koma-compression-atlas",
+                    "x": 0,
+                    "y": 0,
+                    "width": 256,
+                    "height": 128,
+                    "anchorX": 0,
+                    "anchorY": 0,
+                    "localPath": "public/assets/maplestory/shock-koma-variants/20261021/compression-atlas.png"
+                }
+            ],
+            "qualityStatus": "awaiting-user-playback-review"
+        },
+        {
+            "id": "shock-koma-brush-atlas",
+            "localPath": "public/assets/maplestory/shock-koma-variants/20261021/brush-atlas.png",
+            "width": 256,
+            "height": 128,
+            "recordPath": "resources/shock-koma-variant-sprites.json",
+            "frames": [
+                {
+                    "key": "shock-koma-brush-atlas",
+                    "x": 0,
+                    "y": 0,
+                    "width": 256,
+                    "height": 128,
+                    "anchorX": 0,
+                    "anchorY": 0,
+                    "localPath": "public/assets/maplestory/shock-koma-variants/20261021/brush-atlas.png"
+                }
+            ],
+            "qualityStatus": "awaiting-user-playback-review"
         }
     ],
     "extractionNotes": [

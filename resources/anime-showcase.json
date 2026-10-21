@@ -2,11 +2,11 @@
   "schemaVersion": 1,
   "createdDate": "2026-10-19",
   "status": "presentation-studies",
-  "title": "애니 연출 견본집 · 100종",
+  "title": "애니 연출 견본집 · 92종",
   "sourceArtifact": "https://claude.ai/artifact/59raaYDpH7yFHta6687KXh",
-  "scope": "합성8종을 포함한 기법89종·표정11종의 아타호·서리갈기 곰왕 연출 견본100종. 게임 숲·도장 자재와 보유 로컬 원본을 기법에 맞게 재사용한다. 오바리는 기존 전경 정권3장, 스쿼시는 기존 관절 폄·착지 눌림, 쿠루마다는 새 곰왕2장으로 비교한다. 공통 타격은1800ms이며 스쿼시는 같은 시각에 착지하는 독립 도약 비교다. 합성 지면 분쇄는 기존 곰왕 낙하의3020ms 지면 접촉을 사용한다. 뇌광포·점성 흑구·유도탄 포위·중량 정권·먹빛 종결5종을 추가하며, 중량 정권은2200ms 접촉을 사용한다.",
+  "scope": "단일 기법80종·합성1종·표정11종의 아타호·서리갈기 곰왕 연출 견본92종. 게임 숲·도장 자재와 보유 로컬 원본을 기법에 맞게 재사용한다. 오바리는 기존 전경 정권3장, 스쿼시는 기존 관절 폄·착지 눌림, 쿠루마다는 새 곰왕2장으로 비교한다. 공통 타격은1800ms이며 스쿼시는 같은 시각에 착지하는 독립 도약 비교다. 현재 합성은 섬광 정권만 유지하며 사용하지 않는7종은 목록에서 제거했다. 연출실에서는 단일 기법80종은 기법 견본, 합성1종은 기법 조합, 표정11종은 표정 연출로 구분한다. 쇼크코마는 한 항목에서 기존2종·신규5종을 선택한다.",
   "authoring": {
-    "actors": "기존 아타호 기립8방향·어퍼컷5방향·동쪽 정권·남동 달리기4장·날아차기·얼굴, 보유 남동 전경 정권3장·도약 폄·착지 눌림, 곰왕 대기·피격·쓰러짐 및 새 머리부터 낙하·머리 착지2장",
+    "actors": "기존 아타호 기립8방향·어퍼컷5방향·동쪽 정권·남동·동쪽 달리기 각4장·날아차기·얼굴, 보유 남동 전경 정권3장·도약 폄·착지 눌림, 곰왕 대기·피격·쓰러짐 및 새 머리부터 낙하·머리 착지2장",
     "effects": "공통 무대·기공·현무암은 보유 로컬 원본을 재사용한다. 카나다 빛과 폭발·연기7종은 새 빛무리·폭발 형상·연기·암부·거품·갈고리 불꽃을 기법별 형상·발생·수명으로 조합한다. 드래곤·서커스·다른 광학 효과는 기존 표현을 유지한다.",
     "externalAssets": [],
     "paidGenerationCalls": 9,
@@ -170,7 +170,8 @@
     "resources/ataho-v2-part-presentation.json",
     "resources/ataho-v2-combat-vfx-generation.json",
     "resources/ataho-v2-ki-sprite-generation.json",
-    "resources/ataho-v2-orbit-residue-generation.json"
+    "resources/ataho-v2-orbit-residue-generation.json",
+    "resources/shock-koma-variant-sprites.json"
   ],
   "references": [
     {
@@ -218,7 +219,7 @@
     {
       "id": "impact",
       "name": "충격 순간을 한 장으로",
-      "count": 12
+      "count": 11
     },
     {
       "id": "motion",
@@ -248,7 +249,7 @@
     {
       "id": "composite",
       "name": "기법을 엮은 합성 연출",
-      "count": 8
+      "count": 1
     }
   ],
   "entries": [
@@ -256,857 +257,1299 @@
       "id": "impact-frame",
       "name": "임팩트 프레임",
       "category": "impact",
-      "previewMs": 1840,
+      "previewMs": 850,
       "description": "어퍼컷이 곰왕에게 닿는 순간을 실제 두 원본의 검은 윤곽과 추상 충격선으로 바꿉니다.",
-      "distinction": "새 몸을 그리지 않고 접촉 컷의 화면 표현만 잠깐 교체합니다."
+      "distinction": "새 몸을 그리지 않고 접촉 컷의 화면 표현만 잠깐 교체합니다.",
+      "durationMs": 1899.4444444444443,
+      "beats": [
+        {
+          "timeMs": 850,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "shock-koma",
-      "name": "쇼크코마 · 극단색과 먹선",
+      "name": "쇼크코마",
       "category": "impact",
-      "previewMs": 1905,
+      "previewMs": 915,
       "beats": [
         {
-          "timeMs": 1818,
+          "timeMs": 828,
           "label": "극단색 1코마"
         },
         {
-          "timeMs": 1860,
+          "timeMs": 870,
           "label": "명암 반전 1코마"
         },
         {
-          "timeMs": 1905,
+          "timeMs": 915,
           "label": "먹선 2코마"
         },
         {
-          "timeMs": 1980,
+          "timeMs": 984.0740740740741,
           "label": "원색 복귀"
         }
       ],
-      "description": "아타호의 어퍼컷 접촉을 극단색 1코마 → 흑백 반전 1코마 → 거친 먹선 2코마로 교체하고 원색 장면으로 돌아옵니다.",
-      "distinction": "24fps 기준 약 0.167초 동안 실제 두 배우의 명암·윤곽을 다시 그립니다. 원작의 새 동작 원화를 복제한 것은 아니며, 모션 감소에서는 낮은 대비의 먹선 한 장을 유지합니다."
-    },
-    {
-      "id": "shock-koma-v2",
-      "name": "쇼크코마 v2 · 섬광과 잔염",
-      "category": "impact",
-      "previewMs": 2200,
-      "beats": [
+      "description": "극단색과 먹선·섬광과 잔염·백화 소거·압축 파열·일필 관통·색판 어긋남·망점 붕괴의7종을 선택합니다.",
+      "distinction": "선택한 버전의 설명·길이·주요 순간과 비교판·저장 작화 경계를 함께 바꿉니다. 기존 두 버전의 고유 노출을 유지하고 새5종은 기존 정권 원화를 공유합니다.",
+      "durationMs": 1902.4074074074074,
+      "variants": [
         {
-          "timeMs": 1816,
-          "label": "발광 윤곽"
+          "value": "ink",
+          "label": "극단색과 먹선"
         },
         {
-          "timeMs": 1850,
-          "label": "적색 실루엣"
+          "value": "embers",
+          "label": "섬광과 잔염"
         },
         {
-          "timeMs": 1916,
-          "label": "백열핵"
+          "value": "whiteout",
+          "label": "백화 소거"
         },
         {
-          "timeMs": 2200,
-          "label": "붉은 잔염"
+          "value": "compression",
+          "label": "압축 파열"
         },
         {
-          "timeMs": 2566,
-          "label": "흑백 방사선"
+          "value": "brush",
+          "label": "일필 관통"
         },
         {
-          "timeMs": 2666,
-          "label": "원색 복귀"
+          "value": "misregister",
+          "label": "색판 어긋남"
+        },
+        {
+          "value": "halftone",
+          "label": "망점 붕괴"
         }
-      ],
-      "description": "수평 정권의 접촉을 발광 윤곽 → 적색 실루엣 → 백열핵 → 붉은 잔염 → 흑백 방사선으로 바꾼 뒤 원색 장면으로 돌아옵니다.",
-      "distinction": "사용자 영상 2~3초의 섬광과 긴 잔염을 기존 정권 윤곽과 절차 에너지로 재구성합니다. 원작의 새 동작을 복제한 것은 아니며, 모션 감소에서는 낮은 대비의 한 장을 유지합니다."
+      ]
     },
     {
       "id": "beta-flash",
       "name": "베타 플래시",
       "category": "impact",
-      "previewMs": 1810,
-      "description": "검은 주변부와 비워 둔 흰 초점 공간 안에 아타호와 곰왕의 실제 윤곽을 남깁니다.",
-      "distinction": "화면 전체 반전과 달리 검정과 흰 여백의 면적을 설계합니다."
+      "previewMs": 830,
+      "description": "접촉 순간 3코마 동안 검은 주변부와 흰 초점 여백을 즉시 교체해 실제 두 배우의 윤곽을 남깁니다.",
+      "distinction": "화면 전체 반전과 달리 검정과 흰 여백의 면적을 설계합니다.",
+      "durationMs": 1899.4444444444443,
+      "beats": [
+        {
+          "timeMs": 830,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "monochrome-invert",
       "name": "흑백 반전",
       "category": "impact",
-      "previewMs": 1840,
+      "previewMs": 850,
       "description": "같은 어퍼컷과 곰왕 피격 구도의 밝고 어두운 관계를 접촉 순간 뒤집습니다.",
-      "distinction": "원본 형태·비율·방향은 유지하고 명암 관계만 바꿉니다."
+      "distinction": "원본 형태·비율·방향은 유지하고 명암 관계만 바꿉니다.",
+      "durationMs": 1899.4444444444443,
+      "beats": [
+        {
+          "timeMs": 850,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "screen-shatter",
       "name": "화면 갈라짐",
       "category": "impact",
-      "previewMs": 2170,
+      "previewMs": 1086.25,
       "description": "실제 아타호와 곰왕이 담긴 접촉 화면을 조각에 남긴 채 벌립니다.",
-      "distinction": "원본 배우의 새 회전 자세가 아니라 합성 화면의 조각이 이동합니다."
+      "distinction": "원본 배우의 새 회전 자세가 아니라 합성 화면의 조각이 이동합니다.",
+      "durationMs": 1957.5,
+      "beats": [
+        {
+          "timeMs": 1086.25,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "hisashi-punch",
       "name": "히사시 펀치",
       "category": "impact",
-      "previewMs": 2260,
-      "description": "수평 정권의 접촉 프레임과 곰왕 피격 반응을 오래 붙잡습니다.",
-      "distinction": "접촉 구간의 재생 시간만 늘리고 몸과 상대 반응은 기존 프레임을 사용합니다."
+      "previewMs": 1131.111111111111,
+      "beats": [
+        {
+          "timeMs": 711.1111111111111,
+          "label": "장전 끝 · 짧은 신전"
+        },
+        {
+          "timeMs": 831.1111111111111,
+          "label": "정권 접촉"
+        },
+        {
+          "timeMs": 1131.111111111111,
+          "label": "접촉만 느리게 진행"
+        },
+        {
+          "timeMs": 1391.111111111111,
+          "label": "정상 회수로 방출"
+        }
+      ],
+      "description": "장전 뒤 정권을 빠르게 뻗고 접촉 구간만 560ms로 늘린 뒤 빠르게 회수합니다.",
+      "distinction": "배우와 상대가 같은 시계로 느려집니다. 충격 링·잔상·흔들림 없이 기존 원화의 시간 대비만 사용합니다.",
+      "durationMs": 2098.333333333333
     },
     {
       "id": "action-cutin",
       "name": "컷인",
       "category": "impact",
-      "previewMs": 1250,
-      "description": "곰왕을 향한 공격 위에 기존 아타호 얼굴의 별도 패널을 끼웁니다.",
-      "distinction": "행동을 남긴 채 같은 실제 인물의 눈 크롭을 함께 보여줍니다."
+      "previewMs": 510,
+      "beats": [
+        {
+          "timeMs": 370,
+          "label": "공격 위에 얼굴 패널 삽입"
+        },
+        {
+          "timeMs": 510,
+          "label": "눈과 공격을 함께 읽기"
+        },
+        {
+          "timeMs": 743.3333333333333,
+          "label": "패널 제거 · 타격 공간 확보"
+        }
+      ],
+      "description": "장전 중 얼굴 패널을 즉시 삽입하고 신전 전에 걷어, 눈과 이어지는 일격의 대비를 만듭니다.",
+      "distinction": "행동을 남긴 채 같은 실제 인물의 눈 크롭을 함께 보여줍니다.",
+      "durationMs": 1992.7777777777778
     },
     {
       "id": "pon-yori",
       "name": "퐁요리",
       "category": "impact",
-      "previewMs": 1900,
-      "description": "어퍼컷 와이드에서 타점 근접 구도로 중간 줌 이동 없이 전환합니다.",
-      "distinction": "원본 배우는 같은 비율이며 처음과 끝 구도를 컷으로 잇습니다."
+      "previewMs": 850,
+      "beats": [
+        {
+          "timeMs": 710,
+          "label": "접촉 전 · 와이드"
+        },
+        {
+          "timeMs": 770,
+          "label": "신전 · 즉시 근접 컷"
+        },
+        {
+          "timeMs": 850,
+          "label": "같은 타점의 피격"
+        },
+        {
+          "timeMs": 1131.111111111111,
+          "label": "즉시 와이드 복귀"
+        }
+      ],
+      "description": "접촉 직전 와이드에서 타점 근접으로 즉시 바꾸고, 피격을 읽은 뒤 와이드로 돌아옵니다.",
+      "distinction": "원본 배우는 같은 비율이며 처음과 끝 구도를 컷으로 잇습니다.",
+      "durationMs": 1899.4444444444443
     },
     {
       "id": "obari-punch",
       "name": "오바리 펀치 · 전경 정권 원화",
       "category": "impact",
-      "previewMs": 1870,
-      "description": "보유한 남동 장전·큰 전경 주먹·회수 원화를 직접 연결하고 실제 타점에서 곰왕을 왼쪽으로 밀어 늦게 정착시킵니다.",
-      "distinction": "몸 전체 확대 대신 전용 큰 주먹 원화를 씁니다. 기존 정권과 새 원화 시안을 비교하며 사용자 GIF 품질 검토는 대기 상태입니다.",
+      "previewMs": 880,
       "beats": [
         {
-          "timeMs": 850,
+          "timeMs": 283.3333333333333,
           "label": "전용 장전 원화"
         },
         {
-          "timeMs": 1800,
+          "timeMs": 810,
           "label": "큰 전경 주먹 · 실제 타점"
         },
         {
-          "timeMs": 1960,
+          "timeMs": 970,
           "label": "공격자 회수 원화"
         },
         {
-          "timeMs": 2020,
+          "timeMs": 1030,
           "label": "곰왕 왼쪽 반동"
         },
         {
-          "timeMs": 2550,
+          "timeMs": 1341.764705882353,
           "label": "공격자 기립"
         },
         {
-          "timeMs": 2800,
+          "timeMs": 1488.8235294117646,
           "label": "밀린 자리에서 정착"
         }
-      ]
+      ],
+      "description": "보유한 남동 장전·큰 전경 주먹·회수 원화를 직접 연결하고 실제 타점에서 곰왕을 왼쪽으로 밀어 늦게 정착시킵니다.",
+      "distinction": "별도 충격광 없이 전용 큰 주먹 원화로 원근을 드러냅니다. 기존 정권과 보유 원화 시안을 비교하며 사용자 GIF 품질 검토는 대기 상태입니다.",
+      "durationMs": 1897.156862745098
     },
     {
       "id": "inazuma-kick",
       "name": "이나즈마 킥",
       "category": "impact",
-      "previewMs": 1900,
-      "description": "기존 A/B 사선 날아차기와 곰왕 피격에 낙하 방향의 번개 궤적을 더합니다.",
-      "distinction": "기존 점프·장전·신전·착지를 재사용하며 PNG를 돌리거나 발을 새로 키우지 않습니다."
+      "previewMs": 850,
+      "beats": [
+        {
+          "timeMs": 620,
+          "label": "A · 무릎 모아 장전"
+        },
+        {
+          "timeMs": 770,
+          "label": "B · 짧은 사선 신전 시작"
+        },
+        {
+          "timeMs": 850,
+          "label": "발바닥 접촉"
+        },
+        {
+          "timeMs": 1150,
+          "label": "같은 다리를 접어 착지"
+        }
+      ],
+      "description": "기존 A 장전은 읽히게 남기고 B 사선 신전은 80ms로 압축해 발이 먼저 닿는 일격을 보여 줍니다.",
+      "distinction": "발의 궤도와 신전 원화로 낙하를 읽게 합니다. 별도 번개·충격광을 더하지 않고 원본 비율을 유지합니다.",
+      "durationMs": 1905
     },
     {
       "id": "kurumada-fall",
       "name": "쿠루마다 낙하 · 머리 착지 원화",
       "category": "impact",
-      "previewMs": 3020,
-      "description": "어퍼컷 뒤 구도를 넓혀 240px 낙차를 담고 마지막에 빠르게 하강합니다. 머리·어깨가 눌리는 착지 뒤 먼지와 구도 복귀로 끝냅니다.",
-      "distinction": "PixelLab에서 기존 곰왕을 기준으로 낙하·머리 착지 두 핵심 자세를 새로 제작했습니다. PNG 회전은 사용하지 않으며 작화 품질은 사용자 GIF 검토 대기입니다.",
+      "previewMs": 1729.047619047619,
       "beats": [
         {
-          "timeMs": 1800,
+          "timeMs": 810,
           "label": "어퍼컷 · 넓어지는 구도"
         },
         {
-          "timeMs": 2380,
+          "timeMs": 1203.3333333333333,
           "label": "머리부터 낙하 원화"
         },
         {
-          "timeMs": 2780,
+          "timeMs": 1489.047619047619,
           "label": "막판 하강 가속"
         },
         {
-          "timeMs": 3020,
+          "timeMs": 1729.047619047619,
           "label": "머리 접촉 · 압축 원화"
         },
         {
-          "timeMs": 3780,
-          "label": "먼지 소거 · 구도 복귀"
-        },
-        {
-          "timeMs": 3860,
+          "timeMs": 2249.0476190476193,
           "label": "착지 종결 구도"
         }
-      ]
+      ],
+      "description": "어퍼컷 뒤 240px 낙차와 막판 하강 가속을 보여 줍니다. 머리·어깨가 눌리는 착지 원화로 힘을 받고 끝냅니다.",
+      "distinction": "보유한 낙하·머리 착지 두 자세를 재사용하고 먼지·충격광은 더하지 않습니다. PNG 회전 없이 원본 비율을 지키며 작화 품질은 사용자 GIF 검토 대기입니다.",
+      "durationMs": 2362.3809523809527
     },
     {
       "id": "smear-frame",
       "name": "스미어 프레임",
       "category": "motion",
-      "previewMs": 1770,
+      "previewMs": 780,
       "description": "상승에서 접촉으로 넘어가는 60ms 동안 실제 아타호의 실루엣을 동작 방향으로 길게 잇습니다.",
-      "distinction": "기존 PNG의 픽셀 행을 잠깐 늘린 연결 그림이며 별도 빛 궤적이나 새 픽셀 자세가 아닙니다."
+      "distinction": "기존 PNG의 픽셀 행을 잠깐 늘린 연결 그림이며 별도 빛 궤적이나 새 픽셀 자세가 아닙니다.",
+      "durationMs": 1899.4444444444443,
+      "beats": [
+        {
+          "timeMs": 780,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "obake",
       "name": "오바케",
       "category": "motion",
-      "previewMs": 1760,
+      "previewMs": 770,
       "description": "어퍼컷의 연결 구간 80ms에 실제 몸 외곽을 비대칭으로 흐트러뜨렸다 접촉 자세로 돌아옵니다.",
-      "distinction": "기존 몸 그림의 매우 짧은 변형 중간그림입니다. 독립 오라의 외곽 변형과 구별합니다."
+      "distinction": "기존 몸 그림의 매우 짧은 변형 중간그림입니다. 독립 오라의 외곽 변형과 구별합니다.",
+      "durationMs": 1899.4444444444443,
+      "beats": [
+        {
+          "timeMs": 770,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "background-animation",
       "name": "배경 동화",
       "category": "motion",
-      "previewMs": 1050,
+      "previewMs": 550,
       "description": "곰왕 방향 앞쪽에서 아타호와 같은 속도로 후퇴하며 낮은 사선으로 질주를 담습니다. 아타호는 크게 유지하고 기둥·돌바닥을 빠르게 흘린 뒤 타격 전에 두 캐릭터를 잡습니다.",
-      "distinction": "달리기와 배우·그림자·기둥을 같은 공간에 투영합니다. 기본 장면과 모션 감소는 같은 질주를 고정된 넓은 구도로 비교합니다."
+      "distinction": "달리기와 배우·그림자·기둥을 같은 공간에 투영합니다. 기본 장면과 모션 감소는 같은 질주를 고정된 넓은 구도로 비교합니다.",
+      "durationMs": 2202.179487179487,
+      "beats": [
+        {
+          "timeMs": 550,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "nakanuki",
       "name": "나카누키",
       "category": "motion",
-      "previewMs": 1650,
+      "previewMs": 675,
       "description": "실제 어퍼컷의 준비와 접촉은 남기고 사이 프레임을 생략합니다.",
-      "distinction": "PNG를 변형하거나 새 포즈를 만들지 않고 기존 원화의 노출 순서만 조정합니다."
+      "distinction": "PNG를 변형하거나 새 포즈를 만들지 않고 기존 원화의 노출 순서만 조정합니다.",
+      "durationMs": 1899.4444444444443,
+      "beats": [
+        {
+          "timeMs": 675,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "midareuchi",
       "name": "미다레우치",
       "category": "motion",
-      "previewMs": 1230,
-      "description": "어퍼컷 한 번의 준비·통과 그림을 1~8코마씩 불규칙하게 노출해 타이밍을 흔듭니다.",
-      "distinction": "공격 횟수나 타격 간격이 아니라 한 동작 안에서 그림을 유지하는 코마 수의 대비입니다. 두 판 모두 1800ms에 한 번 맞습니다."
+      "previewMs": 513.3333333333333,
+      "description": "어퍼컷 한 번의 준비·통과 그림을 8·2·5·1코마로 노출하고 마지막 상승만 한 코마로 뽑습니다.",
+      "distinction": "공격 횟수나 타격 간격이 아니라 한 동작 안에서 그림을 유지하는 코마 수의 대비입니다. 두 판 모두 같은 순간에 한 번 맞습니다.",
+      "durationMs": 2172.777777777778,
+      "beats": [
+        {
+          "timeMs": 513.3333333333333,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "strobe",
       "name": "스트로보",
       "category": "motion",
-      "previewMs": 1840,
-      "description": "수평 정권에 진입한 자세와 위치를 일정 시간 간격으로 남기고 제자리에서 감쇠합니다.",
-      "distinction": "원본 비율의 여러 과거 자세이며 늘린 몸이나 새 도형 배우가 아닙니다."
+      "previewMs": 1115,
+      "description": "빠른 수평 진입의 자세와 위치를 일정 간격으로 남기고, 세 장 안에서 짧게 감쇠해 접촉 자세를 드러냅니다.",
+      "distinction": "원본 비율의 여러 과거 자세이며 늘린 몸이나 새 도형 배우가 아닙니다.",
+      "durationMs": 2190,
+      "beats": [
+        {
+          "timeMs": 1115,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "motion-metamorphosis",
       "name": "메타모르포제",
       "category": "motion",
-      "previewMs": 1750,
-      "description": "아타호의 타격 빛이 둥근 덩어리에서 초승달 외곽으로 연속 변형합니다.",
-      "distinction": "캐릭터의 변신이 아니라 독립 기공 효과입니다. 두 그림의 페이드와 실제 외곽 이동을 비교합니다."
+      "previewMs": 1025,
+      "description": "둥근 기공 덩어리를 빠르게 초승달로 벼리고 접촉 때 완성된 외곽을 드러냅니다.",
+      "distinction": "캐릭터의 변신이 아니라 독립 기공 효과입니다. 두 그림의 페이드와 실제 외곽 이동을 비교합니다.",
+      "durationMs": 2135,
+      "beats": [
+        {
+          "timeMs": 1025,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "wave-propagation",
       "name": "물결 보내기",
       "category": "motion",
-      "previewMs": 1900,
-      "description": "지지점에 묶인 긴 천띠의 꼭짓점을 끝 쪽으로 밀어 보내는 과정을 빈 공간에서 보여 줍니다.",
-      "distinction": "뿌리는 고정하고 천의 구간마다 반응을 늦춥니다. 배우의 옷이나 몸을 새로 만들지 않는 독립 천띠 견본입니다."
+      "previewMs": 866.6666666666666,
+      "description": "지지점에서 보낸 짧고 큰 굴곡이 긴 천띠의 끝까지 빠르게 전달되는 과정을 보여 줍니다.",
+      "distinction": "뿌리는 고정하고 천의 구간마다 반응을 늦춥니다. 배우의 옷이나 몸을 새로 만들지 않는 독립 천띠 견본입니다.",
+      "durationMs": 2153.8888888888887,
+      "beats": [
+        {
+          "timeMs": 866.6666666666666,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "araki-flutter",
       "name": "아라키 휘날림",
       "category": "motion",
-      "previewMs": 1250,
+      "previewMs": 816.6666666666666,
       "description": "실제 준비 원본의 머리 위 털·꼬리 털·옷 가장자리가 서로 다른 위상으로 반복 나부낍니다.",
-      "distinction": "얼굴과 몸 중심을 고정하고 기존 픽셀 영역만 움직이는 제한 시안입니다. 원작 작화의 복제나 새 망토가 아닙니다."
+      "distinction": "얼굴과 몸 중심을 고정하고 기존 픽셀 영역만 움직이는 제한 시안입니다. 원작 작화의 복제나 새 망토가 아닙니다.",
+      "durationMs": 2266.818181818182,
+      "beats": [
+        {
+          "timeMs": 816.6666666666666,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "squash-stretch",
       "name": "스쿼시 앤 스트레치",
       "category": "motion",
-      "previewMs": 1980,
-      "description": "도약에서 관절을 펴고 착지에서 무릎과 골반을 접는 실제 몸 원화를 같은 발 기준으로 비교합니다.",
+      "previewMs": 1013.3333333333333,
+      "description": "관절을 펴며 도약한 뒤 빠르게 착지해 무릎과 골반을 짧게 접고, 같은 발 위치에서 복귀합니다.",
       "distinction": "기존 조합실의 도약 폄·착지 눌림 그림을 재사용합니다. 전체 PNG를 늘이거나 머리를 납작하게 만들지 않는 원화 시안이며 사용자 GIF 품질 확인은 대기 중입니다.",
       "beats": [
         {
-          "timeMs": 1080,
+          "timeMs": 446.66666666666663,
           "label": "도약 · 실제 관절 폄 원화"
         },
         {
-          "timeMs": 1860,
+          "timeMs": 1013.3333333333333,
           "label": "착지 · 실제 무릎·골반 압축 원화"
         },
         {
-          "timeMs": 2140,
+          "timeMs": 1173.3333333333333,
           "label": "같은 발 위치에서 복귀"
         }
-      ]
+      ],
+      "durationMs": 2026.111111111111
     },
     {
       "id": "kanada-motion",
       "name": "카나다계 동작",
       "category": "motion",
-      "previewMs": 1720,
+      "previewMs": 730,
       "description": "실제 어퍼컷의 준비·통과·접촉 원화를 선명하게 끊어 노출합니다.",
-      "distinction": "새로운 각진 관절 원화는 없습니다. 기존 원화 대비와 노출 박자를 참고한 시안이며 작가 원전의 복제가 아닙니다."
+      "distinction": "새로운 각진 관절 원화는 없습니다. 기존 원화 대비와 노출 박자를 참고한 시안이며 작가 원전의 복제가 아닙니다.",
+      "durationMs": 1899.4444444444443,
+      "beats": [
+        {
+          "timeMs": 730,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "kanada-perspective",
       "name": "카나다 파스",
       "category": "motion",
-      "previewMs": 1820,
+      "previewMs": 830,
       "description": "기존 킥 B의 발 쪽은 가깝게, 몸통 쪽은 멀게 투영해 부분마다 다른 원근 배율을 만듭니다.",
-      "distinction": "전체 균등 확대를 없앤 기존 원화의 투영 견본입니다. 별도 발앞 자세·새 관절 그림을 만들지 않으며 전용 원화의 대체는 아닙니다."
+      "distinction": "전체 균등 확대를 없앤 기존 원화의 투영 견본입니다. 별도 발앞 자세·새 관절 그림을 만들지 않으며 전용 원화의 대체는 아닙니다.",
+      "durationMs": 1961.6666666666665,
+      "beats": [
+        {
+          "timeMs": 830,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "focus-lines",
       "name": "집중선",
       "category": "motion",
-      "previewMs": 1900,
-      "description": "아타호와 곰왕의 실제 접촉 공간으로 배경 선들을 모읍니다.",
-      "distinction": "원본 PNG와 타점은 유지하며 한 점으로 수렴하는 배경선만 더합니다."
+      "previewMs": 810,
+      "description": "접촉 직전에 배경 선의 빈 공간을 좁혀 시선을 모으고, 맞는 순간 가장 굵게 수렴시킨 뒤 짧게 걷습니다.",
+      "distinction": "원본 PNG와 타점은 유지하며 한 점으로 수렴하는 배경선만 더합니다.",
+      "durationMs": 1939.4444444444443,
+      "beats": [
+        {
+          "timeMs": 810,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "speed-streamlines",
       "name": "속도선·유선",
       "category": "motion",
-      "previewMs": 1430,
-      "description": "정권 진입 속도에 맞춰 길고 짧은 선이 뒤로 스치고, 몸 바깥의 유선이 짧은 후류로 빠져나갑니다.",
+      "previewMs": 511.66666666666663,
+      "description": "동쪽 달리기의 이동 속도에 맞춰 선과 후류가 흐르고, 발을 디딘 뒤 정권을 짧게 신전합니다.",
       "distinction": "빠른 진입에서 선이 길어지고 접촉 직후 걷힙니다. 얼굴·주먹·피격 표정은 비워 실제 타격을 읽게 합니다.",
       "beats": [
         {
-          "timeMs": 1120,
+          "timeMs": 438.3333333333333,
           "label": "진입 · 흐름 발생"
         },
         {
-          "timeMs": 1430,
-          "label": "가속 · 속도선과 후류"
+          "timeMs": 511.66666666666663,
+          "label": "질주 · 속도선과 후류"
         },
         {
-          "timeMs": 1740,
+          "timeMs": 698.3333333333333,
+          "label": "발 디딤"
+        },
+        {
+          "timeMs": 758.3333333333333,
+          "label": "정권 준비"
+        },
+        {
+          "timeMs": 928.3333333333333,
           "label": "접촉 직전 · 선 회수"
         },
         {
-          "timeMs": 1920,
+          "timeMs": 1108.3333333333333,
           "label": "접촉 뒤 · 정착"
         }
-      ]
+      ],
+      "durationMs": 2077.777777777778
     },
     {
       "id": "fx-kanada-light",
       "name": "카나다 빛",
       "category": "effects",
-      "previewMs": 1930,
+      "previewMs": 940,
       "description": "굵은 접촉 핵이 짧게 터지고, 큰 빛무리가 어퍼컷 방향으로 뻗은 뒤 작은 잔광이 빠르게 걷힙니다.",
       "distinction": "큰 전진 빛과 작은 반동·잔광의 크기와 수명을 달리해 힘의 방향을 읽힙니다.",
       "beats": [
         {
-          "timeMs": 1835,
+          "timeMs": 835,
           "label": "접촉 · 빛무리 핵"
         },
         {
-          "timeMs": 1930,
+          "timeMs": 890,
           "label": "파열 · 어퍼컷 방향"
         },
         {
-          "timeMs": 2110,
+          "timeMs": 1040,
           "label": "짧은 잔광"
         },
         {
-          "timeMs": 2320,
+          "timeMs": 1182,
           "label": "소멸"
         }
-      ]
+      ],
+      "durationMs": 2020.3030303030305
     },
     {
       "id": "fx-kanada-beam",
       "name": "카나다 빔",
       "category": "effects",
-      "previewMs": 2570,
-      "description": "정권에서 방출한 광선의 S축을 따라 각진 외피와 빈틈이 전진하고, 종료 때 후단이 손을 떠나 앞쪽으로 빠지는 견본입니다. 원작 동작 재현은 미검증입니다.",
-      "distinction": "직선 위 두께 변화와 달리 중심선·선두 방향·실루엣이 함께 바뀝니다.",
+      "previewMs": 1366.3636363636363,
       "beats": [
         {
-          "timeMs": 2570,
+          "timeMs": 1366.3636363636363,
           "label": "S축과 전진 외피"
         },
         {
-          "timeMs": 3220,
+          "timeMs": 1760.3030303030303,
           "label": "후단 이탈"
         },
         {
-          "timeMs": 3740,
+          "timeMs": 2145.4882154882152,
           "label": "앞으로 빠지는 빔"
         }
-      ]
+      ],
+      "description": "전용 외피·선두·후단 자재가 정권에서 방출한 S축을 따라 전진하고, 뒤의 넓은 면이 앞을 추월한 뒤 후단이 손을 떠나는 견본입니다. 원작 동작 재현은 미검증입니다.",
+      "distinction": "직선 위 두께 변화와 달리 중심선·선두 방향·실루엣이 함께 바뀝니다.",
+      "durationMs": 2329.191919191919
     },
     {
       "id": "fx-kanada-explosion",
       "name": "카나다 폭발",
       "category": "effects",
-      "previewMs": 1920,
+      "previewMs": 930,
       "description": "압축 핵·창·방사형·갈고리·갈라진 불꽃을 서로 다른 길이의 셀로 바꾸는 해석 견본입니다. 원작 동작 재현은 미검증입니다.",
       "distinction": "같은 별모양 확대 대신 짧은 돌출과 긴 유지, 수축과 재확대, 형태 교체를 비교합니다.",
       "beats": [
         {
-          "timeMs": 1810,
+          "timeMs": 820,
           "label": "압축 핵"
         },
         {
-          "timeMs": 1860,
+          "timeMs": 840,
           "label": "창"
         },
         {
-          "timeMs": 1920,
+          "timeMs": 890,
           "label": "방사형"
         },
         {
-          "timeMs": 1980,
+          "timeMs": 940,
           "label": "갈고리"
         },
         {
-          "timeMs": 2040,
+          "timeMs": 1010,
           "label": "세 갈래"
         },
         {
-          "timeMs": 2480,
+          "timeMs": 1194.8275862068965,
           "label": "분열 불꽃"
         },
         {
-          "timeMs": 3160,
+          "timeMs": 1607.9937304075233,
           "label": "소멸"
         }
-      ]
+      ],
+      "durationMs": 2041.3270637408566
     },
     {
       "id": "fx-kanada-dragon",
       "name": "카나다 드래곤",
       "category": "effects",
-      "previewMs": 2870,
-      "description": "정권에서 수평으로 출발한 용의 머리가 경로의 접선으로 기울고, 리본 몸통의 두께와 불꽃 혀가 셀마다 바뀌는 화염 견본입니다.",
-      "distinction": "고정된 용 그림 이동 대신 머리 방향·몸통 외곽·작은 화염이 함께 변합니다."
+      "previewMs": 1537.2727272727273,
+      "description": "전용 두부2장과 몸통·꼬리 자재를 이어, 수평 방출한 용의 입과 화염 윤곽이 바뀌며 이미 지나간 경로에 연속 몸통을 남기는 견본입니다.",
+      "distinction": "고정된 용 그림 이동 대신 머리 방향·몸통 외곽·작은 화염이 함께 변합니다.",
+      "durationMs": 2373.6363636363635,
+      "beats": [
+        {
+          "timeMs": 1537.2727272727273,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-itano",
       "name": "이타노 서커스",
       "category": "effects",
-      "previewMs": 1260,
-      "description": "곰왕의 두 번 회피를 다른 시각·깊이에서 쫓는 탄과 굽은 연기 꼬리, 지연 추적 카메라의 견본입니다.",
-      "distinction": "회피 전 위치를 놓친 탄이 앞뒤로 지나가 각자 화면을 벗어나며 연기 꼬리는 늦게 부풀어 흩어집니다.",
+      "previewMs": 875,
       "beats": [
         {
-          "timeMs": 1260,
+          "timeMs": 875,
           "label": "깊이가 다른 추격"
         },
         {
-          "timeMs": 1770,
+          "timeMs": 1300.0000000000002,
           "label": "빗나간 탄의 관성"
         },
         {
-          "timeMs": 2220,
+          "timeMs": 1621.4285714285716,
           "label": "탄별 이탈"
         }
-      ]
+      ],
+      "description": "곰왕의 두 번 회피를 다른 시각·깊이에서 쫓는 탄과 굽은 연기 꼬리, 지연 추적 카메라의 견본입니다.",
+      "distinction": "회피 전 위치를 놓친 탄이 앞뒤로 지나가 각자 화면을 벗어나며 연기 꼬리는 늦게 부풀어 흩어집니다.",
+      "durationMs": 2648.636363636364
     },
     {
       "id": "fx-muraki",
       "name": "무라키 서커스",
       "category": "effects",
-      "previewMs": 1450,
-      "description": "선행탄과 잠깐 정체한 뒤 추진하는 후속탄을 나눠, 회피와 연기 꼬리의 박자를 비교하는 견본입니다.",
-      "distinction": "선행·정체·재추진을 비동기로 배치하고, 빗나간 탄이 각자의 진행 방향과 수명으로 떠납니다.",
+      "previewMs": 1018.3333333333334,
       "beats": [
         {
-          "timeMs": 1040,
+          "timeMs": 676.6666666666666,
           "label": "후속탄 재추진"
         },
         {
-          "timeMs": 1880,
+          "timeMs": 1366.4814814814818,
           "label": "빗나간 탄의 관성"
         },
         {
-          "timeMs": 2480,
+          "timeMs": 1802.845117845118,
           "label": "탄별 이탈"
         }
-      ]
+      ],
+      "description": "선행탄과 잠깐 정체한 뒤 추진하는 후속탄을 나눠, 회피와 연기 꼬리의 박자를 비교하는 견본입니다.",
+      "distinction": "선행·정체·재추진을 비동기로 배치하고, 빗나간 탄이 각자의 진행 방향과 수명으로 떠납니다.",
+      "durationMs": 2667.2390572390577
     },
     {
       "id": "fx-anno",
       "name": "안노 폭발",
       "category": "effects",
-      "previewMs": 2760,
+      "previewMs": 1604.074074074074,
       "description": "좁은 접촉점에서 분진 기둥이 치솟고, 거친 점묘·밑동 구름·검은 잔해가 분리되는 견본입니다.",
-      "distinction": "깨끗한 원 입자 대신 분진 내부의 스패터와 외곽 비산, 뒤늦은 연기 머리를 나눕니다."
+      "distinction": "깨끗한 원 입자 대신 분진 내부의 스패터와 외곽 비산, 뒤늦은 연기 머리를 나눕니다.",
+      "durationMs": 2480.6397306397307,
+      "beats": [
+        {
+          "timeMs": 1604.074074074074,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-iso-explosion",
       "name": "이소 폭발",
       "category": "effects",
-      "previewMs": 2800,
+      "previewMs": 1700,
       "description": "불규칙한 연기 외곽과 Y자·삼각형 암부가 다른 속도로 말리며 부피를 만드는 견본입니다.",
-      "distinction": "외곽의 팽창과 내부 음영의 회전이 따로 움직입니다."
+      "distinction": "외곽의 팽창과 내부 음영의 회전이 따로 움직입니다.",
+      "durationMs": 2558.787878787879,
+      "beats": [
+        {
+          "timeMs": 1700,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-iso-debris",
       "name": "이소 파편",
       "category": "effects",
-      "previewMs": 2230,
+      "previewMs": 1222,
       "description": "잔 파편을 네 덩어리의 단색 실루엣으로 묶고, 바깥 조각부터 떨어져 나오는 견본입니다.",
-      "distinction": "처음부터 흩어진 독립 입자 대신 붙은 외곽·공통 탄도·뒤늦은 벌어짐을 비교합니다."
+      "distinction": "처음부터 흩어진 독립 입자 대신 붙은 외곽·공통 탄도·뒤늦은 벌어짐을 비교합니다.",
+      "durationMs": 2453.727272727273,
+      "beats": [
+        {
+          "timeMs": 1222,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-nakamura",
       "name": "나카무라 큐브",
       "category": "effects",
-      "previewMs": 2420,
+      "previewMs": 1368.103448275862,
       "description": "접촉점의 석재 판이 큰 입방 조각과 작은 잔여로 깨지고, 게임의 현무암 면을 유지한 채 세 축으로 도는 견본입니다.",
-      "distinction": "고정 면색의 평면 회전 대신 실제 꼭짓점 회전과 원근, 큰 파편·작은 파편의 시차를 비교합니다."
+      "distinction": "고정 면색의 평면 회전 대신 실제 꼭짓점 회전과 원근, 큰 파편·작은 파편의 시차를 비교합니다.",
+      "durationMs": 2480.916927899687,
+      "beats": [
+        {
+          "timeMs": 1368.103448275862,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-hashimoto",
       "name": "하시모토 스팀·폭발",
       "category": "effects",
-      "previewMs": 2440,
+      "previewMs": 1390,
       "description": "눌린 김이 여러 높이의 둥근 층으로 솟고 검은 조각은 별도 탄도로 튀는 스팀 견본입니다.",
-      "distinction": "김의 압축·상승·말림과 단단한 파편의 빠른 비산을 나눕니다."
+      "distinction": "김의 압축·상승·말림과 단단한 파편의 빠른 비산을 나눕니다.",
+      "durationMs": 2466.346153846154,
+      "beats": [
+        {
+          "timeMs": 1390,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-norio",
       "name": "노리오 연기",
       "category": "effects",
-      "previewMs": 2560,
+      "previewMs": 1463.8461538461538,
       "description": "같은 면색의 먼지가 눌려 태어나고, 겹친 외곽이 말리다 작은 덩어리로 갈라지는 견본입니다.",
-      "distinction": "내부 음영이나 하이라이트 없이 외곽과 겹침의 변화만으로 연기를 읽힙니다."
+      "distinction": "내부 음영이나 하이라이트 없이 외곽과 겹침의 변화만으로 연기를 읽힙니다.",
+      "durationMs": 2415.531017369727,
+      "beats": [
+        {
+          "timeMs": 1463.8461538461538,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-mori",
       "name": "모리 이펙트·파편",
       "category": "effects",
-      "previewMs": 2150,
-      "description": "길쭉하고 거친 파편의 외형과 굵은 내부 획을 셀마다 바꾸며 쏟아내는 견본입니다.",
-      "distinction": "고정 도형의 회전 대신 돌출부·굽은 획·짧은 유지가 함께 바뀝니다."
+      "previewMs": 1156.6666666666667,
+      "description": "굵고 끊긴 내부 획을 지닌 전용 파편4장의 실루엣을 코마마다 교체하며 같은 탄도로 쏟아내는 견본입니다.",
+      "distinction": "고정 도형의 회전 대신 돌출부·굽은 획·짧은 유지가 함께 바뀝니다.",
+      "durationMs": 2227.2727272727275,
+      "beats": [
+        {
+          "timeMs": 1156.6666666666667,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-araki",
       "name": "아라키 이펙트",
       "category": "effects",
-      "previewMs": 1920,
-      "description": "교차 광선과 작은 빛 거품을 권격 접촉에 옮긴 해석입니다. 검 연출이나 작가 고유 동작의 재현은 미검증입니다.",
-      "distinction": "같은 어퍼컷 접촉점에서 광선이 교차하고 둥근 빛 잔여가 늦게 남습니다."
+      "previewMs": 930,
+      "description": "전용 교차광2장과 빛 거품2장을 접촉·잔여 순서로 합성한 해석입니다. 검 연출이나 작가 고유 동작의 재현은 미검증입니다.",
+      "distinction": "같은 어퍼컷 접촉점에서 광선이 교차하고 둥근 빛 잔여가 늦게 남습니다.",
+      "durationMs": 1974.030303030303,
+      "beats": [
+        {
+          "timeMs": 930,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-yoshinari",
       "name": "요시나리 폭발",
       "category": "effects",
-      "previewMs": 2384,
+      "previewMs": 1342.3076923076924,
       "description": "큰 불덩어리 안에서 ゝ 모양 터치가 각자 태어나 말리고 떠오르는 데포르메 폭발 견본입니다.",
-      "distinction": "한 덩어리에 붙은 고정 무늬 대신 터치마다 발생·회전·축소 시점을 다르게 둡니다."
+      "distinction": "한 덩어리에 붙은 고정 무늬 대신 터치마다 발생·회전·축소 시점을 다르게 둡니다.",
+      "durationMs": 2345.1923076923076,
+      "beats": [
+        {
+          "timeMs": 1342.3076923076924,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-oki",
       "name": "오키 폭발",
       "category": "effects",
-      "previewMs": 2648,
+      "previewMs": 1552.2222222222222,
       "description": "크기가 다른 거품이 접촉점부터 순서대로 부풀어 오르고, 외곽으로 떠올라 쪼그라드는 폭발 견본입니다.",
-      "distinction": "같은 자리의 반복 점멸 대신 거품마다 한 번의 발생·팽창·상승·소멸을 보여 줍니다."
+      "distinction": "같은 자리의 반복 점멸 대신 거품마다 한 번의 발생·팽창·상승·소멸을 보여 줍니다.",
+      "durationMs": 2244.4444444444443,
+      "beats": [
+        {
+          "timeMs": 1552.2222222222222,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-kozuma",
       "name": "코즈마 이펙트",
       "category": "effects",
-      "previewMs": 3110,
-      "description": "정권의 접촉점에서 수평으로 짧고 끈적하게 늘다가 목이 가늘어지고, 큰 덩어리가 갑자기 빠져나가는 점성 견본입니다.",
-      "distinction": "붙어 버티는 시간과 떨어져 나가는 속도를 대비하고, 잔여 조각은 분리 직전 연결부의 위치를 이어받습니다.",
+      "previewMs": 1844.1666666666667,
       "beats": [
         {
-          "timeMs": 2730,
+          "timeMs": 1509.1666666666667,
           "label": "점성 목의 압축"
         },
         {
-          "timeMs": 3000,
+          "timeMs": 1734.1666666666667,
           "label": "연결부 분리"
         },
         {
-          "timeMs": 3150,
+          "timeMs": 1874.8563218390805,
           "label": "연결부에서 태어난 잔여"
         }
-      ]
+      ],
+      "description": "전용 덩어리·가는 목·끊긴 꼬리·잔여 자재가 정권의 접촉점에서 붙어 버티다가, 목이 가늘어지고 갑자기 빠져나가는 점성 견본입니다.",
+      "distinction": "붙어 버티는 시간과 떨어져 나가는 속도를 대비하고, 잔여 조각은 분리 직전 연결부의 위치를 이어받습니다.",
+      "durationMs": 2548.837513061651
     },
     {
       "id": "fx-tatsuzo",
       "name": "타츠조 이펙트",
       "category": "effects",
-      "previewMs": 2670,
-      "description": "검정 단색의 둥근 덩어리가 부드러운 목으로 합쳐졌다가 떨어지고, 다시 모이며 사라지는 견본입니다.",
-      "distinction": "외곽을 한 번 흔드는 대신 연결부 굵기·구체의 눌림·합체와 분리를 함께 바꿉니다."
+      "previewMs": 1499.3333333333335,
+      "description": "검정 단색의 전용 원화8장을 순서대로 바꿔 둥근 덩어리가 목으로 합쳐지고, 분리된 뒤 다시 모여 수축하는 견본입니다.",
+      "distinction": "외곽을 한 번 흔드는 대신 연결부 굵기·구체의 눌림·합체와 분리를 함께 바꿉니다.",
+      "durationMs": 2546.818181818182,
+      "beats": [
+        {
+          "timeMs": 1499.3333333333335,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-shigeta",
       "name": "시게타 불꽃",
       "category": "effects",
-      "previewMs": 2000,
-      "description": "기계 전투 스파크의 모티프를 권격 접촉에 옮긴 해석입니다. 실제 금속 파괴와 작가 고유 동작 재현은 포함하지 않습니다.",
-      "distinction": "짧은 가지형 파열 뒤 발광 조각이 갈라져 날며 식어 사라집니다."
+      "previewMs": 1010,
+      "description": "전용 가지 파열·백열 금속편·식은 조각으로 기계 전투 스파크를 권격 접촉에 옮긴 해석입니다. 실제 금속 파괴와 작가 고유 동작 재현은 포함하지 않습니다.",
+      "distinction": "짧은 가지형 파열 뒤 발광 조각이 갈라져 날며 식어 사라집니다.",
+      "durationMs": 1960.7575757575758,
+      "beats": [
+        {
+          "timeMs": 1010,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-anime-r",
       "name": "아니메R의 사라지는 파편",
       "category": "effects",
-      "previewMs": 2650,
+      "previewMs": 1558,
       "description": "큰 잔해가 날던 자리에서 작은 조각이 갈라져 같은 속도를 이어받고, 다시 잔편이 되어 사라지는 견본입니다.",
-      "distinction": "부모와 자식의 출발 위치·탄도·재질을 이어 갑작스러운 교체나 전체 알파 소멸을 줄입니다."
+      "distinction": "부모와 자식의 출발 위치·탄도·재질을 이어 갑작스러운 교체나 전체 알파 소멸을 줄입니다.",
+      "durationMs": 2304.9655172413795,
+      "beats": [
+        {
+          "timeMs": 1558,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "fx-kutsuna",
       "name": "쿠츠나 번개",
       "category": "effects",
-      "previewMs": 2130,
-      "description": "굵기와 고리 모양이 코마마다 바뀌는 주 전류가 빠르게 뻗고, 짧은 가지가 갈라진 뒤 꼬리부터 끊어집니다.",
-      "distinction": "원작 클립의 선택 프레임을 참고해 여섯 곡선 다발을 새로 구성했습니다. 흰 핵·가는 연결·국소 팽창과 세 번의 방출을 나눕니다.",
+      "previewMs": 1062.121212121212,
+      "description": "밝기를 유지한 무대에서 몸 주변 전류를 모으고, 명중 때 같은 번개 본체의 굵은 고리·접힘·끊긴 잔전류를 빠르게 방출합니다.",
+      "distinction": "큰 고리의 빈 공간과 가는 연결부·국소 굵은 전류를 대비하고, 윤곽 교체와 선두·꼬리의 이탈로 힘을 전달합니다.",
       "beats": [
         {
-          "timeMs": 1850,
-          "label": "선두 전진"
+          "timeMs": 516.6666666666666,
+          "label": "충전 · 몸 주변 방사"
         },
         {
-          "timeMs": 1960,
-          "label": "고리와 굵기 교체"
+          "timeMs": 1062.121212121212,
+          "label": "힘 모으기 · 고리와 끊긴 전류"
         },
         {
-          "timeMs": 2130,
-          "label": "짧은 가지 분기"
+          "timeMs": 1243.9393939393938,
+          "label": "빠른 신전"
         },
         {
-          "timeMs": 2390,
-          "label": "후속 방출"
+          "timeMs": 1403.9393939393938,
+          "label": "명중 · 굵은 접힘 전류"
         },
         {
-          "timeMs": 2820,
-          "label": "꼬리 이탈"
+          "timeMs": 1503.9393939393938,
+          "label": "전류의 선두 진행 · 상대 밀림"
         },
         {
-          "timeMs": 3050,
-          "label": "소멸"
+          "timeMs": 1823.9393939393938,
+          "label": "끊긴 잔전류의 이탈"
+        },
+        {
+          "timeMs": 2238.030303030303,
+          "label": "정착"
         }
-      ]
+      ],
+      "durationMs": 2413.030303030303
     },
     {
       "id": "camera-transmitted-light",
       "name": "투과광",
       "category": "camera",
-      "previewMs": 2100,
-      "description": "어퍼컷 접촉선의 가는 밝은 핵과 두 겹의 확산을 나눠 그림 안에서 빛이 터지게 합니다.",
-      "distinction": "그림 내부의 빛 처리이며 공간을 가로지르는 입사광과 다릅니다."
+      "previewMs": 1056.6666666666665,
+      "description": "어퍼컷 접촉에 가는 밝은 핵과 두 겹의 확산을 즉시 드러내고 짧게 가라앉힙니다.",
+      "distinction": "그림 내부의 빛 처리이며 공간을 가로지르는 입사광과 다릅니다.",
+      "durationMs": 2533.3333333333335,
+      "beats": [
+        {
+          "timeMs": 1056.6666666666665,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-para",
       "name": "파라",
       "category": "camera",
-      "previewMs": 2100,
+      "previewMs": 1400,
       "description": "짙은 보라 그림자와 금빛 반사광을 화면 양쪽에 대비시킵니다.",
-      "distinction": "색 시트의 합성이며 인물·배경을 움직이거나 흐리지 않습니다."
+      "distinction": "색 시트의 합성이며 인물·배경을 움직이거나 흐리지 않습니다.",
+      "durationMs": 2616.666666666667,
+      "beats": [
+        {
+          "timeMs": 1400,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-wavy-glass",
       "name": "파도 유리",
       "category": "camera",
-      "previewMs": 2000,
+      "previewMs": 1466.6666666666667,
       "description": "서로 다른 두 물결로 윤곽을 크게 굴절시키고 화면 가장자리까지 같은 장면을 채웁니다.",
-      "distinction": "윤곽 자체의 굴절을 재해석하며 초점 블러와 구별합니다."
+      "distinction": "윤곽 자체의 굴절을 재해석하며 초점 블러와 구별합니다.",
+      "durationMs": 2783.3333333333335,
+      "beats": [
+        {
+          "timeMs": 1466.6666666666667,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-diffusion",
       "name": "디퓨전",
       "category": "camera",
-      "previewMs": 2100,
+      "previewMs": 1400,
       "description": "달과 밝은 면에서 빛을 넓게 퍼뜨리고 어두운 윤곽과 얼굴은 선명하게 남깁니다.",
-      "distinction": "원본의 선을 남기는 확산 합성입니다. 장면 자체를 흐리는 블러와 다릅니다."
+      "distinction": "원본의 선을 남기는 확산 합성입니다. 장면 자체를 흐리는 블러와 다릅니다.",
+      "durationMs": 2616.666666666667,
+      "beats": [
+        {
+          "timeMs": 1400,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-blur",
       "name": "블러",
       "category": "camera",
-      "previewMs": 2100,
-      "description": "타점은 중심에 남기고 멀리 있는 배경·배우 윤곽을 크게 방사형으로 번지게 합니다.",
-      "distinction": "방향 없는 초점 흐림 대신 한 축을 향한 노출을 누적하는 방사형 블러입니다. 초점 넘기기의 디포커스와 다릅니다."
+      "previewMs": 1100,
+      "beats": [
+        {
+          "timeMs": 920,
+          "label": "접근 노출 증가"
+        },
+        {
+          "timeMs": 1100,
+          "label": "방사형 노출 정점"
+        },
+        {
+          "timeMs": 1280,
+          "label": "선명한 회수"
+        }
+      ],
+      "description": "접근 때 타점 중심의 방사형 노출을 모으고 접촉 뒤180ms 안에 걷어 회수를 선명하게 보여줍니다.",
+      "distinction": "방향 없는 초점 흐림 대신 한 축을 향한 노출을 누적하는 방사형 블러입니다. 초점 넘기기의 디포커스와 다릅니다.",
+      "durationMs": 2526.666666666667
     },
     {
       "id": "camera-lens-flare",
       "name": "렌즈 플레어·고스트",
       "category": "camera",
-      "previewMs": 2100,
+      "previewMs": 1066.6666666666665,
       "description": "같은 접촉광에서 화면 반대편까지 이어지는 긴 렌즈 축에 크기가 다른 고스트를 드러냅니다.",
-      "distinction": "화면의 렌즈 축에 붙는 빛상이며 실제 공간에 존재하는 입자가 아닙니다."
+      "distinction": "화면의 렌즈 축에 붙는 빛상이며 실제 공간에 존재하는 입자가 아닙니다.",
+      "durationMs": 2533.3333333333335,
+      "beats": [
+        {
+          "timeMs": 1066.6666666666665,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-anamorphic",
       "name": "아나모픽 플레어",
       "category": "camera",
-      "previewMs": 2100,
+      "previewMs": 1066.6666666666665,
       "description": "접촉광에서 화면을 가로지르는 가는 빛띠가 뻗고 양끝으로 서서히 사라집니다.",
-      "distinction": "원형 고스트보다 가로 방향의 광학적 번짐을 강조합니다."
+      "distinction": "원형 고스트보다 가로 방향의 광학적 번짐을 강조합니다.",
+      "durationMs": 2533.3333333333335,
+      "beats": [
+        {
+          "timeMs": 1066.6666666666665,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-cross-light",
       "name": "십자광",
       "category": "camera",
-      "previewMs": 1900,
-      "description": "한 광점에 짧게 네 방향의 뾰족한 광선을 드러냅니다.",
-      "distinction": "국소 광점의 강조이며 화면 전체 수평 플레어나 반복 명멸이 아닙니다."
+      "previewMs": 1046.6666666666665,
+      "description": "접촉에 네 방향의 뾰족한 광선을 즉시 드러내고260ms 안에 줄입니다.",
+      "distinction": "국소 광점의 강조이며 화면 전체 수평 플레어나 반복 명멸이 아닙니다.",
+      "durationMs": 2533.3333333333335,
+      "beats": [
+        {
+          "timeMs": 1046.6666666666665,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-screen-shake",
       "name": "화면 흔들림",
       "category": "camera",
-      "previewMs": 1840,
-      "description": "한 번의 접촉 뒤 화면 위치와 롤이 크게 흔들렸다가750ms 안에 감쇠합니다.",
-      "distinction": "충격 사건에 붙는 감쇠 진동이며 지속적인 손떨림과 다릅니다."
+      "previewMs": 1056.6666666666665,
+      "description": "한 번의 접촉에 짧고 큰 위치 진동을 주고 롤은 작게 남겨560ms 안에 감쇠합니다.",
+      "distinction": "충격 사건에 붙는 감쇠 진동이며 지속적인 손떨림과 다릅니다.",
+      "durationMs": 2570,
+      "beats": [
+        {
+          "timeMs": 1056.6666666666665,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-contact-multi",
       "name": "밀착 멀티",
       "category": "camera",
-      "previewMs": 2600,
+      "previewMs": 1833.3333333333333,
       "description": "앞 나무가 화면을 크게 가로지르는 동안 전투·지면과 먼 산은 점점 느리게 이송합니다.",
-      "distinction": "평면 셀의 크기는 고정합니다. z 투영으로 크기까지 변하는 멀티플레인과 구별합니다."
+      "distinction": "평면 셀의 크기는 고정합니다. z 투영으로 크기까지 변하는 멀티플레인과 구별합니다.",
+      "durationMs": 2533.333333333333,
+      "beats": [
+        {
+          "timeMs": 1833.3333333333333,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-flicker",
       "name": "플리커",
       "category": "camera",
-      "previewMs": 2120,
+      "previewMs": 1420,
       "description": "같은 장면의 금빛·푸른 노출을400ms씩 유지한 뒤 끊어 교대합니다.",
-      "distinction": "한 번의 섬광과 다릅니다. 움직임 줄이기에서는 명멸 없이 일정한 노출로 바꿉니다."
+      "distinction": "한 번의 섬광과 다릅니다. 움직임 줄이기에서는 명멸 없이 일정한 노출로 바꿉니다.",
+      "durationMs": 2616.666666666667,
+      "beats": [
+        {
+          "timeMs": 1420,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-rack-focus",
       "name": "초점 넘기기",
       "category": "camera",
-      "previewMs": 2500,
+      "previewMs": 1716.6666666666667,
       "description": "접촉 전에는 아타호만 선명하게 두고 접촉 뒤 곰왕으로 초점을 빠르게 넘겨 유지합니다.",
       "beats": [
         {
-          "timeMs": 1500,
+          "timeMs": 783.3333333333333,
           "label": "아타호 선명"
         },
         {
-          "timeMs": 2150,
+          "timeMs": 1400,
           "label": "초점 이동"
         },
         {
-          "timeMs": 2550,
+          "timeMs": 1750,
           "label": "곰왕 선명"
         }
       ],
-      "distinction": "같은 전투의 구도와 원본 동작을 공유하고 두 배우 레이어의 선명도만 교대합니다."
+      "distinction": "같은 전투의 구도와 원본 동작을 공유하고 두 배우 레이어의 선명도만 교대합니다.",
+      "durationMs": 2616.666666666667
     },
     {
       "id": "camera-follow-pan",
       "name": "따라가는 PAN",
       "category": "camera",
-      "previewMs": 2200,
+      "previewMs": 1500,
       "description": "기존 어퍼컷 접근 중의 실제 아타호 위치를 따라 배경과 전장을 이송합니다.",
-      "distinction": "애니메이션 그림의 2D 수평 이송입니다. 3D 카메라의 제자리 회전은 아닙니다."
+      "distinction": "애니메이션 그림의 2D 수평 이송입니다. 3D 카메라의 제자리 회전은 아닙니다.",
+      "durationMs": 2616.666666666667,
+      "beats": [
+        {
+          "timeMs": 1500,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-slow-quick-pan",
       "name": "지와 PAN·퀵 PAN",
       "category": "camera",
-      "previewMs": 2100,
-      "description": "공격자 쪽을 천천히 훑은 뒤 곰왕을 향해180ms의 빠른 수평 전환을 대조합니다.",
+      "previewMs": 1511.6666666666665,
+      "description": "공격자 쪽을 천천히 훑은 뒤 곰왕을 향해140ms 동안 수평 전환하고 접촉에 구도를 정착시킵니다.",
       "beats": [
         {
-          "timeMs": 950,
+          "timeMs": 633.3333333333334,
           "label": "느린 PAN"
         },
         {
-          "timeMs": 1940,
+          "timeMs": 1141.6666666666665,
           "label": "퀵 PAN"
         },
         {
-          "timeMs": 2150,
-          "label": "새 구도 정착"
+          "timeMs": 1311.6666666666665,
+          "label": "접촉 구도 정착"
         }
       ],
-      "distinction": "배율을 고정한 수평 이송의 속도 대비이며 급확대가 아닙니다."
+      "distinction": "배율을 고정한 수평 이송의 속도 대비이며 급확대가 아닙니다.",
+      "durationMs": 2520
     },
     {
       "id": "camera-track-up-back",
       "name": "T.U·T.B",
       "category": "camera",
-      "previewMs": 2100,
-      "description": "같은 타점을 중심으로 두 배 넘게 접근해 유지한 뒤 다시 넓은 구도로 물러납니다.",
+      "previewMs": 1541.6666666666665,
+      "description": "같은 타점을 중심으로 접촉 시각에 두 배 넘게 접근해 유지하고 곧 넓은 구도로 물러납니다.",
       "beats": [
         {
-          "timeMs": 1400,
-          "label": "T.U 도착"
+          "timeMs": 1241.6666666666665,
+          "label": "T.U 접촉에 도착"
         },
         {
-          "timeMs": 2100,
+          "timeMs": 1541.6666666666665,
           "label": "근접 구도 유지"
         },
         {
-          "timeMs": 2920,
+          "timeMs": 1901.6666666666665,
           "label": "T.B 후퇴 중"
         },
         {
-          "timeMs": 3600,
+          "timeMs": 2218.333333333333,
           "label": "와이드 복귀"
         }
       ],
-      "distinction": "2D 그림을 확대·축소하는 촬영 표현입니다. 원근이 변하는 3D 돌리와 구별합니다."
+      "distinction": "2D 그림을 확대·축소하는 촬영 표현입니다. 원근이 변하는 3D 돌리와 구별합니다.",
+      "durationMs": 2651.6666666666665
     },
     {
       "id": "camera-handheld",
       "name": "손떨림",
       "category": "camera",
-      "previewMs": 2100,
+      "previewMs": 1566.6666666666667,
       "description": "위치와 작은 롤이 끊임없이 조금씩 흔들립니다.",
-      "distinction": "특정 충격에 반응하거나 감쇠하지 않는 지속적인 촬영 흔들림입니다."
+      "distinction": "특정 충격에 반응하거나 감쇠하지 않는 지속적인 촬영 흔들림입니다.",
+      "durationMs": 2783.3333333333335,
+      "beats": [
+        {
+          "timeMs": 1566.6666666666667,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-multi-bokeh",
       "name": "멀티 보케",
       "category": "camera",
-      "previewMs": 2100,
+      "previewMs": 1400,
       "description": "전경 나무는 크게 흐리고 배경 점광원은 넓은 빛망울로 퍼뜨리며 전투 배우만 선명하게 둡니다.",
-      "distinction": "전경·전투·배경을 세 깊이 판으로 나눈 고정 초점입니다. 연속 깊이·렌즈 조리개 시뮬레이션은 아닙니다."
+      "distinction": "전경·전투·배경을 세 깊이 판으로 나눈 고정 초점입니다. 연속 깊이·렌즈 조리개 시뮬레이션은 아닙니다.",
+      "durationMs": 2616.666666666667,
+      "beats": [
+        {
+          "timeMs": 1400,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-foggy",
       "name": "포기",
       "category": "camera",
-      "previewMs": 2100,
+      "previewMs": 1316.6666666666665,
       "description": "젖빛 막으로 어두운 부분을 들어 올리고 달과 접촉광 주변에는 넓은 확산을 더합니다.",
-      "distinction": "포그 필터의 재해석입니다. 접촉광의 확산은 같은 광원의 점멸과 함께 생기고 사라집니다."
+      "distinction": "포그 필터의 재해석입니다. 접촉광의 확산은 같은 광원의 점멸과 함께 생기고 사라집니다.",
+      "durationMs": 2533.3333333333335,
+      "beats": [
+        {
+          "timeMs": 1316.6666666666665,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-double-shadow",
       "name": "이중노출 그림자",
       "category": "camera",
-      "previewMs": 2100,
+      "previewMs": 1400,
       "description": "두 배우의 발아래 넓은 반투명 그림자를 따로 합성하고 그 안으로 눈밭 무늬가 비치게 합니다.",
-      "distinction": "몸의 잔상이 아닌 그림자 영역의 반노출입니다. 같은 배우의 동작을 유지하며 정밀한 광원 투영은 생략합니다."
+      "distinction": "몸의 잔상이 아닌 그림자 영역의 반노출입니다. 같은 배우의 동작을 유지하며 정밀한 광원 투영은 생략합니다.",
+      "durationMs": 2616.666666666667,
+      "beats": [
+        {
+          "timeMs": 1400,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-glow",
       "name": "글로우",
       "category": "camera",
-      "previewMs": 2100,
+      "previewMs": 1066.6666666666665,
       "description": "비교 양쪽의 선명한 접촉광은 같게 두고 효과 쪽에서만 핵 주변으로 큰 원형 빛을 퍼뜨립니다.",
-      "distinction": "장면 전체의 대비를 바꾸는 디퓨전·포기와 달리 한 광원의 주변만 처리합니다."
+      "distinction": "장면 전체의 대비를 바꾸는 디퓨전·포기와 달리 한 광원의 주변만 처리합니다.",
+      "durationMs": 2533.3333333333335,
+      "beats": [
+        {
+          "timeMs": 1066.6666666666665,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-incident-light",
       "name": "입사광 — 사선 광주·틴들 해석",
       "category": "camera",
-      "previewMs": 2100,
+      "previewMs": 1566.6666666666667,
       "description": "수관 밖에서 들어오는 사선 광주를 강조하고 그 빛 안을 지나는 먼지만 밝게 드러냅니다.",
-      "distinction": "入射光의 렌즈 플레어 용법과 구분한 해석입니다. 화면 렌즈의 고스트와 달리 공간 안에 빛줄기가 있습니다."
+      "distinction": "入射光의 렌즈 플레어 용법과 구분한 해석입니다. 화면 렌즈의 고스트와 달리 공간 안에 빛줄기가 있습니다.",
+      "durationMs": 2783.3333333333335,
+      "beats": [
+        {
+          "timeMs": 1566.6666666666667,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "camera-multiplane",
       "name": "멀티플레인 카메라",
       "category": "camera",
-      "previewMs": 2350,
+      "previewMs": 1666.6666666666667,
       "description": "아타호와 곰왕 원본을 수직 판에 두고 앞 나무와 먼 산을 z 깊이에 따라 원근 투영합니다.",
-      "distinction": "앞 나무는 거의 두 배로 커지며 바깥으로 지나가고 먼 산은 조금만 변합니다. 고정 크기 셀 이송이나 전체 줌과 다릅니다."
+      "distinction": "앞 나무는 거의 두 배로 커지며 바깥으로 지나가고 먼 산은 조금만 변합니다. 고정 크기 셀 이송이나 전체 줌과 다릅니다.",
+      "durationMs": 2666.666666666667,
+      "beats": [
+        {
+          "timeMs": 1666.6666666666667,
+          "label": "핵심 순간"
+        }
+      ]
     },
     {
       "id": "emotion-sweat",
@@ -1354,557 +1797,340 @@
       "id": "editing-harmony",
       "name": "하모니",
       "category": "editing",
-      "previewMs": 2500,
+      "previewMs": 1716.6666666666665,
       "beats": [
         {
-          "timeMs": 1750,
+          "timeMs": 966.6666666666666,
           "label": "접촉 직전"
         },
         {
-          "timeMs": 2200,
-          "label": "회화 판 전환"
+          "timeMs": 1046.6666666666665,
+          "label": "회화 판 즉시 전환"
         },
         {
-          "timeMs": 3000,
+          "timeMs": 2216.6666666666665,
           "label": "종결 판 유지"
         }
       ],
-      "description": "어퍼컷 접촉의 인물과 배경을 같은 안료와 붓자국으로 다시 칠한 정지 종결 판으로 전환합니다.",
-      "distinction": "원본 위 세피아 필터가 아니라 색면과 경계선을 재구성한 디지털 원리 견본입니다. 전용 수작업 하모니 원화는 아닙니다."
+      "description": "어퍼컷 접촉에 인물과 배경을 같은 안료와 붓자국으로 다시 칠한 정지 종결 판을 즉시 드러냅니다.",
+      "distinction": "원본 위 세피아 필터가 아니라 색면과 경계선을 재구성한 디지털 원리 견본입니다. 전용 수작업 하모니 원화는 아닙니다.",
+      "durationMs": 2539.1666666666665
     },
     {
       "id": "editing-still",
       "name": "멈춘 그림",
       "category": "editing",
-      "previewMs": 2150,
+      "previewMs": 1383.3333333333333,
       "beats": [
         {
-          "timeMs": 1750,
+          "timeMs": 983.3333333333333,
           "label": "접촉 직전"
         },
         {
-          "timeMs": 2350,
+          "timeMs": 1383.3333333333333,
           "label": "접촉 그림 정지"
         },
         {
-          "timeMs": 3300,
+          "timeMs": 1820,
           "label": "동작 재개"
         }
       ],
-      "description": "어퍼컷의 접촉 자세를 멈춰 보여준 뒤 같은 동작을 이어갑니다.",
-      "distinction": "회화 질감이나 새로운 그림 없이 한 자세의 유지 시간만 바꿉니다."
+      "description": "어퍼컷 접촉의 장면 전체를660ms 멈춰 보여준 뒤 같은 동작을 이어갑니다.",
+      "distinction": "회화 질감이나 새로운 그림 없이 한 자세의 유지 시간만 바꿉니다.",
+      "durationMs": 2836.6666666666665
     },
     {
       "id": "editing-triple",
       "name": "반복 쇼트",
       "category": "editing",
-      "previewMs": 3180,
+      "previewMs": 2463.333333333333,
       "beats": [
         {
-          "timeMs": 1950,
+          "timeMs": 1233.3333333333333,
           "label": "와이드 1회"
         },
         {
-          "timeMs": 2550,
+          "timeMs": 1833.3333333333333,
           "label": "근접 2회"
         },
         {
-          "timeMs": 3150,
+          "timeMs": 2433.333333333333,
           "label": "타점 3회"
         },
         {
-          "timeMs": 3450,
+          "timeMs": 2658.333333333333,
           "label": "와이드 회수"
         }
       ],
       "description": "같은 정권 접촉을 와이드·근접·타점의 세 컷으로 다시 보여줍니다.",
-      "distinction": "세 번 때리는 동작이 아니라 같은 사건을 반복하는 편집입니다."
+      "distinction": "세 번 때리는 동작이 아니라 같은 사건을 반복하는 편집입니다.",
+      "durationMs": 3033.333333333333
     },
     {
       "id": "editing-split",
       "name": "화면 분할",
       "category": "editing",
-      "previewMs": 1450,
+      "previewMs": 750,
       "beats": [
         {
-          "timeMs": 850,
+          "timeMs": 350,
           "label": "두 인물 준비"
         },
         {
-          "timeMs": 1500,
+          "timeMs": 783.3333333333333,
           "label": "패널 안 긴장"
         },
         {
-          "timeMs": 1850,
+          "timeMs": 1066.6666666666665,
           "label": "한 장면으로 합류"
         }
       ],
       "description": "떨어진 두 인물의 준비를 동시에 보여준 뒤 하나의 장면으로 합칩니다.",
-      "distinction": "인서트 한 장보다 두 시간선의 동시 진행에 초점을 둡니다."
+      "distinction": "인서트 한 장보다 두 시간선의 동시 진행에 초점을 둡니다.",
+      "durationMs": 2533.3333333333335
     },
     {
       "id": "editing-orbit",
       "name": "마와리코미 · 게임 공간 회전",
       "category": "editing",
-      "previewMs": 3400,
+      "previewMs": 2266.6666666666665,
       "beats": [
         {
-          "timeMs": 400,
+          "timeMs": 133.33333333333334,
           "label": "동쪽 기립 · 회전 전"
         },
         {
-          "timeMs": 1800,
+          "timeMs": 1116.6666666666665,
           "label": "방향별 어퍼컷 접촉"
         },
         {
-          "timeMs": 2100,
+          "timeMs": 1416.6666666666665,
           "label": "중간 시점 · 팔 회수"
         },
         {
-          "timeMs": 3600,
+          "timeMs": 2333.3333333333335,
           "label": "반대편 기립 · 구도 정착"
         }
       ],
       "description": "게임 숲 공터에서 두 배우 사이를 돌아 아타호의 방향별 원본과 나무·바위의 깊이별 시차를 보여줍니다.",
-      "distinction": "아타호는 기립 8방향과 어퍼컷 5방향 중 가까운 실제 원본을 사용합니다. 곰왕은 남서(SW) 한 시점의 판으로 유지하며 실제 후면을 보여주는 다각도 동작은 아닙니다."
+      "distinction": "아타호는 기립 8방향과 어퍼컷 5방향 중 가까운 실제 원본을 사용합니다. 곰왕은 남서(SW) 한 시점의 판으로 유지하며 실제 후면을 보여주는 다각도 동작은 아닙니다.",
+      "durationMs": 2533.3333333333335
     },
     {
       "id": "editing-text-cuts",
       "name": "신보 문자 컷",
       "category": "editing",
-      "previewMs": 1320,
+      "previewMs": 732.3333333333334,
       "beats": [
         {
-          "timeMs": 920,
+          "timeMs": 420,
           "label": "시선 문자 컷"
         },
         {
-          "timeMs": 1350,
+          "timeMs": 762.3333333333334,
           "label": "일순 문자 컷"
         },
         {
-          "timeMs": 1710,
+          "timeMs": 1051.3333333333335,
           "label": "결의 문자 컷"
         },
         {
-          "timeMs": 1900,
+          "timeMs": 1241.3333333333335,
           "label": "타격 장면"
         }
       ],
       "description": "장면 사이에 검정·빨강 바탕의 짧은 문자 컷을 끼웁니다.",
-      "distinction": "대사를 계속 띄우는 자막보다 화면 자체를 글자의 박자로 바꿉니다."
+      "distinction": "대사를 계속 띄우는 자막보다 화면 자체를 글자의 박자로 바꿉니다.",
+      "durationMs": 2561.3333333333335
     },
     {
       "id": "editing-extreme",
       "name": "신보 눈·입 클로즈업",
       "category": "editing",
-      "previewMs": 2500,
+      "previewMs": 2100,
       "beats": [
         {
-          "timeMs": 350,
+          "timeMs": 116.66666666666667,
           "label": "와이드"
         },
         {
-          "timeMs": 1100,
+          "timeMs": 700,
           "label": "눈"
         },
         {
-          "timeMs": 1700,
+          "timeMs": 1300,
           "label": "입"
         },
         {
-          "timeMs": 2500,
+          "timeMs": 2100,
           "label": "눈의 긴장"
         },
         {
-          "timeMs": 3500,
+          "timeMs": 2950,
           "label": "와이드 복귀"
         }
       ],
       "description": "눈과 입의 극단적인 근접 컷이 서로 다른 유지 시간으로 교차합니다.",
-      "distinction": "얼굴 전체를 확대하는 컷인과 달리 얼굴의 일부만 보여줍니다."
+      "distinction": "얼굴 전체를 확대하는 컷인과 달리 얼굴의 일부만 보여줍니다.",
+      "durationMs": 3125
     },
     {
       "id": "editing-imaishi",
-      "name": "이마이시 연출",
+      "name": "이마이시 연출 · 노출 리듬",
       "category": "editing",
-      "previewMs": 2200,
+      "previewMs": 1350,
       "beats": [
         {
-          "timeMs": 1350,
+          "timeMs": 800,
           "label": "끊어지는 장전"
         },
         {
-          "timeMs": 1830,
-          "label": "돌파"
+          "timeMs": 1210,
+          "label": "짧은 돌파"
         },
         {
-          "timeMs": 2200,
-          "label": "타격 유지"
+          "timeMs": 1350,
+          "label": "접촉 원화 유지"
         }
       ],
-      "description": "아타호 어퍼컷의 장전·접촉 컷과 거대 글자를 강한 박자로 연결합니다.",
-      "distinction": "원근·타이밍·문자 구성을 한 장면의 정점에 모으는 견본입니다."
+      "description": "장전 원화를 끊어 읽히고 짧은 돌파 뒤 접촉 원화를 오래 노출해 강한 박자를 만듭니다.",
+      "distinction": "원화의 노출 배분만 재해석합니다. 작가 고유 필체의 복제 인증은 아니며 문자·집중선·급확대를 얹지 않습니다.",
+      "durationMs": 2696.666666666667
     },
     {
       "id": "editing-shadow-play",
       "name": "그림자극 소녀 · 원리 응용",
       "category": "editing",
-      "previewMs": 2300,
+      "previewMs": 1466.6666666666667,
       "beats": [
         {
-          "timeMs": 1600,
+          "timeMs": 833.3333333333334,
           "label": "큰 왕관"
         },
         {
-          "timeMs": 2400,
+          "timeMs": 1566.6666666666667,
           "label": "한 방"
         },
         {
-          "timeMs": 3300,
+          "timeMs": 2316.666666666667,
           "label": "왕관의 주인"
         }
       ],
       "description": "왕관을 쓴 큰 곰왕과 작은 아타호의 한 방으로 왕관의 주인이 바뀌는 짧은 막간극입니다.",
-      "distinction": "왕관이라는 상징과 질문→행동→반전의 막간극 원리를 응용합니다. 원작의 소녀·대사·장면을 재현하지 않습니다."
+      "distinction": "왕관이라는 상징과 질문→행동→반전의 막간극 원리를 응용합니다. 원작의 소녀·대사·장면을 재현하지 않습니다.",
+      "durationMs": 2625
     },
     {
       "id": "editing-overlap",
       "name": "오버랩",
       "category": "editing",
-      "previewMs": 1850,
+      "previewMs": 725,
       "beats": [
         {
-          "timeMs": 1450,
+          "timeMs": 362.5,
           "label": "앞 장면"
         },
         {
-          "timeMs": 2150,
+          "timeMs": 1025,
           "label": "두 장면의 겹침"
         },
         {
-          "timeMs": 3000,
+          "timeMs": 1875,
           "label": "다음 장면"
         }
       ],
       "description": "앞 장소가 남아 있는 동안 다음 장소와 인물이 겹쳐 들어옵니다.",
-      "distinction": "인물 소실 효과가 아니라 두 장면 전체의 겹침 전환입니다."
+      "distinction": "인물 소실 효과가 아니라 두 장면 전체의 겹침 전환입니다.",
+      "durationMs": 2550
     },
     {
       "id": "editing-wipe-iris",
       "name": "와이프·아이리스",
       "category": "editing",
-      "previewMs": 2300,
+      "previewMs": 1175,
       "beats": [
         {
-          "timeMs": 1450,
+          "timeMs": 362.5,
           "label": "앞 장면"
         },
         {
-          "timeMs": 2200,
+          "timeMs": 1075,
           "label": "쓸고 들어오는 경계"
         },
         {
-          "timeMs": 2850,
+          "timeMs": 1687.5,
           "label": "다음 장면"
         },
         {
-          "timeMs": 3650,
+          "timeMs": 2450,
           "label": "인물을 남기는 원"
         }
       ],
       "description": "새 장면이 옆으로 쓸고 들어온 뒤 원형 창이 인물을 남기며 닫힙니다.",
-      "distinction": "밝기만 바꾸지 않고 다음 화면을 드러내는 경계의 형태를 바꿉니다."
+      "distinction": "밝기만 바꾸지 않고 다음 화면을 드러내는 경계의 형태를 바꿉니다.",
+      "durationMs": 2850
     },
     {
       "id": "editing-white-out",
       "name": "화이트 아웃",
       "category": "editing",
-      "previewMs": 2200,
+      "previewMs": 1400,
       "beats": [
         {
-          "timeMs": 1100,
+          "timeMs": 366.6666666666667,
           "label": "앞 장면"
         },
         {
-          "timeMs": 2200,
+          "timeMs": 1400,
           "label": "흰 빛의 정점"
         },
         {
-          "timeMs": 3300,
+          "timeMs": 2500,
           "label": "다음 장소 드러남"
         }
       ],
       "description": "장면이 흰 빛에 잠겼다가 다음 장소가 천천히 돌아옵니다.",
-      "distinction": "짧은 타격 섬광보다 긴 노출 변화로 장면 사이의 시간을 만듭니다."
+      "distinction": "짧은 타격 섬광보다 긴 노출 변화로 장면 사이의 시간을 만듭니다.",
+      "durationMs": 2987.5
     },
     {
       "id": "composite-fast",
-      "name": "합성 · 섬광 정권",
+      "name": "섬광 정권",
       "category": "composite",
-      "previewMs": 1940,
-      "description": "속도선의 진입 뒤 두 코마 접촉 컷과 수평 빛무리, 작은 파편이 차례로 이어집니다.",
+      "previewMs": 1189,
+      "description": "340px 진입을 디딤에서 멈추고 정권을 뻗습니다. 두 코마 접촉 컷 뒤 상대가140ms에84px 밀리고, 빛과 작은 파편이 앞쪽으로 빠져 회수를 드러냅니다.",
       "distinction": "비교판은 같은 정권과 타점의 카나다 빛 한 종이며, 합성판은 속도·접촉·잔여에 다른 역할을 줍니다.",
       "beats": [
         {
-          "timeMs": 1430,
-          "label": "속도선 · 진입"
+          "timeMs": 503.33333333333337,
+          "label": "동쪽 달리기 · 속도선"
         },
         {
-          "timeMs": 1816,
+          "timeMs": 690,
+          "label": "디딤 · 정권 준비"
+        },
+        {
+          "timeMs": 996,
           "label": "두 코마 접촉 컷"
         },
         {
-          "timeMs": 1940,
-          "label": "수평 빛무리 파열"
+          "timeMs": 1120,
+          "label": "수평 빛무리 · 상대 방출"
         },
         {
-          "timeMs": 2200,
-          "label": "작은 파편"
+          "timeMs": 1189,
+          "label": "빠른84px 밀림"
         },
         {
-          "timeMs": 2600,
-          "label": "소멸"
+          "timeMs": 1355.6666666666667,
+          "label": "작은 파편 이탈"
+        },
+        {
+          "timeMs": 1442.3333333333333,
+          "label": "70px 떨어진 자리 정착"
         }
-      ]
-    },
-    {
-      "id": "composite-fire",
-      "name": "합성 · 화염 파열",
-      "category": "composite",
-      "previewMs": 2660,
-      "description": "작은 백열핵에서 카나다 파열과 외곽 거품이 번지고, 뒤늦은 공중 연기가 남습니다.",
-      "distinction": "비교판은 카나다 폭발 한 종이며, 합성판은 핵·파열·외곽·잔연기의 정점을 시차로 나눕니다.",
-      "beats": [
-        {
-          "timeMs": 1820,
-          "label": "백열핵"
-        },
-        {
-          "timeMs": 1940,
-          "label": "카나다 파열"
-        },
-        {
-          "timeMs": 2660,
-          "label": "외곽 거품"
-        },
-        {
-          "timeMs": 3100,
-          "label": "공중 잔연기"
-        },
-        {
-          "timeMs": 3980,
-          "label": "소멸"
-        }
-      ]
-    },
-    {
-      "id": "composite-ground",
-      "name": "합성 · 지면 분쇄",
-      "category": "composite",
-      "previewMs": 3340,
-      "description": "곰왕의 머리 착지점에서 낮은 충격과 현무암 파편이 퍼지고 분진 기둥과 바닥 먼지가 뒤따릅니다.",
-      "distinction": "비교판은 같은 낙하와 착지점의 안노 분진 한 종이며, 합성판은 지면 충격·파편·먼지를 차례로 더합니다.",
-      "beats": [
-        {
-          "timeMs": 2380,
-          "label": "머리부터 낙하"
-        },
-        {
-          "timeMs": 2950,
-          "label": "가속 하강"
-        },
-        {
-          "timeMs": 3040,
-          "label": "지면 접촉"
-        },
-        {
-          "timeMs": 3340,
-          "label": "현무암 파편"
-        },
-        {
-          "timeMs": 3500,
-          "label": "뒤늦은 분진"
-        },
-        {
-          "timeMs": 4180,
-          "label": "소멸"
-        }
-      ]
-    },
-    {
-      "id": "composite-beam",
-      "name": "합성 · 뇌광포",
-      "category": "composite",
-      "previewMs": 2350,
-      "description": "굵은 수평 광선이 지난 자리에서 가는 전류가 분기하고, 광선의 후단과 잔전류가 뒤늦게 끊어져 사라집니다.",
-      "distinction": "비교판은 같은 배우와 방출의 카나다 빔 한 종이며, 합성판은 빛핵·광선·전류 분기·후단 이탈의 박자를 나눕니다.",
-      "beats": [
-        {
-          "timeMs": 1660,
-          "label": "장전"
-        },
-        {
-          "timeMs": 1900,
-          "label": "빛핵"
-        },
-        {
-          "timeMs": 2120,
-          "label": "광선 전진"
-        },
-        {
-          "timeMs": 2350,
-          "label": "전류 분기"
-        },
-        {
-          "timeMs": 2920,
-          "label": "후단 이탈"
-        },
-        {
-          "timeMs": 3100,
-          "label": "잔전류"
-        },
-        {
-          "timeMs": 3500,
-          "label": "소멸"
-        }
-      ]
-    },
-    {
-      "id": "composite-orb",
-      "name": "합성 · 점성 흑구",
-      "category": "composite",
-      "previewMs": 2620,
-      "description": "세 검은 덩어리가 합쳐지고 끈끈한 목으로 늘어나다 끊어져 날아갑니다.",
-      "distinction": "비교판은 타츠조식 합체 흑구 한 종이며, 합성판은 붙어서 늘어나는 목·절단·사출과 분리 위치의 잔여를 이어 갑니다.",
-      "beats": [
-        {
-          "timeMs": 1150,
-          "label": "세 덩어리 발생"
-        },
-        {
-          "timeMs": 1650,
-          "label": "합체"
-        },
-        {
-          "timeMs": 2360,
-          "label": "붙어서 늘어남"
-        },
-        {
-          "timeMs": 2760,
-          "label": "목 절단"
-        },
-        {
-          "timeMs": 3100,
-          "label": "사출 · 목의 잔여"
-        },
-        {
-          "timeMs": 3720,
-          "label": "소멸"
-        }
-      ]
-    },
-    {
-      "id": "composite-siege",
-      "name": "합성 · 유도탄 포위",
-      "category": "composite",
-      "previewMs": 2260,
-      "description": "네 유도탄이 서로 다른 앞뒤 곡선으로 돌아 같은 표적에 차례로 닿고, 휘어진 연기 궤적과 도착 연기가 남습니다.",
-      "distinction": "비교판과 유도탄의 궤적·도착 핵·피격 시각은 같으며, 합성판은 각 탄의 연기 꼬리와 도착 뒤 잔연기를 더합니다.",
-      "beats": [
-        {
-          "timeMs": 760,
-          "label": "사출"
-        },
-        {
-          "timeMs": 1740,
-          "label": "앞뒤 곡선"
-        },
-        {
-          "timeMs": 2000,
-          "label": "첫 도착"
-        },
-        {
-          "timeMs": 2260,
-          "label": "연속 명중"
-        },
-        {
-          "timeMs": 2800,
-          "label": "마지막 도착"
-        },
-        {
-          "timeMs": 3520,
-          "label": "소멸"
-        }
-      ]
-    },
-    {
-      "id": "composite-heavy",
-      "name": "합성 · 중량 정권",
-      "category": "composite",
-      "previewMs": 2460,
-      "description": "긴 장전 뒤 짧게 신전하고 접촉을 유지한 뒤 곰왕이 무겁게 밀려나며, 소수의 큰 파편이 뒤늦게 떨어집니다.",
-      "distinction": "비교판과 준비·2200ms 접촉·120ms 유지·반동·접촉 효과는 같으며, 합성판은 소수의 무거운 파편을 앞뒤로 나눠 더합니다.",
-      "beats": [
-        {
-          "timeMs": 1380,
-          "label": "장전"
-        },
-        {
-          "timeMs": 2100,
-          "label": "신전"
-        },
-        {
-          "timeMs": 2220,
-          "label": "접촉 유지"
-        },
-        {
-          "timeMs": 2380,
-          "label": "밀림"
-        },
-        {
-          "timeMs": 2660,
-          "label": "최대 반동"
-        },
-        {
-          "timeMs": 3180,
-          "label": "파편 착지"
-        },
-        {
-          "timeMs": 3460,
-          "label": "정착"
-        }
-      ]
-    },
-    {
-      "id": "composite-ink",
-      "name": "합성 · 먹빛 종결",
-      "category": "composite",
-      "previewMs": 3000,
-      "description": "장전의 정적 뒤 짧은 흑백 접촉과 거친 먹획 파편을 지나 하모니 정지판으로 끝납니다.",
-      "distinction": "비교판은 같은 어퍼컷과 접촉 정지의 모리 파편 한 종이며, 합성판은 흑백 접촉과 회화 정지판으로 타격 뒤 여운을 남깁니다.",
-      "beats": [
-        {
-          "timeMs": 1650,
-          "label": "장전 정적"
-        },
-        {
-          "timeMs": 1835,
-          "label": "흑백 접촉"
-        },
-        {
-          "timeMs": 2070,
-          "label": "먹획 파편"
-        },
-        {
-          "timeMs": 2600,
-          "label": "파편 감쇠"
-        },
-        {
-          "timeMs": 2700,
-          "label": "하모니 정지판"
-        }
-      ]
+      ],
+      "durationMs": 2652.333333333333
     }
   ],
   "actorPair": {
@@ -3149,7 +3375,7 @@
     "paidGenerationCalls": 0,
     "audio": false
   },
-  "currentStateBoundary": "현재 견본 수·분류·합성 범위는 compositionExpansion과 entries를 따른다. compositionAddition은 처음 추가한 합성3종의 당시 기록으로 보존한다. 단일 기법의 속도·반동·접촉 시각은 speedImpactRevision, 속도선은 speedStreamlineRefinement, 빛·폭발·연기 자재와 후속 배치는 spriteEffectRevision을 우선한다. scope·authoring·adaptationBoundary·gameResourceRevision의 자재·출처·누적 생성량과 품질 검토 경계는 유지한다. 이전 referenceReview·followupReferenceReview·effectMaximization 등 날짜별 기록은 당시의 관찰·구현 이력으로 보존한다.",
+  "currentStateBoundary": "현재 쇼크코마 통합·버전 선택·목록 수량은shockKomaVariantRevision과entries를 우선한다. 현재 견본 목록·수량·합성 범위는 unusedCompositeRemoval과 entries를 우선한다. 현재 재생 진입점과 검토 자료 연결은 entryPointConsolidation을 따른다. 연출실 분류·표시명은 studioGroupingRevision을 따르며 현재 분류별 수는 unusedCompositeRemoval을 따른다. compositionExpansion과 studioGroupingRevision의 수량은 합성7종 제거 전 당시 기록으로 보존한다. compositionAddition은 처음 추가한 합성3종의 당시 기록으로 보존한다. 단일 기법의 속도·반동·접촉 시각은 speedImpactRevision, 속도선은 speedStreamlineRefinement, 빛·폭발·연기 자재와 후속 배치는 spriteEffectRevision을 우선한다. scope·authoring·adaptationBoundary·gameResourceRevision의 자재·출처·누적 생성량과 품질 검토 경계는 유지한다. 이전 referenceReview·followupReferenceReview·effectMaximization 등 날짜별 기록은 당시의 관찰·구현 이력으로 보존한다.",
   "gameResourceRevision": {
     "date": "2026-10-20",
     "scope": "기법81종의 게임 자재 연결과 원화 필요 항목 보완. 표정11종의 기존 표현은 유지하고 공유 배경 사용 장면만 함께 바뀐다.",
@@ -3546,5 +3772,1275 @@
     "generationCalls": 0,
     "audio": false,
     "boundary": "이전 followupReferenceReview의 본인 동작 미관찰 기록은 그 당시의 범위다. 이번은 위 선택 원전 클립 관찰을 반영한 독자적인 Canvas 응용이며 작가 필체의 정밀 복제나 본게임 채택은 아니다."
+  },
+  "presentationPolish": {
+    "date": "2026-10-20",
+    "scope": "기존 속도·폭발·연기·합성 연출의 동작 연결, 실제 접촉, 대상 반응, 소멸 마감",
+    "changes": [
+      {
+        "id": "speed-streamlines",
+        "sequence": [
+          "동쪽 달리기 2주기",
+          "1510ms 디딤",
+          "1570ms 준비",
+          "1680ms 신전",
+          "1800ms 접촉"
+        ]
+      },
+      {
+        "id": "composite-fast",
+        "contactMs": 1800,
+        "contactHoldMs": 66.66666666666667,
+        "maximumPushPx": 30,
+        "settledPushPx": 22,
+        "continuity": "접촉 컷과 정상 화면의 배우·빛 타점과 크기 일치"
+      },
+      {
+        "id": "composite-beam",
+        "contactMs": 2220,
+        "contactHoldMs": 60,
+        "releaseMs": 2840,
+        "endMs": 3260,
+        "current": "기존 PixelLab 쿠츠나 번개4셀",
+        "continuity": "실제 선단 성장과 접촉·밀림을 공유하고 표적 뒤 관통을 제한"
+      },
+      {
+        "id": "composite-orb",
+        "splitMs": 2760,
+        "contactMs": 3040,
+        "contactHoldMs": 90,
+        "continuity": "시전 손끝·목 부착·사출 선단·눌린 명중 형상을 연결"
+      },
+      {
+        "id": "composite-siege",
+        "arrivalMs": [1960, 2220, 2470, 2760],
+        "contactHoldMs": 42,
+        "reaction": "말단 접선 방향의 밀림·들림과 착지 먼지, 후속 경로도 이동한 대상에 도착"
+      },
+      {
+        "id": "composite-ground",
+        "ending": "소수의 현무암 파편이 실제 중력 비행 뒤 한 번 낮게 튀고 각각의 착지점에 먼지를 남김"
+      },
+      {
+        "id": "composite-fire",
+        "contactMs": 1800,
+        "contactHoldMs": 90,
+        "maximumPushPx": 70,
+        "settledPushPx": 62,
+        "settleMs": 3120
+      },
+      {
+        "id": "composite-heavy",
+        "export": "2200~2320ms 접촉 정지를 GIF 경계에도 보존"
+      },
+      {
+        "ids": ["fx-oki", "fx-yoshinari"],
+        "ending": "초기 원형 재등장 대신 기존 말림 원화의 냉각·분리 사본이 개별로 수축하고 퇴장"
+      },
+      {
+        "ids": ["fx-anno", "fx-iso-explosion"],
+        "material": "점묘와 회전 암부를 실제 연기 원본 알파 안에 합성한 작은 표시 사본을 로드할 때 준비"
+      }
+    ],
+    "comparison": "같은 합성 항목의 두 비교판은 배우·접촉·밀림·회복 시계를 공유하고 추가 효과만 구분한다.",
+    "resources": "기존 동쪽 달리기4장·번개4셀·효과 원본을 재사용한다. 냉각·알파 마스크는 로드할 때 메모리에 만드는 표시 사본이며 새 원화나 외부 생성물이 아니다.",
+    "generationCalls": 0,
+    "additionalCreditUsd": 0,
+    "audio": false,
+    "qualityBoundary": "과거 선택의 동기가 YAGNI였다고 단정하지 않는다. 실제 확인된 연결·수명 문제를 보완한 연출실 시안이며 최종 시각 품질은 사용자 재생·GIF 검토 대상이다.",
+    "previewPage": "src/resources/cutscenes/studio/?item=showcase%3Acomposite-fast",
+    "previews": [
+      {
+        "id": "composite-beam",
+        "localPath": "public/assets/maplestory/anime-fx-polish/20261020/composite-beam.gif",
+        "width": 640,
+        "height": 360,
+        "frameCount": 86,
+        "durationMs": 4200,
+        "sha256": "102964c271cf51e95483e584c91824ac0711c72123e22dfd78ab7fa22c690215"
+      },
+      {
+        "id": "composite-fast",
+        "localPath": "public/assets/maplestory/anime-fx-polish/20261020/composite-fast.gif",
+        "width": 640,
+        "height": 360,
+        "frameCount": 88,
+        "durationMs": 4200,
+        "sha256": "bae6c26f766e294b48f9f08bc586ade98f8a9f1aaa5b08c4c75a24b9ecb40b75"
+      },
+      {
+        "id": "composite-fire",
+        "localPath": "public/assets/maplestory/anime-fx-polish/20261020/composite-fire.gif",
+        "width": 640,
+        "height": 360,
+        "frameCount": 85,
+        "durationMs": 4200,
+        "sha256": "4648746a408f7837f832848634f3b01ba1e446795fa350afcc288bde4219c137"
+      },
+      {
+        "id": "composite-ground",
+        "localPath": "public/assets/maplestory/anime-fx-polish/20261020/composite-ground.gif",
+        "width": 640,
+        "height": 360,
+        "frameCount": 84,
+        "durationMs": 4200,
+        "sha256": "b1a4f98e0f2b610f7d19f81bf58522e8eb4d4091e09050ab461e071cde94969e"
+      },
+      {
+        "id": "composite-orb",
+        "localPath": "public/assets/maplestory/anime-fx-polish/20261020/composite-orb.gif",
+        "width": 640,
+        "height": 360,
+        "frameCount": 87,
+        "durationMs": 4200,
+        "sha256": "8e569e28445bfd1247de49402cc5602ed371f2f610c98edfbae1aafc5f5a9fcd"
+      }
+    ],
+    "previewContext": "현재 보완판 재생·기본판 비교·저장은 연출실에서 선택한다. 아래 GIF5개와 각 해시·출력 정보는 기존 제작 이력으로 보존한다."
+  },
+  "studioGroupingRevision": {
+    "date": "2026-10-20",
+    "scope": "showcase의 합성8종을 단일 기법 견본에서 기법 조합으로 이동한다.",
+    "source": "showcase",
+    "groups": {
+      "techniques": 81,
+      "combinations": 8,
+      "expressions": 11
+    },
+    "sampleCount": 100,
+    "compositeOrigin": "합성",
+    "compositeIds": [
+      "composite-fast",
+      "composite-fire",
+      "composite-ground",
+      "composite-beam",
+      "composite-orb",
+      "composite-siege",
+      "composite-heavy",
+      "composite-ink"
+    ],
+    "manifestStateGroup": "combinations",
+    "boundary": "compositionAddition·compositionExpansion의 기법 수는 합성을 포함한 당시 집계로 보존한다. 원본 source·sampleId·경로·단일 기법/합성 분류·재생과 연출 내용은 바꾸지 않는다."
+  },
+  "entryPointConsolidation": {
+    "date": "2026-10-20",
+    "scope": "쿠츠나 독립 시안과 보완판 GIF 검토의 사용자 진입을 통합 연출실로 모은다.",
+    "kutsunaPage": "src/resources/cutscenes/studio/?item=showcase%3Afx-kutsuna",
+    "kutsunaSourcePath": "src/resources/effects/anime-showcase/kutsuna-charge-scene.ts",
+    "polishPage": "src/resources/cutscenes/studio/?item=showcase%3Acomposite-fast",
+    "preserved": "원본 여섯 연출 HTML은 연출실 내부 iframe 재생 진입점으로 유지한다. 기존 PNG·GIF·원본 프레임·생성 요청·영수증·해시·사용자 GIF 품질 검토 대기와 날짜별 관찰 기록은 보존한다.",
+    "boundary": "이번 정리는 화면 진입과 자료 연결을 통일하는 작업이며 기존 연출·생성량·품질 승인 상태를 바꾸지 않는다."
+  },
+  "unusedCompositeRemoval": {
+    "date": "2026-10-20",
+    "scope": "사용하지 않는 합성7종을 연출실과 원본 견본 목록에서 제거하고 섬광 정권만 유지한다.",
+    "removedIds": [
+      "composite-fire",
+      "composite-ground",
+      "composite-beam",
+      "composite-orb",
+      "composite-siege",
+      "composite-heavy",
+      "composite-ink"
+    ],
+    "removedNames": [
+      "화염 파열",
+      "지면 분쇄",
+      "뇌광포",
+      "점성 흑구",
+      "유도탄 포위",
+      "중량 정권",
+      "먹빛 종결"
+    ],
+    "remainingCompositeIds": ["composite-fast"],
+    "compositeCount": 1,
+    "showcaseCount": 93,
+    "combinationCount": 11,
+    "studioItemCount": 131,
+    "preserved": "날짜별 제작 이력과 원본 파일·로컬 PNG/GIF는 보존한다."
+  },
+  "combinationLabelsRevision": {
+    "date": "2026-10-20",
+    "scope": "기법 조합11종의 제목을 기술명으로 맞추고 조합·합성 출처 표기를 실제 사용 기법을 더하기로 연결한 목록으로 바꾼다.",
+    "metadata": "manifest 각 state의 label과 techniques를 연출실 제목·사용 기법·검색에 사용한다. 원본 컷과 견본의 재생 제목도 같은 이름을 사용한다.",
+    "techniqueBasis": "현재 렌더러의 실제 배경·원화·촬영·편집·효과 합성을 대조했다. 연속 앵글 전환·불릿 타임·지연 타격·수묵 실루엣·붓 궤적은 구현된 표현의 일반 명칭이며 별도 단일 견본이 있다는 뜻은 아니다. 시간 정지의 나카누키는 이동 중간을 생략한 응용이다.",
+    "preserved": "source·sampleId·주소·재생 시간·동작·효과·저장 기능과 날짜별 제작 이력을 유지한다."
+  },
+  "singleTechniqueSpeedImpactRevision": {
+    "date": "2026-10-21",
+    "scope": "기법 견본81종 검토·39종 개선. 기법 고유의 형태·노출·발생·전진·소멸만 다듬고 별도 기법 혼합은 걷어낸다.",
+    "changedIds": [
+      "beta-flash",
+      "hisashi-punch",
+      "action-cutin",
+      "pon-yori",
+      "obari-punch",
+      "inazuma-kick",
+      "kurumada-fall",
+      "background-animation",
+      "nakanuki",
+      "midareuchi",
+      "strobe",
+      "motion-metamorphosis",
+      "wave-propagation",
+      "squash-stretch",
+      "kanada-motion",
+      "focus-lines",
+      "speed-streamlines",
+      "fx-kanada-light",
+      "fx-kanada-explosion",
+      "fx-anno",
+      "fx-iso-explosion",
+      "fx-hashimoto",
+      "fx-norio",
+      "fx-yoshinari",
+      "fx-oki",
+      "fx-kutsuna",
+      "camera-transmitted-light",
+      "camera-blur",
+      "camera-lens-flare",
+      "camera-anamorphic",
+      "camera-cross-light",
+      "camera-screen-shake",
+      "camera-slow-quick-pan",
+      "camera-track-up-back",
+      "camera-foggy",
+      "camera-glow",
+      "editing-harmony",
+      "editing-still",
+      "editing-imaishi"
+    ],
+    "retainedIds": [
+      "impact-frame",
+      "shock-koma",
+      "shock-koma-v2",
+      "monochrome-invert",
+      "screen-shatter",
+      "smear-frame",
+      "obake",
+      "araki-flutter",
+      "kanada-perspective",
+      "fx-kanada-beam",
+      "fx-kanada-dragon",
+      "fx-itano",
+      "fx-muraki",
+      "fx-iso-debris",
+      "fx-nakamura",
+      "fx-mori",
+      "fx-araki",
+      "fx-kozuma",
+      "fx-tatsuzo",
+      "fx-shigeta",
+      "fx-anime-r"
+    ],
+    "boundaries": [
+      "기법조합11종·표정11종·완성컷씬·포즈연기 비교는 이번 변경 범위 밖이다. 공유 drawSpeedApproach의 기존218px 진입과 카나다빛의 조합 시계는 유지한다.",
+      "새 몸·방향·중간그림·효과스프라이트·유료생성·오디오는 추가하지 않는다.",
+      "기본/연출 비교와 시간탐색·GIF는 같은 렌더 경로를 사용한다.",
+      "모든 작가의 원작을 새로 전수 재생하거나 필체를 검증한 것은 아니다. 항목별 sources/observations와 유지 이유를 구분한다."
+    ],
+    "observations": {
+      "motion": "원격 GIF/WebP 원본의 선택 프레임 관찰과 문헌·공개 코드 열람이다. 브라우저 실제 연속 재생이나 원작 프로젝트 실행 검증은 하지 않았다. 작업 견본의 실제 실행과 npm 검사는 root 통합 단계에서 수행한다.",
+      "fx": [
+        {
+          "source": "https://saint11.art/img/pixel-tutorials/LightMagic.gif",
+          "type": "원작성 무음 GIF",
+          "observed": "이번 IAB에서 서로 다른2시점 화면 직접 관찰. 빠른 중심 광선과 뒤에 남는 작은 광점의 노출·수명 차이. 전수 프레임 분해/프로젝트 코드 실행 아님."
+        },
+        {
+          "source": "https://saint11.art/img/pixel-tutorials/Stars.gif",
+          "type": "원작성 무음 GIF",
+          "observed": "이번 IAB 서로 다른2시점 직접 관찰. 큰 별의 밝은 핵·뾰족한 외곽 변화와 작은 별의 비동기 명멸. 전수 프레임 분해 아님."
+        },
+        {
+          "source": "https://saint11.art/img/pixel-tutorials/Explosion.gif",
+          "type": "원작성 무음 GIF",
+          "observed": "이번 IAB 서로 다른2시점 직접 관찰. 짧은 초기 파열과 뒤따르는 갈라진 화염·느린 연기의 다른 수명. 정적 설명표와 움직이는 하단 연속 효과를 구분해서 봄."
+        },
+        {
+          "source": "https://saint11.art/img/pixel-tutorials/SmokeSheet.gif",
+          "type": "원작성 무음 GIF",
+          "observed": "이번 IAB 서로 다른2시점 직접 관찰. 초기 압출 뒤 외곽 부피·말림·분리·늦은 퇴장의 차이. 원작 프로젝트 실행 아님."
+        },
+        {
+          "source": "https://saint11.art/img/pixel-tutorials/Fire.gif",
+          "type": "원작성 무음 GIF",
+          "observed": "이번 IAB 서로 다른2시점 직접 관찰. 파동의 중간 상승과 끝의 가는 조각, 작은 불티의 짧은 수명. 카나다 용 원전 인증 아님."
+        },
+        {
+          "source": "https://fullfrontal.moe/sakuga-espresso-one-piece-1074/",
+          "media": "local:public/assets/maplestory/anime-lightning-reference/milos.mp4",
+          "type": "원작 클립 선택 코마·무음 부분 재생",
+          "observed": "임시 IAB 플레이어에서 muted=true/paused=true를 먼저 확인.12.833333/12.875/14/14.041667/14.125초 선택 코마와12~20.50957초 무음 부분 재생 직접 확인. 가는 연결과 큰 열린 고리, 매 코마 다른 국소 두께·접힘·비연속 윤곽.55초 전편 시청·쿠츠나 직접 게시 자료/원전 구현코드 확보를 주장하지 않음."
+        },
+        {
+          "source": "resources/anime-showcase.json followupReferenceReview.effects",
+          "type": "기존 검토/코드 대조",
+          "observed": "21항목의 기존 출처 대응과 실제 렌더러를 대조. 변경9종은 위에서 이번 직접 확인한 일반 원작성 원리/원작 클립 범위 안에서 조정. 작가별 원전 미확인12종을 새로 확인했다고 주장하지 않음."
+        },
+        {
+          "source": "root 통합 실제 재생 및 drawAnno/drawHashimoto 좌표 코드 대조",
+          "type": "가림 진단과 배치 보정",
+          "observed": "root가 fx-anno1834/2001/2484ms,fx-hashimoto2000/2483ms에서 본체가 두배우뒤에가려짐을 직접확인. 담당은ground-anchor변환후상승높이와가로범위를코드로확인해 두함수의기존plume층순서/배치/크기만보정.보정후실제재생은root담당."
+        }
+      ],
+      "camera": "Codex IAB; GIFs contain no audio; YouTube mute=1 plus visible 음소거 해제 controls and video.muted true checked"
+    },
+    "reviews": [
+      {
+        "id": "impact-frame",
+        "status": "retained",
+        "reason": "2코마의 접촉 작화 교체가 이미 짧다. 새 반동이나 장노출을 덧붙이지 않았다.",
+        "sources": ["https://www.youtube.com/shorts/ctLfv9wBSMw"]
+      },
+      {
+        "id": "shock-koma",
+        "status": "retained",
+        "reason": "사용자 영상 기준1+1+2코마 순서와 명암·먹선 교체를 보존했다.",
+        "sources": ["https://www.youtube.com/shorts/ctLfv9wBSMw"]
+      },
+      {
+        "id": "shock-koma-v2",
+        "status": "retained",
+        "reason": "기존 영상의 발광윤곽·적색·핵·잔염 순서가 기법의 핵심이라 노출을 보존했다.",
+        "sources": ["https://www.youtube.com/shorts/ctLfv9wBSMw"]
+      },
+      {
+        "id": "beta-flash",
+        "status": "changed",
+        "reason": "접촉 전에65ms씩 페이드하던 흑백 면을 접촉 순간3코마로 바로 교체한다. 집중 여백과 배우 윤곽은 유지한다.",
+        "sources": ["https://www.clipstudio.net/oekaki/archives/151280"],
+        "observations": [
+          "출판사 원작성 만화 강좌의 정적 도해·여백 구성 재열람. 움직이는 원전 검증으로 취급하지 않는다."
+        ]
+      },
+      {
+        "id": "monochrome-invert",
+        "status": "retained",
+        "reason": "명암 반전의2코마 노출을 유지하고 색면 교체나 별도 효과를 추가하지 않았다.",
+        "sources": ["https://www.youtube.com/shorts/ctLfv9wBSMw"]
+      },
+      {
+        "id": "screen-shatter",
+        "status": "retained",
+        "reason": "동일 접촉 화면을 잘라 벌리는 독립 표현을 유지했다. 새 원작성 파쇄 컷 직접 관찰이 없어 추측한 양식 변경은 하지 않았다.",
+        "sources": ["https://w.atwiki.jp/sakuga/pages/28.html"]
+      },
+      {
+        "id": "hisashi-punch",
+        "status": "changed",
+        "reason": "마지막 신전120ms/느린 접촉560ms/빠른 회수로 시간 대비를 정리하고 별도 링·먹줄을 제거했다. 두 배우는 같은 시계로 진행한다.",
+        "sources": ["https://www.youtube.com/shorts/-d3qVNXAWEw"],
+        "observations": [
+          "Otsu Animation의 원작 인용 비교 영상 약65~73초를 무음 부분 재생하고 약73초 접촉 프레임 관찰. 분석자의 편집본이며 제작자 원본 프로젝트 검증은 아니다."
+        ]
+      },
+      {
+        "id": "action-cutin",
+        "status": "changed",
+        "reason": "얼굴 패널을1040~1600ms에 바로 넣고 걷는다. 패널의 속도선과 슬라이드·페이드는 제거해 삽입 자체에 집중했다.",
+        "sources": ["https://www.youtube.com/shorts/-d3qVNXAWEw"],
+        "observations": [
+          "비교 영상 약7.8초의 눈 패널 구성 선택 프레임 확인. 원작 인용 편집본의 관찰이다."
+        ]
+      },
+      {
+        "id": "pon-yori",
+        "status": "changed",
+        "reason": "와이드→근접의 즉시 전환을1760ms 신전에 맞추고2250ms에 와이드로 돌아온다. 연속 줌이나 흔들림은 추가하지 않는다.",
+        "sources": [
+          "https://usapen3.hatenablog.com/entry/2016/12/18/234110",
+          "https://cdn-ak.f.st-hatena.com/images/fotolife/u/usapen3/20160803/20160803204416.gif"
+        ],
+        "observations": [
+          "연결된 NEW GAME! GIF를IAB에서 여러 시점으로 재생 확인. 설명자는 원작 제작자가 아닌 분석자이며 영화 카메라 수치 검증은 아니다."
+        ]
+      },
+      {
+        "id": "obari-punch",
+        "status": "changed",
+        "reason": "보유 전경 주먹 원화와 상대 반동을 유지하고 별도 접촉광을 제거한다. 새 원화나 인체 변형은 없다.",
+        "sources": ["https://www.youtube.com/shorts/-d3qVNXAWEw"],
+        "observations": [
+          "오바리/히사시 비교 영상의 전경 주먹 원작 인용 구간을 무음 부분 재생·선택 시점 확인. 보유 원화의 사용자 GIF 품질 검토 대기 상태는 유지한다."
+        ]
+      },
+      {
+        "id": "inazuma-kick",
+        "status": "changed",
+        "reason": "보유A장전과B신전을180ms대비80ms로 노출하고 같은1800ms에 발이 닿는다. 별도 번개와충격광을 제거했다.",
+        "sources": [
+          "https://threadreaderapp.com/thread/1281239473200803841.html",
+          "https://video.twimg.com/ext_tw_video/1287801911295565824/pu/vid/720x480/z015etuXIfRrbWdt.mp4?tag=10"
+        ],
+        "observations": [
+          "tweet65에 연결된3.648초 원작 인용 클립을 임시 muted 플레이어에서 재생·선택 프레임 확인. 실제 영상 표기는 Rebuild of Evangelion이며 Gunbuster 본편 관찰로 기록하지 않는다. 발을 전경에 두고 반대다리를 접는 형태와 비교했으나 현재 보유A/B는 강한 발앞 원근의 완전재현은 아니다."
+        ]
+      },
+      {
+        "id": "kurumada-fall",
+        "status": "changed",
+        "reason": "보유 머리부터 낙하/압축 착지와 큰 낙차를 유지하고 다른 기법인 먼지·충격광을 제거했다.",
+        "sources": [
+          "https://threadreaderapp.com/thread/1281239473200803841.html",
+          "https://w.atwiki.jp/sakuga/pages/28.html"
+        ],
+        "observations": [
+          "기존 원문·연결 정적 머리착지 사례와 보유 원화의 자세 대조. 이번 본편 낙하 연속 재생을 새로 검증한 것은 아니다. 보유 원화의 사용자 GIF 품질 검토 대기 상태 유지."
+        ]
+      },
+      {
+        "id": "smear-frame",
+        "status": "retained",
+        "reason": "상승을 잇는 60ms의 몸 실루엣 변형이 이미 빠른 중간그림의 원리를 따른다. 장시간 노출·광궤적 추가는 원리를 흐리므로 유지했다.",
+        "sources": [
+          "https://saint11.art/img/pixel-tutorials/AttackSheet.gif",
+          "https://www.toonboom.com/etienne-cote-on-animating-smear-frames-and-multiples-in-ednora"
+        ],
+        "observations": [
+          "AttackSheet 36프레임 중 0,5,10,15,20,25,30,35 선택 프레임에서 장전·늘린 연결 그림·도착 대비 확인.",
+          "Toon Boom 원제작자 인터뷰의 한 코마 노출과 동작 아크 설명 문헌 확인. 연결 Ednöra 영상은 이번 재생하지 않았다."
+        ]
+      },
+      {
+        "id": "obake",
+        "status": "retained",
+        "reason": "현재 80ms의 비대칭 몸 외곽 변형은 원작성자 공개 예제의 매우 짧은 일그러진 중간그림과 맞는다. 더 크게 왜곡하면 기존 얼굴과 접촉 실루엣을 해치므로 유지했다.",
+        "sources": [
+          "https://coloso.jp/products/2danimator-proro-jp",
+          "https://cdn.day1company.io/prod/uploads/202406/135659-569/kr-2danimation-proro-example-02--1-.webp"
+        ],
+        "observations": [
+          "IAB에서 원작성자 강의 예제의 お化け 문맥과 이미지 URL 확인. 18프레임 중 0,2,5,7,10,12,15,17에서 준비 자세가 끝의 일그러진 실루엣으로 바뀌는 과정 확인."
+        ]
+      },
+      {
+        "id": "background-animation",
+        "status": "changed",
+        "reason": "배경과 배우를 같은 공간으로 투영하는 빠른 질주는 유지하고, 별도 먼지와 카메라 roll을 제거해 기법 혼합을 걷어냈다.",
+        "sources": [
+          "https://coloso.jp/products/2danimator-proro-jp",
+          "https://cdn.day1company.io/prod/uploads/202406/135437-569/kr-2danimation-proro-example-04.webp"
+        ],
+        "observations": [
+          "IAB에서 背景の動画 공개 예제 문맥 확인. 46프레임 중 0,6,13,19,26,32,39,45에서 캐릭터 질주와 배경 기둥의 상대 이동 확인. 원본에 먼지도 있으나 이번 단일 견본은 배경 투영만 분리했다."
+        ]
+      },
+      {
+        "id": "nakanuki",
+        "status": "changed",
+        "reason": "700ms의 미래 준비 자세 선노출을 없애고 1480~1800ms의 연결만 생략해 접촉으로 바로 넘어간다. 별도 방사 burst는 제거했다.",
+        "sources": [
+          "https://saint11.art/img/pixel-tutorials/Easings.gif",
+          "https://saint11.art/img/pixel-tutorials/AttackSheet.gif",
+          "https://w.atwiki.jp/sakuga/pages/28.html"
+        ],
+        "observations": [
+          "Easings 23프레임 중 0,3,6,9,13,16,19,22에서 긴 준비와 빠른 동작 사이 간격 및 중간그림 생략 설명 확인. AttackSheet의 세 장 공격 대비 확인. 일본 용어는 문헌 대조이며 원작 영상 재현 인증은 아니다."
+        ]
+      },
+      {
+        "id": "midareuchi",
+        "status": "changed",
+        "reason": "8/2/5/1코마의 불규칙 노출은 유지하고 긴 5코마 노출을 상승 중간그림에서 장전 그림으로 옮겨 마지막 상승을 한 코마로 뽑았다. 공격 횟수·타점은 바꾸지 않았다.",
+        "sources": [
+          "https://saint11.art/img/pixel-tutorials/AttackSheet.gif",
+          "https://saint11.art/img/pixel-tutorials/Easings.gif",
+          "https://w.atwiki.jp/sakuga/pages/28.html"
+        ],
+        "observations": [
+          "AttackSheet 36프레임 및 Easings 23프레임의 선택 8개씩에서 같은 원화의 노출 배분과 짧은 동작 대비 확인. 미다레우치 작가 원전 영상 자체를 검증한 것은 아니다."
+        ]
+      },
+      {
+        "id": "strobe",
+        "status": "changed",
+        "reason": "진입 거리를310px, 시간을650ms로 집중하고, 잔상 수명을850→360ms로 줄여 과거 자세가 세 장 이내로 읽히게 했다. 접촉 후 제자리 복제는 중단했다.",
+        "sources": [
+          "https://raw.githubusercontent.com/saltmire/saltmire-trail/master/media/preview.gif",
+          "https://github.com/saltmire/saltmire-trail/blob/master/addons/saltmire_trail/trail.gd"
+        ],
+        "observations": [
+          "72프레임 중 0,10,20,30,41,51,61,71에서 과거 자세가 이전 위치에 남아 짧게 감쇠하는 원리 확인. 원작성자 trail.gd 코드 열람, Godot 프로젝트 실행은 하지 않았다."
+        ]
+      },
+      {
+        "id": "motion-metamorphosis",
+        "status": "changed",
+        "reason": "같은 꼭짓점의 연속 외곽 변형을1550→650ms로 집중하고1800ms 접촉에 초승달을 완성한다. 변형 효과의 긴 잔류를 줄였다.",
+        "sources": ["https://saint11.art/img/pixel-tutorials/LightMagic.gif"],
+        "observations": [
+          "30프레임 중 0,4,8,12,17,21,25,29에서 원형 빛이 초승달·일그러진 외곽으로 변하는 과정 확인. 특히 #4→#8의 원형→초승달을 현재 독립 기공 견본의 원리와 대조했다."
+        ]
+      },
+      {
+        "id": "wave-propagation",
+        "status": "changed",
+        "reason": "지지점 고정과 구간별 반응 지연은 유지하면서 전파 시간을1750→1000ms로 줄이고 굴곡을 좁고 크게 해 힘이 끝으로 전달되는 과정을 선명하게 했다.",
+        "sources": [
+          "https://shirzadbahrami.com/physics-based-animation-undulation/",
+          "https://shirzadbahrami.com/wp-content/uploads/2026/08/3.-Output.gif"
+        ],
+        "observations": [
+          "71프레임 중 0,10,20,30,40,50,60,70에서 연결 사슬의 굴곡이 지연 전달되고 정착하는 모습 확인. 원작성자 설명 및 코드 조각 열람, 3ds Max 코드는 실행하지 않았다. 체인 길이 보존 시뮬레이션을 천띠 코드에 이식한 것은 아니다."
+        ]
+      },
+      {
+        "id": "araki-flutter",
+        "status": "retained",
+        "reason": "머리털·꼬리털·옷 가장자리의 위상차 반복 휘날림이 기법의 핵심이다. 타격 때 진폭을 터뜨리거나 몸을 흔들면 다른 기법이 되므로 기존 반복을 유지했다.",
+        "sources": [
+          "https://coloso.jp/products/2danimator-proro-jp",
+          "https://cdn.day1company.io/prod/uploads/202405/144744-1093/kr-2danimation-proro-example-03.webp",
+          "https://www.inouejet.com/camera/"
+        ],
+        "observations": [
+          "proro なびき 89프레임 중 0,13,25,38,50,63,75,88에서 얼굴 중심과 머리 뿌리를 유지하며 끝부분이 서로 다른 위상으로 움직이는 형태 확인. 아라키 본인의 원작 영상 재생이나 필체 재현 검증은 아니다."
+        ]
+      },
+      {
+        "id": "squash-stretch",
+        "status": "changed",
+        "reason": "같은 도약 높이와 착지 시각에서 정점을 뒤로 옮겨 낙하를 빠르게 하고, 압축 원화 노출을250→120ms로 줄인 뒤 같은 발 위치로 회복한다. 새로운 변형 그림은 만들지 않았다.",
+        "sources": ["https://saint11.art/img/pixel-tutorials/Squash.gif"],
+        "observations": [
+          "19프레임 중 0,3,5,8,10,13,15,18에서 준비 압축·도약 폄·착지 눌림·회복과 체적 유지 설명 확인. 기존 전용 원화의 사용자 GIF 품질 확인 대기 상태는 유지한다."
+        ]
+      },
+      {
+        "id": "kanada-motion",
+        "status": "changed",
+        "reason": "기존 준비·통과·접촉 원화의 노출만 남겼다. 통과 두 장을42ms씩 노출하고, 별도 번개 polygon과 접촉 뒤 추가 정지·회수 변속은 제거했다.",
+        "sources": [
+          "https://w.atwiki.jp/sakuga/pages/28.html",
+          "https://coloso.jp/products/2danimator-proro-jp",
+          "https://cdn.day1company.io/prod/uploads/202406/152506-569/kr-2danimation-proro-example-part02-1.gif"
+        ],
+        "observations": [
+          "sakuga 용어문헌의 적은 그림·강한 키포즈·타이밍 설명 대조. proro 동세18프레임 중0,2,5,7,10,12,15,17에서 준비와 급격한 접근의 포즈 대비 확인. 카나다 본인 원전의 연속 재생이나 필체 검증은 없으며 기존 원화 노출 시안이라는 경계를 유지한다."
+        ]
+      },
+      {
+        "id": "kanada-perspective",
+        "status": "retained",
+        "reason": "가까운 발과 먼 몸통에 다른 원근 배율을 적용하는 본질을 유지했다. 더 강한 확대나 궤적을 추가하면 전용 발앞 원화 없이 신체를 해칠 수 있으므로 현 투영을 유지했다.",
+        "sources": [
+          "https://w.atwiki.jp/sakuga/pages/28.html",
+          "https://cdn.day1company.io/prod/uploads/202406/152506-569/kr-2danimation-proro-example-part02-1.gif"
+        ],
+        "observations": [
+          "proro 공개 동세 예제의 #10~#17에서 가까운 손과 몸의 원근 대비 확인. 카나다 본인의 원전 재생은 확인하지 않았으며, 기존 킥B의 부분 투영 시안으로 제한한다."
+        ]
+      },
+      {
+        "id": "focus-lines",
+        "status": "changed",
+        "reason": "약2초 동안 걸려 있던 집중선을1530~2050ms로 줄이고, 빈 공간을 접촉점으로 좁히며1800ms에 선 굵기를 최대화했다. 배우와 타점은 유지한다.",
+        "sources": [
+          "https://coloso.jp/products/2danimator-proro-jp",
+          "https://cdn.day1company.io/prod/uploads/202406/152506-569/kr-2danimation-proro-example-part02-1.gif"
+        ],
+        "observations": [
+          "동세18프레임 중0,2,5,7,10,12,15,17에서 피사체를 비우고 주변 선이 주 동작으로 시선을 수렴시키는 배치와 두께 대비 확인. 원본의 오바케·강한 원근을 이번 집중선 견본에 섞지 않았다."
+        ]
+      },
+      {
+        "id": "speed-streamlines",
+        "status": "changed",
+        "reason": "단일 견본에서만 같은 달리기·디딤 시각의 진입 거리를218→278px로 늘려 속도를 강화했다. 조합이 재사용하는 drawSpeedApproach는 기본 이동거리218px와 기존 선 강도를 유지한다. 얼굴·주먹·피격 표정의 빈 공간도 유지했다.",
+        "sources": [
+          "https://coloso.jp/products/2danimator-proro-jp",
+          "https://cdn.day1company.io/prod/uploads/202406/152506-569/kr-2danimation-proro-example-part02-1.gif",
+          "https://cdn.day1company.io/prod/uploads/202406/135437-569/kr-2danimation-proro-example-04.webp"
+        ],
+        "observations": [
+          "proro 동세18프레임 및 배경 질주46프레임의 선택8개씩에서 이동 방향 반대의 선·피사체 주변 빈 공간·실제 이동 대비 확인. 별도 잔상·먼지·섬광은 추가하지 않았다."
+        ]
+      },
+      {
+        "id": "fx-kanada-light",
+        "status": "changed",
+        "reason": "단일 강화 견본의 기존 핵→주방향 빛→작은 잔광 시계만1.35배 압축. 감소모션·기본판·기법 조합에서는 기존 노출 보존. 형상·개수·방향 유지.",
+        "sources": [
+          "https://saint11.art/img/pixel-tutorials/LightMagic.gif",
+          "https://saint11.art/img/pixel-tutorials/Stars.gif"
+        ]
+      },
+      {
+        "id": "fx-kanada-beam",
+        "status": "retained",
+        "reason": "S축/셀별 외피/전진하는 타일·빈틈/후단 이탈이 이미 있다. 카나다 해당 빔 원전의 이번 직접 확인이 부족하므로 기존 형태·박자 유지. 본인 인터뷰는 해당 컷 관찰과 구분.",
+        "sources": [
+          "https://fullfrontal.moe/kozuma-shinsaku/",
+          "https://w.atwiki.jp/sakuga/pages/28.html"
+        ]
+      },
+      {
+        "id": "fx-kanada-explosion",
+        "status": "changed",
+        "reason": "압축핵·창·방사·갈고리·분열 원화 교체를 보존하고 초기3셀 노출 단축, 갈고리·분열의 대비를 남긴다. 수명1700→1375 effect-age ms(실시간1360→1100ms).",
+        "sources": ["https://saint11.art/img/pixel-tutorials/Explosion.gif"]
+      },
+      {
+        "id": "fx-kanada-dragon",
+        "status": "retained",
+        "reason": "머리 접선/실제 지난 경로의 리본 몸통/셀별 불꽃 혀가 구현되어 있다. Fire GIF도 이번 확인했지만 카나다 용 원전 검증으로 취급하지 않고 원리와 종료 박자 유지.",
+        "sources": [
+          "https://saint11.art/img/pixel-tutorials/Fire.gif",
+          "https://w.atwiki.jp/sakuga/pages/28.html"
+        ]
+      },
+      {
+        "id": "fx-itano",
+        "status": "retained",
+        "reason": "탄별 유도·관성 이탈·깊이와 지연 카메라가 이미 분리되어 있다. 기존 연기 원리 재확인 이외 이번 이타노 비행 원전 재생은 하지 않았으므로 탄도·카메라 유지.",
+        "sources": [
+          "https://www.youtube.com/watch?v=NyF5ai1-EdA&t=166s",
+          "https://saint11.art/img/pixel-tutorials/SmokeSheet.gif",
+          "https://w.atwiki.jp/sakuga/pages/28.html"
+        ]
+      },
+      {
+        "id": "fx-muraki",
+        "status": "retained",
+        "reason": "선행탄과140~340ms 정체·재추진 및 독립 퇴장 박자가 이미 있다. 무라키 원전의 이번 직접 확인이 부족해 차이를 추측 수정하지 않음.",
+        "sources": [
+          "https://saint11.art/img/pixel-tutorials/SmokeSheet.gif",
+          "https://w.atwiki.jp/sakuga/pages/28.html"
+        ]
+      },
+      {
+        "id": "fx-anno",
+        "status": "changed",
+        "reason": "분진기둥·점묘·검은 잔해·늦은 머리/밑동을 유지하고 기둥별 발생 간격32→24ms, 초기 압출을180+layer*22ms cubic release로 빠르게 한다. 상승·말림·소멸 수명은 분리 보존. 통합 실제 재생에서 본체가 배우 뒤에 가려져, 기존12개 중 좁은3개(0/4/7층)를 전면으로 나누고 위층의 상승/폭만 강화했다. 밑동10개는후면보존, 추가효과없음.",
+        "sources": [
+          "https://saint11.art/img/pixel-tutorials/SmokeSheet.gif",
+          "https://saint11.art/img/pixel-tutorials/Explosion.gif"
+        ]
+      },
+      {
+        "id": "fx-iso-explosion",
+        "status": "changed",
+        "reason": "6개 외곽 몸체 발생 간격65→34ms, 외곽 팽창1150→510ms. Y자/삼각 암부의 느린 독립 회전·기존 불규칙 외곽과 소멸은 보존.",
+        "sources": ["https://saint11.art/img/pixel-tutorials/SmokeSheet.gif"]
+      },
+      {
+        "id": "fx-iso-debris",
+        "status": "retained",
+        "reason": "네 단색 군집의 공통 탄도와 바깥 파편부터 벌어지는 규칙이 있다. 해당 이소 원전 움직임 새 확인이 부족하여 양식·시계 유지.",
+        "sources": ["https://w.atwiki.jp/sakuga/pages/28.html"]
+      },
+      {
+        "id": "fx-nakamura",
+        "status": "retained",
+        "reason": "실제8꼭짓점3축 회전·원근·면 정렬·큰/작은 파편 발생 시차가 있다. 작가별 원전 새 관찰 없이 힘을 키워 큐브 본질을 바꾸지 않고 유지.",
+        "sources": ["https://w.atwiki.jp/sakuga/pages/28.html"]
+      },
+      {
+        "id": "fx-hashimoto",
+        "status": "changed",
+        "reason": "3층×5개 김의 눌림·상승·말림·명도와 별도 잔해 보존. 초기 release만 smooth460ms에서 층별175/240/305ms cubic으로 압축하여 압출과 후반 느린 김의 차이 강화. 통합 실제 재생의 가림을 해결하기 위해 기존15개 중 중앙아래/중층을전면으로나누고(기존밑동2개포함총4개전면), 윗층상승90px/층·좌우간격19px/층·반경13px/층으로 확대했다. 같은김원본/3층발생/별도파편/말림수명만사용.",
+        "sources": [
+          "https://saint11.art/img/pixel-tutorials/SmokeSheet.gif",
+          "https://saint11.art/img/pixel-tutorials/Explosion.gif"
+        ]
+      },
+      {
+        "id": "fx-norio",
+        "status": "changed",
+        "reason": "단색 무음영13덩어리의 외곽·겹침·분리만 유지. 발생300ms smooth→170ms cubic, 분리 시작540→420ms로 초기 밀림과 후반 외곽 말림 대비 강화. 음영/섬광/카메라 추가없음.",
+        "sources": ["https://saint11.art/img/pixel-tutorials/SmokeSheet.gif"]
+      },
+      {
+        "id": "fx-mori",
+        "status": "retained",
+        "reason": "긴 파편의 돌출·굵은 내부 획·12fps 셀별 형태 변화가 있다. Mori 특유 원전 박자의 새 관찰이 없어 유지.",
+        "sources": ["https://w.atwiki.jp/sakuga/pages/28.html"]
+      },
+      {
+        "id": "fx-araki",
+        "status": "retained",
+        "reason": "교차광선과 뒤늦은 거품의 기존 구분이 있다. Stars/LightMagic 일반 원작성 GIF를 보았으나 아라키 검 이펙트 원전 재현으로 바꾸지 않음.",
+        "sources": [
+          "https://saint11.art/img/pixel-tutorials/Stars.gif",
+          "https://saint11.art/img/pixel-tutorials/LightMagic.gif",
+          "https://w.atwiki.jp/sakuga/pages/28.html"
+        ]
+      },
+      {
+        "id": "fx-yoshinari",
+        "status": "changed",
+        "reason": "큰 불덩이 초기 팽창770→310ms, 개별 갈고리 터치 이동910ms smooth→470ms cubic으로 압축.30개 터치의 발생 시차·회전·냉각·각자 수명과 큰 본체의 위계를 보존.",
+        "sources": [
+          "https://saint11.art/img/pixel-tutorials/Explosion.gif",
+          "https://saint11.art/img/pixel-tutorials/Fire.gif"
+        ]
+      },
+      {
+        "id": "fx-oki",
+        "status": "changed",
+        "reason": "32개 거품의 개별 발생·팽창·상승·냉각·분리 유지. 발생간격92→52ms/층간격71→45ms, 초기 팽창105/175ms와 이동370ms cubic으로 빠르게 열되 큰/작은 거품 부피 차이와 각 수명 보존.",
+        "sources": ["https://saint11.art/img/pixel-tutorials/Explosion.gif"]
+      },
+      {
+        "id": "fx-kozuma",
+        "status": "retained",
+        "reason": "붙어서 버티는 목·급출발·1200ms 분리·실제 목 좌표의 잔여가 이미 있다. 점성 자체를 빨리 재생하면 긴 장력 대비를 잃을 수 있고 해당 원전 움직임 이번 직접 확인이 부족해 유지.",
+        "sources": [
+          "https://fullfrontal.moe/kozuma-shinsaku/",
+          "https://w.atwiki.jp/sakuga/pages/28.html"
+        ]
+      },
+      {
+        "id": "fx-tatsuzo",
+        "status": "retained",
+        "reason": "검정 단색 구체·목의 합체/분리·재결합이 구현되어 있다. 연결부의 장력을 잃지 않도록 해당 원전 새 관찰 없이 시계 변경하지 않음.",
+        "sources": ["https://w.atwiki.jp/sakuga/pages/28.html"]
+      },
+      {
+        "id": "fx-shigeta",
+        "status": "retained",
+        "reason": "가지 파열→발광편 탄도→자식편·냉각의 차이가 있다. 금속 파괴 해당 컷의 이번 직접 관찰이 부족해 기존 자재·속도 유지.",
+        "sources": ["https://w.atwiki.jp/sakuga/pages/28.html"]
+      },
+      {
+        "id": "fx-anime-r",
+        "status": "retained",
+        "reason": "부모→자식→잔편이 실제 분리 위치와 속도를 이어받는다. 기존 분열 자체의 가독성을 유지하고 이번 원전 새 관찰 없이 임의 가속하지 않음.",
+        "sources": ["https://w.atwiki.jp/sakuga/pages/28.html"]
+      },
+      {
+        "id": "fx-kutsuna",
+        "status": "changed",
+        "reason": "보유4셀의 큰 고리/열린 접힘/국소 굵기/끊긴 잔전류만 사용. 기존 충전 암전·줌·화면 흔들림·타 폭발/빛무리·돌 파편 제거. 명중 전류4개는55ms 선단 진행,92ms 뒤 꼬리 이탈,240~312ms 개별 수명. 같은 배우 시계의80ms 접촉 자세와 대상 밀림은 양 비교판 공통으로 유지.",
+        "sources": [
+          "https://fullfrontal.moe/sakuga-espresso-one-piece-1074/",
+          "local:public/assets/maplestory/anime-lightning-reference/milos.mp4"
+        ]
+      },
+      {
+        "id": "camera-transmitted-light",
+        "status": "changed",
+        "reason": "접촉55ms 뒤에야 빛이 커지고480ms 유지하던 노출을 접촉 즉시 정점,420ms 감쇠로 바꿨다. 내부 가는 핵/두 확산 형상은 유지.",
+        "sources": ["https://saint11.art/img/pixel-tutorials/LightMagic.gif"],
+        "observations": [
+          "LightMagic GIF의 원작성 국소 발광 연속 프레임 관찰. 전통 투과광 촬영재료 자체의 직접 재생 인증은 아님.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "camera-para",
+        "status": "retained-intrinsic",
+        "reason": "정적인 그림자/빛 색시트가 본질. 접촉 노출/흔들림을 추가하면 별도기법 혼합이므로 현상 유지.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "camera-wavy-glass",
+        "status": "retained-reference-limited",
+        "reason": "연속 수평 굴절과 가장자리 채움이 본질. 원작 굴절의 새 움직이는 자료 미확보로 타격성 왜곡을 추가하지 않음.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "camera-diffusion",
+        "status": "retained-intrinsic",
+        "reason": "명부만 퍼뜨리고 어두운 윤곽을 남기는 필터 구별이 구현됨. 더 강한 밝기/섬광은 타점을 가리고 글로우와 섞이므로 유지.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "camera-blur",
+        "status": "changed",
+        "reason": "1250~2910ms의 긴 균일 방사형 번짐 대신1450~1800ms 노출 증가,1800~1980ms 회수. 최대0.24→0.34,19→25노출, 원노출 비중을 높여 타점 주변을 보존.",
+        "sources": [
+          "https://evanw.github.io/glfx.js/demo/",
+          "https://raw.githubusercontent.com/evanw/glfx.js/master/src/filters/blur/zoomblur.js"
+        ],
+        "observations": [
+          "원작성 glfx 실행 데모에서 Zoom Blur 선택 후 strength0.3→0.45, 중심320/239.5→378/277.5 직접 드래그. 중심과 방사 축 변화 관찰. 원본 GLSL40샘플/중심 방향/가중누적 코드 읽음; 우리 Canvas 구현은 별도 재해석.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "camera-lens-flare",
+        "status": "changed",
+        "reason": "광원과 렌즈 축/6개 고스트 형상은 유지하고 공유 접촉광을 접촉 즉시 정점,420ms 감쇠로 조정.",
+        "sources": [
+          "https://threejs.org/examples/webgl_lensflares.html",
+          "https://saint11.art/img/pixel-tutorials/LightMagic.gif"
+        ],
+        "observations": [
+          "three.js 공식 원작성 실행 데모에서 D750ms/A600ms 이동. 광원 위치에 따라 반대편 렌즈 축에 고스트가 놓임을 관찰. 타격용 노출값은 프로젝트 적용 판단.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "camera-anamorphic",
+        "status": "changed",
+        "reason": "수평 빛띠와 원형 고스트 없는 구별은 유지하고 공유 접촉광의 느린120ms 기동/650ms 유지 구간을 짧은420ms 감쇠로 조정.",
+        "sources": [
+          "https://threejs.org/examples/webgl_lensflares.html",
+          "https://saint11.art/img/pixel-tutorials/LightMagic.gif"
+        ],
+        "observations": [
+          "렌즈 광원/고스트 데모 및 국소 발광 GIF 직접 확인. 아나모픽 수평 번짐의 별도 원작 영상은 새로 확인하지 못했으며 기존 수평 형상에는 변경 없음.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "camera-cross-light",
+        "status": "changed",
+        "reason": "80ms 동안 커져550ms 머물던 십자광을 접촉 즉시 크게 드러내고260ms 안에 크기와 밝기가 함께 줄도록 변경.",
+        "sources": ["https://saint11.art/img/pixel-tutorials/Stars.gif"],
+        "observations": [
+          "Stars 원작성 GIF 연속 프레임에서 국소 십자별의 밝은 핵/짧은 크기 변화 관찰. 우주 별빛 도해이므로 타격의 정확한 노출 수치 근거는 아님.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "camera-screen-shake",
+        "status": "changed",
+        "reason": "750ms 잔진동→560ms, 초기 위치강도32→38, 수평/수직 비0.56→0.44, 롤0.018→0.014. 짧고 큰 위치 변화 뒤 빨리 정착. 다른 견본에는 흔들림 추가 없음.",
+        "sources": [
+          "https://roystan.net/articles/camera-shake/",
+          "https://roystan.net/media/tutorials/camera-shake/shake-trauma.gif"
+        ],
+        "observations": [
+          "원작성 무음 GIF 연속 화면에서 격자 위치/롤 변화와 감쇠 관찰. 본문 Perlin축 분리/빈도/trauma지수 코드 읽음. Unity 원본프로젝트 실행은 안 함.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "camera-contact-multi",
+        "status": "retained-intrinsic",
+        "reason": "고정크기 근경/전투/원경 판의 다른 이송 속도가 본질. 추가 가속/타격 흔들림 없이 공간차 읽힘 유지.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "camera-flicker",
+        "status": "retained-intrinsic",
+        "reason": "기존400ms 노출 색교대와 감소모드 고정노출 유지. 타격 섬광으로 바꾸지 않고 현재 반복노출 정의 유지. 현업 사전의 동작되감기 flicker 용법과는 다름.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "camera-rack-focus",
+        "status": "retained-reference-limited",
+        "reason": "같은 구도 안에서 두 배우 선명도만 교대. 타격 속도를 이유로 구도/줌/번짐을 섞지 않음. 새 원작 rack-focus 동작자료 직접 확인 부족.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "camera-follow-pan",
+        "status": "retained-intrinsic",
+        "reason": "현재 실제 아타호 위치만큼 전장을 반대로 이송해 같은 동작을 추적. 자기 기법이 구현돼 있고 공유 모션의 속도를 별도 바꾸지 않음.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "camera-slow-quick-pan",
+        "status": "changed",
+        "reason": "접촉 뒤1850~2030ms 전환하던 구도를1660~1800ms의140ms 전환으로 앞당겨 접촉에 정착. 배율/롤/블러 변화 없음.",
+        "sources": [
+          "https://yomotsu.github.io/camera-movement-comparison/truck-pan.html",
+          "https://www.inouejet.com/camera/"
+        ],
+        "observations": [
+          "원작성 Truck vs Pan 실행 데모0.5→0.7 직접 슬라이더 조작. 왼쪽 위치1.20unit/오른쪽 회전-16도 구별 확인. 여기의 PAN은 기존2D촬영 이송 정의를 유지; 실제3D회전으로 주장하지 않음.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "camera-track-up-back",
+        "status": "changed",
+        "reason": "500~1400ms 접근/2400~3450ms 후퇴→900~1800ms 접근/2180~3000ms 후퇴. 접촉 시각에 확대 도착 후 짧게 유지. 전체2D배율만 변경.",
+        "sources": [
+          "https://yomotsu.github.io/camera-movement-comparison/dolly-zoom.html",
+          "https://www.inouejet.com/camera/"
+        ],
+        "observations": [
+          "원작성 Dolly vs Zoom 실행 데모0.5→0.8 직접 조작. 위치5→8과 FOV60→96 변화에 따른 격자 원근 차이 확인. 우리2D T.U/T.B는 원근 돌리가 아님을 유지.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "camera-handheld",
+        "status": "retained-intrinsic",
+        "reason": "감쇠/특정 충격이 없는 작은 지속 촬영 흔들림이 본질. 화면흔들림 견본과 구별 유지.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "camera-multi-bokeh",
+        "status": "retained-intrinsic",
+        "reason": "전경 큰흐림/전투 선명/배경 작은흐림과 점광원 보케가 본질. 접촉 펄스나 줌을 추가하지 않음.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "camera-foggy",
+        "status": "changed",
+        "reason": "젖빛 막/달/공간 처리 유지. 공유 접촉광의 국소 확산만 새420ms 광원 수명을 따라가게 됨.",
+        "sources": ["https://saint11.art/img/pixel-tutorials/LightMagic.gif"],
+        "observations": [
+          "이번 직접 재생은 국소 발광 GIF. 포그 필터 원작 움직이는 자료를 새로 확보한 것은 아니며 전체 필터 모양/농도 변경 없음.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "camera-double-shadow",
+        "status": "retained-intrinsic",
+        "reason": "몸 잔상이 아닌 별도 반투명 지면 그림자 마스크가 구현됨. 소멸/복제/이동 효과를 추가하지 않음.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "camera-glow",
+        "status": "changed",
+        "reason": "광원 주변 원형 번짐/선명한 핵은 유지. 비교 양쪽 같은 광원을1800ms 즉시 정점,420ms 감쇠로 공유해 타점에서 밝기가 늦게 자라는 현상 제거.",
+        "sources": [
+          "https://saint11.art/img/pixel-tutorials/LightMagic.gif",
+          "https://threejs.org/examples/webgl_lensflares.html"
+        ],
+        "observations": [
+          "국소 발광 GIF 및 three.js 광원 데모 직접 관찰. 광학적 정확성/원작 본편 렌즈 수치 복제를 주장하지 않음.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "camera-incident-light",
+        "status": "retained-intrinsic",
+        "reason": "공간 안의 사선 광주와 그 안의 먼지가 본질. 빛을 타격 섬광이나 렌즈 고스트로 바꾸지 않음.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "camera-multiplane",
+        "status": "retained-intrinsic",
+        "reason": "z깊이 투영에 따른 나무/배우판/원경 배율과 시차가 구현됨. 전체줌/평면 이송과 구별 유지.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "editing-harmony",
+        "status": "changed",
+        "reason": "접촉원화를1830ms부터 고정하고2050~2550ms에 교차합성하던 과정을 제거.1830ms 즉시 회화판으로 전환해 오버랩 혼합을 제거. 기존 안료/붓자국 판은 유지.",
+        "sources": [
+          "https://www.youtube.com/watch?v=uODFxIY9DJ8",
+          "https://animation-nerima.jp/topics/topic-news/2654/"
+        ],
+        "observations": [
+          "TMS 공식 예고편 무음 실제 재생.77.8728/78.4978/79.1228초 선택 프레임과80~83초 회화판 유지 관찰.79초 이후 링구석 조의 인물/배경 붓질 판. 광고문자 겹침 있음. 원본 본편 전체/재료층 실행 미확인. 제작진 행사 문헌의 선화/미술 통합 정의 대조.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "editing-still",
+        "status": "changed",
+        "reason": "장면 전체 접촉 정지를1250→660ms로 줄여2460ms부터 같은 동작 재개. 필터/줌/새 그림 추가 없음.",
+        "sources": ["https://www.youtube.com/watch?v=ccy9AhOvxCg"],
+        "observations": [
+          "Adobe Care 공식 영상 음소거 재생.17/40초 컷/타임라인과50~54초 공중 개의 정지 프레임/Rate Stretch 조작 시연 관찰. 전용 게임 히트스톱 자료로 소개하지 않음.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "editing-triple",
+        "status": "retained-reference-limited",
+        "reason": "동일 정권 사건을 와이드/근접/타점 세번 다시 보는 구현이 존재. 정확한 원작 반복쇼트 새 재생 근거가 없어600ms 박자를 임의 변경하지 않음.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "editing-split",
+        "status": "retained-reference-limited",
+        "reason": "두 인물 동시 진행을 패널로 보여준 뒤 단일장면 합류. 새 원작 분할 동작자료 미확보로 패널 이동/줌 등을 추가하지 않음.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "editing-orbit",
+        "status": "retained-intrinsic",
+        "reason": "실제3D 공터 투영/깊이정렬과 아타호 기립8/어퍼컷5방향 원본 사용 유지. 곰왕 한시점 판의 한계를 임의 뒤집기/왜곡으로 덮지 않음.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "editing-text-cuts",
+        "status": "retained-reference-limited",
+        "reason": "장면전체 문자판 삽입 원리는 구현. 신보 원작 특정 문자컷의 이번 직접 재생 근거가 없어 노출을 임의 축약하지 않음.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "editing-extreme",
+        "status": "retained-reference-limited",
+        "reason": "눈과 입의 별도 크롭/긴 눈-짧은입-긴눈이 구현. 신보 원작 극근접 컷의 직접 재생 부족으로 새 타격 연출을 섞지 않음.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "editing-imaishi",
+        "status": "changed",
+        "reason": "기존 집중선/거대문자/1.7배 급확대 제거. 장전130ms 단위 불연속노출→1716/1758ms 짧은 돌파2구간→1800~2040ms 접촉 원화 노출→빠른 회수만 유지. 같은 어퍼컷/타점.",
+        "sources": ["https://www.youtube.com/watch?v=3VXB9QEainA"],
+        "observations": [
+          "GKIDS 공식 PROMARE 예고편55~60초 무음 부분 재생,55초 주변 프레임 전진으로 팔 원화 이동/구도 전환 관찰. 특정 컷 작화 기여/정확한 노출표는 미확인. 작가 필체 복제 인증이 아닌 원화 노출 원리 응용으로 경계 명시.",
+          "현재 구현의 실제 실행 확인은 root 통합 검증에 위임. 새 유료생성/새 배우 원화 없음."
+        ]
+      },
+      {
+        "id": "editing-shadow-play",
+        "status": "retained-reference-limited",
+        "reason": "왕관상징/질문-행동-반전의 막간극 유지. 우테나 원작 그림자극 영상 이번 직접 관찰 부족.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "editing-overlap",
+        "status": "retained-intrinsic",
+        "reason": "두 장소 전체의 겹침이 본질. 속도를 이유로 단발 플래시/급컷으로 교체하면 다른 기법이 되어 유지.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "editing-wipe-iris",
+        "status": "retained-intrinsic",
+        "reason": "이동하는 경계와 인물 중심 원형창이 본질. 빠른 타격 편집으로 대체하지 않고 경계 읽힐 시간 유지.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      },
+      {
+        "id": "editing-white-out",
+        "status": "retained-intrinsic",
+        "reason": "장면 전체의 긴 노출변화와 장소 전환이 본질. 타격용 짧은 섬광으로 바꾸지 않음.",
+        "sources": ["https://www.inouejet.com/camera/"],
+        "observations": [
+          "코드/기존 카탈로그 경계 대조. 이번 원작성 기법 영상 전체를 직접 확인한 것으로 주장하지 않음."
+        ]
+      }
+    ]
+  },
+  "combinationSpeedImpactRevision": {
+    "date": "2026-10-21",
+    "scope": "기법 조합의 섬광 정권1종. 나머지10종은anime-selected-cuts.json에 기록한다.",
+    "changedIds": ["composite-fast"],
+    "reviews": [
+      {
+        "id": "composite-fast",
+        "status": "changed",
+        "reason": "기존 속도선·쇼크코마v2·카나다 빛의 역할과 두 코마 접촉을 보존하고 진입340px·140ms 방출·84px 최고반동·70px 정착을 같은 배우 시계에 연결한다. 기존 작은7파편은 더 빠르게 이탈·회수해 잔심을 드러낸다.",
+        "sources": [
+          "https://www.youtube.com/shorts/ctLfv9wBSMw",
+          "https://www.youtube.com/shorts/-d3qVNXAWEw"
+        ],
+        "observations": [
+          "같은 세션의 앞선 무음 영상·프레임 관찰을 재사용했다. 사용자 쇼크코마 영상의 명암 교체와 오쓰 편집 비교의 준비·짧은 신전·접촉·회수를 대조했으며 새 원작성 영상의 전수 재생은 아니다."
+        ]
+      }
+    ],
+    "boundaries": [
+      "기법 조합에서 기존 기법끼리 단계별 역할을 유지하며 조합한다. 단일 기법 견본의 본질·독립성은 바꾸지 않는다.",
+      "기본/연출 비교는 같은 진입·접촉·상대 반동을 쓰고 기존 효과 차이만 비교한다.",
+      "공유 진입의 기본값218px·단일 속도 견본278px은 유지하며 섬광 정권만340px를 선택한다."
+    ],
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "paidGenerationCalls": 0,
+    "audio": false
+  },
+  "baseTempoRevision": {
+    "date": "2026-10-21",
+    "scope": "기법 견본81종과 섬광 정권의1배속을 준비·회수·끝 여백 중심으로 압축한다. source renderer의 고유 코마·짧은 신전·느린 접촉·발생 형상을 보존한다.",
+    "count": 82,
+    "profilePaths": [
+      "src/resources/effects/anime-showcase/action-timing.ts",
+      "src/resources/effects/anime-showcase/effect-timing.ts",
+      "src/resources/effects/anime-showcase/camera-editing-timing.ts",
+      "src/resources/effects/anime-selected-cuts/timing.ts"
+    ],
+    "sourceDurationMs": 4200,
+    "actualDurationMs": {
+      "min": 1897.156862745098,
+      "max": 3125
+    },
+    "currentClockBoundary": "entries의durationMs·previewMs·beats는 현재1배속 실제재생시각이다. 기존날짜별revision·renderer상수는4200ms 제작시각의이력이다. 두 시각의변환은SceneTiming이소유하며 기본/연출비교·탐색·생성경로는같은변환을쓴다.",
+    "preserved": [
+      "배속 선택1은 실제1배속이며 선택값을몰래1.5로바꾸지않는다.",
+      "기법 견본에 별도 연출기법을 추가하지 않는다.",
+      "24/30fps 쇼크코마·60/80ms변형·560ms히사시접촉·660ms멈춘그림 등 본질적인 노출을 보호한다.",
+      "플리커는실제400ms색교대시계로노출하고배우와무대의준비·회수만압축한다.",
+      "표정11종·완성컷씬·포즈연기비교의시간표와표정의기본피격반응은유지한다."
+    ],
+    "reaction": {
+      "peakPixels": 42,
+      "sourceLaunchMs": 120,
+      "sourceLiftMs": 420,
+      "sourceRecoveryMs": 900,
+      "reason": "기존기본피격의느린대칭사인반동을짧은방출과회수로바꾸고, 기본/연출모두같이사용한다. 섬광정권의1816ms압축그림도같은기본반동을참조한다."
+    },
+    "referenceBoundary": "같은 세션 앞선 움직이는 자료의 직접 관찰과 제작 문헌·코드 열람을 재사용했다. 이번 추가조정에서 원작 영상을 새로 전수 재생한 것으로 기록하지 않는다.",
+    "references": [
+      {
+        "url": "https://saint11.art/img/pixel-tutorials/AttackSheet.gif",
+        "use": "같은 세션 앞선8개 프레임 직접 관찰 재사용. 준비·짧은 신전·도착 노출의 시간 대비."
+      },
+      {
+        "url": "https://saint11.art/img/pixel-tutorials/Easings.gif",
+        "use": "같은 세션 앞선8개 프레임 관찰 재사용. 빠른 돌출과 도착 뒤 작은 회수의 대비."
+      },
+      {
+        "url": "https://coloso.jp/products/2danimator-proro-jp",
+        "use": "같은 세션의 배경동화·짧은접근 선택프레임 관찰 재사용. 연속 질주를 코마마다 감속시키지 않는 기준."
+      },
+      {
+        "url": "https://www.youtube.com/shorts/ctLfv9wBSMw",
+        "use": "앞서 본 사용자 쇼크코마 영상의 짧은 명암 교체와 긴 잔염 노출 재사용."
+      },
+      {
+        "url": "https://roystan.net/articles/camera-shake/",
+        "use": "앞선 원작성 GIF 관찰·코드 열람 재사용. 충격 뒤 빠른 감쇠·정착의 기준."
+      },
+      {
+        "url": "https://www.imageworks.com/our-craft/feature-animation/movies/spider-man-spider-verse",
+        "use": "앞선 공식 제작 문헌 열람 재사용. 키포즈 유지와 짧은 연결의 대비. 이번 새 영상 관찰은 아님."
+      }
+    ],
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "paidGenerationCalls": 0,
+    "audio": false
+  },
+  "shockKomaV2SpriteRevision": {
+    "date": "2026-10-21",
+    "request": "주먹을 내지른 뒤 섬광과 잔염 형상을 개선",
+    "recordPath": "resources/shock-koma-v2-sprites.json",
+    "replacement": "큰 타원3장과 절차 잔염 덩어리를 백열 면의 팽창→검은 틈으로 갈라지는 붉은 띠→가늘게 분리되는 끝의12장으로 교체한다.",
+    "preserved": "30fps·발광 윤곽1코마·적색 실루엣1코마·백열 섬광3코마·잔염17코마·흑백 방사선3코마와 기존1배속 박자·정권 배우·움직임 줄이기를 유지한다.",
+    "reference": "기존37장 분해표와 무음1.9~3.1초 클립을 재확인했다. 편집 영상의 관찰과 새PixelLab 형상 제작을 구분하며 원작 그림을 생성 입력으로 업로드하지 않았다.",
+    "newEffectDrawings": 12,
+    "newAtlasFiles": 1,
+    "newActorFrames": 0,
+    "sourceCalls": 1,
+    "subscriptionGenerationsCharged": 9,
+    "additionalCreditUsd": 0,
+    "audio": false,
+    "qualityStatus": "awaiting-user-playback-review"
+  },
+  "sevenEffectSpriteRevision": {
+    "date": "2026-10-21",
+    "ids": [
+      "fx-kanada-beam",
+      "fx-kanada-dragon",
+      "fx-mori",
+      "fx-araki",
+      "fx-kozuma",
+      "fx-tatsuzo",
+      "fx-shigeta"
+    ],
+    "recordPath": "resources/anime-fx-seven-sprites.json",
+    "scope": "카나다 빔·카나다 드래곤·모리·아라키·코즈마·타츠조·시게타의 전용 형상. 기존 배우·원본 시계·기법별 발생/이동/분리/소멸을 유지한다.",
+    "sourceAtlasCount": 7,
+    "materialCount": 32,
+    "newActorFrames": 0,
+    "subscriptionGenerationsCharged": 50,
+    "additionalCreditUsd": 0,
+    "audio": false,
+    "boundary": "기존기록과이번움직임관찰·정적형상확인·문헌열람·접근실패를구분한다. 작가별특정원전동작재현을새로인증한것은아니며 모든원본이미지·영상은생성입력이나게임자재로업로드/복사하지않았다.",
+    "sharedEffect": "카나다 빔의draw/sample을사용하는뇌광포조합도같은새외피를사용하되원본시계·head/tail계약·명중위치는유지한다.",
+    "qualityStatus": "awaiting-user-playback-review"
+  },
+  "shockKomaVariantRevision": {
+    "date": "2026-10-21",
+    "request": "쇼크코마 두 항목을 하나로 통합하고 내부에서 기존2종과 신규5종을 선택",
+    "itemId": "shock-koma",
+    "variants": [
+      {
+        "value": "ink",
+        "label": "극단색과 먹선"
+      },
+      {
+        "value": "embers",
+        "label": "섬광과 잔염"
+      },
+      {
+        "value": "whiteout",
+        "label": "백화 소거"
+      },
+      {
+        "value": "compression",
+        "label": "압축 파열"
+      },
+      {
+        "value": "brush",
+        "label": "일필 관통"
+      },
+      {
+        "value": "misregister",
+        "label": "색판 어긋남"
+      },
+      {
+        "value": "halftone",
+        "label": "망점 붕괴"
+      }
+    ],
+    "rendererPath": "src/resources/effects/anime-showcase/shock-koma-variants.ts",
+    "timingPath": "src/resources/effects/anime-showcase/shock-koma-variant-data.ts",
+    "spriteRecordPath": "resources/shock-koma-variant-sprites.json",
+    "legacyAlias": {
+      "item": "showcase:shock-koma-v2",
+      "target": "showcase:shock-koma",
+      "variant": "embers"
+    },
+    "preserved": "기존 극단색·먹선의24fps 1+1+2코마와 섬광·잔염의30fps25코마, 기존 어퍼컷·정권 원화를 유지한다. 신규5종은 같은 정권 접촉의 알파·명암을 사용한다. 버전별 주요순간·시간표·기본판 비교·움직임 줄이기·GIF 경계를 함께 선택한다.",
+    "referenceBoundary": "앞선 기존 영상 관찰과 이번 코드·무음 실제재생을 대조한 독자적인 형상 제안이다. 기존 영상이나 제작자의 원화를 복제하지 않는다. 새 배우 자세·음향은 추가하지 않는다.",
+    "counts": {
+      "techniques": 80,
+      "showcase": 92,
+      "studio": 130
+    },
+    "qualityStatus": "awaiting-user-playback-review"
   }
 }

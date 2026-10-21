@@ -1,9 +1,11 @@
-import { burst, ellipse, label, line, noise, palette, polygon, ring, smooth, star, windowed, } from './drawing.js';
-import { battleLayout, battleImpact, drawAtaho, drawBattle, drawBear, drawPortrait, } from './battle.js';
+import { ellipse, label, line, noise, palette, polygon, smooth, star, } from './drawing.js';
+import { battleLayout, drawAtaho, drawBattle, drawBear, drawPortrait, } from './battle.js';
 import { height, width, } from './types.js';
 import { drawPerspectivePunch, drawHeadFirstFall, perspectivePunchTiming, headFirstFallTiming, } from './impact-resource.js';
 import { drawShockKoma } from './shock-koma.js';
 import { drawShockKomaV2 } from './shock-koma-v2.js';
+import { drawShockKomaVariant } from './shock-koma-variants.js';
+import { shockKomaSample } from './shock-koma-selection.js';
 export const impactSamples = [
     {
         id: 'impact-frame',
@@ -13,42 +15,13 @@ export const impactSamples = [
         description: '어퍼컷이 곰왕에게 닿는 순간을 실제 두 원본의 검은 윤곽과 추상 충격선으로 바꿉니다.',
         distinction: '새 몸을 그리지 않고 접촉 컷의 화면 표현만 잠깐 교체합니다.',
     },
-    {
-        id: 'shock-koma',
-        name: '쇼크코마 · 극단색과 먹선',
-        category: 'impact',
-        previewMs: 1905,
-        beats: [
-            { timeMs: 1818, label: '극단색 1코마' },
-            { timeMs: 1860, label: '명암 반전 1코마' },
-            { timeMs: 1905, label: '먹선 2코마' },
-            { timeMs: 1980, label: '원색 복귀' },
-        ],
-        description: '아타호의 어퍼컷 접촉을 극단색 1코마 → 흑백 반전 1코마 → 거친 먹선 2코마로 교체하고 원색 장면으로 돌아옵니다.',
-        distinction: '24fps 기준 약 0.167초 동안 실제 두 배우의 명암·윤곽을 다시 그립니다. 원작의 새 동작 원화를 복제한 것은 아니며, 모션 감소에서는 낮은 대비의 먹선 한 장을 유지합니다.',
-    },
-    {
-        id: 'shock-koma-v2',
-        name: '쇼크코마 v2 · 섬광과 잔염',
-        category: 'impact',
-        previewMs: 2200,
-        beats: [
-            { timeMs: 1816, label: '발광 윤곽' },
-            { timeMs: 1850, label: '적색 실루엣' },
-            { timeMs: 1916, label: '백열핵' },
-            { timeMs: 2200, label: '붉은 잔염' },
-            { timeMs: 2566, label: '흑백 방사선' },
-            { timeMs: 2666, label: '원색 복귀' },
-        ],
-        description: '수평 정권의 접촉을 발광 윤곽 → 적색 실루엣 → 백열핵 → 붉은 잔염 → 흑백 방사선으로 바꾼 뒤 원색 장면으로 돌아옵니다.',
-        distinction: '사용자 영상 2~3초의 섬광과 긴 잔염을 기존 정권 윤곽과 절차 에너지로 재구성합니다. 원작의 새 동작을 복제한 것은 아니며, 모션 감소에서는 낮은 대비의 한 장을 유지합니다.',
-    },
+    shockKomaSample(),
     {
         id: 'beta-flash',
         name: '베타 플래시',
         category: 'impact',
-        previewMs: 1810,
-        description: '검은 주변부와 비워 둔 흰 초점 공간 안에 아타호와 곰왕의 실제 윤곽을 남깁니다.',
+        previewMs: 1820,
+        description: '접촉 순간 3코마 동안 검은 주변부와 흰 초점 여백을 즉시 교체해 실제 두 배우의 윤곽을 남깁니다.',
         distinction: '화면 전체 반전과 달리 검정과 흰 여백의 면적을 설계합니다.',
     },
     {
@@ -71,24 +44,41 @@ export const impactSamples = [
         id: 'hisashi-punch',
         name: '히사시 펀치',
         category: 'impact',
-        previewMs: 2260,
-        description: '수평 정권의 접촉 프레임과 곰왕 피격 반응을 오래 붙잡습니다.',
-        distinction: '접촉 구간의 재생 시간만 늘리고 몸과 상대 반응은 기존 프레임을 사용합니다.',
+        previewMs: 2100,
+        beats: [
+            { timeMs: 1680, label: '장전 끝 · 짧은 신전' },
+            { timeMs: 1800, label: '정권 접촉' },
+            { timeMs: 2100, label: '접촉만 느리게 진행' },
+            { timeMs: 2360, label: '정상 회수로 방출' },
+        ],
+        description: '장전 뒤 정권을 빠르게 뻗고 접촉 구간만 560ms로 늘린 뒤 빠르게 회수합니다.',
+        distinction: '배우와 상대가 같은 시계로 느려집니다. 충격 링·잔상·흔들림 없이 기존 원화의 시간 대비만 사용합니다.',
     },
     {
         id: 'action-cutin',
         name: '컷인',
         category: 'impact',
         previewMs: 1250,
-        description: '곰왕을 향한 공격 위에 기존 아타호 얼굴의 별도 패널을 끼웁니다.',
+        beats: [
+            { timeMs: 1040, label: '공격 위에 얼굴 패널 삽입' },
+            { timeMs: 1250, label: '눈과 공격을 함께 읽기' },
+            { timeMs: 1600, label: '패널 제거 · 타격 공간 확보' },
+        ],
+        description: '장전 중 얼굴 패널을 즉시 삽입하고 신전 전에 걷어, 눈과 이어지는 일격의 대비를 만듭니다.',
         distinction: '행동을 남긴 채 같은 실제 인물의 눈 크롭을 함께 보여줍니다.',
     },
     {
         id: 'pon-yori',
         name: '퐁요리',
         category: 'impact',
-        previewMs: 1900,
-        description: '어퍼컷 와이드에서 타점 근접 구도로 중간 줌 이동 없이 전환합니다.',
+        previewMs: 1840,
+        beats: [
+            { timeMs: 1700, label: '접촉 전 · 와이드' },
+            { timeMs: 1760, label: '신전 · 즉시 근접 컷' },
+            { timeMs: 1840, label: '같은 타점의 피격' },
+            { timeMs: 2250, label: '즉시 와이드 복귀' },
+        ],
+        description: '접촉 직전 와이드에서 타점 근접으로 즉시 바꾸고, 피격을 읽은 뒤 와이드로 돌아옵니다.',
         distinction: '원본 배우는 같은 비율이며 처음과 끝 구도를 컷으로 잇습니다.',
     },
     {
@@ -105,15 +95,21 @@ export const impactSamples = [
             { timeMs: perspectivePunchTiming.settledMs, label: '밀린 자리에서 정착' },
         ],
         description: '보유한 남동 장전·큰 전경 주먹·회수 원화를 직접 연결하고 실제 타점에서 곰왕을 왼쪽으로 밀어 늦게 정착시킵니다.',
-        distinction: '몸 전체 확대 대신 전용 큰 주먹 원화를 씁니다. 기존 정권과 새 원화 시안을 비교하며 사용자 GIF 품질 검토는 대기 상태입니다.',
+        distinction: '별도 충격광 없이 전용 큰 주먹 원화로 원근을 드러냅니다. 기존 정권과 보유 원화 시안을 비교하며 사용자 GIF 품질 검토는 대기 상태입니다.',
     },
     {
         id: 'inazuma-kick',
         name: '이나즈마 킥',
         category: 'impact',
-        previewMs: 1900,
-        description: '기존 A/B 사선 날아차기와 곰왕 피격에 낙하 방향의 번개 궤적을 더합니다.',
-        distinction: '기존 점프·장전·신전·착지를 재사용하며 PNG를 돌리거나 발을 새로 키우지 않습니다.',
+        previewMs: 1800,
+        beats: [
+            { timeMs: 1540, label: 'A · 무릎 모아 장전' },
+            { timeMs: 1720, label: 'B · 짧은 사선 신전 시작' },
+            { timeMs: 1800, label: '발바닥 접촉' },
+            { timeMs: 2260, label: '같은 다리를 접어 착지' },
+        ],
+        description: '기존 A 장전은 읽히게 남기고 B 사선 신전은 80ms로 압축해 발이 먼저 닿는 일격을 보여 줍니다.',
+        distinction: '발의 궤도와 신전 원화로 낙하를 읽게 합니다. 별도 번개·충격광을 더하지 않고 원본 비율을 유지합니다.',
     },
     {
         id: 'kurumada-fall',
@@ -125,11 +121,10 @@ export const impactSamples = [
             { timeMs: headFirstFallTiming.turnMs, label: '머리부터 낙하 원화' },
             { timeMs: headFirstFallTiming.terminalMs, label: '막판 하강 가속' },
             { timeMs: headFirstFallTiming.contactMs, label: '머리 접촉 · 압축 원화' },
-            { timeMs: headFirstFallTiming.dustEndMs, label: '먼지 소거 · 구도 복귀' },
             { timeMs: headFirstFallTiming.settledMs, label: '착지 종결 구도' },
         ],
-        description: '어퍼컷 뒤 구도를 넓혀 240px 낙차를 담고 마지막에 빠르게 하강합니다. 머리·어깨가 눌리는 착지 뒤 먼지와 구도 복귀로 끝냅니다.',
-        distinction: 'PixelLab에서 기존 곰왕을 기준으로 낙하·머리 착지 두 핵심 자세를 새로 제작했습니다. PNG 회전은 사용하지 않으며 작화 품질은 사용자 GIF 검토 대기입니다.',
+        description: '어퍼컷 뒤 240px 낙차와 막판 하강 가속을 보여 줍니다. 머리·어깨가 눌리는 착지 원화로 힘을 받고 끝냅니다.',
+        distinction: '보유한 낙하·머리 착지 두 자세를 재사용하고 먼지·충격광은 더하지 않습니다. PNG 회전 없이 원본 비율을 지키며 작화 품질은 사용자 GIF 검토 대기입니다.',
     },
 ];
 const contactMs = battleLayout.contactMs;
@@ -172,7 +167,10 @@ function drawAbstractImpact(ctx, frame) {
     star(ctx, impact.x, impact.y, frame.reducedMotion ? 57 : 78, frame.reducedMotion ? '#aeabbc' : palette.paper, 7, 0.13);
 }
 function drawBeta(ctx, frame) {
-    const amount = windowed(sceneTime(frame), 1680, 2160, 65);
+    const age = sceneTime(frame) - contactMs;
+    if (age < 0 || age >= 1000 / 8)
+        return;
+    const amount = 1;
     ctx.save();
     ctx.globalAlpha *= amount * (frame.reducedMotion ? 0.6 : 1);
     ctx.fillStyle = '#080c17';
@@ -269,43 +267,32 @@ function drawShatter(ctx, frame) {
         ctx.restore();
     }
 }
+/** 장전을 읽힌 뒤 신전을 압축하고, 두 배우의 접촉 시간만 함께 늘린다. */
 function hisashiTime(t) {
-    if (t < contactMs)
+    if (t < 1300)
         return t;
-    if (t < 2800)
-        return contactMs + (t - contactMs) * 0.04;
-    return contactMs + (2800 - contactMs) * 0.04 + (t - 2800) * 1.35;
+    if (t < 1680)
+        return 1300 + ((t - 1300) / 380) * 200;
+    if (t < contactMs)
+        return 1500 + ((t - 1680) / 120) * 300;
+    if (t < 2360)
+        return contactMs + (t - contactMs) * 0.16;
+    return contactMs + 560 * 0.16 + (t - 2360) * 1.8;
 }
 function drawHisashi(ctx, frame) {
     const t = sceneTime(frame);
-    const impact = battleImpact(frame);
     drawCombat(ctx, frame, frame.enhanced ? hisashiTime(t) : t);
-    if (!frame.enhanced || t < contactMs || t >= 3000)
-        return;
-    ctx.save();
-    ctx.globalAlpha *=
-        windowed(t, contactMs, 2800, 160) * (frame.reducedMotion ? 0.35 : 0.7);
-    const p = smooth((t - contactMs) / 1000);
-    ring(ctx, impact.x, impact.y, 29 + p * 18, 39 - p * 12, palette.paper, 3);
-    for (let i = 0; i < 4; i++)
-        line(ctx, [
-            { x: impact.x + 30, y: impact.y - 15 + i * 10 },
-            { x: impact.x + 39 + p * 12, y: impact.y - 11 + i * 10 },
-        ], palette.ink, 3);
-    ctx.restore();
 }
 function drawCutIn(ctx, frame) {
     const t = sceneTime(frame);
     drawCombat(ctx, frame);
     if (!frame.enhanced)
         return;
-    const amount = windowed(t, 780, 1670, 90);
+    const amount = t >= 1040 && t < 1600 ? 1 : 0;
     if (amount <= 0)
         return;
     ctx.save();
     ctx.globalAlpha *= amount;
-    if (!frame.reducedMotion)
-        ctx.translate((1 - smooth((t - 780) / 100)) * 140, 0);
     polygon(ctx, [
         { x: 430, y: 40 },
         { x: 936, y: 40 },
@@ -321,11 +308,6 @@ function drawCutIn(ctx, frame) {
     ctx.clip();
     ctx.fillStyle = '#201326';
     ctx.fillRect(340, 40, 600, 190);
-    for (let i = 0; i < 12; i++)
-        line(ctx, [
-            { x: 345, y: 60 + i * 16 },
-            { x: 940, y: 5 + i * 16 },
-        ], '#ad5676', 6);
     drawPortrait(ctx, frame, {
         x: 472,
         y: 48,
@@ -337,7 +319,7 @@ function drawCutIn(ctx, frame) {
 }
 function drawPonYori(ctx, frame) {
     const t = sceneTime(frame);
-    if (!frame.enhanced || t < 1600 || t >= 2650) {
+    if (!frame.enhanced || t < 1760 || t >= 2250) {
         drawCombat(ctx, frame);
         return;
     }
@@ -351,35 +333,22 @@ function drawObari(ctx, frame) {
     drawPerspectivePunch(ctx, frame);
 }
 function drawInazuma(ctx, frame) {
+    // 비교판은 같은 원본 킥의 균등 노출, 연출판은 A 장전과 B 신전의 시간 대비다.
     const t = sceneTime(frame);
-    drawBattle(ctx, frame, { action: 'kick' });
-    if (!frame.enhanced)
-        return;
-    const amount = windowed(t, 1430, 1980, 160);
-    ctx.save();
-    ctx.globalAlpha *= amount * (frame.reducedMotion ? 0.28 : 0.88);
-    polygon(ctx, [
-        { x: impact.x - 204, y: impact.y - 253 },
-        { x: impact.x - 38, y: impact.y - 45 },
-        { x: impact.x - 79, y: impact.y - 54 },
-        { x: impact.x + 26, y: impact.y + 38 },
-        { x: impact.x - 154, y: impact.y - 94 },
-        { x: impact.x - 97, y: impact.y - 92 },
-    ], palette.blue);
-    if (!frame.reducedMotion)
-        line(ctx, [
-            { x: impact.x - 204, y: impact.y - 253 },
-            { x: impact.x - 38, y: impact.y - 45 },
-            { x: impact.x - 79, y: impact.y - 54 },
-            { x: impact.x + 26, y: impact.y + 38 },
-        ], palette.paper, 4);
-    ctx.restore();
-    if (t >= contactMs && t < 2180) {
-        ctx.save();
-        ctx.globalAlpha *= frame.reducedMotion ? 0.25 : 1;
-        burst(ctx, impact.x, impact.y, (t - contactMs) / 380, palette.paper, 11);
-        ctx.restore();
+    let timeMs = t;
+    if (frame.enhanced && t >= 1000) {
+        if (t < 1540)
+            timeMs = 1000 + ((t - 1000) / 540) * 680;
+        else if (t < 1720)
+            timeMs = 1680;
+        else if (t < contactMs)
+            timeMs = 1680 + ((t - 1720) / 80) * 120;
+        else if (t < 1900)
+            timeMs = contactMs + (t - contactMs) * 1.6;
+        else
+            timeMs = 1960 + (t - 1900) * 1.8;
     }
+    drawBattle(ctx, frame, { action: 'kick', timeMs });
 }
 function drawKurumada(ctx, frame) {
     drawHeadFirstFall(ctx, frame);
@@ -398,10 +367,12 @@ export function drawImpact(ctx, id, frame) {
                     : '실제 어퍼컷과 곰왕 피격');
                 break;
             case 'shock-koma':
-                drawShockKoma(ctx, frame);
-                break;
-            case 'shock-koma-v2':
-                drawShockKomaV2(ctx, frame);
+                if (!frame.shockVariant || frame.shockVariant === 'ink')
+                    drawShockKoma(ctx, frame);
+                else if (frame.shockVariant === 'embers')
+                    drawShockKomaV2(ctx, frame);
+                else
+                    drawShockKomaVariant(ctx, frame, frame.shockVariant);
                 break;
             case 'beta-flash':
                 drawCombat(ctx, frame);
@@ -426,7 +397,7 @@ export function drawImpact(ctx, id, frame) {
             case 'hisashi-punch':
                 drawHisashi(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '같은 접촉·피격 프레임을 길게 붙잡음'
+                    ? '짧은 신전 → 느린 접촉 560ms → 빠른 회수'
                     : '같은 실제 일격의 정상 재생');
                 break;
             case 'action-cutin':
@@ -450,7 +421,7 @@ export function drawImpact(ctx, id, frame) {
             case 'inazuma-kick':
                 drawInazuma(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '기존 A/B 사선 날아차기 + 낙하 방향 번개'
+                    ? 'A/B 장전 → 사선 신전 → 발 접촉 · 별도 번개 없음'
                     : '같은 기존 A/B 날아차기');
                 break;
             case 'kurumada-fall':

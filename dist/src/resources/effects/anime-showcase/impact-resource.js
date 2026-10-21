@@ -1,4 +1,3 @@
-import { gameDust, gameImpact } from '../../cutscenes/game-effects.js';
 import { battleLayout, drawAtaho, drawBattle, drawBear } from './battle.js';
 import { clamp, ellipse, gameStage, smooth, stage } from './drawing.js';
 import { height, width, } from './types.js';
@@ -13,7 +12,6 @@ export const headFirstFallTiming = {
     turnMs: 2380,
     terminalMs: 2780,
     contactMs: 3020,
-    dustEndMs: 3780,
     settledMs: 3860,
 };
 function pose(frame, key) {
@@ -77,12 +75,6 @@ export function drawPerspectivePunch(context, frame) {
                 ? strike
                 : pose(frame, 'perspective-punch:recover');
     drawPose(context, source, feet, scale);
-    gameImpact(context, frame.assets.effects, {
-        ...contact,
-        progress: (time - battleLayout.contactMs) / 220,
-        size: frame.reducedMotion ? 120 : 200,
-        angle: Math.PI,
-    });
 }
 /** 배경의 투영과 원화에 같은 넓은 구도를 주며 화면 밖을 빈 캔버스로 드러내지 않는다. */
 function frameFall(context, frame) {
@@ -112,7 +104,7 @@ export function drawHeadFirstFall(context, frame, options = {}) {
         drawBattle(context, frame);
         return;
     }
-    const { turnMs, contactMs, dustEndMs } = headFirstFallTiming;
+    const { turnMs, contactMs } = headFirstFallTiming;
     const target = battleLayout.target;
     const travel = smooth((time - battleLayout.contactMs) / (contactMs - battleLayout.contactMs));
     const bodyX = target.x + travel * (frame.reducedMotion ? 15 : 42);
@@ -150,19 +142,6 @@ export function drawHeadFirstFall(context, frame, options = {}) {
             options.impactEffects(context, { point: impactPoint, layer: 'front' });
             return;
         }
-        gameDust(context, frame.assets.effects, {
-            x: headX + 25,
-            y: target.ground,
-            progress: (time - contactMs) / (dustEndMs - contactMs),
-            size: frame.reducedMotion ? 220 : 340,
-        });
-        gameImpact(context, frame.assets.effects, {
-            x: headX,
-            y: target.ground - 8,
-            progress: (time - contactMs) / 200,
-            size: frame.reducedMotion ? 100 : 180,
-            angle: -Math.PI / 2,
-        });
     }
     finally {
         context.restore();

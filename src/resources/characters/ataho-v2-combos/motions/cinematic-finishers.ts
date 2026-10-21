@@ -1,6 +1,6 @@
 import type { ComboMotion } from '../types.js';
 import { finisherAuthoringTargetX } from '../finisher-actors.js';
-import { FinisherSequence } from './finisher-sequence.js';
+import { finisherAttack, FinisherSequence } from './finisher-sequence.js';
 import { drunkenTigerFinisher } from './drunken-tiger-finisher.js';
 import { impactAttacks } from './impact-attacks.js';
 
@@ -45,7 +45,6 @@ demon
   })
   .beat('滅 · 응축한 결정타', 'climax', (sequence) => {
     sequence.attack('uppercut', { pace: 0.5, contactMs: 50 });
-    sequence.attack('hammer', { pace: 0.55, contactMs: 60 });
     const smash = impactAttacks.find((motion) => motion.id === 'aerial-smash');
     const contact = smash?.steps.find((step) => step.contact);
     if (!smash || !contact?.contact?.reach)
@@ -53,18 +52,36 @@ demon
     // 낮은 실제 손끝은 그대로 두고, 그 접촉점만 고정 표적의 x에 맞춘다.
     const xOffset =
       finisherAuthoringTargetX - contact.x - contact.contact.reach;
-    sequence.move(
-      smash.steps[0]!.x + xOffset,
-      '순옥살 · 양손 내려찍기를 위해 뒤로 발 디딤',
-      100,
-    );
+    const hammer = finisherAttack('hammer', { pace: 0.55, contactMs: 60 });
+    sequence.move(hammer[0]!.x, '순옥살 · 망치주먹으로 발 디딤', 100);
+    // 앞타의 회수에서 후퇴를 마쳐, 도약 전에 다시 걷고 멈추는 박자를 없앤다.
     sequence.append(
-      smash.steps.map((step) => ({
+      hammer.map((step, index) =>
+        index === hammer.length - 1
+          ? {
+              ...step,
+              x: smash.steps[0]!.x + xOffset,
+              phase: '순옥살 · 팔을 거두며 도약 거리로 중심 옮기기',
+            }
+          : step,
+      ),
+    );
+    const launchTimings = [25, 40, 45, 90, 35, 100];
+    const launchHeights = [0, 0, 0, -34, -60, -52];
+    sequence.append(
+      smash.steps.map((step, index) => ({
         ...step,
         x: step.x + xOffset,
-        durationMs: step.frame === 3 ? 220 : step.durationMs,
-        emphasis: step.frame === 3 ? ('charge' as const) : step.emphasis,
-        phase: `순옥살 · ${step.phase.replace(/^\d+타 · /, '')}`,
+        y: launchHeights[index] ?? step.y,
+        durationMs: launchTimings[index] ?? step.durationMs,
+        movementCurve:
+          step.frame === 3
+            ? { x: 'ease-in' as const, y: 'ease-in' as const }
+            : step.movementCurve,
+        phase:
+          step.frame === 3
+            ? '순옥살 · 양손을 모은 채 정점을 지나 급강하'
+            : `순옥살 · ${step.phase.replace(/^\d+타 · /, '')}`,
       })),
     );
   })
@@ -205,15 +222,16 @@ export const cinematicFinishers: readonly ComboMotion[] = [
     id: 'finisher-demon',
     title: '순옥살 · 21타',
     summary:
-      '어둠 속 좌우 협공이 점점 빨라진다. 마지막은 낮게 뛰어 정점에서 양손을 모았다가 내려찍고, 착지한 두 발과 정적으로 끝낸다.',
+      '어둠 속 좌우 협공이 점점 빨라진다. 마지막 회수에서 바로 높이 도약하고, 양손을 모은 채 정점을 지나 급강하한 뒤 착지와 정적으로 끝낸다.',
     priority: 'review',
     review:
-      '공식 영상의 고요한 준비·암중 난타·정적 종결을 참고한 맨손 재해석이다. 좌우 협공과 상단 추격을 가속하고, 마지막에는 공중에서 양손을 모아 내려찍은 뒤 두 발을 디디며 끝낸다. 본체15타와 실제 공격 분신6타를 합친21타 구성이며 첫20타의 순서와 시각은 유지한다. 끝타는 기존 공중 양손 내려찍기 그림을 재사용한다.',
+      '공식 영상의 고요한 준비·암중 난타·정적 종결을 참고한 맨손 재해석이다. 본체15타와 실제 공격 분신6타를 합친21타 구성이며 첫20타의 순서와 시각은 유지한다. 끝타는 기존 공중 양손 내려찍기0~8번 그림을 재사용하고, 앞 망치주먹의70ms 회수에서 도약 거리로 중심을 옮긴다. 중복 준비를65ms로 줄이고135ms 동안 높이60까지 상승한 뒤35ms 정점 통과와100ms 하강을 이어20→21타 간격을750ms에서465ms로 좁힌다. 정점에 멈추지 않으며 실제 손끝 접촉과 착지·회수·종결의 여운은 유지한다.',
     missingPose:
-      '원작 전용 발동·등돌림·天 자세 그림과 잡기 상대는 없다. 기존 그림을 조합한 연출 비교 시안이며 tiger-rpg 본게임 판정을 옮기지 않는다.',
+      '원작 전용 발동·등돌림·天 자세 그림과 잡기 상대는 없다. 도약 직전 다리가 완전히 펴진 그림도 없어 기존 준비·공중 자세와 좌표 이동으로 높은 궤적을 잇는다. 기존 그림을 조합한 연출 비교 시안이며 tiger-rpg 본게임 판정을 옮기지 않는다.',
     finisher: {
       theme: 'demon',
-      subtitle: '가속하는 암중 협공 · 공중 양손 장전 · 내려찍기와 착지의 정적',
+      subtitle:
+        '가속하는 암중 협공 · 높은 도약과 급강하 · 내려찍기와 착지의 정적',
       accent: '#b53a47',
       endGlyph: '天',
     },

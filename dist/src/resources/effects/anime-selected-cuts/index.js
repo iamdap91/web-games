@@ -1,7 +1,7 @@
 import { registerEmbeddedScene } from '../../catalog/embedded-scene.js';
 import { connectStudioScene, redirectToStudio, studioMode, } from '../../cutscenes/studio/bridge.js';
 import { loadCutAssets } from './assets.js';
-import { cuts, drawCut } from './catalog.js';
+import { cutTypes, drawCut, findCutSelection, } from './catalog.js';
 import { exportCutGif } from './export.js';
 import { CutPlayer } from './player.js';
 import { CutSurfaces } from './surfaces.js';
@@ -22,9 +22,11 @@ class CutScreen {
     list = element('cuts', HTMLElement);
     seek = element('seek', HTMLInputElement);
     play = element('play', HTMLButtonElement);
+    variant = element('variant', HTMLSelectElement);
     status = element('status', HTMLOutputElement);
     download = element('download', HTMLAnchorElement);
-    current = cuts.find((c) => c.id === location.hash.slice(1)) ?? cuts[0];
+    currentType = cutTypes[0];
+    current = this.currentType.variants[0];
     frameId = 0;
     last = 0;
     disposed = false;
@@ -36,23 +38,31 @@ class CutScreen {
         this.surfaces = surfaces;
         if (!this.context)
             throw new Error('Canvas를 준비할 수 없습니다.');
-        if (cuts.length !== 10 || new Set(cuts.map((c) => c.id)).size !== 10)
-            throw new Error('서로 다른 10개 컷이 필요합니다.');
+        if (!cutTypes.length ||
+            new Set(cutTypes.map((type) => type.id)).size !== cutTypes.length ||
+            cutTypes.some((type) => type.variants.length === 0))
+            throw new Error('연출 유형과 각 유형의 버전 목록을 확인해 주세요.');
         const { signal } = this.events;
-        cuts.forEach((cut, index) => {
+        cutTypes.forEach((type, index) => {
+            const cut = type.variants[0];
             const button = document.createElement('button');
             button.type = 'button';
-            button.dataset.cut = cut.id;
+            button.dataset.cut = type.id;
             const number = document.createElement('span');
             number.textContent = String(index + 1).padStart(2, '0');
             const title = document.createElement('strong');
-            title.textContent = cut.title;
+            title.textContent = type.title;
             const note = document.createElement('small');
-            note.textContent = `${cut.kind} · ${cut.duration.toFixed(2)}초`;
+            note.textContent = `${cut.kind} · ${type.variants.length > 1
+                ? `${type.variants.length}개 버전`
+                : `${cut.duration.toFixed(2)}초`}`;
             button.append(number, title, note);
-            button.addEventListener('click', () => this.select(cut), { signal });
+            button.addEventListener('click', () => this.select(type, cut), {
+                signal,
+            });
             this.list.append(button);
         });
+        this.variant.addEventListener('change', () => this.selectVariant(this.variant.value), { signal });
         this.play.addEventListener('click', () => {
             this.player.toggle();
             this.render();
@@ -99,9 +109,9 @@ class CutScreen {
             }
         }, { signal });
         window.addEventListener('hashchange', () => {
-            const cut = cuts.find((c) => c.id === location.hash.slice(1));
-            if (cut && cut !== this.current)
-                this.select(cut);
+            const selection = this.selectionFromLocation();
+            if (selection)
+                this.select(selection.type, selection.cut);
         }, { signal });
         element('png', HTMLButtonElement).addEventListener('click', () => this.savePng(), { signal });
         element('gif', HTMLButtonElement).addEventListener('click', () => {
@@ -118,13 +128,14 @@ class CutScreen {
         for (const id of ['play', 'restart', 'png', 'gif'])
             element(id, HTMLButtonElement).disabled = false;
         this.status.textContent = '준비 완료 · 무음';
-        this.select(this.current);
+        const initial = this.selectionFromLocation();
+        this.select(initial?.type ?? this.currentType, initial?.cut ?? this.current);
         this.studio = connectStudioScene('selected', {
             snapshot: () => {
                 const state = this.player.snapshot;
                 return {
-                    itemId: this.current.id,
-                    title: this.current.title,
+                    itemId: this.currentType.id,
+                    title: this.currentTitle,
                     description: this.current.description,
                     timeMs: state.time * 1000,
                     durationMs: state.duration * 1000,
@@ -134,15 +145,23 @@ class CutScreen {
                         label: beat.label,
                     })),
                     loop: element('loop', HTMLInputElement).checked,
+                    variant: this.currentType.variants.length > 1 ? this.current.id : undefined,
+                    variantOptions: this.currentType.variants.length > 1
+                        ? this.currentType.variants.map((cut) => ({
+                            value: cut.id,
+                            label: cut.title,
+                        }))
+                        : undefined,
                     exporting: this.exporting !== null,
                     exportStatus: this.status.textContent ?? '',
                 };
             },
             select: (id) => {
-                const cut = cuts.find((entry) => entry.id === id);
-                if (cut)
-                    this.select(cut);
+                const selection = findCutSelection(id);
+                if (selection)
+                    this.select(selection.type, selection.cut);
             },
+            variant: (id) => this.selectVariant(id),
             toggle: () => {
                 this.player.toggle();
                 this.render();
@@ -168,19 +187,48 @@ class CutScreen {
         });
         this.frameId = requestAnimationFrame((time) => this.tick(time));
     }
-    select(cut) {
+    get currentTitle() {
+        return this.current.id === this.currentType.id
+            ? this.currentType.title
+            : `${this.currentType.title} · ${this.current.title}`;
+    }
+    selectionFromLocation() {
+        return findCutSelection(location.hash.slice(1), new URLSearchParams(location.search).get('variant') ?? undefined);
+    }
+    selectVariant(id) {
+        const cut = this.currentType.variants.find((entry) => entry.id === id);
+        if (cut)
+            this.select(this.currentType, cut);
+    }
+    select(type, cut) {
         this.exporting?.abort();
+        this.currentType = type;
         this.current = cut;
         this.player.select(cut.duration);
         this.seek.max = String(cut.duration);
-        history.replaceState(null, '', `#${cut.id}`);
-        element('cut-title', HTMLElement).textContent = cut.title;
+        const url = new URL(location.href);
+        url.hash = type.id;
+        if (type.variants.length > 1)
+            url.searchParams.set('variant', cut.id);
+        else
+            url.searchParams.delete('variant');
+        history.replaceState(null, '', url);
+        element('cut-title', HTMLElement).textContent = this.currentTitle;
         element('cut-kind', HTMLElement).textContent = cut.kind;
         element('counter', HTMLOutputElement).textContent =
-            `${String(cuts.indexOf(cut) + 1).padStart(2, '0')} / 10`;
+            `${String(cutTypes.indexOf(type) + 1).padStart(2, '0')} / ${cutTypes.length}`;
         element('description', HTMLElement).textContent = cut.description;
+        this.variant.replaceChildren();
+        for (const variant of type.variants) {
+            const option = document.createElement('option');
+            option.value = variant.id;
+            option.textContent = variant.title;
+            this.variant.append(option);
+        }
+        this.variant.value = cut.id;
+        element('variant-control', HTMLElement).hidden = type.variants.length < 2;
         for (const button of this.list.querySelectorAll('button'))
-            button.setAttribute('aria-pressed', String(button.dataset.cut === cut.id));
+            button.setAttribute('aria-pressed', String(button.dataset.cut === type.id));
         const beats = element('beats', HTMLElement);
         beats.replaceChildren();
         for (const beat of cut.beats) {
@@ -196,7 +244,9 @@ class CutScreen {
         this.render();
     }
     step(direction) {
-        this.select(cuts[(cuts.indexOf(this.current) + direction + cuts.length) % cuts.length]);
+        const type = cutTypes[(cutTypes.indexOf(this.currentType) + direction + cutTypes.length) %
+            cutTypes.length];
+        this.select(type, type.variants[0]);
     }
     seekFrame(direction) {
         this.player.seek(this.player.snapshot.time + direction / 24);
@@ -212,8 +262,10 @@ class CutScreen {
             surfaces: this.surfaces,
         });
         this.seek.value = String(state.time);
-        this.canvas.dataset.cut = this.current.id;
+        this.canvas.dataset.cut = this.currentType.id;
+        this.canvas.dataset.variant = this.current.id;
         this.canvas.dataset.time = state.time.toFixed(4);
+        this.canvas.dataset.sourceTimeMs = String(this.current.timing.toSource(state.time * 1000));
         this.canvas.dataset.playing = String(state.playing);
         element('time', HTMLOutputElement).textContent =
             `${state.time.toFixed(3)} / ${state.duration.toFixed(3)} s`;

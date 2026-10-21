@@ -15,7 +15,7 @@
         }
       }
     </script>
-    <title>애니 연출 · 고른 컷 10개</title>
+    <title>애니 연출 · 조합 14유형</title>
     <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="../../cutscenes/studio/embed.css" />
   </head>
@@ -24,17 +24,17 @@
       <header>
         <div>
           <p class="eyebrow">ATAHO / ANIMATION STUDIES</p>
-          <h1>고른 컷 <em>10</em></h1>
+          <h1>조합 <em>14유형</em></h1>
           <p>속도를 쌓고, 한 장으로 터뜨리고, 멈춘다.</p>
         </div>
       </header>
       <div class="layout">
-        <nav id="cuts" aria-label="완성 컷 선택"></nav>
+        <nav id="cuts" aria-label="조합 선택"></nav>
         <section class="viewer" aria-label="연출 미리보기">
           <div class="caption">
             <span id="cut-kind">3D</span>
             <h2 id="cut-title">그림 준비 중</h2>
-            <output id="counter">01 / 10</output>
+            <output id="counter">01 / 14</output>
           </div>
           <canvas
             id="stage"
@@ -56,8 +56,17 @@
                 <option value="1" selected>1×</option>
                 <option value="1.5">1.5×</option>
               </select></label
+            ><span id="variant-control" hidden
+              ><label
+                >버전
+                <select
+                  id="variant"
+                  aria-label="바리에이션 선택"
+                ></select></label></span
             ><label><input id="loop" type="checkbox" />반복</label
-            ><label><input id="sequence" type="checkbox" />10컷 연속</label>
+            ><label
+              ><input id="sequence" type="checkbox" />전체 유형 연속</label
+            >
           </div>
           <div class="timeline">
             <button id="frame-back" aria-label="이전 코마">−1f</button

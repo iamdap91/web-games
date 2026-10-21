@@ -1,3 +1,4 @@
+import { drawMoriSprites } from './effects-drawn-impact.js';
 import {
   clamp,
   ellipse,
@@ -10,7 +11,7 @@ import {
   smooth,
   stage,
 } from './drawing.js';
-import type { Context, Frame, Point } from './types.js';
+import type { Context, EffectFrame, Frame, Point } from './types.js';
 import { atahoPosition, battleLayout, drawAtaho, drawBear } from './battle.js';
 import {
   drawKiSprite,
@@ -457,7 +458,7 @@ function drawIsoDebris(ctx: Context, frame: Frame): void {
 
 function cube(
   ctx: Context,
-  frame: Frame,
+  frame: EffectFrame,
   x: number,
   y: number,
   size: number,
@@ -517,7 +518,7 @@ function cube(
   }
 }
 
-function drawNakamura(ctx: Context, frame: Frame): void {
+export function drawNakamura(ctx: Context, frame: EffectFrame): void {
   const age = frame.timeMs - battleLayout.contactMs;
   if (age < -170 || age > 2350) return;
   const motion = frame.reducedMotion ? 0.5 : 1;
@@ -551,60 +552,6 @@ function drawNakamura(ctx: Context, frame: Frame): void {
       ctx.fillStyle = `#${mapStyles.ridge.ground.stone.toString(16)}`;
       ctx.fillRect(x - 6, y - 6, 12, 12);
     }
-  }
-  ctx.restore();
-}
-
-function drawMori(ctx: Context, frame: Frame): void {
-  const age = frame.timeMs - battleLayout.contactMs;
-  if (age < 0 || age > 1800) return;
-  const cell = Math.floor(age / (frame.reducedMotion ? 170 : 1000 / 12));
-  const motion = frame.reducedMotion ? 0.6 : 1;
-  ctx.save();
-  ctx.globalAlpha *= 1 - smooth((age - 1200) / 600);
-  for (let i = 0; i < 16; i++) {
-    const delay = frame.enhanced ? (i % 3) * 60 : 0;
-    if (age < delay) continue;
-    const seconds = (age - delay) / 1000;
-    const angle = -0.94 + noise(i) * 1.7;
-    const speed = 95 + noise(i + 8) * 190;
-    const x = 410 + Math.cos(angle) * seconds * speed * motion;
-    const y =
-      310 + Math.sin(angle) * seconds * speed * motion + seconds * seconds * 54;
-    if (!frame.enhanced) {
-      ellipse(ctx, x, y, 5, 5, '#c1b388');
-      continue;
-    }
-    ctx.save();
-    ctx.translate(x, y);
-    ctx.rotate(angle + Math.sin(i) * seconds * 0.4);
-    const length =
-      (i % 4 === 0 ? 64 : 24 + (i % 5) * 5) * (1 - clamp(seconds / 2) * 0.5);
-    const kink = (noise(i * 11 + cell) - 0.5) * length * 0.55;
-    polygon(
-      ctx,
-      [
-        { x: -length, y: -2 },
-        { x: -length * 0.4, y: -7 - kink },
-        { x: length * 0.23, y: -3 },
-        { x: length, y: 1 },
-        { x: length * 0.2, y: 4 + kink },
-        { x: -length * 0.65, y: 9 },
-        { x: -length * 0.3, y: 1 },
-      ],
-      i % 3 ? '#d9bb7e' : '#15222c',
-    );
-    line(
-      ctx,
-      [
-        { x: -length * 0.85, y: -1 },
-        { x: -length * 0.18, y: -2 + kink * 0.25 },
-        { x: length * 0.8, y: 1 },
-      ],
-      '#17232b',
-      3.6,
-    );
-    ctx.restore();
   }
   ctx.restore();
 }
@@ -677,7 +624,7 @@ export function drawFlightEffects(
 ): boolean {
   if (id === 'fx-iso-debris') drawIsoDebris(ctx, frame);
   else if (id === 'fx-nakamura') drawNakamura(ctx, frame);
-  else if (id === 'fx-mori') drawMori(ctx, frame);
+  else if (id === 'fx-mori') drawMoriSprites(ctx, frame);
   else if (id === 'fx-anime-r') drawAnimeR(ctx, frame);
   else return false;
   return true;

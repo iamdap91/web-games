@@ -1,0 +1,208 @@
+{
+  "createdDate": "2026-10-21",
+  "approval": "진행 중인 새 붕권 제작 승인 유지. 사용자 추가 이미지와 '이런 모션이야'를 타격B의 새 시각 기준으로 적용. 기존 모션·A/B 모두 보존.",
+  "characterId": "ccd70d82-72e4-4ec9-839a-7481e30bff2f",
+  "preservedCandidates": {
+    "commits": ["0500c8a", "028156c"],
+    "records": [
+      "resources/ataho-v2-bongkwon-generation.json",
+      "resources/ataho-v2-bongkwon-keyposes-generation.json"
+    ]
+  },
+  "reference": {
+    "sourceType": "user-uploaded-image",
+    "attachmentPath": "/tmp/codex-remote-attachments/01a15baa-9dc8-7821-92ff-63c96b31b5f1/FBD4EB95-EE97-47E7-B1A4-DE0052506C55/1-붙여넣은-이미지-1.jpg",
+    "originalPath": "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/references/user-contact.jpg",
+    "cropRect": {
+      "x": 295,
+      "y": 205,
+      "width": 328,
+      "height": 370
+    },
+    "cropPaths": [
+      "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/references/contact-right.png",
+      "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/references/contact-left.png"
+    ],
+    "inputPaths": [
+      "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/references/contact-right-input.png",
+      "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/references/contact-left-input.png"
+    ],
+    "inputSize": {
+      "width": 164,
+      "height": 185
+    },
+    "inputProcessing": "공격자 전신을 crop. 같은 사진의 수평 반전본은 북서쪽의 왼쪽 목표 방향 참조로만 사용. 참조 사진만164×185로 축소, 아타호 그림 자체는 미러링·리사이즈하지 않음.",
+    "observed": "양발을 넓게 접지하고 양무릎·골반을 낮춤. 넓게 드러난 등이 회전하고 타격팔은 수평. 반대주먹은 뒤허리·엉덩이옆 아래로 또렷하게 당겨짐.",
+    "limitations": "정적 한 장으로 앞뒤 순서·속도·체중 이동 시점은 판단하지 않음. 타격 주먹 끝 일부는 MID 표시/효과에 가려져 승인된 아타호 손 디자인을 사용.",
+    "originalSha256": "8b9aaee35588e86ebb6cf083af8ecf2e13ea0baf12c057bc8fb35e7c53730289",
+    "inputSha256": {
+      "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/references/contact-right-input.png": "007ed45bc421ef0cbb7001518a2e4b9faea629a6d446e2f12f73e982148da697",
+      "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/references/contact-left-input.png": "fc96a1106193d1382a048a120d803dab28bd764b82fc3ff0454543d98692f19b"
+    }
+  },
+  "strategy": {
+    "reuseA": true,
+    "newBOnly": true,
+    "intermediateFramesGenerated": false,
+    "previousBPoseDifference": "이전B는 뒤발이 들리고 몸통이 높으며 반대주먹이 재킷 뒤 높은 곳에 가려짐. 새B는 양발 버팀·낮은 골반과 등·뒤허리 아래 반대주먹을 사진처럼 맞추는 목표."
+  },
+  "attemptLimitForThisTargetedMethod": 2,
+  "attempts": [
+    {
+      "attempt": 1,
+      "method": "pro-two-direction-contact-sheet",
+      "jobId": "3f8925f0-f9a7-408c-a4a7-d4c53807f92a",
+      "request": {
+        "width": 192,
+        "height": 96,
+        "no_background": true,
+        "style_image_url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south-east.png?t=1791934584",
+        "style_copy": ["color_palette", "outline", "detail", "shading"],
+        "seed": 1792542001,
+        "reference_images": [
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/south-east.png?t=1791934584",
+            "usage": "TIGER APPEARANCE for LEFT CELL. Same approved Ataho, palette, proportions and native60pxbody scale. Repose into human contact photo. Target RIGHT, low-top-down camera."
+          },
+          {
+            "url": "https://backblaze.pixellab.ai/file/pixellab-characters/e6c783d6-3e60-4b00-95f8-120d1915bcb7/ccd70d82-72e4-4ec9-839a-7481e30bff2f/rotations/north-west.png?t=1791934584",
+            "usage": "TIGER APPEARANCE for RIGHT CELL. Same approved Ataho, palette, proportions and native60pxbody scale. Rear three-quarter camera, target LEFT/away. Repose into mirrored contact photo."
+          },
+          {
+            "usage": "LEFT CELL CONTACT POSE. Copy red fighter's exact low broad bent-knee stance, both soles planted, broad back, horizontal striking arm and other fist low beside rear hip. Ignore human design, red costume, effects, text and opponent.",
+            "localPath": "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/references/contact-right-input.png",
+            "base64Omitted": true,
+            "encodingAtSubmission": "base64"
+          },
+          {
+            "usage": "RIGHT CELL CONTACT POSE. Horizontally mirrored human pose to put target LEFT. Copy stance/joints only. Keep approved NORTH-WEST tiger appearance. Striking fist is LEFT of body.",
+            "localPath": "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/references/contact-left-input.png",
+            "base64Omitted": true,
+            "encodingAtSubmission": "base64"
+          }
+        ],
+        "description": "192x96 transparent pixel sprite sheet, exactly two96x96 cells. BOTH drawings are the SAME approved tiger in ONE precise deathfist CONTACT pose from the red human fighter photo. LEFT cell aims SCREEN RIGHT (south-east); RIGHT cell aims SCREEN LEFT/AWAY (north-west). Match the proper tiger base for each cell; keep same about60px native body scale and same head size. Recreate the HUMAN PHOTO'S SILHOUETTE precisely using tiger anatomy/clothing. VERY WIDE grounded feet, BOTH FULL SOLES touching the ground, both knees deeply bent, pelvis dropped low BETWEEN the feet. The rear knee is ALSO bent, not a straight stretched running leg. Neither heel lifts; neither leg flies behind the body. The rotated broad BACK of the plain reddish-brown jacket is prominent, with head turned toward target. Torso rotates strongly over the low hip base and inclines modestly toward target, not a tall upright chest. RIGHT striking arm extended HORIZONTALLY at shoulder line toward target, below eyes. Shoulder behind closed fist; arm visibly attached. Opposite fist is CLEARLY VISIBLE LOW beside rear hip/upper thigh, elbow bent and pulled backward/downward, like the photo, not hidden behind high ribs. Keep planted wide stance, low pelvis, broad back and opposing fists as one compact forceful silhouette. LEFT-cell fist points RIGHT; RIGHT-cell fist points LEFT. Preserve approved orange fur, cream muzzle, jacket, dark loose trousers, bare tiger paws, tail and simple pixel clusters. Jacket back is PLAIN BROWN, no logo, pattern or tiger stripes on fabric. Empty transparent surroundings, character only, no effects, text, extra limbs or opponent. Each full body fits inside its96pxcell."
+      },
+      "receipt": {
+        "content": [
+          {
+            "type": "text",
+            "text": "id: 3f8925f0-f9a7-408c-a4a7-d4c53807f92a\njob_id: 3f8925f0-f9a7-408c-a4a7-d4c53807f92a\nmodel: pro\ndescription: 192x96 transparent pixel sprite sheet, exactly two96x96 cells. BOTH drawings are the SAME approved tiger in ONE precise deathfist CONTACT pose from the red human fighter photo. LEFT cell aims SCREEN RIGHT (south-east); RIGHT cell aims SCREEN LEFT/AWAY (north-west). Match the proper tiger base for each cell; keep same about60px native body scale and same head size. Recreate the HUMAN PHOTO'S SILHOUETTE precisely using tiger anatomy/clothing. VERY WIDE grounded feet, BOTH FULL SOLES touching the ground, both knees deeply bent, pelvis dropped low BETWEEN the feet. The rear knee is ALSO bent, not a straight stretched running leg. Neither heel lifts; neither leg flies behind the body. The rotated broad BACK of the plain reddish-brown jacket is prominent, with head turned toward target. Torso rotates strongly over the low hip base and inclines modestly toward target, not a tall upright chest. RIGHT striking arm extended HORIZONTALLY at shoulder line toward target, below eyes. Shoulder behind closed fist; arm visibly attached. Opposite fist is CLEARLY VISIBLE LOW beside rear hip/upper thigh, elbow bent and pulled backward/downward, like the photo, not hidden behind high ribs. Keep planted wide stance, low pelvis, broad back and opposing fists as one compact forceful silhouette. LEFT-cell fist points RIGHT; RIGHT-cell fist points LEFT. Preserve approved orange fur, cream muzzle, jacket, dark loose trousers, bare tiger paws, tail and simple pixel clusters. Jacket back is PLAIN BROWN, no logo, pattern or tiger stripes on fabric. Empty transparent surroundings, character only, no effects, text, extra limbs or opponent. Each full body fits inside its96pxcell.\nsize: 192x96px\ntransparent: True\ncandidates: 1\nreferences: 4\nstyle_image: yes (color_palette, outline, detail, shading)\nseed: 1792542001\nasset_id: d4b83f2a-8259-51a6-8779-fcc3dffa4c1b\nasset_status: pending (saved when generation completes)\ncost: 10 generations\nstatus: processing (~1-10 min)\n\nhint: get_image(job_id=\"3f8925f0-f9a7-408c-a4a7-d4c53807f92a\")"
+          }
+        ],
+        "isError": false
+      },
+      "chargedGenerations": 10,
+      "sheet": {
+        "localPath": "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/originals/contact-sheet.png",
+        "width": 192,
+        "height": 96,
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/3f8925f0-f9a7-408c-a4a7-d4c53807f92a/download",
+        "sha256": "1693f83199dfafea2e7678e431fe72dca169d9440f6cbcdb505b12484290b548",
+        "byteSize": 5742,
+        "sourceTransport": "PixelLab get_image inline PNG"
+      }
+    }
+  ],
+  "totalChargedGenerations": 10,
+  "selection": {
+    "status": "pending-user-contact-pose-review",
+    "sourcePixelsModified": false,
+    "characterMirrored": false,
+    "directions": [
+      {
+        "direction": "south-east",
+        "motionKey": "bongkwon-photo-contact-south-east",
+        "reusedA": {
+          "fromMotionKey": "bongkwon-keyposes-south-east",
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/selected/south-east/charge.png",
+          "localSha256": "61e8620348189fa746ca52faf081e3487f3d0c027d833490ee256f4fdcdb3c52",
+          "pivot": {
+            "x": 48,
+            "y": 10
+          }
+        },
+        "newB": {
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/selected/south-east/impact.png",
+          "localSha256": "68ebf656461eb00005ae9cad62c175f0b5ff6be1c7d31e2b6b586a11102cb468",
+          "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/originals/contact-sheet.png",
+          "sourceSha256": "1693f83199dfafea2e7678e431fe72dca169d9440f6cbcdb505b12484290b548",
+          "sourceRect": {
+            "x": 0,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          },
+          "alphaBounds": [10, 15, 92, 81],
+          "pivot": {
+            "x": 48,
+            "y": 15
+          },
+          "anchor": {
+            "x": 48,
+            "y": 81
+          }
+        }
+      },
+      {
+        "direction": "north-west",
+        "motionKey": "bongkwon-photo-contact-north-west",
+        "reusedA": {
+          "fromMotionKey": "bongkwon-keyposes-north-west",
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-keyposes/20261021/selected/north-west/charge.png",
+          "localSha256": "952419ef887e92ae3797c5882ba8e6bc09f69a29ca8e9e2e374983804feabd4c",
+          "pivot": {
+            "x": 48,
+            "y": 15
+          }
+        },
+        "newB": {
+          "localPath": "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/selected/north-west/impact.png",
+          "localSha256": "9364696ab9d8d760dd33f6a337ac53db5fddfa1a092c3d1e873304c7b2a9c7a4",
+          "sourceOriginalPath": "public/assets/maplestory/ataho-v2-bongkwon-photo-contact/20261021/originals/contact-sheet.png",
+          "sourceSha256": "1693f83199dfafea2e7678e431fe72dca169d9440f6cbcdb505b12484290b548",
+          "sourceRect": {
+            "x": 96,
+            "y": 0,
+            "width": 96,
+            "height": 96
+          },
+          "alphaBounds": [6, 15, 81, 81],
+          "pivot": {
+            "x": 48,
+            "y": 15
+          },
+          "anchor": {
+            "x": 48,
+            "y": 81
+          }
+        }
+      }
+    ],
+    "motionKeys": [
+      "bongkwon-photo-contact-south-east",
+      "bongkwon-photo-contact-north-west"
+    ]
+  },
+  "intendedCells": {
+    "width": 192,
+    "height": 96,
+    "cellWidth": 96,
+    "cellHeight": 96,
+    "left": "south-east-B",
+    "right": "north-west-B"
+  },
+  "playback": {
+    "durationSecondsPerPose": 0.8,
+    "type": "A/B pose comparison",
+    "intermediateFramesGenerated": false,
+    "alignment": "기존A의 피벗을 그대로 재사용. 새B는 각셀의 실제 발밑으로 피벗을 잡아 동일한 월드 지면에 배치. 원본 그림의 위치·색상은 변경하지 않음."
+  },
+  "counts": {
+    "newContactPoses": 2,
+    "reusedChargePoses": 2,
+    "generatedSheets": 1,
+    "libraryEntriesAdded": 2,
+    "totalLibraryEntries": 102
+  }
+}

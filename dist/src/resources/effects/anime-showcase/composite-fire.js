@@ -1,8 +1,46 @@
-import { battleImpact, battleLayout, drawBattleActors } from './battle.js';
-import { smooth, stage } from './drawing.js';
+import { atahoPosition, battleImpact, battleLayout, drawAtaho, drawBear, } from './battle.js';
+import { clamp, ellipse, smooth, stage } from './drawing.js';
 import { drawEffectLayer } from './effect-layer.js';
 import { drawEffectSprite } from './effect-sprite.js';
 import { height, width, } from './types.js';
+export const compositeFireTiming = {
+    contactMs: battleLayout.contactMs,
+    holdEndMs: 1890,
+    pushEndMs: 2400,
+    landingMs: 2760,
+    settleEndMs: 3120,
+};
+/** 두 비교판은 같은 접촉 정지·밀림·회수를 공유하고 효과만 바꾼다. */
+function drawFireActors(ctx, frame) {
+    const { contactMs, holdEndMs, pushEndMs, landingMs, settleEndMs } = compositeFireTiming;
+    const timeMs = frame.timeMs;
+    const poseTime = timeMs < contactMs
+        ? timeMs
+        : timeMs < holdEndMs
+            ? contactMs
+            : timeMs - (holdEndMs - contactMs);
+    const departure = 1 - (1 - clamp((timeMs - holdEndMs) / (pushEndMs - holdEndMs))) ** 3;
+    const settle = smooth((timeMs - pushEndMs) / (settleEndMs - pushEndMs));
+    const motion = frame.reducedMotion ? 0.28 : 1;
+    const displacement = (70 * departure - 8 * settle) * motion;
+    const lift = Math.sin(clamp((timeMs - holdEndMs) / (landingMs - holdEndMs)) * Math.PI) *
+        18 *
+        motion;
+    const position = atahoPosition(frame, {
+        action: 'uppercut',
+        timeMs: poseTime,
+    });
+    const air = clamp((battleLayout.attacker.ground - position.ground) / 180);
+    ellipse(ctx, position.x, 448, 58 * (1 - air * 0.45), 10 * (1 - air * 0.4), '#14293b32');
+    ellipse(ctx, 657 + displacement, 448, 115, 15, '#14293b32');
+    const reacting = timeMs >= contactMs && timeMs < settleEndMs;
+    drawBear(ctx, frame, {
+        timeMs: reacting ? contactMs + Math.max(0, timeMs - holdEndMs) : timeMs,
+        state: reacting ? 'hit' : 'stand',
+        recoil: { displacementX: displacement, lift },
+    });
+    drawAtaho(ctx, frame, { action: 'uppercut', timeMs: poseTime });
+}
 /** 하나의 접촉 뒤 핵·파열·외곽 거품·공중 연기의 정점을 차례로 넘긴다. */
 export function drawCompositeFire(ctx, frame) {
     const elapsed = frame.timeMs - battleLayout.contactMs;
@@ -17,7 +55,7 @@ export function drawCompositeFire(ctx, frame) {
                 point,
                 scale: 0.82,
             });
-            drawBattleActors(ctx, frame, { action: 'uppercut' });
+            drawFireActors(ctx, frame);
             drawEffectLayer(ctx, 'fx-kanada-explosion', source, {
                 layer: 'front',
                 point,
@@ -28,7 +66,7 @@ export function drawCompositeFire(ctx, frame) {
         drawAirSmoke(ctx, source, point, elapsed);
         drawOuterBubbles(ctx, source, point, elapsed, 'back');
         drawCentralBurst(ctx, source, point, elapsed, 'back');
-        drawBattleActors(ctx, frame, { action: 'uppercut' });
+        drawFireActors(ctx, frame);
         drawCentralBurst(ctx, source, point, elapsed, 'front');
         drawOuterBubbles(ctx, source, point, elapsed, 'front');
         drawWhiteCore(ctx, source, point, elapsed);

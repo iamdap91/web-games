@@ -1,7 +1,6 @@
-import { gameDust } from '../../cutscenes/game-effects.js';
 import { atahoPosition, battleLayout, drawAtaho, drawAtahoRun, drawBear, } from './battle.js';
 import { clamp, ellipse, mix, gameStage, smooth } from './drawing.js';
-import { height, width, } from './types.js';
+import { width } from './types.js';
 const drawingMs = 1000 / 12;
 const movementFrameMs = 1000 / 24;
 const runFrameMs = 1000 / 16;
@@ -70,7 +69,6 @@ function cameraAt(frame, beat) {
             x: (beat.initialX + beat.targetX) / 2 - width / 2,
             z: -1500,
             yaw: 0,
-            roll: 0,
             eyeHeight: 255,
             horizonY: 185,
             drawing: 0,
@@ -78,13 +76,11 @@ function cameraAt(frame, beat) {
     }
     const settle = smooth((beat.timeMs - backgroundRun.endMs) /
         (backgroundRun.cameraEndMs - backgroundRun.endMs));
-    const rush = smooth((beat.timeMs - backgroundRun.startMs) / 140) * (1 - settle);
     return {
         // 곰왕 방향 앞쪽에서 아타호와 같은 속도로 후퇴하며 사선으로 바라본다.
         x: beat.attackerX - width / 2 + 450,
         z: 180,
         yaw: -0.5 - settle * 0.15,
-        roll: rush * -0.035,
         eyeHeight: mix(150, 205, settle),
         horizonY: mix(280, 225, settle),
         drawing: Math.floor(Math.min(beat.timeMs, backgroundRun.cameraEndMs) / drawingMs),
@@ -136,13 +132,7 @@ function drawProjectedActor(ctx, camera, anchor, draw) {
 export function drawBackgroundAnimation(ctx, frame) {
     const beat = sampleBeat(frame);
     const camera = cameraAt(frame, beat);
-    // 기울인 판 바깥의 얇은 모서리도 같은 게임 배경으로 채운다.
-    if (camera.roll !== 0)
-        drawWorld(ctx, camera, frame);
     ctx.save();
-    ctx.translate(width / 2, height / 2);
-    ctx.rotate(camera.roll);
-    ctx.translate(-width / 2, -height / 2);
     drawWorld(ctx, camera, frame);
     const actorOptions = {
         action: 'uppercut',
@@ -173,25 +163,6 @@ export function drawBackgroundAnimation(ctx, frame) {
             frameIndex: Math.floor(Math.max(0, frame.timeMs - backgroundRun.startMs) / runFrameMs),
         });
     });
-    // 바닥에 붙은 짧은 먼지 자국은 접근 때만 남고 타격 전에 가라앉는다.
-    const dust = frame.enhanced
-        ? clamp((beat.timeMs - backgroundRun.startMs) / 100) *
-            (1 - smooth((beat.timeMs - backgroundRun.endMs) / 250))
-        : 0;
-    if (dust > 0) {
-        ctx.save();
-        ctx.globalAlpha = dust * (frame.reducedMotion ? 0.12 : 0.42);
-        const p = project({ x: position.x - width / 2 - 24, y: 1, z: 0 }, camera);
-        const elapsed = Math.max(0, beat.timeMs - backgroundRun.startMs);
-        const footfall = Math.floor(Math.min(elapsed, backgroundRun.endMs - backgroundRun.startMs) / 250) * 250;
-        gameDust(ctx, frame.assets.effects, {
-            x: p.x,
-            y: p.y,
-            progress: (elapsed - footfall) / 350,
-            size: 100 * p.scale,
-        });
-        ctx.restore();
-    }
     drawWorld(ctx, camera, frame, 'foreground');
     ctx.restore();
 }

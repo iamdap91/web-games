@@ -14,7 +14,7 @@
       <header class="studio-header">
         <div>
           <p class="eyebrow">이계취호전 / PRESENTATION STUDIO</p>
-          <h1>연출실 <span id="studio-total">130개의 장면과 기법</span></h1>
+          <h1>연출실 <span id="studio-total">장면과 기법</span></h1>
         </div>
         <p class="header-note">완성 컷부터 표현의 원리까지, 한곳에서.</p>
       </header>
@@ -75,6 +75,7 @@
                 min="0"
                 max="1"
                 step="0.001"
+                required
                 value="0"
                 disabled
                 aria-label="연출 재생 시각"
@@ -87,6 +88,9 @@
                 ><input id="compare" type="checkbox" /><span id="compare-label"
                   >기본 장면과 비교</span
                 ></label
+              ><label id="variant-option" hidden
+                >버전
+                <select id="variant"></select></label
               ><label id="facing-option" hidden
                 >방향
                 <select id="facing"></select></label
@@ -97,7 +101,35 @@
                 <button id="png" hidden>현재 코마 PNG</button
                 ><button id="gif" hidden>연출 GIF 저장</button
                 ><button id="cancel-export" hidden>저장 취소</button>
+                <a id="gif-download" hidden download>GIF 다운로드</a>
               </div>
+            </div>
+            <div id="gif-range" class="gif-range" hidden>
+              <span>GIF 구간</span>
+              <label
+                >시작
+                <input
+                  id="gif-start"
+                  type="number"
+                  min="0"
+                  step="0.001"
+                  required
+                  value="0"
+                  required
+                />초</label
+              >
+              <label
+                >끝
+                <input
+                  id="gif-end"
+                  type="number"
+                  min="0"
+                  step="0.001"
+                  required
+                  value="0"
+                  required
+                />초</label
+              >
             </div>
           </div>
           <div

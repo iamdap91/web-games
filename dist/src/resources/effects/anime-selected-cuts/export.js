@@ -21,15 +21,19 @@ export async function exportCutGif(cut, assets, signal, progress) {
         for (let i = 0; i < count; i++) {
             await new Promise((resolve) => window.setTimeout(resolve, 0));
             signal.throwIfAborted();
+            const start = i / 24;
+            const end = Math.min(cut.duration, (i + 1) / 24);
+            const delay = (Math.round(end * 100) - Math.round(start * 100)) * 10;
+            if (delay <= 0)
+                continue;
             drawCut(c, cut, {
-                time: Math.min(cut.duration, (i + 0.5) / 24),
+                time: (start + end) / 2,
                 assets,
                 surfaces,
             });
             out.drawImage(surface, 0, 0, 640, 360);
             const pixels = out.getImageData(0, 0, 640, 360).data, palette = quantize(pixels, 256, { format: 'rgb565' });
             // GIF의 10ms 단위 지연을 교대로 배분해 24fps 누적 오차를 줄인다.
-            const delay = (Math.round(((i + 1) * 100) / 24) - Math.round((i * 100) / 24)) * 10;
             gif.writeFrame(applyPalette(pixels, palette, 'rgb565'), 640, 360, {
                 palette,
                 delay,
@@ -37,6 +41,7 @@ export async function exportCutGif(cut, assets, signal, progress) {
             });
             progress(Math.round(((i + 1) / count) * 100));
         }
+        progress(100);
         gif.finish();
         return new Blob([new Uint8Array(gif.bytes())], { type: 'image/gif' });
     }

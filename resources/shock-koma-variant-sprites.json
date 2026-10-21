@@ -1,0 +1,350 @@
+{
+  "version": 1,
+  "date": "2026-10-21",
+  "provider": "PixelLab Pro Flash",
+  "qualityStatus": "awaiting-user-playback-review",
+  "scope": "쇼크코마의 압축 파열·일필 관통 효과 형상 각4장. 배우 그림은 생성하지 않았다. 생성 원본과 무손실 알파·픽셀 크기를 보존하며 사용자가 실제 재생으로 품질을 판정한다.",
+  "atlases": [
+    {
+      "key": "shock-koma-compression-atlas",
+      "localPath": "public/assets/maplestory/shock-koma-variants/20261021/compression-atlas.png",
+      "width": 256,
+      "height": 128,
+      "sha256": "961bbfa67b3080bd004a69787be8a9010b4fe85680f9bbd47557a84d5a5d76d5",
+      "byteSize": 4786,
+      "source": {
+        "localPath": "public/assets/maplestory/shock-koma-variants/20261021/originals/compression-source.png",
+        "sha256": "f83a69153bd799ce63f107b25ca7b6b1cb190709107494ad14161b6805786621",
+        "byteSize": 5010,
+        "width": 256,
+        "height": 128
+      },
+      "processing": "recorded-interior-crops-at-original-coordinates"
+    },
+    {
+      "key": "shock-koma-brush-atlas",
+      "localPath": "public/assets/maplestory/shock-koma-variants/20261021/brush-atlas.png",
+      "width": 256,
+      "height": 128,
+      "sha256": "b6eb0588539514a543413921a0ab689e68ceced85f8963ea27ce96293ffbebb4",
+      "byteSize": 3290,
+      "source": {
+        "localPath": "public/assets/maplestory/shock-koma-variants/20261021/originals/brush-source.png",
+        "sha256": "b6eb0588539514a543413921a0ab689e68ceced85f8963ea27ce96293ffbebb4",
+        "byteSize": 3290,
+        "width": 256,
+        "height": 128
+      },
+      "processing": "byte-identical-source-copy"
+    }
+  ],
+  "render": {
+    "impactX": 570,
+    "impactY": 300,
+    "pixelScale": 5,
+    "sampling": "nearest",
+    "separation": "원본의 실제 셀 내부를 동일좌표로 옮기는 무손실 분리다. RGBA·픽셀 크기·셀별 타점을 보존하며 크기를 정규화하지 않는다. 격자선이 있는 압축 파열은 기록된 내부 사각형만 보존하고 격자와 여백을 알파0으로 둔다.",
+    "exposureCells": [1, 1, 2, 2]
+  },
+  "variants": {
+    "compression": {
+      "atlasKey": "shock-koma-compression-atlas",
+      "qualityStatus": "awaiting-user-playback-review",
+      "cells": [
+        {
+          "key": "compression-0",
+          "x": 4,
+          "y": 3,
+          "width": 122,
+          "height": 59,
+          "anchorX": 60,
+          "anchorY": 29,
+          "exposureCells": 1,
+          "sourceCrop": {
+            "x": 4,
+            "y": 3,
+            "width": 122,
+            "height": 59
+          },
+          "alphaBounds": {
+            "x": 40,
+            "y": 7,
+            "width": 46,
+            "height": 46
+          }
+        },
+        {
+          "key": "compression-1",
+          "x": 128,
+          "y": 3,
+          "width": 124,
+          "height": 59,
+          "anchorX": 64,
+          "anchorY": 29,
+          "exposureCells": 1,
+          "sourceCrop": {
+            "x": 128,
+            "y": 3,
+            "width": 124,
+            "height": 59
+          },
+          "alphaBounds": {
+            "x": 23,
+            "y": 0,
+            "width": 74,
+            "height": 58
+          }
+        },
+        {
+          "key": "compression-2",
+          "x": 4,
+          "y": 63,
+          "width": 122,
+          "height": 60,
+          "anchorX": 60,
+          "anchorY": 33,
+          "exposureCells": 2,
+          "sourceCrop": {
+            "x": 4,
+            "y": 63,
+            "width": 122,
+            "height": 60
+          },
+          "alphaBounds": {
+            "x": 12,
+            "y": 5,
+            "width": 99,
+            "height": 55
+          }
+        },
+        {
+          "key": "compression-3",
+          "x": 128,
+          "y": 63,
+          "width": 124,
+          "height": 60,
+          "anchorX": 64,
+          "anchorY": 33,
+          "exposureCells": 2,
+          "sourceCrop": {
+            "x": 128,
+            "y": 63,
+            "width": 124,
+            "height": 60
+          },
+          "alphaBounds": {
+            "x": 28,
+            "y": 8,
+            "width": 65,
+            "height": 48
+          }
+        }
+      ]
+    },
+    "brush": {
+      "atlasKey": "shock-koma-brush-atlas",
+      "qualityStatus": "awaiting-user-playback-review",
+      "cells": [
+        {
+          "key": "brush-0",
+          "x": 0,
+          "y": 0,
+          "width": 128,
+          "height": 64,
+          "anchorX": 20,
+          "anchorY": 32,
+          "exposureCells": 1,
+          "sourceCrop": {
+            "x": 0,
+            "y": 0,
+            "width": 128,
+            "height": 64
+          },
+          "alphaBounds": {
+            "x": 14,
+            "y": 29,
+            "width": 104,
+            "height": 13
+          }
+        },
+        {
+          "key": "brush-1",
+          "x": 128,
+          "y": 0,
+          "width": 128,
+          "height": 64,
+          "anchorX": 20,
+          "anchorY": 32,
+          "exposureCells": 1,
+          "sourceCrop": {
+            "x": 128,
+            "y": 0,
+            "width": 128,
+            "height": 64
+          },
+          "alphaBounds": {
+            "x": 4,
+            "y": 16,
+            "width": 108,
+            "height": 37
+          }
+        },
+        {
+          "key": "brush-2",
+          "x": 0,
+          "y": 64,
+          "width": 128,
+          "height": 64,
+          "anchorX": 20,
+          "anchorY": 32,
+          "exposureCells": 2,
+          "sourceCrop": {
+            "x": 0,
+            "y": 64,
+            "width": 128,
+            "height": 64
+          },
+          "alphaBounds": {
+            "x": 15,
+            "y": 15,
+            "width": 108,
+            "height": 24
+          }
+        },
+        {
+          "key": "brush-3",
+          "x": 128,
+          "y": 64,
+          "width": 128,
+          "height": 64,
+          "anchorX": 20,
+          "anchorY": 32,
+          "exposureCells": 2,
+          "sourceCrop": {
+            "x": 128,
+            "y": 64,
+            "width": 128,
+            "height": 64
+          },
+          "alphaBounds": {
+            "x": 5,
+            "y": 19,
+            "width": 103,
+            "height": 23
+          }
+        }
+      ]
+    }
+  },
+  "generation": {
+    "completedCalls": 2,
+    "subscriptionGenerationsCharged": 18,
+    "additionalCreditUsd": 0,
+    "requests": [
+      {
+        "key": "compression",
+        "jobId": "1891bd37-75ca-4616-a766-165809821638",
+        "sourceImageId": "0c08d7e8-b9ce-5f36-a101-cce93c712b9d",
+        "assetId": "0c08d7e8-b9ce-5f36-a101-cce93c712b9d",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/1891bd37-75ca-4616-a766-165809821638/download",
+        "subscriptionGenerationsCharged": 9,
+        "additionalCreditUsd": 0,
+        "request": {
+          "description": "Original pixel-art VFX spritesheet, four DISTINCT chronological drawings of an abstract compressed-force impact, no people, no environment, no letters. Transparent 256x128 canvas EXACT layout 2 columns x 2 rows, each cell128x64 with 8px clear transparent gutter. Reading order: top-left a tight angular black compressed knot with one very thin ivory fissure through it; top-right the same knot split OPEN by a broad jagged ivory lightning-like CRACK with heavy black walls; bottom-left a wide violent asymmetrical white fracture fan tearing those black walls apart, fragmented opaque black wedges around the fissure; bottom-right only sparse broken tapering black-and-ivory fracture remnants, mostly transparent. All four root points at cell center x64,y32. Crisp hand-designed chunky pixel clusters and pointed graphic shapes, severe black/ivory contrast, NO bloom NO smoke NO fire NO circles NO smooth gradient NO rectangular panel backgrounds. This is graphic force and paper rupture, not an electrical bolt. Four isolated complete drawings, nothing touching cell boundaries. Pixel edges, limited monochrome palette, each cell a different shape, consistent pixel size.",
+          "width": 256,
+          "height": 128,
+          "no_background": true,
+          "palette": ["#101017", "#45404a", "#fff5dc"],
+          "palette_name": "opaque ink and ivory",
+          "seed": 0
+        },
+        "initialReceipt": {
+          "background_job_id": "1891bd37-75ca-4616-a766-165809821638",
+          "image_id": "0c08d7e8-b9ce-5f36-a101-cce93c712b9d",
+          "status": "processing",
+          "source_image_id": "0c08d7e8-b9ce-5f36-a101-cce93c712b9d",
+          "job_id": "1891bd37-75ca-4616-a766-165809821638",
+          "description": "Original pixel-art VFX spritesheet, four DISTINCT chronological drawings of an abstract compressed-force impact, no people, no environment, no letters. Transparent 256x128 canvas EXACT layout 2 columns x 2 rows, each cell128x64 with 8px clear transparent gutter. Reading order: top-left a tight angular black compressed knot with one very thin ivory fissure through it; top-right the same knot split OPEN by a broad jagged ivory lightning-like CRACK with heavy black walls; bottom-left a wide violent asymmetrical white fracture fan tearing those black walls apart, fragmented opaque black wedges around the fissure; bottom-right only sparse broken tapering black-and-ivory fracture remnants, mostly transparent. All four root points at cell center x64,y32. Crisp hand-designed chunky pixel clusters and pointed graphic shapes, severe black/ivory contrast, NO bloom NO smoke NO fire NO circles NO smooth gradient NO rectangular panel backgrounds. This is graphic force and paper rupture, not an electrical bolt. Four isolated complete drawings, nothing touching cell boundaries. Pixel edges, limited monochrome palette, each cell a different shape, consistent pixel size.",
+          "seed": 0,
+          "image_size": {
+            "width": 256,
+            "height": 128
+          },
+          "output_count": 1,
+          "estimated_generations": 9,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/1891bd37-75ca-4616-a766-165809821638/download"
+        },
+        "completionReceipt": {
+          "status": "completed",
+          "frames": 1,
+          "transparent": true,
+          "assetStatus": "saved",
+          "subscriptionGenerationsCharged": 9
+        }
+      },
+      {
+        "key": "brush",
+        "jobId": "69fa6df1-1dfd-45f0-aff8-f1423853960c",
+        "sourceImageId": "13cb5ef4-f66e-5124-8956-b10505019bd3",
+        "assetId": "13cb5ef4-f66e-5124-8956-b10505019bd3",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/69fa6df1-1dfd-45f0-aff8-f1423853960c/download",
+        "subscriptionGenerationsCharged": 9,
+        "additionalCreditUsd": 0,
+        "request": {
+          "description": "Original pixel-art VFX spritesheet, four DISTINCT sequential drawings of a single bold ink strike slashing horizontally from left to right, no people, no environment, no text, NO lightning NO fire NO glow. Transparent256x128 canvas EXACT 2 columns x2 rows, each cell128x64, transparent margins8px. In reading order: top-left a narrow tightly compressed black brush stroke pointing right with rough bristled edge; top-right an explosive VERY BROAD opaque black ragged stroke with natural transparent dry-brush slits and sharp torn right tip; bottom-left the long stroke tears into two or three discontinuous chunks, still pointing right, ivory scratch edges; bottom-right a sparse set of thin tapered broken ink remnants escaping to the right, mostly transparent. Each drawing's force begins at x20,y32 in its own cell and extends right to x118. Rich irregular dry-brush grain inside a strong simple silhouette, rough hand-inked black shapes against real transparency, charcoal gray and ivory only as sparse edge accents. Solid graphic black ink, not translucent fire or energy beam. Same pixel scale, four isolated drawings, no labels, no panels, no decorations.",
+          "width": 256,
+          "height": 128,
+          "no_background": true,
+          "palette": ["#101017", "#45404a", "#fff5dc"],
+          "palette_name": "opaque ink and ivory",
+          "seed": 0
+        },
+        "initialReceipt": {
+          "background_job_id": "69fa6df1-1dfd-45f0-aff8-f1423853960c",
+          "image_id": "13cb5ef4-f66e-5124-8956-b10505019bd3",
+          "status": "processing",
+          "source_image_id": "13cb5ef4-f66e-5124-8956-b10505019bd3",
+          "job_id": "69fa6df1-1dfd-45f0-aff8-f1423853960c",
+          "description": "Original pixel-art VFX spritesheet, four DISTINCT sequential drawings of a single bold ink strike slashing horizontally from left to right, no people, no environment, no text, NO lightning NO fire NO glow. Transparent256x128 canvas EXACT 2 columns x2 rows, each cell128x64, transparent margins8px. In reading order: top-left a narrow tightly compressed black brush stroke pointing right with rough bristled edge; top-right an explosive VERY BROAD opaque black ragged stroke with natural transparent dry-brush slits and sharp torn right tip; bottom-left the long stroke tears into two or three discontinuous chunks, still pointing right, ivory scratch edges; bottom-right a sparse set of thin tapered broken ink remnants escaping to the right, mostly transparent. Each drawing's force begins at x20,y32 in its own cell and extends right to x118. Rich irregular dry-brush grain inside a strong simple silhouette, rough hand-inked black shapes against real transparency, charcoal gray and ivory only as sparse edge accents. Solid graphic black ink, not translucent fire or energy beam. Same pixel scale, four isolated drawings, no labels, no panels, no decorations.",
+          "seed": 0,
+          "image_size": {
+            "width": 256,
+            "height": 128
+          },
+          "output_count": 1,
+          "estimated_generations": 9,
+          "pricing_provisional": true,
+          "poll_tool": "get_image",
+          "download_path": "/mcp/images/69fa6df1-1dfd-45f0-aff8-f1423853960c/download"
+        },
+        "completionReceipt": {
+          "status": "completed",
+          "frames": 1,
+          "transparent": true,
+          "assetStatus": "saved",
+          "subscriptionGenerationsCharged": 9
+        }
+      }
+    ],
+    "cancelledCalls": [
+      {
+        "jobId": "ecf13940-ffd1-4f23-b77b-922d8021e2c9",
+        "sourceImageId": "4e5e3623-590b-5273-aebe-26eba8d1a8e5",
+        "reason": "도구 복구와 담당 인계가 교차하여 시작한 중복 compression 작업을 처리 중 즉시 취소했다.",
+        "status": "cancelled",
+        "providerReceipt": "job ecf13940-ffd1-4f23-b77b-922d8021e2c9 cancelled (was processing, generation stopped). concurrency slot released",
+        "subscriptionGenerationsCharged": null,
+        "chargeStatus": "provider-did-not-report-charge"
+      }
+    ]
+  },
+  "observations": {
+    "verification": "생성 원본2장과 필요한 압축 파열 crop 정지 그림을 직접 확인했다. 실제 연속 재생·타격감·사용자 품질 판정은 이 기록의 정적 이미지 확인으로 대체하지 않는다. GIF 다운로드 검사는 수행하지 않는다.",
+    "palette": ["#101017", "#45404a", "#fff5dc"],
+    "alphaValues": [0, 255],
+    "compressionLimit": "생성기가 금지한2x2 아이보리 격자선을 그려 셀 내부 crop로 제외했다. 두 번째 형상의 위끝과 세 번째 형상의 아래끝은 원본에서 격자선과 닿아 있어 crop 경계에서도 끝이 잘린 모양이다. 해당 끝을 새로 그리거나 복원하지 않았다.",
+    "brushObservation": "좁은 획·넓은 획·끊긴 덩어리·소수 잔획4형상이다. 강한 근검정 면이 있으므로 밝은 명암판에서 판독하기 쉽다."
+  }
+}

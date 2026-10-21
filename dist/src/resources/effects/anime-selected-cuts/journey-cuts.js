@@ -9,13 +9,16 @@ const runCut = {
     contact: 2.46,
     runDistance: 56,
     ramp: 0.12,
-    spurtDuration: 0.3,
+    spurtDuration: 0.22,
     spurtSpeed: 50,
     leapDistance: 6.7,
     leapHeight: 1.1,
     settleStart: 1.97,
     settleEnd: 2.25,
     targetGap: 1.05,
+    impactHold: 0.045,
+    reactionDuration: 0.22,
+    defeatDuration: 0.23,
 };
 // 마지막 이차 가속의 이동량까지 빼고 기본 속도를 정해 총 56m를 맞춘다.
 const runBaseSpeed = (runCut.runDistance - (runCut.spurtSpeed * runCut.spurtDuration) / 3) /
@@ -25,9 +28,12 @@ const fallCut = {
     startHeight: 67,
     initialSpeed: 14,
     gravity: 8,
-    boostStart: 2.16,
+    boostStart: 2.28,
     contact: 2.58,
     contactHeight: 1.95,
+    landingDelay: 0.05,
+    landingDuration: 0.29,
+    contactHold: 0.075,
     cameraLag: 0.025,
     cameraLagHeight: 0.72,
     cameraLagBlend: 0.12,
@@ -40,6 +46,16 @@ const fallBoostDistance = fallCut.startHeight -
 const fallPeakSpeed = fallCut.initialSpeed +
     fallCut.gravity * fallCut.contact +
     (3 * fallBoostDistance) / fallBoostDuration;
+const fallLanding = fallCut.contact + fallCut.landingDelay + fallCut.landingDuration;
+const stairsCut = {
+    jump: 1.7,
+    flightDuration: 0.9,
+    contact: 2.4,
+    land: 2.56,
+    leapHeight: 3,
+};
+const stairContactFlight = (stairsCut.contact - stairsCut.jump) / stairsCut.flightDuration;
+const stairContactHeight = Math.sin(stairContactFlight * Math.PI) * stairsCut.leapHeight;
 const runSmearExposures = [
     { frame: 9, holds: 1, strength: 0.7 },
     { frame: 16, holds: 1, strength: 0.85 },
@@ -83,14 +99,14 @@ function sceneBackground(ctx, frame, camera, kind, smear, focus, vertical = fals
 function contact(ctx, frame, projected, time, contactTime, angle, patch) {
     if (!projected)
         return;
-    const swing = (time - (contactTime - 0.12)) / 0.15;
+    const swing = (time - (contactTime - 0.085)) / 0.095;
     if (swing > 0 && swing < 1)
         fistSmear(ctx, projected.x, projected.y, swing, angle, Math.min(160, projected.scale * 1.4), patch);
-    if (time >= contactTime && time < contactTime + 0.33)
+    if (time >= contactTime && time < contactTime + 0.22)
         gameImpact(ctx, frame.assets.effects, {
             x: projected.x,
             y: projected.y,
-            progress: (time - contactTime) / 0.33,
+            progress: (time - contactTime) / 0.22,
             size: Math.min(320, projected.scale * 3.6),
             angle,
         });
@@ -190,15 +206,15 @@ function drawBackgroundRun(ctx, frame) {
     const time = Math.max(0, Math.min(3.3, frame.time));
     const point = runPoint(time);
     const hit = time >= runCut.contact;
-    const hitAge = Math.max(0, time - runCut.contact);
+    const hitAge = Math.max(0, time - runCut.contact - runCut.impactHold);
     const bearPoint = {
         x: 0,
         y: hit
-            ? Math.sin(clamp((time - runCut.contact) / 0.25) * Math.PI) * 0.5
+            ? Math.sin(clamp(hitAge / runCut.reactionDuration) * Math.PI) * 0.5
             : 0,
         z: runLandingZ +
             runCut.targetGap +
-            (hit ? smooth((time - runCut.contact) / 0.3) * 1.2 : 0),
+            (hit ? smooth(hitAge / runCut.reactionDuration) * 1.2 : 0),
     };
     const chase = {
         position: {
@@ -245,10 +261,10 @@ function drawBackgroundRun(ctx, frame) {
             height: strikeHeight(frame.assets.hero.uppercut['south-east'], phase, 2),
         });
     }
-    scene.bear(frame.assets, bearPoint, hitAge > 0.28 ? 'defeat' : hit ? 'hit' : 'stand', hitAge > 0.28
-        ? clamp((hitAge - 0.28) / 0.24)
+    scene.bear(frame.assets, bearPoint, hitAge > runCut.reactionDuration ? 'defeat' : hit ? 'hit' : 'stand', hitAge > runCut.reactionDuration
+        ? clamp((hitAge - runCut.reactionDuration) / runCut.defeatDuration)
         : hit
-            ? clamp(hitAge / 0.28)
+            ? clamp(hitAge / runCut.reactionDuration)
             : poseTime(time, 3) * 2, { rotation: camera.roll });
     scene.render();
     frame.surfaces.stage.foreground(ctx, 'run', camera, time, { focus: point });
@@ -273,10 +289,16 @@ function fallDescent(time) {
 function fallPoint(time) {
     const falling = Math.min(time, fallCut.contact);
     return {
-        x: Math.sin(falling * 1.3) * 0.5 * (1 - smooth((time - 2.16) / 0.3)),
+        x: Math.sin(falling * 1.3) *
+            0.5 *
+            (1 - smooth((time - fallCut.boostStart) / fallBoostDuration)),
         y: time < fallCut.contact
             ? fallDescent(time).height
-            : fallCut.contactHeight * (1 - smooth((time - 2.65) / 0.33)),
+            : fallCut.contactHeight *
+                (1 -
+                    clamp((time - fallCut.contact - fallCut.landingDelay) /
+                        fallCut.landingDuration) **
+                        2),
         z: 0,
     };
 }
@@ -347,10 +369,13 @@ function drawFalling(ctx, frame) {
     }
     else {
         const phase = time < fallCut.contact
-            ? lerp(3 / 9, 4.5 / 9, clamp((poseTime(time, 1) - 2.22) / 0.36))
-            : time < 2.69
+            ? time < fallCut.contact - 0.09
+                ? 3.5 / 9
+                : 4.5 / 9
+            : time < fallCut.contact + fallCut.contactHold
                 ? 5.5 / 9
-                : lerp(6 / 9, 8.5 / 9, clamp((time - 2.69) / 0.3));
+                : lerp(6 / 9, 8.5 / 9, clamp((time - fallCut.contact - fallCut.contactHold) /
+                    (fallLanding + 0.06 - fallCut.contact - fallCut.contactHold)));
         scene.hero(frame.assets, fall, 'slam', phase, {
             facing: 0,
             height: strikeHeight(frame.assets.hero.slam['south-east'], phase, 5),
@@ -368,12 +393,12 @@ function drawFalling(ctx, frame) {
             : poseTime(time, 3) * 2);
     scene.render();
     frame.surfaces.stage.foreground(ctx, 'cliff', camera, time, { focus: fall });
-    if (time >= 2.98) {
+    if (time >= fallLanding) {
         const ground = scene.project({ x: 0, y: 0, z: 0 });
         if (ground)
             gameDust(ctx, frame.assets.effects, {
                 ...ground,
-                progress: (time - 2.98) / 0.5,
+                progress: (time - fallLanding) / 0.36,
                 size: 300,
             });
     }
@@ -392,20 +417,34 @@ function stairProgress(time) {
         return lerp(0, 0.26, time / 0.75);
     if (time < 1.34)
         return lerp(0.26, 0.61, (time - 0.75) / 0.59);
-    if (time < 1.7)
-        return lerp(0.61, 1, (time - 1.34) / 0.36);
+    if (time < stairsCut.jump)
+        return lerp(0.61, 1, (time - 1.34) / (stairsCut.jump - 1.34));
     return 1;
+}
+/** 접촉 때의 높이·하강속도를 잇고 남은 낙차를 짧은 착지에서 받아낸다. */
+function stairFlightHeight(time) {
+    if (time < stairsCut.contact) {
+        const jump = clamp((time - stairsCut.jump) / stairsCut.flightDuration);
+        return Math.sin(jump * Math.PI) * stairsCut.leapHeight;
+    }
+    const duration = stairsCut.land - stairsCut.contact;
+    const landing = clamp((time - stairsCut.contact) / duration);
+    const contactVelocity = (Math.cos(stairContactFlight * Math.PI) * Math.PI * stairsCut.leapHeight) /
+        stairsCut.flightDuration;
+    return (stairContactHeight * (1 - landing * landing) +
+        contactVelocity * duration * landing * (1 - landing));
 }
 function drawStairs(ctx, frame) {
     const time = Math.max(0, Math.min(3.05, frame.time));
     const progress = stairProgress(time);
     const step = stairPoint(progress);
     const angle = stairAngle(progress);
-    const jump = clamp((time - 1.7) / 0.9);
+    const jump = clamp((time - stairsCut.jump) / stairsCut.flightDuration);
+    const approach = ease((time - stairsCut.jump) / (stairsCut.contact - stairsCut.jump));
     const point = {
-        x: step.x + (time > 1.7 ? Math.cos(angle) * ease(jump) * 1.4 : 0),
-        y: step.y + Math.sin(jump * Math.PI) * 3,
-        z: step.z - (time > 1.7 ? Math.sin(angle) * ease(jump) * 1.4 : 0),
+        x: step.x + Math.cos(angle) * approach * 1.4,
+        y: step.y + stairFlightHeight(time),
+        z: step.z - Math.sin(angle) * approach * 1.4,
     };
     const orbit = angle - 0.8;
     // 중앙 빈 공간의 반경1.5m 안에서 돌아 외곽 기둥이 주연을 덮지 않는다.
@@ -439,85 +478,91 @@ function drawStairs(ctx, frame) {
         roll: 0,
     };
     const camera = mixCamera(chase, finish, smooth((time - 2.08) / 0.26));
-    const smear = time > 1.68 && time < 2.18
-        ? Math.sin(clamp((time - 1.68) / 0.5) * Math.PI) * 0.8
-        : 0;
+    const smear = smooth((time - 1.4) / 0.24) *
+        (1 - smooth((time - (stairsCut.contact - 0.15)) / 0.1)) *
+        0.78;
     const scene = sceneBackground(ctx, frame, camera, 'stairs', smear, point);
-    if (time < 1.7)
+    if (time < stairsCut.jump)
         scene.hero(frame.assets, point, 'run', poseTime(time, 2) * 3, {
             facing: angle + Math.PI / 2,
         });
     else if (time < 2.19)
-        scene.hero(frame.assets, point, 'jump', (poseTime(time, 1) - 1.7) / 0.7, {
-            facing: 0,
-        });
+        scene.hero(frame.assets, point, 'jump', (poseTime(time, 1) - stairsCut.jump) /
+            (stairsCut.contact - stairsCut.jump), { facing: 0 });
     else {
-        const phase = time < 2.4
-            ? lerp(3 / 9, 4.5 / 9, clamp((poseTime(time, 1) - 2.19) / 0.21))
-            : time < 2.47
+        const phase = time < stairsCut.contact
+            ? time < stairsCut.contact - 0.08
+                ? 3.5 / 9
+                : 4.5 / 9
+            : time < stairsCut.contact + 0.07
                 ? 5.5 / 9
-                : lerp(6 / 9, 8.5 / 9, clamp((time - 2.47) / 0.2));
+                : lerp(6 / 9, 8.5 / 9, clamp((time - stairsCut.contact - 0.07) / 0.18));
         scene.hero(frame.assets, point, 'slam', phase, {
             facing: 0,
             height: strikeHeight(frame.assets.hero.slam['south-east'], phase, 5),
         });
     }
-    const hit = time >= 2.4;
+    const hit = time >= stairsCut.contact;
     scene.bear(frame.assets, {
-        x: landing.x + 0.8 + (hit ? smooth((time - 2.4) / 0.24) * 0.7 : 0),
+        x: landing.x +
+            0.8 +
+            (hit ? smooth((time - stairsCut.contact) / 0.24) * 0.7 : 0),
         y: landing.y,
-        z: landing.z + 0.9 + (hit ? smooth(clamp((time - 2.4) / 0.24)) * 0.5 : 0),
-    }, time >= 2.53 ? 'defeat' : hit ? 'hit' : 'stand', time >= 2.53
-        ? clamp((time - 2.53) / 0.2)
+        z: landing.z +
+            0.9 +
+            (hit ? smooth((time - stairsCut.contact) / 0.24) * 0.5 : 0),
+    }, time >= stairsCut.contact + 0.13 ? 'defeat' : hit ? 'hit' : 'stand', time >= stairsCut.contact + 0.13
+        ? clamp((time - stairsCut.contact - 0.13) / 0.2)
         : hit
-            ? clamp((time - 2.4) / 0.13)
+            ? clamp((time - stairsCut.contact) / 0.13)
             : poseTime(time, 3) * 2);
     scene.render();
     frame.surfaces.stage.foreground(ctx, 'stairs', camera, time, {
         focus: point,
     });
     if (smear > 0)
-        speedLines(ctx, time, smear * 0.28);
+        speedLines(ctx, time, smear * 0.34);
     contact(ctx, frame, strikePoint(scene, frame.assets.hero.slam['south-east'][5], {
         x: landing.x,
-        y: landing.y + Math.sin((0.7 / 0.9) * Math.PI) * 3,
+        y: landing.y + stairContactHeight,
         z: landing.z,
-    }, [64, 69]), time, 2.4, 1.2);
+    }, [64, 69]), time, stairsCut.contact, 1.2);
     finishShade(ctx, (time - 2.65) / 0.1);
 }
 export const journeyCuts = [
     {
         id: 'background-run',
-        title: '背景動画 · 숲길 질주',
+        title: '질풍 돌격',
         kind: '3D',
         duration: 3.3,
-        description: '게임 숲길의 낮은 사선 카메라가 아타호와 함께 후퇴한다. 질주 끝0.30초에33→50m/s로 치고 나가 같은 속도로 도약한다. 배경 스미어를1~2코마씩 섞고, 착지 뒤 구도를 정착시켜 어퍼컷 한 번으로 끝낸다.',
+        description: '게임 숲길의 낮은 사선 카메라가 아타호와 함께 후퇴한다. 질주 끝0.22초에34→50m/s로 치고 나가 같은 속도로 도약한다. 배경 스미어를1~2코마씩 섞고, 착지 뒤 한 번 접촉해45ms 힘을 받은 곰왕이 튕겨 나간다. 짧은 권격과 접촉광을 걷고 회수를 드러낸다.',
         beats: [
             { time: runCut.start, label: '사선 동행 · 급가속' },
             { time: 23 / 24, label: '질주 · 배경 스미어 2코마' },
             {
                 time: runCut.jump - runCut.spurtDuration,
-                label: '끝 스퍼트 · 33→50m/s',
+                label: '끝 스퍼트 · 34→50m/s',
             },
             { time: runCut.jump, label: '짧은 도약 · 배경 스미어' },
             { time: runCut.settleEnd, label: '타격 구도 정착' },
-            { time: runCut.contact, label: '주먹 접촉 · 짧은 정지' },
+            { time: runCut.contact, label: '주먹 접촉 · 45ms 힘 받기' },
+            { time: runCut.contact + 0.22, label: '접촉광 회수 · 피격 방출' },
             { time: 3, label: '회수 · 곰왕 쓰러짐' },
         ],
         draw: drawBackgroundRun,
     },
     {
         id: 'falling-background',
-        title: '落下 · 바위 협곡',
+        title: '낙성 강타',
         kind: '3D',
         duration: 3.7,
-        description: '게임 바위·식생으로 재구성한 협곡을 나선 추적 낙하한 뒤 마지막0.42초에31→51m/s로 가속한다. 카메라가25ms 늦게 따라와 몸도 아래로 파고들며 접촉 전에 구도를 회수한다. 머리부터 떨어지는 장은 기존 점프 원본의 카드 회전이며 새 낙하 자세를 그린 재현은 아니다.',
+        description: '게임 바위·식생으로 재구성한 협곡을 나선 추적 낙하한 뒤 마지막0.30초에32→58m/s로 가속한다. 카메라가25ms 늦게 따라와 몸도 아래로 파고들며 접촉 전에 구도를 회수한다. 접촉 직전90ms에 내려찍기를 뽑고2.92초에 빠르게 착지한다. 머리부터 떨어지는 장은 기존 점프 원본의 카드 회전이며 새 낙하 자세를 그린 재현은 아니다.',
         beats: [
             { time: 0, label: '머리부터 낙하 · 나선 추적' },
             { time: 1, label: '낙하 가속 · 배경만 세로 스미어' },
             { time: 1.88, label: '낙하 중 자세 회복' },
-            { time: fallCut.boostStart, label: '마지막 하강 가속 · 31→51m/s' },
             { time: 2.22, label: '양손 내려찍기 장전' },
+            { time: fallCut.boostStart, label: '마지막 하강 가속 · 32→58m/s' },
             {
                 time: fallCut.boostStart + fallCut.cameraLagBlend,
                 label: '카메라 지연 · 본체 하강',
@@ -527,22 +572,26 @@ export const journeyCuts = [
                 label: '접촉 구도 회수',
             },
             { time: fallCut.contact, label: '공중 접촉 · 앙각 정착' },
-            { time: 3.3, label: '착지 · 곰왕 쓰러짐' },
+            { time: fallLanding, label: '빠른 착지 · 먼지 발생' },
+            { time: fallLanding + 0.36, label: '먼지 회수 · 곰왕 쓰러짐' },
         ],
         draw: drawFalling,
     },
     {
         id: 'spiral-stairs',
-        title: '螺旋 · 열린 계단 60칸',
+        title: '나선 비격',
         kind: '3D',
         duration: 3.05,
-        description: '게임의 석재 재질로 재구성한 난간 없는 60칸 나선 계단을 실제 3D로 오르며 하이→근접→로우 앵글을 잇고, 낮은 구간을 압축한 뒤 하늘 열린 꼭대기에 내려찍는다. 계단·카메라는 입체이고 인물은 방향별 평면 원본이다. 특정 작품 장면의 정확한 자세 재현은 아니다.',
+        description: '게임의 석재 재질로 재구성한 난간 없는60칸을 오르며 하이→근접→로우 앵글을 잇는다. 가속부터 도약까지 배경 흐림·속도선으로 밀고 접촉 전에 걷어,80ms 신전과 공중 내려찍기를 선명하게 드러낸다. 타점까지 이동한 뒤2.56초에 빠르게 착지한다. 계단·카메라는 입체이고 인물은 방향별 평면 원본이며 특정 작품의 정확한 자세 재현은 아니다.',
         beats: [
             { time: 0, label: '60칸 · 높은 시점에서 진입' },
             { time: 0.75, label: '허공에서 파고드는 카메라' },
             { time: 1.34, label: '로우 앵글 구간 압축' },
-            { time: 1.7, label: '꼭대기 도약 · 배경 스미어' },
-            { time: 2.4, label: '공중 내려찍기 접촉' },
+            { time: 1.64, label: '나선 가속 · 흐림·속도선' },
+            { time: stairsCut.jump, label: '꼭대기 도약 · 배경 스미어' },
+            { time: 2.35, label: '배경·타점 선명하게 회수' },
+            { time: stairsCut.contact, label: '공중 내려찍기 접촉' },
+            { time: stairsCut.land, label: '빠른 꼭대기 착지' },
             { time: 2.75, label: '꼭대기 착지 · 종결' },
         ],
         draw: drawStairs,

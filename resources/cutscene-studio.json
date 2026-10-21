@@ -2,20 +2,26 @@
   "version": 1,
   "date": "2026-10-20",
   "name": "연출실",
-  "scope": "기존 여섯 연출 화면을 130개 항목의 공통 탐색·재생 화면으로 통합",
+  "scope": "기존 여섯 연출 화면의134개 항목을 완성 컷씬·기법 견본·기법 조합·표정 연출·포즈·연기 비교의 다섯 분류로 탐색·재생한다. 기법 조합은15유형21버전이며 조합6유형과 쇼크코마는 항목 선택 뒤 하단에서 버전을 고른다.",
   "sourcePath": "src/resources/cutscenes/studio/index.ts",
   "previewPath": "src/resources/cutscenes/studio/",
-  "defaultItem": "selected:background-run",
+  "defaultItem": "tiger-awakening:full-cutscene",
   "groups": [
     {
       "id": "finished",
       "name": "완성 컷씬",
-      "count": 13
+      "count": 3
     },
     {
       "id": "techniques",
       "name": "기법 견본",
-      "count": 81
+      "count": 80
+    },
+    {
+      "id": "combinations",
+      "name": "기법 조합",
+      "count": 15,
+      "versionCount": 21
     },
     {
       "id": "expressions",
@@ -30,12 +36,12 @@
   ],
   "sources": [
     {
-      "id": "selected",
-      "assetId": "local/anime-selected-cuts",
+      "id": "tiger-awakening",
+      "assetId": "local/ataho-tiger-awakening-cutscene",
       "group": "finished",
-      "count": 10,
-      "defaultItem": "selected:background-run",
-      "recordPath": "resources/anime-selected-cuts.json"
+      "count": 1,
+      "defaultItem": "tiger-awakening:full-cutscene",
+      "recordPath": "resources/ataho-tiger-awakening-cutscene.json"
     },
     {
       "id": "ataho-shadow",
@@ -46,14 +52,6 @@
       "recordPath": "resources/ataho-cutscene-generation.json"
     },
     {
-      "id": "tiger-awakening",
-      "assetId": "local/ataho-tiger-awakening-cutscene",
-      "group": "finished",
-      "count": 1,
-      "defaultItem": "tiger-awakening:full-cutscene",
-      "recordPath": "resources/ataho-tiger-awakening-cutscene.json"
-    },
-    {
       "id": "hisashi-punch",
       "assetId": "local/ataho-hisashi-punch-cutscene",
       "group": "finished",
@@ -62,10 +60,20 @@
       "recordPath": "resources/ataho-hisashi-punch.json"
     },
     {
+      "id": "selected",
+      "assetId": "local/anime-selected-cuts",
+      "group": "combinations",
+      "count": 14,
+      "versionCount": 20,
+      "defaultItem": "selected:background-run",
+      "recordPath": "resources/anime-selected-cuts.json"
+    },
+    {
       "id": "showcase",
       "assetId": "local/anime-showcase",
       "groups": {
-        "techniques": 81,
+        "techniques": 80,
+        "combinations": 1,
         "expressions": 11
       },
       "count": 92,
@@ -85,5 +93,225 @@
     "기존 여섯 항목의 manifest 정보·소스·제작 기록을 유지한다.",
     "기존 개별 리소스 ID와 아타호·표현 비교 묶음 주소를 계속 찾을 수 있다.",
     "새 원화·유료 생성·소리·본게임 규칙은 추가하지 않는다."
-  ]
+  ],
+  "studioGroupingRevision": {
+    "date": "2026-10-20",
+    "scope": "아타호 단독3종만 완성 컷씬에 남기고, 기존 고른 컷10종은 조합으로 표시하며 합성8종과 함께 기법 조합18종으로 이동한다.",
+    "groups": [
+      {
+        "id": "finished",
+        "name": "완성 컷씬",
+        "count": 3
+      },
+      {
+        "id": "techniques",
+        "name": "기법 견본",
+        "count": 81
+      },
+      {
+        "id": "combinations",
+        "name": "기법 조합",
+        "count": 18
+      },
+      {
+        "id": "expressions",
+        "name": "표정 연출",
+        "count": 11
+      },
+      {
+        "id": "poses",
+        "name": "포즈·연기 비교",
+        "count": 25
+      }
+    ],
+    "totalItems": 138,
+    "defaultItem": "tiger-awakening:full-cutscene",
+    "origins": {
+      "selected": "조합",
+      "composite": "합성"
+    },
+    "preserved": "원본 source·sampleId·리소스ID·경로·재생·제작 기록은 유지한다."
+  },
+  "unusedCompositeRemoval": {
+    "date": "2026-10-20",
+    "scope": "사용하지 않는 합성7종을 연출실과 원본 견본 목록에서 제거하고 섬광 정권만 유지한다.",
+    "removedIds": [
+      "composite-fire",
+      "composite-ground",
+      "composite-beam",
+      "composite-orb",
+      "composite-siege",
+      "composite-heavy",
+      "composite-ink"
+    ],
+    "removedNames": [
+      "화염 파열",
+      "지면 분쇄",
+      "뇌광포",
+      "점성 흑구",
+      "유도탄 포위",
+      "중량 정권",
+      "먹빛 종결"
+    ],
+    "remainingCompositeIds": ["composite-fast"],
+    "compositeCount": 1,
+    "showcaseCount": 93,
+    "combinationCount": 11,
+    "studioItemCount": 131,
+    "preserved": "날짜별 제작 이력과 원본 파일·로컬 PNG/GIF는 보존한다."
+  },
+  "combinationLabelsRevision": {
+    "date": "2026-10-20",
+    "scope": "기법 조합11종의 제목을 기술명으로 맞추고 조합·합성 출처 표기를 실제 사용 기법을 더하기로 연결한 목록으로 바꾼다.",
+    "metadata": "manifest 각 state의 label과 techniques를 연출실 제목·사용 기법·검색에 사용한다. 원본 컷과 견본의 재생 제목도 같은 이름을 사용한다.",
+    "techniqueBasis": "현재 렌더러의 실제 배경·원화·촬영·편집·효과 합성을 대조했다. 연속 앵글 전환·불릿 타임·지연 타격·수묵 실루엣·붓 궤적은 구현된 표현의 일반 명칭이며 별도 단일 견본이 있다는 뜻은 아니다. 시간 정지의 나카누키는 이동 중간을 생략한 응용이다.",
+    "preserved": "source·sampleId·주소·재생 시간·동작·효과·저장 기능과 날짜별 제작 이력을 유지한다."
+  },
+  "shockKomaVariantRevision": {
+    "date": "2026-10-21",
+    "request": "쇼크코마 두 항목을 하나로 통합하고 내부에서 기존2종과 신규5종을 선택",
+    "itemId": "shock-koma",
+    "variants": [
+      {
+        "value": "ink",
+        "label": "극단색과 먹선"
+      },
+      {
+        "value": "embers",
+        "label": "섬광과 잔염"
+      },
+      {
+        "value": "whiteout",
+        "label": "백화 소거"
+      },
+      {
+        "value": "compression",
+        "label": "압축 파열"
+      },
+      {
+        "value": "brush",
+        "label": "일필 관통"
+      },
+      {
+        "value": "misregister",
+        "label": "색판 어긋남"
+      },
+      {
+        "value": "halftone",
+        "label": "망점 붕괴"
+      }
+    ],
+    "rendererPath": "src/resources/effects/anime-showcase/shock-koma-variants.ts",
+    "timingPath": "src/resources/effects/anime-showcase/shock-koma-variant-data.ts",
+    "spriteRecordPath": "resources/shock-koma-variant-sprites.json",
+    "legacyAlias": {
+      "item": "showcase:shock-koma-v2",
+      "target": "showcase:shock-koma",
+      "variant": "embers"
+    },
+    "preserved": "기존 극단색·먹선의24fps 1+1+2코마와 섬광·잔염의30fps25코마, 기존 어퍼컷·정권 원화를 유지한다. 신규5종은 같은 정권 접촉의 알파·명암을 사용한다. 버전별 주요순간·시간표·기본판 비교·움직임 줄이기·GIF 경계를 함께 선택한다.",
+    "referenceBoundary": "앞선 기존 영상 관찰과 이번 코드·무음 실제재생을 대조한 독자적인 형상 제안이다. 기존 영상이나 제작자의 원화를 복제하지 않는다. 새 배우 자세·음향은 추가하지 않는다.",
+    "counts": {
+      "techniques": 80,
+      "showcase": 92,
+      "studio": 130
+    },
+    "qualityStatus": "awaiting-user-playback-review"
+  },
+  "speedImpactCombinationAddition": {
+    "date": "2026-10-21",
+    "scope": "기존11개 기법 조합을 유지하고 박자 연격·관통 돌파·촌경 강타3종을 selected 소스에 더한다.",
+    "addedItems": [
+      "selected:rhythm-rush",
+      "selected:piercing-dash",
+      "selected:short-power"
+    ],
+    "selectedCount": 13,
+    "combinationCount": 14,
+    "studioItemCount": 134,
+    "recordPath": "resources/anime-selected-cuts.json#speedImpactCombinationAddition",
+    "preserved": "기존 항목·source·ID·경로·재생 및 날짜별 제작 이력을 보존한다. 기본 선택은 완성 컷씬의 호왕일격이며 새 원화·유료 생성·음향·본게임 연결은 추가하지 않는다."
+  },
+  "currentStateBoundary": "현재 수량은groups·sources와variationRevision을 따른다. 목록은134항목이며 기법 조합15유형21버전 중selected는14유형20버전이다. 추가 조합3종·쇼크코마7버전·액션 시너지7종의 날짜별revision 수량은 각각 개정 당시의 제작 이력으로 보존한다.",
+  "actionSynergyCombinationAddition": {
+    "date": "2026-10-21",
+    "scope": "추천한 액션 시너지7종을 사용자 승인으로 모두 구현. selected20종·기법 조합21종·통합 연출실140항목.",
+    "sourcePath": "src/resources/effects/anime-selected-cuts/action-synergy-cuts.ts",
+    "cutIds": [
+      "synergy-heavy-strike",
+      "synergy-explosive-rush",
+      "synergy-accelerating-flurry",
+      "synergy-delayed-pierce",
+      "synergy-reversal-counter",
+      "synergy-ground-break",
+      "synergy-final-blow"
+    ],
+    "clock": "새7종의 duration/beat는1배속 실제시간이다. rate1 프로필과 같은 절대시각을 재생·코마 탐색·정지에 사용하고 마지막0.3초를 고정한다.",
+    "reuse": "기존 남동 원투·달리기·점프·내려찍기·팔 풀기와 곰왕 공격·피격·쓰러짐, 기존 압축핵·먼지·현무암·효과 자재를 재사용. 역전 반격은 기존 찰나 반격의 3D 구도·실제 공격과 타점을 보존한 새 시간 배분 버전이다.",
+    "groundBoundary": "대지 분쇄는 발 착지에서 지면 파동을 내보내고, 떨어진 곰왕은 파동 도달 후 반응한다. 착지120ms에 발 앵커를 고정한 가로4.5%·세로-8%의 순간 스쿼시를 사용하며 새 자세 원화로 소개하지 않는다.",
+    "referenceBoundary": "기존 동작·카메라·기법 견본의 관찰 기록과 구현을 재사용했다. 이번에 원작 영상 전체나 작가별 필체를 새로 검증한 것은 아니다.",
+    "references": [
+      {
+        "url": "https://saint11.art/img/pixel-tutorials/AttackSheet.gif",
+        "use": "기존 직접 관찰 기록의 준비·짧은 연결·도착 대비 재사용"
+      },
+      {
+        "url": "https://saint11.art/img/pixel-tutorials/Easings.gif",
+        "use": "기존 직접 관찰 기록의 돌출·포즈 유지·회수 대비 재사용"
+      },
+      {
+        "url": "https://saint11.art/img/pixel-tutorials/Squash.gif",
+        "use": "기존 관찰 기록의 접지점 유지와 짧은 착지 압축 재사용"
+      },
+      {
+        "url": "https://roystan.net/articles/camera-shake/",
+        "use": "기존 감쇠 GIF 관찰·코드 열람의 충격 후 정착 원리 재사용"
+      }
+    ],
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "paidGenerationCalls": 0,
+    "audio": false,
+    "recordPath": "resources/anime-selected-cuts.json#actionSynergyCombinationAddition"
+  },
+  "variationRevision": {
+    "date": "2026-10-21",
+    "scope": "겹치는 액션 시너지6종을 기존 유형 안의 바리에이션으로 묶고 대지 분쇄만 독립 유형으로 유지한다. selected14유형20버전·기법 조합15유형21버전·통합 연출실134항목이다.",
+    "selectedTypeCount": 14,
+    "selectedVersionCount": 20,
+    "combinationTypeCount": 15,
+    "combinationVersionCount": 21,
+    "studioItemCount": 134,
+    "selection": "유형을 먼저 고른 뒤 하단 버전 선택에서 기존 버전과 변형을 고른다. 선택한 실제 컷 ID의 기법·길이·주요 순간·저장을 함께 적용한다.",
+    "groups": [
+      {
+        "parentId": "short-power",
+        "variantIds": ["short-power", "synergy-heavy-strike"]
+      },
+      {
+        "parentId": "background-run",
+        "variantIds": ["background-run", "synergy-explosive-rush"]
+      },
+      {
+        "parentId": "rhythm-rush",
+        "variantIds": ["rhythm-rush", "synergy-accelerating-flurry"]
+      },
+      {
+        "parentId": "already-cut",
+        "variantIds": ["already-cut", "synergy-delayed-pierce"]
+      },
+      {
+        "parentId": "bullet-counter",
+        "variantIds": ["bullet-counter", "synergy-reversal-counter"]
+      },
+      {
+        "parentId": "comic-panels",
+        "variantIds": ["comic-panels", "synergy-final-blow"]
+      }
+    ],
+    "standaloneId": "synergy-ground-break",
+    "legacyLinks": "기존 변형 컷 ID는 부모 유형 ID와 variant=실제 컷 ID 주소로 연결하며 새로고침·브라우저 기록 이동에서 복원한다. 기존 버전의 variant 값도 해당 실제 컷 ID다.",
+    "preserved": "cuts의20개 실제 렌더러·컷 ID·동작·원화·시간·기법·주요 순간·저장과 날짜별 제작 이력을 보존한다. 과거 actionSynergyCombinationAddition의20항목·21종·140항목은 통합 전 수량이다.",
+    "recordPath": "resources/anime-selected-cuts.json#variationRevision"
+  }
 }

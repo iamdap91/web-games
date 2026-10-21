@@ -1,5 +1,6 @@
 import { battleImpact, drawAtaho, drawBattle, drawBear } from './battle.js';
-import { ellipse, label, line, noise, polygon } from './drawing.js';
+import spriteRecord from '../../../../resources/shock-koma-v2-sprites.json' with { type: 'json' };
+import { label, line, noise, polygon } from './drawing.js';
 import { height, width } from './types.js';
 const cellMs = 1000 / 30;
 const contactMs = 1800;
@@ -132,55 +133,17 @@ function radialInk(ctx) {
         ], '#090c14');
     }
 }
-/** 백열 핵의 면적을 줄이고 적색 테두리와 검은 틈을 드러내 잔염으로 푼다. */
-function flame(ctx, drawing, progress) {
-    const strength = 1 - progress * 0.58;
+/** 같은 픽셀 배율과 타점을 유지해야 핵의 팽창·소진이 작화 자체로 드러난다. */
+function drawImpactCell(ctx, frame, index) {
+    const atlas = frame.assets.effects.get(`technique:${spriteRecord.atlas.key}`);
+    const cell = spriteRecord.cells[index];
+    if (!atlas || !cell)
+        throw new Error('쇼크코마 v2의 효과 작화가 없습니다.');
+    const { pixelScale, impactX, impactY } = spriteRecord.render;
     ctx.save();
-    ctx.translate(570, 300);
-    ctx.rotate(-0.13);
-    for (const layer of [
-        { color: '#ec074d', radius: 1.16 },
-        { color: '#ff443e', radius: 1 },
-        { color: '#ffc24c', radius: 0.77 },
-        { color: '#fffbd9', radius: 0.52 },
-    ]) {
-        ctx.beginPath();
-        ctx.moveTo(-38, 0);
-        for (let i = 0; i <= 48; i++) {
-            const angle = (i / 48) * Math.PI * 2;
-            const jag = 0.8 + noise(i + drawing * 101) * 0.35;
-            const x = 165 + Math.cos(angle) * 270 * layer.radius;
-            const y = Math.sin(angle) *
-                (108 + Math.cos(angle * 3 + drawing) * 34) *
-                layer.radius *
-                strength *
-                jag;
-            ctx.lineTo(x, y);
-        }
-        ctx.closePath();
-        ctx.fillStyle = layer.color;
-        ctx.shadowColor = layer.color;
-        ctx.shadowBlur = layer.radius > 1 ? 24 : 0;
-        ctx.fill();
-    }
-    ctx.shadowBlur = 0;
-    // 밝은 덩어리를 가로지르는 불꽃 갈래와 어두운 틈이 진행 방향을 드러낸다.
-    for (let i = 0; i < 16; i++) {
-        const x = 70 + noise(i + 11) * 330;
-        const y = (noise(i + 32) - 0.5) * 240 * strength;
-        const travel = 15 + noise(i + drawing * 13) * 75;
-        line(ctx, [
-            { x, y },
-            { x: x + travel, y: y - 8 },
-            { x: x + travel * 1.8, y: y - 3 },
-        ], i % 3 === 0 ? '#100a1b' : '#ff7054', 2 + noise(i + 70) * 7);
-    }
+    ctx.imageSmoothingEnabled = false;
+    ctx.drawImage(atlas.image, cell.x, cell.y, cell.width, cell.height, impactX - cell.anchorX * pixelScale, impactY - cell.anchorY * pixelScale, cell.width * pixelScale, cell.height * pixelScale);
     ctx.restore();
-    for (let i = 0; i < 32; i++) {
-        const x = 600 + noise(i + drawing * 19) * 370;
-        const y = 300 + (noise(i + drawing * 17) - 0.5) * 340 * strength;
-        ellipse(ctx, x, y, 1 + noise(i) * 4, 1 + noise(i + 8) * 3, '#ff7d40');
-    }
 }
 const surfaces = new WeakMap();
 export function drawShockKomaV2Scene(ctx, frame) {
@@ -213,17 +176,16 @@ export function drawShockKomaV2Scene(ctx, frame) {
             plates.draw(ctx, 'red');
         }
         else if (t < flameMs) {
-            const age = (t - whiteMs) / (flameMs - whiteMs);
-            const radius = 135 + Math.floor(age * 3) * 105;
-            ellipse(ctx, 630, 275, radius * 1.5, radius, '#362238');
-            ellipse(ctx, 630, 275, radius * 1.42, radius * 0.94, '#ff8d64');
-            ellipse(ctx, 630, 275, radius * 1.34, radius * 0.88, '#fffde1');
+            // 접촉 앞에서 퍼져야 곰왕의 큰 실루엣 뒤에 섬광이 묻히지 않는다.
             plates.draw(ctx, 'white');
+            // 정확한 코마 탐색도 다음 작화를 고르도록 소수점 시간 오차만 흡수한다.
+            const drawing = Math.min(2, Math.floor((t - whiteMs + 0.001) / cellMs));
+            drawImpactCell(ctx, frame, drawing);
         }
         else if (t < inkMs) {
-            const progress = (t - flameMs) / (inkMs - flameMs);
-            flame(ctx, Math.floor((t - flameMs) / (cellMs * 2)), progress);
             plates.draw(ctx, 'fire');
+            const drawing = Math.floor((t - flameMs + 0.001) / (cellMs * 2));
+            drawImpactCell(ctx, frame, 3 + drawing);
         }
         else {
             radialInk(ctx);

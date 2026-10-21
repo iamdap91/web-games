@@ -1,9 +1,27 @@
 import { drawBear, drawHero } from './cast.js';
 import { clamp, ease, gameBackground, rand } from './drawing.js';
 import { gameInk } from '../../cutscenes/game-effects.js';
-const inkStroke = { start: 1.46, duration: 0.2, contact: 0.7 };
-const inkHitTime = inkStroke.start + inkStroke.duration * inkStroke.contact;
+const inkStroke = {
+    start: 1.34,
+    duration: 0.15,
+    contact: 0.7,
+    acceleration: 1.65,
+};
+const inkHitTime = inkStroke.start +
+    inkStroke.duration * Math.pow(inkStroke.contact, 1 / inkStroke.acceleration);
 const inkHit = { x: 865, y: 365 };
+const inkTiming = {
+    spreadStart: 0.17,
+    spreadEnd: 0.62,
+    seal: 1.8,
+    colorReturn: 2.24,
+    colorDuration: 0.56,
+};
+/** 붓획과 실제 주먹이 같은 진행량에서 만나도록 가속과 접촉 시각을 함께 계산한다. */
+function strokeProgress(time) {
+    return (clamp((time - inkStroke.start) / inkStroke.duration) **
+        inkStroke.acceleration);
+}
 function paper(context) {
     context.fillStyle = '#efe5cc';
     context.fillRect(0, 0, 1280, 720);
@@ -34,8 +52,10 @@ function inkLandscape(context, frame) {
 }
 function inkActors(context, frame, ink) {
     const time = frame.time;
-    const strike = clamp((time - inkStroke.start) / (inkHitTime - inkStroke.start));
-    const recoil = ease(clamp((time - inkHitTime - 0.12) / 0.42));
+    const strike = clamp(strokeProgress(time) / inkStroke.contact);
+    const age = time - inkHitTime;
+    const recoil = ease((age - 0.07) / 0.34);
+    const displacement = ease((age - 0.07) / 0.15) * 96 - ease((age - 0.22) / 0.19) * 18;
     const sequence = frame.assets.hero.uppercut['south-east'];
     const contact = sequence[2];
     const scale = 6;
@@ -45,16 +65,16 @@ function inkActors(context, frame, ink) {
     const action = time < inkStroke.start ? 'idle' : 'uppercut';
     const index = time < inkHitTime
         ? Math.min(1, Math.floor(strike * 2))
-        : time < inkHitTime + 0.12
+        : time < inkHitTime + 0.1
             ? 2
-            : Math.min(6, 3 + Math.floor(clamp((time - inkHitTime - 0.12) / 0.46) * 4));
+            : Math.min(6, 3 + Math.floor(clamp((time - inkHitTime - 0.1) / 0.36) * 4));
     const sprite = action === 'idle'
         ? frame.assets.hero.idle['south-east'][0]
         : sequence[index];
     const bounds = sprite.bounds;
     const bodyHeight = (bounds?.bottom ?? sprite.image.naturalHeight) - (bounds?.top ?? 0);
     drawBear(context, frame.assets, {
-        x: 940 + recoil * 78,
+        x: 940 + displacement,
         y: 625 - Math.sin(recoil * Math.PI) * 38,
         height: 480,
         state: time >= inkHitTime ? 'hit' : 'stand',
@@ -62,7 +82,7 @@ function inkActors(context, frame, ink) {
         filter: ink ? 'brightness(0) opacity(.86)' : 'none',
     });
     drawHero(context, frame.assets, {
-        x: heroX - (1 - ease(strike)) * 315,
+        x: heroX - (1 - strike) * 315,
         y: heroY,
         height: bodyHeight * scale,
         action,
@@ -195,16 +215,18 @@ function drawInk(context, frame) {
     const time = Math.min(frame.time, 3.2);
     const heldFrame = { ...frame, time };
     const color = frame.surfaces.get('ink-color-world');
-    gameBackground(color, frame, 0.2 + clamp((time - 2.48) / 0.65) * 0.15);
+    gameBackground(color, frame, 0.2 +
+        clamp((time - inkTiming.colorReturn) / inkTiming.colorDuration) * 0.15);
     inkActors(color, heldFrame, false);
     context.drawImage(color.canvas, 0, 0);
-    if (time > 0.17) {
+    if (time > inkTiming.spreadStart) {
         const ink = frame.surfaces.get('ink-world');
         inkLandscape(ink, heldFrame);
         inkActors(ink, heldFrame, true);
-        if (time < 0.85) {
+        if (time < inkTiming.spreadEnd) {
             const mask = frame.surfaces.get('ink-spread-mask');
-            inkEdge(mask, ease(clamp((time - 0.17) / 0.68)));
+            inkEdge(mask, ease((time - inkTiming.spreadStart) /
+                (inkTiming.spreadEnd - inkTiming.spreadStart)));
             ink.save();
             ink.globalCompositeOperation = 'destination-in';
             ink.drawImage(mask.canvas, 0, 0);
@@ -213,14 +235,14 @@ function drawInk(context, frame) {
         context.drawImage(ink.canvas, 0, 0);
     }
     if (time > inkStroke.start) {
-        const brush = clamp((time - inkStroke.start) / inkStroke.duration);
+        const brush = strokeProgress(time);
         brushStroke(context, frame, brush);
         const tip = brushPoint(brush);
         gameInk(context, frame.assets.effects, {
             sheet: 'stroke',
             x: tip.x,
             y: tip.y,
-            progress: (time - inkStroke.start) / 0.32,
+            progress: (time - inkStroke.start) / 0.23,
             size: 380,
             angle: Math.atan2(-378, 1040),
         });
@@ -234,13 +256,15 @@ function drawInk(context, frame) {
             size: 230,
             angle: Math.atan2(-378, 1040),
         });
-    if (time > 2.48) {
+    if (time > inkTiming.colorReturn) {
         const returnPlate = frame.surfaces.get('ink-color-return');
         returnPlate.drawImage(color.canvas, 0, 0);
         returnPlate.save();
         returnPlate.globalCompositeOperation = 'destination-in';
         returnPlate.lineCap = 'round';
-        returnPlate.lineWidth = 12 + ease(clamp((time - 2.48) / 0.65)) * 2050;
+        returnPlate.lineWidth =
+            12 +
+                ease((time - inkTiming.colorReturn) / inkTiming.colorDuration) * 2050;
         returnPlate.strokeStyle = '#111';
         returnPlate.beginPath();
         const start = brushPoint(0);
@@ -251,7 +275,7 @@ function drawInk(context, frame) {
         returnPlate.restore();
         context.drawImage(returnPlate.canvas, 0, 0);
     }
-    if (time > 1.94)
+    if (time > inkTiming.seal)
         redSeal(context);
     context.save();
     context.strokeStyle = '#171d18';
@@ -261,17 +285,17 @@ function drawInk(context, frame) {
 }
 export const inkCut = {
     id: 'ink-one-stroke',
-    title: '수묵 일필 · 한 획',
+    title: '수묵 일섬',
     kind: '2D',
     duration: 3.5,
-    description: '기존 게임 배경을 한지에 먹빛으로 인쇄하고 원본 인물 실루엣을 겹친다. 정적 뒤 0.2초의 권격을 기존 먹 획·충격 원본과 46가닥 비백으로 잇고, 주먹과 획이 닿는 한순간에 곰왕이 반응한다. 낙관 뒤에는 같은 공간의 색과 타격 여운을 되돌린다.',
+    description: '먹 번짐 뒤 정적에서150ms의 붓 한 획을 가속해 뽑는다. 주먹과 획은 같은 진행량에서 곰왕에 닿고, 빠른 초기 밀림과 짧은 먹 여운으로 힘을 잇는다. 기존46가닥 비백과 낙관을 유지하며 같은 공간의 색이 획에서 돌아온다.',
     beats: [
-        { time: 0.17, label: '먹이 번져 한지 세계로' },
-        { time: 0.85, label: '먹 실루엣의 정적' },
-        { time: 1.46, label: '0.2초의 붓 한 획' },
+        { time: inkTiming.spreadStart, label: '먹이 번져 한지 세계로' },
+        { time: inkTiming.spreadEnd, label: '먹 실루엣의 정적' },
+        { time: inkStroke.start, label: '150ms의 가속하는 붓 한 획' },
         { time: inkHitTime, label: '주먹·획의 접촉 · 피격' },
-        { time: 1.94, label: '낙관 斬' },
-        { time: 2.48, label: '획에서 색 귀환 · 여운' },
+        { time: inkTiming.seal, label: '낙관 斬' },
+        { time: inkTiming.colorReturn, label: '획에서 색 귀환 · 여운' },
     ],
     draw: drawInk,
 };

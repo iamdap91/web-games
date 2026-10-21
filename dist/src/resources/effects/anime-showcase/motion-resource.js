@@ -80,8 +80,11 @@ export function drawAnatomicalSquash(context, frame) {
     const time = Math.max(0, frame.timeMs);
     const airborne = time >= 1160 && time < 1800;
     const flight = clamp((time - 1160) / 640);
+    // 같은 높이에서 상승을 읽히게 하고, 마지막 낙하 구간을 짧게 해 접지를 또렷하게 한다.
+    const apex = 0.62;
+    const arc = flight < apex ? flight / apex - 1 : (flight - apex) / (1 - apex);
     const height = airborne
-        ? Math.sin(flight * Math.PI) * (frame.reducedMotion ? 25 : 125)
+        ? (1 - arc * arc) * (frame.reducedMotion ? 25 : 125)
         : 0;
     const jumpIndex = time < 650
         ? 0
@@ -89,19 +92,19 @@ export function drawAnatomicalSquash(context, frame) {
             ? 2
             : time < 1160
                 ? 3
-                : time < 1480
+                : time < 1560
                     ? 4
                     : time < 1740
                         ? 5
                         : time < 1800
                             ? 6
-                            : time < 2050
+                            : time < 2000
                                 ? 7
                                 : 8;
     const deformation = frame.enhanced
         ? time >= 1050 && time < 1160
             ? 'squash:extension'
-            : time >= 1800 && time < 2050
+            : time >= 1800 && time < 1920
                 ? 'squash:compression'
                 : undefined
         : undefined;

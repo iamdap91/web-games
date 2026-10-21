@@ -19,6 +19,7 @@ if (!redirectToStudio('ataho-shadow')) {
       description: '고요한 시선. 어둠 속 공방. 한 번의 결산.',
     },
     cuts,
+    gif: { fileName: 'ataho-shadow-cutscene' },
     load: loadSceneAssets,
     draw: drawScene,
     action: (snapshot) => {

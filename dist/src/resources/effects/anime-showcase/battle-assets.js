@@ -50,12 +50,13 @@ export async function loadBattleAssets() {
         })));
     };
     const loader = new MotionFrameLoader();
-    const [stand, hit, defeat, portrait, run] = await Promise.all([
+    const [stand, hit, defeat, portrait, run, runEast] = await Promise.all([
         sprites('stand'),
         sprites('hit1'),
         sprites('die1'),
         imageAt('public/assets/maplestory/ataho-v2-effects/20261016/cutin/ataho-face-original.png'),
         Promise.all([0, 1, 2, 3].map((frame) => loadSourceFrame({ motion: 'running-4-frames-south-east', frame }))),
+        Promise.all([0, 1, 2, 3].map((frame) => loadSourceFrame({ motion: 'running-4-frames-east', frame }))),
         loader.load(uppercut),
         loader.load(enhancedFlyingKickMotion),
         loader.load(straight),
@@ -91,6 +92,7 @@ export async function loadBattleAssets() {
         kick: enhancedFlyingKickMotion,
         straight,
         run,
+        runEast,
         bear: { stand, hit, defeat },
         portrait,
         directional: { idle, uppercut: directionalUppercut },

@@ -7,6 +7,7 @@ export class StudioViewport {
     frame = document.createElement('iframe');
     events = new AbortController();
     item;
+    requestedVariant;
     ready = false;
     constructor(container, onState, onStep) {
         this.onState = onState;
@@ -32,23 +33,40 @@ export class StudioViewport {
                 this.send({ action: 'select', value: this.item.sampleId });
                 return;
             }
+            const variant = this.requestedVariant;
+            if (variant !== undefined) {
+                const supported = message.capabilities.includes('variant') &&
+                    message.state.variantOptions?.some((option) => option.value === variant);
+                if (supported && message.state.variant !== variant) {
+                    this.send({ action: 'variant', value: variant });
+                    return;
+                }
+                this.requestedVariant = undefined;
+            }
             this.onState(message);
         }, { signal: this.events.signal });
     }
-    show(item) {
+    show(item, variant) {
         const previous = this.item;
         this.item = item;
+        this.requestedVariant = variant;
         this.frame.title = `${item.title} · 연출`;
         if (previous?.source === item.source) {
-            if (this.ready)
-                this.send({ action: 'select', value: item.sampleId });
+            if (this.ready) {
+                if (previous.sampleId === item.sampleId && variant !== undefined)
+                    this.send({ action: 'variant', value: variant });
+                else
+                    this.send({ action: 'select', value: item.sampleId });
+            }
             return;
         }
         this.release();
         this.ready = false;
-        this.frame.src = studioSceneUrl(item).href;
+        this.frame.src = studioSceneUrl(item, variant).href;
     }
     send(command) {
+        if (command.action === 'variant')
+            this.requestedVariant = command.value;
         if (this.ready)
             this.frame.contentWindow?.postMessage({ type: 'cutscene-studio-command', command }, location.origin);
     }
@@ -65,6 +83,7 @@ export class StudioViewport {
         this.events.abort();
         this.frame.remove();
         this.item = undefined;
+        this.requestedVariant = undefined;
         this.ready = false;
     }
 }

@@ -11,6 +11,10 @@ function actionFor(frame, action) {
     if (action)
         return action;
     switch (frame.sampleId) {
+        case 'shock-koma':
+            return !frame.shockVariant || frame.shockVariant === 'ink'
+                ? 'uppercut'
+                : 'straight';
         case 'inazuma-kick':
             return 'kick';
         case 'hisashi-punch':
@@ -119,11 +123,14 @@ export function drawAtaho(ctx, frame, options = {}) {
 }
 /** 승인된 달리기 네 장의 공통 발 앵커를 유지해 원본의 뜀 높이를 남긴다. */
 export function drawAtahoRun(ctx, frame, options) {
-    const source = frame.assets.run[options.frameIndex % frame.assets.run.length];
+    const frames = options.direction === 'east' ? frame.assets.runEast : frame.assets.run;
+    const source = frames[options.frameIndex % frames.length];
     const scale = options.scale ?? battleLayout.attacker.scale;
+    // 동쪽 달리기는 프레임마다 발 높이가 달라 실제 알파의 발끝을 같은 지면에 둔다.
+    const anchorY = options.direction === 'east' ? source.feetY : source.anchorY;
     ctx.save();
     ctx.imageSmoothingEnabled = false;
-    ctx.drawImage(source.image, Math.round(options.x - source.anchorX * scale), Math.round(options.ground - source.anchorY * scale), source.image.naturalWidth * scale, source.image.naturalHeight * scale);
+    ctx.drawImage(source.image, Math.round(options.x - source.anchorX * scale), Math.round(options.ground - anchorY * scale), source.image.naturalWidth * scale, source.image.naturalHeight * scale);
     ctx.restore();
 }
 function bearFrame(frames, timeMs, loop = false) {
@@ -136,6 +143,17 @@ function bearFrame(frames, timeMs, loop = false) {
     }
     return frames[frames.length - 1];
 }
+/** 같은 기본 피격을 짧게 방출하고 천천히 회수해 접촉 뒤 둥실 떠오르는 반동을 줄인다. */
+export function battleRecoil(ageMs, reducedMotion) {
+    const age = Math.max(0, ageMs);
+    const launch = 1 - (1 - clamp(age / 120)) ** 3;
+    const settle = 1 - smooth((age - 120) / 780);
+    const motion = reducedMotion ? 0.23 : 1;
+    return {
+        displacementX: 42 * launch * settle * motion,
+        lift: Math.sin(clamp(age / 420) * Math.PI) * 10 * motion,
+    };
+}
 export function drawBear(ctx, frame, options = {}) {
     const t = options.timeMs ?? frame.timeMs;
     const age = t - battleLayout.contactMs;
@@ -145,13 +163,16 @@ export function drawBear(ctx, frame, options = {}) {
             ? 'hit'
             : 'stand';
     const source = bearFrame(frame.assets.bear[state], state === 'stand' ? t : Math.max(0, age) * (state === 'hit' ? 0.65 : 1), state === 'stand');
-    const recoil = state === 'stand'
-        ? 0
-        : Math.sin(clamp(age / 900) * Math.PI) * (frame.reducedMotion ? 5 : 22);
+    const recoilAge = state === 'stand' ? 0 : age;
+    // 표정 비교는 이번 기법의 시간·피격 조정 범위 밖이므로 기존 반응을 유지한다.
+    const expressionRecoil = Math.sin(clamp(recoilAge / 900) * Math.PI) * (frame.reducedMotion ? 5 : 22);
+    const recoil = frame.sampleId.startsWith('emotion-')
+        ? { displacementX: expressionRecoil, lift: expressionRecoil * 0.45 }
+        : battleRecoil(recoilAge, frame.reducedMotion);
     const x = (options.x ?? battleLayout.target.x) +
-        (options.recoil?.displacementX ?? recoil);
+        (options.recoil?.displacementX ?? recoil.displacementX);
     const ground = (options.ground ?? battleLayout.target.ground) -
-        (options.recoil?.lift ?? recoil * 0.45);
+        (options.recoil?.lift ?? recoil.lift);
     const scale = options.scale ?? battleLayout.target.scale;
     ctx.save();
     ctx.globalAlpha *= options.opacity ?? 1;

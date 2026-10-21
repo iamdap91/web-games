@@ -1,7 +1,7 @@
 import { drawBackgroundAnimation } from './motion-background.js';
 import { drawSpeedStreamlines } from './motion-speed.js';
-import { burst, clamp, ellipse, label, line, mix, noise, palette, polygon, smooth, stage, windowed, } from './drawing.js';
-import { atahoPosition, battleLayout, drawAtaho, drawBattle, drawBattleActors, drawBear, } from './battle.js';
+import { clamp, ellipse, label, line, mix, noise, palette, polygon, smooth, stage, windowed, } from './drawing.js';
+import { atahoPosition, battleLayout, drawAtaho, drawAtahoRun, drawBattle, drawBattleActors, drawBear, } from './battle.js';
 import { drawAtahoBreakdown, drawAtahoFlutter, drawAtahoPerspective, } from './motion-deformation.js';
 import { drawAnatomicalSquash } from './motion-resource.js';
 export const motionSamples = [
@@ -42,15 +42,15 @@ export const motionSamples = [
         name: '미다레우치',
         category: 'motion',
         previewMs: 1230,
-        description: '어퍼컷 한 번의 준비·통과 그림을 1~8코마씩 불규칙하게 노출해 타이밍을 흔듭니다.',
-        distinction: '공격 횟수나 타격 간격이 아니라 한 동작 안에서 그림을 유지하는 코마 수의 대비입니다. 두 판 모두 1800ms에 한 번 맞습니다.',
+        description: '어퍼컷 한 번의 준비·통과 그림을 8·2·5·1코마로 노출하고 마지막 상승만 한 코마로 뽑습니다.',
+        distinction: '공격 횟수나 타격 간격이 아니라 한 동작 안에서 그림을 유지하는 코마 수의 대비입니다. 두 판 모두 같은 순간에 한 번 맞습니다.',
     },
     {
         id: 'strobe',
         name: '스트로보',
         category: 'motion',
         previewMs: 1840,
-        description: '수평 정권에 진입한 자세와 위치를 일정 시간 간격으로 남기고 제자리에서 감쇠합니다.',
+        description: '빠른 수평 진입의 자세와 위치를 일정 간격으로 남기고, 세 장 안에서 짧게 감쇠해 접촉 자세를 드러냅니다.',
         distinction: '원본 비율의 여러 과거 자세이며 늘린 몸이나 새 도형 배우가 아닙니다.',
     },
     {
@@ -58,15 +58,15 @@ export const motionSamples = [
         name: '메타모르포제',
         category: 'motion',
         previewMs: 1750,
-        description: '아타호의 타격 빛이 둥근 덩어리에서 초승달 외곽으로 연속 변형합니다.',
+        description: '둥근 기공 덩어리를 빠르게 초승달로 벼리고 접촉 때 완성된 외곽을 드러냅니다.',
         distinction: '캐릭터의 변신이 아니라 독립 기공 효과입니다. 두 그림의 페이드와 실제 외곽 이동을 비교합니다.',
     },
     {
         id: 'wave-propagation',
         name: '물결 보내기',
         category: 'motion',
-        previewMs: 1900,
-        description: '지지점에 묶인 긴 천띠의 꼭짓점을 끝 쪽으로 밀어 보내는 과정을 빈 공간에서 보여 줍니다.',
+        previewMs: 1450,
+        description: '지지점에서 보낸 짧고 큰 굴곡이 긴 천띠의 끝까지 빠르게 전달되는 과정을 보여 줍니다.',
         distinction: '뿌리는 고정하고 천의 구간마다 반응을 늦춥니다. 배우의 옷이나 몸을 새로 만들지 않는 독립 천띠 견본입니다.',
     },
     {
@@ -81,13 +81,13 @@ export const motionSamples = [
         id: 'squash-stretch',
         name: '스쿼시 앤 스트레치',
         category: 'motion',
-        previewMs: 1980,
-        description: '도약에서 관절을 펴고 착지에서 무릎과 골반을 접는 실제 몸 원화를 같은 발 기준으로 비교합니다.',
+        previewMs: 1840,
+        description: '관절을 펴며 도약한 뒤 빠르게 착지해 무릎과 골반을 짧게 접고, 같은 발 위치에서 복귀합니다.',
         distinction: '기존 조합실의 도약 폄·착지 눌림 그림을 재사용합니다. 전체 PNG를 늘이거나 머리를 납작하게 만들지 않는 원화 시안이며 사용자 GIF 품질 확인은 대기 중입니다.',
         beats: [
             { timeMs: 1080, label: '도약 · 실제 관절 폄 원화' },
-            { timeMs: 1860, label: '착지 · 실제 무릎·골반 압축 원화' },
-            { timeMs: 2140, label: '같은 발 위치에서 복귀' },
+            { timeMs: 1840, label: '착지 · 실제 무릎·골반 압축 원화' },
+            { timeMs: 2000, label: '같은 발 위치에서 복귀' },
         ],
     },
     {
@@ -110,20 +110,22 @@ export const motionSamples = [
         id: 'focus-lines',
         name: '집중선',
         category: 'motion',
-        previewMs: 1900,
-        description: '아타호와 곰왕의 실제 접촉 공간으로 배경 선들을 모읍니다.',
+        previewMs: 1800,
+        description: '접촉 직전에 배경 선의 빈 공간을 좁혀 시선을 모으고, 맞는 순간 가장 굵게 수렴시킨 뒤 짧게 걷습니다.',
         distinction: '원본 PNG와 타점은 유지하며 한 점으로 수렴하는 배경선만 더합니다.',
     },
     {
         id: 'speed-streamlines',
         name: '속도선·유선',
         category: 'motion',
-        previewMs: 1430,
-        description: '정권 진입 속도에 맞춰 길고 짧은 선이 뒤로 스치고, 몸 바깥의 유선이 짧은 후류로 빠져나갑니다.',
+        previewMs: 1230,
+        description: '동쪽 달리기의 이동 속도에 맞춰 선과 후류가 흐르고, 발을 디딘 뒤 정권을 짧게 신전합니다.',
         distinction: '빠른 진입에서 선이 길어지고 접촉 직후 걷힙니다. 얼굴·주먹·피격 표정은 비워 실제 타격을 읽게 합니다.',
         beats: [
             { timeMs: 1120, label: '진입 · 흐름 발생' },
-            { timeMs: 1430, label: '가속 · 속도선과 후류' },
+            { timeMs: 1230, label: '질주 · 속도선과 후류' },
+            { timeMs: 1510, label: '발 디딤' },
+            { timeMs: 1570, label: '정권 준비' },
             { timeMs: 1740, label: '접촉 직전 · 선 회수' },
             { timeMs: 1920, label: '접촉 뒤 · 정착' },
         ],
@@ -136,7 +138,63 @@ function time(frame) {
 function dashPosition(t, frame) {
     const contact = frame.assets.straight.steps.find((step) => step.contact).contact;
     const destination = battleLayout.impact.x - (contact.reach ?? 0) * battleLayout.attacker.scale;
-    return mix(destination - 218, destination, smooth((t - 950) / 850));
+    return mix(destination - 310, destination, clamp((t - 1150) / 650) ** 1.5);
+}
+const speedTiming = {
+    startMs: 950,
+    plantMs: 1510,
+    prepareMs: 1570,
+    releaseMs: 1680,
+    contactMs: battleLayout.contactMs,
+    holdEndMs: 1960,
+};
+export const speedApproachCuts = Object.values(speedTiming);
+/** 달리기의 이동은 디딤에서 끝내고 신전 때의 체중 이동만 손끝에 더한다. */
+function speedPosition(t, frame, travelDistance) {
+    const contact = frame.assets.straight.steps.find((step) => step.contact).contact;
+    const destination = battleLayout.impact.x - (contact.reach ?? 0) * battleLayout.attacker.scale;
+    if (t < speedTiming.plantMs)
+        return mix(destination - travelDistance, destination - 6, smooth((t - speedTiming.startMs) / (speedTiming.plantMs - speedTiming.startMs)));
+    return mix(destination - 6, destination, smooth((t - speedTiming.releaseMs) /
+        (speedTiming.contactMs - speedTiming.releaseMs)));
+}
+/** 같은 동쪽 원화의 마지막 디딤과 정권 준비를 한 발 기준으로 잇는다. */
+function drawSpeedActor(ctx, frame, options) {
+    const t = time(frame);
+    const x = speedPosition(t, frame, options.travelDistance);
+    if (t >= speedTiming.startMs && t < speedTiming.prepareMs) {
+        const running = t < speedTiming.plantMs;
+        const exposure = (speedTiming.plantMs - speedTiming.startMs) / 8;
+        // 1→2→3→0을 두 번 밟은 뒤 정권0번과 발끝이 겹치는0번을 잠깐 유지한다.
+        const frameIndex = running
+            ? (1 + Math.floor((t - speedTiming.startMs) / exposure)) % 4
+            : 0;
+        drawAtahoRun(ctx, frame, {
+            x,
+            ground: battleLayout.attacker.ground,
+            frameIndex,
+            direction: 'east',
+        });
+        return;
+    }
+    let poseTime = 0;
+    if (t >= options.holdEndMs)
+        poseTime = 1960 + t - options.holdEndMs;
+    else if (t >= speedTiming.contactMs)
+        poseTime = battleLayout.contactMs + 16;
+    else if (t >= speedTiming.releaseMs)
+        poseTime =
+            1480 +
+                ((t - speedTiming.releaseMs) /
+                    (speedTiming.contactMs - speedTiming.releaseMs)) *
+                    320;
+    else if (t >= speedTiming.prepareMs)
+        poseTime =
+            1000 +
+                smooth((t - speedTiming.prepareMs) /
+                    (speedTiming.releaseMs - speedTiming.prepareMs)) *
+                    480;
+    drawAtaho(ctx, frame, { x, action: 'straight', timeMs: poseTime });
 }
 function drawFight(ctx, frame, timeMs = frame.timeMs) {
     drawBattle(ctx, frame, { timeMs, action: 'uppercut' });
@@ -194,16 +252,14 @@ function drawBackground(ctx, frame) {
 }
 function drawNakanuki(ctx, frame) {
     const t = time(frame);
-    const sourceTime = frame.enhanced && t >= 1100 && t < 1800 ? 1450 : t;
+    const sourceTime = frame.enhanced && t >= 1480 && t < 1800 ? 1480 : t;
     drawRetimedPreparation(ctx, frame, sourceTime);
-    if (frame.enhanced && t >= 1800 && t < 2090)
-        burst(ctx, impact.x, impact.y, (t - 1800) / 290, palette.paper, 8);
 }
 // 24fps의 한 공격을 1~8코마씩 불규칙 노출한다. 연타 횟수의 차이가 아니다.
 const irregularExposure = [
     { source: 1000, frames: 8 },
     { source: 1400, frames: 2 },
-    { source: 1670, frames: 5 },
+    { source: 1600, frames: 5 },
     { source: 1780, frames: 1 },
 ];
 const irregularFrameCount = irregularExposure.reduce((total, exposure) => total + exposure.frames, 0);
@@ -236,9 +292,9 @@ function drawStrobe(ctx, frame) {
     stage(ctx, frame, frame.reducedMotion ? 0 : t);
     if (frame.enhanced) {
         const intervalMs = frame.reducedMotion ? 240 : 120;
-        const lifetimeMs = frame.reducedMotion ? 360 : 850;
+        const lifetimeMs = frame.reducedMotion ? 240 : 360;
         // 잔상은 현재 시각을 따라 미끄러지지 않고 노출한 자세와 위치에서 사라진다.
-        for (let capturedMs = 1100; capturedMs <= 2200; capturedMs += intervalMs) {
+        for (let capturedMs = 1150; capturedMs < 1800; capturedMs += intervalMs) {
             const age = t - capturedMs;
             if (age <= 0 || age >= lifetimeMs)
                 continue;
@@ -246,7 +302,7 @@ function drawStrobe(ctx, frame) {
                 timeMs: capturedMs,
                 x: dashPosition(capturedMs, frame),
                 action: 'straight',
-                opacity: (1 - age / lifetimeMs) * (frame.reducedMotion ? 0.19 : 0.55),
+                opacity: (1 - age / lifetimeMs) ** 1.4 * (frame.reducedMotion ? 0.19 : 0.52),
             });
         }
     }
@@ -267,7 +323,7 @@ function energyShape(ctx, points, opacity) {
 function drawMetamorphosis(ctx, frame) {
     const t = time(frame);
     drawFight(ctx, frame);
-    const p = smooth((t - 1000) / 1550);
+    const p = clamp((t - 1150) / 650) ** 1.7;
     const blob = Array.from({ length: 36 }, (_, i) => {
         const a = Math.PI / 2 + (i * Math.PI * 2) / 36;
         return { x: Math.cos(a) * 82, y: Math.sin(a) * 82 };
@@ -282,7 +338,7 @@ function drawMetamorphosis(ctx, frame) {
             y: Math.sin(a) * 116,
         };
     });
-    const opacity = windowed(t, 800, 3000, 300) * (frame.reducedMotion ? 0.37 : 0.72);
+    const opacity = windowed(t, 1060, 2080, 120) * (frame.reducedMotion ? 0.37 : 0.82);
     if (frame.enhanced)
         energyShape(ctx, blob.map((start, i) => ({
             x: mix(start.x, crescent[i].x, p),
@@ -297,7 +353,7 @@ function drawWave(ctx, frame) {
     const t = time(frame);
     stage(ctx, frame, frame.reducedMotion ? 0 : t);
     const gesture = windowed(t, 650, 1000, 220);
-    const travel = (t - 950) / 1750;
+    const travel = (t - 950) / 1000;
     line(ctx, [
         { x: 270, y: 105 },
         { x: 270, y: 440 },
@@ -307,7 +363,7 @@ function drawWave(ctx, frame) {
     for (let i = 0; i <= 36; i++) {
         const q = i / 36, local = q - travel;
         const delayed = t >= 850
-            ? Math.sin(local * 18) * Math.exp((-local * local) / 0.035) * 86
+            ? Math.sin(local * 18) * Math.exp((-local * local) / 0.024) * 100
             : 0;
         const offset = (frame.enhanced ? delayed : gesture * Math.sin(q * 2.3) * 55) *
             (frame.reducedMotion ? 0.5 : 1) *
@@ -318,7 +374,7 @@ function drawWave(ctx, frame) {
         lower.push({ x: 270 + q * 500, y: y + halfWidth });
     }
     ctx.save();
-    ctx.globalAlpha *= windowed(t, 650, 3000, 250) * 0.82;
+    ctx.globalAlpha *= windowed(t, 650, 2380, 160) * 0.82;
     polygon(ctx, [...upper, ...lower.slice().reverse()], palette.blue);
     line(ctx, upper, '#d6f0fa', 3);
     for (let i = 0; i < upper.length; i += 6)
@@ -342,37 +398,19 @@ function drawSquash(ctx, frame) {
 }
 function drawKanada(ctx, frame) {
     const t = time(frame);
-    const sourceTime = !frame.enhanced || t < 1100
+    const sourceTime = !frame.enhanced || t < 1400
         ? t
-        : t < 1680
+        : t < 1716
             ? 1450
-            : t < 1760
+            : t < 1758
                 ? 1700
                 : t < 1800
                     ? 1780
-                    : t < 1980
-                        ? 1800
-                        : t < 2250
-                            ? 1800 + (t - 1980) * 0.65
-                            : 1975.5 + (t - 2250) * 1.3;
+                    : t;
     if (t < battleLayout.contactMs)
         drawRetimedPreparation(ctx, frame, sourceTime);
     else
         drawFight(ctx, frame, sourceTime);
-    if (frame.enhanced && t >= 1800 && t < 2300) {
-        ctx.save();
-        ctx.globalAlpha *=
-            (1 - (t - 1800) / 500) * (frame.reducedMotion ? 0.2 : 0.65);
-        polygon(ctx, [
-            { x: impact.x - 148, y: impact.y + 170 },
-            { x: impact.x - 8, y: impact.y + 72 },
-            { x: impact.x - 63, y: impact.y + 103 },
-            { x: impact.x + 160, y: impact.y + 12 },
-            { x: impact.x + 37, y: impact.y + 107 },
-            { x: impact.x + 88, y: impact.y + 81 },
-        ], palette.paper);
-        ctx.restore();
-    }
 }
 function drawPerspective(ctx, frame) {
     if (!frame.enhanced) {
@@ -390,15 +428,16 @@ function drawPerspective(ctx, frame) {
 function drawFocusLines(ctx, frame) {
     const t = time(frame);
     stage(ctx, frame, frame.reducedMotion ? 0 : t);
-    const alpha = windowed(t, 900, 2900, 450);
+    const gather = smooth((t - 1530) / 270);
+    const alpha = windowed(t, 1530, 2050, 70);
     if (frame.enhanced && alpha > 0) {
         ctx.save();
-        ctx.globalAlpha *= alpha * (frame.reducedMotion ? 0.3 : 0.86);
+        ctx.globalAlpha *= alpha * (frame.reducedMotion ? 0.3 : 0.94);
         const count = frame.reducedMotion ? 24 : 57;
         for (let i = 0; i < count; i++) {
             const a = (i * Math.PI * 2) / count + noise(i) * 0.025;
-            const inner = 130 + noise(i + 7) * 90;
-            const halfWidth = i % 4 ? 3 : 11;
+            const inner = mix(250, 104, gather) + noise(i + 7) * 72;
+            const halfWidth = (i % 4 ? 3 : 10) * mix(0.45, 1.25, gather);
             polygon(ctx, [
                 {
                     x: impact.x + Math.cos(a) * inner,
@@ -418,18 +457,27 @@ function drawFocusLines(ctx, frame) {
     }
     drawBattleActors(ctx, frame, { action: 'uppercut' });
 }
-export function drawSpeedApproach(ctx, frame) {
+export function drawSpeedApproach(ctx, frame, options = {}) {
     const t = time(frame);
-    const x = dashPosition(t, frame);
+    const travelDistance = options.travelDistance ?? 218;
+    const x = speedPosition(t, frame, travelDistance);
     stage(ctx, frame, frame.reducedMotion ? 0 : t);
-    drawSpeedStreamlines(ctx, frame, {
-        x,
-        travel: x - dashPosition(950, frame),
-        velocity: (dashPosition(t + 8, frame) - dashPosition(t - 8, frame)) / 16,
-    });
+    // 디딤 뒤에는 배경 흐름을 다시 켜지 않아 정지한 몸에서 속도가 솟지 않게 한다.
+    if (t < speedTiming.plantMs)
+        drawSpeedStreamlines(ctx, frame, {
+            x,
+            travel: x - speedPosition(speedTiming.startMs, frame, travelDistance),
+            velocity: (speedPosition(t + 8, frame, travelDistance) -
+                speedPosition(t - 8, frame, travelDistance)) /
+                16,
+        });
     ellipse(ctx, x, 448, 58, 10, '#14293b32');
-    ellipse(ctx, 657, 448, 115, 15, '#14293b32');
-    drawDash(ctx, frame);
+    ellipse(ctx, 657 + (options.target?.recoil?.displacementX ?? 0), 448, 115, 15, '#14293b32');
+    drawBear(ctx, frame, options.target);
+    drawSpeedActor(ctx, frame, {
+        holdEndMs: options.holdEndMs ?? speedTiming.holdEndMs,
+        travelDistance,
+    });
 }
 export function drawMotion(ctx, id, frame) {
     ctx.save();
@@ -438,13 +486,13 @@ export function drawMotion(ctx, id, frame) {
             case 'smear-frame':
                 drawSmear(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '1740~1800ms · 실제 몸의 상승 방향 스미어'
+                    ? '짧은 연결 구간 · 실제 몸의 상승 방향 스미어'
                     : '같은 실제 어퍼컷과 피격');
                 break;
             case 'obake':
                 drawObake(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '1720~1800ms · 실제 몸의 비대칭 연결 그림'
+                    ? '짧은 연결 구간 · 실제 몸의 비대칭 연결 그림'
                     : '같은 기존 어퍼컷의 연결 프레임');
                 break;
             case 'background-animation':
@@ -468,7 +516,7 @@ export function drawMotion(ctx, id, frame) {
             case 'strobe':
                 drawStrobe(ctx, frame);
                 label(ctx, frame.enhanced
-                    ? '120ms마다 남긴 정권 자세가 같은 위치에서 감쇠'
+                    ? '120ms 간격 · 최대 세 과거 자세만 짧게 감쇠'
                     : '현재 실제 프레임만 표시');
                 break;
             case 'motion-metamorphosis':
@@ -514,7 +562,7 @@ export function drawMotion(ctx, id, frame) {
                     : '같은 어퍼컷과 곰왕 피격');
                 break;
             case 'speed-streamlines':
-                drawSpeedApproach(ctx, frame);
+                drawSpeedApproach(ctx, frame, { travelDistance: 278 });
                 label(ctx, frame.enhanced
                     ? '진입 속도에 따른 역방향 흐름 · 몸 바깥의 짧은 후류'
                     : '같은 실제 원화의 진입과 접촉');

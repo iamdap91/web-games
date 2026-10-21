@@ -1,0 +1,177 @@
+{
+    "date": "2026-10-21",
+    "provider": "PixelLab Pro Flash",
+    "qualityStatus": "awaiting-user-playback-review",
+    "scope": "쇼크코마 v2의 백열 섬광3장과 붉은 잔염9장. 배우·명암 교체·25코마 길이는 유지한다.",
+    "atlas": {
+        "key": "shock-koma-v2-atlas",
+        "localPath": "public/assets/maplestory/shock-koma-v2/20261021/impact-atlas.png",
+        "width": 252,
+        "height": 256,
+        "sha256": "9ce78924c0bf82cef2edcf8ecac13d618e2a5f641bf170a78997ec934b421852",
+        "byteSize": 8346
+    },
+    "generation": {
+        "jobId": "28321db9-6ff7-44c2-913a-d50d0a0ab68d",
+        "assetId": "29f3f12b-dcaf-54f8-9cbe-db2581c2e208",
+        "sourceUrl": "https://api.pixellab.ai/mcp/images/28321db9-6ff7-44c2-913a-d50d0a0ab68d/download",
+        "calls": 1,
+        "subscriptionGenerationsCharged": 9,
+        "additionalCreditUsd": 0,
+        "request": {
+            "description": "Original fighting-game impact VFX ANIMATION SPRITESHEET. Exactly 3 columns x 4 rows, twelve separate frames, each cell exactly 84 pixels wide by 64 high, equal invisible grid. Transparent background, NO text NO drawn grid NO character. Read left to right then next row. All frames depict ONE rightward incandescent impact jet, rooted consistently at x=12 y=34 inside each cell, extending to the RIGHT with sharp angular contours and branching torn ribbons. Hard crisp pixel clusters, high contrast cel animation, no gradients. First row is a 3-frame FLASH opening: frame1 compact sharp white wedge, frame2 violent asymmetric white expansion, frame3 wide white hot folded sheets with deep transparent fissures. Rows2-4 are nine sequential AFTERGLOW frames: white leading folds and coral-red/orange ribbons surge rightward, open transparent dark cracks, split into long narrow tapering folds, white core rapidly shrinks and extinguishes, separated crimson trailing strips stretch to right, last frame only two very thin disconnected red fragments. Each silhouette changes coherently through dissipation. Uneven diagonal torn edges, clear negative space, not an oval or filled blob. Keep all artwork fully inside its cell with 4px transparent margin. NOT a round explosion, NOT a starburst, NOT a circular ring, NOT upward campfire, NOT smoke, NOT a ball. Avoid decorative dots and orbiting sparks. Silhouettes must have a clear horizontal force direction, a narrow left root and broad ragged right front, then break apart.",
+            "width": 252,
+            "height": 256,
+            "no_background": true,
+            "max_colors": 7,
+            "palette": [
+                "#fffde6",
+                "#ffe69a",
+                "#ff9a46",
+                "#ff3a4d",
+                "#dc174b",
+                "#8e123d",
+                "#2b0b22"
+            ],
+            "palette_name": "incandescent white coral flame",
+            "seed": 0
+        }
+    },
+    "reference": {
+        "url": "https://www.youtube.com/shorts/ctLfv9wBSMw",
+        "observation": "기존37장 순차 프레임과1.9~3.1초 음성 트랙 제거 클립을 재확인했다. 백열 면의 팽창, 검은 틈 사이 붉은 긴 잔광, 가늘게 분리되는 끝을 구분했다.",
+        "boundary": "사용자 제공 편집 영상의 기존 관찰을 재확인했다. 수록 원작의 출처·작가를 새로 인증한 것은 아니며, 영상의 그림을 업로드하거나 복제하지 않고 형상 흐름만 참고했다."
+    },
+    "render": {
+        "impactX": 570,
+        "impactY": 300,
+        "pixelScale": 5,
+        "sampling": "nearest",
+        "separation": "원본 시트의 실제 형상 사이 빈 영역으로 crop한다. 셀마다 공통 타점에 맞추며 원본RGBA·알파·픽셀 크기를 보존한다. 형상마다 크기를 정규화하지 않는다.",
+        "flashExposureCells": 3,
+        "afterglowExposureCells": 17,
+        "framing": "가장 넓은 세 번째 섬광의 오른쪽 끝2픽셀은 화면 오른쪽으로 빠지며, 타점과 정수5배율을 유지한다."
+    },
+    "cells": [
+        {
+            "key": "flash-0",
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 70,
+            "anchorX": 5,
+            "anchorY": 38,
+            "exposureCells": 1
+        },
+        {
+            "key": "flash-1",
+            "x": 80,
+            "y": 0,
+            "width": 83,
+            "height": 70,
+            "anchorX": 0,
+            "anchorY": 38,
+            "exposureCells": 1
+        },
+        {
+            "key": "flash-2",
+            "x": 163,
+            "y": 0,
+            "width": 89,
+            "height": 70,
+            "anchorX": 2,
+            "anchorY": 38,
+            "exposureCells": 1
+        },
+        {
+            "key": "afterglow-0",
+            "x": 0,
+            "y": 70,
+            "width": 80,
+            "height": 58,
+            "anchorX": 4,
+            "anchorY": 23,
+            "exposureCells": 2
+        },
+        {
+            "key": "afterglow-1",
+            "x": 80,
+            "y": 70,
+            "width": 83,
+            "height": 58,
+            "anchorX": 2,
+            "anchorY": 23,
+            "exposureCells": 2
+        },
+        {
+            "key": "afterglow-2",
+            "x": 163,
+            "y": 70,
+            "width": 89,
+            "height": 58,
+            "anchorX": 5,
+            "anchorY": 23,
+            "exposureCells": 2
+        },
+        {
+            "key": "afterglow-3",
+            "x": 0,
+            "y": 128,
+            "width": 80,
+            "height": 59,
+            "anchorX": 4,
+            "anchorY": 23,
+            "exposureCells": 2
+        },
+        {
+            "key": "afterglow-4",
+            "x": 80,
+            "y": 128,
+            "width": 83,
+            "height": 59,
+            "anchorX": 4,
+            "anchorY": 23,
+            "exposureCells": 2
+        },
+        {
+            "key": "afterglow-5",
+            "x": 163,
+            "y": 128,
+            "width": 89,
+            "height": 59,
+            "anchorX": 6,
+            "anchorY": 23,
+            "exposureCells": 2
+        },
+        {
+            "key": "afterglow-6",
+            "x": 0,
+            "y": 187,
+            "width": 80,
+            "height": 69,
+            "anchorX": 5,
+            "anchorY": 22,
+            "exposureCells": 2
+        },
+        {
+            "key": "afterglow-7",
+            "x": 80,
+            "y": 187,
+            "width": 83,
+            "height": 69,
+            "anchorX": 5,
+            "anchorY": 22,
+            "exposureCells": 2
+        },
+        {
+            "key": "afterglow-8",
+            "x": 163,
+            "y": 187,
+            "width": 89,
+            "height": 69,
+            "anchorX": 6,
+            "anchorY": 22,
+            "exposureCells": 1
+        }
+    ]
+}
