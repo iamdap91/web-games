@@ -4,6 +4,7 @@ import { loadSourceFrame, } from '../../characters/ataho-v2-combos/source-frames
 import { loadCombatEffectSpriteFrame, } from '../../characters/ataho-v2-combos/combat-effect-sprites.js';
 import { loadInkSpriteFrame } from '../../characters/ataho-v2-combos/ink-sprites.js';
 import { loadEffectSpriteResources } from '../anime-showcase/effect-sprite-resources.js';
+import { loadKiSpriteFrame } from '../../characters/ataho-v2-combos/ki-sprites.js';
 export const directions = [
     'south',
     'south-east',
@@ -32,6 +33,7 @@ export async function loadCutAssets() {
         slam: {},
         punch: {},
         release: {},
+        ki: {},
     };
     await Promise.all(directions.flatMap((direction) => [
         frames(direction === 'south' ? 'stand' : `stand-${direction}`, 1).then((value) => {
@@ -51,6 +53,7 @@ export async function loadCutAssets() {
             frames('ataho-one-two-punch-south-east-south-east', 17),
         ]);
     hero.release['south-east'] = await frames('ataho-backward-lean-two-straight-arm-circles-south-east-south-east', 6, 9);
+    hero.ki['south-east'] = await frames('presentation-ki-beam-poses-south-east', 3);
     const bearAsset = manifest.assets.find((asset) => asset.id === 'ai/monster-hoarfrost-bear');
     if (!bearAsset || !('animations' in bearAsset))
         throw new Error('곰왕 원본을 찾지 못했습니다.');
@@ -80,6 +83,14 @@ export async function loadCutAssets() {
     sourcePaths.add(portraitPath);
     const effects = new Map();
     await Promise.all([
+        loadKiSpriteFrame('orb').then((source) => {
+            effects.set('ki-vfx:orb', source);
+            sourcePaths.add(source.localPath);
+        }),
+        loadKiSpriteFrame('beam').then((source) => {
+            effects.set('ki-vfx:beam', source);
+            sourcePaths.add(source.localPath);
+        }),
         loadEffectSpriteResources().then((frames) => {
             for (const [key, source] of frames) {
                 effects.set(key, source);

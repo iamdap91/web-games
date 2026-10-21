@@ -16,7 +16,7 @@ export const studioGroups = [
     {
         id: 'combinations',
         name: '기법 조합',
-        description: '15유형 · 유형 안에서 바리에이션 선택',
+        description: '23유형 · 유형 안에서 바리에이션 선택',
     },
     {
         id: 'expressions',

@@ -2,7 +2,7 @@
   "version": 1,
   "date": "2026-10-20",
   "name": "연출실",
-  "scope": "기존 여섯 연출 화면의134개 항목을 완성 컷씬·기법 견본·기법 조합·표정 연출·포즈·연기 비교의 다섯 분류로 탐색·재생한다. 기법 조합은15유형21버전이며 조합6유형과 쇼크코마는 항목 선택 뒤 하단에서 버전을 고른다.",
+  "scope": "기존 여섯 연출 화면의142개 항목을 다섯 분류로 탐색·재생한다. 기법 조합23유형29버전이며 조합6유형과 쇼크코마는 내부 버전을 선택한다.",
   "sourcePath": "src/resources/cutscenes/studio/index.ts",
   "previewPath": "src/resources/cutscenes/studio/",
   "defaultItem": "tiger-awakening:full-cutscene",
@@ -20,8 +20,8 @@
     {
       "id": "combinations",
       "name": "기법 조합",
-      "count": 15,
-      "versionCount": 21
+      "count": 23,
+      "versionCount": 29
     },
     {
       "id": "expressions",
@@ -63,8 +63,8 @@
       "id": "selected",
       "assetId": "local/anime-selected-cuts",
       "group": "combinations",
-      "count": 14,
-      "versionCount": 20,
+      "count": 22,
+      "versionCount": 28,
       "defaultItem": "selected:background-run",
       "recordPath": "resources/anime-selected-cuts.json"
     },
@@ -232,7 +232,7 @@
     "recordPath": "resources/anime-selected-cuts.json#speedImpactCombinationAddition",
     "preserved": "기존 항목·source·ID·경로·재생 및 날짜별 제작 이력을 보존한다. 기본 선택은 완성 컷씬의 호왕일격이며 새 원화·유료 생성·음향·본게임 연결은 추가하지 않는다."
   },
-  "currentStateBoundary": "현재 수량은groups·sources와variationRevision을 따른다. 목록은134항목이며 기법 조합15유형21버전 중selected는14유형20버전이다. 추가 조합3종·쇼크코마7버전·액션 시너지7종의 날짜별revision 수량은 각각 개정 당시의 제작 이력으로 보존한다.",
+  "currentStateBoundary": "현재 수량은 projectileCombinationAddition을 따른다. selected22유형28버전·기법 조합23유형29버전·연출실142항목이다. 날짜별 revision의 수량과 관찰 범위는 당시 제작 이력으로 보존한다.",
   "actionSynergyCombinationAddition": {
     "date": "2026-10-21",
     "scope": "추천한 액션 시너지7종을 사용자 승인으로 모두 구현. selected20종·기법 조합21종·통합 연출실140항목.",
@@ -313,5 +313,61 @@
     "legacyLinks": "기존 변형 컷 ID는 부모 유형 ID와 variant=실제 컷 ID 주소로 연결하며 새로고침·브라우저 기록 이동에서 복원한다. 기존 버전의 variant 값도 해당 실제 컷 ID다.",
     "preserved": "cuts의20개 실제 렌더러·컷 ID·동작·원화·시간·기법·주요 순간·저장과 날짜별 제작 이력을 보존한다. 과거 actionSynergyCombinationAddition의20항목·21종·140항목은 통합 전 수량이다.",
     "recordPath": "resources/anime-selected-cuts.json#variationRevision"
+  },
+  "causalCombinationAddition": {
+    "date": "2026-10-21",
+    "scope": "승인된 지형 도탄·벽 반동 연계·연막 교란·한 타 세 숏을 네 독립 유형으로 추가한다. selected18유형24버전·기법 조합19유형25버전·연출실138항목이다.",
+    "sourcePath": "src/resources/effects/anime-selected-cuts/causal-cuts.ts",
+    "cutIds": [
+      "causal-ricochet",
+      "causal-wall-rebound",
+      "causal-smoke-decoy",
+      "causal-triple-shot"
+    ],
+    "selectedTypeCount": 18,
+    "selectedVersionCount": 24,
+    "combinationTypeCount": 19,
+    "combinationVersionCount": 25,
+    "studioItemCount": 138,
+    "clock": "각 컷은1배속 실제시간의 duration·주요 순간을 사용하며, 재생·탐색·PNG/GIF와 마지막0.3초 정지가 같은 시각을 사용한다.",
+    "distinctions": {
+      "causal-ricochet": "벽면 충돌이 단일 기탄의 반사 방향을 결정한다. 기존 유도탄·다각도 탄막과 구분한다.",
+      "causal-wall-rebound": "첫 타격으로 날아간 상대가 실제 벽 접촉 후 되돌아와 두 번째 타격을 연결한다.",
+      "causal-smoke-decoy": "가림 속 실제 이동과 상대의 빈자리 공격 뒤 옆의 실제 위치를 공개한다. 반격 타격은 추가하지 않는다.",
+      "causal-triple-shot": "동일한 한 접촉을 세 크기로 재제시하는 편집이며 세 앵글·세 타격이 아니다. 최종 방출·쓰러짐은 한 번이다."
+    },
+    "reusedResources": [
+      "기존 아타호 남동 원투·달리기·기립",
+      "기존 곰왕 공격·피격·쓰러짐",
+      "기존 권기탄 orb-atlas-original.png",
+      "기존 현무암 픽셀 면색·단색 연기·접촉·먼지 원본"
+    ],
+    "references": [
+      {
+        "url": "https://docs.godotengine.org/en/stable/tutorials/physics/using_character_body_2d.html#bouncing-reflecting",
+        "use": "직전 검토에서 공식 도탄 GIF의 벽 접촉·색 변화와 반사 전후 움직임을 보고 공개 반사 코드를 읽었다. 원본 Godot 프로젝트를 실행한 것은 아니다."
+      }
+    ],
+    "referenceBoundary": "기존 동작·카메라 관찰 기록과 직전 기법 검토를 재사용한다. 이번 새 네 조합은 자체 구성이고 원작의 완성 안무를 복제한 것이 아니다.",
+    "newActorFrames": 0,
+    "newEffectSprites": 0,
+    "paidGenerationCalls": 0,
+    "audio": false,
+    "recordPath": "resources/anime-selected-cuts.json#causalCombinationAddition"
+  },
+  "projectileCombinationAddition": {
+    "date": "2026-10-21",
+    "addedItems": [
+      "selected:projectile-return",
+      "selected:beam-clash",
+      "selected:target-chain",
+      "selected:prop-strike"
+    ],
+    "selectedTypeCount": 22,
+    "selectedVersionCount": 28,
+    "combinationTypeCount": 23,
+    "combinationVersionCount": 29,
+    "studioItemCount": 142,
+    "recordPath": "resources/anime-selected-cuts.json#projectileCombinationAddition"
   }
 }

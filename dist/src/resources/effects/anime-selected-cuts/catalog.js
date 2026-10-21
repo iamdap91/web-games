@@ -5,6 +5,8 @@ import { arenaCuts } from './arena-cuts.js';
 import { flatCuts } from './flat-cuts.js';
 import { speedImpactCuts } from './speed-impact-cuts.js';
 import { actionSynergyCuts } from './action-synergy-cuts.js';
+import { causalCuts } from './causal-cuts.js';
+import { projectileCuts } from './projectile-cuts.js';
 import { combinationVariantGroups, resolveCombinationSelection, } from './combination-variants.js';
 import { finishMatte } from './drawing.js';
 const all = [...journeyCuts, ...arenaCuts, ...flatCuts];
@@ -56,6 +58,8 @@ export const cuts = [
     ...flatCuts,
     ...speedImpactCuts,
     ...actionSynergyCuts,
+    ...causalCuts,
+    ...projectileCuts,
 ].map(retimeCut);
 function requiredCut(id) {
     const cut = cuts.find((entry) => entry.id === id);
